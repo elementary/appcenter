@@ -916,12 +916,12 @@ namespace AppCenter.Views {
                 Idle.add (() => {
                     var number_of_screenshots = app_screenshots.get_children ().length ();
 
-                    
+
                     if (number_of_screenshots > 0) {
                         screenshot_stack.visible_child = screenshot_overlay;
                         stack_context.remove_class ("loading");
-                        
-                        
+
+
                         if (number_of_screenshots > 1) {
                             screenshot_next.no_show_all = false;
                             screenshot_next.show_all ();
@@ -929,15 +929,15 @@ namespace AppCenter.Views {
                             screenshot_previous.show_all ();
                         }
 
-                        /* 
+                        /*
                         * There's some weird bug where Apps with just one
                         * screenshot load the screenshot very small. For some
                         * reason, hiding and re-showing the screenhot makes it
                         * large again, but it only happens with one screenshot
                         * in the carousel. As a workaround, we can add an
-                        * extra copy of the first screenshot and disable all 
-                        * navigation to make it look/work like a single 
-                        * screenshot. 
+                        * extra copy of the first screenshot and disable all
+                        * navigation to make it look/work like a single
+                        * screenshot.
                         */
                         if (number_of_screenshots == 1) {
                             load_screenshot (screenshot_files[0]);
@@ -961,7 +961,7 @@ namespace AppCenter.Views {
             try {
                 AppCenter.Widgets.AppScreenshot image = new AppCenter.Widgets.AppScreenshot ();
                 image.set_path (path);
-                
+
 
                 Idle.add (() => {
                     image.show ();

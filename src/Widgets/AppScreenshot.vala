@@ -26,7 +26,7 @@
     private int pixbuf_height {
     get { return pixbuf != null ? pixbuf.height : 1; }
     }
-    
+
     public void set_path (string path_text) {
         file_path = path_text;
         try {
@@ -37,7 +37,7 @@
             pixbuf = null;
         }
     }
-    
+
     protected override bool draw (Cairo.Context cr) {
         if (pixbuf == null)
             return Gdk.EVENT_PROPAGATE;
@@ -46,13 +46,13 @@
         if (width > 800) {
             width = 800;
         }
-        double scale = double.min((double) height / pixbuf_height, (double) width / pixbuf_width);
+        double scale = double.min ((double) height / pixbuf_height, (double) width / pixbuf_width);
         cr.scale (scale, scale);
         Gdk.cairo_set_source_pixbuf (cr, pixbuf, 0, 0);
         cr.paint ();
         return Gdk.EVENT_PROPAGATE;
     }
-    
+
     protected override Gtk.SizeRequestMode get_request_mode () {
         return Gtk.SizeRequestMode.HEIGHT_FOR_WIDTH;
     }
@@ -61,12 +61,12 @@
     min = 0;
     nat = pixbuf_width;
     }
-    
+
     protected override void get_preferred_height (out int min, out int nat) {
     min = 0;
     nat = pixbuf_height;
     }
-    
+
     protected override void get_preferred_height_for_width (int width, out int min, out int nat) {
         min = width * pixbuf_height / pixbuf_width;
     nat = min;
