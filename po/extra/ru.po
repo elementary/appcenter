@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-11 23:01+0000\n"
-"PO-Revision-Date: 2021-10-29 12:36+0000\n"
+"PO-Revision-Date: 2021-11-12 17:48+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -91,17 +91,15 @@ msgstr "Исправления:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Correctly show the installed status of first-party applications"
-msgstr ""
+msgstr "Корректное отображение статуса установленных сторонних приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Don't store $0 app installs as paid"
 msgstr "Приложения за $0 больше не указываются как платные"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
-#, fuzzy
-#| msgid "Fix missing mail icon in payments dialog"
 msgid "Fix missing illicit substances icon"
-msgstr "Исправлено отсутствие значка почты в диалоговом окне платежей"
+msgstr "Исправлено отсутствие пиктограммы запрещенных веществ"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Don't show plugins on the homepage"
@@ -109,11 +107,11 @@ msgstr "Плагины не показыаются на домашней стр�
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr ""
+msgstr "Отображение пиктограммы «Многопользовательская игра» только для игр"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "Более компактное отображение прогресса установки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 #: data/io.elementary.appcenter.appdata.xml.in:132
