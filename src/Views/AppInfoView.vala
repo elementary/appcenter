@@ -76,6 +76,18 @@ namespace AppCenter.Views {
             action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+            unowned var open_button_context = open_button.get_style_context ();
+            open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var cancel_button_context = cancel_button.get_style_context ();
+            cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
             var package_component = package.component;
 
             var drugs = new ContentType (
