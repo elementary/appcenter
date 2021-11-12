@@ -96,12 +96,12 @@ namespace AppCenter.Views {
             list_box.invalidate_sort ();
         }
 
-        protected override AppRowInterface construct_row_for_package (AppCenterCore.Package package) {
+        protected override Widgets.PackageRow construct_row_for_package (AppCenterCore.Package package) {
             return new Widgets.PackageRow.installed (package, action_button_group);
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (AppRowInterface row1, AppRowInterface row2) {
+        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
             var row1_package = row1.get_package ();
             var row2_package = row2.get_package ();
 
@@ -154,7 +154,7 @@ namespace AppCenter.Views {
         }
 
         [CCode (instance_pos = -1)]
-        private void row_update_header (AppRowInterface row, AppRowInterface? before) {
+        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
             var row_package = row.get_package ();
             var before_package = before.get_package ();
 

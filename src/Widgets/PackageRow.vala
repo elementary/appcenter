@@ -19,7 +19,7 @@
  */
 
 namespace AppCenter.Widgets {
-    public class PackageRow : Gtk.ListBoxRow, AppRowInterface {
+    public class PackageRow : Gtk.ListBoxRow{
         AbstractPackageRowGrid grid;
 
         public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
