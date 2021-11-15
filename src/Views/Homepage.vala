@@ -291,20 +291,16 @@ public class AppCenter.Homepage : AbstractView {
             return;
         }
 
-        var app_list_view = new Views.AppListView ();
-        app_list_view.show_all ();
-        add_named (app_list_view, category.name);
-        set_visible_child (app_list_view);
+        var category_view = new CategoryView (category);
 
-        app_list_view.show_app.connect ((package) => {
+        add_named (category_view, category.name);
+        visible_child = category_view;
+
+        category_view.show_app.connect ((package) => {
             viewing_package = true;
             base.show_package (package);
             subview_entered (category.name, false, "");
         });
-
-        unowned var client = AppCenterCore.Client.get_default ();
-        var apps = client.get_applications_for_category (category);
-        app_list_view.add_packages (apps);
     }
 
     private void banner_timeout_start () {
