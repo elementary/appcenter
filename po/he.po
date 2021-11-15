@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 22:29+0000\n"
-"PO-Revision-Date: 2021-09-16 19:44+0000\n"
+"PO-Revision-Date: 2021-11-16 04:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -789,16 +790,12 @@ msgid "Non-Curated Apps"
 msgstr "יישומים שלא נאספו"
 
 #: src/Views/CategoryView.vala:28
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Paid Apps"
-msgstr "חיפוש יישומים"
+msgstr "יישומים בתשלום"
 
 #: src/Views/CategoryView.vala:39
-#, fuzzy
-#| msgid "Free"
 msgid "Free Apps"
-msgstr "חינם"
+msgstr "יישומים בחינם"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
