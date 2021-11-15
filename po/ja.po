@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 22:29+0000\n"
-"PO-Revision-Date: 2021-10-26 04:15+0000\n"
+"PO-Revision-Date: 2021-11-16 01:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -786,16 +787,12 @@ msgid "Non-Curated Apps"
 msgstr "キュレーションされていないアプリ"
 
 #: src/Views/CategoryView.vala:28
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Paid Apps"
-msgstr "アプリを検索"
+msgstr "有料アプリ"
 
 #: src/Views/CategoryView.vala:39
-#, fuzzy
-#| msgid "Free"
 msgid "Free Apps"
-msgstr "無料"
+msgstr "無料アプリ"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
