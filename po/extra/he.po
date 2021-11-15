@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 22:29+0000\n"
-"PO-Revision-Date: 2021-11-12 02:08+0000\n"
+"PO-Revision-Date: 2021-11-16 04:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -51,7 +51,7 @@ msgstr "שיפורים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "קטגוריות תופענה ברשת במקום ברשימה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Allow window to shrink to much narrower sizes"
