@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-11 23:01+0000\n"
+"POT-Creation-Date: 2021-11-15 22:29+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -43,35 +43,35 @@ msgstr "تم تثبيت التطبيق بنجاح"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:354
+#: src/Application.vala:299 src/MainWindow.vala:362
 #, c-format
 msgid "“%s” has been installed"
 msgstr "تم تثبيت ”%s“"
 
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "فشل تشغيل ”%s“"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:260
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
 #: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
 #: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "الرئيسية"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:425 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "ابحث عن تطبيقات"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:365
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "افتح"
@@ -808,9 +808,21 @@ msgstr "لم يتم العثور على تطبيقات"
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "حاول تغيير عبارات البحث. يمكنك أيضا تحميل تطبيقات Flatpak بشكل متواز، مثلاً من %s"
 
-#: src/Views/AppListView.vala:168
+#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "التطبيقات غير المختارة"
+
+#: src/Views/CategoryView.vala:28
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Paid Apps"
+msgstr "ابحث عن تطبيقات"
+
+#: src/Views/CategoryView.vala:39
+#, fuzzy
+#| msgid "Free"
+msgid "Free Apps"
+msgstr "مجاني"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
