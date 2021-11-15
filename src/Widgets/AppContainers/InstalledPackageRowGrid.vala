@@ -49,6 +49,12 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     construct {
         updates_view = true;
 
+        var package_name = new Gtk.Label (package.get_name ()) {
+            valign = Gtk.Align.END,
+            xalign = 0
+        };
+        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
         app_version = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
             valign = Gtk.Align.START,
