@@ -59,12 +59,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
             }
         }
 
-        package_name = new Gtk.Label (package.get_name ()) {
-            valign = Gtk.Align.END,
-            xalign = 0
-        };
-        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-
         margin = 6;
         margin_start = 12;
         margin_end = 12;

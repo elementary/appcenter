@@ -1180,8 +1180,7 @@ namespace AppCenter.Views {
                 activate_on_single_click = true,
                 column_spacing = 12,
                 row_spacing = 12,
-                homogeneous = true,
-                min_children_per_line = 2
+                homogeneous = true
             };
 
             foreach (var author_package in author_packages) {
