@@ -24,9 +24,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         homogeneous = true;
         margin_bottom = 12;
 
-        add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
-        add (get_category (_("Communication"), "", {
+        var games_card = new GamesCard ();
+
+        add (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
+        add (new LegacyCard (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        add (new LegacyCard (_("Communication"), "", {
             "Chat",
             "ContactManagement",
             "Email",
@@ -35,7 +37,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Telephony",
             "VideoConference"
         }, "communication"));
-        add (get_category (_("Development"), "", {
+        add (new LegacyCard (_("Development"), "", {
             "Database",
             "Debugger",
             "Development",
@@ -45,28 +47,13 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "TerminalEmulator",
             "WebDevelopment"
         }, "development"));
-        add (get_category (_("Education"), "", {"Education"}, "education"));
-        add (get_category (_("Finance"), "payment-card-symbolic", {
+        add (new LegacyCard (_("Education"), "", {"Education"}, "education"));
+        add (new LegacyCard (_("Finance"), "payment-card-symbolic", {
             "Economy",
             "Finance"
         }, "finance"));
-        add (get_category (_("Games"), "applications-games-symbolic", {
-            "ActionGame",
-            "AdventureGame",
-            "ArcadeGame",
-            "BlocksGame",
-            "BoardGame",
-            "CardGame",
-            "Game",
-            "KidsGame",
-            "LogicGame",
-            "RolePlaying",
-            "Shooter",
-            "Simulation",
-            "SportsGame",
-            "StrategyGame"
-        }, "games"));
-        add (get_category (_("Graphics"), "", {
+        add (games_card);
+        add (new LegacyCard (_("Graphics"), "", {
             "2DGraphics",
             "3DGraphics",
             "Graphics",
@@ -75,11 +62,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "RasterGraphics",
             "VectorGraphics"
         }, "graphics"));
-        add (get_category (_("Internet"), "applications-internet", {
+        add (new LegacyCard (_("Internet"), "applications-internet", {
             "Network",
             "P2P"
         }, "internet"));
-        add (get_category (_("Math, Science, & Engineering"), "", {
+        add (new LegacyCard (_("Math, Science, & Engineering"), "", {
             "ArtificialIntelligence",
             "Astronomy",
             "Biology",
@@ -98,31 +85,31 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
-        add (get_category (_("Media Production"), "applications-multimedia-symbolic", {
+        add (new LegacyCard (_("Media Production"), "applications-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
             "Recorder",
             "Sequencer"
         }, "media-production"));
-        add (get_category (_("Office"), "applications-office-symbolic", {
+        add (new LegacyCard (_("Office"), "applications-office-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
             "Spreadsheet",
             "WordProcessor"
         }, "office"));
-        add (get_category (_("System"), "applications-system-symbolic", {
+        add (new LegacyCard (_("System"), "applications-system-symbolic", {
             "Monitor",
             "System"
         }, "system"));
-        add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
-        add (get_category (_("Video"), "applications-video-symbolic", {
+        add (new LegacyCard (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
+        add (new LegacyCard (_("Video"), "applications-video-symbolic", {
             "Tuner",
             "TV",
             "Video"
         }, "video"));
-        add (get_category (_("Writing & Language"), "preferences-desktop-locale", {
+        add (new LegacyCard (_("Writing & Language"), "preferences-desktop-locale", {
             "Dictionary",
             "Languages",
             "Literature",
@@ -134,28 +121,166 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         }, "writing-language"));
 
         set_sort_func ((child1, child2) => {
-            var item1 = child1 as Widgets.CategoryItem;
-            var item2 = child2 as Widgets.CategoryItem;
+            var item1 = (AbstractCategoryCard) child1;
+            var item2 = (AbstractCategoryCard) child2;
             if (item1 != null && item2 != null) {
-                return item1.app_category.name.collate (item2.app_category.name);
+                return item1.category.name.collate (item2.category.name);
             }
 
             return 0;
         });
     }
 
-    private Widgets.CategoryItem get_category (string name, string icon, string[] groups, string style) {
-        var category = new AppStream.Category ();
-        category.set_name (name);
-        category.set_icon (icon);
+    public abstract class AbstractCategoryCard : Gtk.FlowBoxChild {
+        public AppStream.Category category { get; protected set; }
 
-        foreach (var group in groups) {
-            category.add_desktop_group (group);
+        protected Gtk.Grid content_area;
+        protected unowned Gtk.StyleContext style_context;
+
+        protected static Gtk.CssProvider category_provider;
+
+        static construct {
+            category_provider = new Gtk.CssProvider ();
+            category_provider.load_from_resource ("io/elementary/appcenter/categories.css");
         }
 
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class (style);
+        construct {
+            var expanded_grid = new Gtk.Grid () {
+                expand = true,
+                margin = 12
+            };
 
-        return item;
+            content_area = new Gtk.Grid () {
+                margin = 12
+            };
+            content_area.add (expanded_grid);
+
+            style_context = content_area.get_style_context ();
+            style_context.add_class (Granite.STYLE_CLASS_CARD);
+            style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
+            style_context.add_class ("category");
+            style_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            child = content_area;
+        }
+    }
+
+    private class LegacyCard : AbstractCategoryCard {
+        public LegacyCard (string name, string icon, string[] groups, string style) {
+            category = new AppStream.Category ();
+            category.set_name (name);
+            category.set_icon (icon);
+
+            foreach (var group in groups) {
+                category.add_desktop_group (group);
+            }
+
+            var display_image = new Gtk.Image ();
+            display_image.icon_size = Gtk.IconSize.DIALOG;
+            display_image.valign = Gtk.Align.CENTER;
+            display_image.halign = Gtk.Align.END;
+
+            var name_label = new Gtk.Label (null);
+            name_label.wrap = true;
+            name_label.max_width_chars = 15;
+            name_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var grid = new Gtk.Grid ();
+            grid.orientation = Gtk.Orientation.HORIZONTAL;
+            grid.column_spacing = 6;
+            grid.halign = Gtk.Align.CENTER;
+            grid.valign = Gtk.Align.CENTER;
+            grid.margin_top = 32;
+            grid.margin_end = 16;
+            grid.margin_bottom = 32;
+            grid.margin_start = 16;
+            grid.add (display_image);
+            grid.add (name_label);
+
+            content_area.attach (grid, 0, 0);
+
+            if (category.icon != "") {
+                display_image.icon_name = category.icon;
+                name_label.xalign = 0;
+                name_label.halign = Gtk.Align.START;
+            } else {
+                display_image.destroy ();
+                name_label.justify = Gtk.Justification.CENTER;
+            }
+
+            style_context.add_class (style);
+
+            if (style == "accessibility") {
+                name_label.label = category.name.up ();
+            } else {
+                name_label.label = category.name;
+            }
+
+            if (style == "science") {
+                name_label.justify = Gtk.Justification.CENTER;
+            }
+        }
+    }
+
+    private class GamesCard : AbstractCategoryCard {
+        construct {
+            category = new AppStream.Category () {
+                name = _("Fun & Games"),
+                icon = "applications-games-symbolic"
+            };
+            category.add_desktop_group ("ActionGame");
+            category.add_desktop_group ("AdventureGame");
+            category.add_desktop_group ("Amusement");
+            category.add_desktop_group ("ArcadeGame");
+            category.add_desktop_group ("BlocksGame");
+            category.add_desktop_group ("BoardGame");
+            category.add_desktop_group ("CardGame");
+            category.add_desktop_group ("Game");
+            category.add_desktop_group ("KidsGame");
+            category.add_desktop_group ("LogicGame");
+            category.add_desktop_group ("RolePlaying");
+            category.add_desktop_group ("Shooter");
+            category.add_desktop_group ("Simulation");
+            category.add_desktop_group ("SportsGame");
+            category.add_desktop_group ("StrategyGame");
+
+            var image = new Gtk.Image () {
+                icon_name = "applications-games-symbolic",
+                pixel_size = 64
+            };
+
+            unowned var image_context = image.get_style_context ();
+            image_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            image_context.add_class ("slate");
+
+            var fun_label = new Gtk.Label (_("Fun &")) {
+                halign = Gtk.Align.START
+            };
+
+            unowned var fun_label_context = fun_label.get_style_context ();
+            fun_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            fun_label_context.add_class ("pink");
+            fun_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var games_label = new Gtk.Label (_("Games"));
+
+            unowned var games_label_context = games_label.get_style_context ();
+            games_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            games_label_context.add_class ("blue");
+            games_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var grid = new Gtk.Grid () {
+                column_spacing = 12,
+                halign = Gtk.Align.CENTER,
+                valign = Gtk.Align.CENTER
+            };
+            grid.attach (image, 0, 0, 1, 2);
+            grid.attach (fun_label, 1, 0);
+            grid.attach (games_label, 1, 1);
+
+            content_area.attach (grid, 0, 0);
+
+            style_context.add_class ("games");
+        }
     }
 }

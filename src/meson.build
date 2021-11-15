@@ -39,7 +39,6 @@ appcenter_files = files(
     'Widgets/Banner.vala',
     'Widgets/CardNumberEntry.vala',
     'Widgets/CategoryFlowBox.vala',
-    'Widgets/CategoryItem.vala',
     'Widgets/HumbleButton.vala',
     'Widgets/NetworkInfoBar.vala',
     'Widgets/PackageRow.vala',

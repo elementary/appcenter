@@ -124,22 +124,18 @@ public class AppCenter.Homepage : AbstractView {
         load_banners_and_carousels.begin ();
 
         category_flow.child_activated.connect ((child) => {
-            var item = child as Widgets.CategoryItem;
-            if (item != null) {
-                currently_viewed_category = item.app_category;
-                show_app_list_for_category (item.app_category);
-            }
+            var card = (Widgets.CategoryFlowBox.AbstractCategoryCard) child;
+            currently_viewed_category = card.category;
+            show_app_list_for_category (card.category);
         });
 
         AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
             Idle.add (() => {
                 // Clear the cached categories when the AppStream pool is updated
                 foreach (weak Gtk.Widget child in category_flow.get_children ()) {
-                    if (child is Widgets.CategoryItem) {
-                        var item = child as Widgets.CategoryItem;
-                        var category_components = item.app_category.get_components ();
-                        category_components.remove_range (0, category_components.length);
-                    }
+                    var item = (Widgets.CategoryFlowBox.AbstractCategoryCard) child;
+                    var category_components = item.category.get_components ();
+                    category_components.remove_range (0, category_components.length);
                 }
 
                 // Remove any old cached category list views
