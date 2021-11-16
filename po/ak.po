@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-11 23:01+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
@@ -39,37 +39,37 @@ msgstr "Atwe %s agu so awie"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:354
+#: src/Application.vala:299 src/MainWindow.vala:362
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "Atwe %s agu so awie"
 
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "Yi fi so"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:260
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
 #: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
 #: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Ahyɛase"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Twe gu so"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:425 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Hwehwɛ Dwumadi Bi"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:365
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "Bie"
@@ -807,9 +807,21 @@ msgstr ""
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:168
+#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr ""
+
+#: src/Views/CategoryView.vala:28
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Paid Apps"
+msgstr "Hwehwɛ Dwumadi Bi"
+
+#: src/Views/CategoryView.vala:39
+#, fuzzy
+#| msgid "Free"
+msgid "Free Apps"
+msgstr "Kwa"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
@@ -864,42 +876,48 @@ msgstr "Gyae"
 msgid "Games"
 msgstr "Agodie"
 
-#: src/Widgets/CategoryFlowBox.vala:69
+#: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
 msgstr "Mfonyin"
 
-#: src/Widgets/CategoryFlowBox.vala:78
+#: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
 msgstr "Intanɛt"
 
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:83
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Nyansapɛ"
 
-#: src/Widgets/CategoryFlowBox.vala:101
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:108
+#: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
 msgstr "Adwuma Mu"
 
-#: src/Widgets/CategoryFlowBox.vala:115
+#: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
 msgstr "System"
 
-#: src/Widgets/CategoryFlowBox.vala:119
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
 msgstr "Universal Access"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
 msgstr "Video"
 
-#: src/Widgets/CategoryFlowBox.vala:125
+#: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Nneɛmakora Ho Nhyehyɛe"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"

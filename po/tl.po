@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-11 23:01+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Tagalog <https://l10n.elementary.io/projects/appcenter/appcenter/tl/>\n"
@@ -39,35 +39,35 @@ msgstr "% ay matagumpay na naiinstall"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:354
+#: src/Application.vala:299 src/MainWindow.vala:362
 #, fuzzy, c-format
 msgid "“%s” has been installed"
 msgstr "% ay matagumpay na naiinstall"
 
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "I-uninstall"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:260
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
 #: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
 #: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr ""
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Naka-install"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:425 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Maghanap ng mga App"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:365
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr ""
@@ -798,9 +798,21 @@ msgstr ""
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:168
+#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr ""
+
+#: src/Views/CategoryView.vala:28
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Paid Apps"
+msgstr "Maghanap ng mga App"
+
+#: src/Views/CategoryView.vala:39
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Free Apps"
+msgstr "Maghanap ng mga App"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
@@ -855,41 +867,45 @@ msgstr "Ikansela"
 msgid "Games"
 msgstr "Mga Laro"
 
-#: src/Widgets/CategoryFlowBox.vala:69
+#: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
 msgstr "Mga grapiko"
 
-#: src/Widgets/CategoryFlowBox.vala:78
+#: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
 msgstr "Ang Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:83
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Agham & Pag-iinhinyero"
 
-#: src/Widgets/CategoryFlowBox.vala:101
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:108
+#: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
 msgstr "Opisina"
 
-#: src/Widgets/CategoryFlowBox.vala:115
+#: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
 msgstr "Pang-system"
 
-#: src/Widgets/CategoryFlowBox.vala:119
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
 msgstr "Mga Video"
 
-#: src/Widgets/CategoryFlowBox.vala:125
+#: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:136
+msgid "Privacy & Security"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:65

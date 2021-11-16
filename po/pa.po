@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-11 23:01+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -40,35 +40,35 @@ msgstr "ਐਪ ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:354
+#: src/Application.vala:299 src/MainWindow.vala:362
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "“%s“ ਨੂੰ ਲਾਂਚ ਕਰਨ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:260
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
 #: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
 #: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "ਮੁੱਖ ਪੰਨਾ"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "ਸਥਾਪਤ ਕੀਤੇ ਹੋਏ"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:425 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "ਐਪਾਂ ਖੋਜੋ"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:365
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
@@ -795,9 +795,21 @@ msgstr ""
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:168
+#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "ਅਣ ਸੰਵਾਰੀਆਂ ਐਪਾਂ"
+
+#: src/Views/CategoryView.vala:28
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Paid Apps"
+msgstr "ਐਪਾਂ ਖੋਜੋ"
+
+#: src/Views/CategoryView.vala:39
+#, fuzzy
+#| msgid "Free"
+msgid "Free Apps"
+msgstr "ਮੁਫ਼ਤ"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
@@ -850,41 +862,47 @@ msgstr "ਵਿੱਤੀ"
 msgid "Games"
 msgstr "ਗੇਮਾਂ"
 
-#: src/Widgets/CategoryFlowBox.vala:69
+#: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
 msgstr "ਗ੍ਰਾਫ਼ਿਕਸ"
 
-#: src/Widgets/CategoryFlowBox.vala:78
+#: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
 msgstr "ਇੰਟਰਨੈੱਟ"
 
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Math, Science, & Engineering"
 msgstr "ਹਿਸਾਬ, ਸਾਇੰਸ, ਅਤੇ ਇੰਜੀਨੀਅਰਿੰਗ"
 
-#: src/Widgets/CategoryFlowBox.vala:101
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "Media Production"
 msgstr "ਮੀਡੀਆ ਪ੍ਰੋਡਕਸ਼ਨ"
 
-#: src/Widgets/CategoryFlowBox.vala:108
+#: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
 msgstr "ਦਫ਼ਤਰੀ"
 
-#: src/Widgets/CategoryFlowBox.vala:115
+#: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
 msgstr "ਸਿਸਟਮ"
 
-#: src/Widgets/CategoryFlowBox.vala:119
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
 msgstr "ਸਰਬ-ਸਾਂਝਾ"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
 msgstr "ਵਿਡੀਓ"
 
-#: src/Widgets/CategoryFlowBox.vala:125
+#: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr "ਲੇਖਣ ਅਤੇ ਭਾਸ਼ਾ"
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "ਪਰਦੇਦਾਰੀ ਨੀਤੀ"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"

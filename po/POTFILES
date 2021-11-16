@@ -29,6 +29,7 @@ src/Views/AbstractView.vala
 src/Views/AppInfoView.vala
 src/Views/AppListUpdateView.vala
 src/Views/AppListView.vala
+src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/InstalledView.vala
 src/Views/SearchView.vala
