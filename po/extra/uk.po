@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-16 17:49+0000\n"
-"PO-Revision-Date: 2021-11-16 04:08+0000\n"
+"PO-Revision-Date: 2021-11-16 23:08+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -54,7 +54,7 @@ msgstr "Вдосконалення:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Amusements appear in the Games category"
-msgstr ""
+msgstr "У категорії Ігри з'являються розваги"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Categories show as a grid instead of a list"
