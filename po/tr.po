@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-15 22:29+0000\n"
-"PO-Revision-Date: 2021-09-18 16:09+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
+"PO-Revision-Date: 2021-11-16 13:54+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
@@ -799,16 +799,12 @@ msgid "Non-Curated Apps"
 msgstr "Doğrulanmamış Uygulamalar"
 
 #: src/Views/CategoryView.vala:28
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Paid Apps"
-msgstr "Uygulama Ara"
+msgstr "Ücretli Uygulamalar"
 
 #: src/Views/CategoryView.vala:39
-#, fuzzy
-#| msgid "Free"
 msgid "Free Apps"
-msgstr "Ücretsiz"
+msgstr "Ücretsiz Uygulamalar"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
@@ -861,41 +857,47 @@ msgstr "Finans"
 msgid "Games"
 msgstr "Oyunlar"
 
-#: src/Widgets/CategoryFlowBox.vala:69
+#: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
 msgstr "Grafik"
 
-#: src/Widgets/CategoryFlowBox.vala:78
+#: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
 msgstr "İnternet"
 
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Math, Science, & Engineering"
 msgstr "Matematik, Bilim ve Mühendislik"
 
-#: src/Widgets/CategoryFlowBox.vala:101
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "Media Production"
 msgstr "Medya Üretimi"
 
-#: src/Widgets/CategoryFlowBox.vala:108
+#: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
 msgstr "Ofis"
 
-#: src/Widgets/CategoryFlowBox.vala:115
+#: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
 msgstr "Sistem"
 
-#: src/Widgets/CategoryFlowBox.vala:119
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
 msgstr "Evrensel Erişim"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
 msgstr "Video"
 
-#: src/Widgets/CategoryFlowBox.vala:125
+#: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr "Yazı ve Dil"
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Gizlilik Politikası"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"
