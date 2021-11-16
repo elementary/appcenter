@@ -13,9 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 22:29+0000\n"
-"PO-Revision-Date: 2021-09-22 15:33+0000\n"
-"Last-Translator: Léo Bidot <toonbunny@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"PO-Revision-Date: 2021-11-16 13:54+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -798,16 +799,12 @@ msgid "Non-Curated Apps"
 msgstr "Applications non vérifiées"
 
 #: src/Views/CategoryView.vala:28
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Paid Apps"
-msgstr "Rechercher des applications"
+msgstr "Applications payantes"
 
 #: src/Views/CategoryView.vala:39
-#, fuzzy
-#| msgid "Free"
 msgid "Free Apps"
-msgstr "Gratuit"
+msgstr "Applications gratuites"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
