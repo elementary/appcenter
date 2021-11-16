@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 17:49+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -929,6 +929,12 @@ msgstr "Video"
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Politica de confidențialitate"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"

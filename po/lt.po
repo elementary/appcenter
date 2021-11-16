@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 17:49+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -923,6 +923,12 @@ msgstr "Vaizdas"
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr "Rašymas ir kalba"
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Privatumo politika"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"

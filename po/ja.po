@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 17:49+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2021-11-16 01:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -879,6 +879,12 @@ msgstr "動画"
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr "文書作成と言語"
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "プライバシーポリシー"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"

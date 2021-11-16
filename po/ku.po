@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 17:49+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2018-02-05 00:10+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/appcenter/appcenter/ku/>\n"
@@ -897,6 +897,10 @@ msgstr "Vîdyo"
 
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:136
+msgid "Privacy & Security"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:65

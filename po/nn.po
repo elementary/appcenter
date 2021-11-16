@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 17:49+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2020-07-04 12:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -904,6 +904,12 @@ msgstr "Video"
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr "Skriving og språk"
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Personvernreglar"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"
