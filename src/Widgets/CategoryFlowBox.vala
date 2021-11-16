@@ -119,7 +119,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Translation",
             "WordProcessor"
         }, "writing-language"));
-        add (get_category (_("Privacy & Security"), "preferences-system-privacy", {
+        add (new LegacyCard (_("Privacy & Security"), "preferences-system-privacy", {
             "Security",
         }, "privacy-security"));
 
