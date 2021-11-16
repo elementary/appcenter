@@ -15,6 +15,7 @@
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Amusements appear in the Games category</li>
           <li>Categories show as a grid instead of a list</li>
           <li>Allow window to shrink to much narrower sizes</li>
           <li>Updated translations</li>

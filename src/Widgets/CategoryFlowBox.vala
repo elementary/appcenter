@@ -54,6 +54,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "ActionGame",
             "AdventureGame",
             "ArcadeGame",
+            "Amusement",
             "BlocksGame",
             "BoardGame",
             "CardGame",
