@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 17:49+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2019-04-12 00:57+0000\n"
 "Last-Translator: Cody Garver <cody@elementary.io>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/appcenter/hi/>\n"
@@ -896,6 +896,10 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:136
+msgid "Privacy & Security"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:65

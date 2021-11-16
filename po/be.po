@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 17:49+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2016-03-04 13:30+0000\n"
 "Last-Translator: Pavel <aps7@tut.by>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -892,6 +892,10 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:136
+msgid "Privacy & Security"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:65
