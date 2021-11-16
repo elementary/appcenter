@@ -26,6 +26,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Label release_description;
     private Gtk.Label release_expander_label;
     private Gtk.Label release_single_label;
+    private Gtk.FlowBox info_flowbox;
     private Gtk.Revealer release_stack_revealer;
     private Gtk.Stack release_stack;
 
@@ -113,6 +114,16 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
 
+        info_flowbox = new Gtk.FlowBox () {
+            activate_on_single_click = true,
+            column_spacing = 24,
+            hexpand = true,
+            row_spacing = 12
+        };
+        info_flowbox.add (info_grid);
+        info_flowbox.add (release_stack_revealer);
+
+
         action_stack.homogeneous = false;
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
@@ -121,8 +132,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         var grid = new Gtk.Grid () {
             column_spacing = 24
         };
-        grid.attach (info_grid, 0, 0);
-        grid.attach (release_stack_revealer, 2, 0, 1, 2);
+        //  grid.attach (info_grid, 0, 0);
+        //  grid.attach (release_stack_revealer, 2, 0, 1, 2);
+        grid.attach(info_flowbox, 0, 0);
         grid.attach (action_stack, 3, 0);
 
         add (grid);
