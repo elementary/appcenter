@@ -225,31 +225,29 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         return success;
     }
 
-    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
         assert_not_reached ();
     }
 
-    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
         var success = true;
         // updatable_packages is a HashMultiMap of packages to be updated, where the key is
         // a pointer to the backend that is capable of updating them. Most packages only have one
         // backend, but there is the special case of the OS updates package which could contain
         // flatpaks and/or packagekit packages
 
-        var backends = package.change_information.updatable_packages.get_keys ().to_array ();
-        int num_backends = backends.length;
-
-        for (int i = 0; i < num_backends; i++) {
-            unowned Backend backend = backends[i];
-
+        var backends = package.change_information.updatable_packages.get_keys ();
+        int num_backends = backends.size;
+        int index = 0;
+        foreach (var backend in backends) {
             var backend_succeeded = yield backend.update_package (
                 package,
                 // Intercept progress callbacks so we can divide the progress between the number of backends
                 (can_cancel, description, progress, status) => {
-                    double calculated_progress = (i * (1.0f / num_backends)) + (progress / num_backends);
+                    double calculated_progress = (index * (1.0f / num_backends)) + (progress / num_backends);
                     ChangeInformation.Status consolidated_status = status;
                     // Only report finished when the last operation completes
-                    if (consolidated_status == ChangeInformation.Status.FINISHED && (i + 1) < num_backends) {
+                    if (consolidated_status == ChangeInformation.Status.FINISHED && (index + 1) < num_backends) {
                         consolidated_status = ChangeInformation.Status.RUNNING;
                     }
 
@@ -261,12 +259,14 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
             if (!backend_succeeded) {
                 success = false;
             }
+
+            index++;
         }
 
         return success;
     }
 
-    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
         assert_not_reached ();
     }
 
