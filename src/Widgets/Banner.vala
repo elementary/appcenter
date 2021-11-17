@@ -57,15 +57,13 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         };
         summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        string[] lines = package.get_description ().split ("\n");
-        var description = lines[0].strip ();
-
-        for (int i = 1; i < lines.length; i++) {
-            description += " " + lines[i].strip ();
+        string description = "";
+        if (package.get_description () != null) {
+            // We only want the first line/paragraph
+            description = package.get_description ().split ("\n")[0];
         }
 
-        int close_paragraph_index = description.index_of ("</p>", 0);
-        var description_label = new Gtk.Label (description.slice (3, close_paragraph_index)) {
+        var description_label = new Gtk.Label (description) {
             ellipsize = Pango.EllipsizeMode.END,
             lines = 2,
             max_width_chars = 50,
