@@ -800,7 +800,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async Pk.Results get_updates (Cancellable cancellable) throws GLib.Error {
+    public async Pk.Results get_updates (Cancellable? cancellable) throws GLib.Error {
         var job_args = new GetUpdatesArgs ();
         job_args.cancellable = cancellable;
 
