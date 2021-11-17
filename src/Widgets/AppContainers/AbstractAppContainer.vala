@@ -73,7 +73,10 @@ namespace AppCenter {
             uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             uninstall_button_revealer.add (uninstall_button);
 
-            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
+            uninstall_button.clicked.connect (() => {
+            	uninstall_clicked.begin ();
+            	action_button.free_string = _("Install");
+            });
 
             open_button = new Gtk.Button.with_label (_("Open"));
 
