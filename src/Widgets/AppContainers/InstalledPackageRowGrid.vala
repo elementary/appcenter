@@ -138,7 +138,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         add (grid);
 
-        info_size_group.add_widget (info_grid);
+        info_size_group.add_widget (release_stack_revealer);
 
         release_expander.button_press_event.connect (() => {
             release_expander.expanded = !release_expander.expanded;
