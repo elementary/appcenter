@@ -293,7 +293,7 @@ public class AppCenter.Homepage : AbstractView {
 
         var category_view = new CategoryView (category);
 
-        add_named (category_view, category.name);
+        add (category_view);
         visible_child = category_view;
 
         category_view.show_app.connect ((package) => {

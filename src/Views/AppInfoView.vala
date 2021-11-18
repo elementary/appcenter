@@ -24,7 +24,7 @@ namespace AppCenter.Views {
         public signal void show_other_package (
             AppCenterCore.Package package,
             bool remember_history = true,
-            Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+            bool transition = true
         );
 
         private static Gtk.CssProvider banner_provider;
@@ -703,7 +703,7 @@ namespace AppCenter.Views {
                 origin_combo.get_active_iter (out iter);
                 origin_liststore.@get (iter, 0, out selected_origin_package);
                 if (selected_origin_package != null && selected_origin_package != package) {
-                    show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
+                    show_other_package (selected_origin_package, false, false);
                 }
             });
 

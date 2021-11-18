@@ -17,24 +17,22 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public abstract class AppCenter.AbstractView : Gtk.Stack {
+public abstract class AppCenter.AbstractView : Hdy.Deck {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
     public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
 
     construct {
-        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        transition_type = Hdy.DeckTransitionType.SLIDE;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
 
         notify["transition-running"].connect (() => {
             // Transition finished
             if (!transition_running) {
-                foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
-                        child.destroy ();
-                    }
+                while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
+                    deck.remove (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD));
                 }
             }
         });
@@ -66,14 +64,17 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
         add (app_info_view);
         set_visible_child (app_info_view);
 
-        app_info_view.show_other_package.connect ((_package, remember_history, _transition_type) => {
-            transition_type = _transition_type;
+        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
+            if (!transition) {
+                transition_duration = 0;
+            }
+
             show_package (_package, remember_history);
             if (remember_history) {
                 previous_package = package;
                 subview_entered (package.get_name (), false, "", null);
             }
-            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+            transition_duration = 200;
         });
     }
 
