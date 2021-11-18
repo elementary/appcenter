@@ -31,6 +31,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Stack release_stack;
 
     private static Gtk.SizeGroup info_size_group;
+    private static Gtk.SizeGroup updates_size_group;
 
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
         Object (package: package);
@@ -45,6 +46,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     static construct {
         info_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        updates_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
     }
 
     construct {
@@ -138,7 +140,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         add (grid);
 
-        info_size_group.add_widget (release_stack_revealer);
+        info_size_group.add_widget (info_grid);
+        updates_size_group.add_widget (release_stack_revealer);
 
         release_expander.button_press_event.connect (() => {
             release_expander.expanded = !release_expander.expanded;
