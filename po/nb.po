@@ -4,10 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:39+0000\n"
-"PO-Revision-Date: 2021-09-04 12:16+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
+"PO-Revision-Date: 2021-11-17 13:22+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +39,7 @@ msgstr "Programmet har blitt installert"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:362
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ble installert"
@@ -48,26 +49,26 @@ msgstr "%s ble installert"
 msgid "Failed to launch “%s“"
 msgstr "Klarte ikke å kjøre «%s»"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
-#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
-#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
+#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
+#: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Startside"
 
-#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Programsøk"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:365
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "Åpne"
 
@@ -100,7 +101,7 @@ msgstr "Fjerner pakker"
 msgid "Downloading"
 msgstr "Laster ned"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:998
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1051
 msgid "Installing"
 msgstr "Installerer"
 
@@ -145,9 +146,9 @@ msgid "Finished"
 msgstr "Ferdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1007 src/Core/FlatpakBackend.vala:1035
-#: src/Core/FlatpakBackend.vala:1143 src/Core/FlatpakBackend.vala:1171
-#: src/Core/FlatpakBackend.vala:1317 src/Core/FlatpakBackend.vala:1343
+#: src/Core/FlatpakBackend.vala:1060 src/Core/FlatpakBackend.vala:1084
+#: src/Core/FlatpakBackend.vala:1192 src/Core/FlatpakBackend.vala:1216
+#: src/Core/FlatpakBackend.vala:1362 src/Core/FlatpakBackend.vala:1384
 msgid "Cancelling"
 msgstr "Avbryter"
 
@@ -236,11 +237,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengelig for ditt system"
 msgstr[1] "%u oppdateringer er tilgjengelige for ditt system"
 
-#: src/Core/FlatpakBackend.vala:1134
+#: src/Core/FlatpakBackend.vala:1183
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1308
+#: src/Core/FlatpakBackend.vala:1353
 msgid "Updating"
 msgstr "Oppdaterer"
 
@@ -397,10 +398,8 @@ msgid "Email"
 msgstr "E-post"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Din e-postadresse brukes kun til å sende en kvittering. Du vil ikke bli meldt på noen e-postliste."
+msgstr "Brukes kun til å sende en kvittering. Du vil ikke bli meldt på noen e-postliste."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -416,7 +415,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:103
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -524,7 +523,7 @@ msgid "Uninstall “%s”?"
 msgstr "Avinstaller \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:68
 msgid "Uninstall"
 msgstr "Avinstaller"
 
@@ -569,170 +568,182 @@ msgstr "Klarte ikke å oppdatere «%s»"
 
 #: src/Views/AppInfoView.vala:80
 msgid "Illicit Substances"
-msgstr ""
+msgstr "Ulovlige substanser"
 
 #: src/Views/AppInfoView.vala:81
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
+msgstr "Tilstedeværelse eller referanser til alkohol, narkotika, eller tobakk"
 
 #: src/Views/AppInfoView.vala:86
 msgid "Sex & Nudity"
-msgstr ""
+msgstr "Sex og nakenhet"
 
 #: src/Views/AppInfoView.vala:87
 msgid "Adult nudity or sexual themes"
-msgstr ""
+msgstr "Voksen nakenhet eller seksuelle tema"
 
 #: src/Views/AppInfoView.vala:92
 msgid "Offensive Language"
-msgstr ""
+msgstr "Støtende språk"
 
 #: src/Views/AppInfoView.vala:93
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr ""
+msgstr "Banning, diskriminerende språk, eller voksen humor"
 
 #: src/Views/AppInfoView.vala:98
 msgid "Gambling"
-msgstr ""
+msgstr "Taskenspill og hasard"
 
 #: src/Views/AppInfoView.vala:99
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "Realistisk eller deltagende taskenspill og hasard"
 
-#: src/Views/AppInfoView.vala:123
+#: src/Views/AppInfoView.vala:113
+msgid "Non-Curated"
+msgstr "Ikke-gjennomsett"
+
+#: src/Views/AppInfoView.vala:114
+msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgstr "Ikke vurdert av elementary mht. sikkerhet, personvern, eller systemintegrasjon."
+
+#: src/Views/AppInfoView.vala:136
 msgid "Conflict"
-msgstr ""
+msgstr "Konflikt"
 
-#: src/Views/AppInfoView.vala:124
+#: src/Views/AppInfoView.vala:137
 msgid "Depictions of unsafe situations or aggressive conflict"
-msgstr ""
+msgstr "Beskrivelser av utrygge situasjoner eller aggressiv konflikt"
 
-#: src/Views/AppInfoView.vala:138
+#: src/Views/AppInfoView.vala:150
 msgid "Violence"
-msgstr ""
+msgstr "Vold"
 
-#: src/Views/AppInfoView.vala:139
+#: src/Views/AppInfoView.vala:155
+msgid "Fantasy Violence"
+msgstr "Fantasivold"
+
+#: src/Views/AppInfoView.vala:160
 msgid "Graphic violence, bloodshed, or death"
-msgstr ""
+msgstr "Grafisk vold, blodsutgytelser, eller død"
 
-#: src/Views/AppInfoView.vala:180
+#: src/Views/AppInfoView.vala:204
 msgid "Multiplayer"
-msgstr ""
+msgstr "Flerspiller"
 
-#: src/Views/AppInfoView.vala:181
+#: src/Views/AppInfoView.vala:205
 msgid "Online play with other people"
-msgstr ""
+msgstr "Nettbasert spill med andre"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:221
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Umoderert lyd, -video, eller -sludring med andre"
 
-#: src/Views/AppInfoView.vala:199
+#: src/Views/AppInfoView.vala:223
 msgid "Moderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Moderert lyd, -video, eller -sludring med andre"
 
-#: src/Views/AppInfoView.vala:203
+#: src/Views/AppInfoView.vala:227
 msgid "Online Interactions"
-msgstr ""
+msgstr "Nettbaserte interaksjoner"
 
-#: src/Views/AppInfoView.vala:213
+#: src/Views/AppInfoView.vala:237
 msgid "Location Sharing"
-msgstr ""
+msgstr "Posisjonsdeling"
 
-#: src/Views/AppInfoView.vala:214
+#: src/Views/AppInfoView.vala:238
 msgid "Other people can see your real-world location"
-msgstr ""
+msgstr "Andre kan se din posisjon i den virkelige verden"
 
-#: src/Views/AppInfoView.vala:226
+#: src/Views/AppInfoView.vala:250
 msgid "Collects anonymous usage data"
-msgstr ""
+msgstr "Samler inn anonym bruksdata"
 
-#: src/Views/AppInfoView.vala:229
+#: src/Views/AppInfoView.vala:253
 msgid "Collects usage data that could be used to identify you"
-msgstr ""
+msgstr "Samler bruksdata som kan brukes til å identifisere deg"
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:258
 msgid "Info Sharing"
-msgstr ""
+msgstr "Infodeling"
 
-#: src/Views/AppInfoView.vala:351
+#: src/Views/AppInfoView.vala:375
 msgid "Screenshot Not Available"
 msgstr "Skjermbilde ikke tilgjengelig"
 
-#: src/Views/AppInfoView.vala:454
+#: src/Views/AppInfoView.vala:476
 msgid "Homepage"
 msgstr "Startside"
 
-#: src/Views/AppInfoView.vala:460
+#: src/Views/AppInfoView.vala:482
 msgid "Translate"
 msgstr "Oversett"
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:488
 msgid "Send Feedback"
 msgstr "Send tilbakemelding"
 
-#: src/Views/AppInfoView.vala:472
+#: src/Views/AppInfoView.vala:494
 msgid "Help"
 msgstr "Hjelp"
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:505
 msgid "What's New:"
 msgstr "Nyheter:"
 
-#: src/Views/AppInfoView.vala:528
+#: src/Views/AppInfoView.vala:550
 msgid "Extensions:"
 msgstr "Utvidelser:"
 
-#: src/Views/AppInfoView.vala:631
+#: src/Views/AppInfoView.vala:653
 msgid "Link copied to clipboard"
 msgstr "Lenke kopiert til utklippstavle"
 
-#: src/Views/AppInfoView.vala:642
+#: src/Views/AppInfoView.vala:664
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Sjekk ut %s i AppSenter:"
 
-#: src/Views/AppInfoView.vala:650
+#: src/Views/AppInfoView.vala:672
 msgid "Share"
 msgstr "Del"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:960
+#: src/Views/AppInfoView.vala:986
 msgid "Public Domain"
 msgstr "Offentlig eiendom"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:963
+#: src/Views/AppInfoView.vala:989
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://no.wikipedia.org/wiki/Offentlig_eiendom"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:968
+#: src/Views/AppInfoView.vala:994
 msgid "Free Software"
 msgstr "Fri programvare"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:971
+#: src/Views/AppInfoView.vala:997
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.nb.html"
 
-#: src/Views/AppInfoView.vala:975
+#: src/Views/AppInfoView.vala:1001
 msgid "Proprietary"
 msgstr "Proprietært"
 
-#: src/Views/AppInfoView.vala:978
+#: src/Views/AppInfoView.vala:1004
 msgid "Unknown License"
 msgstr "Ukjent lisens"
 
-#: src/Views/AppInfoView.vala:1058
+#: src/Views/AppInfoView.vala:1084
 msgid "Fund"
 msgstr "Bidra"
 
-#: src/Views/AppInfoView.vala:1066
+#: src/Views/AppInfoView.vala:1092
 msgid "Fund the development of this app"
 msgstr "Kronerull utviklingen av dette programmet"
 
-#: src/Views/AppInfoView.vala:1170
+#: src/Views/AppInfoView.vala:1204
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Andre programmer av %s"
@@ -778,19 +789,31 @@ msgstr "Fant ingen programmer"
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Prøv å endre søket. Du kan også sideinnlaste Flatpak-programmer fra f.eks. %s"
 
-#: src/Views/AppListView.vala:168
+#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "Ikke-bekreftede programmer"
 
-#: src/Views/Homepage.vala:65
+#: src/Views/CategoryView.vala:28
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Paid Apps"
+msgstr "Betalte programmer"
+
+#: src/Views/CategoryView.vala:39
+#, fuzzy
+#| msgid "Free"
+msgid "Free Apps"
+msgstr "Gratisprogrammer"
+
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Nylig oppdatert"
 
-#: src/Views/Homepage.vala:88
+#: src/Views/Homepage.vala:86
 msgid "Categories"
 msgstr "Kategorier"
 
-#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
+#: src/Views/Homepage.vala:275 src/Views/Homepage.vala:286
 #, c-format
 msgid "Search %s"
 msgstr "Søk %s"
@@ -833,53 +856,59 @@ msgstr "Finans"
 msgid "Games"
 msgstr "Spill"
 
-#: src/Widgets/CategoryFlowBox.vala:69
+#: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
 msgstr "Grafikk"
 
-#: src/Widgets/CategoryFlowBox.vala:78
+#: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
 msgstr "Internett"
 
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Math, Science, & Engineering"
 msgstr "Matematikk, vitenskap og teknikk"
 
-#: src/Widgets/CategoryFlowBox.vala:101
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "Media Production"
 msgstr "Medieproduksjon"
 
-#: src/Widgets/CategoryFlowBox.vala:108
+#: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
 msgstr "Kontor"
 
-#: src/Widgets/CategoryFlowBox.vala:115
+#: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
 msgstr "System"
 
-#: src/Widgets/CategoryFlowBox.vala:119
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
 msgstr "Tilgjengelighet"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
 msgstr "Video"
 
-#: src/Widgets/CategoryFlowBox.vala:125
+#: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr "Skriving og språk"
+
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Personvern og sikkerhet"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"
 msgstr "Krever betaling, som ikke er aktivert"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:202
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:238
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:240
 msgid "Install"
 msgstr "Installer"
 
@@ -973,7 +1002,7 @@ msgstr "Drivere"
 msgid "Up to Date"
 msgstr "Oppdatert"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:223
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:259
 msgid "Update"
 msgstr "Oppdater"
 

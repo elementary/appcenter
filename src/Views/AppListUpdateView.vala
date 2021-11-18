@@ -74,12 +74,12 @@ namespace AppCenter.Views {
                 add_row_for_package (package);
             }
 
-            on_list_changed ();
+            list_box.invalidate_sort ();
         }
 
         public override void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
-            on_list_changed ();
+            list_box.invalidate_sort ();
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
@@ -87,35 +87,46 @@ namespace AppCenter.Views {
 
             // Only add row if this package needs an update or it's not a font or plugin
             if (needs_update || (!package.is_plugin && !package.is_font)) {
-                var row = construct_row_for_package (package);
-                add_row (row);
+                var row = new Widgets.PackageRow.installed (package, action_button_group);
+                list_box.add (row);
             }
         }
 
-        protected override void on_list_changed () {
-            list_box.invalidate_sort ();
-        }
-
-        protected override AppRowInterface construct_row_for_package (AppCenterCore.Package package) {
-            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group);
-        }
-
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (AppRowInterface row1, AppRowInterface row2) {
-            bool a_is_updating = row1.get_is_updating ();
-            bool b_is_updating = row2.get_is_updating ();
+        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
+            var row1_package = row1.get_package ();
+            var row2_package = row2.get_package ();
+
+            bool a_has_updates = false;
+            bool a_is_driver = false;
+            bool a_is_os = false;
+            bool a_is_updating = false;
+            string a_package_name = "";
+            if (row1_package != null) {
+                a_has_updates = row1_package.update_available;
+                a_is_driver = row1_package.is_driver;
+                a_is_os = row1_package.is_os_updates;
+                a_is_updating = row1_package.is_updating;
+                a_package_name = row1_package.get_name ();
+            }
+
+            bool b_has_updates = false;
+            bool b_is_driver = false;
+            bool b_is_os = false;
+            bool b_is_updating = false;
+            string b_package_name = "";
+            if (row2_package != null) {
+                b_has_updates = row2_package.update_available;
+                b_is_driver = row2_package.is_driver;
+                b_is_os = row2_package.is_os_updates;
+                b_is_updating = row2_package.is_updating;
+                b_package_name = row1_package.get_name ();
+            }
 
             // The currently updating package is always top of the list
             if (a_is_updating || b_is_updating) {
                 return a_is_updating ? -1 : 1;
             }
-
-            bool a_has_updates = row1.get_update_available ();
-            bool b_has_updates = row2.get_update_available ();
-
-            bool a_is_os = row1.get_is_os_updates ();
-            bool b_is_os = row2.get_is_os_updates ();
-
             // Sort updatable OS updates first, then other updatable packages
             if (a_has_updates != b_has_updates) {
                 if (a_is_os && a_has_updates) {
@@ -135,9 +146,6 @@ namespace AppCenter.Views {
                 }
             }
 
-            bool a_is_driver = row1.get_is_driver ();
-            bool b_is_driver = row2.get_is_driver ();
-
             if (a_is_driver != b_is_driver) {
                 return a_is_driver ? - 1 : 1;
             }
@@ -147,16 +155,32 @@ namespace AppCenter.Views {
                 return a_is_os ? -1 : 1;
             }
 
-            return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
+            return a_package_name.collate (b_package_name); /* Else sort in name order */
         }
 
         [CCode (instance_pos = -1)]
-        private void row_update_header (AppRowInterface row, AppRowInterface? before) {
-            bool update_available = row.get_update_available ();
-            bool is_driver = row.get_is_driver ();
+        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
+            bool update_available = false;
+            bool is_driver = false;
+            var row_package = row.get_package ();
+            if (row_package != null) {
+                update_available = row_package.update_available || row_package.is_updating;
+                is_driver = row_package.is_driver;
+            }
+
+
+            bool before_update_available = false;
+            bool before_is_driver = false;
+            if (before != null) {
+                var before_package = before.get_package ();
+                if (before_package != null) {
+                    before_update_available = before_package.update_available || before_package.is_updating;
+                    before_is_driver = before_package.is_driver;
+                }
+            }
 
             if (update_available) {
-                if (before != null && update_available == before.get_update_available ()) {
+                if (before != null && update_available == before_update_available) {
                     row.set_header (null);
                     return;
                 }
@@ -198,7 +222,7 @@ namespace AppCenter.Views {
                 header.show_all ();
                 row.set_header (header);
             } else if (is_driver) {
-                if (before != null && is_driver == before.get_is_driver ()) {
+                if (before != null && is_driver == before_is_driver) {
                     row.set_header (null);
                     return;
                 }
@@ -207,7 +231,7 @@ namespace AppCenter.Views {
                 header.show_all ();
                 row.set_header (header);
             } else {
-                if (before != null && is_driver == before.get_is_driver () && update_available == before.get_update_available ()) {
+                if (before != null && is_driver == before_is_driver && update_available == before_update_available) {
                     row.set_header (null);
                     return;
                 }

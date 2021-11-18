@@ -1,5 +1,5 @@
-/*-
- * Copyright 2019 elementary, Inc. (https://elementary.io)
+/*
+ * Copyright 2019–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -262,12 +262,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return installed_apps;
     }
 
-    public Gee.Collection<Package> get_native_packages_by_release_date () {
+    public Gee.Collection<Package> get_featured_packages_by_release_date () {
         var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
 
         foreach (var package in package_list.values) {
-            if (package.is_native) {
+            if (!package.is_explicit && !package.is_plugin) {
+#if CURATED
+                if (package.is_native) {
+                    apps.add (package);
+                }
+#else
                 apps.add (package);
+#endif
             }
         }
 
@@ -912,6 +918,53 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         }
 
+        /* The below sorting is a workaround for the fact that libappstream uses app ID + remote as a unique
+         * key for an app, and any subsequent duplicates found in the XML are discarded. So if there's a "stable"
+         * branch and a "daily" branch for an application from the same remote, and the daily branch happens to come
+         * first in the file, libappstream throws away the AppData for the stable version.
+         *
+         * See https://github.com/elementary/appcenter/issues/1612 for details
+         */
+        var sorted_components = new Gee.ArrayList<Xml.Node*> ();
+        // Iterate through all components in the appstream XML
+        for (Xml.Node* component = root->children; component != null; component = component->next) {
+            if (component->name != "component") {
+                continue;
+            }
+
+            // Find their bundle tag
+            for (Xml.Node* iter = component->children; iter != null; iter = iter->next) {
+                if (iter->name == "bundle") {
+                    string bundle_id = iter->get_content ();
+                    // If it's not an app, we don't care about sorting it
+                    if (!bundle_id.has_prefix ("app/")) {
+                        break;
+                    }
+
+                    // If it's a stable branch of an app, put it on top of the array
+                    if (bundle_id.has_suffix ("/stable")) {
+                        sorted_components.insert (0, component);
+                    // Otherwise add it to the end
+                    } else {
+                        sorted_components.add (component);
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        // Unlink all of the components we sorted, so we can re-attach them in their new positions
+        // Can't do this during the loop above as it breaks the iterator
+        foreach (var component in sorted_components) {
+            component->unlink ();
+        }
+
+        // Re-attach them in the new order
+        foreach (var component in sorted_components) {
+            root->add_child (component);
+        }
+
         doc->set_compress_mode (7);
         doc->save_file (dest_file.get_path ());
 
@@ -1017,10 +1070,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return should_continue;
         });
 
-        transaction.operation_done.connect ((operation, commit, details) => {
-            success = true;
-        });
-
         transaction.ready.connect (() => {
             total_operations = transaction.get_operations ().length ();
             return true;
@@ -1029,7 +1078,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         current_operation = 0;
 
         try {
-            transaction.run (cancellable);
+            success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
@@ -1153,10 +1202,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return should_continue;
         });
 
-        transaction.operation_done.connect ((operation, commit, details) => {
-            success = true;
-        });
-
         transaction.ready.connect (() => {
             total_operations = transaction.get_operations ().length ();
             return true;
@@ -1165,7 +1210,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         current_operation = 0;
 
         try {
-            transaction.run (cancellable);
+            success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
@@ -1325,10 +1370,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         });
 
-        transaction.operation_done.connect ((operation, commit, details) => {
-            success = true;
-        });
-
         transaction.ready.connect (() => {
             total_operations = transaction.get_operations ().length ();
             return true;
@@ -1337,7 +1378,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         current_operation = 0;
 
         try {
-            transaction.run (cancellable);
+            success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);

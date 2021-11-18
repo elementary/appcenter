@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014–2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2014–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ namespace AppCenter.Views {
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
-        private Gtk.TextView app_description;
+        private Gtk.Label app_description;
         private Widgets.ReleaseListBox release_list_box;
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
@@ -79,32 +79,45 @@ namespace AppCenter.Views {
             var drugs = new ContentType (
                 _("Illicit Substances"),
                 _("Presence of or references to alcohol, narcotics, or tobacco"),
-                "application-content-illicit-substance-symbolic"
+                "oars-illicit-substance-symbolic"
             );
 
             var sex_nudity = new ContentType (
                 _("Sex & Nudity"),
                 _("Adult nudity or sexual themes"),
-                "application-content-sex-nudity-symbolic"
+                "oars-sex-nudity-symbolic"
             );
 
             var language = new ContentType (
                 _("Offensive Language"),
                 _("Profanity, discriminatory language, or adult humor"),
-                "application-content-offensive-language-symbolic"
+                "oars-offensive-language-symbolic"
             );
 
             var gambling = new ContentType (
                 _("Gambling"),
                 _("Realistic or participatory gambling"),
-                "application-content-gambling-symbolic"
+                "oars-gambling-symbolic"
             );
 
             var oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
-                row_spacing = 12,
-                margin_bottom = 24
+                margin_bottom = 24,
+                row_spacing = 24,
+                selection_mode = Gtk.SelectionMode.NONE
             };
+
+#if CURATED
+            if (!package.is_native && !package.is_os_updates) {
+                var uncurated = new ContentType (
+                    _("Non-Curated"),
+                    _("Not reviewed by elementary for security, privacy, or system integration"),
+                    "security-low-symbolic"
+                );
+
+                oars_flowbox.add (uncurated);
+            }
+#endif
 
             var ratings = package_component.get_content_ratings ();
             for (int i = 0; i < ratings.length; i++) {
@@ -122,7 +135,7 @@ namespace AppCenter.Views {
                     var conflict = new ContentType (
                         _("Conflict"),
                         _("Depictions of unsafe situations or aggressive conflict"),
-                        "application-content-conflict-symbolic"
+                        "oars-conflict-symbolic"
                     );
 
                     oars_flowbox.add (conflict);
@@ -134,10 +147,18 @@ namespace AppCenter.Views {
                     rating.get_value ("violence-bloodshed") > AppStream.ContentRatingValue.NONE ||
                     rating.get_value ("violence-sexual") > AppStream.ContentRatingValue.NONE
                 ) {
+                    string? title = _("Violence");
+                    if (
+                        fantasy_violence_value == AppStream.ContentRatingValue.INTENSE &&
+                        realistic_violence_value < AppStream.ContentRatingValue.INTENSE
+                    ) {
+                        title = _("Fantasy Violence");
+                    }
+
                     var violence = new ContentType (
-                        _("Violence"),
+                        title,
                         _("Graphic violence, bloodshed, or death"),
-                        "application-content-violence-symbolic"
+                        "oars-violence-symbolic"
                     );
 
                     oars_flowbox.add (violence);
@@ -175,7 +196,10 @@ namespace AppCenter.Views {
 
                 var social_chat_value = rating.get_value ("social-chat");
                 // MILD is defined as multi-player period, no chat
-                if (social_chat_value > AppStream.ContentRatingValue.NONE) {
+                if (
+                    social_chat_value > AppStream.ContentRatingValue.NONE &&
+                    package.component.has_category ("Game")
+                ) {
                     var multiplayer = new ContentType (
                         _("Multiplayer"),
                         _("Online play with other people"),
@@ -202,7 +226,7 @@ namespace AppCenter.Views {
                     var social = new ContentType (
                         _("Online Interactions"),
                         description,
-                        "application-content-chat-symbolic"
+                        "oars-chat-symbolic"
                     );
 
                     oars_flowbox.add (social);
@@ -233,7 +257,7 @@ namespace AppCenter.Views {
                     var social_info = new ContentType (
                         _("Info Sharing"),
                         description,
-                        "application-content-socal-info-symbolic"
+                        "oars-socal-info-symbolic"
                     );
 
                     oars_flowbox.add (social_info);
@@ -421,13 +445,11 @@ namespace AppCenter.Views {
             };
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-            app_description = new Gtk.TextView () {
-                cursor_visible = false,
-                editable = false,
-                expand = true,
-                pixels_below_lines = 3,
-                pixels_inside_wrap = 3,
-                wrap_mode = Gtk.WrapMode.WORD_CHAR
+            app_description = new Gtk.Label (null) {
+                // Allow wrapping but prevent expanding the parent
+                width_request = 1,
+                wrap = true,
+                xalign = 0
             };
             app_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
@@ -685,17 +707,7 @@ namespace AppCenter.Views {
                 }
             });
 
-            if (package.is_os_updates) {
-                package.notify["state"].connect (() => {
-                    Idle.add (() => {
-                        // For the OS updates component, this is the "x components with updates" text
-                        author_label.label = package.get_version ();
-
-                        parse_description (package.get_description ());
-                        return false;
-                    });
-                });
-            }
+            realize.connect (load_more_content);
         }
 
         protected override void update_state (bool first_update = false) {
@@ -773,7 +785,9 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
+        private void load_more_content () {
+            var cache = AppCenterCore.Client.get_default ().screenshot_cache;
+
             Gtk.TreeIter iter;
             uint count = 0;
             foreach (var origin_package in package.origin_packages) {
@@ -790,13 +804,19 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                if (package.is_os_updates) {
-                    author_label.label = package.get_version ();
-                } else {
-                    author_label.label = package.author_title;
-                }
+                var description = package.get_description ();
+                Idle.add (() => {
+                    if (package.is_os_updates) {
+                        author_label.label = package.get_version ();
+                    } else {
+                        author_label.label = package.author_title;
+                    }
 
-                parse_description (package.get_description ());
+                    if (description != null) {
+                        app_description.label = description;
+                    }
+                    return false;
+                });
 
                 get_app_download_size.begin ();
 
@@ -917,27 +937,6 @@ namespace AppCenter.Views {
                 });
             } catch (Error e) {
                 critical (e.message);
-            }
-        }
-
-        private void parse_description (string? description) {
-            if (description != null) {
-                string[] lines = description.split ("\n");
-                string stripped_description = lines[0].strip ();
-                for (int i = 1; i < lines.length; i++) {
-                    stripped_description += " " + lines[i].strip ();
-                }
-
-                // This method may be called in a thread, pass back to GTK thread
-                Idle.add (() => {
-                    try {
-                        app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
-                    } catch (Error e) {
-                        warning ("Failed to parse appstream description: %s", e.message);
-                    }
-
-                    return false;
-                });
             }
         }
 
@@ -1077,7 +1076,9 @@ namespace AppCenter.Views {
                     stripe.transient_for = (Gtk.Window) get_toplevel ();
 
                     stripe.download_requested.connect (() => {
-                        App.add_paid_app (package.component.get_id ());
+                        if (stripe.amount != 0) {
+                            App.add_paid_app (package.component.get_id ());
+                        }
                     });
 
                     stripe.show ();
@@ -1112,10 +1113,9 @@ namespace AppCenter.Views {
         }
     }
 
-    class ContentType : Gtk.Grid {
+    class ContentType : Gtk.FlowBoxChild {
         public ContentType (string title, string description, string icon_name) {
-            orientation = Gtk.Orientation.VERTICAL;
-            row_spacing = 3;
+            can_focus = false;
 
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
                 halign = Gtk.Align.START,
@@ -1136,9 +1136,16 @@ namespace AppCenter.Views {
             description_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
             description_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            add (icon);
-            add (label);
-            add (description_label);
+            var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 3
+            };
+
+            grid.add (icon);
+            grid.add (label);
+            grid.add (description_label);
+
+            add (grid);
         }
     }
 
@@ -1173,8 +1180,7 @@ namespace AppCenter.Views {
                 activate_on_single_click = true,
                 column_spacing = 12,
                 row_spacing = 12,
-                homogeneous = true,
-                min_children_per_line = 2
+                homogeneous = true
             };
 
             foreach (var author_package in author_packages) {

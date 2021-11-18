@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '3.7.1'
+    version: '3.8.2'
 )
 
 gettext_name = meson.project_name()
@@ -22,7 +22,7 @@ glib = dependency ('glib-2.0')
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
 granite = dependency ('granite', version: '>=6.0.0')
-handy = dependency('libhandy-1')
+handy = dependency('libhandy-1', version: '>=1.1.90')
 packagekit = dependency ('packagekit-glib2')
 appstream = dependency ('appstream', version: '>=0.12.10')
 libsoup = dependency ('libsoup-2.4')

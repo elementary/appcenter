@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:39+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2021-08-01 16:45+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -43,164 +43,215 @@ msgstr ""
 "migliore con le ultime novità e correzioni."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#: data/io.elementary.appcenter.appdata.xml.in:40
-#: data/io.elementary.appcenter.appdata.xml.in:54
-#: data/io.elementary.appcenter.appdata.xml.in:67
-#: data/io.elementary.appcenter.appdata.xml.in:79
-#: data/io.elementary.appcenter.appdata.xml.in:107
-#, fuzzy
-#| msgid "Fixes"
-msgid "Fixes:"
-msgstr "Correzioni"
-
-#: data/io.elementary.appcenter.appdata.xml.in:18
-msgid "Show other apps by an author for Flatpak sources"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:20
-#: data/io.elementary.appcenter.appdata.xml.in:30
-#: data/io.elementary.appcenter.appdata.xml.in:45
-#: data/io.elementary.appcenter.appdata.xml.in:59
-#: data/io.elementary.appcenter.appdata.xml.in:71
-#: data/io.elementary.appcenter.appdata.xml.in:86
+#: data/io.elementary.appcenter.appdata.xml.in:42
+#: data/io.elementary.appcenter.appdata.xml.in:60
+#: data/io.elementary.appcenter.appdata.xml.in:70
+#: data/io.elementary.appcenter.appdata.xml.in:85
 #: data/io.elementary.appcenter.appdata.xml.in:99
+#: data/io.elementary.appcenter.appdata.xml.in:111
+#: data/io.elementary.appcenter.appdata.xml.in:126
+#: data/io.elementary.appcenter.appdata.xml.in:139
 #, fuzzy
 #| msgid "Keyboard improvements"
 msgid "Improvements:"
 msgstr "Miglioramenti della tastiera"
 
-#: data/io.elementary.appcenter.appdata.xml.in:22
-msgid "Navigate banners on the home page with multitouch gestures"
+#: data/io.elementary.appcenter.appdata.xml.in:18
+msgid "Amusements appear in the Games category"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:23
-msgid "Show content warnings on app info pages"
+#: data/io.elementary.appcenter.appdata.xml.in:19
+msgid "Categories show as a grid instead of a list"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:24
-#: data/io.elementary.appcenter.appdata.xml.in:34
-#: data/io.elementary.appcenter.appdata.xml.in:48
-#: data/io.elementary.appcenter.appdata.xml.in:61
-#: data/io.elementary.appcenter.appdata.xml.in:73
+#: data/io.elementary.appcenter.appdata.xml.in:20
+msgid "Allow window to shrink to much narrower sizes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:21
+#: data/io.elementary.appcenter.appdata.xml.in:45
+#: data/io.elementary.appcenter.appdata.xml.in:64
+#: data/io.elementary.appcenter.appdata.xml.in:74
 #: data/io.elementary.appcenter.appdata.xml.in:88
-#: data/io.elementary.appcenter.appdata.xml.in:105
-#: data/io.elementary.appcenter.appdata.xml.in:126
-#: data/io.elementary.appcenter.appdata.xml.in:146
-#: data/io.elementary.appcenter.appdata.xml.in:159
-#: data/io.elementary.appcenter.appdata.xml.in:172
+#: data/io.elementary.appcenter.appdata.xml.in:101
+#: data/io.elementary.appcenter.appdata.xml.in:113
+#: data/io.elementary.appcenter.appdata.xml.in:128
+#: data/io.elementary.appcenter.appdata.xml.in:145
+#: data/io.elementary.appcenter.appdata.xml.in:166
 #: data/io.elementary.appcenter.appdata.xml.in:186
-#: data/io.elementary.appcenter.appdata.xml.in:219
-#: data/io.elementary.appcenter.appdata.xml.in:229
-#: data/io.elementary.appcenter.appdata.xml.in:235
-#: data/io.elementary.appcenter.appdata.xml.in:282
+#: data/io.elementary.appcenter.appdata.xml.in:199
+#: data/io.elementary.appcenter.appdata.xml.in:212
+#: data/io.elementary.appcenter.appdata.xml.in:226
+#: data/io.elementary.appcenter.appdata.xml.in:259
+#: data/io.elementary.appcenter.appdata.xml.in:269
+#: data/io.elementary.appcenter.appdata.xml.in:275
+#: data/io.elementary.appcenter.appdata.xml.in:322
 msgid "Updated translations"
 msgstr "Traduzioni aggiornate"
 
-#: data/io.elementary.appcenter.appdata.xml.in:32
-msgid "Show apps from newly sideloaded remotes without requiring a restart"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:33
-msgid "Less abrupt transition when changing app sources"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:42
-msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:47
-msgid "Mention Sideload when search returns no results"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:56
-msgid ""
-"Ensure user installation is selected by default when navigating from the "
-"homepage"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:57
-msgid "Fix opening apps from app installed toasts"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:69
-msgid "Install Linux kernel headers with NVIDIA drivers"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:81
-msgid "Show Recently Updated Flatpak apps on home page"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:82
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
-msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "Aggiunta la compatibilità per le applicazioni Flatpak"
-
-#: data/io.elementary.appcenter.appdata.xml.in:83
-msgid "Fix missing mail icon in payments dialog"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:84
-msgid "Fix missing privacy policy in payments dialog"
-msgstr ""
-
+#: data/io.elementary.appcenter.appdata.xml.in:27
+#: data/io.elementary.appcenter.appdata.xml.in:35
+#: data/io.elementary.appcenter.appdata.xml.in:55
+#: data/io.elementary.appcenter.appdata.xml.in:80
 #: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:107
+#: data/io.elementary.appcenter.appdata.xml.in:119
+#: data/io.elementary.appcenter.appdata.xml.in:147
+#, fuzzy
+#| msgid "Fixes"
+msgid "Fixes:"
+msgstr "Correzioni"
+
+#: data/io.elementary.appcenter.appdata.xml.in:29
+msgid "Correctly show the installed status of first-party applications"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:37
+msgid "Don't store $0 app installs as paid"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:38
+msgid "Fix missing illicit substances icon"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:39
+msgid "Don't show plugins on the homepage"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:40
+msgid "Only show \"Multiplayer\" badge for games"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:44
+msgid "Show installation progress in a more compact way"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:51
+#: data/io.elementary.appcenter.appdata.xml.in:134
 #, fuzzy
 #| msgid "New features"
 msgid "New features:"
 msgstr "Nuove funzionalità"
 
+#: data/io.elementary.appcenter.appdata.xml.in:53
+msgid "Show content warnings on app info pages"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:57
+msgid "Show other apps by an author for Flatpak sources"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:58
+msgid "Populate banner on home locally instead of relying on an external API"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:62
+msgid "Greatly increased number of recently-updated apps shown on home page"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:63
+msgid "Navigate banners on the home page with multitouch gestures"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:72
+msgid "Show apps from newly sideloaded remotes without requiring a restart"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:73
+msgid "Less abrupt transition when changing app sources"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:82
+msgid "Install Linux kernel headers for device drivers that use DKMS"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:83
+msgid "Use system Flatpak runtimes for locally installed apps"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:87
+msgid "Mention Sideload when search returns no results"
+msgstr ""
+
 #: data/io.elementary.appcenter.appdata.xml.in:96
-msgid "Show in-app notification when an app is installed"
+msgid ""
+"Ensure user installation is selected by default when navigating from the "
+"homepage"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
+msgid "Fix opening apps from app installed toasts"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:109
+msgid "Install Linux kernel headers with NVIDIA drivers"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:121
+msgid "Show Recently Updated Flatpak apps on home page"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:122
+#, fuzzy
+#| msgid "Add support for Flatpak apps"
+msgid "Show brand colors and support payments for Flatpak apps"
+msgstr "Aggiunta la compatibilità per le applicazioni Flatpak"
+
+#: data/io.elementary.appcenter.appdata.xml.in:123
+msgid "Fix missing mail icon in payments dialog"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:124
+msgid "Fix missing privacy policy in payments dialog"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:136
+msgid "Show in-app notification when an app is installed"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:137
 msgid "Add contextual badges to notifications"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:101
+#: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Ensure Home button is usable during search"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:102
+#: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:103
+#: data/io.elementary.appcenter.appdata.xml.in:143
 #, fuzzy
 #| msgid "Improve update badge styling and category styling"
 msgid "Improve styling and contrast of buttons"
 msgstr "Migliora lo stile dell'icona di aggiornamento e delle categorie"
 
-#: data/io.elementary.appcenter.appdata.xml.in:104
+#: data/io.elementary.appcenter.appdata.xml.in:144
 msgid "More concise and consistent language"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:109
+#: data/io.elementary.appcenter.appdata.xml.in:149
 msgid "Fully uninstall Flatpaks, including locales"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:110
+#: data/io.elementary.appcenter.appdata.xml.in:150
 msgid "Still fetch screenshots from remotes that don't include proper headers"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:111
+#: data/io.elementary.appcenter.appdata.xml.in:151
 msgid "Fix truncated footer buttons"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:112
+#: data/io.elementary.appcenter.appdata.xml.in:152
 msgid "Only show Mail button when a usable mail app is installed"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:113
+#: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:154
 #, fuzzy
 #| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
@@ -208,48 +259,48 @@ msgstr ""
 "Mostra un dialogo di errore se l'installazione di un'applicazione non "
 "avviene con successo"
 
-#: data/io.elementary.appcenter.appdata.xml.in:120
-#: data/io.elementary.appcenter.appdata.xml.in:136
-#: data/io.elementary.appcenter.appdata.xml.in:152
-#: data/io.elementary.appcenter.appdata.xml.in:165
-#: data/io.elementary.appcenter.appdata.xml.in:208
-#: data/io.elementary.appcenter.appdata.xml.in:225
+#: data/io.elementary.appcenter.appdata.xml.in:160
+#: data/io.elementary.appcenter.appdata.xml.in:176
+#: data/io.elementary.appcenter.appdata.xml.in:192
+#: data/io.elementary.appcenter.appdata.xml.in:205
+#: data/io.elementary.appcenter.appdata.xml.in:248
+#: data/io.elementary.appcenter.appdata.xml.in:265
 msgid "Fixes"
 msgstr "Correzioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:122
+#: data/io.elementary.appcenter.appdata.xml.in:162
 msgid "Correctly display names of Flatpak runtime updates"
 msgstr ""
 "Visualizza correttamente i nomi degli aggiornamenti dei runtime di Flatpak"
 
-#: data/io.elementary.appcenter.appdata.xml.in:124
-#: data/io.elementary.appcenter.appdata.xml.in:141
-#: data/io.elementary.appcenter.appdata.xml.in:157
-#: data/io.elementary.appcenter.appdata.xml.in:169
-#: data/io.elementary.appcenter.appdata.xml.in:182
+#: data/io.elementary.appcenter.appdata.xml.in:164
+#: data/io.elementary.appcenter.appdata.xml.in:181
+#: data/io.elementary.appcenter.appdata.xml.in:197
+#: data/io.elementary.appcenter.appdata.xml.in:209
+#: data/io.elementary.appcenter.appdata.xml.in:222
 msgid "Minor updates"
 msgstr "Aggiornamenti minori"
 
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#: data/io.elementary.appcenter.appdata.xml.in:178
+#: data/io.elementary.appcenter.appdata.xml.in:172
+#: data/io.elementary.appcenter.appdata.xml.in:218
 msgid "New features"
 msgstr "Nuove funzionalità"
 
-#: data/io.elementary.appcenter.appdata.xml.in:134
+#: data/io.elementary.appcenter.appdata.xml.in:174
 msgid "Support system-wide Flatpak remotes"
 msgstr "Supporta pacchetti Flatpak remoti a livello di sistema"
 
-#: data/io.elementary.appcenter.appdata.xml.in:138
+#: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Fix Flatpak runtime updates getting stuck"
 msgstr "Corregge gli aggiornamenti dei runtime Flatpak che si bloccano"
 
-#: data/io.elementary.appcenter.appdata.xml.in:139
+#: data/io.elementary.appcenter.appdata.xml.in:179
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
 "Risolto il problema con le caselle di origine che alteravano l'impostazione "
 "dell'intestazione con testi eccessivamente lunghi"
 
-#: data/io.elementary.appcenter.appdata.xml.in:143
+#: data/io.elementary.appcenter.appdata.xml.in:183
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
@@ -257,51 +308,51 @@ msgstr ""
 "Quando le applicazioni sono disponibili da diverse fonti preferisce la "
 "versione installata e in alternativa il Flatpak"
 
-#: data/io.elementary.appcenter.appdata.xml.in:144
+#: data/io.elementary.appcenter.appdata.xml.in:184
 msgid "Improve search performance"
 msgstr "Migliora le prestazioni della ricerca"
 
-#: data/io.elementary.appcenter.appdata.xml.in:145
+#: data/io.elementary.appcenter.appdata.xml.in:185
 msgid "Improve update badge styling and category styling"
 msgstr "Migliora lo stile dell'icona di aggiornamento e delle categorie"
 
-#: data/io.elementary.appcenter.appdata.xml.in:154
+#: data/io.elementary.appcenter.appdata.xml.in:194
 msgid "Ensure AppCenter is reopened at the correct position"
 msgstr "Assicura che AppCenter venga riaperto nella posizione corretta"
 
-#: data/io.elementary.appcenter.appdata.xml.in:155
+#: data/io.elementary.appcenter.appdata.xml.in:195
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
 "Fare clic sul'icona degli aggiornamenti nell'intestazione passa alla vista "
 "degli aggiornamenti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:167
+#: data/io.elementary.appcenter.appdata.xml.in:207
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
 "Assicura che tutti gli eseguibili Flatpak siano presenti nella lista degli "
 "aggiornamenti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:171
-#: data/io.elementary.appcenter.appdata.xml.in:192
-#: data/io.elementary.appcenter.appdata.xml.in:281
+#: data/io.elementary.appcenter.appdata.xml.in:211
+#: data/io.elementary.appcenter.appdata.xml.in:232
+#: data/io.elementary.appcenter.appdata.xml.in:321
 msgid "Performance improvements"
 msgstr "Miglioramenti delle prestazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:180
+#: data/io.elementary.appcenter.appdata.xml.in:220
 msgid "Perform updates without administrator permissions"
 msgstr "Aggiorna senza i privilegi di amministratore"
 
-#: data/io.elementary.appcenter.appdata.xml.in:184
+#: data/io.elementary.appcenter.appdata.xml.in:224
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr ""
 "Assicura che le applicazioni sulla pagina iniziale siano visualizzate in "
 "modo più affidabile"
 
-#: data/io.elementary.appcenter.appdata.xml.in:185
+#: data/io.elementary.appcenter.appdata.xml.in:225
 msgid "More reliably set the Dock badge number"
 msgstr "Migliora l'affidabilità del contatore degli aggiornamenti nella dock"
 
-#: data/io.elementary.appcenter.appdata.xml.in:194
+#: data/io.elementary.appcenter.appdata.xml.in:234
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
@@ -309,15 +360,15 @@ msgstr ""
 "Verifica la presenza di aggiornamenti all'avvio del dispositivo solo se sono "
 "trascorse più di 24 ore dall'ultima verifica"
 
-#: data/io.elementary.appcenter.appdata.xml.in:195
+#: data/io.elementary.appcenter.appdata.xml.in:235
 msgid "Reduce slowdowns when opening certain apps"
 msgstr "Riduce i rallentamenti quando aprono certe applicazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:197
+#: data/io.elementary.appcenter.appdata.xml.in:237
 msgid "Extension improvements"
 msgstr "Miglioramenti delle estensioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:199
+#: data/io.elementary.appcenter.appdata.xml.in:239
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
@@ -325,7 +376,7 @@ msgstr ""
 "Per semplificare la vista degli aggiornamenti, adesso le estensioni vengono "
 "mostrate solo quando è necessario aggiornarle"
 
-#: data/io.elementary.appcenter.appdata.xml.in:200
+#: data/io.elementary.appcenter.appdata.xml.in:240
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
@@ -333,7 +384,7 @@ msgstr ""
 "Cliccando su un'estensione nella pagina d'informazioni di un'applicazione "
 "ora mostra i dettagli sull'estensione"
 
-#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:241
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
@@ -342,11 +393,11 @@ msgstr ""
 "associare visualmente in modo più chiaro le estensioni con le rispettive "
 "applicazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:203
+#: data/io.elementary.appcenter.appdata.xml.in:243
 msgid "Keyboard improvements"
 msgstr "Miglioramenti della tastiera"
 
-#: data/io.elementary.appcenter.appdata.xml.in:205
+#: data/io.elementary.appcenter.appdata.xml.in:245
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
@@ -354,151 +405,151 @@ msgstr ""
 "Schiacciando la freccia verso il basso nel riquadro di ricerca si passa alla "
 "lista di risultati della ricerca"
 
-#: data/io.elementary.appcenter.appdata.xml.in:206
+#: data/io.elementary.appcenter.appdata.xml.in:246
 msgid "Ctrl+F now moves the cursor to the search field"
 msgstr "Adesso Ctrl+F sposta il cursore al campo di ricerca"
 
-#: data/io.elementary.appcenter.appdata.xml.in:210
+#: data/io.elementary.appcenter.appdata.xml.in:250
 msgid "Use configured network proxy settings for apt operations"
 msgstr ""
 "Uso delle impostazioni configurate del proxy di rete per le operazioni di apt"
 
-#: data/io.elementary.appcenter.appdata.xml.in:211
+#: data/io.elementary.appcenter.appdata.xml.in:251
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
 "No viene più richiesta l'approvazione per l'aggiornamento delle applicazioni "
 "non verificate"
 
-#: data/io.elementary.appcenter.appdata.xml.in:212
+#: data/io.elementary.appcenter.appdata.xml.in:252
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
 "Verifica che il sottotitolo dell'aggiornamento del sistema operativo sia "
 "corretto al termine degli aggiornamenti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:213
+#: data/io.elementary.appcenter.appdata.xml.in:253
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
 "Abbreviazione dei nomi troppo lunghi nella vista delle informazioni sulle "
 "applicazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:215
+#: data/io.elementary.appcenter.appdata.xml.in:255
 msgid "And more"
 msgstr "E altro ancora"
 
-#: data/io.elementary.appcenter.appdata.xml.in:217
+#: data/io.elementary.appcenter.appdata.xml.in:257
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
 "Mostra uno schermo di caricamento più ricco di informazioni durante il "
 "controllo degli aggiornamenti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:218
+#: data/io.elementary.appcenter.appdata.xml.in:258
 msgid "Don't list fonts alongside apps"
 msgstr "I tipi di carattere non vengono più mostrati insieme alle applicazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:227
+#: data/io.elementary.appcenter.appdata.xml.in:267
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
 "Previene la chiusura improvvisa durante l'aggiornamento simultaneo di "
 "Flatpak e pacchetti di sistema"
 
-#: data/io.elementary.appcenter.appdata.xml.in:228
+#: data/io.elementary.appcenter.appdata.xml.in:268
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
 "Evita la sospensione del sistema durante l'installazione, aggiornamento o "
 "rimozione di pacchetti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:240
-#: data/io.elementary.appcenter.appdata.xml.in:257
+#: data/io.elementary.appcenter.appdata.xml.in:280
+#: data/io.elementary.appcenter.appdata.xml.in:297
 msgid "Minor fixes"
 msgstr "Correzioni minori"
 
-#: data/io.elementary.appcenter.appdata.xml.in:242
+#: data/io.elementary.appcenter.appdata.xml.in:282
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
 "Aggiornamento delle informazioni dettagliate sulle applicazioni avvengono "
 "modifiche esterne all'AppCenter"
 
-#: data/io.elementary.appcenter.appdata.xml.in:243
+#: data/io.elementary.appcenter.appdata.xml.in:283
 msgid "Fix for notification not appearing when a restart is required"
 msgstr ""
 "Correzione della notifica che non veniva visualizzata quando era necessario "
 "un riavvio del sistema"
 
-#: data/io.elementary.appcenter.appdata.xml.in:244
+#: data/io.elementary.appcenter.appdata.xml.in:284
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
 "Le applicazioni nella vista elenco adesso vengono caricate nell'ordine "
 "giusto durante lo scorrimento"
 
-#: data/io.elementary.appcenter.appdata.xml.in:245
+#: data/io.elementary.appcenter.appdata.xml.in:285
 msgid "Prevent unescaped XML entities from appearing in application names"
 msgstr ""
 "Evita che elementi in formato XML non filtrato appaiano nei nomi delle "
 "applicazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:246
+#: data/io.elementary.appcenter.appdata.xml.in:286
 msgid "Load the \"Installed\" view faster"
 msgstr "Caricamento più veloce della vista \"Installate\""
 
-#: data/io.elementary.appcenter.appdata.xml.in:247
+#: data/io.elementary.appcenter.appdata.xml.in:287
 msgid "Ensure flatpak applications show in the category views"
 msgstr ""
 "Verifica che le applicazioni flatpak vengano mostrate nella vista per "
 "categoria"
 
-#: data/io.elementary.appcenter.appdata.xml.in:248
+#: data/io.elementary.appcenter.appdata.xml.in:288
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
 "Quando è possibile, risparmia un po' di ampiezza di banda scaricando "
 "schermate di dimensioni ridotte"
 
-#: data/io.elementary.appcenter.appdata.xml.in:249
+#: data/io.elementary.appcenter.appdata.xml.in:289
 msgid "System components no longer have an \"Open\" button"
 msgstr "I componenti di sistema non hanno più il bottone \"Apri\""
 
-#: data/io.elementary.appcenter.appdata.xml.in:250
+#: data/io.elementary.appcenter.appdata.xml.in:290
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
 "Il menu delle applicazioni permette di rimuovere i flatpaks che non sono "
 "stati installati tramite AppCenter"
 
-#: data/io.elementary.appcenter.appdata.xml.in:251
+#: data/io.elementary.appcenter.appdata.xml.in:291
 msgid "Make download size estimates more accurate"
 msgstr "La stima delle dimensioni di scaricamento adesso è più precisa"
 
-#: data/io.elementary.appcenter.appdata.xml.in:259
+#: data/io.elementary.appcenter.appdata.xml.in:299
 msgid "Prevent AppCenter from opening on log in"
 msgstr "Evita che AppCenter si apra all'inizio della sessione"
 
-#: data/io.elementary.appcenter.appdata.xml.in:260
+#: data/io.elementary.appcenter.appdata.xml.in:300
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
 "Evita che vengano visualizzate notifiche di aggiornamenti fantasma quando "
 "non ci sono aggiornamenti disponibili"
 
-#: data/io.elementary.appcenter.appdata.xml.in:261
+#: data/io.elementary.appcenter.appdata.xml.in:301
 msgid "Show correct installation state for extensions"
 msgstr "Viene mostrato lo stato d'installazione corretto per le estensioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:268
+#: data/io.elementary.appcenter.appdata.xml.in:308
 msgid "Add support for Flatpak apps"
 msgstr "Aggiunta la compatibilità per le applicazioni Flatpak"
 
-#: data/io.elementary.appcenter.appdata.xml.in:269
+#: data/io.elementary.appcenter.appdata.xml.in:309
 msgid "Warn about non-curated apps"
 msgstr "Avvisa riguardo alle applicazioni non verificate"
 
-#: data/io.elementary.appcenter.appdata.xml.in:270
+#: data/io.elementary.appcenter.appdata.xml.in:310
 msgid "Show an error dialog if an installation fails"
 msgstr ""
 "Mostra un dialogo di errore se l'installazione di un'applicazione non "
 "avviene con successo"
 
-#: data/io.elementary.appcenter.appdata.xml.in:271
+#: data/io.elementary.appcenter.appdata.xml.in:311
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
@@ -506,190 +557,190 @@ msgstr ""
 "Correzione di un problema con alcune applicazioni che non potevano essere "
 "disinstallate dal menu delle applicazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:272
+#: data/io.elementary.appcenter.appdata.xml.in:312
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr ""
 "Adesso è possibile esplorare o disinstallare applicazioni anche in assenza "
 "di un collegamento a Internet"
 
-#: data/io.elementary.appcenter.appdata.xml.in:273
+#: data/io.elementary.appcenter.appdata.xml.in:313
 msgid "Fix twitter share URLs"
 msgstr "Corregge la condivisione di URL su Twitter"
 
-#: data/io.elementary.appcenter.appdata.xml.in:274
+#: data/io.elementary.appcenter.appdata.xml.in:314
 msgid "Drop Google+ from the share menu"
 msgstr "Eliminato Google+ dal menu condivisione"
 
-#: data/io.elementary.appcenter.appdata.xml.in:275
+#: data/io.elementary.appcenter.appdata.xml.in:315
 msgid "Animate screenshot background while loading"
 msgstr "Sfondo con una schermata animata durante il caricamento"
 
-#: data/io.elementary.appcenter.appdata.xml.in:276
+#: data/io.elementary.appcenter.appdata.xml.in:316
 msgid "Add navigation arrows for screenshots"
 msgstr ""
 "Aggiunta di frecce di navigazione per le immagini dello schermo catturate"
 
-#: data/io.elementary.appcenter.appdata.xml.in:277
+#: data/io.elementary.appcenter.appdata.xml.in:317
 msgid "Don't show uninstall buttons for essential system components"
 msgstr ""
 "Non vengono più mostrai i bottoni di disinstallazione per i componenti di "
 "sistema essenziali"
 
-#: data/io.elementary.appcenter.appdata.xml.in:278
+#: data/io.elementary.appcenter.appdata.xml.in:318
 msgid "Properly display proprietary licenses"
 msgstr "Visualizzazione corretta delle licenze proprietarie"
 
-#: data/io.elementary.appcenter.appdata.xml.in:279
+#: data/io.elementary.appcenter.appdata.xml.in:319
 msgid "Fix some layout issues"
 msgstr "Correzione di alcuni problemi di disposizione grafica"
 
-#: data/io.elementary.appcenter.appdata.xml.in:280
+#: data/io.elementary.appcenter.appdata.xml.in:320
 msgid "Fix crashes"
 msgstr "Correzione di chiusure improvvise"
 
-#: data/io.elementary.appcenter.appdata.xml.in:289
+#: data/io.elementary.appcenter.appdata.xml.in:329
 msgid "Meson build system fixes"
 msgstr "Correzioni al sistema di compilazione Meson"
 
-#: data/io.elementary.appcenter.appdata.xml.in:290
+#: data/io.elementary.appcenter.appdata.xml.in:330
 msgid "Improve window state restoration"
 msgstr "Migliorato il ripristino dello stato della finestra"
 
-#: data/io.elementary.appcenter.appdata.xml.in:291
+#: data/io.elementary.appcenter.appdata.xml.in:331
 msgid "Prevent action buttons from jumping around"
 msgstr ""
 "Previene che i pulsanti delle azioni vengano visualizzati in posizioni strane"
 
-#: data/io.elementary.appcenter.appdata.xml.in:292
+#: data/io.elementary.appcenter.appdata.xml.in:332
 msgid "Remove reset paid apps gsettings key"
 msgstr ""
 "Rimuovi da gsettings la chiave \"reset\" per le applicazioni a pagamento"
 
-#: data/io.elementary.appcenter.appdata.xml.in:293
+#: data/io.elementary.appcenter.appdata.xml.in:333
 msgid "Memory management refinements"
 msgstr "Miglioramenti alla gestione della memoria"
 
-#: data/io.elementary.appcenter.appdata.xml.in:294
+#: data/io.elementary.appcenter.appdata.xml.in:334
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
 "Aggiunta della compilazione condizionale per disattivare il contenuto remoto "
 "dinamico della pagina iniziale"
 
-#: data/io.elementary.appcenter.appdata.xml.in:295
-#: data/io.elementary.appcenter.appdata.xml.in:307
-#: data/io.elementary.appcenter.appdata.xml.in:314
-#: data/io.elementary.appcenter.appdata.xml.in:327
-#: data/io.elementary.appcenter.appdata.xml.in:338
+#: data/io.elementary.appcenter.appdata.xml.in:335
 #: data/io.elementary.appcenter.appdata.xml.in:347
-#: data/io.elementary.appcenter.appdata.xml.in:356
-#: data/io.elementary.appcenter.appdata.xml.in:365
-#: data/io.elementary.appcenter.appdata.xml.in:374
-#: data/io.elementary.appcenter.appdata.xml.in:383
-#: data/io.elementary.appcenter.appdata.xml.in:392
-#: data/io.elementary.appcenter.appdata.xml.in:401
-#: data/io.elementary.appcenter.appdata.xml.in:410
-#: data/io.elementary.appcenter.appdata.xml.in:419
-#: data/io.elementary.appcenter.appdata.xml.in:428
-#: data/io.elementary.appcenter.appdata.xml.in:438
-#: data/io.elementary.appcenter.appdata.xml.in:448
+#: data/io.elementary.appcenter.appdata.xml.in:354
+#: data/io.elementary.appcenter.appdata.xml.in:367
+#: data/io.elementary.appcenter.appdata.xml.in:378
+#: data/io.elementary.appcenter.appdata.xml.in:387
+#: data/io.elementary.appcenter.appdata.xml.in:396
+#: data/io.elementary.appcenter.appdata.xml.in:405
+#: data/io.elementary.appcenter.appdata.xml.in:414
+#: data/io.elementary.appcenter.appdata.xml.in:423
+#: data/io.elementary.appcenter.appdata.xml.in:432
+#: data/io.elementary.appcenter.appdata.xml.in:441
+#: data/io.elementary.appcenter.appdata.xml.in:450
+#: data/io.elementary.appcenter.appdata.xml.in:459
+#: data/io.elementary.appcenter.appdata.xml.in:468
+#: data/io.elementary.appcenter.appdata.xml.in:478
+#: data/io.elementary.appcenter.appdata.xml.in:488
 msgid "New translations"
 msgstr "Nuove traduzioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:302
+#: data/io.elementary.appcenter.appdata.xml.in:342
 msgid "New categories: Communication, Finance, Media Production"
 msgstr "Nuove categorie: Comunicazione, Finanza, Produzione multimediale"
 
-#: data/io.elementary.appcenter.appdata.xml.in:303
+#: data/io.elementary.appcenter.appdata.xml.in:343
 msgid "Add Math to Science category"
 msgstr "Aggiunta di Matematica alla categoria Scienza"
 
-#: data/io.elementary.appcenter.appdata.xml.in:304
+#: data/io.elementary.appcenter.appdata.xml.in:344
 msgid "Relax email address validator"
 msgstr "Validazione più permissiva degli indirizzi di posta elettronica"
 
-#: data/io.elementary.appcenter.appdata.xml.in:305
+#: data/io.elementary.appcenter.appdata.xml.in:345
 msgid "Present update availability more accurately"
 msgstr "Presentazione più accurata della disponibilità di aggiornamenti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:306
+#: data/io.elementary.appcenter.appdata.xml.in:346
 msgid "Category graphics revamped"
 msgstr "Migliorata la grafica delle categorie"
 
-#: data/io.elementary.appcenter.appdata.xml.in:321
-#: data/io.elementary.appcenter.appdata.xml.in:333
-#: data/io.elementary.appcenter.appdata.xml.in:344
-#: data/io.elementary.appcenter.appdata.xml.in:353
-#: data/io.elementary.appcenter.appdata.xml.in:362
-#: data/io.elementary.appcenter.appdata.xml.in:371
-#: data/io.elementary.appcenter.appdata.xml.in:380
-#: data/io.elementary.appcenter.appdata.xml.in:389
-#: data/io.elementary.appcenter.appdata.xml.in:398
-#: data/io.elementary.appcenter.appdata.xml.in:407
-#: data/io.elementary.appcenter.appdata.xml.in:416
-#: data/io.elementary.appcenter.appdata.xml.in:425
+#: data/io.elementary.appcenter.appdata.xml.in:361
+#: data/io.elementary.appcenter.appdata.xml.in:373
+#: data/io.elementary.appcenter.appdata.xml.in:384
+#: data/io.elementary.appcenter.appdata.xml.in:393
+#: data/io.elementary.appcenter.appdata.xml.in:402
+#: data/io.elementary.appcenter.appdata.xml.in:411
+#: data/io.elementary.appcenter.appdata.xml.in:420
+#: data/io.elementary.appcenter.appdata.xml.in:429
+#: data/io.elementary.appcenter.appdata.xml.in:438
+#: data/io.elementary.appcenter.appdata.xml.in:447
+#: data/io.elementary.appcenter.appdata.xml.in:456
+#: data/io.elementary.appcenter.appdata.xml.in:465
 msgid "Bug fixes and improve performance."
 msgstr "Correzione di problemi e miglioramento delle prestazioni."
 
-#: data/io.elementary.appcenter.appdata.xml.in:323
+#: data/io.elementary.appcenter.appdata.xml.in:363
 msgid "Improve transaction success rate"
 msgstr "Miglioramento nel tasso di successo delle transazioni"
 
-#: data/io.elementary.appcenter.appdata.xml.in:324
+#: data/io.elementary.appcenter.appdata.xml.in:364
 msgid "Add Publishing to Office category"
 msgstr "Aggiunta della categoria Pubblicazione alla categoria Ufficio"
 
-#: data/io.elementary.appcenter.appdata.xml.in:325
+#: data/io.elementary.appcenter.appdata.xml.in:365
 msgid "Improve descriptions of OS Updates"
 msgstr ""
 "Miglioramento nelle descrizioni degli aggiornamenti del sistema operativo"
 
-#: data/io.elementary.appcenter.appdata.xml.in:326
-#: data/io.elementary.appcenter.appdata.xml.in:337
-#: data/io.elementary.appcenter.appdata.xml.in:346
-#: data/io.elementary.appcenter.appdata.xml.in:355
-#: data/io.elementary.appcenter.appdata.xml.in:364
-#: data/io.elementary.appcenter.appdata.xml.in:373
-#: data/io.elementary.appcenter.appdata.xml.in:382
-#: data/io.elementary.appcenter.appdata.xml.in:391
-#: data/io.elementary.appcenter.appdata.xml.in:400
-#: data/io.elementary.appcenter.appdata.xml.in:409
-#: data/io.elementary.appcenter.appdata.xml.in:418
+#: data/io.elementary.appcenter.appdata.xml.in:366
+#: data/io.elementary.appcenter.appdata.xml.in:377
+#: data/io.elementary.appcenter.appdata.xml.in:386
+#: data/io.elementary.appcenter.appdata.xml.in:395
+#: data/io.elementary.appcenter.appdata.xml.in:404
+#: data/io.elementary.appcenter.appdata.xml.in:413
+#: data/io.elementary.appcenter.appdata.xml.in:422
+#: data/io.elementary.appcenter.appdata.xml.in:431
+#: data/io.elementary.appcenter.appdata.xml.in:440
+#: data/io.elementary.appcenter.appdata.xml.in:449
+#: data/io.elementary.appcenter.appdata.xml.in:458
 msgid "Various bug fixes and performance improvements"
 msgstr "Correzione di problemi vari e miglioramenti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:335
+#: data/io.elementary.appcenter.appdata.xml.in:375
 msgid "Give details for Operating System Updates"
 msgstr "Vengono forniti i dettagli sugli aggiornamenti del sistema operativo"
 
-#: data/io.elementary.appcenter.appdata.xml.in:336
+#: data/io.elementary.appcenter.appdata.xml.in:376
 msgid "Support mouse button navigation"
 msgstr "Aggiunto il supporto per la navigazione con i pulsanti del mouse"
 
-#: data/io.elementary.appcenter.appdata.xml.in:427
+#: data/io.elementary.appcenter.appdata.xml.in:467
 msgid "Fix crash caused by entries with missing packages"
 msgstr ""
 "Risolto un problema per cui il programma si chiudeva inaspettatamente in "
 "presenza di voci con pacchetti mancanti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:434
+#: data/io.elementary.appcenter.appdata.xml.in:474
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
 "Aggiunta la capacità di cercare per categoria e correzione di problemi "
 "minori."
 
-#: data/io.elementary.appcenter.appdata.xml.in:436
+#: data/io.elementary.appcenter.appdata.xml.in:476
 msgid "It is now possible to search apps inside a category"
 msgstr ""
 "Adesso è possibile cercare le applicazioni all'interno di una categoria"
 
-#: data/io.elementary.appcenter.appdata.xml.in:437
+#: data/io.elementary.appcenter.appdata.xml.in:477
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
 "Previene la comparsa di molteplici finestre di autenticazione quando si "
 "ritorna dallo stato di sospensione"
 
-#: data/io.elementary.appcenter.appdata.xml.in:444
+#: data/io.elementary.appcenter.appdata.xml.in:484
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -698,15 +749,15 @@ msgstr ""
 "categoria viene ora mostrato nella barra del titolo e sono stati risolti "
 "altri problemi minori."
 
-#: data/io.elementary.appcenter.appdata.xml.in:446
+#: data/io.elementary.appcenter.appdata.xml.in:486
 msgid "Fix Steam installation"
 msgstr "Risolto un problema con l'installazione di Steam"
 
-#: data/io.elementary.appcenter.appdata.xml.in:447
+#: data/io.elementary.appcenter.appdata.xml.in:487
 msgid "Make search asynchronous"
 msgstr "Rende la ricerca asincrona"
 
-#: data/io.elementary.appcenter.appdata.xml.in:499
+#: data/io.elementary.appcenter.appdata.xml.in:514
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 

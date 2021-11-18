@@ -24,12 +24,12 @@ appcenter_files = files(
     'Dialogs/UninstallFailDialog.vala',
     'Dialogs/UpdateFailDialog.vala',
     'Dialogs/UpgradeFailDialog.vala',
-    'Interfaces/AppRowInterface.vala',
     'Services/DBusServer.vala',
     'Services/SearchProvider.vala',
     'Views/AppInfoView.vala',
     'Views/AppListUpdateView.vala',
     'Views/AppListView.vala',
+    'Views/CategoryView.vala',
     'Views/Homepage.vala',
     'Views/InstalledView.vala',
     'Views/SearchView.vala',
@@ -62,10 +62,6 @@ config_file = configure_file(
 args = []
 if get_option('curated')
     args += '--define=CURATED'
-endif
-
-if get_option('homepage')
-    args += '--define=HOMEPAGE'
 endif
 
 if get_option('payments')
