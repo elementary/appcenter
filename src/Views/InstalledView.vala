@@ -51,7 +51,7 @@ public class AppCenter.Views.InstalledView : AbstractView {
         });
     }
 
-    public override void return_clicked () {
+    public override void update_navigation () {
         if (previous_package != null) {
             show_package (previous_package);
             subview_entered (C_("view", "Installed"), false, null);

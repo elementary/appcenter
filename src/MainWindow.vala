@@ -441,7 +441,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         selected_package = null;
 
         if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
-            homepage.return_clicked ();
+            homepage.navigate (Hdy.NavigationDirection.BACK);;
 
             return_button_history.clear ();
             return_button.no_show_all = true;
@@ -459,7 +459,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
 
         var view = (AbstractView) stack.visible_child;
-        view.return_clicked ();
+        view.navigate (Hdy.NavigationDirection.BACK);;
     }
 
     private void on_view_mode_changed () {

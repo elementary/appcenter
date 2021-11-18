@@ -24,13 +24,21 @@ public class AppCenter.Homepage : AbstractView {
 
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
-    private AppStream.Category current_category;
 
     public signal void page_loaded ();
 
     public bool viewing_package { get; private set; default = false; }
 
-    public AppStream.Category currently_viewed_category;
+    public AppStream.Category? currently_viewed_category {
+        get {
+            if (visible_child is CategoryView) {
+                return ((CategoryView) visible_child).category;
+            }
+
+            return null;
+        }
+    }
+
     private Hdy.Carousel banner_carousel;
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
@@ -126,7 +134,6 @@ public class AppCenter.Homepage : AbstractView {
         category_flow.child_activated.connect ((child) => {
             var item = child as Widgets.CategoryItem;
             if (item != null) {
-                currently_viewed_category = item.app_category;
                 show_app_list_for_category (item.app_category);
             }
         });
@@ -248,43 +255,36 @@ public class AppCenter.Homepage : AbstractView {
         page_loaded ();
     }
 
-    public override void show_package (
-        AppCenterCore.Package package,
-        bool remember_history = true
-    ) {
-        base.show_package (package, remember_history);
-        viewing_package = true;
-        if (remember_history) {
-            current_category = null;
-            currently_viewed_category = null;
-            subview_entered (_("Home"), false, "");
-        }
-    }
+    public override void update_navigation () {
+        string? return_name = null;
+        bool allow_search = true;
+        string? custom_header = null;
+        string? custom_search_placeholder = null;
+        viewing_package = false;
 
-    public override void return_clicked () {
-        if (previous_package != null) {
-            show_package (previous_package);
-            if (current_category != null) {
-                subview_entered (current_category.name, false, "");
-            } else {
-                subview_entered (_("Home"), false, "");
-            }
-        } else if (viewing_package && current_category != null) {
-            visible_child = get_child_by_name (current_category.name);
-            viewing_package = false;
-            subview_entered (_("Home"), true, current_category.name, _("Search %s").printf (current_category.name));
-        } else {
-            set_visible_child (scrolled_window);
-            viewing_package = false;
-            currently_viewed_category = null;
-            current_category = null;
-            subview_entered (null, true);
+        if (visible_child is CategoryView) {
+            var category_name = ((CategoryView) visible_child).category.name;
+            custom_header = category_name;
+            custom_search_placeholder = _("Search %s").printf (category_name);
+        } else if (visible_child is Views.AppInfoView) {
+            allow_search = false;
+            custom_header = "";
+            viewing_package = true;
         }
+
+        var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
+        if (previous_child == scrolled_window) {
+            return_name = _("Home");
+        } else if (previous_child is CategoryView) {
+            return_name = ((CategoryView) previous_child).category.name;
+        } else if (previous_child is Views.AppInfoView) {
+            return_name = ((Views.AppInfoView) previous_child).package.get_name ();
+        }
+
+        subview_entered (return_name, allow_search, custom_header, custom_search_placeholder);
     }
 
     private void show_app_list_for_category (AppStream.Category category) {
-        subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
-        current_category = category;
         var child = get_child_by_name (category.name);
         if (child != null) {
             visible_child = child;
@@ -297,7 +297,6 @@ public class AppCenter.Homepage : AbstractView {
         visible_child = category_view;
 
         category_view.show_app.connect ((package) => {
-            viewing_package = true;
             base.show_package (package);
             subview_entered (category.name, false, "");
         });

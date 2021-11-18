@@ -28,8 +28,21 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
 
+        notify["visible-child"].connect (() => {
+            update_navigation ();
+
+            if (!transition_running) {
+                foreach (weak Gtk.Widget child in get_children ()) {
+                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
+                        child.destroy ();
+                    }
+                }
+            }
+        });
+
         notify["transition-running"].connect (() => {
-            // Transition finished
+            update_navigation ();
+
             if (!transition_running) {
                 foreach (weak Gtk.Widget child in get_children ()) {
                     if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
@@ -80,5 +93,5 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         });
     }
 
-    public abstract void return_clicked ();
+    public abstract void update_navigation ();
 }

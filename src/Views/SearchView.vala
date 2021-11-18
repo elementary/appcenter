@@ -42,7 +42,7 @@ public class AppCenter.Views.SearchView : AbstractView {
         });
     }
 
-    public override void return_clicked () {
+    public override void update_navigation () {
         if (viewing_package) {
             if (previous_package != null) {
                 show_package (previous_package);
