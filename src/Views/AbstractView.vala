@@ -31,8 +31,10 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         notify["transition-running"].connect (() => {
             // Transition finished
             if (!transition_running) {
-                while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
-                    deck.remove (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD));
+                foreach (weak Gtk.Widget child in get_children ()) {
+                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
+                        child.destroy ();
+                    }
                 }
             }
         });
