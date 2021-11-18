@@ -48,7 +48,7 @@ public class AppCenterCore.Job : Object {
 public abstract class AppCenterCore.JobArgs { }
 
 public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.InstallPackageArgs : JobArgs {
@@ -71,15 +71,15 @@ public class AppCenterCore.RemovePackageArgs : JobArgs {
 
 public class AppCenterCore.GetDownloadSizeArgs : JobArgs {
     public Package package;
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.GetUpdatesArgs : JobArgs {
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.RefreshCacheArgs : JobArgs {
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.IsPackageInstalledArgs : JobArgs {
@@ -92,5 +92,5 @@ public class AppCenterCore.GetPackageDetailsArgs : JobArgs {
 
 public class AppCenterCore.GetPackageDependenciesArgs : JobArgs {
     public Package package;
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }

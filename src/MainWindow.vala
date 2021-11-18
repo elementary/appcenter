@@ -29,14 +29,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Stack custom_title_stack;
     private Gtk.Label homepage_header;
     private Granite.Widgets.ModeButton view_mode;
-    private Hdy.HeaderBar headerbar;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
-    private ulong task_finished_connection = 0U;
     private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
@@ -45,6 +43,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
 
+    private ulong task_finished_connection = 0U;
     private uint configure_id;
     private int homepage_view_id;
     private int installed_view_id;
@@ -160,15 +159,20 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        return_button = new Gtk.Button ();
-        return_button.no_show_all = true;
-        return_button.valign = Gtk.Align.CENTER;
-        return_button.get_style_context ().add_class ("back-button");
+        return_button = new Gtk.Button () {
+            no_show_all = true,
+            valign = Gtk.Align.CENTER
+        };
+        return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+
         return_button_history = new Gee.LinkedList<string> ();
 
-        view_mode = new Granite.Widgets.ModeButton ();
-        view_mode.margin_end = view_mode.margin_start = 12;
-        view_mode.margin_bottom = view_mode.margin_top = 7;
+        view_mode = new Granite.Widgets.ModeButton () {
+            margin = 12,
+            margin_top = 7,
+            margin_bottom = 7
+        };
+
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
@@ -185,19 +189,21 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         eventbox_badge.add (updates_badge);
         eventbox_badge.button_release_event.connect (badge_event);
 
-        updates_badge_revealer = new Gtk.Revealer ();
-        updates_badge_revealer.halign = Gtk.Align.END;
-        updates_badge_revealer.valign = Gtk.Align.START;
-        updates_badge_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        updates_badge_revealer = new Gtk.Revealer () {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.START,
+            transition_type = Gtk.RevealerTransitionType.CROSSFADE
+        };
         updates_badge_revealer.add (eventbox_badge);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
         view_mode_overlay.add_overlay (updates_badge_revealer);
 
-        view_mode_revealer = new Gtk.Revealer ();
-        view_mode_revealer.reveal_child = true;
-        view_mode_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        view_mode_revealer = new Gtk.Revealer () {
+            reveal_child = true,
+            transition_type = Gtk.RevealerTransitionType.CROSSFADE
+        };
         view_mode_revealer.add (view_mode_overlay);
 
         homepage_header = new Gtk.Label (null);
@@ -208,15 +214,16 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         custom_title_stack.add (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
-        search_entry = new Gtk.SearchEntry ();
-        search_entry.valign = Gtk.Align.CENTER;
-        search_entry.placeholder_text = _("Search Apps");
+        search_entry = new Gtk.SearchEntry () {
+            placeholder_text = _("Search Apps"),
+            valign = Gtk.Align.CENTER
+        };
 
         spinner = new Gtk.Spinner ();
 
-        /* HeaderBar */
-        headerbar = new Hdy.HeaderBar ();
-        headerbar.show_close_button = true;
+        var headerbar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
         headerbar.pack_end (search_entry);
@@ -226,8 +233,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
-        stack = new Gtk.Stack ();
-        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+        };
         stack.add (homepage);
         stack.add (installed_view);
         stack.add (search_view);

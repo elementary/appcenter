@@ -33,16 +33,19 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
 
         list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
         list_box.row_activated.connect ((r) => {
-            var row = (AppRowInterface)r;
+            var row = (Widgets.PackageRow)r;
             show_app (row.get_package ());
         });
 
         scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled.add (list_box);
-    }
 
-    protected abstract AppRowInterface construct_row_for_package (AppCenterCore.Package package);
+        list_box.add.connect ((row) => {
+            row.show_all ();
+            ((Widgets.PackageRow) row).get_package ().changing.connect (on_package_changing);
+        });
+    }
 
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
     public abstract void add_package (AppCenterCore.Package package);
@@ -50,7 +53,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     public void remove_package (AppCenterCore.Package package) {
         package.changing.disconnect (on_package_changing);
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak AppRowInterface row = r as AppRowInterface;
+            weak Widgets.PackageRow row = r as Widgets.PackageRow;
 
             if (row.get_package () == package) {
                 row.destroy ();
@@ -58,12 +61,12 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
             }
         }
 
-        on_list_changed ();
+        list_box.invalidate_sort ();
     }
 
     public virtual void clear () {
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak AppRowInterface row = r as AppRowInterface;
+            weak Widgets.PackageRow row = r as Widgets.PackageRow;
             if (row == null) {
                 continue;
             }
@@ -73,19 +76,13 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
             row.destroy ();
         };
 
-        on_list_changed ();
-    }
-
-    protected void add_row (AppRowInterface row) {
-        row.show_all ();
-        list_box.add (row);
-        row.get_package ().changing.connect (on_package_changing);
+        list_box.invalidate_sort ();
     }
 
     protected virtual Gee.Collection<AppCenterCore.Package> get_packages () {
         var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak AppRowInterface row = r as AppRowInterface;
+            weak Widgets.PackageRow row = r as Widgets.PackageRow;
             if (row == null) {
                 continue;
             }
@@ -97,8 +94,8 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     }
 
     [CCode (instance_pos = -1)]
-    protected virtual int package_row_compare (AppRowInterface row1, AppRowInterface row2) {
-        return row1.get_name_label ().collate (row2.get_name_label ());
+    protected virtual int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
+        return row1.get_package ().get_name ().collate (row2.get_package ().get_name ());
     }
 
     protected virtual void on_package_changing (AppCenterCore.Package package, bool is_changing) {
@@ -110,11 +107,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
 
         assert (packages_changing >= 0);
         if (packages_changing == 0) {
-            on_list_changed ();
+            list_box.invalidate_sort ();
         }
-    }
-
-    protected virtual void on_list_changed () {
-
     }
 }
