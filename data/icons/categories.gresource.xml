@@ -8,12 +8,23 @@
     <file alias="applications-video-rtl-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
     <file alias="applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
     <file alias="applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">currency-dollar-symbolic.svg</file>
     <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">online-account-facebook.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">internet-mail-symbolic.svg</file>
     <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">online-account-reddit.svg</file>
     <file alias="online-account-tumblr.svg" compressed="true" preprocess="xml-stripblanks">online-account-tumblr.svg</file>
     <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>
     <file alias="online-account-telegram.svg" compressed="true" preprocess="xml-stripblanks">online-account-telegram.svg</file>
     <file alias="text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
+
+    <file alias="oars-chat-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/chat.svg</file>
+    <file alias="oars-conflict-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/conflict.svg</file>
+    <file alias="oars-gambling-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/gambling.svg</file>
+    <file alias="oars-offensive-language-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/language.svg</file>
+    <file alias="oars-sex-nudity-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/nudity.svg</file>
+    <file alias="oars-socal-info-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-info.svg</file>
+    <file alias="oars-illicit-substance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/substance.svg</file>
+    <file alias="oars-violence-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/violence.svg</file>
   </gresource>
   <gresource prefix="/io/elementary/appcenter/backgrounds">
     <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>

@@ -19,7 +19,8 @@
  */
 
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
-    public signal void changed ();
+    protected Gtk.Label package_name;
+    protected Gtk.Overlay app_icon_overlay;
 
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (
@@ -28,26 +29,39 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
     }
 
     construct {
-        inner_image.icon_size = Gtk.IconSize.DIALOG;
-        /* Needed to enforce size on icons from Filesystem/Remote */
-        inner_image.pixel_size = 48;
+        var app_icon = new Gtk.Image () {
+            pixel_size = 48
+        };
 
-        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        package_name.wrap = true;
-        package_name.hexpand = true;
-        package_name.xalign = 0;
+        var badge_image = new Gtk.Image () {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.END,
+            pixel_size = 24
+        };
+
+        app_icon_overlay = new Gtk.Overlay ();
+        app_icon_overlay.add (app_icon);
+
+        var scale_factor = get_scale_factor ();
+
+        var plugin_host_package = package.get_plugin_host_package ();
+        if (package.is_plugin && plugin_host_package != null) {
+            app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
+            badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
+
+            app_icon_overlay.add_overlay (badge_image);
+        } else {
+            app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
+
+            if (package.is_os_updates) {
+                badge_image.icon_name = "system-software-update";
+                app_icon_overlay.add_overlay (badge_image);
+            }
+        }
 
         margin = 6;
         margin_start = 12;
         margin_end = 12;
-        
-        // <- Pop!_Shop
-
-        hexpand = true;
-
-        action_stack.homogeneous = false;
-
-        // ->
 
         show_uninstall = false;
         show_open = false;

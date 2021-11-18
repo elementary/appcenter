@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+/*
+ * Copyright 2017–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -81,7 +80,7 @@ public class AppCenterCore.UpdateManager : Object {
                 unowned string pkg_summary = pk_package.get_summary ();
                 unowned string pkg_version = pk_package.get_version ();
                 os_desc += Markup.printf_escaped (
-                    "<li>%s\n\t%s\n\t%s</li>\n",
+                    " • %s\n\t%s\n\t%s\n",
                     pkg_name,
                     pkg_summary,
                     _("Version: %s").printf (pkg_version)
@@ -125,7 +124,7 @@ public class AppCenterCore.UpdateManager : Object {
 
                 os_count++;
                 os_desc += Markup.printf_escaped (
-                    "<li>%s\n\t%s</li>",
+                    " • %s\n\t%s\n",
                     @ref.get_name (),
                     _("Flatpak runtime")
                 );
@@ -146,12 +145,12 @@ public class AppCenterCore.UpdateManager : Object {
             debug ("No OS updates found");
             var latest_version = _("No components with updates");
             os_updates.latest_version = latest_version;
-            os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
+            os_updates.description = GLib.Markup.printf_escaped ("%s\n", latest_version);
         } else {
             debug ("%u OS updates found", os_count);
             var latest_version = ngettext ("%u component with updates", "%u components with updates", os_count).printf (os_count);
             os_updates.latest_version = latest_version;
-            os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
+            os_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
 
         count = apps_with_updates.size;
@@ -194,7 +193,7 @@ public class AppCenterCore.UpdateManager : Object {
                 string body = _("Please restart your system to finalize updates");
                 var notification = new Notification (title);
                 notification.set_body (body);
-                notification.set_icon (new ThemedIcon (Build.PROJECT_NAME));
+                notification.set_icon (new ThemedIcon ("system-reboot"));
                 notification.set_priority (NotificationPriority.URGENT);
                 notification.set_default_action ("app.open-application");
                 Application.get_default ().send_notification ("restart", notification);

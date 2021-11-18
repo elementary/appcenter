@@ -154,38 +154,3 @@
     padding-bottom: 0;
     padding-top: 0;
 }
-
-.switcher {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    opacity: 0.4;
-}
-
-.switcher:checked {
-    opacity: 1;
-}
-
-.terminal {
-    background-color: #252e32;
-    padding: 12px;
-    color: #94a3a5;
-}
-
-.terminal selection {
-    background-color: #93a1a1;
-    color: #252e32;
-}
-
-list, stack, textview, textview text {
-    background: transparent;
-}
-
-flowboxchild grid image,
-row grid image {
-  -gtk-icon-shadow: 0 2px 3px alpha(black, 0.3);
-}
-
-row.activatable button.text-button > label {
-    color: @theme_fg_color;
-  }

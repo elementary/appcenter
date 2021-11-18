@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2014–2018 elementary, Inc. (https://elementary.io)
+/*
+ * Copyright 2014–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,11 +34,8 @@ public class AppCenterCore.PackageDetails : Object {
 }
 
 public class AppCenterCore.Package : Object {
-    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
-    // We stopped using this origin in elementary OS 5.1, references to this can be removed
-    // after everyone has had chance to update their appstream-data-pantheon package
-    private const string DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-bionic-main";
+    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -216,7 +212,6 @@ public class AppCenterCore.Package : Object {
         get {
             switch (component.get_origin ()) {
                 case APPCENTER_PACKAGE_ORIGIN:
-                case DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN:
                 case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
                     return true;
                 default:
@@ -359,7 +354,7 @@ public class AppCenterCore.Package : Object {
             if (backend is PackageKitBackend) {
                 if (origin == APPCENTER_PACKAGE_ORIGIN) {
                     return _("AppCenter");
-                } else if (origin == DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN || origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
+                } else if (origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
                     return _("elementary Updates");
                 } else if (origin.has_prefix ("ubuntu-")) {
                     return _("Ubuntu (non-curated)");
@@ -424,7 +419,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private string? name = null;
     public string? description = null;
     private string? summary = null;
     private string? color_primary = null;
@@ -549,7 +543,7 @@ public class AppCenterCore.Package : Object {
             }
         }
 
-        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s".printf (get_name ())));
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (get_name ()));
     }
 
     public void launch () throws Error {
@@ -628,6 +622,7 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? name = null;
     public string? get_name () {
         if (name != null) {
             return name;
@@ -642,22 +637,43 @@ public class AppCenterCore.Package : Object {
             name = backend_details.name;
         }
 
+        name = Utils.unescape_markup (name);
+
         return name;
     }
 
     public void set_name (string? new_name) {
-        name = new_name;
+        name = Utils.unescape_markup (new_name);
     }
 
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();
+
             if (description == null) {
                 if (backend_details == null) {
                     populate_backend_details_sync ();
                 }
 
                 description = backend_details.description;
+            }
+
+            if (description == null) {
+                return null;
+            }
+
+            try {
+                // Condense double spaces
+                var space_regex = new Regex ("\\s+");
+                description = space_regex.replace (description, description.length, 0, " ");
+            } catch (Error e) {
+               warning ("Failed to condense spaces: %s", e.message);
+            }
+
+            try {
+                description = AppStream.markup_convert_simple (description);
+            } catch (Error e) {
+                warning ("Failed to convert description to markup: %s", e.message);
             }
         }
 

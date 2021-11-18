@@ -1,5 +1,5 @@
 /*-
- * Copyright 2019 elementary, Inc. (https://elementary.io)
+ * Copyright 2019-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,8 @@ public class AppCenterCore.Job : Object {
         UPDATE_PACKAGE,
         REMOVE_PACKAGE,
         IS_PACKAGE_INSTALLED,
-        GET_PACKAGE_DETAILS
+        GET_PACKAGE_DETAILS,
+        GET_PACKAGE_DEPENDENCIES
     }
 
     public Job (Type type) {
@@ -47,7 +48,7 @@ public class AppCenterCore.Job : Object {
 public abstract class AppCenterCore.JobArgs { }
 
 public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.InstallPackageArgs : JobArgs {
@@ -70,15 +71,15 @@ public class AppCenterCore.RemovePackageArgs : JobArgs {
 
 public class AppCenterCore.GetDownloadSizeArgs : JobArgs {
     public Package package;
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.GetUpdatesArgs : JobArgs {
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.RefreshCacheArgs : JobArgs {
-    public Cancellable cancellable;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.IsPackageInstalledArgs : JobArgs {
@@ -87,4 +88,9 @@ public class AppCenterCore.IsPackageInstalledArgs : JobArgs {
 
 public class AppCenterCore.GetPackageDetailsArgs : JobArgs {
     public Package package;
+}
+
+public class AppCenterCore.GetPackageDependenciesArgs : JobArgs {
+    public Package package;
+    public Cancellable? cancellable;
 }

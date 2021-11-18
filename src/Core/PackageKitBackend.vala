@@ -1,5 +1,5 @@
 /*-
- * Copyright 2019 elementary, Inc. (https://elementary.io)
+ * Copyright 2019-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -116,6 +116,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 case Job.Type.GET_PACKAGE_DETAILS:
                     get_package_details_internal (job);
                     break;
+                case Job.Type.GET_PACKAGE_DEPENDENCIES:
+                    get_package_dependencies_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -151,6 +154,17 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         appstream_pool = new AppStream.Pool ();
+
+#if HIDE_UPSTREAM_DISTRO_APPS
+        // Only use a user cache, the system cache probably contains all the Ubuntu components
+        appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);
+
+        // Clear out the default set of metadata locations and only use the folder that gets populated
+        // with elementary's AppStream data.
+        appstream_pool.clear_metadata_locations ();
+        appstream_pool.add_metadata_location ("/usr/share/app-info");
+#endif
+
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
 
@@ -792,7 +806,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async Pk.Results get_updates (Cancellable cancellable) throws GLib.Error {
+    public async Pk.Results get_updates (Cancellable? cancellable) throws GLib.Error {
         var job_args = new GetUpdatesArgs ();
         job_args.cancellable = cancellable;
 
@@ -999,6 +1013,55 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return (PackageDetails)job.result.get_object ();
+    }
+
+    private void get_package_dependencies_internal (Job job) {
+        var args = (GetPackageDependenciesArgs)job.args;
+        var package = args.package;
+        var cancellable = args.cancellable;
+
+        Pk.Package pk_package;
+        try {
+            pk_package = get_package_internal (package);
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        string[] package_array = { pk_package.package_id, null };
+        var filters = Pk.Bitfield.from_enums (Pk.Filter.ARCH, Pk.Filter.NEWEST);
+        try {
+            var deps_result = client.depends_on (filters, package_array, true, cancellable, (p, t) => {});
+            package_array = {};
+            deps_result.get_package_array ().foreach ((dep_package) => {
+                package_array += dep_package.get_name ();
+            });
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        var result = new Gee.ArrayList<string>.wrap (package_array);
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (result);
+        job.results_ready ();
+    }
+
+    public async Gee.ArrayList<string> get_package_dependencies (Package package, Cancellable? cancellable) throws GLib.Error {
+        var job_args = new GetPackageDependenciesArgs () {
+            package = package,
+            cancellable = cancellable
+        };
+
+        var job = yield launch_job (Job.Type.GET_PACKAGE_DEPENDENCIES, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Gee.ArrayList<string>)job.result.get_object ();
     }
 
     private void update_progress_status (Pk.Progress progress, Pk.ProgressType type) {

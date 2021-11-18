@@ -57,20 +57,20 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         grid.add (display_image);
         grid.add (name_label);
 
-        var expanded_grid = new Gtk.Grid ();
-        expanded_grid.expand = true;
-#if POP_OS
-        expanded_grid.margin = 6;
-#else
-        expanded_grid.margin = 12;
-#endif
+        var expanded_grid = new Gtk.Grid () {
+            expand = true,
+            margin = 12
+        };
 
-        themed_grid = new Gtk.Grid ();
+        themed_grid = new Gtk.Grid () {
+            margin = 12
+        };
         themed_grid.attach (grid, 0, 0, 1, 1);
         themed_grid.attach (expanded_grid, 0, 0, 1, 1);
-        themed_grid.margin = 12;
 
         themed_grid_context = themed_grid.get_style_context ();
+        themed_grid_context.add_class (Granite.STYLE_CLASS_CARD);
+        themed_grid_context.add_class (Granite.STYLE_CLASS_ROUNDED);
         themed_grid_context.add_class ("category");
         themed_grid_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 

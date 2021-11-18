@@ -2,8 +2,8 @@ namespace Build {
     public const string APP_NAME = "@APP_NAME@";
     public const string HIDDEN_APP_LIST = "@HIDDEN_APP_LIST@";
     public const string CONFIGDIR = "@CONFIGDIR@";
+    public const string LOCALEDIR = "@LOCALEDIR@";
     public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
     public const string PROJECT_NAME = "@PROJECT_NAME@";
     public const string VERSION = "@VERSION@";
-    public const string HOUSTON_API_URL = "@HOUSTON_API_URL@";
 }
