@@ -72,6 +72,8 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         cached_packages = new Gee.TreeSet<Package> ();
         var tokens = AppCenter.App.settings.get_strv ("cached-drivers");
 
+        string latest_nvidia_pkg = "";
+
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
@@ -91,16 +93,23 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
             string[] parts = package_name.split (",");
             pkgnames += parts[0];
-#if POP_OS
-            if (pkgnames.has_prefix ("backport-") && pkgnames.has_suffix ("-dkms")) {
-                continue;
-            }
-
+            
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
             driver_component.set_pkgnames (pkgnames);
             driver_component.set_id (package_name);
             unowned string? nvidia_version = null;
+            
+            var icon = new AppStream.Icon ();
+            icon.set_name ("application-x-firmware");
+            icon.set_kind (AppStream.IconKind.STOCK);
+            driver_component.add_icon (icon);
+
+#if POP_OS
+            if (pkgnames.has_prefix ("backport-") && pkgnames.has_suffix ("-dkms")) {
+                continue;
+            }
+
 
             if (pkgnames.has_prefix ("nvidia-driver-")) {
                 nvidia_version = pkgnames.offset (14);
@@ -126,11 +135,6 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             }
 #endif
 
-            var icon = new AppStream.Icon ();
-            icon.set_name ("application-x-firmware");
-            icon.set_kind (AppStream.IconKind.STOCK);
-            driver_component.add_icon (icon);
-
             var package = new Package (this, driver_component);
             try {
                 if (yield is_package_installed (package)) {
@@ -142,6 +146,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             }
 
             yield add_kernel_headers_if_necessary (package, cancellable);
+        }
 
         if (null != latest_nvidia_pkg) {
             debug ("adding NVIDIA driver package %s", latest_nvidia_pkg);

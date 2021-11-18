@@ -309,7 +309,7 @@ public class AppCenter.App : Gtk.Application {
 				break;
 			    case Gtk.ResponseType.OK:
 			    	dialog.destroy ();
-				    main_window.go_to_installed_clear ();
+				    main_window.go_to_installed ();
 				break;
 			}
 		    });
