@@ -17,57 +17,63 @@
  *
  * Authored by: Ian Santopietro <ian@system76.com>
  */
-public class AppCenter.Widgets.AppScreenshot : Gtk.DrawingArea {
+ public class AppCenter.Widgets.AppScreenshot : Gtk.DrawingArea {
     private string file_path;
-    private double aspect_ratio;
     private Gdk.Pixbuf? pixbuf;
-    private int pixbuf_height;
-    
-    construct {
-        hexpand = true;
-        halign = Gtk.Align.FILL;
+    private int pixbuf_width {
+    get { return pixbuf != null ? pixbuf.width : 1; }
     }
-    
+    private int pixbuf_height {
+    get { return pixbuf != null ? pixbuf.height : 1; }
+    }
+
     public void set_path (string path_text) {
-        int width, height;
         file_path = path_text;
-        Gdk.Pixbuf.get_file_info (file_path, out width, out height);
-        aspect_ratio = (double) width / height;
         try {
             pixbuf = new Gdk.Pixbuf.from_file (file_path);
-            pixbuf_height = height;
         }
         catch (Error e) {
             critical ("Couldn't load pixbuf: %s", e.message);
             pixbuf = null;
         }
     }
-    
+
     protected override bool draw (Cairo.Context cr) {
         if (pixbuf == null)
             return Gdk.EVENT_PROPAGATE;
         int height = get_allocated_height ();
-        double scale = (double) height / pixbuf_height;
+        int width = get_allocated_width ();
+        if (width > 800) {
+            width = 800;
+        }
+        double scale = double.min ((double) height / pixbuf_height, (double) width / pixbuf_width);
         cr.scale (scale, scale);
         Gdk.cairo_set_source_pixbuf (cr, pixbuf, 0, 0);
         cr.paint ();
         return Gdk.EVENT_PROPAGATE;
     }
-    
+
     protected override Gtk.SizeRequestMode get_request_mode () {
         return Gtk.SizeRequestMode.HEIGHT_FOR_WIDTH;
     }
-    
-    protected override void get_preferred_height (out int min, out int nat) {
-        get_preferred_height_for_width (
-            get_allocated_width (),
-            out min,
-            out nat
-        );
+
+    protected override void get_preferred_width (out int min, out int nat) {
+    min = 0;
+    nat = pixbuf_width;
     }
-    
+
+    protected override void get_preferred_height (out int min, out int nat) {
+    min = 0;
+    nat = pixbuf_height;
+    }
+
     protected override void get_preferred_height_for_width (int width, out int min, out int nat) {
-        double val = width / aspect_ratio;
-        min = nat = (int) val;
+        min = width * pixbuf_height / pixbuf_width;
+    nat = min;
+    }
+
+    protected override void get_preferred_width_for_height (int height, out int min, out int nat) {
+        min = height * pixbuf_width / pixbuf_height;
+    nat = min;
     }
 }
