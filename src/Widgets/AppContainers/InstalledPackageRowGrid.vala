@@ -26,10 +26,12 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Label release_description;
     private Gtk.Label release_expander_label;
     private Gtk.Label release_single_label;
+    private Gtk.FlowBox info_flowbox;
     private Gtk.Revealer release_stack_revealer;
     private Gtk.Stack release_stack;
 
     private static Gtk.SizeGroup info_size_group;
+    private static Gtk.SizeGroup updates_size_group;
 
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
         Object (package: package);
@@ -44,6 +46,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     static construct {
         info_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        updates_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
     }
 
     construct {
@@ -51,6 +54,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         var package_name = new Gtk.Label (package.get_name ()) {
             valign = Gtk.Align.END,
+            wrap = true,
             xalign = 0
         };
         package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
@@ -58,6 +62,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         app_version = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
             valign = Gtk.Align.START,
+            wrap = true,
             xalign = 0
         };
         app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -113,21 +118,30 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
 
+        info_flowbox = new Gtk.FlowBox () {
+            activate_on_single_click = true,
+            column_spacing = 24,
+            hexpand = true,
+            row_spacing = 12
+        };
+        info_flowbox.add (info_grid);
+        info_flowbox.add (release_stack_revealer);
+
+
         action_stack.homogeneous = false;
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
-        action_stack.hexpand = true;
 
         var grid = new Gtk.Grid () {
             column_spacing = 24
         };
-        grid.attach (info_grid, 0, 0);
-        grid.attach (release_stack_revealer, 2, 0, 1, 2);
+        grid.attach(info_flowbox, 0, 0);
         grid.attach (action_stack, 3, 0);
 
         add (grid);
 
         info_size_group.add_widget (info_grid);
+        updates_size_group.add_widget (release_stack_revealer);
 
         release_expander.button_press_event.connect (() => {
             release_expander.expanded = !release_expander.expanded;
