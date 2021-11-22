@@ -70,6 +70,28 @@ public class AppCenter.Homepage : AbstractView {
         banner_revealer = new Gtk.Revealer ();
         banner_revealer.add (banner_grid);
 
+#if POP_OS
+        var pop_banner_copy_1 = new Gtk.Label (_("EXPLORE YOUR HORIZONS AND"));
+        pop_banner_copy_1.margin_top = pop_banner_copy_1.margin_start = 38;
+        pop_banner_copy_1.xalign = 0;
+        pop_banner_copy_1.hexpand = true;
+        pop_banner_copy_1.wrap = true;
+
+        var pop_banner_copy_2 = new Gtk.Label (_("UNLEASH YOUR POTENTIAL"));
+        pop_banner_copy_2.margin_start = pop_banner_copy_2.margin_end = 37;
+        pop_banner_copy_2.xalign = 0;
+        pop_banner_copy_2.hexpand = true;
+        pop_banner_copy_2.wrap = true;
+
+        var pop_banner = new Gtk.Grid ();
+        pop_banner.height_request = 300;
+        pop_banner.expand = true;
+        pop_banner.get_style_context ().add_class ("pop-banner");
+        pop_banner.attach (pop_banner_copy_1, 0, 0, 1, 1);
+        pop_banner.attach (pop_banner_copy_2, 0, 1, 1, 1);
+        
+#endif
+
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
             margin_start = 12
         };
@@ -129,6 +151,10 @@ public class AppCenter.Homepage : AbstractView {
                 show_package (local_package);
             });
         }
+
+#if POP_OS
+        banner_carousel.prepend (pop_banner);
+#endif
 
         load_banners_and_carousels.begin ();
 
@@ -190,8 +216,56 @@ public class AppCenter.Homepage : AbstractView {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-
+        var pick_packages = new Gee.LinkedList<AppCenterCore.Package> ();
+        
         int package_count = 0;
+
+#if POP_OS
+        string[] newest_ids = {
+            "io.atom.Atom",
+            "com.slack.Slack",
+            "org.telegram",
+            "org.gnome.meld",
+            "com.valvesoftware.Steam",
+            "net.lutris.Lutris",
+            "com.mattermost.Desktop",
+            "com.visualstudio.code",
+            "com.spotify.Client",
+            "com.gexperts.Tilix",
+            "alacritty",
+            "com.uploadedlobster.peek",
+            "virt-manager",
+            "org.signal.Signal",
+            "flameshot",
+            "com.getpostman.Postman",
+            "io.dbeaver.DBeaverCommunity",
+            "chromium" // TODO: Chrome
+        };
+
+        foreach (var id in newest_ids) {
+            if (package_count >= MAX_PACKAGES_IN_BANNER) {
+                break;
+            }
+
+            var package = AppCenterCore.Client.get_default ().get_package_for_component_id (id);
+            var installed = false;
+            foreach (var origin_package in package.origin_packages) {
+                try {
+                    if (yield origin_package.backend.is_package_installed (origin_package)) {
+                        installed = true;
+                        break;
+                    }
+                } catch (Error e) {
+                    continue;
+                }
+            }
+
+            if (!installed) {
+                packages_in_banner.add (package);
+                package_count++;
+            }
+        }
+#else
         foreach (var package in packages_by_release_date) {
             if (package_count >= MAX_PACKAGES_IN_BANNER) {
                 break;
@@ -214,7 +288,12 @@ public class AppCenter.Homepage : AbstractView {
                 package_count++;
             }
         }
+#endif
 
+        foreach (var package in packages_in_banner) {
+            print(package.get_name ());
+        }
+        
         foreach (var package in packages_in_banner) {
             var banner = new Widgets.Banner (package);
             banner.clicked.connect (() => {

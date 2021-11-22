@@ -73,8 +73,8 @@ if get_option('sharing')
     args += '--define=SHARING'
 endif
 
-if get_option('hide_upstream_distro_apps')
-    args += '--define=HIDE_UPSTREAM_DISTRO_APPS'
+if get_option('pop_os')
+    args += '--define=POP_OS'
 endif
 
 executable(

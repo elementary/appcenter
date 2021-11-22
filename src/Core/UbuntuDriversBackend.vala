@@ -17,7 +17,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
+ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
