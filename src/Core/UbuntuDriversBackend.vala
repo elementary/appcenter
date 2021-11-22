@@ -41,7 +41,7 @@
         return command.get_exit_status () == 0;
     }
 
-#if POP_OS
+#if POP_OS_NULL
     // A package has Pop packaging if the source is from the Pop PPA.
     private async bool packaged_by_pop (Cancellable? cancellable = null, string package) {
         string? output = null;
@@ -105,7 +105,7 @@
             icon.set_kind (AppStream.IconKind.STOCK);
             driver_component.add_icon (icon);
 
-#if POP_OS
+#if POP_OS_NULL
             if (pkgnames.has_prefix ("backport-") && pkgnames.has_suffix ("-dkms")) {
                 continue;
             }
