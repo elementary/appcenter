@@ -30,7 +30,16 @@ public class AppCenter.Homepage : AbstractView {
 
     public bool viewing_package { get; private set; default = false; }
 
-    public AppStream.Category currently_viewed_category;
+    public AppStream.Category? currently_viewed_category {
+        get {
+            if (visible_child is CategoryView) {
+                return ((CategoryView) visible_child).category;
+            }
+
+            return null;
+        }
+    }
+
     private Hdy.Carousel banner_carousel;
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
@@ -126,7 +135,6 @@ public class AppCenter.Homepage : AbstractView {
         category_flow.child_activated.connect ((child) => {
             var item = child as Widgets.CategoryItem;
             if (item != null) {
-                currently_viewed_category = item.app_category;
                 show_app_list_for_category (item.app_category);
             }
         });
@@ -256,7 +264,6 @@ public class AppCenter.Homepage : AbstractView {
         viewing_package = true;
         if (remember_history) {
             current_category = null;
-            currently_viewed_category = null;
             subview_entered (_("Home"), false, "");
         }
     }
@@ -276,7 +283,6 @@ public class AppCenter.Homepage : AbstractView {
         } else {
             set_visible_child (scrolled_window);
             viewing_package = false;
-            currently_viewed_category = null;
             current_category = null;
             subview_entered (null, true);
         }
