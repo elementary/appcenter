@@ -1,3 +1,27 @@
+appcenter (3.9.0) bionic; urgency=medium
+
+  * Release 3.9.0 (#1772)
+  * Core: Reduce the memory footprint and avoid unnecessary reference
+    increase (#1768)
+  * Update screenshots
+  * PackageRow: remove methods specific to updates view (#1755)
+  * Homepage: get currently_viewed_category accurately (#1770)
+  * PackagekitBackend: Make nullable state of cancellables consistent
+    (#1767)
+  * Package: centralize description string handling (#1701)
+  * AbstractAppList: Remove unnecessary abstractions (#1756)
+  * Update translation files
+  * Update translation template
+  * CategoryFlowBox: Add Privacy & Security (#1765)
+  * CategoryFlowBox: Add Amusement to Games (#1764)
+  * Create CategoryView (#1747)
+  * InstalledPackageRowGrid: Use modern code style (#1754)
+  * MainWindow: code style (#1757)
+  * Allow narrower window sizes (#1753)
+  * AppInfoView: Change app description to Gtk.Label (#1723)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 23 Nov 2021 21:24:05 +0000
+
 appcenter (3.8.2) bionic; urgency=medium
 
   * Release 3.8.2 (#1734)
