@@ -65,7 +65,9 @@ public class AppCenter.Homepage : AbstractView {
             orientation = Gtk.Orientation.VERTICAL
         };
         banner_grid.add (banner_event_box);
+#if !POP_OS
         banner_grid.add (banner_dots);
+#endif
 
         banner_revealer = new Gtk.Revealer ();
         banner_revealer.add (banner_grid);
@@ -154,6 +156,8 @@ public class AppCenter.Homepage : AbstractView {
 
 #if POP_OS
         banner_carousel.prepend (pop_banner);
+        banner_carousel.interactive = false;
+        banner_dots.visible = false;
 #endif
 
         load_banners_and_carousels.begin ();
@@ -397,7 +401,9 @@ public class AppCenter.Homepage : AbstractView {
                 new_index = 0;
             }
 
+#if !POP_OS
             banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+#endif
 
             return Source.CONTINUE;
         });
