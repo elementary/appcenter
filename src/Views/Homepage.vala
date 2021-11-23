@@ -19,7 +19,7 @@
 */
 
 public class AppCenter.Homepage : AbstractView {
-    private const int MAX_PACKAGES_IN_BANNER = 5;
+    private const int MAX_PACKAGES_IN_BANNER = 24;
     private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
     private Gtk.FlowBox category_flow;
@@ -44,6 +44,10 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
+
+#if POP_OS
+    private Gtk.FlowBox picks_carousel;
+#endif
 
     private uint banner_timeout_id;
 
@@ -106,12 +110,34 @@ public class AppCenter.Homepage : AbstractView {
             max_children_per_line = 5
         };
 
+        
         var recently_updated_grid = new Gtk.Grid () {
             margin_end = 12,
+            margin_start = 12,
+            row_spacing = 24
+        };
+
+#if POP_OS
+        var picks_label = new Granite.HeaderLabel (_("Pop!_Picks")) {
             margin_start = 12
         };
+
+        picks_carousel = new Gtk.FlowBox () {
+            activate_on_single_click = true,
+            column_spacing = 12,
+            row_spacing = 12,
+            homogeneous = true,
+            max_children_per_line = 5
+        };
+
+        recently_updated_grid.attach (picks_label, 0, 0);
+        recently_updated_grid.attach (picks_carousel, 0, 1);
+        recently_updated_grid.attach (recently_updated_label, 0, 2);
+        recently_updated_grid.attach (recently_updated_carousel, 0, 3);
+#else
         recently_updated_grid.attach (recently_updated_label, 0, 0);
         recently_updated_grid.attach (recently_updated_carousel, 0, 1);
+#endif
 
         recently_updated_revealer = new Gtk.Revealer ();
         recently_updated_revealer.add (recently_updated_grid );
@@ -267,8 +293,17 @@ public class AppCenter.Homepage : AbstractView {
             if (!installed) {
                 packages_in_banner.add (package);
                 package_count++;
+                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                picks_carousel.add (package_row);
+            }
+
+            if (picks_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
+                break;
             }
         }
+
+        picks_carousel.show_all ();
+        recently_updated_revealer.reveal_child = picks_carousel.get_children ().length () > 0;
 #else
         foreach (var package in packages_by_release_date) {
             if (package_count >= MAX_PACKAGES_IN_BANNER) {
