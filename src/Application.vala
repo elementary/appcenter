@@ -294,21 +294,24 @@ public class AppCenter.App : Gtk.Application {
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
                         break;
                     }
-
                     var dialog = new InstallFailDialog (package, error);
 
                     dialog.show_all ();
-		    dialog.response.connect ((response_id) => {
-		    	switch (response_id) {
-			    case Gtk.ResponseType.CLOSE:
-			    	dialog.destroy ();
-				break;
-			    case Gtk.ResponseType.OK:
-			    	dialog.destroy ();
-				    main_window.go_to_installed_clear ();
-				break;
-			}
-		    });
+		            dialog.response.connect ((response_id) => {
+		    	        switch (response_id) {
+			                case Gtk.ResponseType.CLOSE:
+			            	    dialog.destroy ();
+				                break;
+			                case Gtk.ResponseType.OK:
+			    	            dialog.destroy ();
+				                if (error.message.contains ("whilst offline")) {
+                                    main_window.open_network_settings ();
+                                } else {
+                                    main_window.go_to_installed_clear ();
+                                }
+				                break;
+			            }
+		            });
                     dialog.run ();
                 }
 

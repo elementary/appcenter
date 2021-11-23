@@ -38,21 +38,6 @@ public class AppCenter.Widgets.NetworkInfoBar : Gtk.InfoBar {
 
         try_set_revealed ();
 
-        response.connect ((response_id) => {
-            switch (response_id) {
-                case Gtk.ResponseType.ACCEPT:
-                    try {
-                        AppInfo settings = AppInfo.create_from_commandline ("gnome-control-center wifi", "Settings", NONE);
-                        settings.launch (null, null);
-                    } catch (GLib.Error e) {
-                        critical (e.message);
-                    }
-                    break;
-                default:
-                    assert_not_reached ();
-            }
-        });
-
         var network_monitor = NetworkMonitor.get_default ();
         network_monitor.network_changed.connect (() => {
             try_set_revealed ();

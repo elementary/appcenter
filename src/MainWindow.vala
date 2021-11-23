@@ -276,6 +276,20 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
 
+        network_info_bar.response.connect ((response_id) => {
+            switch (response_id) {
+                case Gtk.ResponseType.ACCEPT:
+                    try {
+                        open_network_settings ();
+                    } catch (GLib.Error e) {
+                        critical (e.message);
+                    }
+                    break;
+                default:
+                    assert_not_reached ();
+            }
+        });
+
         var grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL
         };
@@ -383,6 +397,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 	    return_button_history.clear ();
         return_button.no_show_all = true;
         return_button.visible = false;
+    }
+
+    public void open_network_settings () {
+        AppInfo settings = AppInfo.create_from_commandline ("gnome-control-center wifi", "Settings", NONE);
+        settings.launch (null, null);
     }
 
     public void search (string term, bool mimetype = false) {
