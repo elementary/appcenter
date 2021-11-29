@@ -123,6 +123,18 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         show.connect (on_view_mode_changed);
+
+        size_allocate.connect (() => {
+            int width = 0;
+            get_size (out width, null);
+            if (width > 550) {
+                search_entry.width_chars = 22;
+                search_entry.placeholder_text = _("Search Apps");
+            } else {
+                search_entry.width_chars = 9;
+                search_entry.placeholder_text = _("Search");
+            }
+        });
     }
 
     construct {
@@ -404,6 +416,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     private void package_selected (AppCenterCore.Package package) {
         selected_package = package;
+        search_entry.visible = false;
     }
 
     private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
