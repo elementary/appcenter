@@ -77,7 +77,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         release_expander_label = new Gtk.Label ("") {
             wrap = true,
-            use_markup = true
+            use_markup = true,
+            xalign = 0
         };
 
         release_expander = new Gtk.Expander ("") {
@@ -90,7 +91,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_expander.show_all ();
 
         release_single_label = new Gtk.Label (null) {
-            halign = Gtk.Align.START,
+            max_width_chars = 1,
             selectable = true,
             use_markup = true,
             valign = Gtk.Align.START,
@@ -122,7 +123,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             activate_on_single_click = true,
             column_spacing = 24,
             hexpand = true,
-            row_spacing = 12
+            row_spacing = 12,
+            selection_mode = Gtk.SelectionMode.NONE
         };
         info_flowbox.add (info_grid);
         info_flowbox.add (release_stack_revealer);
