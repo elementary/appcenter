@@ -15,15 +15,7 @@
 */
 
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
-    public bool working {
-        set {
-            if (value) {
-                spinner.start ();
-            } else {
-                spinner.stop ();
-            }
-        }
-    }
+    public bool working { get; set; }
 
     private Gtk.Revealer view_mode_revealer;
     private Gtk.Stack custom_title_stack;
@@ -43,7 +35,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
 
-    private ulong task_finished_connection = 0U;
     private uint configure_id;
     private int homepage_view_id;
     private int installed_view_id;
@@ -114,10 +105,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (show_homepage);
 
-        unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
-        client.notify["working"].connect (() => {
+        unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
+        aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
+
+        notify["working"].connect (() => {
             Idle.add (() => {
-                working = client.working;
+                spinner.active = working;
                 return GLib.Source.REMOVE;
             });
         });
@@ -301,15 +294,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public override bool delete_event (Gdk.EventAny event) {
-        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
-        if (client.working) {
-            if (task_finished_connection != 0U) {
-                client.disconnect (task_finished_connection);
-            }
-
+        if (working) {
             hide ();
-            task_finished_connection = client.notify["working"].connect (() => {
-                if (!visible && !client.working) {
+
+            notify["working"].connect (() => {
+                if (!visible && !working) {
                     destroy ();
                 }
             });
