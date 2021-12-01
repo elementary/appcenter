@@ -107,7 +107,8 @@ public class AppCenter.Homepage : AbstractView {
             column_spacing = 12,
             row_spacing = 12,
             homogeneous = true,
-            max_children_per_line = 5
+            max_children_per_line = 5,
+            selection_mode = Gtk.SelectionMode.NONE
         };
 
         
@@ -127,7 +128,8 @@ public class AppCenter.Homepage : AbstractView {
             column_spacing = 12,
             row_spacing = 12,
             homogeneous = true,
-            max_children_per_line = 5
+            max_children_per_line = 5,
+            selection_mode = Gtk.SelectionMode.NONE
         };
 
         recently_updated_grid.attach (picks_label, 0, 0);
@@ -236,6 +238,12 @@ public class AppCenter.Homepage : AbstractView {
         });
 
         recently_updated_carousel.child_activated.connect ((child) => {
+            var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
+
+            show_package (package_row_grid.package);
+        });
+
+        picks_carousel.child_activated.connect ((child) => {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
 
             show_package (package_row_grid.package);

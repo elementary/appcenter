@@ -451,6 +451,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void view_return () {
+        search_entry.visible = true;
         selected_package = null;
 
         if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
