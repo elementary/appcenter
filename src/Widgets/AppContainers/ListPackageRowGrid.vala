@@ -26,9 +26,24 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     }
 
     construct {
+        var package_name = new Gtk.Label (package.get_name ()) {
+            ellipsize = Pango.EllipsizeMode.END,
+            lines = 2,
+            max_width_chars = 1,
+            valign = Gtk.Align.END,
+            wrap = true,
+            xalign = 0
+        };
+        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
         package_summary = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
+            hexpand = true,
+            lines = 2,
+            max_width_chars = 1,
             valign = Gtk.Align.START,
+            width_chars = 20,
+            wrap = true,
             xalign = 0
         };
         package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-29 03:45+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2016-06-26 17:02+0000\n"
 "Last-Translator: Bone Pyae Sone <bone.burma@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "%s အားအောင်မြင်စွာ ထည့်သွင�
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:362
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -49,26 +49,26 @@ msgstr "%s အားအောင်မြင်စွာ ထည့်သွင�
 msgid "Failed to launch “%s“"
 msgstr "ဖယ်ထုတ်မယ်"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:261
-#: src/Views/Homepage.vala:271 src/Views/Homepage.vala:276
-#: src/Views/Homepage.vala:287 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
+#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
+#: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr ""
 
-#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "သွင်းမယ်"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr ""
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:356
+#: src/MainWindow.vala:365
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr ""
@@ -102,7 +102,7 @@ msgstr "ဖယ်ရှားနေပါသည်"
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1049
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1051
 msgid "Installing"
 msgstr ""
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "ပြီးပါပြီ"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1058 src/Core/FlatpakBackend.vala:1082
-#: src/Core/FlatpakBackend.vala:1190 src/Core/FlatpakBackend.vala:1214
-#: src/Core/FlatpakBackend.vala:1360 src/Core/FlatpakBackend.vala:1382
+#: src/Core/FlatpakBackend.vala:1060 src/Core/FlatpakBackend.vala:1084
+#: src/Core/FlatpakBackend.vala:1192 src/Core/FlatpakBackend.vala:1216
+#: src/Core/FlatpakBackend.vala:1362 src/Core/FlatpakBackend.vala:1384
 msgid "Cancelling"
 msgstr "မလုပ်တော့"
 
@@ -236,13 +236,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "သင့်စနစ်အတွက် မြှင့်တင်မွမ်းမံမှု %u ခု လုပ်ဆောင်နိုင်ပါတယ်"
 
-#: src/Core/FlatpakBackend.vala:1181
+#: src/Core/FlatpakBackend.vala:1183
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ဖယ်ထုတ်မယ်"
 
-#: src/Core/FlatpakBackend.vala:1351
+#: src/Core/FlatpakBackend.vala:1353
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -676,81 +676,81 @@ msgstr ""
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:476
 msgid "Homepage"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:484
+#: src/Views/AppInfoView.vala:482
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:490
+#: src/Views/AppInfoView.vala:488
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:496
+#: src/Views/AppInfoView.vala:494
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:507
+#: src/Views/AppInfoView.vala:505
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:552
+#: src/Views/AppInfoView.vala:550
 msgid "Extensions:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:655
+#: src/Views/AppInfoView.vala:653
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:666
+#: src/Views/AppInfoView.vala:664
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:674
+#: src/Views/AppInfoView.vala:672
 msgid "Share"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:988
+#: src/Views/AppInfoView.vala:986
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:991
+#: src/Views/AppInfoView.vala:989
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:996
+#: src/Views/AppInfoView.vala:994
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:999
+#: src/Views/AppInfoView.vala:997
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1003
+#: src/Views/AppInfoView.vala:1001
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1006
+#: src/Views/AppInfoView.vala:1004
 #, fuzzy
 msgid "Unknown License"
 msgstr "အခြေအနေမသိရှိရသေး"
 
-#: src/Views/AppInfoView.vala:1086
+#: src/Views/AppInfoView.vala:1084
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1094
+#: src/Views/AppInfoView.vala:1092
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1206
+#: src/Views/AppInfoView.vala:1204
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
@@ -795,19 +795,31 @@ msgstr ""
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:168
+#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr ""
+
+#: src/Views/CategoryView.vala:28
+#, fuzzy
+#| msgid "Latest Apps"
+msgid "Paid Apps"
+msgstr "နောက်ဆုံးထွက်"
+
+#: src/Views/CategoryView.vala:39
+#, fuzzy
+#| msgid "Latest Apps"
+msgid "Free Apps"
+msgstr "နောက်ဆုံးထွက်"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:86
 msgid "Categories"
 msgstr "အမျိုးအစားများ"
 
-#: src/Views/Homepage.vala:276 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:275 src/Views/Homepage.vala:286
 #, c-format
 msgid "Search %s"
 msgstr ""
@@ -822,33 +834,33 @@ msgstr "ရှာရန်"
 msgid "Card Number"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "ထောက်ပံ့ပစ္စည်းများ"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "အသံပိုင်း"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:29
 #, fuzzy
 msgid "Communication"
 msgstr "ပညာရေး"
 
-#: src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "တီထွင်ဖန်တီး"
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "ပညာရေး"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:49
 #, fuzzy
 msgid "Finance"
 msgstr "မလုပ်တော့"
 
-#: src/Widgets/CategoryFlowBox.vala:54
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "ဂိမ်းများ"
 
@@ -889,17 +901,21 @@ msgstr "ဗီဒီယို"
 msgid "Writing & Language"
 msgstr ""
 
+#: src/Widgets/CategoryFlowBox.vala:136
+msgid "Privacy & Security"
+msgstr ""
+
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:238
 msgid "Free"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:240
 #, fuzzy
 msgid "Install"
 msgstr "သွင်းမယ်"
@@ -994,7 +1010,7 @@ msgstr ""
 msgid "Up to Date"
 msgstr "နောက်ဆုံးပေါ် ခေတ်မီ ပြင်ဆင်ပြီး"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:259
 msgid "Update"
 msgstr "မြှင့်တင်မွမ်းမံမှု"
 
@@ -1032,9 +1048,6 @@ msgstr "မြှင့်တင်မွမ်းမံမှု"
 
 #~ msgid "Best Rated"
 #~ msgstr "အကောင်းဆုံး"
-
-#~ msgid "Latest Apps"
-#~ msgstr "နောက်ဆုံးထွက်"
 
 #~ msgid "Installing packages"
 #~ msgstr "ထည့်သွင်းနေသည်"

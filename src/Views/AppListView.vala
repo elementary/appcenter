@@ -85,24 +85,21 @@ namespace AppCenter.Views {
             current_visible_index = 0U;
         }
 
-        protected override AppRowInterface construct_row_for_package (AppCenterCore.Package package) {
-            return new Widgets.PackageRow.list (package);
-        }
-
         // Show 20 more apps on the listbox
         private void show_more_apps () {
             uint old_index = current_visible_index;
             while (current_visible_index < list_store.get_n_items ()) {
                 var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
-                var row = construct_row_for_package (package);
-                add_row (row);
+                var row = new Widgets.PackageRow.list (package);
+                list_box.add (row);
+
                 current_visible_index++;
                 if (old_index + 20 < current_visible_index) {
                     break;
                 }
             }
 
-            on_list_changed ();
+            list_box.invalidate_sort ();
         }
 
         private int search_priority (string name) {
@@ -148,13 +145,13 @@ namespace AppCenter.Views {
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (AppRowInterface row1, AppRowInterface row2) {
+        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
             return compare_packages (row1.get_package (), row2.get_package ());
         }
 
 #if CURATED
         [CCode (instance_pos = -1)]
-        private void row_update_header (AppRowInterface row, AppRowInterface? before) {
+        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
             bool elementary_native = row.get_package ().is_native;
 
             if (!elementary_native) {
@@ -164,7 +161,7 @@ namespace AppCenter.Views {
             }
         }
 
-        private void mark_row_non_curated (AppRowInterface row) {
+        private void mark_row_non_curated (Widgets.PackageRow row) {
             var header = new Gtk.Label (_("Non-Curated Apps"));
             header.margin = 12;
             header.margin_top = 18;

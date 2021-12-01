@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014–2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2014–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -707,18 +707,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            if (package.is_os_updates) {
-                package.notify["state"].connect (() => {
-                    Idle.add (() => {
-                        // For the OS updates component, this is the "x components with updates" text
-                        author_label.label = package.get_version ();
-
-                        parse_description (package.get_description ());
-                        return false;
-                    });
-                });
-            }
-
             realize.connect (load_more_content);
         }
 
@@ -816,13 +804,19 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                if (package.is_os_updates) {
-                    author_label.label = package.get_version ();
-                } else {
-                    author_label.label = package.author_title;
-                }
+                var description = package.get_description ();
+                Idle.add (() => {
+                    if (package.is_os_updates) {
+                        author_label.label = package.get_version ();
+                    } else {
+                        author_label.label = package.author_title;
+                    }
 
-                parse_description (package.get_description ());
+                    if (description != null) {
+                        app_description.label = description;
+                    }
+                    return false;
+                });
 
                 get_app_download_size.begin ();
 
@@ -943,27 +937,6 @@ namespace AppCenter.Views {
                 });
             } catch (Error e) {
                 critical (e.message);
-            }
-        }
-
-        private void parse_description (string? description) {
-            if (description != null) {
-                string[] lines = description.split ("\n");
-                string stripped_description = lines[0].strip ();
-                for (int i = 1; i < lines.length; i++) {
-                    stripped_description += " " + lines[i].strip ();
-                }
-
-                // This method may be called in a thread, pass back to GTK thread
-                Idle.add (() => {
-                    try {
-                        app_description.label = AppStream.markup_convert_simple (stripped_description);
-                    } catch (Error e) {
-                        warning ("Failed to parse appstream description: %s", e.message);
-                    }
-
-                    return false;
-                });
             }
         }
 
@@ -1207,8 +1180,7 @@ namespace AppCenter.Views {
                 activate_on_single_click = true,
                 column_spacing = 12,
                 row_spacing = 12,
-                homogeneous = true,
-                min_children_per_line = 2
+                homogeneous = true
             };
 
             foreach (var author_package in author_packages) {

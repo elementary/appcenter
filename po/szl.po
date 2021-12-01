@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-29 03:45+0000\n"
+"POT-Creation-Date: 2021-11-16 23:08+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -38,7 +38,7 @@ msgstr "%s było sprownie zainstalowane"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:362
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -50,25 +50,25 @@ msgstr "%s było sprownie zainstalowane"
 msgid "Failed to launch “%s“"
 msgstr "Niy szło ôdinstalować „%s”"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:261
-#: src/Views/Homepage.vala:271 src/Views/Homepage.vala:276
-#: src/Views/Homepage.vala:287 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
+#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
+#: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Katalog dōmowy"
 
-#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Wyszukej program"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:356
+#: src/MainWindow.vala:365
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "Ôtwōrz"
@@ -102,7 +102,7 @@ msgstr "Kasowanie paketōw"
 msgid "Downloading"
 msgstr "Pobiyranie"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1049
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1051
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "Fertich"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1058 src/Core/FlatpakBackend.vala:1082
-#: src/Core/FlatpakBackend.vala:1190 src/Core/FlatpakBackend.vala:1214
-#: src/Core/FlatpakBackend.vala:1360 src/Core/FlatpakBackend.vala:1382
+#: src/Core/FlatpakBackend.vala:1060 src/Core/FlatpakBackend.vala:1084
+#: src/Core/FlatpakBackend.vala:1192 src/Core/FlatpakBackend.vala:1216
+#: src/Core/FlatpakBackend.vala:1362 src/Core/FlatpakBackend.vala:1384
 msgid "Cancelling"
 msgstr "Pociepowanie"
 
@@ -240,11 +240,11 @@ msgstr[0] "Je dostympno %u aktualizacyjo dlo tego systymu"
 msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
-#: src/Core/FlatpakBackend.vala:1181
+#: src/Core/FlatpakBackend.vala:1183
 msgid "Uninstalling"
 msgstr "Ôdinstalowowanie"
 
-#: src/Core/FlatpakBackend.vala:1351
+#: src/Core/FlatpakBackend.vala:1353
 msgid "Updating"
 msgstr "Aktualizowanie"
 
@@ -685,80 +685,80 @@ msgstr ""
 msgid "Screenshot Not Available"
 msgstr "Przechyt ekranu niydostympny"
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:476
 msgid "Homepage"
 msgstr "Strōna WWW"
 
-#: src/Views/AppInfoView.vala:484
+#: src/Views/AppInfoView.vala:482
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:490
+#: src/Views/AppInfoView.vala:488
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:496
+#: src/Views/AppInfoView.vala:494
 msgid "Help"
 msgstr "Pōmoc"
 
-#: src/Views/AppInfoView.vala:507
+#: src/Views/AppInfoView.vala:505
 msgid "What's New:"
 msgstr "Co nowego:"
 
-#: src/Views/AppInfoView.vala:552
+#: src/Views/AppInfoView.vala:550
 msgid "Extensions:"
 msgstr "Rozszyrzynia:"
 
-#: src/Views/AppInfoView.vala:655
+#: src/Views/AppInfoView.vala:653
 msgid "Link copied to clipboard"
 msgstr "Link skopiowany do skrytki"
 
-#: src/Views/AppInfoView.vala:666
+#: src/Views/AppInfoView.vala:664
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Wyprōbuj %s w AppCenter:"
 
-#: src/Views/AppInfoView.vala:674
+#: src/Views/AppInfoView.vala:672
 msgid "Share"
 msgstr "Udostympniōne"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:988
+#: src/Views/AppInfoView.vala:986
 msgid "Public Domain"
 msgstr "Dōmyna publiczno"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:991
+#: src/Views/AppInfoView.vala:989
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://pl.m.wikipedia.org/wiki/Dōmyna_publiczno"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:996
+#: src/Views/AppInfoView.vala:994
 msgid "Free Software"
 msgstr "Wolne ôprogramowanie"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:999
+#: src/Views/AppInfoView.vala:997
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1003
+#: src/Views/AppInfoView.vala:1001
 msgid "Proprietary"
 msgstr "Włosnościowy"
 
-#: src/Views/AppInfoView.vala:1006
+#: src/Views/AppInfoView.vala:1004
 msgid "Unknown License"
 msgstr "Niyznōmo licyncyjo"
 
-#: src/Views/AppInfoView.vala:1086
+#: src/Views/AppInfoView.vala:1084
 msgid "Fund"
 msgstr "Zafunduj"
 
-#: src/Views/AppInfoView.vala:1094
+#: src/Views/AppInfoView.vala:1092
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozrost tego programu"
 
-#: src/Views/AppInfoView.vala:1206
+#: src/Views/AppInfoView.vala:1204
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Inksze programy autorstwa %s"
@@ -803,19 +803,31 @@ msgstr ""
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:168
+#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "Programy niynadzorowane"
+
+#: src/Views/CategoryView.vala:28
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Paid Apps"
+msgstr "Wyszukej program"
+
+#: src/Views/CategoryView.vala:39
+#, fuzzy
+#| msgid "Free"
+msgid "Free Apps"
+msgstr "Wolny"
 
 #: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Ôstatnio zaktualizowane"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:86
 msgid "Categories"
 msgstr "Kategoryje"
 
-#: src/Views/Homepage.vala:276 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:275 src/Views/Homepage.vala:286
 #, c-format
 msgid "Search %s"
 msgstr "Wyszukej %s"
@@ -830,31 +842,31 @@ msgstr "Szukej"
 msgid "Card Number"
 msgstr "Numer karty"
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Akcesoria"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Źwiynk"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
 msgstr "Kōmunikacyjo"
 
-#: src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Rozrost ôprogramowanio"
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Edukacyjo"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
 msgstr "Finance"
 
-#: src/Widgets/CategoryFlowBox.vala:54
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Gry"
 
@@ -894,17 +906,23 @@ msgstr "Wideo"
 msgid "Writing & Language"
 msgstr "Pisanie i jynzyk"
 
+#: src/Widgets/CategoryFlowBox.vala:136
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Polityka prywatności"
+
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"
 msgstr "Wymogo płatności, co niy sōm włōnczōne"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:238
 msgid "Free"
 msgstr "Wolny"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:240
 msgid "Install"
 msgstr "Instalacyjo"
 
@@ -999,7 +1017,7 @@ msgstr "Kludzocze"
 msgid "Up to Date"
 msgstr "Teroźne"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:259
 msgid "Update"
 msgstr "Zaktualizuj"
 

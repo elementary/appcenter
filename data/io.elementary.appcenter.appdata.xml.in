@@ -11,6 +11,17 @@
     <p>The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
+    <release version="3.9.0" date="2021-11-23" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Amusements appear in the Games category</li>
+          <li>Categories show as a grid instead of a list</li>
+          <li>Allow window to shrink to much narrower sizes</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.8.2" date="2021-10-29" urgency="medium">
       <description>
         <p>Fixes:</p>

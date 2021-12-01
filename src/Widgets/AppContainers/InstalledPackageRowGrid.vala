@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2017 elementary LLC. (https://elementary.io)
+ * Copyright 2014-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,79 +20,91 @@
 public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid {
     public signal void changed ();
 
-    Gtk.Label app_version;
-    Gtk.Stack release_stack;
-    Gtk.Expander release_expander;
-    Gtk.Label release_expander_label;
-    Gtk.Label release_description;
-    Gtk.Label release_single_label;
+    private AppStream.Release? newest = null;
+    private Gtk.Expander release_expander;
+    private Gtk.Label app_version;
+    private Gtk.Label release_description;
+    private Gtk.Label release_expander_label;
+    private Gtk.Label release_single_label;
     private Gtk.Revealer release_stack_revealer;
-    AppStream.Release? newest = null;
+    private Gtk.Stack release_stack;
 
-    private Gtk.Grid info_grid;
+    private static Gtk.SizeGroup info_size_group;
 
-    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
-        base (package);
+    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
+        Object (package: package);
 
         if (action_size_group != null) {
             action_size_group.add_widget (action_button);
             action_size_group.add_widget (cancel_button);
         }
 
-        if (info_size_group != null) {
-            info_size_group.add_widget (info_grid);
-        }
-
         set_up_package ();
+    }
+
+    static construct {
+        info_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
     }
 
     construct {
         updates_view = true;
-        app_version = new Gtk.Label (null);
+
+        var package_name = new Gtk.Label (package.get_name ()) {
+            valign = Gtk.Align.END,
+            xalign = 0
+        };
+        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
+        app_version = new Gtk.Label (null) {
+            ellipsize = Pango.EllipsizeMode.END,
+            valign = Gtk.Align.START,
+            xalign = 0
+        };
         app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        app_version.valign = Gtk.Align.START;
-        ((Gtk.Misc) app_version).xalign = 0;
 
-        release_description = new Gtk.Label (null);
-        release_description.selectable = true;
-        release_description.use_markup = true;
-        release_description.wrap = true;
-        release_description.margin_start = 12;
-        release_description.xalign = 0;
+        release_description = new Gtk.Label (null) {
+            margin_start = 12,
+            selectable = true,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
 
-        release_expander = new Gtk.Expander ("");
-        release_expander.halign = release_expander.valign = Gtk.Align.START;
+        release_expander_label = new Gtk.Label ("") {
+            wrap = true,
+            use_markup = true
+        };
+
+        release_expander = new Gtk.Expander ("") {
+            halign = Gtk.Align.START,
+            valign = Gtk.Align.START,
+            label_widget = release_expander_label,
+            visible = true
+        };
         release_expander.add (release_description);
-        release_expander.visible = true;
         release_expander.show_all ();
-        release_expander.button_press_event.connect (() => {
-            release_expander.expanded = !release_expander.expanded;
-            return true;
-        });
 
-        release_expander_label = new Gtk.Label ("");
-        release_expander_label.wrap = true;
-        release_expander_label.use_markup = true;
-        release_expander.set_label_widget (release_expander_label);
-
-        release_single_label = new Gtk.Label (null);
-        release_single_label.selectable = true;
-        release_single_label.use_markup = true;
-        release_single_label.wrap = true;
-        release_single_label.xalign = 0;
-        release_single_label.halign = release_single_label.valign = Gtk.Align.START;
-        release_single_label.visible = true;
+        release_single_label = new Gtk.Label (null) {
+            halign = Gtk.Align.START,
+            selectable = true,
+            use_markup = true,
+            valign = Gtk.Align.START,
+            visible = true,
+            wrap = true,
+            xalign = 0
+        };
         release_single_label.show_all ();
 
         release_stack = new Gtk.Stack ();
         release_stack.add (release_expander);
         release_stack.add (release_single_label);
 
-        release_stack_revealer = new Gtk.Revealer ();
-        release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        release_stack_revealer = new Gtk.Revealer () {
+            transition_type = Gtk.RevealerTransitionType.CROSSFADE
+        };
         release_stack_revealer.add (release_stack);
 
-        info_grid = new Gtk.Grid () {
+        var info_grid = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 6,
             valign = Gtk.Align.START
@@ -105,6 +116,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         action_stack.homogeneous = false;
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
+        action_stack.hexpand = true;
 
         var grid = new Gtk.Grid () {
             column_spacing = 24
@@ -114,6 +126,13 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         grid.attach (action_stack, 3, 0);
 
         add (grid);
+
+        info_size_group.add_widget (info_grid);
+
+        release_expander.button_press_event.connect (() => {
+            release_expander.expanded = !release_expander.expanded;
+            return true;
+        });
     }
 
     protected override void set_up_package () {
@@ -124,8 +143,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                 app_version.label = package.get_version ();
             }
         }
-
-        app_version.ellipsize = Pango.EllipsizeMode.END;
 
         base.set_up_package ();
     }
