@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-16 23:08+0000\n"
-"PO-Revision-Date: 2021-11-16 13:54+0000\n"
+"PO-Revision-Date: 2021-11-19 09:53+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -888,10 +889,8 @@ msgid "Writing & Language"
 msgstr "Kirjoittaminen ja kieli"
 
 #: src/Widgets/CategoryFlowBox.vala:136
-#, fuzzy
-#| msgid "Privacy Policy"
 msgid "Privacy & Security"
-msgstr "Yksityisyyskäytäntö"
+msgstr "Yksityisyys ja tietoturva"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"

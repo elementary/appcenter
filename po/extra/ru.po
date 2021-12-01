@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-16 23:08+0000\n"
-"PO-Revision-Date: 2021-11-12 17:48+0000\n"
+"PO-Revision-Date: 2021-11-30 16:23+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -55,15 +55,15 @@ msgstr "Улучшения:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Amusements appear in the Games category"
-msgstr ""
+msgstr "Развлечения появляются в категории Игры"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "Категории отображаются в виде сетки вместо списка"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Allow window to shrink to much narrower sizes"
-msgstr ""
+msgstr "Теперь можно сжимать окно до гораздо более узких размеров"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:45

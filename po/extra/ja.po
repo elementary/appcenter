@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-16 23:08+0000\n"
-"PO-Revision-Date: 2021-11-16 04:08+0000\n"
+"PO-Revision-Date: 2021-11-24 06:52+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -53,7 +53,7 @@ msgstr "改善点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Amusements appear in the Games category"
-msgstr ""
+msgstr "“Amusement” タグのついたアプリを“ゲーム”カテゴリーに表示"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Categories show as a grid instead of a list"
