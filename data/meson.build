@@ -13,11 +13,11 @@ foreach i : icon_sizes
     )
 endforeach
 
-install_data(
-    join_paths('icons', 'app', 'symbolic.svg'),
-    install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'symbolic', 'apps'),
-    rename: meson.project_name() + '-symbolic.svg'
-)
+#install_data(
+#    join_paths('icons', 'app', 'symbolic.svg'),
+#    install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'symbolic', 'apps'),
+#    rename: meson.project_name() + '-symbolic.svg'
+#)
 
 # Daemon Desktop file (for GNOME Session autostart)
 configure_file(
