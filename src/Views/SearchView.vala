@@ -66,10 +66,21 @@ public class AppCenter.Views.SearchView : AbstractView {
     }
 
     public void search (string search_term, AppStream.Category? category, bool mimetype = false) {
+        /*
+            Annotation 01
+            Atheesh Thirumalairajan (@candiedoperation)
+            https://github.com/candiedoperation
+            
+            This Method has been implement in order to
+            update the dynamic FlatHub Link if no apps
+            match the search term.
+        */
+        
         current_search_term = search_term;
         current_category = category;
 
         app_list_view.clear ();
+        app_list_view.set_flathub_uri(current_search_term); //Refer Annotation 01       
         app_list_view.current_search_term = current_search_term;
         unowned Client client = Client.get_default ();
 
