@@ -21,19 +21,21 @@
 namespace AppCenter.Views {
     /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
+        private Granite.Widgets.AlertView alert_view;
         public string? current_search_term = null;
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
 
         construct {
-            var flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (_(current_search_term, "Flathub"));
-            var alert_view = new Granite.Widgets.AlertView (
+            var flathub_link = "<a href='https://flathub.org'>%s</a>".printf (_("Flathub"));
+            alert_view = new Granite.Widgets.AlertView (
                 _("No Apps Found"),
-                _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
+                _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf ("https://flathub.org"),
                 "edit-find-symbolic"
             );
-            alert_view.show_all ();
-
+            
+            alert_view.show_all ();        
+        
 #if CURATED
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 #endif
@@ -47,6 +49,21 @@ namespace AppCenter.Views {
             });
 
             add (scrolled);
+        }
+        
+        public void set_flathub_uri (string uri) {
+            /*
+                Atheesh Thirumalairajan (@candiedoperation)
+                https://github.com/candiedoperation
+                
+                This Method has been added in order to provide
+                dynamic flathub.org links for current searched
+                text in the App Search Box
+            */
+            
+            var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (uri, _("Flathub"));        
+            alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
+            alert_view.show_all ();            
         }
 
         public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
