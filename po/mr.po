@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 23:08+0000\n"
+"POT-Creation-Date: 2021-12-03 18:52+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:334
+#: src/Application.vala:38 src/Core/Package.vala:333
 msgid "AppCenter"
 msgstr "अनुप्रयोग भांडार(अॅप सेंटर)"
 
@@ -48,9 +48,9 @@ msgstr "\"%s\" इन्स्टॉल झाले"
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" लाँच करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
-#: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:267
+#: src/Views/Homepage.vala:277 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:292 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
@@ -100,7 +100,7 @@ msgstr "पॅकेज मिटवत आहे"
 msgid "Downloading"
 msgstr "डाउनलोड करित आहे"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1051
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1053
 msgid "Installing"
 msgstr "इन्स्टॉल होत आहे"
 
@@ -145,9 +145,9 @@ msgid "Finished"
 msgstr "पूर्ण झाले"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1060 src/Core/FlatpakBackend.vala:1084
-#: src/Core/FlatpakBackend.vala:1192 src/Core/FlatpakBackend.vala:1216
-#: src/Core/FlatpakBackend.vala:1362 src/Core/FlatpakBackend.vala:1384
+#: src/Core/FlatpakBackend.vala:1062 src/Core/FlatpakBackend.vala:1086
+#: src/Core/FlatpakBackend.vala:1194 src/Core/FlatpakBackend.vala:1218
+#: src/Core/FlatpakBackend.vala:1364 src/Core/FlatpakBackend.vala:1386
 msgid "Cancelling"
 msgstr "रद्द करीत आहे"
 
@@ -236,41 +236,41 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहे"
 msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
-#: src/Core/FlatpakBackend.vala:1183
+#: src/Core/FlatpakBackend.vala:1185
 msgid "Uninstalling"
 msgstr "विस्थापित करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:1353
+#: src/Core/FlatpakBackend.vala:1355
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
-#: src/Core/Package.vala:304
+#: src/Core/Package.vala:303
 #, c-format
 msgid "%s Developers"
 msgstr "%s डेव्हलपर"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:335
 msgid "elementary Updates"
 msgstr "एलिमेंटरी अपडेट"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:337
 msgid "Ubuntu (non-curated)"
 msgstr "उबंटू (नॉन-क्युरेटेड)"
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:342
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (सिस्टम-व्यापी)"
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:347
 msgid "Ubuntu Drivers"
 msgstr "उबंटू ड्राइव्हर्स"
 
-#: src/Core/Package.vala:351
+#: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
 msgstr "अज्ञात उत्पत्ति (नॉन-क्युरेटेड)"
 
-#: src/Core/Package.vala:523
+#: src/Core/Package.vala:522
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
@@ -280,44 +280,44 @@ msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्था�
 msgid "%s (local)"
 msgstr "%s (स्थानिक)"
 
-#: src/Core/UpdateManager.vala:38
+#: src/Core/UpdateManager.vala:37
 msgid "Operating System Updates"
 msgstr "ऑपरेटिंग सिस्टिमचे अपडेट्स"
 
-#: src/Core/UpdateManager.vala:39
+#: src/Core/UpdateManager.vala:38
 msgid "Updates to system components"
 msgstr "सिस्टिमच्या भागांचे अपडेट्स"
 
-#: src/Core/UpdateManager.vala:87
+#: src/Core/UpdateManager.vala:86
 #, c-format
 msgid "Version: %s"
 msgstr "आवृत्ती: %s"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:129
 msgid "Flatpak runtime"
 msgstr "फ्लॅटपॅक रनटाइम"
 
-#: src/Core/UpdateManager.vala:147
+#: src/Core/UpdateManager.vala:146
 msgid "No components with updates"
 msgstr "कोणत्याही भागांचे अपडेट्स उपलब्ध नाहीत"
 
-#: src/Core/UpdateManager.vala:152
+#: src/Core/UpdateManager.vala:151
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u अपडेट्स उपलब्ध असलेला भाग"
 msgstr[1] "%u अपडेट्स उपलब्ध असलेले भाग"
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:153
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:192
 msgid "Restart Required"
 msgstr "पुन्हा सुरु करणे आवश्यक"
 
-#: src/Core/UpdateManager.vala:194
+#: src/Core/UpdateManager.vala:193
 msgid "Please restart your system to finalize updates"
 msgstr "अपडेट्सना अंतिम स्वरूप देण्यासाठी कृपया आपली सिस्टिम पुन्हा सुरु करा"
 
@@ -715,42 +715,42 @@ msgid "Share"
 msgstr "शेअर करा"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:986
+#: src/Views/AppInfoView.vala:959
 msgid "Public Domain"
 msgstr "सार्वजनिक डोमेन"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:989
+#: src/Views/AppInfoView.vala:962
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%9C%E0%A4%A8%E0%A4%BF%E0%A4%95_%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:994
+#: src/Views/AppInfoView.vala:967
 msgid "Free Software"
 msgstr "फ्री सॉफ्टवेअर"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:997
+#: src/Views/AppInfoView.vala:970
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1001
+#: src/Views/AppInfoView.vala:974
 msgid "Proprietary"
 msgstr "मालकी"
 
-#: src/Views/AppInfoView.vala:1004
+#: src/Views/AppInfoView.vala:977
 msgid "Unknown License"
 msgstr "अज्ञात परवाना"
 
-#: src/Views/AppInfoView.vala:1084
+#: src/Views/AppInfoView.vala:1057
 msgid "Fund"
 msgstr "निधी"
 
-#: src/Views/AppInfoView.vala:1092
+#: src/Views/AppInfoView.vala:1065
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
-#: src/Views/AppInfoView.vala:1204
+#: src/Views/AppInfoView.vala:1177
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
@@ -776,7 +776,7 @@ msgid "Requesting a restart failed. Restart manually to finish installing update
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:186
+#: src/Views/AppListUpdateView.vala:210
 msgid "Update All"
 msgstr "सर्व अपडेट करा"
 
@@ -793,7 +793,7 @@ msgstr ""
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:165 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "नॉन-क्युरेटेड अॅप्स"
 
@@ -809,15 +809,15 @@ msgstr "अनुप्रयोग शोधा"
 msgid "Free Apps"
 msgstr "विनामुल्य"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:73
 msgid "Recently Updated"
 msgstr "अलीकडे अपडेट केलेले"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:95
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:275 src/Views/Homepage.vala:286
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:292
 #, c-format
 msgid "Search %s"
 msgstr "%s शोधा"
