@@ -36,7 +36,6 @@ namespace AppCenter.Views {
             );
             
             alert_view.show_all ();        
-        
 #if CURATED
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 #endif
