@@ -16,6 +16,7 @@
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  *              Jeremy Wootten <jeremy@elementaryos.org>
+ *              Atheesh Thirumalairajan <candiedoperation@icloud.com>
  */
 
 namespace AppCenter.Views {
@@ -52,15 +53,6 @@ namespace AppCenter.Views {
         }
         
         notify["current-search-term"].connect (() => {
-            /*
-                Atheesh Thirumalairajan (@candiedoperation)
-                https://github.com/candiedoperation
-                
-                This Method has been added in order to provide
-                dynamic flathub.org links for current searched
-                text in the App Search Box
-            */
-            
             var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (uri, _("Flathub"));        
             alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
             alert_view.show_all ();            
