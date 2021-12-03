@@ -117,6 +117,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_view.package_selected.connect (package_selected);
         search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (show_homepage);
+        search_view.category_return_clicked.connect (show_category);
 
         unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
         client.notify["working"].connect (() => {
@@ -558,4 +559,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         stack.visible_child = homepage;
         view_mode_revealer.reveal_child = true;
     }
+
+    public void show_category (AppStream.Category category) {
+        search ("");
+        return_button_history.clear ();
+        view_mode.selected = homepage_view_id;
+        stack.visible_child = homepage;
+        homepage.show_app_list_for_category (category);
+    }
+
 }

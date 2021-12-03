@@ -24,6 +24,7 @@ public class AppCenter.Views.SearchView : AbstractView {
 
     public bool viewing_package { get; private set; default = false; }
     public signal void home_return_clicked ();
+    public signal void category_return_clicked (AppStream.Category category);
     private AppStream.Category? current_category;
     private string current_search_term;
 
@@ -51,13 +52,15 @@ public class AppCenter.Views.SearchView : AbstractView {
                 viewing_package = false;
 
                 if (current_category != null) {
-                    subview_entered (_("Home"), true, current_category.name);
+                    subview_entered (current_category.name, true, current_category.name);
                 } else {
                     subview_entered (_("Home"), true);
                 }
             }
+        } else if (current_category != null) {
+            category_return_clicked (current_category);
         } else {
-                home_return_clicked ();
+            home_return_clicked ();
         }
     }
 
@@ -80,7 +83,7 @@ public class AppCenter.Views.SearchView : AbstractView {
         }
 
         if (current_category != null) {
-            subview_entered (_("Home"), true, current_category.name);
+            subview_entered (current_category.name, true, current_category.name);
         } else {
             subview_entered (_("Home"), true);
         }

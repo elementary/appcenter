@@ -427,7 +427,7 @@ public class AppCenter.Homepage : AbstractView {
         }
     }
 
-    private void show_app_list_for_category (AppStream.Category category) {
+    public void show_app_list_for_category (AppStream.Category category) {
         subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
         current_category = category;
         var child = get_child_by_name (category.name);
