@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 18:52+0000\n"
+"POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2021-07-11 16:58+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -771,20 +771,20 @@ msgstr ""
 msgid "Update All"
 msgstr "සියල්ල යාවත්කාල කරන්න"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
 msgstr ""
 
-#: src/Views/AppListView.vala:31
+#: src/Views/AppListView.vala:32
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:32
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:165 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr ""
 

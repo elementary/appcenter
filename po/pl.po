@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 18:52+0000\n"
+"POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2021-11-17 13:22+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -781,20 +781,20 @@ msgstr "Żądanie restartu nieudane. Uruchom ponownie ręcznie, aby dokończyć 
 msgid "Update All"
 msgstr "Aktualizuj wszystko"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/AppListView.vala:31
+#: src/Views/AppListView.vala:32
 msgid "No Apps Found"
 msgstr "Nie znaleziono aplikacji"
 
-#: src/Views/AppListView.vala:32
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Spróbuj zmienić szukane wyrażenie. Możesz także instalować aplikacji Flatpak np. z %s"
 
-#: src/Views/AppListView.vala:165 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "Programy bez przeglądu"
 

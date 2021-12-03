@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 18:52+0000\n"
+"POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2021-11-30 18:33+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -776,20 +776,20 @@ msgstr "Žiadosť o reštart sa nepodarila. Reštartujte ručne pre dokončenie 
 msgid "Update All"
 msgstr "Aktualizovať všetko"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/AppListView.vala:31
+#: src/Views/AppListView.vala:32
 msgid "No Apps Found"
 msgstr "Neboli nájdené žiadne aplikácie"
 
-#: src/Views/AppListView.vala:32
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Skúste pozmeniť vyhľadávaný výraz. Prípadne môžete nainštalovať Flatpak aplikácie z iného zdroja, napríklad z %s"
 
-#: src/Views/AppListView.vala:165 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "Nepreverené aplikácie"
 

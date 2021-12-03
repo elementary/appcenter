@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 18:52+0000\n"
+"POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2021-11-17 17:32+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
@@ -782,20 +782,20 @@ msgstr "Помилка запиту на перезапуск. Перезапу�
 msgid "Update All"
 msgstr "Оновити все"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/AppListView.vala:31
+#: src/Views/AppListView.vala:32
 msgid "No Apps Found"
 msgstr "Застосунків не знайдено"
 
-#: src/Views/AppListView.vala:32
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Спробуйте змінити пошукові терміни. Ви також можете завантажити застосунки Flatpak, наприклад з %s"
 
-#: src/Views/AppListView.vala:165 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "Не куровані застосунки"
 

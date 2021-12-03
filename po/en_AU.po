@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 18:52+0000\n"
+"POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
 "Language-Team: English (Australia) <https://weblate.elementary.io/projects/appcenter/appcenter/en_AU/>\n"
@@ -783,20 +783,20 @@ msgstr ""
 msgid "Update All"
 msgstr ""
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
 msgstr ""
 
-#: src/Views/AppListView.vala:31
+#: src/Views/AppListView.vala:32
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:32
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:165 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr ""
 

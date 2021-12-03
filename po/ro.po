@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 18:52+0000\n"
+"POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2021-11-28 22:36+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -781,20 +781,20 @@ msgstr "Cererea de repornire a eșuat. Repornește manual pentru a finaliza inst
 msgid "Update All"
 msgstr "Actualizează totul"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/AppListView.vala:31
+#: src/Views/AppListView.vala:32
 msgid "No Apps Found"
 msgstr "Nicio aplicație găsită"
 
-#: src/Views/AppListView.vala:32
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi aplicații Flatpak de exemplu de la %s"
 
-#: src/Views/AppListView.vala:165 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "Aplicații neverificate"
 
