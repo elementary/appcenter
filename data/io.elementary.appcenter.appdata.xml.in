@@ -15,6 +15,7 @@
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Link to Flathub's search page when no search results are found</li>
           <li>Updated translations</li>
         </ul>
       </description>
