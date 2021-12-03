@@ -66,16 +66,6 @@ public class AppCenter.Views.SearchView : AbstractView {
     }
 
     public void search (string search_term, AppStream.Category? category, bool mimetype = false) {
-        /*
-            Annotation 01
-            Atheesh Thirumalairajan (@candiedoperation)
-            https://github.com/candiedoperation
-            
-            This Method has been implement in order to
-            update the dynamic FlatHub Link if no apps
-            match the search term.
-        */
-        
         current_search_term = search_term;
         current_category = category;
 
