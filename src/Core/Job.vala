@@ -53,19 +53,19 @@ public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
 
 public class AppCenterCore.InstallPackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation.ProgressCallback cb;
+    public ChangeInformation? change_info;
     public Cancellable? cancellable;
 }
 
 public class AppCenterCore.UpdatePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation.ProgressCallback cb;
+    public ChangeInformation? change_info;
     public Cancellable? cancellable;
 }
 
 public class AppCenterCore.RemovePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation.ProgressCallback cb;
+    public ChangeInformation? change_info;
     public Cancellable? cancellable;
 }
 
