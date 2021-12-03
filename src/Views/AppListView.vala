@@ -51,7 +51,7 @@ namespace AppCenter.Views {
             add (scrolled);
         }
         
-        public void set_flathub_uri (string uri) {
+        notify["current-search-term"].connect (() => {
             /*
                 Atheesh Thirumalairajan (@candiedoperation)
                 https://github.com/candiedoperation
