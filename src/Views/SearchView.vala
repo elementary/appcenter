@@ -70,7 +70,7 @@ public class AppCenter.Views.SearchView : AbstractView {
         current_category = category;
 
         app_list_view.clear ();
-        app_list_view.set_flathub_uri(current_search_term); //Refer Annotation 01       
+        app_list_view.set_flathub_uri(current_search_term);
         app_list_view.current_search_term = current_search_term;
         unowned Client client = Client.get_default ();
 
