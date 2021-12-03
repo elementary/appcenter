@@ -34,8 +34,7 @@ namespace AppCenter.Views {
                 _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf ("https://flathub.org"),
                 "edit-find-symbolic"
             );
-            
-            alert_view.show_all ();        
+            alert_view.show_all ();       
 #if CURATED
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 #endif
