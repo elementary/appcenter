@@ -31,7 +31,7 @@ namespace AppCenter.Views {
             var flathub_link = "<a href='https://flathub.org'>%s</a>".printf (_("Flathub"));
             alert_view = new Granite.Widgets.AlertView (
                 _("No Apps Found"),
-                _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf ("https://flathub.org"),
+                _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
                 "edit-find-symbolic"
             );
             alert_view.show_all ();
