@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 23:08+0000\n"
+"POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:334
+#: src/Application.vala:38 src/Core/Package.vala:333
 msgid "AppCenter"
 msgstr "వినియోగకేంద్రం"
 
@@ -46,9 +46,9 @@ msgstr ""
 msgid "Failed to launch “%s“"
 msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
-#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
-#: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:176 src/Views/Homepage.vala:267
+#: src/Views/Homepage.vala:277 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:292 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr ""
 
@@ -98,7 +98,7 @@ msgstr "ప్యాకేజీలు తొలగించబడుతున�
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1051
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1053
 msgid "Installing"
 msgstr ""
 
@@ -143,9 +143,9 @@ msgid "Finished"
 msgstr "పూర్తయింది"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1060 src/Core/FlatpakBackend.vala:1084
-#: src/Core/FlatpakBackend.vala:1192 src/Core/FlatpakBackend.vala:1216
-#: src/Core/FlatpakBackend.vala:1362 src/Core/FlatpakBackend.vala:1384
+#: src/Core/FlatpakBackend.vala:1062 src/Core/FlatpakBackend.vala:1086
+#: src/Core/FlatpakBackend.vala:1194 src/Core/FlatpakBackend.vala:1218
+#: src/Core/FlatpakBackend.vala:1364 src/Core/FlatpakBackend.vala:1386
 msgid "Cancelling"
 msgstr "రద్దుచేస్తోంది"
 
@@ -234,45 +234,45 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u నిర్వహణ పద్ధతి భాగములకు సవరణ లభ్యం"
 msgstr[1] "%u నిర్వహణ పద్ధతి భాగములకు సవరణలు లభ్యం"
 
-#: src/Core/FlatpakBackend.vala:1183
+#: src/Core/FlatpakBackend.vala:1185
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
-#: src/Core/FlatpakBackend.vala:1353
+#: src/Core/FlatpakBackend.vala:1355
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "నవీకరించుము"
 
-#: src/Core/Package.vala:304
+#: src/Core/Package.vala:303
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:335
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:337
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:342
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:347
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:351
+#: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:523
+#: src/Core/Package.vala:522
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -282,44 +282,44 @@ msgstr ""
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:38
+#: src/Core/UpdateManager.vala:37
 msgid "Operating System Updates"
 msgstr "నిర్వహణ పద్ధతి నవీకరణలు"
 
-#: src/Core/UpdateManager.vala:39
+#: src/Core/UpdateManager.vala:38
 msgid "Updates to system components"
 msgstr "నిర్వహణ పద్ధతి భాగములకు సవరణలు"
 
-#: src/Core/UpdateManager.vala:87
+#: src/Core/UpdateManager.vala:86
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:129
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:147
+#: src/Core/UpdateManager.vala:146
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:152
+#: src/Core/UpdateManager.vala:151
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:153
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:192
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:194
+#: src/Core/UpdateManager.vala:193
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
@@ -717,43 +717,43 @@ msgid "Share"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:986
+#: src/Views/AppInfoView.vala:959
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:989
+#: src/Views/AppInfoView.vala:962
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:994
+#: src/Views/AppInfoView.vala:967
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:997
+#: src/Views/AppInfoView.vala:970
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1001
+#: src/Views/AppInfoView.vala:974
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1004
+#: src/Views/AppInfoView.vala:977
 #, fuzzy
 msgid "Unknown License"
 msgstr "అజ్ఞాత స్థితి"
 
-#: src/Views/AppInfoView.vala:1084
+#: src/Views/AppInfoView.vala:1057
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1092
+#: src/Views/AppInfoView.vala:1065
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1204
+#: src/Views/AppInfoView.vala:1177
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
@@ -781,24 +781,24 @@ msgid "Requesting a restart failed. Restart manually to finish installing update
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:186
+#: src/Views/AppListUpdateView.vala:210
 msgid "Update All"
 msgstr "అన్నీ సవరణ చెయ్యి"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
 msgstr ""
 
-#: src/Views/AppListView.vala:31
+#: src/Views/AppListView.vala:32
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:32
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 #, fuzzy
 msgid "Non-Curated Apps"
 msgstr "వినియోగములు లేవు"
@@ -815,15 +815,15 @@ msgstr "నవీన వినియోగము"
 msgid "Free Apps"
 msgstr "నవీన వినియోగము"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:73
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:95
 msgid "Categories"
 msgstr "వర్గములు"
 
-#: src/Views/Homepage.vala:275 src/Views/Homepage.vala:286
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:292
 #, c-format
 msgid "Search %s"
 msgstr ""
