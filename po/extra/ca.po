@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-03 20:38+0000\n"
-"PO-Revision-Date: 2021-11-17 13:22+0000\n"
+"PO-Revision-Date: 2021-12-04 14:22+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -55,6 +55,8 @@ msgstr "Millores:"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Link to Flathub's search page when no search results are found"
 msgstr ""
+"Enllaç a la pàgina de cerca de Flathub quan no es trobi cap resultat de la "
+"cerca"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 #: data/io.elementary.appcenter.appdata.xml.in:30
