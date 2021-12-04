@@ -558,12 +558,11 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        ChangeInformation.ProgressCallback cb = change_information.callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
             case State.UPDATING:
-                var success = yield backend.update_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.update_package (this, change_information, action_cancellable);
                 if (success) {
                     change_information.clear_update_info ();
                     update_state ();
@@ -571,12 +570,12 @@ public class AppCenterCore.Package : Object {
 
                 return success;
             case State.INSTALLING:
-                var success = yield backend.install_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.install_package (this, change_information, action_cancellable);
                 _installed = success;
                 update_state ();
                 return success;
             case State.REMOVING:
-                var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.remove_package (this, change_information, action_cancellable);
                 _installed = !success;
                 update_state ();
                 yield client.refresh_updates ();

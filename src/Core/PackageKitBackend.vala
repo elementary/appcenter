@@ -559,7 +559,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private void install_package_internal (Job job) {
         unowned var args = (InstallPackageArgs)job.args;
         unowned var package = args.package;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned ChangeInformation? change_info = args.change_info;
         unowned var cancellable = args.cancellable;
 
         reset_progress ();
@@ -591,7 +591,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.install_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -606,10 +606,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
+    public async bool install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.INSTALL_PACKAGE, job_args);
@@ -624,7 +624,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         unowned var args = (UpdatePackageArgs)job.args;
         unowned var package = args.package;
         unowned var cancellable = args.cancellable;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned ChangeInformation? change_info = args.change_info;
 
         reset_progress ();
 
@@ -642,7 +642,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         try {
             var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -657,10 +657,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
+    public async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new UpdatePackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         if (update_permission == null) {
@@ -686,7 +686,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         unowned var args = (RemovePackageArgs)job.args;
         unowned var package = args.package;
         unowned var cancellable = args.cancellable;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned ChangeInformation? change_info = args.change_info;
 
         reset_progress ();
 
@@ -703,7 +703,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -718,10 +718,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new RemovePackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.REMOVE_PACKAGE, job_args);
