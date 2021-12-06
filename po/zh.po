@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2021-12-06 18:08+0000\n"
-"Last-Translator: Mingjie Jiang <jiang@mingjie.dev>\n"
+"Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
 "Language: zh\n"
@@ -327,9 +327,8 @@ msgid "Please restart your system to finalize updates"
 msgstr "请重启您的系统以完成更新"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "这可能是由一个手动安装的扩展软件仓库或一个已损坏的源文件造成。"
+msgstr "这可能是一个暂时性的故障，也可能是外来或用户编译的软件引起的问题。"
 
 #: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
