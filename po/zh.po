@@ -3,19 +3,21 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # sdopx <26029682@qq.com>, 2019.
 # Jimmy Sun <jimmysuncn@hotmail.com>, 2019.
+# Vincent Yu <coolplayyhj@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-03 20:38+0000\n"
-"PO-Revision-Date: 2019-05-15 01:18+0000\n"
-"Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
-"Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
+"PO-Revision-Date: 2021-12-06 16:21+0000\n"
+"Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
+"Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/zh/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:333
@@ -33,10 +35,8 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "未找到指定的链接'%s'，请使用搜索"
 
 #: src/Application.vala:298
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s已被安装成功"
+msgstr "应用安装成功"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
@@ -48,9 +48,9 @@ msgid "“%s” has been installed"
 msgstr "%s已被安装成功"
 
 #: src/MainWindow.vala:146
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "卸载"
+msgstr "无法打开 “%s“"
 
 #: src/MainWindow.vala:176 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:277 src/Views/Homepage.vala:282
@@ -60,10 +60,9 @@ msgstr "首页"
 
 #: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "正在安装"
+msgstr "已安装"
 
 #: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
@@ -257,13 +256,12 @@ msgid "%s Developers"
 msgstr "%s个开发者"
 
 #: src/Core/Package.vala:335
-#, fuzzy
 msgid "elementary Updates"
-msgstr "最近更新"
+msgstr "elementary 更新"
 
 #: src/Core/Package.vala:337
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (非官方渠道发布)"
 
 #: src/Core/Package.vala:342
 #, c-format
@@ -282,10 +280,10 @@ msgstr ""
 #: src/Core/Package.vala:522
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "未在AppCenter中设置为“已安装应用”的软件包: %s"
 
 #: src/Core/PackageKitBackend.vala:286
-#, fuzzy, c-format
+#, c-format
 msgid "%s (local)"
 msgstr "%s（本地）"
 
@@ -304,7 +302,7 @@ msgstr "版本：%s"
 
 #: src/Core/UpdateManager.vala:129
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak 运行库"
 
 #: src/Core/UpdateManager.vala:146
 msgid "No components with updates"
