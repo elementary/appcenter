@@ -186,6 +186,10 @@ public class AppCenter.Homepage : AbstractView {
         banner_carousel.prepend (pop_banner);
         banner_carousel.interactive = false;
         banner_dots.visible = false;
+
+        // Show the banner, since it only contains our artwork currently
+        banner_carousel.show_all ();
+        banner_revealer.reveal_child = true;
 #endif
 
         load_banners_and_carousels.begin ();
