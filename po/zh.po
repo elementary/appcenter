@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-03 20:38+0000\n"
-"PO-Revision-Date: 2021-12-06 16:21+0000\n"
+"PO-Revision-Date: 2021-12-06 18:08+0000\n"
 "Last-Translator: Mingjie Jiang <jiang@mingjie.dev>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
@@ -337,9 +337,9 @@ msgid "Failed to install app"
 msgstr "卸载"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "卸载"
+msgstr "安装“%s”失败"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -348,14 +348,13 @@ msgid "Non-Curated Warning"
 msgstr "注意事项"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
 msgid "Install non-curated app?"
-msgstr "%s（本地）"
+msgstr "是否安装非AppCenter内的应用程序？"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
+msgstr "“%s” 不是elementary整合的。该应用未经过安全，隐私，或系统整合的审查。"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
