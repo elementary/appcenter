@@ -4,12 +4,13 @@
 # sdopx <26029682@qq.com>, 2019.
 # Jimmy Sun <jimmysuncn@hotmail.com>, 2019.
 # Vincent Yu <coolplayyhj@gmail.com>, 2021.
+# Mingjie Jiang <jiang@mingjie.dev>, 2021.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-03 20:38+0000\n"
 "PO-Revision-Date: 2021-12-06 16:21+0000\n"
-"Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
+"Last-Translator: Mingjie Jiang <jiang@mingjie.dev>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
 "Language: zh\n"
@@ -42,10 +43,9 @@ msgstr "应用安装成功"
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:362
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s已被安装成功"
+msgstr "%s已被安装"
 
 #: src/MainWindow.vala:146
 #, c-format
@@ -269,9 +269,8 @@ msgid "%s (system-wide)"
 msgstr ""
 
 #: src/Core/Package.vala:347
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "驱动"
+msgstr "Ubuntu 驱动程序"
 
 #: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
