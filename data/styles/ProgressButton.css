@@ -26,6 +26,14 @@
     background-repeat: no-repeat;
 }
 
+.banner .progress-button {
+    background-image: linear-gradient(
+        0deg,
+        @banner_bg_color 0.125em,
+        transparent 0.125em
+    );
+}
+
 .progress-button:dir(rtl) {
     background-position: calc(100% - 2px);
 }
