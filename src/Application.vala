@@ -275,44 +275,45 @@ public class AppCenter.App : Gtk.Application {
         switch (operation) {
             case AppCenterCore.Package.State.INSTALLING:
                 if (error == null) {
-                    if (package.get_can_launch ()) {
-                        // Check if window is focused
-                        if (main_window != null) {
-                            var win = main_window.get_window ();
-                            if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
-                                main_window.send_installed_toast (package);
+                    // Check if window is focused
+                    if (main_window != null) {
+                        var win = main_window.get_window ();
+                        if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                            main_window.send_installed_toast (package);
 
-                                break;
-                            }
+                            break;
                         }
-
-                        var notification = new Notification (_("The app has been installed"));
-                        notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
-                        notification.set_icon (new ThemedIcon ("process-completed"));
-                        notification.set_default_action ("app.open-application");
-
-                        send_notification ("installed", notification);
                     }
+
+                    var notification = new Notification (_("The app has been installed"));
+                    notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
+                    notification.set_icon (new ThemedIcon (Build.PROJECT_NAME));
+                    notification.set_default_action ("app.open-application");
+
+                    send_notification ("installed", notification);
                 } else {
                     // Check if permission was denied or the operation was cancelled
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
                         break;
                     }
-
                     var dialog = new InstallFailDialog (package, error);
 
                     dialog.show_all ();
-		    dialog.response.connect ((response_id) => {
-		    	switch (response_id) {
-			    case Gtk.ResponseType.CLOSE:
-			    	dialog.destroy ();
-				break;
-			    case Gtk.ResponseType.OK:
-			    	dialog.destroy ();
-				    main_window.go_to_installed ();
-				break;
-			}
-		    });
+		            dialog.response.connect ((response_id) => {
+		    	        switch (response_id) {
+			                case Gtk.ResponseType.CLOSE:
+			            	    dialog.destroy ();
+				                break;
+			                case Gtk.ResponseType.OK:
+			    	            dialog.destroy ();
+				                if (error.message.contains ("whilst offline")) {
+                                    main_window.open_network_settings ();
+                                } else {
+                                    main_window.go_to_installed_clear ();
+                                }
+				                break;
+			            }
+		            });
                     dialog.run ();
                 }
 
