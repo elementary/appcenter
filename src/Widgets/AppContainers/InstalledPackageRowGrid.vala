@@ -68,6 +68,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         release_description = new Gtk.Label (null) {
+            hexpand = true,
             margin_start = 12,
             selectable = true,
             use_markup = true,
@@ -76,13 +77,14 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         };
 
         release_expander_label = new Gtk.Label ("") {
+            hexpand = true,
             wrap = true,
             use_markup = true,
             xalign = 0
         };
 
         release_expander = new Gtk.Expander ("") {
-            halign = Gtk.Align.START,
+            hexpand = true,
             valign = Gtk.Align.START,
             label_widget = release_expander_label,
             visible = true
@@ -91,7 +93,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_expander.show_all ();
 
         release_single_label = new Gtk.Label (null) {
-            max_width_chars = 1,
+            hexpand = true,
             selectable = true,
             use_markup = true,
             valign = Gtk.Align.START,
@@ -101,7 +103,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         };
         release_single_label.show_all ();
 
-        release_stack = new Gtk.Stack ();
+        release_stack = new Gtk.Stack () {
+            hexpand = true
+        };
         release_stack.add (release_expander);
         release_stack.add (release_single_label);
 

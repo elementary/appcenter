@@ -17,7 +17,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
- public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
+public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
@@ -41,27 +41,6 @@
         return command.get_exit_status () == 0;
     }
 
-#if POP_OS_NULL
-    // A package has Pop packaging if the source is from the Pop PPA.
-    private async bool packaged_by_pop (Cancellable? cancellable = null, string package) {
-        string? output = null;
-        string? drivers_exec_path = Environment.find_program_in_path ("sh");
-        if (drivers_exec_path == null) {
-            return false;
-        }
-
-        Subprocess command;
-        try {
-            command = new Subprocess (SubprocessFlags.STDOUT_PIPE, drivers_exec_path, "-c", "apt-cache policy %s | grep 'ppa.launchpad.net/system76/pop/ubuntu'".printf(package));
-            yield command.communicate_utf8_async (null, cancellable, out output, null);
-        } catch (Error e) {
-            return false;
-        }
-
-        return command.get_exit_status () == 0;
-    }
-#endif
-
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         if (cached_packages != null) {
             return cached_packages;
@@ -71,8 +50,6 @@
 
         cached_packages = new Gee.TreeSet<Package> ();
         var tokens = AppCenter.App.settings.get_strv ("cached-drivers");
-
-        string latest_nvidia_pkg = "";
 
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
@@ -84,6 +61,11 @@
                 continue;
             }
 
+            // Filter out the nvidia server drivers
+            if (package_name.contains ("nvidia") && package_name.contains ("-server")) {
+                continue;
+            }
+
             string[] pkgnames = {};
 
             // ubuntu-drivers returns lines like the following for dkms packages:
@@ -92,48 +74,34 @@
             // we want to install both packages if they're different
 
             string[] parts = package_name.split (",");
+            // Get the driver part (before the comma)
             pkgnames += parts[0];
-            
+
+            if (parts.length > 1) {
+                if (parts[1].contains ("kernel modules provided by")) {
+                    string[] kernel_module_parts = parts[1].split (" ");
+                    // Get the remainder of the string after the last space
+                    var last_part = kernel_module_parts[kernel_module_parts.length - 1];
+                    // Strip off the trailing bracket
+                    last_part = last_part.replace (")", "");
+
+                    if (!(last_part in pkgnames)) {
+                        pkgnames += last_part;
+                    }
+                } else {
+                    warning ("Unrecognised line from ubuntu-drivers, needs checking: %s", package_name);
+                }
+            }
+
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
             driver_component.set_pkgnames (pkgnames);
             driver_component.set_id (package_name);
-            unowned string? nvidia_version = null;
-            
+
             var icon = new AppStream.Icon ();
             icon.set_name ("application-x-firmware");
             icon.set_kind (AppStream.IconKind.STOCK);
             driver_component.add_icon (icon);
-
-#if POP_OS_NULL
-            if (pkgnames.has_prefix ("backport-") && pkgnames.has_suffix ("-dkms")) {
-                continue;
-            }
-
-
-            if (pkgnames.has_prefix ("nvidia-driver-")) {
-                nvidia_version = pkgnames.offset (14);
-            } else if (pkgnames.has_prefix ("nvidia-")) {
-                nvidia_version = pkgnames.offset (7);
-            }
-
-            if (null != nvidia_version) {
-                if (nvidia_version.contains ("-")) continue;
-
-                if (!yield packaged_by_pop (cancellable, pkgnames)) {
-                    continue;
-                }
-
-                int parsed = int.parse (nvidia_version);
-
-                if (latest_nvidia_ver < parsed) {
-                    latest_nvidia_pkg = pkgnames;
-                    latest_nvidia_ver = parsed;
-                }
-
-                continue;
-            }
-#endif
 
             var package = new Package (this, driver_component);
             try {
@@ -146,35 +114,12 @@
             }
 
             yield add_kernel_headers_if_necessary (package, cancellable);
-        }
 
-        if (null != latest_nvidia_pkg) {
-            debug ("adding NVIDIA driver package %s", latest_nvidia_pkg);
-            cached_packages.add (add_driver (latest_nvidia_pkg));
+            cached_packages.add (package);
         }
 
         working = false;
         return cached_packages;
-    }
-
-    private Package add_driver (string package_name) {
-        var driver_component = new AppStream.Component ();
-        driver_component.set_kind (AppStream.ComponentKind.DRIVER);
-        driver_component.set_pkgnames ({ package_name });
-        driver_component.set_id (package_name);
-
-        var icon = new AppStream.Icon ();
-        icon.set_name ("application-x-firmware");
-        icon.set_kind (AppStream.IconKind.STOCK);
-        driver_component.add_icon (icon);
-
-        var package = new Package (this, driver_component);
-        if (package.installed) {
-            package.mark_installed ();
-            package.update_state ();
-        }
-
-        return package;
     }
 
     private static async void add_kernel_headers_if_necessary (Package package, Cancellable? cancellable) {
@@ -201,7 +146,6 @@
             }
         }
     }
-
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
         return new Gee.ArrayList<Package> ();
