@@ -41,6 +41,27 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return command.get_exit_status () == 0;
     }
 
+#if POP_OS
+    // A package has Pop packaging if the source is from the Pop PPA.
+    private async bool packaged_by_pop (Cancellable? cancellable = null, string package) {
+        string? output = null;
+        string? drivers_exec_path = Environment.find_program_in_path ("sh");
+        if (drivers_exec_path == null) {
+            return false;
+        }
+
+        Subprocess command;
+        try {
+            command = new Subprocess (SubprocessFlags.STDOUT_PIPE, drivers_exec_path, "-c", "apt-cache policy %s | grep 'ppa.launchpad.net/system76/pop/ubuntu'".printf(package));
+            yield command.communicate_utf8_async (null, cancellable, out output, null);
+        } catch (Error e) {
+            return false;
+        }
+
+        return command.get_exit_status () == 0;
+    }
+#endif
+
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         if (cached_packages != null) {
             return cached_packages;
@@ -51,6 +72,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         cached_packages = new Gee.TreeSet<Package> ();
         var tokens = AppCenter.App.settings.get_strv ("cached-drivers");
 
+        string? latest_nvidia_pkg = null;
+        int latest_nvidia_ver = 0;
+
+        //  string[] tokens = command_output.split ("\n");
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
