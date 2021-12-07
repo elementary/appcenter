@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-04 00:23+0000\n"
+"PO-Revision-Date: 2021-12-08 01:24+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -54,7 +54,7 @@ msgstr "Виправлення:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Prevent potential crashes when updating"
-msgstr ""
+msgstr "Усунено ймовірність збоїв під час оновлення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
