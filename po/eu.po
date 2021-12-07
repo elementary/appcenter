@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 20:38+0000\n"
+"POT-Creation-Date: 2021-12-07 19:54+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Basque <https://l10n.elementary.io/projects/appcenter/appcenter/eu/>\n"
@@ -39,48 +39,48 @@ msgstr "%s behar bezala instalatu da"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:362
+#: src/Application.vala:299 src/MainWindow.vala:351
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s behar bezala instalatu da"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:139
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "Bilatu eta instalatu aplikazioak"
 
-#: src/MainWindow.vala:176 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:277 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:292 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
+#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
+#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:89
 #, fuzzy
 msgid "Home"
 msgstr "Hasierako orria"
 
-#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalatu"
 
-#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:211 src/MainWindow.vala:422 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Bilatu aplikazioak"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:354
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr ""
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr ""
 
-#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
-#: src/Core/ChangeInformation.vala:64
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:292
+#: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr ""
 
@@ -144,11 +144,11 @@ msgstr ""
 msgid "Requesting data"
 msgstr ""
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr ""
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
 #: src/Core/FlatpakBackend.vala:1062 src/Core/FlatpakBackend.vala:1086
 #: src/Core/FlatpakBackend.vala:1194 src/Core/FlatpakBackend.vala:1218
 #: src/Core/FlatpakBackend.vala:1364 src/Core/FlatpakBackend.vala:1386
@@ -824,7 +824,7 @@ msgstr ""
 msgid "Categories"
 msgstr "Kategoriak"
 
-#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:292
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
 #, c-format
 msgid "Search %s"
 msgstr ""

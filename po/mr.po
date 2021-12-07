@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-03 20:38+0000\n"
+"POT-Creation-Date: 2021-12-07 19:54+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -38,45 +38,45 @@ msgstr "अ‍ॅप स्थापित केले गेले आहे"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:362
+#: src/Application.vala:299 src/MainWindow.vala:351
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" इन्स्टॉल झाले"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:139
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" लाँच करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:176 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:277 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:292 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
+#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
+#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
-#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "प्रस्थापित"
 
-#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:211 src/MainWindow.vala:422 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "अनुप्रयोग शोधा"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:354
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "उघडा"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "सुरु होत आहे"
 
-#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
-#: src/Core/ChangeInformation.vala:64
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:292
+#: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "वाट पाहत आहे"
 
@@ -140,11 +140,11 @@ msgstr "बदल कमीट करीत आहे"
 msgid "Requesting data"
 msgstr "डेटाची मागणी करीत आहे"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "पूर्ण झाले"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
 #: src/Core/FlatpakBackend.vala:1062 src/Core/FlatpakBackend.vala:1086
 #: src/Core/FlatpakBackend.vala:1194 src/Core/FlatpakBackend.vala:1218
 #: src/Core/FlatpakBackend.vala:1364 src/Core/FlatpakBackend.vala:1386
@@ -817,7 +817,7 @@ msgstr "अलीकडे अपडेट केलेले"
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:292
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
 #, c-format
 msgid "Search %s"
 msgstr "%s शोधा"
