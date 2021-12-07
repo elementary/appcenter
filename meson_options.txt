@@ -6,5 +6,4 @@ option('homepage', type : 'boolean', value : true, description: 'Dynamic homepag
 option('name', type : 'string', value : 'Pop!_Shop', description : 'The name of the application')
 option('payments', type : 'boolean', value : false, description : 'Enable payment features and display paid apps')
 option('sharing', type : 'boolean', value : false, description : 'Display sharing features, i.e. copyable URLs to apps')
-option('api_url', type : 'string', value : 'https://developer.elementary.io/api', description : 'The base URL of the API to get app lists for the homepage banners')
 option('pop_os', type : 'boolean', value: true, description : 'Make Pop-specific changes')
