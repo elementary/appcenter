@@ -13,6 +13,10 @@
   <releases>
     <release version="3.9.1" date="2021-12-03" urgency="medium">
       <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Prevent potential crashes when updating</li>
+        </ul>
         <p>Improvements:</p>
         <ul>
           <li>Link to Flathub's search page when no search results are found</li>
