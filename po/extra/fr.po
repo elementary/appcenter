@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-07 10:20+0000\n"
+"PO-Revision-Date: 2021-12-08 16:57+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -53,7 +53,7 @@ msgstr "Corrections :"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Prevent potential crashes when updating"
-msgstr ""
+msgstr "Correction d'un plantage potentiel lors des mises à jour"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
