@@ -47,9 +47,15 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         free_grid.attach (free_header, 0, 0);
         free_grid.attach (free_flowbox, 0, 1);
 
+#if POP_OS
+        var uncurated_header = new Granite.HeaderLabel (_("Apps")) {
+            margin_start = 12
+        };
+#else
         var uncurated_header = new Granite.HeaderLabel (_("Non-Curated Apps")) {
             margin_start = 12
         };
+#endif
         uncurated_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var uncurated_flowbox = new SubcategoryFlowbox ();

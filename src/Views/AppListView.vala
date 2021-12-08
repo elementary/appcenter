@@ -162,7 +162,11 @@ namespace AppCenter.Views {
         }
 
         private void mark_row_non_curated (Widgets.PackageRow row) {
+#if POP_OS
+            var header = new Gtk.Label (_("Apps"));
+#else
             var header = new Gtk.Label (_("Non-Curated Apps"));
+#endif
             header.margin = 12;
             header.margin_top = 18;
             header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
