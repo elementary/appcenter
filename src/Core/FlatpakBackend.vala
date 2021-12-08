@@ -430,9 +430,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
                 AppCenterCore.Package? user_package = null;
                 foreach (var origin_package in package.origin_packages) {
-                    if (((FlatpakPackage) origin_package).installation == user_installation) {
-                        user_package = origin_package;
-                        break;
+                    if (origin_package is FlatpakPackage) {
+                        if (((FlatpakPackage) origin_package).installation == user_installation) {
+                            user_package = origin_package;
+                            break;
+                        }
                     }
                 }
 
