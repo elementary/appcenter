@@ -446,7 +446,6 @@ namespace AppCenter.Views {
 
             package_summary = new Gtk.Label (null) {
                 label = package.get_summary (),
-                selectable = true,
                 wrap = true,
                 wrap_mode = Pango.WrapMode.WORD_CHAR,
                 valign = Gtk.Align.CENTER,
