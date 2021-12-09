@@ -47,6 +47,7 @@ public class AppCenter.Homepage : AbstractView {
 
 #if POP_OS
     private Gtk.FlowBox picks_carousel;
+    private Gtk.Revealer picks_revealer;
 #endif
 
     private uint banner_timeout_id;
@@ -118,6 +119,11 @@ public class AppCenter.Homepage : AbstractView {
             row_spacing = 24
         };
 
+        recently_updated_grid.attach (recently_updated_label, 0, 0);
+        recently_updated_grid.attach (recently_updated_carousel, 0, 1);
+        recently_updated_revealer = new Gtk.Revealer ();
+        recently_updated_revealer.add (recently_updated_grid );
+
 #if POP_OS
         var picks_label = new Granite.HeaderLabel (_("Pop!_Picks")) {
             margin_start = 12
@@ -132,17 +138,18 @@ public class AppCenter.Homepage : AbstractView {
             selection_mode = Gtk.SelectionMode.NONE
         };
 
-        recently_updated_grid.attach (picks_label, 0, 0);
-        recently_updated_grid.attach (picks_carousel, 0, 1);
-        recently_updated_grid.attach (recently_updated_label, 0, 2);
-        recently_updated_grid.attach (recently_updated_carousel, 0, 3);
-#else
-        recently_updated_grid.attach (recently_updated_label, 0, 0);
-        recently_updated_grid.attach (recently_updated_carousel, 0, 1);
-#endif
 
-        recently_updated_revealer = new Gtk.Revealer ();
-        recently_updated_revealer.add (recently_updated_grid );
+        var picks_grid = new Gtk.Grid () {
+            margin_end = 12,
+            margin_start = 12,
+            row_spacing = 24
+        };
+
+        picks_grid.attach (picks_label, 0, 0);
+        picks_grid.attach (picks_carousel, 0, 1);
+        picks_revealer = new Gtk.Revealer ();
+        picks_revealer.add (picks_grid );
+#endif
 
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
             margin_start = 24,
@@ -160,6 +167,9 @@ public class AppCenter.Homepage : AbstractView {
             orientation = Gtk.Orientation.VERTICAL
         };
         grid.add (banner_revealer);
+#if POP_OS
+        grid.add (picks_revealer);
+#endif
         grid.add (recently_updated_revealer);
         grid.add (categories_label);
         grid.add (category_flow);
@@ -315,7 +325,7 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         picks_carousel.show_all ();
-        recently_updated_revealer.reveal_child = picks_carousel.get_children ().length () > 0;
+        picks_revealer.reveal_child = picks_carousel.get_children ().length () > 0;
 #else
         foreach (var package in packages_by_release_date) {
             if (package_count >= MAX_PACKAGES_IN_BANNER) {
@@ -340,10 +350,6 @@ public class AppCenter.Homepage : AbstractView {
             }
         }
 #endif
-
-        foreach (var package in packages_in_banner) {
-            print(package.get_name ());
-        }
         
         foreach (var package in packages_in_banner) {
             var banner = new Widgets.Banner (package);
