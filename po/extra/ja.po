@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-04 00:23+0000\n"
+"PO-Revision-Date: 2021-12-09 05:21+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -53,7 +53,7 @@ msgstr "修正点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Prevent potential crashes when updating"
-msgstr ""
+msgstr "アップデート中にクラッシュする可能性のある不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
