@@ -159,3 +159,19 @@
     padding-bottom: 0;
     padding-top: 0;
 }
+
+/* Pop-specific adjustments */
+list, stack, textview, textview text {
+    background: transparent;
+}
+
+.terminal {
+    background-color: #252e32;
+    padding: 12px;
+    color: #94a3a5;
+}
+
+.terminal selection {
+    background-color: #93a1a1;
+    color: #252e32;
+}
