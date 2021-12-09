@@ -17,6 +17,11 @@
 
  @import url("categories.css");
 
+/* Fix for headerbar padding. Otherwise it's too tall */
+.titlebar box.linked button {
+    margin: 0;
+}
+
 .pop-banner {
     background-size: auto 100%;
     background-position: center;
@@ -47,7 +52,7 @@
 }
 
 .badge {
-    padding: 2px;
+    padding: 0px;
     border-radius: 999px; /* $circular_radius */
     background-color: #EA9090; /* $red */
     color: #2B2928; /* $dark_ui_900 */
