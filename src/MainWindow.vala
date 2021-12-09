@@ -40,6 +40,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Revealer updates_badge_revealer;
     private Granite.Widgets.Toast toast;
 
+#if POP_OS
+    private Gtk.Button repos_button;
+#endif
+
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
 
@@ -233,11 +237,36 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
+#if POP_OS
+        repos_button = new Gtk.Button.from_icon_name ("preferences-system-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        repos_button.tooltip_text = _("Edit Software Sources…");
+        repos_button.clicked.connect (() => {
+            try {
+                string[] args = {
+                  "/usr/lib/repoman/repoman.pkexec"
+                };
+                Process.spawn_async (
+                    null,
+                    args,
+                    null,
+                    SpawnFlags.SEARCH_PATH,
+                    null,
+                    null
+                );
+            } catch (Error e) {
+                warning (e.message);
+            }
+        });
+#endif
+
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
+#if POP_OS
+        headerbar.pack_end (repos_button);
+#endif
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
@@ -444,6 +473,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private void package_selected (AppCenterCore.Package package) {
         selected_package = package;
         search_entry.visible = false;
+        repos_button.visible = false;
     }
 
     private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
@@ -479,6 +509,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     private void view_return () {
         search_entry.visible = true;
+        repos_button.visible = true;
         selected_package = null;
 
         if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
