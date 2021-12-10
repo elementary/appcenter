@@ -83,7 +83,7 @@ public class AppCenter.Views.SearchView : AbstractView {
         }
 
         if (current_category != null) {
-            subview_entered (_(current_category.name), true, current_category.name);
+            subview_entered (current_category.name, true, current_category.name);
         } else {
             subview_entered (_("Home"), true);
         }
