@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-11-30 16:23+0000\n"
+"PO-Revision-Date: 2021-12-10 12:14+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -72,7 +72,7 @@ msgstr "Улучшения:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Link to Flathub's search page when no search results are found"
-msgstr ""
+msgstr "Ссылка на страницу поиска Flathub при отсутствии результатов поиска"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:34
