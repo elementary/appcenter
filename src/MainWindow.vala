@@ -104,7 +104,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_view.package_selected.connect (package_selected);
         search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (show_homepage);
-        search_view.category_return_clicked.connect(show_category);
+        search_view.category_return_clicked.connect (show_category);
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
