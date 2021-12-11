@@ -1,3 +1,15 @@
+appcenter (3.9.1) bionic; urgency=medium
+
+  * Release 3.9.1 (#1785)
+  * Update translation files
+  * Update translation template
+  * Avoid multiple circular references (#1778)
+  * Core: Pass the ChangeInformation object around instead of its
+    callback (#1783)
+  * SearchView: Link to Flathub search where possible (#1780)
+
+ -- elementary Builds Team <builds@elementary.io>  Sat, 11 Dec 2021 05:21:43 +0000
+
 appcenter (3.9.0) bionic; urgency=medium
 
   * Release 3.9.0 (#1772)
