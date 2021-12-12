@@ -197,13 +197,13 @@ public class AppCenter.App : Gtk.Application {
             main_window = new MainWindow (this);
 
 
-            // Force a cache refresh when the window opens, so we get new apps
+            // Force a Flatpak cache refresh when the window opens, so we get new apps
 #if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin (true);
+                client.update_cache.begin (true, AppCenterCore.Client.UpdateCacheType.FLATPAK);
             });
 #else
-            client.update_cache.begin (true);
+            client.update_cache.begin (true, AppCenterCore.Client.UpdateCacheType.FLATPAK);
 #endif
 
             main_window.destroy.connect (() => {
