@@ -161,7 +161,7 @@ public class AppCenterCore.Client : Object {
             refresh_updates.begin ();
         }
 
-        if (last_cache_update_is_old) {
+        if (last_cache_update_is_old && AppCenter.App.settings.get_boolean ("automatically-install-flatpak-updates")) {
             debug ("Update Flatpaks");
             var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
             foreach (var app in installed_apps) {
