@@ -200,10 +200,10 @@ public class AppCenter.App : Gtk.Application {
             // Force a Flatpak cache refresh when the window opens, so we get new apps
 #if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin (true, AppCenterCore.Client.UpdateCacheType.FLATPAK);
+                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
             });
 #else
-            client.update_cache.begin (true, AppCenterCore.Client.UpdateCacheType.FLATPAK);
+            client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
 #endif
 
             main_window.destroy.connect (() => {
@@ -332,13 +332,13 @@ public class AppCenter.App : Gtk.Application {
         });
     }
 
-    private void on_cache_update_failed (Error error, AppCenterCore.Client.UpdateCacheType update_cache_type) {
+    private void on_cache_update_failed (Error error, AppCenterCore.Client.CacheUpdateType cache_update_type) {
         if (main_window == null) {
             return;
         }
 
         if (update_fail_dialog == null) {
-            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), update_cache_type);
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type);
             update_fail_dialog.transient_for = main_window;
 
             update_fail_dialog.destroy.connect (() => {
