@@ -24,6 +24,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
+    private Gtk.Button refresh_button;
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
@@ -111,6 +112,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         notify["working"].connect (() => {
             Idle.add (() => {
                 spinner.active = working;
+                refresh_button.sensitive = !working;
                 return GLib.Source.REMOVE;
             });
         });
@@ -214,12 +216,18 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
+        refresh_button = new Gtk.Button.from_icon_name ("view-refresh", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = "app.show-updates",
+            tooltip_text = _("Update")
+        };
+
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
         headerbar.pack_end (search_entry);
+        headerbar.pack_end (refresh_button);
         headerbar.pack_end (spinner);
 
         homepage = new Homepage ();
