@@ -167,9 +167,11 @@ public class AppCenter.App : Gtk.Application {
 
         var client = AppCenterCore.Client.get_default ();
 
+#if PACKAGEKIT_BACKEND
         if (fake_update_packages != null) {
             AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
         }
+#endif
 
         if (silent) {
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
@@ -183,6 +185,7 @@ public class AppCenter.App : Gtk.Application {
             return;
         }
 
+#if PACKAGEKIT_BACKEND
         if (local_path != null) {
             var file = File.new_for_commandline_arg (local_path);
 
@@ -192,6 +195,7 @@ public class AppCenter.App : Gtk.Application {
                 warning ("Failed to load local AppStream XML file: %s", e.message);
             }
         }
+#endif
 
         if (main_window == null) {
             main_window = new MainWindow (this);

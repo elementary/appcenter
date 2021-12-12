@@ -52,6 +52,7 @@ public class AppCenterCore.UpdateManager : Object {
             installed_package.update_state ();
         }
 
+#if PACKAGEKIT_BACKEND
         Pk.Results pk_updates;
         unowned PackageKitBackend client = PackageKitBackend.get_default ();
         try {
@@ -60,10 +61,12 @@ public class AppCenterCore.UpdateManager : Object {
             warning ("Unable to get updates from PackageKit backend: %s", e.message);
             return 0;
         }
+#endif
 
         uint os_count = 0;
         string os_desc = "";
 
+#if PACKAGEKIT_BACKEND
         var package_array = pk_updates.get_package_array ();
         debug ("PackageKit backend reports %d updates", package_array.length);
 
@@ -87,6 +90,7 @@ public class AppCenterCore.UpdateManager : Object {
                 );
             }
         });
+#endif
 
         os_updates.component.set_pkgnames ({});
         os_updates.change_information.clear_update_info ();
@@ -159,6 +163,7 @@ public class AppCenterCore.UpdateManager : Object {
             count += 1;
         }
 
+#if PACKAGEKIT_BACKEND
         pk_updates.get_details_array ().foreach ((pk_detail) => {
             var pk_package = new Pk.Package ();
             try {
@@ -181,6 +186,7 @@ public class AppCenterCore.UpdateManager : Object {
                 critical (e.message);
             }
         });
+#endif
 
         os_updates.update_state ();
         return count;
