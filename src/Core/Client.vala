@@ -16,7 +16,7 @@
 
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
-    public signal void cache_update_failed (Error error);
+    public signal void cache_update_failed (Error error, UpdateCacheType update_cache_type);
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
@@ -154,7 +154,7 @@ public class AppCenterCore.Client : Object {
                 } catch (Error e) {
                     if (!(e is GLib.IOError.CANCELLED)) {
                         critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                        cache_update_failed (e);
+                        cache_update_failed (e, update_cache_type);
                     }
                 } finally {
                     refresh_in_progress = false;
