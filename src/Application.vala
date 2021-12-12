@@ -82,6 +82,11 @@ public class AppCenter.App : Gtk.Application {
         client.cache_update_failed.connect (on_cache_update_failed);
         client.installed_apps_changed.connect (on_updates_available);
 
+        var refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.activate.connect (() => {
+            client.update_cache.begin (true);
+        });
+
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (application_id + ".desktop");
             try {
@@ -93,7 +98,9 @@ public class AppCenter.App : Gtk.Application {
 
         add_action (quit_action);
         add_action (show_updates_action);
+        add_action (refresh_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
+        set_accels_for_action ("app.refresh", {"<Control>r"});
 
         search_provider = new SearchProvider ();
     }
