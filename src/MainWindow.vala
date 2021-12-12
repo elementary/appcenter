@@ -214,11 +214,40 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
+        var automatically_install_flatpak_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
+            description = _("Automatically install Flatpak updates")
+        };
+
+        var menu_popover_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_bottom = 6,
+            margin_top = 12,
+            orientation = Gtk.Orientation.VERTICAL,
+            row_spacing = 6
+        };
+
+        menu_popover_grid.add (automatically_install_flatpak_updates_button);
+
+        menu_popover_grid.show_all ();
+
+        var menu_popover = new Gtk.Popover (null);
+        menu_popover.add (menu_popover_grid);
+
+        var menu_button = new Gtk.MenuButton () {
+            can_focus = false,
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = menu_popover,
+            tooltip_text = _("Settings"),
+            valign = Gtk.Align.CENTER
+        };
+
+
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
+        headerbar.pack_end (menu_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
@@ -252,6 +281,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         int window_width, window_height;
         App.settings.get ("window-position", "(ii)", out window_x, out window_y);
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
+        App.settings.bind (
+            "automatically-install-flatpak-updates",
+            automatically_install_flatpak_updates_button,
+            "active",
+            SettingsBindFlags.DEFAULT
+        );
 
         if (window_x != -1 || window_y != -1) {
             move (window_x, window_y);
