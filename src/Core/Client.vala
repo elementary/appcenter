@@ -130,7 +130,8 @@ public class AppCenterCore.Client : Object {
 
         /* One cache update a day, keeps the doctor away! */
         var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
-        if (force || seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES) {
+        bool last_cache_update_is_old = seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES;
+        if (force || last_cache_update_is_old) {
             if (nm.get_network_available ()) {
                 debug ("New refresh task");
 
@@ -158,6 +159,21 @@ public class AppCenterCore.Client : Object {
 
         if (nm.get_network_available ()) {
             refresh_updates.begin ();
+        }
+
+        if (last_cache_update_is_old) {
+            debug ("Update Flatpaks");
+            var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
+            foreach (var app in installed_apps) {
+                if (app.update_available) {
+                    debug ("Update: %s\n", app.get_name ());
+                    try {
+                        yield FlatpakBackend.get_default ().update_package (app, null, cancellable);
+                    } catch (Error e) {
+                        warning ("Updating %s failed: %s", app.get_name (), e.message);
+                    }
+                }
+            }
         }
 
         var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
