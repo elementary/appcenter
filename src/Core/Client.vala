@@ -103,7 +103,7 @@ public class AppCenterCore.Client : Object {
         }
     }
 
-    public async void update_cache (bool force = false) {
+    public async void update_cache (bool force = false, UpdateCacheType update_cache_type = UpdateCacheType.ALL) {
         cancellable.reset ();
 
         debug ("update cache called %s", force.to_string ());
@@ -136,8 +136,16 @@ public class AppCenterCore.Client : Object {
 
                 refresh_in_progress = true;
                 try {
-                    success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
-                    if (success) {
+                    switch (update_cache_type) {
+                        case UpdateCacheType.FLATPAK:
+                            success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
+                            break;
+                        case UpdateCacheType.ALL:
+                            success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
+                            break;
+                    }
+
+                    if (success && update_cache_type == UpdateCacheType.ALL) {
                         last_cache_update = new DateTime.now_utc ();
                         AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
                     }
@@ -160,14 +168,16 @@ public class AppCenterCore.Client : Object {
             refresh_updates.begin ();
         }
 
-        var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
-        debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
-        update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
-            update_cache_timeout_id = 0;
-            update_cache.begin (true);
+        if (update_cache_type == UpdateCacheType.ALL) {
+            var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
+            debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
+            update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
+                update_cache_timeout_id = 0;
+                update_cache.begin (true);
 
-            return GLib.Source.REMOVE;
-        });
+                return GLib.Source.REMOVE;
+            });
+        }
     }
 
     public Package? get_package_for_component_id (string id) {
@@ -185,5 +195,10 @@ public class AppCenterCore.Client : Object {
     private static GLib.Once<Client> instance;
     public static unowned Client get_default () {
         return instance.once (() => { return new Client (); });
+    }
+
+    public enum UpdateCacheType {
+        FLATPAK,
+        ALL
     }
 }
