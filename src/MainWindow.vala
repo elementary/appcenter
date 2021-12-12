@@ -218,8 +218,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         spinner = new Gtk.Spinner ();
 
         refresh_button = new Gtk.Button.from_icon_name ("view-refresh", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = "app.show-updates",
-            tooltip_text = _("Update")
+            action_name = "app.refresh",
+            tooltip_markup = Granite.markup_accel_tooltip (
+                ((AppCenter.App) GLib.Application.get_default ()).get_accels_for_action ("app.refresh"),
+                _("Refresh")
+            )
         };
 
         refresh_button_revealer = new Gtk.Revealer () {
