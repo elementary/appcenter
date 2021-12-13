@@ -98,6 +98,10 @@ public class AppCenterCore.UpdateManager : Object {
         foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
+                if (AppCenter.App.settings.get_boolean ("automatically-install-flatpak-updates") && appcenter_package.is_native) {
+                    continue;
+                }
+
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
@@ -108,6 +112,10 @@ public class AppCenterCore.UpdateManager : Object {
                     warning ("Unable to get flatpak download size: %s", e.message);
                 }
             } else {
+                if (AppCenter.App.settings.get_boolean ("automatically-install-flatpak-updates")) {
+                    continue;
+                }
+
                 debug ("Added %s to OS updates", flatpak_update);
                 string bundle_id;
                 if (!FlatpakBackend.get_package_list_key_parts (flatpak_update, null, null, out bundle_id)) {
