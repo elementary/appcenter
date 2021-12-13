@@ -215,7 +215,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         spinner = new Gtk.Spinner ();
 
         var automatically_install_flatpak_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
-            description = _("Automatically install Flatpak updates")
+            description = _("Automatically install updates to curated apps")
         };
 
         var menu_popover_grid = new Gtk.Grid () {

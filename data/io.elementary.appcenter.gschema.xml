@@ -44,7 +44,7 @@
     <key type="b" name="automatically-install-flatpak-updates">
       <default>false</default>
       <summary>Automatically install Flatpak updates</summary>
-      <description>Whether to automatically install Flatpak updates</description>
+      <description>Whether to automatically install updates to curated Flatpaks</description>
     </key>
   </schema>
 </schemalist>
