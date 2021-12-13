@@ -221,7 +221,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var menu_popover_grid = new Gtk.Grid () {
             column_spacing = 6,
             margin_bottom = 6,
-            margin_top = 12,
+            margin_top = 6,
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 6
         };
