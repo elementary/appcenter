@@ -235,7 +235,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         var menu_button = new Gtk.MenuButton () {
             can_focus = false,
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
             popover = menu_popover,
             tooltip_text = _("Settings"),
             valign = Gtk.Align.CENTER
