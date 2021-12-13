@@ -16,6 +16,6 @@
  */
 
 .titlebar {
-    padding-bottom: 0.188rem;
-    padding-top: 0.188rem;
+    padding-bottom: 0.333rem; /* 3px at 9pt font */
+    padding-top: 0.333rem;    /* 3px at 9pt font */
 }
