@@ -73,6 +73,7 @@ public class AppCenterCore.UpdateManager : Object {
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", pkg_name);
                 apps_with_updates.add (appcenter_package);
+                count++;
                 appcenter_package.latest_version = pk_package.get_version ();
             } else {
                 debug ("Added %s to OS updates", pkg_name);
@@ -98,12 +99,13 @@ public class AppCenterCore.UpdateManager : Object {
         foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
-                if (AppCenter.App.settings.get_boolean ("automatically-install-flatpak-updates") && appcenter_package.is_native) {
-                    continue;
-                }
-
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
+
+                if (!(AppCenter.App.settings.get_boolean ("automatically-install-flatpak-updates") && appcenter_package.is_native)) {
+                    count++;
+                }
+
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
                 appcenter_package.update_state ();
                 try {
@@ -112,10 +114,6 @@ public class AppCenterCore.UpdateManager : Object {
                     warning ("Unable to get flatpak download size: %s", e.message);
                 }
             } else {
-                if (AppCenter.App.settings.get_boolean ("automatically-install-flatpak-updates")) {
-                    continue;
-                }
-
                 debug ("Added %s to OS updates", flatpak_update);
                 string bundle_id;
                 if (!FlatpakBackend.get_package_list_key_parts (flatpak_update, null, null, out bundle_id)) {
@@ -130,7 +128,10 @@ public class AppCenterCore.UpdateManager : Object {
                     continue;
                 }
 
-                os_count++;
+                if (!AppCenter.App.settings.get_boolean ("automatically-install-flatpak-updates")) {
+                    os_count++;
+                }
+
                 os_desc += Markup.printf_escaped (
                     " • %s\n\t%s\n",
                     @ref.get_name (),
@@ -161,7 +162,6 @@ public class AppCenterCore.UpdateManager : Object {
             os_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
 
-        count = apps_with_updates.size;
         debug ("%u app updates found", count);
         if (os_count > 0) {
             count += 1;
