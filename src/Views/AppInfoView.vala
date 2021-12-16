@@ -1230,7 +1230,7 @@ namespace AppCenter.Views {
                     author_packages.add (pkg);
                 }
             }
-            if (author_packages.size <= 1) {
+            if (author_packages.size < 1) {
                 return;
             }
 
