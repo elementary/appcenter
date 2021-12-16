@@ -100,7 +100,8 @@ public class AppCenter.Homepage : AbstractView {
 #endif
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
-            margin_start = 12
+            margin_start = 12,
+            margin_top = 6
         };
 
         recently_updated_carousel = new Gtk.FlowBox () {
@@ -126,7 +127,8 @@ public class AppCenter.Homepage : AbstractView {
 
 #if POP_OS
         var picks_label = new Granite.HeaderLabel (_("Pop!_Picks")) {
-            margin_start = 12
+            margin_start = 12,
+            margin_top = 18
         };
 
         picks_carousel = new Gtk.FlowBox () {
