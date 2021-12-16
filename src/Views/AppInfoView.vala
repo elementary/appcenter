@@ -1215,7 +1215,21 @@ namespace AppCenter.Views {
                 return;
             }
 
-            var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
+            /*
+            Store "other apps" into an intermediary list for further processing.
+            We need to do this to prevent showing "Other Apps by X" when there
+            are multiple packages of the same app (i.e. a Flatpak version and
+            an APT version).
+            */
+            var raw_author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
+
+            // Filter packages by name to avoid showing duplicates 
+            var author_packages = new Gee.ArrayList<AppCenterCore.Package> ();
+            foreach (var pkg in raw_author_packages) {
+                if (pkg.get_name () != package.get_name ()) {
+                    author_packages.add (pkg);
+                }
+            }
             if (author_packages.size <= 1) {
                 return;
             }
