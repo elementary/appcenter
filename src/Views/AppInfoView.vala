@@ -323,16 +323,16 @@ namespace AppCenter.Views {
                 };
                 screenshot_arrow_revealer_n.add (screenshot_next);
 
+                screenshot_overlay = new Gtk.Overlay ();
+                screenshot_overlay.add (app_screenshots);
+                screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
+                screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
+
                 screenshot_clamp = new Hdy.Clamp () {
                     margin = 6,
                     maximum_size = MAX_WIDTH
                 };
-                screenshot_clamp.add (app_screenshots);
-
-                screenshot_overlay = new Gtk.Overlay ();
-                screenshot_overlay.add (screenshot_clamp);
-                screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
-                screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
+                screenshot_clamp.add (screenshot_overlay);
 
                 app_screenshots.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 app_screenshots.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
@@ -389,7 +389,7 @@ namespace AppCenter.Views {
                     transition_type = Gtk.StackTransitionType.CROSSFADE
                 };
                 screenshot_stack.add (app_screenshot_spinner);
-                screenshot_stack.add (screenshot_overlay);
+                screenshot_stack.add (screenshot_clamp);
                 screenshot_stack.add (app_screenshot_not_found);
 
                 stack_context = screenshot_stack.get_style_context ();
@@ -930,7 +930,7 @@ namespace AppCenter.Views {
 
 
                     if (number_of_screenshots > 0) {
-                        screenshot_stack.visible_child = screenshot_overlay;
+                        screenshot_stack.visible_child = screenshot_clamp;
                         stack_context.remove_class ("loading");
 
 
