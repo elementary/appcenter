@@ -218,6 +218,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             description = _("Automatically install updates to curated apps")
         };
 
+        automatically_install_flatpak_updates_button.notify["active"].connect (() => {
+            if (automatically_install_flatpak_updates_button.active) {
+                AppCenterCore.Client.get_default ().update_cache.begin (true);
+            }
+        });
+
         var menu_popover_grid = new Gtk.Grid () {
             column_spacing = 6,
             margin_bottom = 6,
