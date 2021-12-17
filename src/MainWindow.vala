@@ -221,6 +221,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         automatically_install_flatpak_updates_button.notify["active"].connect (() => {
             if (automatically_install_flatpak_updates_button.active) {
                 AppCenterCore.Client.get_default ().update_cache.begin (true);
+            } else {
+                AppCenterCore.Client.get_default ().cancel_updates (true);
             }
         });
 
