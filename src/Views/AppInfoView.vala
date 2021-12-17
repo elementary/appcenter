@@ -1223,12 +1223,29 @@ namespace AppCenter.Views {
             */
             var raw_author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
 
-            // Filter packages by name to avoid showing duplicates 
             var author_packages = new Gee.ArrayList<AppCenterCore.Package> ();
             foreach (var pkg in raw_author_packages) {
-                if (pkg.get_name () != package.get_name ()) {
-                    author_packages.add (pkg);
+                var pkgnames = new Gee.ArrayList<string> ();
+                foreach (var rawpkg in author_packages) {
+                    pkgnames.add (rawpkg.get_name ());
                 }
+                if (pkgnames.contains (pkg.get_name ())) {
+                    continue;
+                }
+                // Remove packages with an identical name
+                if (pkg.get_name () == package.get_name ()) {
+                    continue;
+                }
+
+                author_packages.add (pkg);
+            }
+
+            foreach (var pkg in author_packages) {
+                author_packages.remove (pkg);
+                if (author_packages.contains (pkg)) {
+                    continue;
+                }
+                author_packages.add (pkg);
             }
             if (author_packages.size < 1) {
                 return;
