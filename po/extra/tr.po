@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-11 20:00+0000\n"
+"PO-Revision-Date: 2021-12-14 18:45+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -53,7 +53,7 @@ msgstr "Düzeltmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Prevent potential crashes when updating"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
@@ -70,7 +70,7 @@ msgstr "İyileştirmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Link to Flathub's search page when no search results are found"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:34
@@ -96,11 +96,11 @@ msgstr "Çeviriler güncellendi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Amusements appear in the Games category"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Categories show as a grid instead of a list"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Allow window to shrink to much narrower sizes"
@@ -108,27 +108,27 @@ msgstr "Pencerenin çok daha dar boyutlara küçülmesine izin verin"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Correctly show the installed status of first-party applications"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Don't store $0 app installs as paid"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Fix missing illicit substances icon"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Don't show plugins on the homepage"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Show installation progress in a more compact way"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 #: data/io.elementary.appcenter.appdata.xml.in:147
@@ -137,73 +137,73 @@ msgstr "Yeni özellikler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:66
 msgid "Show content warnings on app info pages"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:70
 msgid "Show other apps by an author for Flatpak sources"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:71
 msgid "Populate banner on home locally instead of relying on an external API"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:75
 msgid "Greatly increased number of recently-updated apps shown on home page"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Navigate banners on the home page with multitouch gestures"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:85
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:86
 msgid "Less abrupt transition when changing app sources"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:100
 msgid "Mention Sideload when search returns no results"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid ""
 "Ensure user installation is selected by default when navigating from the "
 "homepage"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:110
 msgid "Fix opening apps from app installed toasts"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:122
 msgid "Install Linux kernel headers with NVIDIA drivers"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:134
 msgid "Show Recently Updated Flatpak apps on home page"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:135
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:136
 msgid "Fix missing mail icon in payments dialog"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:137
 msgid "Fix missing privacy policy in payments dialog"
-msgstr " "
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:149
 msgid "Show in-app notification when an app is installed"
