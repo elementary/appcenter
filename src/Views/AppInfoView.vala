@@ -1251,7 +1251,7 @@ namespace AppCenter.Views {
                 return;
             }
 
-            var header = new Granite.HeaderLabel (_("Other Apps by %s").printf (package.author_title));
+            var header = new Granite.HeaderLabel (_("Also by %s").printf (package.author_title));
 
             var flowbox = new Gtk.FlowBox () {
                 activate_on_single_click = true,
