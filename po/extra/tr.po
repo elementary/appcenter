@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-14 18:45+0000\n"
-"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
+"PO-Revision-Date: 2021-12-27 20:39+0000\n"
+"Last-Translator: hazee17 <xaleded268+github@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -53,7 +53,7 @@ msgstr "Düzeltmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Prevent potential crashes when updating"
-msgstr ""
+msgstr "Güncelleme sırasında olası çökmeleri önle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
@@ -70,7 +70,7 @@ msgstr "İyileştirmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Link to Flathub's search page when no search results are found"
-msgstr ""
+msgstr "Arama sonucu bulunamadığında Flathub'ın arama sayfasına bağlan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:34
