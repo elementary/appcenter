@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-27 21:44+0000\n"
+"PO-Revision-Date: 2021-12-30 20:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -715,7 +715,7 @@ msgstr "オペレーティングシステムのアップデートに詳細を追
 
 #: data/io.elementary.appcenter.appdata.xml.in:389
 msgid "Support mouse button navigation"
-msgstr "マウスボタンによるナビゲーションをサポート"
+msgstr "マウスボタンによるナビゲーションに対応"
 
 #: data/io.elementary.appcenter.appdata.xml.in:480
 msgid "Fix crash caused by entries with missing packages"
