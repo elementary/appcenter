@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-17 11:20+0000\n"
+"PO-Revision-Date: 2021-12-30 20:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -463,7 +463,7 @@ msgstr "ただいま基準以上の支払い要求があります。後ほどお
 
 #: src/Dialogs/StripeDialog.vala:598
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "このカードはこの種類の取引をサポートしません。別のカードを使用して、もう一度お試しください。"
+msgstr "このカードはこの種類の取引には対応していません。別のカードを使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:600
 msgid "The currency is not supported by this card. Please try again with a different card."
