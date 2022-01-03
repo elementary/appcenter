@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-12-30 20:04+0000\n"
+"PO-Revision-Date: 2022-01-03 00:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -719,7 +719,7 @@ msgstr "マウスボタンによるナビゲーションに対応"
 
 #: data/io.elementary.appcenter.appdata.xml.in:480
 msgid "Fix crash caused by entries with missing packages"
-msgstr "不足しているパッケージの登録によるクラッシュを修正"
+msgstr "パッケージが不足しているエントリーによってクラッシュする不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:487
 msgid "Add capability to search by category and apply minor bug fixes."
