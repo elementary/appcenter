@@ -833,7 +833,7 @@ namespace AppCenter.Views {
                     return null;
                 }
 
-                List<string> urls = new List<string> ();
+                List<CaptionedUrl> captioned_urls = new List<CaptionedUrl> ();
 
                 var scale = get_scale_factor ();
                 var min_screenshot_width = MAX_WIDTH * scale;
@@ -857,20 +857,25 @@ namespace AppCenter.Views {
                         }
                     });
 
+                    var captioned_url = new CaptionedUrl (
+                        screenshot.get_caption (),
+                        best_image.get_url ()
+                    );
+
                     if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
-                        urls.prepend (best_image.get_url ());
+                        captioned_urls.prepend (captioned_url);
                     } else if (best_image != null) {
-                        urls.append (best_image.get_url ());
+                        captioned_urls.append (captioned_url);
                     }
                 });
 
-                string?[] screenshot_files = new string?[urls.length ()];
-                bool[] results = new bool[urls.length ()];
+                string?[] screenshot_files = new string?[captioned_urls.length ()];
+                bool[] results = new bool[captioned_urls.length ()];
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
-                for (int i = 0; i < urls.length (); i++) {
-                    string url = urls.nth_data (i);
+                for (int i = 0; i < captioned_urls.length (); i++) {
+                    string url = captioned_urls.nth_data (i).url;
                     string? file = null;
                     int index = i;
 
@@ -882,14 +887,15 @@ namespace AppCenter.Views {
                 }
 
                 // TODO: dynamically load screenshots as they become available.
-                while (urls.length () != completed) {
+                while (captioned_urls.length () != completed) {
                     Thread.usleep (100000);
                 }
 
                 // Load screenshots that were successfully obtained.
-                for (int i = 0; i < urls.length (); i++) {
+                for (int i = 0; i < captioned_urls.length (); i++) {
                     if (results[i] == true) {
-                        load_screenshot (screenshot_files[i]);
+                        string caption = captioned_urls.nth_data (i).caption;
+                        load_screenshot (caption, screenshot_files[i]);
                     }
                 }
 
@@ -919,7 +925,7 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string path) {
+        private void load_screenshot (string? caption, string path) {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
@@ -929,6 +935,9 @@ namespace AppCenter.Views {
                 image.icon_name = "image-x-generic";
                 image.halign = Gtk.Align.CENTER;
                 image.gicon = pixbuf;
+                if (caption != null) {
+                    image.tooltip_text = caption;
+                }
 
                 Idle.add (() => {
                     image.show ();
@@ -1109,6 +1118,15 @@ namespace AppCenter.Views {
                 context.add_class ("circular");
                 context.add_class ("arrow");
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
+        }
+
+        private class CaptionedUrl : Object {
+            public string? caption { get; construct; }
+            public string url { get; construct; }
+
+            public CaptionedUrl (string? caption, string url) {
+                Object (caption: caption, url: url);
             }
         }
     }
