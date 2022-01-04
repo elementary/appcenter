@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2022-01-03 00:55+0000\n"
+"PO-Revision-Date: 2022-01-04 08:58+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -250,7 +250,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Improve styling and contrast of buttons"
-msgstr "スタイルとボタンのコントラストを改善"
+msgstr "ボタンのスタイルとコントラストを改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "More concise and consistent language"
@@ -581,7 +581,7 @@ msgstr "読み込み時にスクリーンショットの背景をアニメーシ
 
 #: data/io.elementary.appcenter.appdata.xml.in:329
 msgid "Add navigation arrows for screenshots"
-msgstr "別jのスクリーンショットに移動するための矢印ボタンを追加"
+msgstr "スクリーンショットを切り替えられる矢印ボタンを追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:330
 msgid "Don't show uninstall buttons for essential system components"
@@ -624,9 +624,7 @@ msgstr "メモリー管理の改善"
 #: data/io.elementary.appcenter.appdata.xml.in:347
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
-msgstr ""
-"動的なリモートホームページコンテンツを無効化するための動的なコンパイルオプ"
-"ションを追加"
+msgstr "動的なリモートホームページコンテンツを無効化するためのコンパイルオプションを追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:348
 #: data/io.elementary.appcenter.appdata.xml.in:360
