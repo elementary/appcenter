@@ -936,7 +936,7 @@ namespace AppCenter.Views {
                 image.halign = Gtk.Align.CENTER;
                 image.gicon = pixbuf;
                 if (caption != null) {
-                    // Upstream spec says "ideally not more than 100 characters"
+                    // AppStream spec says "ideally not more than 100 characters"
                     int max_caption_len = 500;
                     image.tooltip_text = ellipsize (caption, max_caption_len);
                 }
