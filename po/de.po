@@ -3,7 +3,7 @@
 # Tucan Holmes <tucan.web.swiss@gmail.com>, 2018.
 # Pascal Matthiesen <pascal@false.one>, 2018.
 # Tim Krueger <t@timkrueger.me>, 2019.
-# Uwe S <saabisto@gmx.de>, 2019, 2020, 2021.
+# Uwe S <saabisto@gmx.de>, 2019, 2020, 2021, 2022.
 # Christoph Matthies <c.matthies.mail+github@gmail.com>, 2019.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # supaeasy <ismo+github@wolffson.ch>, 2021.
@@ -12,9 +12,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2021-11-17 13:22+0000\n"
+"PO-Revision-Date: 2022-01-04 08:58+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -798,7 +799,7 @@ msgstr "Unbetreute Anwendungen"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
-msgstr "Erworbene Anwendungen"
+msgstr "Kostenpflichtige Anwendungen"
 
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
