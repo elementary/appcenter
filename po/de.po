@@ -7,13 +7,14 @@
 # Christoph Matthies <c.matthies.mail+github@gmail.com>, 2019.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # supaeasy <ismo+github@wolffson.ch>, 2021.
+# Maik Marschner <legomaik@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
 "PO-Revision-Date: 2022-01-04 08:58+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"Last-Translator: Maik Marschner <legomaik@gmail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -978,7 +979,9 @@ msgstr "Tatsächlicher Umfang der herunterzuladenden Daten wahrscheinlich kleine
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Es werden nur diejenigen Komponenten der Anwendungen und Aktualisjerungen heruntergeladen, die benötigt werden."
+msgstr ""
+"Es werden nur diejenigen Komponenten der Anwendungen und Aktualisierungen "
+"heruntergeladen, die benötigt werden."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
