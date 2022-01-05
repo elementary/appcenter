@@ -935,18 +935,10 @@ namespace AppCenter.Views {
                 image.icon_name = "image-x-generic";
                 image.halign = Gtk.Align.CENTER;
                 image.gicon = pixbuf;
-
                 if (caption != null) {
-                    image.has_tooltip = true;
-                    image.query_tooltip.connect ((x, y, keyboard_tooltip, tooltip) => {
-                        tooltip.set_custom (new Gtk.Label (caption) {
-                            ellipsize = Pango.EllipsizeMode.END,
-                            // AppStream spec says "ideally not more than 100 characters"
-                            max_width_chars = 200
-                        });
-
-                        return true;
-                    });
+                    // AppStream spec says "ideally not more than 100 characters"
+                    int max_caption_len = 500;
+                    image.tooltip_text = ellipsize (caption, max_caption_len);
                 }
 
                 Idle.add (() => {
@@ -957,6 +949,17 @@ namespace AppCenter.Views {
             } catch (Error e) {
                 critical (e.message);
             }
+        }
+
+        private string ellipsize (string long_text, int max_length) {
+            if (long_text.length > max_length) {
+                StringBuilder sb = new StringBuilder (long_text);
+                sb.truncate (max_length);
+                sb.append ("\u2026");
+                return sb.str;
+            }
+
+            return long_text;
         }
 
         private void parse_license (string project_license, out string license_copy, out string license_url) {
