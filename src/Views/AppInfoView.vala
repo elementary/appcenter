@@ -937,7 +937,7 @@ namespace AppCenter.Views {
                 image.gicon = pixbuf;
                 if (caption != null) {
                     // AppStream spec says "ideally not more than 100 characters"
-                    int max_caption_len = 500;
+                    int max_caption_len = 200;
                     image.tooltip_text = ellipsize (caption, max_caption_len);
                 }
 
