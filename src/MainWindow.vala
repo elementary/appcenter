@@ -214,12 +214,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
-        var automatically_install_flatpak_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
+        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
             description = _("Automatically install updates to curated apps")
         };
 
-        automatically_install_flatpak_updates_button.notify["active"].connect (() => {
-            if (automatically_install_flatpak_updates_button.active) {
+        automatic_updates_button.notify["active"].connect (() => {
+            if (automatic_updates_button.active) {
                 AppCenterCore.Client.get_default ().update_cache.begin (true);
             } else {
                 AppCenterCore.Client.get_default ().cancel_updates (true);
@@ -234,7 +234,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             row_spacing = 6
         };
 
-        menu_popover_grid.add (automatically_install_flatpak_updates_button);
+        menu_popover_grid.add (automatic_updates_button);
 
         menu_popover_grid.show_all ();
 
@@ -290,8 +290,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         App.settings.get ("window-position", "(ii)", out window_x, out window_y);
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
         App.settings.bind (
-            "automatically-install-flatpak-updates",
-            automatically_install_flatpak_updates_button,
+            "automatic-updates",
+            automatic_updates_button,
             "active",
             SettingsBindFlags.DEFAULT
         );

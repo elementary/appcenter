@@ -41,10 +41,10 @@
       <summary>Unix UTC time of last cache refresh</summary>
       <description>Used to determine when AppCenter last refreshed its caches and checked for package updates</description>
     </key>
-    <key type="b" name="automatically-install-flatpak-updates">
+    <key type="b" name="automatic-updates">
       <default>false</default>
-      <summary>Automatically install Flatpak updates</summary>
-      <description>Whether to automatically install updates to curated Flatpaks</description>
+      <summary>Automatic updates</summary>
+      <description>Whether to automatically install updates to curated Flatpak apps</description>
     </key>
   </schema>
 </schemalist>
