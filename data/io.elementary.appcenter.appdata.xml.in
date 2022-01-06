@@ -13,6 +13,10 @@
   <releases>
     <release version="3.9.2" date="2021-12-10" urgency="medium">
       <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Prevent back button from disappearing or requiring multiple clicks</li>
+        </ul>
         <p>Improvements:</p>
         <ul>
           <li>Show screenshot captions in a tooltip</li>
