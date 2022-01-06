@@ -494,6 +494,33 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var flatpak_ref = Flatpak.Ref.parse (bundle_id);
         bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
 
+        //  var remote_ref = installation.fetch_remote_ref_sync (string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, cancellable);
+
+        installation.list_remotes ().foreach ((remote) => {
+            var elements = bundle_id.split ("/", 4);
+            
+            var remote_name = remote.get_name ();
+            //  var name = installation.get_id ();
+            var name = elements[1];
+            var arch = elements[2];
+            var branch = elements[3];
+
+            try {
+                var remote_ref = installation.fetch_remote_ref_sync (remote_name, flatpak_ref.kind, name, arch, branch, cancellable);
+                print ("is_app: %s\n", is_app ? "true" : "false");
+                print ("remote_name: %s\n", remote_name);
+                print ("name: %s\n", name);
+                print ("arch: %s\n", arch);
+                print ("branch: %s\n", branch);
+
+                print ("eol: %s\n", remote_ref.get_eol ());
+                print ("eol_rebase: %s\n", remote_ref.get_eol_rebase ());
+                print ("\n");
+            } catch (Error e) {
+                
+            }            
+        });
+
         uint64 download_size = 0;
 
         var added_remotes = new Gee.ArrayList<string> ();
