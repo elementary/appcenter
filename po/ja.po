@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-07 19:54+0000\n"
-"PO-Revision-Date: 2022-01-04 08:58+0000\n"
+"PO-Revision-Date: 2022-01-05 20:37+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -86,11 +86,11 @@ msgstr "実行しています"
 
 #: src/Utils.vala:68
 msgid "Querying"
-msgstr "検索しています"
+msgstr "問い合わせています"
 
 #: src/Utils.vala:70
 msgid "Getting information"
-msgstr "情報を入手しています"
+msgstr "情報を取得しています"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
@@ -130,7 +130,7 @@ msgstr "署名を確認しています"
 
 #: src/Utils.vala:90
 msgid "Testing changes"
-msgstr "変更を確認しています"
+msgstr "変更をテストしています"
 
 #: src/Utils.vala:92
 msgid "Committing changes"
@@ -157,15 +157,15 @@ msgstr "リポジトリの情報をダウンロードしています"
 
 #: src/Utils.vala:102
 msgid "Downloading list of packages"
-msgstr "パッケージリストをダウンロードしています"
+msgstr "パッケージの一覧をダウンロードしています"
 
 #: src/Utils.vala:104
 msgid "Downloading file lists"
-msgstr "ファイルリストをダウンロードしています"
+msgstr "ファイルの一覧をダウンロードしています"
 
 #: src/Utils.vala:106
 msgid "Downloading lists of changes"
-msgstr "変更リストをダウンロードしています"
+msgstr "変更の一覧をダウンロードしています"
 
 #: src/Utils.vala:108
 msgid "Downloading groups"
@@ -185,7 +185,7 @@ msgstr "キャッシュを読み込んでいます"
 
 #: src/Utils.vala:116
 msgid "Scanning applications"
-msgstr "アプリケーションを検索しています"
+msgstr "アプリケーションをスキャンしています"
 
 #: src/Utils.vala:118
 msgid "Generating package lists"
@@ -193,7 +193,7 @@ msgstr "パッケージリストを生成しています"
 
 #: src/Utils.vala:120
 msgid "Waiting for package manager lock"
-msgstr "パッケージマネージャーのロックを待機しています"
+msgstr "パッケージマネージャーがロックされるのを待機しています"
 
 #: src/Utils.vala:122
 msgid "Waiting for authentication"
