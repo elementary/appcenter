@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-07 19:54+0000\n"
+"POT-Creation-Date: 2022-01-06 21:26+0000\n"
 "PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -102,7 +102,7 @@ msgstr "Tar bort paket"
 msgid "Downloading"
 msgstr "Hämtar"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1053
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1061
 msgid "Installing"
 msgstr "Installerar"
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "Klart"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1062 src/Core/FlatpakBackend.vala:1086
-#: src/Core/FlatpakBackend.vala:1194 src/Core/FlatpakBackend.vala:1218
-#: src/Core/FlatpakBackend.vala:1364 src/Core/FlatpakBackend.vala:1386
+#: src/Core/FlatpakBackend.vala:1070 src/Core/FlatpakBackend.vala:1094
+#: src/Core/FlatpakBackend.vala:1202 src/Core/FlatpakBackend.vala:1226
+#: src/Core/FlatpakBackend.vala:1372 src/Core/FlatpakBackend.vala:1394
 msgid "Cancelling"
 msgstr "Avbryter"
 
@@ -238,13 +238,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u ny uppdatering finns tillgänglig för ditt system"
 msgstr[1] "%u nya uppdateringar finns tillgängliga för ditt system"
 
-#: src/Core/FlatpakBackend.vala:1185
+#: src/Core/FlatpakBackend.vala:1193
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Avinstallera"
 
-#: src/Core/FlatpakBackend.vala:1355
+#: src/Core/FlatpakBackend.vala:1363
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -283,7 +283,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:286
+#: src/Core/PackageKitBackend.vala:290
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -732,44 +732,44 @@ msgid "Share"
 msgstr "Dela"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:959
+#: src/Views/AppInfoView.vala:981
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:962
+#: src/Views/AppInfoView.vala:984
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:967
+#: src/Views/AppInfoView.vala:989
 #, fuzzy
 msgid "Free Software"
 msgstr "Redigera källprogramvara"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:970
+#: src/Views/AppInfoView.vala:992
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:974
+#: src/Views/AppInfoView.vala:996
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:977
+#: src/Views/AppInfoView.vala:999
 #, fuzzy
 msgid "Unknown License"
 msgstr "Okänt tillstånd"
 
-#: src/Views/AppInfoView.vala:1057
+#: src/Views/AppInfoView.vala:1079
 msgid "Fund"
 msgstr "Finansiera"
 
-#: src/Views/AppInfoView.vala:1065
+#: src/Views/AppInfoView.vala:1087
 msgid "Fund the development of this app"
 msgstr "Finansiera utvecklingen av den här appen"
 
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1208
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Andra appar av %s"
