@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 23:18+0000\n"
+"POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Tagalog <https://l10n.elementary.io/projects/appcenter/appcenter/tl/>\n"
@@ -39,7 +39,7 @@ msgstr "% ay matagumpay na naiinstall"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:352
+#: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
 msgid "“%s” has been installed"
 msgstr "% ay matagumpay na naiinstall"
@@ -62,12 +62,26 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Naka-install"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:423
+#: src/MainWindow.vala:212 src/MainWindow.vala:466
 msgid "Search Apps"
 msgstr "Maghanap ng mga App"
 
+#: src/MainWindow.vala:218
+msgid "Automatic Updates"
+msgstr ""
+
+#: src/MainWindow.vala:219
+msgid "Automatically update free and paid-for curated apps"
+msgstr ""
+
+#: src/MainWindow.vala:249
+#, fuzzy
+#| msgid "Starting"
+msgid "Settings"
+msgstr "Nagsisimula"
+
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:355
+#: src/MainWindow.vala:398
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr ""
@@ -293,36 +307,36 @@ msgstr "Mga Update para sa Operating System"
 msgid "Updates to system components"
 msgstr "Mga update para sa system components"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:138
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:146
+#: src/Core/UpdateManager.vala:155
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:151
+#: src/Core/UpdateManager.vala:160
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:153
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:200
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:201
 msgid "Please restart your system to finalize updates"
 msgstr ""
 

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 23:18+0000\n"
+"POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -38,7 +38,7 @@ msgstr "%s było sprownie zainstalowane"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:352
+#: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -63,12 +63,28 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:423
+#: src/MainWindow.vala:212 src/MainWindow.vala:466
 msgid "Search Apps"
 msgstr "Wyszukej program"
 
+#: src/MainWindow.vala:218
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Automatic Updates"
+msgstr "Niy szło pobrać aktualizacyji"
+
+#: src/MainWindow.vala:219
+msgid "Automatically update free and paid-for curated apps"
+msgstr ""
+
+#: src/MainWindow.vala:249
+#, fuzzy
+#| msgid "Starting"
+msgid "Settings"
+msgstr "Zaczynanie"
+
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:355
+#: src/MainWindow.vala:398
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "Ôtwōrz"
@@ -292,20 +308,20 @@ msgstr "Aktualizacyje systymu ôperacyjnego"
 msgid "Updates to system components"
 msgstr "Aktualizacyje elymyntōw systymu"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "Wersyjo: %s"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:138
 msgid "Flatpak runtime"
 msgstr "Bibliotyka Flatpak"
 
-#: src/Core/UpdateManager.vala:146
+#: src/Core/UpdateManager.vala:155
 msgid "No components with updates"
 msgstr "Brak kōmpōnyntōw z aktualizacyjami"
 
-#: src/Core/UpdateManager.vala:151
+#: src/Core/UpdateManager.vala:160
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -313,16 +329,16 @@ msgstr[0] "Jedyn kōmpōnynt z aktualizacyjōm"
 msgstr[1] "%u kōmpōnynta z aktualizacyjami"
 msgstr[2] "%u kōmpōnyntōw z aktualizacyjami"
 
-#: src/Core/UpdateManager.vala:153
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:200
 msgid "Restart Required"
 msgstr "Potrzebny restart"
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:201
 msgid "Please restart your system to finalize updates"
 msgstr "Zresztartuj systym, żeby dokōńczyć aktualizacyje"
 

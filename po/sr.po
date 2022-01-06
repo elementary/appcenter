@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 23:18+0000\n"
+"POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2021-03-11 10:09+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -39,7 +39,7 @@ msgstr "Програм је инсталиран"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:352
+#: src/Application.vala:299 src/MainWindow.vala:395
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ је инсталиран"
@@ -62,12 +62,28 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Инсталиран"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:423
+#: src/MainWindow.vala:212 src/MainWindow.vala:466
 msgid "Search Apps"
 msgstr "Тражи програме"
 
+#: src/MainWindow.vala:218
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Automatic Updates"
+msgstr "Нисам успео да довучем освежења"
+
+#: src/MainWindow.vala:219
+msgid "Automatically update free and paid-for curated apps"
+msgstr ""
+
+#: src/MainWindow.vala:249
+#, fuzzy
+#| msgid "Starting"
+msgid "Settings"
+msgstr "Покрећем"
+
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:355
+#: src/MainWindow.vala:398
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "Отвори"
@@ -291,20 +307,20 @@ msgstr "Освежења оперативног система"
 msgid "Updates to system components"
 msgstr "Освежења за састојке система"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "Издање: %s"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:138
 msgid "Flatpak runtime"
 msgstr "Извршно време Флатпака"
 
-#: src/Core/UpdateManager.vala:146
+#: src/Core/UpdateManager.vala:155
 msgid "No components with updates"
 msgstr "Нема састојака са освежењима"
 
-#: src/Core/UpdateManager.vala:151
+#: src/Core/UpdateManager.vala:160
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -312,16 +328,16 @@ msgstr[0] "%u састојак са освежењима"
 msgstr[1] "%u састојка са освежењима"
 msgstr[2] "%u састојака са освежењима"
 
-#: src/Core/UpdateManager.vala:153
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:200
 msgid "Restart Required"
 msgstr "Потребно је поновно покретање система"
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:201
 msgid "Please restart your system to finalize updates"
 msgstr "Поново покрените систем да завршите са освежењима"
 
