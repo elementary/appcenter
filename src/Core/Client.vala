@@ -172,7 +172,7 @@ public class AppCenterCore.Client : Object {
                 debug ("Update Flatpaks");
                 var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
                 foreach (var app in installed_apps) {
-                    if (app.is_native && app.update_available) {
+                    if (app.is_native && app.update_available && !app.should_pay) {
                         debug ("Update: %s", app.get_name ());
                         try {
                             yield app.update (false);
