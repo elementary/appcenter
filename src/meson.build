@@ -76,6 +76,10 @@ if get_option('hide_upstream_distro_apps')
     args += '--define=HIDE_UPSTREAM_DISTRO_APPS'
 endif
 
+if appstream.version().version_compare('>=0.15')
+    args += '--define=HAS_APPSTREAM_0_15'
+endif
+
 executable(
     meson.project_name(),
     appcenter_files,
