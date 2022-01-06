@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 21:26+0000\n"
+"POT-Creation-Date: 2022-01-06 23:18+0000\n"
 "PO-Revision-Date: 2016-09-13 07:28+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: \n"
@@ -38,38 +38,38 @@ msgstr "%s بەسەرکەوتوویی دامەزرا"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:351
+#: src/Application.vala:299 src/MainWindow.vala:352
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s بەسەرکەوتوویی دامەزرا"
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:140
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "پەیداکردن و دامەزراندنی نەرمەکالاکان"
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
+#: src/MainWindow.vala:170 src/Views/Homepage.vala:271
 #: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:89
+#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
+#: src/Views/SearchView.vala:88
 #, fuzzy
 msgid "Home"
 msgstr "پەرەی سەرەکی"
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:171 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "دامەزراندن"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:422 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:87
+#: src/MainWindow.vala:212 src/MainWindow.vala:423
 msgid "Search Apps"
 msgstr "گەڕان بۆ نەرمەواڵەکان"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:355
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr ""
@@ -829,7 +829,7 @@ msgid "Search %s"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:40
 msgctxt "view"
 msgid "Search"
 msgstr "گه‌ڕان"
