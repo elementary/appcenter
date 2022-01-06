@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-07 19:54+0000\n"
+"POT-Creation-Date: 2022-01-06 21:26+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -106,7 +106,7 @@ msgstr "Đang xóa gói"
 msgid "Downloading"
 msgstr "Đang tải về"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1053
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1061
 msgid "Installing"
 msgstr "Đang cài đặt"
 
@@ -151,9 +151,9 @@ msgid "Finished"
 msgstr "Đã hoàn tất"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1062 src/Core/FlatpakBackend.vala:1086
-#: src/Core/FlatpakBackend.vala:1194 src/Core/FlatpakBackend.vala:1218
-#: src/Core/FlatpakBackend.vala:1364 src/Core/FlatpakBackend.vala:1386
+#: src/Core/FlatpakBackend.vala:1070 src/Core/FlatpakBackend.vala:1094
+#: src/Core/FlatpakBackend.vala:1202 src/Core/FlatpakBackend.vala:1226
+#: src/Core/FlatpakBackend.vala:1372 src/Core/FlatpakBackend.vala:1394
 msgid "Cancelling"
 msgstr "Đang hủy"
 
@@ -240,13 +240,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u bản cập nhật khả dụng cho hệ thống của bạn"
 
-#: src/Core/FlatpakBackend.vala:1185
+#: src/Core/FlatpakBackend.vala:1193
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Gỡ cài đặt"
 
-#: src/Core/FlatpakBackend.vala:1355
+#: src/Core/FlatpakBackend.vala:1363
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -284,7 +284,7 @@ msgstr "Nguồn gốc không xác định (không được quản lý)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
 
-#: src/Core/PackageKitBackend.vala:286
+#: src/Core/PackageKitBackend.vala:290
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (cục bộ)"
@@ -733,43 +733,43 @@ msgid "Share"
 msgstr "Chia sẻ"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:959
+#: src/Views/AppInfoView.vala:981
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:962
+#: src/Views/AppInfoView.vala:984
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:967
+#: src/Views/AppInfoView.vala:989
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:970
+#: src/Views/AppInfoView.vala:992
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:974
+#: src/Views/AppInfoView.vala:996
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:977
+#: src/Views/AppInfoView.vala:999
 #, fuzzy
 msgid "Unknown License"
 msgstr "Trạng thái không xác định"
 
-#: src/Views/AppInfoView.vala:1057
+#: src/Views/AppInfoView.vala:1079
 msgid "Fund"
 msgstr "Tài trợ"
 
-#: src/Views/AppInfoView.vala:1065
+#: src/Views/AppInfoView.vala:1087
 msgid "Fund the development of this app"
 msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1208
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Các ứng dụng khác %s"
