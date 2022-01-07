@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 21:26+0000\n"
+"POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2021-07-24 18:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
@@ -39,35 +39,51 @@ msgstr "A aplicação foi instalada"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:351
+#: src/Application.vala:299 src/MainWindow.vala:395
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" foi instalada"
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:140
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Falha ao iniciar “%s\""
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
+#: src/MainWindow.vala:170 src/Views/Homepage.vala:271
 #: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:89
+#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
+#: src/Views/SearchView.vala:88
 msgid "Home"
 msgstr "Página inicial"
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:171 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalado"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:422 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:87
+#: src/MainWindow.vala:212 src/MainWindow.vala:466
 msgid "Search Apps"
 msgstr "Procurar aplicações"
 
+#: src/MainWindow.vala:218
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Automatic Updates"
+msgstr "A busca por atualizações falhou"
+
+#: src/MainWindow.vala:219
+msgid "Automatically update free and paid-for curated apps"
+msgstr ""
+
+#: src/MainWindow.vala:249
+#, fuzzy
+#| msgid "Starting"
+msgid "Settings"
+msgstr "A iniciar"
+
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:398
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "Abrir"
@@ -289,36 +305,36 @@ msgstr "Atualizações do sistema operativo"
 msgid "Updates to system components"
 msgstr "Atualizações aos componentes do sistema"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "Versão: %s"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:138
 msgid "Flatpak runtime"
 msgstr "Tempo de execução Flatpak"
 
-#: src/Core/UpdateManager.vala:146
+#: src/Core/UpdateManager.vala:155
 msgid "No components with updates"
 msgstr "Sem componentes atualizáveis"
 
-#: src/Core/UpdateManager.vala:151
+#: src/Core/UpdateManager.vala:160
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u componente com atualizações"
 msgstr[1] "%u componentes com atualizações"
 
-#: src/Core/UpdateManager.vala:153
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:200
 msgid "Restart Required"
 msgstr "Reinício necessário"
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:201
 msgid "Please restart your system to finalize updates"
 msgstr "Reinicie o seu sistema para finalizar as atualizações"
 
@@ -824,7 +840,7 @@ msgid "Search %s"
 msgstr "Pesquisar %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:40
 msgctxt "view"
 msgid "Search"
 msgstr "Procurar"
