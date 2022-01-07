@@ -50,6 +50,10 @@ namespace AppCenter.Views {
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
+        private Gtk.FlowBox oars_flowbox;
+        private Gtk.Revealer oars_flowbox_revealer;
+
+        private bool is_eol_shown = false;
 
         private unowned Gtk.StyleContext stack_context;
 
@@ -100,12 +104,15 @@ namespace AppCenter.Views {
                 "oars-gambling-symbolic"
             );
 
-            var oars_flowbox = new Gtk.FlowBox () {
+            oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 margin_bottom = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
+
+            oars_flowbox_revealer = new Gtk.Revealer ();
+            oars_flowbox_revealer.add (oars_flowbox);
 
 #if CURATED
             if (!package.is_native && !package.is_os_updates) {
@@ -522,8 +529,9 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
+            content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
-                content_grid.add (oars_flowbox);
+                oars_flowbox_revealer.reveal_child = true;
             }
 
             if (screenshots.length > 0) {
@@ -743,6 +751,22 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
+
+            if (package.is_eol && !is_eol_shown) {
+                is_eol_shown = true;
+                var end_of_life = new ContentType (
+                    _("End of Life"),
+                    _("Uses a runtime that is no longer supported and does not receive security updates"),
+                    "software-update-urgent-symbolic"
+                );
+
+                oars_flowbox.insert (end_of_life, 0);
+                oars_flowbox.show_all ();
+
+                if (oars_flowbox.get_children ().length () > 0) {
+                    oars_flowbox_revealer.reveal_child = true;
+                }
+            }
         }
 
         public void view_entered () {
