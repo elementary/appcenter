@@ -1,5 +1,3 @@
-
-  
 /*
 * Copyright 2021 elementary, Inc. (https://elementary.io)
 *
