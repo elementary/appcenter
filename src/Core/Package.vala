@@ -37,7 +37,7 @@ public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
 
-    public uint deprecated_dependencies_number { get; set; default = 0U; }
+    public bool runtime_eol { get; set; default = false; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"

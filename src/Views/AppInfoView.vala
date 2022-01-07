@@ -752,15 +752,11 @@ namespace AppCenter.Views {
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
 
-            if (package.deprecated_dependencies_number > 0 && !is_eol_shown) {
+            if (package.runtime_eol && !is_eol_shown) {
                 is_eol_shown = true;
                 var end_of_life = new ContentType (
-                    _("End of Life"),
-                    ngettext (
-                        "Uses a runtime that is no longer supported and does not receive security updates",
-                        "Uses runtimes that are no longer supported and do not receive security updates",
-                        package.deprecated_dependencies_number
-                    ),
+                    _("Outdated"),
+                    _("Built with older technologies that may not work as expected or receive security updates"),
                     "software-update-urgent-symbolic"
                 );
 

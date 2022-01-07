@@ -498,7 +498,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var added_remotes = new Gee.ArrayList<string> ();
 
-        uint deprecated_dependencies_number = 0;
+        bool runtime_eol = false;
         try {
             var transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
             transaction.add_default_dependency_sources ();
@@ -537,7 +537,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                         var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
 
                         if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
-                            deprecated_dependencies_number++;
+                            runtime_eol = true;
                         }
                     } catch (Error e) {
                         warning ("Error while fetching remote ref: %s", e.message);
@@ -576,7 +576,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         if (package != null) {
-            package.deprecated_dependencies_number = deprecated_dependencies_number;
+            package.runtime_eol = runtime_eol;
         }
 
         return download_size;
