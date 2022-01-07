@@ -11,6 +11,7 @@ You'll need the following dependencies:
 * gettext
 * libappstream-dev (>= 0.10)
 * libflatpak-dev
+* libfwupd-dev
 * libgee-0.8-dev
 * libgranite-dev (>=5.2.5)
 * libgtk-3-dev
