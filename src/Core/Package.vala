@@ -37,6 +37,8 @@ public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
 
+    public bool is_eol { get; set; }
+
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
      * or above is considered explicit for our naive warning.
