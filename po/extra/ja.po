@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2022-01-04 08:58+0000\n"
+"PO-Revision-Date: 2022-01-07 11:05+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -46,12 +46,8 @@ msgid "New features:"
 msgstr "新機能:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "No longer prompt for approval to update non-curated apps"
 msgid "Added an option to automatically update curated apps"
-msgstr ""
-"キューレートしていないアプリのアップデートの際に、インストール許可のダイアロ"
-"グを表示しないように修正"
+msgstr "キュレーションされたアプリのアップデートを自動的にアップデートするオプションを追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:33
@@ -68,7 +64,7 @@ msgstr "修正点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
+msgstr "ヘッダーの戻るボタンが消えたり複数回のクリックを要したりしていた不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -86,7 +82,7 @@ msgstr "改善点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "スクリーンショットのキャプションをツールチップに表示"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:40
@@ -459,9 +455,7 @@ msgstr "apt 操作に設定済みのネットワークプロキシ設定を使�
 
 #: data/io.elementary.appcenter.appdata.xml.in:281
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
-"キューレートしていないアプリのアップデートの際に、インストール許可のダイアロ"
-"グを表示しないように修正"
+msgstr "キュレーションされていないアプリのアップデートの際に、インストール許可のダイアログを表示しないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:282
 msgid ""
