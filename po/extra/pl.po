@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2021-12-08 16:57+0000\n"
+"PO-Revision-Date: 2022-01-07 11:05+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
@@ -47,11 +47,9 @@ msgid "New features:"
 msgstr "Nowe funkcje:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "No longer prompt for approval to update non-curated apps"
 msgid "Added an option to automatically update curated apps"
 msgstr ""
-"Wyłączone prośby o potwierdzenie aktualizacji niewyselekcjonowanych aplikacji"
+"Dodano opcję automatycznych aktualizacji niewyselekcjonowanych aplikacji"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:33
@@ -68,7 +66,7 @@ msgstr "Poprawki:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
+msgstr "Zapobiegnięto znikaniu i niedziałaniu przycisku powrotu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -86,7 +84,7 @@ msgstr "Ulepszenia:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "Pokazano opisy zrzutu w tooltipie"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:40
