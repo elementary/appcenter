@@ -73,6 +73,7 @@ public class AppCenterCore.UpdateManager : Object {
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", pkg_name);
                 apps_with_updates.add (appcenter_package);
+                count++;
                 appcenter_package.latest_version = pk_package.get_version ();
             } else {
                 debug ("Added %s to OS updates", pkg_name);
@@ -100,6 +101,11 @@ public class AppCenterCore.UpdateManager : Object {
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
+
+                if (!(AppCenter.App.settings.get_boolean ("automatic-updates") && appcenter_package.is_native)) {
+                    count++;
+                }
+
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
                 appcenter_package.update_state ();
                 try {
@@ -122,7 +128,10 @@ public class AppCenterCore.UpdateManager : Object {
                     continue;
                 }
 
-                os_count++;
+                if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
+                    os_count++;
+                }
+
                 os_desc += Markup.printf_escaped (
                     " • %s\n\t%s\n",
                     @ref.get_name (),
@@ -153,7 +162,6 @@ public class AppCenterCore.UpdateManager : Object {
             os_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
 
-        count = apps_with_updates.size;
         debug ("%u app updates found", count);
         if (os_count > 0) {
             count += 1;

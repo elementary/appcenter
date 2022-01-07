@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 21:26+0000\n"
+"POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2021-12-07 10:20+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -45,35 +45,51 @@ msgstr "应用已安装"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:351
+#: src/Application.vala:299 src/MainWindow.vala:395
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” 已安装"
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:140
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "启动 “%s” 失败"
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
+#: src/MainWindow.vala:170 src/Views/Homepage.vala:271
 #: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:89
+#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
+#: src/Views/SearchView.vala:88
 msgid "Home"
 msgstr "主页"
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:171 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "已安装"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:422 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:87
+#: src/MainWindow.vala:212 src/MainWindow.vala:466
 msgid "Search Apps"
 msgstr "搜索应用"
 
+#: src/MainWindow.vala:218
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Automatic Updates"
+msgstr "获取更新失败"
+
+#: src/MainWindow.vala:219
+msgid "Automatically update free and paid-for curated apps"
+msgstr ""
+
+#: src/MainWindow.vala:249
+#, fuzzy
+#| msgid "Starting"
+msgid "Settings"
+msgstr "正在开始"
+
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:398
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "打开"
@@ -293,35 +309,35 @@ msgstr "系统更新"
 msgid "Updates to system components"
 msgstr "组件更新"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "版本： %s"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:138
 msgid "Flatpak runtime"
 msgstr "Flatpak 运行组件"
 
-#: src/Core/UpdateManager.vala:146
+#: src/Core/UpdateManager.vala:155
 msgid "No components with updates"
 msgstr "暂无组件更新"
 
-#: src/Core/UpdateManager.vala:151
+#: src/Core/UpdateManager.vala:160
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "有 %u 个组件需要更新"
 
-#: src/Core/UpdateManager.vala:153
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%s:"
 msgstr "%s："
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:200
 msgid "Restart Required"
 msgstr "需要重启"
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:201
 msgid "Please restart your system to finalize updates"
 msgstr "请重启您的系统来完成更新"
 
@@ -815,7 +831,7 @@ msgid "Search %s"
 msgstr "搜索 %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:40
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"
