@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2022-01-05 20:37+0000\n"
+"PO-Revision-Date: 2022-01-07 11:05+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,20 +66,16 @@ msgid "Search Apps"
 msgstr "アプリを検索"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
-msgstr "アップデートを取得できませんでした"
+msgstr "自動アップデート"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
+msgstr "キュレーションされたアプリのうち、無料あるいは購入済みのものを自動的にアップデートします"
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "開始しています"
+msgstr "設定"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:398
