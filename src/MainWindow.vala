@@ -24,8 +24,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
-    private Gtk.Button refresh_button;
-    private Gtk.Revealer refresh_button_revealer;
     private Gtk.ModelButton refresh_menuitem;
     private Homepage homepage;
     private Views.SearchView search_view;
@@ -115,7 +113,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         notify["working"].connect (() => {
             Idle.add (() => {
                 spinner.active = working;
-                refresh_button_revealer.reveal_child = !working;
                 refresh_menuitem.sensitive = !working;
                 return GLib.Source.REMOVE;
             });
@@ -220,19 +217,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
-        refresh_button = new Gtk.Button.from_icon_name ("view-refresh", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = "app.refresh",
-            tooltip_markup = Granite.markup_accel_tooltip (
-                ((AppCenter.App) GLib.Application.get_default ()).get_accels_for_action ("app.refresh"),
-                _("Refresh")
-            )
-        };
-
-        refresh_button_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
-        };
-        refresh_button_revealer.add (refresh_button);
-
         var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
             description = _("Automatically update free and paid-for curated apps")
         };
@@ -287,7 +271,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         headerbar.pack_start (return_button);
         headerbar.pack_end (menu_button);
         headerbar.pack_end (search_entry);
-        headerbar.pack_end (refresh_button_revealer);
         headerbar.pack_end (spinner);
 
         homepage = new Homepage ();
