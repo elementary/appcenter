@@ -26,6 +26,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Spinner spinner;
     private Gtk.Button refresh_button;
     private Gtk.Revealer refresh_button_revealer;
+    private Gtk.ModelButton refresh_menuitem;
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
@@ -115,6 +116,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             Idle.add (() => {
                 spinner.active = working;
                 refresh_button_revealer.reveal_child = !working;
+                refresh_menuitem.sensitive = !working;
                 return GLib.Source.REMOVE;
             });
         });
@@ -248,7 +250,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             "app.refresh"
         );
 
-        var refresh_menuitem = new Gtk.ModelButton () {
+        refresh_menuitem = new Gtk.ModelButton () {
             action_name = "app.refresh"
         };
         refresh_menuitem.get_child ().destroy ();
