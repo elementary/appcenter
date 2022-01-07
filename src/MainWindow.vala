@@ -243,6 +243,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
+        var refresh_accellabel = new Granite.AccelLabel.from_action_name (
+            _("Refresh"),
+            "app.refresh"
+        );
+
+        var refresh_menuitem = new Gtk.ModelButton () {
+            action_name = "app.refresh"
+        };
+        refresh_menuitem.get_child ().destroy ();
+        refresh_menuitem.add (refresh_accellabel);
+
         var menu_popover_grid = new Gtk.Grid () {
             column_spacing = 6,
             margin_bottom = 6,
@@ -252,6 +263,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
 
         menu_popover_grid.add (automatic_updates_button);
+        menu_popover_grid.add (refresh_menuitem);
 
         menu_popover_grid.show_all ();
 
