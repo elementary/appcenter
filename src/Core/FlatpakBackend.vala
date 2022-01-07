@@ -469,10 +469,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         bool system = fp_package.installation == system_installation;
 
         var id = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
-        return yield get_download_size_by_id (id, cancellable, is_update);
+        return yield get_download_size_by_id (id, cancellable, is_update, package);
     }
 
-    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
         bool system;
         string origin, bundle_id;
         var split_success = get_package_list_key_parts (id, out system, out origin, out bundle_id);
@@ -493,33 +493,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var flatpak_ref = Flatpak.Ref.parse (bundle_id);
         bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
-
-        //  var remote_ref = installation.fetch_remote_ref_sync (string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, cancellable);
-
-        installation.list_remotes ().foreach ((remote) => {
-            var elements = bundle_id.split ("/", 4);
-            
-            var remote_name = remote.get_name ();
-            //  var name = installation.get_id ();
-            var name = elements[1];
-            var arch = elements[2];
-            var branch = elements[3];
-
-            try {
-                var remote_ref = installation.fetch_remote_ref_sync (remote_name, flatpak_ref.kind, name, arch, branch, cancellable);
-                print ("is_app: %s\n", is_app ? "true" : "false");
-                print ("remote_name: %s\n", remote_name);
-                print ("name: %s\n", name);
-                print ("arch: %s\n", arch);
-                print ("branch: %s\n", branch);
-
-                print ("eol: %s\n", remote_ref.get_eol ());
-                print ("eol_rebase: %s\n", remote_ref.get_eol_rebase ());
-                print ("\n");
-            } catch (Error e) {
-                
-            }            
-        });
 
         uint64 download_size = 0;
 
@@ -552,6 +525,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                         entry_ref = Flatpak.Ref.parse (entry.get_ref ());
                     } catch (Error e) {
                         return;
+                    }
+
+                    try {
+                        var remote_name = entry.get_remote ();
+                        var kind = entry_ref.kind;
+                        var name = entry_ref.name;
+                        var arch = entry_ref.arch;
+                        var branch = entry_ref.branch;
+                        var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
+
+                        if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
+                            if (package != null) {
+                                package.is_eol = true;
+                            }
+                        }
+                    } catch (Error e) {
+                        warning ("Error while fetching remote ref: %s", e.message);
                     }
 
                     // Don't include runtime deps in download size for apps we're updating
