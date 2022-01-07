@@ -762,10 +762,7 @@ namespace AppCenter.Views {
 
                 oars_flowbox.insert (end_of_life, 0);
                 oars_flowbox.show_all ();
-
-                if (oars_flowbox.get_children ().length () > 0) {
-                    oars_flowbox_revealer.reveal_child = true;
-                }
+                oars_flowbox_revealer.reveal_child = true;
             }
         }
 
