@@ -77,6 +77,18 @@ public class AppCenter.App : Gtk.Application {
             activate ();
         });
 
+        var show_firmware_updates_action = new SimpleAction ("show-firmware-updates", null);
+        show_firmware_updates_action.activate.connect (() => {
+            var uri = "settings://about/firmware";
+            AppInfo.launch_default_for_uri_async.begin (uri, null, null, (obj, res) => {
+                try {
+                    AppInfo.launch_default_for_uri_async.end (res);
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            });
+        });
+
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
@@ -93,6 +105,7 @@ public class AppCenter.App : Gtk.Application {
 
         add_action (quit_action);
         add_action (show_updates_action);
+        add_action (show_firmware_updates_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
 
         search_provider = new SearchProvider ();
