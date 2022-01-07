@@ -1,13 +1,14 @@
 # Eri Hidayat <eriwhidayat@gmail.com>, 2018, 2019, 2020.
 # Yusnur Rofiq <yusnurrofiq@gmail.com>, 2019.
 # Faisal Rachmadin <frachmadin@gmail.com>, 2022.
+# Gusti Ahmad Fanshuri Alfarisy <gusti.alfarisy@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2022-01-07 20:57+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
+"Last-Translator: Gusti Ahmad Fanshuri Alfarisy <gusti.alfarisy@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/id/>\n"
 "Language: id\n"
@@ -21,7 +22,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:333
 msgid "AppCenter"
-msgstr "Pusat Aplikasi"
+msgstr "AppCenter"
 
 #: src/Application.vala:114
 #, c-format
@@ -572,10 +573,8 @@ msgid "Try Again"
 msgstr "Coba Kembali"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to update app"
-msgstr "Gagal mencopot pemasangan aplikasi"
+msgstr "Gagal memperbarui aplikasi"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
@@ -698,7 +697,7 @@ msgstr "Terjemahkan"
 
 #: src/Views/AppInfoView.vala:488
 msgid "Send Feedback"
-msgstr ""
+msgstr "Kirimkan Umpan Balik"
 
 #: src/Views/AppInfoView.vala:494
 msgid "Help"
@@ -785,6 +784,8 @@ msgstr "Mulai Ulang Sekarang"
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"Permintaan mulai ulang gagal. Mulai ulang secara manual untuk menyelesaikan "
+"instalasi pembaruan"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:210
