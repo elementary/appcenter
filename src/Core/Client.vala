@@ -30,12 +30,14 @@ public class AppCenterCore.Client : Object {
     private GLib.DateTime last_cache_update = null;
 
     public uint updates_number { get; private set; default = 0U; }
+    public uint firmware_updates_number { get; private set; default = 0U; }
     private uint update_cache_timeout_id = 0;
     private bool refresh_in_progress = false;
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
     private AsyncMutex update_notification_mutex = new AsyncMutex ();
+    private AsyncMutex firmware_update_notification_mutex = new AsyncMutex ();
 
     private Client () { }
 
@@ -183,8 +185,64 @@ public class AppCenterCore.Client : Object {
                 }
             }
 
+            if (last_cache_update_is_old) {
+                refresh_firmware_updates.begin ();
+            }
+
             refresh_updates.begin ();
         }
+    }
+
+    private async void refresh_firmware_updates () {
+        yield firmware_update_notification_mutex.lock ();
+
+        bool was_empty = firmware_updates_number == 0U;
+
+        var fwupd_client = new Fwupd.Client ();
+        var num_updates = 0;
+        try {
+            var devices = yield FirmwareClient.get_devices (fwupd_client);
+            for (int i = 0; i < devices.length; i++) {
+                var device = devices[i];
+                if (device.has_flag (Fwupd.DEVICE_FLAG_UPDATABLE)) {
+                    Fwupd.Release? release = null;
+                    try {
+                        var upgrades = yield FirmwareClient.get_upgrades (fwupd_client, device.get_id ());
+
+                        if (upgrades != null) {
+                            release = upgrades[0];
+                        }
+                    } catch (Error e) {
+                        warning (e.message);
+                    }
+
+                    if (release != null && device.get_version () != release.get_version ()) {
+                        num_updates++;
+                    }
+                }
+            }
+        } catch (Error e) {
+            warning (e.message);
+        }
+
+        firmware_updates_number = num_updates;
+
+        var application = Application.get_default ();
+        if (was_empty && firmware_updates_number != 0U) {
+            string title = ngettext ("Firmware Update Available", "Firmware Updates Available", num_updates);
+            string body = ngettext ("%u update is available for your hardware", "%u updates are available for your hardware", num_updates).printf (num_updates);
+
+            var notification = new Notification (title);
+            notification.set_body (body);
+            notification.set_icon (new ThemedIcon ("application-x-firmware"));
+            notification.set_default_action ("app.show-firmware-updates");
+
+            application.send_notification ("io.elementary.appcenter.firmware.updates", notification);
+        } else {
+            application.withdraw_notification ("io.elementary.appcenter.firmware.updates");
+        }
+
+        update_notification_mutex.unlock ();
     }
 
     public Package? get_package_for_component_id (string id) {
