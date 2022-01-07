@@ -9,6 +9,7 @@ appcenter_files = files(
     'Core/ChangeInformation.vala',
     'Core/Client.vala',
     'Core/ComponentValidator.vala',
+    'Core/FirmwareClient.vala',
     'Core/FlatpakBackend.vala',
     'Core/Job.vala',
     'Core/Package.vala',
