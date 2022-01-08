@@ -766,12 +766,27 @@ namespace AppCenter.Views {
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
 
-            if (package.official_runtime_version_mismatch) {
-                official_runtime_infobar_label.label = _("This app was not built for %s %s\n").printf (
-                    Environment.get_os_info (GLib.OsInfoKey.NAME),
-                    Environment.get_os_info (GLib.OsInfoKey.VERSION) ?? ""
-                );
-                official_runtime_infobar.revealed = true;
+            if (package.official_runtime_version != null) {
+                var current_version = Environment.get_os_info (GLib.OsInfoKey.VERSION) ?? "";
+                string? warning = null;
+
+                // daily, next, ...
+                if (int.parse (package.official_runtime_version) == 0) {
+                    warning = _("This app uses an unstable runtime");
+                } else if (double.parse (current_version) > double.parse (package.official_runtime_version)) {
+                    if (int.parse (current_version) > int.parse (package.official_runtime_version)) {
+                        // major os upgrade (7 > 6)
+                        warning = _("This app uses an outdated major runtime");
+                    } else {
+                        // minor os upgrade (6.1 > 6.0)
+                        warning = _("This app uses an outdated minor runtime");
+                    }
+                }
+
+                if (warning != null) {
+                    official_runtime_infobar_label.label = warning;
+                    official_runtime_infobar.revealed = true;
+                }
             }
 
             if (package.runtime_eol && !is_eol_shown) {
