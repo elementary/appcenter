@@ -546,11 +546,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                             }
                         }
 
-                        if (kind == Flatpak.RefKind.APP) {
+                        var os_version_id = Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? "";
+                        if (kind == Flatpak.RefKind.APP && Build.RUNTIME_NAME.length > 0 && os_version_id.length > 0) {
                             var metadata = entry.get_metadata ();
                             try {
                                 var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
-                                var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), Build.RUNTIME_VERSION);
+                                var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
                                 if (runtime != expected_runtime && package != null) {
                                     package.official_runtime_version_mismatch = true;
                                 }
