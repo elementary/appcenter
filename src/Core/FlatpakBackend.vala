@@ -30,6 +30,10 @@ public class AppCenterCore.FlatpakPackage : Package {
 }
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {
+    // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
+    private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
+    private const string FLATPAK_METADATA_KEY_RUNTIME = "runtime";
+
     // AppStream data has to be 1 hour old before it's refreshed
     public const uint MAX_APPSTREAM_AGE = 3600;
 
@@ -480,6 +484,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return 0;
         }
 
+        print ("id: %s\n", id);
+        print ("bundle_id: %s\n", bundle_id);
+
         unowned Flatpak.Installation? installation = null;
         if (system) {
             installation = system_installation;
@@ -533,6 +540,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                         var name = entry_ref.name;
                         var arch = entry_ref.arch;
                         var branch = entry_ref.branch;
+                        var commit = entry.get_commit ();
+                        var format_ref = entry_ref.format_ref ();
+
+                        print ("remote_name: %s\n", remote_name);
+                        print ("name: %s\n", name);
+                        print ("arch: %s\n", arch);
+                        print ("branch: %s\n", branch);
+                        print ("commit: %s\n", commit);
+                        print ("format_ref: %s\n", format_ref);
+
                         var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
 
                         if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
@@ -540,6 +557,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                                 package.runtime_eol = true;
                             }
                         }
+
+                        if (kind == Flatpak.RefKind.APP) {
+                            var metadata = entry.get_metadata ();
+                            try {
+                                var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
+                                print ("runtime: %s\n", runtime);
+                            } catch (Error e) {
+                                warning ("Could not get runtime: %s\n", e.message);
+                            }
+                        }
+
+                        print ("\n");
                     } catch (Error e) {
                         warning ("Error while fetching remote ref: %s", e.message);
                     }
