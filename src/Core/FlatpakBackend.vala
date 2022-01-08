@@ -553,7 +553,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                                 var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
                                 var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
                                 if (runtime != expected_runtime && package != null) {
-                                    package.official_runtime_version_mismatch = true;
+                                    string? runtime_id, runtime_arch, runtime_branch;
+                                    if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
+                                        package.official_runtime_version = runtime_branch;
+                                    }
                                 }
                             } catch (Error e) {
                                 warning ("Could not get runtime: %s\n", e.message);
@@ -886,6 +889,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         system = parts[0] == "system";
         origin = parts[1];
         bundle_id = parts[2];
+
+        return true;
+    }
+
+    private bool get_runtime_parts (string runtime, out string? id, out string? arch, out string ?branch) {
+        id = null;
+        arch = null;
+        branch = null;
+
+        string[] parts = runtime.split ("/", 3);
+        if (parts.length != 3) {
+            return false;
+        }
+
+        id = parts[0];
+        arch = parts[1];
+        branch = parts[2];
 
         return true;
     }

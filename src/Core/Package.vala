@@ -38,7 +38,7 @@ public class AppCenterCore.Package : Object {
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
 
     public bool runtime_eol { get; set; default = false; }
-    public bool official_runtime_version_mismatch { get; set; default = false; }
+    public string? official_runtime_version { get; set; default = null; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
