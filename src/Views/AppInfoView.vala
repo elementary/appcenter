@@ -55,6 +55,9 @@ namespace AppCenter.Views {
 
         private bool is_eol_shown = false;
 
+        private Gtk.InfoBar official_runtime_infobar;
+        private Gtk.Label official_runtime_infobar_label;
+
         private unowned Gtk.StyleContext stack_context;
 
         public bool to_recycle { public get; private set; default = false; }
@@ -529,6 +532,17 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
+            official_runtime_infobar_label = new Gtk.Label ("");
+
+            official_runtime_infobar = new Gtk.InfoBar () {
+                message_type = Gtk.MessageType.WARNING,
+                revealed = false,
+                show_close_button = false
+            };
+            official_runtime_infobar.get_content_area ().add (official_runtime_infobar_label);
+
+            content_grid.add (official_runtime_infobar);
+
             content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
                 oars_flowbox_revealer.reveal_child = true;
@@ -751,6 +765,14 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
+
+            if (package.official_runtime_version_mismatch) {
+                official_runtime_infobar_label.label = _("This app was not built for %s %s\n").printf (
+                    Environment.get_os_info (GLib.OsInfoKey.NAME),
+                    Environment.get_os_info (GLib.OsInfoKey.VERSION) ?? ""
+                );
+                official_runtime_infobar.revealed = true;
+            }
 
             if (package.runtime_eol && !is_eol_shown) {
                 is_eol_shown = true;
