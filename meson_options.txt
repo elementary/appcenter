@@ -4,3 +4,5 @@ option('name', type : 'string', value : 'AppCenter', description : 'The name of 
 option('payments', type : 'boolean', value : true, description : 'Enable payment features and display paid apps')
 option('sharing', type : 'boolean', value : true, description : 'Display sharing features, i.e. copyable URLs to appcenter.elementary.io')
 option('hide_upstream_distro_apps', type : 'boolean', value : true, description : 'Used for hiding Ubuntu repo apps on elementary OS')
+option('runtime_name', type : 'string', value : 'io.elementary.Platform', description : 'The name of the distributor runtime')
+option('runtime_version', type : 'string', value : '6.1', description : 'The version of the distributor runtime')
