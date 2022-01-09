@@ -40,7 +40,7 @@ msgstr "Uvedený odkaz „%s“ nebyl nalezen, místo toho se hledá"
 
 #: src/Application.vala:298
 msgid "The app has been installed"
-msgstr "Aplikace %s byla úspěšně nainstalována"
+msgstr "Aplikace byla úspěšně nainstalována."
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
