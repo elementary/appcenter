@@ -3,20 +3,22 @@
 # Antonin Hablak <tondulin5@outlook.cz>, 2018.
 # Lukáš Kucharczyk <kucharczyk.lukas@gmail.com>, 2018.
 # p-bo <pavel.borecki@gmail.com>, 2020.
+# Martin Šťastný <martin@stastni.cz>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2020-05-31 16:11+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
+"PO-Revision-Date: 2022-01-09 21:09+0000\n"
+"Last-Translator: Martin Šťastný <martin@stastni.cz>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -44,10 +46,9 @@ msgstr "%s úspěšně nainstalováno"
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s úspěšně nainstalováno"
+msgstr "“%s” byl nainstalován"
 
 #: src/MainWindow.vala:140
 #, fuzzy, c-format
