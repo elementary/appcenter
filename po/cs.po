@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2022-01-09 21:27+0000\n"
-"Last-Translator: filipboucek <filoveccz@gmail.com>\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -806,7 +806,7 @@ msgstr "Restartovat nyní"
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
-"Žádání o restart selhalo. Restartujte ručně pro dokončení instalace "
+"Žádání o restart se nezdařilo. Restartujte ručně pro dokončení instalace "
 "aktualizace"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
