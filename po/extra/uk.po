@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2022-01-07 11:47+0000\n"
+"PO-Revision-Date: 2022-01-07 20:57+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -66,6 +66,8 @@ msgstr "Виправлення:"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
+"Виправлено зникнення кнопки «Назад» або необхідність її кількаразового "
+"натискання"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -83,7 +85,7 @@ msgstr "Вдосконалення:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "Показувати підписи до знімків екрана у підказці"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:40
