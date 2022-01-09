@@ -51,10 +51,9 @@ msgid "“%s” has been installed"
 msgstr "“%s” byl nainstalován"
 
 #: src/MainWindow.vala:140
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Odebrání „%s“ se nezdařilo"
+msgstr "Nezdařilo se spustit “%s“"
 
 #: src/MainWindow.vala:170 src/Views/Homepage.vala:271
 #: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
