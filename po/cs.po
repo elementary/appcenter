@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2022-01-09 21:27+0000\n"
-"Last-Translator: Jenda <bugwebcz@centrum.cz>\n"
+"Last-Translator: filipboucek <filoveccz@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -816,11 +816,11 @@ msgstr "Aktualizovat vše"
 
 #: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:32
 msgid "No Apps Found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné aplikace"
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
