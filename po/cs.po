@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2022-01-09 21:12+0000\n"
-"Last-Translator: Martin Šťastný <martin@stastni.cz>\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -246,7 +246,7 @@ msgstr "Neznámý stav"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr "jsou prováděny operace s balíky."
+msgstr "jsou prováděny operace s balíčky"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -422,7 +422,7 @@ msgstr "Toto je jednorázová platba. Na váš e-mail bude zaslán daňový dokl
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "nebo"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
