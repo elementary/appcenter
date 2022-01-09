@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2022-01-09 21:12+0000\n"
-"Last-Translator: filipboucek <filoveccz@gmail.com>\n"
+"Last-Translator: Martin Šťastný <martin@stastni.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -287,7 +287,7 @@ msgstr "Ubuntu (neprověřované)"
 #: src/Core/Package.vala:342
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (celosystémově)"
 
 #: src/Core/Package.vala:347
 msgid "Ubuntu Drivers"
@@ -397,7 +397,9 @@ msgstr "Přesto instalovat"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Při zpracování karty se vyskytla chyba. Zkuste to prosím znovu později.  Omlouváme se za jakékoli způsobené potíže."
+msgstr ""
+"Při zpracování karty se vyskytla chyba. Zkuste to prosím znovu později. "
+"Omlouváme se za jakékoli způsobené potíže."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -578,7 +580,9 @@ msgstr "Kontrola aktualizací se nezdařila"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Toto mohlo být způsobeno externími, ručně přidanými repozitáři softwaru, nebo poškozeným souborem s  jejich seznamem (sources)."
+msgstr ""
+"Toto mohlo být způsobeno externími, ručně přidanými repozitáři softwaru, "
+"nebo poškozeným souborem s jejich seznamem (sources)."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -589,16 +593,13 @@ msgid "Try Again"
 msgstr "Zkuste to znovu"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to update app"
-msgstr "Odebrání aplikace se nezdařilo"
+msgstr "Nepodařilo se aktualizovat aplikaci"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "Odebrání „%s“ se nezdařilo"
+msgstr "Aktualizace „%s“ se nezdařila"
 
 #: src/Views/AppInfoView.vala:80
 msgid "Illicit Substances"
