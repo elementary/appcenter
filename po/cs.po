@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
 "PO-Revision-Date: 2022-01-09 21:10+0000\n"
-"Last-Translator: Martin Šťastný <martin@stastni.cz>\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -54,7 +54,7 @@ msgstr "„%s“ bylo nainstalováno"
 #: src/MainWindow.vala:140
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr "Odinstalování „%s“ se nezdařilo"
+msgstr "Nepodařilo se spustit „%s“"
 
 #: src/MainWindow.vala:170 src/Views/Homepage.vala:271
 #: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
