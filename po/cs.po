@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2022-01-10 03:57+0000\n"
-"Last-Translator: Martin Šťastný <martin@stastni.cz>\n"
+"PO-Revision-Date: 2022-01-10 13:49+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -638,10 +638,10 @@ msgid "Non-Curated"
 msgstr "Neprověřované aplikace"
 
 #: src/Views/AppInfoView.vala:114
-#, fuzzy
-#| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr "„%s“ není prověřené v elementary a nebylo zkontrolováno ohledně zabezpečení, respektování soukromí či začlenění do systému."
+msgstr ""
+"Není prověřené v elementary ohledně zabezpečení, respektování soukromí či "
+"začlenění do systému"
 
 #: src/Views/AppInfoView.vala:136
 msgid "Conflict"
