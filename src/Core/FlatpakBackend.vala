@@ -545,33 +545,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                             } else {
                                 var os_version_id = Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? "";
                                 if (kind == Flatpak.RefKind.APP && Build.RUNTIME_NAME.length > 0 && os_version_id.length > 0) {
-                                    var metadata = entry.get_metadata ();
-                                    try {
-                                        var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
-                                        var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
-                                        if (runtime != expected_runtime) {
-                                            string? runtime_id, runtime_arch, runtime_branch;
-                                            if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
-                                                if (runtime_branch != null) {
-                                                    // daily, next, ...
-
-                                                    if (int.parse (runtime_branch) == 0) {
-                                                        package.runtime_status = RuntimeStatus.UNSTABLE;
-                                                    } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
-                                                        if (int.parse (os_version_id) > int.parse (runtime_branch)) {
-                                                            // major os upgrade (7 > 6)
-                                                            package.runtime_status = RuntimeStatus.MAJOR_OUTDATED;
-                                                        } else {
-                                                            // minor os upgrade (6.1 > 6.0)
-                                                            package.runtime_status = RuntimeStatus.MINOR_OUTDATED;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    } catch (Error e) {
-                                        warning ("Could not get runtime: %s\n", e.message);
-                                    }
+                                    var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
+                                    package.runtime_status = get_runtime_status_of_branch (entry.get_metadata (), expected_runtime, os_version_id);
                                 }
                             }
                         }
@@ -921,6 +896,35 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         branch = parts[2];
 
         return true;
+    }
+
+    private RuntimeStatus get_runtime_status_of_branch (KeyFile metadata, string expected_runtime, string os_version_id) {
+        try {
+            var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
+            if (runtime != expected_runtime) {
+                string? runtime_id, runtime_arch, runtime_branch;
+                if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
+                    if (runtime_branch != null) {
+                        // daily, next, ...
+                        if (int.parse (runtime_branch) == 0) {
+                            return RuntimeStatus.UNSTABLE;
+                        } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
+                            if (int.parse (os_version_id) > int.parse (runtime_branch)) {
+                                // major os upgrade (7 > 6)
+                                return RuntimeStatus.MAJOR_OUTDATED;
+                            } else {
+                                // minor os upgrade (6.1 > 6.0)
+                                return RuntimeStatus.MINOR_OUTDATED;
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Error e) {
+            warning ("Could not get runtime: %s\n", e.message);
+        }
+
+        return RuntimeStatus.UP_TO_DATE;
     }
 
     private void delete_folder_contents (File folder, Cancellable? cancellable = null) {
