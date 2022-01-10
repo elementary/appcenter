@@ -551,7 +551,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                             }
                         }
                     } catch (Error e) {
-                        warning ("Error while fetching remote ref: %s", e.message);
+                        warning ("Could not query runtime status: %s", e.message);
                     }
 
                     // Don't include runtime deps in download size for apps we're updating
@@ -898,28 +898,26 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return true;
     }
 
-    private void update_runtime_status (Package package, KeyFile metadata, string expected_runtime, string os_version_id) {
-        try {
-            var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
-            string runtime_id, runtime_arch, runtime_branch;
-            if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
-                if (expected_runtime != runtime) {
-                    // daily, next, ...
-                    if (int.parse (runtime_branch) == 0) {
-                        package.runtime_status = RuntimeStatus.UNSTABLE;
-                    } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
-                        if (int.parse (os_version_id) > int.parse (runtime_branch)) {
-                            // major os upgrade (7 > 6)
-                            package.runtime_status = RuntimeStatus.MAJOR_OUTDATED;
-                        } else {
-                            // minor os upgrade (6.1 > 6.0)
-                            package.runtime_status = RuntimeStatus.MINOR_OUTDATED;
-                        }
+    private void update_runtime_status (Package package, KeyFile metadata, string expected_runtime, string os_version_id) throws Error {
+        var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
+        string expected_runtime_id, expected_runtime_arch, expected_runtime_branch;
+        string runtime_id = "", runtime_arch, runtime_branch = "";
+        if (get_runtime_parts (expected_runtime, out expected_runtime_id, out expected_runtime_arch, out expected_runtime_branch) &&
+            get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
+            if (expected_runtime_id == runtime_id &&expected_runtime != runtime) {
+                // daily, next, ...
+                if (int.parse (runtime_branch) == 0) {
+                    package.runtime_status = RuntimeStatus.UNSTABLE;
+                } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
+                    if (int.parse (os_version_id) > int.parse (runtime_branch)) {
+                        // major os upgrade (7 > 6)
+                        package.runtime_status = RuntimeStatus.MAJOR_OUTDATED;
+                    } else {
+                        // minor os upgrade (6.1 > 6.0)
+                        package.runtime_status = RuntimeStatus.MINOR_OUTDATED;
                     }
                 }
             }
-        } catch (Error e) {
-            warning ("Could not get runtime: %s\n", e.message);
         }
     }
 
