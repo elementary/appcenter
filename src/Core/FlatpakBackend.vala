@@ -901,11 +901,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void update_runtime_status (Package package, KeyFile metadata, string expected_runtime, string os_version_id) {
         try {
             var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
-            string expected_runtime_id = "", expected_runtime_arch = "", expected_runtime_branch = "";
-            string runtime_id = "", runtime_arch = "", runtime_branch = "";
-            if (get_runtime_parts (expected_runtime, out expected_runtime_id, out expected_runtime_arch, out expected_runtime_branch) &&
-                get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
-                if (expected_runtime_id == runtime_id && expected_runtime != runtime) {
+            string runtime_id, runtime_arch, runtime_branch;
+            if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
+                if (expected_runtime != runtime) {
                     // daily, next, ...
                     if (int.parse (runtime_branch) == 0) {
                         package.runtime_status = RuntimeStatus.UNSTABLE;
