@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"PO-Revision-Date: 2022-01-10 03:57+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
 ">\n"
 "Language: cs\n"
@@ -45,17 +45,12 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:81
 #: data/io.elementary.appcenter.appdata.xml.in:164
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Nové funkce"
+msgstr "Nové funkce:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "No longer prompt for approval to update non-curated apps"
 msgid "Added an option to automatically update curated apps"
-msgstr ""
-"Už nezobrazována výzva pro schvalování aktualizací neprověřených aplikací"
+msgstr "Přidána volba automatických aktualizací prověřovaných aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:33
@@ -67,10 +62,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:137
 #: data/io.elementary.appcenter.appdata.xml.in:149
 #: data/io.elementary.appcenter.appdata.xml.in:177
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Opravy"
+msgstr "Provedené opravy:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent back button from disappearing or requiring multiple clicks"
@@ -87,10 +80,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:141
 #: data/io.elementary.appcenter.appdata.xml.in:156
 #: data/io.elementary.appcenter.appdata.xml.in:169
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Improvements:"
-msgstr "Vylepšení ovládání klávesnicí"
+msgstr "Vylepšení:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show screenshot captions in a tooltip"
@@ -194,6 +185,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:112
 msgid "Install Linux kernel headers for device drivers that use DKMS"
 msgstr ""
+"Instalace hlaviček linuxového jádra pro ovladače zařízení používající DKMS"
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Use system Flatpak runtimes for locally installed apps"
@@ -222,10 +214,8 @@ msgid "Show Recently Updated Flatpak apps on home page"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:152
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "Přidána podpora pro Flatpak aplikace"
+msgstr "Zobrazeny barvy značky a podporovány platby u Flatpak aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Fix missing mail icon in payments dialog"
@@ -280,10 +270,8 @@ msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:184
-#, fuzzy
-#| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
-msgstr "Zobraván chybový dialog, pokud se instalace nezdaří"
+msgstr "Zobrazován chybový dialog, pokud se instalace nezdaří"
 
 #: data/io.elementary.appcenter.appdata.xml.in:190
 #: data/io.elementary.appcenter.appdata.xml.in:206
@@ -330,10 +318,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:214
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Opravy chyb a vylepšení výkonu."
+msgstr "Vylepšení rychlosti vyhledávání"
 
 #: data/io.elementary.appcenter.appdata.xml.in:215
 msgid "Improve update badge styling and category styling"
@@ -410,8 +396,8 @@ msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
-"Prohození hlavní hlavní a překryvné ikony pro rozšíření, pro zřejmější "
-"přiřazení rozšíření k jejich aplikaci"
+"Prohození hlavní a překryvné ikony pro rozšíření, pro zřejmější přiřazení "
+"rozšíření k jejich aplikaci"
 
 #: data/io.elementary.appcenter.appdata.xml.in:273
 msgid "Keyboard improvements"
@@ -739,10 +725,6 @@ msgstr ""
 "Zamezeno vytváření více ověřovacích dialogů při probuzení z režimu spánku"
 
 #: data/io.elementary.appcenter.appdata.xml.in:514
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
