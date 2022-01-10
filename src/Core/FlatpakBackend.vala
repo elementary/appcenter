@@ -546,7 +546,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                                 var os_version_id = Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? "";
                                 if (kind == Flatpak.RefKind.APP && Build.RUNTIME_NAME.length > 0 && os_version_id.length > 0) {
                                     var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
-                                    package.runtime_status = get_runtime_status_of_branch (entry.get_metadata (), expected_runtime, os_version_id);
+                                    update_runtime_status (package, entry.get_metadata (), expected_runtime, os_version_id);
                                 }
                             }
                         }
@@ -898,24 +898,24 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return true;
     }
 
-    private RuntimeStatus get_runtime_status_of_branch (KeyFile metadata, string expected_runtime, string os_version_id) {
+    private void update_runtime_status (Package package, KeyFile metadata, string expected_runtime, string os_version_id) {
         try {
             var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
-            if (runtime != expected_runtime) {
-                string? runtime_id, runtime_arch, runtime_branch;
-                if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
-                    if (runtime_branch != null) {
-                        // daily, next, ...
-                        if (int.parse (runtime_branch) == 0) {
-                            return RuntimeStatus.UNSTABLE;
-                        } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
-                            if (int.parse (os_version_id) > int.parse (runtime_branch)) {
-                                // major os upgrade (7 > 6)
-                                return RuntimeStatus.MAJOR_OUTDATED;
-                            } else {
-                                // minor os upgrade (6.1 > 6.0)
-                                return RuntimeStatus.MINOR_OUTDATED;
-                            }
+            string expected_runtime_id = "", expected_runtime_arch = "", expected_runtime_branch = "";
+            string runtime_id = "", runtime_arch = "", runtime_branch = "";
+            if (get_runtime_parts (expected_runtime, out expected_runtime_id, out expected_runtime_arch, out expected_runtime_branch) &&
+                get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
+                if (expected_runtime_id == runtime_id && expected_runtime != runtime) {
+                    // daily, next, ...
+                    if (int.parse (runtime_branch) == 0) {
+                        package.runtime_status = RuntimeStatus.UNSTABLE;
+                    } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
+                        if (int.parse (os_version_id) > int.parse (runtime_branch)) {
+                            // major os upgrade (7 > 6)
+                            package.runtime_status = RuntimeStatus.MAJOR_OUTDATED;
+                        } else {
+                            // minor os upgrade (6.1 > 6.0)
+                            package.runtime_status = RuntimeStatus.MINOR_OUTDATED;
                         }
                     }
                 }
@@ -923,8 +923,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } catch (Error e) {
             warning ("Could not get runtime: %s\n", e.message);
         }
-
-        return RuntimeStatus.UP_TO_DATE;
     }
 
     private void delete_folder_contents (File folder, Cancellable? cancellable = null) {
