@@ -771,6 +771,12 @@ namespace AppCenter.Views {
                 case RuntimeStatus.MINOR_OUTDATED:
                     break;
                 case RuntimeStatus.UNSTABLE:
+                    runtime_warning = new ContentType (
+                        _("Unstable"),
+                        _("Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "applications-development-symbolic"
+                    );
+                    break;
                 case RuntimeStatus.UP_TO_DATE:
                     break;
             }
