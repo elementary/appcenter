@@ -904,7 +904,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         string runtime_id = "", runtime_arch, runtime_branch = "";
         if (get_runtime_parts (expected_runtime, out expected_runtime_id, out expected_runtime_arch, out expected_runtime_branch) &&
             get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
-            if (expected_runtime_id == runtime_id &&expected_runtime != runtime) {
+            if (expected_runtime_id == runtime_id && expected_runtime != runtime) {
                 // daily, next, ...
                 if (int.parse (runtime_branch) == 0) {
                     package.runtime_status = RuntimeStatus.UNSTABLE;
