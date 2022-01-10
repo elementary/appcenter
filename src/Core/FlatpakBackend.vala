@@ -574,7 +574,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                                     }
                                 }
                             }
-                        }    
+                        }
                     } catch (Error e) {
                         warning ("Error while fetching remote ref: %s", e.message);
                     }
