@@ -230,7 +230,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         var refresh_accellabel = new Granite.AccelLabel.from_action_name (
-            _("Refresh"),
+            _("Check for Updates"),
             "app.refresh"
         );
 
