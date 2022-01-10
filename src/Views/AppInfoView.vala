@@ -762,14 +762,14 @@ namespace AppCenter.Views {
                     );
                     break;
                 case RuntimeStatus.MAJOR_OUTDATED:
-                case RuntimeStatus.MINOR_OUTDATED:
                     runtime_warning = new ContentType (
                         _("Outdated"),
                         _("Built for an older version of %s; might not support the latest features").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
                         "software-update-available-symbolic"
                     );
                     break;
-                // Listed for overview
+                case RuntimeStatus.MINOR_OUTDATED:
+                    break;
                 case RuntimeStatus.UNSTABLE:
                 case RuntimeStatus.UP_TO_DATE:
                     break;
