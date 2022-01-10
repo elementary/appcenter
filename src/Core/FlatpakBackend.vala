@@ -532,35 +532,49 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     }
 
                     try {
-                        var remote_name = entry.get_remote ();
-                        var kind = entry_ref.kind;
-                        var name = entry_ref.name;
-                        var arch = entry_ref.arch;
-                        var branch = entry_ref.branch;
-                        var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
+                        if (package != null) {
+                            var remote_name = entry.get_remote ();
+                            var kind = entry_ref.kind;
+                            var name = entry_ref.name;
+                            var arch = entry_ref.arch;
+                            var branch = entry_ref.branch;
+                            var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
 
-                        if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
-                            if (package != null) {
-                                package.runtime_eol = true;
-                            }
-                        }
+                            if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
+                                package.runtime_status = RuntimeStatus.END_OF_LIFE;
+                            } else {
+                                var os_version_id = Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? "";
+                                if (kind == Flatpak.RefKind.APP && Build.RUNTIME_NAME.length > 0 && os_version_id.length > 0) {
+                                    var metadata = entry.get_metadata ();
+                                    try {
+                                        var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
+                                        var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
+                                        if (runtime != expected_runtime) {
+                                            string? runtime_id, runtime_arch, runtime_branch;
+                                            if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
+                                                if (runtime_branch != null) {
+                                                    // daily, next, ...
 
-                        var os_version_id = Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? "";
-                        if (kind == Flatpak.RefKind.APP && Build.RUNTIME_NAME.length > 0 && os_version_id.length > 0) {
-                            var metadata = entry.get_metadata ();
-                            try {
-                                var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
-                                var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
-                                if (runtime != expected_runtime && package != null) {
-                                    string? runtime_id, runtime_arch, runtime_branch;
-                                    if (get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
-                                        package.official_runtime_version = runtime_branch;
+                                                    if (int.parse (runtime_branch) == 0) {
+                                                        package.runtime_status = RuntimeStatus.UNSTABLE;
+                                                    } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
+                                                        if (int.parse (os_version_id) > int.parse (runtime_branch)) {
+                                                            // major os upgrade (7 > 6)
+                                                            package.runtime_status = RuntimeStatus.MAJOR_OUTDATED;
+                                                        } else {
+                                                            // minor os upgrade (6.1 > 6.0)
+                                                            package.runtime_status = RuntimeStatus.MINOR_OUTDATED;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    } catch (Error e) {
+                                        warning ("Could not get runtime: %s\n", e.message);
                                     }
                                 }
-                            } catch (Error e) {
-                                warning ("Could not get runtime: %s\n", e.message);
                             }
-                        }
+                        }    
                     } catch (Error e) {
                         warning ("Error while fetching remote ref: %s", e.message);
                     }

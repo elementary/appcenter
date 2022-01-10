@@ -53,7 +53,7 @@ namespace AppCenter.Views {
         private Gtk.FlowBox oars_flowbox;
         private Gtk.Revealer oars_flowbox_revealer;
 
-        private bool is_eol_shown = false;
+        private bool is_runtime_warning_shown = false;
 
         private unowned Gtk.StyleContext stack_context;
 
@@ -752,30 +752,8 @@ namespace AppCenter.Views {
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
 
-            var runtime_status = RuntimeStatus.UP_TO_DATE;
-            if (package.official_runtime_version != null) {
-                var current_version = Environment.get_os_info (GLib.OsInfoKey.VERSION) ?? "";
-
-                // daily, next, ...
-                if (int.parse (package.official_runtime_version) == 0) {
-                    runtime_status = RuntimeStatus.UNSTABLE;
-                } else if (double.parse (current_version) > double.parse (package.official_runtime_version)) {
-                    if (int.parse (current_version) > int.parse (package.official_runtime_version)) {
-                        // major os upgrade (7 > 6)
-                        runtime_status = RuntimeStatus.MAJOR_OUTDATED;
-                    } else {
-                        // minor os upgrade (6.1 > 6.0)
-                        runtime_status = RuntimeStatus.MINOR_OUTDATED;
-                    }
-                }
-            }
-
-            if (package.runtime_eol) {
-                runtime_status = RuntimeStatus.END_OF_LIFE;
-            }
-
             ContentType? runtime_warning = null;
-            switch (runtime_status) {
+            switch (package.runtime_status) {
                 case RuntimeStatus.END_OF_LIFE:
                     runtime_warning = new ContentType (
                         _("Outdated"),
@@ -797,8 +775,8 @@ namespace AppCenter.Views {
                     break;
             }
 
-            if (runtime_warning != null && !is_eol_shown) {
-                is_eol_shown = true;
+            if (runtime_warning != null && !is_runtime_warning_shown) {
+                is_runtime_warning_shown = true;
 
                 oars_flowbox.insert (runtime_warning, 0);
                 oars_flowbox.show_all ();
@@ -1306,13 +1284,5 @@ namespace AppCenter.Views {
                 show_other_package (package_row_grid.package);
             });
         }
-    }
-
-    private enum RuntimeStatus {
-        UP_TO_DATE,
-        END_OF_LIFE,
-        MAJOR_OUTDATED,
-        MINOR_OUTDATED,
-        UNSTABLE;
     }
 }
