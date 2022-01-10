@@ -55,9 +55,6 @@ namespace AppCenter.Views {
 
         private bool is_eol_shown = false;
 
-        private Gtk.InfoBar official_runtime_infobar;
-        private Gtk.Label official_runtime_infobar_label;
-
         private unowned Gtk.StyleContext stack_context;
 
         public bool to_recycle { public get; private set; default = false; }
@@ -532,17 +529,6 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
-            official_runtime_infobar_label = new Gtk.Label ("");
-
-            official_runtime_infobar = new Gtk.InfoBar () {
-                message_type = Gtk.MessageType.WARNING,
-                revealed = false,
-                show_close_button = false
-            };
-            official_runtime_infobar.get_content_area ().add (official_runtime_infobar_label);
-
-            content_grid.add (official_runtime_infobar);
-
             content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
                 oars_flowbox_revealer.reveal_child = true;
@@ -766,38 +752,55 @@ namespace AppCenter.Views {
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
 
+            var runtime_status = RuntimeStatus.UP_TO_DATE;
             if (package.official_runtime_version != null) {
                 var current_version = Environment.get_os_info (GLib.OsInfoKey.VERSION) ?? "";
-                string? warning = null;
 
                 // daily, next, ...
                 if (int.parse (package.official_runtime_version) == 0) {
-                    warning = _("This app uses an unstable runtime");
+                    runtime_status = RuntimeStatus.UNSTABLE;
                 } else if (double.parse (current_version) > double.parse (package.official_runtime_version)) {
                     if (int.parse (current_version) > int.parse (package.official_runtime_version)) {
                         // major os upgrade (7 > 6)
-                        warning = _("This app uses an outdated major runtime");
+                        runtime_status = RuntimeStatus.MAJOR_OUTDATED;
                     } else {
                         // minor os upgrade (6.1 > 6.0)
-                        warning = _("This app uses an outdated minor runtime");
+                        runtime_status = RuntimeStatus.MINOR_OUTDATED;
                     }
-                }
-
-                if (warning != null) {
-                    official_runtime_infobar_label.label = warning;
-                    official_runtime_infobar.revealed = true;
                 }
             }
 
-            if (package.runtime_eol && !is_eol_shown) {
-                is_eol_shown = true;
-                var end_of_life = new ContentType (
-                    _("Outdated"),
-                    _("Built with older technologies that may not work as expected or receive security updates"),
-                    "software-update-urgent-symbolic"
-                );
+            if (package.runtime_eol) {
+                runtime_status = RuntimeStatus.END_OF_LIFE;
+            }
 
-                oars_flowbox.insert (end_of_life, 0);
+            ContentType? runtime_warning = null;
+            switch (runtime_status) {
+                case RuntimeStatus.END_OF_LIFE:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("Built for an older version of %s; might not support the latest features").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "software-update-available-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MAJOR_OUTDATED:
+                case RuntimeStatus.MINOR_OUTDATED:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("Built with older technologies that may not work as expected or receive security updates"),
+                        "software-update-urgent-symbolic"
+                    );
+                    break;
+                // Listed for overview
+                case RuntimeStatus.UNSTABLE:
+                case RuntimeStatus.UP_TO_DATE:
+                    break;
+            }
+
+            if (runtime_warning != null && !is_eol_shown) {
+                is_eol_shown = true;
+
+                oars_flowbox.insert (runtime_warning, 0);
                 oars_flowbox.show_all ();
                 oars_flowbox_revealer.reveal_child = true;
             }
@@ -1303,5 +1306,13 @@ namespace AppCenter.Views {
                 show_other_package (package_row_grid.package);
             });
         }
+    }
+
+    private enum RuntimeStatus {
+        UP_TO_DATE,
+        END_OF_LIFE,
+        MAJOR_OUTDATED,
+        MINOR_OUTDATED,
+        UNSTABLE;
     }
 }

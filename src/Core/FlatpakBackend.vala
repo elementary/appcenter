@@ -537,7 +537,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                         var name = entry_ref.name;
                         var arch = entry_ref.arch;
                         var branch = entry_ref.branch;
-
                         var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
 
                         if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
