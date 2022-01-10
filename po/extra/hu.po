@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2021-12-26 05:20+0000\n"
+"PO-Revision-Date: 2022-01-10 03:57+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -42,11 +42,11 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:81
 #: data/io.elementary.appcenter.appdata.xml.in:164
 msgid "New features:"
-msgstr ""
+msgstr "Új funkciók:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Added an option to automatically update curated apps"
-msgstr ""
+msgstr "Lehetőség az ellenőrzött alkalmazások automatikus frissítésére"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:33
@@ -64,6 +64,7 @@ msgstr "Javítások:"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
+"A vissza gomb eltűnésének és többszöri megnyomást igénylésének megelőzése"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -81,7 +82,7 @@ msgstr "Fejlesztések:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "Képernyőképek feliratának megjelenítése lebegő címkén"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:40
