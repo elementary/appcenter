@@ -30,6 +30,10 @@ public class AppCenterCore.FlatpakPackage : Package {
 }
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {
+    // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
+    private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
+    private const string FLATPAK_METADATA_KEY_RUNTIME = "runtime";
+
     // AppStream data has to be 1 hour old before it's refreshed
     public const uint MAX_APPSTREAM_AGE = 3600;
 
@@ -469,10 +473,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         bool system = fp_package.installation == system_installation;
 
         var id = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
-        return yield get_download_size_by_id (id, cancellable, is_update);
+        return yield get_download_size_by_id (id, cancellable, is_update, package);
     }
 
-    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
         bool system;
         string origin, bundle_id;
         var split_success = get_package_list_key_parts (id, out system, out origin, out bundle_id);
@@ -525,6 +529,29 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                         entry_ref = Flatpak.Ref.parse (entry.get_ref ());
                     } catch (Error e) {
                         return;
+                    }
+
+                    try {
+                        if (package != null) {
+                            var remote_name = entry.get_remote ();
+                            var kind = entry_ref.kind;
+                            var name = entry_ref.name;
+                            var arch = entry_ref.arch;
+                            var branch = entry_ref.branch;
+                            var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
+
+                            if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
+                                package.runtime_status = RuntimeStatus.END_OF_LIFE;
+                            } else {
+                                var os_version_id = Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? "";
+                                if (kind == Flatpak.RefKind.APP && Build.RUNTIME_NAME.length > 0 && os_version_id.length > 0) {
+                                    var expected_runtime = "%s/%s/%s".printf (Build.RUNTIME_NAME, flatpak_ref.get_arch (), os_version_id);
+                                    update_runtime_status (package, entry.get_metadata (), expected_runtime, os_version_id);
+                                }
+                            }
+                        }
+                    } catch (Error e) {
+                        warning ("Could not query runtime status: %s", e.message);
                     }
 
                     // Don't include runtime deps in download size for apps we're updating
@@ -852,6 +879,46 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         bundle_id = parts[2];
 
         return true;
+    }
+
+    private bool get_runtime_parts (string runtime, out string? id, out string? arch, out string ?branch) {
+        id = null;
+        arch = null;
+        branch = null;
+
+        string[] parts = runtime.split ("/", 3);
+        if (parts.length != 3) {
+            return false;
+        }
+
+        id = parts[0];
+        arch = parts[1];
+        branch = parts[2];
+
+        return true;
+    }
+
+    private void update_runtime_status (Package package, KeyFile metadata, string expected_runtime, string os_version_id) throws Error {
+        var runtime = metadata.get_string (FLATPAK_METADATA_GROUP_APPLICATION, FLATPAK_METADATA_KEY_RUNTIME);
+        string expected_runtime_id, expected_runtime_arch, expected_runtime_branch;
+        string runtime_id = "", runtime_arch, runtime_branch = "";
+        if (get_runtime_parts (expected_runtime, out expected_runtime_id, out expected_runtime_arch, out expected_runtime_branch) &&
+            get_runtime_parts (runtime, out runtime_id, out runtime_arch, out runtime_branch)) {
+            if (expected_runtime_id == runtime_id && expected_runtime != runtime) {
+                // daily, next, ...
+                if (int.parse (runtime_branch) == 0) {
+                    package.runtime_status = RuntimeStatus.UNSTABLE;
+                } else if (double.parse (os_version_id) > double.parse (runtime_branch)) {
+                    if (int.parse (os_version_id) > int.parse (runtime_branch)) {
+                        // major os upgrade (7 > 6)
+                        package.runtime_status = RuntimeStatus.MAJOR_OUTDATED;
+                    } else {
+                        // minor os upgrade (6.1 > 6.0)
+                        package.runtime_status = RuntimeStatus.MINOR_OUTDATED;
+                    }
+                }
+            }
+        }
     }
 
     private void delete_folder_contents (File folder, Cancellable? cancellable = null) {
