@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2022-01-11 00:52+0000\n"
+"PO-Revision-Date: 2022-01-11 18:13+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
@@ -36,7 +36,7 @@ msgstr "Nedaří se rozpoznat typ média %s"
 #: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Uvedený odkaz „%s“ nebyl nalezen, místo toho se hledá"
+msgstr "Uvedený odkaz „%s“ nebyl nalezen, náhradně tedy bude hledáno"
 
 #: src/Application.vala:298
 msgid "The app has been installed"
@@ -172,7 +172,7 @@ msgstr "Rušení"
 
 #: src/Utils.vala:100
 msgid "Downloading repository information"
-msgstr "Stahováníinformací o repozitáři"
+msgstr "Stahování informací o repozitáři"
 
 #: src/Utils.vala:102
 msgid "Downloading list of packages"
@@ -216,7 +216,7 @@ msgstr "Čekání na zámek správce balíčků"
 
 #: src/Utils.vala:122
 msgid "Waiting for authentication"
-msgstr "Čekání na ověření"
+msgstr "Čeká se na ověření"
 
 #: src/Utils.vala:124
 msgid "Updating running applications"
