@@ -113,7 +113,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         notify["working"].connect (() => {
             Idle.add (() => {
                 spinner.active = working;
-                refresh_menuitem.sensitive = !working;
+                App.refresh_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
         });

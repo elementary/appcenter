@@ -49,6 +49,8 @@ public class AppCenter.App : Gtk.Application {
 
     public static GLib.Settings settings;
 
+    public static SimpleAction refresh_action;
+
     static construct {
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
     }
@@ -82,7 +84,7 @@ public class AppCenter.App : Gtk.Application {
         client.cache_update_failed.connect (on_cache_update_failed);
         client.installed_apps_changed.connect (on_updates_available);
 
-        var refresh_action = new SimpleAction ("refresh", null);
+        refresh_action = new SimpleAction ("refresh", null);
         refresh_action.activate.connect (() => {
             client.update_cache.begin (true);
         });
