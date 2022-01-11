@@ -8,15 +8,16 @@
 # Turker <turkerbol@gmail.com>, 2018, 2019.
 # Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018, 2019.
 # Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019, 2020, 2021.
-# Özgür Baskin <queeup@zoho.com>, 2021.
+# Özgür Baskin <queeup@zoho.com>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2021-11-17 13:22+0000\n"
+"PO-Revision-Date: 2022-01-11 18:13+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,20 +76,17 @@ msgid "Search Apps"
 msgstr "Uygulama Ara"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
-msgstr "Güncelleştirmeler Alınamadı"
+msgstr "Otomatik Güncellemeler"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
 msgstr ""
+"Ücretsiz ve doğrulanmış olan ücretli uygulamaları otomatik olarak güncelleyin"
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Başlatılıyor"
+msgstr "Ayarlar"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:398

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2022-01-10 03:57+0000\n"
+"PO-Revision-Date: 2022-01-11 18:13+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
 ">\n"
@@ -25,11 +25,6 @@ msgid "Browse and manage apps"
 msgstr "Procházejte a spravujte aplikace"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -37,10 +32,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Obchod s aplikacemi pro nezávislé a open source vývojáře. Procházejte podle "
-"kategorií nebo vyhledávejte a objevujte nové aplikace. Centrum aplikací "
-"slouží také k aktualizování vašeho systému na nejnovější a nejlepší verzi, s "
-"novými funkcemi a opravami."
+"Obchod s aplikacemi od elementary – open source a s dobrovolnými platbami. "
+"Prověřováno a pečlivě vybíráno týmem elementary, aby bylo zajištěno správné "
+"fungování v rámci systému, respektování soukromí a zabezpečení. Procházejte "
+"podle kategorií nebo vyhledávejte a objevujte nové aplikace. Centrum "
+"aplikací slouží také k aktualizování vašeho systému na nejnovější a nejlepší "
+"verzi, s novými funkcemi a opravami."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:81
@@ -67,7 +64,7 @@ msgstr "Provedené opravy:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
+msgstr "Zabráněno aby tlačítko zpět zmizelo nebo vyžadovalo několik kliknutí"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -85,7 +82,7 @@ msgstr "Vylepšení:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "Zobrazeny popisky snímku obrazovky v bublinové nápovědě"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:40
@@ -112,75 +109,82 @@ msgstr "Aktualizovány překlady"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Prevent potential crashes when updating"
-msgstr ""
+msgstr "Zabráněno potenciálním pádům při aktualizování"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Link to Flathub's search page when no search results are found"
-msgstr ""
+msgstr "Pokud není nic nalezeno, odkazuje se na stránku hledání na Flathub"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Amusements appear in the Games category"
-msgstr ""
+msgstr "V kategorii Hry se objevuje Zábava"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "Kategorie jsou zobrazovány jako mřížka namísto seznamu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Allow window to shrink to much narrower sizes"
-msgstr ""
+msgstr "Oknu umožněno oříznout příliš úzké velikosti"
 
 #: data/io.elementary.appcenter.appdata.xml.in:59
 msgid "Correctly show the installed status of first-party applications"
-msgstr ""
+msgstr "Správné zobrazování stavu nainstalováno pro aplikace třetích stran"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Don't store $0 app installs as paid"
-msgstr ""
+msgstr "Neukládat instalace aplikací za nula jako placené"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Fix missing illicit substances icon"
-msgstr ""
+msgstr "Opraveno absence ikony nedovolené látky"
 
 #: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Don't show plugins on the homepage"
-msgstr ""
+msgstr "Nezobrazování zásuvných modulů na úvodní stránce"
 
 #: data/io.elementary.appcenter.appdata.xml.in:70
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr ""
+msgstr "U her zobrazován pouze odznáček „Pro více hráčů“"
 
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "Postup instalace je zobrazován kompaktněji"
 
 #: data/io.elementary.appcenter.appdata.xml.in:83
 msgid "Show content warnings on app info pages"
-msgstr ""
+msgstr "Zobrazována varování ohledně obsahu na informačních stránkách aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:87
 msgid "Show other apps by an author for Flatpak sources"
 msgstr ""
+"Zobrazování i dalších aplikací od daného autora v případě Flatpak zdrojů"
 
 #: data/io.elementary.appcenter.appdata.xml.in:88
 msgid "Populate banner on home locally instead of relying on an external API"
 msgstr ""
+"Pruh na úvodní obrazovce je plněn z lokálního obsahu namísto spoléhání se na "
+"externí API"
 
 #: data/io.elementary.appcenter.appdata.xml.in:92
 msgid "Greatly increased number of recently-updated apps shown on home page"
 msgstr ""
+"Výrazně zvýšen počet právě aktualizovaných aplikací zobrazovaný na úvodní "
+"obrazovce"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
 msgid "Navigate banners on the home page with multitouch gestures"
-msgstr ""
+msgstr "Pohyb po pruzích na úvodní stránce pomocí vícedotykových gest"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
 msgstr ""
+"Zobrazování aplikací z nových zdrojů nainstalovaných bokem aniž by bylo "
+"potřeba restartovat"
 
 #: data/io.elementary.appcenter.appdata.xml.in:103
 msgid "Less abrupt transition when changing app sources"
-msgstr ""
+msgstr "Hladší přechod při změně zdrojů aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:112
 msgid "Install Linux kernel headers for device drivers that use DKMS"
@@ -190,84 +194,100 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Use system Flatpak runtimes for locally installed apps"
 msgstr ""
+"Používání systémových Flatpak běhových prostředí pro místně nainstalované "
+"aplikace"
 
 #: data/io.elementary.appcenter.appdata.xml.in:117
 msgid "Mention Sideload when search returns no results"
-msgstr ""
+msgstr "Zmínění instalace bokem pokud vyhledávání nic nenalezne"
 
 #: data/io.elementary.appcenter.appdata.xml.in:126
 msgid ""
 "Ensure user installation is selected by default when navigating from the "
 "homepage"
 msgstr ""
+"Zajištěno že uživatelské instalace jsou vybrány ve výchozím stavu při pohybu "
+"z úvodní obrazovky"
 
 #: data/io.elementary.appcenter.appdata.xml.in:127
 msgid "Fix opening apps from app installed toasts"
-msgstr ""
+msgstr "Opraveno otevírání aplikací z toastů nainstalovaných aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Install Linux kernel headers with NVIDIA drivers"
 msgstr ""
+"Společně s ovladači od nVidia jsou instalovány potřebné hlavičkové soubory "
+"linuxového jádra"
 
 #: data/io.elementary.appcenter.appdata.xml.in:151
 msgid "Show Recently Updated Flatpak apps on home page"
-msgstr ""
+msgstr "Na úvodní stránce zobrazovány nedávno aktualizované Flatpak aplikace"
 
 #: data/io.elementary.appcenter.appdata.xml.in:152
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "Zobrazeny barvy značky a podporovány platby u Flatpak aplikací"
+msgstr "Zobrazovány barvy značky a podporovány platby u Flatpak aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Fix missing mail icon in payments dialog"
-msgstr ""
+msgstr "Opravena absence ikony e-mailu v dialogu pro platbu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:154
 msgid "Fix missing privacy policy in payments dialog"
-msgstr ""
+msgstr "Opravena absence zásad ochrany soukromí v dialogu platby"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Show in-app notification when an app is installed"
-msgstr ""
+msgstr "Pokud je aplikace nainstalovaná, zobrazit upozornění v aplikaci"
 
 #: data/io.elementary.appcenter.appdata.xml.in:167
 msgid "Add contextual badges to notifications"
-msgstr ""
+msgstr "Přidány kontextové odznáčky do upozornění"
 
 #: data/io.elementary.appcenter.appdata.xml.in:171
 msgid "Ensure Home button is usable during search"
 msgstr ""
+"Zajištěno, že je tlačítko pro přechod na úvodní stránku funkční i v průběhu "
+"vyhledávání"
 
 #: data/io.elementary.appcenter.appdata.xml.in:172
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
 msgstr ""
+"Dotazováno se uživatele na ruční restart pokud není možné požádat relaci, "
+"aby se zeptala"
 
 #: data/io.elementary.appcenter.appdata.xml.in:173
 msgid "Improve styling and contrast of buttons"
-msgstr ""
+msgstr "Vylepšen styl a kontrast tlačítek"
 
 #: data/io.elementary.appcenter.appdata.xml.in:174
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "Srozumitelnější a jednotnější vyjadřování"
 
 #: data/io.elementary.appcenter.appdata.xml.in:179
 msgid "Fully uninstall Flatpaks, including locales"
-msgstr ""
+msgstr "Úplná odinstalace Flatpak balíčků, včetně jazykových dat"
 
 #: data/io.elementary.appcenter.appdata.xml.in:180
 msgid "Still fetch screenshots from remotes that don't include proper headers"
 msgstr ""
+"Stále jsou stahovány snímky obrazovky ze zdrojů, které neobsahují řádné "
+"hlavičky"
 
 #: data/io.elementary.appcenter.appdata.xml.in:181
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "Opraveno uřezávání tlačítek v zápatí"
 
 #: data/io.elementary.appcenter.appdata.xml.in:182
 msgid "Only show Mail button when a usable mail app is installed"
 msgstr ""
+"Tlačítko pro E-mail je zobrazováno pouze pokud je nainstalována použitelná "
+"příslušná aplikace"
 
 #: data/io.elementary.appcenter.appdata.xml.in:183
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Opraveno nesprávné zobrazování některých aplikací v průběhu vyhledávání jako "
+"nenainstalovaných"
 
 #: data/io.elementary.appcenter.appdata.xml.in:184
 msgid "Show an error dialog when opening an app fails"
@@ -284,7 +304,7 @@ msgstr "Opravy"
 
 #: data/io.elementary.appcenter.appdata.xml.in:192
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Správné zobrazování názvů aktualizací Flatpak běhových prostředí"
 
 #: data/io.elementary.appcenter.appdata.xml.in:194
 #: data/io.elementary.appcenter.appdata.xml.in:211
@@ -301,21 +321,24 @@ msgstr "Nové funkce"
 
 #: data/io.elementary.appcenter.appdata.xml.in:204
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Podpora pro zdroje Flatpak balíčků pro celý systém"
 
 #: data/io.elementary.appcenter.appdata.xml.in:208
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Opraveno zasekávání aktualizací Flatpak běhových prostředí"
 
 #: data/io.elementary.appcenter.appdata.xml.in:209
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"Opraveny kombinované kolonky s dlouhým původem rozbíjející rozvržení záhlaví"
 
 #: data/io.elementary.appcenter.appdata.xml.in:213
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Pokud je stejná aplikace k dispozici z vícero zdrojů, je upřednostňována "
+"nainstalovaná verze a pak Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:214
 msgid "Improve search performance"
@@ -323,7 +346,7 @@ msgstr "Vylepšení rychlosti vyhledávání"
 
 #: data/io.elementary.appcenter.appdata.xml.in:215
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Vylepšen styl odznáčku aktualizace a kategorií"
 
 #: data/io.elementary.appcenter.appdata.xml.in:224
 msgid "Ensure AppCenter is reopened at the correct position"
