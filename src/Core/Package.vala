@@ -33,9 +33,19 @@ public class AppCenterCore.PackageDetails : Object {
     public string? version { get; set; }
 }
 
+public enum RuntimeStatus {
+    UP_TO_DATE,
+    END_OF_LIFE,
+    MAJOR_OUTDATED,
+    MINOR_OUTDATED,
+    UNSTABLE;
+}
+
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
+
+    public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
