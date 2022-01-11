@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-06 23:22+0000\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/appcenter/appcenter/bn/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:333
+#: src/Application.vala:38 src/Core/Package.vala:343
 msgid "AppCenter"
 msgstr "অ্যাপলিকেশন সেন্টার"
 
@@ -117,7 +117,7 @@ msgstr "প্যাকেজ অপসারণ করা হচ্ছে"
 msgid "Downloading"
 msgstr "ডাউনলোড হচ্ছে"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1061
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
 msgid "Installing"
 msgstr "ইনস্টল হচ্ছে"
 
@@ -162,9 +162,9 @@ msgid "Finished"
 msgstr "শেষ হয়েছে"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1070 src/Core/FlatpakBackend.vala:1094
-#: src/Core/FlatpakBackend.vala:1202 src/Core/FlatpakBackend.vala:1226
-#: src/Core/FlatpakBackend.vala:1372 src/Core/FlatpakBackend.vala:1394
+#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
+#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
 msgid "Cancelling"
 msgstr "বাতিল করা হচ্ছে"
 
@@ -253,45 +253,45 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1193
+#: src/Core/FlatpakBackend.vala:1260
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "ইনস্টল হচ্ছে"
 
-#: src/Core/FlatpakBackend.vala:1363
+#: src/Core/FlatpakBackend.vala:1430
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "আপডেট"
 
-#: src/Core/Package.vala:303
+#: src/Core/Package.vala:313
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:345
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:347
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:352
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:347
+#: src/Core/Package.vala:357
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:350
+#: src/Core/Package.vala:360
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:522
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -586,184 +586,209 @@ msgstr ""
 msgid "Failed to update “%s”"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:80
+#: src/Views/AppInfoView.vala:84
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:81
+#: src/Views/AppInfoView.vala:85
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:86
+#: src/Views/AppInfoView.vala:90
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:87
+#: src/Views/AppInfoView.vala:91
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:92
+#: src/Views/AppInfoView.vala:96
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:93
+#: src/Views/AppInfoView.vala:97
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:98
+#: src/Views/AppInfoView.vala:102
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:99
+#: src/Views/AppInfoView.vala:103
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:113
+#: src/Views/AppInfoView.vala:120
 msgid "Non-Curated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:114
+#: src/Views/AppInfoView.vala:121
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:143
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:144
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:150
+#: src/Views/AppInfoView.vala:157
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:162
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:160
+#: src/Views/AppInfoView.vala:167
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:204
+#: src/Views/AppInfoView.vala:211
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:205
+#: src/Views/AppInfoView.vala:212
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:221
+#: src/Views/AppInfoView.vala:228
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:230
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:227
+#: src/Views/AppInfoView.vala:234
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:237
+#: src/Views/AppInfoView.vala:244
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:238
+#: src/Views/AppInfoView.vala:245
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:250
+#: src/Views/AppInfoView.vala:257
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:260
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:265
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:382
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:476
+#: src/Views/AppInfoView.vala:483
 msgid "Homepage"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:489
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:488
+#: src/Views/AppInfoView.vala:495
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:494
+#: src/Views/AppInfoView.vala:501
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:505
+#: src/Views/AppInfoView.vala:512
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:550
+#: src/Views/AppInfoView.vala:558
 msgid "Extensions:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:653
+#: src/Views/AppInfoView.vala:661
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:664
+#: src/Views/AppInfoView.vala:672
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:680
 msgid "Share"
 msgstr ""
 
+#: src/Views/AppInfoView.vala:759 src/Views/AppInfoView.vala:766
+msgid "Outdated"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:760
+msgid "Built with older technologies that may not work as expected or receive security updates"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:767
+#, c-format
+msgid "Built for an older version of %s; might not support the latest features"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:775
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Installed"
+msgid "Unstable"
+msgstr "ইনস্টল হয়েছে"
+
+#: src/Views/AppInfoView.vala:776
+#, c-format
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:981
+#: src/Views/AppInfoView.vala:1026
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:984
+#: src/Views/AppInfoView.vala:1029
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:989
+#: src/Views/AppInfoView.vala:1034
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:992
+#: src/Views/AppInfoView.vala:1037
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:996
+#: src/Views/AppInfoView.vala:1041
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:999
+#: src/Views/AppInfoView.vala:1044
 msgid "Unknown License"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1079
+#: src/Views/AppInfoView.vala:1124
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1087
+#: src/Views/AppInfoView.vala:1132
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1208
+#: src/Views/AppInfoView.vala:1253
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
