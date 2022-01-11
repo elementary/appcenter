@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-06 23:22+0000\n"
-"PO-Revision-Date: 2022-01-10 13:49+0000\n"
+"PO-Revision-Date: 2022-01-11 00:52+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
@@ -73,20 +73,16 @@ msgid "Search Apps"
 msgstr "Hledat aplikace"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
-msgstr "Kontrola aktualizací se nezdařila"
+msgstr "Automatické aktualizace"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
+msgstr "Automaticky aktualizovat volné a placené dohlížené aplikace"
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Spouštění"
+msgstr "Nastavení"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:398
@@ -413,10 +409,10 @@ msgid "Pay $%d for %s"
 msgstr "Zaplaťte $%d za %s"
 
 #: src/Dialogs/StripeDialog.vala:94
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Toto je jednorázová platba. Na váš e-mail bude zaslán daňový doklad."
+msgstr ""
+"Toto je jednorázová platba, doporučená vývojářem. Je také možné si zvolit "
+"svou vlastní."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
@@ -427,10 +423,10 @@ msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Vaše e-mailová adresa je použita pouze pro zaslání účtenky. Nebudete zapsán do žádného seznamu pro příjem pošty."
+msgstr ""
+"Použito pouze pro zaslání účtenky. Nebudete zapsán do žádného seznamu pro "
+"příjem pošty."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -605,7 +601,7 @@ msgstr "Zakázané látky"
 
 #: src/Views/AppInfoView.vala:81
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
+msgstr "Přítomnost nebo odkazy na alkohol, drogy nebo kouření"
 
 #: src/Views/AppInfoView.vala:86
 msgid "Sex & Nudity"
@@ -613,15 +609,15 @@ msgstr "Sex a nahota"
 
 #: src/Views/AppInfoView.vala:87
 msgid "Adult nudity or sexual themes"
-msgstr ""
+msgstr "Nahota nebo sexuální podtext"
 
 #: src/Views/AppInfoView.vala:92
 msgid "Offensive Language"
-msgstr ""
+msgstr "Urážlivé výrazy"
 
 #: src/Views/AppInfoView.vala:93
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr ""
+msgstr "Neuctivost, diskriminující výrazy nebo humor pro dospělé"
 
 #: src/Views/AppInfoView.vala:98
 msgid "Gambling"
@@ -629,13 +625,11 @@ msgstr "Gambling"
 
 #: src/Views/AppInfoView.vala:99
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "Realistický nebo účastnický gambling"
 
 #: src/Views/AppInfoView.vala:113
-#, fuzzy
-#| msgid "Non-Curated Apps"
 msgid "Non-Curated"
-msgstr "Neprověřované aplikace"
+msgstr "Neprověřované"
 
 #: src/Views/AppInfoView.vala:114
 msgid "Not reviewed by elementary for security, privacy, or system integration"
@@ -657,19 +651,19 @@ msgstr "Násilí"
 
 #: src/Views/AppInfoView.vala:155
 msgid "Fantasy Violence"
-msgstr ""
+msgstr "Fantazijní násilí"
 
 #: src/Views/AppInfoView.vala:160
 msgid "Graphic violence, bloodshed, or death"
-msgstr ""
+msgstr "Zobrazování násilí, krvácení nebo úmrtí"
 
 #: src/Views/AppInfoView.vala:204
 msgid "Multiplayer"
-msgstr ""
+msgstr "Pro vícero hráčů"
 
 #: src/Views/AppInfoView.vala:205
 msgid "Online play with other people"
-msgstr ""
+msgstr "Hraní s ostatními lidmi přes Internet"
 
 #: src/Views/AppInfoView.vala:221
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
@@ -698,6 +692,8 @@ msgstr "Sbírá anonymní data o používání"
 #: src/Views/AppInfoView.vala:253
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
+"Shromažďuje data o používání, která by mohla být použita pro vaší "
+"identifikaci"
 
 #: src/Views/AppInfoView.vala:258
 msgid "Info Sharing"
@@ -794,8 +790,6 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Stahování seznamu aktualizací, které jsou k dispozici pro operační systém a nainstalované aplikace"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "Pro dokončení instalace aktualizací je vyžadován restart"
 
@@ -826,22 +820,20 @@ msgstr "Nebyly nalezeny žádné aplikace"
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"Zkuste upravit vyhledávaný pojem. Je také možné nainstalovat bokem Flatpak "
+"aplikace, například z %s"
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "Neprověřované aplikace"
 
 #: src/Views/CategoryView.vala:28
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Paid Apps"
-msgstr "Hledat aplikace"
+msgstr "Placené aplikace"
 
 #: src/Views/CategoryView.vala:39
-#, fuzzy
-#| msgid "Free"
 msgid "Free Apps"
-msgstr "Zdarma"
+msgstr "Aplikace zdarma"
 
 #: src/Views/Homepage.vala:73
 msgid "Recently Updated"
@@ -931,10 +923,8 @@ msgid "Writing & Language"
 msgstr "Psaní a jazyky"
 
 #: src/Widgets/CategoryFlowBox.vala:136
-#, fuzzy
-#| msgid "Privacy Policy"
 msgid "Privacy & Security"
-msgstr "Zásady ochrany soukromí"
+msgstr "Soukromí a zabezpečení"
 
 #: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"
