@@ -167,7 +167,7 @@ public class AppCenterCore.Client : Object {
         });
 
         if (nm.get_network_available ()) {
-            if (last_cache_update_is_old && AppCenter.App.settings.get_boolean ("automatic-updates")) {
+            if ((force || last_cache_update_is_old) && AppCenter.App.settings.get_boolean ("automatic-updates")) {
                 yield refresh_updates ();
                 debug ("Update Flatpaks");
                 var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
