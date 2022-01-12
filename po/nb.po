@@ -1,13 +1,14 @@
 # Nils K <slx@nilsk.net>, 2018, 2019, 2020.
-# Allan Nordhøy <epost@anotheragency.no>, 2018, 2019, 2021.
+# Allan Nordhøy <epost@anotheragency.no>, 2018, 2019, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2021-11-17 13:22+0000\n"
+"PO-Revision-Date: 2022-01-12 06:52+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,8 +73,9 @@ msgid "Automatic Updates"
 msgstr "Klarte ikke å hente oppgraderinger"
 
 #: src/MainWindow.vala:219
+#, fuzzy
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
+msgstr "Oppgrader vurderte programmer om de er gratis eller betalte"
 
 #: src/MainWindow.vala:249
 #, fuzzy
@@ -724,16 +726,18 @@ msgstr "Del"
 
 #: src/Views/AppInfoView.vala:759 src/Views/AppInfoView.vala:766
 msgid "Outdated"
-msgstr ""
+msgstr "Utdatert"
 
 #: src/Views/AppInfoView.vala:760
 msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
+"Bygd med eldre teknologi som ikke trenger å virke som forventet, eller motta "
+"sikkerhetsoppdateringer"
 
 #: src/Views/AppInfoView.vala:767
 #, c-format
 msgid "Built for an older version of %s; might not support the latest features"
-msgstr ""
+msgstr "Bygd for en eldre versjon av %s; og kan mangle de siste funksjonene"
 
 #: src/Views/AppInfoView.vala:775
 #, fuzzy
@@ -745,6 +749,8 @@ msgstr "Avinstaller"
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
+"Bygd for en ustabil versjon av %s; kan inneholde store problemer. Ikke "
+"anbefalt brukt i produksjonsøyemed."
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1026
