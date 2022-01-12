@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2022-01-07 20:57+0000\n"
+"PO-Revision-Date: 2022-01-12 06:52+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -53,6 +53,8 @@ msgstr "Додано опцію автооновлення курованих з
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Warn when apps are built against older runtimes"
 msgstr ""
+"Додано попередження, якщо застосунки створено для давніших середовищ "
+"виконання"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:34
