@@ -3,13 +3,14 @@
 # Lieven Hanssen <lhanssen@freedommail.co>, 2020.
 # Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022.
 # MB <barendregt@fastmail.com>, 2022.
+# Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2022-01-15 00:26+0000\n"
-"Last-Translator: MB <barendregt@fastmail.com>\n"
+"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -36,10 +37,8 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als zoekterm gebruiken"
 
 #: src/Application.vala:298
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s is met succes geïnstalleerd"
+msgstr "De toepassing is geïnstalleerd"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
