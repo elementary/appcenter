@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2022-01-11 18:13+0000\n"
+"PO-Revision-Date: 2022-01-12 19:13+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
 ">\n"
@@ -51,7 +51,7 @@ msgstr "Přidána volba automatických aktualizací prověřovaných aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Warn when apps are built against older runtimes"
-msgstr ""
+msgstr "Varování, pokud jsou aplikace sestaveny vůči starým běhovým prostředím"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:34
