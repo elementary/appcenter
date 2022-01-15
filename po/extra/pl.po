@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2022-01-07 11:05+0000\n"
+"PO-Revision-Date: 2022-01-12 19:13+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Warn when apps are built against older runtimes"
-msgstr ""
+msgstr "Ostrzeganie gdy aplikacje są budowane ze starszymi zależnościami"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:34

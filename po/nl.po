@@ -1,20 +1,24 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
 # Jaimie85 <alsemgeest@gmail.com>, 2019, 2020.
 # Lieven Hanssen <lhanssen@freedommail.co>, 2020.
+# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022.
+# MB <barendregt@fastmail.com>, 2022.
+# Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2020-09-20 09:14+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
+"PO-Revision-Date: 2022-01-15 00:26+0000\n"
+"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -33,25 +37,21 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als zoekterm gebruiken"
 
 #: src/Application.vala:298
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s is met succes geïnstalleerd"
+msgstr "De toepassing is geïnstalleerd"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s is met succes geïnstalleerd"
+msgstr "“%s” is geïnstalleerd"
 
 #: src/MainWindow.vala:140
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Het verwijderen van “%s” is mislukt"
+msgstr "Het starten van “%s” is mislukt"
 
 #: src/MainWindow.vala:170 src/Views/Homepage.vala:271
 #: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
@@ -71,20 +71,16 @@ msgid "Search Apps"
 msgstr "Zoek Apps"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
-msgstr "De updates konden niet worden opgehaald"
+msgstr "Automatische updates"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
+msgstr "Update gratis en betaalde apps automatisch"
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Starten"
+msgstr "Instellingen"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:398
@@ -242,7 +238,7 @@ msgstr "Onbekende toestand"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "Pakketbewerkingen worden momenteel uitgevoerd"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -406,14 +402,14 @@ msgid "Pay $%d for %s"
 msgstr "Betaal $%d voor %s"
 
 #: src/Dialogs/StripeDialog.vala:94
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Dit is een eenmalige betaling. Uw e-mailadres wordt alleen gebruikt om u een betaalbewijs te sturen."
+msgstr ""
+"Dit is een eenmalige betaling voorgesteld door de ontwikkelaar. U kunt een "
+"andere prijs opgeven."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "of"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
