@@ -50,6 +50,10 @@ namespace AppCenter.Views {
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
+        private Gtk.FlowBox oars_flowbox;
+        private Gtk.Revealer oars_flowbox_revealer;
+
+        private bool is_runtime_warning_shown = false;
 
         private unowned Gtk.StyleContext stack_context;
 
@@ -100,12 +104,15 @@ namespace AppCenter.Views {
                 "oars-gambling-symbolic"
             );
 
-            var oars_flowbox = new Gtk.FlowBox () {
+            oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 margin_bottom = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
+
+            oars_flowbox_revealer = new Gtk.Revealer ();
+            oars_flowbox_revealer.add (oars_flowbox);
 
 #if CURATED
             if (!package.is_native && !package.is_os_updates) {
@@ -522,8 +529,9 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
+            content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
-                content_grid.add (oars_flowbox);
+                oars_flowbox_revealer.reveal_child = true;
             }
 
             if (screenshots.length > 0) {
@@ -743,6 +751,43 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
+
+            ContentType? runtime_warning = null;
+            switch (package.runtime_status) {
+                case RuntimeStatus.END_OF_LIFE:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("Built with older technologies that may not work as expected or receive security updates"),
+                        "software-update-urgent-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MAJOR_OUTDATED:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("Built for an older version of %s; might not support the latest features").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "software-update-available-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MINOR_OUTDATED:
+                    break;
+                case RuntimeStatus.UNSTABLE:
+                    runtime_warning = new ContentType (
+                        _("Unstable"),
+                        _("Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "applications-development-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.UP_TO_DATE:
+                    break;
+            }
+
+            if (runtime_warning != null && !is_runtime_warning_shown) {
+                is_runtime_warning_shown = true;
+
+                oars_flowbox.insert (runtime_warning, 0);
+                oars_flowbox.show_all ();
+                oars_flowbox_revealer.reveal_child = true;
+            }
         }
 
         public void view_entered () {
