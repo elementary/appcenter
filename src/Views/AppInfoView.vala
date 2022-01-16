@@ -1264,6 +1264,10 @@ namespace AppCenter.Views {
                     continue;
                 }
 
+                if (!author_package.is_native) {
+                    continue;
+                }
+
                 var other_app = new AppCenter.Widgets.ListPackageRowGrid (author_package);
                 flowbox.add (other_app);
             }
