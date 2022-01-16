@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2022-01-12 16:02+0000\n"
+"PO-Revision-Date: 2022-01-16 04:10+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
@@ -76,7 +76,7 @@ msgstr "Anwendungen suchen"
 
 #: src/MainWindow.vala:218
 msgid "Automatic Updates"
-msgstr "Automatische Aktualisierungen"
+msgstr "Automatisch aktualisieren"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
