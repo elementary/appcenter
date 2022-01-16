@@ -17,6 +17,7 @@
         <ul>
           <li>Added an option to automatically update curated apps</li>
           <li>Warn when apps are built against older runtimes</li>
+          <li>Only show curated apps in other apps footer</li>
         </ul>
         <p>Fixes:</p>
         <ul>
