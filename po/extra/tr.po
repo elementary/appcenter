@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2022-01-16 20:07+0000\n"
-"Last-Translator: Berk Akkaya <berkakkaya000@gmail.com>\n"
+"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -68,7 +68,9 @@ msgstr "Düzeltmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr "Geri butonunun kaybolmasını yada birden çok tıklama gerektirmesini önle"
+msgstr ""
+"Geri gitme düğmesinin kaybolmasını yada birden çok tıklama gerektirmesi "
+"önlendi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:38
