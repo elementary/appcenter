@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2022-01-11 18:13+0000\n"
+"PO-Revision-Date: 2022-01-16 20:07+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -69,6 +69,8 @@ msgstr "Düzeltmeler:"
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
+"Geri gitme düğmesinin kaybolmasını yada birden çok tıklama gerektirmesi "
+"önlendi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:38
@@ -125,7 +127,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "Kategoriler liste görünümü yerine ızgara görünümünde gösterilir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Allow window to shrink to much narrower sizes"
