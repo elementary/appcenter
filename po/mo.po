@@ -2,11 +2,10 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/mo/>\n"
+"Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
 "Language: mo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,6 +30,7 @@ msgstr "Linkul specificat '%s' nu a putut fi găsit, în loc de căutare"
 
 #: src/Application.vala:298
 #, fuzzy
+#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s a fost instalat cu succes"
 
@@ -39,6 +39,7 @@ msgstr "%s a fost instalat cu succes"
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
+#| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s a fost instalat cu succes"
 
@@ -67,6 +68,7 @@ msgstr "Căutare Apps"
 
 #: src/MainWindow.vala:218
 #, fuzzy
+#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
 msgstr "Nu s-a putut prelua actualizările"
 
@@ -76,6 +78,7 @@ msgstr ""
 
 #: src/MainWindow.vala:249
 #, fuzzy
+#| msgid "Starting"
 msgid "Settings"
 msgstr "Pornire"
 
@@ -260,11 +263,13 @@ msgstr[1] ""
 
 #: src/Core/FlatpakBackend.vala:1260
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Dezinstalați"
 
 #: src/Core/FlatpakBackend.vala:1430
 #, fuzzy
+#| msgid "Update"
 msgid "Updating"
 msgstr "Actualizați"
 
@@ -353,12 +358,8 @@ msgstr "Reporniți-vă sistemul pentru a finaliza actualizările"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 #, fuzzy
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
-msgstr ""
-"Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe "
-"software sau de un fișier de surse corupte."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe software sau de un fișier de surse corupte."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
@@ -372,6 +373,7 @@ msgstr "Dezinstalați"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
+#| msgid "Non-Curated Apps"
 msgid "Non-Curated Warning"
 msgstr "Aplicații suspecte"
 
@@ -382,9 +384,7 @@ msgstr "%s (local)"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
@@ -409,12 +409,8 @@ msgid "Install Anyway"
 msgstr "Instalare"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"A apărut o eroare la procesarea cardului. Vă rugăm să încercați din nou mai "
-"târziu. Ne cerem scuze pentru eventualele neplăceri cauzate."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "A apărut o eroare la procesarea cardului. Vă rugăm să încercați din nou mai târziu. Ne cerem scuze pentru eventualele neplăceri cauzate."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -424,19 +420,16 @@ msgstr "Consultați informațiile de plată și încercați din nou."
 msgid "Payment"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Plătește %d pentru %s"
 
 #: src/Dialogs/StripeDialog.vala:94
 #, fuzzy
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
-msgstr ""
-"Aceasta este o plată unică. Adresa dvs. de e-mail este utilizată numai "
-"pentru a vă trimite o chitanță."
+#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
+msgstr "Aceasta este o plată unică. Adresa dvs. de e-mail este utilizată numai pentru a vă trimite o chitanță."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
@@ -448,12 +441,8 @@ msgstr "Poșta"
 
 #: src/Dialogs/StripeDialog.vala:157
 #, fuzzy
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
-msgstr ""
-"Adresa dvs. de e-mail este utilizată pentru a trimite o chitanță. Nu va fii "
-"stocată și nu veți fi abonat la o listă de corespondență."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "Adresa dvs. de e-mail este utilizată pentru a trimite o chitanță. Nu va fii stocată și nu veți fi abonat la o listă de corespondență."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -468,134 +457,100 @@ msgstr "LUNĂ / AN"
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Anulare"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Plătește %d .00"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "Procesare"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "A apărut o problemă în procesarea plății"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Plătește mai târziu"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Reîncercați"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Numărul cardului este incorect. Încercați din nou utilizând numărul corect "
-"al cardului."
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Numărul cardului este incorect. Încercați din nou utilizând numărul corect al cardului."
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Luna de expirare este nevalidă. Încercați din nou utilizând data de expirare "
-"corectă."
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Luna de expirare este nevalidă. Încercați din nou utilizând data de expirare corectă."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Anul de expirare este incorect. Încercați din nou utilizând data de expirare "
-"corectă."
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Anul de expirare este incorect. Încercați din nou utilizând data de expirare corectă."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"Numărul CVC este incorect. Încercați din nou utilizând codul CVC corect."
+msgstr "Numărul CVC este incorect. Încercați din nou utilizând codul CVC corect."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "Cardul a expirat. Încearcă din nou cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"În prezent există prea multe solicitări de plată, încercați din nou mai "
-"târziu."
+msgstr "În prezent există prea multe solicitări de plată, încercați din nou mai târziu."
+
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Aceast card nu acceptă acest tip de tranzacție. Încearcă din nou cu un alt card."
+
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Moneda de acest card nu este acceptată . Încearcă din nou cu un alt card."
 
 #: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Aceast card nu acceptă acest tip de tranzacție. Încearcă din nou cu un alt "
-"card."
-
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Moneda de acest card nu este acceptată . Încearcă din nou cu un alt card."
-
-#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Tranzacția a fost procesată cu succes."
 
-#: src/Dialogs/StripeDialog.vala:610
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
+#: src/Dialogs/StripeDialog.vala:606
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Cod poștal incorect. Încercați din nou folosind / codul poștal corect."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Nu aveți suficiente fonduri. Utilizați o metodă de plată alternativă."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Cantitate incorectă. Încercați din nou utilizând o sumă validă."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Codul PIN este incorect. Vă rugăm introduceți codul PIN corect."
 
-#: src/Dialogs/StripeDialog.vala:627
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Au fost prea multe încercări de cod PIN. Încearcă din nou cu un alt card."
+#: src/Dialogs/StripeDialog.vala:623
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Au fost prea multe încercări de cod PIN. Încearcă din nou cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Imposibil de completat tranzacția. Contactați cu banca pentru informații "
-"suplimentare."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Imposibil de completat tranzacția. Contactați cu banca pentru informații suplimentare."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "S-a atins cantitatea limită de credit de pe card."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Cardul dat este un card de probă. Utilizați o carte reală pentru a continua."
+msgstr "Cardul dat este un card de probă. Utilizați o carte reală pentru a continua."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -620,9 +575,7 @@ msgstr "Dezinstalați"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe "
-"software sau de un fișier de surse corupte."
+msgstr "Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe software sau de un fișier de surse corupte."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -638,12 +591,8 @@ msgid "Failed to Fetch Updates"
 msgstr "Nu s-a putut prelua actualizările"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe "
-"software sau de un fișier de surse corupte."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe software sau de un fișier de surse corupte."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -697,6 +646,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:120
 #, fuzzy
+#| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "Aplicații suspecte"
 
@@ -810,9 +760,7 @@ msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
+msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:767
@@ -822,14 +770,13 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:775
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Dezinstalați"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
@@ -876,6 +823,7 @@ msgstr "Alte aplicații de %s"
 
 #: src/Views/AppListUpdateView.vala:32
 #, fuzzy
+#| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Căutați actualizări …"
 
@@ -885,6 +833,7 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
 #, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "Este necesară o repornire pentru a finaliza instalarea actualizărilor"
 
@@ -893,8 +842,7 @@ msgid "Restart Now"
 msgstr "Reporniți acum"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
@@ -912,8 +860,7 @@ msgstr ""
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
@@ -922,11 +869,13 @@ msgstr "Aplicații suspecte"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
+#| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Căutare Apps"
 
 #: src/Views/CategoryView.vala:39
 #, fuzzy
+#| msgid "Free"
 msgid "Free Apps"
 msgstr "Gratuit"
 
@@ -1023,6 +972,7 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:136
 #, fuzzy
+#| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Politica de confidențialitate"
 
@@ -1153,9 +1103,7 @@ msgstr "Actualizați"
 #~ msgstr "Un magazin de aplicații deschisă, cumpără ce dorești"
 
 #~ msgid "Get the apps that you need at a price you can afford."
-#~ msgstr ""
-#~ "Obțineți aplicațiile de care aveți nevoie la un preț pe care vă puteți "
-#~ "permite."
+#~ msgstr "Obțineți aplicațiile de care aveți nevoie la un preț pe care vă puteți permite."
 
 #~ msgid "Trending"
 #~ msgstr "Tendință"
@@ -1164,8 +1112,7 @@ msgstr "Actualizați"
 #~ msgstr "Fără rezultate"
 
 #~ msgid "No apps could be found. Try changing search terms."
-#~ msgstr ""
-#~ "Nu s-au găsit aplicații. Încercați să modificați termenii de căutare."
+#~ msgstr "Nu s-au găsit aplicații. Încercați să modificați termenii de căutare."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Sugestii de traduceri"
@@ -1177,8 +1124,7 @@ msgstr "Actualizați"
 #~ msgstr "Sigur doriți să reporniți?"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr ""
-#~ "Se va închide toate aplicațiile deschise și va reporni acest dispozitiv."
+#~ msgstr "Se va închide toate aplicațiile deschise și va reporni acest dispozitiv."
 
 #~ msgid "Restart"
 #~ msgstr "Reporniți"

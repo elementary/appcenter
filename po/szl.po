@@ -3,17 +3,15 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
-"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/szl/>\n"
+"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
 "Language: szl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -33,6 +31,7 @@ msgstr "Ôkryślōny link „%s” niy bōł znojdziōny, wyszukowanie"
 
 #: src/Application.vala:298
 #, fuzzy
+#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s było sprownie zainstalowane"
 
@@ -41,11 +40,13 @@ msgstr "%s było sprownie zainstalowane"
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
+#| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s było sprownie zainstalowane"
 
 #: src/MainWindow.vala:140
 #, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
 msgid "Failed to launch “%s“"
 msgstr "Niy szło ôdinstalować „%s”"
 
@@ -68,6 +69,7 @@ msgstr "Wyszukej program"
 
 #: src/MainWindow.vala:218
 #, fuzzy
+#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
 msgstr "Niy szło pobrać aktualizacyji"
 
@@ -77,6 +79,7 @@ msgstr ""
 
 #: src/MainWindow.vala:249
 #, fuzzy
+#| msgid "Starting"
 msgid "Settings"
 msgstr "Zaczynanie"
 
@@ -290,9 +293,7 @@ msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 #: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: "
-"%s"
+msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
 
 #: src/Core/PackageKitBackend.vala:290
 #, c-format
@@ -342,12 +343,8 @@ msgid "Please restart your system to finalize updates"
 msgstr "Zresztartuj systym, żeby dokōńczyć aktualizacyje"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
-msgstr ""
-"To może być tymczasowy problym abo skirz zewnyntrznego abo ryncznie "
-"skōmpilowanego ôprogramowanio."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "To może być tymczasowy problym abo skirz zewnyntrznego abo ryncznie skōmpilowanego ôprogramowanio."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -368,12 +365,8 @@ msgstr "Zainstalować niynzadzorowano aplikacyjo?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
-msgstr ""
-"elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, "
-"prywatności abo integracyje ze systymym."
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr "elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, prywatności abo integracyje ze systymym."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -381,8 +374,7 @@ msgstr "Może niy dostować poprowek felerōw ani aktualizacyji funkcyji"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwolynio"
+msgstr "Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwolynio"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -397,12 +389,8 @@ msgid "Install Anyway"
 msgstr "Zainstaluj i tak"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Przi przetworzaniu karty trefiōł sie feler. Sprōbuj zaś niyskorzij. "
-"Przeproszōmy za wszyjske niywygody."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Przi przetworzaniu karty trefiōł sie feler. Sprōbuj zaś niyskorzij. Przeproszōmy za wszyjske niywygody."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -412,19 +400,16 @@ msgstr "Przejzdrzij informacyje ô płacyniu i sprōbuj zaś."
 msgid "Payment"
 msgstr "Płat"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Zapłać $%d za %s"
 
 #: src/Dialogs/StripeDialog.vala:94
 #, fuzzy
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
-msgstr ""
-"To je jednorazowy płat. Twoja adresa e-mail je używano ino żeby wysłać ci "
-"rachōnek."
+#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
+msgstr "To je jednorazowy płat. Twoja adresa e-mail je używano ino żeby wysłać ci rachōnek."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
@@ -436,12 +421,9 @@ msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:157
 #, fuzzy
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
-msgstr ""
-"Twoja adresa e-mail suży do wysłanio rachōnku. Niy bydzie zapisano do żodnyj "
-"listy pocztowyj."
+#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "Twoja adresa e-mail suży do wysłanio rachōnku. Niy bydzie zapisano do żodnyj listy pocztowyj."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -456,125 +438,100 @@ msgstr "MM / RR"
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Pociep"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Zapłać $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "Przetworzanie"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Bōł problym przi przetworzaniu płatu"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Zapłać niyskorzij"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Ponōw"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Numer karty je niynoleżny. Sprōbuj zaś ze noleżnym numerym karty."
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Miesiōnc przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm "
-"przedowniynio."
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Miesiōnc przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm przedowniynio."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Rok przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm przedowniynio."
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Rok przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm przedowniynio."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Numer CVC je niynoleżny. Sprōbuj zaś ze noleżnym numerym CVC."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "Karta je przedowniōno. Sprōbuj zaś z inkszōm kartōm."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "W tym mōmyncie je za moc prōśb ô płat. Sprōbuj niyskorzij."
 
-#: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Ta karta niy spiyro tyj zorty transakcyje. Sprōbuj zaś z inkszōm kartōm."
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Ta karta niy spiyro tyj zorty transakcyje. Sprōbuj zaś z inkszōm kartōm."
 
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Ta karta niy ôbsuguje tyj waluty. Sprōbuj zaś z inkszōm kartōm."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The transaction has already been processed."
 msgstr "Transakcyjo była już przetworzōno."
 
-#: src/Dialogs/StripeDialog.vala:610
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
+#: src/Dialogs/StripeDialog.vala:606
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Kod pocztowy je niynoleżny. Sprōbuj zaś ze noleżnym kodym pocztowym."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Niy styko ci funduszy. Użyj alternatywnyj metody płacynio."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Kwota je niynoleżno. Sprōbuj zaś ze noleżnōm kwotōm."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Kod PIN je niynoleżny. Sprōbuj zaś ze noleżnym kodym PIN."
 
-#: src/Dialogs/StripeDialog.vala:627
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
+#: src/Dialogs/StripeDialog.vala:623
+msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Za moc prōb wkludzynio kodu PIN. Sprōbuj zaś z inkszōm kartōm."
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Niy idzie zakōńczyć transakcyje. Coby dostać ekstra informacyje, skōntaktuj "
-"sie ze swojim bankym."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Niy idzie zakōńczyć transakcyje. Coby dostać ekstra informacyje, skōntaktuj sie ze swojim bankym."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Skōńczōł sie na karcie limit postrzodkōw abo kredyt."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Podano karta ot karta testowo. Użyj prowdziwyj karty, żeby kōntynuować."
+msgstr "Podano karta ot karta testowo. Użyj prowdziwyj karty, żeby kōntynuować."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -597,8 +554,7 @@ msgstr "Ôdinstaluj"
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"To może być skirz zewnyntrznego abo ryncznie skōmpilowanego ôprogramowanio."
+msgstr "To może być skirz zewnyntrznego abo ryncznie skōmpilowanego ôprogramowanio."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -614,12 +570,8 @@ msgid "Failed to Fetch Updates"
 msgstr "Niy szło pobrać aktualizacyji"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"To może być skuli ryncznie przidanego repozytorium ôprogramowanio abo "
-"poprzniōnego zbioru zdrzōdłowego."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "To może być skuli ryncznie przidanego repozytorium ôprogramowanio abo poprzniōnego zbioru zdrzōdłowego."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -631,11 +583,13 @@ msgstr "Sprōbuj zaś"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
+#| msgid "Failed to uninstall app"
 msgid "Failed to update app"
 msgstr "Niy szło ôdinstalować programu"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
 msgid "Failed to update “%s”"
 msgstr "Niy szło ôdinstalować „%s”"
 
@@ -673,15 +627,15 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:120
 #, fuzzy
+#| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "Programy niynadzorowane"
 
 #: src/Views/AppInfoView.vala:121
 #, fuzzy
+#| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr ""
-"elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, "
-"prywatności abo integracyje ze systymym."
+msgstr "elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, prywatności abo integracyje ze systymym."
 
 #: src/Views/AppInfoView.vala:143
 msgid "Conflict"
@@ -789,9 +743,7 @@ msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
+msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:767
@@ -801,14 +753,13 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:775
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Ôdinstaluj"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
@@ -858,12 +809,11 @@ msgstr "Wybadowanie aktualizacyji"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"Ściōnganie listy wszyjskich dostympnych aktualizacyji systymu ôperacyjnego i "
-"zainstalowanych aplikcayji"
+msgstr "Ściōnganie listy wszyjskich dostympnych aktualizacyji systymu ôperacyjnego i zainstalowanych aplikcayji"
 
 #: src/Views/AppListUpdateView.vala:41
 #, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "Potrzebny resztart, coby dokōńczyć instalacyjo aktualizacyji"
 
@@ -872,8 +822,7 @@ msgid "Restart Now"
 msgstr "Sztartnij zaś kōmputer"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
@@ -891,8 +840,7 @@ msgstr ""
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
@@ -901,11 +849,13 @@ msgstr "Programy niynadzorowane"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
+#| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Wyszukej program"
 
 #: src/Views/CategoryView.vala:39
 #, fuzzy
+#| msgid "Free"
 msgid "Free Apps"
 msgstr "Wolny"
 
@@ -998,6 +948,7 @@ msgstr "Pisanie i jynzyk"
 
 #: src/Widgets/CategoryFlowBox.vala:136
 #, fuzzy
+#| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Polityka prywatności"
 
@@ -1116,13 +1067,8 @@ msgstr "Zaktualizuj"
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "„%s” zawiyro niycynzuralne treści"
 
-#~ msgid ""
-#~ "“%s” may contain content only suitable for adults or that may be "
-#~ "sensitive or disturbing. In general, elementary does not review or "
-#~ "endorse the contents of this app."
-#~ msgstr ""
-#~ "„%s” może zawiyrać treści ino dlo majoryntnych abo treści, co szterujōm. "
-#~ "Ôgōlnie elementary niy przeglōndo ani niy spiyro zawartości tego programu."
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "„%s” może zawiyrać treści ino dlo majoryntnych abo treści, co szterujōm. Ôgōlnie elementary niy przeglōndo ani niy spiyro zawartości tego programu."
 
 #~ msgid "Show content warnings"
 #~ msgstr "Pokoż ôstrzeżynia ô zawartości"
@@ -1147,8 +1093,7 @@ msgstr "Zaktualizuj"
 #~ msgstr "Brak wynikōw"
 
 #~ msgid "No apps could be found. Try changing search terms."
-#~ msgstr ""
-#~ "Niy szło znojś żodnych programōw. Sprōbuj zmiynić kryteria wyszukowanio."
+#~ msgstr "Niy szło znojś żodnych programōw. Sprōbuj zmiynić kryteria wyszukowanio."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Zapropōnuj przekłod"
@@ -1160,8 +1105,7 @@ msgstr "Zaktualizuj"
 #~ msgstr "Na zicher sztartnōńć na nowo?"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr ""
-#~ "Wszyjske ôtwarte aplikacyje bydōm zawarte, a maszina zresztartowano."
+#~ msgstr "Wszyjske ôtwarte aplikacyje bydōm zawarte, a maszina zresztartowano."
 
 #~ msgid "Restart"
 #~ msgstr "Zresztartuj"

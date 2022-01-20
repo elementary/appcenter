@@ -3,17 +3,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/lt/>\n"
+"Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
-"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -34,6 +32,7 @@ msgstr "Nurodytos nuorodos \"%s\" rasti nepavyko, vietoj to, atliekama paieška"
 
 #: src/Application.vala:298
 #, fuzzy
+#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
@@ -42,11 +41,13 @@ msgstr "%s buvo sėkmingai įdiegta"
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
+#| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
 #: src/MainWindow.vala:140
 #, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
 msgid "Failed to launch “%s“"
 msgstr "Nepavyko pašalinti \"%s\""
 
@@ -69,6 +70,7 @@ msgstr "Ieškoti programų"
 
 #: src/MainWindow.vala:218
 #, fuzzy
+#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
 msgstr "Nepavyko gauti atnaujinimų"
 
@@ -78,6 +80,7 @@ msgstr ""
 
 #: src/MainWindow.vala:249
 #, fuzzy
+#| msgid "Starting"
 msgid "Settings"
 msgstr "Pradedama"
 
@@ -256,11 +259,13 @@ msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
 
 #: src/Core/FlatpakBackend.vala:1260
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Šalinti"
 
 #: src/Core/FlatpakBackend.vala:1430
 #, fuzzy
+#| msgid "Update"
 msgid "Updating"
 msgstr "Atnaujinti"
 
@@ -293,11 +298,11 @@ msgstr "Nežinoma kilmė (nekuruojama)"
 #: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
+msgstr "Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
 
 #: src/Core/PackageKitBackend.vala:290
 #, fuzzy, c-format
+#| msgid "%s (non-curated)"
 msgid "%s (local)"
 msgstr "%s (nekuruojama)"
 
@@ -346,38 +351,37 @@ msgstr "Norėdami užbaigti atnaujinimus, paleiskite savo sistemą iš naujo"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 #, fuzzy
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
-msgstr ""
-"Tai galėjo būti sukelta išorinės ar rankiniu būdu kompiliuotos programinės "
-"įrangos."
+#| msgid "This may have been caused by external or manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Tai galėjo būti sukelta išorinės ar rankiniu būdu kompiliuotos programinės įrangos."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
+#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
 msgstr "Nepavyko pašalinti programos"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
 msgid "Failed to install “%s”"
 msgstr "Nepavyko pašalinti \"%s\""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
+#| msgid "Content Warning"
 msgid "Non-Curated Warning"
 msgstr "Įspėjimas dėl turinio"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
 #, fuzzy
+#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
 msgstr "%s (nekuruojama)"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
@@ -390,6 +394,7 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 #, fuzzy
+#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "Rodyti įspėjimus dėl turinio"
 
@@ -402,12 +407,8 @@ msgid "Install Anyway"
 msgstr "Vis tiek įdiegti"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Apdorojant kortelę, įvyko klaida. Prašome vėliau bandyti dar kartą. "
-"Atsiprašome už sukeltus nepatogumus."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Apdorojant kortelę, įvyko klaida. Prašome vėliau bandyti dar kartą. Atsiprašome už sukeltus nepatogumus."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -417,19 +418,16 @@ msgstr "Prašome peržiūrėti savo apmokėjimo informaciją ir bandyti dar kart
 msgid "Payment"
 msgstr "Mokėjimas"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Mokėti %d$ už %s"
 
 #: src/Dialogs/StripeDialog.vala:94
 #, fuzzy
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
-msgstr ""
-"Tai yra vienkartinis apmokėjimas. Jūsų el. pašto adresas yra naudojamas tik "
-"kvitui išsiųsti."
+#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
+msgstr "Tai yra vienkartinis apmokėjimas. Jūsų el. pašto adresas yra naudojamas tik kvitui išsiųsti."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
@@ -441,12 +439,9 @@ msgstr "El. paštas"
 
 #: src/Dialogs/StripeDialog.vala:157
 #, fuzzy
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
-msgstr ""
-"Jūsų el. paštas yra naudojamas tik išsiųsti kvitą. Jūs nebūsite įtraukti į "
-"jokį pašto prenumeratos sąrašą."
+#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "Jūsų el. paštas yra naudojamas tik išsiųsti kvitą. Jūs nebūsite įtraukti į jokį pašto prenumeratos sąrašą."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -461,146 +456,100 @@ msgstr "mm / MM"
 msgid "CVC"
 msgstr "CVC saugos kodas"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Mokėti $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "Apdorojama"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Apdorojant jūsų apmokėjimą, įvyko klaida"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Mokėti vėliau"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Kortelės numeris yra neteisingas. Prašome bandyti dar kartą, naudojant "
-"teisingą kortelės numerį."
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Kortelės numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą kortelės numerį."
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Galiojimo datos mėnuo yra neteisingas. Prašome bandyti dar kartą, naudojant "
-"teisingą galiojimo datą."
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Galiojimo datos mėnuo yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą galiojimo datą."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Galiojimo datos metai yra neteisingi. Prašome bandyti dar kartą, naudojant "
-"teisingą galiojimo datą."
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Galiojimo datos metai yra neteisingi. Prašome bandyti dar kartą, naudojant teisingą galiojimo datą."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"CVC saugumo kodas yra neteisingas. Prašome bandyti dar kartą, naudojant "
-"teisingą CVC saugumo kodą."
+msgstr "CVC saugumo kodas yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą CVC saugumo kodą."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
-"Kortelės galiojimas yra pasibaigęs. Prašome bandyti dar kartą, naudojant "
-"kitą kortelę."
+msgstr "Kortelės galiojimas yra pasibaigęs. Prašome bandyti dar kartą, naudojant kitą kortelę."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Šiuo metu yra pernelyg daug apmokėjimo užklausų, prašome vėliau bandyti dar "
-"kartą."
+msgstr "Šiuo metu yra pernelyg daug apmokėjimo užklausų, prašome vėliau bandyti dar kartą."
+
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Ši kortelė nepalaiko tokio tipo operacijos. Prašome bandyti dar kartą, naudojant kitą kortelę."
+
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Ši valiuta nėra palaikoma šios kortelės. Prašome bandyti dar kartą, naudojant kitą kortelę."
 
 #: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Ši kortelė nepalaiko tokio tipo operacijos. Prašome bandyti dar kartą, "
-"naudojant kitą kortelę."
-
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Ši valiuta nėra palaikoma šios kortelės. Prašome bandyti dar kartą, "
-"naudojant kitą kortelę."
-
-#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Operacija jau buvo apdorota."
 
-#: src/Dialogs/StripeDialog.vala:610
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"Pašto kodas yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą "
-"pašto kodą."
+#: src/Dialogs/StripeDialog.vala:606
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "Pašto kodas yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą pašto kodą."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"Jūs neturite pakankamai lėšų. Prašome naudoti alternatyvų apmokėjimo metodą."
+msgstr "Jūs neturite pakankamai lėšų. Prašome naudoti alternatyvų apmokėjimo metodą."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"Suma yra neteisinga. Prašome bandyti dar kartą, naudojant teisingą sumą."
+msgstr "Suma yra neteisinga. Prašome bandyti dar kartą, naudojant teisingą sumą."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"PIN numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą "
-"PIN."
+msgstr "PIN numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą PIN."
 
-#: src/Dialogs/StripeDialog.vala:627
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Buvo atlikta per daug PIN bandymų. Prašome bandyti dar kartą, naudojant kitą "
-"kortelę."
+#: src/Dialogs/StripeDialog.vala:623
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Buvo atlikta per daug PIN bandymų. Prašome bandyti dar kartą, naudojant kitą kortelę."
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Nepavyko užbaigti operacijos. Prašome dėl tolimesnės informacijos susisiekti "
-"su savo banku."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Nepavyko užbaigti operacijos. Prašome dėl tolimesnės informacijos susisiekti su savo banku."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Kortelėje yra pasiekta balanso ar kredito riba."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Nurodyta kortelė yra bandomoji kortelė. Norint tęsti, prašome naudoti tikrą "
-"kortelę."
+msgstr "Nurodyta kortelė yra bandomoji kortelė. Norint tęsti, prašome naudoti tikrą kortelę."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -623,9 +572,7 @@ msgstr "Šalinti"
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Tai galėjo būti sukelta išorinės ar rankiniu būdu kompiliuotos programinės "
-"įrangos."
+msgstr "Tai galėjo būti sukelta išorinės ar rankiniu būdu kompiliuotos programinės įrangos."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -641,12 +588,8 @@ msgid "Failed to Fetch Updates"
 msgstr "Nepavyko gauti atnaujinimų"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Tai galėjo būti sukelta išorinės, rankiniu būdu pridėtos programinės įrangos "
-"saugyklos arba pažeisto šaltinių failo."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Tai galėjo būti sukelta išorinės, rankiniu būdu pridėtos programinės įrangos saugyklos arba pažeisto šaltinių failo."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -658,11 +601,13 @@ msgstr "Bandyti dar kartą"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
+#| msgid "Failed to uninstall app"
 msgid "Failed to update app"
 msgstr "Nepavyko pašalinti programos"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
 msgid "Failed to update “%s”"
 msgstr "Nepavyko pašalinti \"%s\""
 
@@ -700,6 +645,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:120
 #, fuzzy
+#| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "Nekuruojamos programos"
 
@@ -813,9 +759,7 @@ msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
+msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:767
@@ -825,14 +769,13 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:775
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Šalinti"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
@@ -878,6 +821,7 @@ msgstr "Kitos %s programos"
 
 #: src/Views/AppListUpdateView.vala:32
 #, fuzzy
+#| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Ieškoma atnaujinimų…"
 
@@ -887,17 +831,16 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
 #, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr ""
-"Norint užbaigti įdiegti atnaujinimus, reikia paleisti kompiuterį iš naujo"
+msgstr "Norint užbaigti įdiegti atnaujinimus, reikia paleisti kompiuterį iš naujo"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Paleisti iš naujo dabar"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
@@ -915,8 +858,7 @@ msgstr ""
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
@@ -925,11 +867,13 @@ msgstr "Nekuruojamos programos"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
+#| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Ieškoti programų"
 
 #: src/Views/CategoryView.vala:39
 #, fuzzy
+#| msgid "Free"
 msgid "Free Apps"
 msgstr "Nemokamai"
 
@@ -1022,6 +966,7 @@ msgstr "Rašymas ir kalba"
 
 #: src/Widgets/CategoryFlowBox.vala:136
 #, fuzzy
+#| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Privatumo politika"
 
@@ -1142,14 +1087,8 @@ msgstr "Atnaujinti"
 #~ msgstr "Programoje %s yra turinio suaugusiems"
 
 #, fuzzy
-#~ msgid ""
-#~ "“%s” may contain content only suitable for adults or that may be "
-#~ "sensitive or disturbing. In general, elementary does not review or "
-#~ "endorse the contents of this app."
-#~ msgstr ""
-#~ "Programoje %s gali būti turinys, kuris yra skirtas suaugusiems arba, "
-#~ "kuris gali būti intymus ar keliantis nerimą. Apskritai, elementary "
-#~ "neperžiūri arba nepritaria šios programos turiniui."
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "Programoje %s gali būti turinys, kuris yra skirtas suaugusiems arba, kuris gali būti intymus ar keliantis nerimą. Apskritai, elementary neperžiūri arba nepritaria šios programos turiniui."
 
 #~ msgid "Show content warnings"
 #~ msgstr "Rodyti įspėjimus dėl turinio"
@@ -1162,8 +1101,7 @@ msgstr "Atnaujinti"
 #, fuzzy
 #~| msgid "An open, pay-what-you-want app store"
 #~ msgid "The open source, pay-what-you-can app store"
-#~ msgstr ""
-#~ "Atvira programų parduotuvė, besivadovaujanti principu \"mokėk, kiek nori\""
+#~ msgstr "Atvira programų parduotuvė, besivadovaujanti principu \"mokėk, kiek nori\""
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Gaukite reikiamas programas už prieinamą kainą."
@@ -1175,8 +1113,7 @@ msgstr "Atnaujinti"
 #~ msgstr "Rezultatų nėra"
 
 #~ msgid "No apps could be found. Try changing search terms."
-#~ msgstr ""
-#~ "Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
+#~ msgstr "Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Siūlyti vertimus"
@@ -1242,9 +1179,7 @@ msgstr "Atnaujinti"
 #~ "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #~ msgid "The pin number is incorrect. Please try again using the correct pin."
-#~ msgstr ""
-#~ "Pin numeris yra neteisingas. Prašome bandyti dar kartą, naudojant "
-#~ "teisingą pin."
+#~ msgstr "Pin numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą pin."
 
 #~ msgid "by %s"
 #~ msgstr "pagal %s"

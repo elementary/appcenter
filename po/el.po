@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/el/>\n"
+"Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/appcenter/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,6 +32,7 @@ msgstr "Ο σύνδεσμος '%s' δεν βρέθηκε, αναζήτηση α�
 
 #: src/Application.vala:298
 #, fuzzy
+#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s έχει εγκατασταθεί επιτυχώς"
 
@@ -41,6 +41,7 @@ msgstr "%s έχει εγκατασταθεί επιτυχώς"
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
+#| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s έχει εγκατασταθεί επιτυχώς"
 
@@ -77,6 +78,7 @@ msgstr ""
 
 #: src/MainWindow.vala:249
 #, fuzzy
+#| msgid "Starting"
 msgid "Settings"
 msgstr "Γίνεται εκκίνηση"
 
@@ -253,11 +255,13 @@ msgstr[1] "%u ενημερώσεις είναι διαθέσιμες για το
 
 #: src/Core/FlatpakBackend.vala:1260
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Απεγκατάσταση"
 
 #: src/Core/FlatpakBackend.vala:1430
 #, fuzzy
+#| msgid "Update"
 msgid "Updating"
 msgstr "Ενημέρωση"
 
@@ -336,14 +340,10 @@ msgstr "Απαιτείται επανεκκίνηση"
 
 #: src/Core/UpdateManager.vala:201
 msgid "Please restart your system to finalize updates"
-msgstr ""
-"Παρακαλώ κάντε επανεκκίνηση του συστήματός σας για να ολοκληρώσετε τις "
-"ενημερώσεις"
+msgstr "Παρακαλώ κάντε επανεκκίνηση του συστήματός σας για να ολοκληρώσετε τις ενημερώσεις"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
@@ -358,6 +358,7 @@ msgstr "Βρείτε και εγκαταστήστε εφαρμογές"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
+#| msgid "Content Warning"
 msgid "Non-Curated Warning"
 msgstr "Προειδοποίηση περιεχομένου"
 
@@ -367,9 +368,7 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
@@ -382,6 +381,7 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 #, fuzzy
+#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "Προβολή ειδοποιήσεων περιεχομένου"
 
@@ -395,12 +395,8 @@ msgid "Install Anyway"
 msgstr "Γίνεται εγκατάσταση"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Παρουσιάστηκε ένα σφάλμα κατά την επεξεργασία της κάρτας. Παρακαλώ δοκιμάστε "
-"ξανά αργότερα. Ζητούμε συγγνώμη για την ταλαιπωρία."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Παρουσιάστηκε ένα σφάλμα κατά την επεξεργασία της κάρτας. Παρακαλώ δοκιμάστε ξανά αργότερα. Ζητούμε συγγνώμη για την ταλαιπωρία."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -410,15 +406,13 @@ msgstr "Παρακαλώ ελέγξτε τα στοιχεία της πληρω�
 msgid "Payment"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:94
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:115
@@ -431,13 +425,8 @@ msgstr "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
 
 #: src/Dialogs/StripeDialog.vala:157
 #, fuzzy
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
-msgstr ""
-"Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας χρησιμοποιείται για την αποστολή "
-"απόδειξης. Δεν θα αποθηκεύτεί πουθενά και δεν θα εγγραφείτε σε κάποια λίστα "
-"αλληλογραφίας."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας χρησιμοποιείται για την αποστολή απόδειξης. Δεν θα αποθηκεύτεί πουθενά και δεν θα εγγραφείτε σε κάποια λίστα αλληλογραφίας."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -452,143 +441,101 @@ msgstr "ΜΜ/ΕΕ"
 msgid "CVC"
 msgstr "Kωδικός επαλήθευσης CVC"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Πληρωμή $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "Σε επεξεργασία"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Παρουσιάστηκε ένα πρόβλημα κατα την επεξεργασία της πληρωμής σας"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Πληρωμή αργότερα"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Προσπάθησε ξανά"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Ο αριθμός κάρτας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό "
-"αριθμό κάρτας."
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Ο αριθμός κάρτας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό αριθμό κάρτας."
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Ο μήνας λήξης δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή "
-"ημερομηνία λήξης."
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Ο μήνας λήξης δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή ημερομηνία λήξης."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Το έτος λήξης δεν είναι έγκυρο. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή "
-"ημερομηνία λήξης."
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Το έτος λήξης δεν είναι έγκυρο. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή ημερομηνία λήξης."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας "
-"το σωστό κωδικό επαλήθευσης CVC."
+msgstr "Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας το σωστό κωδικό επαλήθευσης CVC."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "Η κάρτα έχει λήξει. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Υπάρχουν υπερβολικά πολλά αιτήματα πληρωμής αυτή την στιγμή, παρακαλούμε "
-"προσπαθήστε ξανά αργότερα."
+msgstr "Υπάρχουν υπερβολικά πολλά αιτήματα πληρωμής αυτή την στιγμή, παρακαλούμε προσπαθήστε ξανά αργότερα."
+
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Αυτή η κάρτα δεν υποστηρίζει αυτό το είδος συναλλαγής. Δοκιμάστε ξανά με διαφορετική κάρτα."
+
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Το νόμισμα δεν υποστηρίζεται από αυτήν την κάρτα. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
 #: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Αυτή η κάρτα δεν υποστηρίζει αυτό το είδος συναλλαγής. Δοκιμάστε ξανά με "
-"διαφορετική κάρτα."
-
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Το νόμισμα δεν υποστηρίζεται από αυτήν την κάρτα. Δοκιμάστε ξανά με "
-"διαφορετική κάρτα."
-
-#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Η συναλλαγή έχει ήδη υποβληθεί σε επεξεργασία."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:606
 #, fuzzy
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"Ο ταχυδρομικός κώδικας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον "
-"σωστό ταχυδρομικό κώδικα."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "Ο ταχυδρομικός κώδικας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό ταχυδρομικό κώδικα."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"Δεν έχετε αρκετά χρήματα. Παρακαλώ χρησιμοποιήστε έναν άλλο τρόπο πληρωμής."
+msgstr "Δεν έχετε αρκετά χρήματα. Παρακαλώ χρησιμοποιήστε έναν άλλο τρόπο πληρωμής."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"Το ποσό είναι λανθασμένο. Δοκιμάστε ξανά χρησιμοποιώντας ένα έγκυρο ποσό."
+msgstr "Το ποσό είναι λανθασμένο. Δοκιμάστε ξανά χρησιμοποιώντας ένα έγκυρο ποσό."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας "
-"το σωστό κωδικό επαλήθευσης CVC."
+msgstr "Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας το σωστό κωδικό επαλήθευσης CVC."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:623
 #, fuzzy
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Υπήρξαν πάρα πολλές απόπειρες αριθμού PIN. Δοκιμάστε ξανά με διαφορετική "
-"κάρτα."
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Υπήρξαν πάρα πολλές απόπειρες αριθμού PIN. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Δεν είναι δυνατή η ολοκλήρωση της συναλλαγής. Παρακαλώ επικοινωνήστε με την "
-"τράπεζά σας για περισσότερες πληροφορίες."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Δεν είναι δυνατή η ολοκλήρωση της συναλλαγής. Παρακαλώ επικοινωνήστε με την τράπεζά σας για περισσότερες πληροφορίες."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
@@ -631,9 +578,7 @@ msgid "Failed to Fetch Updates"
 msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:34
@@ -688,6 +633,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:120
 #, fuzzy
+#| msgid "Content Warning"
 msgid "Non-Curated"
 msgstr "Προειδοποίηση περιεχομένου"
 
@@ -801,9 +747,7 @@ msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
+msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:767
@@ -813,14 +757,13 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:775
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Απεγκατάσταση"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
@@ -868,6 +811,7 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:32
 #, fuzzy
+#| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Γίνεται αναζήτηση για ενημερώσεις…"
 
@@ -877,17 +821,16 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
 #, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr ""
-"Απαιτείται επανεκκίνηση για να ολοκληρωθεί η εγκατάσταση των ενημερώσεων"
+msgstr "Απαιτείται επανεκκίνηση για να ολοκληρωθεί η εγκατάσταση των ενημερώσεων"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Επανεκκίνηση τώρα"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
@@ -905,8 +848,7 @@ msgstr ""
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
@@ -915,11 +857,13 @@ msgstr ""
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
+#| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Αναζήτηση εφαρμογών"
 
 #: src/Views/CategoryView.vala:39
 #, fuzzy
+#| msgid "Free"
 msgid "Free Apps"
 msgstr "Δωρεάν"
 
@@ -1015,6 +959,7 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:136
 #, fuzzy
+#| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Πολιτική Απορρήτου"
 
@@ -1053,8 +998,7 @@ msgstr "Το δίκτυο δεν είναι διαθέσιμο"
 #: src/Widgets/NetworkInfoBar.vala:29
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
-"Συνδεθείτε στο διαδίκτυο για να εγκαταστήσετε ή να ενημερώσετε εφαρμογές."
+msgstr "Συνδεθείτε στο διαδίκτυο για να εγκαταστήσετε ή να ενημερώσετε εφαρμογές."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
@@ -1139,14 +1083,8 @@ msgstr "Ενημέρωση"
 #~ msgstr "%s Περιλαμβάνει ακατάλληλο περιεχόμενο για ορισμένους χρήστες"
 
 #, fuzzy
-#~ msgid ""
-#~ "“%s” may contain content only suitable for adults or that may be "
-#~ "sensitive or disturbing. In general, elementary does not review or "
-#~ "endorse the contents of this app."
-#~ msgstr ""
-#~ "%s περιλαμβάνει περιεχόμενο για ενήλικους που μπορεί να είναι ευαίσθητο ή "
-#~ "ενοχλητικό. Γενικά, τα elementary δεν ελέγχουν ή επικυρώνουν τα "
-#~ "περιεχόμενα αυτής της εφαρμογής."
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "%s περιλαμβάνει περιεχόμενο για ενήλικους που μπορεί να είναι ευαίσθητο ή ενοχλητικό. Γενικά, τα elementary δεν ελέγχουν ή επικυρώνουν τα περιεχόμενα αυτής της εφαρμογής."
 
 #~ msgid "Show content warnings"
 #~ msgstr "Προβολή ειδοποιήσεων περιεχομένου"
@@ -1157,9 +1095,7 @@ msgstr "Ενημέρωση"
 #~ msgstr "Προειδοποίηση περιεχομένου"
 
 #~ msgid "Get the apps that you need at a price you can afford."
-#~ msgstr ""
-#~ "Αποκτήστε τις εφαρμογές που χρειάζεστε στην τιμή που μπορείτε να "
-#~ "διαθέσετε."
+#~ msgstr "Αποκτήστε τις εφαρμογές που χρειάζεστε στην τιμή που μπορείτε να διαθέσετε."
 
 #~ msgid "No Results"
 #~ msgstr "Δεν υπάρχουν αποτελέσματα"
@@ -1177,9 +1113,7 @@ msgstr "Ενημέρωση"
 #~ msgstr "Είστε σίγουροι ότι θέλετε να κάνετε επανεκκίνηση;"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr ""
-#~ "Όλες οι εφαρμογές σας θα τερματιστούν και η συσκευής σας θα κάνει "
-#~ "επανεκκίνηση."
+#~ msgstr "Όλες οι εφαρμογές σας θα τερματιστούν και η συσκευής σας θα κάνει επανεκκίνηση."
 
 #~ msgid "Restart"
 #~ msgstr "Επανεκκίνηση"
@@ -1224,9 +1158,7 @@ msgstr "Ενημέρωση"
 #~ "  onIaom https://launchpad.net/~onlaom"
 
 #~ msgid "The pin number is incorrect. Please try again using the correct pin."
-#~ msgstr ""
-#~ "Ο αριθμός PIN δεν είναι σωστός. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό "
-#~ "αριθμό PIN."
+#~ msgstr "Ο αριθμός PIN δεν είναι σωστός. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό αριθμό PIN."
 
 #~ msgid "Best Rated"
 #~ msgstr "Καλύτερα αξιολογημένες"

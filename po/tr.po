@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2022-01-16 10:23+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
@@ -81,8 +81,7 @@ msgstr "Otomatik Güncellemeler"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
-"Ücretsiz ve doğrulanmış olan ücretli uygulamaları otomatik olarak güncelleyin"
+msgstr "Ücretsiz ve doğrulanmış olan ücretli uygulamaları otomatik olarak güncelleyin"
 
 #: src/MainWindow.vala:249
 msgid "Settings"
@@ -345,12 +344,8 @@ msgid "Please restart your system to finalize updates"
 msgstr "Lütfen güncellemeler bittikten sonra sisteminizi yeniden başlatın"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
-msgstr ""
-"Bu geçici bir sorun veya harici ya da elle derlenmiş yazılımlardan "
-"kaynaklanmış olabilir."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Bu geçici bir sorun veya harici ya da elle derlenmiş yazılımlardan kaynaklanmış olabilir."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -371,12 +366,8 @@ msgstr "Doğrulanmamış uygulama yüklensin mi?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
-msgstr ""
-"\"%s\", elementary tarafından doğrulanmamış ve güvenlik, gizlilik veya "
-"sistem entegrasyonu açısından incelenmemiştir."
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr "\"%s\", elementary tarafından doğrulanmamış ve güvenlik, gizlilik veya sistem entegrasyonu açısından incelenmemiştir."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -384,9 +375,7 @@ msgstr "Hata düzeltmeleri veya özellik güncellemeleri alamayabilir"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Sistem veya kişisel dosyalarınıza izniniz olmadan erişebilir veya bunları "
-"değiştirebilir"
+msgstr "Sistem veya kişisel dosyalarınıza izniniz olmadan erişebilir veya bunları değiştirebilir"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -401,12 +390,8 @@ msgid "Install Anyway"
 msgstr "Yine de Yükle"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Kart işlenirken hata oluştu. Lütfen daha sonra tekrar deneyiniz. Verdiğimiz "
-"rahatsızlıktan dolayı özür dileriz."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Kart işlenirken hata oluştu. Lütfen daha sonra tekrar deneyiniz. Verdiğimiz rahatsızlıktan dolayı özür dileriz."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -416,18 +401,14 @@ msgstr "Lütfen ödeme bilgilerinizi gözden geçirin ve tekrar deneyin."
 msgid "Payment"
 msgstr "Ödeme"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%s için %d$ öde"
 
 #: src/Dialogs/StripeDialog.vala:94
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
-msgstr ""
-"Bu, geliştirici tarafından önerilen tek seferlik bir ödemedir. Ayrıca kendi "
-"fiyatınızı da seçebilirsiniz."
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
+msgstr "Bu, geliştirici tarafından önerilen tek seferlik bir ödemedir. Ayrıca kendi fiyatınızı da seçebilirsiniz."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
@@ -438,12 +419,8 @@ msgid "Email"
 msgstr "E-posta"
 
 #: src/Dialogs/StripeDialog.vala:157
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
-msgstr ""
-"Sadece size makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone "
-"edilmeyeceksiniz."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "Sadece size makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone edilmeyeceksiniz."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -458,134 +435,100 @@ msgstr "AA / YY"
 msgid "CVC"
 msgstr "CVC (Güvenlik Kodu)"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Vazgeç"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "%d.00$ Öde"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "İşleniyor"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Ödemenizi İşleme Sırasında Bir Sorun Oluştu"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Daha Sonra Öde"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Tekrar Dene"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Kart numarası yanlış. Lütfen doğru kart numarasını kullanarak tekrar deneyin."
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Kart numarası yanlış. Lütfen doğru kart numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak "
-"tekrar deneyin."
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak "
-"tekrar deneyin."
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"CVC numarası yanlış. Lütfen doğru CVC numarasını kullanarak tekrar deneyin."
+msgstr "CVC numarası yanlış. Lütfen doğru CVC numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
-"Kartın kullanım süresi dolmuş. Lütfen farklı bir kartla tekrar deneyin."
+msgstr "Kartın kullanım süresi dolmuş. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Şu anda çok fazla ödeme talebi var, lütfen daha sonra tekrar deneyiniz."
+msgstr "Şu anda çok fazla ödeme talebi var, lütfen daha sonra tekrar deneyiniz."
+
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Bu kart bu tür bir işlemi desteklemiyor. Lütfen farklı bir kartla tekrar deneyin."
+
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Para birimi bu kart tarafından desteklenmiyor. Lütfen farklı bir kartla tekrar deneyin."
 
 #: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Bu kart bu tür bir işlemi desteklemiyor. Lütfen farklı bir kartla tekrar "
-"deneyin."
-
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Para birimi bu kart tarafından desteklenmiyor. Lütfen farklı bir kartla "
-"tekrar deneyin."
-
-#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Bu işlem zaten işlendi."
 
-#: src/Dialogs/StripeDialog.vala:610
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
+#: src/Dialogs/StripeDialog.vala:606
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Posta kodu hatalıdır. Lütfen doğru posta koduyla tekrar deneyiniz."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Yeterli bakiyeniz yok. Lütfen alternatif bir ödeme yöntemi kullanın."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Bu miktar yanlış. Lütfen geçerli bir miktar kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"PIN numarası yanlış. Lütfen doğru PIN numarasını kullanarak tekrar deneyin."
+msgstr "PIN numarası yanlış. Lütfen doğru PIN numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:627
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Çok fazla PIN denemesi yapıldı. Lütfen farklı bir kartla tekrar deneyin."
+#: src/Dialogs/StripeDialog.vala:623
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Çok fazla PIN denemesi yapıldı. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "İşlem tamamlanamadı. Daha fazla bilgi için lütfen bankanıza başvurun."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Karttaki bakiye veya kredi limitine ulaşılmıştır."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Kullanılan kart test kartıdır. Devam etmek için lütfen gerçek bir kart "
-"kullanınız."
+msgstr "Kullanılan kart test kartıdır. Devam etmek için lütfen gerçek bir kart kullanınız."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -624,12 +567,8 @@ msgid "Failed to Fetch Updates"
 msgstr "Güncelleştirmeler Alınamadı"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Bunun nedeni elle eklenen harici dosyalar, yazılım depoları veya bozuk bir "
-"kaynak dosyası olabilir."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Bunun nedeni elle eklenen harici dosyalar, yazılım depoları veya bozuk bir kaynak dosyası olabilir."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -654,9 +593,7 @@ msgstr "Yasadışı Maddeler"
 
 #: src/Views/AppInfoView.vala:85
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
-"Alkol, uyuşturucu veya tütün ürünlerinin varlığı ve bunlara atıfta "
-"bulunulması"
+msgstr "Alkol, uyuşturucu veya tütün ürünlerinin varlığı ve bunlara atıfta bulunulması"
 
 #: src/Views/AppInfoView.vala:90
 msgid "Sex & Nudity"
@@ -688,9 +625,7 @@ msgstr "Doğrulanmamış"
 
 #: src/Views/AppInfoView.vala:121
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr ""
-"Güvenlik, gizlilik veya sistem entegrasyonu elementary tarafından "
-"incelenmemiştir"
+msgstr "Güvenlik, gizlilik veya sistem entegrasyonu elementary tarafından incelenmemiştir"
 
 #: src/Views/AppInfoView.vala:143
 msgid "Conflict"
@@ -798,9 +733,7 @@ msgid "Outdated"
 msgstr "Güncel değil"
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
+msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
 "Beklendiği gibi çalışmayabilecek veya güvenlik güncellemeleri alamayacak "
 "eski teknolojilerle oluşturulmuş"
@@ -818,9 +751,7 @@ msgstr "Kararlı durumda değil"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 "%s işletim sisteminin kararsız bir sürümü için oluşturuldu; önemli sorunlar "
 "içerebilir. Bir üretim sisteminde kullanılması önerilmez."
@@ -872,9 +803,7 @@ msgstr "Güncellemeler Denetleniyor"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"İşletim sistemi ve yüklü uygulamalar için mevcut güncellemelerin bir listesi "
-"indiriliyor"
+msgstr "İşletim sistemi ve yüklü uygulamalar için mevcut güncellemelerin bir listesi indiriliyor"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
@@ -885,11 +814,8 @@ msgid "Restart Now"
 msgstr "Şimdi Yeniden Başlat"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
-"Yeniden başlatma isteği başarısız oldu. Güncellemeleri tamamlamak için el "
-"ile yeniden başlatın"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr "Yeniden başlatma isteği başarısız oldu. Güncellemeleri tamamlamak için el ile yeniden başlatın"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:210
@@ -906,11 +832,8 @@ msgstr "Uygulama Bulunamadı"
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-"Arama terimlerini değiştirmeyi deneyin. %s adresinden Flatpak uygulamalarını "
-"da yükleyebilirsiniz"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr "Arama terimlerini değiştirmeyi deneyin. %s adresinden Flatpak uygulamalarını da yükleyebilirsiniz"
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
@@ -1097,8 +1020,7 @@ msgstr "Gerçek İndirme Boyutu Daha Küçük Olabilir"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
-"Uygulamaların yalnızca gereken ve güncellenen parçaları indirilecektir."
+msgstr "Uygulamaların yalnızca gereken ve güncellenen parçaları indirilecektir."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
@@ -1130,14 +1052,8 @@ msgstr "Güncelle"
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "\"%s\" müstehcen içerik barındırır"
 
-#~ msgid ""
-#~ "“%s” may contain content only suitable for adults or that may be "
-#~ "sensitive or disturbing. In general, elementary does not review or "
-#~ "endorse the contents of this app."
-#~ msgstr ""
-#~ "\"%s\" yetişkinlere yönelik, rahatsız edici veya hassas içerik "
-#~ "barındırabilir. Genel olarak, elementary bu uygulama içindeki içerikleri "
-#~ "gözden geçirmez veya kontrol etmez."
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "\"%s\" yetişkinlere yönelik, rahatsız edici veya hassas içerik barındırabilir. Genel olarak, elementary bu uygulama içindeki içerikleri gözden geçirmez veya kontrol etmez."
 
 #~ msgid "Show content warnings"
 #~ msgstr "İçerik uyarılarını göster"
@@ -1145,32 +1061,23 @@ msgstr "Güncelle"
 #~ msgid "Content Warnings"
 #~ msgstr "İçerik Uyarıları"
 
-#~ msgid ""
-#~ "Communication or data is sent to the Internet for other humans to see"
-#~ msgstr ""
-#~ "İletişim veya diğer insanların görmesi için veriler internete gönderilir"
+#~ msgid "Communication or data is sent to the Internet for other humans to see"
+#~ msgstr "İletişim veya diğer insanların görmesi için veriler internete gönderilir"
 
 #~ msgid "Cartoon, fantasy, or realistic violence"
 #~ msgstr "Çizgi film, fantastik veya gerçekçi şiddet"
 
 #~ msgid "The open source, pay-what-you-can app store"
-#~ msgstr ""
-#~ "Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir "
-#~ "uygulama mağazası"
+#~ msgstr "Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir uygulama mağazası"
 
-#~ msgid ""
-#~ "Reviewed and curated for a native, privacy-respecting, and secure "
-#~ "experience."
-#~ msgstr ""
-#~ "Yerel, gizliliğe saygılı ve güvenli bir deneyim için gözden geçirilmiş ve "
-#~ "seçilmiştir."
+#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+#~ msgstr "Yerel, gizliliğe saygılı ve güvenli bir deneyim için gözden geçirilmiş ve seçilmiştir."
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "Sadece size bir makbuz göndermek için kullanılır."
 
 #~ msgid "Get the apps that you need at a price you can afford."
-#~ msgstr ""
-#~ "İhtiyacınız olan uygulamaları, karşılayabileceğiniz bir fiyata alın."
+#~ msgstr "İhtiyacınız olan uygulamaları, karşılayabileceğiniz bir fiyata alın."
 
 #~ msgid "Trending"
 #~ msgstr "Popüler"
@@ -1191,8 +1098,7 @@ msgstr "Güncelle"
 #~ msgstr "Yeniden başlatmak istediğinizden emin misiniz?"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr ""
-#~ "Bu, tüm açık uygulamaları kapatacak ve bu cihazı yeniden başlatacaktır."
+#~ msgstr "Bu, tüm açık uygulamaları kapatacak ve bu cihazı yeniden başlatacaktır."
 
 #~ msgid "Restart"
 #~ msgstr "Yeniden Başlat"
@@ -1243,8 +1149,7 @@ msgstr "Güncelle"
 #~ "  Veli Çakıroğlu https://launchpad.net/~velicakiroglu\n"
 #~ "  Yasin Uysal https://launchpad.net/~yasinuysal22\n"
 #~ "  Yusuf Kayan https://launchpad.net/~c08b\n"
-#~ "  asdasdqwdq qwd qwq https://launchpad.net/~onlycodetr-deactivatedaccount-"
-#~ "deactivatedaccount\n"
+#~ "  asdasdqwdq qwd qwq https://launchpad.net/~onlycodetr-deactivatedaccount-deactivatedaccount\n"
 #~ "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 #~ "  tolka https://launchpad.net/~tolsen92-s\n"
 #~ "  Özgür BASKIN https://launchpad.net/~ozgur-baskin\n"

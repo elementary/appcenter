@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/"
-"ak/>\n"
+"Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,6 +32,7 @@ msgstr "Antumi anhu '%s' enti wo ara hwehwɛ"
 
 #: src/Application.vala:298
 #, fuzzy
+#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "Atwe %s agu so awie"
 
@@ -41,6 +41,7 @@ msgstr "Atwe %s agu so awie"
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
+#| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "Atwe %s agu so awie"
 
@@ -77,6 +78,7 @@ msgstr ""
 
 #: src/MainWindow.vala:249
 #, fuzzy
+#| msgid "Starting"
 msgid "Settings"
 msgstr "Ɛrehyɛ ase"
 
@@ -253,11 +255,13 @@ msgstr[1] "Dwumadie foforɔ %u aba"
 
 #: src/Core/FlatpakBackend.vala:1260
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Yi fi so"
 
 #: src/Core/FlatpakBackend.vala:1430
 #, fuzzy
+#| msgid "Update"
 msgid "Updating"
 msgstr "Twe nea aba"
 
@@ -341,9 +345,7 @@ msgid "Please restart your system to finalize updates"
 msgstr "Yɛsrɛ wo dum sɔ ansa atumi de dwumadie ahoroɔ no agu so awei"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
@@ -366,9 +368,7 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
@@ -393,12 +393,8 @@ msgid "Install Anyway"
 msgstr "Ɛde regu so"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Biribi sii ma antumi anyɛ wo Kaad (Card) no ho adwuma anwie. Yɛsrɛ wo san yɛ "
-"bio. Sɛ ahaw wo a, yɛsrɛ wo sɛ fakyɛ yɛn."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Biribi sii ma antumi anyɛ wo Kaad (Card) no ho adwuma anwie. Yɛsrɛ wo san yɛ bio. Sɛ ahaw wo a, yɛsrɛ wo sɛ fakyɛ yɛn."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -408,15 +404,13 @@ msgstr "Hwɛ sɛ nsɛm a woabɔ de retua no tɛ saa pɛpɛɛpɛ anaa na san yɛ 
 msgid "Payment"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:94
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:115
@@ -429,12 +423,8 @@ msgstr "Email"
 
 #: src/Dialogs/StripeDialog.vala:157
 #, fuzzy
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
-msgstr ""
-"Yɛbɛmena wo ne tua ho adanse krataa afa wo email no so. Yɛrenkora so sɛ yɛde "
-"nsɛm bɛfa so amena wo akyiri enti mma ɛnha wo."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "Yɛbɛmena wo ne tua ho adanse krataa afa wo email no so. Yɛrenkora so sɛ yɛde nsɛm bɛfa so amena wo akyiri enti mma ɛnha wo."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -449,126 +439,101 @@ msgstr "BB / AA"
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Gyae"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Tua $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "Ɛredi ho dwuma"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Biribi sii nti antumi antua wo sika no"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Tua Akyiri"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "San yɛ bio"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Kaad no nɔma nni mu. Yɛsrɛ wo bɔ nɔma ɛdi mu na san yɛ bio."
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Ɛda a kaad no bɛtwam no nni mu. Yɛsrɛ wo hwɛ bɔ nea ɛdi mu na san yɛ bio."
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Ɛda a kaad no bɛtwam no nni mu. Yɛsrɛ wo hwɛ bɔ nea ɛdi mu na san yɛ bio."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Afe a wobɔeɛ sɛ kaad no bɛtwam no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san "
-"yɛ bio."
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Afe a wobɔeɛ sɛ kaad no bɛtwam no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san yɛ bio."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC nɔma no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san yɛ bio."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kaad no atwam. Yɛsrɛ wo fa kaad foforɔ a ɛdi mu yɛ."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Adetua ahoroɔ a ɛrekɔ so siesie no dɔɔso dodo. Yɛsrɛ wo twɛn kakra."
 
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Kaad wei mma kwan mma womfa nni dwuma wɔ saa kwan yi so. Yɛsrɛ wo fa kaad foforɔ yɛ."
+
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Kaad wei ntumi mfa saa sika ko yi nni dwuma. Yɛsrɛ wo fa kaad foforɔ yɛ."
+
 #: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Kaad wei mma kwan mma womfa nni dwuma wɔ saa kwan yi so. Yɛsrɛ wo fa kaad "
-"foforɔ yɛ."
-
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Kaad wei ntumi mfa saa sika ko yi nni dwuma. Yɛsrɛ wo fa kaad foforɔ yɛ."
-
-#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Atua awie dedaw."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:606
 #, fuzzy
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"Wo ZIP anaa Postal code no nni mu. Yɛsrɛ wo bɔ ZIP anaa Postal code foforɔ."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "Wo ZIP anaa Postal code no nni mu. Yɛsrɛ wo bɔ ZIP anaa Postal code foforɔ."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Wo sika a wowɔ no sua. Yɛsrɛ wo fa ɔkwan foforɔ so tua."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Ɛboɔ a woabɔ no nni mu. Yɛsrɛ wo bɔ ɛboɔ a edi mu."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "CVC nɔma no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san yɛ bio."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:623
 #, fuzzy
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
+msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Woabɔ pin nɔma ahoroɔ pii dodow. Yɛsrɛ wo fa kaad foforɔ yɛ."
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Antumi antua. Yɛsrɛ wo frɛ wo sikakorabea hɔ bisa eho asɛm."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Sika dodow a wobɛtumi ayi afi wo kaad no so no asõ."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Kaad no yɛ nea wɔde sɔ hwɛ kɛkɛ. Yɛsrɛ wo fa nea edi mu yɛ."
 
@@ -610,9 +575,7 @@ msgid "Failed to Fetch Updates"
 msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:34
@@ -779,9 +742,7 @@ msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
+msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:767
@@ -791,14 +752,13 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:775
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Yi fi so"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
@@ -845,6 +805,7 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:32
 #, fuzzy
+#| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
@@ -854,6 +815,7 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
 #, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "Ɛhia sɛ wodum sɔ ansa atumi de dwumadie ahoroɔ no agu so awie"
 
@@ -862,8 +824,7 @@ msgid "Restart Now"
 msgstr "Dum Sɔ Siesie Ara"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
@@ -881,8 +842,7 @@ msgstr ""
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
@@ -891,11 +851,13 @@ msgstr ""
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
+#| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Hwehwɛ Dwumadi Bi"
 
 #: src/Views/CategoryView.vala:39
 #, fuzzy
+#| msgid "Free"
 msgid "Free Apps"
 msgstr "Kwa"
 
@@ -991,6 +953,7 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:136
 #, fuzzy
+#| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Nneɛmakora Ho Nhyehyɛe"
 

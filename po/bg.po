@@ -2,11 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2017-06-18 12:17+0000\n"
 "Last-Translator: Valentin Kirilov <val.kirilov@gmail.com>\n"
-"Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/bg/>\n"
+"Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,6 +31,7 @@ msgstr ""
 
 #: src/Application.vala:298
 #, fuzzy
+#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s беше успешно инсталирана"
 
@@ -40,6 +40,7 @@ msgstr "%s беше успешно инсталирана"
 #. selected but it's not the app we're installing.
 #: src/Application.vala:299 src/MainWindow.vala:395
 #, fuzzy, c-format
+#| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s беше успешно инсталирана"
 
@@ -77,6 +78,7 @@ msgstr ""
 
 #: src/MainWindow.vala:249
 #, fuzzy
+#| msgid "Starting"
 msgid "Settings"
 msgstr "Пускане"
 
@@ -253,11 +255,13 @@ msgstr[1] "Налични са %u обновления за системата �
 
 #: src/Core/FlatpakBackend.vala:1260
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Деинсталиране"
 
 #: src/Core/FlatpakBackend.vala:1430
 #, fuzzy
+#| msgid "Update"
 msgid "Updating"
 msgstr "Обновяване"
 
@@ -340,9 +344,7 @@ msgid "Please restart your system to finalize updates"
 msgstr "Моля рестартирайте системата за да завършите обновленията"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
@@ -365,9 +367,7 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
@@ -392,12 +392,8 @@ msgid "Install Anyway"
 msgstr "Инсталиране"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Настъпи грешка при обработката на картата. Моля опитайте отново по-късно. "
-"Извиняваме се за причиненото неудобство."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Настъпи грешка при обработката на картата. Моля опитайте отново по-късно. Извиняваме се за причиненото неудобство."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -407,15 +403,13 @@ msgstr "Моля прегледайте вашите данни за плаща�
 msgid "Payment"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:94
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:115
@@ -427,9 +421,7 @@ msgid "Email"
 msgstr "Ел. поща"
 
 #: src/Dialogs/StripeDialog.vala:157
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:158
@@ -445,134 +437,103 @@ msgstr "ММ / ГГ"
 msgid "CVC"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Отказ"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Платете $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "Обработва се"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Настъпи грешка при обработката на вашето плащане"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Плати по-късно"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Опитай отново"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Номера на картата е невалиден. Моля опитайте отново като използвате "
-"правилния номер на картата."
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Номера на картата е невалиден. Моля опитайте отново като използвате правилния номер на картата."
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
-"Картата е с изтекъл срок на валидност. Моля опитайте отново с друга карта."
+msgstr "Картата е с изтекъл срок на валидност. Моля опитайте отново с друга карта."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"В момента има прекалено много заявки за плащане, моля опитайте отново по-"
-"късно."
+msgstr "В момента има прекалено много заявки за плащане, моля опитайте отново по-късно."
+
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Картата не позволява подобен тип транзакция. Моля опитайте отново с друга карта."
+
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Избраната валута не се поддържа от тази карта. Моля опитайте отново с друга карта."
 
 #: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Картата не позволява подобен тип транзакция. Моля опитайте отново с друга "
-"карта."
-
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Избраната валута не се поддържа от тази карта. Моля опитайте отново с друга "
-"карта."
-
-#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Транзакцията вече е обработена."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:606
 #, fuzzy
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "ПИН кодът е грешен. Моля опитайте отново като използвате верен ПИН."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Въведената сума е грешна. Моля опитайте отново с коректна сума."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "ПИН кодът е грешен. Моля опитайте отново като използвате верен ПИН."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:623
 #, fuzzy
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Картата е с изтекъл срок на валидност. Моля опитайте отново с друга карта."
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Картата е с изтекъл срок на валидност. Моля опитайте отново с друга карта."
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Транзакцията не може да бъде обработена. Моля свържете се с Вашата банка за "
-"повече информация."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Транзакцията не може да бъде обработена. Моля свържете се с Вашата банка за повече информация."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Балансът на картата беше достигнат."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Въведената карта е тестова. Моля използвайте истинска карта за да продължите."
+msgstr "Въведената карта е тестова. Моля използвайте истинска карта за да продължите."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -613,9 +574,7 @@ msgid "Failed to Fetch Updates"
 msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:34
@@ -783,9 +742,7 @@ msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
+msgid "Built with older technologies that may not work as expected or receive security updates"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:767
@@ -795,14 +752,13 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:775
 #, fuzzy
+#| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Деинсталиране"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
@@ -850,6 +806,7 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:32
 #, fuzzy
+#| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Търсене за обновления…"
 
@@ -859,17 +816,16 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
 #, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr ""
-"Необходимо е да рестартирате за да завършите инсталацията на обновленията"
+msgstr "Необходимо е да рестартирате за да завършите инсталацията на обновленията"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Рестартирай Сега"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
@@ -887,8 +843,7 @@ msgstr ""
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
@@ -897,11 +852,13 @@ msgstr ""
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
+#| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Търсене из приложения"
 
 #: src/Views/CategoryView.vala:39
 #, fuzzy
+#| msgid "Free"
 msgid "Free Apps"
 msgstr "Безплатно"
 
@@ -997,6 +954,7 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:136
 #, fuzzy
+#| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Декларация за Поверителност"
 
@@ -1113,8 +1071,7 @@ msgid "Update"
 msgstr "Обновяване"
 
 #~ msgid "Get the apps that you need at a price you can afford."
-#~ msgstr ""
-#~ "Вземи приложенията, който искаш на цена, която можеш да си позволиш."
+#~ msgstr "Вземи приложенията, който искаш на цена, която можеш да си позволиш."
 
 #~ msgid "No Results"
 #~ msgstr "Няма резултати"
@@ -1132,8 +1089,7 @@ msgstr "Обновяване"
 #~ msgstr "Сигурни ли сте, че искате да Рестартирате?"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr ""
-#~ "Това ще затвори всички отворени приложения и ще рестартира устройството."
+#~ msgstr "Това ще затвори всички отворени приложения и ще рестартира устройството."
 
 #~ msgid "Restart"
 #~ msgstr "Рестартиране"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 15:51-0500\n"
+"POT-Creation-Date: 2022-01-11 21:08+0000\n"
 "PO-Revision-Date: 2022-01-12 16:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
@@ -71,9 +71,7 @@ msgstr "自動アップデート"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
-"キュレーションされたアプリのうち、無料あるいは購入済みのものを自動的にアップ"
-"デートします"
+msgstr "キュレーションされたアプリのうち、無料あるいは購入済みのものを自動的にアップデートします"
 
 #: src/MainWindow.vala:249
 msgid "Settings"
@@ -285,9 +283,7 @@ msgstr "提供元不明 (キュレーションされていないアプリ)"
 #: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"以下のパッケージのアプリケーションは AppCenter でインストール済みの状態になっ"
-"ていません: %s"
+msgstr "以下のパッケージのアプリケーションは AppCenter でインストール済みの状態になっていません: %s"
 
 #: src/Core/PackageKitBackend.vala:290
 #, c-format
@@ -335,12 +331,8 @@ msgid "Please restart your system to finalize updates"
 msgstr "アップデートを完了するには再起動してください"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
-msgstr ""
-"これは一時的な不具合か、外部のソフトウェアやコンパイルしてインストールされた"
-"ソフトウェアによって発生した不具合の可能性があります。"
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "これは一時的な不具合か、外部のソフトウェアやコンパイルしてインストールされたソフトウェアによって発生した不具合の可能性があります。"
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -361,12 +353,8 @@ msgstr "キュレーションされていないアプリをインストールし
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
-msgstr ""
-"elementary は “%s” をキュレーションしておらず、セキュリティー・プライバシー・"
-"システム統合に関する安全性は審査されていません。"
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr "elementary は “%s” をキュレーションしておらず、セキュリティー・プライバシー・システム統合に関する安全性は審査されていません。"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -389,12 +377,8 @@ msgid "Install Anyway"
 msgstr "了解してインストール"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"カードの処理中にエラーが発生しました。後ほどもう一度お試しください。ご迷惑お"
-"かけして申し訳ありません。"
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "カードの処理中にエラーが発生しました。後ほどもう一度お試しください。ご迷惑おかけして申し訳ありません。"
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -404,17 +388,14 @@ msgstr "支払い情報を見直して、もう一度お試しください。"
 msgid "Payment"
 msgstr "支払い"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%dドルを %s に払う"
 
 #: src/Dialogs/StripeDialog.vala:94
-msgid ""
-"This is a one time payment suggested by the developer. You can also choose "
-"your own price."
-msgstr ""
-"開発者の提案した価格を一括で支払います。ご自身で価格を決めることもできます。"
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
+msgstr "開発者の提案した価格を一括で支払います。ご自身で価格を決めることもできます。"
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
@@ -425,12 +406,8 @@ msgid "Email"
 msgstr "メール"
 
 #: src/Dialogs/StripeDialog.vala:157
-msgid ""
-"Only used to send you a receipt. You will not be subscribed to any mailing "
-"list."
-msgstr ""
-"領収書を送信するためだけに使用されます。メーリングリストには一切追加されませ"
-"ん。"
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "領収書を送信するためだけに使用されます。メーリングリストには一切追加されません。"
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -445,134 +422,104 @@ msgstr "MM / YY"
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "%d.00ドル払う"
 
-#: src/Dialogs/StripeDialog.vala:246
-msgid "Try for Free"
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "処理しています"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "支払いの処理中に不具合が発生しました"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "後で支払う"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "もう一度試す"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"カード番号が違います。正しいカード番号を使用して、もう一度お試しください。"
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "カード番号が違います。正しいカード番号を使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:559
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"有効期限の月が不適切です。正しい有効期限を使用して、もう一度お試しください。"
+#: src/Dialogs/StripeDialog.vala:555
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "有効期限の月が不適切です。正しい有効期限を使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"有効期限の年が不適切です。正しい有効期限を使用して、もう一度お試しください。"
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "有効期限の年が不適切です。正しい有効期限を使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"CVC 番号が違います。正しい CVC 番号を使用して、もう一度お試しください。"
+msgstr "CVC 番号が違います。正しい CVC 番号を使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "カードが期限切れです。別のカードを使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "ただいま基準以上の支払い要求があります。後ほどお試しください。"
 
+#: src/Dialogs/StripeDialog.vala:598
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "このカードはこの種類の取引には対応していません。別のカードを使用して、もう一度お試しください。"
+
+#: src/Dialogs/StripeDialog.vala:600
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "この種類の取引においてこの通貨はサポートされていません。別のカードを使用して、もう一度お試しください。"
+
 #: src/Dialogs/StripeDialog.vala:602
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"このカードはこの種類の取引には対応していません。別のカードを使用して、もう一"
-"度お試しください。"
-
-#: src/Dialogs/StripeDialog.vala:604
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"この種類の取引においてこの通貨はサポートされていません。別のカードを使用し"
-"て、もう一度お試しください。"
-
-#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "支払いはすでに行われました。"
 
-#: src/Dialogs/StripeDialog.vala:610
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
+#: src/Dialogs/StripeDialog.vala:606
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "郵便番号が違います。正しい郵便番号を使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "残高が十分ではありません。代替の決済方法を使用してください。"
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "金額が違います。妥当な金額を使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN 番号が違います。正しい PIN を使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:627
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"過度の PIN の試行がありました。別のカードを使用して、もう一度お試しください。"
+#: src/Dialogs/StripeDialog.vala:623
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "過度の PIN の試行がありました。別のカードを使用して、もう一度お試しください。"
 
-#: src/Dialogs/StripeDialog.vala:647
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
+#: src/Dialogs/StripeDialog.vala:643
+msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "処理を完了できませんでした。詳細を知るには銀行へ連絡してください。"
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "カードの残高か与信限度額に達しました。"
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"指定されたカードはテスト用です。続行するには本物のカードを使用してください。"
+msgstr "指定されたカードはテスト用です。続行するには本物のカードを使用してください。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
-"このアプリをアンインストールすると、関連するデータも削除される可能性がありま"
-"す。"
+msgstr "このアプリをアンインストールすると、関連するデータも削除される可能性があります。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
@@ -591,9 +538,7 @@ msgstr "アンインストール"
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"これは外部のソフトウェアか、コンパイルしてインストールされたソフトウェアに"
-"よって発生した可能性があります。"
+msgstr "これは外部のソフトウェアか、コンパイルしてインストールされたソフトウェアによって発生した可能性があります。"
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -609,12 +554,8 @@ msgid "Failed to Fetch Updates"
 msgstr "アップデートを取得できませんでした"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルに"
-"より発生した可能性があります。"
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルにより発生した可能性があります。"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -671,9 +612,7 @@ msgstr "キュレーション対象外"
 
 #: src/Views/AppInfoView.vala:121
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr ""
-"elementary によるセキュリティー・プライバシー・システム統合に関する安全性の審"
-"査がされていません"
+msgstr "elementary によるセキュリティー・プライバシー・システム統合に関する安全性の審査がされていません"
 
 #: src/Views/AppInfoView.vala:143
 msgid "Conflict"
@@ -705,13 +644,11 @@ msgstr "他人とオンラインでプレイするゲームです"
 
 #: src/Views/AppInfoView.vala:228
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
-msgstr ""
-"他人と行う、非承認性のオーディオ・ビデオ・テキストメッセージングアプリです"
+msgstr "他人と行う、非承認性のオーディオ・ビデオ・テキストメッセージングアプリです"
 
 #: src/Views/AppInfoView.vala:230
 msgid "Moderated Audio, Video, or Text messaging with other people"
-msgstr ""
-"他人と行う、承認性のオーディオ・ビデオ・テキストメッセージングアプリです"
+msgstr "他人と行う、承認性のオーディオ・ビデオ・テキストメッセージングアプリです"
 
 #: src/Views/AppInfoView.vala:234
 msgid "Online Interactions"
@@ -783,19 +720,13 @@ msgid "Outdated"
 msgstr "旧バージョン"
 
 #: src/Views/AppInfoView.vala:760
-msgid ""
-"Built with older technologies that may not work as expected or receive "
-"security updates"
-msgstr ""
-"古いシステムをベースにしているため、想定通りに動作しなかったりセキュリティー"
-"アップデートを受けられなかったりする可能性があります"
+msgid "Built with older technologies that may not work as expected or receive security updates"
+msgstr "古いシステムをベースにしているため、想定通りに動作しなかったりセキュリティーアップデートを受けられなかったりする可能性があります"
 
 #: src/Views/AppInfoView.vala:767
 #, c-format
 msgid "Built for an older version of %s; might not support the latest features"
-msgstr ""
-"%s の旧バージョン向けに開発されているため、最新機能に対応していない可能性があ"
-"ります"
+msgstr "%s の旧バージョン向けに開発されているため、最新機能に対応していない可能性があります"
 
 #: src/Views/AppInfoView.vala:775
 msgid "Unstable"
@@ -803,12 +734,8 @@ msgstr "不安定版"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
-msgid ""
-"Built for an unstable version of %s; may contain major issues. Not "
-"recommended for use on a production system."
-msgstr ""
-"%s の不安定版向けに開発されているので、重大な不具合が発生する可能性がありま"
-"す。本番環境での使用は推奨しません。"
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
+msgstr "%s の不安定版向けに開発されているので、重大な不具合が発生する可能性があります。本番環境での使用は推奨しません。"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1026
@@ -857,9 +784,7 @@ msgstr "アップデートを確認しています"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"OS とインストール済みアプリの、利用可能なアップデートの一覧をダウンロードして"
-"います"
+msgstr "OS とインストール済みアプリの、利用可能なアップデートの一覧をダウンロードしています"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
@@ -870,11 +795,8 @@ msgid "Restart Now"
 msgstr "今すぐ再起動"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
-"再起動できませんでした。アップデートのインストールを完了するには、セッション"
-"インジケーターから再起動してください"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr "再起動できませんでした。アップデートのインストールを完了するには、セッションインジケーターから再起動してください"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:210
@@ -891,11 +813,8 @@ msgstr "アプリが見つかりません"
 
 #: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
 #, c-format
-msgid ""
-"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-"検索用語を変更してみてください。%s などから、AppCenter を経由せずに Flatpak "
-"アプリをインストールすることもできます"
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr "検索用語を変更してみてください。%s などから、AppCenter を経由せずに Flatpak アプリをインストールすることもできます"
 
 #: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
@@ -1032,9 +951,7 @@ msgstr "ネットワークが利用できません。"
 
 #: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
-"アプリを検索したりインストールしたりするには、インターネットに接続してくださ"
-"い。"
+msgstr "アプリを検索したりインストールしたりするには、インターネットに接続してください。"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
@@ -1115,14 +1032,8 @@ msgstr "アップデート"
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "“%s” は不適切なコンテンツを含んでいます"
 
-#~ msgid ""
-#~ "“%s” may contain content only suitable for adults or that may be "
-#~ "sensitive or disturbing. In general, elementary does not review or "
-#~ "endorse the contents of this app."
-#~ msgstr ""
-#~ "“%s” には、成人向けの内容、扱いに注意を要する内容、あるいは衝撃を与える内"
-#~ "容が含まれている可能性があります。一般的に、elementary はこのアプリの内容"
-#~ "までは審査・保証していません。"
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "“%s” には、成人向けの内容、扱いに注意を要する内容、あるいは衝撃を与える内容が含まれている可能性があります。一般的に、elementary はこのアプリの内容までは審査・保証していません。"
 
 #~ msgid "Show content warnings"
 #~ msgstr "コンテンツの警告を表示"
@@ -1135,12 +1046,8 @@ msgstr "アップデート"
 #~ msgid "The open source, pay-what-you-can app store"
 #~ msgstr "オープンソースのアプリを、あなたが支払える価格で手に入れよう"
 
-#~ msgid ""
-#~ "Reviewed and curated for a native, privacy-respecting, and secure "
-#~ "experience."
-#~ msgstr ""
-#~ "ネイティブ動作とプライバシーの尊重、安全なエクスペリエンスを考え、審査と"
-#~ "キュレーションのうえアプリを提供しています。"
+#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+#~ msgstr "ネイティブ動作とプライバシーの尊重、安全なエクスペリエンスを考え、審査とキュレーションのうえアプリを提供しています。"
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "領収書をお送りするためだけに使用されます。"
@@ -1167,9 +1074,7 @@ msgstr "アップデート"
 #~ msgstr "再起動してもよろしいですか？"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr ""
-#~ "続行すると、開いているすべてのアプリケーションを閉じてこのデバイスを再起動"
-#~ "します。"
+#~ msgstr "続行すると、開いているすべてのアプリケーションを閉じてこのデバイスを再起動します。"
 
 #~ msgid "Restart"
 #~ msgstr "再起動"
