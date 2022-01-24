@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-11 21:08+0000\n"
+"POT-Creation-Date: 2022-01-20 22:54+0000\n"
 "PO-Revision-Date: 2021-03-11 10:09+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -399,7 +399,7 @@ msgstr "Прегледајте вашу уплату и покушајте по�
 msgid "Payment"
 msgstr "Плаћање"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Платите %d $ за „%s“"
@@ -437,98 +437,102 @@ msgstr "ММ / ГГ"
 msgid "CVC"
 msgstr "Сигурносни код (CVC)"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Откажи"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
-#: src/Dialogs/StripeDialog.vala:379
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
+#: src/Dialogs/StripeDialog.vala:383
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Платите %d.00 $"
 
-#: src/Dialogs/StripeDialog.vala:308
+#: src/Dialogs/StripeDialog.vala:246
+msgid "Try for Free"
+msgstr ""
+
+#: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
 msgstr "Обрађујем"
 
-#: src/Dialogs/StripeDialog.vala:333
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Дошло је до проблема приликом обраде ваше уплате"
 
-#: src/Dialogs/StripeDialog.vala:371
+#: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
 msgstr "Платите касније"
 
-#: src/Dialogs/StripeDialog.vala:372
+#: src/Dialogs/StripeDialog.vala:376
 msgid "Retry"
 msgstr "Покушајте поново"
 
-#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Број картице није исправан. Покушајте поново са исправним бројем картице."
 
-#: src/Dialogs/StripeDialog.vala:555
+#: src/Dialogs/StripeDialog.vala:559
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Месец истека картице није исправан. Покушајте поново користећи исправан датум истека."
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Година истека није исправна. Покушајте поново са исправном годином истека."
 
-#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
+#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Сигурносни код (CVC) није исправан. Покушајте поново користећи исправан сигурносни код (CVC)."
 
-#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
 msgid "The card has expired. Please try again with a different card."
 msgstr "Картица је истекла. Покушајте поново са другом картицом."
 
-#: src/Dialogs/StripeDialog.vala:582
+#: src/Dialogs/StripeDialog.vala:586
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Тренутно има превише захтева за уплатом, касније покушајте поново."
 
-#: src/Dialogs/StripeDialog.vala:598
+#: src/Dialogs/StripeDialog.vala:602
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Ова картица не подржава ову врсту уплате. Покушајте поново са другом картицом."
 
-#: src/Dialogs/StripeDialog.vala:600
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Ова картица не подржава уплату овом валутом. Покушајте поново са другом картицом."
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Уплата је већ била обрађена."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Поштански број није тачан. Пробајте опет са тачним поштанским бројем."
 
-#: src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:612
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Немате довољно средстава. Користите други начин плаћања."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Износ није исправан. Покушајте поново са исправним износом."
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:625
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "ПИН број је нетачан. Пробајте опет са тачним ПИН-ом."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:627
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Било је превише покушаја уноса ПИН-а. Пробајте опет са другом картицом."
 
-#: src/Dialogs/StripeDialog.vala:643
+#: src/Dialogs/StripeDialog.vala:647
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Не могу да обавим уплату. Обратите се вашој банци за више информација."
 
-#: src/Dialogs/StripeDialog.vala:646
+#: src/Dialogs/StripeDialog.vala:650
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Расположива средства или ограничење је достигнуто."
 
-#: src/Dialogs/StripeDialog.vala:649
+#: src/Dialogs/StripeDialog.vala:653
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Дата картица је пробна. Користите праву картицу да наставите."
 

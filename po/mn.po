@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-11 21:08+0000\n"
+"POT-Creation-Date: 2022-01-20 22:54+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/appcenter/mn/>\n"
@@ -409,7 +409,7 @@ msgstr "Тө өөрийн төлбөр болон түүнтэй холбоот�
 msgid "Payment"
 msgstr "Төлбөр"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%s зориулан $%d төлөх"
@@ -447,98 +447,102 @@ msgstr "СС / ЖЖ"
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Цуцлах"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
-#: src/Dialogs/StripeDialog.vala:379
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
+#: src/Dialogs/StripeDialog.vala:383
 #, c-format
 msgid "Pay $%d.00"
 msgstr "$%d.00 төлөх"
 
-#: src/Dialogs/StripeDialog.vala:308
+#: src/Dialogs/StripeDialog.vala:246
+msgid "Try for Free"
+msgstr ""
+
+#: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
 msgstr "Боловсруулж байна"
 
-#: src/Dialogs/StripeDialog.vala:333
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Таны төлбөрийг боловсруулхад асуудал үүслээ"
 
-#: src/Dialogs/StripeDialog.vala:371
+#: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
 msgstr "Дараа төлөх"
 
-#: src/Dialogs/StripeDialog.vala:372
+#: src/Dialogs/StripeDialog.vala:376
 msgid "Retry"
 msgstr "Дахин оролдох"
 
-#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Картын дугаар буруу байна. Картын дугаараа шалгаад дахин оролдноорой."
 
-#: src/Dialogs/StripeDialog.vala:555
+#: src/Dialogs/StripeDialog.vala:559
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Дуусах хугацаа буруу байна. Картын дуусах хугацаагаа шалгаад дахин оролдоорой."
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Картын дуусах он буруу байна. Дахин шалгаад оролдож үзнэ үү."
 
-#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
+#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC дугаар буруу байна. CVC дугаараа шалгаад дахин оролдож үзнэ үү."
 
-#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
 msgid "The card has expired. Please try again with a different card."
 msgstr "Картын хүчинтэй хугацаа дууссан байна. Өөр карт ашиглан дахин оролдож үзнэ үү."
 
-#: src/Dialogs/StripeDialog.vala:582
+#: src/Dialogs/StripeDialog.vala:586
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Яг энэ агшинд маш олон төлбөрийн хүсэлт ирсэн тул, дараа дахин оролдно уу."
 
-#: src/Dialogs/StripeDialog.vala:598
+#: src/Dialogs/StripeDialog.vala:602
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Энэ карт энэ төрөлийн гүйлгээг дэмжихгүй байна. Өөр карт ашиглан дахин оролдож үзээрэй."
 
-#: src/Dialogs/StripeDialog.vala:600
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Одоогоор энэ картыг дэмжихгүй байна. Өөр картаар дахин оролдож үзээрэй."
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Гүйлгээ аль хэдийнэ хийгдсэн байна."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Зип/Шуудангийн код буруу байна. Зөв Зип/Шуудангийн код ашиглан дахин оролдож үзнэ үү."
 
-#: src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:612
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Таны дансны үлдэгдэл хүрэлцэхгүй байна. Өөр төлбөрийн хэлбэр ашиглана уу."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Нийт дүн буруу байна. Зөв дүн оруулсан дахин оролдож үзнэ үү."
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:625
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "ПИН код буруу байна. Зөв ПИН ашиглаж дахин оролдож үзнэ үү."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:627
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "ПИН олон удаа оруулсан байна. Өөр карт ашиглан дахин оролдож үзнэ үү."
 
-#: src/Dialogs/StripeDialog.vala:643
+#: src/Dialogs/StripeDialog.vala:647
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Гүлгээг амжилттай дуусгаж чадсангүй.  Өөрийн банктай холбогдож мэдээлэл авна уу."
 
-#: src/Dialogs/StripeDialog.vala:646
+#: src/Dialogs/StripeDialog.vala:650
 msgid "The balance or credit limit on the card has been reached."
 msgstr "картын дансны үлдэгдэл эсвэл хязгаар  хэсэрсэн байна."
 
-#: src/Dialogs/StripeDialog.vala:649
+#: src/Dialogs/StripeDialog.vala:653
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Оруулсан карт түр карт байна. Хүчин төгөлдөр карт ашиглана уу."
 
