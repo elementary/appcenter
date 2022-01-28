@@ -9,9 +9,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-20 22:54+0000\n"
-"PO-Revision-Date: 2022-01-01 20:39+0000\n"
+"PO-Revision-Date: 2022-01-28 11:48+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,20 +71,16 @@ msgid "Search Apps"
 msgstr "搜尋應用程式"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
-msgstr "無法擷取更新"
+msgstr "自動更新"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
+msgstr "自動更新免費應用及經過認證的付費應用"
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "起始中"
+msgstr "设定"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:398
@@ -399,7 +396,7 @@ msgstr "支付"
 #: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "為 %2$s 支付 $%1$d 元"
+msgstr "為%s支付 $%d"
 
 #: src/Dialogs/StripeDialog.vala:94
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
@@ -443,7 +440,7 @@ msgstr "支付 $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:246
 msgid "Try for Free"
-msgstr ""
+msgstr "免費試用"
 
 #: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
@@ -535,7 +532,7 @@ msgstr "解除安裝該應用程式亦將有可能刪除其數據文件。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
-msgstr "是否解除安裝"
+msgstr "是否解除安裝應用?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
 #, c-format
@@ -587,7 +584,6 @@ msgid "Failed to update “%s”"
 msgstr "無法更新 “%s”"
 
 #: src/Views/AppInfoView.vala:84
-#, fuzzy
 msgid "Illicit Substances"
 msgstr "違規物品"
 
@@ -616,9 +612,8 @@ msgid "Gambling"
 msgstr "賭博"
 
 #: src/Views/AppInfoView.vala:103
-#, fuzzy
 msgid "Realistic or participatory gambling"
-msgstr "親歷或聚眾賭博"
+msgstr "親歷或參與性賭博"
 
 #: src/Views/AppInfoView.vala:120
 msgid "Non-Curated"
@@ -731,27 +726,25 @@ msgstr "分享"
 
 #: src/Views/AppInfoView.vala:759 src/Views/AppInfoView.vala:766
 msgid "Outdated"
-msgstr ""
+msgstr "已過期"
 
 #: src/Views/AppInfoView.vala:760
 msgid "Built with older technologies that may not work as expected or receive security updates"
-msgstr ""
+msgstr "使用過時的技術構建而可能無法按預期工作或取得安全更新"
 
 #: src/Views/AppInfoView.vala:767
 #, c-format
 msgid "Built for an older version of %s; might not support the latest features"
-msgstr ""
+msgstr "為舊版 %s構建; 可能不支持最新功能"
 
 #: src/Views/AppInfoView.vala:775
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Unstable"
-msgstr "解除安裝"
+msgstr "不穩定"
 
 #: src/Views/AppInfoView.vala:776
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr ""
+msgstr "為不穩定版本 %s而構建； 可能包含重大問題。 不建議在生產系統上使用。"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1026
@@ -761,7 +754,7 @@ msgstr "公眾領域"
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:1029
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://zh.wikipedia.org/wiki/%E5%85%AC%E6%9C%89%E9%A2%86%E5%9F%9F"
+msgstr "https://zh.wikipedia.org/wiki/公有领域"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:1034
@@ -963,7 +956,7 @@ msgstr "$%d 美元"
 
 #: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
-msgstr "網路無法使用"
+msgstr "網絡連接不可用。"
 
 #: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
