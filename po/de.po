@@ -895,7 +895,7 @@ msgstr "Tatsächlicher Umfang der herunterzuladenden Daten wahrscheinlich kleine
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Es werden nur diejenigen Komponenten der Anwendungen und Aktualisjerungen heruntergeladen, die benötigt werden."
+msgstr "Es werden nur diejenigen Komponenten der Anwendungen und Aktualisierungen heruntergeladen, die benötigt werden."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
