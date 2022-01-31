@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-20 22:54+0000\n"
-"PO-Revision-Date: 2022-01-30 02:55+0000\n"
+"PO-Revision-Date: 2022-01-31 07:59+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ro/>\n"
@@ -75,13 +75,11 @@ msgstr "Actualizări automate"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
+msgstr "Actualizează automat aplicațiile gratis și plătite, îngrijite de noi"
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Se începe"
+msgstr "Setări"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:398
@@ -447,7 +445,7 @@ msgstr "Plătește $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:246
 msgid "Try for Free"
-msgstr ""
+msgstr "Încearcă pe gratis"
 
 #: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
