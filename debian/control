@@ -23,7 +23,7 @@ Build-Depends: appstream,
                meson,
                valac (>= 0.26)
 Standards-Version: 4.1.1
-Homepage: https://github.com/pop/shop
+Homepage: https://github.com/pop-os/shop
 
 Package: pop-shop
 Architecture: amd64 arm64
