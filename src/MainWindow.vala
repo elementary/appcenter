@@ -430,7 +430,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             toast.title = _("“%s” has been installed").printf (package.get_name ());
             // Show Open only when a desktop app is installed
             if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
-                toast.set_default_action (_("Open"));
+                // FIXME: This seems to be broken with some apps in some cases
+                // Disabled it here to workaround the issue until we can fix.
+                //toast.set_default_action (_("Open"));
+                toast.set_default_action (null);
             } else {
                 toast.set_default_action (null);
             }
