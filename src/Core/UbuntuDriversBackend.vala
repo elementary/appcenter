@@ -110,6 +110,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 if (yield is_package_installed (package)) {
                     package.mark_installed ();
                     package.update_state ();
+                    continue;
                 }
             } catch (Error e) {
                 warning ("Unable to check if driver is installed: %s", e.message);
