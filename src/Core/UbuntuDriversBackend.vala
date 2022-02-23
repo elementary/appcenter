@@ -24,17 +24,19 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     private Gee.TreeSet<Package>? cached_packages = null;
 
     private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
-        output = null;
-        string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
-        if (drivers_exec_path == null) {
+        string? bin_path = Environment.find_program_in_path ("ubuntu-drivers");
+        if (bin_path == null) {
+            stderr.printf("ubuntu-drivers: not found\n");
             return false;
         }
 
         Subprocess command;
+
         try {
-            command = new Subprocess (SubprocessFlags.STDOUT_PIPE, drivers_exec_path, "list");
-            yield command.communicate_utf8_async (null, cancellable, out output, null);
+            command = new Subprocess (SubprocessFlags.STDOUT_PIPE, bin_path, "list");
+            yield command.communicate_utf8_async (null, null, out output, null);
         } catch (Error e) {
+            stderr.printf("ubuntu-drivers: %s\n", e.message);
             return false;
         }
 
@@ -70,27 +72,19 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         working = true;
 
         cached_packages = new Gee.TreeSet<Package> ();
-        string? command_output;
-        var result = yield get_drivers_output (cancellable, out command_output);
-        if (!result || command_output == null || cancellable.is_cancelled ()) {
+        string? command_output = null;
+        bool success = yield get_drivers_output (null, out command_output);
+        if (!success || command_output == null) {
             working = false;
             return cached_packages;
         }
 
-        string? latest_nvidia_pkg = null;
-        int latest_nvidia_ver = 0;
-
         string[] tokens = command_output.split ("\n");
         for (int i = 0; i < tokens.length; i++) {
-            if (cancellable.is_cancelled ()) {
-                break;
-            }
-
             unowned string package_name = tokens[i];
             if (package_name.strip () == "") {
                 continue;
             }
-
 
             // ubuntu-drivers returns lines like the following for dkms packages:
             // backport-iwlwifi-dkms, (kernel modules provided by backport-iwlwifi-dkms)
@@ -101,36 +95,11 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             if (package_name.has_prefix ("backport-") && package_name.has_suffix ("-dkms")) {
                 continue;
             }
-
+#endif
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
             driver_component.set_pkgnames ({ package_name });
             driver_component.set_id (package_name);
-            unowned string? nvidia_version = null;
-
-            if (package_name.has_prefix ("nvidia-driver-")) {
-                nvidia_version = package_name.offset (14);
-            } else if (package_name.has_prefix ("nvidia-")) {
-                nvidia_version = package_name.offset (7);
-            }
-
-            if (null != nvidia_version) {
-                if (nvidia_version.contains ("-")) continue;
-
-                if (!yield packaged_by_pop (cancellable, package_name)) {
-                    continue;
-                }
-
-                int parsed = int.parse (nvidia_version);
-
-                if (latest_nvidia_ver < parsed) {
-                    latest_nvidia_pkg = package_name;
-                    latest_nvidia_ver = parsed;
-                }
-
-                continue;
-            }
-#endif
 
             var package = new Package (this, driver_component);
             try {
@@ -143,11 +112,6 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             }
 
             cached_packages.add (add_driver (package_name));
-        }
-
-        if (null != latest_nvidia_pkg) {
-            debug ("adding NVIDIA driver package %s", latest_nvidia_pkg);
-            cached_packages.add (add_driver (latest_nvidia_pkg));
         }
 
         working = false;
