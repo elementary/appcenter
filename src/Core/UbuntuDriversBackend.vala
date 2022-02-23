@@ -95,6 +95,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             if (package_name.has_prefix ("backport-") && package_name.has_suffix ("-dkms")) {
                 continue;
             }
+
+            if (package_name.has_suffix ("-server")) {
+                continue;
+            }
 #endif
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
