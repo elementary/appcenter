@@ -3,15 +3,16 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # sdopx <26029682@qq.com>, 2019.
 # Jimmy Sun <jimmysuncn@hotmail.com>, 2019.
-# Vincent Yu <coolplayyhj@gmail.com>, 2021.
+# Vincent Yu <coolplayyhj@gmail.com>, 2021, 2022.
 # Mingjie Jiang <jiang@mingjie.dev>, 2021.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2021-12-06 18:08+0000\n"
+"POT-Creation-Date: 2022-01-20 22:54+0000\n"
+"PO-Revision-Date: 2022-01-28 11:48+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
-"Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
+"Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/zh/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,9 +26,9 @@ msgid "AppCenter"
 msgstr "应用中心"
 
 #: src/Application.vala:114
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "无法解析 %s 的文件类型"
+msgstr "无法解析 %s 的媒体类型"
 
 #: src/Application.vala:134
 #, c-format
@@ -69,20 +70,16 @@ msgid "Search Apps"
 msgstr "搜索应用"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Automatic Updates"
-msgstr "获取更新失败"
+msgstr "自动更新"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
-msgstr ""
+msgstr "自动更新免费和付费的认证应用"
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "正在启动"
+msgstr "设置"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:398
@@ -240,7 +237,7 @@ msgstr "未知状态"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "正在处理软件包操作"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -254,21 +251,17 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
 #: src/Core/FlatpakBackend.vala:1260
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "卸载"
+msgstr "正在卸载"
 
 #: src/Core/FlatpakBackend.vala:1430
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "更新"
+msgstr "正在更新"
 
 #: src/Core/Package.vala:313
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "%s个开发者"
+msgstr "%s开发者"
 
 #: src/Core/Package.vala:345
 msgid "elementary Updates"
@@ -281,7 +274,7 @@ msgstr "Ubuntu (非官方渠道发布)"
 #: src/Core/Package.vala:352
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s （系統級）"
 
 #: src/Core/Package.vala:357
 msgid "Ubuntu Drivers"
@@ -289,7 +282,7 @@ msgstr "Ubuntu 驱动程序"
 
 #: src/Core/Package.vala:360
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "未知来源（未经认证）"
 
 #: src/Core/Package.vala:532
 #, c-format
@@ -346,9 +339,8 @@ msgid "This may be a temporary issue or could have been caused by external or ma
 msgstr "这可能是一个暂时性的故障，也可能是外来或用户编译的软件引起的问题。"
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "卸载"
+msgstr "安装应用失败"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
@@ -356,10 +348,8 @@ msgid "Failed to install “%s”"
 msgstr "安装“%s”失败"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "注意事项"
+msgstr "未经认证警告"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
 msgid "Install non-curated app?"
@@ -372,26 +362,23 @@ msgstr "“%s” 不是elementary整合的。该应用未经过安全，隐私�
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "应用可能不会收到bug修复或功能更新"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "应用可能在未授权的情况下修改系统设置或个人文件"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "显示内容警告"
+msgstr "显示未经认证警告"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "未安装"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
 msgid "Install Anyway"
-msgstr "正在安装"
+msgstr "仍要安装"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -405,29 +392,26 @@ msgstr "请检查您的支付信息并再度尝试。"
 msgid "Payment"
 msgstr "付款"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
-#, fuzzy, c-format
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#, c-format
 msgid "Pay $%d for %s"
-msgstr "为%2$s支付%1$d美元"
+msgstr "为 %s 支付 $%d"
 
 #: src/Dialogs/StripeDialog.vala:94
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "这是一次性支付。您的电子邮件地址只会被用于给您发送收据。"
+msgstr "此一次性支付是应用开发者提议的。您亦可以自行选择您能接受的价格。"
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "或"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "电子邮件"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "您的电子邮件地址用于发送收据。它从未被储存，您也不会订阅某个邮件列表。"
+msgstr "仅用于向您发送收据。您不会被订阅至任何邮件收件列表中。"
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -442,114 +426,117 @@ msgstr "月份 / 年份"
 msgid "CVC"
 msgstr "CVC号码"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
-#: src/Dialogs/StripeDialog.vala:379
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
+#: src/Dialogs/StripeDialog.vala:383
 #, c-format
 msgid "Pay $%d.00"
 msgstr "支付%d.00美元"
 
-#: src/Dialogs/StripeDialog.vala:308
+#: src/Dialogs/StripeDialog.vala:246
+msgid "Try for Free"
+msgstr "免费试用"
+
+#: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
 msgstr "正在处理"
 
-#: src/Dialogs/StripeDialog.vala:333
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "在处理您的支付时遇到了一个问题"
 
-#: src/Dialogs/StripeDialog.vala:371
+#: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
 msgstr "稍后再支付"
 
-#: src/Dialogs/StripeDialog.vala:372
+#: src/Dialogs/StripeDialog.vala:376
 msgid "Retry"
 msgstr "重试"
 
-#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "信用卡卡号有误。请使用正确的信用卡卡号再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:555
+#: src/Dialogs/StripeDialog.vala:559
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "到期月份无效。请使用正确的到期月份再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "到期年份无效。请使用正确的到期年份再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
+#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC号码有误。请使用正确的CVC再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
 msgid "The card has expired. Please try again with a different card."
 msgstr "信用卡已过期。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:582
+#: src/Dialogs/StripeDialog.vala:586
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "当前支付请求过多，请稍后重试。"
 
-#: src/Dialogs/StripeDialog.vala:598
+#: src/Dialogs/StripeDialog.vala:602
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "该卡不支付这类交易。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:600
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "该卡不支持这种货币。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "交易已经被处理了。"
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "邮政编码有误。请使用正确的邮政编码再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:612
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "您的资金不足。请使用其他支持方式。"
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "数量有误。请使用一个有效的数量再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:625
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN码有误。请使用正确的PIN码再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:627
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "该PIN码尝试次数过多。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:643
+#: src/Dialogs/StripeDialog.vala:647
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "无法未完成交易。请联系您的银行获取更多信息。"
 
-#: src/Dialogs/StripeDialog.vala:646
+#: src/Dialogs/StripeDialog.vala:650
 msgid "The balance or credit limit on the card has been reached."
 msgstr "已超过信用卡余额或限额。"
 
-#: src/Dialogs/StripeDialog.vala:649
+#: src/Dialogs/StripeDialog.vala:653
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "给出的信用卡是一张测试卡。请使用一张真正的信用卡继续。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "卸载此应用的同时也会删除其数据文件。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "卸载"
+msgstr "要卸载应用吗？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "卸载"
+msgstr "卸载 “%s”？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:68
@@ -558,18 +545,17 @@ msgstr "卸载"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "这可能是由一个手动安装的扩展软件仓库或一个已损坏的源文件造成。"
+msgstr "这可能是一个从外部安装的扩展软件仓库或手动编译的源文件造成的。"
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "卸载应用失败"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "卸载 “%s” 失败"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -588,52 +574,49 @@ msgid "Try Again"
 msgstr "重试"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "卸载"
+msgstr "更新应用失败"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "卸载"
+msgstr "更新 “%s” 失败"
 
 #: src/Views/AppInfoView.vala:84
 msgid "Illicit Substances"
-msgstr ""
+msgstr "违禁内容物"
 
 #: src/Views/AppInfoView.vala:85
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
+msgstr "存在或提及酒精、麻醉品或烟草"
 
 #: src/Views/AppInfoView.vala:90
 msgid "Sex & Nudity"
-msgstr ""
+msgstr "性与裸露"
 
 #: src/Views/AppInfoView.vala:91
 msgid "Adult nudity or sexual themes"
-msgstr ""
+msgstr "成人裸体或性主题"
 
 #: src/Views/AppInfoView.vala:96
 msgid "Offensive Language"
-msgstr ""
+msgstr "攻击性语言"
 
 #: src/Views/AppInfoView.vala:97
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr ""
+msgstr "亵渎、歧视性语言或成人幽默"
 
 #: src/Views/AppInfoView.vala:102
 msgid "Gambling"
-msgstr ""
+msgstr "赌博"
 
 #: src/Views/AppInfoView.vala:103
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "现实或参与性赌博"
 
 #: src/Views/AppInfoView.vala:120
-#, fuzzy
-#| msgid "Non-Curated Apps"
 msgid "Non-Curated"
-msgstr "非策略性应用程序"
+msgstr "非官方認證"
 
 #: src/Views/AppInfoView.vala:121
 msgid "Not reviewed by elementary for security, privacy, or system integration"

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-11 21:08+0000\n"
-"PO-Revision-Date: 2022-01-16 04:10+0000\n"
+"POT-Creation-Date: 2022-01-20 22:54+0000\n"
+"PO-Revision-Date: 2022-01-21 03:26+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
@@ -400,7 +400,7 @@ msgstr "Bitte überprüfen Sie die Zahlungsinformationen und versuchen Sie es er
 msgid "Payment"
 msgstr "Zahlung"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%d USD für %s zahlen"
@@ -434,98 +434,102 @@ msgstr "MM / JJ"
 msgid "CVC"
 msgstr "CVC-Prüfnummer"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
-#: src/Dialogs/StripeDialog.vala:379
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
+#: src/Dialogs/StripeDialog.vala:383
 #, c-format
 msgid "Pay $%d.00"
 msgstr "%d,00 $ USD zahlen"
 
-#: src/Dialogs/StripeDialog.vala:308
+#: src/Dialogs/StripeDialog.vala:246
+msgid "Try for Free"
+msgstr "Kostenlos testen"
+
+#: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
 msgstr "Verarbeitung"
 
-#: src/Dialogs/StripeDialog.vala:333
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Es gab ein Problem bei der Verarbeitung Ihrer Zahlung"
 
-#: src/Dialogs/StripeDialog.vala:371
+#: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
 msgstr "Später zahlen"
 
-#: src/Dialogs/StripeDialog.vala:372
+#: src/Dialogs/StripeDialog.vala:376
 msgid "Retry"
 msgstr "Wiederholen"
 
-#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Die Kartennummer ist nicht korrekt. Bitte geben Sie die richtige Kartennummer ein."
 
-#: src/Dialogs/StripeDialog.vala:555
+#: src/Dialogs/StripeDialog.vala:559
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Der angegebene Monat im Ablaufdatum ist ungültig. Bitte versuchen Sie es erneut mit dem korrekten Ablaufdatum."
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Das angegebene Jahr im Ablaufdatum ist ungültig. Bitte versuche es erneut mit dem korrekten Ablaufdatum."
 
-#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
+#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Die CVC-Prüfnummer ist ungültig. Versuchen Sie es bitte mit der korrekten Nummer erneut."
 
-#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
 msgid "The card has expired. Please try again with a different card."
 msgstr "Die Karte ist abgelaufen. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
-#: src/Dialogs/StripeDialog.vala:582
+#: src/Dialogs/StripeDialog.vala:586
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Im Augenblick sind zu viele Zahlungsanfragen in Bearbeitung. Versuchen Sie bitte später erneut."
 
-#: src/Dialogs/StripeDialog.vala:598
+#: src/Dialogs/StripeDialog.vala:602
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Die Karte unterstützt diese Transaktionsart nicht. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
-#: src/Dialogs/StripeDialog.vala:600
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Zahlungen in dieser Währung sind mit dieser Karte nicht möglich. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "Diese Transaktion wurde bereits verarbeitet."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Die Postleitzahl ist nicht korrekt. Versuchen Sie es bitte mit Angabe der korrekten Postleitzahl erneut."
 
-#: src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:612
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Das Guthaben reicht nicht aus. Nutzen Sie bitte eine andere Zahlungsweise."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Der Betrag ist ungültig. Versuchen Sie es bitte mit einem korrekten Wert erneut."
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:625
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Die PIN ist falsch. Versuchen Sie es bitte mit der richtigen PIN erneut."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:627
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Die PIN wurde zu oft falsch eingegeben. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
-#: src/Dialogs/StripeDialog.vala:643
+#: src/Dialogs/StripeDialog.vala:647
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Die Transaktion konnte nicht abgeschlossen werden. Weitere Informationen erhalten Sie von Ihrer Bank."
 
-#: src/Dialogs/StripeDialog.vala:646
+#: src/Dialogs/StripeDialog.vala:650
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Das Kartenlimit ist erreicht."
 
-#: src/Dialogs/StripeDialog.vala:649
+#: src/Dialogs/StripeDialog.vala:653
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Die angegebene Karte ist eine Testkarte. Verwenden Sie bitte eine echte Karte, um den Prozess abzuschließen."
 
@@ -733,16 +737,12 @@ msgstr "Veraltet"
 
 #: src/Views/AppInfoView.vala:760
 msgid "Built with older technologies that may not work as expected or receive security updates"
-msgstr ""
-"Erstellt mit älteren Techniken, die möglicherweise nicht so arbeiten, wie es "
-"zu erwarten wäre, und auch keine Sicherheitsaktualisierungen erhalten"
+msgstr "Erstellt mit älteren Techniken, die möglicherweise nicht so arbeiten, wie es zu erwarten wäre, und auch keine Sicherheitsaktualisierungen erhalten"
 
 #: src/Views/AppInfoView.vala:767
 #, c-format
 msgid "Built for an older version of %s; might not support the latest features"
-msgstr ""
-"Erstellt für eine ältere Version von %s; möglicherweise werden die neuesten "
-"Funktionen nicht unterstützt"
+msgstr "Erstellt für eine ältere Version von %s; möglicherweise werden die neuesten Funktionen nicht unterstützt"
 
 #: src/Views/AppInfoView.vala:775
 msgid "Unstable"
@@ -751,9 +751,7 @@ msgstr "Nicht stabil"
 #: src/Views/AppInfoView.vala:776
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr ""
-"Erstellt für eine nicht stabile Version von %s; möglicherweise bestehen "
-"große Probleme. Von einer Einsatz in einem produktivem System wird abgeraten."
+msgstr "Erstellt für eine nicht stabile Version von %s; möglicherweise bestehen große Probleme. Von einer Einsatz in einem produktivem System wird abgeraten."
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1026
