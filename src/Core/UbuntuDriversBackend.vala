@@ -100,30 +100,14 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 continue;
             }
 #endif
-            var driver_component = new AppStream.Component ();
-            driver_component.set_kind (AppStream.ComponentKind.DRIVER);
-            driver_component.set_pkgnames ({ package_name });
-            driver_component.set_id (package_name);
-
-            var package = new Package (this, driver_component);
-            try {
-                if (yield is_package_installed (package)) {
-                    package.mark_installed ();
-                    package.update_state ();
-                    continue;
-                }
-            } catch (Error e) {
-                warning ("Unable to check if driver is installed: %s", e.message);
-            }
-
-            cached_packages.add (add_driver (package_name));
+            cached_packages.add (yield add_driver (package_name));
         }
 
         working = false;
         return cached_packages;
     }
 
-    private Package add_driver (string package_name) {
+    private async Package add_driver (string package_name) {
         var driver_component = new AppStream.Component ();
         driver_component.set_kind (AppStream.ComponentKind.DRIVER);
         driver_component.set_pkgnames ({ package_name });
@@ -135,9 +119,14 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         driver_component.add_icon (icon);
 
         var package = new Package (this, driver_component);
-        if (package.installed) {
-            package.mark_installed ();
-            package.update_state ();
+
+        try {
+            if (yield is_package_installed (package)) {
+                package.mark_installed ();
+
+            }
+        } catch (Error e) {
+            warning ("Unable to check if driver is installed: %s", e.message);
         }
 
         return package;
