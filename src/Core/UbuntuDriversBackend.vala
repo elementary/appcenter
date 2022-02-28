@@ -79,6 +79,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             return cached_packages;
         }
 
+#if POP_OS
+        int latest_nvidia_ver = 0;
+        string? latest_nvidia_pkg = null;
+        string? current_nvidia_pkg = null;
+#endif
+
         string[] tokens = command_output.split ("\n");
         for (int i = 0; i < tokens.length; i++) {
             unowned string package_name = tokens[i];
@@ -99,8 +105,48 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             if (package_name.has_suffix ("-server")) {
                 continue;
             }
+
+            var driver_component = new AppStream.Component ();
+            driver_component.set_kind (AppStream.ComponentKind.DRIVER);
+            driver_component.set_pkgnames ({ package_name });
+            driver_component.set_id (package_name);
+            unowned string? nvidia_version = null;
+
+            if (package_name.has_prefix ("nvidia-driver-")) {
+                nvidia_version = package_name.offset (14);
+            } else if (package_name.has_prefix ("nvidia-")) {
+                nvidia_version = package_name.offset (7);
+            }
+
+            if (null != nvidia_version) {
+                if (nvidia_version.contains ("-")) continue;
+
+                int parsed = int.parse (nvidia_version);
+
+                var package = new Package (this, driver_component);
+
+                try {
+                    if (yield is_package_installed (package)) {
+                        current_nvidia_pkg = package_name;
+                    }
+                } catch (Error e) { }
+
+                if (latest_nvidia_ver < parsed) {
+                    latest_nvidia_pkg = package_name;
+                    latest_nvidia_ver = parsed;
+                }
+
+                continue;
+            }
 #endif
             cached_packages.add (yield add_driver (package_name));
+        }
+
+        if (null != latest_nvidia_pkg && null != current_nvidia_pkg) {
+            cached_packages.add (yield add_driver (current_nvidia_pkg));
+            if (latest_nvidia_pkg != current_nvidia_pkg) {
+                cached_packages.add (yield add_driver (latest_nvidia_pkg));
+            }
         }
 
         working = false;
@@ -123,7 +169,6 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         try {
             if (yield is_package_installed (package)) {
                 package.mark_installed ();
-
             }
         } catch (Error e) {
             warning ("Unable to check if driver is installed: %s", e.message);
