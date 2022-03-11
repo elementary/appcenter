@@ -109,6 +109,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
                 if (latest_nvidia_ver < parsed) {
                     nvidia_version_latest = package_name;
+                    nvidia_package_latest = package;
                     latest_nvidia_ver = parsed;
                 }
 
@@ -120,10 +121,11 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             cached_packages.add (package);
         }
 
-        if (null != nvidia_version_latest && null != nvidia_version_current) {
-            cached_packages.add (nvidia_package_current);
-            if (strcmp (nvidia_version_latest, nvidia_version_current) != 0) {
-                cached_packages.add (nvidia_package_latest);
+        if (null != nvidia_version_latest) {
+            cached_packages.add (nvidia_package_latest);
+
+            if (nvidia_version_latest != nvidia_version_current) {
+                cached_packages.add (nvidia_package_current);
             }
         }
 
