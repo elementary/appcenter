@@ -1,13 +1,14 @@
 # Shukrullo <shukrullo@umail.uz>, 2020.
-# Shukrullo Turgunov <shookrullo@gmail.com>, 2021.
+# Shukrullo Turgunov <shookrullo@gmail.com>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-20 22:54+0000\n"
-"PO-Revision-Date: 2021-03-21 18:16+0000\n"
+"PO-Revision-Date: 2022-03-18 12:49+0000\n"
 "Last-Translator: Shukrullo Turgunov <shookrullo@gmail.com>\n"
-"Language-Team: Uzbek <https://l10n.elementary.io/projects/appcenter/appcenter/uz/>\n"
+"Language-Team: Uzbek <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/uz/>\n"
 "Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,11 +68,11 @@ msgstr "O'rnatilgan"
 
 #: src/MainWindow.vala:212 src/MainWindow.vala:466
 msgid "Search Apps"
-msgstr "Дастурларни қидириш"
+msgstr "Ilovalarni qidirish"
 
 #: src/MainWindow.vala:218
 msgid "Automatic Updates"
-msgstr ""
+msgstr "Avtomatik yangilanishlar"
 
 #: src/MainWindow.vala:219
 msgid "Automatically update free and paid-for curated apps"
@@ -87,7 +88,7 @@ msgstr "Ishga tushirilmoqda"
 #: src/MainWindow.vala:398
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
-msgstr ""
+msgstr "Ochish"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
 msgid "Starting"
@@ -112,7 +113,7 @@ msgstr "Ma'lumotlar olinmoqda"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
-msgstr "Paketlarni o'chirish"
+msgstr "Paketlarni o'chirilmoqda"
 
 #: src/Utils.vala:74
 msgid "Downloading"
@@ -120,7 +121,7 @@ msgstr "Yuklanmoqda"
 
 #: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
 msgid "Installing"
-msgstr "Ўрнатилмоқда"
+msgstr "O'rnatilmoqda"
 
 #: src/Utils.vala:78
 msgid "Refreshing software list"
@@ -128,15 +129,15 @@ msgstr "Dasturlar ro'yxati yangilanmoqda"
 
 #: src/Utils.vala:80
 msgid "Installing updates"
-msgstr "Yangilanishlarni o'rnatish"
+msgstr "Yangilanishlarni o'rnatilmoqda"
 
 #: src/Utils.vala:82
 msgid "Cleaning up packages"
-msgstr "Ilovalarni tozalash"
+msgstr "Ilovalarni tozalanmoqda"
 
 #: src/Utils.vala:84
 msgid "Obsoleting packages"
-msgstr "Paketlarni almashtirish"
+msgstr "Paketlar almashtirilmoqda"
 
 #: src/Utils.vala:86
 msgid "Resolving dependencies"
@@ -148,15 +149,15 @@ msgstr "Imzolarni tekshirish"
 
 #: src/Utils.vala:90
 msgid "Testing changes"
-msgstr "O'zgarishlarni tekshirish"
+msgstr "O'zgarishlarni tekshirilmoqda"
 
 #: src/Utils.vala:92
 msgid "Committing changes"
-msgstr "O'zgarishlarni amalga oshirish"
+msgstr "O'zgarishlar amalga oshirilmoqda"
 
 #: src/Utils.vala:94
 msgid "Requesting data"
-msgstr "Ma'lumotlarni so'rash"
+msgstr "Ma'lumotlar so'ralmoqda"
 
 #: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
 msgid "Finished"
@@ -167,7 +168,7 @@ msgstr "Yakunlandi"
 #: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
 #: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
 msgid "Cancelling"
-msgstr "Bekor qilish"
+msgstr "Bekor qilinmoqda"
 
 #: src/Utils.vala:100
 msgid "Downloading repository information"
