@@ -15,15 +15,7 @@
 */
 
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
-    public bool working {
-        set {
-            if (value) {
-                spinner.start ();
-            } else {
-                spinner.stop ();
-            }
-        }
-    }
+    public bool working { get; set; }
 
     private Gtk.Revealer view_mode_revealer;
     private Gtk.Stack custom_title_stack;
@@ -43,7 +35,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
 
-    private ulong task_finished_connection = 0U;
     private uint configure_id;
     private int homepage_view_id;
     private int installed_view_id;
@@ -113,11 +104,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_view.package_selected.connect (package_selected);
         search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (show_homepage);
+        search_view.category_return_clicked.connect (show_category);
 
-        unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
-        client.notify["working"].connect (() => {
+        unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
+        aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
+
+        notify["working"].connect (() => {
             Idle.add (() => {
-                working = client.working;
+                spinner.active = working;
                 return GLib.Source.REMOVE;
             });
         });
@@ -221,11 +215,48 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
+        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
+            description = _("Automatically update free and paid-for curated apps")
+        };
+
+        automatic_updates_button.notify["active"].connect (() => {
+            if (automatic_updates_button.active) {
+                AppCenterCore.Client.get_default ().update_cache.begin (true);
+            } else {
+                AppCenterCore.Client.get_default ().cancel_updates (true);
+            }
+        });
+
+        var menu_popover_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_bottom = 6,
+            margin_top = 6,
+            orientation = Gtk.Orientation.VERTICAL,
+            row_spacing = 6
+        };
+
+        menu_popover_grid.add (automatic_updates_button);
+
+        menu_popover_grid.show_all ();
+
+        var menu_popover = new Gtk.Popover (null);
+        menu_popover.add (menu_popover_grid);
+
+        var menu_button = new Gtk.MenuButton () {
+            can_focus = false,
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = menu_popover,
+            tooltip_text = _("Settings"),
+            valign = Gtk.Align.CENTER
+        };
+
+
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
+        headerbar.pack_end (menu_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
@@ -259,6 +290,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         int window_width, window_height;
         App.settings.get ("window-position", "(ii)", out window_x, out window_y);
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
+        App.settings.bind (
+            "automatic-updates",
+            automatic_updates_button,
+            "active",
+            SettingsBindFlags.DEFAULT
+        );
 
         if (window_x != -1 || window_y != -1) {
             move (window_x, window_y);
@@ -301,15 +338,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public override bool delete_event (Gdk.EventAny event) {
-        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
-        if (client.working) {
-            if (task_finished_connection != 0U) {
-                client.disconnect (task_finished_connection);
-            }
-
+        if (working) {
             hide ();
-            task_finished_connection = client.notify["working"].connect (() => {
-                if (!visible && !client.working) {
+
+            notify["working"].connect (() => {
+                if (!visible && !working) {
                     destroy ();
                 }
             });
@@ -483,4 +516,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         stack.visible_child = homepage;
         view_mode_revealer.reveal_child = true;
     }
+
+    public void show_category (AppStream.Category category) {
+        search ("");
+        return_button_history.clear ();
+        view_mode.selected = homepage_view_id;
+        stack.visible_child = homepage;
+        homepage.show_app_list_for_category (category);
+    }
+
 }

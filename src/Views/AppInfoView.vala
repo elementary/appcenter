@@ -50,6 +50,10 @@ namespace AppCenter.Views {
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
+        private Gtk.FlowBox oars_flowbox;
+        private Gtk.Revealer oars_flowbox_revealer;
+
+        private bool is_runtime_warning_shown = false;
 
         private unowned Gtk.StyleContext stack_context;
 
@@ -114,12 +118,15 @@ namespace AppCenter.Views {
                 "oars-gambling-symbolic"
             );
 
-            var oars_flowbox = new Gtk.FlowBox () {
+            oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 margin_bottom = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
+
+            oars_flowbox_revealer = new Gtk.Revealer ();
+            oars_flowbox_revealer.add (oars_flowbox);
 
 #if CURATED
             if (!package.is_native && !package.is_os_updates) {
@@ -536,8 +543,9 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
+            content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
-                content_grid.add (oars_flowbox);
+                oars_flowbox_revealer.reveal_child = true;
             }
 
             if (screenshots.length > 0) {
@@ -753,6 +761,43 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
+
+            ContentType? runtime_warning = null;
+            switch (package.runtime_status) {
+                case RuntimeStatus.END_OF_LIFE:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("Built with older technologies that may not work as expected or receive security updates"),
+                        "software-update-urgent-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MAJOR_OUTDATED:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("Built for an older version of %s; might not support the latest features").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "software-update-available-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MINOR_OUTDATED:
+                    break;
+                case RuntimeStatus.UNSTABLE:
+                    runtime_warning = new ContentType (
+                        _("Unstable"),
+                        _("Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "applications-development-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.UP_TO_DATE:
+                    break;
+            }
+
+            if (runtime_warning != null && !is_runtime_warning_shown) {
+                is_runtime_warning_shown = true;
+
+                oars_flowbox.insert (runtime_warning, 0);
+                oars_flowbox.show_all ();
+                oars_flowbox_revealer.reveal_child = true;
+            }
         }
 
         public void view_entered () {
@@ -843,7 +888,7 @@ namespace AppCenter.Views {
                     return null;
                 }
 
-                List<string> urls = new List<string> ();
+                List<CaptionedUrl> captioned_urls = new List<CaptionedUrl> ();
 
                 var scale = get_scale_factor ();
                 var min_screenshot_width = MAX_WIDTH * scale;
@@ -867,20 +912,25 @@ namespace AppCenter.Views {
                         }
                     });
 
+                    var captioned_url = new CaptionedUrl (
+                        screenshot.get_caption (),
+                        best_image.get_url ()
+                    );
+
                     if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
-                        urls.prepend (best_image.get_url ());
+                        captioned_urls.prepend (captioned_url);
                     } else if (best_image != null) {
-                        urls.append (best_image.get_url ());
+                        captioned_urls.append (captioned_url);
                     }
                 });
 
-                string?[] screenshot_files = new string?[urls.length ()];
-                bool[] results = new bool[urls.length ()];
+                string?[] screenshot_files = new string?[captioned_urls.length ()];
+                bool[] results = new bool[captioned_urls.length ()];
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
-                for (int i = 0; i < urls.length (); i++) {
-                    string url = urls.nth_data (i);
+                for (int i = 0; i < captioned_urls.length (); i++) {
+                    string url = captioned_urls.nth_data (i).url;
                     string? file = null;
                     int index = i;
 
@@ -892,14 +942,15 @@ namespace AppCenter.Views {
                 }
 
                 // TODO: dynamically load screenshots as they become available.
-                while (urls.length () != completed) {
+                while (captioned_urls.length () != completed) {
                     Thread.usleep (100000);
                 }
 
                 // Load screenshots that were successfully obtained.
-                for (int i = 0; i < urls.length (); i++) {
+                for (int i = 0; i < captioned_urls.length (); i++) {
                     if (results[i] == true) {
-                        load_screenshot (screenshot_files[i]);
+                        string caption = captioned_urls.nth_data (i).caption;
+                        load_screenshot (caption, screenshot_files[i]);
                     }
                 }
 
@@ -929,7 +980,7 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string path) {
+        private void load_screenshot (string? caption, string path) {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
@@ -939,6 +990,11 @@ namespace AppCenter.Views {
                 image.icon_name = "image-x-generic";
                 image.halign = Gtk.Align.CENTER;
                 image.gicon = pixbuf;
+                if (caption != null) {
+                    // AppStream spec says "ideally not more than 100 characters"
+                    int max_caption_len = 200;
+                    image.tooltip_text = ellipsize (caption, max_caption_len);
+                }
 
                 Idle.add (() => {
                     image.show ();
@@ -948,6 +1004,17 @@ namespace AppCenter.Views {
             } catch (Error e) {
                 critical (e.message);
             }
+        }
+
+        private string ellipsize (string long_text, int max_length) {
+            if (long_text.length > max_length) {
+                StringBuilder sb = new StringBuilder (long_text);
+                sb.truncate (max_length);
+                sb.append ("\u2026");
+                return sb.str;
+            }
+
+            return long_text;
         }
 
         private void parse_license (string project_license, out string license_copy, out string license_url) {
@@ -1119,6 +1186,15 @@ namespace AppCenter.Views {
                 context.add_class ("circular");
                 context.add_class ("arrow");
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
+        }
+
+        private class CaptionedUrl : Object {
+            public string? caption { get; construct; }
+            public string url { get; construct; }
+
+            public CaptionedUrl (string? caption, string url) {
+                Object (caption: caption, url: url);
             }
         }
     }

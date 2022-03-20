@@ -28,8 +28,6 @@ public class AppCenterCore.ChangeInformation : Object {
         FINISHED
     }
 
-    public delegate void ProgressCallback (bool can_cancel, string status_description, double progress, Status status);
-
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
