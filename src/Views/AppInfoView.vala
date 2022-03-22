@@ -41,7 +41,6 @@ namespace AppCenter.Views {
         private Gtk.ListBox extension_box;
         private Gtk.ListStore origin_liststore;
         private Gtk.Overlay screenshot_overlay;
-        private Hdy.Clamp screenshot_clamp;
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
@@ -300,11 +299,11 @@ namespace AppCenter.Views {
                 app_screenshots.page_changed.connect ((index) => {
                     screenshot_previous.sensitive = screenshot_next.sensitive = true;
 
-                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                    uint screenshot_children = app_screenshots.get_children ().length ();
 
                     if (index == 0) {
                         screenshot_previous.sensitive = false;
-                    } else if (index == screenshot_children.length () - 1) {
+                    } else if (index == screenshot_children - 1) {
                         screenshot_next.sensitive = false;
                     }
                 });
@@ -323,14 +322,8 @@ namespace AppCenter.Views {
                 };
                 screenshot_arrow_revealer_n.add (screenshot_next);
 
-                screenshot_clamp = new Hdy.Clamp () {
-                    margin = 6,
-                    maximum_size = MAX_WIDTH
-                };
-                screenshot_clamp.add (app_screenshots);
-
                 screenshot_overlay = new Gtk.Overlay ();
-                screenshot_overlay.add (screenshot_clamp);
+                screenshot_overlay.add (app_screenshots);
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
 
@@ -739,7 +732,37 @@ namespace AppCenter.Views {
                 }
             });
 
-            realize.connect (load_more_content);
+            realize.connect (() => {
+                var screenshot_files = new Gee.ArrayList<string> ();
+                load_more_content(screenshot_files);
+                    var top_level_width = get_toplevel ().get_allocated_width ();
+                    int redraw_counter = 0;
+                    body_clamp.size_allocate.connect (() => {
+                        if (redraw_counter == 0) {
+                            var children = app_screenshots.get_children ();
+                            foreach (var child in children) {
+                                child.hide ();
+                            }
+                        }
+                        redraw_counter++;
+                        Timeout.add(150, () => {
+                            redraw_counter--;
+                            if (redraw_counter == 0) {
+                                var children = app_screenshots.get_children ();
+                                foreach (var child in children) {
+                                    app_screenshots.remove (child);
+                                }
+                                foreach (var file in screenshot_files) {
+                                    load_screenshot (null, file);
+                                }
+                                foreach (var child in children) {
+                                    child.show ();
+                                }
+                            }
+                            return GLib.Source.REMOVE;
+                        });
+                    });
+            });
         }
 
         protected override void update_state (bool first_update = false) {
@@ -817,7 +840,7 @@ namespace AppCenter.Views {
             }
         }
 
-        private void load_more_content () {
+        private void load_more_content (Gee.ArrayList<string> screenshot_files) {
             var cache = AppCenterCore.Client.get_default ().screenshot_cache;
 
             Gtk.TreeIter iter;
@@ -836,149 +859,141 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                var description = package.get_description ();
-                Idle.add (() => {
-                    if (package.is_os_updates) {
-                        author_label.label = package.get_version ();
-                    } else {
-                        author_label.label = package.author_title;
-                    }
-
-                    if (description != null) {
-                        app_description.label = description;
-                    }
-                    return false;
-                });
-
-                get_app_download_size.begin ();
-
-                Idle.add (() => {
-                    if (release_list_box.populate ()) {
-                        release_grid.no_show_all = false;
-                        release_grid.show_all ();
-                    }
-
-                    return false;
-                });
-
-                if (screenshots.length == 0) {
-                    return null;
-                }
-
-                List<string> urls = new List<string> ();
-
-                var scale = get_scale_factor ();
-                var min_screenshot_width = MAX_WIDTH * scale;
-
-                screenshots.foreach ((screenshot) => {
-                    AppStream.Image? best_image = null;
-                    screenshot.get_images ().foreach ((image) => {
-                        // Image is better than no image
-                        if (best_image == null) {
-                            best_image = image;
+                    var description = package.get_description ();
+                    Idle.add (() => {
+                        if (package.is_os_updates) {
+                            author_label.label = package.get_version ();
+                        } else {
+                            author_label.label = package.author_title;
                         }
 
-                        // If our current best is less than the minimum and we have a bigger image, choose that instead
-                        if (best_image.get_width () < min_screenshot_width && image.get_width () >= best_image.get_width ()) {
-                            best_image = image;
+                        if (description != null) {
+                            app_description.label = description;
+                        }
+                        return false;
+                    });
+
+                    get_app_download_size.begin ();
+
+                    Idle.add (() => {
+                        if (release_list_box.populate ()) {
+                            release_grid.no_show_all = false;
+                            release_grid.show_all ();
                         }
 
-                        // If our new image is smaller than the current best, but still bigger than the minimum, pick that
-                        if (image.get_width () < best_image.get_width () && image.get_width () >= min_screenshot_width) {
-                            best_image = image;
+                        return false;
+                    });
+
+                    if (screenshots.length == 0) {
+                        return null;
+                    }
+
+                    List<string> urls = new List<string> ();
+
+                    var scale = get_scale_factor ();
+                    var min_screenshot_width = MAX_WIDTH * scale;
+
+                    var screenshot_files_prep = new Gee.ArrayList<string> ();
+                    screenshots.foreach ((screenshot) => {
+                        AppStream.Image? best_image = null;
+                        screenshot.get_images ().foreach ((image) => {
+                            // Image is better than no image
+                            if (best_image == null) {
+                                best_image = image;
+                            }
+
+                            // If our current best is less than the minimum and we have a bigger image, choose that instead
+                            if (best_image.get_width () < min_screenshot_width && image.get_width () >= best_image.get_width ()) {
+                                best_image = image;
+                            }
+
+                            // If our new image is smaller than the current best, but still bigger than the minimum, pick that
+                            if (image.get_width () < best_image.get_width () && image.get_width () >= min_screenshot_width) {
+                                best_image = image;
+                            }
+                        });
+
+                        if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
+                            urls.prepend (best_image.get_url ());
+                        } else if (best_image != null) {
+                            urls.append (best_image.get_url ());
                         }
                     });
 
-                    if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
-                        urls.prepend (best_image.get_url ());
-                    } else if (best_image != null) {
-                        urls.append (best_image.get_url ());
+                    bool[] results = new bool[urls.length ()];
+                    int completed = 0;
+
+                    // Fetch each screenshot in parallel.
+                    for (int i = 0; i < urls.length (); i++) {
+                        string url = urls.nth_data (i);
+                        string? file = null;
+                        int index = i;
+
+                        cache.fetch.begin (url, (obj, res) => {
+                            results[index] = cache.fetch.end (res, out file);
+                            screenshot_files_prep.add(file);
+                            completed++;
+                        });
                     }
-                });
 
-                string?[] screenshot_files = new string?[urls.length ()];
-                bool[] results = new bool[urls.length ()];
-                int completed = 0;
-
-                // Fetch each screenshot in parallel.
-                for (int i = 0; i < urls.length (); i++) {
-                    string url = urls.nth_data (i);
-                    string? file = null;
-                    int index = i;
-
-                    cache.fetch.begin (url, (obj, res) => {
-                        results[index] = cache.fetch.end (res, out file);
-                        screenshot_files[index] = file;
-                        completed++;
-                    });
-                }
-
-                // TODO: dynamically load screenshots as they become available.
-                while (urls.length () != completed) {
-                    Thread.usleep (100000);
-                }
-
-                // Load screenshots that were successfully obtained.
-                for (int i = 0; i < urls.length (); i++) {
-                    if (results[i] == true) {
-                        load_screenshot (screenshot_files[i]);
+                    // TODO: dynamically load screenshots as they become available.
+                    while (urls.length () != completed) {
+                        Thread.usleep (100000);
                     }
-                }
 
-                Idle.add (() => {
-                    var number_of_screenshots = app_screenshots.get_children ().length ();
-
-
-                    if (number_of_screenshots > 0) {
-                        screenshot_stack.visible_child = screenshot_overlay;
-                        stack_context.remove_class ("loading");
-
-
-                        if (number_of_screenshots > 1) {
-                            screenshot_next.no_show_all = false;
-                            screenshot_next.show_all ();
-                            screenshot_previous.no_show_all = false;
-                            screenshot_previous.show_all ();
+                    // Load screenshots that were successfully obtained.
+                    for (int i = 0; i < urls.length (); i++) {
+                        if (results[i] == true) {
+                            screenshot_files.add (screenshot_files_prep[i]);
                         }
-
-                        /*
-                        * There's some weird bug where Apps with just one
-                        * screenshot load the screenshot very small. For some
-                        * reason, hiding and re-showing the screenhot makes it
-                        * large again, but it only happens with one screenshot
-                        * in the carousel. As a workaround, we can add an
-                        * extra copy of the first screenshot and disable all
-                        * navigation to make it look/work like a single
-                        * screenshot.
-                        */
-                        if (number_of_screenshots == 1) {
-                            load_screenshot (screenshot_files[0]);
-                            app_screenshots.interactive = false;
-                            screenshot_switcher.visible = false;
-                        }
-                    } else {
-                        screenshot_stack.visible_child = app_screenshot_not_found;
-                        stack_context.remove_class ("loading");
                     }
+                    foreach (var file in screenshot_files) {
+                        load_screenshot (null, file);
+                    };
+
+                    Idle.add (() => {
+                        var number_of_screenshots = app_screenshots.get_children ().length ();
+
+
+                        if (number_of_screenshots > 0) {
+                            screenshot_stack.visible_child = screenshot_overlay;
+                            stack_context.remove_class ("loading");
+
+
+                            if (number_of_screenshots > 1) {
+                                screenshot_next.no_show_all = false;
+                                screenshot_next.show_all ();
+                                screenshot_previous.no_show_all = false;
+                                screenshot_previous.show_all ();
+                            }
+                        } else {
+                            screenshot_stack.visible_child = app_screenshot_not_found;
+                            stack_context.remove_class ("loading");
+                        }
 
                     return GLib.Source.REMOVE;
                 });
-
                 return null;
             });
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string path) {
+        private void load_screenshot (string? caption, string path) {
+            var scale_factor = get_scale_factor ();
             try {
-                AppCenter.Widgets.AppScreenshot image = new AppCenter.Widgets.AppScreenshot ();
-                image.set_path (path);
+                int width = get_toplevel ().get_allocated_width ();
+                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path,  int.min(MAX_WIDTH * scale_factor, (int)(width * 0.7 * scale_factor)), 500 * scale_factor, true);
+                var image = new Gtk.Image ();
+                // image.width_request = get_toplevel ().get_allocated_width ();
+                // image.height_request = 500;
+                image.icon_name = "image-x-generic";
+                image.halign = Gtk.Align.CENTER;
 
+                image.gicon = pixbuf;
 
                 Idle.add (() => {
                     image.show ();
                     app_screenshots.add (image);
-                    image.halign = Gtk.Align.CENTER;
                     return GLib.Source.REMOVE;
                 });
             } catch (Error e) {

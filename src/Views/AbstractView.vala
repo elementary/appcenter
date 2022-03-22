@@ -32,7 +32,7 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
             // Transition finished
             if (!transition_running) {
                 foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
+                    if (child is Views.AppInfoView && child != get_visible_child ()) {
                         child.destroy ();
                     }
                 }
@@ -65,6 +65,7 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
 
         add (app_info_view);
         set_visible_child (app_info_view);
+        // app_info_view.hide.connect(() => {stdout.printf("shit\n");});
 
         app_info_view.show_other_package.connect ((_package, remember_history, _transition_type) => {
             transition_type = _transition_type;
