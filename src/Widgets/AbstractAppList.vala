@@ -50,7 +50,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
     public abstract void add_package (AppCenterCore.Package package);
 
-    public void remove_package (AppCenterCore.Package package) {
+    public virtual void remove_package (AppCenterCore.Package package) {
         package.changing.disconnect (on_package_changing);
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
             weak Widgets.AppListRow row = r as Widgets.AppListRow;

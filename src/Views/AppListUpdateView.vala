@@ -24,6 +24,7 @@ namespace AppCenter.Views {
     public class AppListUpdateView : AbstractAppList {
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
+        private Gee.HashSet<string> added = new Gee.HashSet<string>();
 
         construct {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
@@ -67,6 +68,16 @@ namespace AppCenter.Views {
             add (scrolled);
         }
 
+        public override void clear() {
+            this.added.clear();
+            base.clear();
+        }
+
+        public override void remove_package (AppCenterCore.Package package) {
+            this.added.remove(package.hash);
+            base.remove_package(package);
+        }
+
         public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
             foreach (var package in packages) {
                 add_row_for_package (package);
@@ -81,6 +92,13 @@ namespace AppCenter.Views {
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
+            if (added.contains(package.hash)) {
+                return;
+            }
+
+            added.add(package.hash);
+
+            stderr.printf ("Adding Row %s\n", package.get_name());
             var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
 
             // Only add row if this package needs an update or it's not a font or plugin
