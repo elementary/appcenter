@@ -255,6 +255,7 @@ namespace AppCenter {
                 "net.lutris.Lutris",
                 "com.mattermost.Desktop",
                 "com.visualstudio.code",
+                "org.gnome.DejaDup",
                 "com.spotify.Client",
                 "com.gexperts.Tilix",
                 "alacritty",
@@ -264,7 +265,7 @@ namespace AppCenter {
                 "flameshot",
                 "com.getpostman.Postman",
                 "io.dbeaver.DBeaverCommunity",
-                "chromium" // TODO: Chrome
+                "org.chromium.Chromium"
             };
             featured_apps = {};
             foreach (var package in newest_ids) {
