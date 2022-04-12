@@ -80,7 +80,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
 
         if (app_category.icon != "") {
             display_image.icon_name = app_category.icon;
-            ((Gtk.Misc) name_label).xalign = 0;
+            name_label.xalign = 0;
             name_label.halign = Gtk.Align.START;
         } else {
             display_image.destroy ();

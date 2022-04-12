@@ -40,7 +40,7 @@ public class AppCenter.Homepage : AbstractView {
         }
     }
 
-    private Hdy.Carousel banner_carousel;
+    private Adw.Carousel banner_carousel;
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
@@ -48,7 +48,7 @@ public class AppCenter.Homepage : AbstractView {
     private uint banner_timeout_id;
 
     construct {
-        banner_carousel = new Hdy.Carousel () {
+        banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
         };
 
@@ -57,7 +57,7 @@ public class AppCenter.Homepage : AbstractView {
         banner_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
         banner_event_box.add (banner_carousel);
 
-        var banner_dots = new Hdy.CarouselIndicatorDots () {
+        var banner_dots = new Adw.CarouselIndicatorDots () {
             carousel = banner_carousel
         };
 

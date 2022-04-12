@@ -42,12 +42,12 @@ namespace AppCenter.Views {
         private Gtk.ListStore origin_liststore;
         private Gtk.Overlay screenshot_overlay;
         private Gtk.Revealer origin_combo_revealer;
-        private Hdy.Carousel app_screenshots;
+        private Adw.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
         private Gtk.Label app_description;
         private Widgets.ReleaseListBox release_list_box;
         private Widgets.SizeLabel size_label;
-        private Hdy.CarouselIndicatorDots screenshot_switcher;
+        private Adw.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
         private Gtk.FlowBox oars_flowbox;
@@ -288,7 +288,7 @@ namespace AppCenter.Views {
             screenshots = package_component.get_screenshots ();
 
             if (screenshots.length > 0) {
-                app_screenshots = new Hdy.Carousel () {
+                app_screenshots = new Adw.Carousel () {
                     height_request = 500
                 };
 
@@ -383,7 +383,7 @@ namespace AppCenter.Views {
                     return false;
                 });
 
-                screenshot_switcher = new Hdy.CarouselIndicatorDots () {
+                screenshot_switcher = new Adw.CarouselIndicatorDots () {
                     carousel = app_screenshots
                 };
 
@@ -628,7 +628,7 @@ namespace AppCenter.Views {
                 header_grid.attach (size_label, 3, 1);
             }
 
-            var header_clamp = new Hdy.Clamp () {
+            var header_clamp = new Adw.Clamp () {
                 margin = 24,
                 maximum_size = MAX_WIDTH
             };
@@ -643,7 +643,7 @@ namespace AppCenter.Views {
             header_box_context.add_class ("banner");
             header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            var body_clamp = new Hdy.Clamp () {
+            var body_clamp = new Adw.Clamp () {
                 margin = 24,
                 maximum_size = MAX_WIDTH
             };
@@ -1285,7 +1285,7 @@ namespace AppCenter.Views {
             grid.add (header);
             grid.add (flowbox);
 
-            var clamp = new Hdy.Clamp () {
+            var clamp = new Adw.Clamp () {
                 margin = 24,
                 maximum_size = max_width
             };

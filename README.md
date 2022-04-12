@@ -12,9 +12,9 @@ You'll need the following dependencies:
 * libappstream-dev (>= 0.10)
 * libflatpak-dev
 * libgee-0.8-dev
-* libgranite-dev (>=5.2.5)
-* libgtk-3-dev
-* libhandy-1-dev
+* libgranite-7-dev
+* libgtk4-dev
+* libadwaita-1-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev
