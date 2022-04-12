@@ -26,7 +26,6 @@ public class UninstallFailDialog : Granite.MessageDialog {
             secondary_text: _("This may have been caused by external or manually compiled software."),
             buttons: Gtk.ButtonsType.CLOSE,
             badge_icon: new ThemedIcon ("dialog-error"),
-            window_position: Gtk.WindowPosition.CENTER,
             error: error,
             package: package
         );

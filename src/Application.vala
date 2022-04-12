@@ -151,19 +151,19 @@ public class AppCenter.App : Gtk.Application {
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/appcenter/application.css");
-        Gtk.StyleContext.add_provider_for_screen (
-          Gdk.Screen.get_default (),
-          provider,
-          Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
+        // Gtk.StyleContext.add_provider_for_screen (
+        //   Gdk.Screen.get_default (),
+        //   provider,
+        //   Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        // );
 
         var fallback_provider = new Gtk.CssProvider ();
         fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
-        Gtk.StyleContext.add_provider_for_screen (
-          Gdk.Screen.get_default (),
-          fallback_provider,
-          Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
-        );
+        // Gtk.StyleContext.add_provider_for_screen (
+        //   Gdk.Screen.get_default (),
+        //   fallback_provider,
+        //   Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
+        // );
 
         var client = AppCenterCore.Client.get_default ();
 
@@ -211,7 +211,7 @@ public class AppCenter.App : Gtk.Application {
             });
 
             add_window (main_window);
-            main_window.show_all ();
+            main_window.present ();
             if (show_updates) {
                 main_window.go_to_installed ();
             }
@@ -310,7 +310,7 @@ public class AppCenter.App : Gtk.Application {
 
                     var dialog = new InstallFailDialog (package, error);
 
-                    dialog.show_all ();
+                    dialog.present ();
                     dialog.run ();
                     dialog.destroy ();
                 }

@@ -251,9 +251,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
 
         var headerbar = new Gtk.HeaderBar () {
-            show_close_button = true
+            show_title_buttons = true,
+            title_widget = custom_title_stack
         };
-        headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
         headerbar.pack_end (menu_button);
         headerbar.pack_end (search_entry);
@@ -279,11 +279,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL
         };
-        grid.add (headerbar);
-        grid.add (network_info_bar);
-        grid.add (overlay);
+        grid.attach (headerbar, 0, 0);
+        grid.attach (network_info_bar, 0, 1);
+        grid.attach (overlay, 0, 2);
 
-        add (grid);
+        child = grid;
 
         int window_x, window_y;
         int window_width, window_height;
@@ -296,11 +296,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             SettingsBindFlags.DEFAULT
         );
 
-        if (window_x != -1 || window_y != -1) {
-            move (window_x, window_y);
-        }
+        // if (window_x != -1 || window_y != -1) {
+        //     move (window_x, window_y);
+        // }
 
-        resize (window_width, window_height);
+        // resize (window_width, window_height);
 
         if (App.settings.get_boolean ("window-maximized")) {
             maximize ();

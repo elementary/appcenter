@@ -158,7 +158,7 @@ namespace AppCenter {
                     var css = CSS.printf ((int) (fraction * 100));
 
                     try {
-                        provider.load_from_data (css, css.length);
+                        provider.load_from_data (css.data);
                         style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
                     } catch (Error e) {
                         critical (e.message);
