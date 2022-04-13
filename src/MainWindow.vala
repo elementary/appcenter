@@ -50,10 +50,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
-        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/io/elementary/appcenter/icons");
+        Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/io/elementary/appcenter/icons");
 
-        search_entry.grab_focus_without_selecting ();
+        // search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
@@ -66,31 +65,31 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
         app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
 
-        button_release_event.connect ((event) => {
-            // On back mouse button pressed
-            if (event.button == 8) {
-                view_return ();
-                return true;
-            }
+        // button_release_event.connect ((event) => {
+        //     // On back mouse button pressed
+        //     if (event.button == 8) {
+        //         view_return ();
+        //         return true;
+        //     }
 
-            return false;
-        });
+        //     return false;
+        // });
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        search_entry.key_press_event.connect ((event) => {
-            if (event.keyval == Gdk.Key.Escape) {
-                search_entry.text = "";
-                return true;
-            }
+        // search_entry.key_press_event.connect ((event) => {
+        //     if (event.keyval == Gdk.Key.Escape) {
+        //         search_entry.text = "";
+        //         return true;
+        //     }
 
-            if (event.keyval == Gdk.Key.Down) {
-                search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
-                return true;
-            }
+        //     if (event.keyval == Gdk.Key.Down) {
+        //         search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
+        //         return true;
+        //     }
 
-            return false;
-        });
+        //     return false;
+        // });
 
         return_button.clicked.connect (view_return);
 
@@ -108,7 +107,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         notify["working"].connect (() => {
             Idle.add (() => {
-                spinner.active = working;
+                spinner.spinning = working;
                 return GLib.Source.REMOVE;
             });
         });
@@ -137,11 +136,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                         e.message,
                         "system-software-install",
                         Gtk.ButtonsType.CLOSE
-                    );
-                    message_dialog.badge_icon = new ThemedIcon ("dialog-error");
-                    message_dialog.transient_for = this;
+                    ) {
+                        badge_icon = new ThemedIcon ("dialog-error"),
+                        transient_for = this
+                    };
 
-                    message_dialog.show_all ();
+                    message_dialog.present ();
                     message_dialog.response.connect ((response_id) => {
                         message_dialog.destroy ();
                     });
@@ -150,7 +150,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
 
         return_button = new Gtk.Button () {
-            no_show_all = true,
+            visible = false,
             valign = Gtk.Align.CENTER
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
@@ -179,32 +179,32 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         // var eventbox_badge = new Gtk.EventBox ();
-        // eventbox_badge.add (updates_badge);
         // eventbox_badge.button_release_event.connect (badge_event);
 
         updates_badge_revealer = new Gtk.Revealer () {
+            child = updates_badge,
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        updates_badge_revealer.add (eventbox_badge);
 
-        var view_mode_overlay = new Gtk.Overlay ();
-        view_mode_overlay.add (view_mode);
+        var view_mode_overlay = new Gtk.Overlay () {
+            child = view_mode
+        };
         view_mode_overlay.add_overlay (updates_badge_revealer);
 
         view_mode_revealer = new Gtk.Revealer () {
+            child = view_mode_overlay,
             reveal_child = true,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        view_mode_revealer.add (view_mode_overlay);
 
         homepage_header = new Gtk.Label (null);
-        homepage_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
+        homepage_header.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         custom_title_stack = new Gtk.Stack ();
-        custom_title_stack.add (view_mode_revealer);
-        custom_title_stack.add (homepage_header);
+        custom_title_stack.add_child (view_mode_revealer);
+        custom_title_stack.add_child (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
         search_entry = new Gtk.SearchEntry () {
@@ -234,21 +234,18 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             row_spacing = 6
         };
 
-        menu_popover_grid.add (automatic_updates_button);
+        menu_popover_grid.attach (automatic_updates_button, 0, 0);
 
-        menu_popover_grid.show_all ();
-
-        var menu_popover = new Gtk.Popover (null);
-        menu_popover.add (menu_popover_grid);
+        var menu_popover = new Gtk.Popover () {
+            child = menu_popover_grid
+        };
 
         var menu_button = new Gtk.MenuButton () {
-            can_focus = false,
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            icon_name = "open-menu",
             popover = menu_popover,
             tooltip_text = _("Settings"),
             valign = Gtk.Align.CENTER
         };
-
 
         var headerbar = new Gtk.HeaderBar () {
             show_title_buttons = true,
@@ -266,13 +263,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
-        stack.add (homepage);
-        stack.add (installed_view);
-        stack.add (search_view);
+        stack.add_child (homepage);
+        stack.add_child (installed_view);
+        stack.add_child (search_view);
 
-        var overlay = new Gtk.Overlay ();
+        var overlay = new Gtk.Overlay () {
+            child = stack
+        };
         overlay.add_overlay (toast);
-        overlay.add (stack);
 
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
 
@@ -420,7 +418,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     return_button.label = return_button_history.peek_head ();
                 } else {
                     return_button_history.clear ();
-                    return_button.no_show_all = true;
                     return_button.visible = false;
                 }
             }
@@ -445,10 +442,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
 
             return_button.label = return_name;
-            return_button.no_show_all = false;
             return_button.visible = true;
         } else {
-            return_button.no_show_all = true;
             return_button.visible = false;
         }
 
@@ -466,7 +461,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         search_entry.sensitive = allow_search;
-        search_entry.grab_focus_without_selecting ();
+        // search_entry.grab_focus_without_selecting ();
     }
 
     private void view_return () {
@@ -476,17 +471,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             homepage.return_clicked ();
 
             return_button_history.clear ();
-            return_button.no_show_all = true;
             return_button.visible = false;
         }
 
         return_button_history.poll_head ();
         if (!return_button_history.is_empty) {
             return_button.label = return_button_history.peek_head ();
-            return_button.no_show_all = false;
             return_button.visible = true;
         } else {
-            return_button.no_show_all = true;
             return_button.visible = false;
         }
 
