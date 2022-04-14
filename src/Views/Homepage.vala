@@ -284,6 +284,7 @@ public class AppCenter.Homepage : AbstractView {
             "net.lutris.Lutris",
             "com.mattermost.Desktop",
             "com.visualstudio.code",
+            "org.gnome.DejaDup",
             "com.spotify.Client",
             "com.gexperts.Tilix",
             "alacritty",
@@ -293,7 +294,7 @@ public class AppCenter.Homepage : AbstractView {
             "flameshot",
             "com.getpostman.Postman",
             "io.dbeaver.DBeaverCommunity",
-            "chromium" // TODO: Chrome
+            "org.chromium.Chromium"
         };
 
         foreach (var id in newest_ids) {
