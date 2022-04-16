@@ -268,8 +268,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         stack.add (homepage);
         stack.add (installed_view);
-        stack.visible_child = homepage;
-
         stack.add (search_view);
 
         var overlay = new Gtk.Overlay ();
