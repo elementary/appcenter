@@ -161,9 +161,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button_history = new Gee.LinkedList<string> ();
 
         view_mode = new Granite.Widgets.ModeButton () {
-            margin = 12,
-            margin_top = 7,
-            margin_bottom = 7
+            margin_end = 12,
+            margin_start = 12,
+            valign = Gtk.Align.CENTER
         };
 
         homepage_view_id = view_mode.append_text (_("Home"));
@@ -178,20 +178,21 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         badge_context.add_class (Granite.STYLE_CLASS_BADGE);
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        var eventbox_badge = new Gtk.EventBox ();
-        eventbox_badge.add (updates_badge);
-        eventbox_badge.button_release_event.connect (badge_event);
-
         updates_badge_revealer = new Gtk.Revealer () {
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        updates_badge_revealer.add (eventbox_badge);
+        updates_badge_revealer.add (updates_badge);
+
+        var eventbox_badge = new Gtk.EventBox () {
+            halign = Gtk.Align.END
+        };
+        eventbox_badge.add (updates_badge_revealer);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
-        view_mode_overlay.add_overlay (updates_badge_revealer);
+        view_mode_overlay.add_overlay (eventbox_badge);
 
         view_mode_revealer = new Gtk.Revealer () {
             reveal_child = true,
@@ -248,7 +249,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             tooltip_text = _("Settings"),
             valign = Gtk.Align.CENTER
         };
-
 
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
@@ -307,6 +307,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
 
         stack.notify["visible-child"].connect (on_view_mode_changed);
+
+        eventbox_badge.button_release_event.connect (() => {
+            stack.visible_child = installed_view;
+        });
 
         view_mode.notify["selected"].connect (() => {
             if (view_mode.selected == homepage_view_id) {
@@ -370,11 +374,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             updates_badge.label = updates_number.to_string ();
             updates_badge_revealer.reveal_child = true;
         }
-    }
-
-    private bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
-        go_to_installed ();
-        return Gdk.EVENT_STOP;
     }
 
     public void show_package (AppCenterCore.Package package) {
