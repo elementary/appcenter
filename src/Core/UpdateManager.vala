@@ -102,7 +102,7 @@ public class AppCenterCore.UpdateManager : Object {
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
 
-                if (!(AppCenter.App.settings.get_boolean ("automatic-updates") && appcenter_package.is_native)) {
+                if (!(AppCenter.App.settings.get_boolean ("automatic-updates"))) {
                     count++;
                 }
 
