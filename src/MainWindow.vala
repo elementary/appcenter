@@ -215,8 +215,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
-        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
-            description = _("Automatically update free and paid-for curated apps")
+        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
+            description = _("System updates and unpaid apps will not update automatically")
         };
 
         automatic_updates_button.notify["active"].connect (() => {
