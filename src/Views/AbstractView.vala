@@ -65,7 +65,6 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
 
         add (app_info_view);
         set_visible_child (app_info_view);
-        // app_info_view.hide.connect(() => {stdout.printf("shit\n");});
 
         app_info_view.show_other_package.connect ((_package, remember_history, _transition_type) => {
             transition_type = _transition_type;
