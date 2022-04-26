@@ -96,13 +96,15 @@ public class AppCenterCore.UpdateManager : Object {
         var flatpak_updates = yield fp_client.get_updates ();
         debug ("Flatpak backend reports %d updates", flatpak_updates.size);
 
+        var auto_update_enabled = AppCenter.App.settings.get_boolean ("automatic-updates");
+
         foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
 
-                if (!(AppCenter.App.settings.get_boolean ("automatic-updates"))) {
+                if (!auto_update_enabled || appcenter_package.should_pay) {
                     count++;
                 }
 
