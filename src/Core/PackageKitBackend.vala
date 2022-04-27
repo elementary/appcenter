@@ -156,13 +156,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         appstream_pool = new AppStream.Pool ();
 
 #if HIDE_UPSTREAM_DISTRO_APPS
-        // Only use a user cache, the system cache probably contains all the Ubuntu components
-        appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);
-
         // Clear out the default set of metadata locations and only use the folder that gets populated
         // with elementary's AppStream data.
-        appstream_pool.clear_metadata_locations ();
-        appstream_pool.add_metadata_location ("/usr/share/app-info");
+        appstream_pool.reset_extra_data_locations ();
+        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.METAINFO);
 #endif
 
         // We don't want to show installed desktop files here
@@ -294,7 +291,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
-            appstream_pool.add_component (component);
+            var components = new GenericArray<AppStream.Component> ();
+            components.add (component);
+
+            appstream_pool.add_components (components);
 
             var package = new AppCenterCore.Package (this, component);
             package_list[id] = package;

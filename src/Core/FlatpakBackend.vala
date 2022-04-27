@@ -97,7 +97,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 #else
         user_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
 #endif
-        user_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
 
         system_appstream_pool = new AppStream.Pool ();
 #if HAS_APPSTREAM_0_15
@@ -105,7 +104,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 #else
         system_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
 #endif
-        system_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
 
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
@@ -796,8 +794,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void reload_appstream_pool () {
         var new_package_list = new Gee.HashMap<string, Package> ();
 
-        user_appstream_pool.clear_metadata_locations ();
-        user_appstream_pool.add_metadata_location (user_metadata_path);
+        user_appstream_pool.reset_extra_data_locations ();
+        user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.METAINFO);
 
         try {
             debug ("Loading flatpak user pool");
@@ -826,8 +824,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         }
 
-        system_appstream_pool.clear_metadata_locations ();
-        system_appstream_pool.add_metadata_location (system_metadata_path);
+        system_appstream_pool.reset_extra_data_locations ();
+        system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.METAINFO);
 
         try {
             debug ("Loading flatpak system pool");
