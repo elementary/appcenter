@@ -51,17 +51,13 @@ public class AppCenter.Views.SearchView : AbstractView {
                 viewing_package = false;
 
                 if (current_category != null) {
-                    subview_entered (_("Search Apps"), true, current_category.name);
+                    subview_entered (_("Home"), true, current_category.name);
                 } else {
-                    subview_entered (null, true);
+                    subview_entered (_("Home"), true);
                 }
             }
         } else {
-            if (current_category != null) {
-                search (current_search_term, null);
-            } else {
                 home_return_clicked ();
-            }
         }
     }
 
@@ -84,7 +80,7 @@ public class AppCenter.Views.SearchView : AbstractView {
         }
 
         if (current_category != null) {
-            subview_entered (_("Search Apps"), true, current_category.name);
+            subview_entered (_("Home"), true, current_category.name);
         } else {
             subview_entered (_("Home"), true);
         }
