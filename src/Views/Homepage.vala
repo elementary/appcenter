@@ -129,6 +129,7 @@ public class AppCenter.Homepage : AbstractView {
             });
         }
 
+        banner_timeout_start ();
         load_banners_and_carousels.begin ();
 
         category_flow.child_activated.connect ((child) => {
@@ -183,6 +184,10 @@ public class AppCenter.Homepage : AbstractView {
 
             show_package (package_row_grid.package);
         });
+
+        destroy.connect (() => {
+            banner_timeout_stop ();
+        });
     }
 
     private async void load_banners_and_carousels () {
@@ -225,7 +230,6 @@ public class AppCenter.Homepage : AbstractView {
 
         banner_carousel.show_all ();
         banner_revealer.reveal_child = true;
-        banner_timeout_start ();
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
@@ -284,7 +288,7 @@ public class AppCenter.Homepage : AbstractView {
         subview_entered (return_name, allow_search, custom_header, custom_search_placeholder);
     }
 
-    private void show_app_list_for_category (AppStream.Category category) {
+    public void show_app_list_for_category (AppStream.Category category) {
         var child = get_child_by_name (category.name);
         if (child != null) {
             visible_child = child;
@@ -303,6 +307,10 @@ public class AppCenter.Homepage : AbstractView {
     }
 
     private void banner_timeout_start () {
+        if (banner_timeout_id != 0) {
+            Source.remove (banner_timeout_id);
+        }
+
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
             var new_index = (uint) banner_carousel.position + 1;
             var max_index = banner_carousel.n_pages - 1; // 0-based index

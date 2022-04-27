@@ -25,6 +25,7 @@ namespace AppCenter {
 
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button open_button;
+        protected Gtk.Button uninstall_button { get; private set; }
 
         protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
@@ -65,7 +66,7 @@ namespace AppCenter {
                 }
             });
 
-            var uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
+            uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
                 margin_end = 12
             };
 

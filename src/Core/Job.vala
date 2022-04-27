@@ -20,7 +20,7 @@
 public class AppCenterCore.Job : Object {
     public Type operation { get; construct; }
     public JobArgs? args { get; set; }
-    public Error error { get; set; }
+    public Error? error { get; set; }
 
     public Value result;
 
@@ -53,20 +53,20 @@ public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
 
 public class AppCenterCore.InstallPackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation.ProgressCallback cb;
-    public Cancellable cancellable;
+    public ChangeInformation? change_info;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.UpdatePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation.ProgressCallback cb;
-    public Cancellable cancellable;
+    public ChangeInformation? change_info;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.RemovePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation.ProgressCallback cb;
-    public Cancellable cancellable;
+    public ChangeInformation? change_info;
+    public Cancellable? cancellable;
 }
 
 public class AppCenterCore.GetDownloadSizeArgs : JobArgs {

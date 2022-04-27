@@ -16,12 +16,13 @@
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  *              Jeremy Wootten <jeremy@elementaryos.org>
+ *              Atheesh Thirumalairajan <candiedoperation@icloud.com>
  */
 
 namespace AppCenter.Views {
     /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
-        public string? current_search_term = null;
+        public string? current_search_term { get; set; default = null; }
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
 
@@ -47,6 +48,11 @@ namespace AppCenter.Views {
             });
 
             add (scrolled);
+
+            notify["current-search-term"].connect (() => {
+                var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (current_search_term, _("Flathub"));
+                alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
+            });
         }
 
         public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
@@ -145,13 +151,13 @@ namespace AppCenter.Views {
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (AppRowInterface row1, AppRowInterface row2) {
+        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
             return compare_packages (row1.get_package (), row2.get_package ());
         }
 
 #if CURATED
         [CCode (instance_pos = -1)]
-        private void row_update_header (AppRowInterface row, AppRowInterface? before) {
+        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
             bool elementary_native = row.get_package ().is_native;
 
             if (!elementary_native) {
@@ -161,7 +167,7 @@ namespace AppCenter.Views {
             }
         }
 
-        private void mark_row_non_curated (AppRowInterface row) {
+        private void mark_row_non_curated (Widgets.PackageRow row) {
             var header = new Gtk.Label (_("Non-Curated Apps"));
             header.margin = 12;
             header.margin_top = 18;

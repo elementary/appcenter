@@ -24,7 +24,6 @@ appcenter_files = files(
     'Dialogs/UninstallFailDialog.vala',
     'Dialogs/UpdateFailDialog.vala',
     'Dialogs/UpgradeFailDialog.vala',
-    'Interfaces/AppRowInterface.vala',
     'Services/DBusServer.vala',
     'Services/SearchProvider.vala',
     'Views/AppInfoView.vala',
@@ -75,6 +74,10 @@ endif
 
 if get_option('hide_upstream_distro_apps')
     args += '--define=HIDE_UPSTREAM_DISTRO_APPS'
+endif
+
+if appstream.version().version_compare('>=0.15')
+    args += '--define=HAS_APPSTREAM_0_15'
 endif
 
 executable(

@@ -38,7 +38,7 @@ public interface AppCenterCore.Backend : Object {
     public abstract async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error;
     public abstract async bool is_package_installed (Package package) throws GLib.Error;
     public abstract async PackageDetails get_package_details (Package package) throws GLib.Error;
-    public abstract async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
-    public abstract async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
-    public abstract async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
+    public abstract async bool install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
+    public abstract async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
+    public abstract async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
 }

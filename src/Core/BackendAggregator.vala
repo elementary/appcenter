@@ -225,36 +225,39 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         return success;
     }
 
-    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         assert_not_reached ();
     }
 
-    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var success = true;
         // updatable_packages is a HashMultiMap of packages to be updated, where the key is
         // a pointer to the backend that is capable of updating them. Most packages only have one
         // backend, but there is the special case of the OS updates package which could contain
         // flatpaks and/or packagekit packages
 
-        var backends = package.change_information.updatable_packages.get_keys ().to_array ();
-        int num_backends = backends.length;
+        var backends = package.change_information.updatable_packages.get_keys ();
+        Gee.ArrayList<ChangeInformation>? change_infos = null;
+        if (change_info != null) {
+            change_infos = new Gee.ArrayList<ChangeInformation> ();
+        }
 
-        for (int i = 0; i < num_backends; i++) {
-            unowned Backend backend = backends[i];
-
+        foreach (var backend in backends) {
+            ChangeInformation? sub_change_info = null;
+            if (change_info != null) {
+                // Intercept progress callbacks so we can divide the progress between the number of backends
+                sub_change_info = new ChangeInformation ();
+                change_infos.add (sub_change_info);
+                sub_change_info.status_changed.connect (() => {
+                    report_change_info (change_info, change_infos);
+                });
+                sub_change_info.progress_changed.connect (() => {
+                    report_change_info (change_info, change_infos);
+                });
+            }
             var backend_succeeded = yield backend.update_package (
                 package,
-                // Intercept progress callbacks so we can divide the progress between the number of backends
-                (can_cancel, description, progress, status) => {
-                    double calculated_progress = (i * (1.0f / num_backends)) + (progress / num_backends);
-                    ChangeInformation.Status consolidated_status = status;
-                    // Only report finished when the last operation completes
-                    if (consolidated_status == ChangeInformation.Status.FINISHED && (i + 1) < num_backends) {
-                        consolidated_status = ChangeInformation.Status.RUNNING;
-                    }
-
-                    cb (can_cancel, description, calculated_progress, consolidated_status);
-                },
+                sub_change_info,
                 cancellable
             );
 
@@ -266,8 +269,27 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         return success;
     }
 
-    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         assert_not_reached ();
+    }
+
+    private static void report_change_info (ChangeInformation real_change_info, Gee.ArrayList<ChangeInformation> change_infos) {
+        double calculated_progress = 0.0f;
+        var consolidated_status = ChangeInformation.Status.FINISHED;
+        bool can_cancel = true;
+        foreach (var change_info in change_infos) {
+            if (change_info.status != ChangeInformation.Status.FINISHED) {
+                consolidated_status = ChangeInformation.Status.RUNNING;
+            }
+
+            if (change_info.can_cancel == false) {
+                can_cancel = false;
+            }
+
+            calculated_progress += change_info.progress / change_infos.size;
+        }
+
+        real_change_info.callback (can_cancel, _("Waiting"), calculated_progress, consolidated_status);
     }
 
     private static GLib.Once<BackendAggregator> instance;
