@@ -454,14 +454,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.visible = return_name != null;
     }
 
-    public void configure_search (bool sensitive, string? placeholder_text = null) {
+    public void configure_search (bool sensitive, string? placeholder_text = _("Search Apps")) {
         search_entry.sensitive = sensitive;
-
-        if (placeholder_text != null && placeholder_text != "") {
-            search_entry.placeholder_text = placeholder_text;
-        } else {
-            search_entry.placeholder_text = _("Search Apps");
-        }
+        search_entry.placeholder_text = placeholder_text;
 
         if (sensitive) {
             search_entry.grab_focus_without_selecting ();
