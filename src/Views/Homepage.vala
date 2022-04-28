@@ -320,7 +320,7 @@ public class AppCenter.Homepage : AbstractView {
 
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
             if (!banner_carousel.is_visible ()) {
-                    return Source.CONTINUE;
+                return Source.CONTINUE;
             }
 
             var new_index = (uint) banner_carousel.position + 1;
