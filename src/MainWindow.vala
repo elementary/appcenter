@@ -448,12 +448,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
 
             return_button.label = return_name;
-            return_button.no_show_all = false;
-            return_button.visible = true;
-        } else {
-            return_button.no_show_all = true;
-            return_button.visible = false;
         }
+
+        return_button.no_show_all = return_name == null;
+        return_button.visible = return_name != null;
     }
 
     public void configure_search (bool sensitive, string? placeholder_text = null) {
