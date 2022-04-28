@@ -441,12 +441,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         selected_package = package;
     }
 
-    private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
-        set_return_name (return_name);
-        set_custom_header (custom_header);
-        configure_search (allow_search, custom_search_placeholder);
-    }
-
     public void set_return_name (string? return_name) {
         if (return_name != null) {
             if (return_button_history.peek_head () != return_name) {
