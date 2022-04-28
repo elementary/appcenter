@@ -13,9 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-28 03:14+0000\n"
-"PO-Revision-Date: 2022-01-21 13:11+0000\n"
+"PO-Revision-Date: 2022-04-28 15:07+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,14 +75,14 @@ msgid "Search Apps"
 msgstr "Rechercher des applications"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Automatic Updates"
 msgid "Automatic App Updates"
-msgstr "Mises à jour automatiques"
+msgstr "Mises à jour automatiques des applications"
 
 #: src/MainWindow.vala:219
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
+"Les mises à jour du système et des applications non payées ne se feront pas "
+"automatiquement"
 
 #: src/MainWindow.vala:249
 msgid "Settings"
