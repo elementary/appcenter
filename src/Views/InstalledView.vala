@@ -18,7 +18,6 @@
  */
 
 public class AppCenter.Views.InstalledView : AbstractView {
-    public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
     private Cancellable refresh_cancellable;
 
     private AppListUpdateView app_list_view;
@@ -30,7 +29,8 @@ public class AppCenter.Views.InstalledView : AbstractView {
 
         app_list_view = new AppListUpdateView ();
         app_list_view.show_app.connect ((package) => {
-            subview_entered (C_("view", "Installed"), false, "");
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            main_window.set_return_name (C_("view", "Installed"));
             show_package (package);
         });
 
@@ -53,12 +53,15 @@ public class AppCenter.Views.InstalledView : AbstractView {
     }
 
     public override void return_clicked () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
         if (previous_package != null) {
             show_package (previous_package);
-            subview_entered (C_("view", "Installed"), false, null);
+            main_window.set_return_name (C_("view", "Installed"));
         } else {
             set_visible_child (app_list_view);
-            subview_entered (null, false);
+            main_window.set_return_name (null);
+            main_window.set_custom_header (null);
+            main_window.configure_search (false);
         }
     }
 
