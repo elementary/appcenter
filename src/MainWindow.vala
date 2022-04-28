@@ -53,7 +53,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/appcenter/icons");
 
-        view_mode.selected = homepage_view_id;
         search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
@@ -79,8 +78,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        view_mode.notify["selected"].connect (on_view_mode_changed);
-
         search_entry.key_press_event.connect ((event) => {
             if (event.keyval == Gdk.Key.Escape) {
                 search_entry.text = "";
@@ -103,7 +100,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         installed_view.subview_entered.connect (view_opened);
         search_view.package_selected.connect (package_selected);
         search_view.subview_entered.connect (view_opened);
-        search_view.home_return_clicked.connect (show_homepage);
+        search_view.home_return_clicked.connect (() => {
+            stack.visible_child = homepage;
+        });
         search_view.category_return_clicked.connect (show_category);
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
@@ -162,9 +161,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button_history = new Gee.LinkedList<string> ();
 
         view_mode = new Granite.Widgets.ModeButton () {
-            margin = 12,
-            margin_top = 7,
-            margin_bottom = 7
+            margin_end = 12,
+            margin_start = 12,
+            valign = Gtk.Align.CENTER
         };
 
         homepage_view_id = view_mode.append_text (_("Home"));
@@ -179,20 +178,21 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         badge_context.add_class (Granite.STYLE_CLASS_BADGE);
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        var eventbox_badge = new Gtk.EventBox ();
-        eventbox_badge.add (updates_badge);
-        eventbox_badge.button_release_event.connect (badge_event);
-
         updates_badge_revealer = new Gtk.Revealer () {
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        updates_badge_revealer.add (eventbox_badge);
+        updates_badge_revealer.add (updates_badge);
+
+        var eventbox_badge = new Gtk.EventBox () {
+            halign = Gtk.Align.END
+        };
+        eventbox_badge.add (updates_badge_revealer);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
-        view_mode_overlay.add_overlay (updates_badge_revealer);
+        view_mode_overlay.add_overlay (eventbox_badge);
 
         view_mode_revealer = new Gtk.Revealer () {
             reveal_child = true,
@@ -250,7 +250,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             valign = Gtk.Align.CENTER
         };
 
-
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
@@ -306,6 +305,20 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         if (App.settings.get_boolean ("window-maximized")) {
             maximize ();
         }
+
+        stack.notify["visible-child"].connect (on_view_mode_changed);
+
+        eventbox_badge.button_release_event.connect (() => {
+            stack.visible_child = installed_view;
+        });
+
+        view_mode.notify["selected"].connect (() => {
+            if (view_mode.selected == homepage_view_id) {
+                stack.visible_child = homepage;
+            } else if (view_mode.selected == installed_view_id) {
+                stack.visible_child = installed_view;
+            }
+        });
 
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
@@ -363,21 +376,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    private bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
-        go_to_installed ();
-        return Gdk.EVENT_STOP;
-    }
-
     public void show_package (AppCenterCore.Package package) {
-        search ("");
         return_button_history.clear ();
-        view_mode.selected = homepage_view_id;
         stack.visible_child = homepage;
         homepage.show_package (package);
     }
 
     public void go_to_installed () {
-        view_mode.selected = installed_view_id;
+        stack.visible_child = installed_view;
     }
 
     public void search (string term, bool mimetype = false) {
@@ -426,7 +432,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 }
             }
 
-            search_view.reset ();
             stack.visible_child = homepage;
         }
 
@@ -496,31 +501,22 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_view_mode_changed () {
-        if (search_entry.text.length >= VALID_QUERY_LENGTH) {
-            stack.visible_child = search_view;
+        if (stack.visible_child == homepage) {
+            search ("");
+            search_view.reset ();
+            search_entry.sensitive = !homepage.viewing_package;
+            view_mode_revealer.reveal_child = true;
+            view_mode.selected = homepage_view_id;
+        } else if (stack.visible_child == installed_view) {
+            search_entry.sensitive = false;
+            view_mode.selected = installed_view_id;
+        } else if (search_entry.text.length >= VALID_QUERY_LENGTH) {
             search_entry.sensitive = !search_view.viewing_package;
-        } else {
-            if (view_mode.selected == homepage_view_id) {
-                stack.visible_child = homepage;
-                search_entry.sensitive = !homepage.viewing_package;
-            } else if (view_mode.selected == installed_view_id) {
-                stack.visible_child = installed_view;
-                search_entry.sensitive = false;
-            }
         }
     }
 
-    private void show_homepage () {
-        search ("");
-        search_view.reset ();
-        stack.visible_child = homepage;
-        view_mode_revealer.reveal_child = true;
-    }
-
     public void show_category (AppStream.Category category) {
-        search ("");
         return_button_history.clear ();
-        view_mode.selected = homepage_view_id;
         stack.visible_child = homepage;
         homepage.show_app_list_for_category (category);
     }
