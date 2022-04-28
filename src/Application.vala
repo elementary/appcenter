@@ -96,6 +96,8 @@ public class AppCenter.App : Gtk.Application {
         set_accels_for_action ("app.quit", {"<Control>q"});
 
         search_provider = new SearchProvider ();
+
+        DBusServer.get_default ().app = this;
     }
 
     public override void open (File[] files, string hint) {
@@ -186,7 +188,6 @@ public class AppCenter.App : Gtk.Application {
 
         if (main_window == null) {
             main_window = new MainWindow (this);
-
 
             // Force a cache refresh when the window opens, so we get new apps
 #if HOMEPAGE
@@ -384,5 +385,25 @@ public static int main (string[] args) {
     GLib.Environment.set_application_name ("Pop!_Shop");
 #endif
     var application = new AppCenter.App ();
+
+    bool show_updates = false;
+
+    foreach (var arg in args) {
+        if (arg == "--show-updates" || arg == "-u") {
+            show_updates = true;
+            break;
+        }
+    }
+
+    if (show_updates) {
+        try {
+            stderr.printf("connecting to client to show updates\n");
+            var dbus_client = self_connect();
+            dbus_client.show_updates();
+        } catch (Error error) {
+            stderr.printf ("Failed to show updates: %s\n", error.message);
+        }
+    }
+
     return application.run (args);
 }

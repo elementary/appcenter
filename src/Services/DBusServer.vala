@@ -21,6 +21,8 @@
 [DBus (name="io.elementary.appcenter")]
 public class DBusServer : Object {
     private static GLib.Once<DBusServer> instance;
+    public AppCenter.App app;
+
     public static unowned DBusServer get_default () {
         return instance.once (() => { return new DBusServer (); });
     }
@@ -123,4 +125,24 @@ public class DBusServer : Object {
 
         return components;
     }
+
+    /* Activate window with the installed view. */
+    public void show_updates() throws Error {
+        app.show_updates = true;
+        app.activate ();
+        app.show_updates = false;
+    }
+}
+
+[DBus (name="io.elementary.appcenter")]
+public interface DBusClient: Object {
+    public abstract void show_updates () throws GLib.Error;
+}
+
+public DBusClient self_connect () throws Error {
+    return Bus.get_proxy_sync (
+        BusType.SESSION,
+        "io.elementary.appcenter",
+        "/io/elementary/appcenter"
+    );
 }
