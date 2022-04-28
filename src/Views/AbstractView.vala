@@ -71,7 +71,9 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
             show_package (_package, remember_history);
             if (remember_history) {
                 previous_package = package;
-                subview_entered (package.get_name (), false, "", null);
+
+                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+                main_window.set_return_name (package.get_name ());
             }
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         });

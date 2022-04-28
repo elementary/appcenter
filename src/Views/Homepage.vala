@@ -311,7 +311,6 @@ public class AppCenter.Homepage : AbstractView {
             main_window.configure_search (false);
         } else if (visible_child == scrolled_window) {
             current_category = null;
-
             main_window.set_return_name (null);
             main_window.set_custom_header (null);
             main_window.configure_search (true);

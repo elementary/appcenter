@@ -95,7 +95,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.clicked.connect (view_return);
 
         homepage.package_selected.connect (package_selected);
-        homepage.subview_entered.connect (view_opened);
         installed_view.package_selected.connect (package_selected);
         installed_view.subview_entered.connect (view_opened);
         search_view.package_selected.connect (package_selected);
@@ -447,7 +446,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
         set_return_name (return_name);
         set_custom_header (custom_header);
-
         configure_search (allow_search, custom_search_placeholder);
     }
 
