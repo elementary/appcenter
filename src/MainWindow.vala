@@ -98,7 +98,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         installed_view.package_selected.connect (package_selected);
         installed_view.subview_entered.connect (view_opened);
         search_view.package_selected.connect (package_selected);
-        search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (() => {
             stack.visible_child = homepage;
         });

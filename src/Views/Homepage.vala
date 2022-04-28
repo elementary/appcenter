@@ -306,9 +306,6 @@ public class AppCenter.Homepage : AbstractView {
             main_window.set_custom_header (current_category.name);
             main_window.set_return_name (_("Home"));
             main_window.configure_search (true, _("Search %s").printf (current_category.name));
-        } else if (visible_child is Views.AppInfoView) {
-            main_window.set_custom_header ("");
-            main_window.configure_search (false);
         } else if (visible_child == scrolled_window) {
             current_category = null;
             main_window.set_return_name (null);

@@ -18,7 +18,6 @@
  */
 
 public abstract class AppCenter.AbstractView : Gtk.Stack {
-    public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
     public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
@@ -27,6 +26,14 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
         transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
+
+        notify["visible-child"].connect (() => {
+            if (visible_child is Views.AppInfoView) {
+                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+                main_window.set_custom_header ("");
+                main_window.configure_search (false);
+            }
+        });
 
         notify["transition-running"].connect (() => {
             // Transition finished

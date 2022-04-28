@@ -18,6 +18,7 @@
  */
 
 public class AppCenter.Views.InstalledView : AbstractView {
+    public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
     private Cancellable refresh_cancellable;
 
     private AppListUpdateView app_list_view;
