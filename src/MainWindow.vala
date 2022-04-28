@@ -445,6 +445,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
+        set_return_name (return_name);
+        set_custom_header (custom_header);
+
+        configure_search (allow_search, custom_search_placeholder);
+    }
+
+    public void set_return_name (string? return_name) {
         if (return_name != null) {
             if (return_button_history.peek_head () != return_name) {
                 return_button_history.offer_head (return_name);
@@ -457,22 +464,29 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             return_button.no_show_all = true;
             return_button.visible = false;
         }
+    }
 
+    public void configure_search (bool sensitive, string? placeholder_text = null) {
+        search_entry.sensitive = sensitive;
+
+        if (placeholder_text != null && placeholder_text != "") {
+            search_entry.placeholder_text = placeholder_text;
+        } else {
+            search_entry.placeholder_text = _("Search Apps");
+        }
+
+        if (sensitive) {
+            search_entry.grab_focus_without_selecting ();
+        }
+    }
+
+    public void set_custom_header (string? custom_header) {
         if (custom_header != null) {
             homepage_header.label = custom_header;
             custom_title_stack.visible_child = homepage_header;
         } else {
             custom_title_stack.visible_child = view_mode_revealer;
         }
-
-        if (custom_search_placeholder != null) {
-            search_entry.placeholder_text = custom_search_placeholder;
-        } else {
-            search_entry.placeholder_text = _("Search Apps");
-        }
-
-        search_entry.sensitive = allow_search;
-        search_entry.grab_focus_without_selecting ();
     }
 
     private void view_return () {
