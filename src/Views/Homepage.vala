@@ -319,8 +319,9 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
-            if (!banner_carousel.is_visible ())
+            if (!banner_carousel.is_visible ()) {
                     return Source.CONTINUE;
+            }
 
             var new_index = (uint) banner_carousel.position + 1;
             var max_index = banner_carousel.n_pages - 1; // 0-based index
