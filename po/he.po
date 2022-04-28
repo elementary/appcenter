@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-28 03:14+0000\n"
-"PO-Revision-Date: 2022-01-21 13:11+0000\n"
+"PO-Revision-Date: 2022-04-28 15:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,14 +66,12 @@ msgid "Search Apps"
 msgstr "חיפוש יישומים"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Automatic Updates"
 msgid "Automatic App Updates"
-msgstr "עדכונים אוטומטיים"
+msgstr "עדכונים אוטומטיים ליישומון"
 
 #: src/MainWindow.vala:219
 msgid "System updates and unpaid apps will not update automatically"
-msgstr ""
+msgstr "עדכוני מערכת ויישומונים שלא נרכשו לא יתעדכנו אוטומטית"
 
 #: src/MainWindow.vala:249
 msgid "Settings"
