@@ -101,7 +101,6 @@ namespace AppCenter.Views {
 
             added.add(package.hash);
 
-            stderr.printf ("Adding Row %s\n", package.get_name());
             var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
 
             // Only add row if this package needs an update or it's not a font or plugin

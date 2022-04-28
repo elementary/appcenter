@@ -278,10 +278,12 @@ namespace AppCenter.Views {
                     no_show_all = true
                 };
                 screenshot_previous.clicked.connect (() => {
-                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
-                    var index = app_screenshots.get_position ();
-                    if (index > 0) {
-                        app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index - 1));
+                    if (app_screenshots != null) {
+                        GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                        var index = app_screenshots.get_position ();
+                        if (index > 0) {
+                            app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index - 1));
+                        }
                     }
                 });
 
@@ -289,10 +291,12 @@ namespace AppCenter.Views {
                     no_show_all = true
                 };
                 screenshot_next.clicked.connect (() => {
-                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
-                    var index = app_screenshots.get_position ();
-                    if (index < screenshot_children.length () - 1) {
-                        app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index + 1));
+                    if (app_screenshots != null) {
+                        GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                        var index = app_screenshots.get_position ();
+                        if (index < screenshot_children.length () - 1) {
+                            app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index + 1));
+                        }
                     }
                 });
 

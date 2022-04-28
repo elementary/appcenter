@@ -245,14 +245,6 @@ public class AppCenter.Homepage : AbstractView {
             });
         });
 
-        banner_event_box.enter_notify_event.connect (() => {
-            banner_timeout_stop ();
-        });
-
-        banner_event_box.leave_notify_event.connect (() => {
-            banner_timeout_start ();
-        });
-
         recently_updated_carousel.child_activated.connect ((child) => {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
 
@@ -354,19 +346,6 @@ public class AppCenter.Homepage : AbstractView {
         }
 #endif
         
-        foreach (var package in packages_in_banner) {
-            var banner = new Widgets.Banner (package);
-            banner.clicked.connect (() => {
-                show_package (package);
-            });
-
-            banner_carousel.add (banner);
-        }
-
-        banner_carousel.show_all ();
-        banner_revealer.reveal_child = true;
-        banner_timeout_start ();
-
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
                 break;
@@ -445,23 +424,6 @@ public class AppCenter.Homepage : AbstractView {
             viewing_package = true;
             base.show_package (package);
             subview_entered (category.name, false, "");
-        });
-    }
-
-    private void banner_timeout_start () {
-        banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
-            var new_index = (uint) banner_carousel.position + 1;
-            var max_index = banner_carousel.n_pages - 1; // 0-based index
-
-            if (banner_carousel.position >= max_index) {
-                new_index = 0;
-            }
-
-#if !POP_OS
-            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
-#endif
-
-            return Source.CONTINUE;
         });
     }
 
