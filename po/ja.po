@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-28 03:14+0000\n"
-"PO-Revision-Date: 2022-01-22 08:16+0000\n"
+"PO-Revision-Date: 2022-04-29 04:01+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,14 +66,12 @@ msgid "Search Apps"
 msgstr "アプリを検索"
 
 #: src/MainWindow.vala:218
-#, fuzzy
-#| msgid "Automatic Updates"
 msgid "Automatic App Updates"
-msgstr "自動アップデート"
+msgstr "アプリの自動アップデート"
 
 #: src/MainWindow.vala:219
 msgid "System updates and unpaid apps will not update automatically"
-msgstr ""
+msgstr "システムのアップデートと未払いのアプリは対象外です"
 
 #: src/MainWindow.vala:249
 msgid "Settings"
