@@ -155,10 +155,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         appstream_pool = new AppStream.Pool ();
 
-#if HIDE_UPSTREAM_DISTRO_APPS
         // Clear out the default set of metadata locations and only use the folder that gets populated
         // with elementary's AppStream data.
-
+#if HIDE_UPSTREAM_DISTRO_APPS
 #if HAS_APPSTREAM_0_15
         appstream_pool.reset_extra_data_locations ();
         appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.METAINFO);
@@ -169,8 +168,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         appstream_pool.clear_metadata_locations ();
         appstream_pool.add_metadata_location ("/usr/share/app-info");
 #endif
-
-
 #endif
 
         // We don't want to show installed desktop files here
