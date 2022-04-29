@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 03:14+0000\n"
+"POT-Creation-Date: 2022-04-29 20:56+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -736,17 +736,20 @@ msgstr "%s ਨੂੰ ਐਪ-ਸੈਂਟਰ ਵਿੱਚ ਵੇਖੋ:"
 msgid "Share"
 msgstr "ਸਾਂਝਾ ਕਰੋ"
 
-#: src/Views/AppInfoView.vala:769 src/Views/AppInfoView.vala:776
-msgid "Outdated"
+#: src/Views/AppInfoView.vala:769
+msgid "End of Life"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:770
-msgid "Built with older technologies that may not work as expected or receive security updates"
+msgid "May not work as expected or receive security updates"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:776
+msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:777
-#, c-format
-msgid "Built for an older version of %s; might not support the latest features"
+msgid "May not work as expected or support the latest features"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:785
