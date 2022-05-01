@@ -90,14 +90,12 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         if (visible_child is Views.AppInfoView) {
             main_window.set_custom_header ("");
             main_window.configure_search (false);
-        } else if (visible_child is CategoryView) {
-            var current_category = ((CategoryView) visible_child).category;
-            main_window.set_custom_header (current_category.name);
-            main_window.configure_search (true, _("Search %s").printf (current_category.name));
         }
 
         var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
-        if (previous_child is Views.AppInfoView) {
+        if (previous_child == null) {
+            main_window.set_return_name (null);
+        } else if (previous_child is Views.AppInfoView) {
             main_window.set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
         } else if (previous_child is CategoryView) {
             main_window.set_return_name (((CategoryView) previous_child).category.name);
