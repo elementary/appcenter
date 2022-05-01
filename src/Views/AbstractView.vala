@@ -23,7 +23,7 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
     protected AppCenterCore.Package? previous_package = null;
 
     construct {
-        transition_type = Hdy.DeckTransitionType.SLIDE;
+        can_swipe_back = true;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
 
