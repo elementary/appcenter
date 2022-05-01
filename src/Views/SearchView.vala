@@ -36,32 +36,39 @@ public class AppCenter.Views.SearchView : AbstractView {
         app_list_view = new AppListView ();
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
-            /// TRANSLATORS: the name of the Search view
-            subview_entered (C_("view", "Search"), false);
+            // var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            // /// TRANSLATORS: the name of the Search view
+            // main_window.set_return_name (C_("view", "Search"));
             viewing_package = true;
             show_package (package);
         });
     }
 
     public override void update_navigation () {
-        if (viewing_package) {
-            if (previous_package != null) {
-                show_package (previous_package);
-            } else {
-                set_visible_child (app_list_view);
-                viewing_package = false;
+        // if (viewing_package) {
+        //     if (previous_package != null) {
+        //         show_package (previous_package);
+        //     } else {
+        //         set_visible_child (app_list_view);
+        //         viewing_package = false;
 
-                if (current_category != null) {
-                    subview_entered (current_category.name, true, current_category.name);
-                } else {
-                    subview_entered (_("Home"), true);
-                }
-            }
-        } else if (current_category != null) {
-            category_return_clicked (current_category);
-        } else {
-            home_return_clicked ();
-        }
+        //         var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+        //         if (current_category != null) {
+        //             main_window.set_custom_header (current_category.name);
+        //             main_window.set_return_name (current_category.name);
+        //         } else {
+        //             main_window.set_custom_header (null);
+        //             main_window.set_return_name (_("Home"));
+        //         }
+
+        //         main_window.configure_search (true);
+
+        //     }
+        // } else if (current_category != null) {
+        //     category_return_clicked (current_category);
+        // } else {
+        //     home_return_clicked ();
+        // }
     }
 
     public void search (string search_term, AppStream.Category? category, bool mimetype = false) {
@@ -82,11 +89,15 @@ public class AppCenter.Views.SearchView : AbstractView {
             app_list_view.add_packages (found_apps);
         }
 
-        if (current_category != null) {
-            subview_entered (current_category.name, true, current_category.name);
-        } else {
-            subview_entered (_("Home"), true);
-        }
+        // var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+        // if (current_category != null) {
+        //     main_window.set_custom_header (current_category.name);
+        // } else {
+        //     main_window.set_custom_header (null);
+        //     main_window.set_return_name (_("Home"));
+        // }
+
+        // main_window.configure_search (true);
     }
 
     public void reset () {

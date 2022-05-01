@@ -18,7 +18,6 @@
  */
 
 public abstract class AppCenter.AbstractView : Hdy.Deck {
-    public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
     public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
@@ -29,26 +28,16 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         expand = true;
 
         notify["visible-child"].connect (() => {
-            update_navigation ();
-
             if (!transition_running) {
-                foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
-                        child.destroy ();
-                    }
-                }
+                update_navigation ();
+                abstract_update_navigation ();
             }
         });
 
         notify["transition-running"].connect (() => {
-            update_navigation ();
-
             if (!transition_running) {
-                foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
-                        child.destroy ();
-                    }
-                }
+                update_navigation ();
+                abstract_update_navigation ();
             }
         });
     }
@@ -87,10 +76,36 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
             show_package (_package, remember_history);
             if (remember_history) {
                 previous_package = package;
-                subview_entered (package.get_name (), false, "", null);
+
+                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+                main_window.set_return_name (package.get_name ());
             }
             transition_duration = 200;
         });
+    }
+
+    private void abstract_update_navigation () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+
+        if (visible_child is Views.AppInfoView) {
+            main_window.set_custom_header ("");
+            main_window.configure_search (false);
+        } else if (visible_child is CategoryView) {
+            var current_category = ((CategoryView) visible_child).category;
+            main_window.set_custom_header (current_category.name);
+            main_window.configure_search (true, _("Search %s").printf (current_category.name));
+        }
+
+        var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
+        if (previous_child is Views.AppInfoView) {
+            main_window.set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
+        } else if (previous_child is CategoryView) {
+            main_window.set_return_name (((CategoryView) previous_child).category.name);
+        }
+
+        while (get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
+            get_adjacent_child (Hdy.NavigationDirection.FORWARD).destroy ();
+        }
     }
 
     public abstract void update_navigation ();

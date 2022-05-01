@@ -29,7 +29,6 @@ public class AppCenter.Views.InstalledView : AbstractView {
 
         app_list_view = new AppListUpdateView ();
         app_list_view.show_app.connect ((package) => {
-            subview_entered (C_("view", "Installed"), false, "");
             show_package (package);
         });
 
@@ -52,12 +51,15 @@ public class AppCenter.Views.InstalledView : AbstractView {
     }
 
     public override void update_navigation () {
-        if (previous_package != null) {
-            show_package (previous_package);
-            subview_entered (C_("view", "Installed"), false, null);
-        } else {
-            set_visible_child (app_list_view);
-            subview_entered (null, false);
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+
+        if (visible_child == app_list_view) {
+            main_window.set_custom_header (null);
+            main_window.configure_search (false);
+        }
+
+        if (get_adjacent_child (Hdy.NavigationDirection.BACK) == app_list_view) {
+            main_window.set_return_name (C_("view", "Installed"));
         }
     }
 

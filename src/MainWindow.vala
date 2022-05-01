@@ -27,7 +27,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
-    private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
     private Granite.Widgets.Toast toast;
@@ -95,11 +94,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.clicked.connect (view_return);
 
         homepage.package_selected.connect (package_selected);
-        homepage.subview_entered.connect (view_opened);
         installed_view.package_selected.connect (package_selected);
-        installed_view.subview_entered.connect (view_opened);
         search_view.package_selected.connect (package_selected);
-        search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (() => {
             stack.visible_child = homepage;
         });
@@ -158,8 +154,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        return_button_history = new Gee.LinkedList<string> ();
-
         view_mode = new Granite.Widgets.ModeButton () {
             margin_end = 12,
             margin_start = 12,
@@ -215,8 +209,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
-        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic Updates")) {
-            description = _("Automatically update free and paid-for curated apps")
+        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
+            description = _("System updates and unpaid apps will not update automatically")
         };
 
         automatic_updates_button.notify["active"].connect (() => {
@@ -377,7 +371,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
-        return_button_history.clear ();
         stack.visible_child = homepage;
         homepage.show_package (package);
     }
@@ -421,17 +414,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             search_view.search (query, homepage.currently_viewed_category, mimetype);
             stack.visible_child = search_view; // Only show search view after search completed.
         } else {
-            if (stack.visible_child == search_view) {
-                if (homepage.currently_viewed_category != null) {
-                    return_button_history.poll_head ();
-                    return_button.label = return_button_history.peek_head ();
-                } else {
-                    return_button_history.clear ();
-                    return_button.no_show_all = true;
-                    return_button.visible = false;
-                }
-            }
-
             stack.visible_child = homepage;
         }
 
@@ -444,35 +426,31 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         selected_package = package;
     }
 
-    private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
+    public void set_return_name (string? return_name) {
         if (return_name != null) {
-            if (return_button_history.peek_head () != return_name) {
-                return_button_history.offer_head (return_name);
-            }
-
             return_button.label = return_name;
-            return_button.no_show_all = false;
-            return_button.visible = true;
-        } else {
-            return_button.no_show_all = true;
-            return_button.visible = false;
         }
 
+        return_button.no_show_all = return_name == null;
+        return_button.visible = return_name != null;
+    }
+
+    public void configure_search (bool sensitive, string? placeholder_text = _("Search Apps")) {
+        search_entry.sensitive = sensitive;
+        search_entry.placeholder_text = placeholder_text;
+
+        if (sensitive) {
+            search_entry.grab_focus_without_selecting ();
+        }
+    }
+
+    public void set_custom_header (string? custom_header) {
         if (custom_header != null) {
             homepage_header.label = custom_header;
             custom_title_stack.visible_child = homepage_header;
         } else {
             custom_title_stack.visible_child = view_mode_revealer;
         }
-
-        if (custom_search_placeholder != null) {
-            search_entry.placeholder_text = custom_search_placeholder;
-        } else {
-            search_entry.placeholder_text = _("Search Apps");
-        }
-
-        search_entry.sensitive = allow_search;
-        search_entry.grab_focus_without_selecting ();
     }
 
     private void view_return () {
@@ -480,24 +458,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
             homepage.navigate (Hdy.NavigationDirection.BACK);;
-
-            return_button_history.clear ();
-            return_button.no_show_all = true;
-            return_button.visible = false;
-        }
-
-        return_button_history.poll_head ();
-        if (!return_button_history.is_empty) {
-            return_button.label = return_button_history.peek_head ();
-            return_button.no_show_all = false;
-            return_button.visible = true;
-        } else {
-            return_button.no_show_all = true;
-            return_button.visible = false;
         }
 
         var view = (AbstractView) stack.visible_child;
-        view.navigate (Hdy.NavigationDirection.BACK);;
+        view.navigate (Hdy.NavigationDirection.BACK);
     }
 
     private void on_view_mode_changed () {
@@ -516,7 +480,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public void show_category (AppStream.Category category) {
-        return_button_history.clear ();
         stack.visible_child = homepage;
         homepage.show_app_list_for_category (category);
     }

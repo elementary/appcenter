@@ -17,6 +17,8 @@
     <file alias="online-account-telegram.svg" compressed="true" preprocess="xml-stripblanks">online-account-telegram.svg</file>
     <file alias="text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
 
+    <file alias="flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>
+
     <file alias="oars-chat-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/chat.svg</file>
     <file alias="oars-conflict-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/conflict.svg</file>
     <file alias="oars-gambling-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/gambling.svg</file>

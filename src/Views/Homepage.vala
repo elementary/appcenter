@@ -27,7 +27,11 @@ public class AppCenter.Homepage : AbstractView {
 
     public signal void page_loaded ();
 
-    public bool viewing_package { get; private set; default = false; }
+    public bool viewing_package {
+        get {
+            return visible_child is Views.AppInfoView;
+        }
+    }
 
     public AppStream.Category? currently_viewed_category {
         get {
@@ -260,32 +264,16 @@ public class AppCenter.Homepage : AbstractView {
     }
 
     public override void update_navigation () {
-        string? return_name = null;
-        bool allow_search = true;
-        string? custom_header = null;
-        string? custom_search_placeholder = null;
-        viewing_package = false;
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
 
-        if (visible_child is CategoryView) {
-            var category_name = ((CategoryView) visible_child).category.name;
-            custom_header = category_name;
-            custom_search_placeholder = _("Search %s").printf (category_name);
-        } else if (visible_child is Views.AppInfoView) {
-            allow_search = false;
-            custom_header = "";
-            viewing_package = true;
+        if (visible_child == scrolled_window) {
+            main_window.set_custom_header (null);
+            main_window.configure_search (true);
         }
 
-        var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
-        if (previous_child == scrolled_window) {
-            return_name = _("Home");
-        } else if (previous_child is CategoryView) {
-            return_name = ((CategoryView) previous_child).category.name;
-        } else if (previous_child is Views.AppInfoView) {
-            return_name = ((Views.AppInfoView) previous_child).package.get_name ();
+        if (get_adjacent_child (Hdy.NavigationDirection.BACK) == scrolled_window) {
+            main_window.set_return_name (_("Home"));
         }
-
-        subview_entered (return_name, allow_search, custom_header, custom_search_placeholder);
     }
 
     public void show_app_list_for_category (AppStream.Category category) {
@@ -302,7 +290,9 @@ public class AppCenter.Homepage : AbstractView {
 
         category_view.show_app.connect ((package) => {
             base.show_package (package);
-            subview_entered (category.name, false, "");
+
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            main_window.set_return_name (category.name);
         });
     }
 
@@ -312,6 +302,10 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            if (!banner_carousel.is_visible ()) {
+                return Source.CONTINUE;
+            }
+
             var new_index = (uint) banner_carousel.position + 1;
             var max_index = banner_carousel.n_pages - 1; // 0-based index
 

@@ -766,16 +766,16 @@ namespace AppCenter.Views {
             switch (package.runtime_status) {
                 case RuntimeStatus.END_OF_LIFE:
                     runtime_warning = new ContentType (
-                        _("Outdated"),
-                        _("Built with older technologies that may not work as expected or receive security updates"),
-                        "software-update-urgent-symbolic"
+                        _("End of Life"),
+                        _("May not work as expected or receive security updates"),
+                        "flatpak-eol-symbolic"
                     );
                     break;
                 case RuntimeStatus.MAJOR_OUTDATED:
                     runtime_warning = new ContentType (
                         _("Outdated"),
-                        _("Built for an older version of %s; might not support the latest features").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
-                        "software-update-available-symbolic"
+                        _("May not work as expected or support the latest features"),
+                        "flatpak-eol-symbolic"
                     );
                     break;
                 case RuntimeStatus.MINOR_OUTDATED:
