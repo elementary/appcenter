@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2014-2022 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,29 +17,28 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-using AppCenterCore;
-
 public class AppCenter.Views.SearchView : AbstractView {
-    AppListView app_list_view;
-
-    public bool viewing_package { get; private set; default = false; }
     public signal void home_return_clicked ();
     public signal void category_return_clicked (AppStream.Category category);
+
+    public bool viewing_package {
+        get {
+            return visible_child is Views.AppInfoView;
+        }
+    }
+
+    private AppListView app_list_view;
     private AppStream.Category? current_category;
     private string current_search_term;
-
-    public SearchView () {
-
-    }
 
     construct {
         app_list_view = new AppListView ();
         add (app_list_view);
+
         app_list_view.show_app.connect ((package) => {
             var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
             /// TRANSLATORS: the name of the Search view
             main_window.set_return_name (C_("view", "Search"));
-            viewing_package = true;
             show_package (package);
         });
     }
@@ -50,7 +49,6 @@ public class AppCenter.Views.SearchView : AbstractView {
                 show_package (previous_package);
             } else {
                 set_visible_child (app_list_view);
-                viewing_package = false;
 
                 var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
                 if (current_category != null) {
@@ -77,9 +75,9 @@ public class AppCenter.Views.SearchView : AbstractView {
 
         app_list_view.clear ();
         app_list_view.current_search_term = current_search_term;
-        unowned Client client = Client.get_default ();
+        unowned var client = AppCenterCore.Client.get_default ();
 
-        Gee.Collection<Package> found_apps;
+        Gee.Collection<AppCenterCore.Package> found_apps;
 
         if (mimetype) {
             found_apps = client.search_applications_mime (current_search_term);
@@ -103,7 +101,6 @@ public class AppCenter.Views.SearchView : AbstractView {
 
     public void reset () {
         set_visible_child (app_list_view);
-        viewing_package = false;
         current_category = null;
     }
 }
