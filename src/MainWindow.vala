@@ -25,7 +25,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
     private Homepage homepage;
-    private Views.SearchView search_view;
     private Gtk.Button return_button;
     private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
@@ -96,11 +95,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         homepage.package_selected.connect (package_selected);
         installed_view.package_selected.connect (package_selected);
-        search_view.package_selected.connect (package_selected);
-        search_view.home_return_clicked.connect (() => {
-            stack.visible_child = homepage;
-        });
-        search_view.category_return_clicked.connect (show_category);
+        // search_view.package_selected.connect (package_selected);
+        // search_view.home_return_clicked.connect (() => {
+        //     stack.visible_child = homepage;
+        // });
+        // search_view.category_return_clicked.connect (show_category);
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
@@ -258,14 +257,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         homepage = new Homepage ();
         installed_view = new Views.InstalledView ();
-        search_view = new Views.SearchView ();
 
         stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
         stack.add (homepage);
         stack.add (installed_view);
-        stack.add (search_view);
 
         var overlay = new Gtk.Overlay ();
         overlay.add_overlay (toast);
@@ -415,21 +412,20 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
-            search_view.search (query, homepage.currently_viewed_category, mimetype);
-            stack.visible_child = search_view; // Only show search view after search completed.
+            homepage.search (query, mimetype);
         } else {
-            if (stack.visible_child == search_view) {
-                if (homepage.currently_viewed_category != null) {
-                    return_button_history.poll_head ();
-                    return_button.label = return_button_history.peek_head ();
-                } else {
-                    return_button_history.clear ();
-                    return_button.no_show_all = true;
-                    return_button.visible = false;
-                }
-            }
+            // if (stack.visible_child == search_view) {
+            //     if (homepage.currently_viewed_category != null) {
+            //         return_button_history.poll_head ();
+            //         return_button.label = return_button_history.peek_head ();
+            //     } else {
+            //         return_button_history.clear ();
+            //         return_button.no_show_all = true;
+            //         return_button.visible = false;
+            //     }
+            // }
 
-            stack.visible_child = homepage;
+            // stack.visible_child = homepage;
         }
 
         if (mimetype) {
@@ -475,13 +471,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private void view_return () {
         selected_package = null;
 
-        if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
-            homepage.return_clicked ();
+        // if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
+        //     homepage.return_clicked ();
 
-            return_button_history.clear ();
-            return_button.no_show_all = true;
-            return_button.visible = false;
-        }
+        //     return_button_history.clear ();
+        //     return_button.no_show_all = true;
+        //     return_button.visible = false;
+        // }
 
         return_button_history.poll_head ();
         if (!return_button_history.is_empty) {
@@ -500,7 +496,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private void on_view_mode_changed () {
         if (stack.visible_child == homepage) {
             search ("");
-            search_view.reset ();
+            // search_view.reset ();
             search_entry.sensitive = !homepage.viewing_package;
             view_mode_revealer.reveal_child = true;
             view_mode.selected = homepage_view_id;
@@ -508,7 +504,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             search_entry.sensitive = false;
             view_mode.selected = installed_view_id;
         } else if (search_entry.text.length >= VALID_QUERY_LENGTH) {
-            search_entry.sensitive = !search_view.viewing_package;
+            // search_entry.sensitive = !search_view.viewing_package;
         }
     }
 

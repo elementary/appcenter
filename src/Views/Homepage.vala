@@ -48,6 +48,7 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
+    private AppCenter.Views.AppListView search_view;
 
     private uint banner_timeout_id;
 
@@ -264,6 +265,53 @@ public class AppCenter.Homepage : AbstractView {
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
 
         page_loaded ();
+    }
+
+    public void search (string search_term, bool mimetype = false) {
+        // current_search_term = search_term;
+
+        if (search_view == null) {
+            search_view = new AppCenter.Views.AppListView ();
+            search_view.show_all ();
+            add (search_view);
+        }
+
+        search_view.clear ();
+        search_view.current_search_term = search_term;
+
+        if (visible_child != search_view) {
+            visible_child = search_view;
+        }
+
+        unowned var client = AppCenterCore.Client.get_default ();
+
+        Gee.Collection<AppCenterCore.Package> found_apps;
+
+        if (mimetype) {
+            found_apps = client.search_applications_mime (search_term);
+            search_view.add_packages (found_apps);
+        } else {
+            found_apps = client.search_applications (search_term, current_category);
+            search_view.add_packages (found_apps);
+        }
+
+        // var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+        // if (current_category != null) {
+        //     main_window.set_custom_header (current_category.name);
+        //     main_window.set_return_name (current_category.name);
+        // } else {
+        //     main_window.set_custom_header (null);
+        //     main_window.set_return_name (_("Home"));
+        // }
+
+        // main_window.configure_search (true);
+
+        search_view.show_app.connect ((package) => {
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            /// TRANSLATORS: the name of the Search view
+            main_window.set_return_name (C_("view", "Search"));
+            show_package (package);
+        });
     }
 
     public override void show_package (

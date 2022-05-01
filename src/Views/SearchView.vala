@@ -1,5 +1,5 @@
 /*-
- * Copyright 2014-2022 elementary, Inc. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,56 +17,58 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
+using AppCenterCore;
+
 public class AppCenter.Views.SearchView : AbstractView {
+    AppListView app_list_view;
+
+    public bool viewing_package { get; private set; default = false; }
     public signal void home_return_clicked ();
     public signal void category_return_clicked (AppStream.Category category);
-
-    public bool viewing_package {
-        get {
-            return visible_child is Views.AppInfoView;
-        }
-    }
-
-    private AppListView app_list_view;
     private AppStream.Category? current_category;
     private string current_search_term;
+
+    public SearchView () {
+
+    }
 
     construct {
         app_list_view = new AppListView ();
         add (app_list_view);
-
         app_list_view.show_app.connect ((package) => {
-            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
-            /// TRANSLATORS: the name of the Search view
-            main_window.set_return_name (C_("view", "Search"));
+            // var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            // /// TRANSLATORS: the name of the Search view
+            // main_window.set_return_name (C_("view", "Search"));
+            viewing_package = true;
             show_package (package);
         });
     }
 
-    public override void return_clicked () {
-        if (viewing_package) {
-            if (previous_package != null) {
-                show_package (previous_package);
-            } else {
-                set_visible_child (app_list_view);
+    public override void update_navigation () {
+        // if (viewing_package) {
+        //     if (previous_package != null) {
+        //         show_package (previous_package);
+        //     } else {
+        //         set_visible_child (app_list_view);
+        //         viewing_package = false;
 
-                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
-                if (current_category != null) {
-                    main_window.set_custom_header (current_category.name);
-                    main_window.set_return_name (current_category.name);
-                } else {
-                    main_window.set_custom_header (null);
-                    main_window.set_return_name (_("Home"));
-                }
+        //         var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+        //         if (current_category != null) {
+        //             main_window.set_custom_header (current_category.name);
+        //             main_window.set_return_name (current_category.name);
+        //         } else {
+        //             main_window.set_custom_header (null);
+        //             main_window.set_return_name (_("Home"));
+        //         }
 
-                main_window.configure_search (true);
+        //         main_window.configure_search (true);
 
-            }
-        } else if (current_category != null) {
-            category_return_clicked (current_category);
-        } else {
-            home_return_clicked ();
-        }
+        //     }
+        // } else if (current_category != null) {
+        //     category_return_clicked (current_category);
+        // } else {
+        //     home_return_clicked ();
+        // }
     }
 
     public void search (string search_term, AppStream.Category? category, bool mimetype = false) {
@@ -75,9 +77,9 @@ public class AppCenter.Views.SearchView : AbstractView {
 
         app_list_view.clear ();
         app_list_view.current_search_term = current_search_term;
-        unowned var client = AppCenterCore.Client.get_default ();
+        unowned Client client = Client.get_default ();
 
-        Gee.Collection<AppCenterCore.Package> found_apps;
+        Gee.Collection<Package> found_apps;
 
         if (mimetype) {
             found_apps = client.search_applications_mime (current_search_term);
@@ -87,20 +89,20 @@ public class AppCenter.Views.SearchView : AbstractView {
             app_list_view.add_packages (found_apps);
         }
 
-        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
-        if (current_category != null) {
-            main_window.set_custom_header (current_category.name);
-            main_window.set_return_name (current_category.name);
-        } else {
-            main_window.set_custom_header (null);
-            main_window.set_return_name (_("Home"));
-        }
+        // var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+        // if (current_category != null) {
+        //     main_window.set_custom_header (current_category.name);
+        // } else {
+        //     main_window.set_custom_header (null);
+        //     main_window.set_return_name (_("Home"));
+        // }
 
-        main_window.configure_search (true);
+        // main_window.configure_search (true);
     }
 
     public void reset () {
         set_visible_child (app_list_view);
+        viewing_package = false;
         current_category = null;
     }
 }
