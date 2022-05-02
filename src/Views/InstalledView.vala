@@ -54,7 +54,6 @@ public class AppCenter.Views.InstalledView : AbstractView {
         var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
 
         if (visible_child == app_list_view) {
-            main_window.set_custom_header (null);
             main_window.configure_search (false);
         }
 

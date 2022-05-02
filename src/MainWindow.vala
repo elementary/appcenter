@@ -17,10 +17,6 @@
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working { get; set; }
 
-    private Gtk.Revealer view_mode_revealer;
-    private Gtk.Stack custom_title_stack;
-    private Gtk.Label homepage_header;
-    private Granite.Widgets.ModeButton view_mode;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
@@ -148,14 +144,49 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        view_mode = new Granite.Widgets.ModeButton () {
-            margin_end = 12,
-            margin_start = 12,
+        search_entry = new Gtk.SearchEntry () {
+            placeholder_text = _("Search Apps"),
+            hexpand = true,
             valign = Gtk.Align.CENTER
         };
 
-        homepage_view_id = view_mode.append_text (_("Home"));
-        installed_view_id = view_mode.append_text (C_("view", "Installed"));
+        var search_clamp = new Hdy.Clamp () {
+            maximum_size = 800
+        };
+        search_clamp.add (search_entry);
+
+        spinner = new Gtk.Spinner ();
+
+        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
+            description = _("System updates and unpaid apps will not update automatically")
+        };
+
+        var menu_popover_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_bottom = 6,
+            margin_top = 6,
+            orientation = Gtk.Orientation.VERTICAL,
+            row_spacing = 6
+        };
+
+        menu_popover_grid.add (automatic_updates_button);
+
+        menu_popover_grid.show_all ();
+
+        var menu_popover = new Gtk.Popover (null);
+        menu_popover.add (menu_popover_grid);
+
+        var menu_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = menu_popover,
+            tooltip_text = _("Updates Settings"),
+            valign = Gtk.Align.CENTER
+        };
+
+        var update_button = new Gtk.Button.from_icon_name ("system-software-update", Gtk.IconSize.LARGE_TOOLBAR) {
+            tooltip_text = _("Installed Apps & Updates")
+        };
+        update_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var badge_provider = new Gtk.CssProvider ();
         badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
@@ -179,72 +210,19 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         eventbox_badge.add (updates_badge_revealer);
 
         var view_mode_overlay = new Gtk.Overlay ();
-        view_mode_overlay.add (view_mode);
+        view_mode_overlay.add (update_button);
         view_mode_overlay.add_overlay (eventbox_badge);
 
-        view_mode_revealer = new Gtk.Revealer () {
-            reveal_child = true,
-            transition_type = Gtk.RevealerTransitionType.CROSSFADE
-        };
-        view_mode_revealer.add (view_mode_overlay);
-
-        homepage_header = new Gtk.Label (null);
-        homepage_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
-
-        custom_title_stack = new Gtk.Stack ();
-        custom_title_stack.add (view_mode_revealer);
-        custom_title_stack.add (homepage_header);
-        custom_title_stack.set_visible_child (view_mode_revealer);
-
-        search_entry = new Gtk.SearchEntry () {
-            placeholder_text = _("Search Apps"),
-            valign = Gtk.Align.CENTER
-        };
-
-        spinner = new Gtk.Spinner ();
-
-        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
-            description = _("System updates and unpaid apps will not update automatically")
-        };
-
-        automatic_updates_button.notify["active"].connect (() => {
-            if (automatic_updates_button.active) {
-                AppCenterCore.Client.get_default ().update_cache.begin (true);
-            } else {
-                AppCenterCore.Client.get_default ().cancel_updates (true);
-            }
-        });
-
-        var menu_popover_grid = new Gtk.Grid () {
-            column_spacing = 6,
-            margin_bottom = 6,
-            margin_top = 6,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6
-        };
-
-        menu_popover_grid.add (automatic_updates_button);
-
-        menu_popover_grid.show_all ();
-
-        var menu_popover = new Gtk.Popover (null);
-        menu_popover.add (menu_popover_grid);
-
-        var menu_button = new Gtk.MenuButton () {
-            can_focus = false,
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
-            popover = menu_popover,
-            tooltip_text = _("Settings"),
-            valign = Gtk.Align.CENTER
-        };
+        var updates_linked = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        updates_linked.add (view_mode_overlay);
+        updates_linked.add (menu_button);
 
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
-        headerbar.set_custom_title (custom_title_stack);
+        headerbar.set_custom_title (search_clamp);
         headerbar.pack_start (return_button);
-        headerbar.pack_end (menu_button);
-        headerbar.pack_end (search_entry);
+        headerbar.pack_end (updates_linked);
         headerbar.pack_end (spinner);
 
         homepage = new Homepage ();
@@ -294,16 +272,20 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         stack.notify["visible-child"].connect (on_view_mode_changed);
 
-        eventbox_badge.button_release_event.connect (() => {
+        automatic_updates_button.notify["active"].connect (() => {
+            if (automatic_updates_button.active) {
+                AppCenterCore.Client.get_default ().update_cache.begin (true);
+            } else {
+                AppCenterCore.Client.get_default ().cancel_updates (true);
+            }
+        });
+
+        update_button.clicked.connect (() => {
             stack.visible_child = installed_view;
         });
 
-        view_mode.notify["selected"].connect (() => {
-            if (view_mode.selected == homepage_view_id) {
-                stack.visible_child = homepage;
-            } else if (view_mode.selected == installed_view_id) {
-                stack.visible_child = installed_view;
-            }
+        eventbox_badge.button_release_event.connect (() => {
+            stack.visible_child = installed_view;
         });
 
         homepage.page_loaded.connect (() => homepage_loaded ());
@@ -400,8 +382,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         uint query_length = query.length;
         bool query_valid = query_length >= VALID_QUERY_LENGTH;
 
-        view_mode_revealer.reveal_child = !query_valid;
-
         if (query_valid) {
             homepage.search (query, mimetype);
         } else if (stack.visible_child == homepage) {
@@ -439,15 +419,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    public void set_custom_header (string? custom_header) {
-        if (custom_header != null) {
-            homepage_header.label = custom_header;
-            custom_title_stack.visible_child = homepage_header;
-        } else {
-            custom_title_stack.visible_child = view_mode_revealer;
-        }
-    }
-
     private void view_return () {
         selected_package = null;
 
@@ -458,11 +429,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private void on_view_mode_changed () {
         if (stack.visible_child == homepage) {
             search_entry.sensitive = !homepage.viewing_package;
-            view_mode_revealer.reveal_child = true;
-            view_mode.selected = homepage_view_id;
         } else if (stack.visible_child == installed_view) {
             search_entry.sensitive = false;
-            view_mode.selected = installed_view_id;
         }
     }
 
