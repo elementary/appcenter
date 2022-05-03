@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 03:14+0000\n"
-"PO-Revision-Date: 2022-04-29 06:48+0000\n"
+"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"PO-Revision-Date: 2022-04-30 13:00+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -733,18 +733,23 @@ msgstr "Wypróbuj %s w AppCenter:"
 msgid "Share"
 msgstr "Udostępnij"
 
-#: src/Views/AppInfoView.vala:769 src/Views/AppInfoView.vala:776
+#: src/Views/AppInfoView.vala:769
+msgid "End of Life"
+msgstr "Koniec życia"
+
+#: src/Views/AppInfoView.vala:770
+msgid "May not work as expected or receive security updates"
+msgstr ""
+"Może nie działać tak jak powinno lub nie będzie aktualizowane pod kątem "
+"bezpieczeństwa"
+
+#: src/Views/AppInfoView.vala:776
 msgid "Outdated"
 msgstr "Przestarzałe"
 
-#: src/Views/AppInfoView.vala:770
-msgid "Built with older technologies that may not work as expected or receive security updates"
-msgstr "Zbudowane przy użyciu starszych technologii, które niekoniecznie będą działać jak powinny lub nie będą aktualizowane pod kątem bezpieczeństwa"
-
 #: src/Views/AppInfoView.vala:777
-#, c-format
-msgid "Built for an older version of %s; might not support the latest features"
-msgstr "Zbudowane dla starej wersji %s; może nie wspierać najnowszych funkcji"
+msgid "May not work as expected or support the latest features"
+msgstr "Może nie działać tak jak powinno lub wspierać najnowszych funkcji"
 
 #: src/Views/AppInfoView.vala:785
 msgid "Unstable"
