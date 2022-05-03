@@ -120,12 +120,13 @@ namespace AppCenter.Views {
 
             oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
-                margin_bottom = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
 
-            oars_flowbox_revealer = new Gtk.Revealer ();
+            oars_flowbox_revealer = new Gtk.Revealer () {
+                hexpand = true,
+            };
             oars_flowbox_revealer.add (oars_flowbox);
 
 #if CURATED
@@ -543,7 +544,7 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
-            content_grid.add (oars_flowbox_revealer);
+            // content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
                 oars_flowbox_revealer.reveal_child = true;
             }
@@ -605,6 +606,17 @@ namespace AppCenter.Views {
             progress_grid.margin_top = 12;
             button_grid.margin_top = progress_grid.margin_top;
 
+            var return_button = new Gtk.Button.with_label (_("Audio")) {
+                halign = Gtk.Align.START,
+                valign = Gtk.Align.CENTER
+            };
+            return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+
+            var titlebar = new Hdy.HeaderBar ();
+            titlebar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            titlebar.pack_start (return_button);
+            titlebar.pack_end (action_stack);
+
             var header_grid = new Gtk.Grid () {
                 column_spacing = 12,
                 row_spacing = 6,
@@ -613,8 +625,9 @@ namespace AppCenter.Views {
             header_grid.attach (app_icon_overlay, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (author_label, 1, 1);
-            header_grid.attach (origin_combo_revealer, 1, 2, 3);
-            header_grid.attach (action_stack, 3, 0);
+            header_grid.attach (oars_flowbox_revealer, 1, 2);
+            // header_grid.attach (origin_combo_revealer, 1, 2, 3);
+            // header_grid.attach (action_stack, 3, 0);
 
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel () {
@@ -625,11 +638,10 @@ namespace AppCenter.Views {
 
                 action_button_group.add_widget (size_label);
 
-                header_grid.attach (size_label, 3, 1);
+                // header_grid.attach (size_label, 3, 1);
             }
 
             var header_clamp = new Hdy.Clamp () {
-                margin = 24,
                 maximum_size = MAX_WIDTH
             };
             header_clamp.add (header_grid);
@@ -640,7 +652,7 @@ namespace AppCenter.Views {
             header_box.add (header_clamp);
 
             unowned var header_box_context = header_box.get_style_context ();
-            header_box_context.add_class ("banner");
+            // header_box_context.add_class ("banner");
             header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
@@ -658,9 +670,10 @@ namespace AppCenter.Views {
             var grid = new Gtk.Grid () {
                 row_spacing = 12
             };
-            grid.attach (header_box, 0, 0);
-            grid.attach (body_clamp, 0, 1);
-            grid.attach (other_apps_bar, 0, 3);
+            grid.attach (titlebar, 0, 0);
+            grid.attach (header_box, 0, 1);
+            grid.attach (body_clamp, 0, 2);
+            grid.attach (other_apps_bar, 0, 4);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER,
@@ -1209,6 +1222,7 @@ namespace AppCenter.Views {
             };
 
             var label = new Gtk.Label (title) {
+                hexpand = true,
                 xalign = 0
             };
 
@@ -1224,12 +1238,13 @@ namespace AppCenter.Views {
 
             var grid = new Gtk.Grid () {
                 orientation = Gtk.Orientation.VERTICAL,
+                column_spacing = 6,
                 row_spacing = 3
             };
 
-            grid.add (icon);
-            grid.add (label);
-            grid.add (description_label);
+            grid.attach (icon, 0, 0);
+            grid.attach(label, 1, 0);
+            grid.attach (description_label, 0, 1, 2);
 
             add (grid);
         }
