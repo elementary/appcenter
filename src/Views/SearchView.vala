@@ -24,6 +24,7 @@ public class AppCenter.Views.SearchView : AbstractView {
 
     public bool viewing_package { get; private set; default = false; }
     public signal void home_return_clicked ();
+    public signal void category_return_clicked (AppStream.Category category);
     private AppStream.Category? current_category;
     private string current_search_term;
 
@@ -35,8 +36,9 @@ public class AppCenter.Views.SearchView : AbstractView {
         app_list_view = new AppListView ();
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
             /// TRANSLATORS: the name of the Search view
-            subview_entered (C_("view", "Search"), false);
+            main_window.set_return_name (C_("view", "Search"));
             viewing_package = true;
             show_package (package);
         });
@@ -50,18 +52,22 @@ public class AppCenter.Views.SearchView : AbstractView {
                 set_visible_child (app_list_view);
                 viewing_package = false;
 
+                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
                 if (current_category != null) {
-                    subview_entered (_("Search Apps"), true, current_category.name);
+                    main_window.set_custom_header (current_category.name);
+                    main_window.set_return_name (current_category.name);
                 } else {
-                    subview_entered (null, true);
+                    main_window.set_custom_header (null);
+                    main_window.set_return_name (_("Home"));
                 }
+
+                main_window.configure_search (true);
+
             }
+        } else if (current_category != null) {
+            category_return_clicked (current_category);
         } else {
-            if (current_category != null) {
-                search (current_search_term, null);
-            } else {
-                home_return_clicked ();
-            }
+            home_return_clicked ();
         }
     }
 
@@ -83,11 +89,16 @@ public class AppCenter.Views.SearchView : AbstractView {
             app_list_view.add_packages (found_apps);
         }
 
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
         if (current_category != null) {
-            subview_entered (_("Search Apps"), true, current_category.name);
+            main_window.set_custom_header (current_category.name);
+            main_window.set_return_name (current_category.name);
         } else {
-            subview_entered (_("Home"), true);
+            main_window.set_custom_header (null);
+            main_window.set_return_name (_("Home"));
         }
+
+        main_window.configure_search (true);
     }
 
     public void reset () {

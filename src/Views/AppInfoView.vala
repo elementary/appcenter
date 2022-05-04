@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014–2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2014–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,19 +37,25 @@ namespace AppCenter.Views {
         private Gtk.Grid release_grid;
         private Gtk.Label app_screenshot_not_found;
         private Gtk.Label package_summary;
+        private Gtk.Label author_label;
         private Gtk.ListBox extension_box;
         private Gtk.ListStore origin_liststore;
         private Gtk.Overlay screenshot_overlay;
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
-        private Gtk.StyleContext stack_context;
-        private Gtk.TextView app_description;
+        private Gtk.Label app_description;
         private Widgets.ReleaseListBox release_list_box;
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
+        private Gtk.FlowBox oars_flowbox;
+        private Gtk.Revealer oars_flowbox_revealer;
+
+        private bool is_runtime_warning_shown = false;
+
+        private unowned Gtk.StyleContext stack_context;
 
         public bool to_recycle { public get; private set; default = false; }
 
@@ -70,17 +76,228 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            inner_image.margin_top = 12;
-            inner_image.pixel_size = 128;
+            unowned var action_button_context = action_button.get_style_context ();
+            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            action_button.suggested_action = true;
+            unowned var open_button_context = open_button.get_style_context ();
+            open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var cancel_button_context = cancel_button.get_style_context ();
+            cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
+
+            var drugs = new ContentType (
+                _("Illicit Substances"),
+                _("Presence of or references to alcohol, narcotics, or tobacco"),
+                "oars-illicit-substance-symbolic"
+            );
+
+            var sex_nudity = new ContentType (
+                _("Sex & Nudity"),
+                _("Adult nudity or sexual themes"),
+                "oars-sex-nudity-symbolic"
+            );
+
+            var language = new ContentType (
+                _("Offensive Language"),
+                _("Profanity, discriminatory language, or adult humor"),
+                "oars-offensive-language-symbolic"
+            );
+
+            var gambling = new ContentType (
+                _("Gambling"),
+                _("Realistic or participatory gambling"),
+                "oars-gambling-symbolic"
+            );
+
+            oars_flowbox = new Gtk.FlowBox () {
+                column_spacing = 24,
+                margin_bottom = 24,
+                margin_top = 24,
+                row_spacing = 24,
+                selection_mode = Gtk.SelectionMode.NONE
+            };
+
+            oars_flowbox_revealer = new Gtk.Revealer ();
+            oars_flowbox_revealer.add (oars_flowbox);
+
+            var content_warning_clamp = new Hdy.Clamp () {
+                margin_start = 24,
+                margin_end = 24,
+                maximum_size = MAX_WIDTH
+            };
+            content_warning_clamp.add (oars_flowbox_revealer);
+
+#if CURATED
+            if (!package.is_native && !package.is_os_updates) {
+                var uncurated = new ContentType (
+                    _("Non-Curated"),
+                    _("Not reviewed by elementary for security, privacy, or system integration"),
+                    "security-low-symbolic"
+                );
+
+                oars_flowbox.add (uncurated);
+            }
+#endif
+
+            var ratings = package_component.get_content_ratings ();
+            for (int i = 0; i < ratings.length; i++) {
+                var rating = ratings[i];
+
+                var fantasy_violence_value = rating.get_value ("violence-fantasy");
+                var realistic_violence_value = rating.get_value ("violence-realistic");
+
+                if (
+                    fantasy_violence_value == AppStream.ContentRatingValue.MILD ||
+                    fantasy_violence_value == AppStream.ContentRatingValue.MODERATE ||
+                    realistic_violence_value == AppStream.ContentRatingValue.MILD ||
+                    realistic_violence_value == AppStream.ContentRatingValue.MODERATE
+                ) {
+                    var conflict = new ContentType (
+                        _("Conflict"),
+                        _("Depictions of unsafe situations or aggressive conflict"),
+                        "oars-conflict-symbolic"
+                    );
+
+                    oars_flowbox.add (conflict);
+                }
+
+                if (
+                    fantasy_violence_value == AppStream.ContentRatingValue.INTENSE ||
+                    realistic_violence_value == AppStream.ContentRatingValue.INTENSE ||
+                    rating.get_value ("violence-bloodshed") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("violence-sexual") > AppStream.ContentRatingValue.NONE
+                ) {
+                    string? title = _("Violence");
+                    if (
+                        fantasy_violence_value == AppStream.ContentRatingValue.INTENSE &&
+                        realistic_violence_value < AppStream.ContentRatingValue.INTENSE
+                    ) {
+                        title = _("Fantasy Violence");
+                    }
+
+                    var violence = new ContentType (
+                        title,
+                        _("Graphic violence, bloodshed, or death"),
+                        "oars-violence-symbolic"
+                    );
+
+                    oars_flowbox.add (violence);
+                }
+
+                if (
+                    rating.get_value ("drugs-narcotics") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (drugs);
+                }
+
+                if (
+                    rating.get_value ("sex-nudity") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("sex-themes") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("sex-prostitution") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (sex_nudity);
+                }
+
+                if (
+                    // Mild is considered things like "Dufus"
+                    rating.get_value ("language-profanity") > AppStream.ContentRatingValue.MILD ||
+                    // Mild is considered things like slapstick humor
+                    rating.get_value ("language-humor") > AppStream.ContentRatingValue.MILD ||
+                    rating.get_value ("language-discrimination") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (language);
+                }
+
+                if (
+                    rating.get_value ("money-gambling") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (gambling);
+                }
+
+                var social_chat_value = rating.get_value ("social-chat");
+                // MILD is defined as multi-player period, no chat
+                if (
+                    social_chat_value > AppStream.ContentRatingValue.NONE &&
+                    package.component.has_category ("Game")
+                ) {
+                    var multiplayer = new ContentType (
+                        _("Multiplayer"),
+                        _("Online play with other people"),
+                        "system-users-symbolic"
+                    );
+
+                    oars_flowbox.add (multiplayer);
+                }
+
+                var social_audio_value = rating.get_value ("social-audio");
+                if (
+                    social_chat_value > AppStream.ContentRatingValue.MILD ||
+                    social_audio_value > AppStream.ContentRatingValue.NONE
+                ) {
+
+                    // social-audio in OARS includes video as well
+                    string? description = null;
+                    if (social_chat_value == AppStream.ContentRatingValue.INTENSE || social_audio_value == AppStream.ContentRatingValue.INTENSE) {
+                        description = _("Unmoderated Audio, Video, or Text messaging with other people");
+                    } else if (social_chat_value == AppStream.ContentRatingValue.MODERATE || social_audio_value == AppStream.ContentRatingValue.MODERATE) {
+                        description = _("Moderated Audio, Video, or Text messaging with other people");
+                    }
+
+                    var social = new ContentType (
+                        _("Online Interactions"),
+                        description,
+                        "oars-chat-symbolic"
+                    );
+
+                    oars_flowbox.add (social);
+                }
+
+                if (rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE) {
+                    var location = new ContentType (
+                        _("Location Sharing"),
+                        _("Other people can see your real-world location"),
+                        "find-location-symbolic"
+                    );
+
+                    oars_flowbox.add (location);
+                }
+
+                var social_info_value = rating.get_value ("social-info");
+                if (social_info_value > AppStream.ContentRatingValue.MILD) {
+                    string? description = null;
+                    switch (social_info_value) {
+                        case AppStream.ContentRatingValue.MODERATE:
+                            description = _("Collects anonymous usage data");
+                            break;
+                        case AppStream.ContentRatingValue.INTENSE:
+                            description = _("Collects usage data that could be used to identify you");
+                            break;
+                    }
+
+                    var social_info = new ContentType (
+                        _("Info Sharing"),
+                        description,
+                        "oars-socal-info-symbolic"
+                    );
+
+                    oars_flowbox.add (social_info);
+                }
+            }
 
             screenshots = package_component.get_screenshots ();
 
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
+                    allow_scroll_wheel = false,
                     height_request = 500,
                     spacing = 128
                 };
@@ -122,16 +339,16 @@ namespace AppCenter.Views {
 
                 var screenshot_arrow_revealer_p = new Gtk.Revealer () {
                     halign = Gtk.Align.START,
-                    valign = Gtk.Align.CENTER
+                    valign = Gtk.Align.CENTER,
+                    transition_type = Gtk.RevealerTransitionType.CROSSFADE
                 };
-                screenshot_arrow_revealer_p.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
                 screenshot_arrow_revealer_p.add (screenshot_previous);
 
                 var screenshot_arrow_revealer_n = new Gtk.Revealer () {
                     halign = Gtk.Align.END,
-                    valign = Gtk.Align.CENTER
+                    valign = Gtk.Align.CENTER,
+                    transition_type = Gtk.RevealerTransitionType.CROSSFADE
                 };
-                screenshot_arrow_revealer_n.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
                 screenshot_arrow_revealer_n.add (screenshot_next);
 
                 screenshot_overlay = new Gtk.Overlay ();
@@ -141,7 +358,7 @@ namespace AppCenter.Views {
 
                 app_screenshots.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 app_screenshots.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
-                app_screenshots.add_events (Gdk.EventMask.SCROLL_MASK);
+
                 screenshot_overlay.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 screenshot_overlay.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
 
@@ -177,18 +394,15 @@ namespace AppCenter.Views {
                     return false;
                 });
 
-                app_screenshots.scroll_event.connect (() => {
-                    return Gdk.EVENT_STOP;
-                });
-
                 screenshot_switcher = new Hdy.CarouselIndicatorDots () {
                     carousel = app_screenshots
                 };
 
-                var app_screenshot_spinner = new Gtk.Spinner ();
-                app_screenshot_spinner.halign = Gtk.Align.CENTER;
-                app_screenshot_spinner.valign = Gtk.Align.CENTER;
-                app_screenshot_spinner.active = true;
+                var app_screenshot_spinner = new Gtk.Spinner () {
+                    active = true,
+                    halign = Gtk.Align.CENTER,
+                    valign = Gtk.Align.CENTER
+                };
 
                 app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
                 app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -206,34 +420,69 @@ namespace AppCenter.Views {
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
 
-            package_name.ellipsize = Pango.EllipsizeMode.MIDDLE;
-            package_name.selectable = true;
-            package_name.xalign = 0;
+            var app_icon = new Gtk.Image () {
+                margin_top = 12,
+                pixel_size = 128
+            };
+
+            var badge_image = new Gtk.Image () {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.END,
+                pixel_size = 64
+            };
+
+            var app_icon_overlay = new Gtk.Overlay ();
+            app_icon_overlay.add (app_icon);
+
+            var scale_factor = get_scale_factor ();
+
+            var plugin_host_package = package.get_plugin_host_package ();
+            if (package.is_plugin && plugin_host_package != null) {
+                app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
+                badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
+
+                app_icon_overlay.add_overlay (badge_image);
+            } else {
+                app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
+
+                if (package.is_os_updates) {
+                    badge_image.icon_name = "system-software-update";
+                    app_icon_overlay.add_overlay (badge_image);
+                }
+            }
+
+            var package_name = new Gtk.Label (package.get_name ()) {
+                ellipsize = Pango.EllipsizeMode.MIDDLE,
+                selectable = true,
+                valign = Gtk.Align.END,
+                xalign = 0
+            };
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-            package_name.valign = Gtk.Align.END;
 
-            package_author.selectable = true;
-            package_author.xalign = 0;
-            package_author.valign = Gtk.Align.START;
-            package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            author_label = new Gtk.Label (null) {
+                selectable = true,
+                valign = Gtk.Align.START,
+                xalign = 0
+            };
+            author_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            package_summary = new Gtk.Label (null);
-            package_summary.label = package.get_summary ();
-            package_summary.selectable = true;
-            package_summary.xalign = 0;
+            package_summary = new Gtk.Label (null) {
+                label = package.get_summary (),
+                selectable = true,
+                wrap = true,
+                wrap_mode = Pango.WrapMode.WORD_CHAR,
+                valign = Gtk.Align.CENTER,
+                xalign = 0
+            };
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-            package_summary.wrap = true;
-            package_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
-            package_summary.valign = Gtk.Align.CENTER;
 
-            app_description = new Gtk.TextView ();
-            app_description.expand = true;
-            app_description.editable = false;
+            app_description = new Gtk.Label (null) {
+                // Allow wrapping but prevent expanding the parent
+                width_request = 1,
+                wrap = true,
+                xalign = 0
+            };
             app_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-            app_description.cursor_visible = false;
-            app_description.pixels_below_lines = 3;
-            app_description.pixels_inside_wrap = 3;
-            app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
             var links_grid = new Gtk.Grid () {
                 column_spacing = 12
@@ -284,59 +533,60 @@ namespace AppCenter.Views {
             }
 #endif
 
-            var whats_new_label = new Gtk.Label (_("What's New:"));
+            var whats_new_label = new Gtk.Label (_("What's New:")) {
+                xalign = 0
+            };
             whats_new_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-            whats_new_label.xalign = 0;
 
             release_list_box = new Widgets.ReleaseListBox (package);
 
-            release_grid = new Gtk.Grid ();
-            release_grid.row_spacing = 12;
-            release_grid.attach (whats_new_label, 0, 0, 1, 1);
-            release_grid.attach (release_list_box, 0, 1, 1, 1);
-            release_grid.no_show_all = true;
+            release_grid = new Gtk.Grid () {
+                no_show_all = true,
+                row_spacing = 12
+            };
+            release_grid.attach (whats_new_label, 0, 0);
+            release_grid.attach (release_list_box, 0, 1);
             release_grid.hide ();
 
             var content_grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
                 row_spacing = 24
             };
-            content_grid.attach (package_summary, 0, 2, 2);
-            content_grid.attach (app_description, 0, 3, 2);
-            content_grid.attach (release_grid, 0, 4, 2);
+
+            content_grid.add (package_summary);
+            content_grid.add (app_description);
+            content_grid.add (release_grid);
 
             if (package_component.get_addons ().length > 0) {
-                extension_box = new Gtk.ListBox ();
-                extension_box.selection_mode = Gtk.SelectionMode.SINGLE;
+                extension_box = new Gtk.ListBox () {
+                    selection_mode = Gtk.SelectionMode.SINGLE
+                };
+
                 extension_box.row_activated.connect ((row) => {
                     var extension_row = row as Widgets.PackageRow;
                     if (extension_row != null) {
-                        show_other_package (extension_row.get_package (), true, Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
+                        show_other_package (extension_row.get_package ());
                     }
                 });
 
-                var extension_label = new Gtk.Label (_("Extensions:"));
-                extension_label.margin_top = 12;
+                var extension_label = new Gtk.Label (_("Extensions:")) {
+                    halign = Gtk.Align.START,
+                    margin_top = 12
+                };
                 extension_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-                extension_label.halign = Gtk.Align.START;
 
-                content_grid.attach (extension_label, 0, 5, 2);
-                content_grid.attach (extension_box, 0, 6, 2);
+                content_grid.add (extension_label);
+                content_grid.add (extension_box);
                 load_extensions.begin ();
             }
 
+            content_grid.add (links_grid);
+
             origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
-            origin_combo = new Gtk.ComboBox.with_model (origin_liststore);
-            origin_combo.halign = Gtk.Align.START;
-            origin_combo.valign = Gtk.Align.START;
-            origin_combo.changed.connect (() => {
-                Gtk.TreeIter iter;
-                AppCenterCore.Package selected_origin_package;
-                origin_combo.get_active_iter (out iter);
-                origin_liststore.@get (iter, 0, out selected_origin_package);
-                if (selected_origin_package != null && selected_origin_package != package) {
-                    show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
-                }
-            });
+            origin_combo = new Gtk.ComboBox.with_model (origin_liststore) {
+                halign = Gtk.Align.START,
+                valign = Gtk.Align.START
+            };
 
             origin_combo_revealer = new Gtk.Revealer ();
             origin_combo_revealer.add (origin_combo);
@@ -355,20 +605,22 @@ namespace AppCenter.Views {
             progress_grid.margin_top = 12;
             button_grid.margin_top = progress_grid.margin_top;
 
-            var header_grid = new Gtk.Grid ();
-            header_grid.column_spacing = 12;
-            header_grid.row_spacing = 6;
-            header_grid.hexpand = true;
-            header_grid.attach (image, 0, 0, 1, 3);
+            var header_grid = new Gtk.Grid () {
+                column_spacing = 12,
+                row_spacing = 6,
+                hexpand = true
+            };
+            header_grid.attach (app_icon_overlay, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
-            header_grid.attach (package_author, 1, 1);
+            header_grid.attach (author_label, 1, 1);
             header_grid.attach (origin_combo_revealer, 1, 2, 3);
             header_grid.attach (action_stack, 3, 0);
 
             if (!package.is_local) {
-                size_label = new Widgets.SizeLabel ();
-                size_label.halign = Gtk.Align.END;
-                size_label.valign = Gtk.Align.START;
+                size_label = new Widgets.SizeLabel () {
+                    halign = Gtk.Align.END,
+                    valign = Gtk.Align.START
+                };
                 size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
                 action_button_group.add_widget (size_label);
@@ -382,19 +634,14 @@ namespace AppCenter.Views {
             };
             header_clamp.add (header_grid);
 
-            var header_box = new Gtk.Grid ();
-            header_box.get_style_context ().add_class ("banner");
-            header_box.hexpand = true;
+            var header_box = new Gtk.Grid () {
+                hexpand = true
+            };
             header_box.add (header_clamp);
 
-            // FIXME: should be for context, not for screen
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                banner_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
-
-            content_grid.attach (links_grid, 1, 7);
+            unowned var header_box_context = header_box.get_style_context ();
+            header_box_context.add_class ("banner");
+            header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -402,58 +649,32 @@ namespace AppCenter.Views {
             };
             body_clamp.add (content_grid);
 
-            var grid = new Gtk.Grid () {
-                orientation = Gtk.Orientation.VERTICAL,
-                row_spacing = 12
-            };
-            grid.add (header_box);
+            var other_apps_bar = new OtherAppsBar (package, MAX_WIDTH);
+
+            other_apps_bar.show_other_package.connect ((package) => {
+                show_other_package (package);
+            });
+
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
+            box.add (header_box);
+            box.add (content_warning_clamp);
 
             if (screenshots.length > 0) {
-                grid.add (screenshot_stack);
+                box.add (screenshot_stack);
 
                 if (screenshots.length > 1) {
-                    grid.add (screenshot_switcher);
+                    box.add (screenshot_switcher);
                 }
             }
 
-            grid.add (body_clamp);
+            box.add (body_clamp);
+            box.add (other_apps_bar);
 
-            if (package.author != null) {
-                var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));
-                other_apps_header.xalign = 0;
-                other_apps_header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-
-                var other_apps_carousel = new AppCenter.Widgets.AuthorCarousel (package);
-                other_apps_carousel.package_activated.connect ((package) => show_other_package (package));
-
-                var other_apps_grid = new Gtk.Grid ();
-                other_apps_grid.orientation = Gtk.Orientation.VERTICAL;
-                other_apps_grid.row_spacing = 12;
-                other_apps_grid.width_request = MAX_WIDTH;
-                other_apps_grid.add (other_apps_header);
-                other_apps_grid.add (other_apps_carousel);
-
-                var other_apps_clamp = new Hdy.Clamp () {
-                    margin = 24,
-                    maximum_size = MAX_WIDTH
-                };
-                other_apps_clamp.add (other_apps_grid);
-
-                var other_apps_bar = new Gtk.Grid ();
-                other_apps_bar.add (other_apps_clamp);
-
-                unowned var other_apps_style_context = other_apps_bar.get_style_context ();
-                other_apps_style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-
-                if (other_apps_carousel.get_children ().length () > 0) {
-                    grid.add (other_apps_bar);
-                }
-            }
-
-            var scrolled = new Gtk.ScrolledWindow (null, null);
-            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-            scrolled.expand = true;
-            scrolled.add (grid);
+            var scrolled = new Gtk.ScrolledWindow (null, null) {
+                hscrollbar_policy = Gtk.PolicyType.NEVER,
+                expand = true
+            };
+            scrolled.add (box);
 
             var toast = new Granite.Widgets.Toast (_("Link copied to clipboard"));
 
@@ -470,22 +691,25 @@ namespace AppCenter.Views {
                 var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
                 var share_popover = new SharePopover (body, uri);
 
-                var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-                share_icon.valign = Gtk.Align.CENTER;
+                var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+                    valign = Gtk.Align.CENTER
+                };
 
                 var share_label = new Gtk.Label (_("Share"));
 
-                var share_grid = new Gtk.Grid ();
-                share_grid.column_spacing = 6;
+                var share_grid = new Gtk.Grid () {
+                    column_spacing = 6
+                };
                 share_grid.add (share_icon);
                 share_grid.add (share_label);
 
-                var share_button = new Gtk.MenuButton ();
-                share_button.direction = Gtk.ArrowType.UP;
-                share_button.popover = share_popover;
+                var share_button = new Gtk.MenuButton () {
+                    direction = Gtk.ArrowType.UP,
+                    popover = share_popover
+                };
                 share_button.add (share_grid);
 
-                var share_button_context = share_button.get_style_context ();
+                unowned var share_button_context = share_button.get_style_context ();
                 share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 share_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
@@ -497,19 +721,23 @@ namespace AppCenter.Views {
             }
 #endif
             view_entered ();
-            set_up_package (128);
+            set_up_package ();
 
-            if (package.is_os_updates) {
-                package.notify["state"].connect (() => {
-                    Idle.add (() => {
-                        // For the OS updates component, this is the "x components with updates" text
-                        package_author.label = package.get_version ();
-
-                        parse_description (package.get_description ());
-                        return false;
-                    });
-                });
+            if (oars_flowbox.get_children ().length () > 0) {
+                oars_flowbox_revealer.reveal_child = true;
             }
+
+            origin_combo.changed.connect (() => {
+                Gtk.TreeIter iter;
+                AppCenterCore.Package selected_origin_package;
+                origin_combo.get_active_iter (out iter);
+                origin_liststore.@get (iter, 0, out selected_origin_package);
+                if (selected_origin_package != null && selected_origin_package != package) {
+                    show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
+                }
+            });
+
+            realize.connect (load_more_content);
         }
 
         protected override void update_state (bool first_update = false) {
@@ -545,6 +773,43 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
+
+            ContentType? runtime_warning = null;
+            switch (package.runtime_status) {
+                case RuntimeStatus.END_OF_LIFE:
+                    runtime_warning = new ContentType (
+                        _("End of Life"),
+                        _("May not work as expected or receive security updates"),
+                        "flatpak-eol-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MAJOR_OUTDATED:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("May not work as expected or support the latest features"),
+                        "flatpak-eol-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MINOR_OUTDATED:
+                    break;
+                case RuntimeStatus.UNSTABLE:
+                    runtime_warning = new ContentType (
+                        _("Unstable"),
+                        _("Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "applications-development-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.UP_TO_DATE:
+                    break;
+            }
+
+            if (runtime_warning != null && !is_runtime_warning_shown) {
+                is_runtime_warning_shown = true;
+
+                oars_flowbox.insert (runtime_warning, 0);
+                oars_flowbox.show_all ();
+                oars_flowbox_revealer.reveal_child = true;
+            }
         }
 
         public void view_entered () {
@@ -561,23 +826,18 @@ namespace AppCenter.Views {
 
             var provider = new Gtk.CssProvider ();
             try {
-                string color_primary;
-                string color_primary_text;
+                string? color_primary = null;
+                string? color_primary_text = null;
                 if (package != null) {
                     color_primary = package.get_color_primary ();
                     color_primary_text = package.get_color_primary_text ();
-                } else {
-                    color_primary = null;
-                    color_primary_text = null;
                 }
 
-                if (color_primary == null) {
+                if (color_primary == null || color_primary_text == null) {
                     color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
-                }
-
-                if (color_primary_text == null) {
                     color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
                 }
+
                 var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
                 provider.load_from_data (colored_css, colored_css.length);
 
@@ -592,7 +852,9 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
+        private void load_more_content () {
+            var cache = AppCenterCore.Client.get_default ().screenshot_cache;
+
             Gtk.TreeIter iter;
             uint count = 0;
             foreach (var origin_package in package.origin_packages) {
@@ -609,11 +871,19 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                if (package.is_os_updates) {
-                    package_author.label = package.get_version ();
-                }
+                var description = package.get_description ();
+                Idle.add (() => {
+                    if (package.is_os_updates) {
+                        author_label.label = package.get_version ();
+                    } else {
+                        author_label.label = package.author_title;
+                    }
 
-                parse_description (package.get_description ());
+                    if (description != null) {
+                        app_description.label = description;
+                    }
+                    return false;
+                });
 
                 get_app_download_size.begin ();
 
@@ -630,7 +900,7 @@ namespace AppCenter.Views {
                     return null;
                 }
 
-                List<string> urls = new List<string> ();
+                List<CaptionedUrl> captioned_urls = new List<CaptionedUrl> ();
 
                 var scale = get_scale_factor ();
                 var min_screenshot_width = MAX_WIDTH * scale;
@@ -654,20 +924,25 @@ namespace AppCenter.Views {
                         }
                     });
 
+                    var captioned_url = new CaptionedUrl (
+                        screenshot.get_caption (),
+                        best_image.get_url ()
+                    );
+
                     if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
-                        urls.prepend (best_image.get_url ());
+                        captioned_urls.prepend (captioned_url);
                     } else if (best_image != null) {
-                        urls.append (best_image.get_url ());
+                        captioned_urls.append (captioned_url);
                     }
                 });
 
-                string?[] screenshot_files = new string?[urls.length ()];
-                bool[] results = new bool[urls.length ()];
+                string?[] screenshot_files = new string?[captioned_urls.length ()];
+                bool[] results = new bool[captioned_urls.length ()];
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
-                for (int i = 0; i < urls.length (); i++) {
-                    string url = urls.nth_data (i);
+                for (int i = 0; i < captioned_urls.length (); i++) {
+                    string url = captioned_urls.nth_data (i).url;
                     string? file = null;
                     int index = i;
 
@@ -679,14 +954,15 @@ namespace AppCenter.Views {
                 }
 
                 // TODO: dynamically load screenshots as they become available.
-                while (urls.length () != completed) {
+                while (captioned_urls.length () != completed) {
                     Thread.usleep (100000);
                 }
 
                 // Load screenshots that were successfully obtained.
-                for (int i = 0; i < urls.length (); i++) {
+                for (int i = 0; i < captioned_urls.length (); i++) {
                     if (results[i] == true) {
-                        load_screenshot (screenshot_files[i]);
+                        string caption = captioned_urls.nth_data (i).caption;
+                        load_screenshot (caption, screenshot_files[i]);
                     }
                 }
 
@@ -716,7 +992,7 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string path) {
+        private void load_screenshot (string? caption, string path) {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
@@ -728,6 +1004,11 @@ namespace AppCenter.Views {
                 };
 
                 image.gicon = pixbuf;
+                if (caption != null) {
+                    // AppStream spec says "ideally not more than 100 characters"
+                    int max_caption_len = 200;
+                    image.tooltip_text = ellipsize (caption, max_caption_len);
+                }
 
                 Idle.add (() => {
                     image.show ();
@@ -739,25 +1020,15 @@ namespace AppCenter.Views {
             }
         }
 
-        private void parse_description (string? description) {
-            if (description != null) {
-                string[] lines = description.split ("\n");
-                string stripped_description = lines[0].strip ();
-                for (int i = 1; i < lines.length; i++) {
-                    stripped_description += " " + lines[i].strip ();
-                }
-
-                // This method may be called in a thread, pass back to GTK thread
-                Idle.add (() => {
-                    try {
-                        app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
-                    } catch (Error e) {
-                        warning ("Failed to parse appstream description: %s", e.message);
-                    }
-
-                    return false;
-                });
+        private string ellipsize (string long_text, int max_length) {
+            if (long_text.length > max_length) {
+                StringBuilder sb = new StringBuilder (long_text);
+                sb.truncate (max_length);
+                sb.append ("\u2026");
+                return sb.str;
             }
+
+            return long_text;
         }
 
         private void parse_license (string project_license, out string license_copy, out string license_url) {
@@ -831,14 +1102,17 @@ namespace AppCenter.Views {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 tooltip_text = uri;
 
-                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
-                icon.valign = Gtk.Align.CENTER;
+                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR) {
+                    valign = Gtk.Align.CENTER
+                };
 
-                var title = new Gtk.Label (label);
-                title.ellipsize = Pango.EllipsizeMode.END;
+                var title = new Gtk.Label (label) {
+                    ellipsize = Pango.EllipsizeMode.END
+                };
 
-                var grid = new Gtk.Grid ();
-                grid.column_spacing = 6;
+                var grid = new Gtk.Grid () {
+                    column_spacing = 6
+                };
                 grid.add (icon);
                 grid.add (title);
 
@@ -862,44 +1136,44 @@ namespace AppCenter.Views {
             }
         }
 
-        class FundButton : Gtk.MenuButton {
-            private Widgets.HumblePopover selection;
-
+        class FundButton : Gtk.Button {
             public FundButton (AppCenterCore.Package package) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-                icon.valign = Gtk.Align.CENTER;
+                var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+                    valign = Gtk.Align.CENTER
+                };
 
                 var title = new Gtk.Label (_("Fund"));
 
-                var grid = new Gtk.Grid ();
-                grid.column_spacing = 6;
+                var grid = new Gtk.Grid () {
+                    column_spacing = 6
+                };
                 grid.add (icon);
                 grid.add (title);
 
-                selection = new Widgets.HumblePopover (this, true);
-                selection.payment_requested.connect ((amount) => {
-                    var stripe = new Widgets.StripeDialog (amount,
-                                                           package.get_name (),
-                                                           package.normalized_component_id,
-                                                           package.get_payments_key ()
-                                                          );
+                tooltip_text = _("Fund the development of this app");
+
+                add (grid);
+
+                clicked.connect (() => {
+                    var stripe = new Widgets.StripeDialog (
+                        1,
+                        package.get_name (),
+                        package.normalized_component_id,
+                        package.get_payments_key ()
+                    );
+                    stripe.transient_for = (Gtk.Window) get_toplevel ();
 
                     stripe.download_requested.connect (() => {
-                        App.add_paid_app (package.component.get_id ());
+                        if (stripe.amount != 0) {
+                            App.add_paid_app (package.component.get_id ());
+                        }
                     });
 
                     stripe.show ();
                 });
-
-                tooltip_text = _("Fund the development of this app");
-
-                direction = Gtk.ArrowType.UP;
-                popover = selection;
-
-                add (grid);
             }
         }
 
@@ -921,12 +1195,124 @@ namespace AppCenter.Views {
                 expand = true;
                 valign = Gtk.Align.CENTER;
 
-                unowned Gtk.StyleContext context = get_style_context ();
+                unowned var context = get_style_context ();
                 context.add_class (Gtk.STYLE_CLASS_FLAT);
                 context.add_class ("circular");
                 context.add_class ("arrow");
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
+        }
+
+        private class CaptionedUrl : Object {
+            public string? caption { get; construct; }
+            public string url { get; construct; }
+
+            public CaptionedUrl (string? caption, string url) {
+                Object (caption: caption, url: url);
+            }
+        }
+    }
+
+    class ContentType : Gtk.FlowBoxChild {
+        public ContentType (string title, string description, string icon_name) {
+            can_focus = false;
+
+            var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
+                halign = Gtk.Align.START,
+                margin_bottom = 6
+            };
+
+            var label = new Gtk.Label (title) {
+                xalign = 0
+            };
+
+            var description_label = new Gtk.Label (description) {
+                max_width_chars = 25,
+                wrap = true,
+                xalign = 0
+            };
+
+            unowned var description_label_context = description_label.get_style_context ();
+            description_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            description_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 3
+            };
+
+            grid.add (icon);
+            grid.add (label);
+            grid.add (description_label);
+
+            add (grid);
+        }
+    }
+
+    private class OtherAppsBar : Gtk.Grid {
+        public signal void show_other_package (AppCenterCore.Package package);
+
+        public AppCenterCore.Package package { get; construct; }
+        public int max_width { get; construct; }
+
+        private const int AUTHOR_OTHER_APPS_MAX = 10;
+
+        public OtherAppsBar (AppCenterCore.Package package, int max_width) {
+            Object (
+                package: package,
+                max_width: max_width
+            );
+        }
+
+        construct {
+            if (package.author == null) {
+                return;
+            }
+
+            var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
+            if (author_packages.size <= 1) {
+                return;
+            }
+
+            var header = new Granite.HeaderLabel (_("Other Apps by %s").printf (package.author_title));
+
+            var flowbox = new Gtk.FlowBox () {
+                activate_on_single_click = true,
+                column_spacing = 12,
+                row_spacing = 12,
+                homogeneous = true
+            };
+
+            foreach (var author_package in author_packages) {
+                if (author_package.component.get_id () == package.component.get_id ()) {
+                    continue;
+                }
+
+                var other_app = new AppCenter.Widgets.ListPackageRowGrid (author_package);
+                flowbox.add (other_app);
+            }
+
+            var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 12
+            };
+            grid.add (header);
+            grid.add (flowbox);
+
+            var clamp = new Hdy.Clamp () {
+                margin = 24,
+                maximum_size = max_width
+            };
+            clamp.add (grid);
+
+            add (clamp);
+            get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+
+            flowbox.child_activated.connect ((child) => {
+                var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
+
+                show_other_package (package_row_grid.package);
+            });
         }
     }
 }

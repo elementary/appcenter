@@ -58,6 +58,8 @@ public class AppCenter.App : Gtk.Application {
         flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
+        Intl.bindtextdomain (Build.GETTEXT_PACKAGE, Build.LOCALEDIR);
+        Intl.bind_textdomain_codeset (Build.GETTEXT_PACKAGE, "UTF-8");
 
         add_main_option_entries (APPCENTER_OPTIONS);
 
@@ -282,22 +284,24 @@ public class AppCenter.App : Gtk.Application {
         switch (operation) {
             case AppCenterCore.Package.State.INSTALLING:
                 if (error == null) {
-                    // Check if window is focused
-                    if (main_window != null) {
-                        var win = main_window.get_window ();
-                        if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
-                            main_window.send_installed_toast (package);
+                    if (package.get_can_launch ()) {
+                        // Check if window is focused
+                        if (main_window != null) {
+                            var win = main_window.get_window ();
+                            if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                                main_window.send_installed_toast (package);
 
-                            break;
+                                break;
+                            }
                         }
+
+                        var notification = new Notification (_("The app has been installed"));
+                        notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
+                        notification.set_icon (new ThemedIcon ("process-completed"));
+                        notification.set_default_action ("app.open-application");
+
+                        send_notification ("installed", notification);
                     }
-
-                    var notification = new Notification (_("The app has been installed"));
-                    notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
-                    notification.set_icon (new ThemedIcon ("process-completed"));
-                    notification.set_default_action ("app.open-application");
-
-                    send_notification ("installed", notification);
                 } else {
                     // Check if permission was denied or the operation was cancelled
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {

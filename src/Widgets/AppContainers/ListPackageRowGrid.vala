@@ -26,9 +26,24 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     }
 
     construct {
+        var package_name = new Gtk.Label (package.get_name ()) {
+            ellipsize = Pango.EllipsizeMode.END,
+            lines = 2,
+            max_width_chars = 1,
+            valign = Gtk.Align.END,
+            wrap = true,
+            xalign = 0
+        };
+        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
         package_summary = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
+            hexpand = true,
+            lines = 2,
+            max_width_chars = 1,
             valign = Gtk.Align.START,
+            width_chars = 20,
+            wrap = true,
             xalign = 0
         };
         package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -37,7 +52,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             column_spacing = 12,
             row_spacing = 3
         };
-        grid.attach (image, 0, 0, 1, 2);
+        grid.attach (app_icon_overlay, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);
@@ -45,7 +60,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         add (grid);
     }
 
-    protected override void set_up_package (uint icon_size = 48) {
+    protected override void set_up_package () {
         package_summary.label = package.get_summary ();
 
         if (package.is_local) {
@@ -53,6 +68,6 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             action_stack.visible = false;
         }
 
-        base.set_up_package (icon_size);
+        base.set_up_package ();
     }
 }

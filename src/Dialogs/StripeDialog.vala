@@ -46,10 +46,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     private Gtk.Grid? error_layout = null;
     private Gtk.Stack layouts;
 
-    private Gtk.Entry email_entry;
     private AppCenter.Widgets.CardNumberEntry card_number_entry;
-    private Gtk.Entry card_expiration_entry;
-    private Gtk.Entry card_cvc_entry;
+    private Granite.ValidatedEntry card_cvc_entry;
+    private Granite.ValidatedEntry card_expiration_entry;
+    private Granite.ValidatedEntry email_entry;
     private Gtk.Button pay_button;
     private Gtk.Button cancel_button;
 
@@ -60,10 +60,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     public string app_id { get; construct set; }
     public string stripe_key { get; construct set; }
 
-    private bool email_valid = false;
     private bool card_valid = false;
-    private bool expiration_valid = false;
-    private bool cvc_valid = false;
 
     public StripeDialog (int _amount, string _app_name, string _app_id, string _stripe_key) {
         Object (
@@ -94,102 +91,144 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         primary_label.xalign = 0;
 
         var secondary_label = new Gtk.Label (
-            _("This is a one time payment. Your email address is only used to send you a receipt.") +
-            " <a href=\"https://stripe.com/privacy\">%s</a>".printf (_("Privacy Policy"))
+            _("This is a one time payment suggested by the developer. You can also choose your own price.")
         ) {
-            margin_bottom = 18,
+            margin_bottom = 12,
+            margin_top = 6,
             max_width_chars = 50,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
 
-        email_entry = new Gtk.Entry ();
-        email_entry.hexpand = true;
-        email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
-        email_entry.margin_bottom = 6;
-        email_entry.placeholder_text = _("Email");
-        email_entry.primary_icon_name = "internet-mail-symbolic";
-        email_entry.tooltip_text = _("Your email address is only used to send a receipt. You will not be subscribed to any mailing list.");
+        var one_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (1, false));
 
-        email_entry.changed.connect (() => {
-           email_entry.text = email_entry.text.replace (" ", "").down ();
-           validate (0, email_entry.text);
-        });
+        var five_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (5, false));
 
-        card_number_entry = new AppCenter.Widgets.CardNumberEntry ();
-        card_number_entry.hexpand = true;
-        card_number_entry.changed.connect (() => {
-            validate (1, card_number_entry.card_number);
-        });
+        var ten_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (10, false));
 
+        var dollar_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        dollar_button_group.add_widget (one_dollar);
+        dollar_button_group.add_widget (five_dollar);
+        dollar_button_group.add_widget (ten_dollar);
+
+        var or_label = new Gtk.Label (_("or")) {
+            margin_start = 3,
+            margin_end = 3
+        };
+
+        var custom_amount = new Gtk.SpinButton.with_range (0, 100, 1) {
+            activates_default = true,
+            hexpand = true,
+            primary_icon_name = "currency-dollar-symbolic",
+            value = amount
+        };
+
+        var selection_list = new Gtk.Grid () {
+            column_spacing = 6
+        };
+        selection_list.add (custom_amount);
+        selection_list.add (or_label);
+        selection_list.add (one_dollar);
+        selection_list.add (five_dollar);
+        selection_list.add (ten_dollar);
+
+        Regex? email_regex = null;
+        Regex? expiration_regex = null;
+        Regex? cvc_regex = null;
+        try {
+            email_regex = new Regex ("""^[^\s]+@[^\s]+\.[^\s]+$""");
+            expiration_regex = new Regex ("""^[0-9]{2}\/?[0-9]{2}$""");
+            cvc_regex = new Regex ("""[0-9]{3,4}""");
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        email_entry = new Granite.ValidatedEntry.from_regex (email_regex) {
+            activates_default = true,
+            hexpand = true,
+            input_purpose = Gtk.InputPurpose.EMAIL,
+            margin_bottom = 6,
+            placeholder_text = _("Email"),
+            primary_icon_name = "internet-mail-symbolic"
+        };
+
+        var email_label = new Gtk.Label (
+            _("Only used to send you a receipt. You will not be subscribed to any mailing list.") +
+            " <a href=\"https://stripe.com/privacy\">%s</a>".printf (_("Privacy Policy"))
+        ) {
+            hexpand = true,
+            margin_bottom = 12,
+            max_width_chars = 1,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
+        email_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        card_number_entry = new AppCenter.Widgets.CardNumberEntry () {
+            activates_default = true,
+            hexpand = true,
+            margin_bottom = 6
+        };
         card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
 
-        card_expiration_entry = new Gtk.Entry ();
-        card_expiration_entry.hexpand = true;
-        card_expiration_entry.max_length = 5;
-        /// TRANSLATORS: Don't change the order, only transliterate
-        card_expiration_entry.placeholder_text = _("MM / YY");
-        card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
+        card_expiration_entry = new Granite.ValidatedEntry.from_regex (expiration_regex) {
+            activates_default = true,
+            hexpand = true,
+            max_length = 5,
+            primary_icon_name = "office-calendar-symbolic",
+            /// TRANSLATORS: Don't change the order, only transliterate
+            placeholder_text = _("MM / YY")
+        };
 
-        card_expiration_entry.changed.connect (() => {
-            card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
-            validate (2, card_expiration_entry.text);
-        });
-
-        card_expiration_entry.focus_out_event.connect (() => {
-            var expiration_text = card_expiration_entry.text;
-            if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
-                int position = 2;
-                card_expiration_entry.insert_text ("/", 1, ref position);
-            }
-        });
-
-        card_cvc_entry = new Gtk.Entry ();
-        card_cvc_entry.hexpand = true;
-        card_cvc_entry.input_purpose = Gtk.InputPurpose.DIGITS;
-        card_cvc_entry.max_length = 4;
-        card_cvc_entry.placeholder_text = _("CVC");
-        card_cvc_entry.primary_icon_name = "channel-secure-symbolic";
-
-        card_cvc_entry.changed.connect (() => {
-            card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
-            validate (3, card_cvc_entry.text);
-        });
-
+        card_cvc_entry = new Granite.ValidatedEntry.from_regex (cvc_regex) {
+            activates_default = true,
+            hexpand = true,
+            input_purpose = Gtk.InputPurpose.DIGITS,
+            max_length = 4,
+            placeholder_text = _("CVC"),
+            primary_icon_name = "channel-secure-symbolic"
+        };
         card_cvc_entry.bind_property ("has-focus", card_cvc_entry, "visibility");
 
-        var card_grid_bottom = new Gtk.Grid ();
-        card_grid_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        card_grid_bottom.add (card_expiration_entry);
-        card_grid_bottom.add (card_cvc_entry);
+        var card_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL,
+            column_spacing = 6,
+            margin_top = 24
+        };
+        card_grid.attach (email_entry, 0, 0, 2);
+        card_grid.attach (email_label, 0, 1, 2);
+        card_grid.attach (card_number_entry, 0, 2, 2);
+        card_grid.attach (card_expiration_entry, 0, 3);
+        card_grid.attach (card_cvc_entry, 1, 3);
 
-        var card_grid = new Gtk.Grid ();
-        card_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        card_grid.orientation = Gtk.Orientation.VERTICAL;
-        card_grid.add (card_number_entry);
-        card_grid.add (card_grid_bottom);
+        var card_grid_revealer = new Gtk.Revealer ();
+        card_grid_revealer.add (card_grid);
 
         card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
         card_layout.column_spacing = 12;
-        card_layout.row_spacing = 6;
         card_layout.attach (overlay, 0, 0, 1, 2);
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
-        card_layout.attach (email_entry, 1, 2);
-        card_layout.attach (card_grid, 1, 3);
+        card_layout.attach (selection_list, 1, 2);
+        card_layout.attach (card_grid_revealer, 1, 3);
 
-        layouts = new Gtk.Stack ();
-        layouts.vhomogeneous = false;
-        layouts.margin_start = layouts.margin_end = 12;
-        layouts.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        layouts = new Gtk.Stack () {
+            margin = 12,
+            margin_top = 0,
+            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT,
+            vhomogeneous = false
+        };
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
 
         var content_area = get_content_area ();
         content_area.add (layouts);
         content_area.show_all ();
+
+        custom_amount.grab_focus ();
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
@@ -200,28 +239,62 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
         response.connect (on_response);
 
-        email_entry.activate.connect (() => {
-            if (pay_button.sensitive) {
-                pay_button.activate ();
+        bind_property ("amount", custom_amount, "value", BindingFlags.BIDIRECTIONAL);
+
+        notify["amount"].connect (() => {
+            if (amount == 0) {
+                pay_button.label = _("Try for Free");
+            } else {
+                pay_button.label = _("Pay $%d.00").printf (amount);
+            }
+            primary_label.label = _("Pay $%d for %s").printf (amount, app_name);
+            is_payment_sensitive ();
+
+            card_grid_revealer.reveal_child = amount != 0;
+        });
+
+        one_dollar.clicked.connect (() => {
+            amount = 1;
+        });
+
+        five_dollar.clicked.connect (() => {
+            amount = 5;
+        });
+
+        ten_dollar.clicked.connect (() => {
+            amount = 10;
+        });
+
+        email_entry.changed.connect (() => {
+            email_entry.text = email_entry.text.replace (" ", "").down ();
+            is_payment_sensitive ();
+        });
+
+        card_number_entry.changed.connect (() => {
+            card_valid = is_card_valid (card_number_entry.card_number);
+            is_payment_sensitive ();
+        });
+
+        card_expiration_entry.changed.connect (() => {
+            card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            if (card_expiration_entry.text.length < 4) {
+                card_expiration_entry.is_valid = false;
+            }
+
+            is_payment_sensitive ();
+        });
+
+        card_expiration_entry.focus_out_event.connect (() => {
+            var expiration_text = card_expiration_entry.text;
+            if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
+                int position = 2;
+                card_expiration_entry.insert_text ("/", 1, ref position);
             }
         });
 
-        card_number_entry.activate.connect (() => {
-            if (pay_button.sensitive) {
-                pay_button.activate ();
-            }
-        });
-
-        card_expiration_entry.activate.connect (() => {
-            if (pay_button.sensitive) {
-                pay_button.activate ();
-            }
-        });
-
-        card_cvc_entry.activate.connect (() => {
-            if (pay_button.sensitive) {
-                pay_button.activate ();
-            }
+        card_cvc_entry.changed.connect (() => {
+            card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            is_payment_sensitive ();
         });
     }
 
@@ -314,38 +387,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         is_payment_sensitive ();
     }
 
-    private void validate (int entry, string new_text) {
-        try {
-            switch (entry) {
-                case 0:
-                    var regex = new Regex ("""^[^\s]+@[^\s]+\.[^\s]+$""");
-                    email_valid = regex.match (new_text);
-                    break;
-                case 1:
-                    card_valid = is_card_valid (new_text);
-                    break;
-                case 2:
-                    if (new_text.length < 4) {
-                        expiration_valid = false;
-                    } else {
-                        var regex = new Regex ("""^[0-9]{2}\/?[0-9]{2}$""");
-                        expiration_valid = regex.match (new_text);
-                    }
-                    break;
-                case 3:
-                    var regex = new Regex ("""[0-9]{3,4}""");
-                    cvc_valid = regex.match (new_text);
-                    break;
-            }
-        } catch (Error e) {
-            warning (e.message);
-        }
-
-        is_payment_sensitive ();
-    }
-
     private void is_payment_sensitive () {
-        if (email_valid && card_valid && expiration_valid && cvc_valid) {
+        if (amount == 0 || (email_entry.is_valid && card_valid && card_expiration_entry.is_valid && card_cvc_entry.is_valid)) {
             pay_button.sensitive = true;
         } else {
             pay_button.sensitive = false;
@@ -380,8 +423,13 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         switch (response_id) {
             case Gtk.ResponseType.APPLY:
                 if (layouts.visible_child_name == "card") {
-                    show_spinner_view ();
-                    on_pay_clicked ();
+                    if (amount != 0) {
+                        show_spinner_view ();
+                        on_pay_clicked ();
+                    } else {
+                        download_requested ();
+                        destroy ();
+                    }
                 } else {
                     show_card_view ();
                 }

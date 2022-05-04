@@ -18,7 +18,6 @@
  */
 
 public abstract class AppCenter.AbstractView : Gtk.Stack {
-    public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
     public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
@@ -28,11 +27,19 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
 
+        notify["visible-child"].connect (() => {
+            if (visible_child is Views.AppInfoView) {
+                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+                main_window.set_custom_header ("");
+                main_window.configure_search (false);
+            }
+        });
+
         notify["transition-running"].connect (() => {
             // Transition finished
             if (!transition_running) {
                 foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppInfoView && (child as Views.AppInfoView).to_recycle) {
+                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
                         child.destroy ();
                     }
                 }
@@ -66,18 +73,16 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
         add (app_info_view);
         set_visible_child (app_info_view);
 
-        var cache = AppCenterCore.Client.get_default ().screenshot_cache;
-        Timeout.add (transition_duration, () => {
-            app_info_view.load_more_content (cache);
-            return Source.REMOVE;
-        });
-
-        app_info_view.show_other_package.connect ((_package, remember_history) => {
+        app_info_view.show_other_package.connect ((_package, remember_history, _transition_type) => {
+            transition_type = _transition_type;
             show_package (_package, remember_history);
             if (remember_history) {
                 previous_package = package;
-                subview_entered (package.get_name (), false, "", null);
+
+                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+                main_window.set_return_name (package.get_name ());
             }
+            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         });
     }
 

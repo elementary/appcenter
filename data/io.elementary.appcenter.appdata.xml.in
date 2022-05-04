@@ -11,6 +11,128 @@
     <p>The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
+    <release version="3.10.0" date="2021-12-10" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Added an option to automatically update curated apps</li>
+          <li>Warn when apps are built against older runtimes</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Prevent back button from disappearing or requiring multiple clicks</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Show screenshot captions in a tooltip</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.9.1" date="2021-12-10" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Prevent potential crashes when updating</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Link to Flathub's search page when no search results are found</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.9.0" date="2021-11-23" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Amusements appear in the Games category</li>
+          <li>Categories show as a grid instead of a list</li>
+          <li>Allow window to shrink to much narrower sizes</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.8.2" date="2021-10-29" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Correctly show the installed status of first-party applications</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.8.1" date="2021-10-22" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Don't store $0 app installs as paid</li>
+          <li>Fix missing illicit substances icon</li>
+          <li>Don't show plugins on the homepage</li>
+          <li>Only show "Multiplayer" badge for games</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Show installation progress in a more compact way</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.8.0" date="2021-09-21" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Show content warnings on app info pages</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Show other apps by an author for Flatpak sources</li>
+          <li>Populate banner on home locally instead of relying on an external API</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Greatly increased number of recently-updated apps shown on home page</li>
+          <li>Navigate banners on the home page with multitouch gestures</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.7.1" date="2021-08-30" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Show apps from newly sideloaded remotes without requiring a restart</li>
+          <li>Less abrupt transition when changing app sources</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.7.0" date="2021-08-24" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Install Linux kernel headers for device drivers that use DKMS</li>
+          <li>Use system Flatpak runtimes for locally installed apps</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Mention Sideload when search returns no results</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.6.3" date="2021-08-16" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Ensure user installation is selected by default when navigating from the homepage</li>
+          <li>Fix opening apps from app installed toasts</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.6.2" date="2021-08-09" urgency="medium">
       <description>
         <p>Fixes:</p>
@@ -416,33 +538,8 @@
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
-    <content_attribute id="violence-cartoon">none</content_attribute>
-    <content_attribute id="violence-fantasy">none</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
-    <content_attribute id="violence-bloodshed">none</content_attribute>
-    <content_attribute id="violence-sexual">none</content_attribute>
-    <content_attribute id="violence-desecration">none</content_attribute>
-    <content_attribute id="violence-slavery">none</content_attribute>
-    <content_attribute id="violence-worship">none</content_attribute>
-    <content_attribute id="drugs-alcohol">none</content_attribute>
-    <content_attribute id="drugs-narcotics">none</content_attribute>
-    <content_attribute id="drugs-tobacco">none</content_attribute>
-    <content_attribute id="sex-nudity">none</content_attribute>
-    <content_attribute id="sex-themes">none</content_attribute>
-    <content_attribute id="sex-homosexuality">none</content_attribute>
-    <content_attribute id="sex-prostitution">none</content_attribute>
-    <content_attribute id="sex-adultery">none</content_attribute>
-    <content_attribute id="sex-appearance">none</content_attribute>
-    <content_attribute id="language-profanity">none</content_attribute>
-    <content_attribute id="language-humor">none</content_attribute>
-    <content_attribute id="language-discrimination">none</content_attribute>
-    <content_attribute id="social-chat">none</content_attribute>
     <content_attribute id="social-info">mild</content_attribute>
-    <content_attribute id="social-audio">none</content_attribute>
-    <content_attribute id="social-location">none</content_attribute>
-    <content_attribute id="social-contacts">none</content_attribute>
     <content_attribute id="money-purchasing">intense</content_attribute>
-    <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
   <developer_name>elementary, Inc.</developer_name>
@@ -453,6 +550,7 @@
   <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
   <update_contact>contact_at_elementary.io</update_contact>
   <custom>
-    <value key="x-appcenter-color-primary">#665888</value>
+    <value key="x-appcenter-color-primary">#7239b3</value>
+    <value key="x-appcenter-color-primary-text">#fff</value>
   </custom>
 </component>

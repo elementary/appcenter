@@ -130,7 +130,8 @@ public class AppCenterCore.Client : Object {
 
         /* One cache update a day, keeps the doctor away! */
         var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
-        if (force || seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES) {
+        bool last_cache_update_is_old = seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES;
+        if (force || last_cache_update_is_old) {
             if (nm.get_network_available ()) {
                 debug ("New refresh task");
 
@@ -156,10 +157,6 @@ public class AppCenterCore.Client : Object {
             debug ("Too soon to refresh and not forced");
         }
 
-        if (nm.get_network_available ()) {
-            refresh_updates.begin ();
-        }
-
         var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
         debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
         update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
@@ -168,6 +165,26 @@ public class AppCenterCore.Client : Object {
 
             return GLib.Source.REMOVE;
         });
+
+        if (nm.get_network_available ()) {
+            if ((force || last_cache_update_is_old) && AppCenter.App.settings.get_boolean ("automatic-updates")) {
+                yield refresh_updates ();
+                debug ("Update Flatpaks");
+                var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
+                foreach (var app in installed_apps) {
+                    if (app.update_available && !app.should_pay) {
+                        debug ("Update: %s", app.get_name ());
+                        try {
+                            yield app.update (false);
+                        } catch (Error e) {
+                            warning ("Updating %s failed: %s", app.get_name (), e.message);
+                        }
+                    }
+                }
+            }
+
+            refresh_updates.begin ();
+        }
     }
 
     public Package? get_package_for_component_id (string id) {

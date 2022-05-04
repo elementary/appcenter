@@ -22,7 +22,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
     construct {
         activate_on_single_click = true;
         homogeneous = true;
-        min_children_per_line = 2;
+        margin_bottom = 12;
 
         add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
         add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
@@ -54,6 +54,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "ActionGame",
             "AdventureGame",
             "ArcadeGame",
+            "Amusement",
             "BlocksGame",
             "BoardGame",
             "CardGame",
@@ -132,6 +133,9 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Translation",
             "WordProcessor"
         }, "writing-language"));
+        add (get_category (_("Privacy & Security"), "preferences-system-privacy", {
+            "Security",
+        }, "privacy-security"));
 
         set_sort_func ((child1, child2) => {
             var item1 = child1 as Widgets.CategoryItem;

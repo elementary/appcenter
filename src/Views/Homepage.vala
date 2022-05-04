@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
-* Copyright (c) 2016-2017 elementary LLC. (https://elementary.io)
+/*
+* Copyright 2016–2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,331 +18,349 @@
 *              Dane Henson <thegreatdane@gmail.com>
 */
 
-using AppCenterCore;
+public class AppCenter.Homepage : AbstractView {
+    private const int MAX_PACKAGES_IN_BANNER = 5;
+    private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
-const int NUM_PACKAGES_IN_BANNER = 5;
-const int NUM_PACKAGES_IN_CAROUSEL = 5;
+    private Gtk.FlowBox category_flow;
+    private Gtk.ScrolledWindow scrolled_window;
+    private AppStream.Category current_category;
 
-namespace AppCenter {
-    public class Homepage : AbstractView {
-        private Gtk.FlowBox category_flow;
-        private Gtk.ScrolledWindow category_scrolled;
-        private AppStream.Category current_category;
+    public signal void page_loaded ();
 
-        public signal void page_loaded ();
+    public bool viewing_package {
+        get {
+            return visible_child is Views.AppInfoView;
+        }
+    }
 
-        public bool viewing_package { get; private set; default = false; }
-
-        public AppStream.Category currently_viewed_category;
-#if HOMEPAGE
-        public Widgets.Banner newest_banner;
-        public Gtk.Revealer switcher_revealer;
-
-        private Widgets.Switcher switcher;
-        private Widgets.Carousel recently_updated_carousel;
-        private Widgets.Carousel trending_carousel;
-        private Gtk.Revealer recently_updated_revealer;
-        private Gtk.Revealer trending_revealer;
-
-        construct {
-            switcher = new Widgets.Switcher ();
-            switcher.halign = Gtk.Align.CENTER;
-
-            switcher_revealer = new Gtk.Revealer ();
-            switcher_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
-            switcher_revealer.set_transition_duration (Widgets.Banner.TRANSITION_DURATION_MILLISECONDS);
-            switcher_revealer.add (switcher);
-
-            newest_banner = new Widgets.Banner (switcher) {
-                margin = 12
-            };
-
-            newest_banner.clicked.connect (() => {
-                var package = newest_banner.get_package ();
-                if (package != null) {
-                    show_package (package);
-                }
-            });
-
-            var recently_updated_label = new Gtk.Label (_("Recently Updated"));
-            recently_updated_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            recently_updated_label.xalign = 0;
-            recently_updated_label.margin_start = 10;
-
-            recently_updated_carousel = new Widgets.Carousel ();
-
-            var recently_updated_grid = new Gtk.Grid ();
-            recently_updated_grid.margin = 2;
-            recently_updated_grid.margin_top = 12;
-            recently_updated_grid.attach (recently_updated_label, 0, 0, 1, 1);
-            recently_updated_grid.attach (recently_updated_carousel, 0, 1, 1, 1);
-
-            recently_updated_revealer = new Gtk.Revealer ();
-            recently_updated_revealer.add (recently_updated_grid );
-
-            var trending_label = new Gtk.Label (_("Trending"));
-            trending_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            trending_label.xalign = 0;
-            trending_label.margin_start = 10;
-
-            trending_carousel = new Widgets.Carousel ();
-
-            var trending_grid = new Gtk.Grid ();
-            trending_grid.margin = 2;
-            trending_grid.margin_top = 12;
-            trending_grid.attach (trending_label, 0, 0, 1, 1);
-            trending_grid.attach (trending_carousel, 0, 1, 1, 1);
-
-            trending_revealer = new Gtk.Revealer ();
-            trending_revealer.add (trending_grid );
-
-            var categories_label = new Gtk.Label (_("Categories"));
-            categories_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            categories_label.xalign = 0;
-            categories_label.margin_start = 12;
-            categories_label.margin_top = 24;
-#else
-        construct {
-#endif
-            category_flow = new Widgets.CategoryFlowBox ();
-            category_flow.valign = Gtk.Align.START;
-
-            var grid = new Gtk.Grid ();
-            grid.margin = 12;
-#if HOMEPAGE
-            grid.attach (newest_banner, 0, 0, 1, 1);
-            grid.attach (switcher_revealer, 0, 1, 1, 1);
-            grid.attach (trending_revealer, 0, 2, 1, 1);
-            grid.attach (recently_updated_revealer, 0, 3, 1, 1);
-            grid.attach (categories_label, 0, 4, 1, 1);
-#endif
-            grid.attach (category_flow, 0, 5, 1, 1);
-
-            category_scrolled = new Gtk.ScrolledWindow (null, null);
-            category_scrolled.add (grid);
-
-            add (category_scrolled);
-
-#if HOMEPAGE
-            var local_package = App.local_package;
-            if (local_package != null) {
-                newest_banner.add_package (local_package);
+    public AppStream.Category? currently_viewed_category {
+        get {
+            if (visible_child is CategoryView) {
+                return ((CategoryView) visible_child).category;
             }
 
-            load_banners.begin ();
-#endif
+            return null;
+        }
+    }
 
-            category_flow.child_activated.connect ((child) => {
-                var item = child as Widgets.CategoryItem;
-                if (item != null) {
-                    currently_viewed_category = item.app_category;
-                    show_app_list_for_category (item.app_category);
-                }
+    private Hdy.Carousel banner_carousel;
+    private Gtk.Revealer banner_revealer;
+    private Gtk.FlowBox recently_updated_carousel;
+    private Gtk.Revealer recently_updated_revealer;
+
+    private uint banner_timeout_id;
+
+    construct {
+        banner_carousel = new Hdy.Carousel () {
+            allow_long_swipes = true
+        };
+
+        var banner_event_box = new Gtk.EventBox ();
+        banner_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
+        banner_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
+        banner_event_box.add (banner_carousel);
+
+        var banner_dots = new Hdy.CarouselIndicatorDots () {
+            carousel = banner_carousel
+        };
+
+        var banner_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        banner_grid.add (banner_event_box);
+        banner_grid.add (banner_dots);
+
+        banner_revealer = new Gtk.Revealer ();
+        banner_revealer.add (banner_grid);
+
+        var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
+            margin_start = 12
+        };
+
+        recently_updated_carousel = new Gtk.FlowBox () {
+            activate_on_single_click = true,
+            column_spacing = 12,
+            row_spacing = 12,
+            homogeneous = true,
+            max_children_per_line = 5
+        };
+
+        var recently_updated_grid = new Gtk.Grid () {
+            margin_end = 12,
+            margin_start = 12
+        };
+        recently_updated_grid.attach (recently_updated_label, 0, 0);
+        recently_updated_grid.attach (recently_updated_carousel, 0, 1);
+
+        recently_updated_revealer = new Gtk.Revealer ();
+        recently_updated_revealer.add (recently_updated_grid );
+
+        var categories_label = new Granite.HeaderLabel (_("Categories")) {
+            margin_start = 24,
+            margin_top = 24
+        };
+
+        category_flow = new Widgets.CategoryFlowBox () {
+            margin_start = 12,
+            margin_end =12,
+            valign = Gtk.Align.START
+        };
+
+        var grid = new Gtk.Grid () {
+            column_spacing = 24,
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        grid.add (banner_revealer);
+        grid.add (recently_updated_revealer);
+        grid.add (categories_label);
+        grid.add (category_flow);
+
+        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER
+        };
+        scrolled_window.add (grid);
+
+        add (scrolled_window);
+
+        var local_package = App.local_package;
+        if (local_package != null) {
+            var banner = new Widgets.Banner (local_package);
+
+            banner_carousel.prepend (banner);
+
+            banner.clicked.connect (() => {
+                show_package (local_package);
             });
-
-            AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
-                Idle.add (() => {
-                    // Clear the cached categories when the AppStream pool is updated
-                    foreach (weak Gtk.Widget child in category_flow.get_children ()) {
-                        if (child is Widgets.CategoryItem) {
-                            var item = child as Widgets.CategoryItem;
-                            var category_components = item.app_category.get_components ();
-                            category_components.remove_range (0, category_components.length);
-                        }
-                    }
-
-                    // Remove any old cached category list views
-                    foreach (weak Gtk.Widget child in get_children ()) {
-                        if (child is Views.AppListView) {
-                            if (child != visible_child) {
-                                child.destroy ();
-                            } else {
-                                // If the category list view is visible, don't delete it, just make the package list right
-                                var list_view = child as Views.AppListView;
-                                list_view.clear ();
-
-                                unowned Client client = Client.get_default ();
-                                var apps = client.get_applications_for_category (currently_viewed_category);
-                                list_view.add_packages (apps);
-                            }
-                        }
-                    }
-
-#if HOMEPAGE
-                    // If the banners weren't populated, try again to populate them
-                    if (!recently_updated_revealer.reveal_child && !trending_revealer.reveal_child && !switcher_revealer.reveal_child) {
-                        load_banners.begin ();
-                    }
-
-                    return GLib.Source.REMOVE;
-                });
-            });
-
-            recently_updated_carousel.package_activated.connect ((package) => show_package (package));
-            trending_carousel.package_activated.connect ((package) => show_package (package));
         }
 
-        private async void load_banners () {
-            unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
-            var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
+        banner_timeout_start ();
+        load_banners_and_carousels.begin ();
 
-            foreach (var package in packages_by_release_date) {
-                if (recently_updated_carousel.get_children ().length () >= NUM_PACKAGES_IN_CAROUSEL) {
-                    break;
-                }
+        category_flow.child_activated.connect ((child) => {
+            var item = child as Widgets.CategoryItem;
+            if (item != null) {
+                show_app_list_for_category (item.app_category);
+            }
+        });
 
-                var installed = false;
-                foreach (var origin_package in package.origin_packages) {
-                    try {
-                        if (yield origin_package.backend.is_package_installed (origin_package)) {
-                            installed = true;
-                            break;
-                        }
-                    } catch (Error e) {
-                        continue;
+        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+            Idle.add (() => {
+                // Clear the cached categories when the AppStream pool is updated
+                foreach (weak Gtk.Widget child in category_flow.get_children ()) {
+                    if (child is Widgets.CategoryItem) {
+                        var item = child as Widgets.CategoryItem;
+                        var category_components = item.app_category.get_components ();
+                        category_components.remove_range (0, category_components.length);
                     }
                 }
 
-                if (!installed) {
-                    recently_updated_carousel.add_package (package);
+                // Remove any old cached category list views
+                foreach (weak Gtk.Widget child in get_children ()) {
+                    if (child is Views.AppListView) {
+                        if (child != visible_child) {
+                            child.destroy ();
+                        } else {
+                            // If the category list view is visible, don't delete it, just make the package list right
+                            var list_view = child as Views.AppListView;
+                            list_view.clear ();
+
+                            unowned var client = AppCenterCore.Client.get_default ();
+                            var apps = client.get_applications_for_category (currently_viewed_category);
+                            list_view.add_packages (apps);
+                        }
+                    }
                 }
+
+                return GLib.Source.REMOVE;
+            });
+        });
+
+        banner_event_box.enter_notify_event.connect (() => {
+            banner_timeout_stop ();
+        });
+
+        banner_event_box.leave_notify_event.connect (() => {
+            banner_timeout_start ();
+        });
+
+        recently_updated_carousel.child_activated.connect ((child) => {
+            var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
+
+            show_package (package_row_grid.package);
+        });
+
+        destroy.connect (() => {
+            banner_timeout_stop ();
+        });
+
+        notify["visible-child"].connect (update_navigation);
+    }
+
+    private async void load_banners_and_carousels () {
+        unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
+        var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
+        var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
+
+        int package_count = 0;
+        foreach (var package in packages_by_release_date) {
+            if (package_count >= MAX_PACKAGES_IN_BANNER) {
+                break;
             }
 
-            recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
-
-            var houston = AppCenterCore.Houston.get_default ();
-            var pk_client = AppCenterCore.PackageKitBackend.get_default ();
-            var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-
-            var newest_ids = yield houston.get_app_ids ("/newest/project");
-            var trending_ids = yield houston.get_app_ids ("/newest/downloads");
-            Utils.shuffle_array (trending_ids);
-
-            var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
-            packages.set_all (pk_client.get_packages_for_component_ids (newest_ids));
-            packages.set_all (pk_client.get_packages_for_component_ids (trending_ids));
-
-            if (!AppCenterCore.PackageKitBackend.supports_parallel_package_queries) {
-                foreach (var package in packages.values) {
-                    package.update_state ();
-                }
-            } else {
+            var installed = false;
+            foreach (var origin_package in package.origin_packages) {
                 try {
-                    yield pk_client.update_multiple_package_state (packages.values);
+                    if (yield origin_package.backend.is_package_installed (origin_package)) {
+                        installed = true;
+                        break;
+                    }
                 } catch (Error e) {
-                    warning ("Error while getting installed state of banner packages: %s", e.message);
+                    continue;
                 }
             }
 
-            foreach (var package in newest_ids) {
-                if (packages_for_banner.size >= NUM_PACKAGES_IN_BANNER) {
-                    break;
-                }
-
-                var candidate_package = packages[package];
-
-                if (candidate_package != null) {
-                    if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                        packages_for_banner.add (candidate_package);
-                    }
-                }
+            if (!installed) {
+                packages_in_banner.add (package);
+                package_count++;
             }
-
-            foreach (var banner_package in packages_for_banner) {
-                newest_banner.add_package (banner_package);
-            }
-
-            newest_banner.go_to_first ();
-            switcher.show_all ();
-            switcher_revealer.set_reveal_child (true);
-
-            packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-            foreach (var package in trending_ids) {
-                if (packages_for_banner.size >= NUM_PACKAGES_IN_CAROUSEL) {
-                    break;
-                }
-
-                var candidate_package = packages[package];
-
-                if (candidate_package != null) {
-                    if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                        packages_for_banner.add (candidate_package);
-                    }
-                }
-            }
-
-            if (!packages_for_banner.is_empty) {
-                foreach (var trending_package in packages_for_banner) {
-                    trending_carousel.add_package (trending_package);
-                }
-                trending_revealer.reveal_child = true;
-            }
-
-            page_loaded ();
         }
-#else
-                });
+
+        foreach (var package in packages_in_banner) {
+            var banner = new Widgets.Banner (package);
+            banner.clicked.connect (() => {
+                show_package (package);
             });
-        }
-#endif
 
-        public override void show_package (
-            AppCenterCore.Package package,
-            bool remember_history = true
-        ) {
-            base.show_package (package, remember_history);
-            viewing_package = true;
-            if (remember_history) {
-                current_category = null;
-                currently_viewed_category = null;
-                subview_entered (_("Home"), false, "");
+            banner_carousel.add (banner);
+        }
+
+        banner_carousel.show_all ();
+        banner_revealer.reveal_child = true;
+
+        foreach (var package in packages_by_release_date) {
+            if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
+                break;
+            }
+
+            var installed = false;
+            foreach (var origin_package in package.origin_packages) {
+                try {
+                    if (yield origin_package.backend.is_package_installed (origin_package)) {
+                        installed = true;
+                        break;
+                    }
+                } catch (Error e) {
+                    continue;
+                }
+            }
+
+            if (!installed && !(package in packages_in_banner)) {
+                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                recently_updated_carousel.add (package_row);
             }
         }
+        recently_updated_carousel.show_all ();
+        recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
 
-        public override void return_clicked () {
-            if (previous_package != null) {
-                show_package (previous_package);
-                if (current_category != null) {
-                    subview_entered (current_category.name, false, "");
-                } else {
-                    subview_entered (_("Home"), false, "");
-                }
-            } else if (viewing_package && current_category != null) {
-                visible_child = get_child_by_name (current_category.name);
-                viewing_package = false;
-                subview_entered (_("Home"), true, current_category.name, _("Search %s").printf (current_category.name));
+        page_loaded ();
+    }
+
+    public override void show_package (
+        AppCenterCore.Package package,
+        bool remember_history = true
+    ) {
+        base.show_package (package, remember_history);
+        if (remember_history) {
+            current_category = null;
+
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            main_window.set_return_name (_("Home"));
+        }
+    }
+
+    public override void return_clicked () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+
+        if (previous_package != null) {
+            show_package (previous_package);
+            if (current_category != null) {
+                main_window.set_return_name (current_category.name);
             } else {
-                set_visible_child (category_scrolled);
-                viewing_package = false;
-                currently_viewed_category = null;
-                current_category = null;
-                subview_entered (null, true);
+                main_window.set_return_name (_("Home"));
             }
+        } else if (viewing_package && current_category != null) {
+            visible_child = get_child_by_name (current_category.name);
+
+            main_window.set_return_name (_("Home"));
+        } else {
+            set_visible_child (scrolled_window);
+        }
+    }
+
+    private void update_navigation () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+
+        if (visible_child is CategoryView) {
+            current_category = ((CategoryView) visible_child).category;
+            main_window.set_custom_header (current_category.name);
+            main_window.set_return_name (_("Home"));
+            main_window.configure_search (true, _("Search %s").printf (current_category.name));
+        } else if (visible_child == scrolled_window) {
+            current_category = null;
+            main_window.set_return_name (null);
+            main_window.set_custom_header (null);
+            main_window.configure_search (true);
+        }
+    }
+
+    public void show_app_list_for_category (AppStream.Category category) {
+        var child = get_child_by_name (category.name);
+        if (child != null) {
+            visible_child = child;
+            return;
         }
 
-        private void show_app_list_for_category (AppStream.Category category) {
-            subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
-            current_category = category;
-            var child = get_child_by_name (category.name);
-            if (child != null) {
-                visible_child = child;
-                return;
+        var category_view = new CategoryView (category);
+
+        add_named (category_view, category.name);
+        visible_child = category_view;
+
+        category_view.show_app.connect ((package) => {
+            base.show_package (package);
+
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            main_window.set_return_name (category.name);
+        });
+    }
+
+    private void banner_timeout_start () {
+        if (banner_timeout_id != 0) {
+            Source.remove (banner_timeout_id);
+        }
+
+        banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            if (!banner_carousel.is_visible ()) {
+                return Source.CONTINUE;
             }
 
-            var app_list_view = new Views.AppListView ();
-            app_list_view.show_all ();
-            add_named (app_list_view, category.name);
-            set_visible_child (app_list_view);
+            var new_index = (uint) banner_carousel.position + 1;
+            var max_index = banner_carousel.n_pages - 1; // 0-based index
 
-            app_list_view.show_app.connect ((package) => {
-                viewing_package = true;
-                base.show_package (package);
-                subview_entered (category.name, false, "");
-            });
+            if (banner_carousel.position >= max_index) {
+                new_index = 0;
+            }
 
-            unowned Client client = Client.get_default ();
-            var apps = client.get_applications_for_category (category);
-            app_list_view.add_packages (apps);
+            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+
+            return Source.CONTINUE;
+        });
+    }
+
+    private void banner_timeout_stop () {
+        if (banner_timeout_id != 0) {
+            Source.remove (banner_timeout_id);
+            banner_timeout_id = 0;
         }
     }
 }

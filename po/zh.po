@@ -3,85 +3,96 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # sdopx <26029682@qq.com>, 2019.
 # Jimmy Sun <jimmysuncn@hotmail.com>, 2019.
+# Vincent Yu <coolplayyhj@gmail.com>, 2021, 2022.
+# Mingjie Jiang <jiang@mingjie.dev>, 2021.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2019-05-15 01:18+0000\n"
-"Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
-"Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
+"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"PO-Revision-Date: 2022-04-30 17:01+0000\n"
+"Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
+"Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/zh/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:334
+#: src/Application.vala:38 src/Core/Package.vala:343
 msgid "AppCenter"
 msgstr "应用中心"
 
-#: src/Application.vala:112
-#, fuzzy, c-format
+#: src/Application.vala:114
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "无法解析 %s 的文件类型"
+msgstr "无法解析 %s 的媒体类型"
 
-#: src/Application.vala:132
+#: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "未找到指定的链接'%s'，请使用搜索"
 
-#: src/Application.vala:295
-#, fuzzy
-#| msgid "%s has been successfully installed"
+#: src/Application.vala:298
 msgid "The app has been installed"
-msgstr "%s已被安装成功"
+msgstr "应用安装成功"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:353
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#: src/Application.vala:299 src/MainWindow.vala:401
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s已被安装成功"
+msgstr "%s已被安装"
 
-#: src/MainWindow.vala:146
-#, fuzzy, c-format
+#: src/MainWindow.vala:139
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "卸载"
+msgstr "无法打开 “%s“"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
+#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
+#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
+#: src/Views/SearchView.vala:88
 msgid "Home"
 msgstr "首页"
 
-#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "正在安装"
+msgstr "已安装"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:87
+#: src/MainWindow.vala:212 src/MainWindow.vala:471
 msgid "Search Apps"
 msgstr "搜索应用"
 
+#: src/MainWindow.vala:218
+msgid "Automatic App Updates"
+msgstr "自动更新应用程序"
+
+#: src/MainWindow.vala:219
+msgid "System updates and unpaid apps will not update automatically"
+msgstr "系统及未付款的应用的更新将不会自动进行"
+
+#: src/MainWindow.vala:249
+msgid "Settings"
+msgstr "设置"
+
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+#: src/MainWindow.vala:404
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "打开"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "正在启动"
 
-#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
-#: src/Core/ChangeInformation.vala:64
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:292
+#: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "等待中"
 
@@ -105,7 +116,7 @@ msgstr "正在移除软件包"
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
 msgid "Installing"
 msgstr "正在安装"
 
@@ -145,14 +156,14 @@ msgstr "正在提交更改"
 msgid "Requesting data"
 msgstr "正在请求数据"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "已完成"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
-#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
+#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
+#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -226,7 +237,7 @@ msgstr "未知状态"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "正在处理软件包操作"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -239,61 +250,55 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
-#: src/Core/FlatpakBackend.vala:1104
-#, fuzzy
-#| msgid "Uninstall"
+#: src/Core/FlatpakBackend.vala:1260
 msgid "Uninstalling"
-msgstr "卸载"
+msgstr "正在卸载"
 
-#: src/Core/FlatpakBackend.vala:1277
-#, fuzzy
-#| msgid "Update"
+#: src/Core/FlatpakBackend.vala:1430
 msgid "Updating"
-msgstr "更新"
+msgstr "正在更新"
 
-#: src/Core/Package.vala:304
-#, fuzzy, c-format
+#: src/Core/Package.vala:313
+#, c-format
 msgid "%s Developers"
-msgstr "%s个开发者"
+msgstr "%s开发者"
 
-#: src/Core/Package.vala:336
-#, fuzzy
+#: src/Core/Package.vala:345
 msgid "elementary Updates"
-msgstr "最近更新"
+msgstr "elementary 更新"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:347
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (非官方渠道发布)"
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:352
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s （系統級）"
 
-#: src/Core/Package.vala:348
-#, fuzzy
+#: src/Core/Package.vala:357
 msgid "Ubuntu Drivers"
-msgstr "驱动"
+msgstr "Ubuntu 驱动程序"
 
-#: src/Core/Package.vala:351
+#: src/Core/Package.vala:360
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "未知来源（未经认证）"
 
-#: src/Core/Package.vala:524
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "未在AppCenter中设置为“已安装应用”的软件包: %s"
 
-#: src/Core/PackageKitBackend.vala:283
-#, fuzzy, c-format
+#: src/Core/PackageKitBackend.vala:290
+#, c-format
 msgid "%s (local)"
 msgstr "%s（本地）"
 
-#: src/Core/UpdateManager.vala:38
+#: src/Core/UpdateManager.vala:37
 msgid "Operating System Updates"
 msgstr "操作系统更新"
 
-#: src/Core/UpdateManager.vala:39
+#: src/Core/UpdateManager.vala:38
 msgid "Updates to system components"
 msgstr "系统组件的更新"
 
@@ -302,106 +307,78 @@ msgstr "系统组件的更新"
 msgid "Version: %s"
 msgstr "版本：%s"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:140
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak 运行库"
 
-#: src/Core/UpdateManager.vala:147
+#: src/Core/UpdateManager.vala:157
 msgid "No components with updates"
 msgstr "没有组件可以更新"
 
-#: src/Core/UpdateManager.vala:152
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "有%u个组件可以更新"
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:164
 #, c-format
 msgid "%s:"
 msgstr "%s："
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:202
 msgid "Restart Required"
 msgstr "需要重启"
 
-#: src/Core/UpdateManager.vala:194
+#: src/Core/UpdateManager.vala:203
 msgid "Please restart your system to finalize updates"
 msgstr "请重启您的系统以完成更新"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "注意事项"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
-msgid "“%s” contains explicit content"
-msgstr "%s 包含敏感内容"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s 可能包含成人或者其他令人不适的内容。Elementry未对此应用进行审查，亦不对此应用的内容负责。"
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "显示内容警告"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "未安装"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
-msgid "Install Anyway"
-msgstr "正在安装"
-
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "这可能是由一个手动安装的扩展软件仓库或一个已损坏的源文件造成。"
+msgstr "这可能是一个暂时性的故障，也可能是外来或用户编译的软件引起的问题。"
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "卸载"
+msgstr "安装应用失败"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "卸载"
+msgstr "安装“%s”失败"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "注意事项"
+msgstr "未经认证警告"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
 msgid "Install non-curated app?"
-msgstr "%s（本地）"
+msgstr "是否安装非AppCenter内的应用程序？"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
+msgstr "“%s” 不是elementary整合的。该应用未经过安全，隐私，或系统整合的审查。"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "应用可能不会收到bug修复或功能更新"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "应用可能在未授权的情况下修改系统设置或个人文件"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "显示内容警告"
+msgstr "显示未经认证警告"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "未安装"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "仍要安装"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -411,168 +388,174 @@ msgstr "在处理信用卡的过程中发生了一个错误。请稍后再次尝
 msgid "Please review your payment info and try again."
 msgstr "请检查您的支付信息并再度尝试。"
 
-#: src/Dialogs/StripeDialog.vala:76
+#: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
 msgstr "付款"
 
-#: src/Dialogs/StripeDialog.vala:92
-#, fuzzy, c-format
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#, c-format
 msgid "Pay $%d for %s"
-msgstr "为%2$s支付%1$d美元"
+msgstr "为 %s 支付 $%d"
 
-#: src/Dialogs/StripeDialog.vala:97
-msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr "这是一次性支付。您的电子邮件地址只会被用于给您发送收据。"
+#: src/Dialogs/StripeDialog.vala:94
+msgid "This is a one time payment suggested by the developer. You can also choose your own price."
+msgstr "此一次性支付是应用开发者提议的。您亦可以自行选择您能接受的价格。"
 
-#: src/Dialogs/StripeDialog.vala:98
-msgid "Privacy Policy"
-msgstr "隐私策略"
+#: src/Dialogs/StripeDialog.vala:115
+msgid "or"
+msgstr "或"
 
-#: src/Dialogs/StripeDialog.vala:111
+#: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "电子邮件"
 
-#: src/Dialogs/StripeDialog.vala:113
-#, fuzzy
-msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr "您的电子邮件地址用于发送收据。它从未被储存，您也不会订阅某个邮件列表。"
+#: src/Dialogs/StripeDialog.vala:157
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "仅用于向您发送收据。您不会被订阅至任何邮件收件列表中。"
+
+#: src/Dialogs/StripeDialog.vala:158
+msgid "Privacy Policy"
+msgstr "隐私策略"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:132
+#: src/Dialogs/StripeDialog.vala:182
 msgid "MM / YY"
 msgstr "月份 / 年份"
 
-#: src/Dialogs/StripeDialog.vala:152
+#: src/Dialogs/StripeDialog.vala:190
 msgid "CVC"
 msgstr "CVC号码"
 
-#: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:310
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
+#: src/Dialogs/StripeDialog.vala:383
 #, c-format
 msgid "Pay $%d.00"
 msgstr "支付%d.00美元"
 
-#: src/Dialogs/StripeDialog.vala:239
+#: src/Dialogs/StripeDialog.vala:246
+msgid "Try for Free"
+msgstr "免费试用"
+
+#: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
 msgstr "正在处理"
 
-#: src/Dialogs/StripeDialog.vala:264
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "在处理您的支付时遇到了一个问题"
 
-#: src/Dialogs/StripeDialog.vala:302
+#: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
 msgstr "稍后再支付"
 
-#: src/Dialogs/StripeDialog.vala:303
+#: src/Dialogs/StripeDialog.vala:376
 msgid "Retry"
 msgstr "重试"
 
-#: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "信用卡卡号有误。请使用正确的信用卡卡号再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:511
+#: src/Dialogs/StripeDialog.vala:559
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "到期月份无效。请使用正确的到期月份再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
+#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "到期年份无效。请使用正确的到期年份再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
+#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC号码有误。请使用正确的CVC再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
 msgid "The card has expired. Please try again with a different card."
 msgstr "信用卡已过期。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:538
+#: src/Dialogs/StripeDialog.vala:586
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "当前支付请求过多，请稍后重试。"
 
-#: src/Dialogs/StripeDialog.vala:554
+#: src/Dialogs/StripeDialog.vala:602
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "该卡不支付这类交易。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:556
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "该卡不支持这种货币。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr "交易已经被处理了。"
 
-#: src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "邮政编码有误。请使用正确的邮政编码再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:612
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "您的资金不足。请使用其他支持方式。"
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "数量有误。请使用一个有效的数量再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:577
+#: src/Dialogs/StripeDialog.vala:625
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN码有误。请使用正确的PIN码再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:579
+#: src/Dialogs/StripeDialog.vala:627
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "该PIN码尝试次数过多。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:599
+#: src/Dialogs/StripeDialog.vala:647
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "无法未完成交易。请联系您的银行获取更多信息。"
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:650
 msgid "The balance or credit limit on the card has been reached."
 msgstr "已超过信用卡余额或限额。"
 
-#: src/Dialogs/StripeDialog.vala:605
+#: src/Dialogs/StripeDialog.vala:653
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "给出的信用卡是一张测试卡。请使用一张真正的信用卡继续。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "卸载此应用的同时也会删除其数据文件。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "卸载"
+msgstr "要卸载应用吗？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "卸载"
+msgstr "卸载 “%s”？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Uninstall"
 msgstr "卸载"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "这可能是由一个手动安装的扩展软件仓库或一个已损坏的源文件造成。"
+msgstr "这可能是一个从外部安装的扩展软件仓库或手动编译的源文件造成的。"
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "卸载应用失败"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "卸载 “%s” 失败"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -591,113 +574,236 @@ msgid "Try Again"
 msgstr "重试"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "卸载"
+msgstr "更新应用失败"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "卸载"
+msgstr "更新 “%s” 失败"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:98
+msgid "Illicit Substances"
+msgstr "违禁内容物"
+
+#: src/Views/AppInfoView.vala:99
+msgid "Presence of or references to alcohol, narcotics, or tobacco"
+msgstr "存在或提及酒精、麻醉品或烟草"
+
+#: src/Views/AppInfoView.vala:104
+msgid "Sex & Nudity"
+msgstr "性与裸露"
+
+#: src/Views/AppInfoView.vala:105
+msgid "Adult nudity or sexual themes"
+msgstr "成人裸体或性主题"
+
+#: src/Views/AppInfoView.vala:110
+msgid "Offensive Language"
+msgstr "攻击性语言"
+
+#: src/Views/AppInfoView.vala:111
+msgid "Profanity, discriminatory language, or adult humor"
+msgstr "亵渎、歧视性语言或成人幽默"
+
+#: src/Views/AppInfoView.vala:116
+msgid "Gambling"
+msgstr "赌博"
+
+#: src/Views/AppInfoView.vala:117
+msgid "Realistic or participatory gambling"
+msgstr "现实或参与性赌博"
+
+#: src/Views/AppInfoView.vala:134
+msgid "Non-Curated"
+msgstr "非官方認證"
+
+#: src/Views/AppInfoView.vala:135
+msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgstr "在安全、隐私和系统集成度方面未经过 elementary 认证"
+
+#: src/Views/AppInfoView.vala:157
+msgid "Conflict"
+msgstr "冲突"
+
+#: src/Views/AppInfoView.vala:158
+msgid "Depictions of unsafe situations or aggressive conflict"
+msgstr "对不安全情况或严重冲突的描述"
+
+#: src/Views/AppInfoView.vala:171
+msgid "Violence"
+msgstr "暴力"
+
+#: src/Views/AppInfoView.vala:176
+msgid "Fantasy Violence"
+msgstr "幻想暴力"
+
+#: src/Views/AppInfoView.vala:181
+msgid "Graphic violence, bloodshed, or death"
+msgstr "画面包含暴力、流血或死亡内容"
+
+#: src/Views/AppInfoView.vala:225
+msgid "Multiplayer"
+msgstr "多人游戏"
+
+#: src/Views/AppInfoView.vala:226
+msgid "Online play with other people"
+msgstr "与其他人在线游戏"
+
+#: src/Views/AppInfoView.vala:242
+msgid "Unmoderated Audio, Video, or Text messaging with other people"
+msgstr "与其他人互传未经审核的音频、视频或文本消息"
+
+#: src/Views/AppInfoView.vala:244
+msgid "Moderated Audio, Video, or Text messaging with other people"
+msgstr "与其他人互传已审核的音频、视频或文本消息"
+
+#: src/Views/AppInfoView.vala:248
+msgid "Online Interactions"
+msgstr "线上互动"
+
+#: src/Views/AppInfoView.vala:258
+msgid "Location Sharing"
+msgstr "位置共享"
+
+#: src/Views/AppInfoView.vala:259
+msgid "Other people can see your real-world location"
+msgstr "其他人可以看到您的真实位置"
+
+#: src/Views/AppInfoView.vala:271
+msgid "Collects anonymous usage data"
+msgstr "匿名地收集使用数据"
+
+#: src/Views/AppInfoView.vala:274
+msgid "Collects usage data that could be used to identify you"
+msgstr "收集可用于识别您身份的使用数据"
+
+#: src/Views/AppInfoView.vala:279
+msgid "Info Sharing"
+msgstr "资讯分享"
+
+#: src/Views/AppInfoView.vala:396
 msgid "Screenshot Not Available"
 msgstr "截图不可用"
 
-#: src/Views/AppInfoView.vala:252
+#: src/Views/AppInfoView.vala:497
 msgid "Homepage"
 msgstr "主页"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:503
 msgid "Translate"
-msgstr ""
+msgstr "翻译"
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:509
 msgid "Send Feedback"
-msgstr ""
+msgstr "发送反馈"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:515
 msgid "Help"
 msgstr "帮助"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:526
 msgid "What's New:"
 msgstr "最新动态："
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:572
 msgid "Extensions:"
 msgstr "扩展："
 
-#: src/Views/AppInfoView.vala:410
-#, c-format
-msgid "Other Apps by %s"
-msgstr "其他%s的应用"
-
-#: src/Views/AppInfoView.vala:448
+#: src/Views/AppInfoView.vala:671
 msgid "Link copied to clipboard"
 msgstr "链接已复制到剪贴板"
 
-#: src/Views/AppInfoView.vala:459
+#: src/Views/AppInfoView.vala:682
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "到应用中心查看%s："
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:690
 msgid "Share"
 msgstr "分享"
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:767
-msgid "Public Domain"
+#: src/Views/AppInfoView.vala:769
+msgid "End of Life"
 msgstr ""
 
-#. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:770
-msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+#, fuzzy
+#| msgid "Built with older technologies that may not work as expected or receive security updates"
+msgid "May not work as expected or receive security updates"
+msgstr "使用较旧的、可能无法按预期工作或接收安全更新的技术构建"
 
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:775
-msgid "Free Software"
-msgstr ""
+#: src/Views/AppInfoView.vala:776
+msgid "Outdated"
+msgstr "已过期"
 
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:778
-msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:782
-msgid "Proprietary"
-msgstr ""
+#: src/Views/AppInfoView.vala:777
+#, fuzzy
+#| msgid "Built for an older version of %s; might not support the latest features"
+msgid "May not work as expected or support the latest features"
+msgstr "为旧版 %s 构建；可能不支持最新功能"
 
 #: src/Views/AppInfoView.vala:785
-#, fuzzy
-msgid "Unknown License"
-msgstr "未知状态"
+msgid "Unstable"
+msgstr "不稳定"
 
-#: src/Views/AppInfoView.vala:863
+#: src/Views/AppInfoView.vala:786
+#, c-format
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
+msgstr "为不稳定版本 %s 而构建； 可能存在重大问题。 不建议运用在生产力系统上。"
+
+#. TRANSLATORS: See the Wikipedia page
+#: src/Views/AppInfoView.vala:1036
+msgid "Public Domain"
+msgstr "公共域名"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:1039
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr "https://zh.wikipedia.org/wiki/公有领域"
+
+#. TRANSLATORS: Freedom, not price. See the GNU page.
+#: src/Views/AppInfoView.vala:1044
+msgid "Free Software"
+msgstr "开源软件"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:1047
+msgid "https://www.gnu.org/philosophy/free-sw"
+msgstr "https://www.gnu.org/philosophy/free-sw.zh-cn.html"
+
+#: src/Views/AppInfoView.vala:1051
+msgid "Proprietary"
+msgstr "版权所有"
+
+#: src/Views/AppInfoView.vala:1054
+msgid "Unknown License"
+msgstr "未知许可证"
+
+#: src/Views/AppInfoView.vala:1134
 msgid "Fund"
 msgstr "金额"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:1142
 msgid "Fund the development of this app"
 msgstr "资助这个应用程序的开发"
 
+#: src/Views/AppInfoView.vala:1263
+#, c-format
+msgid "Other Apps by %s"
+msgstr "其他%s的应用"
+
 #: src/Views/AppListUpdateView.vala:32
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "正在搜索更新…"
+msgstr "正在检查更新"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
+msgstr "正在下载系统及已安装应用程序的更新"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "需要重启以完成更新的安装"
+msgstr "重启以安装更新"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -705,55 +811,56 @@ msgstr "现在重启"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
+msgstr "请求重新启动失败。请手动重启以完成更新"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:186
+#: src/Views/AppListUpdateView.vala:210
 msgid "Update All"
 msgstr "全部更新"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "无结果"
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+msgid "Flathub"
+msgstr "Flathub"
 
-#: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "找不到应用。请更改搜索条件。"
+#: src/Views/AppListView.vala:32
+msgid "No Apps Found"
+msgstr "未找到应用程序"
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr "尝试更改索引词。 您还可以侧加载 Flatpak 应用程序，例如 %s"
+
+#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/CategoryView.vala:28
+msgid "Paid Apps"
+msgstr "付费应用"
+
+#: src/Views/CategoryView.vala:39
+msgid "Free Apps"
+msgstr "免费应用"
+
+#: src/Views/Homepage.vala:73
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:84
-msgid "Trending"
-msgstr "趋向"
-
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:95
 msgid "Categories"
 msgstr "类别"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:40
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"
-
-#: src/Widgets/Banner.vala:57
-msgid "An open, pay-what-you-want app store"
-msgstr "一个开放的，可以买您所想的应用程序商店"
-
-#: src/Widgets/Banner.vala:76
-msgid "Get the apps that you need at a price you can afford."
-msgstr "以可承受的价格获得您需要的应用程序。"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -768,9 +875,8 @@ msgid "Audio"
 msgstr "声音"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-#, fuzzy
 msgid "Communication"
-msgstr "教学"
+msgstr "通讯"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
@@ -781,87 +887,86 @@ msgid "Education"
 msgstr "教学"
 
 #: src/Widgets/CategoryFlowBox.vala:49
-#, fuzzy
 msgid "Finance"
-msgstr "取消"
+msgstr "金融"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "游戏"
 
-#: src/Widgets/CategoryFlowBox.vala:69
+#: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
 msgstr "图像"
 
-#: src/Widgets/CategoryFlowBox.vala:78
+#: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
 msgstr "互联网"
 
-#: src/Widgets/CategoryFlowBox.vala:82
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Math, Science, & Engineering"
-msgstr "科学与工程设计"
+msgstr "数学、科学及工程"
 
-#: src/Widgets/CategoryFlowBox.vala:101
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "Media Production"
 msgstr "媒体创造"
 
-#: src/Widgets/CategoryFlowBox.vala:108
+#: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
 msgstr "办公"
 
-#: src/Widgets/CategoryFlowBox.vala:115
+#: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
 msgstr "系统"
 
-#: src/Widgets/CategoryFlowBox.vala:119
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
 msgstr "通用访问"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
 msgstr "视频"
 
-#: src/Widgets/CategoryFlowBox.vala:125
+#: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
-msgstr ""
+msgstr "写作及语言"
 
-#: src/Widgets/HumbleButton.vala:85
+#: src/Widgets/CategoryFlowBox.vala:136
+msgid "Privacy & Security"
+msgstr "隐私及安全"
+
+#: src/Widgets/HumbleButton.vala:65
 msgid "Requires payments, which are not enabled"
 msgstr "尚未设置付款信息"
 
-#: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
+#: src/Widgets/HumbleButton.vala:75
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
 msgstr "清空"
 
-#: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
-#, fuzzy
+#: src/Widgets/HumbleButton.vala:77
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 msgid "Install"
-msgstr "正在安装"
+msgstr "安装"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:141
+#: src/Widgets/HumbleButton.vala:92
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00美元"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:144
+#: src/Widgets/HumbleButton.vala:95
 #, c-format
 msgid "$%d"
 msgstr "%d美元"
 
 #: src/Widgets/NetworkInfoBar.vala:28
-#, fuzzy
 msgid "Network Not Available."
 msgstr "网络不可用"
 
 #: src/Widgets/NetworkInfoBar.vala:29
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "连接到互联网以安装或更新应用。"
+msgstr "连接到互联网以浏览或安装应用。"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
@@ -907,16 +1012,16 @@ msgstr "复制链接"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "实际下载大小可能较小"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "仅按需下载部分应用程序及更新。"
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "最新"
+msgstr "至多 %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
@@ -932,9 +1037,48 @@ msgstr "驱动"
 msgid "Up to Date"
 msgstr "最新"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Automatically update free and paid-for curated apps"
+#~ msgstr "自动更新免费和付费的认证应用"
+
+#~ msgid "Content Warning"
+#~ msgstr "注意事项"
+
+#, fuzzy
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "%s 包含敏感内容"
+
+#, fuzzy
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "%s 可能包含成人或者其他令人不适的内容。Elementry未对此应用进行审查，亦不对此应用的内容负责。"
+
+#~ msgid "Show content warnings"
+#~ msgstr "显示内容警告"
+
+#, fuzzy
+#~| msgid "Content Warning"
+#~ msgid "Content Warnings"
+#~ msgstr "注意事项"
+
+#, fuzzy
+#~| msgid "An open, pay-what-you-want app store"
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "一个开放的，可以买您所想的应用程序商店"
+
+#~ msgid "Get the apps that you need at a price you can afford."
+#~ msgstr "以可承受的价格获得您需要的应用程序。"
+
+#~ msgid "Trending"
+#~ msgstr "趋向"
+
+#~ msgid "No Results"
+#~ msgstr "无结果"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "找不到应用。请更改搜索条件。"
 
 #~ msgid "Suggest Translations"
 #~ msgstr "译文建议"
