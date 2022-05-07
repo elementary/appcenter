@@ -299,6 +299,7 @@ public class AppCenter.Homepage : AbstractView {
             visible_child = search_view;
         }
 
+        search_view.clear ();
         search_view.current_search_term = search_term;
 
         unowned var client = AppCenterCore.Client.get_default ();
