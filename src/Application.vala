@@ -49,6 +49,8 @@ public class AppCenter.App : Gtk.Application {
 
     public static GLib.Settings settings;
 
+    public static SimpleAction refresh_action;
+
     static construct {
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
     }
@@ -82,6 +84,11 @@ public class AppCenter.App : Gtk.Application {
         client.cache_update_failed.connect (on_cache_update_failed);
         client.installed_apps_changed.connect (on_updates_available);
 
+        refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.activate.connect (() => {
+            client.update_cache.begin (true);
+        });
+
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (application_id + ".desktop");
             try {
@@ -93,7 +100,9 @@ public class AppCenter.App : Gtk.Application {
 
         add_action (quit_action);
         add_action (show_updates_action);
+        add_action (refresh_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
+        set_accels_for_action ("app.refresh", {"<Control>r"});
 
         search_provider = new SearchProvider ();
     }
@@ -197,13 +206,13 @@ public class AppCenter.App : Gtk.Application {
             main_window = new MainWindow (this);
 
 
-            // Force a cache refresh when the window opens, so we get new apps
+            // Force a Flatpak cache refresh when the window opens, so we get new apps
 #if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin (true);
+                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
             });
 #else
-            client.update_cache.begin (true);
+            client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
 #endif
 
             main_window.destroy.connect (() => {
@@ -332,13 +341,13 @@ public class AppCenter.App : Gtk.Application {
         });
     }
 
-    private void on_cache_update_failed (Error error) {
+    private void on_cache_update_failed (Error error, AppCenterCore.Client.CacheUpdateType cache_update_type) {
         if (main_window == null) {
             return;
         }
 
         if (update_fail_dialog == null) {
-            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message));
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type);
             update_fail_dialog.transient_for = main_window;
 
             update_fail_dialog.destroy.connect (() => {

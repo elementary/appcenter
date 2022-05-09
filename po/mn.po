@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"POT-Creation-Date: 2022-05-09 02:08+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/appcenter/mn/>\n"
@@ -22,17 +22,17 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Аппын Төв"
 
-#: src/Application.vala:114
+#: src/Application.vala:123
 #, fuzzy, c-format
 msgid "Could not parse the media type %s"
 msgstr "%s миметипийг задлаж чадсангүй"
 
-#: src/Application.vala:134
+#: src/Application.vala:143
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Онцгойлон '%s' холбоос олдсонгүй, хайлтын үр дүнд"
 
-#: src/Application.vala:298
+#: src/Application.vala:307
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
@@ -41,52 +41,58 @@ msgstr "%s амжилттай суулгагдлаа"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:401
+#: src/Application.vala:308 src/MainWindow.vala:412
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s амжилттай суулгагдлаа"
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:138
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "Суулгацыг устгах"
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
-#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
+#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr "Эхлэл"
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr "Суулгагдсан"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:471
 msgid "Search Apps"
 msgstr "Апп Хайх"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:217
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "Шинэчлэлүүдийг авч чадсангүй"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:249
+#: src/MainWindow.vala:230
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Check for Updates"
+msgstr "Шинэчлэлтүүдийг хайж байна…"
+
+#: src/MainWindow.vala:260
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Эхлэж байна"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:415
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Нээх"
@@ -580,19 +586,19 @@ msgstr ""
 msgid "Failed to uninstall “%s”"
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
 msgstr "Шинэчлэлүүдийг авч чадсангүй"
 
-#: src/Dialogs/UpdateFailDialog.vala:26
+#: src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг нэмсэн эсвэл эх файлыг гэмтсэн."
 
-#: src/Dialogs/UpdateFailDialog.vala:34
+#: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr "Үл ойшоох"
 
-#: src/Dialogs/UpdateFailDialog.vala:35
+#: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
 msgstr "Дахин оролдох"
 
@@ -875,21 +881,21 @@ msgstr "Апп Хайх"
 msgid "Free Apps"
 msgstr "Үнэгүй"
 
-#: src/Views/Homepage.vala:73
+#: src/Views/Homepage.vala:77
 msgid "Recently Updated"
 msgstr "Саяхан шинэчлэгдсэн"
 
-#: src/Views/Homepage.vala:95
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Ангилалууд"
 
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:308
 #, c-format
 msgid "Search %s"
 msgstr "Хайх %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:40
+#: src/Views/SearchView.vala:41
 msgctxt "view"
 msgid "Search"
 msgstr "Хайх"
