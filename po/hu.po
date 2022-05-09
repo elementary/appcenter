@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2022-05-01 17:02+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -39,7 +39,7 @@ msgstr "Az alkalmazás telepítésre került"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "A(z) \"%s\" telepítésre került"
@@ -62,7 +62,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Telepítve"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Alkalmazások keresése"
 
@@ -74,18 +74,18 @@ msgstr "Automatikus alkalmazásfrissítések"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "A rendszer és a nem kifizetett alkalmazások nem fognak automatikusan frissülni"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Frissítések keresése"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "Beállítások"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Megnyitás"
@@ -119,7 +119,7 @@ msgstr "Csomagok eltávolítása"
 msgid "Downloading"
 msgstr "Letöltés"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Telepítés"
 
@@ -164,9 +164,9 @@ msgid "Finished"
 msgstr "Befejeződött"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Megszakítás"
 
@@ -255,11 +255,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u frissítés érhető el a rendszerhez"
 msgstr[1] "%u frissítés érhető el a rendszerhez"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Eltávolítás"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Frissítés"
 
@@ -294,7 +294,7 @@ msgstr "Ismeretlen forrás (nem ellenőrzött)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Az Appközpontban nincs telepítettre állítva: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (helyi)"
@@ -820,7 +820,7 @@ msgstr "Újraindítási kérelem sikertelen. Indítsa újra kézzel a frissíté
 msgid "Update All"
 msgstr "Összes frissítése"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -828,14 +828,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Nem található alkalmazás"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Próbálja megváltoztatni a keresési kifejezéseket. Lehetősége van Flatpak alkalmazásokat beszerezni például innen is: %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Nem ellenőrzött alkalmazások"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -844,6 +840,10 @@ msgstr "Fizetős alkalmazások"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "Ingyenes alkalmazások"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Nem ellenőrzött alkalmazások"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

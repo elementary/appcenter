@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2022-01-11 18:13+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -40,7 +40,7 @@ msgstr "Aplikasi sudah terpasang"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" sudah terpasang"
@@ -63,7 +63,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Terpasang"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Cari Aplikasi"
 
@@ -77,18 +77,18 @@ msgstr "Pembaruan Otomatis"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Memeriksa Pembaruan"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "Pengaturan"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Buka"
@@ -122,7 +122,7 @@ msgstr "Menghapus paket"
 msgid "Downloading"
 msgstr "Mengunduh"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Memasang"
 
@@ -167,9 +167,9 @@ msgid "Finished"
 msgstr "Selesai"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Membatalkan"
 
@@ -256,11 +256,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Menghapus pemasangan"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Memperbarui"
 
@@ -295,7 +295,7 @@ msgstr "Sumber tidak diketahui (tidak dikurasi)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Status aplikasi tidak ditetapkan sebagai terpasang di AppCenter untuk paket: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -822,7 +822,7 @@ msgstr "Permintaan mulai ulang gagal. Mulai ulang secara manual untuk menyelesai
 msgid "Update All"
 msgstr "Perbarui Semua"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -830,14 +830,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Tidak Ada Aplikasi yang Ditemukan"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Coba ubah istilah penelusuran. Anda juga dapat melakukan sideload aplikasi Flatpak misalnya dari %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Aplikasi Tidak-Dikurasi"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -846,6 +842,10 @@ msgstr "Aplikasi Berbayar"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "Aplikasi Gratis"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Aplikasi Tidak-Dikurasi"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

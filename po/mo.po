@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -37,7 +37,7 @@ msgstr "%s a fost instalat cu succes"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -62,7 +62,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Instalare"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Căutare Apps"
 
@@ -76,20 +76,20 @@ msgstr "Nu s-a putut prelua actualizările"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Căutați actualizări …"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Pornire"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Deschis"
@@ -123,7 +123,7 @@ msgstr "Eliminarea pachetelor"
 msgid "Downloading"
 msgstr "Descărcare"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Instalare"
 
@@ -168,9 +168,9 @@ msgid "Finished"
 msgstr "Terminat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Anulare"
 
@@ -267,13 +267,13 @@ msgstr[1] ""
 "Altu\n"
 "%u sunt disponibile actualizări pentru sistemul dvs"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Dezinstalați"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Update All"
 msgstr "Actualizați-le pe toate"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -871,14 +871,10 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Aplicații suspecte"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
@@ -891,6 +887,10 @@ msgstr "Căutare Apps"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Gratuit"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Aplicații suspecte"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

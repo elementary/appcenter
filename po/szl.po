@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -38,7 +38,7 @@ msgstr "%s było sprownie zainstalowane"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -63,7 +63,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Wyszukej program"
 
@@ -77,20 +77,20 @@ msgstr "Niy szło pobrać aktualizacyji"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Wybadowanie aktualizacyji"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Zaczynanie"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Ôtwōrz"
@@ -124,7 +124,7 @@ msgstr "Kasowanie paketōw"
 msgid "Downloading"
 msgstr "Pobiyranie"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -169,9 +169,9 @@ msgid "Finished"
 msgstr "Fertich"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Pociepowanie"
 
@@ -262,11 +262,11 @@ msgstr[0] "Je dostympno %u aktualizacyjo dlo tego systymu"
 msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Ôdinstalowowanie"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Aktualizowanie"
 
@@ -301,7 +301,7 @@ msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalne)"
@@ -843,7 +843,7 @@ msgstr ""
 msgid "Update All"
 msgstr "Aktualizuj wszyjsko"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -851,14 +851,10 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Programy niynadzorowane"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
@@ -871,6 +867,10 @@ msgstr "Wyszukej program"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Wolny"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Programy niynadzorowane"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

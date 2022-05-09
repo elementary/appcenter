@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -43,7 +43,7 @@ msgstr "تم تثبيت التطبيق بنجاح"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "تم تثبيت ”%s“"
@@ -66,7 +66,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "ابحث عن تطبيقات"
 
@@ -80,20 +80,20 @@ msgstr "فشل في جلب التحديثات"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "جاري البحث عن تحديثات"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "قيد البدء"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "افتح"
@@ -127,7 +127,7 @@ msgstr "قيد حذف الحزم"
 msgid "Downloading"
 msgstr "قيد التحميل"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "قيد التثبيت"
 
@@ -172,9 +172,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "قيد الإلغاء"
 
@@ -271,11 +271,11 @@ msgstr[3] "تتوفر %u تحديثات لنظامك"
 msgstr[4] "يتوفر %u تحديثاً لنظامك"
 msgstr[5] "يتوفر %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "قيد إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "قيد التحديث"
 
@@ -310,7 +310,7 @@ msgstr "غير معروفة الأصل (غير مختارة)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "حالة التطبيق غير معينة ك \"مثبت\" في آب سنتر للحزمة: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (محلي)"
@@ -848,7 +848,7 @@ msgstr "لم تتم إعادة التشغيل. قم بإعادة التشغيل 
 msgid "Update All"
 msgstr "حدث الكل"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -856,14 +856,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "لم يتم العثور على تطبيقات"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "حاول تغيير عبارات البحث. يمكنك أيضا تحميل تطبيقات Flatpak بشكل متواز، مثلاً من %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "التطبيقات غير المختارة"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
@@ -876,6 +872,10 @@ msgstr "ابحث عن تطبيقات"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "مجاني"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "التطبيقات غير المختارة"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
