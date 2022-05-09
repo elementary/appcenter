@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2014-2022 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
  */
 
 namespace AppCenter.Views {
-    /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
+    /** AppList for Search View. Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
         public string? current_search_term { get; set; default = null; }
         private uint current_visible_index = 0U;
@@ -35,9 +35,6 @@ namespace AppCenter.Views {
             );
             alert_view.show_all ();
 
-#if CURATED
-            list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
-#endif
             list_box.set_placeholder (alert_view);
 
             list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
@@ -129,14 +126,6 @@ namespace AppCenter.Views {
         }
 
         private int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-#if CURATED
-            bool p1_is_elementary_native = p1.is_native;
-
-            if (p1_is_elementary_native != p2.is_native) {
-                return p1_is_elementary_native ? -1 : 1;
-            }
-#endif
-
             if (p1.is_plugin != p2.is_plugin) {
                 return p1.is_plugin ? 1 : -1;
             }
@@ -154,28 +143,5 @@ namespace AppCenter.Views {
         protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
             return compare_packages (row1.get_package (), row2.get_package ());
         }
-
-#if CURATED
-        [CCode (instance_pos = -1)]
-        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
-            bool elementary_native = row.get_package ().is_native;
-
-            if (!elementary_native) {
-                if (before == null || (before != null && before.get_package ().is_native)) {
-                    mark_row_non_curated (row);
-                }
-            }
-        }
-
-        private void mark_row_non_curated (Widgets.PackageRow row) {
-            var header = new Gtk.Label (_("Non-Curated Apps"));
-            header.margin = 12;
-            header.margin_top = 18;
-            header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            header.hexpand = true;
-            header.xalign = 0;
-            row.set_header (header);
-        }
-#endif
     }
 }

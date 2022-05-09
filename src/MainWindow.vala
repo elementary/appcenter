@@ -24,6 +24,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
+    private Gtk.ModelButton refresh_menuitem;
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
@@ -108,6 +109,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         notify["working"].connect (() => {
             Idle.add (() => {
                 spinner.active = working;
+                App.refresh_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
         });
@@ -216,31 +218,29 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             description = _("System updates and unpaid apps will not update automatically")
         };
 
-        automatic_updates_button.notify["active"].connect (() => {
-            if (automatic_updates_button.active) {
-                AppCenterCore.Client.get_default ().update_cache.begin (true);
-            } else {
-                AppCenterCore.Client.get_default ().cancel_updates (true);
-            }
-        });
+        var refresh_accellabel = new Granite.AccelLabel.from_action_name (
+            _("Check for Updates"),
+            "app.refresh"
+        );
 
-        var menu_popover_grid = new Gtk.Grid () {
-            column_spacing = 6,
-            margin_bottom = 6,
-            margin_top = 6,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6
+        refresh_menuitem = new Gtk.ModelButton () {
+            action_name = "app.refresh"
         };
+        refresh_menuitem.get_child ().destroy ();
+        refresh_menuitem.add (refresh_accellabel);
 
-        menu_popover_grid.add (automatic_updates_button);
-
-        menu_popover_grid.show_all ();
+        var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
+            margin_bottom = 6,
+            margin_top = 6
+        };
+        menu_popover_box.add (automatic_updates_button);
+        menu_popover_box.add (refresh_menuitem);
+        menu_popover_box.show_all ();
 
         var menu_popover = new Gtk.Popover (null);
-        menu_popover.add (menu_popover_grid);
+        menu_popover.add (menu_popover_box);
 
         var menu_button = new Gtk.MenuButton () {
-            can_focus = false,
             image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
             popover = menu_popover,
             tooltip_text = _("Settings"),
@@ -304,6 +304,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
 
         stack.notify["visible-child"].connect (on_view_mode_changed);
+
+        automatic_updates_button.notify["active"].connect (() => {
+            if (automatic_updates_button.active) {
+                AppCenterCore.Client.get_default ().update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+            } else {
+                AppCenterCore.Client.get_default ().cancel_updates (true);
+            }
+        });
 
         eventbox_badge.button_release_event.connect (() => {
             stack.visible_child = installed_view;

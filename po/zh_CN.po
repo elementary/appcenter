@@ -12,11 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"POT-Creation-Date: 2022-05-09 02:08+0000\n"
 "PO-Revision-Date: 2022-04-30 17:01+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,64 +29,70 @@ msgstr ""
 msgid "AppCenter"
 msgstr "应用中心"
 
-#: src/Application.vala:114
+#: src/Application.vala:123
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "无法解析文件类型 %s"
 
-#: src/Application.vala:134
+#: src/Application.vala:143
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "无法找到定向连接 '%s' ，改为搜索"
 
-#: src/Application.vala:298
+#: src/Application.vala:307
 msgid "The app has been installed"
 msgstr "应用已安装"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:401
+#: src/Application.vala:308 src/MainWindow.vala:412
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” 已安装"
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:138
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "启动 “%s” 失败"
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
-#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
+#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr "主页"
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr "已安装"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:471
 msgid "Search Apps"
 msgstr "搜索应用"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:217
 msgid "Automatic App Updates"
 msgstr "自动更新软件"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "系统更新及未付款的应用更新将不会自动进行"
 
-#: src/MainWindow.vala:249
+#: src/MainWindow.vala:230
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Check for Updates"
+msgstr "正在查找更新"
+
+#: src/MainWindow.vala:260
 msgid "Settings"
 msgstr "设置"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:415
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "打开"
@@ -562,19 +567,19 @@ msgstr "卸载应用失败"
 msgid "Failed to uninstall “%s”"
 msgstr "卸载 “%s” 失败"
 
-#: src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
 msgstr "获取更新失败"
 
-#: src/Dialogs/UpdateFailDialog.vala:26
+#: src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "这可能是外部、手动添加的软件源或源文件损坏造成的。"
 
-#: src/Dialogs/UpdateFailDialog.vala:34
+#: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr "忽略"
 
-#: src/Dialogs/UpdateFailDialog.vala:35
+#: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
 msgstr "重试"
 
@@ -848,21 +853,21 @@ msgstr "付费应用"
 msgid "Free Apps"
 msgstr "免费应用"
 
-#: src/Views/Homepage.vala:73
+#: src/Views/Homepage.vala:77
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:95
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "分类"
 
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:308
 #, c-format
 msgid "Search %s"
 msgstr "搜索 %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:40
+#: src/Views/SearchView.vala:41
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"

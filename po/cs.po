@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"POT-Creation-Date: 2022-05-09 02:08+0000\n"
 "PO-Revision-Date: 2022-01-21 19:36+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -27,66 +27,72 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Centrum Aplikací"
 
-#: src/Application.vala:114
+#: src/Application.vala:123
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Nedaří se rozpoznat typ média %s"
 
-#: src/Application.vala:134
+#: src/Application.vala:143
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Uvedený odkaz „%s“ nebyl nalezen, náhradně tedy bude hledáno"
 
-#: src/Application.vala:298
+#: src/Application.vala:307
 msgid "The app has been installed"
 msgstr "Aplikace byla nainstalována"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:401
+#: src/Application.vala:308 src/MainWindow.vala:412
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ bylo nainstalováno"
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:138
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Nepodařilo se spustit „%s“"
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
-#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
+#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr "Domů"
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainstalované"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:471
 msgid "Search Apps"
 msgstr "Hledat aplikace"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:217
 #, fuzzy
 #| msgid "Automatic Updates"
 msgid "Automatic App Updates"
 msgstr "Automatické aktualizace"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:249
+#: src/MainWindow.vala:230
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Check for Updates"
+msgstr "Hledají se aktualizace"
+
+#: src/MainWindow.vala:260
 msgid "Settings"
 msgstr "Nastavení"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:415
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Otevřít"
@@ -567,19 +573,19 @@ msgstr "Odebrání aplikace se nezdařilo"
 msgid "Failed to uninstall “%s”"
 msgstr "Odebrání „%s“ se nezdařilo"
 
-#: src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
 msgstr "Kontrola aktualizací se nezdařila"
 
-#: src/Dialogs/UpdateFailDialog.vala:26
+#: src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "Toto mohlo být způsobeno externími, ručně přidanými repozitáři softwaru, nebo poškozeným souborem s jejich seznamem (sources)."
 
-#: src/Dialogs/UpdateFailDialog.vala:34
+#: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr "Ignorovat"
 
-#: src/Dialogs/UpdateFailDialog.vala:35
+#: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
 msgstr "Zkuste to znovu"
 
@@ -853,21 +859,21 @@ msgstr "Placené aplikace"
 msgid "Free Apps"
 msgstr "Aplikace zdarma"
 
-#: src/Views/Homepage.vala:73
+#: src/Views/Homepage.vala:77
 msgid "Recently Updated"
 msgstr "Nedávno aktualizované"
 
-#: src/Views/Homepage.vala:95
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:308
 #, c-format
 msgid "Search %s"
 msgstr "Hledat %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:40
+#: src/Views/SearchView.vala:41
 msgctxt "view"
 msgid "Search"
 msgstr "Vyhledávání"
