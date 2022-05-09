@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"POT-Creation-Date: 2022-05-09 02:08+0000\n"
 "PO-Revision-Date: 2019-12-12 19:07+0000\n"
 "Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -24,17 +24,17 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Aplikaĵa Centro"
 
-#: src/Application.vala:114
+#: src/Application.vala:123
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Ne eblas analizi la aŭdovidaĵan tipon %s"
 
-#: src/Application.vala:134
+#: src/Application.vala:143
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specifita ligo „%s“ ne troveblas, nun serĉanta"
 
-#: src/Application.vala:298
+#: src/Application.vala:307
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
@@ -43,53 +43,59 @@ msgstr "%s estis sukcese instalita"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:401
+#: src/Application.vala:308 src/MainWindow.vala:412
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s estis sukcese instalita"
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:138
 #, fuzzy, c-format
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to launch “%s“"
 msgstr "Fiaskis la malinstalo de „%s“"
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
-#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
+#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr "Ĉefpaĝo"
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalitaj"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:471
 msgid "Search Apps"
 msgstr "Serĉi Aplikaĵojn"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:217
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "Malsukcesis la Ŝargo de Ĝisdatigoj"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:249
+#: src/MainWindow.vala:230
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Check for Updates"
+msgstr "Serĉanta ĝisdatigojn…"
+
+#: src/MainWindow.vala:260
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Komencanta"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:415
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Malfermi"
@@ -587,19 +593,19 @@ msgstr "Fiaskis la aplikaĵa malinstalo"
 msgid "Failed to uninstall “%s”"
 msgstr "Fiaskis la malinstalo de „%s“"
 
-#: src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
 msgstr "Malsukcesis la Ŝargo de Ĝisdatigoj"
 
-#: src/Dialogs/UpdateFailDialog.vala:26
+#: src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "Tio estis okazigita de fontaj dosieroj eksteraj el mane enigitaj program-deponejaj adresoj aŭ pro difekto."
 
-#: src/Dialogs/UpdateFailDialog.vala:34
+#: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr "Ignori"
 
-#: src/Dialogs/UpdateFailDialog.vala:35
+#: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
 msgstr "Reprovi"
 
@@ -884,21 +890,21 @@ msgstr "Serĉi Aplikaĵojn"
 msgid "Free Apps"
 msgstr "Senpaga"
 
-#: src/Views/Homepage.vala:73
+#: src/Views/Homepage.vala:77
 msgid "Recently Updated"
 msgstr "Freŝe Ĝisdatigita"
 
-#: src/Views/Homepage.vala:95
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:308
 #, c-format
 msgid "Search %s"
 msgstr "Serĉi %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:40
+#: src/Views/SearchView.vala:41
 msgctxt "view"
 msgid "Search"
 msgstr "Serĉo"
