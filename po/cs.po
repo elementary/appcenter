@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-01-21 19:36+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -44,7 +44,7 @@ msgstr "Aplikace byla nainstalována"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ bylo nainstalováno"
@@ -67,7 +67,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Nainstalované"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Hledat aplikace"
 
@@ -81,19 +81,19 @@ msgstr "Automatické aktualizace"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Hledají se aktualizace"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "Nastavení"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Otevřít"
 
@@ -126,7 +126,7 @@ msgstr "Odstraňování balíčků"
 msgid "Downloading"
 msgstr "Stahování"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Instalace"
 
@@ -171,9 +171,9 @@ msgid "Finished"
 msgstr "Hotovo"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Rušení"
 
@@ -264,11 +264,11 @@ msgstr[0] "%u aktualizace je pro váš systém k dispozici"
 msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
 msgstr[2] "%u aktualizací je pro váš systém k dispozici"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Odebírání"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Aktualizování"
 
@@ -303,7 +303,7 @@ msgstr "Neznámý původ (neprověřené)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stav aplikace v Centru aplikací není nastaven jako instalovaná pro balíček:%s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokální)"
@@ -363,39 +363,6 @@ msgstr "Aplikaci se nepodařilo nainstalovat"
 msgid "Failed to install “%s”"
 msgstr "„%s“ se nepodařilo nainstalovat"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Upozornění na neprověřený obsah"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "Nainstalovat neprověřenou aplikaci?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "„%s“ není prověřené v elementary a nebylo zkontrolováno ohledně zabezpečení, respektování soukromí či začlenění do systému."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Může se stát, že nebude dostávat opravy chyb a aktualizace funkcí"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Může přistupovat k nebo měnit systémové či osobní soubory bez dotazování se"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Zobrazovat varování ohledně neprověřených aplikací"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Neinstalovat"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Přesto instalovat"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Při zpracování karty se vyskytla chyba. Zkuste to prosím znovu později. Omlouváme se za jakékoli způsobené potíže."
@@ -443,7 +410,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Storno"
 
@@ -555,7 +522,7 @@ msgid "Uninstall “%s”?"
 msgstr "Odinstalovat „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Odinstalovat"
 
@@ -834,7 +801,7 @@ msgstr "Žádání o restart se nezdařilo. Restartujte ručně pro dokončení 
 msgid "Update All"
 msgstr "Aktualizovat vše"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -842,14 +809,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Nebyly nalezeny žádné aplikace"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Zkuste upravit vyhledávaný pojem. Je také možné nainstalovat bokem Flatpak aplikace, například z %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Neprověřované aplikace"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -858,6 +821,10 @@ msgstr "Placené aplikace"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "Aplikace zdarma"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Neprověřované aplikace"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -955,12 +922,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Vyžaduje platby a ty nejsou zapnuté"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Zdarma"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Nainstalovat"
 
@@ -1055,9 +1022,33 @@ msgstr "Ovladače"
 msgid "Up to Date"
 msgstr "Aktuální"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Aktualizovat"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Upozornění na neprověřený obsah"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "Nainstalovat neprověřenou aplikaci?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "„%s“ není prověřené v elementary a nebylo zkontrolováno ohledně zabezpečení, respektování soukromí či začlenění do systému."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Může se stát, že nebude dostávat opravy chyb a aktualizace funkcí"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Může přistupovat k nebo měnit systémové či osobní soubory bez dotazování se"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Zobrazovat varování ohledně neprověřených aplikací"
+
+#~ msgid "Don’t Install"
+#~ msgstr "Neinstalovat"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Přesto instalovat"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "Automaticky aktualizovat volné a placené dohlížené aplikace"

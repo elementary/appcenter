@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2020-07-04 12:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -40,7 +40,7 @@ msgstr "%s har blitt installert utan problem"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -65,7 +65,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Søk etter applikasjonar"
 
@@ -79,21 +79,21 @@ msgstr "Klarte ikkje å hente oppdateringar"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Leitar etter oppdateringar"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Startar"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Opne"
 
@@ -126,7 +126,7 @@ msgstr "Fjernar pakkar"
 msgid "Downloading"
 msgstr "Lastar ned"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Installerer"
 
@@ -171,9 +171,9 @@ msgid "Finished"
 msgstr "Ferdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Avbryt"
 
@@ -262,11 +262,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengeleg for ditt system"
 msgstr[1] "%u oppdateringar er tilgjengeleg for ditt system"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Oppdaterar"
 
@@ -301,7 +301,7 @@ msgstr "Ukjend opphav (ikkje-bekrefta)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Tilstanden til appen står som ikkje installert i AppCenter for pakken: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -360,39 +360,6 @@ msgstr "Appen vart ikkje installert"
 msgid "Failed to install “%s”"
 msgstr "Klarte ikkje å installera “%s”"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Innhaldsåtvaring"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "Installer denne ubekrefta appen?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "“%s”  er ikkje utvalgt av elementary, og har ikkje blitt sjekka for sikkerheit, personvern eller integrasjon mot systemet."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Den vil ikkje motta feilretting eller oppdateringar"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Den kan få tilgong til å endra system- eller personlige filer utan godkjenning"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Vis innhaldsåtvaringar"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Ikkje installer"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Installer likevel"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Ein feil skjedde under prosessering av kortet. Prøv igjen seinare. Vi ber om orsak for eventuelle ulemper det medfører."
@@ -444,7 +411,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -556,7 +523,7 @@ msgid "Uninstall “%s”?"
 msgstr "Avinstaller “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Avinstaller"
 
@@ -842,7 +809,7 @@ msgstr ""
 msgid "Update All"
 msgstr "Oppdater alle"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -850,14 +817,10 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Applikasjonar som ikkje er bekrefta"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
@@ -870,6 +833,10 @@ msgstr "Søk etter applikasjonar"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Gratis"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Applikasjonar som ikkje er bekrefta"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -969,12 +936,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Krev betaling, som ikkje er aktivert"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Installer"
 
@@ -1068,9 +1035,33 @@ msgstr "Drivarar"
 msgid "Up to Date"
 msgstr "Alt er oppdatert"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Oppdater"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Innhaldsåtvaring"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "Installer denne ubekrefta appen?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "“%s”  er ikkje utvalgt av elementary, og har ikkje blitt sjekka for sikkerheit, personvern eller integrasjon mot systemet."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Den vil ikkje motta feilretting eller oppdateringar"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Den kan få tilgong til å endra system- eller personlige filer utan godkjenning"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Vis innhaldsåtvaringar"
+
+#~ msgid "Don’t Install"
+#~ msgstr "Ikkje installer"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Installer likevel"
 
 #~ msgid "Content Warning"
 #~ msgstr "Innhaldsåtvaring"

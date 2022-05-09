@@ -55,15 +55,11 @@ namespace AppCenter {
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (install_approved ()) {
-                    action_clicked.begin ();
-                }
+                action_clicked.begin ();
             });
 
             action_button.payment_requested.connect ((amount) => {
-                if (install_approved ()) {
-                    show_stripe_dialog (amount);
-                }
+                show_stripe_dialog (amount);
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
@@ -346,50 +342,6 @@ namespace AppCenter {
                     }
                 }
             });
-        }
-
-        private bool install_approved () {
-            bool approved = true;
-#if CURATED
-            var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
-            var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
-            var app_curated = package.is_native || package.is_os_updates;
-
-            // Only show the curated dialog if the user has left them enabled, the app isn't installed
-            // and it isn't a curated app
-            if (curated_dialog_allowed && !app_installed && !app_curated) {
-                approved = false;
-
-                var non_curated_warning = new Widgets.NonCuratedWarningDialog (package.get_name ());
-                non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
-
-                non_curated_warning.response.connect ((response_id) => {
-                    switch (response_id) {
-                        case Gtk.ResponseType.OK:
-                            approved = true;
-                            break;
-                        case Gtk.ResponseType.CANCEL:
-                        case Gtk.ResponseType.CLOSE:
-                        case Gtk.ResponseType.DELETE_EVENT:
-                            approved = false;
-                            break;
-                        default:
-                            assert_not_reached ();
-                    }
-
-                    non_curated_warning.close ();
-                });
-
-                non_curated_warning.run ();
-                non_curated_warning.destroy ();
-
-                // If the install has been rejected at this stage, return early
-                if (!approved) {
-                    return false;
-                }
-            }
-#endif
-            return approved;
         }
     }
 }

@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-05-09 14:36+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +37,7 @@ msgstr "היישום הותקן"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s” הותקן"
@@ -61,7 +60,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "מותקן"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "חיפוש יישומים"
 
@@ -73,17 +72,17 @@ msgstr "עדכונים אוטומטיים ליישומון"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "עדכוני מערכת ויישומונים שלא נרכשו לא יתעדכנו אוטומטית"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 msgid "Check for Updates"
 msgstr "חיפוש עדכונים"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "הגדרות"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "פתיחה"
 
@@ -116,7 +115,7 @@ msgstr "חבילות בהסרה"
 msgid "Downloading"
 msgstr "מתבצעת הורדה"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "בהליך התקנה"
 
@@ -161,9 +160,9 @@ msgid "Finished"
 msgstr "הסתיים"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "מתבצע ביטול"
 
@@ -252,11 +251,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "עדכון אחד זמין עבור המערכת"
 msgstr[1] "%u עדכונים זמינים עבור המערכת"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "מתבצעת הסרה"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "מתבצע עדכון"
 
@@ -291,7 +290,7 @@ msgstr "מקור לא ידוע (לא מאורגן)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "מצב היישום לא מוגדר כמותקן בחנות היישומים לחבילה: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (מקומי)"
@@ -350,39 +349,6 @@ msgstr "התקנת היישום נכשלה"
 msgid "Failed to install “%s”"
 msgstr "התקנת „%s” נכשלה"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "אזהרה מחוץ לאוסף"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "להתקין יישום מחוץ לאוסף?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "„%s” לא סודר באוסף על ידי elementary ולא נבדקה רמת האבטחה שלו, הפרטיות או ההתאמה למערכת."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "ייתכן שלא יתקבלו עבורו תיקוני תקלות או עדכוני תכונות"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "ייתכן שהוא ייגש או ישנה קובצי מערכת או קבצים פרטיים ללא רשות"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "הצגת אזהרות מחוץ לאוסף"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "לא להתקין"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "להתקין בכל זאת"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "אירעה שגיאה בעת עיבוד נתוני הכרטיס. נא לנסות שוב מאוחר יותר. אנו מתנצלים על הטרחה הכרוכה בתהליך."
@@ -430,7 +396,7 @@ msgid "CVC"
 msgstr "קוד אבטחה (CVC)"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -542,7 +508,7 @@ msgid "Uninstall “%s”?"
 msgstr "להסיר את „%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "הסרה"
 
@@ -817,7 +783,7 @@ msgstr "בקשת הפעלה מחדש נכשלה. יש להפעיל ידנית מ
 msgid "Update All"
 msgstr "עדכון הכול"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -825,14 +791,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "לא נמצאו יישומים"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "נא לנסות לשנות את תנאי החיפוש. ניתן גם לטעון יישומי Flatpak מהצד למשל דרך %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "יישומים שלא נאספו"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -841,6 +803,10 @@ msgstr "יישומים בתשלום"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "יישומים בחינם"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "יישומים שלא נאספו"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -938,12 +904,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "דורש תשלומים, שאינם פעילים עדיין"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "חינם"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "התקנה"
 
@@ -1037,9 +1003,33 @@ msgstr "מנהלי התקנים"
 msgid "Up to Date"
 msgstr "עדכני"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "עדכון"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "אזהרה מחוץ לאוסף"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "להתקין יישום מחוץ לאוסף?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "„%s” לא סודר באוסף על ידי elementary ולא נבדקה רמת האבטחה שלו, הפרטיות או ההתאמה למערכת."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "ייתכן שלא יתקבלו עבורו תיקוני תקלות או עדכוני תכונות"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "ייתכן שהוא ייגש או ישנה קובצי מערכת או קבצים פרטיים ללא רשות"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "הצגת אזהרות מחוץ לאוסף"
+
+#~ msgid "Don’t Install"
+#~ msgstr "לא להתקין"
+
+#~ msgid "Install Anyway"
+#~ msgstr "להתקין בכל זאת"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "לעדכן יישומים חופשיים ובתשלום שנאספו אוטומטית"

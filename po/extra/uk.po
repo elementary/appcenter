@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
-"PO-Revision-Date: 2022-01-12 06:52+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
+"PO-Revision-Date: 2022-05-09 15:59+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -780,7 +780,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr "Перевірка наявності оновлень"
+msgstr "Перевірити наявність оновлень"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"

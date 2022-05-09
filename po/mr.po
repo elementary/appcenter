@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -38,7 +38,7 @@ msgstr "अ‍ॅप स्थापित केले गेले आहे"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" इन्स्टॉल झाले"
@@ -61,7 +61,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "प्रस्थापित"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "अनुप्रयोग शोधा"
 
@@ -75,21 +75,21 @@ msgstr "अपडेट्स आणण्यात अयशस्वी"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "सुरु होत आहे"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "उघडा"
 
@@ -122,7 +122,7 @@ msgstr "पॅकेज मिटवत आहे"
 msgid "Downloading"
 msgstr "डाउनलोड करित आहे"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "इन्स्टॉल होत आहे"
 
@@ -167,9 +167,9 @@ msgid "Finished"
 msgstr "पूर्ण झाले"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "रद्द करीत आहे"
 
@@ -258,11 +258,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहे"
 msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "विस्थापित करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
@@ -297,7 +297,7 @@ msgstr "अज्ञात उत्पत्ति (नॉन-क्युर�
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (स्थानिक)"
@@ -356,39 +356,6 @@ msgstr "अ‍ॅप स्थापित करण्यात अयशस्
 msgid "Failed to install “%s”"
 msgstr "\"%s\" स्थापित करण्यात अयशस्वी"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "नॉन-क्युरेटेड चेतावणी"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "नॉन-क्युरेटेड अ‍ॅप स्थापित करायचा?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "हे दोष निराकरण किंवा वैशिष्ट्य अद्यतने प्राप्त करू शकत नाही"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "हे परवानगीशिवाय सिस्टम किंवा वैयक्तिक फायलींमध्ये प्रवेश करू शकते किंवा बदलू शकते"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "नॉन-क्युरेटेड चेतावण्या दाखवा"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "इन्स्टॉल करू नका"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "तरीही इन्स्टॉल करा"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "ह्या कार्डावरुन प्रक्रिया करतांना काही चूक झाली आहे. कृपया पुन्हा प्रयत्न करा. आपणांस होणाऱ्या असुविधेबद्दल क्षमा असावी."
@@ -440,7 +407,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "रद्द करा"
 
@@ -552,7 +519,7 @@ msgid "Uninstall “%s”?"
 msgstr "\"%s\" विस्थापित करायचा?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "विस्थापित करा"
 
@@ -833,7 +800,7 @@ msgstr ""
 msgid "Update All"
 msgstr "सर्व अपडेट करा"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -841,14 +808,10 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "नॉन-क्युरेटेड अॅप्स"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
@@ -861,6 +824,10 @@ msgstr "अनुप्रयोग शोधा"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "विनामुल्य"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "नॉन-क्युरेटेड अॅप्स"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -960,12 +927,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "जे सक्षम नाहीत, त्यांसाठी पेमेंट आवश्यक आहे"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "विनामुल्य"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "प्रस्थापित"
 
@@ -1059,9 +1026,33 @@ msgstr "ड्राइव्हर्स"
 msgid "Up to Date"
 msgstr "अद्ययावत"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "नॉन-क्युरेटेड चेतावणी"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "नॉन-क्युरेटेड अ‍ॅप स्थापित करायचा?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "हे दोष निराकरण किंवा वैशिष्ट्य अद्यतने प्राप्त करू शकत नाही"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "हे परवानगीशिवाय सिस्टम किंवा वैयक्तिक फायलींमध्ये प्रवेश करू शकते किंवा बदलू शकते"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "नॉन-क्युरेटेड चेतावण्या दाखवा"
+
+#~ msgid "Don’t Install"
+#~ msgstr "इन्स्टॉल करू नका"
+
+#~ msgid "Install Anyway"
+#~ msgstr "तरीही इन्स्टॉल करा"
 
 #~ msgid "Content Warning"
 #~ msgstr "मजकूर चेतावणी"

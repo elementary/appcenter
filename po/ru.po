@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-01-24 19:15+0000\n"
 "Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -44,7 +44,7 @@ msgstr "Приложение установлено"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» установлено"
@@ -67,7 +67,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
@@ -81,19 +81,19 @@ msgstr "Автоматические обновления"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Проверка обновлений"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "Параметры"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Открыть"
 
@@ -126,7 +126,7 @@ msgstr "Удаление пакетов"
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Установка"
 
@@ -171,9 +171,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Отмена"
 
@@ -264,11 +264,11 @@ msgstr[0] "%u доступно обновление для вашей систе
 msgstr[1] "%u доступны обновления для вашей системы"
 msgstr[2] "%u доступно обновлений для вашей системы"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Удаление"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Обновление"
 
@@ -303,7 +303,7 @@ msgstr "Неизвестное происхождение (не курируем
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Состояние приложения не определено как установленное в Центре приложений для пакета: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (локальный)"
@@ -363,39 +363,6 @@ msgstr "Не удалось установить приложение"
 msgid "Failed to install “%s”"
 msgstr "Не удалось установить «%s»"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Предупреждение, не курируемое"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "Установить не курируемое приложение?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "«%s» не курируется elementary и не проверяется на безопасность, конфиденциальность или совместимость с системой."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Может не получать обновлений или исправлений"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Может иметь доступ или изменять системные или личные файлы без разрешения"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Показывать предупреждения про не курируемые приложения"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Не устанавливать"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Всё равно установить"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Ошибка при обработке данных, пожалуйста, повторите попытку позже. Приносим извинения за причинённые неудобства."
@@ -443,7 +410,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -555,7 +522,7 @@ msgid "Uninstall “%s”?"
 msgstr "Удалить «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Удалить"
 
@@ -834,7 +801,7 @@ msgstr "Запрос на перезапуск не удался. Перезап
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -842,14 +809,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Приложения не найдены"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Попробуйте перефразировать запрос. Вы также можете загрузить приложения Flatpak, например с %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Не курируемые приложения"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -858,6 +821,10 @@ msgstr "Платные приложения"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "Бесплатные приложения"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Не курируемые приложения"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -955,12 +922,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Требует платежи, которые не включены"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Бесплатно"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Установить"
 
@@ -1055,9 +1022,33 @@ msgstr "Драйверы"
 msgid "Up to Date"
 msgstr "Обновления не требуются"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Обновить"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Предупреждение, не курируемое"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "Установить не курируемое приложение?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "«%s» не курируется elementary и не проверяется на безопасность, конфиденциальность или совместимость с системой."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Может не получать обновлений или исправлений"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Может иметь доступ или изменять системные или личные файлы без разрешения"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Показывать предупреждения про не курируемые приложения"
+
+#~ msgid "Don’t Install"
+#~ msgstr "Не устанавливать"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Всё равно установить"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "Автоматически обновлять бесплатные и платные курируемые приложения"

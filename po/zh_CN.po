@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-04-30 17:01+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -46,7 +46,7 @@ msgstr "应用已安装"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” 已安装"
@@ -69,7 +69,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "已安装"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "搜索应用"
 
@@ -81,19 +81,19 @@ msgstr "自动更新软件"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "系统更新及未付款的应用更新将不会自动进行"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "正在查找更新"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "设置"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "打开"
 
@@ -126,7 +126,7 @@ msgstr "正在删除软件包"
 msgid "Downloading"
 msgstr "下载中"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "正在安装"
 
@@ -171,9 +171,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "取消中"
 
@@ -260,11 +260,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有 %u 个可用更新"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "正在卸载"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "正在更新"
 
@@ -299,7 +299,7 @@ msgstr "未知来源（未经认证）"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "应用程序在 AppCenter 中的状态未标记为已安装：%s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s（本地）"
@@ -357,39 +357,6 @@ msgstr "安装应用失败"
 msgid "Failed to install “%s”"
 msgstr "安装 “%s” 失败"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "未经认证警告"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "要安装未经认证的应用吗？"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "“%s” 在安全、隐私和系统集成方面未经过 elementary 认证。"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "应用可能不包含问题修复或功能更新"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "应用可能在未经允许的情况下修改系统设置或个人文件"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "显示未经认证警告"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "停止安装"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "仍然安装"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "支付流程出现问题，请稍后再试。为您带来的不便我们深表歉意。"
@@ -437,7 +404,7 @@ msgid "CVC"
 msgstr "CVC 号码"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "取消"
 
@@ -549,7 +516,7 @@ msgid "Uninstall “%s”?"
 msgstr "卸载 “%s”？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "卸载"
 
@@ -828,7 +795,7 @@ msgstr "请求重新启动失败，请手动重启以完成更新"
 msgid "Update All"
 msgstr "全部更新"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -836,14 +803,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "未发现应用"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "尝试更改搜索词。 您还可以加载 Flatpak 应用程序，例如来自 %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "未经认证的应用"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -852,6 +815,10 @@ msgstr "付费应用"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "免费应用"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "未经认证的应用"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -949,12 +916,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "需要付款，但付款方式还未启用"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "安装"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "安装"
 
@@ -1047,9 +1014,33 @@ msgstr "驱动程序"
 msgid "Up to Date"
 msgstr "已是最新"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "未经认证警告"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "要安装未经认证的应用吗？"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "“%s” 在安全、隐私和系统集成方面未经过 elementary 认证。"
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "应用可能不包含问题修复或功能更新"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "应用可能在未经允许的情况下修改系统设置或个人文件"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "显示未经认证警告"
+
+#~ msgid "Don’t Install"
+#~ msgstr "停止安装"
+
+#~ msgid "Install Anyway"
+#~ msgstr "仍然安装"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "自动更新免费和付费的认证应用"

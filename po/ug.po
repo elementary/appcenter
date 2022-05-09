@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2016-12-28 08:13+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "%s سى ئوڭۇشلۇق ئورنىتىلدى"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -64,7 +64,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "ئورنىتىش"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "ئەپلەرنى ئىزدەش"
 
@@ -76,21 +76,21 @@ msgstr ""
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "يىڭىلانمىلارنى ئىزدەۋاتىدۇ...."
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "قوزغىلىۋاتىدۇ"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr ""
 
@@ -123,7 +123,7 @@ msgstr "بوغچىلارنى ئۆچۈرۈۋاتىدۇ"
 msgid "Downloading"
 msgstr "چۈشۈرۈۋاتىدۇ"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "ئورنىتىۋاتىدۇ"
 
@@ -168,9 +168,9 @@ msgid "Finished"
 msgstr "تاماملاندى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "ئەمەلدىن قالدۇرۇۋاتىدۇ"
 
@@ -257,13 +257,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "سىستېمىنىڭ %u يىڭىلىنىشىنى يىڭىلىغىلى بولىدۇ"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ئۆچۈرۈش"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -300,7 +300,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -359,40 +359,6 @@ msgstr "تەكشۈرۈش ۋە ئەپ ئورنىتىش"
 msgid "Failed to install “%s”"
 msgstr "تەكشۈرۈش ۋە ئەپ ئورنىتىش"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
-msgid "Install Anyway"
-msgstr "ئورنىتىۋاتىدۇ"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr ""
@@ -440,7 +406,7 @@ msgid "CVC"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇرۇش"
 
@@ -553,7 +519,7 @@ msgid "Uninstall “%s”?"
 msgstr "ئۆچۈرۈش"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "ئۆچۈرۈش"
 
@@ -837,7 +803,7 @@ msgstr ""
 msgid "Update All"
 msgstr "ھەممىسىنى يىڭىلاش"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -845,13 +811,9 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
 msgstr ""
 
 #: src/Views/CategoryView.vala:28
@@ -865,6 +827,10 @@ msgstr "ئەپلەرنى ئىزدەش"
 #| msgid "Search Apps"
 msgid "Free Apps"
 msgstr "ئەپلەرنى ئىزدەش"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr ""
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -965,12 +931,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 #, fuzzy
 msgid "Install"
 msgstr "ئورنىتىش"
@@ -1066,9 +1032,13 @@ msgstr ""
 msgid "Up to Date"
 msgstr "ئەڭ يىڭى"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "يېڭىلاش"
+
+#, fuzzy
+#~ msgid "Install Anyway"
+#~ msgstr "ئورنىتىۋاتىدۇ"
 
 #~ msgid "No Results"
 #~ msgstr "نەتىجە يوق"

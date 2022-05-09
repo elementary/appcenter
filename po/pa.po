@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -40,7 +40,7 @@ msgstr "ਐਪ ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
@@ -63,7 +63,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "ਸਥਾਪਤ ਕੀਤੇ ਹੋਏ"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "ਐਪਾਂ ਖੋਜੋ"
 
@@ -77,21 +77,21 @@ msgstr "ਅਪਡੇਟਾਂ ਲਿਆਉਣਾ ਨਾਕਾਮ ਰਿਹਾ"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "ਸ਼ੁਰੂ ਕਰ ਰਿਹੈ"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:409
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
 
@@ -124,7 +124,7 @@ msgstr "ਪੈਕੇਜ ਹਟਾ ਰਿਹੈ"
 msgid "Downloading"
 msgstr "ਡਾਊਨਲੋਡ ਕਰ ਰਿਹੈ"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "ਸਥਾਪਤ ਕਰ ਰਿਹੈ"
 
@@ -169,9 +169,9 @@ msgid "Finished"
 msgstr "ਖ਼ਤਮ ਹੋਇਆ"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "ਰੱਦ ਹੋ ਰਿਹੈ"
 
@@ -260,11 +260,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
 msgstr[1] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "ਅਣ-ਸਥਾਪਨ ਹੋ ਰਿਹੈ"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "ਅਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
@@ -299,7 +299,7 @@ msgstr "ਅਣਜਾਣ ਸਰੋਤ ਤੋਂ (ਅਣ- ਘੜੀ/ਘੜੀਆ�
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "ਇਹਨਾ ਪੈਕੇਜਾਂ ਲਈ ਐਪ-ਸੈਂਟਰ ਵਿੱਚ ਐਪ ਹਾਲਾਤ ਬਤੌਰ ਸਥਾਪਤ ਨਹੀਂ ਤੈਅ ਕੀਤੇ ਹੋਈ: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (ਮਕਾਮੀ)"
@@ -358,39 +358,6 @@ msgstr "ਐਪ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 msgid "Failed to install “%s”"
 msgstr "“%s” ਨੂੰ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀ"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "ਅਣ-ਸੰਵਾਰੀ ਐਪ ਸਥਾਪਤ ਕਰਨੀ ਹੈ?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "“%s” ਨੂੰ ਐਲੀਮੈਂਟਰੀ ਨੇ ਸੰਵਾਰਿਆ ਨਹੀਂ ਹੈ ਅਤੇ ਨਾ ਹੀ ਸੁਰੱਖਿਆ, ਪਰਦੇਦਾਰੀ ਜਾਂ ਸਿਸਟਮ ਅਨੁਕੂਲਤਾ ਵੇਖਣ ਲਈ ਇਸਦਾ ਮੁਆਇਨਾ ਕੀਤੈ।"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "ਹੋ ਸਕਦੈ ਇਸਨੂੰ ਅਪਡੇਟਾਂ ਜਾਂ ਸੁਧਾਰ ਨਾ ਮਿਲਣ"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "ਇਹ ਸਿਸਟਮ ਜਾਂ ਨਿੱਜੀ ਫ਼ਾਇਲਾਂ ਨੂੰ ਬਿਨਾਂ ਇਜਾਜ਼ਤ ਪੜ੍ਹ ਸਕਦਾ/ਸਕਦੀ ਹੈ"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "ਸਥਾਪਤ ਨਾ ਕਰੋ"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਸਥਾਪਤ ਕਰੋ"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "ਕਾਰਡ ਪ੍ਰੋਸੈਸਿੰਗ ਦੌਰਾਨ ਖ਼ਰਾਬੀ ਰਹੀ। ਕਿਸੇ ਵੀ ਤਕਲੀਫ਼ ਲਈ ਅਸੀਂ ਮਾਫ਼ੀ ਚਾਹੁੰਦੇ ਹਾਂ।"
@@ -442,7 +409,7 @@ msgid "CVC"
 msgstr "ਸੀਵੀਸੀ"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
@@ -554,7 +521,7 @@ msgid "Uninstall “%s”?"
 msgstr "“%s” ਹਟਾਉਣੀ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "ਅਣ-ਸਥਾਪਨ ਕਰੋ (ਐਪ ਹਟਾਓ)"
 
@@ -835,7 +802,7 @@ msgstr "ਆਪਣੇ-ਆਪ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਨਾਕਾ�
 msgid "Update All"
 msgstr "ਸਾਰੀਆਂ ਨੂੰ ਅਪਡੇਟ ਕਰੋ"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -843,14 +810,10 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "ਅਣ ਸੰਵਾਰੀਆਂ ਐਪਾਂ"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
@@ -863,6 +826,10 @@ msgstr "ਐਪਾਂ ਖੋਜੋ"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "ਮੁਫ਼ਤ"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "ਅਣ ਸੰਵਾਰੀਆਂ ਐਪਾਂ"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
@@ -962,12 +929,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "ਇਹਦੇ ਨਹੀਂ ਅਦਾਇਗੀ ਲੋੜੀਂਦੀ ਹੈ, ਜਿਹੜੇ ਕਿ ਚਾਲੂ ਨਹੀਂ ਕੀਤੀ ਹੋਈ"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "ਮੁਫ਼ਤ"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "ਸਥਾਪਤ ਕਰੋ"
 
@@ -1061,9 +1028,33 @@ msgstr "ਡਰਾਇਵਰ"
 msgid "Up to Date"
 msgstr "ਤਰੋ-ਤਾਜ਼ਾ (ਅਪ ਟੂ ਡੇਟ)"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "ਅਪਡੇਟ"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀ"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "ਅਣ-ਸੰਵਾਰੀ ਐਪ ਸਥਾਪਤ ਕਰਨੀ ਹੈ?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "“%s” ਨੂੰ ਐਲੀਮੈਂਟਰੀ ਨੇ ਸੰਵਾਰਿਆ ਨਹੀਂ ਹੈ ਅਤੇ ਨਾ ਹੀ ਸੁਰੱਖਿਆ, ਪਰਦੇਦਾਰੀ ਜਾਂ ਸਿਸਟਮ ਅਨੁਕੂਲਤਾ ਵੇਖਣ ਲਈ ਇਸਦਾ ਮੁਆਇਨਾ ਕੀਤੈ।"
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "ਹੋ ਸਕਦੈ ਇਸਨੂੰ ਅਪਡੇਟਾਂ ਜਾਂ ਸੁਧਾਰ ਨਾ ਮਿਲਣ"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "ਇਹ ਸਿਸਟਮ ਜਾਂ ਨਿੱਜੀ ਫ਼ਾਇਲਾਂ ਨੂੰ ਬਿਨਾਂ ਇਜਾਜ਼ਤ ਪੜ੍ਹ ਸਕਦਾ/ਸਕਦੀ ਹੈ"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
+
+#~ msgid "Don’t Install"
+#~ msgstr "ਸਥਾਪਤ ਨਾ ਕਰੋ"
+
+#~ msgid "Install Anyway"
+#~ msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਸਥਾਪਤ ਕਰੋ"
 
 #~ msgid "Content Warning"
 #~ msgstr "ਸਮੱਗਰੀ ਚਿਤਾਵਨੀ"
