@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2022-05-01 11:19+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -39,7 +39,7 @@ msgstr "L'aplicació s'ha instal·lat"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s s'ha instal·lat"
@@ -62,7 +62,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Instal·lades"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Cerca aplicacions"
 
@@ -74,18 +74,18 @@ msgstr "Actualitzacions automàtiques de l'aplicació"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "Les actualitzacions del sistema i les aplicacions no pagades no s'actualitzaran automàticament."
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Es comprova si hi ha actualitzacions."
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "Paràmetres"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Obre"
@@ -119,7 +119,7 @@ msgstr "Se suprimeixen paquets"
 msgid "Downloading"
 msgstr "Es baixa"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "S'instal·la"
 
@@ -164,9 +164,9 @@ msgid "Finished"
 msgstr "S'ha acabat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Es cancel·la"
 
@@ -255,11 +255,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Es desinstal·la"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "S'actualitza"
 
@@ -294,7 +294,7 @@ msgstr "D'origen desconegut (sense cura)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'estat de l'aplicació no està establert com a instal·lada al Centre d'aplicacions per al paquet %s."
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -820,7 +820,7 @@ msgstr "Ha fallat la sol·licitud de reinici. Reinicieu manualment el sistema pe
 msgid "Update All"
 msgstr "Actualitza-ho tot"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -828,14 +828,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "No s'ha trobat cap aplicació."
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Preveu de canviar els termes de la cerca. També podeu carregar lateralment aplicacions de Flatpak, per exemple des de %s."
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Aplicacions sense cura"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -844,6 +840,10 @@ msgstr "Aplicacions de pagament"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "Aplicacions gratuïtes"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Aplicacions sense cura"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

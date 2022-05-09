@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -37,7 +37,7 @@ msgstr "% வெற்றிகரமாக நிறுவப்பட்டத
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, fuzzy, c-format
 msgid "“%s” has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
@@ -61,7 +61,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "பயன்பாடுகளை தேடு"
 
@@ -73,20 +73,20 @@ msgstr ""
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "தொடங்குகிறது"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "திற"
@@ -120,7 +120,7 @@ msgstr "தொகுப்புகளை நீக்குகிறது"
 msgid "Downloading"
 msgstr "பதிவிறக்குகிறது"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "நிறுவுகிறது"
 
@@ -165,9 +165,9 @@ msgid "Finished"
 msgstr "முடிந்தது"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
@@ -256,13 +256,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u உங்கள் கணினிக்கு புதுப்பிப்பு உள்ளது"
 msgstr[1] "%u உங்கள் கணினிக்கு புதுப்பிப்புகள் உள்ளன"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "நீக்குதல்"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -301,7 +301,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -844,7 +844,7 @@ msgstr ""
 msgid "Update All"
 msgstr "அனைத்தையும் புதுப்பிக்கவும்"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -852,13 +852,9 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
 msgstr ""
 
 #: src/Views/CategoryView.vala:28
@@ -872,6 +868,10 @@ msgstr "பயன்பாடுகளை தேடு"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "இலவசம்"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr ""
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

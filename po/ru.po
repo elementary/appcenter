@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2022-01-24 19:15+0000\n"
 "Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -44,7 +44,7 @@ msgstr "Приложение установлено"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» установлено"
@@ -67,7 +67,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
@@ -81,18 +81,18 @@ msgstr "Автоматические обновления"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Проверка обновлений"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "Параметры"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Открыть"
@@ -126,7 +126,7 @@ msgstr "Удаление пакетов"
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Установка"
 
@@ -171,9 +171,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "Отмена"
 
@@ -264,11 +264,11 @@ msgstr[0] "%u доступно обновление для вашей систе
 msgstr[1] "%u доступны обновления для вашей системы"
 msgstr[2] "%u доступно обновлений для вашей системы"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Удаление"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Обновление"
 
@@ -303,7 +303,7 @@ msgstr "Неизвестное происхождение (не курируем
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Состояние приложения не определено как установленное в Центре приложений для пакета: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (локальный)"
@@ -834,7 +834,7 @@ msgstr "Запрос на перезапуск не удался. Перезап
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -842,14 +842,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Приложения не найдены"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Попробуйте перефразировать запрос. Вы также можете загрузить приложения Flatpak, например с %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Не курируемые приложения"
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
@@ -858,6 +854,10 @@ msgstr "Платные приложения"
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "Бесплатные приложения"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Не курируемые приложения"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

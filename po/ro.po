@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2022-01-31 07:59+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -40,7 +40,7 @@ msgstr "Aplicația s-a instalat"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" s-a instalat"
@@ -63,7 +63,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Instalate"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "Caută aplicații"
 
@@ -77,18 +77,18 @@ msgstr "Actualizări automate"
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Se caută actualizări"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 msgid "Settings"
 msgstr "Setări"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "Deschide"
@@ -122,7 +122,7 @@ msgstr "Se elimină pachetele"
 msgid "Downloading"
 msgstr "Se descarcă"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "Se instalează"
 
@@ -167,9 +167,9 @@ msgid "Finished"
 msgstr "Finalizat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "În curs de anulare"
 
@@ -260,11 +260,11 @@ msgstr[0] "%u actualizare de sistem este disponibilă"
 msgstr[1] "%u actualizări de sistem sunt disponibile"
 msgstr[2] "%u de actualizări de sistem sunt disponibile"
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "Dezinstalare"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "Actualizare"
 
@@ -299,7 +299,7 @@ msgstr "Origine necunoscută (neverificată)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Statutul aplicației nu este setat drept instalat în Centrul de Aplicații pentru pachetul: %s"
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -832,7 +832,7 @@ msgstr "Cererea de repornire a eșuat. Repornește manual pentru a finaliza inst
 msgid "Update All"
 msgstr "Actualizează totul"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -840,14 +840,10 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Nicio aplicație găsită"
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi aplicații Flatpak de exemplu de la %s"
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr "Aplicații neverificate"
 
 #: src/Views/CategoryView.vala:28
 #, fuzzy
@@ -860,6 +856,10 @@ msgstr "Caută aplicații"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Gratuit"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr "Aplicații neverificate"
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 02:08+0000\n"
+"POT-Creation-Date: 2022-05-09 15:20+0000\n"
 "PO-Revision-Date: 2021-07-11 16:58+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -37,7 +37,7 @@ msgstr "%s ස්ථාපිත වී ඇත"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:412
+#: src/Application.vala:308 src/MainWindow.vala:406
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ස්ථාපිත වී ඇත"
@@ -60,7 +60,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "ස්ථාපිතයි"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:465
 msgid "Search Apps"
 msgstr "යෙදුම් සොයන්න"
 
@@ -72,20 +72,20 @@ msgstr ""
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:222
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "යාවත්කාල සඳහා පරීක්ෂා වෙමින්"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:246
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "අරඹමින්"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:409
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr "විවෘත කරන්න"
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Downloading"
 msgstr "බාගත වෙමින්"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1128
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "ස්ථාපනය වෙමින්"
 
@@ -164,9 +164,9 @@ msgid "Finished"
 msgstr "අවසානයි"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1137 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1269 src/Core/FlatpakBackend.vala:1293
-#: src/Core/FlatpakBackend.vala:1439 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "අවලංගු වෙමින්"
 
@@ -255,11 +255,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1260
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
 msgstr "අස්ථාපනය වෙමින්"
 
-#: src/Core/FlatpakBackend.vala:1430
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
 msgstr "යාවත්කාලින වෙමින්"
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:290
+#: src/Core/PackageKitBackend.vala:295
 #, c-format
 msgid "%s (local)"
 msgstr "%s (ස්ථානීය)"
@@ -822,7 +822,7 @@ msgstr ""
 msgid "Update All"
 msgstr "සියල්ල යාවත්කාල කරන්න"
 
-#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
+#: src/Views/AppListView.vala:30 src/Views/AppListView.vala:50
 msgid "Flathub"
 msgstr ""
 
@@ -830,13 +830,9 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:54
+#: src/Views/AppListView.vala:33 src/Views/AppListView.vala:51
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-
-#: src/Views/AppListView.vala:171 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
 msgstr ""
 
 #: src/Views/CategoryView.vala:28
@@ -850,6 +846,10 @@ msgstr "යෙදුම් සොයන්න"
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "නොමිලේ"
+
+#: src/Views/CategoryView.vala:50
+msgid "Non-Curated Apps"
+msgstr ""
 
 #: src/Views/Homepage.vala:77
 msgid "Recently Updated"
