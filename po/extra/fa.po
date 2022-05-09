@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 22:54+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"PO-Revision-Date: 2022-04-14 22:46+0000\n"
+"Last-Translator: Pikhosh <pikhosh@gmail.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/appcenter/extra/"
 "fa/>\n"
 "Language: fa\n"
@@ -25,11 +25,6 @@ msgid "Browse and manage apps"
 msgstr "برنامک‌ها را مرور و مدیریت کنید"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -37,16 +32,17 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"یک فروشگاه برنامک برای توسعه‌دهندگان مستقل و متن باز. بر اساس دسته بندی مرور "
-"کرده و یا کاوش کرده و برنامک‌های جدیدی بیابید. فروشگاه برنامک همچنین برای "
-"بروزرسانی سیستم به آخرین و برترین نگارش برای ویژگی‌های نو و اصلاحات به‌کار "
-"می‌رود."
+"فروشگاه منبع باز و هرچه-میتوانی-پرداخت-کن ای از المنتری. بازبینی و گزینش شده "
+"توسط المنتری برای اطمینان از یک تجربه بومی، با-احترام-به-حریم-خصوصی و امن. "
+"بر اساس دسته بندی ها مرور کنید یا جست و جو کنید و برنامه های جدید کشف کنید. "
+"مرکز برنامه همچنین برای بروزرسانی سیستم تان به آخرین و بزرگ ترین نسخه برای "
+"ویژگی ها و رفع اشکالات جدید استفاده می شود."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:82
 #: data/io.elementary.appcenter.appdata.xml.in:165
 msgid "New features:"
-msgstr ""
+msgstr "ویژگی های جدید:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Added an option to automatically update curated apps"
@@ -67,7 +63,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:150
 #: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Fixes:"
-msgstr ""
+msgstr "رفع اشکالات:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent back button from disappearing or requiring multiple clicks"
@@ -85,7 +81,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:157
 #: data/io.elementary.appcenter.appdata.xml.in:170
 msgid "Improvements:"
-msgstr ""
+msgstr "بهبود ها:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Show screenshot captions in a tooltip"
@@ -112,7 +108,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:306
 #: data/io.elementary.appcenter.appdata.xml.in:353
 msgid "Updated translations"
-msgstr ""
+msgstr "ترجمه های بروز شده"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Prevent potential crashes when updating"
@@ -294,10 +290,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:228
 #: data/io.elementary.appcenter.appdata.xml.in:240
 #: data/io.elementary.appcenter.appdata.xml.in:253
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "بررسی برای بروزرسانی"
+msgstr "بروزرسانی های جزئی"
 
 #: data/io.elementary.appcenter.appdata.xml.in:203
 #: data/io.elementary.appcenter.appdata.xml.in:249
@@ -714,9 +708,8 @@ msgid "@PROJECT_NAME@"
 msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "نصب;حذف نصب;حذف;کارنما;فروشگاه;برنامک‌ها;بروزرسانی‌ها;نرم‌افزار;"
+msgstr "نصب؛حذف نصب؛حذف؛کاتالوگ؛فروشگاه؛برنامه ها؛نرم افزار؛"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"

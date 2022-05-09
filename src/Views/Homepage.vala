@@ -28,7 +28,11 @@ public class AppCenter.Homepage : AbstractView {
 
     public signal void page_loaded ();
 
-    public bool viewing_package { get; private set; default = false; }
+    public bool viewing_package {
+        get {
+            return visible_child is Views.AppInfoView;
+        }
+    }
 
     public AppStream.Category? currently_viewed_category {
         get {
@@ -189,6 +193,8 @@ public class AppCenter.Homepage : AbstractView {
         destroy.connect (() => {
             banner_timeout_stop ();
         });
+
+        notify["visible-child"].connect (update_navigation);
     }
 
     private async void load_banners_and_carousels () {
@@ -265,36 +271,50 @@ public class AppCenter.Homepage : AbstractView {
         bool remember_history = true
     ) {
         base.show_package (package, remember_history);
-        viewing_package = true;
         if (remember_history) {
             current_category = null;
-            subview_entered (_("Home"), false, "");
+
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            main_window.set_return_name (_("Home"));
         }
     }
 
     public override void return_clicked () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+
         if (previous_package != null) {
             show_package (previous_package);
             if (current_category != null) {
-                subview_entered (current_category.name, false, "");
+                main_window.set_return_name (current_category.name);
             } else {
-                subview_entered (_("Home"), false, "");
+                main_window.set_return_name (_("Home"));
             }
         } else if (viewing_package && current_category != null) {
             visible_child = get_child_by_name (current_category.name);
-            viewing_package = false;
-            subview_entered (_("Home"), true, current_category.name, _("Search %s").printf (current_category.name));
+
+            main_window.set_return_name (_("Home"));
         } else {
             set_visible_child (scrolled_window);
-            viewing_package = false;
+        }
+    }
+
+    private void update_navigation () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+
+        if (visible_child is CategoryView) {
+            current_category = ((CategoryView) visible_child).category;
+            main_window.set_custom_header (current_category.name);
+            main_window.set_return_name (_("Home"));
+            main_window.configure_search (true, _("Search %s").printf (current_category.name));
+        } else if (visible_child == scrolled_window) {
             current_category = null;
-            subview_entered (null, true);
+            main_window.set_return_name (null);
+            main_window.set_custom_header (null);
+            main_window.configure_search (true);
         }
     }
 
     public void show_app_list_for_category (AppStream.Category category) {
-        subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
-        current_category = category;
         var child = get_child_by_name (category.name);
         if (child != null) {
             visible_child = child;
@@ -307,9 +327,10 @@ public class AppCenter.Homepage : AbstractView {
         visible_child = category_view;
 
         category_view.show_app.connect ((package) => {
-            viewing_package = true;
             base.show_package (package);
-            subview_entered (category.name, false, "");
+
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            main_window.set_return_name (category.name);
         });
     }
 
@@ -319,6 +340,10 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            if (!banner_carousel.is_visible ()) {
+                return Source.CONTINUE;
+            }
+
             var new_index = (uint) banner_carousel.position + 1;
             var max_index = banner_carousel.n_pages - 1; // 0-based index
 

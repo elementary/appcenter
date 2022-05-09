@@ -16,7 +16,7 @@
 
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
-    public signal void cache_update_failed (Error error);
+    public signal void cache_update_failed (Error error, CacheUpdateType cache_update_type);
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
@@ -103,7 +103,7 @@ public class AppCenterCore.Client : Object {
         }
     }
 
-    public async void update_cache (bool force = false) {
+    public async void update_cache (bool force = false, CacheUpdateType cache_update_type = CacheUpdateType.ALL) {
         cancellable.reset ();
 
         debug ("update cache called %s", force.to_string ());
@@ -137,8 +137,16 @@ public class AppCenterCore.Client : Object {
 
                 refresh_in_progress = true;
                 try {
-                    success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
-                    if (success) {
+                    switch (cache_update_type) {
+                        case CacheUpdateType.FLATPAK:
+                            success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
+                            break;
+                        case CacheUpdateType.ALL:
+                            success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
+                            break;
+                    }
+
+                    if (success && cache_update_type == CacheUpdateType.ALL) {
                         last_cache_update = new DateTime.now_utc ();
                         AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
                     }
@@ -147,7 +155,7 @@ public class AppCenterCore.Client : Object {
                 } catch (Error e) {
                     if (!(e is GLib.IOError.CANCELLED)) {
                         critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                        cache_update_failed (e);
+                        cache_update_failed (e, cache_update_type);
                     }
                 } finally {
                     refresh_in_progress = false;
@@ -157,14 +165,16 @@ public class AppCenterCore.Client : Object {
             debug ("Too soon to refresh and not forced");
         }
 
-        var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
-        debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
-        update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
-            update_cache_timeout_id = 0;
-            update_cache.begin (true);
+        if (cache_update_type == CacheUpdateType.ALL) {
+            var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
+            debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
+            update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
+                update_cache_timeout_id = 0;
+                update_cache.begin (true);
 
-            return GLib.Source.REMOVE;
-        });
+                return GLib.Source.REMOVE;
+            });
+        }
 
         if (nm.get_network_available ()) {
             if ((force || last_cache_update_is_old) && AppCenter.App.settings.get_boolean ("automatic-updates")) {
@@ -172,7 +182,7 @@ public class AppCenterCore.Client : Object {
                 debug ("Update Flatpaks");
                 var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
                 foreach (var app in installed_apps) {
-                    if (app.is_native && app.update_available && !app.should_pay) {
+                    if (app.update_available && !app.should_pay) {
                         debug ("Update: %s", app.get_name ());
                         try {
                             yield app.update (false);
@@ -202,5 +212,10 @@ public class AppCenterCore.Client : Object {
     private static GLib.Once<Client> instance;
     public static unowned Client get_default () {
         return instance.once (() => { return new Client (); });
+    }
+
+    public enum CacheUpdateType {
+        FLATPAK,
+        ALL
     }
 }
