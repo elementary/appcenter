@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"POT-Creation-Date: 2022-05-09 02:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,64 +23,68 @@ msgstr ""
 msgid "AppCenter"
 msgstr ""
 
-#: src/Application.vala:114
+#: src/Application.vala:123
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:134
+#: src/Application.vala:143
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:298
+#: src/Application.vala:307
 msgid "The app has been installed"
 msgstr ""
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:401
+#: src/Application.vala:308 src/MainWindow.vala:412
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
 
-#: src/MainWindow.vala:139
+#: src/MainWindow.vala:138
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
-#: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
-#: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
+#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr ""
 
-#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:471
+#: src/MainWindow.vala:211 src/MainWindow.vala:471
 msgid "Search Apps"
 msgstr ""
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:217
 msgid "Automatic App Updates"
 msgstr ""
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:249
+#: src/MainWindow.vala:230
+msgid "Check for Updates"
+msgstr ""
+
+#: src/MainWindow.vala:260
 msgid "Settings"
 msgstr ""
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:415
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
 msgstr ""
@@ -582,21 +586,21 @@ msgstr ""
 msgid "Failed to uninstall “%s”"
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:26
+#: src/Dialogs/UpdateFailDialog.vala:27
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:34
+#: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:35
+#: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
 msgstr ""
 
@@ -870,21 +874,21 @@ msgstr ""
 msgid "Free Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:73
+#: src/Views/Homepage.vala:77
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:95
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr ""
 
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:308
 #, c-format
 msgid "Search %s"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:40
+#: src/Views/SearchView.vala:41
 msgctxt "view"
 msgid "Search"
 msgstr ""

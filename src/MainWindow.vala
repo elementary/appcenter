@@ -24,6 +24,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
+    private Gtk.ModelButton refresh_menuitem;
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
@@ -108,6 +109,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         notify["working"].connect (() => {
             Idle.add (() => {
                 spinner.active = working;
+                App.refresh_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
         });
@@ -224,6 +226,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
+        var refresh_accellabel = new Granite.AccelLabel.from_action_name (
+            _("Check for Updates"),
+            "app.refresh"
+        );
+
+        refresh_menuitem = new Gtk.ModelButton () {
+            action_name = "app.refresh"
+        };
+        refresh_menuitem.get_child ().destroy ();
+        refresh_menuitem.add (refresh_accellabel);
+
         var menu_popover_grid = new Gtk.Grid () {
             column_spacing = 6,
             margin_bottom = 6,
@@ -233,6 +246,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
 
         menu_popover_grid.add (automatic_updates_button);
+        menu_popover_grid.add (refresh_menuitem);
 
         menu_popover_grid.show_all ();
 
