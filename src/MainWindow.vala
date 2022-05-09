@@ -46,8 +46,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     public static Views.InstalledView installed_view { get; private set; }
 
-    public signal void homepage_loaded ();
-
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
@@ -324,8 +322,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 stack.visible_child = installed_view;
             }
         });
-
-        homepage.page_loaded.connect (() => homepage_loaded ());
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
