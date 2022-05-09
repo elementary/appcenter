@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-04-30 13:00+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
@@ -94,7 +94,7 @@ msgstr "Ayarlar"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Aç"
 
@@ -361,39 +361,6 @@ msgstr "Uygulama yüklenemedi"
 msgid "Failed to install “%s”"
 msgstr "\"%s\" yüklenemedi"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Doğrulanmamış İçerik Uyarısı"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "Doğrulanmamış uygulama yüklensin mi?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "\"%s\", elementary tarafından doğrulanmamış ve güvenlik, gizlilik veya sistem entegrasyonu açısından incelenmemiştir."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Hata düzeltmeleri veya özellik güncellemeleri alamayabilir"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Sistem veya kişisel dosyalarınıza izniniz olmadan erişebilir veya bunları değiştirebilir"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Doğrulanmamış içerik uyarılarını göster"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Yüklemeyin"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Yine de Yükle"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Kart işlenirken hata oluştu. Lütfen daha sonra tekrar deneyiniz. Verdiğimiz rahatsızlıktan dolayı özür dileriz."
@@ -441,7 +408,7 @@ msgid "CVC"
 msgstr "CVC (Güvenlik Kodu)"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Vazgeç"
 
@@ -553,7 +520,7 @@ msgid "Uninstall “%s”?"
 msgstr "\"%s\" kaldırılsın mı?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Kaldır"
 
@@ -949,12 +916,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Ödeme gerektirir, etkinleştirilmemiş"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Ücretsiz"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Yükle"
 
@@ -1048,9 +1015,33 @@ msgstr "Sürücüler"
 msgid "Up to Date"
 msgstr "Güncel"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Güncelle"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Doğrulanmamış İçerik Uyarısı"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "Doğrulanmamış uygulama yüklensin mi?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "\"%s\", elementary tarafından doğrulanmamış ve güvenlik, gizlilik veya sistem entegrasyonu açısından incelenmemiştir."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Hata düzeltmeleri veya özellik güncellemeleri alamayabilir"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Sistem veya kişisel dosyalarınıza izniniz olmadan erişebilir veya bunları değiştirebilir"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Doğrulanmamış içerik uyarılarını göster"
+
+#~ msgid "Don’t Install"
+#~ msgstr "Yüklemeyin"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Yine de Yükle"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "Ücretsiz ve doğrulanmış olan ücretli uygulamaları otomatik olarak güncelleyin"

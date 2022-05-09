@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-05-02 13:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -84,7 +84,7 @@ msgstr "設定"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "開く"
 
@@ -348,39 +348,6 @@ msgstr "アプリをインストールできませんでした"
 msgid "Failed to install “%s”"
 msgstr "“%s” をインストールできませんでした"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "キュレーションに関する警告"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "キュレーションされていないアプリをインストールしますか？"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "elementary は “%s” をキュレーションしておらず、セキュリティー・プライバシー・システム統合に関する安全性は審査されていません。"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "バグ修正や機能アップデートを受けられない可能性があります"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "許可なくシステムや個人ファイルへアクセス・改変する可能性があります"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "キュレーションに関する警告を表示"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "インストールしない"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "了解してインストール"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "カードの処理中にエラーが発生しました。後ほどもう一度お試しください。ご迷惑おかけして申し訳ありません。"
@@ -428,7 +395,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -540,7 +507,7 @@ msgid "Uninstall “%s”?"
 msgstr "“%s” をアンインストールしますか？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "アンインストール"
 
@@ -936,12 +903,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "支払いが必要ですが、有効になっていません"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "無料"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "インストール"
 
@@ -1034,9 +1001,33 @@ msgstr "ドライバー"
 msgid "Up to Date"
 msgstr "最新の状態"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "アップデート"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "キュレーションに関する警告"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "キュレーションされていないアプリをインストールしますか？"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "elementary は “%s” をキュレーションしておらず、セキュリティー・プライバシー・システム統合に関する安全性は審査されていません。"
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "バグ修正や機能アップデートを受けられない可能性があります"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "許可なくシステムや個人ファイルへアクセス・改変する可能性があります"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "キュレーションに関する警告を表示"
+
+#~ msgid "Don’t Install"
+#~ msgstr "インストールしない"
+
+#~ msgid "Install Anyway"
+#~ msgstr "了解してインストール"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "キュレーションされたアプリのうち、無料あるいは購入済みのものを自動的にアップデートします"

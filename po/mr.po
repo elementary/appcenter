@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -89,7 +89,7 @@ msgstr "सुरु होत आहे"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "उघडा"
 
@@ -356,39 +356,6 @@ msgstr "अ‍ॅप स्थापित करण्यात अयशस्
 msgid "Failed to install “%s”"
 msgstr "\"%s\" स्थापित करण्यात अयशस्वी"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "नॉन-क्युरेटेड चेतावणी"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "नॉन-क्युरेटेड अ‍ॅप स्थापित करायचा?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "हे दोष निराकरण किंवा वैशिष्ट्य अद्यतने प्राप्त करू शकत नाही"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "हे परवानगीशिवाय सिस्टम किंवा वैयक्तिक फायलींमध्ये प्रवेश करू शकते किंवा बदलू शकते"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "नॉन-क्युरेटेड चेतावण्या दाखवा"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "इन्स्टॉल करू नका"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "तरीही इन्स्टॉल करा"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "ह्या कार्डावरुन प्रक्रिया करतांना काही चूक झाली आहे. कृपया पुन्हा प्रयत्न करा. आपणांस होणाऱ्या असुविधेबद्दल क्षमा असावी."
@@ -440,7 +407,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "रद्द करा"
 
@@ -552,7 +519,7 @@ msgid "Uninstall “%s”?"
 msgstr "\"%s\" विस्थापित करायचा?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "विस्थापित करा"
 
@@ -960,12 +927,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "जे सक्षम नाहीत, त्यांसाठी पेमेंट आवश्यक आहे"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "विनामुल्य"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "प्रस्थापित"
 
@@ -1059,9 +1026,33 @@ msgstr "ड्राइव्हर्स"
 msgid "Up to Date"
 msgstr "अद्ययावत"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "नॉन-क्युरेटेड चेतावणी"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "नॉन-क्युरेटेड अ‍ॅप स्थापित करायचा?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "हे दोष निराकरण किंवा वैशिष्ट्य अद्यतने प्राप्त करू शकत नाही"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "हे परवानगीशिवाय सिस्टम किंवा वैयक्तिक फायलींमध्ये प्रवेश करू शकते किंवा बदलू शकते"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "नॉन-क्युरेटेड चेतावण्या दाखवा"
+
+#~ msgid "Don’t Install"
+#~ msgstr "इन्स्टॉल करू नका"
+
+#~ msgid "Install Anyway"
+#~ msgstr "तरीही इन्स्टॉल करा"
 
 #~ msgid "Content Warning"
 #~ msgstr "मजकूर चेतावणी"

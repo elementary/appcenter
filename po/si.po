@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2021-07-11 16:58+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -86,7 +86,7 @@ msgstr "අරඹමින්"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "විවෘත කරන්න"
 
@@ -353,39 +353,6 @@ msgstr "යෙදුම අස්ථාපනය කිරීමට අසමත
 msgid "Failed to install “%s”"
 msgstr "“%s” අස්ථාපනය කිරීමට අසමත්විය"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "ස්ථාපනය කරන්න එපා"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "කෙසේවුවද ස්ථාපනය කරන්න"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr ""
@@ -433,7 +400,7 @@ msgid "CVC"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
 
@@ -545,7 +512,7 @@ msgid "Uninstall “%s”?"
 msgstr "“%s” අස්ථාපනය කරන්නද?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "අස්ථාපනය"
 
@@ -949,12 +916,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "නොමිලේ"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "ස්ථාපනය"
 
@@ -1048,9 +1015,15 @@ msgstr ""
 msgid "Up to Date"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr ""
+
+#~ msgid "Don’t Install"
+#~ msgstr "ස්ථාපනය කරන්න එපා"
+
+#~ msgid "Install Anyway"
+#~ msgstr "කෙසේවුවද ස්ථාපනය කරන්න"
 
 #~ msgid "Show content warnings"
 #~ msgstr "අන්තර්ගතය පෙන්වීමේ අනතුරු ඇඟවීම්"

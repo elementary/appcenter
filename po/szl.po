@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -91,7 +91,7 @@ msgstr "Zaczynanie"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Ôtwōrz"
 
@@ -361,39 +361,6 @@ msgstr "Niy szło zainstalować programu"
 msgid "Failed to install “%s”"
 msgstr "Niy szło ôdinstalować „%s”"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Ôstrzyżynie ô niynadzorowanyj zawartości"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "Zainstalować niynzadzorowano aplikacyjo?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, prywatności abo integracyje ze systymym."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Może niy dostować poprowek felerōw ani aktualizacyji funkcyji"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwolynio"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Pokoż ôstrzyżynia ô niynadzorowaniu"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Niy instaluj"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Zainstaluj i tak"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Przi przetworzaniu karty trefiōł sie feler. Sprōbuj zaś niyskorzij. Przeproszōmy za wszyjske niywygody."
@@ -445,7 +412,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Pociep"
 
@@ -557,7 +524,7 @@ msgid "Uninstall “%s”?"
 msgstr "Ôdinstalować „%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Ôdinstaluj"
 
@@ -970,12 +937,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Wymogo płatności, co niy sōm włōnczōne"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Wolny"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Instalacyjo"
 
@@ -1070,9 +1037,33 @@ msgstr "Kludzocze"
 msgid "Up to Date"
 msgstr "Teroźne"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Zaktualizuj"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Ôstrzyżynie ô niynadzorowanyj zawartości"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "Zainstalować niynzadzorowano aplikacyjo?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, prywatności abo integracyje ze systymym."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Może niy dostować poprowek felerōw ani aktualizacyji funkcyji"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwolynio"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Pokoż ôstrzyżynia ô niynadzorowaniu"
+
+#~ msgid "Don’t Install"
+#~ msgstr "Niy instaluj"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Zainstaluj i tak"
 
 #~ msgid "Content Warning"
 #~ msgstr "Ôstrzeżynie ô zawartości"

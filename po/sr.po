@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2021-03-11 10:09+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -90,7 +90,7 @@ msgstr "Покрећем"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Отвори"
 
@@ -360,39 +360,6 @@ msgstr "Не могу да инсталирам програм"
 msgid "Failed to install “%s”"
 msgstr "Нисам успео да инсталирам „%s“"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Упозорење неодржаваних"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "Да инсталирам неодржаване програме?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "„elementary“ не одржава „%s“ и није му прегледана безбедност, приватност или системско обједињење."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Не може примати исправке грешака или будућих освежења"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Може приступити или изменити систем или личне датотеке без дозволе"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Прикажи упозорења неодржаваних"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Немој инсталирати"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Инсталирај ипак"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Дошло је до грешке приликом обраде картице. Касније покушајте поново. Извињавамо се због непријатности."
@@ -444,7 +411,7 @@ msgid "CVC"
 msgstr "Сигурносни код (CVC)"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Откажи"
 
@@ -556,7 +523,7 @@ msgid "Uninstall “%s”?"
 msgstr "Да уклоним „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Уклони"
 
@@ -966,12 +933,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Захтевају плаћања, која нису омогућена"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Бесплатни"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Инсталирај"
 
@@ -1066,9 +1033,33 @@ msgstr "Управљачки програми"
 msgid "Up to Date"
 msgstr "Освежено је"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Освежи"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Упозорење неодржаваних"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "Да инсталирам неодржаване програме?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "„elementary“ не одржава „%s“ и није му прегледана безбедност, приватност или системско обједињење."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Не може примати исправке грешака или будућих освежења"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Може приступити или изменити систем или личне датотеке без дозволе"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Прикажи упозорења неодржаваних"
+
+#~ msgid "Don’t Install"
+#~ msgstr "Немој инсталирати"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Инсталирај ипак"
 
 #~ msgid "Content Warning"
 #~ msgstr "Упозорење садржаја"

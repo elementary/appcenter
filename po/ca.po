@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-05-01 11:19+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -86,7 +86,7 @@ msgstr "Paràmetres"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Obre"
 
@@ -353,39 +353,6 @@ msgstr "Ha fallat instal·lar l'aplicació."
 msgid "Failed to install “%s”"
 msgstr "Ha fallat instal·lar %s."
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Avís de manca de cura"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "Voleu instal·lar l'aplicació sense curar?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "%s no té la cura de l'elementary i no s'ha revisat pel que fa a la seguretat, privadesa o integració amb el sistema."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Podria no rebre correcions d'errors o actualitzacions de característiques."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Podria accedir o canviar fitxers personals del sistema sense permís."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Mostra els avisos de manca de cura"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "No la instal·lis"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Instal·la-la tanmateix"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Hi ha hagut un error mentre es processava la targeta. Torneu-ho a provar més tard. Disculpeu les molèsties."
@@ -433,7 +400,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -545,7 +512,7 @@ msgid "Uninstall “%s”?"
 msgstr "Voleu desinstal·lar %s?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
@@ -941,12 +908,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Requereix pagaments, que no estan habilitats."
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Lliure"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Instal·la"
 
@@ -1040,9 +1007,33 @@ msgstr "Controladors"
 msgid "Up to Date"
 msgstr "Al dia"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Actualitza"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Avís de manca de cura"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "Voleu instal·lar l'aplicació sense curar?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "%s no té la cura de l'elementary i no s'ha revisat pel que fa a la seguretat, privadesa o integració amb el sistema."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Podria no rebre correcions d'errors o actualitzacions de característiques."
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Podria accedir o canviar fitxers personals del sistema sense permís."
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Mostra els avisos de manca de cura"
+
+#~ msgid "Don’t Install"
+#~ msgstr "No la instal·lis"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Instal·la-la tanmateix"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "Actualitza automàticament les aplicacions seleccionades gratuïtes i de pagament."

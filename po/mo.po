@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -90,7 +90,7 @@ msgstr "Pornire"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Deschis"
 
@@ -377,43 +377,6 @@ msgstr "Dezinstalați"
 msgid "Failed to install “%s”"
 msgstr "Dezinstalați"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Non-Curated Apps"
-msgid "Non-Curated Warning"
-msgstr "Aplicații suspecte"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-msgid "Install non-curated app?"
-msgstr "%s (local)"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
-msgid "Install Anyway"
-msgstr "Instalare"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "A apărut o eroare la procesarea cardului. Vă rugăm să încercați din nou mai târziu. Ne cerem scuze pentru eventualele neplăceri cauzate."
@@ -464,7 +427,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Anulare"
 
@@ -577,7 +540,7 @@ msgid "Uninstall “%s”?"
 msgstr "Dezinstalați"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Dezinstalați"
 
@@ -994,12 +957,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Gratuit"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 #, fuzzy
 msgid "Install"
 msgstr "Instalare"
@@ -1101,9 +1064,22 @@ msgstr "Draivers"
 msgid "Up to Date"
 msgstr "La zi"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Actualizați"
+
+#, fuzzy
+#~| msgid "Non-Curated Apps"
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Aplicații suspecte"
+
+#, fuzzy
+#~ msgid "Install non-curated app?"
+#~ msgstr "%s (local)"
+
+#, fuzzy
+#~ msgid "Install Anyway"
+#~ msgstr "Instalare"
 
 #, fuzzy
 #~| msgid "Non-Curated Apps"

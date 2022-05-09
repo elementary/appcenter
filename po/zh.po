@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-04-30 17:01+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -88,7 +88,7 @@ msgstr "设置"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "打开"
 
@@ -352,39 +352,6 @@ msgstr "安装应用失败"
 msgid "Failed to install “%s”"
 msgstr "安装“%s”失败"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "未经认证警告"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "是否安装非AppCenter内的应用程序？"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "“%s” 不是elementary整合的。该应用未经过安全，隐私，或系统整合的审查。"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "应用可能不会收到bug修复或功能更新"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "应用可能在未授权的情况下修改系统设置或个人文件"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "显示未经认证警告"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "未安装"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "仍要安装"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "在处理信用卡的过程中发生了一个错误。请稍后再次尝试。我们对引发的任何任何不便之处感到抱歉。"
@@ -432,7 +399,7 @@ msgid "CVC"
 msgstr "CVC号码"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "取消"
 
@@ -544,7 +511,7 @@ msgid "Uninstall “%s”?"
 msgstr "卸载 “%s”？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "卸载"
 
@@ -944,12 +911,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "尚未设置付款信息"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "清空"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "安装"
 
@@ -1042,9 +1009,33 @@ msgstr "驱动"
 msgid "Up to Date"
 msgstr "最新"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "未经认证警告"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "是否安装非AppCenter内的应用程序？"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "“%s” 不是elementary整合的。该应用未经过安全，隐私，或系统整合的审查。"
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "应用可能不会收到bug修复或功能更新"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "应用可能在未授权的情况下修改系统设置或个人文件"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "显示未经认证警告"
+
+#~ msgid "Don’t Install"
+#~ msgstr "未安装"
+
+#~ msgid "Install Anyway"
+#~ msgstr "仍要安装"
 
 #~ msgid "Automatically update free and paid-for curated apps"
 #~ msgstr "自动更新免费和付费的认证应用"

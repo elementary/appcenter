@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2019-12-12 19:07+0000\n"
 "Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -96,7 +96,7 @@ msgstr "Komencanta"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Malfermi"
 
@@ -373,45 +373,6 @@ msgstr "Fiaskis la aplikaĵa malinstalo"
 msgid "Failed to install “%s”"
 msgstr "Fiaskis la malinstalo de „%s“"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
-msgid "Non-Curated Warning"
-msgstr "Averto pri Enhavo"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
-msgid "Install non-curated app?"
-msgstr "%s (ne kontrolita)"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
-msgid "Show non-curated warnings"
-msgstr "Montri avertojn pri enhavo"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Ne instali"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Instali Ĉiukaze"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Okazis eraro dum procezado de la karto. Bonvolu reprovi poste. Ni pardonpetas pri la okazigita ĝeno."
@@ -463,7 +424,7 @@ msgid "CVC"
 msgstr "CVC-kodo malantaŭ la bankokarto"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Rezigni"
 
@@ -575,7 +536,7 @@ msgid "Uninstall “%s”?"
 msgstr "Ĉu malinstali „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Malinstali"
 
@@ -988,12 +949,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Postulas pagadon, kio ne estas ebligita"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Senpaga"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Instali"
 
@@ -1087,9 +1048,30 @@ msgstr "Peliloj"
 msgid "Up to Date"
 msgstr "Ĝisdata"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Ĝisdatigi"
+
+#, fuzzy
+#~| msgid "Content Warning"
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Averto pri Enhavo"
+
+#, fuzzy
+#~| msgid "%s (non-curated)"
+#~ msgid "Install non-curated app?"
+#~ msgstr "%s (ne kontrolita)"
+
+#, fuzzy
+#~| msgid "Show content warnings"
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Montri avertojn pri enhavo"
+
+#~ msgid "Don’t Install"
+#~ msgstr "Ne instali"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Instali Ĉiukaze"
 
 #~ msgid "Content Warning"
 #~ msgstr "Averto pri Enhavo"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:20+0000\n"
+"POT-Creation-Date: 2022-05-09 15:59+0000\n"
 "PO-Revision-Date: 2022-02-18 00:54+0000\n"
 "Last-Translator: Jose Manuel Hernandez Farias <ing.josemhf@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
@@ -100,7 +100,7 @@ msgstr "Iniciando"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:409
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Abrir"
 
@@ -367,39 +367,6 @@ msgstr "No se pudo instalar la aplicación"
 msgid "Failed to install “%s”"
 msgstr "No se pudo instalar «%s»"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr "Alerta sobre contenido no revisado"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr "¿Quiere instalar una aplicación no revisada?"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "elementary no ha revisado «%s» para comprobar que sea segura, privada o integrable con el sistema."
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr "Podría no recibir correcciones de defectos o actualizaciones de funcionalidad"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr "Puede consultar o modificar archivos personales y del sistema sin autorización"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr "Mostrar alertas sobre contenido no revisado"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "No instalar"
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Instalar de todas formas"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Se produjo un error al procesar la tarjeta. Inténtelo de nuevo más tarde. Sentimos cualquier inconveniente causado."
@@ -447,7 +414,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:94
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -559,7 +526,7 @@ msgid "Uninstall “%s”?"
 msgstr "¿Quiere desinstalar «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:65
 msgid "Uninstall"
 msgstr "Desinstalar"
 
@@ -967,12 +934,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Requiere pagos, los cuales no están activados"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:237
 msgid "Install"
 msgstr "Instalar"
 
@@ -1066,9 +1033,33 @@ msgstr "Controladores"
 msgid "Up to Date"
 msgstr "Actualizado"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:256
 msgid "Update"
 msgstr "Actualizar"
+
+#~ msgid "Non-Curated Warning"
+#~ msgstr "Alerta sobre contenido no revisado"
+
+#~ msgid "Install non-curated app?"
+#~ msgstr "¿Quiere instalar una aplicación no revisada?"
+
+#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+#~ msgstr "elementary no ha revisado «%s» para comprobar que sea segura, privada o integrable con el sistema."
+
+#~ msgid "It may not receive bug fix or feature updates"
+#~ msgstr "Podría no recibir correcciones de defectos o actualizaciones de funcionalidad"
+
+#~ msgid "It may access or change system or personal files without permission"
+#~ msgstr "Puede consultar o modificar archivos personales y del sistema sin autorización"
+
+#~ msgid "Show non-curated warnings"
+#~ msgstr "Mostrar alertas sobre contenido no revisado"
+
+#~ msgid "Don’t Install"
+#~ msgstr "No instalar"
+
+#~ msgid "Install Anyway"
+#~ msgstr "Instalar de todas formas"
 
 #~ msgid "Content Warning"
 #~ msgstr "Alerta sobre el contenido"
