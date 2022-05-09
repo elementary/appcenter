@@ -1,17 +1,19 @@
+# Pikhosh <pikhosh@gmail.com>, 2022.
+# Hossein <yahiceg727@wii999.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-20 22:54+0000\n"
-"PO-Revision-Date: 2018-02-27 19:11+0000\n"
-"Last-Translator: armoghaddam <armoghaddam24@gmail.com>\n"
-"Language-Team: Persian <https://weblate.elementary.io/projects/appcenter/appcenter/fa/>\n"
+"POT-Creation-Date: 2022-04-29 20:56+0000\n"
+"PO-Revision-Date: 2022-04-14 22:46+0000\n"
+"Last-Translator: Hossein <yahiceg727@wii999.com>\n"
+"Language-Team: Persian <https://l10n.elementary.io/projects/appcenter/appcenter/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -25,67 +27,63 @@ msgid "Could not parse the media type %s"
 msgstr ""
 
 #: src/Application.vala:134
-#, fuzzy, c-format
+#, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "لینک مشخص شده '٪ s' یافت نشد، در عوض جستجو می شود"
+msgstr "لینک مشخص شده '%s' یافت نشد، در عوض جستجو می شود"
 
 #: src/Application.vala:298
-#, fuzzy
 msgid "The app has been installed"
-msgstr "٪ s با موفقیت نصب شده است"
+msgstr "برنامه نصب شده است"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:395
-#, fuzzy, c-format
+#: src/Application.vala:299 src/MainWindow.vala:401
+#, c-format
 msgid "“%s” has been installed"
-msgstr "٪ s با موفقیت نصب شده است"
+msgstr "“%s” نصب شده است"
 
-#: src/MainWindow.vala:140
-#, fuzzy, c-format
+#: src/MainWindow.vala:139
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "پیدا کردن و نصب نرم افزار ها"
+msgstr "ناموفق در اجرای “%s“"
 
-#: src/MainWindow.vala:170 src/Views/Homepage.vala:271
+#: src/MainWindow.vala:169 src/Views/Homepage.vala:271
 #: src/Views/Homepage.vala:281 src/Views/Homepage.vala:286
 #: src/Views/Homepage.vala:296 src/Views/SearchView.vala:57
 #: src/Views/SearchView.vala:88
 msgid "Home"
 msgstr "خانه"
 
-#: src/MainWindow.vala:171 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:170 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "نصب کردن"
+msgstr "نصب شده"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:466
+#: src/MainWindow.vala:212 src/MainWindow.vala:471
 msgid "Search Apps"
 msgstr "جستجو ی نرم افزار"
 
 #: src/MainWindow.vala:218
 #, fuzzy
-#| msgid "Failed to Fetch Updates"
-msgid "Automatic Updates"
-msgstr "به روزرسانی دریافت نشد"
+#| msgid "Automatic Updates"
+msgid "Automatic App Updates"
+msgstr "بروزرسانی های خودکار"
 
 #: src/MainWindow.vala:219
-msgid "Automatically update free and paid-for curated apps"
+msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
 #: src/MainWindow.vala:249
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "راه افتادن"
+msgstr "تنظیمات"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:398
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:78
+#: src/MainWindow.vala:404
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
 msgid "Open"
-msgstr ""
+msgstr "باز کردن"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
 msgid "Starting"
@@ -229,7 +227,7 @@ msgstr "بررسی کتابخانه ها در استفاده"
 
 #: src/Utils.vala:130
 msgid "Copying files"
-msgstr ""
+msgstr "در حال کپی کردن فایل ها"
 
 #: src/Utils.vala:132
 msgid "Unknown state"
@@ -242,8 +240,8 @@ msgstr ""
 #: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "بروزرسانی موجود است"
+msgstr[1] "بروزرسانی هایی موجود است"
 
 #: src/Core/Client.vala:73
 #, c-format
@@ -253,29 +251,25 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: src/Core/FlatpakBackend.vala:1260
-#, fuzzy
-#| msgid "Installing"
 msgid "Uninstalling"
-msgstr "درحال نصب"
+msgstr "در حال حذف نصب"
 
 #: src/Core/FlatpakBackend.vala:1430
-#, fuzzy
-#| msgid "Updates"
 msgid "Updating"
-msgstr "بروزرسانی‌ها"
+msgstr "در حال بروزرسانی"
 
 #: src/Core/Package.vala:313
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s توسعه دهندگان"
 
 #: src/Core/Package.vala:345
 msgid "elementary Updates"
-msgstr ""
+msgstr "بروزرسانی های المنتری"
 
 #: src/Core/Package.vala:347
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "اوبونتو (گزینش-نشده)"
 
 #: src/Core/Package.vala:352
 #, c-format
@@ -284,7 +278,7 @@ msgstr ""
 
 #: src/Core/Package.vala:357
 msgid "Ubuntu Drivers"
-msgstr ""
+msgstr "درایور های اوبونتو"
 
 #: src/Core/Package.vala:360
 msgid "Unknown Origin (non-curated)"
@@ -311,32 +305,32 @@ msgstr ""
 #: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "نسخه: %s"
 
-#: src/Core/UpdateManager.vala:138
+#: src/Core/UpdateManager.vala:140
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:155
+#: src/Core/UpdateManager.vala:157
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:160
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 
-#: src/Core/UpdateManager.vala:162
+#: src/Core/UpdateManager.vala:164
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:200
+#: src/Core/UpdateManager.vala:202
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:201
+#: src/Core/UpdateManager.vala:203
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
@@ -382,12 +376,11 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
-msgstr ""
+msgstr "نصب نکن"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
 msgid "Install Anyway"
-msgstr "درحال نصب"
+msgstr "نصب در هر حال"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -395,11 +388,11 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "لطفا اطلاعات پرداخت خود را بازبینی نمایید و سپس مجددا سعی نمایید"
 
 #: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
-msgstr ""
+msgstr "پرداخت"
 
 #: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
 #, c-format
@@ -412,11 +405,11 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "یا"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
-msgstr ""
+msgstr "ایمیل"
 
 #: src/Dialogs/StripeDialog.vala:157
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
@@ -424,7 +417,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
-msgstr ""
+msgstr "سیاست حفظ حریم خصوصی"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:182
@@ -436,9 +429,9 @@ msgid "CVC"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:97
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:98
 msgid "Cancel"
-msgstr ""
+msgstr "لغو"
 
 #: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
 #: src/Dialogs/StripeDialog.vala:383
@@ -448,11 +441,11 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:246
 msgid "Try for Free"
-msgstr ""
+msgstr "امتحان به رایگان"
 
 #: src/Dialogs/StripeDialog.vala:312
 msgid "Processing"
-msgstr ""
+msgstr "در حال پردازش"
 
 #: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
@@ -460,11 +453,11 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
-msgstr ""
+msgstr "پرداخت بعدا"
 
 #: src/Dialogs/StripeDialog.vala:376
 msgid "Retry"
-msgstr ""
+msgstr "امتحان مجدد"
 
 #: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
 msgid "The card number is incorrect. Please try again using the correct card number."
@@ -549,9 +542,9 @@ msgid "Uninstall “%s”?"
 msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:68
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Uninstall"
-msgstr ""
+msgstr "حذف نصب"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
@@ -595,208 +588,211 @@ msgstr "پیدا کردن و نصب نرم افزار ها"
 msgid "Failed to update “%s”"
 msgstr "پیدا کردن و نصب نرم افزار ها"
 
-#: src/Views/AppInfoView.vala:84
+#: src/Views/AppInfoView.vala:98
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:85
+#: src/Views/AppInfoView.vala:99
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:90
+#: src/Views/AppInfoView.vala:104
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:91
+#: src/Views/AppInfoView.vala:105
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:96
+#: src/Views/AppInfoView.vala:110
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:97
+#: src/Views/AppInfoView.vala:111
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:102
+#: src/Views/AppInfoView.vala:116
 msgid "Gambling"
-msgstr ""
+msgstr "قمار"
 
-#: src/Views/AppInfoView.vala:103
+#: src/Views/AppInfoView.vala:117
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:120
+#: src/Views/AppInfoView.vala:134
 msgid "Non-Curated"
-msgstr ""
+msgstr "گزینش-نشده"
 
-#: src/Views/AppInfoView.vala:121
+#: src/Views/AppInfoView.vala:135
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:157
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:144
+#: src/Views/AppInfoView.vala:158
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:157
+#: src/Views/AppInfoView.vala:171
 msgid "Violence"
-msgstr ""
+msgstr "خشونت"
 
-#: src/Views/AppInfoView.vala:162
+#: src/Views/AppInfoView.vala:176
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:167
+#: src/Views/AppInfoView.vala:181
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:211
+#: src/Views/AppInfoView.vala:225
 msgid "Multiplayer"
-msgstr ""
+msgstr "چند نفره"
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:226
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:228
+#: src/Views/AppInfoView.vala:242
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:230
+#: src/Views/AppInfoView.vala:244
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:248
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:244
+#: src/Views/AppInfoView.vala:258
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:245
+#: src/Views/AppInfoView.vala:259
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:257
+#: src/Views/AppInfoView.vala:271
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:260
+#: src/Views/AppInfoView.vala:274
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:279
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:382
+#: src/Views/AppInfoView.vala:396
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:497
 msgid "Homepage"
 msgstr "صفحه اول"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:503
 msgid "Translate"
-msgstr ""
+msgstr "ترجمه"
 
-#: src/Views/AppInfoView.vala:495
+#: src/Views/AppInfoView.vala:509
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:501
+#: src/Views/AppInfoView.vala:515
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:512
+#: src/Views/AppInfoView.vala:526
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:558
+#: src/Views/AppInfoView.vala:572
 msgid "Extensions:"
-msgstr ""
+msgstr "افزونه ها:"
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:671
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:682
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:680
+#: src/Views/AppInfoView.vala:690
 msgid "Share"
+msgstr "به‌اشتراک گذاری"
+
+#: src/Views/AppInfoView.vala:769
+msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:759 src/Views/AppInfoView.vala:766
+#: src/Views/AppInfoView.vala:770
+msgid "May not work as expected or receive security updates"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:776
 msgid "Outdated"
+msgstr "منسوخ شده"
+
+#: src/Views/AppInfoView.vala:777
+msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:760
-msgid "Built with older technologies that may not work as expected or receive security updates"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:767
-#, c-format
-msgid "Built for an older version of %s; might not support the latest features"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:775
+#: src/Views/AppInfoView.vala:785
 #, fuzzy
 msgid "Unstable"
 msgstr "نصب کردن"
 
-#: src/Views/AppInfoView.vala:776
+#: src/Views/AppInfoView.vala:786
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1026
+#: src/Views/AppInfoView.vala:1036
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1029
+#: src/Views/AppInfoView.vala:1039
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D9%84%DA%A9%DB%8C%D8%AA_%D8%B9%D9%85%D9%88%D9%85%DB%8C"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1034
+#: src/Views/AppInfoView.vala:1044
 #, fuzzy
 msgid "Free Software"
 msgstr "ویرایش کد برنامه"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1037
+#: src/Views/AppInfoView.vala:1047
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw.fa"
 
-#: src/Views/AppInfoView.vala:1041
+#: src/Views/AppInfoView.vala:1051
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1044
+#: src/Views/AppInfoView.vala:1054
 msgid "Unknown License"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1124
+#: src/Views/AppInfoView.vala:1134
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1142
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1253
+#: src/Views/AppInfoView.vala:1263
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
@@ -830,7 +826,7 @@ msgstr ""
 
 #: src/Views/AppListView.vala:30 src/Views/AppListView.vala:53
 msgid "Flathub"
-msgstr ""
+msgstr "فلت هاب"
 
 #: src/Views/AppListView.vala:32
 msgid "No Apps Found"
@@ -886,15 +882,15 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
-msgstr ""
+msgstr "صدا"
 
 #: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr ""
+msgstr "ارتباط"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
-msgstr ""
+msgstr "توسعه"
 
 #: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
@@ -906,15 +902,15 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
-msgstr ""
+msgstr "بازی ها"
 
 #: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
-msgstr ""
+msgstr "گرافیک"
 
 #: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
-msgstr ""
+msgstr "اینترنت"
 
 #: src/Widgets/CategoryFlowBox.vala:83
 msgid "Math, Science, & Engineering"
@@ -926,11 +922,11 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
-msgstr ""
+msgstr "آفیس"
 
 #: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
-msgstr ""
+msgstr "سیستم"
 
 #: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
@@ -938,7 +934,7 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
-msgstr ""
+msgstr "ویدیو"
 
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
@@ -953,12 +949,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:238
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
-msgstr ""
+msgstr "رایگان"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:240
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 #, fuzzy
 msgid "Install"
 msgstr "نصب کردن"
@@ -1003,15 +999,15 @@ msgstr ""
 
 #: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
-msgstr ""
+msgstr "فیس بوک"
 
 #: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
-msgstr ""
+msgstr "توییتر"
 
 #: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
-msgstr ""
+msgstr "ردیت"
 
 #: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
@@ -1019,7 +1015,7 @@ msgstr ""
 
 #: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
-msgstr ""
+msgstr "تلگرام"
 
 #: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
@@ -1047,15 +1043,15 @@ msgstr[1] ""
 
 #: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
-msgstr ""
+msgstr "درایور ها"
 
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:259
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
 msgid "Update"
-msgstr ""
+msgstr "بروزرسانی"
 
 #, fuzzy
 #~| msgid "Finished"

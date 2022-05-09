@@ -76,7 +76,21 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            unowned var action_button_context = action_button.get_style_context ();
+            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var open_button_context = open_button.get_style_context ();
+            open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var cancel_button_context = cancel_button.get_style_context ();
+            cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
 
@@ -623,15 +637,11 @@ namespace AppCenter.Views {
             var header_box = new Gtk.Grid () {
                 hexpand = true
             };
-            header_box.get_style_context ().add_class ("banner");
             header_box.add (header_clamp);
 
-            // FIXME: should be for context, not for screen
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                banner_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
+            unowned var header_box_context = header_box.get_style_context ();
+            header_box_context.add_class ("banner");
+            header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -756,16 +766,16 @@ namespace AppCenter.Views {
             switch (package.runtime_status) {
                 case RuntimeStatus.END_OF_LIFE:
                     runtime_warning = new ContentType (
-                        _("Outdated"),
-                        _("Built with older technologies that may not work as expected or receive security updates"),
-                        "software-update-urgent-symbolic"
+                        _("End of Life"),
+                        _("May not work as expected or receive security updates"),
+                        "flatpak-eol-symbolic"
                     );
                     break;
                 case RuntimeStatus.MAJOR_OUTDATED:
                     runtime_warning = new ContentType (
                         _("Outdated"),
-                        _("Built for an older version of %s; might not support the latest features").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
-                        "software-update-available-symbolic"
+                        _("May not work as expected or support the latest features"),
+                        "flatpak-eol-symbolic"
                     );
                     break;
                 case RuntimeStatus.MINOR_OUTDATED:
