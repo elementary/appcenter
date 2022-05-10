@@ -25,8 +25,6 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
 
-    public signal void page_loaded ();
-
     public bool viewing_package {
         get {
             return visible_child is Views.AppInfoView;
@@ -243,8 +241,6 @@ public class AppCenter.Homepage : AbstractView {
         }
         recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
-
-        page_loaded ();
     }
 
     public override void update_navigation () {
