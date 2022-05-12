@@ -160,7 +160,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 #if HIDE_UPSTREAM_DISTRO_APPS
 #if HAS_APPSTREAM_0_15
         appstream_pool.reset_extra_data_locations ();
-        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.METAINFO);
+        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.COLLECTION);
 #else
         // Only use a user cache, the system cache probably contains all the Ubuntu components
         appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);

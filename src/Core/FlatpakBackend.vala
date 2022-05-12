@@ -798,7 +798,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
 #if HAS_APPSTREAM_0_15
         user_appstream_pool.reset_extra_data_locations ();
-        user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.METAINFO);
+        user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.COLLECTION);
 #else
         user_appstream_pool.clear_metadata_locations ();
         user_appstream_pool.add_metadata_location (user_metadata_path);
@@ -833,7 +833,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
 #if HAS_APPSTREAM_0_15
         system_appstream_pool.reset_extra_data_locations ();
-        system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.METAINFO);
+        system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.COLLECTION);
 #else
         system_appstream_pool.clear_metadata_locations ();
         system_appstream_pool.add_metadata_location (system_metadata_path);
