@@ -15,7 +15,8 @@
       <description>
         <p>New features:</p>
         <ul>
-          <li>Added an option to automatically update curated apps</li>
+          <li>Added an option to automatically update apps</li>
+          <li>Manually check for new updates</li>
           <li>Warn when apps are built against older runtimes</li>
         </ul>
         <p>Fixes:</p>
@@ -24,7 +25,10 @@
         </ul>
         <p>Improvements:</p>
         <ul>
+          <li>Don't show a warning dialog about apps from alt stores</li>
           <li>Show screenshot captions in a tooltip</li>
+          <li>Show "Try for Free" when setting an app's price to 0</li>
+          <li>Performance improvements</li>
           <li>Updated translations</li>
         </ul>
       </description>
