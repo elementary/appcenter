@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:59+0000\n"
+"POT-Creation-Date: 2022-05-13 16:52+0000\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -39,58 +39,58 @@ msgstr "%s의 설치를 마쳤습니다"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:406
+#: src/Application.vala:308 src/MainWindow.vala:402
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s의 설치를 마쳤습니다"
 
-#: src/MainWindow.vala:138
+#: src/MainWindow.vala:136
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "앱을 검색하고 설치하기"
 
-#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
-#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
-#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/MainWindow.vala:166 src/Views/Homepage.vala:274
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
+#: src/Views/Homepage.vala:303 src/Views/SearchView.vala:61
 #: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr "홈"
 
-#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:167 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr "설치함"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:465
+#: src/MainWindow.vala:209 src/MainWindow.vala:461
 msgid "Search Apps"
 msgstr "앱 검색"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:215
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "업데이트할 내용을 불러오지 못했습니다"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:216
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:220
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "업데이트 검색 중…"
 
-#: src/MainWindow.vala:246
+#: src/MainWindow.vala:244
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "시작하고 있습니다"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:405
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "열기"
@@ -841,15 +841,15 @@ msgstr "무료"
 msgid "Non-Curated Apps"
 msgstr "값을 매기지 않는 앱"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:75
 msgid "Recently Updated"
 msgstr "최근 업데이트 항목"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:97
 msgid "Categories"
 msgstr "카테고리"
 
-#: src/Views/Homepage.vala:308
+#: src/Views/Homepage.vala:304
 #, c-format
 msgid "Search %s"
 msgstr "%s 찾기"
