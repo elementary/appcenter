@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:59+0000\n"
+"POT-Creation-Date: 2022-05-13 16:52+0000\n"
 "PO-Revision-Date: 2022-04-30 17:01+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -41,53 +41,53 @@ msgstr "应用安装成功"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:406
+#: src/Application.vala:308 src/MainWindow.vala:402
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s已被安装"
 
-#: src/MainWindow.vala:138
+#: src/MainWindow.vala:136
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "无法打开 “%s“"
 
-#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
-#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
-#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/MainWindow.vala:166 src/Views/Homepage.vala:274
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
+#: src/Views/Homepage.vala:303 src/Views/SearchView.vala:61
 #: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr "首页"
 
-#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:167 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr "已安装"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:465
+#: src/MainWindow.vala:209 src/MainWindow.vala:461
 msgid "Search Apps"
 msgstr "搜索应用"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:215
 msgid "Automatic App Updates"
 msgstr "自动更新应用程序"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:216
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "系统及未付款的应用的更新将不会自动进行"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:220
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "正在检查更新"
 
-#: src/MainWindow.vala:246
+#: src/MainWindow.vala:244
 msgid "Settings"
 msgstr "设置"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:405
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "打开"
@@ -815,15 +815,15 @@ msgstr "免费应用"
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:75
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:97
 msgid "Categories"
 msgstr "类别"
 
-#: src/Views/Homepage.vala:308
+#: src/Views/Homepage.vala:304
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"
