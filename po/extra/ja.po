@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-13 16:52+0000\n"
-"PO-Revision-Date: 2022-04-09 01:36+0000\n"
+"PO-Revision-Date: 2022-05-18 17:33+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -46,18 +46,12 @@ msgid "New features:"
 msgstr "新機能:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Added an option to automatically update curated apps"
 msgid "Added an option to automatically update apps"
-msgstr ""
-"キュレーションされたアプリのアップデートを自動的にアップデートするオプション"
-"を追加"
+msgstr "アプリを自動的にアップデートするオプションを追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "アップデートを確認"
+msgstr "手動で新しいアップデートを確認できる機能を追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Warn when apps are built against older runtimes"
@@ -97,7 +91,7 @@ msgstr "改善点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
+msgstr "外部のアプリストアが提供するアプリに対しては、警告ダイアログを表示しないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Show screenshot captions in a tooltip"
@@ -105,7 +99,7 @@ msgstr "スクリーンショットのキャプションをツールチップに
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
+msgstr "アプリの価格を0円に設定すると、ボタンに“無料で入手”と表示するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 #: data/io.elementary.appcenter.appdata.xml.in:246
