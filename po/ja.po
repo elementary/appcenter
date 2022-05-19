@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-13 16:52+0000\n"
-"PO-Revision-Date: 2022-05-02 13:13+0000\n"
+"PO-Revision-Date: 2022-05-18 17:33+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,13 +71,11 @@ msgstr "アプリの自動アップデート"
 
 #: src/MainWindow.vala:216
 msgid "System updates and unpaid apps will not update automatically"
-msgstr "システムのアップデートと未払いのアプリは対象外です"
+msgstr "システムのアップデートと未購入のアプリは対象外です"
 
 #: src/MainWindow.vala:220
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Check for Updates"
-msgstr "アップデートを確認しています"
+msgstr "アップデートを確認"
 
 #: src/MainWindow.vala:244
 msgid "Settings"
@@ -797,7 +796,7 @@ msgstr "検索用語を変更してみてください。%s などから、AppCen
 
 #: src/Views/CategoryView.vala:28
 msgid "Paid Apps"
-msgstr "有料アプリ"
+msgstr "購入済みアプリ"
 
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"

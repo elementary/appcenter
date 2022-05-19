@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-13 16:52+0000\n"
-"PO-Revision-Date: 2022-01-13 16:10+0000\n"
+"PO-Revision-Date: 2022-05-15 12:44+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -46,18 +46,12 @@ msgid "New features:"
 msgstr "Funcions noves:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Added an option to automatically update curated apps"
 msgid "Added an option to automatically update apps"
-msgstr ""
-"S'ha afegit una opció per actualitzar automàticament les aplicacions "
-"adaptades."
+msgstr "S'ha afegit una opció per actualitzar automàticament les aplicacions."
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "Comprova si hi ha actualitzacions"
+msgstr "Comprovació manual d'actualitzacions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Warn when apps are built against older runtimes"
@@ -98,6 +92,7 @@ msgstr "Millores:"
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
+"No es mostra cap diàleg d'avís sobre aplicacions de botigues alternatives."
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Show screenshot captions in a tooltip"
@@ -107,6 +102,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
+"Mostra \"Prova-la gratis\" quan s'estableixi el preu d'una aplicació a 0."
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 #: data/io.elementary.appcenter.appdata.xml.in:246
