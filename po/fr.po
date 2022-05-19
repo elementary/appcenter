@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 15:59+0000\n"
+"POT-Creation-Date: 2022-05-13 16:52+0000\n"
 "PO-Revision-Date: 2022-05-09 08:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
@@ -46,51 +46,51 @@ msgstr "L’application a été installée"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:406
+#: src/Application.vala:308 src/MainWindow.vala:402
 #, c-format
 msgid "“%s” has been installed"
 msgstr "L’application « %s » a été installée"
 
-#: src/MainWindow.vala:138
+#: src/MainWindow.vala:136
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Échec du lancement de « %s »"
 
-#: src/MainWindow.vala:168 src/Views/Homepage.vala:278
-#: src/Views/Homepage.vala:290 src/Views/Homepage.vala:295
-#: src/Views/Homepage.vala:307 src/Views/SearchView.vala:61
+#: src/MainWindow.vala:166 src/Views/Homepage.vala:274
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
+#: src/Views/Homepage.vala:303 src/Views/SearchView.vala:61
 #: src/Views/SearchView.vala:98
 msgid "Home"
 msgstr "Accueil"
 
-#: src/MainWindow.vala:169 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:167 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:59
 msgctxt "view"
 msgid "Installed"
 msgstr "Installées"
 
-#: src/MainWindow.vala:211 src/MainWindow.vala:465
+#: src/MainWindow.vala:209 src/MainWindow.vala:461
 msgid "Search Apps"
 msgstr "Rechercher des applications"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:215
 msgid "Automatic App Updates"
 msgstr "Mises à jour automatiques des applications"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:216
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "Les mises à jour du système et des applications non payées ne se feront pas automatiquement"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:220
 msgid "Check for Updates"
 msgstr "Rechercher des mises à jour"
 
-#: src/MainWindow.vala:246
+#: src/MainWindow.vala:244
 msgid "Settings"
 msgstr "Paramètres"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:405
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:75
 msgid "Open"
 msgstr "Ouvrir"
@@ -817,15 +817,15 @@ msgstr "Applications gratuites"
 msgid "Non-Curated Apps"
 msgstr "Applications non vérifiées"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:75
 msgid "Recently Updated"
 msgstr "Mises à jour récentes"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:97
 msgid "Categories"
 msgstr "Catégories"
 
-#: src/Views/Homepage.vala:308
+#: src/Views/Homepage.vala:304
 #, c-format
 msgid "Search %s"
 msgstr "Rechercher %s"

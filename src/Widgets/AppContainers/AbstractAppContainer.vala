@@ -48,7 +48,7 @@ namespace AppCenter {
         protected bool updates_view = false;
 
         construct {
-            action_button = new Widgets.HumbleButton ();
+            action_button = new Widgets.HumbleButton (package);
 
             action_button_revealer = new Gtk.Revealer ();
             action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
@@ -56,10 +56,6 @@ namespace AppCenter {
 
             action_button.download_requested.connect (() => {
                 action_clicked.begin ();
-            });
-
-            action_button.payment_requested.connect ((amount) => {
-                show_stripe_dialog (amount);
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
@@ -161,27 +157,6 @@ namespace AppCenter {
                     }
                 });
             }
-        }
-
-        private void show_stripe_dialog (int amount) {
-            var stripe = new Widgets.StripeDialog (
-                amount,
-                package.get_name (),
-                package.normalized_component_id,
-                package.get_payments_key ()
-            );
-
-            stripe.transient_for = (Gtk.Window) get_toplevel ();
-
-            stripe.download_requested.connect (() => {
-                action_clicked.begin ();
-
-                if (stripe.amount != 0) {
-                    App.add_paid_app (package.component.get_id ());
-                }
-            });
-
-            stripe.show ();
         }
 
         protected virtual void set_up_package () {
