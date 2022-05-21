@@ -78,6 +78,8 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         hscrollbar_policy = Gtk.PolicyType.NEVER;
         add (grid);
 
+        show_all ();
+
         populate ();
 
         paid_flowbox.child_activated.connect ((child) => {
@@ -96,80 +98,93 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         });
 
         AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
-            Idle.add (() => {
-                populate ();
-                return GLib.Source.REMOVE;
-            });
+            populate ();
         });
     }
 
     private void populate () {
-        foreach (unowned var child in grid.get_children ()) {
-            grid.remove (child);
-        }
+        get_packages.begin ((obj, res) => {
+            var packages = get_packages.end (res);
 
-        foreach (unowned var child in free_flowbox.get_children ()) {
-            child.destroy ();
-        }
+            foreach (unowned var child in grid.get_children ()) {
+                grid.remove (child);
+            }
 
-        foreach (unowned var child in paid_flowbox.get_children ()) {
-            child.destroy ();
-        }
+            foreach (unowned var child in free_flowbox.get_children ()) {
+                child.destroy ();
+            }
 
-        foreach (unowned var child in uncurated_flowbox.get_children ()) {
-            child.destroy ();
-        }
+            foreach (unowned var child in paid_flowbox.get_children ()) {
+                child.destroy ();
+            }
+
+            foreach (unowned var child in uncurated_flowbox.get_children ()) {
+                child.destroy ();
+            }
+
+            foreach (var package in packages.values) {
+                if (!package.is_plugin && !package.is_font) {
+                    var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+#if CURATED
+                    if (package.is_native) {
+                        if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
+                            paid_flowbox.add (package_row);
+                        } else {
+                            free_flowbox.add (package_row);
+                        }
+                    } else {
+                        uncurated_flowbox.add (package_row);
+                    }
+#else
+                    uncurated_flowbox.add (package_row);
+#endif
+                }
+            }
+
+#if CURATED
+            if (paid_flowbox.get_child_at_index (0) != null) {
+                grid.add (paid_grid);
+            }
+
+            if (free_flowbox.get_child_at_index (0) != null) {
+                grid.add (free_grid);
+            }
+
+            if (uncurated_flowbox.get_child_at_index (0) != null) {
+                grid.add (uncurated_grid);
+            }
+#else
+            grid.add (uncurated_flowbox);
+#endif
+
+            show_all ();
+        });
+    }
+
+    private async Gee.HashMap<string, AppCenterCore.Package> get_packages () {
+        SourceFunc callback = get_packages.callback;
 
         var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
-        var results = AppCenterCore.FlatpakBackend.get_default ().get_applications_for_category (category);
-        foreach (var result in results) {
-            var result_component_id = result.normalized_component_id;
-            if (packages.has_key (result_component_id)) {
-                if (result.origin_score > packages[result_component_id].origin_score) {
-                    packages[result_component_id] = result;
-                }
-            } else {
-                packages[result_component_id] = result;
-            }
-        }
 
-        foreach (var package in packages.values) {
-            if (!package.is_plugin && !package.is_font) {
-                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
-#if CURATED
-                if (package.is_native) {
-                    if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                        paid_flowbox.add (package_row);
-                    } else {
-                        free_flowbox.add (package_row);
+        new Thread<void> ("get_packages", () => {
+            var results = AppCenterCore.FlatpakBackend.get_default ().get_applications_for_category (category);
+            foreach (var result in results) {
+                var result_component_id = result.normalized_component_id;
+                if (packages.has_key (result_component_id)) {
+                    if (result.origin_score > packages[result_component_id].origin_score) {
+                        packages[result_component_id] = result;
                     }
                 } else {
-                    uncurated_flowbox.add (package_row);
+                    packages[result_component_id] = result;
                 }
-#else
-                uncurated_flowbox.add (package_row);
-#endif
-
             }
-        }
 
-#if CURATED
-        if (paid_flowbox.get_child_at_index (0) != null) {
-            grid.add (paid_grid);
-        }
+            Idle.add ((owned) callback);
+        });
 
-        if (free_flowbox.get_child_at_index (0) != null) {
-            grid.add (free_grid);
-        }
+        yield;
 
-        if (uncurated_flowbox.get_child_at_index (0) != null) {
-            grid.add (uncurated_grid);
-        }
-#else
-        grid.add (uncurated_flowbox);
-#endif
-
-        show_all ();
+        return packages;
     }
 
     private class SubcategoryFlowbox : Gtk.FlowBox {
