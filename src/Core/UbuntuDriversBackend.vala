@@ -147,10 +147,6 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         }
     }
 
-    public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        return new Gee.ArrayList<Package> ();
-    }
-
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         return new Gee.ArrayList<Package> ();
     }

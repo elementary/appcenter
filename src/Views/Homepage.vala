@@ -163,8 +163,8 @@ public class AppCenter.Homepage : AbstractView {
                             var list_view = child as Views.AppListView;
                             list_view.clear ();
 
-                            unowned var client = AppCenterCore.Client.get_default ();
-                            var apps = client.get_applications_for_category (currently_viewed_category);
+                            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+                            var apps = flatpak_backend.get_applications_for_category (currently_viewed_category);
                             list_view.add_packages (apps);
                         }
                     }

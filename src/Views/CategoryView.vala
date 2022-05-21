@@ -60,8 +60,9 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         uncurated_grid.attach (uncurated_flowbox, 0, 1);
 #endif
 
-        unowned var client = AppCenterCore.Client.get_default ();
-        foreach (var package in client.get_applications_for_category (category)) {
+
+        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        foreach (var package in flatpak_backend.get_applications_for_category (category)) {
             // Don't show plugins or fonts in search and category views
             if (!package.is_plugin && !package.is_font) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);

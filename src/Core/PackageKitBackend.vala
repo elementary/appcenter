@@ -399,7 +399,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return packages;
     }
 
-    public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
+    private Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
         unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
         // Clear out any cached components that could be from other backends
         if (components.length != 0) {
