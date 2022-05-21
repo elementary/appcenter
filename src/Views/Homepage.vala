@@ -158,9 +158,9 @@ public class AppCenter.Homepage : AbstractView {
                     if (child is CategoryView) {
                         if (child != visible_child) {
                             child.destroy ();
+                        } else {
+                            ((CategoryView) child).populate ();
                         }
-
-                        // FIXME: Add a refresh method to CategoryView for visible child
                     }
                 }
 
