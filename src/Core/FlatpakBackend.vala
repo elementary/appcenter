@@ -331,25 +331,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
         components = category.get_components ();
 
-        var results = new Gee.TreeSet<AppCenterCore.Package> ();
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
             var packages = get_packages_for_component_id (comp.get_id ());
-            results.add_all (packages);
+            apps.add_all (packages);
         });
 
-        var apps = new Gee.HashMap<string, Package> ();
-        foreach (var result in results) {
-            var result_component_id = result.normalized_component_id;
-            if (apps.has_key (result_component_id)) {
-                if (result.origin_score > apps[result_component_id].origin_score) {
-                    apps[result_component_id] = result;
-                }
-            } else {
-                apps[result_component_id] = result;
-            }
-        }
-
-        return apps.values;
+        return apps;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {

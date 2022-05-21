@@ -120,11 +120,22 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
             child.destroy ();
         }
 
-        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-        foreach (var package in flatpak_backend.get_applications_for_category (category)) {
+        var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
+        var results = AppCenterCore.FlatpakBackend.get_default ().get_applications_for_category (category);
+        foreach (var result in results) {
+            var result_component_id = result.normalized_component_id;
+            if (packages.has_key (result_component_id)) {
+                if (result.origin_score > packages[result_component_id].origin_score) {
+                    packages[result_component_id] = result;
+                }
+            } else {
+                packages[result_component_id] = result;
+            }
+        }
+
+        foreach (var package in packages.values) {
             if (!package.is_plugin && !package.is_font) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
-
 #if CURATED
                 if (package.is_native) {
                     if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
