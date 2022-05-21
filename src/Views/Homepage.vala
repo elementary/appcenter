@@ -153,17 +153,6 @@ public class AppCenter.Homepage : AbstractView {
                     }
                 }
 
-                // Remove any old cached category list views
-                foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is CategoryView) {
-                        if (child != visible_child) {
-                            child.destroy ();
-                        } else {
-                            ((CategoryView) child).populate ();
-                        }
-                    }
-                }
-
                 return GLib.Source.REMOVE;
             });
         });

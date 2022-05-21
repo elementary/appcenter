@@ -94,9 +94,16 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
             var row = (Widgets.ListPackageRowGrid) child.get_child ();
             show_app (row.package);
         });
+
+        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+            Idle.add (() => {
+                populate ();
+                return GLib.Source.REMOVE;
+            });
+        });
     }
 
-    public void populate () {
+    private void populate () {
         foreach (unowned var child in grid.get_children ()) {
             grid.remove (child);
         }
