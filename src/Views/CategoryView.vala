@@ -114,8 +114,6 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            var packages = get_packages.end (res);
-
             foreach (unowned var child in grid.get_children ()) {
                 grid.remove (child);
             }
@@ -132,6 +130,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
                 child.destroy ();
             }
 
+            var packages = get_packages.end (res);
             foreach (var package in packages.values) {
                 if (!package.is_plugin && !package.is_font) {
                     var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
