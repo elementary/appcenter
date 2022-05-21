@@ -155,18 +155,12 @@ public class AppCenter.Homepage : AbstractView {
 
                 // Remove any old cached category list views
                 foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppListView) {
+                    if (child is CategoryView) {
                         if (child != visible_child) {
                             child.destroy ();
-                        } else {
-                            // If the category list view is visible, don't delete it, just make the package list right
-                            var list_view = child as Views.AppListView;
-                            list_view.clear ();
-
-                            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-                            var apps = flatpak_backend.get_applications_for_category (currently_viewed_category);
-                            list_view.add_packages (apps);
                         }
+
+                        // FIXME: Add a refresh method to CategoryView for visible child
                     }
                 }
 
