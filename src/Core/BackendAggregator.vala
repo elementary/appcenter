@@ -98,6 +98,26 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         return apps;
     }
 
+    public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
+        var apps = new Gee.HashMap<string, Package> ();
+        foreach (var backend in backends) {
+            var results = backend.get_applications_for_category (category);
+
+            foreach (var result in results) {
+                var result_component_id = result.normalized_component_id;
+                if (apps.has_key (result_component_id)) {
+                    if (result.origin_score > apps[result_component_id].origin_score) {
+                        apps[result_component_id] = result;
+                    }
+                } else {
+                    apps[result_component_id] = result;
+                }
+            }
+        }
+
+        return apps.values;
+    }
+
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         var apps = new Gee.HashMap<string, Package> ();
         foreach (var backend in backends) {

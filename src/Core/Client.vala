@@ -49,6 +49,10 @@ public class AppCenterCore.Client : Object {
         return yield BackendAggregator.get_default ().get_installed_applications (cancellable);
     }
 
+    public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
+        return BackendAggregator.get_default ().get_applications_for_category (category);
+    }
+
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         return BackendAggregator.get_default ().search_applications (query, category);
     }

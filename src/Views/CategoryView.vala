@@ -131,7 +131,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
             }
 
             var packages = get_packages.end (res);
-            foreach (var package in packages.values) {
+            foreach (var package in packages) {
                 if (!package.is_plugin && !package.is_font) {
                     var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
 #if CURATED
@@ -171,23 +171,13 @@ public class AppCenter.CategoryView : Gtk.Stack {
         });
     }
 
-    private async Gee.HashMap<string, AppCenterCore.Package> get_packages () {
+    private async Gee.Collection<AppCenterCore.Package> get_packages () {
         SourceFunc callback = get_packages.callback;
 
-        var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
+        var packages = new Gee.TreeSet <AppCenterCore.Package> ();
 
         new Thread<void> ("get_packages", () => {
-            var results = AppCenterCore.FlatpakBackend.get_default ().get_applications_for_category (category);
-            foreach (var result in results) {
-                var result_component_id = result.normalized_component_id;
-                if (packages.has_key (result_component_id)) {
-                    if (result.origin_score > packages[result_component_id].origin_score) {
-                        packages[result_component_id] = result;
-                    }
-                } else {
-                    packages[result_component_id] = result;
-                }
-            }
+            packages.add_all (AppCenterCore.Client.get_default ().get_applications_for_category (category));
 
             Idle.add ((owned) callback);
         });
