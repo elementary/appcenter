@@ -175,15 +175,12 @@ public class AppCenter.CategoryView : Gtk.Stack {
         SourceFunc callback = get_packages.callback;
 
         var packages = new Gee.TreeSet <AppCenterCore.Package> ();
-
         new Thread<void> ("get_packages", () => {
             packages.add_all (AppCenterCore.Client.get_default ().get_applications_for_category (category));
-
             Idle.add ((owned) callback);
         });
 
         yield;
-
         return packages;
     }
 
