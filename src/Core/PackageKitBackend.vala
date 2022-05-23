@@ -159,6 +159,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         // with elementary's AppStream data.
 #if HIDE_UPSTREAM_DISTRO_APPS
 #if HAS_APPSTREAM_0_15
+        // OS Collection contains Ubuntu components
+        appstream_pool.remove_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
         appstream_pool.reset_extra_data_locations ();
         appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.COLLECTION);
 #else
