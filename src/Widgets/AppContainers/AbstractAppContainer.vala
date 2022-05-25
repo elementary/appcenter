@@ -20,13 +20,10 @@
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Bin {
         public AppCenterCore.Package package { get; construct set; }
-        protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
 
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button open_button;
-        protected Gtk.Button uninstall_button { get; private set; }
-
         protected Gtk.Grid button_grid;
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -34,7 +31,6 @@ namespace AppCenter {
 
         private Gtk.Revealer action_button_revealer;
         private Gtk.Revealer open_button_revealer;
-        private Gtk.Revealer uninstall_button_revealer;
 
         private uint state_source = 0U;
 
@@ -57,16 +53,6 @@ namespace AppCenter {
                 action_clicked.begin ();
             });
 
-            uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
-                margin_end = 12
-            };
-
-            uninstall_button_revealer = new Gtk.Revealer ();
-            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            uninstall_button_revealer.add (uninstall_button);
-
-            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
-
             open_button = new Gtk.Button.with_label (_("Open"));
 
             open_button_revealer = new Gtk.Revealer ();
@@ -76,7 +62,6 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.add (uninstall_button_revealer);
             button_grid.add (action_button_revealer);
             button_grid.add (open_button_revealer);
 
@@ -87,7 +72,6 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
-            action_button_group.add_widget (uninstall_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
@@ -206,13 +190,11 @@ namespace AppCenter {
                         action_button.amount = 0;
                     }
 
-                    uninstall_button_revealer.reveal_child = false;
                     action_button_revealer.reveal_child = !package.is_os_updates;
                     open_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = package.should_pay && updates_view;
                     open_button_revealer.reveal_child = show_open && package.get_can_launch ();
 
@@ -225,7 +207,6 @@ namespace AppCenter {
                        action_button.amount = 0;
                     }
 
-                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = true;
                     open_button_revealer.reveal_child = false;
 
@@ -292,22 +273,6 @@ namespace AppCenter {
                     MainWindow.installed_view.add_app.begin (package);
                 }
             }
-        }
-
-        private async void uninstall_clicked () {
-            package.uninstall.begin ((obj, res) => {
-                try {
-                    if (package.uninstall.end (res)) {
-                        MainWindow.installed_view.remove_app.begin (package);
-                    }
-                } catch (Error e) {
-                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
-                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
-                        new UninstallFailDialog (package, e).present ();
-                    }
-                }
-            });
         }
     }
 }
