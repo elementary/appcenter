@@ -52,6 +52,7 @@ namespace AppCenter.Views {
         private ArrowButton screenshot_previous;
         private Gtk.FlowBox oars_flowbox;
         private Gtk.Revealer oars_flowbox_revealer;
+        private Gtk.Revealer uninstall_button_revealer;
 
         private bool is_runtime_warning_shown = false;
 
@@ -87,10 +88,6 @@ namespace AppCenter.Views {
             unowned var cancel_button_context = cancel_button.get_style_context ();
             cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-            unowned var uninstall_button_context = uninstall_button.get_style_context ();
-            uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
 
@@ -595,15 +592,28 @@ namespace AppCenter.Views {
             origin_combo.pack_start (renderer, true);
             origin_combo.add_attribute (renderer, "text", 1);
 
-            action_stack.valign = Gtk.Align.END;
-            action_stack.halign = Gtk.Align.END;
-            action_stack.hexpand = true;
+            var uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
+                margin_end = 12
+            };
 
-            /* This is required to stop any button movement when switch from button_grid to the
-             * progress grid */
-            progress_grid.margin_end = 6;
-            progress_grid.margin_top = 12;
-            button_grid.margin_top = progress_grid.margin_top;
+            unowned var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            uninstall_button_revealer = new Gtk.Revealer () {
+                transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            };
+            uninstall_button_revealer.add (uninstall_button);
+
+            action_button_group.add_widget (uninstall_button);
+
+            var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.END,
+                hexpand = true
+            };
+            button_box.add (uninstall_button_revealer);
+            button_box.add (action_stack);
 
             var header_grid = new Gtk.Grid () {
                 column_spacing = 12,
@@ -614,7 +624,7 @@ namespace AppCenter.Views {
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (author_label, 1, 1);
             header_grid.attach (origin_combo_revealer, 1, 2, 3);
-            header_grid.attach (action_stack, 3, 0);
+            header_grid.attach (button_box, 3, 0);
 
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel () {
@@ -725,6 +735,8 @@ namespace AppCenter.Views {
                 }
             });
 
+            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
+
             realize.connect (load_more_content);
         }
 
@@ -733,8 +745,19 @@ namespace AppCenter.Views {
                 size_label.update ();
             }
 
-            if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                get_app_download_size.begin ();
+            switch (package.state) {
+                case AppCenterCore.Package.State.NOT_INSTALLED:
+                    get_app_download_size.begin ();
+                    uninstall_button_revealer.reveal_child = false;
+                    break;
+                case AppCenterCore.Package.State.INSTALLED:
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    break;
+                case AppCenterCore.Package.State.UPDATE_AVAILABLE:
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    break;
+                default:
+                    break;
             }
 
             update_action ();
@@ -1081,6 +1104,22 @@ namespace AppCenter.Views {
                         break;
                 }
             }
+        }
+
+        private async void uninstall_clicked () {
+            package.uninstall.begin ((obj, res) => {
+                try {
+                    if (package.uninstall.end (res)) {
+                        MainWindow.installed_view.remove_app.begin (package);
+                    }
+                } catch (Error e) {
+                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
+                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
+                        new UninstallFailDialog (package, e).present ();
+                    }
+                }
+            });
         }
 
         class UrlButton : Gtk.Grid {
