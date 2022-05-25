@@ -27,7 +27,6 @@ namespace AppCenter {
         protected Gtk.Button open_button;
         protected Gtk.Button uninstall_button { get; private set; }
 
-        protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -77,25 +76,14 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.valign = Gtk.Align.CENTER;
-            button_grid.halign = Gtk.Align.END;
-            button_grid.hexpand = false;
-
             button_grid.add (uninstall_button_revealer);
             button_grid.add (action_button_revealer);
             button_grid.add (open_button_revealer);
 
             cancel_button = new ProgressButton () {
-                halign = Gtk.Align.END,
-                label = _("Cancel"),
-                valign = Gtk.Align.END
+                label = _("Cancel")
             };
             cancel_button.clicked.connect (() => action_cancelled ());
-
-            progress_grid = new Gtk.Grid ();
-            progress_grid.halign = Gtk.Align.END;
-            progress_grid.valign = Gtk.Align.CENTER;
-            progress_grid.add (cancel_button);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
@@ -103,11 +91,14 @@ namespace AppCenter {
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
-            action_stack = new Gtk.Stack ();
-            action_stack.hhomogeneous = false;
-            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            action_stack = new Gtk.Stack () {
+                hhomogeneous = false,
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.CENTER,
+                transition_type = Gtk.StackTransitionType.CROSSFADE
+            };
             action_stack.add_named (button_grid, "buttons");
-            action_stack.add_named (progress_grid, "progress");
+            action_stack.add_named (cancel_button, "progress");
             action_stack.show_all ();
 
             destroy.connect (() => {
