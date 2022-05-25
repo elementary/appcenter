@@ -20,18 +20,15 @@
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Bin {
         public AppCenterCore.Package package { get; construct set; }
-        protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
 
         protected Widgets.HumbleButton install_button;
         protected Gtk.Button open_button;
-        protected Gtk.Button uninstall_button { get; private set; }
-
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
-        private Gtk.Revealer uninstall_button_revealer;
+        private Gtk.Revealer open_button_revealer;
 
         private uint state_source = 0U;
 
@@ -46,16 +43,12 @@ namespace AppCenter {
         construct {
             install_button = new Widgets.HumbleButton (package);
 
-            uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
-                margin_end = 12
-            };
+            open_button = new Gtk.Button.with_label (_("Open"));
 
-            uninstall_button_revealer = new Gtk.Revealer () {
+            open_button_revealer = new Gtk.Revealer () {
                 transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
             };
-            uninstall_button_revealer.add (uninstall_button);
-
-            open_button = new Gtk.Button.with_label (_("Open"));
+            open_button_revealer.add (open_button);
 
             cancel_button = new ProgressButton () {
                 label = _("Cancel")
@@ -63,15 +56,15 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (install_button);
-            action_button_group.add_widget (uninstall_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
             action_stack = new Gtk.Stack () {
+                homogeneous = false,
                 transition_type = Gtk.StackTransitionType.CROSSFADE
             };
             action_stack.add (install_button);
-            action_stack.add (open_button);
+            action_stack.add (open_button_revealer);
             action_stack.add (cancel_button);
             action_stack.show_all ();
 
@@ -82,8 +75,6 @@ namespace AppCenter {
             });
 
             open_button.clicked.connect (launch_package_app);
-
-            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             destroy.connect (() => {
                 if (state_source > 0) {
@@ -191,7 +182,6 @@ namespace AppCenter {
                     }
 
                     action_stack.visible_child = install_button;
-                    uninstall_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
@@ -199,11 +189,10 @@ namespace AppCenter {
                         action_stack.visible_child = install_button;
                         install_button.allow_free = false;
                     } else {
-                        action_stack.visible_child = open_button;
+                        action_stack.visible_child = open_button_revealer;
                     }
 
-                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
-                    // open_button_revealer.reveal_child = show_open && package.get_can_launch ();
+                    open_button_revealer.reveal_child = show_open && package.get_can_launch ();
 
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
@@ -213,8 +202,6 @@ namespace AppCenter {
                     if (!package.should_nag_update) {
                        install_button.amount = 0;
                     }
-
-                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLING:
@@ -277,22 +264,6 @@ namespace AppCenter {
                     MainWindow.installed_view.add_app.begin (package);
                 }
             }
-        }
-
-        private async void uninstall_clicked () {
-            package.uninstall.begin ((obj, res) => {
-                try {
-                    if (package.uninstall.end (res)) {
-                        MainWindow.installed_view.remove_app.begin (package);
-                    }
-                } catch (Error e) {
-                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
-                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
-                        new UninstallFailDialog (package, e).present ();
-                    }
-                }
-            });
         }
     }
 }
