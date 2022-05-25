@@ -599,12 +599,6 @@ namespace AppCenter.Views {
             action_stack.halign = Gtk.Align.END;
             action_stack.hexpand = true;
 
-            /* This is required to stop any button movement when switch from button_grid to the
-             * progress grid */
-            progress_grid.margin_end = 6;
-            progress_grid.margin_top = 12;
-            button_grid.margin_top = progress_grid.margin_top;
-
             var header_grid = new Gtk.Grid () {
                 column_spacing = 12,
                 row_spacing = 6,
