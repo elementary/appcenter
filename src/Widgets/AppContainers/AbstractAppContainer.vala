@@ -27,7 +27,6 @@ namespace AppCenter {
         protected Gtk.Button open_button;
         protected Gtk.Button uninstall_button { get; private set; }
 
-        protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -48,7 +47,7 @@ namespace AppCenter {
         protected bool updates_view = false;
 
         construct {
-            action_button = new Widgets.HumbleButton ();
+            action_button = new Widgets.HumbleButton (package);
 
             action_button_revealer = new Gtk.Revealer ();
             action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
@@ -56,10 +55,6 @@ namespace AppCenter {
 
             action_button.download_requested.connect (() => {
                 action_clicked.begin ();
-            });
-
-            action_button.payment_requested.connect ((amount) => {
-                show_stripe_dialog (amount);
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
@@ -81,25 +76,14 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.valign = Gtk.Align.CENTER;
-            button_grid.halign = Gtk.Align.END;
-            button_grid.hexpand = false;
-
             button_grid.add (uninstall_button_revealer);
             button_grid.add (action_button_revealer);
             button_grid.add (open_button_revealer);
 
             cancel_button = new ProgressButton () {
-                halign = Gtk.Align.END,
-                label = _("Cancel"),
-                valign = Gtk.Align.END
+                label = _("Cancel")
             };
             cancel_button.clicked.connect (() => action_cancelled ());
-
-            progress_grid = new Gtk.Grid ();
-            progress_grid.halign = Gtk.Align.END;
-            progress_grid.valign = Gtk.Align.CENTER;
-            progress_grid.add (cancel_button);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
@@ -107,11 +91,14 @@ namespace AppCenter {
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
-            action_stack = new Gtk.Stack ();
-            action_stack.hhomogeneous = false;
-            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            action_stack = new Gtk.Stack () {
+                hhomogeneous = false,
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.CENTER,
+                transition_type = Gtk.StackTransitionType.CROSSFADE
+            };
             action_stack.add_named (button_grid, "buttons");
-            action_stack.add_named (progress_grid, "progress");
+            action_stack.add_named (cancel_button, "progress");
             action_stack.show_all ();
 
             destroy.connect (() => {
@@ -161,27 +148,6 @@ namespace AppCenter {
                     }
                 });
             }
-        }
-
-        private void show_stripe_dialog (int amount) {
-            var stripe = new Widgets.StripeDialog (
-                amount,
-                package.get_name (),
-                package.normalized_component_id,
-                package.get_payments_key ()
-            );
-
-            stripe.transient_for = (Gtk.Window) get_toplevel ();
-
-            stripe.download_requested.connect (() => {
-                action_clicked.begin ();
-
-                if (stripe.amount != 0) {
-                    App.add_paid_app (package.component.get_id ());
-                }
-            });
-
-            stripe.show ();
         }
 
         protected virtual void set_up_package () {
