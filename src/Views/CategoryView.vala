@@ -105,6 +105,12 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
         populate ();
 
+        recently_updated_flowbox.child_activated.connect ((child) => {
+            var row = (Widgets.ListPackageRowGrid) child.get_child ();
+            show_app (row.package);
+        });
+
+
         paid_flowbox.child_activated.connect ((child) => {
             var row = (Widgets.ListPackageRowGrid) child.get_child ();
             show_app (row.package);
@@ -174,7 +180,6 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
             var recent_packages_list = new Gee.ArrayList<AppCenterCore.Package> ();
             recent_packages_list.add_all (packages);
-
             recent_packages_list.sort ((a, b) => {
                 if (a.get_newest_release () == null || b.get_newest_release () == null) {
                     if (a.get_newest_release () != null) {
@@ -197,7 +202,6 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
                 if (!recent_package.installed) {
                     var package_row = new AppCenter.Widgets.ListPackageRowGrid (recent_package);
-
                     recently_updated_flowbox.add (package_row);
                     recent_count++;
                 }
