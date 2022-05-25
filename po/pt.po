@@ -1,13 +1,14 @@
 # Christophe Silva <Christophesilva80@gmail.com>, 2018.
 # Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>, 2018, 2019.
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2019, 2020, 2021, 2022.
+# fabioasguerra <fabio-guerra@hotmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-13 16:52+0000\n"
 "PO-Revision-Date: 2022-05-25 18:59+0000\n"
-"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"Last-Translator: fabioasguerra <fabio-guerra@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
 "Language: pt\n"
@@ -74,6 +75,8 @@ msgstr "Atualizações automáticas das aplicações"
 #: src/MainWindow.vala:216
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
+"Atualizações do sistema e aplicações não pagas não serão atualizadas "
+"automaticamente"
 
 #: src/MainWindow.vala:220
 msgid "Check for Updates"
@@ -370,10 +373,10 @@ msgid "Pay $%d for %s"
 msgstr "Pagar %d$ por %s"
 
 #: src/Dialogs/StripeDialog.vala:94
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Este é um pagamento único. O seu e-mail será utilizado apenas para enviar o recibo."
+msgstr ""
+"Este é um pagamento único sugerido pelo programador. Você também pode "
+"escolher o seu próprio preço."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
