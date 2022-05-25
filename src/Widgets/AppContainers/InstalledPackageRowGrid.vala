@@ -35,7 +35,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         Object (package: package);
 
         if (action_size_group != null) {
-            action_size_group.add_widget (action_button);
+            action_size_group.add_widget (install_button);
             action_size_group.add_widget (cancel_button);
         }
 
@@ -113,8 +113,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
 
-        action_stack.homogeneous = false;
         action_stack.margin_top = 10;
+        action_stack.halign = Gtk.Align.END;
         action_stack.valign = Gtk.Align.START;
         action_stack.hexpand = true;
 

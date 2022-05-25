@@ -76,9 +76,9 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            unowned var action_button_context = action_button.get_style_context ();
-            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            unowned var install_button_context = install_button.get_style_context ();
+            install_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            install_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             unowned var open_button_context = open_button.get_style_context ();
             open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
@@ -598,12 +598,6 @@ namespace AppCenter.Views {
             action_stack.valign = Gtk.Align.END;
             action_stack.halign = Gtk.Align.END;
             action_stack.hexpand = true;
-
-            /* This is required to stop any button movement when switch from button_grid to the
-             * progress grid */
-            progress_grid.margin_end = 6;
-            progress_grid.margin_top = 12;
-            button_grid.margin_top = progress_grid.margin_top;
 
             var header_grid = new Gtk.Grid () {
                 column_spacing = 12,

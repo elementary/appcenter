@@ -23,92 +23,67 @@ namespace AppCenter {
         protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
 
-        protected Widgets.HumbleButton action_button;
+        protected Widgets.HumbleButton install_button;
         protected Gtk.Button open_button;
         protected Gtk.Button uninstall_button { get; private set; }
 
-        protected Gtk.Grid progress_grid;
-        protected Gtk.Grid button_grid;
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
-        private Gtk.Revealer action_button_revealer;
-        private Gtk.Revealer open_button_revealer;
         private Gtk.Revealer uninstall_button_revealer;
 
         private uint state_source = 0U;
 
         public bool action_sensitive {
             set {
-                action_button.sensitive = value;
+                install_button.sensitive = value;
             }
         }
 
         protected bool updates_view = false;
 
         construct {
-            action_button = new Widgets.HumbleButton (package);
-
-            action_button_revealer = new Gtk.Revealer ();
-            action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            action_button_revealer.add (action_button);
-
-            action_button.download_requested.connect (() => {
-                action_clicked.begin ();
-            });
+            install_button = new Widgets.HumbleButton (package);
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
                 margin_end = 12
             };
 
-            uninstall_button_revealer = new Gtk.Revealer ();
-            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            uninstall_button_revealer = new Gtk.Revealer () {
+                transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            };
             uninstall_button_revealer.add (uninstall_button);
-
-            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             open_button = new Gtk.Button.with_label (_("Open"));
 
-            open_button_revealer = new Gtk.Revealer ();
-            open_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            open_button_revealer.add (open_button);
-
-            open_button.clicked.connect (launch_package_app);
-
-            button_grid = new Gtk.Grid ();
-            button_grid.valign = Gtk.Align.CENTER;
-            button_grid.halign = Gtk.Align.END;
-            button_grid.hexpand = false;
-
-            button_grid.add (uninstall_button_revealer);
-            button_grid.add (action_button_revealer);
-            button_grid.add (open_button_revealer);
-
             cancel_button = new ProgressButton () {
-                halign = Gtk.Align.END,
-                label = _("Cancel"),
-                valign = Gtk.Align.END
+                label = _("Cancel")
             };
-            cancel_button.clicked.connect (() => action_cancelled ());
-
-            progress_grid = new Gtk.Grid ();
-            progress_grid.halign = Gtk.Align.END;
-            progress_grid.valign = Gtk.Align.CENTER;
-            progress_grid.add (cancel_button);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-            action_button_group.add_widget (action_button);
+            action_button_group.add_widget (install_button);
             action_button_group.add_widget (uninstall_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
-            action_stack = new Gtk.Stack ();
-            action_stack.hhomogeneous = false;
-            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-            action_stack.add_named (button_grid, "buttons");
-            action_stack.add_named (progress_grid, "progress");
+            action_stack = new Gtk.Stack () {
+                transition_type = Gtk.StackTransitionType.CROSSFADE
+            };
+            action_stack.add (install_button);
+            action_stack.add (open_button);
+            action_stack.add (cancel_button);
             action_stack.show_all ();
+
+            cancel_button.clicked.connect (() => action_cancelled ());
+
+            install_button.download_requested.connect (() => {
+                action_clicked.begin ();
+            });
+
+            open_button.clicked.connect (launch_package_app);
+
+            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             destroy.connect (() => {
                 if (state_source > 0) {
@@ -188,17 +163,17 @@ namespace AppCenter {
 
         protected void update_action () {
             if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
-                action_button.can_purchase = false;
+                install_button.can_purchase = false;
             } else {
                 var can_purchase = package.get_payments_key () != null;
-                action_button.can_purchase = can_purchase;
+                install_button.can_purchase = can_purchase;
 
                 if (can_purchase) {
-                    action_button.amount = int.parse (package.get_suggested_amount ());
+                    install_button.amount = int.parse (package.get_suggested_amount ());
                 }
             }
 
-            action_button.allow_free = true;
+            install_button.allow_free = true;
 
             if (action_stack.get_child_by_name ("buttons") != null) {
                 action_stack.visible_child_name = "buttons";
@@ -207,43 +182,46 @@ namespace AppCenter {
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
 #if PAYMENTS
-                    action_button.free_string = _("Free");
+                    install_button.free_string = _("Free");
 #else
-                    action_button.free_string = _("Install");
+                    install_button.free_string = _("Install");
 #endif
                     if (package.component.get_id () in App.settings.get_strv ("paid-apps")) {
-                        action_button.amount = 0;
+                        install_button.amount = 0;
                     }
 
+                    action_stack.visible_child = install_button;
                     uninstall_button_revealer.reveal_child = false;
-                    action_button_revealer.reveal_child = !package.is_os_updates;
-                    open_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
-                    action_button_revealer.reveal_child = package.should_pay && updates_view;
-                    open_button_revealer.reveal_child = show_open && package.get_can_launch ();
-
-                    action_button.allow_free = false;
-                    break;
-                case AppCenterCore.Package.State.UPDATE_AVAILABLE:
-                    action_button.free_string = _("Update");
-
-                    if (!package.should_nag_update) {
-                       action_button.amount = 0;
+                    if (updates_view && package.should_pay) {
+                        action_stack.visible_child = install_button;
+                        install_button.allow_free = false;
+                    } else {
+                        action_stack.visible_child = open_button;
                     }
 
                     uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
-                    action_button_revealer.reveal_child = true;
-                    open_button_revealer.reveal_child = false;
+                    // open_button_revealer.reveal_child = show_open && package.get_can_launch ();
+
+                    break;
+                case AppCenterCore.Package.State.UPDATE_AVAILABLE:
+                    action_stack.visible_child = install_button;
+                    install_button.free_string = _("Update");
+
+                    if (!package.should_nag_update) {
+                       install_button.amount = 0;
+                    }
+
+                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLING:
                 case AppCenterCore.Package.State.UPDATING:
                 case AppCenterCore.Package.State.REMOVING:
 
-                    action_stack.set_visible_child_name ("progress");
+                    action_stack.visible_child = cancel_button;
                     break;
 
                 default:
@@ -286,9 +264,7 @@ namespace AppCenter {
         }
 
         private async void action_clicked () {
-            if (package.installed && !package.update_available) {
-                action_button_revealer.reveal_child = false;
-            } else if (package.update_available) {
+            if (package.update_available) {
                 try {
                     yield package.update ();
                 } catch (Error e) {
