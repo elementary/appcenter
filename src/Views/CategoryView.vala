@@ -27,6 +27,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
     private Gtk.Grid uncurated_grid;
     private SubcategoryFlowbox free_flowbox;
     private SubcategoryFlowbox paid_flowbox;
+    private SubcategoryFlowbox recently_updated_flowbox;
     private SubcategoryFlowbox uncurated_flowbox;
 
     public CategoryView (AppStream.Category category) {
@@ -34,6 +35,17 @@ public class AppCenter.CategoryView : Gtk.Stack {
     }
 
     construct {
+        var recently_updated_header = new Granite.HeaderLabel (_("Recently Updated")) {
+            margin_start = 12
+        };
+        recently_updated_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+
+        recently_updated_flowbox = new SubcategoryFlowbox ();
+
+        var recently_updated_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        recently_updated_box.add (recently_updated_header);
+        recently_updated_box.add (recently_updated_flowbox);
+
         var paid_header = new Granite.HeaderLabel (_("Paid Apps")) {
             margin_start = 12
         };
@@ -75,6 +87,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 48
         };
+        grid.add (recently_updated_box);
 
         scrolled = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER
@@ -114,39 +127,79 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            foreach (unowned var child in grid.get_children ()) {
-                grid.remove (child);
+            foreach (unowned var child in recently_updated_flowbox.get_children ()) {
+                child.destroy ();
+            }
+
+            if (free_grid.parent != null) {
+                grid.remove (free_grid);
             }
 
             foreach (unowned var child in free_flowbox.get_children ()) {
                 child.destroy ();
             }
 
+            if (paid_grid.parent != null) {
+                grid.remove (paid_grid);
+            }
+
             foreach (unowned var child in paid_flowbox.get_children ()) {
                 child.destroy ();
             }
 
+            if (uncurated_grid.parent != null) {
+                grid.remove (uncurated_grid);
+            }
             foreach (unowned var child in uncurated_flowbox.get_children ()) {
                 child.destroy ();
             }
 
             var packages = get_packages.end (res);
             foreach (var package in packages) {
-                if (!package.is_plugin && !package.is_font) {
-                    var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
 #if CURATED
-                    if (package.is_native) {
-                        if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                            paid_flowbox.add (package_row);
-                        } else {
-                            free_flowbox.add (package_row);
-                        }
+                if (package.is_native) {
+                    if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
+                        paid_flowbox.add (package_row);
                     } else {
-                        uncurated_flowbox.add (package_row);
+                        free_flowbox.add (package_row);
                     }
-#else
+                } else {
                     uncurated_flowbox.add (package_row);
+                }
+#else
+                uncurated_flowbox.add (package_row);
 #endif
+            }
+
+            var recent_packages_list = new Gee.ArrayList<AppCenterCore.Package> ();
+            recent_packages_list.add_all (packages);
+
+            recent_packages_list.sort ((a, b) => {
+                if (a.get_newest_release () == null || b.get_newest_release () == null) {
+                    if (a.get_newest_release () != null) {
+                        return -1;
+                    } else if (b.get_newest_release () != null) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+
+                return b.get_newest_release ().vercmp (a.get_newest_release ());
+            });
+
+            var recent_count = 0;
+            foreach (var recent_package in recent_packages_list) {
+                if (recent_count == 4) {
+                    break;
+                }
+
+                if (!recent_package.installed) {
+                    var package_row = new AppCenter.Widgets.ListPackageRowGrid (recent_package);
+
+                    recently_updated_flowbox.add (package_row);
+                    recent_count++;
                 }
             }
 
@@ -176,7 +229,12 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
         var packages = new Gee.TreeSet <AppCenterCore.Package> ();
         new Thread<void> ("get_packages", () => {
-            packages.add_all (AppCenterCore.Client.get_default ().get_applications_for_category (category));
+            foreach (var package in AppCenterCore.Client.get_default ().get_applications_for_category (category)) {
+                if (!package.is_plugin && !package.is_font) {
+                    packages.add (package);
+                }
+            }
+
             Idle.add ((owned) callback);
         });
 
@@ -194,7 +252,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
         construct {
             column_spacing = 24;
             homogeneous = true;
-            max_children_per_line = 5;
+            max_children_per_line = 4;
             row_spacing = 12;
             valign = Gtk.Align.START;
 
