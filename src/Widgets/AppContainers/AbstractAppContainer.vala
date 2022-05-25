@@ -26,7 +26,6 @@ namespace AppCenter {
         protected Gtk.Button open_button;
         protected Gtk.Grid button_grid;
         protected ProgressButton cancel_button;
-
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
