@@ -21,6 +21,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
     public AppStream.Category category { get; construct; }
 
     private Gtk.ScrolledWindow scrolled;
+    private Gtk.Box recently_updated_box;
     private Gtk.Grid free_grid;
     private Gtk.Grid grid;
     private Gtk.Grid paid_grid;
@@ -42,7 +43,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
         recently_updated_flowbox = new SubcategoryFlowbox ();
 
-        var recently_updated_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        recently_updated_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         recently_updated_box.add (recently_updated_header);
         recently_updated_box.add (recently_updated_flowbox);
 
@@ -87,7 +88,6 @@ public class AppCenter.CategoryView : Gtk.Stack {
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 48
         };
-        grid.add (recently_updated_box);
 
         scrolled = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER
@@ -109,7 +109,6 @@ public class AppCenter.CategoryView : Gtk.Stack {
             var row = (Widgets.ListPackageRowGrid) child.get_child ();
             show_app (row.package);
         });
-
 
         paid_flowbox.child_activated.connect ((child) => {
             var row = (Widgets.ListPackageRowGrid) child.get_child ();
@@ -133,32 +132,27 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            foreach (unowned var child in recently_updated_flowbox.get_children ()) {
-                child.destroy ();
+            foreach (unowned var child in grid.get_children ()) {
+                grid.remove (child);
             }
 
-            if (free_grid.parent != null) {
-                grid.remove (free_grid);
+            foreach (unowned var child in recently_updated_flowbox.get_children ()) {
+                child.destroy ();
             }
 
             foreach (unowned var child in free_flowbox.get_children ()) {
                 child.destroy ();
             }
 
-            if (paid_grid.parent != null) {
-                grid.remove (paid_grid);
-            }
-
             foreach (unowned var child in paid_flowbox.get_children ()) {
                 child.destroy ();
             }
 
-            if (uncurated_grid.parent != null) {
-                grid.remove (uncurated_grid);
-            }
             foreach (unowned var child in uncurated_flowbox.get_children ()) {
                 child.destroy ();
             }
+
+            grid.add (recently_updated_box);
 
             var packages = get_packages.end (res);
             foreach (var package in packages) {
