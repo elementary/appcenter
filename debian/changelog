@@ -1,3 +1,39 @@
+appcenter (3.10.0) bionic; urgency=medium
+
+  * Release 3.10.0 (#1846)
+  * AppInfoView: move uninstall button here (#1855)
+  * PackageKitBackend: don't load Ubuntu components with AppStream 0.15
+    (#1852)
+  * AbstractAppContainer: Remove progress_grid (#1854)
+  * CategoryView: load packages async (#1851)
+  * HumbleButton: move show_stripe_dialog here (#1847)
+  * Update translation files
+  * Update translation template
+  * Core: set AppStream.FormatStyle to COLLECTION (#1845)
+  * Homepage: remove unuseed page_loaded (#1843)
+  * AbstractAppContainer: Remove curated warning dialog (#1841)
+  * Core: fix appstream deprecations (#1835)
+  * AppListView: Don't sort native apps first in search (#1840)
+  * MainWindow: misc menu fixes (#1842)
+  * Add a manual refresh button to update all caches (#1791)
+  * Pull apt updates less frequently (#1790)
+  * Homepage: more accurate navigation (#1837)
+  * AppInfoView: new icon and copy for old runtimes (#1838)
+  * Homepage: Only scroll carousel when banner is visible (#1836)
+  * UpdateManager: notify for unpaid apps
+  * Client: auto update non-native apps
+  * MainWindow: Reliably update on view change (#1831)
+  * AppInfoView: Set banner provider for context, not screen (#1692)
+  * Client: Trigger auto-updates when opening the app (#1811)
+  * Show try for free label  (#1820)
+  * AppInfoView: Warn about OS runtime mismatch (#1807)
+  * Automatically install curated Flatpak updates (#1793)
+  * Make back button behaviour more consistant (#1752)
+  * Expose screenshot captions (#1801)
+  * Fix AppStream.PoolFlags being renamed (#1794)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 26 May 2022 05:55:52 +0000
+
 appcenter (3.9.1) bionic; urgency=medium
 
   * Release 3.9.1 (#1785)
