@@ -734,6 +734,9 @@ public class AppCenterCore.Package : Object {
                     }
 
                     break;
+
+                default:
+                    break;
             }
         }
 

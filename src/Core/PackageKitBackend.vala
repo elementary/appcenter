@@ -1092,6 +1092,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
                 break;
+
+            default:
+                break;
         }
     }
 
