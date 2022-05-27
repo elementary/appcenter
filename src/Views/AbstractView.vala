@@ -43,6 +43,10 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
     }
 
     public virtual void show_package (AppCenterCore.Package package, bool remember_history = true) {
+        if (transition_running) {
+            return;
+        }
+
         previous_package = null;
 
         package_selected (package);
