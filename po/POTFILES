@@ -27,10 +27,10 @@ src/Services/SearchProvider.vala
 src/Views/AbstractView.vala
 src/Views/AppInfoView.vala
 src/Views/AppListUpdateView.vala
-src/Views/AppListView.vala
 src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/InstalledView.vala
+src/Views/SearchView.vala
 src/Widgets/AbstractAppList.vala
 src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
