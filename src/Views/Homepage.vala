@@ -45,7 +45,7 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
-    private AppCenter.Views.AppListView search_view;
+    private AppCenter.SearchView search_view;
 
     private uint banner_timeout_id;
 
@@ -284,7 +284,7 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         if (visible_child != search_view) {
-            search_view = new AppCenter.Views.AppListView ();
+            search_view = new AppCenter.SearchView ();
             search_view.show_all ();
 
             search_view.show_app.connect ((package) => {
