@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2014–2018 elementary, Inc. (https://elementary.io)
+/*
+ * Copyright 2014–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,9 +33,19 @@ public class AppCenterCore.PackageDetails : Object {
     public string? version { get; set; }
 }
 
+public enum RuntimeStatus {
+    UP_TO_DATE,
+    END_OF_LIFE,
+    MAJOR_OUTDATED,
+    MINOR_OUTDATED,
+    UNSTABLE;
+}
+
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
+
+    public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -559,12 +568,11 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        ChangeInformation.ProgressCallback cb = change_information.callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
             case State.UPDATING:
-                var success = yield backend.update_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.update_package (this, change_information, action_cancellable);
                 if (success) {
                     change_information.clear_update_info ();
                     update_state ();
@@ -572,12 +580,12 @@ public class AppCenterCore.Package : Object {
 
                 return success;
             case State.INSTALLING:
-                var success = yield backend.install_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.install_package (this, change_information, action_cancellable);
                 _installed = success;
                 update_state ();
                 return success;
             case State.REMOVING:
-                var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.remove_package (this, change_information, action_cancellable);
                 _installed = !success;
                 update_state ();
                 yield client.refresh_updates ();
@@ -626,12 +634,31 @@ public class AppCenterCore.Package : Object {
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();
+
             if (description == null) {
                 if (backend_details == null) {
                     populate_backend_details_sync ();
                 }
 
                 description = backend_details.description;
+            }
+
+            if (description == null) {
+                return null;
+            }
+
+            try {
+                // Condense double spaces
+                var space_regex = new Regex ("\\s+");
+                description = space_regex.replace (description, description.length, 0, " ");
+            } catch (Error e) {
+               warning ("Failed to condense spaces: %s", e.message);
+            }
+
+            try {
+                description = AppStream.markup_convert_simple (description);
+            } catch (Error e) {
+                warning ("Failed to convert description to markup: %s", e.message);
             }
         }
 

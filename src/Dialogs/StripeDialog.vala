@@ -242,8 +242,12 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         bind_property ("amount", custom_amount, "value", BindingFlags.BIDIRECTIONAL);
 
         notify["amount"].connect (() => {
+            if (amount == 0) {
+                pay_button.label = _("Try for Free");
+            } else {
+                pay_button.label = _("Pay $%d.00").printf (amount);
+            }
             primary_label.label = _("Pay $%d for %s").printf (amount, app_name);
-            pay_button.label = _("Pay $%d.00").printf (amount);
             is_payment_sensitive ();
 
             card_grid_revealer.reveal_child = amount != 0;

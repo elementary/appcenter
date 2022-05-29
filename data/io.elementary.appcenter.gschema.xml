@@ -31,15 +31,15 @@
       <summary>List of package names of drivers that may be required</summary>
       <description>Speeds up loading of updates view by remembering which drivers may be required</description>
     </key>
-    <key type="b" name="non-curated-warning">
-      <default>true</default>
-      <summary>Display warning for non-curated apps</summary>
-      <description>Whether to display a warning dialog when attempting to install apps are not from a curated source</description>
-    </key>
     <key type="x" name="last-refresh-time">
       <default>0</default>
       <summary>Unix UTC time of last cache refresh</summary>
       <description>Used to determine when AppCenter last refreshed its caches and checked for package updates</description>
+    </key>
+    <key type="b" name="automatic-updates">
+      <default>false</default>
+      <summary>Automatic updates</summary>
+      <description>Whether to automatically install updates to curated Flatpak apps</description>
     </key>
   </schema>
 </schemalist>

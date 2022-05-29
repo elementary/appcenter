@@ -24,17 +24,28 @@ public class AppCenter.Homepage : AbstractView {
 
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
-    private AppStream.Category current_category;
 
-    public signal void page_loaded ();
+    public bool viewing_package {
+        get {
+            return visible_child is Views.AppInfoView;
+        }
+    }
 
-    public bool viewing_package { get; private set; default = false; }
+    public AppStream.Category? currently_viewed_category {
+        get {
+            if (visible_child is CategoryView) {
+                return ((CategoryView) visible_child).category;
+            }
 
-    public AppStream.Category currently_viewed_category;
+            return null;
+        }
+    }
+
     private Hdy.Carousel banner_carousel;
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
+    private AppCenter.SearchView search_view;
 
     private uint banner_timeout_id;
 
@@ -121,11 +132,11 @@ public class AppCenter.Homepage : AbstractView {
             });
         }
 
+        banner_timeout_start ();
         load_banners_and_carousels.begin ();
 
         category_flow.child_activated.connect ((child) => {
             var card = (Widgets.CategoryFlowBox.AbstractCategoryCard) child;
-            currently_viewed_category = card.category;
             show_app_list_for_category (card.category);
         });
 
@@ -136,23 +147,6 @@ public class AppCenter.Homepage : AbstractView {
                     var item = (Widgets.CategoryFlowBox.AbstractCategoryCard) child;
                     var category_components = item.category.get_components ();
                     category_components.remove_range (0, category_components.length);
-                }
-
-                // Remove any old cached category list views
-                foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppListView) {
-                        if (child != visible_child) {
-                            child.destroy ();
-                        } else {
-                            // If the category list view is visible, don't delete it, just make the package list right
-                            var list_view = child as Views.AppListView;
-                            list_view.clear ();
-
-                            unowned var client = AppCenterCore.Client.get_default ();
-                            var apps = client.get_applications_for_category (currently_viewed_category);
-                            list_view.add_packages (apps);
-                        }
-                    }
                 }
 
                 return GLib.Source.REMOVE;
@@ -171,6 +165,10 @@ public class AppCenter.Homepage : AbstractView {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
 
             show_package (package_row_grid.package);
+        });
+
+        destroy.connect (() => {
+            banner_timeout_stop ();
         });
     }
 
@@ -214,7 +212,6 @@ public class AppCenter.Homepage : AbstractView {
 
         banner_carousel.show_all ();
         banner_revealer.reveal_child = true;
-        banner_timeout_start ();
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
@@ -240,47 +237,84 @@ public class AppCenter.Homepage : AbstractView {
         }
         recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
-
-        page_loaded ();
     }
 
-    public override void show_package (
-        AppCenterCore.Package package,
-        bool remember_history = true
-    ) {
-        base.show_package (package, remember_history);
-        viewing_package = true;
-        if (remember_history) {
-            current_category = null;
-            currently_viewed_category = null;
-            subview_entered (_("Home"), false, "");
-        }
-    }
+    public override void update_navigation () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
 
-    public override void return_clicked () {
-        if (previous_package != null) {
-            show_package (previous_package);
-            if (current_category != null) {
-                subview_entered (current_category.name, false, "");
+        var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
+
+        if (visible_child == scrolled_window) {
+            main_window.set_custom_header (null);
+            main_window.configure_search (true, _("Search Apps"), "");
+        } else if (visible_child is CategoryView) {
+            var current_category = ((CategoryView) visible_child).category;
+            main_window.set_custom_header (current_category.name);
+            main_window.configure_search (true, _("Search %s").printf (current_category.name), "");
+        } else if (visible_child == search_view) {
+            if (previous_child is CategoryView) {
+                var previous_category = ((CategoryView) previous_child).category;
+                main_window.configure_search (true, _("Search %s").printf (previous_category.name));
+                main_window.set_custom_header (previous_category.name);
             } else {
-                subview_entered (_("Home"), false, "");
+                main_window.set_custom_header (null);
             }
-        } else if (viewing_package && current_category != null) {
-            visible_child = get_child_by_name (current_category.name);
-            viewing_package = false;
-            subview_entered (_("Home"), true, current_category.name, _("Search %s").printf (current_category.name));
-        } else {
-            set_visible_child (scrolled_window);
-            viewing_package = false;
-            currently_viewed_category = null;
-            current_category = null;
-            subview_entered (null, true);
+        }
+
+        if (previous_child == scrolled_window) {
+            main_window.set_return_name (_("Home"));
+        } else if (previous_child == search_view) {
+            /// TRANSLATORS: the name of the Search view
+            main_window.set_return_name (C_("view", "Search"));
         }
     }
 
-    private void show_app_list_for_category (AppStream.Category category) {
-        subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
-        current_category = category;
+    public void search (string search_term, bool mimetype = false) {
+        if (search_term == "") {
+            // Prevent navigating away from category views when backspacing
+            if (visible_child == search_view) {
+                navigate (Hdy.NavigationDirection.BACK);
+            }
+
+            return;
+        }
+
+        if (visible_child != search_view) {
+            search_view = new AppCenter.SearchView ();
+            search_view.show_all ();
+
+            search_view.show_app.connect ((package) => {
+                show_package (package);
+            });
+
+            add (search_view);
+            visible_child = search_view;
+        }
+
+        search_view.clear ();
+        search_view.current_search_term = search_term;
+
+        unowned var client = AppCenterCore.Client.get_default ();
+
+        Gee.Collection<AppCenterCore.Package> found_apps;
+
+        if (mimetype) {
+            found_apps = client.search_applications_mime (search_term);
+            search_view.add_packages (found_apps);
+        } else {
+            AppStream.Category current_category = null;
+
+            var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
+            if (previous_child is CategoryView) {
+                current_category = ((CategoryView) previous_child).category;
+            }
+
+            found_apps = client.search_applications (search_term, current_category);
+            search_view.add_packages (found_apps);
+        }
+    }
+
+    public void show_app_list_for_category (AppStream.Category category) {
         var child = get_child_by_name (category.name);
         if (child != null) {
             visible_child = child;
@@ -289,18 +323,27 @@ public class AppCenter.Homepage : AbstractView {
 
         var category_view = new CategoryView (category);
 
-        add_named (category_view, category.name);
+        add (category_view);
         visible_child = category_view;
 
         category_view.show_app.connect ((package) => {
-            viewing_package = true;
             base.show_package (package);
-            subview_entered (category.name, false, "");
+
+            var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+            main_window.set_return_name (category.name);
         });
     }
 
     private void banner_timeout_start () {
+        if (banner_timeout_id != 0) {
+            Source.remove (banner_timeout_id);
+        }
+
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            if (!banner_carousel.is_visible ()) {
+                return Source.CONTINUE;
+            }
+
             var new_index = (uint) banner_carousel.position + 1;
             var max_index = banner_carousel.n_pages - 1; // 0-based index
 

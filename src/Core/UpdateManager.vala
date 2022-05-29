@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+/*
+ * Copyright 2017–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -74,6 +73,7 @@ public class AppCenterCore.UpdateManager : Object {
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", pkg_name);
                 apps_with_updates.add (appcenter_package);
+                count++;
                 appcenter_package.latest_version = pk_package.get_version ();
             } else {
                 debug ("Added %s to OS updates", pkg_name);
@@ -81,7 +81,7 @@ public class AppCenterCore.UpdateManager : Object {
                 unowned string pkg_summary = pk_package.get_summary ();
                 unowned string pkg_version = pk_package.get_version ();
                 os_desc += Markup.printf_escaped (
-                    "<li>%s\n\t%s\n\t%s</li>\n",
+                    " • %s\n\t%s\n\t%s\n",
                     pkg_name,
                     pkg_summary,
                     _("Version: %s").printf (pkg_version)
@@ -96,11 +96,18 @@ public class AppCenterCore.UpdateManager : Object {
         var flatpak_updates = yield fp_client.get_updates ();
         debug ("Flatpak backend reports %d updates", flatpak_updates.size);
 
+        var auto_update_enabled = AppCenter.App.settings.get_boolean ("automatic-updates");
+
         foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
+
+                if (!auto_update_enabled || appcenter_package.should_pay) {
+                    count++;
+                }
+
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
                 appcenter_package.update_state ();
                 try {
@@ -123,9 +130,12 @@ public class AppCenterCore.UpdateManager : Object {
                     continue;
                 }
 
-                os_count++;
+                if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
+                    os_count++;
+                }
+
                 os_desc += Markup.printf_escaped (
-                    "<li>%s\n\t%s</li>",
+                    " • %s\n\t%s\n",
                     @ref.get_name (),
                     _("Flatpak runtime")
                 );
@@ -146,15 +156,14 @@ public class AppCenterCore.UpdateManager : Object {
             debug ("No OS updates found");
             var latest_version = _("No components with updates");
             os_updates.latest_version = latest_version;
-            os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
+            os_updates.description = GLib.Markup.printf_escaped ("%s\n", latest_version);
         } else {
             debug ("%u OS updates found", os_count);
             var latest_version = ngettext ("%u component with updates", "%u components with updates", os_count).printf (os_count);
             os_updates.latest_version = latest_version;
-            os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
+            os_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
 
-        count = apps_with_updates.size;
         debug ("%u app updates found", count);
         if (os_count > 0) {
             count += 1;

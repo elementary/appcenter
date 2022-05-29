@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014–2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2014–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ namespace AppCenter.Views {
         public signal void show_other_package (
             AppCenterCore.Package package,
             bool remember_history = true,
-            Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+            bool transition = true
         );
 
         private static Gtk.CssProvider banner_provider;
@@ -50,6 +50,11 @@ namespace AppCenter.Views {
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
+        private Gtk.FlowBox oars_flowbox;
+        private Gtk.Revealer oars_flowbox_revealer;
+        private Gtk.Revealer uninstall_button_revealer;
+
+        private bool is_runtime_warning_shown = false;
 
         private unowned Gtk.StyleContext stack_context;
 
@@ -72,7 +77,17 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            unowned var action_button_context = action_button.get_style_context ();
+            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var open_button_context = open_button.get_style_context ();
+            open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var cancel_button_context = cancel_button.get_style_context ();
+            cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
 
@@ -100,12 +115,15 @@ namespace AppCenter.Views {
                 "oars-gambling-symbolic"
             );
 
-            var oars_flowbox = new Gtk.FlowBox () {
+            oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 margin_bottom = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
+
+            oars_flowbox_revealer = new Gtk.Revealer ();
+            oars_flowbox_revealer.add (oars_flowbox);
 
 #if CURATED
             if (!package.is_native && !package.is_os_updates) {
@@ -522,8 +540,9 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
+            content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
-                content_grid.add (oars_flowbox);
+                oars_flowbox_revealer.reveal_child = true;
             }
 
             if (screenshots.length > 0) {
@@ -573,15 +592,28 @@ namespace AppCenter.Views {
             origin_combo.pack_start (renderer, true);
             origin_combo.add_attribute (renderer, "text", 1);
 
-            action_stack.valign = Gtk.Align.END;
-            action_stack.halign = Gtk.Align.END;
-            action_stack.hexpand = true;
+            var uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
+                margin_end = 12
+            };
 
-            /* This is required to stop any button movement when switch from button_grid to the
-             * progress grid */
-            progress_grid.margin_end = 6;
-            progress_grid.margin_top = 12;
-            button_grid.margin_top = progress_grid.margin_top;
+            unowned var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            uninstall_button_revealer = new Gtk.Revealer () {
+                transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            };
+            uninstall_button_revealer.add (uninstall_button);
+
+            action_button_group.add_widget (uninstall_button);
+
+            var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.END,
+                hexpand = true
+            };
+            button_box.add (uninstall_button_revealer);
+            button_box.add (action_stack);
 
             var header_grid = new Gtk.Grid () {
                 column_spacing = 12,
@@ -592,7 +624,7 @@ namespace AppCenter.Views {
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (author_label, 1, 1);
             header_grid.attach (origin_combo_revealer, 1, 2, 3);
-            header_grid.attach (action_stack, 3, 0);
+            header_grid.attach (button_box, 3, 0);
 
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel () {
@@ -615,15 +647,11 @@ namespace AppCenter.Views {
             var header_box = new Gtk.Grid () {
                 hexpand = true
             };
-            header_box.get_style_context ().add_class ("banner");
             header_box.add (header_clamp);
 
-            // FIXME: should be for context, not for screen
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                banner_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
+            unowned var header_box_context = header_box.get_style_context ();
+            header_box_context.add_class ("banner");
+            header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -703,21 +731,11 @@ namespace AppCenter.Views {
                 origin_combo.get_active_iter (out iter);
                 origin_liststore.@get (iter, 0, out selected_origin_package);
                 if (selected_origin_package != null && selected_origin_package != package) {
-                    show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
+                    show_other_package (selected_origin_package, false, false);
                 }
             });
 
-            if (package.is_os_updates) {
-                package.notify["state"].connect (() => {
-                    Idle.add (() => {
-                        // For the OS updates component, this is the "x components with updates" text
-                        author_label.label = package.get_version ();
-
-                        parse_description (package.get_description ());
-                        return false;
-                    });
-                });
-            }
+            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             realize.connect (load_more_content);
         }
@@ -727,8 +745,19 @@ namespace AppCenter.Views {
                 size_label.update ();
             }
 
-            if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                get_app_download_size.begin ();
+            switch (package.state) {
+                case AppCenterCore.Package.State.NOT_INSTALLED:
+                    get_app_download_size.begin ();
+                    uninstall_button_revealer.reveal_child = false;
+                    break;
+                case AppCenterCore.Package.State.INSTALLED:
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    break;
+                case AppCenterCore.Package.State.UPDATE_AVAILABLE:
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    break;
+                default:
+                    break;
             }
 
             update_action ();
@@ -755,6 +784,43 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
+
+            ContentType? runtime_warning = null;
+            switch (package.runtime_status) {
+                case RuntimeStatus.END_OF_LIFE:
+                    runtime_warning = new ContentType (
+                        _("End of Life"),
+                        _("May not work as expected or receive security updates"),
+                        "flatpak-eol-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MAJOR_OUTDATED:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("May not work as expected or support the latest features"),
+                        "flatpak-eol-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MINOR_OUTDATED:
+                    break;
+                case RuntimeStatus.UNSTABLE:
+                    runtime_warning = new ContentType (
+                        _("Unstable"),
+                        _("Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "applications-development-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.UP_TO_DATE:
+                    break;
+            }
+
+            if (runtime_warning != null && !is_runtime_warning_shown) {
+                is_runtime_warning_shown = true;
+
+                oars_flowbox.insert (runtime_warning, 0);
+                oars_flowbox.show_all ();
+                oars_flowbox_revealer.reveal_child = true;
+            }
         }
 
         public void view_entered () {
@@ -816,13 +882,19 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                if (package.is_os_updates) {
-                    author_label.label = package.get_version ();
-                } else {
-                    author_label.label = package.author_title;
-                }
+                var description = package.get_description ();
+                Idle.add (() => {
+                    if (package.is_os_updates) {
+                        author_label.label = package.get_version ();
+                    } else {
+                        author_label.label = package.author_title;
+                    }
 
-                parse_description (package.get_description ());
+                    if (description != null) {
+                        app_description.label = description;
+                    }
+                    return false;
+                });
 
                 get_app_download_size.begin ();
 
@@ -839,7 +911,7 @@ namespace AppCenter.Views {
                     return null;
                 }
 
-                List<string> urls = new List<string> ();
+                List<CaptionedUrl> captioned_urls = new List<CaptionedUrl> ();
 
                 var scale = get_scale_factor ();
                 var min_screenshot_width = MAX_WIDTH * scale;
@@ -863,20 +935,25 @@ namespace AppCenter.Views {
                         }
                     });
 
+                    var captioned_url = new CaptionedUrl (
+                        screenshot.get_caption (),
+                        best_image.get_url ()
+                    );
+
                     if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
-                        urls.prepend (best_image.get_url ());
+                        captioned_urls.prepend (captioned_url);
                     } else if (best_image != null) {
-                        urls.append (best_image.get_url ());
+                        captioned_urls.append (captioned_url);
                     }
                 });
 
-                string?[] screenshot_files = new string?[urls.length ()];
-                bool[] results = new bool[urls.length ()];
+                string?[] screenshot_files = new string?[captioned_urls.length ()];
+                bool[] results = new bool[captioned_urls.length ()];
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
-                for (int i = 0; i < urls.length (); i++) {
-                    string url = urls.nth_data (i);
+                for (int i = 0; i < captioned_urls.length (); i++) {
+                    string url = captioned_urls.nth_data (i).url;
                     string? file = null;
                     int index = i;
 
@@ -888,14 +965,15 @@ namespace AppCenter.Views {
                 }
 
                 // TODO: dynamically load screenshots as they become available.
-                while (urls.length () != completed) {
+                while (captioned_urls.length () != completed) {
                     Thread.usleep (100000);
                 }
 
                 // Load screenshots that were successfully obtained.
-                for (int i = 0; i < urls.length (); i++) {
+                for (int i = 0; i < captioned_urls.length (); i++) {
                     if (results[i] == true) {
-                        load_screenshot (screenshot_files[i]);
+                        string caption = captioned_urls.nth_data (i).caption;
+                        load_screenshot (caption, screenshot_files[i]);
                     }
                 }
 
@@ -925,7 +1003,7 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string path) {
+        private void load_screenshot (string? caption, string path) {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
@@ -935,6 +1013,11 @@ namespace AppCenter.Views {
                 image.icon_name = "image-x-generic";
                 image.halign = Gtk.Align.CENTER;
                 image.gicon = pixbuf;
+                if (caption != null) {
+                    // AppStream spec says "ideally not more than 100 characters"
+                    int max_caption_len = 200;
+                    image.tooltip_text = ellipsize (caption, max_caption_len);
+                }
 
                 Idle.add (() => {
                     image.show ();
@@ -946,25 +1029,15 @@ namespace AppCenter.Views {
             }
         }
 
-        private void parse_description (string? description) {
-            if (description != null) {
-                string[] lines = description.split ("\n");
-                string stripped_description = lines[0].strip ();
-                for (int i = 1; i < lines.length; i++) {
-                    stripped_description += " " + lines[i].strip ();
-                }
-
-                // This method may be called in a thread, pass back to GTK thread
-                Idle.add (() => {
-                    try {
-                        app_description.label = AppStream.markup_convert_simple (stripped_description);
-                    } catch (Error e) {
-                        warning ("Failed to parse appstream description: %s", e.message);
-                    }
-
-                    return false;
-                });
+        private string ellipsize (string long_text, int max_length) {
+            if (long_text.length > max_length) {
+                StringBuilder sb = new StringBuilder (long_text);
+                sb.truncate (max_length);
+                sb.append ("\u2026");
+                return sb.str;
             }
+
+            return long_text;
         }
 
         private void parse_license (string project_license, out string license_copy, out string license_url) {
@@ -1031,6 +1104,22 @@ namespace AppCenter.Views {
                         break;
                 }
             }
+        }
+
+        private async void uninstall_clicked () {
+            package.uninstall.begin ((obj, res) => {
+                try {
+                    if (package.uninstall.end (res)) {
+                        MainWindow.installed_view.remove_app.begin (package);
+                    }
+                } catch (Error e) {
+                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
+                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
+                        new UninstallFailDialog (package, e).present ();
+                    }
+                }
+            });
         }
 
         class UrlButton : Gtk.Grid {
@@ -1136,6 +1225,15 @@ namespace AppCenter.Views {
                 context.add_class ("circular");
                 context.add_class ("arrow");
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
+        }
+
+        private class CaptionedUrl : Object {
+            public string? caption { get; construct; }
+            public string url { get; construct; }
+
+            public CaptionedUrl (string? caption, string url) {
+                Object (caption: caption, url: url);
             }
         }
     }

@@ -155,18 +155,29 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         appstream_pool = new AppStream.Pool ();
 
+        // Clear out the default set of metadata locations and only use the folder that gets populated
+        // with elementary's AppStream data.
 #if HIDE_UPSTREAM_DISTRO_APPS
+#if HAS_APPSTREAM_0_15
+        // Don't load Ubuntu components
+        appstream_pool.set_load_std_data_locations (false);
+        appstream_pool.reset_extra_data_locations ();
+        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.COLLECTION);
+#else
         // Only use a user cache, the system cache probably contains all the Ubuntu components
         appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);
 
-        // Clear out the default set of metadata locations and only use the folder that gets populated
-        // with elementary's AppStream data.
         appstream_pool.clear_metadata_locations ();
         appstream_pool.add_metadata_location ("/usr/share/app-info");
 #endif
+#endif
 
         // We don't want to show installed desktop files here
+#if HAS_APPSTREAM_0_15
+        appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.LOAD_OS_DESKTOP_FILES);
+#else
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
+#endif
 
         reload_appstream_pool ();
 
@@ -281,7 +292,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             throw e;
         }
 
-        var component = metadata.get_component ();
+        unowned var component = metadata.get_component ();
         if (component != null) {
             string name = _("%s (local)").printf (component.get_name ());
             string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
@@ -290,7 +301,14 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
+#if HAS_APPSTREAM_0_15
+            var components = new GenericArray<AppStream.Component> ();
+            components.add (component);
+
+            appstream_pool.add_components (components);
+#else
             appstream_pool.add_component (component);
+#endif
 
             var package = new AppCenterCore.Package (this, component);
             package_list[id] = package;
@@ -332,7 +350,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public Gee.HashMap<string, AppCenterCore.Package> get_packages_for_component_ids (string[] ids) {
         var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
-        foreach (var id in ids) {
+        foreach (unowned string id in ids) {
             var package = get_package_for_component_id (id);
             if (package != null) {
                 packages.set (id, package);
@@ -344,10 +362,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public Gee.Collection<Package> get_packages_for_component_id (string id) {
         var packages = new Gee.ArrayList<Package> ();
+        var suffixed_id = id + ".desktop";
         foreach (var package in package_list.values) {
             if (package.component.id == id) {
                 packages.add (package);
-            } else if (package.component.id == id + ".desktop") {
+            } else if (package.component.id == suffixed_id) {
                 packages.add (package);
             }
         }
@@ -455,8 +474,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void get_installed_packages_internal (Job job) {
-        var args = (GetInstalledPackagesArgs)job.args;
-        var cancellable = args.cancellable;
+        unowned var args = (GetInstalledPackagesArgs)job.args;
+        unowned var cancellable = args.cancellable;
 
         Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         var installed = new Gee.TreeSet<Pk.Package> ();
@@ -466,7 +485,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var packages = results.get_package_array ();
 
             for (int i = 0; i < packages.length; i++) {
-                if (cancellable.is_cancelled ()) {
+                if (cancellable != null && cancellable.is_cancelled ()) {
                     job.result = Value (typeof (Object));
                     job.result.take_object (installed);
                     job.results_ready ();
@@ -482,7 +501,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         job.result = Value (typeof (Object));
-        job.result.take_object (installed);
+        job.result.take_object ((owned) installed);
         job.results_ready ();
     }
 
@@ -495,9 +514,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void get_download_size_internal (Job job) {
-        var args = (GetDownloadSizeArgs)job.args;
-        var package = args.package;
-        var cancellable = args.cancellable;
+        unowned var args = (GetDownloadSizeArgs)job.args;
+        unowned var package = args.package;
+        unowned var cancellable = args.cancellable;
 
         Pk.Package pk_package;
         try {
@@ -556,19 +575,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void install_package_internal (Job job) {
-        var args = (InstallPackageArgs)job.args;
-        var package = args.package;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
-        var cancellable = args.cancellable;
+        unowned var args = (InstallPackageArgs)job.args;
+        unowned var package = args.package;
+        unowned ChangeInformation? change_info = args.change_info;
+        unowned var cancellable = args.cancellable;
 
         reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
-        string[] packages_ids = {};
-        for (int i = 0; i < package.component.get_pkgnames ().length; i++) {
-            packages_ids += package.component.get_pkgnames ()[i];
-        }
-
+        string[] packages_ids = package.component.get_pkgnames ();
         packages_ids += null;
 
         try {
@@ -594,7 +609,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.install_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -609,10 +624,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.INSTALL_PACKAGE, job_args);
@@ -624,18 +639,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void update_package_internal (Job job) {
-        var args = (UpdatePackageArgs)job.args;
-        var package = args.package;
-        var cancellable = args.cancellable;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned var args = (UpdatePackageArgs)job.args;
+        unowned var package = args.package;
+        unowned var cancellable = args.cancellable;
+        unowned ChangeInformation? change_info = args.change_info;
 
         reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
-        string[] packages_ids = {};
-        foreach (var pk_package in package.change_information.updatable_packages[this]) {
-            packages_ids += pk_package;
-        }
+        string[] packages_ids = package.change_information.updatable_packages[this].to_array ();
 
         if (packages_ids.length == 0) {
             job.result = true;
@@ -648,7 +660,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         try {
             var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -663,10 +675,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new UpdatePackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         if (update_permission == null) {
@@ -689,19 +701,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void remove_package_internal (Job job) {
-        var args = (RemovePackageArgs)job.args;
-        var package = args.package;
-        var cancellable = args.cancellable;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned var args = (RemovePackageArgs)job.args;
+        unowned var package = args.package;
+        unowned var cancellable = args.cancellable;
+        unowned ChangeInformation? change_info = args.change_info;
 
         reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
-        string[] packages_ids = {};
-        for (int i = 0; i < package.component.get_pkgnames ().length; i++) {
-            packages_ids += package.component.get_pkgnames ()[i];
-        }
-
+        string[] packages_ids = package.component.get_pkgnames ();
         packages_ids += null;
 
         try {
@@ -713,7 +721,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -728,10 +736,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new RemovePackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.REMOVE_PACKAGE, job_args);
@@ -751,7 +759,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             results = client.get_updates (0, cancellable, (t, p) => { });
 
             if (fake_packages.length > 0) {
-                foreach (string name in fake_packages) {
+                foreach (unowned string name in fake_packages) {
                     var package = new Pk.Package ();
                     if (package.set_id (FAKE_PACKAGE_ID.printf (name))) {
                         results.add_package (package);
@@ -796,11 +804,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         });
 
         job.result = Value (typeof (Object));
-        job.result.take_object (results);
+        job.result.take_object ((owned) results);
         job.results_ready ();
     }
 
-    public async Pk.Results get_updates (Cancellable cancellable) throws GLib.Error {
+    public async Pk.Results get_updates (Cancellable? cancellable) throws GLib.Error {
         var job_args = new GetUpdatesArgs ();
         job_args.cancellable = cancellable;
 
@@ -813,8 +821,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void refresh_cache_internal (Job job) {
-        var args = (RefreshCacheArgs)job.args;
-        var cancellable = args.cancellable;
+        unowned var args = (RefreshCacheArgs)job.args;
+        unowned var cancellable = args.cancellable;
 
         Pk.Results? results = null;
         try {
@@ -850,7 +858,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     private void is_package_installed_internal (Job job) {
         var args = (IsPackageInstalledArgs)job.args;
-        var package = args.package;
+        unowned var package = args.package;
 
         Pk.Package pk_package;
         try {
@@ -974,8 +982,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void get_package_details_internal (Job job) {
-        var args = (GetPackageDetailsArgs)job.args;
-        var package = args.package;
+        unowned var args = (GetPackageDetailsArgs)job.args;
+        unowned var package = args.package;
 
         Pk.Package pk_package;
         try {
@@ -993,7 +1001,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         result.version = pk_package.get_version ();
 
         job.result = Value (typeof (Object));
-        job.result.take_object (result);
+        job.result.take_object ((owned) result);
         job.results_ready ();
     }
 
@@ -1010,9 +1018,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void get_package_dependencies_internal (Job job) {
-        var args = (GetPackageDependenciesArgs)job.args;
-        var package = args.package;
-        var cancellable = args.cancellable;
+        unowned var args = (GetPackageDependenciesArgs)job.args;
+        unowned var package = args.package;
+        unowned var cancellable = args.cancellable;
 
         Pk.Package pk_package;
         try {
@@ -1040,7 +1048,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var result = new Gee.ArrayList<string>.wrap (package_array);
 
         job.result = Value (typeof (Object));
-        job.result.take_object (result);
+        job.result.take_object ((owned) result);
         job.results_ready ();
     }
 

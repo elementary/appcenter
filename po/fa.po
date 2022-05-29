@@ -1,82 +1,98 @@
+# Pikhosh <pikhosh@gmail.com>, 2022.
+# Hossein <yahiceg727@wii999.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 23:08+0000\n"
-"PO-Revision-Date: 2018-02-27 19:11+0000\n"
-"Last-Translator: armoghaddam <armoghaddam24@gmail.com>\n"
-"Language-Team: Persian <https://weblate.elementary.io/projects/appcenter/appcenter/fa/>\n"
+"POT-Creation-Date: 2022-05-27 18:22+0000\n"
+"PO-Revision-Date: 2022-04-14 22:46+0000\n"
+"Last-Translator: Hossein <yahiceg727@wii999.com>\n"
+"Language-Team: Persian <https://l10n.elementary.io/projects/appcenter/appcenter/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:334
+#: src/Application.vala:38 src/Core/Package.vala:343
 msgid "AppCenter"
 msgstr "مرکزبرنامه"
 
-#: src/Application.vala:114
+#: src/Application.vala:123
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:134
-#, fuzzy, c-format
+#: src/Application.vala:143
+#, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "لینک مشخص شده '٪ s' یافت نشد، در عوض جستجو می شود"
+msgstr "لینک مشخص شده '%s' یافت نشد، در عوض جستجو می شود"
 
-#: src/Application.vala:298
-#, fuzzy
+#: src/Application.vala:307
 msgid "The app has been installed"
-msgstr "٪ s با موفقیت نصب شده است"
+msgstr "برنامه نصب شده است"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:362
-#, fuzzy, c-format
+#: src/Application.vala:308 src/MainWindow.vala:390
+#, c-format
 msgid "“%s” has been installed"
-msgstr "٪ s با موفقیت نصب شده است"
+msgstr "“%s” نصب شده است"
 
-#: src/MainWindow.vala:146
-#, fuzzy, c-format
+#: src/MainWindow.vala:129
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "پیدا کردن و نصب نرم افزار ها"
+msgstr "ناموفق در اجرای “%s“"
 
-#: src/MainWindow.vala:176 src/Views/Homepage.vala:260
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
-#: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:269
 msgid "Home"
 msgstr "خانه"
 
-#: src/MainWindow.vala:177 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
-#, fuzzy
+#: src/MainWindow.vala:158 src/Views/InstalledView.vala:62
 msgctxt "view"
 msgid "Installed"
-msgstr "نصب کردن"
+msgstr "نصب شده"
 
-#: src/MainWindow.vala:218 src/MainWindow.vala:433 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:87
+#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:253
 msgid "Search Apps"
 msgstr "جستجو ی نرم افزار"
 
-#. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:365
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:78
-msgid "Open"
+#: src/MainWindow.vala:206
+#, fuzzy
+#| msgid "Automatic Updates"
+msgid "Automatic App Updates"
+msgstr "بروزرسانی های خودکار"
+
+#: src/MainWindow.vala:207
+msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
+#: src/MainWindow.vala:211
+#, fuzzy
+#| msgid "Checking signatures"
+msgid "Check for Updates"
+msgstr "بررسی امضا"
+
+#: src/MainWindow.vala:235
+msgid "Settings"
+msgstr "تنظیمات"
+
+#. Show Open only when a desktop app is installed
+#: src/MainWindow.vala:393
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:56
+msgid "Open"
+msgstr "باز کردن"
+
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "راه افتادن"
 
-#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
-#: src/Core/ChangeInformation.vala:64
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:292
+#: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "در انتظار"
 
@@ -100,7 +116,7 @@ msgstr "حذف بسته ها"
 msgid "Downloading"
 msgstr "در حال دانلود"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1051
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
 msgid "Installing"
 msgstr "درحال نصب"
 
@@ -140,14 +156,14 @@ msgstr "اتخاذ تغییرات"
 msgid "Requesting data"
 msgstr "درخواست داده"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "تمام شد"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1060 src/Core/FlatpakBackend.vala:1084
-#: src/Core/FlatpakBackend.vala:1192 src/Core/FlatpakBackend.vala:1216
-#: src/Core/FlatpakBackend.vala:1362 src/Core/FlatpakBackend.vala:1384
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
+#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
+#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
 msgid "Cancelling"
 msgstr "لغو کردن"
 
@@ -213,7 +229,7 @@ msgstr "بررسی کتابخانه ها در استفاده"
 
 #: src/Utils.vala:130
 msgid "Copying files"
-msgstr ""
+msgstr "در حال کپی کردن فایل ها"
 
 #: src/Utils.vala:132
 msgid "Unknown state"
@@ -226,8 +242,8 @@ msgstr ""
 #: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "بروزرسانی موجود است"
+msgstr[1] "بروزرسانی هایی موجود است"
 
 #: src/Core/Client.vala:73
 #, c-format
@@ -236,91 +252,87 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1183
-#, fuzzy
-#| msgid "Installing"
+#: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
-msgstr "درحال نصب"
+msgstr "در حال حذف نصب"
 
-#: src/Core/FlatpakBackend.vala:1353
-#, fuzzy
-#| msgid "Updates"
+#: src/Core/FlatpakBackend.vala:1440
 msgid "Updating"
-msgstr "بروزرسانی‌ها"
+msgstr "در حال بروزرسانی"
 
-#: src/Core/Package.vala:304
+#: src/Core/Package.vala:313
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s توسعه دهندگان"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:345
 msgid "elementary Updates"
-msgstr ""
+msgstr "بروزرسانی های المنتری"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:347
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "اوبونتو (گزینش-نشده)"
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:352
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:357
 msgid "Ubuntu Drivers"
-msgstr ""
+msgstr "درایور های اوبونتو"
 
-#: src/Core/Package.vala:351
+#: src/Core/Package.vala:360
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:523
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:286
+#: src/Core/PackageKitBackend.vala:297
 #, c-format
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:38
+#: src/Core/UpdateManager.vala:37
 msgid "Operating System Updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:39
+#: src/Core/UpdateManager.vala:38
 msgid "Updates to system components"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "نسخه: %s"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:140
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:147
+#: src/Core/UpdateManager.vala:157
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:152
+#: src/Core/UpdateManager.vala:162
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:164
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:193
+#: src/Core/UpdateManager.vala:202
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:194
+#: src/Core/UpdateManager.vala:203
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
@@ -339,53 +351,19 @@ msgstr "پیدا کردن و نصب نرم افزار ها"
 msgid "Failed to install “%s”"
 msgstr "پیدا کردن و نصب نرم افزار ها"
 
-#: src/Dialogs/NonCuratedWarningDialog.vala:27
-msgid "Non-Curated Warning"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:37
-msgid "Install non-curated app?"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:38
-#, c-format
-msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:47
-msgid "It may not receive bug fix or feature updates"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:60
-msgid "It may access or change system or personal files without permission"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:66
-msgid "Show non-curated warnings"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr ""
-
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
-msgid "Install Anyway"
-msgstr "درحال نصب"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "لطفا اطلاعات پرداخت خود را بازبینی نمایید و سپس مجددا سعی نمایید"
 
 #: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
-msgstr ""
+msgstr "پرداخت"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
@@ -396,11 +374,11 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "یا"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
-msgstr ""
+msgstr "ایمیل"
 
 #: src/Dialogs/StripeDialog.vala:157
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
@@ -408,7 +386,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
-msgstr ""
+msgstr "سیاست حفظ حریم خصوصی"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:182
@@ -419,98 +397,102 @@ msgstr ""
 msgid "CVC"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:97
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
-msgstr ""
+msgstr "لغو"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
-#: src/Dialogs/StripeDialog.vala:379
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
+#: src/Dialogs/StripeDialog.vala:383
 #, c-format
 msgid "Pay $%d.00"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:308
-msgid "Processing"
-msgstr ""
+#: src/Dialogs/StripeDialog.vala:246
+msgid "Try for Free"
+msgstr "امتحان به رایگان"
 
-#: src/Dialogs/StripeDialog.vala:333
+#: src/Dialogs/StripeDialog.vala:312
+msgid "Processing"
+msgstr "در حال پردازش"
+
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:371
+#: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
-msgstr ""
+msgstr "پرداخت بعدا"
 
-#: src/Dialogs/StripeDialog.vala:372
+#: src/Dialogs/StripeDialog.vala:376
 msgid "Retry"
-msgstr ""
+msgstr "امتحان مجدد"
 
-#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:555
+#: src/Dialogs/StripeDialog.vala:559
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
+#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
+#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
 msgid "The card has expired. Please try again with a different card."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:582
+#: src/Dialogs/StripeDialog.vala:586
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:598
+#: src/Dialogs/StripeDialog.vala:602
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:600
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:612
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:625
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:627
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:643
+#: src/Dialogs/StripeDialog.vala:647
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:646
+#: src/Dialogs/StripeDialog.vala:650
 msgid "The balance or credit limit on the card has been reached."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:649
+#: src/Dialogs/StripeDialog.vala:653
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
@@ -528,10 +510,9 @@ msgstr "پیدا کردن و نصب نرم افزار ها"
 msgid "Uninstall “%s”?"
 msgstr ""
 
-#: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:68
+#: src/Dialogs/UninstallConfirmDialog.vala:42 src/Views/AppInfoView.vala:595
 msgid "Uninstall"
-msgstr ""
+msgstr "حذف نصب"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
@@ -549,19 +530,19 @@ msgstr "پیدا کردن و نصب نرم افزار ها"
 msgid "Failed to uninstall “%s”"
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
 msgstr "به روزرسانی دریافت نشد"
 
-#: src/Dialogs/UpdateFailDialog.vala:26
+#: src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "این ممکن است توسط مخزن نرم افزاری خارجی، دستی به وجود آمده یا یک فایل منبع خراب ایجاد شده باشد."
 
-#: src/Dialogs/UpdateFailDialog.vala:34
+#: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr "چشم پوشی"
 
-#: src/Dialogs/UpdateFailDialog.vala:35
+#: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
 msgstr "دوباره امتحان کنید"
 
@@ -575,185 +556,211 @@ msgstr "پیدا کردن و نصب نرم افزار ها"
 msgid "Failed to update “%s”"
 msgstr "پیدا کردن و نصب نرم افزار ها"
 
-#: src/Views/AppInfoView.vala:80
+#: src/Views/AppInfoView.vala:95
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:81
+#: src/Views/AppInfoView.vala:96
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:86
+#: src/Views/AppInfoView.vala:101
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:87
+#: src/Views/AppInfoView.vala:102
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:92
+#: src/Views/AppInfoView.vala:107
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:93
+#: src/Views/AppInfoView.vala:108
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:98
+#: src/Views/AppInfoView.vala:113
 msgid "Gambling"
-msgstr ""
+msgstr "قمار"
 
-#: src/Views/AppInfoView.vala:99
+#: src/Views/AppInfoView.vala:114
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:113
+#: src/Views/AppInfoView.vala:131
 msgid "Non-Curated"
-msgstr ""
+msgstr "گزینش-نشده"
 
-#: src/Views/AppInfoView.vala:114
+#: src/Views/AppInfoView.vala:132
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:154
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:155
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:150
+#: src/Views/AppInfoView.vala:168
 msgid "Violence"
-msgstr ""
+msgstr "خشونت"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:173
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:160
+#: src/Views/AppInfoView.vala:178
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:204
+#: src/Views/AppInfoView.vala:222
 msgid "Multiplayer"
-msgstr ""
+msgstr "چند نفره"
 
-#: src/Views/AppInfoView.vala:205
+#: src/Views/AppInfoView.vala:223
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:221
+#: src/Views/AppInfoView.vala:239
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:241
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:227
+#: src/Views/AppInfoView.vala:245
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:237
+#: src/Views/AppInfoView.vala:255
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:238
+#: src/Views/AppInfoView.vala:256
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:250
+#: src/Views/AppInfoView.vala:268
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:271
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:276
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:393
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:476
+#: src/Views/AppInfoView.vala:494
 msgid "Homepage"
 msgstr "صفحه اول"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:500
 msgid "Translate"
-msgstr ""
+msgstr "ترجمه"
 
-#: src/Views/AppInfoView.vala:488
+#: src/Views/AppInfoView.vala:506
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:494
+#: src/Views/AppInfoView.vala:512
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:505
+#: src/Views/AppInfoView.vala:523
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:550
+#: src/Views/AppInfoView.vala:569
 msgid "Extensions:"
-msgstr ""
+msgstr "افزونه ها:"
 
-#: src/Views/AppInfoView.vala:653
+#: src/Views/AppInfoView.vala:681
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:664
+#: src/Views/AppInfoView.vala:692
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:700
 msgid "Share"
+msgstr "به‌اشتراک گذاری"
+
+#: src/Views/AppInfoView.vala:792
+msgid "End of Life"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:793
+msgid "May not work as expected or receive security updates"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:799
+msgid "Outdated"
+msgstr "منسوخ شده"
+
+#: src/Views/AppInfoView.vala:800
+msgid "May not work as expected or support the latest features"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:808
+#, fuzzy
+msgid "Unstable"
+msgstr "نصب کردن"
+
+#: src/Views/AppInfoView.vala:809
+#, c-format
+msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:986
+#: src/Views/AppInfoView.vala:1059
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:989
+#: src/Views/AppInfoView.vala:1062
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D9%84%DA%A9%DB%8C%D8%AA_%D8%B9%D9%85%D9%88%D9%85%DB%8C"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:994
+#: src/Views/AppInfoView.vala:1067
 #, fuzzy
 msgid "Free Software"
 msgstr "ویرایش کد برنامه"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:997
+#: src/Views/AppInfoView.vala:1070
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw.fa"
 
-#: src/Views/AppInfoView.vala:1001
+#: src/Views/AppInfoView.vala:1074
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1004
+#: src/Views/AppInfoView.vala:1077
 msgid "Unknown License"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1084
+#: src/Views/AppInfoView.vala:1173
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1092
+#: src/Views/AppInfoView.vala:1181
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1204
+#: src/Views/AppInfoView.vala:1302
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
@@ -781,56 +788,56 @@ msgid "Requesting a restart failed. Restart manually to finish installing update
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:186
+#: src/Views/AppListUpdateView.vala:210
 msgid "Update All"
 msgstr ""
 
-#: src/Views/AppListView.vala:29
-msgid "Flathub"
-msgstr ""
-
-#: src/Views/AppListView.vala:31
-msgid "No Apps Found"
-msgstr ""
-
-#: src/Views/AppListView.vala:32
-#, c-format
-msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-
-#: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
-msgid "Non-Curated Apps"
-msgstr ""
-
-#: src/Views/CategoryView.vala:28
+#: src/Views/CategoryView.vala:37
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "جستجو ی نرم افزار"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:48
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Free Apps"
 msgstr "جستجو ی نرم افزار"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/CategoryView.vala:59
+msgid "Non-Curated Apps"
+msgstr ""
+
+#: src/Views/Homepage.vala:75
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:97
 msgid "Categories"
 msgstr "دسته‌بندی‌ها"
 
-#: src/Views/Homepage.vala:275 src/Views/Homepage.vala:286
+#: src/Views/Homepage.vala:257 src/Views/Homepage.vala:261
 #, c-format
 msgid "Search %s"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/Homepage.vala:272
 msgctxt "view"
 msgid "Search"
+msgstr ""
+
+#: src/Views/SearchView.vala:28 src/Views/SearchView.vala:48
+msgid "Flathub"
+msgstr "فلت هاب"
+
+#: src/Views/SearchView.vala:30
+msgid "No Apps Found"
+msgstr ""
+
+#: src/Views/SearchView.vala:31 src/Views/SearchView.vala:49
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
@@ -843,15 +850,15 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
-msgstr ""
+msgstr "صدا"
 
 #: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr ""
+msgstr "ارتباط"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
-msgstr ""
+msgstr "توسعه"
 
 #: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
@@ -863,15 +870,15 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
-msgstr ""
+msgstr "بازی ها"
 
 #: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
-msgstr ""
+msgstr "گرافیک"
 
 #: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
-msgstr ""
+msgstr "اینترنت"
 
 #: src/Widgets/CategoryFlowBox.vala:83
 msgid "Math, Science, & Engineering"
@@ -883,11 +890,11 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
-msgstr ""
+msgstr "آفیس"
 
 #: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
-msgstr ""
+msgstr "سیستم"
 
 #: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
@@ -895,7 +902,7 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
-msgstr ""
+msgstr "ویدیو"
 
 #: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
@@ -905,29 +912,29 @@ msgstr ""
 msgid "Privacy & Security"
 msgstr ""
 
-#: src/Widgets/HumbleButton.vala:65
+#: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
 msgstr ""
 
-#: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:238
+#: src/Widgets/HumbleButton.vala:80
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:185
 msgid "Free"
-msgstr ""
+msgstr "رایگان"
 
-#: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:240
+#: src/Widgets/HumbleButton.vala:82
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:187
 #, fuzzy
 msgid "Install"
 msgstr "نصب کردن"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:92
+#: src/Widgets/HumbleButton.vala:118
 #, c-format
 msgid "$%d.00"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:95
+#: src/Widgets/HumbleButton.vala:121
 #, c-format
 msgid "$%d"
 msgstr ""
@@ -960,15 +967,15 @@ msgstr ""
 
 #: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
-msgstr ""
+msgstr "فیس بوک"
 
 #: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
-msgstr ""
+msgstr "توییتر"
 
 #: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
-msgstr ""
+msgstr "ردیت"
 
 #: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
@@ -976,7 +983,7 @@ msgstr ""
 
 #: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
-msgstr ""
+msgstr "تلگرام"
 
 #: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
@@ -1004,15 +1011,21 @@ msgstr[1] ""
 
 #: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
-msgstr ""
+msgstr "درایور ها"
 
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:259
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
-msgstr ""
+msgstr "بروزرسانی"
+
+#~ msgid "Don’t Install"
+#~ msgstr "نصب نکن"
+
+#~ msgid "Install Anyway"
+#~ msgstr "نصب در هر حال"
 
 #, fuzzy
 #~| msgid "Finished"
