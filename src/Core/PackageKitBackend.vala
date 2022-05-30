@@ -1093,7 +1093,20 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 status = (Pk.Status) progress.status;
                 break;
 
-            default:
+            case Pk.ProgressType.CALLER_ACTIVE:
+            case Pk.ProgressType.DOWNLOAD_SIZE_REMAINING:
+            case Pk.ProgressType.ELAPSED_TIME:
+            case Pk.ProgressType.INVALID:
+            case Pk.ProgressType.PACKAGE:
+            case Pk.ProgressType.PACKAGE_ID:
+            case Pk.ProgressType.PERCENTAGE:
+            case Pk.ProgressType.REMAINING_TIME:
+            case Pk.ProgressType.ROLE:
+            case Pk.ProgressType.SPEED:
+            case Pk.ProgressType.TRANSACTION_FLAGS:
+            case Pk.ProgressType.TRANSACTION_ID:
+            case Pk.ProgressType.UID:
+                // All other ProgressTypes deliberately ignored
                 break;
         }
     }
