@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-05-09 14:36+0000\n"
+"PO-Revision-Date: 2022-05-31 20:05+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -891,14 +892,12 @@ msgid "Privacy & Security"
 msgstr "פרטיות ואבטחה"
 
 #: src/Widgets/CategoryFlowBox.vala:231
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "משחקים"
+msgstr "משחקים וכיף"
 
 #: src/Widgets/CategoryFlowBox.vala:259
 msgid "Fun &"
-msgstr ""
+msgstr "כיף ו"
 
 #: src/Widgets/CategoryFlowBox.vala:268
 msgid "Games"
