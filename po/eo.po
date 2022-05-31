@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 18:22+0000\n"
+"POT-Creation-Date: 2022-05-31 15:16+0000\n"
 "PO-Revision-Date: 2019-12-12 19:07+0000\n"
 "Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -55,7 +55,7 @@ msgstr "%s estis sukcese instalita"
 msgid "Failed to launch “%s“"
 msgstr "Fiaskis la malinstalo de „%s“"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:269
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:265
 msgid "Home"
 msgstr "Ĉefpaĝo"
 
@@ -64,7 +64,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Instalitaj"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:249
 msgid "Search Apps"
 msgstr "Serĉi Aplikaĵojn"
 
@@ -841,13 +841,13 @@ msgstr "Freŝe Ĝisdatigita"
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: src/Views/Homepage.vala:257 src/Views/Homepage.vala:261
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:257
 #, c-format
 msgid "Search %s"
 msgstr "Serĉi %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:268
 msgctxt "view"
 msgid "Search"
 msgstr "Serĉo"
@@ -869,75 +869,85 @@ msgstr ""
 msgid "Card Number"
 msgstr "Karta Numero"
 
-#: src/Widgets/CategoryFlowBox.vala:27
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Accessories"
 msgstr "Akcesoraĵoj"
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:30
 msgid "Audio"
 msgstr "Aŭdado"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:31
 msgid "Communication"
 msgstr "Komunikado"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
 msgstr "Programado"
 
-#: src/Widgets/CategoryFlowBox.vala:48
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "Edukado"
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:51
 msgid "Finance"
 msgstr "Financado"
 
-#: src/Widgets/CategoryFlowBox.vala:53
-msgid "Games"
-msgstr "Ludado"
-
-#: src/Widgets/CategoryFlowBox.vala:70
+#: src/Widgets/CategoryFlowBox.vala:56
 msgid "Graphics"
 msgstr "Desegnado"
 
-#: src/Widgets/CategoryFlowBox.vala:79
+#: src/Widgets/CategoryFlowBox.vala:65
 msgid "Internet"
 msgstr "Interretado"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Math, Science, & Engineering"
 msgstr "Matematiko, Scienco kaj Inĝenierado"
 
-#: src/Widgets/CategoryFlowBox.vala:102
+#: src/Widgets/CategoryFlowBox.vala:88
 msgid "Media Production"
 msgstr "Aŭdovidaĵa Produktado"
 
-#: src/Widgets/CategoryFlowBox.vala:109
+#: src/Widgets/CategoryFlowBox.vala:95
 msgid "Office"
 msgstr "Oficejado"
 
-#: src/Widgets/CategoryFlowBox.vala:116
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "System"
 msgstr "Sistemo"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr "Faciluziloj"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:107
 msgid "Video"
 msgstr "Videado"
 
-#: src/Widgets/CategoryFlowBox.vala:126
+#: src/Widgets/CategoryFlowBox.vala:112
 msgid "Writing & Language"
 msgstr "Skribado & Lingvoj"
 
-#: src/Widgets/CategoryFlowBox.vala:136
+#: src/Widgets/CategoryFlowBox.vala:122
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Privateca Politiko"
+
+#: src/Widgets/CategoryFlowBox.vala:231
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "Ludado"
+
+#: src/Widgets/CategoryFlowBox.vala:259
+msgid "Fun &"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:268
+msgid "Games"
+msgstr "Ludado"
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
