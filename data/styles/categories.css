@@ -273,24 +273,34 @@
 }
 
 .category.games {
-    background-image:
-        linear-gradient(
-            to bottom,
-            mix(@SLATE_500, @BLUEBERRY_500, 0.5),
-            @SLATE_900
-        );
-    border-color: alpha(@SLATE_900, 0.8);
+    border: none;
     box-shadow:
-        inset 0 0 0 1px alpha(white, 0.02),
-        inset 0 1px 0 0 alpha(white, 0.23),
-        inset 0 -1px 0 0 alpha(white, 0.07),
+        inset 0 0 0 1px alpha(shade(@bg_color, 1.67), 0.1),
+        inset 0 1px 0 0 alpha(shade(@bg_color, 1.67), 0.9),
+        inset 0 -1px 0 0 alpha(shade(@bg_color, 1.67), 0.3),
+        0 0 0 1px alpha(black, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
-        0 3px 5px alpha(@BLACK_900, 0.1);
-    color: shade(@BLUEBERRY_100, 1.1);
-    font-size: 26px;
-    font-weight: 700;
-    text-shadow: 0 1px 2px alpha(@BLACK_900, 0.8);
-    -gtk-icon-shadow: 0 1px 2px alpha(@BLACK_900, 0.8);
+        0 3px 5px alpha(black, 0.1);
+    font-weight: 900;
+    letter-spacing: -1px;
+    -gtk-icon-shadow:
+        0 1px 2px alpha(@SLATE_900, 0.2),
+        0 2px 6px alpha(@SLATE_900, 0.1);
+}
+
+.games label.pink {
+    font-size: 30px;
+    text-shadow:
+        0 1px 2px alpha(@BUBBLEGUM_900, 0.2),
+        0 2px 6px alpha(@BUBBLEGUM_900, 0.1);
+    margin-bottom: -12px;
+}
+
+.games label.blue {
+    font-size: 36px;
+    text-shadow:
+        0 1px 2px alpha(@BLUEBERRY_900, 0.2),
+        0 2px 6px alpha(@BLUEBERRY_900, 0.1);
 }
 
 .category.graphics {

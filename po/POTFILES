@@ -35,7 +35,6 @@ src/Widgets/AbstractAppList.vala
 src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/CategoryFlowBox.vala
-src/Widgets/CategoryItem.vala
 src/Widgets/HumbleButton.vala
 src/Widgets/NetworkInfoBar.vala
 src/Widgets/PackageRow.vala
