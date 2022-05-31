@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 18:22+0000\n"
+"POT-Creation-Date: 2022-05-31 15:16+0000\n"
 "PO-Revision-Date: 2022-04-20 09:08+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (Australia) <https://l10n.elementary.io/projects/appcenter/appcenter/en_AU/>\n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "Failed to launch “%s“"
 msgstr "Failed to launch “%s“"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:269
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:265
 #, fuzzy
 msgid "Home"
 msgstr "Home Page"
@@ -58,7 +58,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Install"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:249
 msgid "Search Apps"
 msgstr "Search Apps"
 
@@ -815,13 +815,13 @@ msgstr ""
 msgid "Categories"
 msgstr "Categories"
 
-#: src/Views/Homepage.vala:257 src/Views/Homepage.vala:261
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:257
 #, c-format
 msgid "Search %s"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:268
 msgctxt "view"
 msgid "Search"
 msgstr ""
@@ -843,72 +843,80 @@ msgstr ""
 msgid "Card Number"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:27
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Accessories"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:30
 msgid "Audio"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:31
 msgid "Communication"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:48
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:51
 msgid "Finance"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:53
-msgid "Games"
-msgstr ""
-
-#: src/Widgets/CategoryFlowBox.vala:70
+#: src/Widgets/CategoryFlowBox.vala:56
 msgid "Graphics"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:79
+#: src/Widgets/CategoryFlowBox.vala:65
 msgid "Internet"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Math, Science, & Engineering"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:102
+#: src/Widgets/CategoryFlowBox.vala:88
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:109
+#: src/Widgets/CategoryFlowBox.vala:95
 msgid "Office"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:116
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "System"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:107
 msgid "Video"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:126
+#: src/Widgets/CategoryFlowBox.vala:112
 msgid "Writing & Language"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:136
+#: src/Widgets/CategoryFlowBox.vala:122
 msgid "Privacy & Security"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:231
+msgid "Fun & Games"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:259
+msgid "Fun &"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:268
+msgid "Games"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:66

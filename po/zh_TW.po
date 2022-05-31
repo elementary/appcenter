@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 18:22+0000\n"
+"POT-Creation-Date: 2022-05-31 15:16+0000\n"
 "PO-Revision-Date: 2022-04-30 17:01+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -52,7 +52,7 @@ msgstr "“%s”已安裝"
 msgid "Failed to launch “%s“"
 msgstr "無法開啟 “%s”"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:269
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:265
 msgid "Home"
 msgstr "首頁"
 
@@ -61,7 +61,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "已安裝"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:249
 msgid "Search Apps"
 msgstr "搜尋應用程式"
 
@@ -806,13 +806,13 @@ msgstr "最近更新"
 msgid "Categories"
 msgstr "類別"
 
-#: src/Views/Homepage.vala:257 src/Views/Homepage.vala:261
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:257
 #, c-format
 msgid "Search %s"
 msgstr "搜尋 %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:268
 msgctxt "view"
 msgid "Search"
 msgstr "搜尋"
@@ -834,73 +834,83 @@ msgstr "請嘗試更改搜索詞。您亦可旁加載 Flatpak 應用程序，例
 msgid "Card Number"
 msgstr "號碼"
 
-#: src/Widgets/CategoryFlowBox.vala:27
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Accessories"
 msgstr "附屬應用"
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:30
 msgid "Audio"
 msgstr "音訊"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:31
 msgid "Communication"
 msgstr "通訊"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
 msgstr "開發"
 
-#: src/Widgets/CategoryFlowBox.vala:48
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:51
 msgid "Finance"
 msgstr "金融"
 
-#: src/Widgets/CategoryFlowBox.vala:53
-msgid "Games"
-msgstr "遊戲"
-
-#: src/Widgets/CategoryFlowBox.vala:70
+#: src/Widgets/CategoryFlowBox.vala:56
 msgid "Graphics"
 msgstr "美工繪圖"
 
-#: src/Widgets/CategoryFlowBox.vala:79
+#: src/Widgets/CategoryFlowBox.vala:65
 msgid "Internet"
 msgstr "網際網路"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Math, Science, & Engineering"
 msgstr "數學、科學與工程"
 
-#: src/Widgets/CategoryFlowBox.vala:102
+#: src/Widgets/CategoryFlowBox.vala:88
 msgid "Media Production"
 msgstr "多媒體製作"
 
-#: src/Widgets/CategoryFlowBox.vala:109
+#: src/Widgets/CategoryFlowBox.vala:95
 msgid "Office"
 msgstr "辦公"
 
-#: src/Widgets/CategoryFlowBox.vala:116
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "System"
 msgstr "系統"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr "無障礙功能"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:107
 msgid "Video"
 msgstr "視訊"
 
-#: src/Widgets/CategoryFlowBox.vala:126
+#: src/Widgets/CategoryFlowBox.vala:112
 msgid "Writing & Language"
 msgstr "書寫和語言"
 
-#: src/Widgets/CategoryFlowBox.vala:136
+#: src/Widgets/CategoryFlowBox.vala:122
 msgid "Privacy & Security"
 msgstr "隱私與安全"
+
+#: src/Widgets/CategoryFlowBox.vala:231
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "遊戲"
+
+#: src/Widgets/CategoryFlowBox.vala:259
+msgid "Fun &"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:268
+msgid "Games"
+msgstr "遊戲"
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"

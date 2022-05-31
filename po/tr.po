@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 18:22+0000\n"
+"POT-Creation-Date: 2022-05-31 15:16+0000\n"
 "PO-Revision-Date: 2022-05-13 23:28+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
@@ -57,7 +57,7 @@ msgstr "\"%s\" yüklendi"
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" başlatılamadı"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:269
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:265
 msgid "Home"
 msgstr "Ana Sayfa"
 
@@ -66,7 +66,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Yüklendi"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:249
 msgid "Search Apps"
 msgstr "Uygulama Ara"
 
@@ -808,13 +808,13 @@ msgstr "Son Güncellenenler"
 msgid "Categories"
 msgstr "Kategoriler"
 
-#: src/Views/Homepage.vala:257 src/Views/Homepage.vala:261
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:257
 #, c-format
 msgid "Search %s"
 msgstr "%s içinde ara"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:268
 msgctxt "view"
 msgid "Search"
 msgstr "Ara"
@@ -836,73 +836,83 @@ msgstr "Arama terimlerini değiştirmeyi deneyin. %s adresinden Flatpak uygulama
 msgid "Card Number"
 msgstr "Kart Numarası"
 
-#: src/Widgets/CategoryFlowBox.vala:27
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Accessories"
 msgstr "Donatılar"
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:30
 msgid "Audio"
 msgstr "Ses"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:31
 msgid "Communication"
 msgstr "İletişim"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
 msgstr "Geliştirme"
 
-#: src/Widgets/CategoryFlowBox.vala:48
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "Eğitim"
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:51
 msgid "Finance"
 msgstr "Finans"
 
-#: src/Widgets/CategoryFlowBox.vala:53
-msgid "Games"
-msgstr "Oyunlar"
-
-#: src/Widgets/CategoryFlowBox.vala:70
+#: src/Widgets/CategoryFlowBox.vala:56
 msgid "Graphics"
 msgstr "Grafik"
 
-#: src/Widgets/CategoryFlowBox.vala:79
+#: src/Widgets/CategoryFlowBox.vala:65
 msgid "Internet"
 msgstr "İnternet"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Math, Science, & Engineering"
 msgstr "Matematik, Bilim ve Mühendislik"
 
-#: src/Widgets/CategoryFlowBox.vala:102
+#: src/Widgets/CategoryFlowBox.vala:88
 msgid "Media Production"
 msgstr "Medya Üretimi"
 
-#: src/Widgets/CategoryFlowBox.vala:109
+#: src/Widgets/CategoryFlowBox.vala:95
 msgid "Office"
 msgstr "Ofis"
 
-#: src/Widgets/CategoryFlowBox.vala:116
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "System"
 msgstr "Sistem"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr "Evrensel Erişim"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:107
 msgid "Video"
 msgstr "Video"
 
-#: src/Widgets/CategoryFlowBox.vala:126
+#: src/Widgets/CategoryFlowBox.vala:112
 msgid "Writing & Language"
 msgstr "Yazı ve Dil"
 
-#: src/Widgets/CategoryFlowBox.vala:136
+#: src/Widgets/CategoryFlowBox.vala:122
 msgid "Privacy & Security"
 msgstr "Gizlilik ve Güvenlik"
+
+#: src/Widgets/CategoryFlowBox.vala:231
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "Oyunlar"
+
+#: src/Widgets/CategoryFlowBox.vala:259
+msgid "Fun &"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:268
+msgid "Games"
+msgstr "Oyunlar"
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
