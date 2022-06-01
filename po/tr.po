@@ -14,9 +14,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-05-13 23:28+0000\n"
+"PO-Revision-Date: 2022-06-01 16:47+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -901,14 +902,12 @@ msgid "Privacy & Security"
 msgstr "Gizlilik ve Güvenlik"
 
 #: src/Widgets/CategoryFlowBox.vala:231
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Oyunlar"
+msgstr "Eğlence ve Oyunlar"
 
 #: src/Widgets/CategoryFlowBox.vala:259
 msgid "Fun &"
-msgstr ""
+msgstr "Eğlence ve"
 
 #: src/Widgets/CategoryFlowBox.vala:268
 msgid "Games"
