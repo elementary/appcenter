@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-05-18 17:33+0000\n"
+"PO-Revision-Date: 2022-06-02 11:56+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -888,14 +889,12 @@ msgid "Privacy & Security"
 msgstr "プライバシーとセキュリティー"
 
 #: src/Widgets/CategoryFlowBox.vala:231
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "ゲーム"
+msgstr "エンタメとゲーム"
 
 #: src/Widgets/CategoryFlowBox.vala:259
 msgid "Fun &"
-msgstr ""
+msgstr "エンタメと"
 
 #: src/Widgets/CategoryFlowBox.vala:268
 msgid "Games"
