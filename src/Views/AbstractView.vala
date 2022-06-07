@@ -17,37 +17,36 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public abstract class AppCenter.AbstractView : Gtk.Stack {
+public abstract class AppCenter.AbstractView : Hdy.Deck {
     public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
 
     construct {
-        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        can_swipe_back = true;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
 
         notify["visible-child"].connect (() => {
-            if (visible_child is Views.AppInfoView) {
-                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
-                main_window.set_custom_header ("");
-                main_window.configure_search (false);
+            if (!transition_running) {
+                update_navigation ();
+                abstract_update_navigation ();
             }
         });
 
         notify["transition-running"].connect (() => {
-            // Transition finished
             if (!transition_running) {
-                foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
-                        child.destroy ();
-                    }
-                }
+                update_navigation ();
+                abstract_update_navigation ();
             }
         });
     }
 
     public virtual void show_package (AppCenterCore.Package package, bool remember_history = true) {
+        if (transition_running) {
+            return;
+        }
+
         previous_package = null;
 
         package_selected (package);
@@ -73,8 +72,11 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
         add (app_info_view);
         set_visible_child (app_info_view);
 
-        app_info_view.show_other_package.connect ((_package, remember_history, _transition_type) => {
-            transition_type = _transition_type;
+        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
+            if (!transition) {
+                transition_duration = 0;
+            }
+
             show_package (_package, remember_history);
             if (remember_history) {
                 previous_package = package;
@@ -82,9 +84,31 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
                 var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
                 main_window.set_return_name (package.get_name ());
             }
-            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+            transition_duration = 200;
         });
     }
 
-    public abstract void return_clicked ();
+    private void abstract_update_navigation () {
+        var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+
+        if (visible_child is Views.AppInfoView) {
+            main_window.set_custom_header ("");
+            main_window.configure_search (false);
+        }
+
+        var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
+        if (previous_child == null) {
+            main_window.set_return_name (null);
+        } else if (previous_child is Views.AppInfoView) {
+            main_window.set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
+        } else if (previous_child is CategoryView) {
+            main_window.set_return_name (((CategoryView) previous_child).category.name);
+        }
+
+        while (get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
+            get_adjacent_child (Hdy.NavigationDirection.FORWARD).destroy ();
+        }
+    }
+
+    public abstract void update_navigation ();
 }
