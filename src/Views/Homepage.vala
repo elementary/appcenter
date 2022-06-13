@@ -268,7 +268,6 @@ public class AppCenter.Homepage : AbstractView {
 
 #if POP_OS
         string[] newest_ids = {
-            "io.atom.Atom",
             "com.slack.Slack",
             "org.telegram",
             "org.gnome.meld",
