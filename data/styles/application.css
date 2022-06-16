@@ -22,6 +22,28 @@
     margin: 0;
 }
 
+/* Include Text styles here as fallback */
+
+.h1 {
+    font-size: 20pt;
+    font-weight: 300;
+}
+
+.h2 {
+    font-size: 16pt;
+    font-weight: 200;
+}
+
+.h3 {
+    font-size: 11pt;
+}
+
+.h4,
+.category-label {
+    font-weight: 700;
+}
+
+
 .pop-banner {
     background-size: auto 100%;
     background-position: center;
