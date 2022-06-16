@@ -734,6 +734,10 @@ public class AppCenterCore.Package : Object {
                     }
 
                     break;
+
+                case AppStream.IconKind.UNKNOWN:
+                    warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
+                    break;
             }
         }
 
