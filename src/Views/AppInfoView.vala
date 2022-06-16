@@ -833,8 +833,13 @@ namespace AppCenter.Views {
 
                 
                 if (theme_name.contains ("Contrast")) {
-                    color_primary = "#000";
-                    color_primary_text = "#FFF";
+                    color_primary = "#ededed";
+                    color_primary_text = "#000";
+                    if (theme_name.contains ("Inverse")) {
+                        color_primary = "#323232";
+                        color_primary_text = "#fff";
+                    }
+                    
                 }
 
                 var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
