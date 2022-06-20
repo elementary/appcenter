@@ -24,6 +24,8 @@ namespace AppCenter.Views {
     public class AppListUpdateView : AbstractAppList {
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
+        private Cancellable refresh_cancellable;
+        private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
@@ -67,6 +69,40 @@ namespace AppCenter.Views {
 
             add (infobar);
             add (scrolled);
+
+            refresh_cancellable = new Cancellable ();
+
+            get_apps.begin ();
+
+            unowned var client = AppCenterCore.Client.get_default ();
+            client.installed_apps_changed.connect (() => {
+                Idle.add (() => {
+                    get_apps.begin ();
+                    return GLib.Source.REMOVE;
+                });
+            });
+        }
+
+        private async void get_apps () {
+            refresh_cancellable.cancel ();
+
+            yield refresh_mutex.lock ();
+
+            refresh_cancellable.reset ();
+
+            unowned var client = AppCenterCore.Client.get_default ();
+
+            var installed_apps = yield client.get_installed_applications (refresh_cancellable);
+
+            if (!refresh_cancellable.is_cancelled ()) {
+                clear ();
+
+                var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
+                add_package (os_updates);
+                add_packages (installed_apps);
+            }
+
+            refresh_mutex.unlock ();
         }
 
         public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
