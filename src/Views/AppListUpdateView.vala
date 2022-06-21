@@ -24,7 +24,6 @@ namespace AppCenter.Views {
     public class AppListUpdateView : AbstractAppList {
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
-        private Cancellable refresh_cancellable;
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
@@ -70,8 +69,6 @@ namespace AppCenter.Views {
             add (infobar);
             add (scrolled);
 
-            refresh_cancellable = new Cancellable ();
-
             get_apps.begin ();
 
             unowned var client = AppCenterCore.Client.get_default ();
@@ -84,11 +81,9 @@ namespace AppCenter.Views {
         }
 
         private async void get_apps () {
-            refresh_cancellable.cancel ();
-
             yield refresh_mutex.lock ();
 
-            refresh_cancellable.reset ();
+            var refresh_cancellable = new Cancellable ();
 
             unowned var client = AppCenterCore.Client.get_default ();
 
