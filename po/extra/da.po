@@ -58,15 +58,15 @@ msgstr "Tastatur forbedringer"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Amusements appear in the Games category"
-msgstr ""
+msgstr "Forlystelser vises i kategorien Spil"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "Kategorier vises som et gitter i stedet for en liste"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Allow window to shrink to much narrower sizes"
-msgstr ""
+msgstr "Tillad vinduet at skrumpe til meget smallere størrelser"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:45
@@ -104,7 +104,7 @@ msgstr "Rettelser"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Correctly show the installed status of first-party applications"
-msgstr ""
+msgstr "Vis korrekt installeret status for førstepartsapplikationer"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Don't store $0 app installs as paid"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Don't show plugins on the homepage"
-msgstr ""
+msgstr "Vis ikke plugins på startsiden"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Only show \"Multiplayer\" badge for games"
@@ -124,7 +124,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "Vis installationsprocessen på en mere kompakt måde"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 #: data/io.elementary.appcenter.appdata.xml.in:134
@@ -135,11 +135,11 @@ msgstr "Nye funktioner"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Show content warnings on app info pages"
-msgstr ""
+msgstr "Vis indholdsadvarsler på appinformationssider"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Show other apps by an author for Flatpak sources"
-msgstr ""
+msgstr "Vis andre apps af en forfatter til Flatpak-kilder"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 msgid "Populate banner on home locally instead of relying on an external API"
@@ -151,7 +151,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Navigate banners on the home page with multitouch gestures"
-msgstr ""
+msgstr "Naviger i bannere på startsiden med multitouch-bevægelser"
 
 #: data/io.elementary.appcenter.appdata.xml.in:72
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Show Recently Updated Flatpak apps on home page"
-msgstr ""
+msgstr "Vis nyligt opdaterede Flatpak apps på startsiden"
 
 #: data/io.elementary.appcenter.appdata.xml.in:122
 #, fuzzy
