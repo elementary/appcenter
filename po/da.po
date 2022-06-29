@@ -659,11 +659,11 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:227
 msgid "Online Interactions"
-msgstr ""
+msgstr "Online Interaktioner"
 
 #: src/Views/AppInfoView.vala:237
 msgid "Location Sharing"
-msgstr ""
+msgstr "Placeringsdeling"
 
 #: src/Views/AppInfoView.vala:238
 msgid "Other people can see your real-world location"
@@ -671,11 +671,11 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:250
 msgid "Collects anonymous usage data"
-msgstr ""
+msgstr "Indsamler anonyme brugsdata"
 
 #: src/Views/AppInfoView.vala:253
 msgid "Collects usage data that could be used to identify you"
-msgstr ""
+msgstr "Indsamler brugsdata, der kan bruges til at identificere dig"
 
 #: src/Views/AppInfoView.vala:258
 msgid "Info Sharing"
@@ -801,7 +801,7 @@ msgstr "Der blev ikke fundet nogen apps"
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
+msgstr "Prøv at ændre søgetermer. Du kan også sideloade Flatpak apps f.eks. fra %s"
 
 #: src/Views/AppListView.vala:168 src/Views/CategoryView.vala:50
 msgid "Non-Curated Apps"
