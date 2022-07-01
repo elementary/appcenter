@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-06-02 11:56+0000\n"
+"PO-Revision-Date: 2022-07-01 14:52+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -778,7 +778,7 @@ msgstr "すべてアップデート"
 
 #: src/Views/CategoryView.vala:37
 msgid "Paid Apps"
-msgstr "購入済みアプリ"
+msgstr "有料アプリ"
 
 #: src/Views/CategoryView.vala:48
 msgid "Free Apps"
