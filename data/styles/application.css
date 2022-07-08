@@ -22,6 +22,16 @@
     margin: 0;
 }
 
+/* Fix for weird styling on app menu */
+popover modelbutton {
+    margin: 0 6px;
+    padding: 4px 6px;
+}
+
+.titlebar.windowhandle {
+    padding: 0 6px;
+}
+
 /* Include Text styles here as fallback */
 
 .h1 {
@@ -178,8 +188,8 @@
 }
 
 .titlebar {
-    padding-bottom: 0;
-    padding-top: 0;
+    padding-bottom: 0.333rem; /* 3px at 9pt font */
+    padding-top: 0.333rem;    /* 3px at 9pt font */
 }
 
 /* Pop-specific adjustments */

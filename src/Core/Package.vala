@@ -33,9 +33,19 @@ public class AppCenterCore.PackageDetails : Object {
     public string? version { get; set; }
 }
 
+public enum RuntimeStatus {
+    UP_TO_DATE,
+    END_OF_LIFE,
+    MAJOR_OUTDATED,
+    MINOR_OUTDATED,
+    UNSTABLE;
+}
+
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
+
+    public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -582,12 +592,11 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        ChangeInformation.ProgressCallback cb = change_information.callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
             case State.UPDATING:
-                var success = yield backend.update_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.update_package (this, change_information, action_cancellable);
                 if (success) {
                     change_information.clear_update_info ();
                     update_state ();
@@ -595,12 +604,12 @@ public class AppCenterCore.Package : Object {
 
                 return success;
             case State.INSTALLING:
-                var success = yield backend.install_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.install_package (this, change_information, action_cancellable);
                 _installed = success;
                 update_state ();
                 return success;
             case State.REMOVING:
-                var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
+                var success = yield backend.remove_package (this, change_information, action_cancellable);
                 _installed = !success;
                 update_state ();
                 yield client.refresh_updates ();
@@ -748,6 +757,10 @@ public class AppCenterCore.Package : Object {
                         current_scale = icon_scale;
                     }
 
+                    break;
+
+                case AppStream.IconKind.UNKNOWN:
+                    warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
                     break;
             }
         }

@@ -15,10 +15,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class AppCenter.CategoryView : Gtk.ScrolledWindow {
+public class AppCenter.CategoryView : Gtk.Stack {
     public signal void show_app (AppCenterCore.Package package);
 
     public AppStream.Category category { get; construct; }
+
+    private Gtk.ScrolledWindow scrolled;
+    private Gtk.Grid free_grid;
+    private Gtk.Grid grid;
+    private Gtk.Grid paid_grid;
+    private Gtk.Grid uncurated_grid;
+    private SubcategoryFlowbox free_flowbox;
+    private SubcategoryFlowbox paid_flowbox;
+    private SubcategoryFlowbox uncurated_flowbox;
 
     public CategoryView (AppStream.Category category) {
         Object (category: category);
@@ -30,9 +39,9 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         };
         paid_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var paid_flowbox = new SubcategoryFlowbox ();
+        paid_flowbox = new SubcategoryFlowbox ();
 
-        var paid_grid = new Gtk.Grid ();
+        paid_grid = new Gtk.Grid ();
         paid_grid.attach (paid_header, 0, 0);
         paid_grid.attach (paid_flowbox, 0, 1);
 
@@ -41,9 +50,9 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         };
         free_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var free_flowbox = new SubcategoryFlowbox ();
+        free_flowbox = new SubcategoryFlowbox ();
 
-        var free_grid = new Gtk.Grid ();
+        free_grid = new Gtk.Grid ();
         free_grid.attach (free_header, 0, 0);
         free_grid.attach (free_flowbox, 0, 1);
 
@@ -58,63 +67,36 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
 #endif
         uncurated_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var uncurated_flowbox = new SubcategoryFlowbox ();
+        uncurated_flowbox = new SubcategoryFlowbox ();
 
 #if CURATED
-        var uncurated_grid = new Gtk.Grid ();
+        uncurated_grid = new Gtk.Grid ();
         uncurated_grid.attach (uncurated_header, 0, 0);
         uncurated_grid.attach (uncurated_flowbox, 0, 1);
 #endif
 
-        unowned var client = AppCenterCore.Client.get_default ();
-        foreach (var package in client.get_applications_for_category (category)) {
-            // Don't show plugins or fonts in search and category views
-            if (!package.is_plugin && !package.is_font) {
-                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
-
-#if CURATED
-                if (package.is_native) {
-                    if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                        paid_flowbox.add (package_row);
-                    } else {
-                        free_flowbox.add (package_row);
-                    }
-                } else {
-                    uncurated_flowbox.add (package_row);
-                }
-#else
-                uncurated_flowbox.add (package_row);
-#endif
-
-            }
-        }
-
-        var grid = new Gtk.Grid () {
+        grid = new Gtk.Grid () {
             margin = 12,
             margin_bottom = 24,
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 48
         };
 
-#if CURATED
-        if (paid_flowbox.get_child_at_index (0) != null) {
-            grid.add (paid_grid);
-        }
+        scrolled = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER
+        };
+        scrolled.add (grid);
 
-        if (free_flowbox.get_child_at_index (0) != null) {
-            grid.add (free_grid);
-        }
+        var spinner = new Gtk.Spinner () {
+            halign = Gtk.Align.CENTER
+        };
+        spinner.start ();
 
-        if (uncurated_flowbox.get_child_at_index (0) != null) {
-            grid.add (uncurated_grid);
-        }
-#else
-        grid.add (uncurated_flowbox);
-#endif
-        hscrollbar_policy = Gtk.PolicyType.NEVER;
-        add (grid);
-
+        add (spinner);
+        add (scrolled);
         show_all ();
+
+        populate ();
 
         paid_flowbox.child_activated.connect ((child) => {
             var row = (Widgets.ListPackageRowGrid) child.get_child ();
@@ -130,6 +112,82 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
             var row = (Widgets.ListPackageRowGrid) child.get_child ();
             show_app (row.package);
         });
+
+        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+            populate ();
+        });
+    }
+
+    private void populate () {
+        get_packages.begin ((obj, res) => {
+            foreach (unowned var child in grid.get_children ()) {
+                grid.remove (child);
+            }
+
+            foreach (unowned var child in free_flowbox.get_children ()) {
+                child.destroy ();
+            }
+
+            foreach (unowned var child in paid_flowbox.get_children ()) {
+                child.destroy ();
+            }
+
+            foreach (unowned var child in uncurated_flowbox.get_children ()) {
+                child.destroy ();
+            }
+
+            var packages = get_packages.end (res);
+            foreach (var package in packages) {
+                if (!package.is_plugin && !package.is_font) {
+                    var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+#if CURATED
+                    if (package.is_native) {
+                        if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
+                            paid_flowbox.add (package_row);
+                        } else {
+                            free_flowbox.add (package_row);
+                        }
+                    } else {
+                        uncurated_flowbox.add (package_row);
+                    }
+#else
+                    uncurated_flowbox.add (package_row);
+#endif
+                }
+            }
+
+#if CURATED
+            if (paid_flowbox.get_child_at_index (0) != null) {
+                grid.add (paid_grid);
+            }
+
+            if (free_flowbox.get_child_at_index (0) != null) {
+                grid.add (free_grid);
+            }
+
+            if (uncurated_flowbox.get_child_at_index (0) != null) {
+                grid.add (uncurated_grid);
+            }
+#else
+            grid.add (uncurated_flowbox);
+#endif
+
+            show_all ();
+            visible_child = scrolled;
+        });
+    }
+
+    private async Gee.Collection<AppCenterCore.Package> get_packages () {
+        SourceFunc callback = get_packages.callback;
+
+        var packages = new Gee.TreeSet <AppCenterCore.Package> ();
+        new Thread<void> ("get_packages", () => {
+            packages.add_all (AppCenterCore.Client.get_default ().get_applications_for_category (category));
+            Idle.add ((owned) callback);
+        });
+
+        yield;
+        return packages;
     }
 
     private class SubcategoryFlowbox : Gtk.FlowBox {

@@ -16,7 +16,7 @@
 
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
-    public signal void cache_update_failed (Error error);
+    public signal void cache_update_failed (Error error, CacheUpdateType cache_update_type);
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
@@ -68,21 +68,22 @@ public class AppCenterCore.Client : Object {
         updates_number = yield UpdateManager.get_default ().get_updates (null);
 
         // NOTE: Update notifications are provided by com.system76.SystemUpdater
-        //  var application = Application.get_default ();
-        //  if (was_empty && updates_number != 0U) {
-        //      string title = ngettext ("Update Available", "Updates Available", updates_number);
-        //      string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
+#if !POP_OS
+        var application = Application.get_default ();
+        if (was_empty && updates_number != 0U) {
+            string title = ngettext ("Update Available", "Updates Available", updates_number);
+            string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
 
-        //      var notification = new Notification (title);
-        //      notification.set_body (body);
-        //      notification.set_icon (new ThemedIcon ("software-update-available"));
-        //      notification.set_default_action ("app.show-updates");
+            var notification = new Notification (title);
+            notification.set_body (body);
+            notification.set_icon (new ThemedIcon ("software-update-available"));
+            notification.set_default_action ("app.show-updates");
 
-        //      application.send_notification ("io.elementary.appcenter.updates", notification);
-        //  } else {
-        //      application.withdraw_notification ("io.elementary.appcenter.updates");
-        //  }
-
+            application.send_notification ("io.elementary.appcenter.updates", notification);
+        } else {
+            application.withdraw_notification ("io.elementary.appcenter.updates");
+        }
+#endif
         try {
             yield Granite.Services.Application.set_badge (updates_number);
             yield Granite.Services.Application.set_badge_visible (updates_number != 0);
@@ -104,7 +105,7 @@ public class AppCenterCore.Client : Object {
         }
     }
 
-    public async void update_cache (bool force = false) {
+    public async void update_cache (bool force = false, CacheUpdateType cache_update_type = CacheUpdateType.ALL) {
         cancellable.reset ();
 
         debug ("update cache called %s", force.to_string ());
@@ -131,14 +132,23 @@ public class AppCenterCore.Client : Object {
 
         /* One cache update a day, keeps the doctor away! */
         var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
-        if (force || seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES) {
+        bool last_cache_update_is_old = seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES;
+        if (force || last_cache_update_is_old) {
             if (nm.get_network_available ()) {
                 debug ("New refresh task");
 
                 refresh_in_progress = true;
                 try {
-                    success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
-                    if (success) {
+                    switch (cache_update_type) {
+                        case CacheUpdateType.FLATPAK:
+                            success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
+                            break;
+                        case CacheUpdateType.ALL:
+                            success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
+                            break;
+                    }
+
+                    if (success && cache_update_type == CacheUpdateType.ALL) {
                         last_cache_update = new DateTime.now_utc ();
                         AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
                     }
@@ -147,7 +157,7 @@ public class AppCenterCore.Client : Object {
                 } catch (Error e) {
                     if (!(e is GLib.IOError.CANCELLED)) {
                         critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                        cache_update_failed (e);
+                        cache_update_failed (e, cache_update_type);
                     }
                 } finally {
                     refresh_in_progress = false;
@@ -157,18 +167,36 @@ public class AppCenterCore.Client : Object {
             debug ("Too soon to refresh and not forced");
         }
 
-        if (nm.get_network_available ()) {
-            refresh_updates.begin ();
+        if (cache_update_type == CacheUpdateType.ALL) {
+            var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
+            debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
+            update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
+                update_cache_timeout_id = 0;
+                update_cache.begin (true);
+
+                return GLib.Source.REMOVE;
+            });
         }
 
-        var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
-        debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
-        update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
-            update_cache_timeout_id = 0;
-            update_cache.begin (true);
+        if (nm.get_network_available ()) {
+            if ((force || last_cache_update_is_old) && AppCenter.App.settings.get_boolean ("automatic-updates")) {
+                yield refresh_updates ();
+                debug ("Update Flatpaks");
+                var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
+                foreach (var app in installed_apps) {
+                    if (app.update_available && !app.should_pay) {
+                        debug ("Update: %s", app.get_name ());
+                        try {
+                            yield app.update (false);
+                        } catch (Error e) {
+                            warning ("Updating %s failed: %s", app.get_name (), e.message);
+                        }
+                    }
+                }
+            }
 
-            return GLib.Source.REMOVE;
-        });
+            refresh_updates.begin ();
+        }
     }
 
     public Package? get_package_for_component_id (string id) {
@@ -186,5 +214,10 @@ public class AppCenterCore.Client : Object {
     private static GLib.Once<Client> instance;
     public static unowned Client get_default () {
         return instance.once (() => { return new Client (); });
+    }
+
+    public enum CacheUpdateType {
+        FLATPAK,
+        ALL
     }
 }

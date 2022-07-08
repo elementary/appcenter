@@ -20,13 +20,10 @@
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Bin {
         public AppCenterCore.Package package { get; construct set; }
-        protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
 
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button open_button;
-
-        protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -34,7 +31,6 @@ namespace AppCenter {
 
         private Gtk.Revealer action_button_revealer;
         private Gtk.Revealer open_button_revealer;
-        private Gtk.Revealer uninstall_button_revealer;
 
         private uint state_source = 0U;
 
@@ -47,33 +43,15 @@ namespace AppCenter {
         protected bool updates_view = false;
 
         construct {
-            action_button = new Widgets.HumbleButton ();
+            action_button = new Widgets.HumbleButton (package);
 
             action_button_revealer = new Gtk.Revealer ();
             action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (install_approved ()) {
-                    action_clicked.begin ();
-                }
+                action_clicked.begin ();
             });
-
-            action_button.payment_requested.connect ((amount) => {
-                if (install_approved ()) {
-                    show_stripe_dialog (amount);
-                }
-            });
-
-            var uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
-                margin_end = 12
-            };
-
-            uninstall_button_revealer = new Gtk.Revealer ();
-            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            uninstall_button_revealer.add (uninstall_button);
-
-            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             open_button = new Gtk.Button.with_label (_("Open"));
 
@@ -84,37 +62,27 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.valign = Gtk.Align.CENTER;
-            button_grid.halign = Gtk.Align.END;
-            button_grid.hexpand = false;
-
-            button_grid.add (uninstall_button_revealer);
             button_grid.add (action_button_revealer);
             button_grid.add (open_button_revealer);
 
             cancel_button = new ProgressButton () {
-                halign = Gtk.Align.END,
-                label = _("Cancel"),
-                valign = Gtk.Align.END
+                label = _("Cancel")
             };
             cancel_button.clicked.connect (() => action_cancelled ());
 
-            progress_grid = new Gtk.Grid ();
-            progress_grid.halign = Gtk.Align.END;
-            progress_grid.valign = Gtk.Align.CENTER;
-            progress_grid.add (cancel_button);
-
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
-            action_button_group.add_widget (uninstall_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
-            action_stack = new Gtk.Stack ();
-            action_stack.hhomogeneous = false;
-            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            action_stack = new Gtk.Stack () {
+                hhomogeneous = false,
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.CENTER,
+                transition_type = Gtk.StackTransitionType.CROSSFADE
+            };
             action_stack.add_named (button_grid, "buttons");
-            action_stack.add_named (progress_grid, "progress");
+            action_stack.add_named (cancel_button, "progress");
             action_stack.show_all ();
 
             destroy.connect (() => {
@@ -164,27 +132,6 @@ namespace AppCenter {
                     }
                 });
             }
-        }
-
-        private void show_stripe_dialog (int amount) {
-            var stripe = new Widgets.StripeDialog (
-                amount,
-                package.get_name (),
-                package.normalized_component_id,
-                package.get_payments_key ()
-            );
-
-            stripe.transient_for = (Gtk.Window) get_toplevel ();
-
-            stripe.download_requested.connect (() => {
-                action_clicked.begin ();
-
-                if (stripe.amount != 0) {
-                    App.add_paid_app (package.component.get_id ());
-                }
-            });
-
-            stripe.show ();
         }
 
         protected virtual void set_up_package () {
@@ -243,13 +190,11 @@ namespace AppCenter {
                         action_button.amount = 0;
                     }
 
-                    uninstall_button_revealer.reveal_child = false;
                     action_button_revealer.reveal_child = !package.is_os_updates;
                     open_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = package.should_pay && updates_view;
                     open_button_revealer.reveal_child = show_open && package.get_can_launch ();
 
@@ -262,7 +207,6 @@ namespace AppCenter {
                        action_button.amount = 0;
                     }
 
-                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = true;
                     open_button_revealer.reveal_child = false;
 
@@ -329,66 +273,6 @@ namespace AppCenter {
                     MainWindow.installed_view.add_app.begin (package);
                 }
             }
-        }
-
-        private async void uninstall_clicked () {
-            package.uninstall.begin ((obj, res) => {
-                try {
-                    if (package.uninstall.end (res)) {
-                        MainWindow.installed_view.remove_app.begin (package);
-                    }
-                } catch (Error e) {
-                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
-                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
-                        new UninstallFailDialog (package, e).present ();
-                    }
-                }
-            });
-        }
-
-        private bool install_approved () {
-            bool approved = true;
-#if CURATED
-            var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
-            var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
-            var app_curated = package.is_native || package.is_os_updates;
-
-            // Only show the curated dialog if the user has left them enabled, the app isn't installed
-            // and it isn't a curated app
-            if (curated_dialog_allowed && !app_installed && !app_curated) {
-                approved = false;
-
-                var non_curated_warning = new Widgets.NonCuratedWarningDialog (package.get_name ());
-                non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
-
-                non_curated_warning.response.connect ((response_id) => {
-                    switch (response_id) {
-                        case Gtk.ResponseType.OK:
-                            approved = true;
-                            break;
-                        case Gtk.ResponseType.CANCEL:
-                        case Gtk.ResponseType.CLOSE:
-                        case Gtk.ResponseType.DELETE_EVENT:
-                            approved = false;
-                            break;
-                        default:
-                            assert_not_reached ();
-                    }
-
-                    non_curated_warning.close ();
-                });
-
-                non_curated_warning.run ();
-                non_curated_warning.destroy ();
-
-                // If the install has been rejected at this stage, return early
-                if (!approved) {
-                    return false;
-                }
-            }
-#endif
-            return approved;
         }
     }
 }

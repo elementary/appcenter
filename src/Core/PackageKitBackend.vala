@@ -155,18 +155,29 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         appstream_pool = new AppStream.Pool ();
 
+        // Clear out the default set of metadata locations and only use the folder that gets populated
+        // with elementary's AppStream data.
 #if HIDE_UPSTREAM_DISTRO_APPS
+#if HAS_APPSTREAM_0_15
+        // Don't load Ubuntu components
+        appstream_pool.set_load_std_data_locations (false);
+        appstream_pool.reset_extra_data_locations ();
+        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.COLLECTION);
+#else
         // Only use a user cache, the system cache probably contains all the Ubuntu components
         appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);
 
-        // Clear out the default set of metadata locations and only use the folder that gets populated
-        // with elementary's AppStream data.
         appstream_pool.clear_metadata_locations ();
         appstream_pool.add_metadata_location ("/usr/share/app-info");
 #endif
+#endif
 
         // We don't want to show installed desktop files here
+#if HAS_APPSTREAM_0_15
+        appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.LOAD_OS_DESKTOP_FILES);
+#else
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
+#endif
 
         reload_appstream_pool ();
 
@@ -290,7 +301,14 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
+#if HAS_APPSTREAM_0_15
+            var components = new GenericArray<AppStream.Component> ();
+            components.add (component);
+
+            appstream_pool.add_components (components);
+#else
             appstream_pool.add_component (component);
+#endif
 
             var package = new AppCenterCore.Package (this, component);
             package_list[id] = package;
@@ -565,7 +583,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private void install_package_internal (Job job) {
         unowned var args = (InstallPackageArgs)job.args;
         unowned var package = args.package;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned ChangeInformation? change_info = args.change_info;
         unowned var cancellable = args.cancellable;
 
         reset_progress ();
@@ -597,7 +615,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.install_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -612,10 +630,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
+    public async bool install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.INSTALL_PACKAGE, job_args);
@@ -630,7 +648,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         unowned var args = (UpdatePackageArgs)job.args;
         unowned var package = args.package;
         unowned var cancellable = args.cancellable;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned ChangeInformation? change_info = args.change_info;
 
         reset_progress ();
 
@@ -648,7 +666,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         try {
             var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -663,10 +681,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
+    public async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new UpdatePackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         if (update_permission == null) {
@@ -692,7 +710,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         unowned var args = (RemovePackageArgs)job.args;
         unowned var package = args.package;
         unowned var cancellable = args.cancellable;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        unowned ChangeInformation? change_info = args.change_info;
 
         reset_progress ();
 
@@ -709,7 +727,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+                change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -724,10 +742,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new RemovePackageArgs ();
         job_args.package = package;
-        job_args.cb = (owned)cb;
+        job_args.change_info = change_info;
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.REMOVE_PACKAGE, job_args);
@@ -1079,6 +1097,22 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
+                break;
+
+            case Pk.ProgressType.CALLER_ACTIVE:
+            case Pk.ProgressType.DOWNLOAD_SIZE_REMAINING:
+            case Pk.ProgressType.ELAPSED_TIME:
+            case Pk.ProgressType.INVALID:
+            case Pk.ProgressType.PACKAGE:
+            case Pk.ProgressType.PACKAGE_ID:
+            case Pk.ProgressType.PERCENTAGE:
+            case Pk.ProgressType.REMAINING_TIME:
+            case Pk.ProgressType.ROLE:
+            case Pk.ProgressType.SPEED:
+            case Pk.ProgressType.TRANSACTION_FLAGS:
+            case Pk.ProgressType.TRANSACTION_ID:
+            case Pk.ProgressType.UID:
+                // All other ProgressTypes deliberately ignored
                 break;
         }
     }

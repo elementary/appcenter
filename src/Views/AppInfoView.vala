@@ -24,7 +24,7 @@ namespace AppCenter.Views {
         public signal void show_other_package (
             AppCenterCore.Package package,
             bool remember_history = true,
-            Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+            bool transition = true
         );
 
         private static Gtk.CssProvider banner_provider;
@@ -50,6 +50,11 @@ namespace AppCenter.Views {
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
+        private Gtk.FlowBox oars_flowbox;
+        private Gtk.Revealer oars_flowbox_revealer;
+        private Gtk.Revealer uninstall_button_revealer;
+
+        private bool is_runtime_warning_shown = false;
 
         private unowned Gtk.StyleContext stack_context;
 
@@ -72,7 +77,17 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            unowned var action_button_context = action_button.get_style_context ();
+            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var open_button_context = open_button.get_style_context ();
+            open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            unowned var cancel_button_context = cancel_button.get_style_context ();
+            cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
 
@@ -100,12 +115,15 @@ namespace AppCenter.Views {
                 "oars-gambling-symbolic"
             );
 
-            var oars_flowbox = new Gtk.FlowBox () {
+            oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 margin_bottom = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
+
+            oars_flowbox_revealer = new Gtk.Revealer ();
+            oars_flowbox_revealer.add (oars_flowbox);
 
 #if CURATED
             if (!package.is_native && !package.is_os_updates) {
@@ -278,12 +296,10 @@ namespace AppCenter.Views {
                     no_show_all = true
                 };
                 screenshot_previous.clicked.connect (() => {
-                    if (app_screenshots != null) {
-                        GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
-                        var index = app_screenshots.get_position ();
-                        if (index > 0) {
-                            app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index - 1));
-                        }
+                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                    var index = app_screenshots.get_position ();
+                    if (index > 0) {
+                        app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index - 1));
                     }
                 });
 
@@ -291,12 +307,10 @@ namespace AppCenter.Views {
                     no_show_all = true
                 };
                 screenshot_next.clicked.connect (() => {
-                    if (app_screenshots != null) {
-                        GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
-                        var index = app_screenshots.get_position ();
-                        if (index < screenshot_children.length () - 1) {
-                            app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index + 1));
-                        }
+                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                    var index = app_screenshots.get_position ();
+                    if (index < screenshot_children.length () - 1) {
+                        app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index + 1));
                     }
                 });
 
@@ -427,7 +441,7 @@ namespace AppCenter.Views {
             }
 
             var package_name = new Gtk.Label (package.get_name ()) {
-                ellipsize = Pango.EllipsizeMode.MIDDLE,
+                ellipsize = Pango.EllipsizeMode.END,
                 selectable = true,
                 valign = Gtk.Align.END,
                 xalign = 0
@@ -443,6 +457,7 @@ namespace AppCenter.Views {
 
             package_summary = new Gtk.Label (null) {
                 label = package.get_summary (),
+                selectable = true,
                 wrap = true,
                 wrap_mode = Pango.WrapMode.WORD_CHAR,
                 valign = Gtk.Align.CENTER,
@@ -527,8 +542,14 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
+            content_grid.add (oars_flowbox_revealer);
             if (oars_flowbox.get_children ().length () > 0) {
-                content_grid.add (oars_flowbox);
+                oars_flowbox_revealer.reveal_child = true;
+            }
+
+            if (screenshots.length > 0) {
+                content_grid.add (screenshot_stack);
+                content_grid.add (screenshot_switcher);
             }
 
             content_grid.add (package_summary);
@@ -573,15 +594,28 @@ namespace AppCenter.Views {
             origin_combo.pack_start (renderer, true);
             origin_combo.add_attribute (renderer, "text", 1);
 
-            action_stack.valign = Gtk.Align.END;
-            action_stack.halign = Gtk.Align.END;
-            action_stack.hexpand = true;
+            var uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
+                margin_end = 12
+            };
 
-            /* This is required to stop any button movement when switch from button_grid to the
-             * progress grid */
-            progress_grid.margin_end = 6;
-            progress_grid.margin_top = 12;
-            button_grid.margin_top = progress_grid.margin_top;
+            unowned var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            uninstall_button_revealer = new Gtk.Revealer () {
+                transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            };
+            uninstall_button_revealer.add (uninstall_button);
+
+            action_button_group.add_widget (uninstall_button);
+
+            var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.END,
+                hexpand = true
+            };
+            button_box.add (uninstall_button_revealer);
+            button_box.add (action_stack);
 
             var header_flow = new Gtk.FlowBox () {
                 column_spacing = 12,
@@ -593,7 +627,7 @@ namespace AppCenter.Views {
 
             var meta_grid = new Gtk.Grid () {
                 column_spacing = 12,
-                row_spacing = 6,
+                row_spacing = 12,
                 hexpand = true
             };
             meta_grid.attach (app_icon_overlay, 0, 0, 1, 3);
@@ -607,8 +641,8 @@ namespace AppCenter.Views {
                 hexpand = true,
                 halign = Gtk.Align.END
             };
-
-            action_grid.attach (action_stack, 3, 0);
+            action_grid.attach (button_box, 0, 0);
+            action_grid.attach (action_stack, 0, 1);
 
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel () {
@@ -619,9 +653,8 @@ namespace AppCenter.Views {
 
                 action_button_group.add_widget (size_label);
 
-                action_grid.attach (size_label, 3, 1);
+                action_grid.attach (size_label, 0, 2);
             }
-
             header_flow.add (meta_grid);
             header_flow.add (action_grid);
 
@@ -634,15 +667,11 @@ namespace AppCenter.Views {
             var header_box = new Gtk.Grid () {
                 hexpand = true
             };
-            header_box.get_style_context ().add_class ("banner");
             header_box.add (header_clamp);
 
-            // FIXME: should be for context, not for screen
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                banner_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
+            unowned var header_box_context = header_box.get_style_context ();
+            header_box_context.add_class ("banner");
+            header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -657,21 +686,11 @@ namespace AppCenter.Views {
             });
 
             var grid = new Gtk.Grid () {
-                orientation = Gtk.Orientation.VERTICAL,
                 row_spacing = 12
             };
-            grid.add (header_box);
-
-            if (screenshots.length > 0) {
-                grid.add (screenshot_stack);
-                grid.add (screenshot_switcher);
-
-                //  if (screenshots.length > 1) {
-                //  }
-            }
-
-            grid.add (body_clamp);
-            grid.add (other_apps_bar);
+            grid.attach (header_box, 0, 0);
+            grid.attach (body_clamp, 0, 1);
+            grid.attach (other_apps_bar, 0, 3);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER,
@@ -732,40 +751,42 @@ namespace AppCenter.Views {
                 origin_combo.get_active_iter (out iter);
                 origin_liststore.@get (iter, 0, out selected_origin_package);
                 if (selected_origin_package != null && selected_origin_package != package) {
-                    show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
+                    show_other_package (selected_origin_package, false, false);
                 }
             });
+
+            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             realize.connect (() => {
                 var screenshot_files = new Gee.ArrayList<string> ();
                 load_more_content(screenshot_files);
-                    var top_level_width = get_toplevel ().get_allocated_width ();
-                    int redraw_counter = 0;
-                    body_clamp.size_allocate.connect (() => {
+                var top_level_width = get_toplevel ().get_allocated_width ();
+                int redraw_counter = 0;
+                header_clamp.size_allocate.connect (() => {
+                    if (redraw_counter == 0) {
+                        var children = app_screenshots.get_children ();
+                        foreach (var child in children) {
+                            child.hide ();
+                        }
+                    }
+                    redraw_counter++;
+                    Timeout.add(150, () => {
+                        redraw_counter--;
                         if (redraw_counter == 0) {
                             var children = app_screenshots.get_children ();
                             foreach (var child in children) {
-                                child.hide ();
+                                app_screenshots.remove (child);
+                            }
+                            foreach (var file in screenshot_files) {
+                                load_screenshot (null, file);
+                            }
+                            foreach (var child in children) {
+                                child.show ();
                             }
                         }
-                        redraw_counter++;
-                        Timeout.add(150, () => {
-                            redraw_counter--;
-                            if (redraw_counter == 0) {
-                                var children = app_screenshots.get_children ();
-                                foreach (var child in children) {
-                                    app_screenshots.remove (child);
-                                }
-                                foreach (var file in screenshot_files) {
-                                    load_screenshot (null, file);
-                                }
-                                foreach (var child in children) {
-                                    child.show ();
-                                }
-                            }
-                            return GLib.Source.REMOVE;
-                        });
+                        return GLib.Source.REMOVE;
                     });
+                });
             });
         }
 
@@ -774,8 +795,19 @@ namespace AppCenter.Views {
                 size_label.update ();
             }
 
-            if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                get_app_download_size.begin ();
+            switch (package.state) {
+                case AppCenterCore.Package.State.NOT_INSTALLED:
+                    get_app_download_size.begin ();
+                    uninstall_button_revealer.reveal_child = false;
+                    break;
+                case AppCenterCore.Package.State.INSTALLED:
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    break;
+                case AppCenterCore.Package.State.UPDATE_AVAILABLE:
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    break;
+                default:
+                    break;
             }
 
             update_action ();
@@ -802,6 +834,43 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
             size_label.update (size, package.is_flatpak);
+
+            ContentType? runtime_warning = null;
+            switch (package.runtime_status) {
+                case RuntimeStatus.END_OF_LIFE:
+                    runtime_warning = new ContentType (
+                        _("End of Life"),
+                        _("May not work as expected or receive security updates"),
+                        "flatpak-eol-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MAJOR_OUTDATED:
+                    runtime_warning = new ContentType (
+                        _("Outdated"),
+                        _("May not work as expected or support the latest features"),
+                        "flatpak-eol-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.MINOR_OUTDATED:
+                    break;
+                case RuntimeStatus.UNSTABLE:
+                    runtime_warning = new ContentType (
+                        _("Unstable"),
+                        _("Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME)),
+                        "applications-development-symbolic"
+                    );
+                    break;
+                case RuntimeStatus.UP_TO_DATE:
+                    break;
+            }
+
+            if (runtime_warning != null && !is_runtime_warning_shown) {
+                is_runtime_warning_shown = true;
+
+                oars_flowbox.insert (runtime_warning, 0);
+                oars_flowbox.show_all ();
+                oars_flowbox_revealer.reveal_child = true;
+            }
         }
 
         public void view_entered () {
@@ -831,7 +900,6 @@ namespace AppCenter.Views {
                     color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
                 }
 
-                
                 if (theme_name.contains ("Contrast")) {
                     color_primary = "#ededed";
                     color_primary_text = "#000";
@@ -875,122 +943,122 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                    var description = package.get_description ();
-                    Idle.add (() => {
-                        if (package.is_os_updates) {
-                            author_label.label = package.get_version ();
-                        } else {
-                            author_label.label = package.author_title;
-                        }
-
-                        if (description != null) {
-                            app_description.label = description;
-                        }
-                        return false;
-                    });
-
-                    get_app_download_size.begin ();
-
-                    Idle.add (() => {
-                        if (release_list_box.populate ()) {
-                            release_grid.no_show_all = false;
-                            release_grid.show_all ();
-                        }
-
-                        return false;
-                    });
-
-                    if (screenshots.length == 0) {
-                        return null;
+                var description = package.get_description ();
+                Idle.add (() => {
+                    if (package.is_os_updates) {
+                        author_label.label = package.get_version ();
+                    } else {
+                        author_label.label = package.author_title;
                     }
 
-                    List<string> urls = new List<string> ();
-
-                    var scale = get_scale_factor ();
-                    var min_screenshot_width = MAX_WIDTH * scale;
-
-                    var screenshot_files_prep = new Gee.ArrayList<string> ();
-                    screenshots.foreach ((screenshot) => {
-                        AppStream.Image? best_image = null;
-                        screenshot.get_images ().foreach ((image) => {
-                            // Image is better than no image
-                            if (best_image == null) {
-                                best_image = image;
-                            }
-
-                            // If our current best is less than the minimum and we have a bigger image, choose that instead
-                            if (best_image.get_width () < min_screenshot_width && image.get_width () >= best_image.get_width ()) {
-                                best_image = image;
-                            }
-
-                            // If our new image is smaller than the current best, but still bigger than the minimum, pick that
-                            if (image.get_width () < best_image.get_width () && image.get_width () >= min_screenshot_width) {
-                                best_image = image;
-                            }
-                        });
-
-                        if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
-                            urls.prepend (best_image.get_url ());
-                        } else if (best_image != null) {
-                            urls.append (best_image.get_url ());
-                        }
-                    });
-
-                    bool[] results = new bool[urls.length ()];
-                    int completed = 0;
-
-                    // Fetch each screenshot in parallel.
-                    for (int i = 0; i < urls.length (); i++) {
-                        string url = urls.nth_data (i);
-                        string? file = null;
-                        int index = i;
-
-                        cache.fetch.begin (url, (obj, res) => {
-                            results[index] = cache.fetch.end (res, out file);
-                            screenshot_files_prep.add(file);
-                            completed++;
-                        });
+                    if (description != null) {
+                        app_description.label = description;
                     }
-
-                    // TODO: dynamically load screenshots as they become available.
-                    while (urls.length () != completed) {
-                        Thread.usleep (100000);
-                    }
-
-                    // Load screenshots that were successfully obtained.
-                    for (int i = 0; i < urls.length (); i++) {
-                        if (results[i] == true) {
-                            screenshot_files.add (screenshot_files_prep[i]);
-                        }
-                    }
-                    foreach (var file in screenshot_files) {
-                        load_screenshot (null, file);
-                    };
-
-                    Idle.add (() => {
-                        var number_of_screenshots = app_screenshots.get_children ().length ();
-
-
-                        if (number_of_screenshots > 0) {
-                            screenshot_stack.visible_child = screenshot_overlay;
-                            stack_context.remove_class ("loading");
-
-
-                            if (number_of_screenshots > 1) {
-                                screenshot_next.no_show_all = false;
-                                screenshot_next.show_all ();
-                                screenshot_previous.no_show_all = false;
-                                screenshot_previous.show_all ();
-                            }
-                        } else {
-                            screenshot_stack.visible_child = app_screenshot_not_found;
-                            stack_context.remove_class ("loading");
-                        }
-
-                    return GLib.Source.REMOVE;
+                    return false;
                 });
-                return null;
+
+                get_app_download_size.begin ();
+
+                Idle.add (() => {
+                    if (release_list_box.populate ()) {
+                        release_grid.no_show_all = false;
+                        release_grid.show_all ();
+                    }
+
+                    return false;
+                });
+
+                if (screenshots.length == 0) {
+                    return null;
+                }
+
+                List<string> urls = new List<string> ();
+
+                var scale = get_scale_factor ();
+                var min_screenshot_width = MAX_WIDTH * scale;
+
+                var screenshot_files_prep = new Gee.ArrayList<string> ();
+                screenshots.foreach ((screenshot) => {
+                    AppStream.Image? best_image = null;
+                    screenshot.get_images ().foreach ((image) => {
+                        // Image is better than no image
+                        if (best_image == null) {
+                            best_image = image;
+                        }
+
+                        // If our current best is less than the minimum and we have a bigger image, choose that instead
+                        if (best_image.get_width () < min_screenshot_width && image.get_width () >= best_image.get_width ()) {
+                            best_image = image;
+                        }
+
+                        // If our new image is smaller than the current best, but still bigger than the minimum, pick that
+                        if (image.get_width () < best_image.get_width () && image.get_width () >= min_screenshot_width) {
+                            best_image = image;
+                        }
+                    });
+
+                    if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
+                        urls.prepend (best_image.get_url ());
+                    } else if (best_image != null) {
+                        urls.append (best_image.get_url ());
+                    }
+                });
+
+                bool[] results = new bool[urls.length ()];
+                int completed = 0;
+
+                // Fetch each screenshot in parallel.
+                for (int i = 0; i < urls.length (); i++) {
+                    string url = urls.nth_data (i);
+                    string? file = null;
+                    int index = i;
+
+                    cache.fetch.begin (url, (obj, res) => {
+                        results[index] = cache.fetch.end (res, out file);
+                        screenshot_files_prep.add(file);
+                        completed++;
+                    });
+                }
+
+                // TODO: dynamically load screenshots as they become available.
+                while (urls.length () != completed) {
+                    Thread.usleep (100000);
+                }
+
+                // Load screenshots that were successfully obtained.
+                for (int i = 0; i < urls.length (); i++) {
+                    if (results[i] == true) {
+                        screenshot_files.add (screenshot_files_prep[i]);
+                    }
+                }
+                foreach (var file in screenshot_files) {
+                    load_screenshot (null, file);
+                };
+
+                Idle.add (() => {
+                    var number_of_screenshots = app_screenshots.get_children ().length ();
+
+
+                    if (number_of_screenshots > 0) {
+                        screenshot_stack.visible_child = screenshot_overlay;
+                        stack_context.remove_class ("loading");
+
+
+                        if (number_of_screenshots > 1) {
+                            screenshot_next.no_show_all = false;
+                            screenshot_next.show_all ();
+                            screenshot_previous.no_show_all = false;
+                            screenshot_previous.show_all ();
+                        }
+                    } else {
+                        screenshot_stack.visible_child = app_screenshot_not_found;
+                        stack_context.remove_class ("loading");
+                    }
+
+                return GLib.Source.REMOVE;
             });
+            return null;
+        });
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
@@ -1006,6 +1074,11 @@ namespace AppCenter.Views {
                 image.halign = Gtk.Align.CENTER;
 
                 image.gicon = pixbuf;
+                if (caption != null) {
+                    // AppStream spec says "ideally not more than 100 characters"
+                    int max_caption_len = 200;
+                    image.tooltip_text = ellipsize (caption, max_caption_len);
+                }
 
                 Idle.add (() => {
                     image.show ();
@@ -1015,6 +1088,18 @@ namespace AppCenter.Views {
             } catch (Error e) {
                 critical (e.message);
             }
+        }
+
+
+        private string ellipsize (string long_text, int max_length) {
+            if (long_text.length > max_length) {
+                StringBuilder sb = new StringBuilder (long_text);
+                sb.truncate (max_length);
+                sb.append ("\u2026");
+                return sb.str;
+            }
+
+            return long_text;
         }
 
         private void parse_license (string project_license, out string license_copy, out string license_url) {
@@ -1081,6 +1166,22 @@ namespace AppCenter.Views {
                         break;
                 }
             }
+        }
+
+        private async void uninstall_clicked () {
+            package.uninstall.begin ((obj, res) => {
+                try {
+                    if (package.uninstall.end (res)) {
+                        MainWindow.installed_view.remove_app.begin (package);
+                    }
+                } catch (Error e) {
+                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
+                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
+                        new UninstallFailDialog (package, e).present ();
+                    }
+                }
+            });
         }
 
         class UrlButton : Gtk.Grid {
@@ -1188,6 +1289,15 @@ namespace AppCenter.Views {
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
         }
+
+        private class CaptionedUrl : Object {
+            public string? caption { get; construct; }
+            public string url { get; construct; }
+
+            public CaptionedUrl (string? caption, string url) {
+                Object (caption: caption, url: url);
+            }
+        }
     }
 
     class ContentType : Gtk.FlowBoxChild {
@@ -1246,43 +1356,12 @@ namespace AppCenter.Views {
                 return;
             }
 
-            /*
-            Store "other apps" into an intermediary list for further processing.
-            We need to do this to prevent showing "Other Apps by X" when there
-            are multiple packages of the same app (i.e. a Flatpak version and
-            an APT version).
-            */
-            var raw_author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
-
-            var author_packages = new Gee.ArrayList<AppCenterCore.Package> ();
-            foreach (var pkg in raw_author_packages) {
-                var pkgnames = new Gee.ArrayList<string> ();
-                foreach (var rawpkg in author_packages) {
-                    pkgnames.add (rawpkg.get_name ());
-                }
-                if (pkgnames.contains (pkg.get_name ())) {
-                    continue;
-                }
-                // Remove packages with an identical name
-                if (pkg.get_name () == package.get_name ()) {
-                    continue;
-                }
-
-                author_packages.add (pkg);
-            }
-
-            foreach (var pkg in author_packages) {
-                author_packages.remove (pkg);
-                if (author_packages.contains (pkg)) {
-                    continue;
-                }
-                author_packages.add (pkg);
-            }
-            if (author_packages.size < 1) {
+            var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
+            if (author_packages.size <= 1) {
                 return;
             }
 
-            var header = new Granite.HeaderLabel (_("Also by %s").printf (package.author_title));
+            var header = new Granite.HeaderLabel (_("Other Apps by %s").printf (package.author_title));
 
             var flowbox = new Gtk.FlowBox () {
                 activate_on_single_click = true,

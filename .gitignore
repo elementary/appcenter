@@ -2,3 +2,4 @@
 build/
 *~
 obj-x86_64-linux-gnu/
+*.orig

@@ -17,7 +17,6 @@ src/Core/Task.vala
 src/Core/UbuntuDriversBackend.vala
 src/Core/UpdateManager.vala
 src/Dialogs/InstallFailDialog.vala
-src/Dialogs/NonCuratedWarningDialog.vala
 src/Dialogs/StripeDialog.vala
 src/Dialogs/UninstallConfirmDialog.vala
 src/Dialogs/UninstallFailDialog.vala
@@ -28,7 +27,6 @@ src/Services/SearchProvider.vala
 src/Views/AbstractView.vala
 src/Views/AppInfoView.vala
 src/Views/AppListUpdateView.vala
-src/Views/AppListView.vala
 src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/InstalledView.vala
@@ -37,7 +35,6 @@ src/Widgets/AbstractAppList.vala
 src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/CategoryFlowBox.vala
-src/Widgets/CategoryItem.vala
 src/Widgets/HumbleButton.vala
 src/Widgets/NetworkInfoBar.vala
 src/Widgets/PackageRow.vala

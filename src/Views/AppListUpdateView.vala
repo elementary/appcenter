@@ -24,7 +24,8 @@ namespace AppCenter.Views {
     public class AppListUpdateView : AbstractAppList {
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
-        private Gee.HashSet<string> added = new Gee.HashSet<string>();
+        private Cancellable refresh_cancellable;
+        private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
@@ -36,7 +37,6 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
-            hexpand = true;
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
 
@@ -69,16 +69,40 @@ namespace AppCenter.Views {
 
             add (infobar);
             add (scrolled);
+
+            refresh_cancellable = new Cancellable ();
+
+            get_apps.begin ();
+
+            unowned var client = AppCenterCore.Client.get_default ();
+            client.installed_apps_changed.connect (() => {
+                Idle.add (() => {
+                    get_apps.begin ();
+                    return GLib.Source.REMOVE;
+                });
+            });
         }
 
-        public override void clear() {
-            this.added.clear();
-            base.clear();
-        }
+        private async void get_apps () {
+            refresh_cancellable.cancel ();
 
-        public override void remove_package (AppCenterCore.Package package) {
-            this.added.remove(package.hash);
-            base.remove_package(package);
+            yield refresh_mutex.lock ();
+
+            refresh_cancellable.reset ();
+
+            unowned var client = AppCenterCore.Client.get_default ();
+
+            var installed_apps = yield client.get_installed_applications (refresh_cancellable);
+
+            if (!refresh_cancellable.is_cancelled ()) {
+                clear ();
+
+                var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
+                add_package (os_updates);
+                add_packages (installed_apps);
+            }
+
+            refresh_mutex.unlock ();
         }
 
         public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
@@ -95,12 +119,6 @@ namespace AppCenter.Views {
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
-            if (added.contains(package.hash)) {
-                return;
-            }
-
-            added.add(package.hash);
-
             var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
 
             // Only add row if this package needs an update or it's not a font or plugin

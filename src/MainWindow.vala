@@ -15,15 +15,7 @@
 */
 
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
-    public bool working {
-        set {
-            if (value) {
-                spinner.start ();
-            } else {
-                spinner.stop ();
-            }
-        }
-    }
+    public bool working { get; set; }
 
     private Gtk.Revealer view_mode_revealer;
     private Gtk.Stack custom_title_stack;
@@ -32,22 +24,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
+    private Gtk.ModelButton refresh_menuitem;
     private Homepage homepage;
-    private Views.SearchView search_view;
     private Gtk.Button return_button;
-    private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
     private Granite.Widgets.Toast toast;
-
-#if POP_OS
-    private Gtk.Button repos_button;
-#endif
+    private Hdy.HeaderBar headerbar;
 
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
 
-    private ulong task_finished_connection = 0U;
     private uint configure_id;
     private int homepage_view_id;
     private int installed_view_id;
@@ -58,15 +45,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     public static Views.InstalledView installed_view { get; private set; }
 
-    public signal void homepage_loaded ();
-
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/appcenter/icons");
 
-        view_mode.selected = homepage_view_id;
         search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
@@ -92,8 +76,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        view_mode.notify["selected"].connect (on_view_mode_changed);
-
         search_entry.key_press_event.connect ((event) => {
             if (event.keyval == Gdk.Key.Escape) {
                 search_entry.text = "";
@@ -111,18 +93,15 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.clicked.connect (view_return);
 
         homepage.package_selected.connect (package_selected);
-        homepage.subview_entered.connect (view_opened);
         installed_view.package_selected.connect (package_selected);
-        installed_view.subview_entered.connect (view_opened);
-        search_view.package_selected.connect (package_selected);
-        search_view.subview_entered.connect (view_opened);
-        search_view.home_return_clicked.connect (show_homepage);
-        search_view.category_return_clicked.connect (show_category);
 
-        unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
-        client.notify["working"].connect (() => {
+        unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
+        aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
+
+        notify["working"].connect (() => {
             Idle.add (() => {
-                working = client.working;
+                spinner.active = working;
+                App.refresh_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
         });
@@ -132,12 +111,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         size_allocate.connect (() => {
             int width = 0;
             get_size (out width, null);
-            if (width > 550) {
+            if (width > 700) {
                 search_entry.width_chars = 22;
                 search_entry.placeholder_text = _("Search Apps");
+
             } else {
                 search_entry.width_chars = 9;
                 search_entry.placeholder_text = _("Search");
+
             }
         });
     }
@@ -147,6 +128,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         icon_name = Build.PROJECT_NAME;
         set_default_size (910, 640);
         height_request = 500;
+        width_request = 400; // Minimum viable width
 
         title = _(Build.APP_NAME);
 
@@ -180,14 +162,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             no_show_all = true,
             valign = Gtk.Align.CENTER
         };
+        foreach (var child in return_button.get_children ()) {
+            if (child is Gtk.Label) {
+                child.set_ellipsize (Pango.EllipsizeMode.END);
+            }
+        }
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        return_button_history = new Gee.LinkedList<string> ();
-
         view_mode = new Granite.Widgets.ModeButton () {
-            margin = 12,
-            margin_top = 7,
-            margin_bottom = 7
+            margin_end = 12,
+            margin_start = 12,
+            valign = Gtk.Align.CENTER
         };
 
         homepage_view_id = view_mode.append_text (_("Home"));
@@ -202,20 +187,21 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         badge_context.add_class (Granite.STYLE_CLASS_BADGE);
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        var eventbox_badge = new Gtk.EventBox ();
-        eventbox_badge.add (updates_badge);
-        eventbox_badge.button_release_event.connect (badge_event);
-
         updates_badge_revealer = new Gtk.Revealer () {
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        updates_badge_revealer.add (eventbox_badge);
+        updates_badge_revealer.add (updates_badge);
+
+        var eventbox_badge = new Gtk.EventBox () {
+            halign = Gtk.Align.END
+        };
+        eventbox_badge.add (updates_badge_revealer);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
-        view_mode_overlay.add_overlay (updates_badge_revealer);
+        view_mode_overlay.add_overlay (eventbox_badge);
 
         view_mode_revealer = new Gtk.Revealer () {
             reveal_child = true,
@@ -238,69 +224,77 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
-#if POP_OS
-        repos_button = new Gtk.Button.from_icon_name ("preferences-system-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-        repos_button.tooltip_text = _("Edit Software Sources…");
-        repos_button.clicked.connect (() => {
-            try {
-                string[] args = {
-                  "/usr/lib/repoman/repoman.pkexec"
-                };
-                Process.spawn_async (
-                    null,
-                    args,
-                    null,
-                    SpawnFlags.SEARCH_PATH,
-                    null,
-                    null
-                );
-            } catch (Error e) {
-                warning (e.message);
-            }
-        });
-#endif
+        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
+            description = _("System updates and unpaid apps will not update automatically")
+        };
 
-        var headerbar = new Hdy.HeaderBar () {
+        var refresh_accellabel = new Granite.AccelLabel.from_action_name (
+            _("Check for Updates"),
+            "app.refresh"
+        );
+
+        refresh_menuitem = new Gtk.ModelButton () {
+            action_name = "app.refresh"
+        };
+        refresh_menuitem.get_child ().destroy ();
+        refresh_menuitem.add (refresh_accellabel);
+
+        var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
+            margin_bottom = 6,
+            margin_top = 6
+        };
+#if !POP_OS
+        menu_popover_box.add (automatic_updates_button);
+#endif
+        menu_popover_box.add (refresh_menuitem);
+
+#if POP_OS
+        var repos_accellabel = new Granite.AccelLabel.from_action_name (
+            _("System Software Sources…"),
+            "app.repos"
+        );
+        var repos_menuitem = new Gtk.ModelButton () {
+            action_name = "app.repos"
+        };
+        repos_menuitem.get_child ().destroy ();
+        repos_menuitem.add (repos_accellabel);
+        menu_popover_box.add (repos_menuitem);
+#endif
+        menu_popover_box.show_all ();
+
+        var menu_popover = new Gtk.Popover (null);
+        menu_popover.add (menu_popover_box);
+
+        var menu_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = menu_popover,
+            tooltip_text = _("Settings"),
+            valign = Gtk.Align.CENTER
+        };
+
+        headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
-#if POP_OS
-        headerbar.pack_end (repos_button);
-#endif
+        headerbar.pack_end (menu_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
         homepage = new Homepage ();
         installed_view = new Views.InstalledView ();
-        search_view = new Views.SearchView ();
 
         stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
         stack.add (homepage);
         stack.add (installed_view);
-        stack.add (search_view);
 
         var overlay = new Gtk.Overlay ();
         overlay.add_overlay (toast);
         overlay.add (stack);
 
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
-
-        network_info_bar.response.connect ((response_id) => {
-            switch (response_id) {
-                case Gtk.ResponseType.ACCEPT:
-                    try {
-                        open_network_settings ();
-                    } catch (GLib.Error e) {
-                        critical (e.message);
-                    }
-                    break;
-                default:
-                    assert_not_reached ();
-            }
-        });
 
         var grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL
@@ -315,6 +309,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         int window_width, window_height;
         App.settings.get ("window-position", "(ii)", out window_x, out window_y);
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
+        App.settings.bind (
+            "automatic-updates",
+            automatic_updates_button,
+            "active",
+            SettingsBindFlags.DEFAULT
+        );
 
         if (window_x != -1 || window_y != -1) {
             move (window_x, window_y);
@@ -326,7 +326,27 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             maximize ();
         }
 
-        homepage.page_loaded.connect (() => homepage_loaded ());
+        stack.notify["visible-child"].connect (on_view_mode_changed);
+
+        automatic_updates_button.notify["active"].connect (() => {
+            if (automatic_updates_button.active) {
+                AppCenterCore.Client.get_default ().update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+            } else {
+                AppCenterCore.Client.get_default ().cancel_updates (true);
+            }
+        });
+
+        eventbox_badge.button_release_event.connect (() => {
+            stack.visible_child = installed_view;
+        });
+
+        view_mode.notify["selected"].connect (() => {
+            if (view_mode.selected == homepage_view_id) {
+                stack.visible_child = homepage;
+            } else if (view_mode.selected == installed_view_id) {
+                stack.visible_child = installed_view;
+            }
+        });
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
@@ -357,15 +377,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public override bool delete_event (Gdk.EventAny event) {
-        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
-        if (client.working) {
-            if (task_finished_connection != 0U) {
-                client.disconnect (task_finished_connection);
-            }
-
+        if (working) {
             hide ();
-            task_finished_connection = client.notify["working"].connect (() => {
-                if (!visible && !client.working) {
+
+            notify["working"].connect (() => {
+                if (!visible && !working) {
                     destroy ();
                 }
             });
@@ -386,34 +402,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    private bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
-        go_to_installed ();
-        return Gdk.EVENT_STOP;
-    }
-
     public void show_package (AppCenterCore.Package package) {
-        search ("");
-        return_button_history.clear ();
-        view_mode.selected = homepage_view_id;
         stack.visible_child = homepage;
         homepage.show_package (package);
     }
 
     public void go_to_installed () {
-        view_mode.selected = installed_view_id;
-    }
-
-    public void go_to_installed_clear () {
-        go_to_installed ();
-        homepage.return_clicked ();
-	    return_button_history.clear ();
-        return_button.no_show_all = true;
-        return_button.visible = false;
-    }
-
-    public void open_network_settings () {
-        AppInfo settings = AppInfo.create_from_commandline ("gnome-control-center wifi", "Settings", NONE);
-        settings.launch (null, null);
+        stack.visible_child = installed_view;
     }
 
     public void search (string term, bool mimetype = false) {
@@ -431,10 +426,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             toast.title = _("“%s” has been installed").printf (package.get_name ());
             // Show Open only when a desktop app is installed
             if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
-                // FIXME: This seems to be broken with some apps in some cases
-                // Disabled it here to workaround the issue until we can fix.
-                //toast.set_default_action (_("Open"));
-                toast.set_default_action (null);
+                toast.set_default_action (_("Open"));
             } else {
                 toast.set_default_action (null);
             }
@@ -451,22 +443,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
-            search_view.search (query, homepage.currently_viewed_category, mimetype);
-            stack.visible_child = search_view; // Only show search view after search completed.
-        } else {
-            if (stack.visible_child == search_view) {
-                if (homepage.currently_viewed_category != null) {
-                    return_button_history.poll_head ();
-                    return_button.label = return_button_history.peek_head ();
-                } else {
-                    return_button_history.clear ();
-                    return_button.no_show_all = true;
-                    return_button.visible = false;
-                }
-            }
-
-            search_view.reset ();
-            stack.visible_child = homepage;
+            homepage.search (query, mimetype);
+        } else if (stack.visible_child == homepage) {
+            homepage.search ("");
         }
 
         if (mimetype) {
@@ -476,94 +455,67 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     private void package_selected (AppCenterCore.Package package) {
         selected_package = package;
-        search_entry.visible = false;
-        repos_button.visible = false;
     }
 
-    private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
+    public void set_return_name (string? return_name) {
         if (return_name != null) {
-            if (return_button_history.peek_head () != return_name) {
-                return_button_history.offer_head (return_name);
-            }
-
             return_button.label = return_name;
-            return_button.no_show_all = false;
-            return_button.visible = true;
-        } else {
-            return_button.no_show_all = true;
-            return_button.visible = false;
+        }
+        foreach (var child in return_button.get_children ()) {
+            if (child is Gtk.Label) {
+                child.set_ellipsize (Pango.EllipsizeMode.END);
+            }
         }
 
+        return_button.no_show_all = return_name == null;
+        return_button.visible = return_name != null;
+    }
+
+    public void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
+        search_entry.sensitive = sensitive;
+        search_entry.placeholder_text = placeholder_text;
+
+        if (search_term != null) {
+            search_entry.text = "";
+        }
+
+        if (sensitive) {
+            search_entry.grab_focus_without_selecting ();
+        }
+    }
+
+    public void show_title (bool? title_visible) {
+        custom_title_stack.visible = title_visible;
+    }
+
+    public void set_custom_header (string? custom_header) {
         if (custom_header != null) {
             homepage_header.label = custom_header;
             custom_title_stack.visible_child = homepage_header;
         } else {
             custom_title_stack.visible_child = view_mode_revealer;
         }
-
-        if (custom_search_placeholder != null) {
-            search_entry.placeholder_text = custom_search_placeholder;
-        } else {
-            search_entry.placeholder_text = _("Search Apps");
-        }
-
-        search_entry.sensitive = allow_search;
-        search_entry.grab_focus_without_selecting ();
     }
 
     private void view_return () {
-        search_entry.visible = true;
-        repos_button.visible = true;
         selected_package = null;
 
-        if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
-            homepage.return_clicked ();
-
-            return_button_history.clear ();
-            return_button.no_show_all = true;
-            return_button.visible = false;
-        }
-
-        return_button_history.poll_head ();
-        if (!return_button_history.is_empty) {
-            return_button.label = return_button_history.peek_head ();
-            return_button.no_show_all = false;
-            return_button.visible = true;
-        } else {
-            return_button.no_show_all = true;
-            return_button.visible = false;
-        }
-
         var view = (AbstractView) stack.visible_child;
-        view.return_clicked ();
+        view.navigate (Hdy.NavigationDirection.BACK);
     }
 
     private void on_view_mode_changed () {
-        if (search_entry.text.length >= VALID_QUERY_LENGTH) {
-            stack.visible_child = search_view;
-            search_entry.sensitive = !search_view.viewing_package;
-        } else {
-            if (view_mode.selected == homepage_view_id) {
-                stack.visible_child = homepage;
-                search_entry.sensitive = !homepage.viewing_package;
-            } else if (view_mode.selected == installed_view_id) {
-                stack.visible_child = installed_view;
-                search_entry.sensitive = false;
-            }
+        if (stack.visible_child == homepage) {
+            search_entry.sensitive = !homepage.viewing_package;
+            view_mode_revealer.reveal_child = true;
+            view_mode.selected = homepage_view_id;
+        } else if (stack.visible_child == installed_view) {
+            search_entry.sensitive = false;
+            view_mode.selected = installed_view_id;
         }
     }
 
-    private void show_homepage () {
-        search ("");
-        search_view.reset ();
-        stack.visible_child = homepage;
-        view_mode_revealer.reveal_child = true;
-    }
-
     public void show_category (AppStream.Category category) {
-        search ("");
-        return_button_history.clear ();
-        view_mode.selected = homepage_view_id;
         stack.visible_child = homepage;
         homepage.show_app_list_for_category (category);
     }

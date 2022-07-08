@@ -49,6 +49,9 @@ public class AppCenter.App : Gtk.Application {
 
     public static GLib.Settings settings;
 
+    public static SimpleAction refresh_action;
+    public static SimpleAction repos_action;
+
     static construct {
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
     }
@@ -82,6 +85,33 @@ public class AppCenter.App : Gtk.Application {
         client.cache_update_failed.connect (on_cache_update_failed);
         client.installed_apps_changed.connect (on_updates_available);
 
+        refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.activate.connect (() => {
+            client.update_cache.begin (true);
+        });
+
+#if POP_OS
+        repos_action = new SimpleAction ("repos", null);
+        repos_action.activate.connect (() => {
+            print("Open repos");
+            try {
+                string[] args = {
+                "/usr/lib/repoman/repoman.pkexec"
+                };
+                Process.spawn_async (
+                    null,
+                    args,
+                    null,
+                    SpawnFlags.SEARCH_PATH,
+                    null,
+                    null
+                );
+            } catch (Error e) {
+                warning (e.message);
+            }
+        });
+#endif
+
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (application_id + ".desktop");
             try {
@@ -93,11 +123,15 @@ public class AppCenter.App : Gtk.Application {
 
         add_action (quit_action);
         add_action (show_updates_action);
+        add_action (refresh_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
+        set_accels_for_action ("app.refresh", {"<Control>r"});
+#if POP_OS
+        add_action (repos_action);
+        set_accels_for_action ("app.repos", {"<Control>s"});
+#endif
 
         search_provider = new SearchProvider ();
-
-        DBusServer.get_default ().app = this;
     }
 
     public override void open (File[] files, string hint) {
@@ -142,6 +176,15 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
+        var granite_settings = Granite.Settings.get_default ();
+        var gtk_settings = Gtk.Settings.get_default ();
+
+        gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+
+        granite_settings.notify["prefers-color-scheme"].connect (() => {
+            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+        });
+
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/appcenter/application.css");
         Gtk.StyleContext.add_provider_for_screen (
@@ -189,13 +232,14 @@ public class AppCenter.App : Gtk.Application {
         if (main_window == null) {
             main_window = new MainWindow (this);
 
-            // Force a cache refresh when the window opens, so we get new apps
+
+            // Force a Flatpak cache refresh when the window opens, so we get new apps
 #if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin (true);
+                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
             });
 #else
-            client.update_cache.begin (true);
+            client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
 #endif
 
             main_window.destroy.connect (() => {
@@ -276,46 +320,35 @@ public class AppCenter.App : Gtk.Application {
         switch (operation) {
             case AppCenterCore.Package.State.INSTALLING:
                 if (error == null) {
-                    // Check if window is focused
-                    if (main_window != null) {
-                        var win = main_window.get_window ();
-                        if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
-                            main_window.send_installed_toast (package);
+                    if (package.get_can_launch ()) {
+                        // Check if window is focused
+                        if (main_window != null) {
+                            var win = main_window.get_window ();
+                            if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                                main_window.send_installed_toast (package);
 
-                            break;
+                                break;
+                            }
                         }
+
+                        var notification = new Notification (_("The app has been installed"));
+                        notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
+                        notification.set_icon (new ThemedIcon ("process-completed"));
+                        notification.set_default_action ("app.open-application");
+
+                        send_notification ("installed", notification);
                     }
-
-                    var notification = new Notification (_("The app has been installed"));
-                    notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
-                    notification.set_icon (new ThemedIcon (Build.PROJECT_NAME));
-                    notification.set_default_action ("app.open-application");
-
-                    send_notification ("installed", notification);
                 } else {
                     // Check if permission was denied or the operation was cancelled
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
                         break;
                     }
+
                     var dialog = new InstallFailDialog (package, error);
 
                     dialog.show_all ();
-		            dialog.response.connect ((response_id) => {
-		    	        switch (response_id) {
-			                case Gtk.ResponseType.CLOSE:
-			            	    dialog.destroy ();
-				                break;
-			                case Gtk.ResponseType.OK:
-			    	            dialog.destroy ();
-				                if (error.message.contains ("whilst offline")) {
-                                    main_window.open_network_settings ();
-                                } else {
-                                    main_window.go_to_installed_clear ();
-                                }
-				                break;
-			            }
-		            });
                     dialog.run ();
+                    dialog.destroy ();
                 }
 
                 break;
@@ -335,13 +368,13 @@ public class AppCenter.App : Gtk.Application {
         });
     }
 
-    private void on_cache_update_failed (Error error) {
+    private void on_cache_update_failed (Error error, AppCenterCore.Client.CacheUpdateType cache_update_type) {
         if (main_window == null) {
             return;
         }
 
         if (update_fail_dialog == null) {
-            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message));
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type);
             update_fail_dialog.transient_for = main_window;
 
             update_fail_dialog.destroy.connect (() => {
@@ -381,29 +414,6 @@ public class AppCenter.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
-#if POP_OS
-    GLib.Environment.set_application_name ("Pop!_Shop");
-#endif
     var application = new AppCenter.App ();
-
-    bool show_updates = false;
-
-    foreach (var arg in args) {
-        if (arg == "--show-updates" || arg == "-u") {
-            show_updates = true;
-            break;
-        }
-    }
-
-    if (show_updates) {
-        try {
-            stderr.printf("connecting to client to show updates\n");
-            var dbus_client = self_connect();
-            dbus_client.show_updates();
-        } catch (Error error) {
-            stderr.printf ("Failed to show updates: %s\n", error.message);
-        }
-    }
-
     return application.run (args);
 }

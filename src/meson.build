@@ -18,7 +18,6 @@ appcenter_files = files(
     'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
     'Dialogs/InstallFailDialog.vala',
-    'Dialogs/NonCuratedWarningDialog.vala',
     'Dialogs/StripeDialog.vala',
     'Dialogs/UninstallConfirmDialog.vala',
     'Dialogs/UninstallFailDialog.vala',
@@ -28,17 +27,15 @@ appcenter_files = files(
     'Services/SearchProvider.vala',
     'Views/AppInfoView.vala',
     'Views/AppListUpdateView.vala',
-    'Views/AppListView.vala',
     'Views/CategoryView.vala',
     'Views/Homepage.vala',
     'Views/InstalledView.vala',
-    'Views/SearchView.vala',
     'Views/AbstractView.vala',
+    'Views/SearchView.vala',
     'Widgets/AbstractAppList.vala',
     'Widgets/Banner.vala',
     'Widgets/CardNumberEntry.vala',
     'Widgets/CategoryFlowBox.vala',
-    'Widgets/CategoryItem.vala',
     'Widgets/HumbleButton.vala',
     'Widgets/NetworkInfoBar.vala',
     'Widgets/PackageRow.vala',
@@ -74,6 +71,10 @@ endif
 
 if get_option('pop_os')
     args += '--define=POP_OS'
+endif
+
+if appstream.version().version_compare('>=0.15')
+    args += '--define=HAS_APPSTREAM_0_15'
 endif
 
 executable(
