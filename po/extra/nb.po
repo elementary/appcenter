@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"PO-Revision-Date: 2022-07-08 13:43+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
 "Language: nb\n"
@@ -54,14 +54,12 @@ msgid "Added an option to automatically update apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "Se etter oppgraderinger"
+msgstr "Se etter oppgraderinger manuelt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Warn when apps are built against older runtimes"
-msgstr ""
+msgstr "Advar når programmer er bygget med eldre kjøretidsrutiner"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:38
@@ -303,7 +301,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:189
 msgid "Show an error dialog when opening an app fails"
-msgstr ""
+msgstr "Vis feildialog når åpning av et program misslykkes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:195
 #: data/io.elementary.appcenter.appdata.xml.in:211
