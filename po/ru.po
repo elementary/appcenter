@@ -7,13 +7,14 @@
 # DartDeaDia <dartdeadia@protonmail.com>, 2021, 2022.
 # Camellan <camellan@yandex.ru>, 2021.
 # lenemter <lenemter@gmail.com>, 2022.
+# кубик круглый <megarainbow29@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
 "PO-Revision-Date: 2022-07-13 02:28+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -79,6 +80,8 @@ msgstr "Автоматические обновления"
 #: src/MainWindow.vala:207
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
+"Системные компоненты и неоплаченные приложения не будут обновляться "
+"автоматически"
 
 #: src/MainWindow.vala:211
 msgid "Check for Updates"
@@ -704,7 +707,7 @@ msgstr "Поделиться"
 
 #: src/Views/AppInfoView.vala:792
 msgid "End of Life"
-msgstr ""
+msgstr "Окончание поддержки"
 
 #: src/Views/AppInfoView.vala:793
 msgid "May not work as expected or receive security updates"
