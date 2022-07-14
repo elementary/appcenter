@@ -418,7 +418,9 @@ namespace AppCenter.Views {
                 pixel_size = 64
             };
 
-            var app_icon_overlay = new Gtk.Overlay ();
+            var app_icon_overlay = new Gtk.Overlay () {
+                valign = Gtk.Align.START
+            };
             app_icon_overlay.add (app_icon);
 
             var scale_factor = get_scale_factor ();
@@ -439,9 +441,9 @@ namespace AppCenter.Views {
             }
 
             var package_name = new Gtk.Label (package.get_name ()) {
-                ellipsize = Pango.EllipsizeMode.MIDDLE,
                 selectable = true,
                 valign = Gtk.Align.END,
+                wrap = true,
                 xalign = 0
             };
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
