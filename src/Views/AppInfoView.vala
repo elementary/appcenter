@@ -287,7 +287,8 @@ namespace AppCenter.Views {
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
                     height_request = 500,
-                    allow_scroll_wheel = false
+                    allow_scroll_wheel = false,
+                    allow_mouse_drag = true
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
