@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
 "PO-Revision-Date: 2022-07-15 22:32+0000\n"
-"Last-Translator: ActualDisaster2447 <1jbe1vkry@mozmail.com>\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
 "Language: de\n"
@@ -51,7 +51,7 @@ msgstr "Eine Option für automatische Updates wurde hinzugefügt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Manually check for new updates"
-msgstr "Manuell auf Aktualisierungen prüfen"
+msgstr "Manuelle Prüfung auf neue Aktualisierungen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Warn when apps are built against older runtimes"
