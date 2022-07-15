@@ -63,7 +63,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         margin_start = 12;
         margin_end = 12;
 
-        show_uninstall = false;
         show_open = false;
     }
 }

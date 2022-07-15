@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016–2018 elementary, Inc. (https://elementary.io)
+* Copyright 2016–2022 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -19,7 +19,8 @@
 
 public class AppCenter.Widgets.HumbleButton : Gtk.Button {
     public signal void download_requested ();
-    public signal void payment_requested (int amount);
+
+    public AppCenterCore.Package package { get; construct; }
 
     private int _amount = 1;
     public int amount {
@@ -68,6 +69,10 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
         }
     }
 
+    public HumbleButton (AppCenterCore.Package package) {
+        Object (package: package);
+    }
+
     construct {
         hexpand = true;
 
@@ -79,11 +84,32 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
 
         clicked.connect (() => {
             if (amount != 0) {
-                payment_requested (amount);
+                show_stripe_dialog ();
             } else {
                 download_requested ();
             }
         });
+    }
+
+    private void show_stripe_dialog () {
+        var stripe_dialog = new Widgets.StripeDialog (
+            amount,
+            package.get_name (),
+            package.normalized_component_id,
+            package.get_payments_key ()
+        ) {
+            transient_for = (Gtk.Window) get_toplevel ()
+        };
+
+        stripe_dialog.download_requested.connect (() => {
+            download_requested ();
+
+            if (stripe_dialog.amount != 0) {
+                App.add_paid_app (package.component.get_id ());
+            }
+        });
+
+        stripe_dialog.show ();
     }
 
     public static string get_amount_formatted (int _amount, bool with_short_part = true) {

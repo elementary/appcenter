@@ -159,8 +159,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         // with elementary's AppStream data.
 #if HIDE_UPSTREAM_DISTRO_APPS
 #if HAS_APPSTREAM_0_15
+        // Don't load Ubuntu components
+        appstream_pool.set_load_std_data_locations (false);
         appstream_pool.reset_extra_data_locations ();
-        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.METAINFO);
+        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.COLLECTION);
 #else
         // Only use a user cache, the system cache probably contains all the Ubuntu components
         appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);
@@ -1089,6 +1091,22 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
+                break;
+
+            case Pk.ProgressType.CALLER_ACTIVE:
+            case Pk.ProgressType.DOWNLOAD_SIZE_REMAINING:
+            case Pk.ProgressType.ELAPSED_TIME:
+            case Pk.ProgressType.INVALID:
+            case Pk.ProgressType.PACKAGE:
+            case Pk.ProgressType.PACKAGE_ID:
+            case Pk.ProgressType.PERCENTAGE:
+            case Pk.ProgressType.REMAINING_TIME:
+            case Pk.ProgressType.ROLE:
+            case Pk.ProgressType.SPEED:
+            case Pk.ProgressType.TRANSACTION_FLAGS:
+            case Pk.ProgressType.TRANSACTION_ID:
+            case Pk.ProgressType.UID:
+                // All other ProgressTypes deliberately ignored
                 break;
         }
     }
