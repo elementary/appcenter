@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-07-15 19:33+0000\n"
+"PO-Revision-Date: 2022-07-15 22:32+0000\n"
 "Last-Translator: ActualDisaster2447 <1jbe1vkry@mozmail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Der Open Source, pay-what-you-want AppStore von elementary. Gepflegt und "
 "kuratiert von elementary um eine native, datenschutzfreundliche und sichere "
-"Erfahrung zu bieten. Stöbern Sie durch Kategorien oder Suchen und Entdecken "
+"Erfahrung zu bieten. Stöbern Sie durch Kategorien oder suchen und entdecken "
 "Sie neue Apps. AppCenter wird außerdem zum Aktualisieren Ihres Systems "
 "genutzt. Somit erhalten Sie die aktuellste und beste Software mit allen "
 "neuen Funktionen und Verbesserungen."
@@ -46,12 +46,8 @@ msgid "New features:"
 msgstr "Neue Funktionen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "No longer prompt for approval to update non-curated apps"
 msgid "Added an option to automatically update apps"
-msgstr ""
-"Aktualisierungen von unbetreuten Anwendungen erfordern keine "
-"Authentifikation mehr"
+msgstr "Eine Option für automatische Updates wurde hinzugefügt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Manually check for new updates"
@@ -94,15 +90,17 @@ msgstr "Verbesserungen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
+msgstr "Kein Warnungsdialog bei Apps von alternativen Quellen anzeigen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "Untertiteln zum Bildschirmfoto als Kurzinfo anzeigen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
+"\"Kostenlos ausprobieren\" anzeigen, wenn der Preis einer App auf 0 gesetzt "
+"wird"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 #: data/io.elementary.appcenter.appdata.xml.in:246
@@ -136,23 +134,23 @@ msgstr "Aktualisierte Übersetzungen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Prevent potential crashes when updating"
-msgstr ""
+msgstr "Verhindert potentielle Abstürze während Updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Link to Flathub's search page when no search results are found"
-msgstr ""
+msgstr "Verlinke zur Flathub-Seite, wenn keine Ergebnisse gefunden wurden"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Amusements appear in the Games category"
-msgstr ""
+msgstr "Unterhaltungsapps erscheinen in der Kategorie für Spiele"
 
 #: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "Kategorien in Kacheln anstatt einer Liste anzeigen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Allow window to shrink to much narrower sizes"
-msgstr ""
+msgstr "Fenster erlauben sich auf viel kleinere Größen zu verkleinern"
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 msgid "Correctly show the installed status of first-party applications"
