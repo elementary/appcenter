@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-07-13 02:28+0000\n"
+"PO-Revision-Date: 2022-07-24 18:47+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -72,8 +72,6 @@ msgid "Search Apps"
 msgstr "Поиск приложений"
 
 #: src/MainWindow.vala:206
-#, fuzzy
-#| msgid "Automatic Updates"
 msgid "Automatic App Updates"
 msgstr "Автоматические обновления"
 
@@ -910,14 +908,12 @@ msgid "Privacy & Security"
 msgstr "Конфиденциальнось и безопасность"
 
 #: src/Widgets/CategoryFlowBox.vala:231
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Игры"
+msgstr "Игры и развлечения"
 
 #: src/Widgets/CategoryFlowBox.vala:259
 msgid "Fun &"
-msgstr ""
+msgstr "Развлечения и"
 
 #: src/Widgets/CategoryFlowBox.vala:268
 msgid "Games"

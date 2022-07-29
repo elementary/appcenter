@@ -294,6 +294,7 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
+                    allow_mouse_drag = true,
                     allow_scroll_wheel = false,
                     height_request = 500,
                     spacing = 128
