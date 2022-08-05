@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"PO-Revision-Date: 2022-08-05 16:16+0000\n"
+"Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/extra/"
 "ko/>\n"
 "Language: ko\n"
@@ -89,9 +89,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:146
 #: data/io.elementary.appcenter.appdata.xml.in:161
 #: data/io.elementary.appcenter.appdata.xml.in:174
-#, fuzzy
 msgid "Improvements:"
-msgstr "여러 가지 버그 해결 및 성능 향상"
+msgstr "성능 향상:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show a warning dialog about apps from alt stores"
@@ -346,10 +345,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:219
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "버그 수정 및 기능 향상."
+msgstr "검색 기능 향상"
 
 #: data/io.elementary.appcenter.appdata.xml.in:220
 msgid "Improve update badge styling and category styling"
@@ -742,9 +739,8 @@ msgid "@PROJECT_NAME@"
 msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "설치;제거;제거;카타로그;스토어;앱;업데이트;소프트웨어;"
+msgstr "설치;제거;삭제;카탈로그;스토어;앱;소프트웨어;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
