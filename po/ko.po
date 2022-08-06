@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-08-05 16:16+0000\n"
+"PO-Revision-Date: 2022-08-06 10:35+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -898,7 +898,7 @@ msgstr "시스템"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
-msgstr "편리한 기능"
+msgstr "손 쉬운 사용"
 
 #: src/Widgets/CategoryFlowBox.vala:107
 msgid "Video"
