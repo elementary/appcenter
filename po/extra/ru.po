@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-07-13 02:28+0000\n"
+"PO-Revision-Date: 2022-08-01 17:27+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -48,16 +48,12 @@ msgid "New features:"
 msgstr "Новые возможности:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Added an option to automatically update curated apps"
 msgid "Added an option to automatically update apps"
-msgstr "Добавлена возможность автоматического обновления курируемых приложений"
+msgstr "Добавлена возможность автоматического обновления приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "Проверить наличие обновлений"
+msgstr "Ручная проверка наличия обновлений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Warn when apps are built against older runtimes"
@@ -98,7 +94,7 @@ msgstr "Улучшения:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
+msgstr "Не показывать предупреждение о приложениях из альтернативных магазинов"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Show screenshot captions in a tooltip"
@@ -106,7 +102,7 @@ msgstr "Отображение подписей к снимкам экрана �
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
+msgstr "Показывать «Попробовать бесплатно» при установке цены приложения на 0"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 #: data/io.elementary.appcenter.appdata.xml.in:246
