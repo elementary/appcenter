@@ -118,12 +118,20 @@ namespace AppCenter.Views {
             oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 margin_bottom = 24,
+                margin_top = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
 
             oars_flowbox_revealer = new Gtk.Revealer ();
             oars_flowbox_revealer.add (oars_flowbox);
+
+            var content_warning_clamp = new Hdy.Clamp () {
+                margin_start = 24,
+                margin_end = 24,
+                maximum_size = MAX_WIDTH
+            };
+            content_warning_clamp.add (oars_flowbox_revealer);
 
 #if CURATED
             if (!package.is_native && !package.is_os_updates) {
@@ -286,9 +294,10 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
-                    height_request = 500,
+                    allow_mouse_drag = true,
                     allow_scroll_wheel = false,
-                    allow_mouse_drag = true
+                    height_request = 500,
+                    spacing = 128
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
@@ -347,6 +356,7 @@ namespace AppCenter.Views {
 
                 app_screenshots.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 app_screenshots.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
+
                 screenshot_overlay.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 screenshot_overlay.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
 
@@ -404,7 +414,6 @@ namespace AppCenter.Views {
                 screenshot_stack.add (app_screenshot_not_found);
 
                 stack_context = screenshot_stack.get_style_context ();
-                stack_context.add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 stack_context.add_class ("loading");
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
@@ -544,16 +553,6 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
-            content_grid.add (oars_flowbox_revealer);
-            if (oars_flowbox.get_children ().length () > 0) {
-                oars_flowbox_revealer.reveal_child = true;
-            }
-
-            if (screenshots.length > 0) {
-                content_grid.add (screenshot_stack);
-                content_grid.add (screenshot_switcher);
-            }
-
             content_grid.add (package_summary);
             content_grid.add (app_description);
             content_grid.add (release_grid);
@@ -669,18 +668,26 @@ namespace AppCenter.Views {
                 show_other_package (package);
             });
 
-            var grid = new Gtk.Grid () {
-                row_spacing = 12
-            };
-            grid.attach (header_box, 0, 0);
-            grid.attach (body_clamp, 0, 1);
-            grid.attach (other_apps_bar, 0, 3);
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
+            box.add (header_box);
+            box.add (content_warning_clamp);
+
+            if (screenshots.length > 0) {
+                box.add (screenshot_stack);
+
+                if (screenshots.length > 1) {
+                    box.add (screenshot_switcher);
+                }
+            }
+
+            box.add (body_clamp);
+            box.add (other_apps_bar);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER,
                 expand = true
             };
-            scrolled.add (grid);
+            scrolled.add (box);
 
             var toast = new Granite.Widgets.Toast (_("Link copied to clipboard"));
 
@@ -728,6 +735,10 @@ namespace AppCenter.Views {
 #endif
             view_entered ();
             set_up_package ();
+
+            if (oars_flowbox.get_children ().length () > 0) {
+                oars_flowbox_revealer.reveal_child = true;
+            }
 
             origin_combo.changed.connect (() => {
                 Gtk.TreeIter iter;
@@ -1011,11 +1022,13 @@ namespace AppCenter.Views {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
-                var image = new Gtk.Image ();
-                image.width_request = MAX_WIDTH;
-                image.height_request = 500;
-                image.icon_name = "image-x-generic";
-                image.halign = Gtk.Align.CENTER;
+
+                var image = new Gtk.Image () {
+                    halign = Gtk.Align.CENTER,
+                    height_request = 500,
+                    icon_name = "image-x-generic"
+                };
+
                 image.gicon = pixbuf;
                 if (caption != null) {
                     // AppStream spec says "ideally not more than 100 characters"
