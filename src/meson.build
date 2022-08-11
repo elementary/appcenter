@@ -41,6 +41,7 @@ appcenter_files = files(
     'Widgets/PackageRow.vala',
     'Widgets/ReleaseListBox.vala',
     'Widgets/ReleaseRow.vala',
+    'Widgets/Screenshot.vala',
     'Widgets/SharePopover.vala',
     'Widgets/SizeLabel.vala',
     'Widgets/UpdateHeaderRow.vala',

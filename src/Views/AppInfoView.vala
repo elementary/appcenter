@@ -1019,31 +1019,21 @@ namespace AppCenter.Views {
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
         private void load_screenshot (string? caption, string path) {
-            var scale_factor = get_scale_factor ();
-            try {
-                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
+            var image = new Screenshot (path) {
+                halign = Gtk.Align.CENTER
+            };
 
-                var image = new Gtk.Image () {
-                    halign = Gtk.Align.CENTER,
-                    height_request = 500,
-                    icon_name = "image-x-generic"
-                };
-
-                image.gicon = pixbuf;
-                if (caption != null) {
-                    // AppStream spec says "ideally not more than 100 characters"
-                    int max_caption_len = 200;
-                    image.tooltip_text = ellipsize (caption, max_caption_len);
-                }
-
-                Idle.add (() => {
-                    image.show ();
-                    app_screenshots.add (image);
-                    return GLib.Source.REMOVE;
-                });
-            } catch (Error e) {
-                critical (e.message);
+            if (caption != null) {
+                // AppStream spec says "ideally not more than 100 characters"
+                int max_caption_len = 200;
+                image.tooltip_text = ellipsize (caption, max_caption_len);
             }
+
+            Idle.add (() => {
+                image.show ();
+                app_screenshots.add (image);
+                return GLib.Source.REMOVE;
+            });
         }
 
         private string ellipsize (string long_text, int max_length) {
