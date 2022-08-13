@@ -27,9 +27,11 @@ namespace AppCenter.Views {
             bool transition = true
         );
 
+        private Gtk.CssProvider accent_provider;
         private static Gtk.CssProvider banner_provider;
         private static Gtk.CssProvider loading_provider;
         private static Gtk.CssProvider? previous_css_provider = null;
+        private static Gtk.CssProvider screenshot_provider;
 
         GenericArray<AppStream.Screenshot> screenshots;
 
@@ -70,6 +72,9 @@ namespace AppCenter.Views {
 
             loading_provider = new Gtk.CssProvider ();
             loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
+
+            screenshot_provider = new Gtk.CssProvider ();
+            screenshot_provider.load_from_resource ("io/elementary/appcenter/Screenshot.css");
         }
 
         construct {
@@ -296,8 +301,7 @@ namespace AppCenter.Views {
                 app_screenshots = new Hdy.Carousel () {
                     allow_mouse_drag = true,
                     allow_scroll_wheel = false,
-                    height_request = 500,
-                    spacing = 128
+                    height_request = 500
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
@@ -859,6 +863,13 @@ namespace AppCenter.Views {
                     color_primary_text = package.get_color_primary_text ();
                 }
 
+                accent_provider = new Gtk.CssProvider ();
+                //FIXME: Update to use AppStream's new accent color
+                if (color_primary != null) {
+                    var accent_css = "@define-color accent_color %s;".printf (color_primary);
+                    accent_provider.load_from_data (accent_css, accent_css.length);
+                }
+
                 if (color_primary == null || color_primary_text == null) {
                     color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
                     color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
@@ -1019,32 +1030,40 @@ namespace AppCenter.Views {
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
         private void load_screenshot (string? caption, string path) {
-            var image = new Screenshot (path) {
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
                 halign = Gtk.Align.CENTER
             };
 
+            unowned var box_context = box.get_style_context ();
+            box_context.add_class ("screenshot");
+            box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            box_context.add_provider (screenshot_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
             if (caption != null) {
-                // AppStream spec says "ideally not more than 100 characters"
-                int max_caption_len = 200;
-                image.tooltip_text = ellipsize (caption, max_caption_len);
+                var label = new Gtk.Label (caption) {
+                    max_width_chars = 0,
+                    wrap = true
+                };
+
+                unowned var label_context = label.get_style_context ();
+                label_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                label_context.add_provider (screenshot_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                box.add (label);
             }
+
+            var image = new Screenshot (path) {
+                valign = Gtk.Align.END,
+                vexpand = true
+            };
+
+            box.add (image);
 
             Idle.add (() => {
-                image.show ();
-                app_screenshots.add (image);
+                box.show_all ();
+                app_screenshots.add (box);
                 return GLib.Source.REMOVE;
             });
-        }
-
-        private string ellipsize (string long_text, int max_length) {
-            if (long_text.length > max_length) {
-                StringBuilder sb = new StringBuilder (long_text);
-                sb.truncate (max_length);
-                sb.append ("\u2026");
-                return sb.str;
-            }
-
-            return long_text;
         }
 
         private void parse_license (string project_license, out string license_copy, out string license_url) {
