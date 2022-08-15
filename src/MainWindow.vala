@@ -18,8 +18,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working { get; set; }
 
     private Gtk.Revealer view_mode_revealer;
-    private Gtk.Stack custom_title_stack;
-    private Gtk.Label homepage_header;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
@@ -187,22 +185,18 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         view_mode_revealer = new Gtk.Revealer () {
             reveal_child = true,
-            transition_type = Gtk.RevealerTransitionType.CROSSFADE
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
         view_mode_revealer.add (view_mode_box);
 
-        homepage_header = new Gtk.Label (null);
-        homepage_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
-
-        custom_title_stack = new Gtk.Stack ();
-        custom_title_stack.add (view_mode_revealer);
-        custom_title_stack.add (homepage_header);
-        custom_title_stack.set_visible_child (view_mode_revealer);
-
         search_entry = new Gtk.SearchEntry () {
+            hexpand = true,
             placeholder_text = _("Search Apps"),
             valign = Gtk.Align.CENTER
         };
+
+        var search_clamp = new Hdy.Clamp ();
+        search_clamp.add (search_entry);
 
         spinner = new Gtk.Spinner ();
 
@@ -242,10 +236,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
-        headerbar.set_custom_title (custom_title_stack);
+        headerbar.set_custom_title (search_clamp);
         headerbar.pack_start (return_button);
         headerbar.pack_end (menu_button);
-        headerbar.pack_end (search_entry);
+        headerbar.pack_end (view_mode_revealer);
         headerbar.pack_end (spinner);
 
         homepage = new Homepage ();
@@ -446,13 +440,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    public void set_custom_header (string? custom_header) {
-        if (custom_header != null) {
-            homepage_header.label = custom_header;
-            custom_title_stack.visible_child = homepage_header;
-        } else {
-            custom_title_stack.visible_child = view_mode_revealer;
-        }
+    public void reveal_view_mode (bool reveal_child) {
+        view_mode_revealer.reveal_child = reveal_child;
     }
 
     private void view_return () {
