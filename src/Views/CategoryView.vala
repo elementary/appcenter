@@ -152,8 +152,6 @@ public class AppCenter.CategoryView : Gtk.Stack {
                 child.destroy ();
             }
 
-            grid.add (recently_updated_box);
-
             var packages = get_packages.end (res);
             foreach (var package in packages) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
@@ -188,10 +186,16 @@ public class AppCenter.CategoryView : Gtk.Stack {
                 return b.get_newest_release ().vercmp (a.get_newest_release ());
             });
 
+            var datetime = new GLib.DateTime.now_local ().add_months (-6);
             var recent_count = 0;
             foreach (var recent_package in recent_packages_list) {
                 if (recent_count == 4) {
                     break;
+                }
+
+                // Don't add packages over 6 months old
+                if (recent_package.get_newest_release ().get_timestamp () < datetime.to_unix ()) {
+                    continue;
                 }
 
                 if (!recent_package.installed) {
@@ -202,6 +206,10 @@ public class AppCenter.CategoryView : Gtk.Stack {
             }
 
 #if CURATED
+            if (recently_updated_flowbox.get_child_at_index (0) != null) {
+                grid.add (recently_updated_box);
+            }
+
             if (paid_flowbox.get_child_at_index (0) != null) {
                 grid.add (paid_grid);
             }
