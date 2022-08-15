@@ -20,7 +20,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Revealer view_mode_revealer;
     private Gtk.Stack custom_title_stack;
     private Gtk.Label homepage_header;
-    private Granite.Widgets.ModeButton view_mode;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
@@ -35,8 +34,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private AppCenterCore.Package? selected_package;
 
     private uint configure_id;
-    private int homepage_view_id;
-    private int installed_view_id;
 
     private bool mimetype;
 
@@ -148,14 +145,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        view_mode = new Granite.Widgets.ModeButton () {
-            margin_end = 12,
-            margin_start = 12,
-            valign = Gtk.Align.CENTER
+        var home_button = new Gtk.Button () {
+            image = new Gtk.Image.from_icon_name ("go-home", Gtk.IconSize.LARGE_TOOLBAR),
+            tooltip_text = _("Home")
         };
 
-        homepage_view_id = view_mode.append_text (_("Home"));
-        installed_view_id = view_mode.append_text (C_("view", "Installed"));
+        var updates_button = new Gtk.Button () {
+            image = new Gtk.Image.from_icon_name ("software-update-available", Gtk.IconSize.LARGE_TOOLBAR),
+        };
 
         var badge_provider = new Gtk.CssProvider ();
         badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
@@ -178,15 +175,21 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         eventbox_badge.add (updates_badge_revealer);
 
-        var view_mode_overlay = new Gtk.Overlay ();
-        view_mode_overlay.add (view_mode);
-        view_mode_overlay.add_overlay (eventbox_badge);
+        var updates_overlay = new Gtk.Overlay () {
+            tooltip_text = C_("view", "Updates & installed apps")
+        };
+        updates_overlay.add (updates_button);
+        updates_overlay.add_overlay (eventbox_badge);
+
+        var view_mode_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        view_mode_box.add (home_button);
+        view_mode_box.add (updates_overlay);
 
         view_mode_revealer = new Gtk.Revealer () {
             reveal_child = true,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        view_mode_revealer.add (view_mode_overlay);
+        view_mode_revealer.add (view_mode_box);
 
         homepage_header = new Gtk.Label (null);
         homepage_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
@@ -300,16 +303,16 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        eventbox_badge.button_release_event.connect (() => {
+        home_button.clicked.connect (() => {
+            stack.visible_child = homepage;
+        });
+
+        updates_button.clicked.connect (() => {
             stack.visible_child = installed_view;
         });
 
-        view_mode.notify["selected"].connect (() => {
-            if (view_mode.selected == homepage_view_id) {
-                stack.visible_child = homepage;
-            } else if (view_mode.selected == installed_view_id) {
-                stack.visible_child = installed_view;
-            }
+        eventbox_badge.button_release_event.connect (() => {
+            stack.visible_child = installed_view;
         });
     }
 
@@ -463,10 +466,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         if (stack.visible_child == homepage) {
             search_entry.sensitive = !homepage.viewing_package;
             view_mode_revealer.reveal_child = true;
-            view_mode.selected = homepage_view_id;
         } else if (stack.visible_child == installed_view) {
             search_entry.sensitive = false;
-            view_mode.selected = installed_view_id;
         }
     }
 
