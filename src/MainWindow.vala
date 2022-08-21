@@ -36,7 +36,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     private const int VALID_QUERY_LENGTH = 3;
 
-    public static Views.InstalledView installed_view { get; private set; }
+    public static Views.AppListUpdateView installed_view { get; private set; }
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);
@@ -86,7 +86,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.clicked.connect (view_return);
 
         homepage.package_selected.connect (package_selected);
-        installed_view.package_selected.connect (package_selected);
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
@@ -233,7 +232,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         headerbar.pack_end (spinner);
 
         homepage = new Homepage ();
-        installed_view = new Views.InstalledView ();
+        installed_view = new Views.AppListUpdateView ();
 
         var overlay = new Gtk.Overlay ();
         overlay.add_overlay (toast);
@@ -287,6 +286,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         eventbox_badge.button_release_event.connect (() => {
             go_to_installed ();
+        });
+
+        installed_view.show_app.connect ((package) => {
+            homepage.show_package (package);
+        });
+
+        destroy.connect (() => {
+           installed_view.clear ();
         });
     }
 

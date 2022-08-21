@@ -94,6 +94,9 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         if (visible_child is Views.AppInfoView) {
             main_window.reveal_view_mode (false);
             main_window.configure_search (false);
+        } else if (visible_child is Views.AppListUpdateView) {
+            main_window.reveal_view_mode (true);
+            main_window.configure_search (false);
         }
 
         var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
@@ -103,11 +106,13 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
             main_window.set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
         } else if (previous_child is CategoryView) {
             main_window.set_return_name (((CategoryView) previous_child).category.name);
+        } else if (previous_child is Views.AppListUpdateView) {
+            main_window.set_return_name (C_("view", "Installed"));
         }
 
         while (get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
             var next_child = get_adjacent_child (Hdy.NavigationDirection.FORWARD);
-            if (next_child is AppCenter.Views.InstalledView) {
+            if (next_child is AppCenter.Views.AppListUpdateView) {
                 remove (next_child);
             } else {
                 next_child.destroy ();
