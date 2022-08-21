@@ -29,7 +29,6 @@ appcenter_files = files(
     'Views/AppListUpdateView.vala',
     'Views/CategoryView.vala',
     'Views/Homepage.vala',
-    # 'Views/InstalledView.vala',
     'Views/AbstractView.vala',
     'Views/SearchView.vala',
     'Widgets/AbstractAppList.vala',

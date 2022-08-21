@@ -97,8 +97,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 return GLib.Source.REMOVE;
             });
         });
-
-        show.connect (on_view_mode_changed);
     }
 
     construct {
@@ -270,8 +268,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             maximize ();
         }
 
-        // stack.notify["visible-child"].connect (on_view_mode_changed);
-
         automatic_updates_button.notify["active"].connect (() => {
             if (automatic_updates_button.active) {
                 AppCenterCore.Client.get_default ().update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
@@ -440,11 +436,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         var view = (AbstractView) homepage;
         view.navigate (Hdy.NavigationDirection.BACK);
-    }
-
-    private void on_view_mode_changed () {
-        search_entry.sensitive = !homepage.viewing_package;
-        view_mode_revealer.reveal_child = true;
     }
 
     public void show_category (AppStream.Category category) {
