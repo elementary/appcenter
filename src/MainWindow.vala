@@ -18,7 +18,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working { get; set; }
 
     private Gtk.Revealer view_mode_revealer;
-    private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
     private Gtk.ModelButton refresh_menuitem;
@@ -143,11 +142,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        var home_button = new Gtk.Button () {
-            image = new Gtk.Image.from_icon_name ("go-home", Gtk.IconSize.LARGE_TOOLBAR),
-            tooltip_text = _("Home")
-        };
-
         var updates_button = new Gtk.Button () {
             image = new Gtk.Image.from_icon_name ("software-update-available", Gtk.IconSize.LARGE_TOOLBAR),
         };
@@ -179,15 +173,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         updates_overlay.add (updates_button);
         updates_overlay.add_overlay (eventbox_badge);
 
-        var view_mode_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        view_mode_box.add (home_button);
-        view_mode_box.add (updates_overlay);
-
         view_mode_revealer = new Gtk.Revealer () {
             reveal_child = true,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
-        view_mode_revealer.add (view_mode_box);
+        view_mode_revealer.add (updates_overlay);
 
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
@@ -245,15 +235,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         homepage = new Homepage ();
         installed_view = new Views.InstalledView ();
 
-        stack = new Gtk.Stack () {
-            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
-        };
-        stack.add (homepage);
-        stack.add (installed_view);
-
         var overlay = new Gtk.Overlay ();
         overlay.add_overlay (toast);
-        overlay.add (stack);
+        overlay.add (homepage);
 
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
 
@@ -287,7 +271,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             maximize ();
         }
 
-        stack.notify["visible-child"].connect (on_view_mode_changed);
+        // stack.notify["visible-child"].connect (on_view_mode_changed);
 
         automatic_updates_button.notify["active"].connect (() => {
             if (automatic_updates_button.active) {
@@ -297,16 +281,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        home_button.clicked.connect (() => {
-            stack.visible_child = homepage;
-        });
-
         updates_button.clicked.connect (() => {
-            stack.visible_child = installed_view;
+            go_to_installed ();
         });
 
         eventbox_badge.button_release_event.connect (() => {
-            stack.visible_child = installed_view;
+            go_to_installed ();
         });
     }
 
@@ -364,12 +344,16 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
-        stack.visible_child = homepage;
         homepage.show_package (package);
     }
 
     public void go_to_installed () {
-        stack.visible_child = installed_view;
+        // FIXME: This should be if installed_view exists in the deck at all
+        if (homepage.visible_child != installed_view) {
+            homepage.add (installed_view);
+        }
+        installed_view.show_all ();
+        homepage.visible_child = installed_view;
     }
 
     public void search (string term, bool mimetype = false) {
@@ -405,7 +389,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         if (query_valid) {
             homepage.search (query, mimetype);
-        } else if (stack.visible_child == homepage) {
+        } else {
             homepage.search ("");
         }
 
@@ -447,21 +431,16 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private void view_return () {
         selected_package = null;
 
-        var view = (AbstractView) stack.visible_child;
+        var view = (AbstractView) homepage;
         view.navigate (Hdy.NavigationDirection.BACK);
     }
 
     private void on_view_mode_changed () {
-        if (stack.visible_child == homepage) {
-            search_entry.sensitive = !homepage.viewing_package;
-            view_mode_revealer.reveal_child = true;
-        } else if (stack.visible_child == installed_view) {
-            search_entry.sensitive = false;
-        }
+        search_entry.sensitive = !homepage.viewing_package;
+        view_mode_revealer.reveal_child = true;
     }
 
     public void show_category (AppStream.Category category) {
-        stack.visible_child = homepage;
         homepage.show_app_list_for_category (category);
     }
 

@@ -106,7 +106,12 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         }
 
         while (get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
-            get_adjacent_child (Hdy.NavigationDirection.FORWARD).destroy ();
+            var next_child = get_adjacent_child (Hdy.NavigationDirection.FORWARD);
+            if (next_child is AppCenter.Views.InstalledView) {
+                remove (next_child);
+            } else {
+                next_child.destroy ();
+            }
         }
     }
 
