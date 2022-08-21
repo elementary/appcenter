@@ -351,8 +351,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        // FIXME: This should be if installed_view exists in the deck at all
-        if (homepage.visible_child != installed_view) {
+        if (homepage.get_children ().find (installed_view) == null) {
             homepage.add (installed_view);
         }
         installed_view.show_all ();
