@@ -433,9 +433,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     private void view_return () {
         selected_package = null;
-
-        var view = (AbstractView) homepage;
-        view.navigate (Hdy.NavigationDirection.BACK);
+        homepage.navigate (Hdy.NavigationDirection.BACK);
     }
 
     public void show_category (AppStream.Category category) {
