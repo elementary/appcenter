@@ -23,7 +23,7 @@ public class UpgradeFailDialog : Granite.MessageDialog {
     public UpgradeFailDialog (AppCenterCore.Package? package, string error_message) {
         Object (
             title: "",
-            secondary_text: _("This may have been caused by external or manually compiled software."),
+            secondary_text: _("This may have been caused by external or manually compiled software or a package manager error."),
             buttons: Gtk.ButtonsType.CLOSE,
             badge_icon: new ThemedIcon ("dialog-error"),
             error_message: error_message,
