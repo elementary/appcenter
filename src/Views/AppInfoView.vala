@@ -29,10 +29,10 @@ namespace AppCenter.Views {
 
         private static Gtk.CssProvider banner_provider;
         private static Gtk.CssProvider loading_provider;
-        private static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
 
+        private Gtk.CssProvider accent_provider;
         private Gtk.ComboBox origin_combo;
         private Gtk.Grid release_grid;
         private Gtk.Label app_screenshot_not_found;
@@ -77,17 +77,41 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
+            accent_provider = new Gtk.CssProvider ();
+            try {
+                string? color_primary = null;
+                string? color_primary_text = null;
+                if (package != null) {
+                    color_primary = package.get_color_primary ();
+                    color_primary_text = package.get_color_primary_text ();
+                }
+
+                if (color_primary == null || color_primary_text == null) {
+                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
+                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                }
+
+                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
+                accent_provider.load_from_data (colored_css, colored_css.length);
+            } catch (GLib.Error e) {
+                critical ("Unable to set accent color: %s", e.message);
+            }
+
+
             unowned var action_button_context = action_button.get_style_context ();
             action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            action_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             unowned var open_button_context = open_button.get_style_context ();
             open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            open_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             unowned var cancel_button_context = cancel_button.get_style_context ();
             cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            cancel_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
 
@@ -602,6 +626,7 @@ namespace AppCenter.Views {
             unowned var uninstall_button_context = uninstall_button.get_style_context ();
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            uninstall_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             uninstall_button_revealer = new Gtk.Revealer () {
                 transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
@@ -655,6 +680,7 @@ namespace AppCenter.Views {
             unowned var header_box_context = header_box.get_style_context ();
             header_box_context.add_class ("banner");
             header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            header_box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -848,33 +874,6 @@ namespace AppCenter.Views {
                         origin_combo.set_active_iter (iter);
                     }
                 } while (origin_liststore.iter_next (ref iter));
-            }
-
-            var provider = new Gtk.CssProvider ();
-            try {
-                string? color_primary = null;
-                string? color_primary_text = null;
-                if (package != null) {
-                    color_primary = package.get_color_primary ();
-                    color_primary_text = package.get_color_primary_text ();
-                }
-
-                if (color_primary == null || color_primary_text == null) {
-                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
-                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-                }
-
-                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
-                provider.load_from_data (colored_css, colored_css.length);
-
-                if (previous_css_provider != null) {
-                    Gtk.StyleContext.remove_provider_for_screen (Gdk.Screen.get_default (), previous_css_provider);
-                }
-
-                previous_css_provider = provider;
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (GLib.Error e) {
-                critical (e.message);
             }
         }
 
