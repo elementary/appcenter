@@ -265,7 +265,11 @@ namespace AppCenter {
                     yield package.update ();
                 } catch (Error e) {
                     if (!(e is GLib.IOError.CANCELLED)) {
-                        new UpgradeFailDialog (package, e).present ();
+                        var fail_dialog = new UpgradeFailDialog (package, e) {
+                            modal = true,
+                            transient_for = (Gtk.Window) get_toplevel ()
+                        };
+                        fail_dialog.present ();
                     }
                 }
             } else {
