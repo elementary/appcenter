@@ -79,19 +79,23 @@ namespace AppCenter.Views {
 
             accent_provider = new Gtk.CssProvider ();
             try {
-                string? color_primary = null;
-                string? color_primary_text = null;
+                string? bg_color = null;
+                string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+
                 if (package != null) {
-                    color_primary = package.get_color_primary ();
-                    color_primary_text = package.get_color_primary_text ();
+                    bg_color = package.get_color_primary ();
+
+                    if (bg_color == null) {
+                        bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
+                    } else {
+                        var bg_rgba = Gdk.RGBA ();
+                        bg_rgba.parse (bg_color);
+
+                        text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
+                    }
                 }
 
-                if (color_primary == null || color_primary_text == null) {
-                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
-                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-                }
-
-                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
+                var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
                 accent_provider.load_from_data (colored_css, colored_css.length);
             } catch (GLib.Error e) {
                 critical ("Unable to set accent color: %s", e.message);
