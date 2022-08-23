@@ -265,7 +265,7 @@ namespace AppCenter {
                     yield package.update ();
                 } catch (Error e) {
                     if (!(e is GLib.IOError.CANCELLED)) {
-                        var fail_dialog = new UpgradeFailDialog (package, e) {
+                        var fail_dialog = new UpgradeFailDialog (package, e.message) {
                             modal = true,
                             transient_for = (Gtk.Window) get_toplevel ()
                         };
