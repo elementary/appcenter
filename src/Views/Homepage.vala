@@ -18,7 +18,9 @@
 *              Dane Henson <thegreatdane@gmail.com>
 */
 
-public class AppCenter.Homepage : AbstractView {
+public class AppCenter.Homepage : Hdy.Deck {
+    public signal void package_selected (AppCenterCore.Package package);
+
     private const int MAX_PACKAGES_IN_BANNER = 5;
     private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
@@ -50,6 +52,10 @@ public class AppCenter.Homepage : AbstractView {
     private uint banner_timeout_id;
 
     construct {
+        can_swipe_back = true;
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        expand = true;
+
         banner_carousel = new Hdy.Carousel () {
             allow_long_swipes = true
         };
@@ -170,6 +176,18 @@ public class AppCenter.Homepage : AbstractView {
         destroy.connect (() => {
             banner_timeout_stop ();
         });
+
+        notify["visible-child"].connect (() => {
+            if (!transition_running) {
+                update_navigation ();
+            }
+        });
+
+        notify["transition-running"].connect (() => {
+            if (!transition_running) {
+                update_navigation ();
+            }
+        });
     }
 
     private async void load_banners_and_carousels () {
@@ -239,7 +257,7 @@ public class AppCenter.Homepage : AbstractView {
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
     }
 
-    public override void update_navigation () {
+    public void update_navigation () {
         var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
 
         var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
@@ -259,13 +277,36 @@ public class AppCenter.Homepage : AbstractView {
             } else {
                 main_window.reveal_view_mode (true);
             }
+        } else if (visible_child is Views.AppInfoView) {
+            main_window.reveal_view_mode (false);
+            main_window.configure_search (false);
+        } else if (visible_child is Views.AppListUpdateView) {
+            main_window.reveal_view_mode (true);
+            main_window.configure_search (false);
         }
 
-        if (previous_child == scrolled_window) {
+        if (previous_child == null) {
+            main_window.set_return_name (null);
+        } else if (previous_child == scrolled_window) {
             main_window.set_return_name (_("Home"));
         } else if (previous_child == search_view) {
             /// TRANSLATORS: the name of the Search view
             main_window.set_return_name (C_("view", "Search"));
+        } else if (previous_child is Views.AppInfoView) {
+            main_window.set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
+        } else if (previous_child is CategoryView) {
+            main_window.set_return_name (((CategoryView) previous_child).category.name);
+        } else if (previous_child is Views.AppListUpdateView) {
+            main_window.set_return_name (C_("view", "Installed"));
+        }
+
+        while (get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
+            var next_child = get_adjacent_child (Hdy.NavigationDirection.FORWARD);
+            if (next_child is AppCenter.Views.AppListUpdateView) {
+                remove (next_child);
+            } else {
+                next_child.destroy ();
+            }
         }
     }
 
@@ -327,10 +368,52 @@ public class AppCenter.Homepage : AbstractView {
         visible_child = category_view;
 
         category_view.show_app.connect ((package) => {
-            base.show_package (package);
+            show_package (package);
 
             var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
             main_window.set_return_name (category.name);
+        });
+    }
+
+    public void show_package (AppCenterCore.Package package, bool remember_history = true) {
+        if (transition_running) {
+            return;
+        }
+
+        package_selected (package);
+
+        var package_hash = package.hash;
+
+        var pk_child = get_child_by_name (package_hash) as Views.AppInfoView;
+        if (pk_child != null && pk_child.to_recycle) {
+            // Don't switch to a view that needs recycling
+            pk_child.destroy ();
+            pk_child = null;
+        }
+
+        if (pk_child != null) {
+            pk_child.view_entered ();
+            set_visible_child (pk_child);
+            return;
+        }
+
+        var app_info_view = new Views.AppInfoView (package);
+        app_info_view.show_all ();
+
+        add (app_info_view);
+        visible_child = app_info_view;
+
+        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
+            if (!transition) {
+                transition_duration = 0;
+            }
+
+            show_package (_package, remember_history);
+            if (remember_history) {
+                var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
+                main_window.set_return_name (package.get_name ());
+            }
+            transition_duration = 200;
         });
     }
 
