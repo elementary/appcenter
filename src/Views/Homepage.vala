@@ -31,16 +31,6 @@ public class AppCenter.Homepage : AbstractView {
         }
     }
 
-    public AppStream.Category? currently_viewed_category {
-        get {
-            if (visible_child is CategoryView) {
-                return ((CategoryView) visible_child).category;
-            }
-
-            return null;
-        }
-    }
-
     private Hdy.Carousel banner_carousel;
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;

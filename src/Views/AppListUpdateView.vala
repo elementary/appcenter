@@ -304,7 +304,11 @@ namespace AppCenter.Views {
                         if (e is GLib.IOError.CANCELLED) {
                             break;
                         } else {
-                            new UpgradeFailDialog (package, e).present ();
+                            var fail_dialog = new UpgradeFailDialog (package, e.message) {
+                                modal = true,
+                                transient_for = (Gtk.Window) get_toplevel ()
+                            };
+                            fail_dialog.present ();
                             break;
                         }
                     }
