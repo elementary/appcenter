@@ -92,7 +92,7 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
         var main_window = (AppCenter.MainWindow) ((Gtk.Application) GLib.Application.get_default ()).get_active_window ();
 
         if (visible_child is Views.AppInfoView) {
-            main_window.set_custom_header ("");
+            main_window.reveal_view_mode (false);
             main_window.configure_search (false);
         }
 
