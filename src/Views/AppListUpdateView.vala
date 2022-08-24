@@ -83,14 +83,12 @@ namespace AppCenter.Views {
 
         private async void get_apps () {
             if (refresh_cancellable != null) {
-                refresh_cancellable.cancel ();
-                refresh_cancellable = null;
+                refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
             }
 
+            yield refresh_mutex.lock (); // Wait for any previous operation to end
+            // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
             refresh_cancellable = new Cancellable ();
-
-            yield refresh_mutex.lock ();
-
             unowned var client = AppCenterCore.Client.get_default ();
 
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);
@@ -103,6 +101,7 @@ namespace AppCenter.Views {
                 add_packages (installed_apps);
             }
 
+            refresh_cancellable = null;
             refresh_mutex.unlock ();
         }
 
