@@ -102,24 +102,27 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         add (package_grid);
 
         var provider = new Gtk.CssProvider ();
-        var background_color = package.get_color_primary ();
-        var foreground_color = package.get_color_primary_text ();
-
-        if (background_color == null || foreground_color == null) {
-            background_color = DEFAULT_BANNER_COLOR_PRIMARY;
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-        }
-
-        var colored_css = BANNER_STYLE_CSS.printf (
-            background_color,
-            foreground_color
-        );
-
         try {
+            string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
+            string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+
+            if (package != null) {
+                var primary_color = package.get_color_primary ();
+
+                if (primary_color != null) {
+                    var bg_rgba = Gdk.RGBA ();
+                    bg_rgba.parse (primary_color);
+
+                    bg_color = primary_color;
+                    text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
+                }
+            }
+
+            var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
             provider.load_from_data (colored_css, colored_css.length);
             style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
+        } catch (GLib.Error e) {
+            critical ("Unable to set accent color: %s", e.message);
         }
     }
 }
