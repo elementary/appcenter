@@ -22,7 +22,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
     private Gtk.ModelButton refresh_menuitem;
-    private Homepage homepage;
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
@@ -231,7 +230,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             can_swipe_back = true
         };
 
-        homepage = new Homepage ();
+        var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
 
         var overlay = new Gtk.Overlay ();
