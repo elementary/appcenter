@@ -132,7 +132,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
             var packages = get_packages.end (res);
             foreach (var package in packages) {
-                if (!package.is_plugin && !package.is_font) {
+                if (!(package.kind == AppStream.ComponentKind.ADDON) && !(package.kind == AppStream.ComponentKind.FONT)) {
                     var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
 #if CURATED
                     if (package.is_native) {
