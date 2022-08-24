@@ -373,7 +373,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             return;
         }
 
-        package_selected (package);
+        selected_package = package;
 
         var package_hash = package.hash;
 
@@ -547,10 +547,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    private void package_selected (AppCenterCore.Package package) {
-        selected_package = package;
-    }
-
     private void set_return_name (string? return_name) {
         if (return_name != null) {
             return_button.label = return_name;
@@ -595,5 +591,4 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             set_return_name (category.name);
         });
     }
-
 }
