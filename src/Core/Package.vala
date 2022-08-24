@@ -789,17 +789,16 @@ public class AppCenterCore.Package : Object {
         if (color_primary != null) {
             return color_primary;
         } else {
-            color_primary = component.get_custom_value ("x-appcenter-color-primary");
-            return color_primary;
-        }
-    }
+            var branding = component.get_branding ();
+            if (branding != null) {
+                color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.LIGHT);
+            }
 
-    public string? get_color_primary_text () {
-        if (color_primary_text != null) {
-            return color_primary_text;
-        } else {
-            color_primary_text = component.get_custom_value ("x-appcenter-color-primary-text");
-            return color_primary_text;
+            if (color_primary == null) {
+                color_primary = component.get_custom_value ("x-appcenter-color-primary");
+            }
+
+            return color_primary;
         }
     }
 
