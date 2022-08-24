@@ -17,6 +17,7 @@
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working { get; set; }
 
+    private AppCenter.SearchView search_view;
     private Gtk.Revealer view_mode_revealer;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
@@ -26,6 +27,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
     private Granite.Widgets.Toast toast;
+    private Hdy.Deck deck;
 
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
@@ -84,8 +86,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         return_button.clicked.connect (view_return);
-
-        homepage.package_selected.connect (package_selected);
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
@@ -227,6 +227,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         headerbar.pack_end (view_mode_revealer);
         headerbar.pack_end (spinner);
 
+        deck = new Hdy.Deck () {
+            can_swipe_back = true
+        };
+
         homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
 
@@ -282,12 +286,32 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             go_to_installed ();
         });
 
+        homepage.show_category.connect ((category) => {
+            show_category (category);
+        });
+
+        homepage.show_package.connect ((package) => {
+            show_package (package);
+        });
+
         installed_view.show_app.connect ((package) => {
-            homepage.show_package (package);
+            show_package (package);
         });
 
         destroy.connect (() => {
            installed_view.clear ();
+        });
+
+        deck.notify["visible-child"].connect (() => {
+            if (!deck.transition_running) {
+                update_navigation ();
+            }
+        });
+
+        deck.notify["transition-running"].connect (() => {
+            if (!deck.transition_running) {
+                update_navigation ();
+            }
         });
     }
 
@@ -344,16 +368,105 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    public void show_package (AppCenterCore.Package package) {
-        homepage.show_package (package);
+    public void show_package (AppCenterCore.Package package, bool remember_history = true) {
+        if (deck.transition_running) {
+            return;
+        }
+
+        package_selected (package);
+
+        var package_hash = package.hash;
+
+        var pk_child = deck.get_child_by_name (package_hash) as Views.AppInfoView;
+        if (pk_child != null && pk_child.to_recycle) {
+            // Don't switch to a view that needs recycling
+            pk_child.destroy ();
+            pk_child = null;
+        }
+
+        if (pk_child != null) {
+            pk_child.view_entered ();
+            deck.set_visible_child (pk_child);
+            return;
+        }
+
+        var app_info_view = new Views.AppInfoView (package);
+        app_info_view.show_all ();
+
+        deck.add (app_info_view);
+        deck.visible_child = app_info_view;
+
+        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
+            if (!transition) {
+                deck.transition_duration = 0;
+            }
+
+            show_package (_package, remember_history);
+            if (remember_history) {
+                set_return_name (package.get_name ());
+            }
+            deck.transition_duration = 200;
+        });
+    }
+
+    public void update_navigation () {
+        var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+
+        if (deck.visible_child is Homepage) {
+            reveal_view_mode (true);
+            configure_search (true, _("Search Apps"), "");
+        } else if (deck.visible_child is CategoryView) {
+            var current_category = ((CategoryView) deck.visible_child).category;
+            reveal_view_mode (false);
+            configure_search (true, _("Search %s").printf (current_category.name), "");
+        } else if (deck.visible_child == search_view) {
+            if (previous_child is CategoryView) {
+                var previous_category = ((CategoryView) previous_child).category;
+                configure_search (true, _("Search %s").printf (previous_category.name));
+                reveal_view_mode (false);
+            } else {
+                configure_search (true);
+                reveal_view_mode (true);
+            }
+        } else if (deck.visible_child is Views.AppInfoView) {
+            reveal_view_mode (false);
+            configure_search (false);
+        } else if (deck.visible_child is Views.AppListUpdateView) {
+            reveal_view_mode (true);
+            configure_search (false);
+        }
+
+        if (previous_child == null) {
+            set_return_name (null);
+        } else if (previous_child is Homepage) {
+            set_return_name (_("Home"));
+        } else if (previous_child == search_view) {
+            /// TRANSLATORS: the name of the Search view
+            set_return_name (C_("view", "Search"));
+        } else if (previous_child is Views.AppInfoView) {
+            set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
+        } else if (previous_child is CategoryView) {
+            set_return_name (((CategoryView) previous_child).category.name);
+        } else if (previous_child is Views.AppListUpdateView) {
+            set_return_name (C_("view", "Installed"));
+        }
+
+        while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
+            var next_child = deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD);
+            if (next_child is AppCenter.Views.AppListUpdateView) {
+                remove (next_child);
+            } else {
+                next_child.destroy ();
+            }
+        }
     }
 
     public void go_to_installed () {
-        if (homepage.get_children ().find (installed_view) == null) {
-            homepage.add (installed_view);
+        if (deck.get_children ().find (installed_view) == null) {
+            deck.add (installed_view);
         }
         installed_view.show_all ();
-        homepage.visible_child = installed_view;
+        deck.visible_child = installed_view;
     }
 
     public void search (string term, bool mimetype = false) {
@@ -381,16 +494,52 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void trigger_search () {
-        unowned string query = search_entry.text;
-        uint query_length = query.length;
+        unowned string search_term = search_entry.text;
+        uint query_length = search_term.length;
         bool query_valid = query_length >= VALID_QUERY_LENGTH;
 
         view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
-            homepage.search (query, mimetype);
+            if (deck.visible_child != search_view) {
+                search_view = new AppCenter.SearchView ();
+                search_view.show_all ();
+
+                search_view.show_app.connect ((package) => {
+                    show_package (package);
+                });
+
+                deck.add (search_view);
+                deck.visible_child = search_view;
+            }
+
+            search_view.clear ();
+            search_view.current_search_term = search_term;
+
+            unowned var client = AppCenterCore.Client.get_default ();
+
+            Gee.Collection<AppCenterCore.Package> found_apps;
+
+            if (mimetype) {
+                found_apps = client.search_applications_mime (search_term);
+                search_view.add_packages (found_apps);
+            } else {
+                AppStream.Category current_category = null;
+
+                var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+                if (previous_child is CategoryView) {
+                    current_category = ((CategoryView) previous_child).category;
+                }
+
+                found_apps = client.search_applications (search_term, current_category);
+                search_view.add_packages (found_apps);
+            }
+
         } else {
-            homepage.search ("");
+            // Prevent navigating away from category views when backspacing
+            if (deck.visible_child == search_view) {
+                deck.navigate (Hdy.NavigationDirection.BACK);
+            }
         }
 
         if (mimetype) {
@@ -430,11 +579,25 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     private void view_return () {
         selected_package = null;
-        homepage.navigate (Hdy.NavigationDirection.BACK);
+        deck.navigate (Hdy.NavigationDirection.BACK);
     }
 
     public void show_category (AppStream.Category category) {
-        homepage.show_app_list_for_category (category);
+        var child = deck.get_child_by_name (category.name);
+        if (child != null) {
+            deck.visible_child = child;
+            return;
+        }
+
+        var category_view = new CategoryView (category);
+
+        deck.add (category_view);
+        deck.visible_child = category_view;
+
+        category_view.show_app.connect ((package) => {
+            show_package (package);
+            set_return_name (category.name);
+        });
     }
 
 }
