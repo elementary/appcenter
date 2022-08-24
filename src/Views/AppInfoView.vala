@@ -79,18 +79,17 @@ namespace AppCenter.Views {
 
             accent_provider = new Gtk.CssProvider ();
             try {
-                string? bg_color = null;
+                string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
                 string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
                 if (package != null) {
-                    bg_color = package.get_color_primary ();
+                    var primary_color = package.get_color_primary ();
 
-                    if (bg_color == null) {
-                        bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
-                    } else {
+                    if (primary_color != null) {
                         var bg_rgba = Gdk.RGBA ();
-                        bg_rgba.parse (bg_color);
+                        bg_rgba.parse (primary_color);
 
+                        bg_color = primary_color;
                         text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
                     }
                 }
