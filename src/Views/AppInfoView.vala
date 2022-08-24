@@ -29,13 +29,13 @@ namespace AppCenter.Views {
 
         private static Gtk.CssProvider banner_provider;
         private static Gtk.CssProvider loading_provider;
+        private static Gtk.CssProvider screenshot_provider;
 
         GenericArray<AppStream.Screenshot> screenshots;
 
         private Gtk.CssProvider accent_provider;
         private Gtk.ComboBox origin_combo;
         private Gtk.Grid release_grid;
-        private Gtk.Label app_screenshot_not_found;
         private Gtk.Label package_summary;
         private Gtk.Label author_label;
         private Gtk.ListBox extension_box;
@@ -43,6 +43,7 @@ namespace AppCenter.Views {
         private Gtk.Overlay screenshot_overlay;
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
+        private Hdy.Clamp screenshot_not_found_clamp;
         private Gtk.Stack screenshot_stack;
         private Gtk.Label app_description;
         private Widgets.ReleaseListBox release_list_box;
@@ -70,6 +71,9 @@ namespace AppCenter.Views {
 
             loading_provider = new Gtk.CssProvider ();
             loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
+
+            screenshot_provider = new Gtk.CssProvider ();
+            screenshot_provider.load_from_resource ("io/elementary/appcenter/Screenshot.css");
         }
 
         construct {
@@ -82,6 +86,7 @@ namespace AppCenter.Views {
                 string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
                 string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
+                var accent_css = "";
                 if (package != null) {
                     var primary_color = package.get_color_primary ();
 
@@ -91,15 +96,20 @@ namespace AppCenter.Views {
 
                         bg_color = primary_color;
                         text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
+
+                        //FIXME: Update to use AppStream's new accent color
+                        accent_css = "@define-color accent_color %s;".printf (primary_color);
+                        accent_provider.load_from_data (accent_css, accent_css.length);
                     }
                 }
 
                 var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
+                colored_css += accent_css;
+
                 accent_provider.load_from_data (colored_css, colored_css.length);
             } catch (GLib.Error e) {
                 critical ("Unable to set accent color: %s", e.message);
             }
-
 
             unowned var action_button_context = action_button.get_style_context ();
             action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
@@ -323,8 +333,7 @@ namespace AppCenter.Views {
                 app_screenshots = new Hdy.Carousel () {
                     allow_mouse_drag = true,
                     allow_scroll_wheel = false,
-                    height_request = 500,
-                    spacing = 128
+                    height_request = 500
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
@@ -429,16 +438,25 @@ namespace AppCenter.Views {
                     valign = Gtk.Align.CENTER
                 };
 
-                app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
-                app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                app_screenshot_not_found.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+                var screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
+
+                unowned var screenshot_not_found_context = screenshot_not_found.get_style_context ();
+                screenshot_not_found_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                screenshot_not_found_context.add_provider (screenshot_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                screenshot_not_found_context.add_class ("screenshot");
+                screenshot_not_found_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+                screenshot_not_found_clamp = new Hdy.Clamp () {
+                    maximum_size = MAX_WIDTH
+                };
+                screenshot_not_found_clamp.add (screenshot_not_found);
 
                 screenshot_stack = new Gtk.Stack () {
                     transition_type = Gtk.StackTransitionType.CROSSFADE
                 };
                 screenshot_stack.add (app_screenshot_spinner);
                 screenshot_stack.add (screenshot_overlay);
-                screenshot_stack.add (app_screenshot_not_found);
+                screenshot_stack.add (screenshot_not_found_clamp);
 
                 stack_context = screenshot_stack.get_style_context ();
                 stack_context.add_class ("loading");
@@ -1008,7 +1026,7 @@ namespace AppCenter.Views {
                             screenshot_previous.show_all ();
                         }
                     } else {
-                        screenshot_stack.visible_child = app_screenshot_not_found;
+                        screenshot_stack.visible_child = screenshot_not_found_clamp;
                         stack_context.remove_class ("loading");
                     }
 
@@ -1026,37 +1044,44 @@ namespace AppCenter.Views {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
 
                 var image = new Gtk.Image () {
-                    halign = Gtk.Align.CENTER,
                     height_request = 500,
-                    icon_name = "image-x-generic"
+                    icon_name = "image-x-generic",
+                    vexpand = true
+                };
+                image.gicon = pixbuf;
+
+                var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
+                    halign = Gtk.Align.CENTER
                 };
 
-                image.gicon = pixbuf;
+                unowned var box_context = box.get_style_context ();
+                box_context.add_class ("screenshot");
+                box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                box_context.add_provider (screenshot_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
                 if (caption != null) {
-                    // AppStream spec says "ideally not more than 100 characters"
-                    int max_caption_len = 200;
-                    image.tooltip_text = ellipsize (caption, max_caption_len);
+                    var label = new Gtk.Label (caption) {
+                        max_width_chars = 50,
+                        wrap = true
+                    };
+
+                    unowned var label_context = label.get_style_context ();
+                    label_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    label_context.add_provider (screenshot_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                    box.add (label);
                 }
 
+                box.add (image);
+
                 Idle.add (() => {
-                    image.show ();
-                    app_screenshots.add (image);
+                    box.show_all ();
+                    app_screenshots.add (box);
                     return GLib.Source.REMOVE;
                 });
             } catch (Error e) {
                 critical (e.message);
             }
-        }
-
-        private string ellipsize (string long_text, int max_length) {
-            if (long_text.length > max_length) {
-                StringBuilder sb = new StringBuilder (long_text);
-                sb.truncate (max_length);
-                sb.append ("\u2026");
-                return sb.str;
-            }
-
-            return long_text;
         }
 
         private void parse_license (string project_license, out string license_copy, out string license_url) {

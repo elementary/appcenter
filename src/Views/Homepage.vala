@@ -235,19 +235,19 @@ public class AppCenter.Homepage : AbstractView {
         var previous_child = get_adjacent_child (Hdy.NavigationDirection.BACK);
 
         if (visible_child == scrolled_window) {
-            main_window.set_custom_header (null);
+            main_window.reveal_view_mode (true);
             main_window.configure_search (true, _("Search Apps"), "");
         } else if (visible_child is CategoryView) {
             var current_category = ((CategoryView) visible_child).category;
-            main_window.set_custom_header (current_category.name);
+            main_window.reveal_view_mode (false);
             main_window.configure_search (true, _("Search %s").printf (current_category.name), "");
         } else if (visible_child == search_view) {
             if (previous_child is CategoryView) {
                 var previous_category = ((CategoryView) previous_child).category;
                 main_window.configure_search (true, _("Search %s").printf (previous_category.name));
-                main_window.set_custom_header (previous_category.name);
+                main_window.reveal_view_mode (false);
             } else {
-                main_window.set_custom_header (null);
+                main_window.reveal_view_mode (true);
             }
         }
 
