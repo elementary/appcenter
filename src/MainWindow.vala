@@ -287,11 +287,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         var network_monitor = NetworkMonitor.get_default ();
-        network_info_bar.revealed = !network_monitor.get_network_available ();
-
-        network_monitor.network_changed.connect (() => {
-            network_info_bar.revealed = !network_monitor.get_network_available ();
-        });
+        network_monitor.bind_property ("network-available", network_info_bar, "revealed", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
 
         network_info_bar.response.connect (() => {
             try {
