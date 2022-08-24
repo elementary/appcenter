@@ -29,10 +29,10 @@ namespace AppCenter.Views {
 
         private static Gtk.CssProvider banner_provider;
         private static Gtk.CssProvider loading_provider;
-        private static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
 
+        private Gtk.CssProvider accent_provider;
         private Gtk.ComboBox origin_combo;
         private Gtk.Grid release_grid;
         private Gtk.Label app_screenshot_not_found;
@@ -77,17 +77,41 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
+            accent_provider = new Gtk.CssProvider ();
+            try {
+                string? color_primary = null;
+                string? color_primary_text = null;
+                if (package != null) {
+                    color_primary = package.get_color_primary ();
+                    color_primary_text = package.get_color_primary_text ();
+                }
+
+                if (color_primary == null || color_primary_text == null) {
+                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
+                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                }
+
+                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
+                accent_provider.load_from_data (colored_css, colored_css.length);
+            } catch (GLib.Error e) {
+                critical ("Unable to set accent color: %s", e.message);
+            }
+
+
             unowned var action_button_context = action_button.get_style_context ();
             action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            action_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             unowned var open_button_context = open_button.get_style_context ();
             open_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            open_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             unowned var cancel_button_context = cancel_button.get_style_context ();
             cancel_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            cancel_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
 
@@ -118,12 +142,20 @@ namespace AppCenter.Views {
             oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 margin_bottom = 24,
+                margin_top = 24,
                 row_spacing = 24,
                 selection_mode = Gtk.SelectionMode.NONE
             };
 
             oars_flowbox_revealer = new Gtk.Revealer ();
             oars_flowbox_revealer.add (oars_flowbox);
+
+            var content_warning_clamp = new Hdy.Clamp () {
+                margin_start = 24,
+                margin_end = 24,
+                maximum_size = MAX_WIDTH
+            };
+            content_warning_clamp.add (oars_flowbox_revealer);
 
 #if CURATED
             if (!package.is_native && !package.is_os_updates) {
@@ -286,7 +318,10 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
-                    height_request = 500
+                    allow_mouse_drag = true,
+                    allow_scroll_wheel = false,
+                    height_request = 500,
+                    spacing = 128
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
@@ -345,6 +380,7 @@ namespace AppCenter.Views {
 
                 app_screenshots.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 app_screenshots.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
+
                 screenshot_overlay.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 screenshot_overlay.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
 
@@ -402,7 +438,6 @@ namespace AppCenter.Views {
                 screenshot_stack.add (app_screenshot_not_found);
 
                 stack_context = screenshot_stack.get_style_context ();
-                stack_context.add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 stack_context.add_class ("loading");
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
@@ -418,7 +453,9 @@ namespace AppCenter.Views {
                 pixel_size = 64
             };
 
-            var app_icon_overlay = new Gtk.Overlay ();
+            var app_icon_overlay = new Gtk.Overlay () {
+                valign = Gtk.Align.START
+            };
             app_icon_overlay.add (app_icon);
 
             var scale_factor = get_scale_factor ();
@@ -439,9 +476,9 @@ namespace AppCenter.Views {
             }
 
             var package_name = new Gtk.Label (package.get_name ()) {
-                ellipsize = Pango.EllipsizeMode.MIDDLE,
                 selectable = true,
                 valign = Gtk.Align.END,
+                wrap = true,
                 xalign = 0
             };
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
@@ -540,16 +577,6 @@ namespace AppCenter.Views {
                 row_spacing = 24
             };
 
-            content_grid.add (oars_flowbox_revealer);
-            if (oars_flowbox.get_children ().length () > 0) {
-                oars_flowbox_revealer.reveal_child = true;
-            }
-
-            if (screenshots.length > 0) {
-                content_grid.add (screenshot_stack);
-                content_grid.add (screenshot_switcher);
-            }
-
             content_grid.add (package_summary);
             content_grid.add (app_description);
             content_grid.add (release_grid);
@@ -599,6 +626,7 @@ namespace AppCenter.Views {
             unowned var uninstall_button_context = uninstall_button.get_style_context ();
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            uninstall_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             uninstall_button_revealer = new Gtk.Revealer () {
                 transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
@@ -652,6 +680,7 @@ namespace AppCenter.Views {
             unowned var header_box_context = header_box.get_style_context ();
             header_box_context.add_class ("banner");
             header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            header_box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -665,18 +694,26 @@ namespace AppCenter.Views {
                 show_other_package (package);
             });
 
-            var grid = new Gtk.Grid () {
-                row_spacing = 12
-            };
-            grid.attach (header_box, 0, 0);
-            grid.attach (body_clamp, 0, 1);
-            grid.attach (other_apps_bar, 0, 3);
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
+            box.add (header_box);
+            box.add (content_warning_clamp);
+
+            if (screenshots.length > 0) {
+                box.add (screenshot_stack);
+
+                if (screenshots.length > 1) {
+                    box.add (screenshot_switcher);
+                }
+            }
+
+            box.add (body_clamp);
+            box.add (other_apps_bar);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER,
                 expand = true
             };
-            scrolled.add (grid);
+            scrolled.add (box);
 
             var toast = new Granite.Widgets.Toast (_("Link copied to clipboard"));
 
@@ -724,6 +761,10 @@ namespace AppCenter.Views {
 #endif
             view_entered ();
             set_up_package ();
+
+            if (oars_flowbox.get_children ().length () > 0) {
+                oars_flowbox_revealer.reveal_child = true;
+            }
 
             origin_combo.changed.connect (() => {
                 Gtk.TreeIter iter;
@@ -833,33 +874,6 @@ namespace AppCenter.Views {
                         origin_combo.set_active_iter (iter);
                     }
                 } while (origin_liststore.iter_next (ref iter));
-            }
-
-            var provider = new Gtk.CssProvider ();
-            try {
-                string? color_primary = null;
-                string? color_primary_text = null;
-                if (package != null) {
-                    color_primary = package.get_color_primary ();
-                    color_primary_text = package.get_color_primary_text ();
-                }
-
-                if (color_primary == null || color_primary_text == null) {
-                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
-                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-                }
-
-                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
-                provider.load_from_data (colored_css, colored_css.length);
-
-                if (previous_css_provider != null) {
-                    Gtk.StyleContext.remove_provider_for_screen (Gdk.Screen.get_default (), previous_css_provider);
-                }
-
-                previous_css_provider = provider;
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (GLib.Error e) {
-                critical (e.message);
             }
         }
 
@@ -1007,11 +1021,13 @@ namespace AppCenter.Views {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
-                var image = new Gtk.Image ();
-                image.width_request = MAX_WIDTH;
-                image.height_request = 500;
-                image.icon_name = "image-x-generic";
-                image.halign = Gtk.Align.CENTER;
+
+                var image = new Gtk.Image () {
+                    halign = Gtk.Align.CENTER,
+                    height_request = 500,
+                    icon_name = "image-x-generic"
+                };
+
                 image.gicon = pixbuf;
                 if (caption != null) {
                     // AppStream spec says "ideally not more than 100 characters"
