@@ -409,7 +409,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
     }
 
-    public void update_navigation () {
+    private void update_navigation () {
         var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
 
         if (deck.visible_child is Homepage) {
@@ -551,7 +551,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         selected_package = package;
     }
 
-    public void set_return_name (string? return_name) {
+    private void set_return_name (string? return_name) {
         if (return_name != null) {
             return_button.label = return_name;
         }
@@ -560,7 +560,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.visible = return_name != null;
     }
 
-    public void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
+    private void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
         search_entry.sensitive = sensitive;
         search_entry.placeholder_text = placeholder_text;
 
@@ -573,7 +573,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    public void reveal_view_mode (bool reveal_child) {
+    private void reveal_view_mode (bool reveal_child) {
         view_mode_revealer.reveal_child = reveal_child;
     }
 
@@ -582,7 +582,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         deck.navigate (Hdy.NavigationDirection.BACK);
     }
 
-    public void show_category (AppStream.Category category) {
+    private void show_category (AppStream.Category category) {
         var child = deck.get_child_by_name (category.name);
         if (child != null) {
             deck.visible_child = child;
