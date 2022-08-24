@@ -248,14 +248,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         network_info_bar.get_content_area ().add (network_info_bar_label);
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
-        network_info_bar.response.connect (() => {
-            try {
-                Gtk.show_uri_on_window (this, "settings://network", Gdk.CURRENT_TIME);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        });
-
         var grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL
         };
@@ -299,6 +291,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         network_monitor.network_changed.connect (() => {
             network_info_bar.revealed = !network_monitor.get_network_available ();
+        });
+
+        network_info_bar.response.connect (() => {
+            try {
+                Gtk.show_uri_on_window (this, "settings://network", Gdk.CURRENT_TIME);
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
         });
 
         updates_button.clicked.connect (() => {
