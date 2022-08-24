@@ -234,7 +234,31 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         overlay.add_overlay (toast);
         overlay.add (homepage);
 
-        var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
+        var network_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
+            _("Network Not Available."),
+            _("Connect to the Internet to browse and install apps.")
+        )) {
+            use_markup = true,
+            wrap = true
+        };
+
+        var network_info_bar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.WARNING
+        };
+        network_info_bar.get_content_area ().add (network_info_bar_label);
+        network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
+
+        network_info_bar.response.connect (() => {
+            try {
+                Gtk.show_uri_on_window (
+                    ((Gtk.Application) Application.get_default ()).get_active_window (),
+                    "settings://network",
+                    Gdk.CURRENT_TIME
+                );
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
+        });
 
         var grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL
@@ -272,6 +296,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             } else {
                 AppCenterCore.Client.get_default ().cancel_updates (true);
             }
+        });
+
+        var network_monitor = NetworkMonitor.get_default ();
+        network_info_bar.revealed = !network_monitor.get_network_available ();
+
+        network_monitor.network_changed.connect (() => {
+            network_info_bar.revealed = !network_monitor.get_network_available ();
         });
 
         updates_button.clicked.connect (() => {
