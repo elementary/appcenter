@@ -139,9 +139,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        var updates_button = new Gtk.Button () {
-            image = new Gtk.Image.from_icon_name ("software-update-available", Gtk.IconSize.LARGE_TOOLBAR),
-        };
+        var updates_button = new Gtk.Button.from_icon_name ("software-update-available", Gtk.IconSize.LARGE_TOOLBAR);
 
         var badge_provider = new Gtk.CssProvider ();
         badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
