@@ -17,17 +17,16 @@
 
 public class UpgradeFailDialog : Granite.MessageDialog {
     public AppCenterCore.Package? package { get; construct; }
-    public Error error { get; construct; }
+    public string error_message { get; construct; }
     private const string FALLBACK_ICON = "application-default-icon";
 
-    public UpgradeFailDialog (AppCenterCore.Package? package, Error error) {
+    public UpgradeFailDialog (AppCenterCore.Package? package, string error_message) {
         Object (
             title: "",
-            secondary_text: _("This may have been caused by external or manually compiled software."),
+            secondary_text: _("This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."),
             buttons: Gtk.ButtonsType.CLOSE,
             badge_icon: new ThemedIcon ("dialog-error"),
-            window_position: Gtk.WindowPosition.CENTER,
-            error: error,
+            error_message: error_message,
             package: package
         );
     }
@@ -41,8 +40,8 @@ public class UpgradeFailDialog : Granite.MessageDialog {
             image_icon = package.get_icon (48, get_scale_factor ());
         }
 
-        response.connect (() => destroy ());
+        show_error_details (error_message);
 
-        show_error_details (error.message);
+        response.connect (() => destroy ());
     }
 }

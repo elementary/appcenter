@@ -24,12 +24,10 @@ src/Dialogs/UpdateFailDialog.vala
 src/Dialogs/UpgradeFailDialog.vala
 src/Services/DBusServer.vala
 src/Services/SearchProvider.vala
-src/Views/AbstractView.vala
 src/Views/AppInfoView.vala
 src/Views/AppListUpdateView.vala
 src/Views/CategoryView.vala
 src/Views/Homepage.vala
-src/Views/InstalledView.vala
 src/Views/SearchView.vala
 src/Widgets/AbstractAppList.vala
 src/Widgets/Banner.vala

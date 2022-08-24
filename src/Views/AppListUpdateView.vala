@@ -24,7 +24,7 @@ namespace AppCenter.Views {
     public class AppListUpdateView : AbstractAppList {
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
-        private Cancellable refresh_cancellable;
+        private Cancellable? refresh_cancellable = null;
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
@@ -70,8 +70,6 @@ namespace AppCenter.Views {
             add (infobar);
             add (scrolled);
 
-            refresh_cancellable = new Cancellable ();
-
             get_apps.begin ();
 
             unowned var client = AppCenterCore.Client.get_default ();
@@ -84,12 +82,13 @@ namespace AppCenter.Views {
         }
 
         private async void get_apps () {
-            refresh_cancellable.cancel ();
+            if (refresh_cancellable != null) {
+                refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
+            }
 
-            yield refresh_mutex.lock ();
-
-            refresh_cancellable.reset ();
-
+            yield refresh_mutex.lock (); // Wait for any previous operation to end
+            // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
+            refresh_cancellable = new Cancellable ();
             unowned var client = AppCenterCore.Client.get_default ();
 
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);
@@ -102,6 +101,7 @@ namespace AppCenter.Views {
                 add_packages (installed_apps);
             }
 
+            refresh_cancellable = null;
             refresh_mutex.unlock ();
         }
 
@@ -304,7 +304,11 @@ namespace AppCenter.Views {
                         if (e is GLib.IOError.CANCELLED) {
                             break;
                         } else {
-                            new UpgradeFailDialog (package, e).present ();
+                            var fail_dialog = new UpgradeFailDialog (package, e.message) {
+                                modal = true,
+                                transient_for = (Gtk.Window) get_toplevel ()
+                            };
+                            fail_dialog.present ();
                             break;
                         }
                     }
@@ -315,6 +319,21 @@ namespace AppCenter.Views {
             yield client.refresh_updates ();
 
             updating_all_apps = false;
+        }
+
+        public async void add_app (AppCenterCore.Package package) {
+            unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+            var installed_apps = yield client.get_installed_applications ();
+            foreach (var app in installed_apps) {
+                if (app == package) {
+                    add_package (app);
+                    break;
+                }
+            }
+        }
+
+        public async void remove_app (AppCenterCore.Package package) {
+            remove_package (package);
         }
     }
 }
