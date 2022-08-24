@@ -320,5 +320,20 @@ namespace AppCenter.Views {
 
             updating_all_apps = false;
         }
+
+        public async void add_app (AppCenterCore.Package package) {
+            unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+            var installed_apps = yield client.get_installed_applications ();
+            foreach (var app in installed_apps) {
+                if (app == package) {
+                    add_package (app);
+                    break;
+                }
+            }
+        }
+
+        public async void remove_app (AppCenterCore.Package package) {
+            remove_package (package);
+        }
     }
 }
