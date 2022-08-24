@@ -413,26 +413,26 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
 
         if (deck.visible_child is Homepage) {
-            reveal_view_mode (true);
+            view_mode_revealer.reveal_child = true;
             configure_search (true, _("Search Apps"), "");
         } else if (deck.visible_child is CategoryView) {
             var current_category = ((CategoryView) deck.visible_child).category;
-            reveal_view_mode (false);
+            view_mode_revealer.reveal_child = false;
             configure_search (true, _("Search %s").printf (current_category.name), "");
         } else if (deck.visible_child == search_view) {
             if (previous_child is CategoryView) {
                 var previous_category = ((CategoryView) previous_child).category;
                 configure_search (true, _("Search %s").printf (previous_category.name));
-                reveal_view_mode (false);
+                view_mode_revealer.reveal_child = false;
             } else {
                 configure_search (true);
-                reveal_view_mode (true);
+                view_mode_revealer.reveal_child = true;
             }
         } else if (deck.visible_child is Views.AppInfoView) {
-            reveal_view_mode (false);
+            view_mode_revealer.reveal_child = false;
             configure_search (false);
         } else if (deck.visible_child is Views.AppListUpdateView) {
-            reveal_view_mode (true);
+            view_mode_revealer.reveal_child = true;
             configure_search (false);
         }
 
@@ -571,10 +571,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         if (sensitive) {
             search_entry.grab_focus_without_selecting ();
         }
-    }
-
-    private void reveal_view_mode (bool reveal_child) {
-        view_mode_revealer.reveal_child = reveal_child;
     }
 
     private void view_return () {
