@@ -265,6 +265,7 @@ public class AppCenter.Homepage : Hdy.Deck {
                 main_window.configure_search (true, _("Search %s").printf (previous_category.name));
                 main_window.reveal_view_mode (false);
             } else {
+                main_window.configure_search (true);
                 main_window.reveal_view_mode (true);
             }
         } else if (visible_child is Views.AppInfoView) {
