@@ -59,14 +59,12 @@ public class AppCenter.Homepage : Hdy.Deck {
             carousel = banner_carousel
         };
 
-        var banner_grid = new Gtk.Grid () {
-            orientation = Gtk.Orientation.VERTICAL
-        };
-        banner_grid.add (banner_event_box);
-        banner_grid.add (banner_dots);
+        var banner_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        banner_box.add (banner_event_box);
+        banner_box.add (banner_dots);
 
         banner_revealer = new Gtk.Revealer ();
-        banner_revealer.add (banner_grid);
+        banner_revealer.add (banner_box);
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
             margin_start = 12
@@ -101,19 +99,16 @@ public class AppCenter.Homepage : Hdy.Deck {
             valign = Gtk.Align.START
         };
 
-        var grid = new Gtk.Grid () {
-            column_spacing = 24,
-            orientation = Gtk.Orientation.VERTICAL
-        };
-        grid.add (banner_revealer);
-        grid.add (recently_updated_revealer);
-        grid.add (categories_label);
-        grid.add (category_flow);
+        var box = new Gtk.Box (orientation = Gtk.Orientation.VERTICAL, 0);
+        box.add (banner_revealer);
+        box.add (recently_updated_revealer);
+        box.add (categories_label);
+        box.add (category_flow);
 
         scrolled_window = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
-        scrolled_window.add (grid);
+        scrolled_window.add (box);
 
         add (scrolled_window);
 
