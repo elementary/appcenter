@@ -791,7 +791,7 @@ public class AppCenterCore.Package : Object {
         } else {
             var branding = component.get_branding ();
             if (branding != null) {
-                color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.LIGHT);
+                color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.UNKNOWN);
             }
 
             if (color_primary == null) {
