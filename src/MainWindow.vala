@@ -226,16 +226,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         headerbar.pack_end (view_mode_revealer);
         headerbar.pack_end (spinner);
 
-        deck = new Hdy.Deck () {
-            can_swipe_back = true
-        };
-
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
 
+        deck = new Hdy.Deck () {
+            can_swipe_back = true
+        };
+        deck.add (homepage);
+
         var overlay = new Gtk.Overlay ();
         overlay.add_overlay (toast);
-        overlay.add (homepage);
+        overlay.add (deck);
 
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
 
@@ -385,7 +386,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         if (pk_child != null) {
             pk_child.view_entered ();
-            deck.set_visible_child (pk_child);
+            deck.visible_child = pk_child;
             return;
         }
 
@@ -453,7 +454,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
             var next_child = deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD);
             if (next_child is AppCenter.Views.AppListUpdateView) {
-                remove (next_child);
+                deck.remove (next_child);
             } else {
                 next_child.destroy ();
             }
