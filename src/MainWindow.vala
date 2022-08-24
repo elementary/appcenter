@@ -250,11 +250,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         network_info_bar.response.connect (() => {
             try {
-                Gtk.show_uri_on_window (
-                    ((Gtk.Application) Application.get_default ()).get_active_window (),
-                    "settings://network",
-                    Gdk.CURRENT_TIME
-                );
+                Gtk.show_uri_on_window (this, "settings://network", Gdk.CURRENT_TIME);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
