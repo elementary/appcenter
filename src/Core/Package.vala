@@ -208,7 +208,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return is_native && !(component.get_kind () == AppStream.ComponentKind.DRIVER) && !is_os_updates;
+            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates;
         }
     }
 
