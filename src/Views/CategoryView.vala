@@ -21,12 +21,14 @@ public class AppCenter.CategoryView : Gtk.Stack {
     public AppStream.Category category { get; construct; }
 
     private Gtk.ScrolledWindow scrolled;
+    private Gtk.Box recently_updated_box;
     private Gtk.Grid free_grid;
     private Gtk.Grid grid;
     private Gtk.Grid paid_grid;
     private Gtk.Grid uncurated_grid;
     private SubcategoryFlowbox free_flowbox;
     private SubcategoryFlowbox paid_flowbox;
+    private SubcategoryFlowbox recently_updated_flowbox;
     private SubcategoryFlowbox uncurated_flowbox;
 
     public CategoryView (AppStream.Category category) {
@@ -34,6 +36,17 @@ public class AppCenter.CategoryView : Gtk.Stack {
     }
 
     construct {
+        var recently_updated_header = new Granite.HeaderLabel (_("Recently Updated")) {
+            margin_start = 12
+        };
+        recently_updated_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+
+        recently_updated_flowbox = new SubcategoryFlowbox ();
+
+        recently_updated_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        recently_updated_box.add (recently_updated_header);
+        recently_updated_box.add (recently_updated_flowbox);
+
         var paid_header = new Granite.HeaderLabel (_("Paid Apps")) {
             margin_start = 12
         };
@@ -92,6 +105,11 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
         populate ();
 
+        recently_updated_flowbox.child_activated.connect ((child) => {
+            var row = (Widgets.ListPackageRowGrid) child.get_child ();
+            show_app (row.package);
+        });
+
         paid_flowbox.child_activated.connect ((child) => {
             var row = (Widgets.ListPackageRowGrid) child.get_child ();
             show_app (row.package);
@@ -118,6 +136,10 @@ public class AppCenter.CategoryView : Gtk.Stack {
                 grid.remove (child);
             }
 
+            foreach (unowned var child in recently_updated_flowbox.get_children ()) {
+                child.destroy ();
+            }
+
             foreach (unowned var child in free_flowbox.get_children ()) {
                 child.destroy ();
             }
@@ -132,25 +154,62 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
             var packages = get_packages.end (res);
             foreach (var package in packages) {
-                if (!package.is_plugin && !package.is_font) {
-                    var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
 #if CURATED
-                    if (package.is_native) {
-                        if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                            paid_flowbox.add (package_row);
-                        } else {
-                            free_flowbox.add (package_row);
-                        }
+                if (package.is_native) {
+                    if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
+                        paid_flowbox.add (package_row);
                     } else {
-                        uncurated_flowbox.add (package_row);
+                        free_flowbox.add (package_row);
                     }
-#else
+                } else {
                     uncurated_flowbox.add (package_row);
+                }
+#else
+                uncurated_flowbox.add (package_row);
 #endif
+            }
+
+            var recent_packages_list = new Gee.ArrayList<AppCenterCore.Package> ();
+            recent_packages_list.add_all (packages);
+            recent_packages_list.sort ((a, b) => {
+                if (a.get_newest_release () == null || b.get_newest_release () == null) {
+                    if (a.get_newest_release () != null) {
+                        return -1;
+                    } else if (b.get_newest_release () != null) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+
+                return b.get_newest_release ().vercmp (a.get_newest_release ());
+            });
+
+            var datetime = new GLib.DateTime.now_local ().add_months (-6);
+            var recent_count = 0;
+            foreach (var recent_package in recent_packages_list) {
+                if (recent_count == 4) {
+                    break;
+                }
+
+                // Don't add packages over 6 months old
+                if (recent_package.get_newest_release ().get_timestamp () < datetime.to_unix ()) {
+                    continue;
+                }
+
+                if (!recent_package.installed) {
+                    var package_row = new AppCenter.Widgets.ListPackageRowGrid (recent_package);
+                    recently_updated_flowbox.add (package_row);
+                    recent_count++;
                 }
             }
 
 #if CURATED
+            if (recently_updated_flowbox.get_child_at_index (0) != null) {
+                grid.add (recently_updated_box);
+            }
+
             if (paid_flowbox.get_child_at_index (0) != null) {
                 grid.add (paid_grid);
             }
@@ -176,7 +235,12 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
         var packages = new Gee.TreeSet <AppCenterCore.Package> ();
         new Thread<void> ("get_packages", () => {
-            packages.add_all (AppCenterCore.Client.get_default ().get_applications_for_category (category));
+            foreach (var package in AppCenterCore.Client.get_default ().get_applications_for_category (category)) {
+                if (!package.is_plugin && !package.is_font) {
+                    packages.add (package);
+                }
+            }
+
             Idle.add ((owned) callback);
         });
 
@@ -194,7 +258,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
         construct {
             column_spacing = 24;
             homogeneous = true;
-            max_children_per_line = 5;
+            max_children_per_line = 4;
             row_spacing = 12;
             valign = Gtk.Align.START;
 
