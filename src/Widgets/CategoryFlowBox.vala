@@ -149,12 +149,19 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
 
         construct {
             var expanded_grid = new Gtk.Grid () {
-                expand = true,
-                margin = 12
+                hexpand = true,
+                vexpand = true,
+                margin_top = 12,
+                margin_end = 12,
+                margin_bottom = 12,
+                margin_start = 12
             };
 
             content_area = new Gtk.Grid () {
-                margin = 12
+                margin_top = 12,
+                margin_end = 12,
+                margin_bottom = 12,
+                margin_start = 12
             };
             content_area.add (expanded_grid);
 
