@@ -194,15 +194,9 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool is_driver {
-       get {
-           return component.get_kind () == AppStream.ComponentKind.DRIVER;
-       }
-    }
-
-    public bool is_font {
+    public AppStream.ComponentKind kind {
         get {
-            return component.get_kind () == AppStream.ComponentKind.FONT;
+            return component.get_kind ();
         }
     }
 
@@ -214,7 +208,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return is_native && !is_driver && !is_os_updates;
+            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates;
         }
     }
 
@@ -314,12 +308,6 @@ public class AppCenterCore.Package : Object {
             }
 
             return _author_title;
-        }
-    }
-
-    public bool is_plugin {
-        get {
-            return component.get_kind () == AppStream.ComponentKind.ADDON;
         }
     }
 
