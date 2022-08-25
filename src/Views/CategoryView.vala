@@ -236,7 +236,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
         var packages = new Gee.TreeSet <AppCenterCore.Package> ();
         new Thread<void> ("get_packages", () => {
             foreach (var package in AppCenterCore.Client.get_default ().get_applications_for_category (category)) {
-                if (!package.is_plugin && !package.is_font) {
+                if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
                     packages.add (package);
                 }
             }
