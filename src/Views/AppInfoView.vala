@@ -481,7 +481,7 @@ namespace AppCenter.Views {
             var scale_factor = get_scale_factor ();
 
             var plugin_host_package = package.get_plugin_host_package ();
-            if (package.is_plugin && plugin_host_package != null) {
+            if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
                 app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
                 badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
 
