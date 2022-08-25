@@ -687,7 +687,10 @@ namespace AppCenter.Views {
             }
 
             var header_clamp = new Hdy.Clamp () {
-                margin = 24,
+                margin_top = 24,
+                margin_end = 24,
+                margin_bottom = 24,
+                margin_start = 24,
                 maximum_size = MAX_WIDTH
             };
             header_clamp.add (header_grid);
@@ -703,7 +706,10 @@ namespace AppCenter.Views {
             header_box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
-                margin = 24,
+                margin_top = 24,
+                margin_end = 24,
+                margin_bottom = 24,
+                margin_start = 24,
                 maximum_size = MAX_WIDTH
             };
             body_clamp.add (content_grid);
@@ -731,7 +737,8 @@ namespace AppCenter.Views {
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER,
-                expand = true
+                hexpand = true,
+                vexpand = true
             };
             scrolled.add (box);
 
@@ -1258,7 +1265,8 @@ namespace AppCenter.Views {
             }
 
             construct {
-                expand = true;
+                hexpand = true;
+                vexpand = true;
                 valign = Gtk.Align.CENTER;
 
                 unowned var context = get_style_context ();
@@ -1366,7 +1374,10 @@ namespace AppCenter.Views {
             grid.add (flowbox);
 
             var clamp = new Hdy.Clamp () {
-                margin = 24,
+                margin_top = 24,
+                margin_end = 24,
+                margin_bottom = 24,
+                margin_start = 24,
                 maximum_size = max_width
             };
             clamp.add (grid);
