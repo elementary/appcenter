@@ -234,7 +234,19 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         overlay.add_overlay (toast);
         overlay.add (homepage);
 
-        var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
+        var network_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
+            _("Network Not Available."),
+            _("Connect to the Internet to browse and install apps.")
+        )) {
+            use_markup = true,
+            wrap = true
+        };
+
+        var network_info_bar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.WARNING
+        };
+        network_info_bar.get_content_area ().add (network_info_bar_label);
+        network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         box.add (headerbar);
@@ -263,6 +275,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 AppCenterCore.Client.get_default ().update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
             } else {
                 AppCenterCore.Client.get_default ().cancel_updates (true);
+            }
+        });
+
+        var network_monitor = NetworkMonitor.get_default ();
+        network_monitor.bind_property ("network-available", network_info_bar, "revealed", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
+
+        network_info_bar.response.connect (() => {
+            try {
+                Gtk.show_uri_on_window (this, "settings://network", Gdk.CURRENT_TIME);
+            } catch (GLib.Error e) {
+                critical (e.message);
             }
         });
 
