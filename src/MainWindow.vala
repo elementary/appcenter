@@ -257,9 +257,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         add (grid);
 
-        int window_x, window_y;
         int window_width, window_height;
-        App.settings.get ("window-position", "(ii)", out window_x, out window_y);
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
         App.settings.bind (
             "automatic-updates",
@@ -267,10 +265,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             "active",
             SettingsBindFlags.DEFAULT
         );
-
-        if (window_x != -1 || window_y != -1) {
-            move (window_x, window_y);
-        }
 
         resize (window_width, window_height);
 
@@ -328,10 +322,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                     int width, height;
                     get_size (out width, out height);
                     App.settings.set ("window-size", "(ii)", width, height);
-
-                    int root_x, root_y;
-                    get_position (out root_x, out root_y);
-                    App.settings.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return GLib.Source.REMOVE;
