@@ -528,8 +528,10 @@ namespace AppCenter.Views {
             };
             app_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            var links_grid = new Gtk.Grid () {
-                column_spacing = 12
+            var links_flowbox = new Gtk.FlowBox () {
+                column_spacing = 12,
+                row_spacing = 6,
+                hexpand = true
             };
 
             var project_license = package.component.project_license;
@@ -539,41 +541,39 @@ namespace AppCenter.Views {
 
                 parse_license (project_license, out license_copy, out license_url);
 
-                var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic") {
-                    hexpand = true
-                };
+                var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
 
-                links_grid.add (license_button);
+                links_flowbox.add (license_button);
             }
 
             var homepage_url = package_component.get_url (AppStream.UrlKind.HOMEPAGE);
             if (homepage_url != null) {
                 var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
-                links_grid.add (website_button);
+                links_flowbox.add (website_button);
             }
 
             var translate_url = package_component.get_url (AppStream.UrlKind.TRANSLATE);
             if (translate_url != null) {
                 var translate_button = new UrlButton (_("Translate"), translate_url, "preferences-desktop-locale-symbolic");
-                links_grid.add (translate_button);
+                links_flowbox.add (translate_button);
             }
 
             var bugtracker_url = package_component.get_url (AppStream.UrlKind.BUGTRACKER);
             if (bugtracker_url != null) {
                 var bugtracker_button = new UrlButton (_("Send Feedback"), bugtracker_url, "bug-symbolic");
-                links_grid.add (bugtracker_button);
+                links_flowbox.add (bugtracker_button);
             }
 
             var help_url = package_component.get_url (AppStream.UrlKind.HELP);
             if (help_url != null) {
                 var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
-                links_grid.add (help_button);
+                links_flowbox.add (help_button);
             }
 
 #if PAYMENTS
             if (package.get_payments_key () != null) {
                 var fund_button = new FundButton (package);
-                links_grid.add (fund_button);
+                links_flowbox.add (fund_button);
             }
 #endif
 
@@ -624,7 +624,7 @@ namespace AppCenter.Views {
                 load_extensions.begin ();
             }
 
-            content_grid.add (links_grid);
+            content_grid.add (links_flowbox);
 
             origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
             origin_combo = new Gtk.ComboBox.with_model (origin_liststore) {
@@ -783,7 +783,7 @@ namespace AppCenter.Views {
                     toast.send_notification ();
                 });
 
-                links_grid.add (share_button);
+                links_flowbox.add (share_button);
             }
 #endif
             view_entered ();
@@ -1181,9 +1181,7 @@ namespace AppCenter.Views {
                     valign = Gtk.Align.CENTER
                 };
 
-                var title = new Gtk.Label (label) {
-                    ellipsize = Pango.EllipsizeMode.END
-                };
+                var title = new Gtk.Label (label);
 
                 var grid = new Gtk.Grid () {
                     column_spacing = 6
@@ -1200,9 +1198,9 @@ namespace AppCenter.Views {
 
                     button.clicked.connect (() => {
                         try {
-                            AppInfo.launch_default_for_uri (uri, null);
+                            Gtk.show_uri_on_window ((Gtk.Window) get_toplevel (), uri, Gdk.CURRENT_TIME);
                         } catch (Error e) {
-                            warning ("%s\n", e.message);
+                            critical (e.message);
                         }
                     });
                 } else {
