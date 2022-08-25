@@ -97,7 +97,6 @@ namespace AppCenter.Views {
                         bg_color = primary_color;
                         text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
 
-                        //FIXME: Update to use AppStream's new accent color
                         accent_css = "@define-color accent_color %s;".printf (primary_color);
                         accent_provider.load_from_data (accent_css, accent_css.length);
                     }
