@@ -216,8 +216,9 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_layout.attach (card_grid_revealer, 1, 3);
 
         layouts = new Gtk.Stack () {
-            margin = 12,
-            margin_top = 0,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12,
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT,
             vhomogeneous = false
         };
