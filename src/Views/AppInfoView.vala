@@ -752,7 +752,7 @@ namespace AppCenter.Views {
 
             open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 #if SHARING
-            if (package.is_shareable) {
+            if (package.component.get_origin () == AppCenterCore.Package.APPCENTER_PACKAGE_ORIGIN) {
                 var body = _("Check out %s on AppCenter:").printf (package.get_name ());
                 var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
                 var share_popover = new SharePopover (body, uri);

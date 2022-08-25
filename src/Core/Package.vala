@@ -212,12 +212,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool is_shareable {
-        get {
-            return is_native && !is_driver && !is_os_updates;
-        }
-    }
-
     public bool is_native {
         get {
             switch (component.get_origin ()) {
