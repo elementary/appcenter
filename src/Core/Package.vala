@@ -149,7 +149,7 @@ public class AppCenterCore.Package : Object {
 
     public bool should_pay {
         get {
-            if (!is_native || is_os_updates) {
+            if (component.get_origin () != APPCENTER_PACKAGE_ORIGIN) {
                 return false;
             }
 
