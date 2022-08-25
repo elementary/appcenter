@@ -27,9 +27,11 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     construct {
         orientation = Gtk.Orientation.VERTICAL;
 
-        list_box = new Gtk.ListBox ();
-        list_box.expand = true;
-        list_box.activate_on_single_click = true;
+        list_box = new Gtk.ListBox () {
+            activate_on_single_click = true,
+            hexpand = true,
+            vexpand = true
+        };
 
         list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
         list_box.row_activated.connect ((r) => {

@@ -155,7 +155,10 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             };
 
             var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
-                margin = 12
+                margin_top = 12,
+                margin_end = 12,
+                margin_bottom = 12,
+                margin_start = 12
             };
             releases_dialog_box.add (releases_title);
             releases_dialog_box.add (release_description);
