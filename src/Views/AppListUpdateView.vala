@@ -122,7 +122,7 @@ namespace AppCenter.Views {
             var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
 
             // Only add row if this package needs an update or it's not a font or plugin
-            if (needs_update || (!(package.kind == AppStream.ComponentKind.ADDON) && !(package.kind == AppStream.ComponentKind.FONT))) {
+            if (needs_update || (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT)) {
                 var row = new Widgets.PackageRow.installed (package, action_button_group);
                 list_box.add (row);
             }
