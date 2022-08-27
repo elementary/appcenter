@@ -55,16 +55,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
         app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
 
-        // button_release_event.connect ((event) => {
-        //     // On back mouse button pressed
-        //     if (event.button == 8) {
-        //         view_return ();
-        //         return true;
-        //     }
-
-        //     return false;
-        // });
-
         search_entry.search_changed.connect (() => trigger_search ());
 
         // search_entry.key_press_event.connect ((event) => {
