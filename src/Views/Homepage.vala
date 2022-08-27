@@ -365,7 +365,7 @@ public class AppCenter.Homepage : Gtk.Box {
         }
     }
 
-    public abstract class AbstractCategoryCard : Gtk.FlowBoxChild {
+    private abstract class AbstractCategoryCard : Gtk.FlowBoxChild {
         public AppStream.Category category { get; protected set; }
 
         protected Gtk.Grid content_area;
