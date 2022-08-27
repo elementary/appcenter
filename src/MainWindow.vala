@@ -182,17 +182,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             action_name = "app.refresh",
             child = refresh_accellabel
         };
+        refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
 
-        var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
-            margin_bottom = 6,
-            margin_top = 6
-        };
+        var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         menu_popover_box.append (automatic_updates_button);
         menu_popover_box.append (refresh_menuitem);
 
         var menu_popover = new Gtk.Popover () {
             child = menu_popover_box
         };
+        menu_popover.add_css_class (Granite.STYLE_CLASS_MENU);
 
         var menu_button = new Gtk.MenuButton () {
             child = new Gtk.Image.from_icon_name ("open-menu") {
