@@ -252,11 +252,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        box.append (headerbar);
         box.append (network_info_bar);
         box.append (overlay);
 
         child = box;
+        set_titlebar (headerbar);
 
         int window_width, window_height;
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
