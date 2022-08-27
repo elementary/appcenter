@@ -227,7 +227,7 @@ namespace AppCenter.Views {
                 bool using_flatpak = false;
                 foreach (var package in get_packages ()) {
                     if (package.update_available || package.is_updating) {
-                        if (package.should_nag_update) {
+                        if (package.should_pay) {
                             nag_numbers++;
                         }
 
@@ -296,7 +296,7 @@ namespace AppCenter.Views {
             };
 
             foreach (var package in get_packages ()) {
-                if (package.update_available && !package.should_nag_update) {
+                if (package.update_available && !package.should_pay) {
                     try {
                         yield package.update (false);
                     } catch (Error e) {

@@ -170,12 +170,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool should_nag_update {
-        get {
-            return update_available && should_pay;
-        }
-    }
-
     public bool is_updating {
         get {
             return state == State.UPDATING;
