@@ -14,7 +14,7 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-public class AppCenter.MainWindow : Adw.ApplicationWindow {
+public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
