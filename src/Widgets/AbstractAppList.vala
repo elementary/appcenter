@@ -55,26 +55,31 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     public void remove_package (AppCenterCore.Package package) {
         package.changing.disconnect (on_package_changing);
 
-        unowned var row = (Widgets.PackageRow) list_box.get_first_child ();
+        unowned var row = list_box.get_first_child ();
         while (row != null) {
-            if (row.get_package () == package) {
-                row.destroy ();
-                break;
+            if (row is Widgets.PackageRow) {
+                if (((Widgets.PackageRow) row).get_package () == package) {
+                    row.destroy ();
+                    break;
+                }
             }
-            row = (Widgets.PackageRow) row.get_next_sibling ();
+
+            row = row.get_next_sibling ();
         }
 
         list_box.invalidate_sort ();
     }
 
     public virtual void clear () {
-        unowned var row = (Widgets.PackageRow) list_box.get_first_child ();
+        unowned var row = list_box.get_first_child ();
         while (row != null) {
-            var package = row.get_package ();
-            package.changing.disconnect (on_package_changing);
-            row.destroy ();
+            if (row is Widgets.PackageRow) {
+                var package = ((Widgets.PackageRow) row).get_package ();
+                package.changing.disconnect (on_package_changing);
+                row.destroy ();
+            }
 
-            row = (Widgets.PackageRow) row.get_next_sibling ();
+            row = row.get_next_sibling ();
         }
 
         list_box.invalidate_sort ();
@@ -83,11 +88,13 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     protected virtual Gee.Collection<AppCenterCore.Package> get_packages () {
         var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
 
-        unowned var row = (Widgets.PackageRow) list_box.get_first_child ();
+        unowned var row = list_box.get_first_child ();
         while (row != null) {
-            tree_set.add (row.get_package ());
+            if (row is Widgets.PackageRow) {
+                tree_set.add (((Widgets.PackageRow) row).get_package ());
+            }
 
-            row = (Widgets.PackageRow) row.get_next_sibling ();
+            row = row.get_next_sibling ();
         }
 
         return tree_set;
