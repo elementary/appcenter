@@ -252,14 +252,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         network_info_bar.get_content_area ().add (network_info_bar_label);
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
-        var grid = new Gtk.Grid () {
-            orientation = Gtk.Orientation.VERTICAL
-        };
-        grid.add (headerbar);
-        grid.add (network_info_bar);
-        grid.add (overlay);
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        box.add (headerbar);
+        box.add (network_info_bar);
+        box.add (overlay);
 
-        add (grid);
+        add (box);
 
         int window_width, window_height;
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);

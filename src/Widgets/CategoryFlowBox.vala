@@ -195,19 +195,18 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             name_label.max_width_chars = 15;
             name_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            var grid = new Gtk.Grid ();
-            grid.orientation = Gtk.Orientation.HORIZONTAL;
-            grid.column_spacing = 6;
-            grid.halign = Gtk.Align.CENTER;
-            grid.valign = Gtk.Align.CENTER;
-            grid.margin_top = 32;
-            grid.margin_end = 16;
-            grid.margin_bottom = 32;
-            grid.margin_start = 16;
-            grid.add (display_image);
-            grid.add (name_label);
+            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+                halign = Gtk.Align.CENTER,
+                valign = Gtk.Align.CENTER,
+                margin_top = 32,
+                margin_end = 16,
+                margin_bottom = 32,
+                margin_start = 16
+            };
+            box.add (display_image);
+            box.add (name_label);
 
-            content_area.attach (grid, 0, 0);
+            content_area.attach (box, 0, 0);
 
             if (category.icon != "") {
                 display_image.icon_name = category.icon;
