@@ -20,12 +20,12 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
     public AppStream.Category category { get; construct; }
 
-    private Gtk.ScrolledWindow scrolled;
+    private Gtk.Box box;
+    private Gtk.Box free_box;
+    private Gtk.Box paid_box;
     private Gtk.Box recently_updated_box;
-    private Gtk.Grid free_grid;
-    private Gtk.Grid grid;
-    private Gtk.Grid paid_grid;
-    private Gtk.Grid uncurated_grid;
+    private Gtk.Box uncurated_box;
+    private Gtk.ScrolledWindow scrolled;
     private SubcategoryFlowbox free_flowbox;
     private SubcategoryFlowbox paid_flowbox;
     private SubcategoryFlowbox recently_updated_flowbox;
@@ -54,9 +54,9 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
         paid_flowbox = new SubcategoryFlowbox ();
 
-        paid_grid = new Gtk.Grid ();
-        paid_grid.attach (paid_header, 0, 0);
-        paid_grid.attach (paid_flowbox, 0, 1);
+        paid_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        paid_box.add (paid_header);
+        paid_box.add (paid_flowbox);
 
         var free_header = new Granite.HeaderLabel (_("Free Apps")) {
             margin_start = 12
@@ -65,9 +65,9 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
         free_flowbox = new SubcategoryFlowbox ();
 
-        free_grid = new Gtk.Grid ();
-        free_grid.attach (free_header, 0, 0);
-        free_grid.attach (free_flowbox, 0, 1);
+        free_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        free_box.add (free_header);
+        free_box.add (free_flowbox);
 
         var uncurated_header = new Granite.HeaderLabel (_("Non-Curated Apps")) {
             margin_start = 12
@@ -77,22 +77,22 @@ public class AppCenter.CategoryView : Gtk.Stack {
         uncurated_flowbox = new SubcategoryFlowbox ();
 
 #if CURATED
-        uncurated_grid = new Gtk.Grid ();
-        uncurated_grid.attach (uncurated_header, 0, 0);
-        uncurated_grid.attach (uncurated_flowbox, 0, 1);
+        uncurated_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        uncurated_box.add (uncurated_header);
+        uncurated_box.add (uncurated_flowbox);
 #endif
 
-        grid = new Gtk.Grid () {
-            margin = 12,
+        box = new Gtk.Box (Gtk.Orientation.VERTICAL, 48) {
+            margin_top = 12,
+            margin_end = 12,
             margin_bottom = 24,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 48
+            margin_start = 12
         };
 
         scrolled = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
-        scrolled.add (grid);
+        scrolled.add (box);
 
         var spinner = new Gtk.Spinner () {
             halign = Gtk.Align.CENTER
@@ -132,8 +132,8 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            foreach (unowned var child in grid.get_children ()) {
-                grid.remove (child);
+            foreach (unowned var child in box.get_children ()) {
+                box.remove (child);
             }
 
             foreach (unowned var child in recently_updated_flowbox.get_children ()) {
@@ -207,22 +207,22 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
 #if CURATED
             if (recently_updated_flowbox.get_child_at_index (0) != null) {
-                grid.add (recently_updated_box);
+                box.add (recently_updated_box);
             }
 
             if (paid_flowbox.get_child_at_index (0) != null) {
-                grid.add (paid_grid);
+                box.add (paid_box);
             }
 
             if (free_flowbox.get_child_at_index (0) != null) {
-                grid.add (free_grid);
+                box.add (free_box);
             }
 
             if (uncurated_flowbox.get_child_at_index (0) != null) {
-                grid.add (uncurated_grid);
+                box.add (uncurated_box);
             }
 #else
-            grid.add (uncurated_flowbox);
+            box.add (uncurated_flowbox);
 #endif
 
             show_all ();

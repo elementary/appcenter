@@ -68,29 +68,36 @@ public class SharePopover : Gtk.Popover {
         size_group.add_widget (email_button);
         size_group.add_widget (copy_link_button);
 
-        var service_grid = new Gtk.Grid ();
-        service_grid.margin = 6;
+        var service_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
         if (mail_appinfo != null) {
-            service_grid.add (email_button);
+            service_box.add (email_button);
         }
-        service_grid.add (facebook_button);
-        service_grid.add (twitter_button);
-        service_grid.add (reddit_button);
-        service_grid.add (tumblr_button);
-        service_grid.add (telegram_button);
+        service_box.add (facebook_button);
+        service_box.add (twitter_button);
+        service_box.add (reddit_button);
+        service_box.add (tumblr_button);
+        service_box.add (telegram_button);
 
-        var system_grid = new Gtk.Grid ();
-        system_grid.margin = 6;
-        system_grid.add (copy_link_button);
+        var system_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
+        system_box.add (copy_link_button);
 
-        var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.add (service_grid);
-        grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        grid.add (system_grid);
-        grid.show_all ();
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        box.add (service_box);
+        box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        box.add (system_box);
+        box.show_all ();
 
-        add (grid);
+        add (box);
 
         copy_link_button.clicked.connect (() => {
             var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
