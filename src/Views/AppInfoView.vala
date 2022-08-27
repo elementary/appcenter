@@ -1290,7 +1290,7 @@ namespace AppCenter.Views {
         }
     }
 
-    private class OtherAppsBar : Gtk.ActionBar {
+    private class OtherAppsBar : Gtk.Box {
         public signal void show_other_package (AppCenterCore.Package package);
 
         public AppCenterCore.Package package { get; construct; }
@@ -1346,7 +1346,8 @@ namespace AppCenter.Views {
                 maximum_size = max_width
             };
 
-            set_center_widget (clamp);
+            append (clamp);
+            add_css_class ("bottom-toolbar");
             add_css_class (Granite.STYLE_CLASS_FLAT);
 
             flowbox.child_activated.connect ((child) => {
