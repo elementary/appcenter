@@ -25,7 +25,7 @@ public class AppCenter.Homepage : Gtk.Box {
     private const int MAX_PACKAGES_IN_BANNER = 5;
     private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
-    private Gtk.FlowBox category_flow;
+    private Widgets.CategoryFlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
 
     private Adw.Carousel banner_carousel;
@@ -87,6 +87,7 @@ public class AppCenter.Homepage : Gtk.Box {
         category_flow = new Widgets.CategoryFlowBox () {
             margin_start = 12,
             margin_end =12,
+            margin_bottom = 12,
             valign = Gtk.Align.START
         };
 
@@ -117,9 +118,8 @@ public class AppCenter.Homepage : Gtk.Box {
         banner_timeout_start ();
         load_banners_and_carousels.begin ();
 
-        category_flow.child_activated.connect ((child) => {
-            var card = (Widgets.CategoryFlowBox.AbstractCategoryCard) child;
-            show_category (card.category);
+        category_flow.show_category.connect ((category) => {
+            show_category (category);
         });
 
         AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
