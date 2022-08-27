@@ -18,17 +18,20 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
+public class AppCenter.Widgets.CategoryFlowBox : Gtk.Box {
+    public signal void show_category (AppStream.Category category);
+
     construct {
-        activate_on_single_click = true;
-        homogeneous = true;
-        margin_bottom = 12;
+        var flowbox = new Gtk.FlowBox () {
+            activate_on_single_click = true,
+            homogeneous = true
+        };
 
         var games_card = new GamesCard ();
 
-        add (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        add (new LegacyCard (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
-        add (new LegacyCard (_("Communication"), "", {
+        flowbox.add (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
+        flowbox.add (new LegacyCard (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        flowbox.add (new LegacyCard (_("Communication"), "", {
             "Chat",
             "ContactManagement",
             "Email",
@@ -37,7 +40,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Telephony",
             "VideoConference"
         }, "communication"));
-        add (new LegacyCard (_("Development"), "", {
+        flowbox.add (new LegacyCard (_("Development"), "", {
             "Database",
             "Debugger",
             "Development",
@@ -47,13 +50,13 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "TerminalEmulator",
             "WebDevelopment"
         }, "development"));
-        add (new LegacyCard (_("Education"), "", {"Education"}, "education"));
-        add (new LegacyCard (_("Finance"), "payment-card-symbolic", {
+        flowbox.add (new LegacyCard (_("Education"), "", {"Education"}, "education"));
+        flowbox.add (new LegacyCard (_("Finance"), "payment-card-symbolic", {
             "Economy",
             "Finance"
         }, "finance"));
-        add (games_card);
-        add (new LegacyCard (_("Graphics"), "", {
+        flowbox.add (games_card);
+        flowbox.add (new LegacyCard (_("Graphics"), "", {
             "2DGraphics",
             "3DGraphics",
             "Graphics",
@@ -62,11 +65,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "RasterGraphics",
             "VectorGraphics"
         }, "graphics"));
-        add (new LegacyCard (_("Internet"), "applications-internet", {
+        flowbox.add (new LegacyCard (_("Internet"), "applications-internet", {
             "Network",
             "P2P"
         }, "internet"));
-        add (new LegacyCard (_("Math, Science, & Engineering"), "", {
+        flowbox.add (new LegacyCard (_("Math, Science, & Engineering"), "", {
             "ArtificialIntelligence",
             "Astronomy",
             "Biology",
@@ -85,31 +88,31 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
-        add (new LegacyCard (_("Media Production"), "applications-multimedia-symbolic", {
+        flowbox.add (new LegacyCard (_("Media Production"), "applications-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
             "Recorder",
             "Sequencer"
         }, "media-production"));
-        add (new LegacyCard (_("Office"), "applications-office-symbolic", {
+        flowbox.add (new LegacyCard (_("Office"), "applications-office-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
             "Spreadsheet",
             "WordProcessor"
         }, "office"));
-        add (new LegacyCard (_("System"), "applications-system-symbolic", {
+        flowbox.add (new LegacyCard (_("System"), "applications-system-symbolic", {
             "Monitor",
             "System"
         }, "system"));
-        add (new LegacyCard (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
-        add (new LegacyCard (_("Video"), "applications-video-symbolic", {
+        flowbox.add (new LegacyCard (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
+        flowbox.add (new LegacyCard (_("Video"), "applications-video-symbolic", {
             "Tuner",
             "TV",
             "Video"
         }, "video"));
-        add (new LegacyCard (_("Writing & Language"), "preferences-desktop-locale", {
+        flowbox.add (new LegacyCard (_("Writing & Language"), "preferences-desktop-locale", {
             "Dictionary",
             "Languages",
             "Literature",
@@ -119,11 +122,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Translation",
             "WordProcessor"
         }, "writing-language"));
-        add (new LegacyCard (_("Privacy & Security"), "preferences-system-privacy", {
+        flowbox.add (new LegacyCard (_("Privacy & Security"), "preferences-system-privacy", {
             "Security",
         }, "privacy-security"));
 
-        set_sort_func ((child1, child2) => {
+        flowbox.set_sort_func ((child1, child2) => {
             var item1 = (AbstractCategoryCard) child1;
             var item2 = (AbstractCategoryCard) child2;
             if (item1 != null && item2 != null) {
@@ -131,6 +134,26 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             }
 
             return 0;
+        });
+
+        flowbox.child_activated.connect ((child) => {
+            var card = (AbstractCategoryCard) child;
+            show_category (card.category);
+        });
+
+        add (flowbox);
+
+        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+            Idle.add (() => {
+                // Clear the cached categories when the AppStream pool is updated
+                foreach (unowned var child in flowbox.get_children ()) {
+                    var item = (AbstractCategoryCard) child;
+                    var category_components = item.category.get_components ();
+                    category_components.remove_range (0, category_components.length);
+                }
+
+                return GLib.Source.REMOVE;
+            });
         });
     }
 
