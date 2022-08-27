@@ -236,6 +236,19 @@ public class AppCenter.Homepage : Gtk.Box {
             show_category (card.category);
         });
 
+        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+            Idle.add (() => {
+                // Clear the cached categories when the AppStream pool is updated
+                foreach (unowned var child in category_flow.get_children ()) {
+                    var item = (AbstractCategoryCard) child;
+                    var category_components = item.category.get_components ();
+                    category_components.remove_range (0, category_components.length);
+                }
+
+                return GLib.Source.REMOVE;
+            });
+        });
+
         banner_event_box.enter_notify_event.connect (() => {
             banner_timeout_stop ();
         });
@@ -248,19 +261,6 @@ public class AppCenter.Homepage : Gtk.Box {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
 
             show_package (package_row_grid.package);
-        });
-
-        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
-            Idle.add (() => {
-                // Clear the cached categories when the AppStream pool is updated
-                foreach (unowned var child in category_flow.get_children ()) {
-                    var item = (AbstractCategoryCard) child;
-                    var category_components = item.category.get_components ();
-                    category_components.remove_range (0, category_components.length);
-                }
-
-                return GLib.Source.REMOVE;
-            });
         });
 
         destroy.connect (() => {
