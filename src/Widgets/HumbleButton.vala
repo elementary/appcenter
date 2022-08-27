@@ -98,7 +98,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
             package.normalized_component_id,
             package.get_payments_key ()
         ) {
-            transient_for = (Gtk.Window) get_toplevel ()
+            transient_for = ((Gtk.Application) Application.get_default ()).active_window
         };
 
         stripe_dialog.download_requested.connect (() => {

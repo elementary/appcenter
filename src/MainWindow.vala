@@ -14,19 +14,19 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-public class AppCenter.MainWindow : Hdy.ApplicationWindow {
+public class AppCenter.MainWindow : Adw.ApplicationWindow {
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
     private Gtk.Revealer view_mode_revealer;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
-    private Gtk.ModelButton refresh_menuitem;
+    private Gtk.Button refresh_menuitem;
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
-    private Granite.Widgets.Toast toast;
-    private Hdy.Deck deck;
+    private Granite.Toast toast;
+    private Adw.Leaflet leaflet;
 
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
@@ -42,10 +42,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
-        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/io/elementary/appcenter/icons");
-
-        search_entry.grab_focus_without_selecting ();
+        // search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
@@ -58,31 +55,31 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
         app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
 
-        button_release_event.connect ((event) => {
-            // On back mouse button pressed
-            if (event.button == 8) {
-                view_return ();
-                return true;
-            }
+        // button_release_event.connect ((event) => {
+        //     // On back mouse button pressed
+        //     if (event.button == 8) {
+        //         view_return ();
+        //         return true;
+        //     }
 
-            return false;
-        });
+        //     return false;
+        // });
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        search_entry.key_press_event.connect ((event) => {
-            if (event.keyval == Gdk.Key.Escape) {
-                search_entry.text = "";
-                return true;
-            }
+        // search_entry.key_press_event.connect ((event) => {
+        //     if (event.keyval == Gdk.Key.Escape) {
+        //         search_entry.text = "";
+        //         return true;
+        //     }
 
-            if (event.keyval == Gdk.Key.Down) {
-                search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
-                return true;
-            }
+        //     if (event.keyval == Gdk.Key.Down) {
+        //         search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
+        //         return true;
+        //     }
 
-            return false;
-        });
+        //     return false;
+        // });
 
         return_button.clicked.connect (view_return);
 
@@ -91,7 +88,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         notify["working"].connect (() => {
             Idle.add (() => {
-                spinner.active = working;
+                spinner.spinning = working;
                 App.refresh_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
@@ -99,14 +96,15 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     construct {
-        Hdy.init ();
         icon_name = Build.PROJECT_NAME;
         set_default_size (910, 640);
         height_request = 500;
 
+        Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/io/elementary/appcenter/icons");
+
         title = _(Build.APP_NAME);
 
-        toast = new Granite.Widgets.Toast ("");
+        toast = new Granite.Toast ("");
 
         toast.default_action.connect (() => {
             if (last_installed_package != null) {
@@ -124,7 +122,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                     message_dialog.badge_icon = new ThemedIcon ("dialog-error");
                     message_dialog.transient_for = this;
 
-                    message_dialog.show_all ();
+                    message_dialog.present ();
                     message_dialog.response.connect ((response_id) => {
                         message_dialog.destroy ();
                     });
@@ -133,12 +131,15 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         return_button = new Gtk.Button () {
-            no_show_all = true,
             valign = Gtk.Align.CENTER
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        var updates_button = new Gtk.Button.from_icon_name ("software-update-available", Gtk.IconSize.LARGE_TOOLBAR);
+        var updates_button = new Gtk.Button () {
+            child = new Gtk.Image.from_icon_name ("software-update-available") {
+                pixel_size = 24
+            }
+        };
 
         var badge_provider = new Gtk.CssProvider ();
         badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
@@ -150,28 +151,23 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         updates_badge_revealer = new Gtk.Revealer () {
+            child = updates_badge,
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        updates_badge_revealer.add (updates_badge);
-
-        var eventbox_badge = new Gtk.EventBox () {
-            halign = Gtk.Align.END
-        };
-        eventbox_badge.add (updates_badge_revealer);
 
         var updates_overlay = new Gtk.Overlay () {
+            child = updates_button,
             tooltip_text = C_("view", "Updates & installed apps")
         };
-        updates_overlay.add (updates_button);
-        updates_overlay.add_overlay (eventbox_badge);
+        updates_overlay.add_overlay (updates_badge_revealer);
 
         view_mode_revealer = new Gtk.Revealer () {
+            child = updates_overlay,
             reveal_child = true,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
-        view_mode_revealer.add (updates_overlay);
 
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
@@ -179,8 +175,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             valign = Gtk.Align.CENTER
         };
 
-        var search_clamp = new Hdy.Clamp ();
-        search_clamp.add (search_entry);
+        var search_clamp = new Adw.Clamp () {
+            child = search_entry
+        };
 
         spinner = new Gtk.Spinner ();
 
@@ -193,34 +190,35 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             "app.refresh"
         );
 
-        refresh_menuitem = new Gtk.ModelButton () {
-            action_name = "app.refresh"
+        refresh_menuitem = new Gtk.Button () {
+            action_name = "app.refresh",
+            child = refresh_accellabel
         };
-        refresh_menuitem.get_child ().destroy ();
-        refresh_menuitem.add (refresh_accellabel);
 
         var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
             margin_bottom = 6,
             margin_top = 6
         };
-        menu_popover_box.add (automatic_updates_button);
-        menu_popover_box.add (refresh_menuitem);
-        menu_popover_box.show_all ();
+        menu_popover_box.append (automatic_updates_button);
+        menu_popover_box.append (refresh_menuitem);
 
-        var menu_popover = new Gtk.Popover (null);
-        menu_popover.add (menu_popover_box);
+        var menu_popover = new Gtk.Popover () {
+            child = menu_popover_box
+        };
 
         var menu_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            child = new Gtk.Image.from_icon_name ("open-menu") {
+                pixel_size = 24
+            },
             popover = menu_popover,
             tooltip_text = _("Settings"),
             valign = Gtk.Align.CENTER
         };
 
-        var headerbar = new Hdy.HeaderBar () {
-            show_close_button = true
+        var headerbar = new Gtk.HeaderBar () {
+            show_title_buttons = true,
+            title_widget = search_clamp
         };
-        headerbar.set_custom_title (search_clamp);
         headerbar.pack_start (return_button);
         headerbar.pack_end (menu_button);
         headerbar.pack_end (view_mode_revealer);
@@ -229,14 +227,15 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
 
-        deck = new Hdy.Deck () {
-            can_swipe_back = true
+        leaflet = new Adw.Leaflet () {
+            can_navigate_back = true
         };
-        deck.add (homepage);
+        leaflet.append (homepage);
 
-        var overlay = new Gtk.Overlay ();
+        var overlay = new Gtk.Overlay () {
+            child = leaflet
+        };
         overlay.add_overlay (toast);
-        overlay.add (deck);
 
         var network_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
             _("Network Not Available."),
@@ -249,15 +248,15 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var network_info_bar = new Gtk.InfoBar () {
             message_type = Gtk.MessageType.WARNING
         };
-        network_info_bar.get_content_area ().add (network_info_bar_label);
+        network_info_bar.add_child (network_info_bar_label);
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        box.add (headerbar);
-        box.add (network_info_bar);
-        box.add (overlay);
+        box.append (headerbar);
+        box.append (network_info_bar);
+        box.append (overlay);
 
-        add (box);
+        child = box;
 
         int window_width, window_height;
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
@@ -268,7 +267,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             SettingsBindFlags.DEFAULT
         );
 
-        resize (window_width, window_height);
+        // resize (window_width, window_height);
 
         if (App.settings.get_boolean ("window-maximized")) {
             maximize ();
@@ -287,7 +286,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         network_info_bar.response.connect (() => {
             try {
-                Gtk.show_uri_on_window (this, "settings://network", Gdk.CURRENT_TIME);
+                Gtk.show_uri (this, "settings://network", Gdk.CURRENT_TIME);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
@@ -297,9 +296,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             go_to_installed ();
         });
 
-        eventbox_badge.button_release_event.connect (() => {
-            go_to_installed ();
-        });
+        // eventbox_badge.button_release_event.connect (() => {
+        //     go_to_installed ();
+        // });
 
         homepage.show_category.connect ((category) => {
             show_category (category);
@@ -313,62 +312,62 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             show_package (package);
         });
 
-        destroy.connect (() => {
-           installed_view.clear ();
-        });
+        // destroy.connect (() => {
+        //    installed_view.clear ();
+        // });
 
-        deck.notify["visible-child"].connect (() => {
-            if (!deck.transition_running) {
+        leaflet.notify["visible-child"].connect (() => {
+            if (!leaflet.child_transition_running) {
                 update_navigation ();
             }
         });
 
-        deck.notify["transition-running"].connect (() => {
-            if (!deck.transition_running) {
+        leaflet.notify["child-transition-running"].connect (() => {
+            if (!leaflet.child_transition_running) {
                 update_navigation ();
             }
         });
     }
 
-    public override bool configure_event (Gdk.EventConfigure event) {
-        if (configure_id == 0) {
-            /* Avoid spamming the settings */
-            configure_id = Timeout.add (200, () => {
-                configure_id = 0;
+    // public override bool configure_event (Gdk.EventConfigure event) {
+    //     if (configure_id == 0) {
+    //         /* Avoid spamming the settings */
+    //         configure_id = Timeout.add (200, () => {
+    //             configure_id = 0;
 
-                if (is_maximized) {
-                    App.settings.set_boolean ("window-maximized", true);
-                } else {
-                    App.settings.set_boolean ("window-maximized", false);
+    //             if (is_maximized) {
+    //                 App.settings.set_boolean ("window-maximized", true);
+    //             } else {
+    //                 App.settings.set_boolean ("window-maximized", false);
 
-                    int width, height;
-                    get_size (out width, out height);
-                    App.settings.set ("window-size", "(ii)", width, height);
-                }
+    //                 int width, height;
+    //                 get_size (out width, out height);
+    //                 App.settings.set ("window-size", "(ii)", width, height);
+    //             }
 
-                return GLib.Source.REMOVE;
-            });
-        }
+    //             return GLib.Source.REMOVE;
+    //         });
+    //     }
 
-        return base.configure_event (event);
-    }
+    //     return base.configure_event (event);
+    // }
 
-    public override bool delete_event (Gdk.EventAny event) {
-        if (working) {
-            hide ();
+    // public override bool delete_event (Gdk.EventAny event) {
+    //     if (working) {
+    //         hide ();
 
-            notify["working"].connect (() => {
-                if (!visible && !working) {
-                    destroy ();
-                }
-            });
+    //         notify["working"].connect (() => {
+    //             if (!visible && !working) {
+    //                 destroy ();
+    //             }
+    //         });
 
-            AppCenterCore.Client.get_default ().cancel_updates (false); //Timeouts keep running
-            return true;
-        }
+    //         AppCenterCore.Client.get_default ().cancel_updates (false); //Timeouts keep running
+    //         return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
     public void show_update_badge (uint updates_number) {
         if (updates_number == 0U) {
@@ -380,7 +379,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package, bool remember_history = true) {
-        if (deck.transition_running) {
+        if (leaflet.child_transition_running) {
             return;
         }
 
@@ -388,7 +387,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         var package_hash = package.hash;
 
-        var pk_child = deck.get_child_by_name (package_hash) as Views.AppInfoView;
+        var pk_child = leaflet.get_child_by_name (package_hash) as Views.AppInfoView;
         if (pk_child != null && pk_child.to_recycle) {
             // Don't switch to a view that needs recycling
             pk_child.destroy ();
@@ -397,40 +396,39 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         if (pk_child != null) {
             pk_child.view_entered ();
-            deck.visible_child = pk_child;
+            leaflet.visible_child = pk_child;
             return;
         }
 
         var app_info_view = new Views.AppInfoView (package);
-        app_info_view.show_all ();
 
-        deck.add (app_info_view);
-        deck.visible_child = app_info_view;
+        leaflet.append (app_info_view);
+        leaflet.visible_child = app_info_view;
 
         app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
             if (!transition) {
-                deck.transition_duration = 0;
+                leaflet.mode_transition_duration = 0;
             }
 
             show_package (_package, remember_history);
             if (remember_history) {
                 set_return_name (package.get_name ());
             }
-            deck.transition_duration = 200;
+            leaflet.mode_transition_duration = 200;
         });
     }
 
     private void update_navigation () {
-        var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+        var previous_child = leaflet.get_adjacent_child (Adw.NavigationDirection.BACK);
 
-        if (deck.visible_child is Homepage) {
+        if (leaflet.visible_child is Homepage) {
             view_mode_revealer.reveal_child = true;
             configure_search (true, _("Search Apps"), "");
-        } else if (deck.visible_child is CategoryView) {
-            var current_category = ((CategoryView) deck.visible_child).category;
+        } else if (leaflet.visible_child is CategoryView) {
+            var current_category = ((CategoryView) leaflet.visible_child).category;
             view_mode_revealer.reveal_child = false;
             configure_search (true, _("Search %s").printf (current_category.name), "");
-        } else if (deck.visible_child == search_view) {
+        } else if (leaflet.visible_child == search_view) {
             if (previous_child is CategoryView) {
                 var previous_category = ((CategoryView) previous_child).category;
                 configure_search (true, _("Search %s").printf (previous_category.name));
@@ -439,10 +437,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 configure_search (true);
                 view_mode_revealer.reveal_child = true;
             }
-        } else if (deck.visible_child is Views.AppInfoView) {
+        } else if (leaflet.visible_child is Views.AppInfoView) {
             view_mode_revealer.reveal_child = false;
             configure_search (false);
-        } else if (deck.visible_child is Views.AppListUpdateView) {
+        } else if (leaflet.visible_child is Views.AppListUpdateView) {
             view_mode_revealer.reveal_child = true;
             configure_search (false);
         }
@@ -462,10 +460,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             set_return_name (C_("view", "Installed"));
         }
 
-        while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
-            var next_child = deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD);
+        while (leaflet.get_adjacent_child (Adw.NavigationDirection.FORWARD) != null) {
+            var next_child = leaflet.get_adjacent_child (Adw.NavigationDirection.FORWARD);
             if (next_child is AppCenter.Views.AppListUpdateView) {
-                deck.remove (next_child);
+                leaflet.remove (next_child);
             } else {
                 next_child.destroy ();
             }
@@ -473,11 +471,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        if (deck.get_children ().find (installed_view) == null) {
-            deck.add (installed_view);
-        }
-        installed_view.show_all ();
-        deck.visible_child = installed_view;
+        // if (leaflet.get_children ().find (installed_view) == null) {
+            leaflet.append (installed_view);
+        // }
+
+        leaflet.visible_child = installed_view;
     }
 
     public void search (string term, bool mimetype = false) {
@@ -512,16 +510,15 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
-            if (deck.visible_child != search_view) {
+            if (leaflet.visible_child != search_view) {
                 search_view = new AppCenter.SearchView ();
-                search_view.show_all ();
 
                 search_view.show_app.connect ((package) => {
                     show_package (package);
                 });
 
-                deck.add (search_view);
-                deck.visible_child = search_view;
+                leaflet.append (search_view);
+                leaflet.visible_child = search_view;
             }
 
             search_view.clear ();
@@ -537,7 +534,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             } else {
                 AppStream.Category current_category = null;
 
-                var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+                var previous_child = leaflet.get_adjacent_child (Adw.NavigationDirection.BACK);
                 if (previous_child is CategoryView) {
                     current_category = ((CategoryView) previous_child).category;
                 }
@@ -548,8 +545,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         } else {
             // Prevent navigating away from category views when backspacing
-            if (deck.visible_child == search_view) {
-                deck.navigate (Hdy.NavigationDirection.BACK);
+            if (leaflet.visible_child == search_view) {
+                leaflet.navigate (Adw.NavigationDirection.BACK);
             }
         }
 
@@ -563,7 +560,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             return_button.label = return_name;
         }
 
-        return_button.no_show_all = return_name == null;
         return_button.visible = return_name != null;
     }
 
@@ -576,26 +572,26 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
 
         if (sensitive) {
-            search_entry.grab_focus_without_selecting ();
+            // search_entry.grab_focus_without_selecting ();
         }
     }
 
     private void view_return () {
         selected_package = null;
-        deck.navigate (Hdy.NavigationDirection.BACK);
+        leaflet.navigate (Adw.NavigationDirection.BACK);
     }
 
     private void show_category (AppStream.Category category) {
-        var child = deck.get_child_by_name (category.name);
+        var child = leaflet.get_child_by_name (category.name);
         if (child != null) {
-            deck.visible_child = child;
+            leaflet.visible_child = child;
             return;
         }
 
         var category_view = new CategoryView (category);
 
-        deck.add (category_view);
-        deck.visible_child = category_view;
+        leaflet.append (category_view);
+        leaflet.visible_child = category_view;
 
         category_view.show_app.connect ((package) => {
             show_package (package);

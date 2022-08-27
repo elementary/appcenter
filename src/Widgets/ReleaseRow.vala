@@ -49,7 +49,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         grid.attach (header_label, 0, 0, 1, 1);
         grid.attach (description_label, 0, 1, 1, 1);
 
-        add (grid);
+        child = grid;
     }
 
     public static string format_release_header (AppStream.Release release, bool with_date) {

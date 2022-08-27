@@ -35,34 +35,60 @@ public class SharePopover : Gtk.Popover {
 
         var mail_appinfo = AppInfo.get_default_for_uri_scheme ("mailto");
         if (mail_appinfo != null) {
-            email_button.image = new Gtk.Image.from_gicon (mail_appinfo.get_icon (), Gtk.IconSize.DND);
+            email_button.child = new Gtk.Image.from_gicon (mail_appinfo.get_icon ()) {
+                pixel_size = 32
+            };
             email_button.tooltip_text = mail_appinfo.get_display_name ();
-            email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            email_button.add_css_class (Granite.STYLE_CLASS_FLAT);
         }
 
-        var facebook_button = new Gtk.Button.from_icon_name ("online-account-facebook", Gtk.IconSize.DND);
+        var facebook_button = new Gtk.Button () {
+            child = new Gtk.Image.from_icon_name ("online-account-facebook") {
+                pixel_size = 32
+            }
+        };
         facebook_button.tooltip_text = _("Facebook");
-        facebook_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        facebook_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter", Gtk.IconSize.DND);
+        var twitter_button = new Gtk.Button () {
+            child = new Gtk.Image.from_icon_name ("online-account-twitter") {
+                pixel_size = 32
+            }
+        };
         twitter_button.tooltip_text = _("Twitter");
-        twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        twitter_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit", Gtk.IconSize.DND);
+        var reddit_button = new Gtk.Button () {
+            child = new Gtk.Image.from_icon_name ("online-account-reddit") {
+                pixel_size = 32
+            }
+        };
         reddit_button.tooltip_text = _("Reddit");
-        reddit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        reddit_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr", Gtk.IconSize.DND);
+        var tumblr_button = new Gtk.Button () {
+            child = new Gtk.Image.from_icon_name ("online-account-tumblr") {
+                pixel_size = 32
+            }
+        };
         tumblr_button.tooltip_text = _("Tumblr");
-        tumblr_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        tumblr_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        var telegram_button = new Gtk.Button.from_icon_name ("online-account-telegram", Gtk.IconSize.DND);
+        var telegram_button = new Gtk.Button () {
+            child = new Gtk.Image.from_icon_name ("online-account-telegram") {
+                pixel_size = 32
+            }
+        };
         telegram_button.tooltip_text = _("Telegram");
-        telegram_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        telegram_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var copy_link_button = new Gtk.Button () {
+            child = new Gtk.Image.from_icon_name ("edit-copy-symbolic") {
+                pixel_size = 32
+            }
+        };
         copy_link_button.tooltip_text = _("Copy link");
-        copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        copy_link_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
         size_group.add_widget (email_button);
@@ -75,13 +101,13 @@ public class SharePopover : Gtk.Popover {
             margin_start = 6
         };
         if (mail_appinfo != null) {
-            service_box.add (email_button);
+            service_box.append (email_button);
         }
-        service_box.add (facebook_button);
-        service_box.add (twitter_button);
-        service_box.add (reddit_button);
-        service_box.add (tumblr_button);
-        service_box.add (telegram_button);
+        service_box.append (facebook_button);
+        service_box.append (twitter_button);
+        service_box.append (reddit_button);
+        service_box.append (tumblr_button);
+        service_box.append (telegram_button);
 
         var system_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             margin_top = 6,
@@ -89,24 +115,23 @@ public class SharePopover : Gtk.Popover {
             margin_bottom = 6,
             margin_start = 6
         };
-        system_box.add (copy_link_button);
+        system_box.append (copy_link_button);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        box.add (service_box);
-        box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        box.add (system_box);
-        box.show_all ();
+        box.append (service_box);
+        box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        box.append (system_box);
 
-        add (box);
+        child = box;
 
-        copy_link_button.clicked.connect (() => {
-            var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
-            clipboard.set_text (uri, -1);
+        // copy_link_button.clicked.connect (() => {
+        //     var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
+        //     clipboard.set_text (uri, -1);
 
-            link_copied ();
+        //     link_copied ();
 
-            hide ();
-        });
+        //     hide ();
+        // });
 
         email_button.clicked.connect (() => {
             try {

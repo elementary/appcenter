@@ -16,7 +16,7 @@
 *
 */
 
-public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
+public class AppCenter.Widgets.SizeLabel : Gtk.Box {
     public bool using_flatpak { get; construct; }
     public uint64 size { get; construct; }
 
@@ -39,16 +39,16 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
         size_label.hexpand = true;
         size_label.xalign = 1;
 
-        var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.BUTTON);
+        var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic");
         icon.margin_start = 6;
 
-        icon_revealer = new Gtk.Revealer ();
-        icon_revealer.transition_type = Gtk.RevealerTransitionType.NONE;
-        icon_revealer.add (icon);
+        icon_revealer = new Gtk.Revealer () {
+            child = icon,
+            transition_type = Gtk.RevealerTransitionType.NONE
+        };
 
-        add (size_label);
-        add (icon_revealer);
-        show_all ();
+        append (size_label);
+        append (icon_revealer);
 
         update (size, using_flatpak);
     }
@@ -66,10 +66,8 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
         }
 
         if (size > 0) {
-            no_show_all = false;
             show ();
         } else {
-            no_show_all = true;
             hide ();
         }
     }

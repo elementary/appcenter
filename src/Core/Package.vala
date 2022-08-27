@@ -684,7 +684,7 @@ public class AppCenterCore.Package : Object {
             switch (_icon.get_kind ()) {
                 case AppStream.IconKind.STOCK:
                     unowned string icon_name = _icon.get_name ();
-                    if (Gtk.IconTheme.get_default ().has_icon (icon_name)) {
+                    if (Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).has_icon (icon_name)) {
                         return new ThemedIcon (icon_name);
                     }
 

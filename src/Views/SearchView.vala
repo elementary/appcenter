@@ -26,12 +26,10 @@ public class AppCenter.SearchView : AbstractAppList {
 
     construct {
         var flathub_link = "<a href='https://flathub.org'>%s</a>".printf (_("Flathub"));
-        var alert_view = new Granite.Widgets.AlertView (
-            _("No Apps Found"),
-            _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
-            "edit-find-symbolic"
-        );
-        alert_view.show_all ();
+        var alert_view = new Granite.Placeholder (_("No Apps Found")) {
+            description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
+            icon = new ThemedIcon ("edit-find-symbolic")
+        };
 
         list_box.set_placeholder (alert_view);
 
@@ -42,7 +40,7 @@ public class AppCenter.SearchView : AbstractAppList {
             }
         });
 
-        add (scrolled);
+        append (scrolled);
 
         notify["current-search-term"].connect (() => {
             var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (current_search_term, _("Flathub"));
@@ -92,7 +90,7 @@ public class AppCenter.SearchView : AbstractAppList {
         while (current_visible_index < list_store.get_n_items ()) {
             var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
             var row = new Widgets.PackageRow.list (package);
-            list_box.add (row);
+            list_box.append (row);
 
             current_visible_index++;
             if (old_index + 20 < current_visible_index) {

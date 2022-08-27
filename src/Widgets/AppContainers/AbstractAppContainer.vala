@@ -18,7 +18,7 @@
 */
 
 namespace AppCenter {
-    public abstract class AbstractAppContainer : Gtk.Bin {
+    public abstract class AbstractAppContainer : Gtk.Box {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_open { get; set; default = true; }
 
@@ -45,9 +45,10 @@ namespace AppCenter {
         construct {
             action_button = new Widgets.HumbleButton (package);
 
-            action_button_revealer = new Gtk.Revealer ();
-            action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            action_button_revealer.add (action_button);
+            action_button_revealer = new Gtk.Revealer () {
+                child = action_button,
+                transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            };
 
             action_button.download_requested.connect (() => {
                 action_clicked.begin ();
@@ -55,15 +56,16 @@ namespace AppCenter {
 
             open_button = new Gtk.Button.with_label (_("Open"));
 
-            open_button_revealer = new Gtk.Revealer ();
-            open_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            open_button_revealer.add (open_button);
+            open_button_revealer = new Gtk.Revealer () {
+                child = open_button,
+                transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            };
 
             open_button.clicked.connect (launch_package_app);
 
             button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            button_box.add (action_button_revealer);
-            button_box.add (open_button_revealer);
+            button_box.append (action_button_revealer);
+            button_box.append (open_button_revealer);
 
             cancel_button = new ProgressButton () {
                 label = _("Cancel")
@@ -83,7 +85,6 @@ namespace AppCenter {
             };
             action_stack.add_named (button_box, "buttons");
             action_stack.add_named (cancel_button, "progress");
-            action_stack.show_all ();
 
             destroy.connect (() => {
                 if (state_source > 0) {
@@ -125,7 +126,7 @@ namespace AppCenter {
                     var css = CSS.printf ((int) (fraction * 100));
 
                     try {
-                        provider.load_from_data (css, css.length);
+                        provider.load_from_data (css.data);
                         style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
                     } catch (Error e) {
                         critical (e.message);
@@ -267,7 +268,7 @@ namespace AppCenter {
                     if (!(e is GLib.IOError.CANCELLED)) {
                         var fail_dialog = new UpgradeFailDialog (package, e.message) {
                             modal = true,
-                            transient_for = (Gtk.Window) get_toplevel ()
+                            transient_for = ((Gtk.Application) Application.get_default ()).active_window
                         };
                         fail_dialog.present ();
                     }

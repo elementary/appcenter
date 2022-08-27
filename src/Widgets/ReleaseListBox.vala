@@ -31,7 +31,7 @@ public class AppCenter.Widgets.ReleaseListBox : Gtk.ListBox {
         var releases = package.get_newest_releases (MIN_RELEASES, MAX_RELEASES);
         foreach (var release in releases) {
             var row = new ReleaseRow (release);
-            add (row);
+            append (row);
         }
 
         return releases.size > 0;

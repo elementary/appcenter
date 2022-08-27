@@ -33,9 +33,9 @@ public class AppCenter.Widgets.UpdateHeaderRow : Gtk.Box {
             halign = Gtk.Align.START,
             hexpand = true
         };
-        label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        add (label);
+        append (label);
     }
 
     public UpdateHeaderRow.updatable (uint num_updates, uint64 update_size, bool using_flatpak) {
@@ -49,7 +49,7 @@ public class AppCenter.Widgets.UpdateHeaderRow : Gtk.Box {
         };
         size_label.update (update_size, using_flatpak);
 
-        add (size_label);
+        append (size_label);
     }
 
     public UpdateHeaderRow.drivers () {

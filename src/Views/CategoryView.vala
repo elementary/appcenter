@@ -44,8 +44,8 @@ public class AppCenter.CategoryView : Gtk.Stack {
         recently_updated_flowbox = new SubcategoryFlowbox ();
 
         recently_updated_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        recently_updated_box.add (recently_updated_header);
-        recently_updated_box.add (recently_updated_flowbox);
+        recently_updated_box.append (recently_updated_header);
+        recently_updated_box.append (recently_updated_flowbox);
 
         var paid_header = new Granite.HeaderLabel (_("Paid Apps")) {
             margin_start = 12
@@ -55,8 +55,8 @@ public class AppCenter.CategoryView : Gtk.Stack {
         paid_flowbox = new SubcategoryFlowbox ();
 
         paid_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        paid_box.add (paid_header);
-        paid_box.add (paid_flowbox);
+        paid_box.append (paid_header);
+        paid_box.append (paid_flowbox);
 
         var free_header = new Granite.HeaderLabel (_("Free Apps")) {
             margin_start = 12
@@ -66,8 +66,8 @@ public class AppCenter.CategoryView : Gtk.Stack {
         free_flowbox = new SubcategoryFlowbox ();
 
         free_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        free_box.add (free_header);
-        free_box.add (free_flowbox);
+        free_box.append (free_header);
+        free_box.append (free_flowbox);
 
         var uncurated_header = new Granite.HeaderLabel (_("Non-Curated Apps")) {
             margin_start = 12
@@ -78,8 +78,8 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
 #if CURATED
         uncurated_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        uncurated_box.add (uncurated_header);
-        uncurated_box.add (uncurated_flowbox);
+        uncurated_box.append (uncurated_header);
+        uncurated_box.append (uncurated_flowbox);
 #endif
 
         box = new Gtk.Box (Gtk.Orientation.VERTICAL, 48) {
@@ -89,19 +89,18 @@ public class AppCenter.CategoryView : Gtk.Stack {
             margin_start = 12
         };
 
-        scrolled = new Gtk.ScrolledWindow (null, null) {
+        scrolled = new Gtk.ScrolledWindow () {
+            child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
-        scrolled.add (box);
 
         var spinner = new Gtk.Spinner () {
             halign = Gtk.Align.CENTER
         };
         spinner.start ();
 
-        add (spinner);
-        add (scrolled);
-        show_all ();
+        add_child (spinner);
+        add_child (scrolled);
 
         populate ();
 
@@ -132,25 +131,25 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            foreach (unowned var child in box.get_children ()) {
-                box.remove (child);
-            }
+            while (box.get_first_child () != null) {
+                box.remove (box.get_first_child ());
+            };
 
-            foreach (unowned var child in recently_updated_flowbox.get_children ()) {
-                child.destroy ();
-            }
+            while (recently_updated_flowbox.get_first_child () != null) {
+                recently_updated_flowbox.get_first_child ().destroy ();
+            };
 
-            foreach (unowned var child in free_flowbox.get_children ()) {
-                child.destroy ();
-            }
+            while (free_flowbox.get_first_child () != null) {
+                free_flowbox.get_first_child ().destroy ();
+            };
 
-            foreach (unowned var child in paid_flowbox.get_children ()) {
-                child.destroy ();
-            }
+            while (paid_flowbox.get_first_child () != null) {
+                paid_flowbox.get_first_child ().destroy ();
+            };
 
-            foreach (unowned var child in uncurated_flowbox.get_children ()) {
-                child.destroy ();
-            }
+            while (uncurated_flowbox.get_first_child () != null) {
+                uncurated_flowbox.get_first_child ().destroy ();
+            };
 
             var packages = get_packages.end (res);
             foreach (var package in packages) {
@@ -158,15 +157,15 @@ public class AppCenter.CategoryView : Gtk.Stack {
 #if CURATED
                 if (package.is_native) {
                     if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                        paid_flowbox.add (package_row);
+                        paid_flowbox.append (package_row);
                     } else {
-                        free_flowbox.add (package_row);
+                        free_flowbox.append (package_row);
                     }
                 } else {
-                    uncurated_flowbox.add (package_row);
+                    uncurated_flowbox.append (package_row);
                 }
 #else
-                uncurated_flowbox.add (package_row);
+                uncurated_flowbox.append (package_row);
 #endif
             }
 
@@ -200,32 +199,31 @@ public class AppCenter.CategoryView : Gtk.Stack {
 
                 if (!recent_package.installed) {
                     var package_row = new AppCenter.Widgets.ListPackageRowGrid (recent_package);
-                    recently_updated_flowbox.add (package_row);
+                    recently_updated_flowbox.append (package_row);
                     recent_count++;
                 }
             }
 
 #if CURATED
             if (recently_updated_flowbox.get_child_at_index (0) != null) {
-                box.add (recently_updated_box);
+                box.append (recently_updated_box);
             }
 
             if (paid_flowbox.get_child_at_index (0) != null) {
-                box.add (paid_box);
+                box.append (paid_box);
             }
 
             if (free_flowbox.get_child_at_index (0) != null) {
-                box.add (free_box);
+                box.append (free_box);
             }
 
             if (uncurated_flowbox.get_child_at_index (0) != null) {
-                box.add (uncurated_box);
+                box.append (uncurated_box);
             }
 #else
-            box.add (uncurated_flowbox);
+            box.append (uncurated_flowbox);
 #endif
 
-            show_all ();
             visible_child = scrolled;
         });
     }
@@ -263,10 +261,11 @@ public class AppCenter.CategoryView : Gtk.Stack {
             valign = Gtk.Align.START;
 
             set_sort_func ((Gtk.FlowBoxSortFunc) package_row_compare);
+        }
 
-            add.connect ((widget) => {
-                size_group.add_widget (widget);
-            });
+        public new void append (Gtk.Widget widget) {
+            size_group.add_widget (widget);
+            base.append (widget);
         }
 
         [CCode (instance_pos = -1)]

@@ -30,23 +30,20 @@ namespace AppCenter.Views {
         construct {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-            var loading_view = new Granite.Widgets.AlertView (
-                _("Checking for Updates"),
-                _("Downloading a list of available updates to the OS and installed apps"),
-                "sync-synchronizing"
-            );
-            loading_view.show_all ();
+            var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
+                description = _("Downloading a list of available updates to the OS and installed apps"),
+                icon = new ThemedIcon ("sync-synchronizing")
+            };
 
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
 
             var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
-            info_label.show ();
 
-            var infobar = new Gtk.InfoBar ();
-            infobar.message_type = Gtk.MessageType.WARNING;
-            infobar.no_show_all = true;
-            infobar.get_content_area ().add (info_label);
+            var infobar = new Gtk.InfoBar () {
+                message_type = Gtk.MessageType.WARNING
+            };
+            infobar.add_child (info_label);
 
             var restart_button = infobar.add_button (_("Restart Now"), 0);
             action_button_group.add_widget (restart_button);
@@ -67,8 +64,8 @@ namespace AppCenter.Views {
 
             AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
-            add (infobar);
-            add (scrolled);
+            append (infobar);
+            append (scrolled);
 
             get_apps.begin ();
 
@@ -124,7 +121,7 @@ namespace AppCenter.Views {
             // Only add row if this package needs an update or it's not a font or plugin
             if (needs_update || (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT)) {
                 var row = new Widgets.PackageRow.installed (package, action_button_group);
-                list_box.add (row);
+                list_box.append (row);
             }
         }
 
@@ -249,13 +246,11 @@ namespace AppCenter.Views {
                 }
 
                 update_all_button.valign = Gtk.Align.CENTER;
-                update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+                update_all_button.get_style_context ().add_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
                 update_all_button.clicked.connect (on_update_all);
                 action_button_group.add_widget (update_all_button);
 
-                header.add (update_all_button);
-
-                header.show_all ();
+                header.append (update_all_button);
                 row.set_header (header);
             } else if (is_driver) {
                 if (before != null && is_driver == before_is_driver) {
@@ -264,7 +259,6 @@ namespace AppCenter.Views {
                 }
 
                 var header = new Widgets.UpdateHeaderRow.drivers ();
-                header.show_all ();
                 row.set_header (header);
             } else {
                 if (before != null && is_driver == before_is_driver && update_available == before_update_available) {
@@ -273,7 +267,6 @@ namespace AppCenter.Views {
                 }
 
                 var header = new Widgets.UpdateHeaderRow.up_to_date ();
-                header.show_all ();
                 row.set_header (header);
             }
         }
@@ -289,11 +282,13 @@ namespace AppCenter.Views {
 
             updating_all_apps = true;
 
-            foreach (var row in list_box.get_children ()) {
+            var row = list_box.get_first_child ();
+            while (row != null) {
                 if (row is Widgets.PackageRow) {
                     ((Widgets.PackageRow) row).set_action_sensitive (false);
                 }
-            };
+                row = row.get_next_sibling ();
+            }
 
             foreach (var package in get_packages ()) {
                 if (package.update_available && !package.should_pay) {
@@ -306,7 +301,7 @@ namespace AppCenter.Views {
                         } else {
                             var fail_dialog = new UpgradeFailDialog (package, e.message) {
                                 modal = true,
-                                transient_for = (Gtk.Window) get_toplevel ()
+                                transient_for = ((Gtk.Application) Application.get_default ()).active_window
                             };
                             fail_dialog.present ();
                             break;

@@ -26,9 +26,9 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
 
         var games_card = new GamesCard ();
 
-        add (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        add (new LegacyCard (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
-        add (new LegacyCard (_("Communication"), "", {
+        append (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
+        append (new LegacyCard (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        append (new LegacyCard (_("Communication"), "", {
             "Chat",
             "ContactManagement",
             "Email",
@@ -37,7 +37,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Telephony",
             "VideoConference"
         }, "communication"));
-        add (new LegacyCard (_("Development"), "", {
+        append (new LegacyCard (_("Development"), "", {
             "Database",
             "Debugger",
             "Development",
@@ -47,13 +47,13 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "TerminalEmulator",
             "WebDevelopment"
         }, "development"));
-        add (new LegacyCard (_("Education"), "", {"Education"}, "education"));
-        add (new LegacyCard (_("Finance"), "payment-card-symbolic", {
+        append (new LegacyCard (_("Education"), "", {"Education"}, "education"));
+        append (new LegacyCard (_("Finance"), "payment-card-symbolic", {
             "Economy",
             "Finance"
         }, "finance"));
-        add (games_card);
-        add (new LegacyCard (_("Graphics"), "", {
+        append (games_card);
+        append (new LegacyCard (_("Graphics"), "", {
             "2DGraphics",
             "3DGraphics",
             "Graphics",
@@ -62,11 +62,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "RasterGraphics",
             "VectorGraphics"
         }, "graphics"));
-        add (new LegacyCard (_("Internet"), "applications-internet", {
+        append (new LegacyCard (_("Internet"), "applications-internet", {
             "Network",
             "P2P"
         }, "internet"));
-        add (new LegacyCard (_("Math, Science, & Engineering"), "", {
+        append (new LegacyCard (_("Math, Science, & Engineering"), "", {
             "ArtificialIntelligence",
             "Astronomy",
             "Biology",
@@ -85,31 +85,31 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
-        add (new LegacyCard (_("Media Production"), "applications-multimedia-symbolic", {
+        append (new LegacyCard (_("Media Production"), "applications-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
             "Recorder",
             "Sequencer"
         }, "media-production"));
-        add (new LegacyCard (_("Office"), "applications-office-symbolic", {
+        append (new LegacyCard (_("Office"), "applications-office-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
             "Spreadsheet",
             "WordProcessor"
         }, "office"));
-        add (new LegacyCard (_("System"), "applications-system-symbolic", {
+        append (new LegacyCard (_("System"), "applications-system-symbolic", {
             "Monitor",
             "System"
         }, "system"));
-        add (new LegacyCard (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
-        add (new LegacyCard (_("Video"), "applications-video-symbolic", {
+        append (new LegacyCard (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
+        append (new LegacyCard (_("Video"), "applications-video-symbolic", {
             "Tuner",
             "TV",
             "Video"
         }, "video"));
-        add (new LegacyCard (_("Writing & Language"), "preferences-desktop-locale", {
+        append (new LegacyCard (_("Writing & Language"), "preferences-desktop-locale", {
             "Dictionary",
             "Languages",
             "Literature",
@@ -119,7 +119,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Translation",
             "WordProcessor"
         }, "writing-language"));
-        add (new LegacyCard (_("Privacy & Security"), "preferences-system-privacy", {
+        append (new LegacyCard (_("Privacy & Security"), "preferences-system-privacy", {
             "Security",
         }, "privacy-security"));
 
@@ -163,13 +163,12 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
                 margin_bottom = 12,
                 margin_start = 12
             };
-            content_area.add (expanded_grid);
+            content_area.attach (expanded_grid, 0, 0);
 
-            style_context = content_area.get_style_context ();
-            style_context.add_class (Granite.STYLE_CLASS_CARD);
-            style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
-            style_context.add_class ("category");
-            style_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            add_css_class (Granite.STYLE_CLASS_CARD);
+            add_css_class (Granite.STYLE_CLASS_ROUNDED);
+            add_css_class ("category");
+            content_area.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             child = content_area;
         }
@@ -185,10 +184,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
                 category.add_desktop_group (group);
             }
 
-            var display_image = new Gtk.Image ();
-            display_image.icon_size = Gtk.IconSize.DIALOG;
-            display_image.valign = Gtk.Align.CENTER;
-            display_image.halign = Gtk.Align.END;
+            var display_image = new Gtk.Image () {
+                pixel_size = 32,
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.CENTER
+            };
 
             var name_label = new Gtk.Label (null);
             name_label.wrap = true;
@@ -203,8 +203,8 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
                 margin_bottom = 32,
                 margin_start = 16
             };
-            box.add (display_image);
-            box.add (name_label);
+            box.append (display_image);
+            box.append (name_label);
 
             content_area.attach (box, 0, 0);
 
@@ -217,7 +217,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
                 name_label.justify = Gtk.Justification.CENTER;
             }
 
-            style_context.add_class (style);
+            add_css_class (style);
 
             if (style == "accessibility") {
                 name_label.label = category.name.up ();
@@ -289,7 +289,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
 
             content_area.attach (grid, 0, 0);
 
-            style_context.add_class ("games");
+            add_css_class ("games");
         }
     }
 }

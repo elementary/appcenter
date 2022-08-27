@@ -160,19 +160,19 @@ public class AppCenter.App : Gtk.Application {
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/appcenter/application.css");
-        Gtk.StyleContext.add_provider_for_screen (
-          Gdk.Screen.get_default (),
-          provider,
-          Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
+        // Gtk.StyleContext.add_provider_for_screen (
+        //   Gdk.Screen.get_default (),
+        //   provider,
+        //   Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        // );
 
         var fallback_provider = new Gtk.CssProvider ();
         fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
-        Gtk.StyleContext.add_provider_for_screen (
-          Gdk.Screen.get_default (),
-          fallback_provider,
-          Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
-        );
+        // Gtk.StyleContext.add_provider_for_screen (
+        //   Gdk.Screen.get_default (),
+        //   fallback_provider,
+        //   Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
+        // );
 
         var client = AppCenterCore.Client.get_default ();
 
@@ -215,12 +215,12 @@ public class AppCenter.App : Gtk.Application {
             client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
 #endif
 
-            main_window.destroy.connect (() => {
-                main_window = null;
-            });
+            // main_window.destroy.connect (() => {
+            //     main_window = null;
+            // });
 
             add_window (main_window);
-            main_window.show_all ();
+            main_window.present ();
             if (show_updates) {
                 main_window.go_to_installed ();
             }
@@ -296,12 +296,11 @@ public class AppCenter.App : Gtk.Application {
                     if (package.get_can_launch ()) {
                         // Check if window is focused
                         if (main_window != null) {
-                            var win = main_window.get_window ();
-                            if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                            // if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
                                 main_window.send_installed_toast (package);
 
                                 break;
-                            }
+                            // }
                         }
 
                         var notification = new Notification (_("The app has been installed"));
@@ -318,10 +317,7 @@ public class AppCenter.App : Gtk.Application {
                     }
 
                     var dialog = new InstallFailDialog (package, error);
-
-                    dialog.show_all ();
-                    dialog.run ();
-                    dialog.destroy ();
+                    dialog.present ();
                 }
 
                 break;
@@ -350,9 +346,9 @@ public class AppCenter.App : Gtk.Application {
             update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type);
             update_fail_dialog.transient_for = main_window;
 
-            update_fail_dialog.destroy.connect (() => {
-                update_fail_dialog = null;
-            });
+            // update_fail_dialog.destroy.connect (() => {
+            //     update_fail_dialog = null;
+            // });
         }
 
         update_fail_dialog.present ();

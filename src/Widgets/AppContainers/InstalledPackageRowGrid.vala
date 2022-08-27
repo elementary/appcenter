@@ -49,19 +49,19 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             valign = Gtk.Align.START,
             xalign = 0
         };
-        app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        app_version.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        var release_button = new Gtk.Button.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+        var release_button = new Gtk.Button.from_icon_name ("dialog-information-symbolic") {
             valign = Gtk.Align.CENTER
         };
 
         release_button_revealer = new Gtk.Revealer () {
+            child = release_button,
             halign = Gtk.Align.END,
             hexpand = true,
             tooltip_text = _("Release notes"),
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        release_button_revealer.add (release_button);
 
         action_stack.hexpand = false;
 
@@ -75,13 +75,13 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         grid.attach (release_button_revealer, 2, 0, 1, 2);
         grid.attach (action_stack, 3, 0, 1, 2);
 
-        add (grid);
+        append (grid);
 
         release_button.clicked.connect (() => {
             var releases_dialog = new ReleaseDialog (package) {
-                transient_for = (Gtk.Window) get_toplevel ()
+                transient_for = ((Gtk.Application) Application.get_default ()).active_window
             };
-            releases_dialog.show_all ();
+            releases_dialog.present ();
         });
     }
 
@@ -121,7 +121,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         changed ();
     }
 
-    private class ReleaseDialog : Hdy.Window {
+    private class ReleaseDialog : Granite.Dialog {
         public AppCenterCore.Package package { get; construct; }
 
         public ReleaseDialog (AppCenterCore.Package package) {
@@ -130,7 +130,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         construct {
             title = _("What's new in %s %s").printf (package.get_name (), package.get_version ());
-            type_hint = Gdk.WindowTypeHint.DIALOG;
             modal = true;
 
             var releases_title = new Gtk.Label (title) {
@@ -147,24 +146,18 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                 xalign = 0
             };
 
-            var dialog_close_button = new Gtk.Button.with_label (_("Close")) {
-                halign = Gtk.Align.END,
-                valign = Gtk.Align.END,
-                vexpand = true,
-                margin_top = 12
-            };
-
             var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
                 margin_top = 12,
                 margin_end = 12,
                 margin_bottom = 12,
                 margin_start = 12
             };
-            releases_dialog_box.add (releases_title);
-            releases_dialog_box.add (release_description);
-            releases_dialog_box.add (dialog_close_button);
+            releases_dialog_box.append (releases_title);
+            releases_dialog_box.append (release_description);
 
-            add (releases_dialog_box);
+            child = releases_dialog_box;
+
+            var dialog_close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
 
             dialog_close_button.clicked.connect (() => {
                 close ();

@@ -28,7 +28,7 @@ public class AppCenter.Homepage : Gtk.Box {
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
 
-    private Hdy.Carousel banner_carousel;
+    private Adw.Carousel banner_carousel;
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
@@ -36,28 +36,25 @@ public class AppCenter.Homepage : Gtk.Box {
     private uint banner_timeout_id;
 
     construct {
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        expand = true;
+        add_css_class (Granite.STYLE_CLASS_VIEW);
+        hexpand = true;
+        vexpand = true;
 
-        banner_carousel = new Hdy.Carousel () {
+        banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
         };
 
-        var banner_event_box = new Gtk.EventBox ();
-        banner_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
-        banner_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
-        banner_event_box.add (banner_carousel);
-
-        var banner_dots = new Hdy.CarouselIndicatorDots () {
+        var banner_dots = new Adw.CarouselIndicatorDots () {
             carousel = banner_carousel
         };
 
         var banner_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        banner_box.add (banner_event_box);
-        banner_box.add (banner_dots);
+        banner_box.append (banner_carousel);
+        banner_box.append (banner_dots);
 
-        banner_revealer = new Gtk.Revealer ();
-        banner_revealer.add (banner_box);
+        banner_revealer = new Gtk.Revealer () {
+            child = banner_box
+        };
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
             margin_start = 12
@@ -78,8 +75,9 @@ public class AppCenter.Homepage : Gtk.Box {
         recently_updated_grid.attach (recently_updated_label, 0, 0);
         recently_updated_grid.attach (recently_updated_carousel, 0, 1);
 
-        recently_updated_revealer = new Gtk.Revealer ();
-        recently_updated_revealer.add (recently_updated_grid );
+        recently_updated_revealer = new Gtk.Revealer () {
+            child = recently_updated_grid
+        };
 
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
             margin_start = 24,
@@ -93,17 +91,17 @@ public class AppCenter.Homepage : Gtk.Box {
         };
 
         var box = new Gtk.Box (orientation = Gtk.Orientation.VERTICAL, 0);
-        box.add (banner_revealer);
-        box.add (recently_updated_revealer);
-        box.add (categories_label);
-        box.add (category_flow);
+        box.append (banner_revealer);
+        box.append (recently_updated_revealer);
+        box.append (categories_label);
+        box.append (category_flow);
 
-        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        scrolled_window = new Gtk.ScrolledWindow () {
+            child = scrolled_window,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
-        scrolled_window.add (box);
 
-        add (scrolled_window);
+        append (scrolled_window);
 
         var local_package = App.local_package;
         if (local_package != null) {
@@ -127,23 +125,23 @@ public class AppCenter.Homepage : Gtk.Box {
         AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
             Idle.add (() => {
                 // Clear the cached categories when the AppStream pool is updated
-                foreach (weak Gtk.Widget child in category_flow.get_children ()) {
-                    var item = (Widgets.CategoryFlowBox.AbstractCategoryCard) child;
-                    var category_components = item.category.get_components ();
-                    category_components.remove_range (0, category_components.length);
-                }
+                // foreach (weak Gtk.Widget child in category_flow.get_children ()) {
+                //     var item = (Widgets.CategoryFlowBox.AbstractCategoryCard) child;
+                //     var category_components = item.category.get_components ();
+                //     category_components.remove_range (0, category_components.length);
+                // }
 
                 return GLib.Source.REMOVE;
             });
         });
 
-        banner_event_box.enter_notify_event.connect (() => {
-            banner_timeout_stop ();
-        });
+        // banner_event_box.enter_notify_event.connect (() => {
+        //     banner_timeout_stop ();
+        // });
 
-        banner_event_box.leave_notify_event.connect (() => {
-            banner_timeout_start ();
-        });
+        // banner_event_box.leave_notify_event.connect (() => {
+        //     banner_timeout_start ();
+        // });
 
         recently_updated_carousel.child_activated.connect ((child) => {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
@@ -191,16 +189,15 @@ public class AppCenter.Homepage : Gtk.Box {
                 show_package (package);
             });
 
-            banner_carousel.add (banner);
+            banner_carousel.append (banner);
         }
 
-        banner_carousel.show_all ();
         banner_revealer.reveal_child = true;
 
         foreach (var package in packages_by_release_date) {
-            if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
-                break;
-            }
+            // if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
+            //     break;
+            // }
 
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
@@ -216,11 +213,10 @@ public class AppCenter.Homepage : Gtk.Box {
 
             if (!installed && !(package in packages_in_banner)) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
-                recently_updated_carousel.add (package_row);
+                recently_updated_carousel.append (package_row);
             }
         }
-        recently_updated_carousel.show_all ();
-        recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
+        recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
     }
 
     private void banner_timeout_start () {
@@ -240,7 +236,7 @@ public class AppCenter.Homepage : Gtk.Box {
                 new_index = 0;
             }
 
-            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+            // banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
 
             return Source.CONTINUE;
         });
