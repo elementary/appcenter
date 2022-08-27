@@ -131,9 +131,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
 
         return_button = new Gtk.Button () {
-            valign = Gtk.Align.CENTER
+            valign = Gtk.Align.CENTER,
+            visible = false
         };
-        return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+        return_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
         var updates_button = new Gtk.Button () {
             child = new Gtk.Image.from_icon_name ("software-update-available") {
@@ -228,7 +229,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view = new Views.AppListUpdateView ();
 
         leaflet = new Adw.Leaflet () {
-            can_navigate_back = true
+            can_navigate_back = true,
+            can_unfold = false
         };
         leaflet.append (homepage);
 

@@ -209,7 +209,7 @@ public class AppCenter.Homepage : Gtk.Box {
         box.append (category_flow);
 
         scrolled_window = new Gtk.ScrolledWindow () {
-            child = scrolled_window,
+            child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
