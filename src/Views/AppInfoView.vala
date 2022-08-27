@@ -1309,7 +1309,7 @@ namespace AppCenter.Views {
         }
     }
 
-    private class OtherAppsBar : Gtk.Grid {
+    private class OtherAppsBar : Gtk.Box {
         public signal void show_other_package (AppCenterCore.Package package);
 
         public AppCenterCore.Package package { get; construct; }
@@ -1322,6 +1322,10 @@ namespace AppCenter.Views {
                 package: package,
                 max_width: max_width
             );
+        }
+
+        class construct {
+            set_css_name ("actionbar");
         }
 
         construct {
@@ -1356,17 +1360,18 @@ namespace AppCenter.Views {
             box.add (header);
             box.add (flowbox);
 
+            // actionbar comes with its own padding, offset from the desired padding
             var clamp = new Hdy.Clamp () {
-                margin_top = 24,
-                margin_end = 24,
-                margin_bottom = 24,
-                margin_start = 24,
+                margin_top = 24 - 3,
+                margin_end = 24 - 6,
+                margin_bottom = 24 - 3,
+                margin_start = 24 - 6,
                 maximum_size = max_width
             };
             clamp.add (box);
 
             add (clamp);
-            get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+            get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
             flowbox.child_activated.connect ((child) => {
                 var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
