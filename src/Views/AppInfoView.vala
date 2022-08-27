@@ -592,14 +592,10 @@ namespace AppCenter.Views {
             release_grid.attach (release_list_box, 0, 1);
             release_grid.hide ();
 
-            var content_grid = new Gtk.Grid () {
-                orientation = Gtk.Orientation.VERTICAL,
-                row_spacing = 24
-            };
-
-            content_grid.add (package_summary);
-            content_grid.add (app_description);
-            content_grid.add (release_grid);
+            var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 24);
+            content_box.add (package_summary);
+            content_box.add (app_description);
+            content_box.add (release_grid);
 
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox () {
@@ -619,12 +615,12 @@ namespace AppCenter.Views {
                 };
                 extension_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-                content_grid.add (extension_label);
-                content_grid.add (extension_box);
+                content_box.add (extension_label);
+                content_box.add (extension_box);
                 load_extensions.begin ();
             }
 
-            content_grid.add (links_flowbox);
+            content_box.add (links_flowbox);
 
             origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
             origin_combo = new Gtk.ComboBox.with_model (origin_liststore) {
@@ -712,7 +708,7 @@ namespace AppCenter.Views {
                 margin_start = 24,
                 maximum_size = MAX_WIDTH
             };
-            body_clamp.add (content_grid);
+            body_clamp.add (content_box);
 
             var other_apps_bar = new OtherAppsBar (package, MAX_WIDTH);
 
@@ -763,17 +759,15 @@ namespace AppCenter.Views {
 
                 var share_label = new Gtk.Label (_("Share"));
 
-                var share_grid = new Gtk.Grid () {
-                    column_spacing = 6
-                };
-                share_grid.add (share_icon);
-                share_grid.add (share_label);
+                var share_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+                share_box.add (share_icon);
+                share_box.add (share_label);
 
                 var share_button = new Gtk.MenuButton () {
                     direction = Gtk.ArrowType.UP,
                     popover = share_popover
                 };
-                share_button.add (share_grid);
+                share_button.add (share_box);
 
                 unowned var share_button_context = share_button.get_style_context ();
                 share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -1172,7 +1166,7 @@ namespace AppCenter.Views {
             });
         }
 
-        class UrlButton : Gtk.Grid {
+        class UrlButton : Gtk.Box {
             public UrlButton (string label, string? uri, string icon_name) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 tooltip_text = uri;
@@ -1183,17 +1177,15 @@ namespace AppCenter.Views {
 
                 var title = new Gtk.Label (label);
 
-                var grid = new Gtk.Grid () {
-                    column_spacing = 6
-                };
-                grid.add (icon);
-                grid.add (title);
+                var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+                box.add (icon);
+                box.add (title);
 
                 if (uri != null) {
                     var button = new Gtk.Button ();
                     button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                    button.add (grid);
+                    button.add (box);
                     add (button);
 
                     button.clicked.connect (() => {
@@ -1204,7 +1196,7 @@ namespace AppCenter.Views {
                         }
                     });
                 } else {
-                    add (grid);
+                    add (box);
                 }
             }
         }
@@ -1220,15 +1212,13 @@ namespace AppCenter.Views {
 
                 var title = new Gtk.Label (_("Fund"));
 
-                var grid = new Gtk.Grid () {
-                    column_spacing = 6
-                };
-                grid.add (icon);
-                grid.add (title);
+                var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+                box.add (icon);
+                box.add (title);
 
                 tooltip_text = _("Fund the development of this app");
 
-                add (grid);
+                add (box);
 
                 clicked.connect (() => {
                     var stripe = new Widgets.StripeDialog (
@@ -1310,16 +1300,12 @@ namespace AppCenter.Views {
             description_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
             description_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            var grid = new Gtk.Grid () {
-                orientation = Gtk.Orientation.VERTICAL,
-                row_spacing = 3
-            };
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
+            box.add (icon);
+            box.add (label);
+            box.add (description_label);
 
-            grid.add (icon);
-            grid.add (label);
-            grid.add (description_label);
-
-            add (grid);
+            add (box);
         }
     }
 
@@ -1366,12 +1352,9 @@ namespace AppCenter.Views {
                 flowbox.add (other_app);
             }
 
-            var grid = new Gtk.Grid () {
-                orientation = Gtk.Orientation.VERTICAL,
-                row_spacing = 12
-            };
-            grid.add (header);
-            grid.add (flowbox);
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
+            box.add (header);
+            box.add (flowbox);
 
             var clamp = new Hdy.Clamp () {
                 margin_top = 24,
@@ -1380,7 +1363,7 @@ namespace AppCenter.Views {
                 margin_start = 24,
                 maximum_size = max_width
             };
-            clamp.add (grid);
+            clamp.add (box);
 
             add (clamp);
             get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
