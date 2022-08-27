@@ -126,11 +126,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         };
         return_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        var updates_button = new Gtk.Button () {
-            child = new Gtk.Image.from_icon_name ("software-update-available") {
-                pixel_size = 24
-            }
-        };
+        var updates_button = new Gtk.Button.from_icon_name ("software-update-available");
+        ((Gtk.Image) updates_button.child).pixel_size = 24;
 
         var badge_provider = new Gtk.CssProvider ();
         badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
@@ -201,6 +198,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             child = new Gtk.Image.from_icon_name ("open-menu") {
                 pixel_size = 24
             },
+            has_frame = false,
             popover = menu_popover,
             tooltip_text = _("Settings"),
             valign = Gtk.Align.CENTER
