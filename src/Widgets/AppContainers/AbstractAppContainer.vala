@@ -47,6 +47,7 @@ namespace AppCenter {
 
             action_button_revealer = new Gtk.Revealer () {
                 child = action_button,
+                overflow = Gtk.Overflow.VISIBLE,
                 transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
             };
 
