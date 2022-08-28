@@ -307,9 +307,9 @@ public class AppCenter.Homepage : Gtk.Box {
         banner_revealer.reveal_child = true;
 
         foreach (var package in packages_by_release_date) {
-            // if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
-            //     break;
-            // }
+            if (recently_updated_carousel.get_child_at_index (MAX_PACKAGES_IN_CAROUSEL - 1) != null) {
+                break;
+            }
 
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
