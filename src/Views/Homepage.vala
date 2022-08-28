@@ -391,9 +391,9 @@ public class AppCenter.Homepage : Gtk.Box {
             };
             content_area.attach (expanded_grid, 0, 0);
 
-            add_css_class (Granite.STYLE_CLASS_CARD);
-            add_css_class (Granite.STYLE_CLASS_ROUNDED);
-            add_css_class ("category");
+            content_area.add_css_class (Granite.STYLE_CLASS_CARD);
+            content_area.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+            content_area.add_css_class ("category");
             content_area.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             child = content_area;
@@ -443,7 +443,7 @@ public class AppCenter.Homepage : Gtk.Box {
                 name_label.justify = Gtk.Justification.CENTER;
             }
 
-            add_css_class (style);
+            content_area.add_css_class (style);
 
             if (style == "accessibility") {
                 name_label.label = category.name.up ();
@@ -483,10 +483,8 @@ public class AppCenter.Homepage : Gtk.Box {
                 icon_name = "applications-games-symbolic",
                 pixel_size = 64
             };
-
-            unowned var image_context = image.get_style_context ();
-            image_context.add_class (Granite.STYLE_CLASS_ACCENT);
-            image_context.add_class ("slate");
+            image.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            image.add_css_class ("slate");
 
             var fun_label = new Gtk.Label (_("Fun &")) {
                 halign = Gtk.Align.START
@@ -498,11 +496,9 @@ public class AppCenter.Homepage : Gtk.Box {
             fun_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var games_label = new Gtk.Label (_("Games"));
-
-            unowned var games_label_context = games_label.get_style_context ();
-            games_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
-            games_label_context.add_class ("blue");
-            games_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            games_label.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            games_label.add_css_class ("blue");
+            games_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var grid = new Gtk.Grid () {
                 column_spacing = 12,
@@ -515,7 +511,7 @@ public class AppCenter.Homepage : Gtk.Box {
 
             content_area.attach (grid, 0, 0);
 
-            add_css_class ("games");
+            content_area.add_css_class ("games");
         }
     }
 }

@@ -160,19 +160,19 @@ public class AppCenter.App : Gtk.Application {
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/appcenter/application.css");
-        // Gtk.StyleContext.add_provider_for_screen (
-        //   Gdk.Screen.get_default (),
-        //   provider,
-        //   Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        // );
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
+            provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
 
         var fallback_provider = new Gtk.CssProvider ();
         fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
-        // Gtk.StyleContext.add_provider_for_screen (
-        //   Gdk.Screen.get_default (),
-        //   fallback_provider,
-        //   Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
-        // );
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
+            fallback_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
+        );
 
         var client = AppCenterCore.Client.get_default ();
 
