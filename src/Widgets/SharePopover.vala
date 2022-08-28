@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2022 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Daniel Foré <daniel@elementary.io>
+ * Authored by: Danielle Foré <danielle@elementary.io>
  */
 
 public class SharePopover : Gtk.Popover {
@@ -31,67 +31,38 @@ public class SharePopover : Gtk.Popover {
     }
 
     construct {
-        var email_button = new Gtk.Button ();
-
-        var mail_appinfo = AppInfo.get_default_for_uri_scheme ("mailto");
-        if (mail_appinfo != null) {
-            email_button.child = new Gtk.Image.from_gicon (mail_appinfo.get_icon ()) {
-                pixel_size = 32
-            };
-            email_button.tooltip_text = mail_appinfo.get_display_name ();
-            email_button.add_css_class (Granite.STYLE_CLASS_FLAT);
-        }
-
-        var facebook_button = new Gtk.Button () {
-            child = new Gtk.Image.from_icon_name ("online-account-facebook") {
-                pixel_size = 32
-            }
+        var facebook_button = new Gtk.Button.from_icon_name ("online-account-facebook") {
+            tooltip_text = _("Facebook")
         };
-        facebook_button.tooltip_text = _("Facebook");
-        facebook_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+        facebook_button.child.add_css_class ("large-icons");
 
-        var twitter_button = new Gtk.Button () {
-            child = new Gtk.Image.from_icon_name ("online-account-twitter") {
-                pixel_size = 32
-            }
+        var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter") {
+            tooltip_text = _("Twitter")
         };
-        twitter_button.tooltip_text = _("Twitter");
-        twitter_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+        twitter_button.child.add_css_class ("large-icons");
 
-        var reddit_button = new Gtk.Button () {
-            child = new Gtk.Image.from_icon_name ("online-account-reddit") {
-                pixel_size = 32
-            }
+        var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit") {
+            tooltip_text = _("Reddit")
         };
-        reddit_button.tooltip_text = _("Reddit");
-        reddit_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+        reddit_button.child.add_css_class ("large-icons");
 
-        var tumblr_button = new Gtk.Button () {
-            child = new Gtk.Image.from_icon_name ("online-account-tumblr") {
-                pixel_size = 32
-            }
+        var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr") {
+            tooltip_text = _("Tumblr")
         };
-        tumblr_button.tooltip_text = _("Tumblr");
-        tumblr_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+        tumblr_button.child.add_css_class ("large-icons");
 
-        var telegram_button = new Gtk.Button () {
-            child = new Gtk.Image.from_icon_name ("online-account-telegram") {
-                pixel_size = 32
-            }
+        var telegram_button = new Gtk.Button.from_icon_name ("online-account-telegram") {
+            tooltip_text = _("Telegram")
         };
-        telegram_button.tooltip_text = _("Telegram");
-        telegram_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+        telegram_button.child.add_css_class ("large-icons");
 
-        var copy_link_button = new Gtk.Button () {
-            child = new Gtk.Image.from_icon_name ("edit-copy-symbolic") {
-                pixel_size = 32
-            }
+        var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic") {
+            tooltip_text = _("Copy link")
         };
-        copy_link_button.tooltip_text = _("Copy link");
-        copy_link_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+        ((Gtk.Image) copy_link_button.child).pixel_size = 24;
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
-        size_group.add_widget (email_button);
+        size_group.add_widget (facebook_button);
         size_group.add_widget (copy_link_button);
 
         var service_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
@@ -100,9 +71,23 @@ public class SharePopover : Gtk.Popover {
             margin_bottom = 6,
             margin_start = 6
         };
+
+        var mail_appinfo = AppInfo.get_default_for_uri_scheme ("mailto");
         if (mail_appinfo != null) {
+            var email_button = new Gtk.Button () {
+                child = new Gtk.Image.from_gicon (mail_appinfo.get_icon ()),
+                tooltip_text = mail_appinfo.get_display_name ()
+            };
+            email_button.add_css_class ("image-button");
+            email_button.child.add_css_class ("large-icons");
+
             service_box.append (email_button);
+
+            email_button.clicked.connect (() => {
+                show_uri ("mailto:?subject=%s&body=%s".printf (body, uri));
+            });
         }
+
         service_box.append (facebook_button);
         service_box.append (twitter_button);
         service_box.append (reddit_button);
@@ -130,61 +115,38 @@ public class SharePopover : Gtk.Popover {
 
         //     link_copied ();
 
-        //     hide ();
+        //     popdown ();
         // });
 
-        email_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("mailto:?body=%s %s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
         facebook_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://www.facebook.com/sharer/sharer.php?u=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
+            show_uri ("https://www.facebook.com/sharer/sharer.php?u=%s".printf (uri));
         });
 
         twitter_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://twitter.com/intent/tweet?text=%s&url=%s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
+            show_uri ("https://twitter.com/intent/tweet?text=%s&url=%s".printf (body, uri));
         });
 
         reddit_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("http://www.reddit.com/submit?title=%s&url=%s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
+            show_uri ("http://www.reddit.com/submit?title=%s&url=%s".printf (body, uri));
         });
 
         tumblr_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://www.tumblr.com/share/link?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
+            show_uri ("https://www.tumblr.com/share/link?url=%s".printf (uri));
         });
 
         telegram_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://t.me/share/url?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
+            show_uri ("https://t.me/share/url?url=%s".printf (uri));
         });
+    }
+
+    private void show_uri (string uri) {
+        var main_window = ((Gtk.Application) Application.get_default ()).active_window;
+        try {
+            Gtk.show_uri (main_window, uri, Gdk.CURRENT_TIME);
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        popdown ();
     }
 }
