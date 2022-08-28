@@ -510,7 +510,6 @@ public class AppCenter.Homepage : Gtk.Box {
             grid.attach (games_label, 1, 1);
 
             content_area.attach (grid, 0, 0);
-
             content_area.add_css_class ("games");
         }
     }
