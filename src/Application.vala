@@ -40,7 +40,6 @@ public class AppCenter.App : Gtk.Application {
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
     private Granite.MessageDialog? update_fail_dialog = null;
-    private MainWindow? main_window;
 
     private uint registration_id = 0;
 
@@ -67,8 +66,8 @@ public class AppCenter.App : Gtk.Application {
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
-            if (main_window != null) {
-                main_window.destroy ();
+            if (active_window != null) {
+                active_window.destroy ();
             }
         });
 
@@ -82,7 +81,6 @@ public class AppCenter.App : Gtk.Application {
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
-        client.installed_apps_changed.connect (on_updates_available);
 
         refresh_action = new SimpleAction ("refresh", null);
         refresh_action.activate.connect (() => {
@@ -114,6 +112,8 @@ public class AppCenter.App : Gtk.Application {
         if (file == null) {
             return;
         }
+
+        var main_window = (MainWindow) active_window;
 
         if (file.has_uri_scheme ("type")) {
             string? mimetype = mimetype_from_file (file);
@@ -149,36 +149,11 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
-        var granite_settings = Granite.Settings.get_default ();
-        var gtk_settings = Gtk.Settings.get_default ();
-
-        gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-
-        granite_settings.notify["prefers-color-scheme"].connect (() => {
-            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-        });
-
-        var provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("io/elementary/appcenter/application.css");
-        Gtk.StyleContext.add_provider_for_screen (
-          Gdk.Screen.get_default (),
-          provider,
-          Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-
-        var fallback_provider = new Gtk.CssProvider ();
-        fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
-        Gtk.StyleContext.add_provider_for_screen (
-          Gdk.Screen.get_default (),
-          fallback_provider,
-          Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
-        );
-
-        var client = AppCenterCore.Client.get_default ();
-
         if (fake_update_packages != null) {
             AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
         }
+
+        var client = AppCenterCore.Client.get_default ();
 
         if (silent) {
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
@@ -202,36 +177,45 @@ public class AppCenter.App : Gtk.Application {
             }
         }
 
-        if (main_window == null) {
-            main_window = new MainWindow (this);
+        if (active_window == null) {
+            var granite_settings = Granite.Settings.get_default ();
+            var gtk_settings = Gtk.Settings.get_default ();
 
+            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
 
-            // Force a Flatpak cache refresh when the window opens, so we get new apps
-#if HOMEPAGE
-            main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
-            });
-#else
-            client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
-#endif
-
-            main_window.destroy.connect (() => {
-                main_window = null;
+            granite_settings.notify["prefers-color-scheme"].connect (() => {
+                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
             });
 
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("io/elementary/appcenter/application.css");
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
+
+            var fallback_provider = new Gtk.CssProvider ();
+            fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                fallback_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
+            );
+
+            var main_window = new MainWindow (this);
             add_window (main_window);
             main_window.show_all ();
-            if (show_updates) {
-                main_window.go_to_installed ();
-            }
-        } else {
-            if (show_updates) {
-                main_window.go_to_installed ();
-                main_window.present ();
-            }
         }
 
-        main_window.present ();
+        // Force a Flatpak cache refresh when the window opens, so we get new apps
+        client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+
+        if (show_updates) {
+            ((MainWindow) active_window).go_to_installed ();
+        }
+
+        active_window.present_with_time (Gdk.CURRENT_TIME);
     }
 
     public override bool dbus_register (DBusConnection connection, string object_path) throws Error {
@@ -295,7 +279,8 @@ public class AppCenter.App : Gtk.Application {
                 if (error == null) {
                     if (package.get_can_launch ()) {
                         // Check if window is focused
-                        if (main_window != null) {
+                        if (active_window != null) {
+                            var main_window = (MainWindow) active_window;
                             var win = main_window.get_window ();
                             if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
                                 main_window.send_installed_toast (package);
@@ -330,25 +315,15 @@ public class AppCenter.App : Gtk.Application {
         }
     }
 
-    public void on_updates_available () {
-        var client = AppCenterCore.Client.get_default ();
-        Idle.add (() => {
-            if (main_window != null) {
-                main_window.show_update_badge (client.updates_number);
-            }
-
-            return GLib.Source.REMOVE;
-        });
-    }
-
     private void on_cache_update_failed (Error error, AppCenterCore.Client.CacheUpdateType cache_update_type) {
-        if (main_window == null) {
+        if (active_window == null) {
             return;
         }
 
         if (update_fail_dialog == null) {
-            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type);
-            update_fail_dialog.transient_for = main_window;
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type) {
+                transient_for = active_window
+            };
 
             update_fail_dialog.destroy.connect (() => {
                 update_fail_dialog = null;
