@@ -274,6 +274,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             maximize ();
         }
 
+        show_all ();
+
         var client = AppCenterCore.Client.get_default ();
 
         automatic_updates_button.notify["active"].connect (() => {

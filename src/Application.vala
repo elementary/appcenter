@@ -208,7 +208,6 @@ public class AppCenter.App : Gtk.Application {
 
             var main_window = new MainWindow (this);
             add_window (main_window);
-            main_window.show_all ();
         }
 
         if (show_updates) {
