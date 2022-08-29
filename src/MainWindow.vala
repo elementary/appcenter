@@ -31,8 +31,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
 
-    private uint configure_id;
-
     private bool mimetype;
 
     private const int VALID_QUERY_LENGTH = 3;
@@ -247,20 +245,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         child = box;
         set_titlebar (headerbar);
 
-        int window_width, window_height;
-        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
         App.settings.bind (
             "automatic-updates",
             automatic_updates_button,
             "active",
             SettingsBindFlags.DEFAULT
         );
-
-        // resize (window_width, window_height);
-
-        if (App.settings.get_boolean ("window-maximized")) {
-            maximize ();
-        }
 
         automatic_updates_button.notify["active"].connect (() => {
             if (automatic_updates_button.active) {
@@ -317,29 +307,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
     }
-
-    // public override bool configure_event (Gdk.EventConfigure event) {
-    //     if (configure_id == 0) {
-    //         /* Avoid spamming the settings */
-    //         configure_id = Timeout.add (200, () => {
-    //             configure_id = 0;
-
-    //             if (is_maximized) {
-    //                 App.settings.set_boolean ("window-maximized", true);
-    //             } else {
-    //                 App.settings.set_boolean ("window-maximized", false);
-
-    //                 int width, height;
-    //                 get_size (out width, out height);
-    //                 App.settings.set ("window-size", "(ii)", width, height);
-    //             }
-
-    //             return GLib.Source.REMOVE;
-    //         });
-    //     }
-
-    //     return base.configure_event (event);
-    // }
 
     // public override bool delete_event (Gdk.EventAny event) {
     //     if (working) {

@@ -220,15 +220,24 @@ public class AppCenter.App : Gtk.Application {
             // });
 
             add_window (main_window);
-            main_window.present ();
-            if (show_updates) {
-                main_window.go_to_installed ();
+
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            settings.bind ("window-height", main_window, "default-height", SettingsBindFlags.DEFAULT);
+            settings.bind ("window-width", main_window, "default-width", SettingsBindFlags.DEFAULT);
+
+            if (settings.get_boolean ("window-maximized")) {
+                main_window.maximize ();
             }
-        } else {
-            if (show_updates) {
-                main_window.go_to_installed ();
-                main_window.present ();
-            }
+
+            settings.bind ("window-maximized", main_window, "maximized", SettingsBindFlags.SET);
+        }
+
+        if (show_updates) {
+            main_window.go_to_installed ();
         }
 
         main_window.present ();
