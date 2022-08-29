@@ -109,14 +109,11 @@ public class SharePopover : Gtk.Popover {
 
         child = box;
 
-        // copy_link_button.clicked.connect (() => {
-        //     var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
-        //     clipboard.set_text (uri, -1);
-
-        //     link_copied ();
-
-        //     popdown ();
-        // });
+        copy_link_button.clicked.connect (() => {
+            Gdk.Display.get_default ().get_clipboard ().set_text (uri);
+            link_copied ();
+            popdown ();
+        });
 
         facebook_button.clicked.connect (() => {
             show_uri ("https://www.facebook.com/sharer/sharer.php?u=%s".printf (uri));
