@@ -203,13 +203,13 @@ public class AppCenter.App : Gtk.Application {
                 Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
             );
 
+            // Force a Flatpak cache refresh when the window is created, so we get new apps
+            client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+
             var main_window = new MainWindow (this);
             add_window (main_window);
             main_window.show_all ();
         }
-
-        // Force a Flatpak cache refresh when the window opens, so we get new apps
-        client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
 
         if (show_updates) {
             ((MainWindow) active_window).go_to_installed ();
