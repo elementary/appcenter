@@ -149,7 +149,7 @@ public class AppCenterCore.Package : Object {
 
     public bool should_pay {
         get {
-            if (!is_native || is_os_updates) {
+            if (component.get_origin () != APPCENTER_PACKAGE_ORIGIN) {
                 return false;
             }
 
@@ -167,12 +167,6 @@ public class AppCenterCore.Package : Object {
             }
 
             return true;
-        }
-    }
-
-    public bool should_nag_update {
-        get {
-            return update_available && should_pay;
         }
     }
 
@@ -194,15 +188,9 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool is_driver {
-       get {
-           return component.get_kind () == AppStream.ComponentKind.DRIVER;
-       }
-    }
-
-    public bool is_font {
+    public AppStream.ComponentKind kind {
         get {
-            return component.get_kind () == AppStream.ComponentKind.FONT;
+            return component.get_kind ();
         }
     }
 
@@ -214,7 +202,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return is_native && !is_driver && !is_os_updates;
+            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates;
         }
     }
 
@@ -314,12 +302,6 @@ public class AppCenterCore.Package : Object {
             }
 
             return _author_title;
-        }
-    }
-
-    public bool is_plugin {
-        get {
-            return component.get_kind () == AppStream.ComponentKind.ADDON;
         }
     }
 
@@ -789,17 +771,16 @@ public class AppCenterCore.Package : Object {
         if (color_primary != null) {
             return color_primary;
         } else {
-            color_primary = component.get_custom_value ("x-appcenter-color-primary");
-            return color_primary;
-        }
-    }
+            var branding = component.get_branding ();
+            if (branding != null) {
+                color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.UNKNOWN);
+            }
 
-    public string? get_color_primary_text () {
-        if (color_primary_text != null) {
-            return color_primary_text;
-        } else {
-            color_primary_text = component.get_custom_value ("x-appcenter-color-primary-text");
-            return color_primary_text;
+            if (color_primary == null) {
+                color_primary = component.get_custom_value ("x-appcenter-color-primary");
+            }
+
+            return color_primary;
         }
     }
 

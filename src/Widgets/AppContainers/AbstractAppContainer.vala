@@ -24,7 +24,7 @@ namespace AppCenter {
 
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button open_button;
-        protected Gtk.Grid button_grid;
+        protected Gtk.Box button_box;
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
@@ -61,9 +61,9 @@ namespace AppCenter {
 
             open_button.clicked.connect (launch_package_app);
 
-            button_grid = new Gtk.Grid ();
-            button_grid.add (action_button_revealer);
-            button_grid.add (open_button_revealer);
+            button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            button_box.add (action_button_revealer);
+            button_box.add (open_button_revealer);
 
             cancel_button = new ProgressButton () {
                 label = _("Cancel")
@@ -81,7 +81,7 @@ namespace AppCenter {
                 valign = Gtk.Align.CENTER,
                 transition_type = Gtk.StackTransitionType.CROSSFADE
             };
-            action_stack.add_named (button_grid, "buttons");
+            action_stack.add_named (button_box, "buttons");
             action_stack.add_named (cancel_button, "progress");
             action_stack.show_all ();
 
@@ -203,8 +203,8 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.free_string = _("Update");
 
-                    if (!package.should_nag_update) {
-                       action_button.amount = 0;
+                    if (!package.should_pay) {
+                        action_button.amount = 0;
                     }
 
                     action_button_revealer.reveal_child = true;

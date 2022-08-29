@@ -70,7 +70,7 @@ public class AppCenter.SearchView : AbstractAppList {
 
     private void add_row_for_package (AppCenterCore.Package package) {
         // Don't show plugins or fonts in search and category views
-        if (!package.is_plugin && !package.is_font) {
+        if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
             GLib.CompareDataFunc<AppCenterCore.Package> sort_fn = (a, b) => {
                 return compare_packages (a, b);
             };
@@ -124,8 +124,8 @@ public class AppCenter.SearchView : AbstractAppList {
     }
 
     private int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-        if (p1.is_plugin != p2.is_plugin) {
-            return p1.is_plugin ? 1 : -1;
+        if ((p1.kind == AppStream.ComponentKind.ADDON) != (p2.kind == AppStream.ComponentKind.ADDON)) {
+            return p1.kind == AppStream.ComponentKind.ADDON ? 1 : -1;
         }
 
         int sp1 = search_priority (p1.get_name ());

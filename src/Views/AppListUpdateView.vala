@@ -122,7 +122,7 @@ namespace AppCenter.Views {
             var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
 
             // Only add row if this package needs an update or it's not a font or plugin
-            if (needs_update || (!package.is_plugin && !package.is_font)) {
+            if (needs_update || (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT)) {
                 var row = new Widgets.PackageRow.installed (package, action_button_group);
                 list_box.add (row);
             }
@@ -140,7 +140,7 @@ namespace AppCenter.Views {
             string a_package_name = "";
             if (row1_package != null) {
                 a_has_updates = row1_package.update_available;
-                a_is_driver = row1_package.is_driver;
+                a_is_driver = row1_package.kind == AppStream.ComponentKind.DRIVER;
                 a_is_os = row1_package.is_os_updates;
                 a_is_updating = row1_package.is_updating;
                 a_package_name = row1_package.get_name ();
@@ -153,7 +153,7 @@ namespace AppCenter.Views {
             string b_package_name = "";
             if (row2_package != null) {
                 b_has_updates = row2_package.update_available;
-                b_is_driver = row2_package.is_driver;
+                b_is_driver = row2_package.kind == AppStream.ComponentKind.DRIVER;
                 b_is_os = row2_package.is_os_updates;
                 b_is_updating = row2_package.is_updating;
                 b_package_name = row1_package.get_name ();
@@ -201,7 +201,7 @@ namespace AppCenter.Views {
             var row_package = row.get_package ();
             if (row_package != null) {
                 update_available = row_package.update_available || row_package.is_updating;
-                is_driver = row_package.is_driver;
+                is_driver = row_package.kind == AppStream.ComponentKind.DRIVER;
             }
 
 
@@ -211,7 +211,7 @@ namespace AppCenter.Views {
                 var before_package = before.get_package ();
                 if (before_package != null) {
                     before_update_available = before_package.update_available || before_package.is_updating;
-                    before_is_driver = before_package.is_driver;
+                    before_is_driver = before_package.kind == AppStream.ComponentKind.DRIVER;
                 }
             }
 
@@ -227,7 +227,7 @@ namespace AppCenter.Views {
                 bool using_flatpak = false;
                 foreach (var package in get_packages ()) {
                     if (package.update_available || package.is_updating) {
-                        if (package.should_nag_update) {
+                        if (package.should_pay) {
                             nag_numbers++;
                         }
 
@@ -296,7 +296,7 @@ namespace AppCenter.Views {
             };
 
             foreach (var package in get_packages ()) {
-                if (package.update_available && !package.should_nag_update) {
+                if (package.update_available && !package.should_pay) {
                     try {
                         yield package.update (false);
                     } catch (Error e) {
