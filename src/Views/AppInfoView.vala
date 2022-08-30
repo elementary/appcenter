@@ -46,7 +46,7 @@ namespace AppCenter.Views {
         private Hdy.Clamp screenshot_not_found_clamp;
         private Gtk.Stack screenshot_stack;
         private Gtk.Label app_description;
-        private Widgets.ReleaseListBox release_list_box;
+        private Gtk.ListBox release_list_box;
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
@@ -582,7 +582,10 @@ namespace AppCenter.Views {
             };
             whats_new_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-            release_list_box = new Widgets.ReleaseListBox (package);
+            release_list_box = new Gtk.ListBox () {
+                selection_mode = Gtk.SelectionMode.NONE
+            };
+            release_list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
 
             release_grid = new Gtk.Grid () {
                 no_show_all = true,
@@ -934,7 +937,13 @@ namespace AppCenter.Views {
                 get_app_download_size.begin ();
 
                 Idle.add (() => {
-                    if (release_list_box.populate ()) {
+                    var releases = package.get_newest_releases (1, 5);
+                    foreach (var release in releases) {
+                        var row = new AppCenter.Widgets.ReleaseRow (release);
+                        release_list_box.add (row);
+                    }
+
+                    if (releases.size > 0) {
                         release_grid.no_show_all = false;
                         release_grid.show_all ();
                     }
