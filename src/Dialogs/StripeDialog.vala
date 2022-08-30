@@ -236,8 +236,9 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
         pay_button = (Gtk.Button) add_button (_("Pay $%d.00").printf (amount), Gtk.ResponseType.APPLY);
         pay_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        // pay_button.has_default = true;
         pay_button.sensitive = false;
+
+        set_default_widget (pay_button);
 
         response.connect (on_response);
 
