@@ -277,9 +277,24 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             show_package (package);
         });
 
-        // destroy.connect (() => {
-        //    installed_view.clear ();
-        // });
+        close_request.connect (() => {
+           installed_view.clear ();
+
+            if (working) {
+                hide ();
+
+                notify["working"].connect (() => {
+                    if (!visible && !working) {
+                        destroy ();
+                    }
+                });
+
+                AppCenterCore.Client.get_default ().cancel_updates (false); //Timeouts keep running
+                return true;
+            }
+
+            return false;
+        });
 
         leaflet.notify["visible-child"].connect (() => {
             if (!leaflet.child_transition_running) {
@@ -307,23 +322,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
     }
-
-    // public override bool delete_event (Gdk.EventAny event) {
-    //     if (working) {
-    //         hide ();
-
-    //         notify["working"].connect (() => {
-    //             if (!visible && !working) {
-    //                 destroy ();
-    //             }
-    //         });
-
-    //         AppCenterCore.Client.get_default ().cancel_updates (false); //Timeouts keep running
-    //         return true;
-    //     }
-
-    //     return false;
-    // }
 
     public void show_update_badge (uint updates_number) {
         if (updates_number == 0U) {
