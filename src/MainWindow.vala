@@ -201,7 +201,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         headerbar.pack_end (spinner);
 
         var homepage = new Homepage ();
-        installed_view = new Views.AppListUpdateView ();
+        installed_view = new Views.AppListUpdateView () {
+            name = "installed-view"
+        };
 
         leaflet = new Adw.Leaflet () {
             can_navigate_back = true,
@@ -425,9 +427,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        // if (leaflet.get_children ().find (installed_view) == null) {
+        if (leaflet.get_child_by_name ("installed-view") == null) {
             leaflet.append (installed_view);
-        // }
+        }
 
         leaflet.visible_child = installed_view;
     }
