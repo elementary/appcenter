@@ -318,10 +318,7 @@ public class AppCenter.App : Gtk.Application {
                     }
 
                     var dialog = new InstallFailDialog (package, error);
-
-                    dialog.show_all ();
-                    dialog.run ();
-                    dialog.destroy ();
+                    dialog.present ();
                 }
 
                 break;
