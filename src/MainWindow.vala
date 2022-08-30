@@ -40,7 +40,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
-        // search_entry.grab_focus_without_selecting ();
+        search_entry.grab_focus ();
 
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
@@ -528,7 +528,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         if (sensitive) {
-            // search_entry.grab_focus_without_selecting ();
+            search_entry.grab_focus ();
         }
     }
 
