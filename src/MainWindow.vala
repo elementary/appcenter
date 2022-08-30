@@ -123,6 +123,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         updates_badge_revealer = new Gtk.Revealer () {
+            can_target = false,
             child = updates_badge,
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
