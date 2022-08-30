@@ -265,10 +265,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             go_to_installed ();
         });
 
-        // eventbox_badge.button_release_event.connect (() => {
-        //     go_to_installed ();
-        // });
-
         homepage.show_category.connect ((category) => {
             show_category (category);
         });
