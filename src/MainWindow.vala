@@ -124,7 +124,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                     message_dialog.badge_icon = new ThemedIcon ("dialog-error");
                     message_dialog.transient_for = this;
 
-                    message_dialog.show_all ();
+                    message_dialog.present ();
                     message_dialog.response.connect ((response_id) => {
                         message_dialog.destroy ();
                     });
