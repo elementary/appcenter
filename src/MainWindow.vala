@@ -55,20 +55,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        // search_entry.key_press_event.connect ((event) => {
-        //     if (event.keyval == Gdk.Key.Escape) {
-        //         search_entry.text = "";
-        //         return true;
-        //     }
-
-        //     if (event.keyval == Gdk.Key.Down) {
-        //         search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
-        //         return true;
-        //     }
-
-        //     return false;
-        // });
-
         return_button.clicked.connect (view_return);
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
@@ -155,11 +141,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
 
+        var search_entry_eventcontrollerkey = new Gtk.EventControllerKey ();
+
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
             placeholder_text = _("Search Apps"),
             valign = Gtk.Align.CENTER
         };
+        search_entry.add_controller (search_entry_eventcontrollerkey);
 
         var search_clamp = new Adw.Clamp () {
             child = search_entry
@@ -304,6 +293,20 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         leaflet.notify["child-transition-running"].connect (() => {
             if (!leaflet.child_transition_running) {
                 update_navigation ();
+            }
+        });
+
+
+        search_entry_eventcontrollerkey.key_released.connect ((keyval, keycode, state) => {
+            switch (keyval) {
+                case Gdk.Key.Down:
+                    search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
+                    break;
+                case Gdk.Key.Escape:
+                    search_entry.text = "";
+                    break;
+                default:
+                    break;
             }
         });
     }
