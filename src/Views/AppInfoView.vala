@@ -1175,11 +1175,7 @@ namespace AppCenter.Views {
                     append (button);
 
                     button.clicked.connect (() => {
-                        try {
-                            Gtk.show_uri (((Gtk.Application) Application.get_default ()).active_window, uri, Gdk.CURRENT_TIME);
-                        } catch (Error e) {
-                            critical (e.message);
-                        }
+                        Gtk.show_uri (((Gtk.Application) Application.get_default ()).active_window, uri, Gdk.CURRENT_TIME);
                     });
                 } else {
                     append (box);
