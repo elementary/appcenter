@@ -64,44 +64,6 @@ public class AppCenter.App : Gtk.Application {
 
         add_main_option_entries (APPCENTER_OPTIONS);
 
-        var quit_action = new SimpleAction ("quit", null);
-        quit_action.activate.connect (() => {
-            if (active_window != null) {
-                active_window.destroy ();
-            }
-        });
-
-        var show_updates_action = new SimpleAction ("show-updates", null);
-        show_updates_action.activate.connect (() => {
-            silent = false;
-            show_updates = true;
-            activate ();
-        });
-
-        var client = AppCenterCore.Client.get_default ();
-        client.operation_finished.connect (on_operation_finished);
-        client.cache_update_failed.connect (on_cache_update_failed);
-
-        refresh_action = new SimpleAction ("refresh", null);
-        refresh_action.activate.connect (() => {
-            client.update_cache.begin (true);
-        });
-
-        if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
-            var appinfo = new DesktopAppInfo (application_id + ".desktop");
-            try {
-                appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
-            } catch (Error e) {
-                critical ("Unable to set default for the settings scheme: %s", e.message);
-            }
-        }
-
-        add_action (quit_action);
-        add_action (show_updates_action);
-        add_action (refresh_action);
-        set_accels_for_action ("app.quit", {"<Control>q"});
-        set_accels_for_action ("app.refresh", {"<Control>r"});
-
         search_provider = new SearchProvider ();
     }
 
@@ -148,6 +110,73 @@ public class AppCenter.App : Gtk.Application {
         }
     }
 
+    protected override void startup () {
+        base.startup ();
+
+        var granite_settings = Granite.Settings.get_default ();
+        var gtk_settings = Gtk.Settings.get_default ();
+
+        gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+
+        granite_settings.notify["prefers-color-scheme"].connect (() => {
+            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+        });
+
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/appcenter/application.css");
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+
+        var fallback_provider = new Gtk.CssProvider ();
+        fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            fallback_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
+        );
+
+        var quit_action = new SimpleAction ("quit", null);
+        quit_action.activate.connect (() => {
+            if (active_window != null) {
+                active_window.destroy ();
+            }
+        });
+
+        var show_updates_action = new SimpleAction ("show-updates", null);
+        show_updates_action.activate.connect (() => {
+            silent = false;
+            show_updates = true;
+            activate ();
+        });
+
+        var client = AppCenterCore.Client.get_default ();
+        client.operation_finished.connect (on_operation_finished);
+        client.cache_update_failed.connect (on_cache_update_failed);
+
+        refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.activate.connect (() => {
+            client.update_cache.begin (true);
+        });
+
+        add_action (quit_action);
+        add_action (show_updates_action);
+        add_action (refresh_action);
+        set_accels_for_action ("app.quit", {"<Control>q"});
+        set_accels_for_action ("app.refresh", {"<Control>r"});
+
+        if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
+            var appinfo = new DesktopAppInfo (application_id + ".desktop");
+            try {
+                appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
+            } catch (Error e) {
+                critical ("Unable to set default for the settings scheme: %s", e.message);
+            }
+        }
+    }
+
     public override void activate () {
         if (fake_update_packages != null) {
             AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
@@ -178,31 +207,6 @@ public class AppCenter.App : Gtk.Application {
         }
 
         if (active_window == null) {
-            var granite_settings = Granite.Settings.get_default ();
-            var gtk_settings = Gtk.Settings.get_default ();
-
-            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-
-            granite_settings.notify["prefers-color-scheme"].connect (() => {
-                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-            });
-
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("io/elementary/appcenter/application.css");
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
-
-            var fallback_provider = new Gtk.CssProvider ();
-            fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                fallback_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
-            );
-
             // Force a Flatpak cache refresh when the window is created, so we get new apps
             client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
 
