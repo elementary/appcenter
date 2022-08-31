@@ -378,43 +378,25 @@ namespace AppCenter.Views {
                     transition_type = Gtk.RevealerTransitionType.CROSSFADE
                 };
 
+                var screenshot_focus_controller = new Gtk.EventControllerMotion ();
+
                 screenshot_overlay = new Gtk.Overlay () {
                     child = app_screenshots
                 };
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
+                screenshot_overlay.add_controller (screenshot_focus_controller);
 
-                // screenshot_overlay.enter_notify_event.connect (() => {
-                //     screenshot_arrow_revealer_n.reveal_child = true;
-                //     screenshot_arrow_revealer_p.reveal_child = true;
-                //     return false;
-                // });
 
-                // screenshot_overlay.leave_notify_event.connect ((event) => {
-                //     // Prevent hiding prev/next button when they're marked as insensitive
-                //     if (event.mode != Gdk.CrossingMode.STATE_CHANGED) {
-                //         screenshot_arrow_revealer_n.reveal_child = false;
-                //         screenshot_arrow_revealer_p.reveal_child = false;
-                //     }
+                screenshot_focus_controller.enter.connect (() => {
+                    screenshot_arrow_revealer_n.reveal_child = true;
+                    screenshot_arrow_revealer_p.reveal_child = true;
+                });
 
-                //     return false;
-                // });
-
-                // app_screenshots.enter_notify_event.connect (() => {
-                //     screenshot_arrow_revealer_n.reveal_child = true;
-                //     screenshot_arrow_revealer_p.reveal_child = true;
-                //     return false;
-                // });
-
-                // app_screenshots.leave_notify_event.connect ((event) => {
-                //     // Prevent hiding prev/next button when they're marked as insensitive
-                //     if (event.mode != Gdk.CrossingMode.STATE_CHANGED) {
-                //         screenshot_arrow_revealer_n.reveal_child = false;
-                //         screenshot_arrow_revealer_p.reveal_child = false;
-                //     }
-
-                //     return false;
-                // });
+                screenshot_focus_controller.leave.connect (() => {
+                    screenshot_arrow_revealer_n.reveal_child = false;
+                    screenshot_arrow_revealer_p.reveal_child = false;
+                });
 
                 screenshot_switcher = new Adw.CarouselIndicatorDots () {
                     carousel = app_screenshots

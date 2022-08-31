@@ -40,7 +40,7 @@ public class AppCenter.Homepage : Gtk.Box {
         hexpand = true;
         vexpand = true;
 
-        var banner_focus_controller = new Gtk.EventControllerFocus ();
+        var banner_focus_controller = new Gtk.EventControllerMotion ();
 
         banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
