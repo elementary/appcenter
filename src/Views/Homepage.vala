@@ -40,12 +40,12 @@ public class AppCenter.Homepage : Gtk.Box {
         hexpand = true;
         vexpand = true;
 
-        var banner_focus_controller = new Gtk.EventControllerMotion ();
+        var banner_motion_controller = new Gtk.EventControllerMotion ();
 
         banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
         };
-        banner_carousel.add_controller (banner_focus_controller);
+        banner_carousel.add_controller (banner_motion_controller);
 
         var banner_dots = new Adw.CarouselIndicatorDots () {
             carousel = banner_carousel
@@ -253,11 +253,11 @@ public class AppCenter.Homepage : Gtk.Box {
             });
         });
 
-        banner_focus_controller.enter.connect (() => {
+        banner_motion_controller.enter.connect (() => {
             banner_timeout_stop ();
         });
 
-        banner_focus_controller.leave.connect (() => {
+        banner_motion_controller.leave.connect (() => {
             banner_timeout_start ();
         });
 
