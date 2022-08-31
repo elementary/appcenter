@@ -304,12 +304,9 @@ public class AppCenter.App : Gtk.Application {
                 if (error == null) {
                     if (package.get_can_launch ()) {
                         // Check if window is focused
-                        if (main_window != null) {
-                            // if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
-                                main_window.send_installed_toast (package);
-
-                                break;
-                            // }
+                        if (active_window != null && active_window.is_active) {
+                            ((MainWindow) active_window).send_installed_toast (package);
+                            break;
                         }
 
                         var notification = new Notification (_("The app has been installed"));
