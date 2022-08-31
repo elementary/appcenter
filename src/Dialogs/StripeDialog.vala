@@ -128,6 +128,12 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             value = amount
         };
 
+        var custom_image = new Gtk.Image.from_icon_name ("currency-dollar-symbolic") {
+            margin_start = 3,
+            margin_end = 3
+        };
+        custom_image.insert_before (custom_amount, custom_amount.get_first_child ());
+
         var selection_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         selection_box.append (custom_amount);
         selection_box.append (or_label);
