@@ -57,11 +57,9 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
 
         unowned var row = list_box.get_first_child ();
         while (row != null) {
-            if (row is Widgets.PackageRow) {
-                if (((Widgets.PackageRow) row).get_package () == package) {
-                    row.destroy ();
-                    break;
-                }
+            if (row is Widgets.PackageRow && ((Widgets.PackageRow) row).get_package () == package) {
+                row.destroy ();
+                break;
             }
 
             row = row.get_next_sibling ();
