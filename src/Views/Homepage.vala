@@ -40,9 +40,12 @@ public class AppCenter.Homepage : Gtk.Box {
         hexpand = true;
         vexpand = true;
 
+        var banner_focus_controller = new Gtk.EventControllerFocus ();
+
         banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
         };
+        banner_carousel.add_controller (banner_focus_controller);
 
         var banner_dots = new Adw.CarouselIndicatorDots () {
             carousel = banner_carousel
@@ -237,23 +240,26 @@ public class AppCenter.Homepage : Gtk.Box {
         AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
             Idle.add (() => {
                 // Clear the cached categories when the AppStream pool is updated
-                // foreach (unowned var child in category_flow.get_children ()) {
-                //     var item = (AbstractCategoryCard) child;
-                //     var category_components = item.category.get_components ();
-                //     category_components.remove_range (0, category_components.length);
-                // }
+                var child = category_flow.get_first_child ();
+                while (child != null) {
+                    var item = (AbstractCategoryCard) child;
+                    var category_components = item.category.get_components ();
+                    category_components.remove_range (0, category_components.length);
+
+                    child = child.get_next_sibling ();
+                }
 
                 return GLib.Source.REMOVE;
             });
         });
 
-        // banner_event_box.enter_notify_event.connect (() => {
-        //     banner_timeout_stop ();
-        // });
+        banner_focus_controller.enter.connect (() => {
+            banner_timeout_stop ();
+        });
 
-        // banner_event_box.leave_notify_event.connect (() => {
-        //     banner_timeout_start ();
-        // });
+        banner_focus_controller.leave.connect (() => {
+            banner_timeout_start ();
+        });
 
         recently_updated_carousel.child_activated.connect ((child) => {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
@@ -348,7 +354,7 @@ public class AppCenter.Homepage : Gtk.Box {
                 new_index = 0;
             }
 
-            // banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+            banner_carousel.scroll_to (banner_carousel.get_nth_page (new_index), true);
 
             return Source.CONTINUE;
         });
