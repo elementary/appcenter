@@ -337,7 +337,8 @@ namespace AppCenter.Views {
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
-                    sensitive = false
+                    sensitive = false,
+                    visible = false
                 };
                 screenshot_previous.clicked.connect (() => {
                     var index = (int) app_screenshots.position;
@@ -346,7 +347,9 @@ namespace AppCenter.Views {
                     }
                 });
 
-                screenshot_next = new ArrowButton ("go-next-symbolic");
+                screenshot_next = new ArrowButton ("go-next-symbolic") {
+                    visible = false
+                };
                 screenshot_next.clicked.connect (() => {
                     var index = (int) app_screenshots.position;
                     if (index < app_screenshots.n_pages - 1) {
@@ -993,6 +996,11 @@ namespace AppCenter.Views {
                     if (app_screenshots.n_pages > 0) {
                         screenshot_stack.visible_child = screenshot_overlay;
                         stack_context.remove_class ("loading");
+
+                        if (app_screenshots.n_pages  > 1) {
+                            screenshot_next.visible = true;
+                            screenshot_previous.visible = true;
+                        }
                     } else {
                         screenshot_stack.visible_child = screenshot_not_found_clamp;
                         stack_context.remove_class ("loading");
