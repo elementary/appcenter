@@ -175,6 +175,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         };
         card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
 
+        var expiration_focus_controller = new Gtk.EventControllerFocus ();
+
         card_expiration_entry = new Granite.ValidatedEntry.from_regex (expiration_regex) {
             activates_default = true,
             hexpand = true,
@@ -183,6 +185,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             /// TRANSLATORS: Don't change the order, only transliterate
             placeholder_text = _("MM / YY")
         };
+        card_expiration_entry.add_controller (expiration_focus_controller);
 
         card_cvc_entry = new Granite.ValidatedEntry.from_regex (cvc_regex) {
             activates_default = true,
@@ -270,7 +273,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         email_entry.changed.connect (() => {
-            email_entry.text = email_entry.text.replace (" ", "").down ();
+            // email_entry.text = email_entry.text.replace (" ", "").down ();
             is_payment_sensitive ();
         });
 
@@ -280,7 +283,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         card_expiration_entry.changed.connect (() => {
-            card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            // card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+
             if (card_expiration_entry.text.length < 4) {
                 card_expiration_entry.is_valid = false;
             }
@@ -288,16 +292,16 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             is_payment_sensitive ();
         });
 
-        // card_expiration_entry.focus_out_event.connect (() => {
-        //     var expiration_text = card_expiration_entry.text;
-        //     if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
-        //         int position = 2;
-        //         card_expiration_entry.insert_text ("/", 1, ref position);
-        //     }
-        // });
+        expiration_focus_controller.leave.connect (() => {
+            var expiration_text = card_expiration_entry.text;
+            if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
+                int position = 2;
+                card_expiration_entry.insert_text ("/", 1, ref position);
+            }
+        });
 
         card_cvc_entry.changed.connect (() => {
-            card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            // card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
             is_payment_sensitive ();
         });
     }
