@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016-2017 elementary LLC (https://elementary.io)
+* Copyright 2016-2022 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -42,8 +42,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     private const string DEFAULT_ERROR_MESSAGE = N_("Please review your payment info and try again.");
 
     private Gtk.Grid card_layout;
-    private Gtk.Grid? processing_layout = null;
-    private Gtk.Grid? error_layout = null;
+    private Gtk.Box? processing_layout = null;
+    private Gtk.Box? error_layout = null;
     private Gtk.Stack layouts;
 
     private AppCenter.Widgets.CardNumberEntry card_number_entry;
@@ -67,7 +67,6 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             amount: _amount,
             app_name: _app_name,
             app_id: _app_id,
-            deletable: false,
             resizable: false,
             stripe_key: _stripe_key,
             title: _("Payment")
@@ -75,20 +74,25 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.START;
+        var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG) {
+            valign = Gtk.Align.START
+        };
 
-        var overlay_image = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.LARGE_TOOLBAR);
-        overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+        var overlay_image = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.LARGE_TOOLBAR) {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.END
+        };
 
-        var overlay = new Gtk.Overlay ();
-        overlay.valign = Gtk.Align.START;
+        var overlay = new Gtk.Overlay () {
+            valign = Gtk.Align.START
+        };
         overlay.add (image);
         overlay.add_overlay (overlay_image);
 
-        var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name));
+        var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name)) {
+            xalign = 0
+        };
         primary_label.get_style_context ().add_class ("primary");
-        primary_label.xalign = 0;
 
         var secondary_label = new Gtk.Label (
             _("This is a one time payment suggested by the developer. You can also choose your own price.")
@@ -124,14 +128,12 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             value = amount
         };
 
-        var selection_list = new Gtk.Grid () {
-            column_spacing = 6
-        };
-        selection_list.add (custom_amount);
-        selection_list.add (or_label);
-        selection_list.add (one_dollar);
-        selection_list.add (five_dollar);
-        selection_list.add (ten_dollar);
+        var selection_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        selection_box.add (custom_amount);
+        selection_box.add (or_label);
+        selection_box.add (one_dollar);
+        selection_box.add (five_dollar);
+        selection_box.add (ten_dollar);
 
         Regex? email_regex = null;
         Regex? expiration_regex = null;
@@ -206,13 +208,14 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         var card_grid_revealer = new Gtk.Revealer ();
         card_grid_revealer.add (card_grid);
 
-        card_layout = new Gtk.Grid ();
+        card_layout = new Gtk.Grid () {
+            column_spacing = 12
+        };
         card_layout.get_style_context ().add_class ("login");
-        card_layout.column_spacing = 12;
         card_layout.attach (overlay, 0, 0, 1, 2);
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
-        card_layout.attach (selection_list, 1, 2);
+        card_layout.attach (selection_box, 1, 2);
         card_layout.attach (card_grid_revealer, 1, 3);
 
         layouts = new Gtk.Stack () {
@@ -235,8 +238,9 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
         pay_button = (Gtk.Button) add_button (_("Pay $%d.00").printf (amount), Gtk.ResponseType.APPLY);
         pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        pay_button.has_default = true;
         pay_button.sensitive = false;
+
+        set_default (pay_button);
 
         response.connect (on_response);
 
@@ -301,25 +305,26 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
     private void show_spinner_view () {
         if (processing_layout == null) {
-            processing_layout = new Gtk.Grid ();
-            processing_layout.orientation = Gtk.Orientation.VERTICAL;
-            processing_layout.column_spacing = 12;
-
-            var spinner = new Gtk.Spinner ();
-            spinner.width_request = 48;
-            spinner.height_request = 48;
+            var spinner = new Gtk.Spinner () {
+                height_request = 48,
+                width_request = 48
+            };
             spinner.start ();
 
-            var label = new Gtk.Label (_("Processing"));
-            label.hexpand = true;
+            var label = new Gtk.Label (_("Processing")) {
+                hexpand = true
+            };
             label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
-            box.valign = Gtk.Align.CENTER;
-            box.vexpand = true;
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
+                valign = Gtk.Align.CENTER,
+                vexpand = true
+            };
 
             box.add (spinner);
             box.add (label);
+
+            processing_layout = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             processing_layout.add (box);
 
             layouts.add_named (processing_layout, "processing");
@@ -333,37 +338,41 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
     private void show_error_view (string error_reason) {
         if (error_layout == null) {
-            error_layout = new Gtk.Grid ();
+            var primary_label = new Gtk.Label (_("There Was a Problem Processing Your Payment")) {
+                max_width_chars = 35,
+                wrap = true,
+                xalign = 0
+            };
+            primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
-            var primary_label = new Gtk.Label (_("There Was a Problem Processing Your Payment"));
-            primary_label.get_style_context ().add_class ("primary");
-            primary_label.max_width_chars = 35;
-            primary_label.wrap = true;
-            primary_label.xalign = 0;
-
-            secondary_error_label = new Gtk.Label (error_reason);
-            secondary_error_label.max_width_chars = 35;
-            secondary_error_label.wrap = true;
-            secondary_error_label.xalign = 0;
+            secondary_error_label = new Gtk.Label (error_reason) {
+                max_width_chars = 35,
+                wrap = true,
+                xalign = 0
+            };
 
             var icon = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.DIALOG);
 
-            var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR);
-            overlay_icon.halign = Gtk.Align.END;
-            overlay_icon.valign = Gtk.Align.END;
+            var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR) {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.END
+            };
 
-            var overlay = new Gtk.Overlay ();
-            overlay.valign = Gtk.Align.START;
+            var overlay = new Gtk.Overlay () {
+                valign = Gtk.Align.START
+            };
             overlay.add (icon);
             overlay.add_overlay (overlay_icon);
 
-            var grid = new Gtk.Grid ();
-            grid.column_spacing = 12;
-            grid.row_spacing = 6;
+            var grid = new Gtk.Grid () {
+                column_spacing = 12,
+                row_spacing = 6
+            };
             grid.attach (overlay, 0, 0, 1, 2);
-            grid.attach (primary_label, 1, 0, 1, 1);
-            grid.attach (secondary_error_label, 1, 1, 1, 1);
+            grid.attach (primary_label, 1, 0);
+            grid.attach (secondary_error_label, 1, 1);
 
+            error_layout = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             error_layout.add (grid);
 
             layouts.add_named (error_layout, "error");
