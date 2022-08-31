@@ -355,9 +355,10 @@ public class AppCenter.App : Gtk.Application {
             update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type);
             update_fail_dialog.transient_for = main_window;
 
-            // update_fail_dialog.destroy.connect (() => {
-            //     update_fail_dialog = null;
-            // });
+            update_fail_dialog.close_request.connect (() => {
+                update_fail_dialog = null;
+                return Gdk.EVENT_PROPAGATE;
+            });
         }
 
         update_fail_dialog.present ();
