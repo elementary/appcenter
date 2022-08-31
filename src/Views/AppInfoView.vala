@@ -1198,7 +1198,7 @@ namespace AppCenter.Views {
                         package.normalized_component_id,
                         package.get_payments_key ()
                     );
-                    // stripe.transient_for = ((Gtk.Application) Application.get_default ()).active_window;
+                    stripe.transient_for = ((Gtk.Application) Application.get_default ()).active_window;
 
                     stripe.download_requested.connect (() => {
                         if (stripe.amount != 0) {
