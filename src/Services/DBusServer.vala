@@ -58,22 +58,25 @@ public class DBusServer : Object {
         }
 
         var uninstall_confirm_dialog = new UninstallConfirmDialog (package);
+        uninstall_confirm_dialog.present ();
 
-        // if (uninstall_confirm_dialog.run () == Gtk.ResponseType.ACCEPT) {
-        //     package.uninstall.begin ((obj, res) => {
-        //         try {
-        //             package.uninstall.end (res);
-        //         } catch (Error e) {
-        //             // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-        //             // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
-        //             if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
-        //                 new UninstallFailDialog (package, e).present ();
-        //             }
-        //         }
-        //     });
-        // }
+        uninstall_confirm_dialog.response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                package.uninstall.begin ((obj, res) => {
+                    try {
+                        package.uninstall.end (res);
+                    } catch (Error e) {
+                        // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                        // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
+                        if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
+                            new UninstallFailDialog (package, e).present ();
+                        }
+                    }
+                });
+            }
 
-        uninstall_confirm_dialog.destroy ();
+            uninstall_confirm_dialog.destroy ();
+        });
     }
 
     /**

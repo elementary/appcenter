@@ -147,19 +147,18 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             };
 
             var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
-                margin_top = 12,
                 margin_end = 12,
-                margin_bottom = 12,
-                margin_start = 12
+                margin_start = 12,
+                vexpand = true
             };
             releases_dialog_box.append (releases_title);
             releases_dialog_box.append (release_description);
 
-            child = releases_dialog_box;
+            get_content_area ().append (releases_dialog_box);
 
-            var dialog_close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
+            add_button (_("Close"), Gtk.ResponseType.CLOSE);
 
-            dialog_close_button.clicked.connect (() => {
+            response.connect (() => {
                 close ();
             });
         }
