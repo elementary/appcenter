@@ -418,9 +418,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         while (leaflet.get_adjacent_child (Adw.NavigationDirection.FORWARD) != null) {
             var next_child = leaflet.get_adjacent_child (Adw.NavigationDirection.FORWARD);
-            if (next_child is AppCenter.Views.AppListUpdateView) {
-                leaflet.remove (next_child);
-            } else {
+            leaflet.remove (next_child);
+
+            if (!(next_child is AppCenter.Views.AppListUpdateView)) {
                 next_child.destroy ();
             }
         }
