@@ -74,8 +74,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         set_default_size (910, 640);
         height_request = 500;
 
-        Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/io/elementary/appcenter/icons");
-
         title = _(Build.APP_NAME);
 
         toast = new Granite.Toast ("");
@@ -242,12 +240,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             SettingsBindFlags.DEFAULT
         );
 
+        var client = AppCenterCore.Client.get_default ();
         automatic_updates_button.notify["active"].connect (() => {
             if (automatic_updates_button.active) {
-                AppCenterCore.Client.get_default ().update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
             } else {
-                AppCenterCore.Client.get_default ().cancel_updates (true);
+                client.cancel_updates (true);
             }
+        });
+
+        client.notify["updates-number"].connect (() => {
+            show_update_badge (client.updates_number);
         });
 
         var network_monitor = NetworkMonitor.get_default ();
@@ -323,13 +326,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return false;
     }
 
-    public void show_update_badge (uint updates_number) {
-        if (updates_number == 0U) {
-            updates_badge_revealer.reveal_child = false;
-        } else {
-            updates_badge.label = updates_number.to_string ();
-            updates_badge_revealer.reveal_child = true;
-        }
+    private void show_update_badge (uint updates_number) {
+        Idle.add (() => {
+            if (updates_number == 0U) {
+                updates_badge_revealer.reveal_child = false;
+            } else {
+                updates_badge.label = updates_number.to_string ();
+                updates_badge_revealer.reveal_child = true;
+            }
+
+            return GLib.Source.REMOVE;
+        });
     }
 
     public void show_package (AppCenterCore.Package package, bool remember_history = true) {

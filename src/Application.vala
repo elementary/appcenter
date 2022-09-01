@@ -40,7 +40,6 @@ public class AppCenter.App : Gtk.Application {
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
     private Granite.MessageDialog? update_fail_dialog = null;
-    private MainWindow? main_window;
 
     private uint registration_id = 0;
 
@@ -65,45 +64,6 @@ public class AppCenter.App : Gtk.Application {
 
         add_main_option_entries (APPCENTER_OPTIONS);
 
-        var quit_action = new SimpleAction ("quit", null);
-        quit_action.activate.connect (() => {
-            if (main_window != null) {
-                main_window.destroy ();
-            }
-        });
-
-        var show_updates_action = new SimpleAction ("show-updates", null);
-        show_updates_action.activate.connect (() => {
-            silent = false;
-            show_updates = true;
-            activate ();
-        });
-
-        var client = AppCenterCore.Client.get_default ();
-        client.operation_finished.connect (on_operation_finished);
-        client.cache_update_failed.connect (on_cache_update_failed);
-        client.installed_apps_changed.connect (on_updates_available);
-
-        refresh_action = new SimpleAction ("refresh", null);
-        refresh_action.activate.connect (() => {
-            client.update_cache.begin (true);
-        });
-
-        if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
-            var appinfo = new DesktopAppInfo (application_id + ".desktop");
-            try {
-                appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
-            } catch (Error e) {
-                critical ("Unable to set default for the settings scheme: %s", e.message);
-            }
-        }
-
-        add_action (quit_action);
-        add_action (show_updates_action);
-        add_action (refresh_action);
-        set_accels_for_action ("app.quit", {"<Control>q"});
-        set_accels_for_action ("app.refresh", {"<Control>r"});
-
         search_provider = new SearchProvider ();
     }
 
@@ -114,6 +74,8 @@ public class AppCenter.App : Gtk.Application {
         if (file == null) {
             return;
         }
+
+        var main_window = (MainWindow) active_window;
 
         if (file.has_uri_scheme ("type")) {
             string? mimetype = mimetype_from_file (file);
@@ -148,7 +110,9 @@ public class AppCenter.App : Gtk.Application {
         }
     }
 
-    public override void activate () {
+    protected override void startup () {
+        base.startup ();
+
         var granite_settings = Granite.Settings.get_default ();
         var gtk_settings = Gtk.Settings.get_default ();
 
@@ -174,11 +138,51 @@ public class AppCenter.App : Gtk.Application {
             Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
         );
 
-        var client = AppCenterCore.Client.get_default ();
+        var quit_action = new SimpleAction ("quit", null);
+        quit_action.activate.connect (() => {
+            if (active_window != null) {
+                active_window.destroy ();
+            }
+        });
 
+        var show_updates_action = new SimpleAction ("show-updates", null);
+        show_updates_action.activate.connect (() => {
+            silent = false;
+            show_updates = true;
+            activate ();
+        });
+
+        var client = AppCenterCore.Client.get_default ();
+        client.operation_finished.connect (on_operation_finished);
+        client.cache_update_failed.connect (on_cache_update_failed);
+
+        refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.activate.connect (() => {
+            client.update_cache.begin (true);
+        });
+
+        add_action (quit_action);
+        add_action (show_updates_action);
+        add_action (refresh_action);
+        set_accels_for_action ("app.quit", {"<Control>q"});
+        set_accels_for_action ("app.refresh", {"<Control>r"});
+
+        if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
+            var appinfo = new DesktopAppInfo (application_id + ".desktop");
+            try {
+                appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
+            } catch (Error e) {
+                critical ("Unable to set default for the settings scheme: %s", e.message);
+            }
+        }
+    }
+
+    public override void activate () {
         if (fake_update_packages != null) {
             AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
         }
+
+        var client = AppCenterCore.Client.get_default ();
 
         if (silent) {
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
@@ -202,23 +206,11 @@ public class AppCenter.App : Gtk.Application {
             }
         }
 
-        if (main_window == null) {
-            main_window = new MainWindow (this);
-
-
-            // Force a Flatpak cache refresh when the window opens, so we get new apps
-#if HOMEPAGE
-            main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
-            });
-#else
+        if (active_window == null) {
+            // Force a Flatpak cache refresh when the window is created, so we get new apps
             client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
-#endif
 
-            // main_window.destroy.connect (() => {
-            //     main_window = null;
-            // });
-
+            var main_window = new MainWindow (this);
             add_window (main_window);
 
             /*
@@ -237,10 +229,10 @@ public class AppCenter.App : Gtk.Application {
         }
 
         if (show_updates) {
-            main_window.go_to_installed ();
+            ((MainWindow) active_window).go_to_installed ();
         }
 
-        main_window.present ();
+        active_window.present_with_time (Gdk.CURRENT_TIME);
     }
 
     public override bool dbus_register (DBusConnection connection, string object_path) throws Error {
@@ -332,25 +324,15 @@ public class AppCenter.App : Gtk.Application {
         }
     }
 
-    public void on_updates_available () {
-        var client = AppCenterCore.Client.get_default ();
-        Idle.add (() => {
-            if (main_window != null) {
-                main_window.show_update_badge (client.updates_number);
-            }
-
-            return GLib.Source.REMOVE;
-        });
-    }
-
     private void on_cache_update_failed (Error error, AppCenterCore.Client.CacheUpdateType cache_update_type) {
-        if (main_window == null) {
+        if (active_window == null) {
             return;
         }
 
         if (update_fail_dialog == null) {
-            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type);
-            update_fail_dialog.transient_for = main_window;
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type) {
+                transient_for = active_window
+            };
 
             update_fail_dialog.close_request.connect (() => {
                 update_fail_dialog = null;
