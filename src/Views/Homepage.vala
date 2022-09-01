@@ -381,19 +381,10 @@ public class AppCenter.Homepage : Gtk.Box {
         construct {
             var expanded_grid = new Gtk.Grid () {
                 hexpand = true,
-                vexpand = true,
-                margin_top = 12,
-                margin_end = 12,
-                margin_bottom = 12,
-                margin_start = 12
+                vexpand = true
             };
 
-            content_area = new Gtk.Grid () {
-                margin_top = 12,
-                margin_end = 12,
-                margin_bottom = 12,
-                margin_start = 12
-            };
+            content_area = new Gtk.Grid ();
             content_area.add (expanded_grid);
 
             style_context = content_area.get_style_context ();
@@ -423,11 +414,7 @@ public class AppCenter.Homepage : Gtk.Box {
 
             var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
                 halign = Gtk.Align.CENTER,
-                valign = Gtk.Align.CENTER,
-                margin_top = 32,
-                margin_end = 16,
-                margin_bottom = 32,
-                margin_start = 16
+                valign = Gtk.Align.CENTER
             };
 
             content_area.attach (box, 0, 0);
