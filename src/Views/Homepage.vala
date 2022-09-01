@@ -416,11 +416,6 @@ public class AppCenter.Homepage : Gtk.Box {
                 category.add_desktop_group (group);
             }
 
-            var display_image = new Gtk.Image ();
-            display_image.icon_size = Gtk.IconSize.DIALOG;
-            display_image.valign = Gtk.Align.CENTER;
-            display_image.halign = Gtk.Align.END;
-
             var name_label = new Gtk.Label (null);
             name_label.wrap = true;
             name_label.max_width_chars = 15;
@@ -434,20 +429,24 @@ public class AppCenter.Homepage : Gtk.Box {
                 margin_bottom = 32,
                 margin_start = 16
             };
-            box.add (display_image);
-            box.add (name_label);
 
             content_area.attach (box, 0, 0);
 
             if (category.icon != "") {
-                display_image.icon_name = category.icon;
+                var display_image = new Gtk.Image.from_icon_name (category.icon, Gtk.IconSize.DIALOG) {
+                     halign = Gtk.Align.END,
+                    valign = Gtk.Align.CENTER
+                };
+
+                box.add (display_image);
+
                 name_label.xalign = 0;
                 name_label.halign = Gtk.Align.START;
             } else {
-                display_image.destroy ();
                 name_label.justify = Gtk.Justification.CENTER;
             }
 
+            box.add (name_label);
             style_context.add_class (style);
 
             if (style == "accessibility") {
