@@ -435,20 +435,20 @@ public class AppCenter.Homepage : Gtk.Box {
                 margin_bottom = 32,
                 margin_start = 16
             };
-            box.append (display_image);
-            box.append (name_label);
-
-            content_area.attach (box, 0, 0);
 
             if (category.icon != "") {
                 display_image.icon_name = category.icon;
+                box.append (display_image);
+
                 name_label.xalign = 0;
                 name_label.halign = Gtk.Align.START;
             } else {
-                display_image.destroy ();
                 name_label.justify = Gtk.Justification.CENTER;
             }
 
+            box.append (name_label);
+
+            content_area.attach (box, 0, 0);
             content_area.add_css_class (style);
 
             if (style == "accessibility") {
