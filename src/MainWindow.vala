@@ -42,9 +42,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
-        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/io/elementary/appcenter/icons");
-
         search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
@@ -99,7 +96,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     construct {
-        Hdy.init ();
         icon_name = Build.PROJECT_NAME;
         set_default_size (910, 640);
         height_request = 500;
@@ -256,6 +252,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         box.add (headerbar);
         box.add (network_info_bar);
         box.add (overlay);
+        box.show_all ();
 
         add (box);
 
@@ -273,8 +270,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         if (App.settings.get_boolean ("window-maximized")) {
             maximize ();
         }
-
-        show_all ();
 
         var client = AppCenterCore.Client.get_default ();
 
