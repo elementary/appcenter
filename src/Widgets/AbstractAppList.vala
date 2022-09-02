@@ -42,11 +42,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled.add (list_box);
-
-        list_box.add.connect ((row) => {
-            row.show_all ();
-            ((Widgets.PackageRow) row).get_package ().changing.connect (on_package_changing);
-        });
     }
 
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
