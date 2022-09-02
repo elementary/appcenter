@@ -76,20 +76,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         list_box.invalidate_sort ();
     }
 
-    protected virtual Gee.Collection<AppCenterCore.Package> get_packages () {
-        var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
-        foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak Widgets.PackageRow row = r as Widgets.PackageRow;
-            if (row == null) {
-                continue;
-            }
-
-            tree_set.add (row.get_package ());
-        }
-
-        return tree_set;
-    }
-
     [CCode (instance_pos = -1)]
     protected virtual int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
         return row1.get_package ().get_name ().collate (row2.get_package ().get_name ());

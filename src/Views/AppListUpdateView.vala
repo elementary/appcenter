@@ -325,6 +325,20 @@ namespace AppCenter.Views {
             updating_all_apps = false;
         }
 
+        private Gee.Collection<AppCenterCore.Package> get_packages () {
+            var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
+            foreach (unowned var child in list_box.get_children ()) {
+                unowned var row = child as Widgets.PackageRow;
+                if (row == null) {
+                    continue;
+                }
+
+                tree_set.add (row.get_package ());
+            }
+
+            return tree_set;
+        }
+
         public async void add_app (AppCenterCore.Package package) {
             unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
             var installed_apps = yield client.get_installed_applications ();
