@@ -421,7 +421,7 @@ public class AppCenter.Homepage : Gtk.Box {
 
             if (category.icon != "") {
                 var display_image = new Gtk.Image.from_icon_name (category.icon, Gtk.IconSize.DIALOG) {
-                     halign = Gtk.Align.END,
+                    halign = Gtk.Align.END,
                     valign = Gtk.Align.CENTER
                 };
 
