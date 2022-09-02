@@ -351,7 +351,17 @@ namespace AppCenter.Views {
         }
 
         public async void remove_app (AppCenterCore.Package package) {
-            remove_package (package);
+            package.changing.disconnect (on_package_changing);
+            foreach (unowned var child in list_box.get_children ()) {
+                unowned var row = (Widgets.PackageRow) child;
+
+                if (row.get_package () == package) {
+                    row.destroy ();
+                    break;
+                }
+            }
+
+            list_box.invalidate_sort ();
         }
     }
 }

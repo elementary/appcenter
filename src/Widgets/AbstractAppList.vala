@@ -47,20 +47,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
     public abstract void add_package (AppCenterCore.Package package);
 
-    public void remove_package (AppCenterCore.Package package) {
-        package.changing.disconnect (on_package_changing);
-        foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak Widgets.PackageRow row = r as Widgets.PackageRow;
-
-            if (row.get_package () == package) {
-                row.destroy ();
-                break;
-            }
-        }
-
-        list_box.invalidate_sort ();
-    }
-
     public virtual void clear () {
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
             weak Widgets.PackageRow row = r as Widgets.PackageRow;
