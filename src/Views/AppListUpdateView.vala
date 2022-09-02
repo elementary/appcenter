@@ -37,6 +37,7 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
+            list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
 
@@ -129,7 +130,7 @@ namespace AppCenter.Views {
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
+        private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
             var row1_package = row1.get_package ();
             var row2_package = row2.get_package ();
 

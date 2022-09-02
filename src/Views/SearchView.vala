@@ -34,6 +34,7 @@ public class AppCenter.SearchView : AbstractAppList {
         alert_view.show_all ();
 
         list_box.set_placeholder (alert_view);
+        list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
         scrolled.edge_reached.connect ((position) => {
@@ -138,7 +139,7 @@ public class AppCenter.SearchView : AbstractAppList {
     }
 
     [CCode (instance_pos = -1)]
-    protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
+    private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
         return compare_packages (row1.get_package (), row2.get_package ());
     }
 }
