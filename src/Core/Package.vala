@@ -724,10 +724,28 @@ public class AppCenterCore.Package : Object {
         }
 
         if (icon == null) {
-            if (component.get_kind () == AppStream.ComponentKind.ADDON) {
-                icon = new ThemedIcon ("extension");
-            } else {
-                icon = new ThemedIcon ("application-default-icon");
+            switch (component.get_kind ()) {
+                case AppStream.ComponentKind.ADDON:
+                    icon = new ThemedIcon ("extension");
+                    break;
+                case AppStream.ComponentKind.CODEC:
+                case AppStream.ComponentKind.CONSOLE_APP:
+                case AppStream.ComponentKind.DESKTOP_APP:
+                case AppStream.ComponentKind.DRIVER:
+                case AppStream.ComponentKind.FIRMWARE:
+                case AppStream.ComponentKind.FONT:
+                case AppStream.ComponentKind.GENERIC:
+                case AppStream.ComponentKind.ICON_THEME:
+                case AppStream.ComponentKind.INPUT_METHOD: //ComponentKind.INPUTMETHOD is deprecated has same value so cannot be included
+                case AppStream.ComponentKind.LOCALIZATION:
+                case AppStream.ComponentKind.OPERATING_SYSTEM:
+                case AppStream.ComponentKind.REPOSITORY:
+                case AppStream.ComponentKind.RUNTIME:
+                case AppStream.ComponentKind.SERVICE:
+                case AppStream.ComponentKind.UNKNOWN:
+                case AppStream.ComponentKind.WEB_APP:
+                    icon = new ThemedIcon ("application-default-icon");
+                    break;
             }
         }
 
