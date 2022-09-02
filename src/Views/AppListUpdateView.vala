@@ -114,7 +114,7 @@ namespace AppCenter.Views {
             list_box.invalidate_sort ();
         }
 
-        public override void add_package (AppCenterCore.Package package) {
+        public void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
             list_box.invalidate_sort ();
 
