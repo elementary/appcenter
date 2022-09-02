@@ -179,27 +179,27 @@
     background-image:
         linear-gradient(
             to right,
-            transparent 15px,
-            alpha(white, 0.05) 15px,
-            alpha(white, 0.05) 16px,
-            transparent 16px
+            transparent calc(0.5em - 1px),
+            alpha(white, 0.05) calc(0.5em - 1px),
+            alpha(white, 0.05) 0.5em,
+            transparent 0.5em
         ),
         linear-gradient(
             to bottom,
-            transparent 15px,
-            alpha(white, 0.05) 15px,
-            alpha(white, 0.05) 16px,
-            transparent 16px
+            transparent calc(0.5em - 1px),
+            alpha(white, 0.05) calc(0.5em - 1px),
+            alpha(white, 0.05) 0.5em,
+            transparent 0.5em
         ),
         linear-gradient(
             to right,
-            transparent 31px,
-            alpha(white, 0.125) 31px
+            transparent calc(1em - 1px),
+            alpha(white, 0.125) calc(1em - 1px)
         ),
         linear-gradient(
             to bottom,
-            transparent 31px,
-            alpha(white, 0.125) 31px
+            transparent calc(1em - 1px),
+            alpha(white, 0.125) calc(1em - 1px)
         ),
         linear-gradient(
             to bottom right,
@@ -209,10 +209,10 @@
     background-position: center center;
     background-repeat: repeat;
     background-size:
-        32px 32px,
-        32px 32px,
-        32px 32px,
-        32px 32px,
+        1em 1em,
+        1em 1em,
+        1em 1em,
+        1em 1em,
         cover;
     border-color: alpha(@GRAPE_900, 0.7);
     color: white;
