@@ -44,7 +44,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     }
 
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
-    public abstract void add_package (AppCenterCore.Package package);
 
     public virtual void clear () {
         foreach (weak Gtk.Widget r in list_box.get_children ()) {

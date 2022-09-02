@@ -61,14 +61,6 @@ public class AppCenter.SearchView : AbstractAppList {
         }
     }
 
-    public override void add_package (AppCenterCore.Package package) {
-        add_row_for_package (package);
-
-        if (current_visible_index < 20) {
-            show_more_apps ();
-        }
-    }
-
     private void add_row_for_package (AppCenterCore.Package package) {
         // Don't show plugins or fonts in search and category views
         if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
