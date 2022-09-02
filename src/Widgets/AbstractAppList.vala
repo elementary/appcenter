@@ -53,7 +53,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
             }
 
             var package = row.get_package ();
-            package.changing.disconnect (on_package_changing);
             row.destroy ();
         };
 
@@ -72,18 +71,5 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         }
 
         return tree_set;
-    }
-
-    protected virtual void on_package_changing (AppCenterCore.Package package, bool is_changing) {
-        if (is_changing) {
-            packages_changing++;
-        } else {
-            packages_changing--;
-        }
-
-        assert (packages_changing >= 0);
-        if (packages_changing == 0) {
-            list_box.invalidate_sort ();
-        }
     }
 }
