@@ -33,7 +33,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
             vexpand = true
         };
 
-        list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
         list_box.row_activated.connect ((r) => {
             var row = (Widgets.PackageRow)r;
             show_app (row.get_package ());
@@ -73,11 +72,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         }
 
         return tree_set;
-    }
-
-    [CCode (instance_pos = -1)]
-    protected virtual int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
-        return row1.get_package ().get_name ().collate (row2.get_package ().get_name ());
     }
 
     protected virtual void on_package_changing (AppCenterCore.Package package, bool is_changing) {
