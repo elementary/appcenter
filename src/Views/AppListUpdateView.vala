@@ -117,6 +117,8 @@ namespace AppCenter.Views {
         public override void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
             list_box.invalidate_sort ();
+
+            package.changing.connect (on_package_changing);
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
@@ -125,6 +127,8 @@ namespace AppCenter.Views {
             // Only add row if this package needs an update or it's not a font or plugin
             if (needs_update || (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT)) {
                 var row = new Widgets.PackageRow.installed (package, action_button_group);
+                row.show_all ();
+
                 list_box.add (row);
             }
         }
