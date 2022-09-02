@@ -382,21 +382,11 @@ public class AppCenter.Homepage : Gtk.Box {
         construct {
             var expanded_grid = new Gtk.Grid () {
                 hexpand = true,
-                vexpand = true,
-                margin_top = 12,
-                margin_end = 12,
-                margin_bottom = 12,
-                margin_start = 12
+                vexpand = true
             };
 
-            content_area = new Gtk.Grid () {
-                margin_top = 12,
-                margin_end = 12,
-                margin_bottom = 12,
-                margin_start = 12
-            };
+            content_area = new Gtk.Grid ();
             content_area.attach (expanded_grid, 0, 0);
-
             content_area.add_css_class (Granite.STYLE_CLASS_CARD);
             content_area.add_css_class (Granite.STYLE_CLASS_ROUNDED);
             content_area.add_css_class ("category");
@@ -416,12 +406,6 @@ public class AppCenter.Homepage : Gtk.Box {
                 category.add_desktop_group (group);
             }
 
-            var display_image = new Gtk.Image () {
-                halign = Gtk.Align.END,
-                valign = Gtk.Align.CENTER,
-                pixel_size = 48
-            };
-
             var name_label = new Gtk.Label (null);
             name_label.wrap = true;
             name_label.max_width_chars = 15;
@@ -429,15 +413,16 @@ public class AppCenter.Homepage : Gtk.Box {
 
             var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
                 halign = Gtk.Align.CENTER,
-                valign = Gtk.Align.CENTER,
-                margin_top = 32,
-                margin_end = 16,
-                margin_bottom = 32,
-                margin_start = 16
+                valign = Gtk.Align.CENTER
             };
 
             if (category.icon != "") {
-                display_image.icon_name = category.icon;
+                var display_image = new Gtk.Image.from_icon_name (category.icon) {
+                    halign = Gtk.Align.END,
+                    valign = Gtk.Align.CENTER,
+                    pixel_size = 48
+                };
+
                 box.append (display_image);
 
                 name_label.xalign = 0;
