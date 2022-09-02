@@ -45,7 +45,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     }
 
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
-    public abstract void add_package (AppCenterCore.Package package);
 
     public void remove_package (AppCenterCore.Package package) {
         package.changing.disconnect (on_package_changing);
