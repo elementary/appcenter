@@ -70,6 +70,8 @@ namespace AppCenter.Views {
             add (infobar);
             add (scrolled);
 
+            list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
+
             get_apps.begin ();
 
             unowned var client = AppCenterCore.Client.get_default ();
@@ -123,15 +125,18 @@ namespace AppCenter.Views {
 
             // Only add row if this package needs an update or it's not a font or plugin
             if (needs_update || (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT)) {
-                var row = new Widgets.PackageRow.installed (package, action_button_group);
+                var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
                 list_box.add (row);
             }
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
-            var row1_package = row1.get_package ();
-            var row2_package = row2.get_package ();
+        protected virtual int package_row_compare (Gtk.ListBoxRow child1, Gtk.ListBoxRow child2) {
+            var row1 = (Widgets.InstalledPackageRowGrid) child1.get_child ();
+            var row2 = (Widgets.InstalledPackageRowGrid) child2.get_child ();
+
+            var row1_package = row1.package;
+            var row2_package = row2.package;
 
             bool a_has_updates = false;
             bool a_is_driver = false;
@@ -194,11 +199,10 @@ namespace AppCenter.Views {
             return a_package_name.collate (b_package_name); /* Else sort in name order */
         }
 
-        [CCode (instance_pos = -1)]
-        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
+        private void row_update_header (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
             bool update_available = false;
             bool is_driver = false;
-            var row_package = row.get_package ();
+            var row_package = ((Widgets.InstalledPackageRowGrid) row.get_child ()).package;
             if (row_package != null) {
                 update_available = row_package.update_available || row_package.is_updating;
                 is_driver = row_package.kind == AppStream.ComponentKind.DRIVER;
@@ -208,7 +212,7 @@ namespace AppCenter.Views {
             bool before_update_available = false;
             bool before_is_driver = false;
             if (before != null) {
-                var before_package = before.get_package ();
+                var before_package = ((Widgets.InstalledPackageRowGrid) before.get_child ()).package;
                 if (before_package != null) {
                     before_update_available = before_package.update_available || before_package.is_updating;
                     before_is_driver = before_package.kind == AppStream.ComponentKind.DRIVER;
@@ -289,9 +293,10 @@ namespace AppCenter.Views {
 
             updating_all_apps = true;
 
-            foreach (var row in list_box.get_children ()) {
-                if (row is Widgets.PackageRow) {
-                    ((Widgets.PackageRow) row).set_action_sensitive (false);
+            foreach (unowned var row in list_box.get_children ()) {
+                var package_row = ((Gtk.ListBoxRow) row).get_child ();
+                if (package_row is Widgets.InstalledPackageRowGrid) {
+                    ((Widgets.InstalledPackageRowGrid) package_row).action_sensitive = false;
                 }
             };
 

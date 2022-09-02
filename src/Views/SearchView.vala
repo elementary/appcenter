@@ -34,6 +34,7 @@ public class AppCenter.SearchView : AbstractAppList {
         alert_view.show_all ();
 
         list_box.set_placeholder (alert_view);
+        list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
         scrolled.edge_reached.connect ((position) => {
@@ -91,7 +92,7 @@ public class AppCenter.SearchView : AbstractAppList {
         uint old_index = current_visible_index;
         while (current_visible_index < list_store.get_n_items ()) {
             var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
-            var row = new Widgets.PackageRow.list (package);
+            var row = new Widgets.ListPackageRowGrid (package);
             list_box.add (row);
 
             current_visible_index++;
@@ -138,7 +139,10 @@ public class AppCenter.SearchView : AbstractAppList {
     }
 
     [CCode (instance_pos = -1)]
-    protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
-        return compare_packages (row1.get_package (), row2.get_package ());
+    protected virtual int package_row_compare (Gtk.ListBoxRow child1, Gtk.ListBoxRow child2) {
+        var row1 = (Widgets.ListPackageRowGrid) child1.get_child ();
+        var row2 = (Widgets.ListPackageRowGrid) child2.get_child ();
+
+        return compare_packages (row1.package, row2.package);
     }
 }

@@ -606,10 +606,8 @@ namespace AppCenter.Views {
                 };
 
                 extension_box.row_activated.connect ((row) => {
-                    var extension_row = row as Widgets.PackageRow;
-                    if (extension_row != null) {
-                        show_other_package (extension_row.get_package ());
-                    }
+                    var extension_row = (Widgets.ListPackageRowGrid) row.get_child ();
+                    show_other_package (extension_row.package);
                 });
 
                 var extension_label = new Gtk.Label (_("Extensions:")) {
@@ -835,7 +833,7 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var row = new Widgets.PackageRow.list (extension_package);
+                var row = new Widgets.ListPackageRowGrid (extension_package);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
