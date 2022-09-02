@@ -113,6 +113,8 @@ namespace AppCenter.Views {
         public override void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
             list_box.invalidate_sort ();
+
+            package.changing.connect (on_package_changing);
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {

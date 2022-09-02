@@ -43,10 +43,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
             var row = (Widgets.PackageRow)r;
             show_app (row.get_package ());
         });
-
-        // list_box.add.connect ((row) => {
-        //     ((Widgets.PackageRow) row).get_package ().changing.connect (on_package_changing);
-        // });
     }
 
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);

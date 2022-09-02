@@ -89,6 +89,8 @@ public class AppCenter.SearchView : AbstractAppList {
         uint old_index = current_visible_index;
         while (current_visible_index < list_store.get_n_items ()) {
             var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
+            package.changing.connect (on_package_changing);
+
             var row = new Widgets.PackageRow.list (package);
             list_box.append (row);
 
