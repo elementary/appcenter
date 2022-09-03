@@ -40,6 +40,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
+    public Job.Type job_type { get; protected set; }
     public bool working { public get; protected set; }
 
     private static Polkit.Permission? update_permission = null;
@@ -87,6 +88,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             last_action = new DateTime.now_local ();
             working = false;
             var job = jobs.pop ();
+            job_type = job.operation;
             working = true;
             switch (job.operation) {
                 case Job.Type.GET_INSTALLED_PACKAGES:
