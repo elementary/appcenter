@@ -29,7 +29,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Hdy.Deck deck;
 
     private AppCenterCore.Package? last_installed_package;
-    private AppCenterCore.Package? selected_package;
 
     private uint configure_id;
 
@@ -45,7 +44,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
-        go_back.activate.connect (view_return);
+        go_back.activate.connect (() => deck.navigate (Hdy.NavigationDirection.BACK));
         add_action (go_back);
 
         var focus_search = new SimpleAction ("focus-search", null);
@@ -58,7 +57,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         button_release_event.connect ((event) => {
             // On back mouse button pressed
             if (event.button == 8) {
-                view_return ();
+                deck.navigate (Hdy.NavigationDirection.BACK);
                 return true;
             }
 
@@ -80,8 +79,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
             return false;
         });
-
-        return_button.clicked.connect (view_return);
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
@@ -129,6 +126,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         return_button = new Gtk.Button () {
+            action_name = "win.go-back",
             no_show_all = true,
             valign = Gtk.Align.CENTER
         };
@@ -391,8 +389,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             return;
         }
 
-        selected_package = package;
-
         var package_hash = package.hash;
 
         var pk_child = deck.get_child_by_name (package_hash) as Views.AppInfoView;
@@ -495,20 +491,20 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public void send_installed_toast (AppCenterCore.Package package) {
         last_installed_package = package;
 
-        // Only show a toast when we're not on the installed app's page, i.e if
-        // no package is selected (we are not on an app page), or a package is 
-        // selected but it's not the app we're installing.
-        if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
-            toast.title = _("“%s” has been installed").printf (package.get_name ());
-            // Show Open only when a desktop app is installed
-            if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
-                toast.set_default_action (_("Open"));
-            } else {
-                toast.set_default_action (null);
-            }
-
-            toast.send_notification ();
+        // Only show a toast when we're not on the installed app's page
+        if (deck.visible_child is Views.AppInfoView && ((Views.AppInfoView) deck.visible_child).package == package) {
+            return;
         }
+
+        toast.title = _("“%s” has been installed").printf (package.get_name ());
+        // Show Open only when a desktop app is installed
+        if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
+            toast.set_default_action (_("Open"));
+        } else {
+            toast.set_default_action (null);
+        }
+
+        toast.send_notification ();
     }
 
     private void trigger_search () {
@@ -585,11 +581,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         if (sensitive) {
             search_entry.grab_focus_without_selecting ();
         }
-    }
-
-    private void view_return () {
-        selected_package = null;
-        deck.navigate (Hdy.NavigationDirection.BACK);
     }
 
     private void show_category (AppStream.Category category) {
