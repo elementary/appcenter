@@ -117,8 +117,6 @@ namespace AppCenter.Views {
         public void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
             list_box.invalidate_sort ();
-
-            package.changing.connect (on_package_changing);
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
@@ -349,7 +347,6 @@ namespace AppCenter.Views {
         }
 
         public async void remove_app (AppCenterCore.Package package) {
-            package.changing.disconnect (on_package_changing);
             foreach (unowned var child in list_box.get_children ()) {
                 if (child is Widgets.PackageRow) {
                     unowned var row = (Widgets.PackageRow) child;
