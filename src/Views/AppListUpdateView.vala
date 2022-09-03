@@ -159,13 +159,14 @@ namespace AppCenter.Views {
                 b_is_driver = row2_package.kind == AppStream.ComponentKind.DRIVER;
                 b_is_os = row2_package.is_os_updates;
                 b_is_updating = row2_package.is_updating;
-                b_package_name = row1_package.get_name ();
+                b_package_name = row2_package.get_name ();
             }
 
             // The currently updating package is always top of the list
             if (a_is_updating || b_is_updating) {
                 return a_is_updating ? -1 : 1;
             }
+
             // Sort updatable OS updates first, then other updatable packages
             if (a_has_updates != b_has_updates) {
                 if (a_is_os && a_has_updates) {
