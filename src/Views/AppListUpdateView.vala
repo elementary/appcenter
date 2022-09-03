@@ -326,6 +326,17 @@ namespace AppCenter.Views {
             updating_all_apps = false;
         }
 
+        private Gee.Collection<AppCenterCore.Package> get_packages () {
+            var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
+            foreach (unowned var child in list_box.get_children ()) {
+                if (child is Widgets.PackageRow) {
+                    tree_set.add (((Widgets.PackageRow) child).get_package ());
+                }
+            }
+
+            return tree_set;
+        }
+
         public async void add_app (AppCenterCore.Package package) {
             unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
             var installed_apps = yield client.get_installed_applications ();
@@ -340,11 +351,13 @@ namespace AppCenter.Views {
         public async void remove_app (AppCenterCore.Package package) {
             package.changing.disconnect (on_package_changing);
             foreach (unowned var child in list_box.get_children ()) {
-                unowned var row = (Widgets.PackageRow) child;
+                if (child is Widgets.PackageRow) {
+                    unowned var row = (Widgets.PackageRow) child;
 
-                if (row.get_package () == package) {
-                    row.destroy ();
-                    break;
+                    if (row.get_package () == package) {
+                        row.destroy ();
+                        break;
+                    }
                 }
             }
 
