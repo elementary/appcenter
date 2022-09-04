@@ -371,7 +371,6 @@ namespace AppCenter.Views {
 
                     if (row.get_package () == package) {
                         list_box.remove (row);
-                        row.destroy ();
                         break;
                     }
                 }
@@ -383,14 +382,8 @@ namespace AppCenter.Views {
         }
 
         public void clear () {
-            var child = list_box.get_first_child ();
-            while (child != null) {
-                if (child is Widgets.PackageRow) {
-                    list_box.remove (child);
-                    child.destroy ();
-                }
-
-                child = child.get_next_sibling ();
+            while (list_box.get_first_child () != null) {
+                list_box.remove (list_box.get_first_child ());
             }
 
             list_box.invalidate_sort ();
