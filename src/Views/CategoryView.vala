@@ -58,7 +58,8 @@ public class AppCenter.CategoryView : Gtk.Box {
         };
 
         var spinner = new Gtk.Spinner () {
-            halign = Gtk.Align.CENTER
+            halign = Gtk.Align.CENTER,
+            hexpand = true
         };
         spinner.start ();
 
