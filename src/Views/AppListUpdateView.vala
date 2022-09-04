@@ -21,7 +21,10 @@
 namespace AppCenter.Views {
 /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
-    public class AppListUpdateView : AbstractAppList {
+    public class AppListUpdateView : Gtk.Box {
+        public signal void show_app (AppCenterCore.Package package);
+
+        private Gtk.ListBox list_box;
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
@@ -37,9 +40,19 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
+            list_box = new Gtk.ListBox () {
+                activate_on_single_click = true,
+                hexpand = true,
+                vexpand = true
+            };
             list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
+
+            var scrolled = new Gtk.ScrolledWindow (null, null) {
+                hscrollbar_policy = Gtk.PolicyType.NEVER
+            };
+            scrolled.add (list_box);
 
             var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
             info_label.show ();
@@ -68,6 +81,7 @@ namespace AppCenter.Views {
 
             AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
+            orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
             add (scrolled);
 
@@ -79,6 +93,12 @@ namespace AppCenter.Views {
                     get_apps.begin ();
                     return GLib.Source.REMOVE;
                 });
+            });
+
+            list_box.row_activated.connect ((row) => {
+                if (row is Widgets.PackageRow) {
+                    show_app (((Widgets.PackageRow) row).get_package ());
+                }
             });
         }
 
@@ -106,7 +126,7 @@ namespace AppCenter.Views {
             refresh_mutex.unlock ();
         }
 
-        public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+        public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
             foreach (var package in packages) {
                 add_row_for_package (package);
             }
@@ -358,6 +378,16 @@ namespace AppCenter.Views {
                     }
                 }
             }
+
+            list_box.invalidate_sort ();
+        }
+
+        public void clear () {
+            foreach (unowned var child in list_box.get_children ()) {
+                if (child is Widgets.PackageRow) {
+                    child.destroy ();
+                }
+            };
 
             list_box.invalidate_sort ();
         }
