@@ -172,12 +172,14 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         };
         email_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
+        var card_number_entry_controllerfocus = new Gtk.EventControllerFocus ();
+
         card_number_entry = new AppCenter.Widgets.CardNumberEntry () {
             activates_default = true,
             hexpand = true,
             margin_bottom = 6
         };
-        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
+        card_number_entry.add_controller (card_number_entry_controllerfocus);
 
         var expiration_focus_controller = new Gtk.EventControllerFocus ();
 
@@ -288,6 +290,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             card_valid = is_card_valid (card_number_entry.card_number);
             is_payment_sensitive ();
         });
+
+        card_number_entry_controllerfocus.bind_property ("contains-focus", card_number_entry, "visibility");
 
         card_expiration_entry.changed.connect (() => {
             if (" " in card_expiration_entry.text) {
