@@ -30,7 +30,6 @@ appcenter_files = files(
     'Views/CategoryView.vala',
     'Views/Homepage.vala',
     'Views/SearchView.vala',
-    'Widgets/AbstractAppList.vala',
     'Widgets/Banner.vala',
     'Widgets/CardNumberEntry.vala',
     'Widgets/HumbleButton.vala',

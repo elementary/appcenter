@@ -21,7 +21,10 @@
 namespace AppCenter.Views {
 /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
-    public class AppListUpdateView : AbstractAppList {
+    public class AppListUpdateView : Gtk.Box {
+        public signal void show_app (AppCenterCore.Package package);
+
+        private Gtk.ListBox list_box;
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
@@ -35,8 +38,19 @@ namespace AppCenter.Views {
                 icon = new ThemedIcon ("sync-synchronizing")
             };
 
+            list_box = new Gtk.ListBox () {
+                activate_on_single_click = true,
+                hexpand = true,
+                vexpand = true
+            };
+            list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
+
+            var scrolled = new Gtk.ScrolledWindow () {
+                child = list_box,
+                hscrollbar_policy = Gtk.PolicyType.NEVER
+            };
 
             var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
 
@@ -64,6 +78,7 @@ namespace AppCenter.Views {
 
             AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
+            orientation = Gtk.Orientation.VERTICAL;
             append (infobar);
             append (scrolled);
 
@@ -75,6 +90,12 @@ namespace AppCenter.Views {
                     get_apps.begin ();
                     return GLib.Source.REMOVE;
                 });
+            });
+
+            list_box.row_activated.connect ((row) => {
+                if (row is Widgets.PackageRow) {
+                    show_app (((Widgets.PackageRow) row).get_package ());
+                }
             });
         }
 
@@ -102,7 +123,7 @@ namespace AppCenter.Views {
             refresh_mutex.unlock ();
         }
 
-        public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+        public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
             foreach (var package in packages) {
                 add_row_for_package (package);
             }
@@ -110,11 +131,9 @@ namespace AppCenter.Views {
             list_box.invalidate_sort ();
         }
 
-        public override void add_package (AppCenterCore.Package package) {
+        public void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
             list_box.invalidate_sort ();
-
-            package.changing.connect (on_package_changing);
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
@@ -128,7 +147,7 @@ namespace AppCenter.Views {
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
+        private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
             var row1_package = row1.get_package ();
             var row2_package = row2.get_package ();
 
@@ -155,13 +174,14 @@ namespace AppCenter.Views {
                 b_is_driver = row2_package.kind == AppStream.ComponentKind.DRIVER;
                 b_is_os = row2_package.is_os_updates;
                 b_is_updating = row2_package.is_updating;
-                b_package_name = row1_package.get_name ();
+                b_package_name = row2_package.get_name ();
             }
 
             // The currently updating package is always top of the list
             if (a_is_updating || b_is_updating) {
                 return a_is_updating ? -1 : 1;
             }
+
             // Sort updatable OS updates first, then other updatable packages
             if (a_has_updates != b_has_updates) {
                 if (a_is_os && a_has_updates) {
@@ -318,6 +338,20 @@ namespace AppCenter.Views {
             updating_all_apps = false;
         }
 
+        private Gee.Collection<AppCenterCore.Package> get_packages () {
+            var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
+            var child = list_box.get_next_sibling ();
+            while (child != null) {
+                if (child is Widgets.PackageRow) {
+                    tree_set.add (((Widgets.PackageRow) child).get_package ());
+                }
+
+                child = child.get_next_sibling ();
+            }
+
+            return tree_set;
+        }
+
         public async void add_app (AppCenterCore.Package package) {
             unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
             var installed_apps = yield client.get_installed_applications ();
@@ -330,7 +364,34 @@ namespace AppCenter.Views {
         }
 
         public async void remove_app (AppCenterCore.Package package) {
-            remove_package (package);
+            var child = list_box.get_next_sibling ();
+            while (child != null) {
+                if (child is Widgets.PackageRow) {
+                    unowned var row = (Widgets.PackageRow) child;
+
+                    if (row.get_package () == package) {
+                        row.destroy ();
+                        break;
+                    }
+                }
+
+                child = child.get_next_sibling ();
+            }
+
+            list_box.invalidate_sort ();
+        }
+
+        public void clear () {
+            var child = list_box.get_next_sibling ();
+            while (child != null) {
+                if (child is Widgets.PackageRow) {
+                    child.destroy ();
+                }
+
+                child = child.get_next_sibling ();
+            }
+
+            list_box.invalidate_sort ();
         }
     }
 }
