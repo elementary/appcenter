@@ -340,7 +340,7 @@ namespace AppCenter.Views {
 
         private Gee.Collection<AppCenterCore.Package> get_packages () {
             var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
-            var child = list_box.get_next_sibling ();
+            var child = list_box.get_first_child ();
             while (child != null) {
                 if (child is Widgets.PackageRow) {
                     tree_set.add (((Widgets.PackageRow) child).get_package ());
@@ -364,12 +364,13 @@ namespace AppCenter.Views {
         }
 
         public async void remove_app (AppCenterCore.Package package) {
-            var child = list_box.get_next_sibling ();
+            var child = list_box.get_first_child ();
             while (child != null) {
                 if (child is Widgets.PackageRow) {
                     unowned var row = (Widgets.PackageRow) child;
 
                     if (row.get_package () == package) {
+                        list_box.remove (row);
                         row.destroy ();
                         break;
                     }
@@ -382,9 +383,10 @@ namespace AppCenter.Views {
         }
 
         public void clear () {
-            var child = list_box.get_next_sibling ();
+            var child = list_box.get_first_child ();
             while (child != null) {
                 if (child is Widgets.PackageRow) {
+                    list_box.remove (child);
                     child.destroy ();
                 }
 

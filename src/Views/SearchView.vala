@@ -92,9 +92,10 @@ public class AppCenter.SearchView : Gtk.Box {
     }
 
     public void clear () {
-        var child = list_box.get_next_sibling ();
+        var child = list_box.get_first_child ();
         while (child != null) {
             if (child is Widgets.PackageRow) {
+                list_box.remove (child);
                 child.destroy ();
             }
 

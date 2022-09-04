@@ -432,7 +432,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        if (leaflet.get_child_by_name ("installed-view") == null) {
+        if (installed_view.parent == null) {
             leaflet.append (installed_view);
         }
 
