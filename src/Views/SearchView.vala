@@ -19,8 +19,12 @@
 *              Atheesh Thirumalairajan <candiedoperation@icloud.com>
 */
 
-public class AppCenter.SearchView : AbstractAppList {
+public class AppCenter.SearchView : Gtk.Box {
+    public signal void show_app (AppCenterCore.Package package);
+
     public string? current_search_term { get; set; default = null; }
+
+    private Gtk.ListBox list_box;
     private uint current_visible_index = 0U;
     private GLib.ListStore list_store;
 
@@ -33,15 +37,20 @@ public class AppCenter.SearchView : AbstractAppList {
         );
         alert_view.show_all ();
 
+        list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
+
+        list_box = new Gtk.ListBox () {
+            activate_on_single_click = true,
+            hexpand = true,
+            vexpand = true
+        };
         list_box.set_placeholder (alert_view);
         list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
 
-        list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
-        scrolled.edge_reached.connect ((position) => {
-            if (position == Gtk.PositionType.BOTTOM) {
-                show_more_apps ();
-            }
-        });
+        var scrolled = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER
+        };
+        scrolled.add (list_box);
 
         add (scrolled);
 
@@ -49,9 +58,21 @@ public class AppCenter.SearchView : AbstractAppList {
             var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (current_search_term, _("Flathub"));
             alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
         });
+
+        list_box.row_activated.connect ((row) => {
+            if (row is Widgets.PackageRow) {
+                show_app (((Widgets.PackageRow) row).get_package ());
+            }
+        });
+
+        scrolled.edge_reached.connect ((position) => {
+            if (position == Gtk.PositionType.BOTTOM) {
+                show_more_apps ();
+            }
+        });
     }
 
-    public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+    public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
         foreach (var package in packages) {
             add_row_for_package (package);
         }
@@ -72,9 +93,16 @@ public class AppCenter.SearchView : AbstractAppList {
         }
     }
 
-    public override void clear () {
-        base.clear ();
+    public void clear () {
+        foreach (unowned var child in list_box.get_children ()) {
+            if (child is Widgets.PackageRow) {
+                child.destroy ();
+            }
+        };
+
         list_store.remove_all ();
+        list_box.invalidate_sort ();
+
         current_search_term = null;
         current_visible_index = 0U;
     }
