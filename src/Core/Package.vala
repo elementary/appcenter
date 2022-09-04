@@ -678,9 +678,8 @@ public class AppCenterCore.Package : Object {
         uint current_scale = 0;
         uint pixel_size = size * scale_factor;
 
-        weak GenericArray<AppStream.Icon> icons = component.get_icons ();
-        for (int i = 0; i < icons.length; i++) {
-            weak AppStream.Icon _icon = icons[i];
+        unowned var icons = component.get_icons ();
+        foreach (unowned var _icon in icons) {
             switch (_icon.get_kind ()) {
                 case AppStream.IconKind.STOCK:
                     unowned string icon_name = _icon.get_name ();
@@ -710,9 +709,9 @@ public class AppCenterCore.Package : Object {
                     bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
                     if (is_bigger || has_better_dpi) {
                         var file = File.new_for_uri (_icon.get_url ());
-                        icon = new FileIcon (file);
-                        current_size = icon_width;
-                        current_scale = icon_scale;
+                        // icon = new FileIcon (file);
+                        // current_size = icon_width;
+                        // current_scale = icon_scale;
                     }
 
                     break;
