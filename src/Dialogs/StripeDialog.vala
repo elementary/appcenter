@@ -153,6 +153,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             activates_default = true,
             hexpand = true,
             input_purpose = Gtk.InputPurpose.EMAIL,
+            input_hints = Gtk.InputHints.LOWERCASE,
             margin_bottom = 6,
             placeholder_text = _("Email"),
             primary_icon_name = "internet-mail-symbolic"
@@ -276,7 +277,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         email_entry.changed.connect (() => {
-            // email_entry.text = email_entry.text.replace (" ", "").down ();
+            if (" " in email_entry.text) {
+                email_entry.text = card_expiration_entry.text.replace (" ", "");
+            }
+
             is_payment_sensitive ();
         });
 
@@ -286,7 +290,9 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         card_expiration_entry.changed.connect (() => {
-            // card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            if (" " in card_expiration_entry.text) {
+                card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            }
 
             if (card_expiration_entry.text.length < 4) {
                 card_expiration_entry.is_valid = false;
@@ -304,7 +310,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         card_cvc_entry.changed.connect (() => {
-            // card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            if (" " in card_cvc_entry.text) {
+                card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            }
+
             is_payment_sensitive ();
         });
     }
@@ -464,6 +473,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         new Thread<void*> (null, () => {
             string expiration_dateyear = card_expiration_entry.text.replace ("/", "");
             var year = (int.parse (expiration_dateyear[2:4]) + 2000).to_string ();
+
+            email_entry.text = email_entry.text.down ();
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, expiration_dateyear[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
