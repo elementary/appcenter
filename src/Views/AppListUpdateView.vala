@@ -24,7 +24,8 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
-        private Gtk.ListBox list_box;
+        private Gtk.FlowBox installed_flowbox;
+        private Gtk.FlowBox updates_flowbox;
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
@@ -40,19 +41,75 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
-            list_box = new Gtk.ListBox () {
-                activate_on_single_click = true,
-                hexpand = true,
+            uint update_numbers = 0U;
+            uint nag_numbers = 0U;
+            uint64 update_real_size = 0ULL;
+            bool using_flatpak = false;
+            foreach (var package in get_packages ()) {
+                if (package.update_available || package.is_updating) {
+                    if (package.should_pay) {
+                        nag_numbers++;
+                    }
+
+                    if (!using_flatpak && package.is_flatpak) {
+                        using_flatpak = true;
+                    }
+
+                    update_numbers++;
+                    update_real_size += package.change_information.size;
+                }
+            }
+
+            var update_all_button = new Gtk.Button.with_label (_("Update All")) {
+                valign = Gtk.Align.CENTER
+            };
+            update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+            if (update_numbers == nag_numbers || updating_all_apps) {
+                update_all_button.sensitive = false;
+            }
+
+            action_button_group.add_widget (update_all_button);
+
+            var updates_header = new Widgets.UpdateHeaderRow.updatable (update_numbers, update_real_size, using_flatpak);
+            updates_header .add (update_all_button);
+
+            updates_flowbox = new Gtk.FlowBox () {
+                column_spacing = 24,
+                homogeneous = true,
+                max_children_per_line = 4,
+                row_spacing = 12,
+                valign = Gtk.Align.START
+            };
+
+            var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
+                margin_top = 24,
+                margin_end = 12,
+                margin_bottom = 12,
+                margin_start = 12,
+            };
+
+            installed_flowbox = new Gtk.FlowBox () {
+                column_spacing = 24,
+                homogeneous = true,
+                max_children_per_line = 4,
+                row_spacing = 12,
+                valign = Gtk.Align.START
+            };
+
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
                 vexpand = true
             };
-            list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
-            list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
-            list_box.set_placeholder (loading_view);
+            box.add (updates_header);
+            box.add (updates_flowbox);
+            box.add (installed_header);
+            box.add (installed_flowbox);
+            box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER
             };
-            scrolled.add (list_box);
+            scrolled.add (box);
 
             var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
             info_label.show ();
@@ -64,6 +121,30 @@ namespace AppCenter.Views {
 
             var restart_button = infobar.add_button (_("Restart Now"), 0);
             action_button_group.add_widget (restart_button);
+
+            orientation = Gtk.Orientation.VERTICAL;
+            add (infobar);
+            add (scrolled);
+
+            get_apps.begin ();
+
+            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+
+            unowned var client = AppCenterCore.Client.get_default ();
+            client.installed_apps_changed.connect (() => {
+                Idle.add (() => {
+                    get_apps.begin ();
+                    return GLib.Source.REMOVE;
+                });
+            });
+
+            // list_box.row_activated.connect ((row) => {
+            //     if (row is Widgets.PackageRow) {
+            //         show_app (((Widgets.PackageRow) row).get_package ());
+            //     }
+            // });
+
+            update_all_button.clicked.connect (on_update_all);
 
             infobar.response.connect ((response) => {
                 if (response == 0) {
@@ -79,27 +160,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
-
-            orientation = Gtk.Orientation.VERTICAL;
-            add (infobar);
-            add (scrolled);
-
-            get_apps.begin ();
-
-            unowned var client = AppCenterCore.Client.get_default ();
-            client.installed_apps_changed.connect (() => {
-                Idle.add (() => {
-                    get_apps.begin ();
-                    return GLib.Source.REMOVE;
-                });
-            });
-
-            list_box.row_activated.connect ((row) => {
-                if (row is Widgets.PackageRow) {
-                    show_app (((Widgets.PackageRow) row).get_package ());
-                }
-            });
         }
 
         private async void get_apps () {
@@ -130,177 +190,174 @@ namespace AppCenter.Views {
             foreach (var package in packages) {
                 add_row_for_package (package);
             }
-
-            list_box.invalidate_sort ();
         }
 
         public void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
-            list_box.invalidate_sort ();
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
-            var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
-
-            // Only add row if this package needs an update or it's not a font or plugin
-            if (needs_update || (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT)) {
-                var row = new Widgets.PackageRow.installed (package, action_button_group);
-                row.show_all ();
-
-                list_box.add (row);
+            if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
+                var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
+                updates_flowbox.add (row);
+            } else if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
+                var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
+                installed_flowbox.add (row);
             }
+
+            show_all ();
         }
 
-        [CCode (instance_pos = -1)]
-        private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
-            var row1_package = row1.get_package ();
-            var row2_package = row2.get_package ();
+        // [CCode (instance_pos = -1)]
+        // private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
+        //     var row1_package = row1.get_package ();
+        //     var row2_package = row2.get_package ();
 
-            bool a_has_updates = false;
-            bool a_is_driver = false;
-            bool a_is_os = false;
-            bool a_is_updating = false;
-            string a_package_name = "";
-            if (row1_package != null) {
-                a_has_updates = row1_package.update_available;
-                a_is_driver = row1_package.kind == AppStream.ComponentKind.DRIVER;
-                a_is_os = row1_package.is_os_updates;
-                a_is_updating = row1_package.is_updating;
-                a_package_name = row1_package.get_name ();
-            }
+        //     bool a_has_updates = false;
+        //     bool a_is_driver = false;
+        //     bool a_is_os = false;
+        //     bool a_is_updating = false;
+        //     string a_package_name = "";
+        //     if (row1_package != null) {
+        //         a_has_updates = row1_package.update_available;
+        //         a_is_driver = row1_package.kind == AppStream.ComponentKind.DRIVER;
+        //         a_is_os = row1_package.is_os_updates;
+        //         a_is_updating = row1_package.is_updating;
+        //         a_package_name = row1_package.get_name ();
+        //     }
 
-            bool b_has_updates = false;
-            bool b_is_driver = false;
-            bool b_is_os = false;
-            bool b_is_updating = false;
-            string b_package_name = "";
-            if (row2_package != null) {
-                b_has_updates = row2_package.update_available;
-                b_is_driver = row2_package.kind == AppStream.ComponentKind.DRIVER;
-                b_is_os = row2_package.is_os_updates;
-                b_is_updating = row2_package.is_updating;
-                b_package_name = row2_package.get_name ();
-            }
+        //     bool b_has_updates = false;
+        //     bool b_is_driver = false;
+        //     bool b_is_os = false;
+        //     bool b_is_updating = false;
+        //     string b_package_name = "";
+        //     if (row2_package != null) {
+        //         b_has_updates = row2_package.update_available;
+        //         b_is_driver = row2_package.kind == AppStream.ComponentKind.DRIVER;
+        //         b_is_os = row2_package.is_os_updates;
+        //         b_is_updating = row2_package.is_updating;
+        //         b_package_name = row2_package.get_name ();
+        //     }
 
-            // The currently updating package is always top of the list
-            if (a_is_updating || b_is_updating) {
-                return a_is_updating ? -1 : 1;
-            }
+        //     // The currently updating package is always top of the list
+        //     if (a_is_updating || b_is_updating) {
+        //         return a_is_updating ? -1 : 1;
+        //     }
 
-            // Sort updatable OS updates first, then other updatable packages
-            if (a_has_updates != b_has_updates) {
-                if (a_is_os && a_has_updates) {
-                    return -1;
-                }
+        //     // Sort updatable OS updates first, then other updatable packages
+        //     if (a_has_updates != b_has_updates) {
+        //         if (a_is_os && a_has_updates) {
+        //             return -1;
+        //         }
 
-                if (b_is_os && b_has_updates) {
-                    return 1;
-                }
+        //         if (b_is_os && b_has_updates) {
+        //             return 1;
+        //         }
 
-                if (a_has_updates) {
-                    return -1;
-                }
+        //         if (a_has_updates) {
+        //             return -1;
+        //         }
 
-                if (b_has_updates) {
-                    return 1;
-                }
-            }
+        //         if (b_has_updates) {
+        //             return 1;
+        //         }
+        //     }
 
-            if (a_is_driver != b_is_driver) {
-                return a_is_driver ? - 1 : 1;
-            }
+        //     if (a_is_driver != b_is_driver) {
+        //         return a_is_driver ? - 1 : 1;
+        //     }
 
-            // Ensures OS updates are sorted to the top amongst up-to-date packages
-            if (a_is_os || b_is_os) {
-                return a_is_os ? -1 : 1;
-            }
+        //     // Ensures OS updates are sorted to the top amongst up-to-date packages
+        //     if (a_is_os || b_is_os) {
+        //         return a_is_os ? -1 : 1;
+        //     }
 
-            return a_package_name.collate (b_package_name); /* Else sort in name order */
-        }
+        //     return a_package_name.collate (b_package_name); /* Else sort in name order */
+        // }
 
-        [CCode (instance_pos = -1)]
-        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
-            bool update_available = false;
-            bool is_driver = false;
-            var row_package = row.get_package ();
-            if (row_package != null) {
-                update_available = row_package.update_available || row_package.is_updating;
-                is_driver = row_package.kind == AppStream.ComponentKind.DRIVER;
-            }
+        // [CCode (instance_pos = -1)]
+        // private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
+        //     bool update_available = false;
+        //     bool is_driver = false;
+        //     var row_package = row.get_package ();
+        //     if (row_package != null) {
+        //         update_available = row_package.update_available || row_package.is_updating;
+        //         is_driver = row_package.kind == AppStream.ComponentKind.DRIVER;
+        //     }
 
 
-            bool before_update_available = false;
-            bool before_is_driver = false;
-            if (before != null) {
-                var before_package = before.get_package ();
-                if (before_package != null) {
-                    before_update_available = before_package.update_available || before_package.is_updating;
-                    before_is_driver = before_package.kind == AppStream.ComponentKind.DRIVER;
-                }
-            }
+        //     bool before_update_available = false;
+        //     bool before_is_driver = false;
+        //     if (before != null) {
+        //         var before_package = before.get_package ();
+        //         if (before_package != null) {
+        //             before_update_available = before_package.update_available || before_package.is_updating;
+        //             before_is_driver = before_package.kind == AppStream.ComponentKind.DRIVER;
+        //         }
+        //     }
 
-            if (update_available) {
-                if (before != null && update_available == before_update_available) {
-                    row.set_header (null);
-                    return;
-                }
+        //     if (update_available) {
+        //         if (before != null && update_available == before_update_available) {
+        //             row.set_header (null);
+        //             return;
+        //         }
 
-                uint update_numbers = 0U;
-                uint nag_numbers = 0U;
-                uint64 update_real_size = 0ULL;
-                bool using_flatpak = false;
-                foreach (var package in get_packages ()) {
-                    if (package.update_available || package.is_updating) {
-                        if (package.should_pay) {
-                            nag_numbers++;
-                        }
+        //         uint update_numbers = 0U;
+        //         uint nag_numbers = 0U;
+        //         uint64 update_real_size = 0ULL;
+        //         bool using_flatpak = false;
+        //         foreach (var package in get_packages ()) {
+        //             if (package.update_available || package.is_updating) {
+        //                 if (package.should_pay) {
+        //                     nag_numbers++;
+        //                 }
 
-                        if (!using_flatpak && package.is_flatpak) {
-                            using_flatpak = true;
-                        }
+        //                 if (!using_flatpak && package.is_flatpak) {
+        //                     using_flatpak = true;
+        //                 }
 
-                        update_numbers++;
-                        update_real_size += package.change_information.size;
-                    }
-                }
+        //                 update_numbers++;
+        //                 update_real_size += package.change_information.size;
+        //             }
+        //         }
 
-                var header = new Widgets.UpdateHeaderRow.updatable (update_numbers, update_real_size, using_flatpak);
+        //         var header = new Widgets.UpdateHeaderRow.updatable (update_numbers, update_real_size, using_flatpak);
 
-                // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-                var update_all_button = new Gtk.Button.with_label (_("Update All"));
-                if (update_numbers == nag_numbers || updating_all_apps) {
-                    update_all_button.sensitive = false;
-                }
+        //         // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
+        //         var update_all_button = new Gtk.Button.with_label (_("Update All"));
+        //         if (update_numbers == nag_numbers || updating_all_apps) {
+        //             update_all_button.sensitive = false;
+        //         }
 
-                update_all_button.valign = Gtk.Align.CENTER;
-                update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-                update_all_button.clicked.connect (on_update_all);
-                action_button_group.add_widget (update_all_button);
+        //         update_all_button.valign = Gtk.Align.CENTER;
+        //         update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        //         update_all_button.clicked.connect (on_update_all);
+        //         action_button_group.add_widget (update_all_button);
 
-                header.add (update_all_button);
+        //         header.add (update_all_button);
 
-                header.show_all ();
-                row.set_header (header);
-            } else if (is_driver) {
-                if (before != null && is_driver == before_is_driver) {
-                    row.set_header (null);
-                    return;
-                }
+        //         header.show_all ();
+        //         row.set_header (header);
+        //     } else if (is_driver) {
+        //         if (before != null && is_driver == before_is_driver) {
+        //             row.set_header (null);
+        //             return;
+        //         }
 
-                var header = new Widgets.UpdateHeaderRow.drivers ();
-                header.show_all ();
-                row.set_header (header);
-            } else {
-                if (before != null && is_driver == before_is_driver && update_available == before_update_available) {
-                    row.set_header (null);
-                    return;
-                }
+        //         var header = new Widgets.UpdateHeaderRow.drivers ();
+        //         header.show_all ();
+        //         row.set_header (header);
+        //     } else {
+        //         if (before != null && is_driver == before_is_driver && update_available == before_update_available) {
+        //             row.set_header (null);
+        //             return;
+        //         }
 
-                var header = new Widgets.UpdateHeaderRow.up_to_date ();
-                header.show_all ();
-                row.set_header (header);
-            }
-        }
+        //         var header = new Widgets.UpdateHeaderRow.up_to_date ();
+        //         header.show_all ();
+        //         row.set_header (header);
+        //     }
+        // }
 
         private void on_update_all () {
             perform_all_updates.begin ();
@@ -313,11 +370,11 @@ namespace AppCenter.Views {
 
             updating_all_apps = true;
 
-            foreach (var row in list_box.get_children ()) {
-                if (row is Widgets.PackageRow) {
-                    ((Widgets.PackageRow) row).set_action_sensitive (false);
-                }
-            };
+            // foreach (var row in list_box.get_children ()) {
+            //     if (row is Widgets.PackageRow) {
+            //         ((Widgets.PackageRow) row).set_action_sensitive (false);
+            //     }
+            // };
 
             foreach (var package in get_packages ()) {
                 if (package.update_available && !package.should_pay) {
@@ -347,11 +404,11 @@ namespace AppCenter.Views {
 
         private Gee.Collection<AppCenterCore.Package> get_packages () {
             var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
-            foreach (unowned var child in list_box.get_children ()) {
-                if (child is Widgets.PackageRow) {
-                    tree_set.add (((Widgets.PackageRow) child).get_package ());
-                }
-            }
+            // foreach (unowned var child in list_box.get_children ()) {
+            //     if (child is Widgets.PackageRow) {
+            //         tree_set.add (((Widgets.PackageRow) child).get_package ());
+            //     }
+            // }
 
             return tree_set;
         }
@@ -368,28 +425,26 @@ namespace AppCenter.Views {
         }
 
         public async void remove_app (AppCenterCore.Package package) {
-            foreach (unowned var child in list_box.get_children ()) {
-                if (child is Widgets.PackageRow) {
-                    unowned var row = (Widgets.PackageRow) child;
+            // foreach (unowned var child in list_box.get_children ()) {
+            //     if (child is Widgets.PackageRow) {
+            //         unowned var row = (Widgets.PackageRow) child;
 
-                    if (row.get_package () == package) {
-                        row.destroy ();
-                        break;
-                    }
-                }
-            }
-
-            list_box.invalidate_sort ();
+            //         if (row.get_package () == package) {
+            //             row.destroy ();
+            //             break;
+            //         }
+            //     }
+            // }
         }
 
         public void clear () {
-            foreach (unowned var child in list_box.get_children ()) {
-                if (child is Widgets.PackageRow) {
-                    child.destroy ();
-                }
+            foreach (unowned var child in updates_flowbox.get_children ()) {
+                updates_flowbox.remove (child);
             };
 
-            list_box.invalidate_sort ();
+            foreach (unowned var child in installed_flowbox.get_children ()) {
+                installed_flowbox.remove (child);
+            };
         }
     }
 }

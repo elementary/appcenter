@@ -55,8 +55,4 @@ public class AppCenter.Widgets.UpdateHeaderRow : Gtk.Box {
     public UpdateHeaderRow.drivers () {
         Object (label_text: _("Drivers"));
     }
-
-    public UpdateHeaderRow.up_to_date () {
-        Object (label_text: _("Up to Date"));
-    }
 }
