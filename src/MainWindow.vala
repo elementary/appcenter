@@ -197,9 +197,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         headerbar.pack_end (spinner);
 
         var homepage = new Homepage ();
-        installed_view = new Views.AppListUpdateView () {
-            name = "installed-view"
-        };
+        installed_view = new Views.AppListUpdateView ();
 
         leaflet = new Adw.Leaflet () {
             can_navigate_back = true,
