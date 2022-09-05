@@ -24,11 +24,7 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
-        private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
-        private Gtk.Revealer header_revealer;
-        private Widgets.SizeLabel size_label;
-
         private Gtk.ListBox list_box;
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
@@ -46,9 +42,9 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
-            header_label = new Granite.HeaderLabel ("");
+            var header_label = new Granite.HeaderLabel ("");
 
-            size_label = new Widgets.SizeLabel () {
+            var size_label = new Widgets.SizeLabel () {
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER
             };
@@ -64,7 +60,7 @@ namespace AppCenter.Views {
             header.add (update_all_button);
             header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            header_revealer = new Gtk.Revealer ();
+            var header_revealer = new Gtk.Revealer ();
             header_revealer.add (header);
             header_revealer.get_style_context ().add_class ("header");
             header_revealer.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
