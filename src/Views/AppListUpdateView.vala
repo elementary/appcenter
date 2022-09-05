@@ -129,6 +129,45 @@ namespace AppCenter.Views {
                 });
             });
 
+            client.notify["updates-number"].connect (() => {
+                if (client.updates_number > 0) {
+                    header_revealer.reveal_child = true;
+
+                    uint nag_numbers = 0U;
+                    uint64 update_real_size = 0ULL;
+                    bool using_flatpak = false;
+                    foreach (var package in get_packages ()) {
+                        if (package.update_available || package.is_updating) {
+                            if (package.should_pay) {
+                                nag_numbers++;
+                            }
+
+                            if (!using_flatpak && package.is_flatpak) {
+                                using_flatpak = true;
+                            }
+
+                            update_real_size += package.change_information.size;
+                        }
+                    }
+
+                    size_label.update (update_real_size, using_flatpak);
+
+                    if (client.updates_number == nag_numbers || updating_all_apps) {
+                        update_all_button.sensitive = false;
+                    } else {
+                        update_all_button.sensitive = true;
+                    }
+
+                    header_label.label = ngettext (
+                        "%u Update Available",
+                        "%u Updates Available",
+                        client.updates_number
+                    ).printf (client.updates_number);
+                } else {
+                    header_revealer.reveal_child = false;
+                }
+            });
+
             list_box.row_activated.connect ((row) => {
                 if (row is Widgets.PackageRow) {
                     show_app (((Widgets.PackageRow) row).get_package ());
@@ -280,39 +319,6 @@ namespace AppCenter.Views {
                     row.set_header (null);
                     return;
                 }
-
-                uint update_numbers = 0U;
-                uint nag_numbers = 0U;
-                uint64 update_real_size = 0ULL;
-                bool using_flatpak = false;
-                foreach (var package in get_packages ()) {
-                    if (package.update_available || package.is_updating) {
-                        if (package.should_pay) {
-                            nag_numbers++;
-                        }
-
-                        if (!using_flatpak && package.is_flatpak) {
-                            using_flatpak = true;
-                        }
-
-                        update_numbers++;
-                        update_real_size += package.change_information.size;
-                    }
-                }
-
-                if (update_numbers > 0) {
-                    header_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
-                    size_label.update (update_real_size, using_flatpak);
-                    header_revealer.reveal_child = true;
-                } else {
-                    header_revealer.reveal_child = false;
-                }
-
-                if (update_numbers == nag_numbers || updating_all_apps) {
-                    update_all_button.sensitive = false;
-                } else {
-                    update_all_button.sensitive = true;
-                }
             } else if (is_driver) {
                 if (before != null && is_driver == before_is_driver) {
                     row.set_header (null);
@@ -351,6 +357,7 @@ namespace AppCenter.Views {
                 return;
             }
 
+            update_all_button.sensitive = false;
             updating_all_apps = true;
 
             foreach (var row in list_box.get_children ()) {
