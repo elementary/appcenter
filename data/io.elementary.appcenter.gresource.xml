@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/io/elementary/appcenter">
     <file alias="application.css" compressed="true">styles/application.css</file>
+    <file alias="AppListUpdateView.css" compressed="true">styles/AppListUpdateView.css</file>
     <file alias="arrow.css" compressed="true">styles/arrow.css</file>
     <file alias="badge.css" compressed="true">styles/badge.css</file>
     <file alias="banner.css" compressed="true">styles/banner.css</file>

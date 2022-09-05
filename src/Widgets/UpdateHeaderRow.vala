@@ -38,20 +38,6 @@ public class AppCenter.Widgets.UpdateHeaderRow : Gtk.Box {
         add (label);
     }
 
-    public UpdateHeaderRow.updatable (uint num_updates, uint64 update_size, bool using_flatpak) {
-        Object (
-            label_text: ngettext ("%u Update Available", "%u Updates Available", num_updates).printf (num_updates)
-        );
-
-        var size_label = new SizeLabel () {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.CENTER
-        };
-        size_label.update (update_size, using_flatpak);
-
-        add (size_label);
-    }
-
     public UpdateHeaderRow.drivers () {
         Object (label_text: _("Drivers"));
     }

@@ -24,6 +24,11 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
+        private Gtk.Revealer header_revealer;
+        private Gtk.Label header_label;
+        private Widgets.SizeLabel size_label;
+        private Gtk.Button update_all_button;
+
         private Gtk.ListBox list_box;
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
@@ -31,7 +36,8 @@ namespace AppCenter.Views {
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
-            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+            var css_provider = new Gtk.CssProvider ();
+            css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
             var loading_view = new Granite.Widgets.AlertView (
                 _("Checking for Updates"),
@@ -39,6 +45,33 @@ namespace AppCenter.Views {
                 "sync-synchronizing"
             );
             loading_view.show_all ();
+
+            header_label = new Gtk.Label ("") {
+                halign = Gtk.Align.START,
+                hexpand = true
+            };
+            header_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+
+            size_label = new Widgets.SizeLabel () {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.CENTER
+            };
+
+            update_all_button = new Gtk.Button.with_label (_("Update All")) {
+                valign = Gtk.Align.CENTER
+            };
+            update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+            var header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
+            header.add (header_label);
+            header.add (size_label);
+            header.add (update_all_button);
+            header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            header_revealer = new Gtk.Revealer ();
+            header_revealer.add (header);
+            header_revealer.get_style_context ().add_class ("header");
+            header_revealer.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
@@ -53,6 +86,7 @@ namespace AppCenter.Views {
                 hscrollbar_policy = Gtk.PolicyType.NEVER
             };
             scrolled.add (list_box);
+            scrolled.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
             info_label.show ();
@@ -63,6 +97,9 @@ namespace AppCenter.Views {
             infobar.get_content_area ().add (info_label);
 
             var restart_button = infobar.add_button (_("Restart Now"), 0);
+
+            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+            action_button_group.add_widget (update_all_button);
             action_button_group.add_widget (restart_button);
 
             infobar.response.connect ((response) => {
@@ -83,6 +120,7 @@ namespace AppCenter.Views {
 
             orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
+            add (header_revealer);
             add (scrolled);
 
             get_apps.begin ();
@@ -100,6 +138,8 @@ namespace AppCenter.Views {
                     show_app (((Widgets.PackageRow) row).get_package ());
                 }
             });
+
+            update_all_button.clicked.connect (on_update_all);
         }
 
         private async void get_apps () {
@@ -264,23 +304,17 @@ namespace AppCenter.Views {
                     }
                 }
 
-                var header = new Widgets.UpdateHeaderRow.updatable (update_numbers, update_real_size, using_flatpak);
+                if (update_numbers > 0) {
+                    header_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
+                    size_label.update (update_real_size, using_flatpak);
+                    header_revealer.reveal_child = true;
+                } else {
+                    header_revealer.reveal_child = false;
+                }
 
-                // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-                var update_all_button = new Gtk.Button.with_label (_("Update All"));
                 if (update_numbers == nag_numbers || updating_all_apps) {
                     update_all_button.sensitive = false;
                 }
-
-                update_all_button.valign = Gtk.Align.CENTER;
-                update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-                update_all_button.clicked.connect (on_update_all);
-                action_button_group.add_widget (update_all_button);
-
-                header.add (update_all_button);
-
-                header.show_all ();
-                row.set_header (header);
             } else if (is_driver) {
                 if (before != null && is_driver == before_is_driver) {
                     row.set_header (null);
