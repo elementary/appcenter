@@ -310,6 +310,8 @@ namespace AppCenter.Views {
 
                 if (update_numbers == nag_numbers || updating_all_apps) {
                     update_all_button.sensitive = false;
+                } else {
+                    update_all_button.sensitive = true;
                 }
             } else if (is_driver) {
                 if (before != null && is_driver == before_is_driver) {
