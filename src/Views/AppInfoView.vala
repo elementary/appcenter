@@ -1206,11 +1206,7 @@ namespace AppCenter.Views {
             private static Gtk.CssProvider arrow_provider;
 
             public ArrowButton (string icon_name) {
-                Object (
-                    child: new Gtk.Image.from_icon_name (icon_name) {
-                        pixel_size = 24
-                    }
-                );
+                Object (icon_name: icon_name);
             }
 
             static construct {
@@ -1225,7 +1221,7 @@ namespace AppCenter.Views {
 
                 unowned var context = get_style_context ();
                 context.add_class (Granite.STYLE_CLASS_FLAT);
-                context.add_class ("circular");
+                context.add_class (Granite.STYLE_CLASS_CIRCULAR);
                 context.add_class ("arrow");
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
