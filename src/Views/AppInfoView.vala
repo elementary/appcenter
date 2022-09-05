@@ -1260,9 +1260,8 @@ namespace AppCenter.Views {
                 wrap = true,
                 xalign = 0
             };
-
-            add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
-            add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+            description_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            description_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
             box.append (icon);
