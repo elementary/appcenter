@@ -94,7 +94,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name)) {
             xalign = 0
         };
-        primary_label.add_css_class ("primary");
+        primary_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         var secondary_label = new Gtk.Label (
             _("This is a one time payment suggested by the developer. You can also choose your own price.")
