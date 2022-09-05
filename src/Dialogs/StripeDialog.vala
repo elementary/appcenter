@@ -123,10 +123,13 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             margin_end = 3
         };
 
+        var custom_amount_controllerkey = new Gtk.EventControllerKey ();
+
         var custom_amount = new Gtk.SpinButton.with_range (0, 100, 1) {
             hexpand = true,
             value = amount
         };
+        custom_amount.add_controller (custom_amount_controllerkey);
 
         var custom_image = new Gtk.Image.from_icon_name ("currency-dollar-symbolic");
         custom_image.insert_before (custom_amount, custom_amount.get_first_child ());
@@ -276,6 +279,12 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
         ten_dollar.clicked.connect (() => {
             amount = 10;
+        });
+
+        custom_amount_controllerkey.key_released.connect ((keyval, keycode, state) => {
+            if (keyval == Gdk.Key.Return || keyval == Gdk.Key.KP_Enter) {
+                activate_default ();
+            }
         });
 
         email_entry.changed.connect (() => {
