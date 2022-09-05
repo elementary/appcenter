@@ -36,7 +36,6 @@ src/Widgets/PackageRow.vala
 src/Widgets/ReleaseRow.vala
 src/Widgets/SharePopover.vala
 src/Widgets/SizeLabel.vala
-src/Widgets/UpdateHeaderRow.vala
 src/Widgets/AppContainers/AbstractAppContainer.vala
 src/Widgets/AppContainers/AbstractPackageRowGrid.vala
 src/Widgets/AppContainers/InstalledPackageRowGrid.vala

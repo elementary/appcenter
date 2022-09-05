@@ -24,10 +24,10 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
-        private Gtk.Revealer header_revealer;
-        private Gtk.Label header_label;
-        private Widgets.SizeLabel size_label;
+        private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
+        private Gtk.Revealer header_revealer;
+        private Widgets.SizeLabel size_label;
 
         private Gtk.ListBox list_box;
         private Gtk.SizeGroup action_button_group;
@@ -46,11 +46,7 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
-            header_label = new Gtk.Label ("") {
-                halign = Gtk.Align.START,
-                hexpand = true
-            };
-            header_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+            header_label = new Granite.HeaderLabel ("");
 
             size_label = new Widgets.SizeLabel () {
                 halign = Gtk.Align.END,
@@ -62,7 +58,7 @@ namespace AppCenter.Views {
             };
             update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-            var header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
+            var header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 16);
             header.add (header_label);
             header.add (size_label);
             header.add (update_all_button);
@@ -321,7 +317,11 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var header = new Widgets.UpdateHeaderRow.drivers ();
+                var header = new Granite.HeaderLabel (_("Drivers")) {
+                    margin_top = 12,
+                    margin_end = 9,
+                    margin_start = 9
+                };
                 header.show_all ();
                 row.set_header (header);
             } else {
@@ -330,7 +330,11 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var header = new Widgets.UpdateHeaderRow.up_to_date ();
+                var header = new Granite.HeaderLabel (_("Up to Date")) {
+                    margin_top = 12,
+                    margin_end = 9,
+                    margin_start = 9
+                };
                 header.show_all ();
                 row.set_header (header);
             }
