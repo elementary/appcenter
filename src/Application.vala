@@ -163,9 +163,15 @@ public class AppCenter.App : Gtk.Application {
             client.update_cache.begin (true);
         });
 
+        var update_all_action = new SimpleAction ("update-all", null);
+        update_all_action.activate.connect (() => {
+            AppCenterCore.UpdateManager.get_default ().perform_all_updates.begin ();
+        });
+
         add_action (quit_action);
         add_action (show_updates_action);
         add_action (refresh_action);
+        add_action (update_all_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
         set_accels_for_action ("app.refresh", {"<Control>r"});
 

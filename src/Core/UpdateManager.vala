@@ -21,11 +21,14 @@ public class AppCenterCore.UpdateManager : Object {
     public bool restart_required { public get; private set; default = false; }
     public Package os_updates { public get; private set; }
 
+
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
+    private Gee.TreeSet<Package> apps_with_updates;
     private File restart_file;
 
     construct {
+        apps_with_updates = new Gee.TreeSet<Package> ();
         restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
 
         var icon = new AppStream.Icon ();
@@ -42,7 +45,7 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
-        var apps_with_updates = new Gee.TreeSet<Package> ();
+        apps_with_updates.clear ();
         uint count = 0;
 
         // Clear any packages previously marked as updatable
@@ -194,6 +197,36 @@ public class AppCenterCore.UpdateManager : Object {
 
         os_updates.update_state ();
         return count;
+    }
+
+    public async void perform_all_updates () {
+        var update_all_action = (SimpleAction) Application.get_default ().lookup_action ("update-all");
+        update_all_action.set_enabled (false);
+
+        foreach (var package in apps_with_updates) {
+            if (!package.should_pay) {
+                try {
+                    yield package.update (false);
+                } catch (Error e) {
+                    // If one package update was cancelled, drop out of the loop of updating the rest
+                    if (e is GLib.IOError.CANCELLED) {
+                        break;
+                    } else {
+                        var fail_dialog = new UpgradeFailDialog (package, e.message) {
+                            modal = true,
+                            transient_for = ((Gtk.Application) Application.get_default ()).active_window
+                        };
+                        fail_dialog.present ();
+                        break;
+                    }
+                }
+            }
+        }
+
+        unowned var client = AppCenterCore.Client.get_default ();
+        yield client.refresh_updates ();
+
+        update_all_action.set_enabled (true);
     }
 
     public void update_restart_state () {

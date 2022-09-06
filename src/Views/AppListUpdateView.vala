@@ -26,7 +26,6 @@ namespace AppCenter.Views {
 
         private Gtk.ListBox list_box;
         private Gtk.SizeGroup action_button_group;
-        private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
@@ -267,14 +266,15 @@ namespace AppCenter.Views {
                 var header = new Widgets.UpdateHeaderRow.updatable (update_numbers, update_real_size, using_flatpak);
 
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-                var update_all_button = new Gtk.Button.with_label (_("Update All"));
-                if (update_numbers == nag_numbers || updating_all_apps) {
+                var update_all_button = new Gtk.Button.with_label (_("Update All")) {
+                    action_name = "app.update-all"
+                };
+                if (update_numbers == nag_numbers) {
                     update_all_button.sensitive = false;
                 }
 
                 update_all_button.valign = Gtk.Align.CENTER;
                 update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-                update_all_button.clicked.connect (on_update_all);
                 action_button_group.add_widget (update_all_button);
 
                 header.add (update_all_button);
@@ -300,49 +300,6 @@ namespace AppCenter.Views {
                 header.show_all ();
                 row.set_header (header);
             }
-        }
-
-        private void on_update_all () {
-            perform_all_updates.begin ();
-        }
-
-        private async void perform_all_updates () {
-            if (updating_all_apps) {
-                return;
-            }
-
-            updating_all_apps = true;
-
-            foreach (var row in list_box.get_children ()) {
-                if (row is Widgets.PackageRow) {
-                    ((Widgets.PackageRow) row).set_action_sensitive (false);
-                }
-            };
-
-            foreach (var package in get_packages ()) {
-                if (package.update_available && !package.should_pay) {
-                    try {
-                        yield package.update (false);
-                    } catch (Error e) {
-                        // If one package update was cancelled, drop out of the loop of updating the rest
-                        if (e is GLib.IOError.CANCELLED) {
-                            break;
-                        } else {
-                            var fail_dialog = new UpgradeFailDialog (package, e.message) {
-                                modal = true,
-                                transient_for = (Gtk.Window) get_toplevel ()
-                            };
-                            fail_dialog.present ();
-                            break;
-                        }
-                    }
-                }
-            }
-
-            unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-            yield client.refresh_updates ();
-
-            updating_all_apps = false;
         }
 
         private Gee.Collection<AppCenterCore.Package> get_packages () {

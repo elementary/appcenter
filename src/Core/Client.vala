@@ -76,6 +76,7 @@ public class AppCenterCore.Client : Object {
             notification.set_body (body);
             notification.set_icon (new ThemedIcon ("software-update-available"));
             notification.set_default_action ("app.show-updates");
+            notification.add_button (_("Update All"), "app.update-all");
 
             application.send_notification ("io.elementary.appcenter.updates", notification);
         } else {
