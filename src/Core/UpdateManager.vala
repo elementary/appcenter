@@ -21,7 +21,6 @@ public class AppCenterCore.UpdateManager : Object {
     public bool restart_required { public get; private set; default = false; }
     public Package os_updates { public get; private set; }
 
-
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
     private Gee.TreeSet<Package> apps_with_updates;
