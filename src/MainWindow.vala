@@ -20,12 +20,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private AppCenter.SearchView search_view;
     private Gtk.Revealer view_mode_revealer;
     private Gtk.SearchEntry search_entry;
-    private Gtk.Spinner spinner;
     private Gtk.ModelButton refresh_menuitem;
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
     private Granite.Widgets.Toast toast;
+    private Granite.Widgets.OverlayBar overlaybar;
     private Hdy.Deck deck;
 
     private AppCenterCore.Package? last_installed_package;
@@ -82,10 +82,38 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
+        aggregator.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
+
+        aggregator.notify ["job-type"].connect (() => {
+            switch (aggregator.job_type) {
+                case GET_DETAILS_FOR_PACKAGE_IDS:
+                case GET_PACKAGE_DEPENDENCIES:
+                case GET_PACKAGE_DETAILS:
+                case IS_PACKAGE_INSTALLED:
+                    overlaybar.label = _("Getting app information…");
+                    break;
+                case GET_DOWNLOAD_SIZE:
+                    overlaybar.label = _("Getting download size…");
+                    break;
+                case GET_INSTALLED_PACKAGES:
+                case GET_UPDATES:
+                case REFRESH_CACHE:
+                    overlaybar.label = _("Checking for updates…");
+                    break;
+                case INSTALL_PACKAGE:
+                    overlaybar.label = _("Installing…");
+                    break;
+                case UPDATE_PACKAGE:
+                    overlaybar.label = _("Installing updates…");
+                    break;
+                case REMOVE_PACKAGE:
+                    overlaybar.label = _("Uninstalling…");
+                    break;
+            }
+        });
 
         notify["working"].connect (() => {
             Idle.add (() => {
-                spinner.active = working;
                 App.refresh_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
@@ -176,8 +204,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var search_clamp = new Hdy.Clamp ();
         search_clamp.add (search_entry);
 
-        spinner = new Gtk.Spinner ();
-
         var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
             description = _("System updates and unpaid apps will not update automatically")
         };
@@ -218,7 +244,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         headerbar.pack_start (return_button);
         headerbar.pack_end (menu_button);
         headerbar.pack_end (view_mode_revealer);
-        headerbar.pack_end (spinner);
 
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
@@ -231,6 +256,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var overlay = new Gtk.Overlay ();
         overlay.add_overlay (toast);
         overlay.add (deck);
+
+        overlaybar = new Granite.Widgets.OverlayBar (overlay);
+        overlaybar.bind_property ("active", overlaybar, "visible");
 
         var network_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
             _("Network Not Available."),

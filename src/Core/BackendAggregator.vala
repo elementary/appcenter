@@ -68,10 +68,12 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         }
     }
 
+    public Job.Type job_type { get; protected set; }
     public bool working {
         get {
             foreach (var backend in backends) {
                 if (backend.working) {
+                    job_type = backend.job_type;
                     return true;
                 }
             }
