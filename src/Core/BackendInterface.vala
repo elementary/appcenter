@@ -23,6 +23,7 @@ public enum BackendType {
 }
 
 public interface AppCenterCore.Backend : Object {
+    public abstract Job.Type job_type { get; protected set; }
     public abstract bool working { public get; protected set; }
 
     public abstract async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null);

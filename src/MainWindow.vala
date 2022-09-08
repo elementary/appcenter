@@ -20,16 +20,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private AppCenter.SearchView search_view;
     private Gtk.Revealer view_mode_revealer;
     private Gtk.SearchEntry search_entry;
-    private Gtk.Spinner spinner;
     private Gtk.Button refresh_menuitem;
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
     private Granite.Toast toast;
+    private Granite.OverlayBar overlaybar;
     private Adw.Leaflet leaflet;
 
     private AppCenterCore.Package? last_installed_package;
-    private AppCenterCore.Package? selected_package;
 
     private bool mimetype;
 
@@ -43,7 +42,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.grab_focus ();
 
         var go_back = new SimpleAction ("go-back", null);
-        go_back.activate.connect (view_return);
+        go_back.activate.connect (() => leaflet.navigate (Adw.NavigationDirection.BACK));
         add_action (go_back);
 
         var focus_search = new SimpleAction ("focus-search", null);
@@ -55,14 +54,40 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        return_button.clicked.connect (view_return);
-
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
+        aggregator.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
+
+        aggregator.notify ["job-type"].connect (() => {
+            switch (aggregator.job_type) {
+                case GET_DETAILS_FOR_PACKAGE_IDS:
+                case GET_PACKAGE_DEPENDENCIES:
+                case GET_PACKAGE_DETAILS:
+                case IS_PACKAGE_INSTALLED:
+                    overlaybar.label = _("Getting app information…");
+                    break;
+                case GET_DOWNLOAD_SIZE:
+                    overlaybar.label = _("Getting download size…");
+                    break;
+                case GET_INSTALLED_PACKAGES:
+                case GET_UPDATES:
+                case REFRESH_CACHE:
+                    overlaybar.label = _("Checking for updates…");
+                    break;
+                case INSTALL_PACKAGE:
+                    overlaybar.label = _("Installing…");
+                    break;
+                case UPDATE_PACKAGE:
+                    overlaybar.label = _("Installing updates…");
+                    break;
+                case REMOVE_PACKAGE:
+                    overlaybar.label = _("Uninstalling…");
+                    break;
+            }
+        });
 
         notify["working"].connect (() => {
             Idle.add (() => {
-                spinner.spinning = working;
                 App.refresh_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
@@ -103,6 +128,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
 
         return_button = new Gtk.Button () {
+            action_name = "win.go-back",
             valign = Gtk.Align.CENTER,
             visible = false
         };
@@ -153,8 +179,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             child = search_entry
         };
 
-        spinner = new Gtk.Spinner ();
-
         var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
             description = _("System updates and unpaid apps will not update automatically")
         };
@@ -194,7 +218,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         headerbar.pack_start (return_button);
         headerbar.pack_end (menu_button);
         headerbar.pack_end (view_mode_revealer);
-        headerbar.pack_end (spinner);
 
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
@@ -209,6 +232,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             child = leaflet
         };
         overlay.add_overlay (toast);
+
+        overlaybar = new Granite.OverlayBar (overlay);
+        overlaybar.bind_property ("active", overlaybar, "visible");
 
         var network_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
             _("Network Not Available."),
@@ -342,8 +368,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return;
         }
 
-        selected_package = package;
-
         var package_hash = package.hash;
 
         var pk_child = leaflet.get_child_by_name (package_hash) as Views.AppInfoView;
@@ -445,20 +469,20 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public void send_installed_toast (AppCenterCore.Package package) {
         last_installed_package = package;
 
-        // Only show a toast when we're not on the installed app's page, i.e if
-        // no package is selected (we are not on an app page), or a package is 
-        // selected but it's not the app we're installing.
-        if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
-            toast.title = _("“%s” has been installed").printf (package.get_name ());
-            // Show Open only when a desktop app is installed
-            if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
-                toast.set_default_action (_("Open"));
-            } else {
-                toast.set_default_action (null);
-            }
-
-            toast.send_notification ();
+        // Only show a toast when we're not on the installed app's page
+        if (leaflet.visible_child is Views.AppInfoView && ((Views.AppInfoView) leaflet.visible_child).package == package) {
+            return;
         }
+
+        toast.title = _("“%s” has been installed").printf (package.get_name ());
+        // Show Open only when a desktop app is installed
+        if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
+            toast.set_default_action (_("Open"));
+        } else {
+            toast.set_default_action (null);
+        }
+
+        toast.send_notification ();
     }
 
     private void trigger_search () {
@@ -533,11 +557,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if (sensitive) {
             search_entry.grab_focus ();
         }
-    }
-
-    private void view_return () {
-        selected_package = null;
-        leaflet.navigate (Adw.NavigationDirection.BACK);
     }
 
     private void show_category (AppStream.Category category) {
