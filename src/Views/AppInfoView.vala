@@ -997,7 +997,7 @@ namespace AppCenter.Views {
                         screenshot_stack.visible_child = screenshot_overlay;
                         stack_context.remove_class ("loading");
 
-                        if (app_screenshots.n_pages  > 1) {
+                        if (app_screenshots.n_pages > 1) {
                             screenshot_next.visible = true;
                             screenshot_previous.visible = true;
                         }
