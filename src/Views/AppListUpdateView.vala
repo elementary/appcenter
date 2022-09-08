@@ -45,7 +45,9 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
-            header_label = new Granite.HeaderLabel ("");
+            header_label = new Granite.HeaderLabel ("") {
+                hexpand = true
+            };
 
             size_label = new Widgets.SizeLabel () {
                 halign = Gtk.Align.END,
@@ -111,8 +113,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
-
             orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
             add (header_revealer);
@@ -133,6 +133,13 @@ namespace AppCenter.Views {
                 update_header_info ();
             });
 
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            update_manager.bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+
+            update_manager.notify["updates-size"].connect (() => {
+                size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
+            });
+
             list_box.row_activated.connect ((row) => {
                 if (row is Widgets.PackageRow) {
                     show_app (((Widgets.PackageRow) row).get_package ());
@@ -147,26 +154,8 @@ namespace AppCenter.Views {
             if (client.updates_number > 0) {
                 header_revealer.reveal_child = true;
 
-                uint nag_numbers = 0U;
-                uint64 update_real_size = 0ULL;
-                bool using_flatpak = false;
-                foreach (var package in get_packages ()) {
-                    if (package.update_available || package.is_updating) {
-                        if (package.should_pay) {
-                            nag_numbers++;
-                        }
-
-                        if (!using_flatpak && package.is_flatpak) {
-                            using_flatpak = true;
-                        }
-
-                        update_real_size += package.change_information.size;
-                    }
-                }
-
-                size_label.update (update_real_size, using_flatpak);
-
-                if (client.updates_number == nag_numbers || updating_all_apps) {
+                unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+                if (client.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
                     update_all_button.sensitive = true;
@@ -365,27 +354,26 @@ namespace AppCenter.Views {
             update_all_button.sensitive = false;
             updating_all_apps = true;
 
-            foreach (var row in list_box.get_children ()) {
-                if (row is Widgets.PackageRow) {
-                    ((Widgets.PackageRow) row).set_action_sensitive (false);
-                }
-            };
+            foreach (unowned var child in list_box.get_children ()) {
+                if (child is Widgets.PackageRow) {
+                    ((Widgets.PackageRow) child).set_action_sensitive (false);
 
-            foreach (var package in get_packages ()) {
-                if (package.update_available && !package.should_pay) {
-                    try {
-                        yield package.update (false);
-                    } catch (Error e) {
-                        // If one package update was cancelled, drop out of the loop of updating the rest
-                        if (e is GLib.IOError.CANCELLED) {
-                            break;
-                        } else {
-                            var fail_dialog = new UpgradeFailDialog (package, e.message) {
-                                modal = true,
-                                transient_for = (Gtk.Window) get_toplevel ()
-                            };
-                            fail_dialog.present ();
-                            break;
+                    var package = ((Widgets.PackageRow) child).get_package ();
+                    if (package.update_available && !package.should_pay) {
+                        try {
+                            yield package.update (false);
+                        } catch (Error e) {
+                            // If one package update was cancelled, drop out of the loop of updating the rest
+                            if (e is GLib.IOError.CANCELLED) {
+                                break;
+                            } else {
+                                var fail_dialog = new UpgradeFailDialog (package, e.message) {
+                                    modal = true,
+                                    transient_for = (Gtk.Window) get_toplevel ()
+                                };
+                                fail_dialog.present ();
+                                break;
+                            }
                         }
                     }
                 }
@@ -395,17 +383,6 @@ namespace AppCenter.Views {
             yield client.refresh_updates ();
 
             updating_all_apps = false;
-        }
-
-        private Gee.Collection<AppCenterCore.Package> get_packages () {
-            var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
-            foreach (unowned var child in list_box.get_children ()) {
-                if (child is Widgets.PackageRow) {
-                    tree_set.add (((Widgets.PackageRow) child).get_package ());
-                }
-            }
-
-            return tree_set;
         }
 
         public async void add_app (AppCenterCore.Package package) {
