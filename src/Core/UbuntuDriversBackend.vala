@@ -18,7 +18,7 @@
  */
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
-
+    public Job.Type job_type { get; protected set; }
     public bool working { public get; protected set; }
 
     private Gee.TreeSet<Package>? cached_packages = null;
@@ -47,6 +47,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         }
 
         working = true;
+        job_type = Job.Type.GET_PACKAGE_DETAILS;
 
         cached_packages = new Gee.TreeSet<Package> ();
         var tokens = AppCenter.App.settings.get_strv ("cached-drivers");

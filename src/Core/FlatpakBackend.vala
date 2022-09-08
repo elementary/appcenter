@@ -48,6 +48,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
+    public Job.Type job_type { get; protected set; }
     public bool working { public get; protected set; }
 
     private string user_metadata_path;
@@ -65,6 +66,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private bool worker_func () {
         while (thread_should_run) {
             var job = jobs.pop ();
+            job_type = job.operation;
             working = true;
             switch (job.operation) {
                 case Job.Type.REFRESH_CACHE:
