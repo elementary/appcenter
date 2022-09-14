@@ -118,19 +118,13 @@ namespace AppCenter.Views {
             add (header_revealer);
             add (scrolled);
 
-            get_apps.begin ();
-
             unowned var client = AppCenterCore.Client.get_default ();
             client.installed_apps_changed.connect (() => {
-                Idle.add (() => {
-                    get_apps.begin ();
-                    return GLib.Source.REMOVE;
+                // Since header currently gets packages from the list not from the Client
+                // we must ensure list is updated before updating the header.
+                get_apps.begin (() => {
+                    update_header_info ();
                 });
-            });
-
-            update_header_info ();
-            client.notify["updates-number"].connect (() => {
-                update_header_info ();
             });
 
             list_box.row_activated.connect ((row) => {
@@ -150,7 +144,7 @@ namespace AppCenter.Views {
                 uint nag_numbers = 0U;
                 uint64 update_real_size = 0ULL;
                 bool using_flatpak = false;
-                foreach (var package in get_packages ()) {
+                foreach (var package in get_packages_in_list ()) {
                     if (package.update_available || package.is_updating) {
                         if (package.should_pay) {
                             nag_numbers++;
@@ -371,7 +365,7 @@ namespace AppCenter.Views {
                 }
             };
 
-            foreach (var package in get_packages ()) {
+            foreach (var package in get_packages_in_list ()) {
                 if (package.update_available && !package.should_pay) {
                     try {
                         yield package.update (false);
@@ -397,7 +391,7 @@ namespace AppCenter.Views {
             updating_all_apps = false;
         }
 
-        private Gee.Collection<AppCenterCore.Package> get_packages () {
+        private Gee.Collection<AppCenterCore.Package> get_packages_in_list () {
             var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
             foreach (unowned var child in list_box.get_children ()) {
                 if (child is Widgets.PackageRow) {
