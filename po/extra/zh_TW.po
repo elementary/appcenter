@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 05:44+0000\n"
+"PO-Revision-Date: 2022-09-18 05:46+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -68,7 +68,7 @@ msgstr "修正:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
+msgstr "防止後退按鈕消失或需要多次點擊"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 #: data/io.elementary.appcenter.appdata.xml.in:42
@@ -81,9 +81,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:146
 #: data/io.elementary.appcenter.appdata.xml.in:161
 #: data/io.elementary.appcenter.appdata.xml.in:174
-#, fuzzy
 msgid "Improvements:"
-msgstr "有多項臭蟲修正和效能改善"
+msgstr "改善:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show a warning dialog about apps from alt stores"
