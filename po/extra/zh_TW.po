@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 05:48+0000\n"
+"PO-Revision-Date: 2022-09-18 05:50+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -90,11 +90,11 @@ msgstr "不顯示針對來自替代商店的應用程序發出的警示對話框
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "在工具提示中顯示屏幕截圖標題"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
+msgstr "在應用程序的價格為 0 時顯示“免費試用”"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 #: data/io.elementary.appcenter.appdata.xml.in:246
