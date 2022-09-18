@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 05:58+0000\n"
+"PO-Revision-Date: 2022-09-18 06:02+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -136,15 +136,15 @@ msgstr "无索引結果時鏈接到 Flathub 的搜索頁面"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Amusements appear in the Games category"
-msgstr ""
+msgstr "在遊戲類別中显示娛樂"
 
 #: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "以網格而不是列表顯示類別"
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Allow window to shrink to much narrower sizes"
-msgstr ""
+msgstr "允許窗口縮小到更窄尺寸"
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 msgid "Correctly show the installed status of first-party applications"
