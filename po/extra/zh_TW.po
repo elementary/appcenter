@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 06:10+0000\n"
+"PO-Revision-Date: 2022-09-18 06:13+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -172,15 +172,15 @@ msgstr "以更簡潔的方式顯示安裝進度"
 
 #: data/io.elementary.appcenter.appdata.xml.in:88
 msgid "Show content warnings on app info pages"
-msgstr ""
+msgstr "在應用信息頁面上顯示內容分级警告"
 
 #: data/io.elementary.appcenter.appdata.xml.in:92
 msgid "Show other apps by an author for Flatpak sources"
-msgstr ""
+msgstr "顯示作者 Flatpak 源的其他應用"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
 msgid "Populate banner on home locally instead of relying on an external API"
-msgstr ""
+msgstr "不依賴外部 API，本地填充主頁上的橫幅"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Greatly increased number of recently-updated apps shown on home page"
