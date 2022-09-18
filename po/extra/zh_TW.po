@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 06:02+0000\n"
+"PO-Revision-Date: 2022-09-18 06:07+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -152,7 +152,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:72
 msgid "Don't store $0 app installs as paid"
-msgstr ""
+msgstr "不要將 0元的應用安裝為付費應用"
 
 #: data/io.elementary.appcenter.appdata.xml.in:73
 msgid "Fix missing illicit substances icon"
