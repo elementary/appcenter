@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 05:42+0000\n"
+"PO-Revision-Date: 2022-09-18 05:44+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -51,7 +51,7 @@ msgstr "手動檢查更新"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Warn when apps are built against older runtimes"
-msgstr ""
+msgstr "在運行針對舊運行時構建的應用程序時發出警告"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:38
@@ -64,7 +64,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:154
 #: data/io.elementary.appcenter.appdata.xml.in:182
 msgid "Fixes:"
-msgstr ""
+msgstr "修正:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Prevent back button from disappearing or requiring multiple clicks"
