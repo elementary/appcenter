@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 05:40+0000\n"
+"PO-Revision-Date: 2022-09-18 05:42+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -39,17 +39,15 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:86
 #: data/io.elementary.appcenter.appdata.xml.in:169
 msgid "New features:"
-msgstr "新特性"
+msgstr "新特性:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Added an option to automatically update apps"
-msgstr ""
+msgstr "現已支持自動更新軟體"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "檢查更新"
+msgstr "手動檢查更新"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Warn when apps are built against older runtimes"
