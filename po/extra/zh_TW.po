@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 06:07+0000\n"
+"PO-Revision-Date: 2022-09-18 06:10+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -156,19 +156,19 @@ msgstr "不要將 0元的應用安裝為付費應用"
 
 #: data/io.elementary.appcenter.appdata.xml.in:73
 msgid "Fix missing illicit substances icon"
-msgstr ""
+msgstr "修復非法物質圖標丢失"
 
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "Don't show plugins on the homepage"
-msgstr ""
+msgstr "不要在主頁上顯示插件"
 
 #: data/io.elementary.appcenter.appdata.xml.in:75
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr ""
+msgstr "僅顯示遊戲的“多人”徽章"
 
 #: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "以更簡潔的方式顯示安裝進度"
 
 #: data/io.elementary.appcenter.appdata.xml.in:88
 msgid "Show content warnings on app info pages"
