@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-09-18 06:13+0000\n"
+"PO-Revision-Date: 2022-09-18 06:17+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -184,7 +184,7 @@ msgstr "不依賴外部 API，本地填充主頁上的橫幅"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Greatly increased number of recently-updated apps shown on home page"
-msgstr ""
+msgstr "大幅增加在主頁上顯示最近更新的應用程序的數量"
 
 #: data/io.elementary.appcenter.appdata.xml.in:98
 msgid "Navigate banners on the home page with multitouch gestures"
