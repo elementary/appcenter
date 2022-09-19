@@ -120,24 +120,15 @@ namespace AppCenter.Views {
 
             get_apps.begin ();
 
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            update_manager.bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+
             unowned var client = AppCenterCore.Client.get_default ();
             client.installed_apps_changed.connect (() => {
                 Idle.add (() => {
                     get_apps.begin ();
                     return GLib.Source.REMOVE;
                 });
-            });
-
-            update_header_info ();
-            client.notify["updates-number"].connect (() => {
-                update_header_info ();
-            });
-
-            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            update_manager.bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
-
-            update_manager.notify["updates-size"].connect (() => {
-                size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
             });
 
             list_box.row_activated.connect ((row) => {
@@ -147,28 +138,6 @@ namespace AppCenter.Views {
             });
 
             update_all_button.clicked.connect (on_update_all);
-        }
-
-        private void update_header_info () {
-            unowned var client = AppCenterCore.Client.get_default ();
-            if (client.updates_number > 0) {
-                header_revealer.reveal_child = true;
-
-                unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-                if (client.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
-                    update_all_button.sensitive = false;
-                } else {
-                    update_all_button.sensitive = true;
-                }
-
-                header_label.label = ngettext (
-                    "%u Update Available",
-                    "%u Updates Available",
-                    client.updates_number
-                ).printf (client.updates_number);
-            } else {
-                header_revealer.reveal_child = false;
-            }
         }
 
         private async void get_apps () {
@@ -190,6 +159,28 @@ namespace AppCenter.Views {
                 add_package (os_updates);
                 add_packages (installed_apps);
             }
+
+            if (client.updates_number > 0) {
+                header_revealer.reveal_child = true;
+
+                unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+                if (client.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
+                    update_all_button.sensitive = false;
+                } else {
+                    update_all_button.sensitive = true;
+                }
+
+                header_label.label = ngettext (
+                    "%u Update Available",
+                    "%u Updates Available",
+                    client.updates_number
+                ).printf (client.updates_number);
+            } else {
+                header_revealer.reveal_child = false;
+            }
+
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
