@@ -148,17 +148,6 @@ namespace AppCenter.Views {
             // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
             refresh_cancellable = new Cancellable ();
             unowned var client = AppCenterCore.Client.get_default ();
-
-            var installed_apps = yield client.get_installed_applications (refresh_cancellable);
-
-            if (!refresh_cancellable.is_cancelled ()) {
-                clear ();
-
-                var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
-                add_package (os_updates);
-                add_packages (installed_apps);
-            }
-
             if (client.updates_number > 0) {
                 header_revealer.reveal_child = true;
 
@@ -174,12 +163,21 @@ namespace AppCenter.Views {
                     "%u Updates Available",
                     client.updates_number
                 ).printf (client.updates_number);
+
+                size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
             } else {
                 header_revealer.reveal_child = false;
             }
 
-            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
+            var installed_apps = yield client.get_installed_applications (refresh_cancellable);
+
+            if (!refresh_cancellable.is_cancelled ()) {
+                clear ();
+
+                var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
+                add_package (os_updates);
+                add_packages (installed_apps);
+            }
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
