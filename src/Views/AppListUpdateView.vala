@@ -113,15 +113,14 @@ namespace AppCenter.Views {
                 }
             });
 
+            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+
             orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
             add (header_revealer);
             add (scrolled);
 
             get_apps.begin ();
-
-            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            update_manager.bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             unowned var client = AppCenterCore.Client.get_default ();
             client.installed_apps_changed.connect (() => {
