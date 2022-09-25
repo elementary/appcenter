@@ -78,7 +78,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         add (box);
     }
 
-    public static string format_release_header (AppStream.Release release, bool with_date) {
+    private static string format_release_header (AppStream.Release release, bool with_date) {
         string label;
 
         unowned string version = release.get_version ();
@@ -103,7 +103,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         return label;
     }
 
-    public static string format_release_description (AppStream.Release release) {
+    private string format_release_description (AppStream.Release release) {
         string description = release.get_description ();
         if (description != null) {
             try {
