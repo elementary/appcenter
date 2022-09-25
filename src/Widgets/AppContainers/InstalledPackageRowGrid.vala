@@ -139,7 +139,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             };
             releases_title.get_style_context ().add_class ("primary");
 
-            var release_description = new Gtk.Label (ReleaseRow.format_release_description (package.get_newest_release ())) {
+            var release_description = new Gtk.Label (ReleaseRow.format_release_description (package.get_newest_release ().get_description ())) {
                 selectable = true,
                 use_markup = true,
                 wrap = true,

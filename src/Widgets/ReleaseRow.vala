@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2022 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,82 +17,77 @@
  * Authored by: Adam Bieńkowski <donadigos159@gmail.com>
  */
 
-public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
+public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
     public AppStream.Release release { get; construct; }
-
-    private Gtk.Label header_label;
-    private Gtk.Label description_label;
 
     public ReleaseRow (AppStream.Release release) {
         Object (release: release);
     }
 
     construct {
-        string header = format_release_header (release, true);
-        string description = format_release_description (release);
+        var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic", Gtk.IconSize.MENU);
 
-        header_label = new Gtk.Label (header);
-        header_label.use_markup = true;
-        header_label.xalign = 0;
+        var header_label = new Gtk.Label (format_version (release.get_version ())) {
+            use_markup = true
+        };
         header_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        description_label = new Gtk.Label (description);
-        description_label.max_width_chars = 100;
-        description_label.selectable = true;
-        description_label.use_markup = true;
-        description_label.wrap = true;
-        description_label.xalign = 0;
+        var date_label = new Gtk.Label (format_date (release.get_timestamp ())) {
+            halign = Gtk.Align.START,
+            hexpand = true
+        };
+        date_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
+            selectable = true,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
         description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var grid = new Gtk.Grid ();
-        grid.margin_bottom = 6;
-        grid.attach (header_label, 0, 0, 1, 1);
-        grid.attach (description_label, 0, 1, 1, 1);
+        var grid = new Gtk.Grid () {
+            column_spacing = 6,
+            row_spacing = 6,
+            margin_bottom = 6
+        };
+        grid.attach (header_icon, 0, 0);
+        grid.attach (header_label, 1, 0);
+        grid.attach (date_label, 2, 0);
+        grid.attach (description_label, 0, 1, 3);
 
         add (grid);
     }
 
-    public static string format_release_header (AppStream.Release release, bool with_date) {
-        string label;
-
-        unowned string version = release.get_version ();
-
-        uint64 timestamp = release.get_timestamp ();
-        if (with_date && timestamp != 0) {
-            var date_time = new DateTime.from_unix_utc ((int64)timestamp);
-            string format = Granite.DateTime.get_default_date_format (false, true, true);
-            string date = date_time.format (format);
-
-            if (version != null) {
-                label = _("<b>%s</b> – %s").printf (version, date);
-            } else {
-                label = date;
-            }
-        } else if (version != null) {
-            label = "<b>%s</b>".printf (version);
-        } else {
-            label = _("Unknown version");
+    private string format_date (uint64 timestamp) {
+        if (timestamp != 0) {
+            return Granite.DateTime.get_relative_datetime (new DateTime.from_unix_utc ((int64) timestamp));
         }
 
-        return label;
+        return _("Unknown date");
     }
 
-    public static string format_release_description (AppStream.Release release) {
-        string description = release.get_description ();
+    private string format_version (string version) {
+        if (version != null) {
+            return "<b>%s</b>".printf (version);
+        } else {
+            return _("Unknown version");
+        }
+    }
+
+    public static string format_release_description (string? description ) {
         if (description != null) {
             try {
-                description = AppStream.markup_convert_simple (description);
+                var markup = AppStream.markup_convert_simple (description);
+
+                if (markup.strip () != "") {
+                    return markup;
+                }
             } catch (Error e) {
                 warning (e.message);
             }
-
-            if (description.strip () == "") {
-                description = _("No description available");
-            }
-        } else {
-            description = _("No description available");
         }
 
-        return description;
+        return _("No description available");
     }
 }
