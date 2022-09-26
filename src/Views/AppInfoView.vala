@@ -937,13 +937,34 @@ namespace AppCenter.Views {
                 get_app_download_size.begin ();
 
                 Idle.add (() => {
-                    var releases = package.get_newest_releases (1, 5);
-                    foreach (var release in releases) {
-                        var row = new AppCenter.Widgets.ReleaseRow (release);
-                        release_list_box.add (row);
+                    var releases = package.component.get_releases ();
+
+                    foreach (unowned var release in releases) {
+                        if (release.get_version () == null) {
+                            releases.remove (release);
+                        }
                     }
 
-                    if (releases.size > 0) {
+                    if (releases.length > 0) {
+                        releases.sort_with_data ((a, b) => {
+                            return b.vercmp (a);
+                        });
+
+                        foreach (unowned var release in releases) {
+                            var row = new Widgets.ReleaseRow (release) {
+                                margin_bottom = 24
+                            };
+                            release_list_box.add (row);
+
+                            if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
+                                break;
+                            }
+
+                            if (release_list_box.get_children ().length () == 5) {
+                                break;
+                            }
+                        }
+
                         release_grid.no_show_all = false;
                         release_grid.show_all ();
                     }
