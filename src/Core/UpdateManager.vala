@@ -20,6 +20,9 @@
 public class AppCenterCore.UpdateManager : Object {
     public bool restart_required { public get; private set; default = false; }
     public Package os_updates { public get; private set; }
+    public int unpaid_apps_number { get; private set; default = 0; }
+    public uint64 updates_size { get; private set; default = 0ULL; }
+    public bool has_flatpak_updates { get; private set; default = false; }
 
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
@@ -44,6 +47,9 @@ public class AppCenterCore.UpdateManager : Object {
     public async uint get_updates (Cancellable? cancellable = null) {
         var apps_with_updates = new Gee.TreeSet<Package> ();
         uint count = 0;
+        has_flatpak_updates = false;
+        unpaid_apps_number = 0;
+        updates_size = 0ULL;
 
         // Clear any packages previously marked as updatable
         var installed_packages = yield BackendAggregator.get_default ().get_installed_applications ();
@@ -75,6 +81,7 @@ public class AppCenterCore.UpdateManager : Object {
                 apps_with_updates.add (appcenter_package);
                 count++;
                 appcenter_package.latest_version = pk_package.get_version ();
+                updates_size += appcenter_package.change_information.size;
             } else {
                 debug ("Added %s to OS updates", pkg_name);
                 os_count++;
@@ -104,8 +111,14 @@ public class AppCenterCore.UpdateManager : Object {
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
 
+                if (appcenter_package.should_pay) {
+                    unpaid_apps_number++;
+                }
+
                 if (!auto_update_enabled || appcenter_package.should_pay) {
                     count++;
+                    updates_size += appcenter_package.change_information.size;
+                    has_flatpak_updates = true;
                 }
 
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
@@ -147,6 +160,7 @@ public class AppCenterCore.UpdateManager : Object {
                     warning ("Unable to get flatpak download size: %s", e.message);
                 }
 
+                updates_size += dl_size;
                 os_updates.change_information.size += dl_size;
                 os_updates.change_information.updatable_packages.@set (fp_client, flatpak_update);
             }
