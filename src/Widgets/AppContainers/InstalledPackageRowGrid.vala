@@ -129,7 +129,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         }
 
         construct {
-            title = _("What's new in %s %s").printf (package.get_name (), package.get_version ());
+            title = _("What's new in %s").printf (package.get_name ());
             modal = true;
 
             var releases_title = new Gtk.Label (title) {
@@ -139,12 +139,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             };
             releases_title.get_style_context ().add_class ("primary");
 
-            var release_description = new Gtk.Label (ReleaseRow.format_release_description (package.get_newest_release ())) {
-                selectable = true,
-                use_markup = true,
-                wrap = true,
-                xalign = 0
-            };
+            var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ());
 
             var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
                 margin_end = 12,
@@ -152,7 +147,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                 vexpand = true
             };
             releases_dialog_box.append (releases_title);
-            releases_dialog_box.append (release_description);
+            releases_dialog_box.append (release_row);
 
             get_content_area ().append (releases_dialog_box);
 
