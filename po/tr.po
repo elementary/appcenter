@@ -13,11 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-06-05 19:31+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,68 +26,129 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:343
+#: src/Application.vala:38 src/Core/Package.vala:325
 msgid "AppCenter"
 msgstr "Uygulama Merkezi"
 
-#: src/Application.vala:123
+#: src/Application.vala:85
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Medya türü %s ayrıştırılamadı"
 
-#: src/Application.vala:143
+#: src/Application.vala:105
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapılıyor"
 
-#: src/Application.vala:307
+#: src/Application.vala:297
 msgid "The app has been installed"
 msgstr "Uygulama yüklendi"
 
-#. Only show a toast when we're not on the installed app's page, i.e if
-#. no package is selected (we are not on an app page), or a package is
-#. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:390
+#: src/Application.vala:298 src/MainWindow.vala:527
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" yüklendi"
 
-#: src/MainWindow.vala:129
+#: src/MainWindow.vala:93
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "Bilgi alınıyor"
+
+#: src/MainWindow.vala:96
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:101
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Checking for updates…"
+msgstr "Güncellemeler Denetleniyor"
+
+#: src/MainWindow.vala:104
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "Yükleniyor"
+
+#: src/MainWindow.vala:107
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "Güncelleştirmeler yükleniyor"
+
+#: src/MainWindow.vala:110
+#, fuzzy
+#| msgid "Uninstalling"
+msgid "Uninstalling…"
+msgstr "Kaldırılıyor"
+
+#: src/MainWindow.vala:140
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" başlatılamadı"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:265
+#: src/MainWindow.vala:187
+#, fuzzy
+#| msgid "Failed to install app"
+msgctxt "view"
+msgid "Updates & installed apps"
+msgstr "Uygulama yüklenemedi"
+
+#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+msgid "Search Apps"
+msgstr "Uygulama Ara"
+
+#: src/MainWindow.vala:207
+msgid "Automatic App Updates"
+msgstr "Uygulamaları Otomatik Güncelle"
+
+#: src/MainWindow.vala:208
+msgid "System updates and unpaid apps will not update automatically"
+msgstr "Sistem güncellemeleri ve ücretsiz uygulamalar otomatik olarak güncellenmez"
+
+#: src/MainWindow.vala:212
+msgid "Check for Updates"
+msgstr "Güncellemeleri Denetle"
+
+#: src/MainWindow.vala:236
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: src/MainWindow.vala:264
+msgid "Network Not Available."
+msgstr "Ağ Bağlantısı Kullanılamıyor."
+
+#: src/MainWindow.vala:265
+msgid "Connect to the Internet to browse and install apps."
+msgstr "Uygulamalara göz atmak ve yüklemek için İnternet'e bağlanın."
+
+#: src/MainWindow.vala:275
+msgid "Network Settings…"
+msgstr "Ağ Ayarları…"
+
+#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#, c-format
+msgid "Search %s"
+msgstr "%s içinde ara"
+
+#: src/MainWindow.vala:484
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:62
+#. / TRANSLATORS: the name of the Search view
+#: src/MainWindow.vala:487
+msgctxt "view"
+msgid "Search"
+msgstr "Ara"
+
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Installed"
 msgstr "Yüklendi"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:249
-msgid "Search Apps"
-msgstr "Uygulama Ara"
-
-#: src/MainWindow.vala:206
-msgid "Automatic App Updates"
-msgstr "Uygulamaları Otomatik Güncelle"
-
-#: src/MainWindow.vala:207
-msgid "System updates and unpaid apps will not update automatically"
-msgstr "Sistem güncellemeleri ve ücretsiz uygulamalar otomatik olarak güncellenmez"
-
-#: src/MainWindow.vala:211
-msgid "Check for Updates"
-msgstr "Güncellemeleri Denetle"
-
-#: src/MainWindow.vala:235
-msgid "Settings"
-msgstr "Ayarlar"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:530
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Aç"
@@ -97,7 +157,7 @@ msgstr "Aç"
 msgid "Starting"
 msgstr "Başlatılıyor"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:292
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "Bekliyor"
@@ -122,7 +182,7 @@ msgstr "Paketler kaldırılıyor"
 msgid "Downloading"
 msgstr "İndiriliyor"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
 msgid "Installing"
 msgstr "Yükleniyor"
 
@@ -167,9 +227,9 @@ msgid "Finished"
 msgstr "Tamamlandı"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
-#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
-#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
+#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
+#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
+#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
 msgid "Cancelling"
 msgstr "İptal ediliyor"
 
@@ -258,88 +318,88 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Sisteminiz için %u güncelleme var"
 msgstr[1] "Sisteminiz için %u güncelleme var"
 
-#: src/Core/FlatpakBackend.vala:1270
+#: src/Core/FlatpakBackend.vala:1272
 msgid "Uninstalling"
 msgstr "Kaldırılıyor"
 
-#: src/Core/FlatpakBackend.vala:1440
+#: src/Core/FlatpakBackend.vala:1442
 msgid "Updating"
 msgstr "Güncelleniyor"
 
-#: src/Core/Package.vala:313
+#: src/Core/Package.vala:301
 #, c-format
 msgid "%s Developers"
 msgstr "%s Geliştiricileri"
 
-#: src/Core/Package.vala:345
+#: src/Core/Package.vala:327
 msgid "elementary Updates"
 msgstr "elementary Güncellemeleri"
 
-#: src/Core/Package.vala:347
+#: src/Core/Package.vala:329
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (doğrulanmamış)"
 
-#: src/Core/Package.vala:352
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (sistem geneli)"
 
-#: src/Core/Package.vala:357
+#: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu Sürücüleri"
 
-#: src/Core/Package.vala:360
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
 msgstr "Bilinmeyen Kaynak (doğrulanmamış)"
 
-#: src/Core/Package.vala:532
+#: src/Core/Package.vala:514
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
 
-#: src/Core/PackageKitBackend.vala:297
+#: src/Core/PackageKitBackend.vala:299
 #, c-format
 msgid "%s (local)"
 msgstr "%s (yerel)"
 
-#: src/Core/UpdateManager.vala:37
+#: src/Core/UpdateManager.vala:40
 msgid "Operating System Updates"
 msgstr "İşletim Sistemi Güncellemeleri"
 
-#: src/Core/UpdateManager.vala:38
+#: src/Core/UpdateManager.vala:41
 msgid "Updates to system components"
 msgstr "Sistem bileşenleri için güncellemeler"
 
-#: src/Core/UpdateManager.vala:87
+#: src/Core/UpdateManager.vala:94
 #, c-format
 msgid "Version: %s"
 msgstr "Sürüm: %s"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:153
 msgid "Flatpak runtime"
 msgstr "Flatpak çalışma zamanı"
 
-#: src/Core/UpdateManager.vala:157
+#: src/Core/UpdateManager.vala:171
 msgid "No components with updates"
 msgstr "Güncellenecek bileşen yok"
 
-#: src/Core/UpdateManager.vala:162
+#: src/Core/UpdateManager.vala:176
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u bileşenin güncellemesi var"
 msgstr[1] "%u bileşenin güncellemesi var"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:178
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:202
+#: src/Core/UpdateManager.vala:216
 msgid "Restart Required"
 msgstr "Yeniden Başlatma Gerekli"
 
-#: src/Core/UpdateManager.vala:203
+#: src/Core/UpdateManager.vala:217
 msgid "Please restart your system to finalize updates"
 msgstr "Lütfen güncellemeler bittikten sonra sisteminizi yeniden başlatın"
 
@@ -347,11 +407,11 @@ msgstr "Lütfen güncellemeler bittikten sonra sisteminizi yeniden başlatın"
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Bu geçici bir sorun veya harici ya da elle derlenmiş yazılımlardan kaynaklanmış olabilir."
 
-#: src/Dialogs/InstallFailDialog.vala:37
+#: src/Dialogs/InstallFailDialog.vala:36
 msgid "Failed to install app"
 msgstr "Uygulama yüklenemedi"
 
-#: src/Dialogs/InstallFailDialog.vala:40
+#: src/Dialogs/InstallFailDialog.vala:39
 #, c-format
 msgid "Failed to install “%s”"
 msgstr "\"%s\" yüklenemedi"
@@ -364,140 +424,140 @@ msgstr "Kart işlenirken hata oluştu. Lütfen daha sonra tekrar deneyiniz. Verd
 msgid "Please review your payment info and try again."
 msgstr "Lütfen ödeme bilgilerinizi gözden geçirin ve tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:73
+#: src/Dialogs/StripeDialog.vala:72
 msgid "Payment"
 msgstr "Ödeme"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%s için %d$ öde"
 
-#: src/Dialogs/StripeDialog.vala:94
+#: src/Dialogs/StripeDialog.vala:98
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Bu, geliştirici tarafından önerilen tek seferlik bir ödemedir. Ayrıca kendi fiyatınızı da seçebilirsiniz."
 
-#: src/Dialogs/StripeDialog.vala:115
+#: src/Dialogs/StripeDialog.vala:119
 msgid "or"
 msgstr "veya"
 
-#: src/Dialogs/StripeDialog.vala:152
+#: src/Dialogs/StripeDialog.vala:154
 msgid "Email"
 msgstr "E-posta"
 
-#: src/Dialogs/StripeDialog.vala:157
+#: src/Dialogs/StripeDialog.vala:159
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Sadece size makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone edilmeyeceksiniz."
 
-#: src/Dialogs/StripeDialog.vala:158
+#: src/Dialogs/StripeDialog.vala:160
 msgid "Privacy Policy"
 msgstr "Gizlilik Politikası"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:182
+#: src/Dialogs/StripeDialog.vala:184
 msgid "MM / YY"
 msgstr "AA / YY"
 
-#: src/Dialogs/StripeDialog.vala:190
+#: src/Dialogs/StripeDialog.vala:192
 msgid "CVC"
 msgstr "CVC (Güvenlik Kodu)"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "Vazgeç"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
+#: src/Dialogs/StripeDialog.vala:393
 #, c-format
 msgid "Pay $%d.00"
 msgstr "%d.00$ Öde"
 
-#: src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:251
 msgid "Try for Free"
 msgstr "Ücretsiz Deneyin"
 
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:314
 msgid "Processing"
 msgstr "İşleniyor"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:341
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Ödemenizi İşleme Sırasında Bir Sorun Oluştu"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:385
 msgid "Pay Later"
 msgstr "Daha Sonra Öde"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:386
 msgid "Retry"
 msgstr "Tekrar Dene"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Kart numarası yanlış. Lütfen doğru kart numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:569
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC numarası yanlış. Lütfen doğru CVC numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kartın kullanım süresi dolmuş. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:596
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Şu anda çok fazla ödeme talebi var, lütfen daha sonra tekrar deneyiniz."
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:612
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Bu kart bu tür bir işlemi desteklemiyor. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Para birimi bu kart tarafından desteklenmiyor. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:616
 msgid "The transaction has already been processed."
 msgstr "Bu işlem zaten işlendi."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:620
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Posta kodu hatalıdır. Lütfen doğru posta koduyla tekrar deneyiniz."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:622
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Yeterli bakiyeniz yok. Lütfen alternatif bir ödeme yöntemi kullanın."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:624
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Bu miktar yanlış. Lütfen geçerli bir miktar kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:635
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN numarası yanlış. Lütfen doğru PIN numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:637
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Çok fazla PIN denemesi yapıldı. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:647
+#: src/Dialogs/StripeDialog.vala:657
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "İşlem tamamlanamadı. Daha fazla bilgi için lütfen bankanıza başvurun."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:660
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Karttaki bakiye veya kredi limitine ulaşılmıştır."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Kullanılan kart test kartıdır. Devam etmek için lütfen gerçek bir kart kullanınız."
 
@@ -505,29 +565,28 @@ msgstr "Kullanılan kart test kartıdır. Devam etmek için lütfen gerçek bir 
 msgid "Uninstalling this app may also delete its data."
 msgstr "Bu uygulamayı kaldırmak uygulamanın verilerinide silebilir."
 
-#: src/Dialogs/UninstallConfirmDialog.vala:35
+#: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
 msgstr "Uygulama kaldırılsın mı?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:38
+#: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
 msgstr "\"%s\" kaldırılsın mı?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:42 src/Views/AppInfoView.vala:595
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:641
 msgid "Uninstall"
 msgstr "Kaldır"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
 msgstr "Buna harici veya elle derlenmiş yazılımlar neden olmuş olabilir."
 
-#: src/Dialogs/UninstallFailDialog.vala:37
+#: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
 msgstr "Uygulama kaldırılamadı"
 
-#: src/Dialogs/UninstallFailDialog.vala:40
+#: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
 msgstr "\"%s\" kaldırılamadı"
@@ -548,287 +607,372 @@ msgstr "Yoksay"
 msgid "Try Again"
 msgstr "Tekrar Dene"
 
-#: src/Dialogs/UpgradeFailDialog.vala:37
+#: src/Dialogs/UpgradeFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgstr "Bunun nedeni elle eklenen harici dosyalar, yazılım depoları veya bozuk bir kaynak dosyası olabilir."
+
+#: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"
 msgstr "Uygulama güncellenemedi"
 
-#: src/Dialogs/UpgradeFailDialog.vala:40
+#: src/Dialogs/UpgradeFailDialog.vala:39
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "\"%s\" güncellenemedi"
 
-#: src/Views/AppInfoView.vala:95
+#: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
 msgstr "Yasadışı Maddeler"
 
-#: src/Views/AppInfoView.vala:96
+#: src/Views/AppInfoView.vala:132
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Alkol, uyuşturucu veya tütün ürünlerinin varlığı ve bunlara atıfta bulunulması"
 
-#: src/Views/AppInfoView.vala:101
+#: src/Views/AppInfoView.vala:137
 msgid "Sex & Nudity"
 msgstr "Cinsellik ve Çıplaklık"
 
-#: src/Views/AppInfoView.vala:102
+#: src/Views/AppInfoView.vala:138
 msgid "Adult nudity or sexual themes"
 msgstr "Yetişkin çıplaklığı veya cinsel temalar"
 
-#: src/Views/AppInfoView.vala:107
+#: src/Views/AppInfoView.vala:143
 msgid "Offensive Language"
 msgstr "Rahatsız Edici Dil"
 
-#: src/Views/AppInfoView.vala:108
+#: src/Views/AppInfoView.vala:144
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Küfür, ayrımcı dil veya yetişkinlere yönelik mizah"
 
-#: src/Views/AppInfoView.vala:113
+#: src/Views/AppInfoView.vala:149
 msgid "Gambling"
 msgstr "Kumar"
 
-#: src/Views/AppInfoView.vala:114
+#: src/Views/AppInfoView.vala:150
 msgid "Realistic or participatory gambling"
 msgstr "Gerçekçi veya katılımcı kumar"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:175
 msgid "Non-Curated"
 msgstr "Doğrulanmamış"
 
-#: src/Views/AppInfoView.vala:132
+#: src/Views/AppInfoView.vala:176
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "Güvenlik, gizlilik veya sistem entegrasyonu elementary tarafından incelenmemiştir"
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:198
 msgid "Conflict"
 msgstr "Çakışma"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:199
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Güvenli olmayan durumların veya agresif çatışmaların tasvirleri"
 
-#: src/Views/AppInfoView.vala:168
+#: src/Views/AppInfoView.vala:212
 msgid "Violence"
 msgstr "Şiddet"
 
-#: src/Views/AppInfoView.vala:173
+#: src/Views/AppInfoView.vala:217
 msgid "Fantasy Violence"
 msgstr "Hayal Ürünü Şiddet"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:222
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Çarpıcı şiddet, kan dökülmesi veya ölüm"
 
-#: src/Views/AppInfoView.vala:222
+#: src/Views/AppInfoView.vala:266
 msgid "Multiplayer"
 msgstr "Çok Oyunculu"
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:267
 msgid "Online play with other people"
 msgstr "Diğer insanlarla çevrimiçi oyun"
 
-#: src/Views/AppInfoView.vala:239
+#: src/Views/AppInfoView.vala:283
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Başkalarıyla yönetilmeyen Ses, Video veya Metin mesajlaşması"
 
-#: src/Views/AppInfoView.vala:241
+#: src/Views/AppInfoView.vala:285
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Başkalarıyla yönetilen Ses, Video veya Metin mesajlaşması"
 
-#: src/Views/AppInfoView.vala:245
+#: src/Views/AppInfoView.vala:289
 msgid "Online Interactions"
 msgstr "Çevrimiçi Etkileşimler"
 
-#: src/Views/AppInfoView.vala:255
+#: src/Views/AppInfoView.vala:299
 msgid "Location Sharing"
 msgstr "Konum Paylaşımı"
 
-#: src/Views/AppInfoView.vala:256
+#: src/Views/AppInfoView.vala:300
 msgid "Other people can see your real-world location"
 msgstr "Diğer insanlar gerçek dünyadaki konumunuzu görebilir"
 
-#: src/Views/AppInfoView.vala:268
+#: src/Views/AppInfoView.vala:312
 msgid "Collects anonymous usage data"
 msgstr "Anonim kullanım verileri toplar"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:315
 msgid "Collects usage data that could be used to identify you"
 msgstr "Sizi tanımlamak için kullanılabilecek kullanım verileri toplar"
 
-#: src/Views/AppInfoView.vala:276
+#: src/Views/AppInfoView.vala:320
 msgid "Info Sharing"
 msgstr "Bilgi Paylaşımı"
 
-#: src/Views/AppInfoView.vala:393
+#: src/Views/AppInfoView.vala:440
 msgid "Screenshot Not Available"
 msgstr "Ekran Görüntüsü Yok"
 
-#: src/Views/AppInfoView.vala:494
+#: src/Views/AppInfoView.vala:551
 msgid "Homepage"
 msgstr "Ana Sayfa"
 
-#: src/Views/AppInfoView.vala:500
+#: src/Views/AppInfoView.vala:557
 msgid "Translate"
 msgstr "Çevir"
 
-#: src/Views/AppInfoView.vala:506
+#: src/Views/AppInfoView.vala:563
 msgid "Send Feedback"
 msgstr "Geri Bildirim Gönder"
 
-#: src/Views/AppInfoView.vala:512
+#: src/Views/AppInfoView.vala:569
 msgid "Help"
 msgstr "Yardım"
 
-#: src/Views/AppInfoView.vala:523
+#: src/Views/AppInfoView.vala:580
 msgid "What's New:"
 msgstr "Yenilikler:"
 
-#: src/Views/AppInfoView.vala:569
+#: src/Views/AppInfoView.vala:615
 msgid "Extensions:"
 msgstr "Eklentiler:"
 
-#: src/Views/AppInfoView.vala:681
+#: src/Views/AppInfoView.vala:744
 msgid "Link copied to clipboard"
 msgstr "Bağlantı panoya kopyalandı"
 
-#: src/Views/AppInfoView.vala:692
+#: src/Views/AppInfoView.vala:755
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "%s uygulamasına göz atın:"
 
-#: src/Views/AppInfoView.vala:700
+#: src/Views/AppInfoView.vala:763
 msgid "Share"
 msgstr "Paylaş"
 
-#: src/Views/AppInfoView.vala:792
+#: src/Views/AppInfoView.vala:857
 msgid "End of Life"
 msgstr "Destek Sonlandırıldı"
 
-#: src/Views/AppInfoView.vala:793
+#: src/Views/AppInfoView.vala:858
 msgid "May not work as expected or receive security updates"
 msgstr "Beklendiği gibi çalışmayabilir veya güvenlik güncellemelerini almayabilir"
 
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:864
 msgid "Outdated"
 msgstr "Güncel değil"
 
-#: src/Views/AppInfoView.vala:800
+#: src/Views/AppInfoView.vala:865
 msgid "May not work as expected or support the latest features"
 msgstr "Beklendiği gibi çalışmayabilir veya en son özellikleri desteklemeyebilir"
 
-#: src/Views/AppInfoView.vala:808
+#: src/Views/AppInfoView.vala:873
 msgid "Unstable"
 msgstr "Kararlı durumda değil"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:874
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "%s işletim sisteminin kararsız bir sürümü için oluşturuldu; önemli sorunlar içerebilir. Bir üretim sisteminde kullanılması önerilmez."
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1059
+#: src/Views/AppInfoView.vala:1133
 msgid "Public Domain"
 msgstr "Kamu Malı"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1062
+#: src/Views/AppInfoView.vala:1136
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://tr.wikipedia.org/wiki/Kamu_malı"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1067
+#: src/Views/AppInfoView.vala:1141
 msgid "Free Software"
 msgstr "Özgür Yazılım"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1070
+#: src/Views/AppInfoView.vala:1144
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.tr.html"
 
-#: src/Views/AppInfoView.vala:1074
+#: src/Views/AppInfoView.vala:1148
 msgid "Proprietary"
 msgstr "Özel"
 
-#: src/Views/AppInfoView.vala:1077
+#: src/Views/AppInfoView.vala:1151
 msgid "Unknown License"
 msgstr "Bilinmeyen Lisans"
 
-#: src/Views/AppInfoView.vala:1173
+#: src/Views/AppInfoView.vala:1243
 msgid "Fund"
 msgstr "Bağış yap"
 
-#: src/Views/AppInfoView.vala:1181
+#: src/Views/AppInfoView.vala:1249
 msgid "Fund the development of this app"
 msgstr "Bu uygulamanın geliştirilmesini destekle"
 
-#: src/Views/AppInfoView.vala:1302
+#: src/Views/AppInfoView.vala:1367
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s tarafından geliştirilen diğer uygulamalar"
 
-#: src/Views/AppListUpdateView.vala:32
+#: src/Views/AppListUpdateView.vala:42
 msgid "Checking for Updates"
 msgstr "Güncellemeler Denetleniyor"
 
-#: src/Views/AppListUpdateView.vala:33
+#: src/Views/AppListUpdateView.vala:43
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "İşletim sistemi ve yüklü uygulamalar için mevcut güncellemelerin bir listesi indiriliyor"
 
-#: src/Views/AppListUpdateView.vala:41
+#: src/Views/AppListUpdateView.vala:57
+msgid "Update All"
+msgstr "Tümünü Güncelle"
+
+#: src/Views/AppListUpdateView.vala:88
 msgid "A restart is required to finish installing updates"
 msgstr "Güncellemelerin tamamlanması için yeniden başlatma gerekiyor"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:96
 msgid "Restart Now"
 msgstr "Şimdi Yeniden Başlat"
 
-#: src/Views/AppListUpdateView.vala:58
+#: src/Views/AppListUpdateView.vala:108
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr "Yeniden başlatma isteği başarısız oldu. Güncellemeleri tamamlamak için el ile yeniden başlatın"
 
-#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:210
-msgid "Update All"
-msgstr "Tümünü Güncelle"
+#: src/Views/AppListUpdateView.vala:162
+#, c-format
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u Güncelleme Var"
+msgstr[1] "%u Güncelleme Var"
+
+#: src/Views/AppListUpdateView.vala:310
+msgid "Drivers"
+msgstr "Sürücüler"
+
+#: src/Views/AppListUpdateView.vala:323
+msgid "Up to Date"
+msgstr "Güncel"
+
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+msgid "Recently Updated"
+msgstr "Son Güncellenenler"
 
 #: src/Views/CategoryView.vala:37
 msgid "Paid Apps"
 msgstr "Ücretli Uygulamalar"
 
-#: src/Views/CategoryView.vala:48
+#: src/Views/CategoryView.vala:39
 msgid "Free Apps"
 msgstr "Ücretsiz Uygulamalar"
 
-#: src/Views/CategoryView.vala:59
+#: src/Views/CategoryView.vala:42
 msgid "Non-Curated Apps"
 msgstr "Doğrulanmamış Uygulamalar"
 
-#: src/Views/Homepage.vala:75
-msgid "Recently Updated"
-msgstr "Son Güncellenenler"
-
-#: src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:84
 msgid "Categories"
 msgstr "Kategoriler"
 
-#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:257
-#, c-format
-msgid "Search %s"
-msgstr "%s içinde ara"
+#: src/Views/Homepage.vala:110
+msgid "Accessories"
+msgstr "Donatılar"
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/Homepage.vala:268
-msgctxt "view"
-msgid "Search"
-msgstr "Ara"
+#: src/Views/Homepage.vala:111
+msgid "Audio"
+msgstr "Ses"
 
-#: src/Views/SearchView.vala:28 src/Views/SearchView.vala:48
+#: src/Views/Homepage.vala:112
+msgid "Communication"
+msgstr "İletişim"
+
+#: src/Views/Homepage.vala:121
+msgid "Development"
+msgstr "Geliştirme"
+
+#: src/Views/Homepage.vala:131
+msgid "Education"
+msgstr "Eğitim"
+
+#: src/Views/Homepage.vala:132
+msgid "Finance"
+msgstr "Finans"
+
+#: src/Views/Homepage.vala:137
+msgid "Graphics"
+msgstr "Grafik"
+
+#: src/Views/Homepage.vala:146
+msgid "Internet"
+msgstr "İnternet"
+
+#: src/Views/Homepage.vala:150
+msgid "Math, Science, & Engineering"
+msgstr "Matematik, Bilim ve Mühendislik"
+
+#: src/Views/Homepage.vala:169
+msgid "Media Production"
+msgstr "Medya Üretimi"
+
+#: src/Views/Homepage.vala:176
+msgid "Office"
+msgstr "Ofis"
+
+#: src/Views/Homepage.vala:183
+msgid "System"
+msgstr "Sistem"
+
+#: src/Views/Homepage.vala:187
+msgid "Universal Access"
+msgstr "Evrensel Erişim"
+
+#: src/Views/Homepage.vala:188
+msgid "Video"
+msgstr "Video"
+
+#: src/Views/Homepage.vala:193
+msgid "Writing & Language"
+msgstr "Yazı ve Dil"
+
+#: src/Views/Homepage.vala:203
+msgid "Privacy & Security"
+msgstr "Gizlilik ve Güvenlik"
+
+#: src/Views/Homepage.vala:454
+msgid "Fun & Games"
+msgstr "Eğlence ve Oyunlar"
+
+#: src/Views/Homepage.vala:482
+msgid "Fun &"
+msgstr "Eğlence ve"
+
+#: src/Views/Homepage.vala:491
+msgid "Games"
+msgstr "Oyunlar"
+
+#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:58
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:30
+#: src/Views/SearchView.vala:34
 msgid "No Apps Found"
 msgstr "Uygulama Bulunamadı"
 
-#: src/Views/SearchView.vala:31 src/Views/SearchView.vala:49
+#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Arama terimlerini değiştirmeyi deneyin. %s adresinden Flatpak uygulamalarını da yükleyebilirsiniz"
@@ -836,82 +980,6 @@ msgstr "Arama terimlerini değiştirmeyi deneyin. %s adresinden Flatpak uygulama
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
 msgstr "Kart Numarası"
-
-#: src/Widgets/CategoryFlowBox.vala:29
-msgid "Accessories"
-msgstr "Donatılar"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Audio"
-msgstr "Ses"
-
-#: src/Widgets/CategoryFlowBox.vala:31
-msgid "Communication"
-msgstr "İletişim"
-
-#: src/Widgets/CategoryFlowBox.vala:40
-msgid "Development"
-msgstr "Geliştirme"
-
-#: src/Widgets/CategoryFlowBox.vala:50
-msgid "Education"
-msgstr "Eğitim"
-
-#: src/Widgets/CategoryFlowBox.vala:51
-msgid "Finance"
-msgstr "Finans"
-
-#: src/Widgets/CategoryFlowBox.vala:56
-msgid "Graphics"
-msgstr "Grafik"
-
-#: src/Widgets/CategoryFlowBox.vala:65
-msgid "Internet"
-msgstr "İnternet"
-
-#: src/Widgets/CategoryFlowBox.vala:69
-msgid "Math, Science, & Engineering"
-msgstr "Matematik, Bilim ve Mühendislik"
-
-#: src/Widgets/CategoryFlowBox.vala:88
-msgid "Media Production"
-msgstr "Medya Üretimi"
-
-#: src/Widgets/CategoryFlowBox.vala:95
-msgid "Office"
-msgstr "Ofis"
-
-#: src/Widgets/CategoryFlowBox.vala:102
-msgid "System"
-msgstr "Sistem"
-
-#: src/Widgets/CategoryFlowBox.vala:106
-msgid "Universal Access"
-msgstr "Evrensel Erişim"
-
-#: src/Widgets/CategoryFlowBox.vala:107
-msgid "Video"
-msgstr "Video"
-
-#: src/Widgets/CategoryFlowBox.vala:112
-msgid "Writing & Language"
-msgstr "Yazı ve Dil"
-
-#: src/Widgets/CategoryFlowBox.vala:122
-msgid "Privacy & Security"
-msgstr "Gizlilik ve Güvenlik"
-
-#: src/Widgets/CategoryFlowBox.vala:231
-msgid "Fun & Games"
-msgstr "Eğlence ve Oyunlar"
-
-#: src/Widgets/CategoryFlowBox.vala:259
-msgid "Fun &"
-msgstr "Eğlence ve"
-
-#: src/Widgets/CategoryFlowBox.vala:268
-msgid "Games"
-msgstr "Oyunlar"
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
@@ -939,53 +1007,45 @@ msgstr "%d.00$ (USD)"
 msgid "$%d"
 msgstr "%d$"
 
-#: src/Widgets/NetworkInfoBar.vala:28
-msgid "Network Not Available."
-msgstr "Ağ Bağlantısı Kullanılamıyor."
+#: src/Widgets/ReleaseRow.vala:66
+msgid "Fixed Issues"
+msgstr ""
 
-#: src/Widgets/NetworkInfoBar.vala:29
-msgid "Connect to the Internet to browse and install apps."
-msgstr "Uygulamalara göz atmak ve yüklemek için İnternet'e bağlanın."
+#: src/Widgets/ReleaseRow.vala:94
+#, fuzzy
+#| msgid "Unknown state"
+msgid "Unknown date"
+msgstr "Bilinmeyen durum"
 
-#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:37
-msgid "Network Settings…"
-msgstr "Ağ Ayarları…"
-
-#: src/Widgets/ReleaseRow.vala:67
-#, c-format
-msgid "<b>%s</b> – %s"
-msgstr "<b>%s</b> – %s"
-
-#: src/Widgets/ReleaseRow.vala:74
+#: src/Widgets/ReleaseRow.vala:101
 msgid "Unknown version"
 msgstr "Bilinmeyen sürüm"
 
-#: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
+#: src/Widgets/ReleaseRow.vala:118
 msgid "No description available"
 msgstr "Açıklama mevcut değil"
 
-#: src/Widgets/SharePopover.vala:44
+#: src/Widgets/SharePopover.vala:35
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/Widgets/SharePopover.vala:48
+#: src/Widgets/SharePopover.vala:39
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:52
+#: src/Widgets/SharePopover.vala:43
 msgid "Reddit"
 msgstr "Reddit"
 
-#: src/Widgets/SharePopover.vala:56
+#: src/Widgets/SharePopover.vala:47
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:60
+#: src/Widgets/SharePopover.vala:51
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:64
+#: src/Widgets/SharePopover.vala:55
 msgid "Copy link"
 msgstr "Bağlantıyı kopyala"
 
@@ -1002,24 +1062,26 @@ msgstr "Uygulamaların yalnızca gereken ve güncellenen parçaları indirilecek
 msgid "Up to %s"
 msgstr "Azami boyut: %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:41
-#, c-format
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u Güncelleme Var"
-msgstr[1] "%u Güncelleme Var"
-
-#: src/Widgets/UpdateHeaderRow.vala:54
-msgid "Drivers"
-msgstr "Sürücüler"
-
-#: src/Widgets/UpdateHeaderRow.vala:58
-msgid "Up to Date"
-msgstr "Güncel"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "Güncelle"
+
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
+msgid "Release notes"
+msgstr ""
+
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
+#, fuzzy, c-format
+#| msgid "What's New:"
+msgid "What's new in %s"
+msgstr "Yenilikler:"
+
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
+msgid "Close"
+msgstr "Kapat"
+
+#~ msgid "<b>%s</b> – %s"
+#~ msgstr "<b>%s</b> – %s"
 
 #~ msgid "Non-Curated Warning"
 #~ msgstr "Doğrulanmamış İçerik Uyarısı"
@@ -1132,9 +1194,6 @@ msgstr "Güncelle"
 #~ msgctxt "view"
 #~ msgid "Updates"
 #~ msgstr "Güncelleştirmeler"
-
-#~ msgid "Close"
-#~ msgstr "Kapat"
 
 #~ msgid "App Center"
 #~ msgstr "Uygulama Merkezi"
