@@ -56,7 +56,34 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         grid.attach (date_label, 2, 0);
         grid.attach (description_label, 0, 1, 3);
 
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 6;
         add (grid);
+
+        var issues = release.get_issues ();
+
+        if (issues.length > 0) {
+            var issue_header = new Gtk.Label (_("Fixed Issues")) {
+                halign = Gtk.Align.START
+            };
+            issue_header.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
+            add (issue_header);
+        }
+
+        foreach (unowned AppStream.Issue issue in issues) {
+            var issue_image = new Gtk.Image.from_icon_name ("bug-symbolic", Gtk.IconSize.MENU);
+
+            var issue_linkbutton = new Gtk.LinkButton.with_label (issue.get_url (), issue.get_id ()) {
+                xalign = 0
+            };
+
+            var issue_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
+            issue_box.add (issue_image);
+            issue_box.add (issue_linkbutton);
+
+            add (issue_box);
+        }
     }
 
     private string format_date (uint64 timestamp) {
@@ -75,7 +102,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         }
     }
 
-    public static string format_release_description (string? description ) {
+    private string format_release_description (string? description ) {
         if (description != null) {
             try {
                 var markup = AppStream.markup_convert_simple (description);

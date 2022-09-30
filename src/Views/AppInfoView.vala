@@ -951,7 +951,9 @@ namespace AppCenter.Views {
                         });
 
                         foreach (unowned var release in releases) {
-                            var row = new AppCenter.Widgets.ReleaseRow (release);
+                            var row = new Widgets.ReleaseRow (release) {
+                                margin_bottom = 24
+                            };
                             release_list_box.add (row);
 
                             if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
