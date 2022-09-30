@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-09-30 14:07+0000\n"
 "Last-Translator: Andrey <max352516@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -351,7 +351,8 @@ msgstr "Обновления среды выполнения Flatpak больш�
 
 #: data/io.elementary.appcenter.appdata.xml.in:214
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr "Исправлено нарушение компоновки заголовков у длинных выпадающих списков"
+msgstr ""
+"Исправлено нарушение компоновки заголовков у длинных выпадающих списков"
 
 #: data/io.elementary.appcenter.appdata.xml.in:218
 msgid ""
@@ -786,10 +787,6 @@ msgstr "elementary, Inc."
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr "@PROJECT_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "установить;удалить;каталог;магазин;приложения;обновления;программы;"
@@ -798,11 +795,6 @@ msgstr "установить;удалить;каталог;магазин;при
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 
-#: data/io.elementary.appcenter.desktop.in.in:19
-#, fuzzy
-msgid "system-software-update"
-msgstr "system-software-install"
-
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
 msgstr "Обновить программное обеспечение"
@@ -810,6 +802,13 @@ msgstr "Обновить программное обеспечение"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Для обновления программного обеспечения требуется аутентификация"
+
+#~ msgid "@PROJECT_NAME@"
+#~ msgstr "@PROJECT_NAME@"
+
+#, fuzzy
+#~ msgid "system-software-update"
+#~ msgstr "system-software-install"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"

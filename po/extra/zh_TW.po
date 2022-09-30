@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-09-18 06:17+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -32,8 +32,9 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"開源的、非強制付款的elementary軟體商店。經elementary審核並發布以確保原生、保護隱私且安全的體驗。可以瀏覽各分類來搜尋和探索新軟體。"
-"AppCenter 也能用來將系統更新成含有新功能和新修正的最嶄新、最強大的版本。"
+"開源的、非強制付款的elementary軟體商店。經elementary審核並發布以確保原生、保"
+"護隱私且安全的體驗。可以瀏覽各分類來搜尋和探索新軟體。AppCenter 也能用來將系"
+"統更新成含有新功能和新修正的最嶄新、最強大的版本。"
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:86
@@ -720,10 +721,6 @@ msgstr ""
 msgid "@APP_NAME@"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr ""
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -734,10 +731,6 @@ msgstr ""
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
 msgstr "檢查更新"
-
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"

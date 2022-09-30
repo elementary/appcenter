@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-05-14 07:37+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -729,10 +729,6 @@ msgstr "elementary בע״מ"
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr "@PROJECT_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
@@ -743,10 +739,6 @@ msgstr ""
 msgid "Check for Updates"
 msgstr "חיפוש עדכונים"
 
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr "system-software-update"
-
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
 msgstr "עדכון תוכנה"
@@ -754,6 +746,12 @@ msgstr "עדכון תוכנה"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "נדרש אימות כדי לבצע עדכון תוכנה"
+
+#~ msgid "@PROJECT_NAME@"
+#~ msgstr "@PROJECT_NAME@"
+
+#~ msgid "system-software-update"
+#~ msgstr "system-software-update"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"

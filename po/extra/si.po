@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2021-07-11 17:55+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -717,20 +717,12 @@ msgstr ""
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr "@PROJECT_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
-
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
 msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
@@ -740,3 +732,6 @@ msgstr "මෘදුකාංග යාවත්කාල කරන්න"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr ""
+
+#~ msgid "@PROJECT_NAME@"
+#~ msgstr "@PROJECT_NAME@"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-07-31 11:43+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -711,10 +711,6 @@ msgstr ""
 msgid "@APP_NAME@"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr ""
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -725,10 +721,6 @@ msgstr ""
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
 msgstr "پشکنین بۆ نوێبوونەوەکان"
-
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"

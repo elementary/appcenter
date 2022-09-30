@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2021-03-21 01:40+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -747,10 +747,6 @@ msgstr "एलिमेंटरी, Inc."
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr "@PROJECT_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "इन्स्टॉल; अनइन्स्टॉल; काढणे; कॅटलॉग; स्टोअर; अॅप्स; सॉफ्टवेअर;"
@@ -759,10 +755,6 @@ msgstr "इन्स्टॉल; अनइन्स्टॉल; काढण�
 msgid "Check for Updates"
 msgstr "अपडेट्ससाठी तपासा"
 
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr "system-software-update"
-
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
 msgstr "सॉफ्टवेअर अद्यतनित करा"
@@ -770,6 +762,12 @@ msgstr "सॉफ्टवेअर अद्यतनित करा"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "सॉफ्टवेअर अद्यतनित करण्यासाठी प्रमाणीकरण आवश्यक आहे"
+
+#~ msgid "@PROJECT_NAME@"
+#~ msgstr "@PROJECT_NAME@"
+
+#~ msgid "system-software-update"
+#~ msgstr "system-software-update"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"

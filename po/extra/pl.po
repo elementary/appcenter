@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-05-14 12:59+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -788,10 +788,6 @@ msgstr "elementary, Inc."
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr "@PROJECT_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
@@ -802,10 +798,6 @@ msgstr ""
 msgid "Check for Updates"
 msgstr "Sprawdź aktualizacje"
 
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr "system-software-update"
-
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
 msgstr "Aktualizacja oprogramowania"
@@ -813,6 +805,12 @@ msgstr "Aktualizacja oprogramowania"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Uwierzytelnianie jest wymagane aby zaktualizować oprogramowanie"
+
+#~ msgid "@PROJECT_NAME@"
+#~ msgstr "@PROJECT_NAME@"
+
+#~ msgid "system-software-update"
+#~ msgstr "system-software-update"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"
