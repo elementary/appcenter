@@ -184,7 +184,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         eventbox_badge.add (updates_badge_revealer);
 
         var updates_overlay = new Gtk.Overlay () {
-            tooltip_text = C_("view", "Updates & installed apps")
+            tooltip_text = C_("view", _("Updates & installed apps"))
         };
         updates_overlay.add (updates_button);
         updates_overlay.add_overlay (eventbox_badge);
