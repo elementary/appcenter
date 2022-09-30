@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
 "PO-Revision-Date: 2022-09-30 14:07+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"Last-Translator: Andrey <max352516@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -511,7 +511,9 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:318
 msgid "Fix for notification not appearing when a restart is required"
-msgstr "Исправление не появляющегося уведомления о необходимости перезагрузки"
+msgstr ""
+"Исправлена ошибка, из-за которой уведомление не появлялось, когда требуется "
+"перезагрузка"
 
 #: data/io.elementary.appcenter.appdata.xml.in:319
 msgid "Apps in list views now load in the correct order when scrolling"
