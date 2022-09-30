@@ -8,6 +8,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: elementary/actions/gettext-template@master
+      with:
+        build-args: ELEMENTARY_CODENAME=next-unstable
       env:
         GIT_USER_TOKEN: "${{ secrets.GIT_USER_TOKEN }}"
         GIT_USER_NAME: "elementaryBot"
