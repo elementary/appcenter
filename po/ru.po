@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 15:16+0000\n"
-"PO-Revision-Date: 2022-07-24 18:47+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2022-09-30 10:30+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -29,7 +29,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:343
 msgid "AppCenter"
-msgstr "Центр приложений"
+msgstr "AppCenter"
 
 #: src/Application.vala:123
 #, c-format
@@ -201,7 +201,7 @@ msgstr "Загрузка информации об обновлении"
 
 #: src/Utils.vala:112
 msgid "Repackaging files"
-msgstr "Перепаковка файлов"
+msgstr "Переупаковка файлов"
 
 #: src/Utils.vala:114
 msgid "Loading cache"
@@ -258,9 +258,9 @@ msgstr[2] "Доступно обновлений"
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "%u доступно обновление для вашей системы"
-msgstr[1] "%u доступны обновления для вашей системы"
-msgstr[2] "%u доступно обновлений для вашей системы"
+msgstr[0] "%u обновление доступно для вашей системы"
+msgstr[1] "%u обновления доступны для вашей системы"
+msgstr[2] "%u обновлений доступно для вашей системы"
 
 #: src/Core/FlatpakBackend.vala:1270
 msgid "Uninstalling"
@@ -299,7 +299,9 @@ msgstr "Неизвестное происхождение (не курируем
 #: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr "Состояние приложения не определено как установленное в Центре приложений для пакета: %s"
+msgstr ""
+"Состояние приложения не определено как установленное в AppCenter для пакета: "
+"%s"
 
 #: src/Core/PackageKitBackend.vala:297
 #, c-format
@@ -428,7 +430,7 @@ msgstr "Обработка"
 
 #: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Не удалось обработать ваш платеж"
+msgstr "Не удалось обработать ваш платёж"
 
 #: src/Dialogs/StripeDialog.vala:375
 msgid "Pay Later"
@@ -472,7 +474,7 @@ msgstr "Валюта не поддерживается этой картой. П
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The transaction has already been processed."
-msgstr "Платеж уже был принят."
+msgstr "Платёж уже был принят."
 
 #: src/Dialogs/StripeDialog.vala:610
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
@@ -543,7 +545,9 @@ msgstr "Не удалось получить обновления"
 
 #: src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Это может быть вызвано внешними (добавленными вручную) репозиториями или поврежденным файлом с источниками."
+msgstr ""
+"Это может быть вызвано внешними (добавленными вручную) репозиториями или "
+"повреждённым файлом с источниками."
 
 #: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
@@ -564,7 +568,7 @@ msgstr "Не удалось обновить «%s»"
 
 #: src/Views/AppInfoView.vala:95
 msgid "Illicit Substances"
-msgstr "Запрещенные вещества"
+msgstr "Запрещённые вещества"
 
 #: src/Views/AppInfoView.vala:96
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
@@ -600,7 +604,9 @@ msgstr "Не курируемые"
 
 #: src/Views/AppInfoView.vala:132
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr "Не проверяется elementary на безопасность, конфиденциальность или совместимость с системой"
+msgstr ""
+"Не проверяется elementary на безопасность, конфиденциальность или системную "
+"интеграцию"
 
 #: src/Views/AppInfoView.vala:154
 msgid "Conflict"
@@ -697,7 +703,7 @@ msgstr "Ссылка скопирована в буфер обмена"
 #: src/Views/AppInfoView.vala:692
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Проверить %s в Центре приложений:"
+msgstr "Ознакомьтесь с %s в AppCenter:"
 
 #: src/Views/AppInfoView.vala:700
 msgid "Share"
@@ -905,11 +911,11 @@ msgstr "Писательство и язык"
 
 #: src/Widgets/CategoryFlowBox.vala:122
 msgid "Privacy & Security"
-msgstr "Конфиденциальнось и безопасность"
+msgstr "Конфиденциальность и безопасность"
 
 #: src/Widgets/CategoryFlowBox.vala:231
 msgid "Fun & Games"
-msgstr "Игры и развлечения"
+msgstr "Развлечения и Игры"
 
 #: src/Widgets/CategoryFlowBox.vala:259
 msgid "Fun &"
