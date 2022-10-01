@@ -13,14 +13,16 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-30 12:16-0700\n"
-"PO-Revision-Date: 2022-09-30 10:30+0000\n"
+"PO-Revision-Date: 2022-10-01 04:48+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -49,38 +51,28 @@ msgid "“%s” has been installed"
 msgstr "«%s» установлено"
 
 #: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Получение информации"
+msgstr "Получение информации о приложении…"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
-msgstr ""
+msgstr "Получение размера загрузки…"
 
 #: src/MainWindow.vala:101
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Проверка обновлений"
+msgstr "Проверка обновлений…"
 
 #: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Установка"
+msgstr "Установка…"
 
 #: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Установка обновлений"
+msgstr "Установка обновлений…"
 
 #: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Удаление"
+msgstr "Удаление…"
 
 #: src/MainWindow.vala:140
 #, c-format
@@ -88,11 +80,9 @@ msgid "Failed to launch “%s“"
 msgstr "Не удалось запустить «%s»"
 
 #: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Не удалось установить приложение"
+msgstr "Обновления и установленные приложения"
 
 #: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
 msgid "Search Apps"
