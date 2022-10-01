@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-30 12:16-0700\n"
-"PO-Revision-Date: 2022-09-30 14:07+0000\n"
-"Last-Translator: Andrey <max352516@gmail.com>\n"
+"PO-Revision-Date: 2022-10-01 17:12+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -33,12 +33,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Магазин приложений от elementary с открытым кодом, использующий модель "
-"«платите, сколько сможете». Проверяется и курируется elementary, чтобы "
+"Магазин приложений от elementary с открытым кодом, использующий модель «"
+"платите, сколько сможете». Проверяется и курируется elementary, чтобы "
 "обеспечить согласованную, с уважением к конфиденциальности и безопасностью "
 "работу приложений. Просматривайте приложения по категориям или ищите и "
-"открывайте для себя новые приложения. Центр приложений также используется "
-"для обновления системы до новой версии, чтобы Вы получали новые функции и "
+"открывайте для себя новые приложения. AppCenter также используется для "
+"обновления системы до новой версии, чтобы Вы получали новые функции и "
 "исправления."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
@@ -507,8 +507,8 @@ msgstr "Незначительные изменения"
 #: data/io.elementary.appcenter.appdata.xml.in:317
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
-"Обновление данных приложения, когда изменения происходят за пределами Центра "
-"приложений"
+"Обновление данных приложения, когда изменения происходят за пределами "
+"AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:318
 msgid "Fix for notification not appearing when a restart is required"
@@ -551,7 +551,7 @@ msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
 "Меню приложений теперь может удалять flatpak пакеты, которые не были "
-"установлены в Центре приложений"
+"установлены в AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:326
 msgid "Make download size estimates more accurate"
@@ -559,7 +559,7 @@ msgstr "Более точная оценка размера загрузки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:334
 msgid "Prevent AppCenter from opening on log in"
-msgstr "Предотвращение открытия Центра приложений при входе в систему"
+msgstr "Предотвращение открытия AppCenter при входе в систему"
 
 #: data/io.elementary.appcenter.appdata.xml.in:335
 msgid "Prevent ghost update notification when there are no updates available"
