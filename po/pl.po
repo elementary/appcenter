@@ -11,14 +11,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-30 12:16-0700\n"
-"PO-Revision-Date: 2022-06-17 12:43+0000\n"
-"Last-Translator: Oskar Rygasiewicz <fleepgames@gmail.com>\n"
-"Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
+"PO-Revision-Date: 2022-10-01 17:12+0000\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -47,38 +49,28 @@ msgid "“%s” has been installed"
 msgstr "„%s” zostało zainstalowane"
 
 #: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Pobieranie informacji"
+msgstr "Pobieranie informacji o aplikacji…"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
-msgstr ""
+msgstr "Obliczanie rozmiaru pliku…"
 
 #: src/MainWindow.vala:101
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Sprawdzanie aktualizacji"
+msgstr "Sprawdzanie aktualizacji…"
 
 #: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Instalowanie"
+msgstr "Instalowanie…"
 
 #: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Instalowanie aktualizacji"
+msgstr "Instalowanie aktualizacji…"
 
 #: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Odinstalowywanie"
+msgstr "Odinstalowywanie…"
 
 #: src/MainWindow.vala:140
 #, c-format
@@ -86,11 +78,9 @@ msgid "Failed to launch “%s“"
 msgstr "Nie udało się uruchomić „%s”"
 
 #: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Nie udało się zainstalować aplikacji"
+msgstr "Aktualizacje i zainstalowane aplikacje"
 
 #: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
 msgid "Search Apps"
@@ -608,10 +598,10 @@ msgid "Try Again"
 msgstr "Spróbuj ponownie"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
-msgstr "Przyczyną może być zewnętrzne, ręcznie dodane repozytorium oprogramowania lub uszkodzony plik źródłowy."
+msgstr ""
+"Przyczyną może być zewnętrzne lub ręcznie skompilowane oprogramowanie, "
+"oprogramowania uzyskane od osób trzecich lub błąd menadżera pakietów."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"
@@ -1010,13 +1000,11 @@ msgstr "$%d"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Naprawione błędy"
 
 #: src/Widgets/ReleaseRow.vala:94
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Nieznany stan"
+msgstr "Nieznana data"
 
 #: src/Widgets/ReleaseRow.vala:101
 msgid "Unknown version"
@@ -1069,13 +1057,12 @@ msgstr "Zaktualizuj"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
-msgstr ""
+msgstr "Informacje o wydaniu"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Co nowego:"
+msgstr "Co nowego w %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
