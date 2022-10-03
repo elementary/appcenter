@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-01-12 19:13+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
@@ -792,10 +792,6 @@ msgstr "elementary, Inc."
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr "@PROJECT_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "instalovat;odinstalovat;odstranit;katalog;obchod;aplikace;software;"
@@ -804,10 +800,6 @@ msgstr "instalovat;odinstalovat;odstranit;katalog;obchod;aplikace;software;"
 msgid "Check for Updates"
 msgstr "Zkontrolovat aktualizace"
 
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr "system-software-update"
-
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
 msgstr "Aktualizovat software"
@@ -815,6 +807,12 @@ msgstr "Aktualizovat software"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Pro aktualizaci software je zapotřebí ověření se"
+
+#~ msgid "@PROJECT_NAME@"
+#~ msgstr "@PROJECT_NAME@"
+
+#~ msgid "system-software-update"
+#~ msgstr "system-software-update"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"

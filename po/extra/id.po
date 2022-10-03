@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-01-07 20:57+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
@@ -780,10 +780,6 @@ msgstr "elementary, PT."
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr "@PROJECT_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "pasang;copot pemasangan;hapus;katalog;toko;aplikasi;perangkat lunak;"
@@ -792,10 +788,6 @@ msgstr "pasang;copot pemasangan;hapus;katalog;toko;aplikasi;perangkat lunak;"
 msgid "Check for Updates"
 msgstr "Memeriksa Pembaruan"
 
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr "pembaruan-sistem-perangkat-lunak"
-
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
 msgstr "Pembaruan perangkat lunak"
@@ -803,6 +795,12 @@ msgstr "Pembaruan perangkat lunak"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Otentikasi diperlukan untuk pembaruan perangkat lunak"
+
+#~ msgid "@PROJECT_NAME@"
+#~ msgstr "@PROJECT_NAME@"
+
+#~ msgid "system-software-update"
+#~ msgstr "pembaruan-sistem-perangkat-lunak"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@IKON_DESKTOP@"

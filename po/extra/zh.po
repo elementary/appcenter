@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -728,10 +728,6 @@ msgstr ""
 msgid "@APP_NAME@"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr ""
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -740,10 +736,6 @@ msgstr "安装;卸载;移除;目录;商店;应用;更新;软件;"
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
 msgstr "检查更新"
-
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
-msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"

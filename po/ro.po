@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2022-01-31 07:59+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -19,72 +19,133 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:343
+#: src/Application.vala:38 src/Core/Package.vala:325
 msgid "AppCenter"
 msgstr "Centru de Aplicații"
 
-#: src/Application.vala:123
+#: src/Application.vala:85
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Nu s-a putut analiza tipul media %s"
 
-#: src/Application.vala:143
+#: src/Application.vala:105
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Legătura '%s' nu este disponibilă. Se inițiază o căutare"
 
-#: src/Application.vala:307
+#: src/Application.vala:297
 msgid "The app has been installed"
 msgstr "Aplicația s-a instalat"
 
-#. Only show a toast when we're not on the installed app's page, i.e if
-#. no package is selected (we are not on an app page), or a package is
-#. selected but it's not the app we're installing.
-#: src/Application.vala:308 src/MainWindow.vala:390
+#: src/Application.vala:298 src/MainWindow.vala:527
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" s-a instalat"
 
-#: src/MainWindow.vala:129
+#: src/MainWindow.vala:93
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "Se obțin informațiile"
+
+#: src/MainWindow.vala:96
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:101
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Checking for updates…"
+msgstr "Se caută actualizări"
+
+#: src/MainWindow.vala:104
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "Se instalează"
+
+#: src/MainWindow.vala:107
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "Se instalează actualizările"
+
+#: src/MainWindow.vala:110
+#, fuzzy
+#| msgid "Uninstalling"
+msgid "Uninstalling…"
+msgstr "Dezinstalare"
+
+#: src/MainWindow.vala:140
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "S-a eșuat în pornirea “%s“"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:265
-msgid "Home"
-msgstr "Pagina principală"
-
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:62
+#: src/MainWindow.vala:187
+#, fuzzy
+#| msgid "Failed to install app"
 msgctxt "view"
-msgid "Installed"
-msgstr "Instalate"
+msgid "Updates & installed apps"
+msgstr "S-a eșuat în instalarea aplicației"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:433 src/Views/Homepage.vala:249
+#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
 msgid "Search Apps"
 msgstr "Caută aplicații"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:207
 #, fuzzy
 #| msgid "Automatic Updates"
 msgid "Automatic App Updates"
 msgstr "Actualizări automate"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:212
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Se caută actualizări"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:236
 msgid "Settings"
 msgstr "Setări"
 
+#: src/MainWindow.vala:264
+msgid "Network Not Available."
+msgstr "Lipsă conexiune la internet."
+
+#: src/MainWindow.vala:265
+msgid "Connect to the Internet to browse and install apps."
+msgstr "Conectați-vă la Internet pentru căutat și instalat aplicații."
+
+#: src/MainWindow.vala:275
+msgid "Network Settings…"
+msgstr "Setări de rețea…"
+
+#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#, c-format
+msgid "Search %s"
+msgstr "Caută %s"
+
+#: src/MainWindow.vala:484
+msgid "Home"
+msgstr "Pagina principală"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/MainWindow.vala:487
+msgctxt "view"
+msgid "Search"
+msgstr "Căutare"
+
+#: src/MainWindow.vala:493
+msgctxt "view"
+msgid "Installed"
+msgstr "Instalate"
+
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:530
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Deschide"
@@ -93,7 +154,7 @@ msgstr "Deschide"
 msgid "Starting"
 msgstr "Se începe"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:292
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "În așteptare"
@@ -118,7 +179,7 @@ msgstr "Se elimină pachetele"
 msgid "Downloading"
 msgstr "Se descarcă"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1138
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
 msgid "Installing"
 msgstr "Se instalează"
 
@@ -163,9 +224,9 @@ msgid "Finished"
 msgstr "Finalizat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1171
-#: src/Core/FlatpakBackend.vala:1279 src/Core/FlatpakBackend.vala:1303
-#: src/Core/FlatpakBackend.vala:1449 src/Core/FlatpakBackend.vala:1471
+#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
+#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
+#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
 msgid "Cancelling"
 msgstr "În curs de anulare"
 
@@ -256,72 +317,72 @@ msgstr[0] "%u actualizare de sistem este disponibilă"
 msgstr[1] "%u actualizări de sistem sunt disponibile"
 msgstr[2] "%u de actualizări de sistem sunt disponibile"
 
-#: src/Core/FlatpakBackend.vala:1270
+#: src/Core/FlatpakBackend.vala:1272
 msgid "Uninstalling"
 msgstr "Dezinstalare"
 
-#: src/Core/FlatpakBackend.vala:1440
+#: src/Core/FlatpakBackend.vala:1442
 msgid "Updating"
 msgstr "Actualizare"
 
-#: src/Core/Package.vala:313
+#: src/Core/Package.vala:301
 #, c-format
 msgid "%s Developers"
 msgstr "Dezvoltatorii %s"
 
-#: src/Core/Package.vala:345
+#: src/Core/Package.vala:327
 msgid "elementary Updates"
 msgstr "Actualizări elementary"
 
-#: src/Core/Package.vala:347
+#: src/Core/Package.vala:329
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (neverificat)"
 
-#: src/Core/Package.vala:352
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (pe tot sistemul)"
 
-#: src/Core/Package.vala:357
+#: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
 msgstr "Drivere Ubuntu"
 
-#: src/Core/Package.vala:360
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
 msgstr "Origine necunoscută (neverificată)"
 
-#: src/Core/Package.vala:532
+#: src/Core/Package.vala:514
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Statutul aplicației nu este setat drept instalat în Centrul de Aplicații pentru pachetul: %s"
 
-#: src/Core/PackageKitBackend.vala:297
+#: src/Core/PackageKitBackend.vala:299
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: src/Core/UpdateManager.vala:37
+#: src/Core/UpdateManager.vala:40
 msgid "Operating System Updates"
 msgstr "Actualizări pentru sistemul de operare"
 
-#: src/Core/UpdateManager.vala:38
+#: src/Core/UpdateManager.vala:41
 msgid "Updates to system components"
 msgstr "Actualizări pentru componentele sistemului"
 
-#: src/Core/UpdateManager.vala:87
+#: src/Core/UpdateManager.vala:94
 #, c-format
 msgid "Version: %s"
 msgstr "Versiune: %s"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:153
 msgid "Flatpak runtime"
 msgstr "Mediu de rulare Flatpak"
 
-#: src/Core/UpdateManager.vala:157
+#: src/Core/UpdateManager.vala:171
 msgid "No components with updates"
 msgstr "Nici un component cu o actualizare"
 
-#: src/Core/UpdateManager.vala:162
+#: src/Core/UpdateManager.vala:176
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -329,16 +390,16 @@ msgstr[0] "%u componentă cu actualizări"
 msgstr[1] "%u componente cu actualizări"
 msgstr[2] "%u componente cu actualizări"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:178
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:202
+#: src/Core/UpdateManager.vala:216
 msgid "Restart Required"
 msgstr "Sistemul trebuie repornit"
 
-#: src/Core/UpdateManager.vala:203
+#: src/Core/UpdateManager.vala:217
 msgid "Please restart your system to finalize updates"
 msgstr "Reporniți sistemul pentru a finaliza instalarea"
 
@@ -346,11 +407,11 @@ msgstr "Reporniți sistemul pentru a finaliza instalarea"
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Aceasta poate fi o problemă temporară sau ar putea fi cauzată de software extern sau compilat manual."
 
-#: src/Dialogs/InstallFailDialog.vala:37
+#: src/Dialogs/InstallFailDialog.vala:36
 msgid "Failed to install app"
 msgstr "S-a eșuat în instalarea aplicației"
 
-#: src/Dialogs/InstallFailDialog.vala:40
+#: src/Dialogs/InstallFailDialog.vala:39
 #, c-format
 msgid "Failed to install “%s”"
 msgstr "S-a eșuat în instalarea “%s”"
@@ -363,140 +424,140 @@ msgstr "Eroare la procesarea cardului. Ne cerem scuze pentru inconvenient și v�
 msgid "Please review your payment info and try again."
 msgstr "Revizuiți informațiile de plată și reveniți."
 
-#: src/Dialogs/StripeDialog.vala:73
+#: src/Dialogs/StripeDialog.vala:72
 msgid "Payment"
 msgstr "Plată"
 
-#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:250
+#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Plăteste $%d pentru %s"
 
-#: src/Dialogs/StripeDialog.vala:94
+#: src/Dialogs/StripeDialog.vala:98
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Aceasta este o plată făcută o singură dată, sugerată de dezvoltator. Poți de asemenea să alegi ce sumă dorești."
 
-#: src/Dialogs/StripeDialog.vala:115
+#: src/Dialogs/StripeDialog.vala:119
 msgid "or"
 msgstr "sau"
 
-#: src/Dialogs/StripeDialog.vala:152
+#: src/Dialogs/StripeDialog.vala:154
 msgid "Email"
 msgstr "Email"
 
-#: src/Dialogs/StripeDialog.vala:157
+#: src/Dialogs/StripeDialog.vala:159
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Utilizată numai pentru a vă trimite o chitanță. Nu veți fi abonat la nicio listă de corespondență."
 
-#: src/Dialogs/StripeDialog.vala:158
+#: src/Dialogs/StripeDialog.vala:160
 msgid "Privacy Policy"
 msgstr "Politica de intimitate"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:182
+#: src/Dialogs/StripeDialog.vala:184
 msgid "MM / YY"
 msgstr "LL / AA"
 
-#: src/Dialogs/StripeDialog.vala:190
+#: src/Dialogs/StripeDialog.vala:192
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:384
+#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "Anulează"
 
-#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:248
-#: src/Dialogs/StripeDialog.vala:383
+#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
+#: src/Dialogs/StripeDialog.vala:393
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Plătește $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:251
 msgid "Try for Free"
 msgstr "Încearcă pe gratis"
 
-#: src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:314
 msgid "Processing"
 msgstr "În procesare"
 
-#: src/Dialogs/StripeDialog.vala:337
+#: src/Dialogs/StripeDialog.vala:341
 msgid "There Was a Problem Processing Your Payment"
 msgstr "A apărut o problemă la procesarea plății"
 
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:385
 msgid "Pay Later"
 msgstr "Plătesc mai târziu"
 
-#: src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:386
 msgid "Retry"
 msgstr "Reîncearcă"
 
-#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Numărul cardului nu este corect. Vă rugăm încercați din nou, folosind numărul corect."
 
-#: src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:569
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Luna expirării nu este validă. Vă rugăm încercați din nou, folosind data corectă."
 
-#: src/Dialogs/StripeDialog.vala:561 src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Anul expirării nu este valid. Vă rugăm încercați din nou, folosind anul corect."
 
-#: src/Dialogs/StripeDialog.vala:564 src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Codul CVC nu este corect. Vă rugăm încercați din nou, folosind codul corect."
 
-#: src/Dialogs/StripeDialog.vala:566 src/Dialogs/StripeDialog.vala:608
+#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
 msgid "The card has expired. Please try again with a different card."
 msgstr "Acest card a expirat. Vă rugăm încercați cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:586
+#: src/Dialogs/StripeDialog.vala:596
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Sistemul de plată este suprasolicitat momentan. Vă rugăm încercați mai târziu."
 
-#: src/Dialogs/StripeDialog.vala:602
+#: src/Dialogs/StripeDialog.vala:612
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Cardul specificat nu poate fi folosit pentru acest tip de tranzacție. Vă rugăm încercați un alt card."
 
-#: src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:614
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Moneda nu poate fi tranzacționată cu cardul specificat. Vă rugăm încercați un alt card."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:616
 msgid "The transaction has already been processed."
 msgstr "Tranzacția a fost deja procesată."
 
-#: src/Dialogs/StripeDialog.vala:610
+#: src/Dialogs/StripeDialog.vala:620
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Codul poștal este incorect. Vă rugăm încercați din nou, folosind un cod poștal corect."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:622
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Fonduri insuficiente pe card. Vă rugăm încercați o altă metodă de plată."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:624
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Suma nu este corectă. Vă rugăm încercați din nou, specificând o sumă corectă."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:635
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Codul PIN nu este corect. Vă rugăm încercați din nou, folosind codul PIN corect."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:637
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Prea multe încercări cu codul PIN. Vă rugăm încercați din nou, cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:647
+#: src/Dialogs/StripeDialog.vala:657
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Tranzacția nu poate fi efectuată. Vă rugăm contactați banca pentru detalii."
 
-#: src/Dialogs/StripeDialog.vala:650
+#: src/Dialogs/StripeDialog.vala:660
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Limita de sold sau credit ale acestui card au fost atinse."
 
-#: src/Dialogs/StripeDialog.vala:653
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Acesta este un card de test. Vă rugăm folosiți un card real pentru continuare."
 
@@ -504,29 +565,28 @@ msgstr "Acesta este un card de test. Vă rugăm folosiți un card real pentru co
 msgid "Uninstalling this app may also delete its data."
 msgstr "Dezinstalarea acestei aplicații poate șterge datele sale."
 
-#: src/Dialogs/UninstallConfirmDialog.vala:35
+#: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
 msgstr "Dezinstalare aplicație?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:38
+#: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
 msgstr "Dezinstalare “%s”?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:42 src/Views/AppInfoView.vala:595
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:641
 msgid "Uninstall"
 msgstr "Dezinstalează"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
 msgstr "Acest lucru poate a fost cauzat de software extern sau compilat manual."
 
-#: src/Dialogs/UninstallFailDialog.vala:37
+#: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
 msgstr "S-a eșuat în dezinstalarea aplicației"
 
-#: src/Dialogs/UninstallFailDialog.vala:40
+#: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
 msgstr "S-a eșuat în dezinstalarea “%s”"
@@ -547,252 +607,277 @@ msgstr "Ignoră"
 msgid "Try Again"
 msgstr "Reîncearcă"
 
-#: src/Dialogs/UpgradeFailDialog.vala:37
+#: src/Dialogs/UpgradeFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgstr "Aceasta poate fi cauzată de arhivele externe adăugate manual sau de un fişier cu surse corupt."
+
+#: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"
 msgstr "S-a eșuat în actualizarea aplicației"
 
-#: src/Dialogs/UpgradeFailDialog.vala:40
+#: src/Dialogs/UpgradeFailDialog.vala:39
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "S-a eșuat în actualizarea pentru “%s”"
 
-#: src/Views/AppInfoView.vala:95
+#: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
 msgstr "Substanțe ilegale"
 
-#: src/Views/AppInfoView.vala:96
+#: src/Views/AppInfoView.vala:132
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Prezență de sau trimiteri către alcool, narcotice sau tutun"
 
-#: src/Views/AppInfoView.vala:101
+#: src/Views/AppInfoView.vala:137
 msgid "Sex & Nudity"
 msgstr "Sex și nuditate"
 
-#: src/Views/AppInfoView.vala:102
+#: src/Views/AppInfoView.vala:138
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:107
+#: src/Views/AppInfoView.vala:143
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:108
+#: src/Views/AppInfoView.vala:144
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:113
+#: src/Views/AppInfoView.vala:149
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:114
+#: src/Views/AppInfoView.vala:150
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:175
 #, fuzzy
 #| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "Aplicații neverificate"
 
-#: src/Views/AppInfoView.vala:132
+#: src/Views/AppInfoView.vala:176
 #, fuzzy
 #| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "“%s” nu este verificat de elementary și nu a fost revizuit pentru securitate, confidențialitate sau integrare în sistem."
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:198
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:199
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:168
+#: src/Views/AppInfoView.vala:212
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:173
+#: src/Views/AppInfoView.vala:217
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:222
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:222
+#: src/Views/AppInfoView.vala:266
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:267
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:239
+#: src/Views/AppInfoView.vala:283
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:241
+#: src/Views/AppInfoView.vala:285
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:245
+#: src/Views/AppInfoView.vala:289
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:255
+#: src/Views/AppInfoView.vala:299
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:256
+#: src/Views/AppInfoView.vala:300
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:268
+#: src/Views/AppInfoView.vala:312
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:315
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:276
+#: src/Views/AppInfoView.vala:320
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:393
+#: src/Views/AppInfoView.vala:440
 msgid "Screenshot Not Available"
 msgstr "Captura de ecran nu este disponibilă"
 
-#: src/Views/AppInfoView.vala:494
+#: src/Views/AppInfoView.vala:551
 msgid "Homepage"
 msgstr "Pagină de pornire"
 
-#: src/Views/AppInfoView.vala:500
+#: src/Views/AppInfoView.vala:557
 msgid "Translate"
 msgstr "Tradu"
 
-#: src/Views/AppInfoView.vala:506
+#: src/Views/AppInfoView.vala:563
 msgid "Send Feedback"
 msgstr "Trimite feedback (îmbunătățiri)"
 
-#: src/Views/AppInfoView.vala:512
+#: src/Views/AppInfoView.vala:569
 msgid "Help"
 msgstr "Ajutor"
 
-#: src/Views/AppInfoView.vala:523
+#: src/Views/AppInfoView.vala:580
 msgid "What's New:"
 msgstr "Ce este nou:"
 
-#: src/Views/AppInfoView.vala:569
+#: src/Views/AppInfoView.vala:615
 msgid "Extensions:"
 msgstr "Extensii:"
 
-#: src/Views/AppInfoView.vala:681
+#: src/Views/AppInfoView.vala:744
 msgid "Link copied to clipboard"
 msgstr "Link copiat in clipboard"
 
-#: src/Views/AppInfoView.vala:692
+#: src/Views/AppInfoView.vala:755
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Încercați %s in AppCenter:"
 
-#: src/Views/AppInfoView.vala:700
+#: src/Views/AppInfoView.vala:763
 msgid "Share"
 msgstr "Partajează"
 
-#: src/Views/AppInfoView.vala:792
+#: src/Views/AppInfoView.vala:857
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:793
+#: src/Views/AppInfoView.vala:858
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:864
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:800
+#: src/Views/AppInfoView.vala:865
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:808
+#: src/Views/AppInfoView.vala:873
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Dezinstalează"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:874
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1059
+#: src/Views/AppInfoView.vala:1133
 msgid "Public Domain"
 msgstr "Domeniu Public"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1062
+#: src/Views/AppInfoView.vala:1136
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ro.wikipedia.org/wiki/Domeniul_public"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1067
+#: src/Views/AppInfoView.vala:1141
 msgid "Free Software"
 msgstr "Software Liber"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1070
+#: src/Views/AppInfoView.vala:1144
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ro.html"
 
-#: src/Views/AppInfoView.vala:1074
+#: src/Views/AppInfoView.vala:1148
 msgid "Proprietary"
 msgstr "Patentat"
 
-#: src/Views/AppInfoView.vala:1077
+#: src/Views/AppInfoView.vala:1151
 msgid "Unknown License"
 msgstr "Licență necunoscută"
 
-#: src/Views/AppInfoView.vala:1173
+#: src/Views/AppInfoView.vala:1243
 msgid "Fund"
 msgstr "Susţine"
 
-#: src/Views/AppInfoView.vala:1181
+#: src/Views/AppInfoView.vala:1249
 msgid "Fund the development of this app"
 msgstr "Susţine dezvoltarea acestei aplicaţii"
 
-#: src/Views/AppInfoView.vala:1302
+#: src/Views/AppInfoView.vala:1367
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Alte aplicaţii de %s"
 
-#: src/Views/AppListUpdateView.vala:32
+#: src/Views/AppListUpdateView.vala:42
 msgid "Checking for Updates"
 msgstr "Se caută actualizări"
 
-#: src/Views/AppListUpdateView.vala:33
+#: src/Views/AppListUpdateView.vala:43
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Se descarcă o listă de actualizări disponibile pentru sistemul de operare și aplicațiile instalate"
 
-#: src/Views/AppListUpdateView.vala:41
+#: src/Views/AppListUpdateView.vala:57
+msgid "Update All"
+msgstr "Actualizează totul"
+
+#: src/Views/AppListUpdateView.vala:88
 msgid "A restart is required to finish installing updates"
 msgstr "Trebuie să reporniți sistemul pentru finalizarea instalării actualizărilor"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:96
 msgid "Restart Now"
 msgstr "Repornește acum"
 
-#: src/Views/AppListUpdateView.vala:58
+#: src/Views/AppListUpdateView.vala:108
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr "Cererea de repornire a eșuat. Repornește manual pentru a finaliza instalarea actualizărilor"
 
-#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:210
-msgid "Update All"
-msgstr "Actualizează totul"
+#: src/Views/AppListUpdateView.vala:162
+#, c-format
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u actualizare disponibilă"
+msgstr[1] "%u actualizări disponibile"
+msgstr[2] "%u de actualizări disponibile"
+
+#: src/Views/AppListUpdateView.vala:310
+msgid "Drivers"
+msgstr "Drivere"
+
+#: src/Views/AppListUpdateView.vala:323
+msgid "Up to Date"
+msgstr "Aplicații la zi"
+
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+msgid "Recently Updated"
+msgstr "Actualizate recent"
 
 #: src/Views/CategoryView.vala:37
 #, fuzzy
@@ -800,44 +885,109 @@ msgstr "Actualizează totul"
 msgid "Paid Apps"
 msgstr "Caută aplicații"
 
-#: src/Views/CategoryView.vala:48
+#: src/Views/CategoryView.vala:39
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Gratuit"
 
-#: src/Views/CategoryView.vala:59
+#: src/Views/CategoryView.vala:42
 msgid "Non-Curated Apps"
 msgstr "Aplicații neverificate"
 
-#: src/Views/Homepage.vala:75
-msgid "Recently Updated"
-msgstr "Actualizate recent"
-
-#: src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:84
 msgid "Categories"
 msgstr "Categorii"
 
-#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:257
-#, c-format
-msgid "Search %s"
-msgstr "Caută %s"
+#: src/Views/Homepage.vala:110
+msgid "Accessories"
+msgstr "Accesorii"
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/Homepage.vala:268
-msgctxt "view"
-msgid "Search"
-msgstr "Căutare"
+#: src/Views/Homepage.vala:111
+msgid "Audio"
+msgstr "Audio"
 
-#: src/Views/SearchView.vala:28 src/Views/SearchView.vala:48
+#: src/Views/Homepage.vala:112
+msgid "Communication"
+msgstr "Comunicare"
+
+#: src/Views/Homepage.vala:121
+msgid "Development"
+msgstr "Dezvoltare"
+
+#: src/Views/Homepage.vala:131
+msgid "Education"
+msgstr "Educație"
+
+#: src/Views/Homepage.vala:132
+msgid "Finance"
+msgstr "Finanțe"
+
+#: src/Views/Homepage.vala:137
+msgid "Graphics"
+msgstr "Grafică"
+
+#: src/Views/Homepage.vala:146
+msgid "Internet"
+msgstr "Internet"
+
+#: src/Views/Homepage.vala:150
+msgid "Math, Science, & Engineering"
+msgstr "Matematică, Știință și Inginerie"
+
+#: src/Views/Homepage.vala:169
+msgid "Media Production"
+msgstr "Producție Media"
+
+#: src/Views/Homepage.vala:176
+msgid "Office"
+msgstr "Birou"
+
+#: src/Views/Homepage.vala:183
+msgid "System"
+msgstr "Sistem"
+
+#: src/Views/Homepage.vala:187
+msgid "Universal Access"
+msgstr "Accesibilitate"
+
+#: src/Views/Homepage.vala:188
+msgid "Video"
+msgstr "Video"
+
+#: src/Views/Homepage.vala:193
+msgid "Writing & Language"
+msgstr "Scris și Limbă"
+
+#: src/Views/Homepage.vala:203
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Politica de intimitate"
+
+#: src/Views/Homepage.vala:454
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "Jocuri"
+
+#: src/Views/Homepage.vala:482
+msgid "Fun &"
+msgstr ""
+
+#: src/Views/Homepage.vala:491
+msgid "Games"
+msgstr "Jocuri"
+
+#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:58
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:30
+#: src/Views/SearchView.vala:34
 msgid "No Apps Found"
 msgstr "Nicio aplicație găsită"
 
-#: src/Views/SearchView.vala:31 src/Views/SearchView.vala:49
+#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi aplicații Flatpak de exemplu de la %s"
@@ -845,86 +995,6 @@ msgstr "Încearcă să schimbi cuvintele de căutare. Poți de asemenea să inst
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
 msgstr "Numărul cardului"
-
-#: src/Widgets/CategoryFlowBox.vala:29
-msgid "Accessories"
-msgstr "Accesorii"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Audio"
-msgstr "Audio"
-
-#: src/Widgets/CategoryFlowBox.vala:31
-msgid "Communication"
-msgstr "Comunicare"
-
-#: src/Widgets/CategoryFlowBox.vala:40
-msgid "Development"
-msgstr "Dezvoltare"
-
-#: src/Widgets/CategoryFlowBox.vala:50
-msgid "Education"
-msgstr "Educație"
-
-#: src/Widgets/CategoryFlowBox.vala:51
-msgid "Finance"
-msgstr "Finanțe"
-
-#: src/Widgets/CategoryFlowBox.vala:56
-msgid "Graphics"
-msgstr "Grafică"
-
-#: src/Widgets/CategoryFlowBox.vala:65
-msgid "Internet"
-msgstr "Internet"
-
-#: src/Widgets/CategoryFlowBox.vala:69
-msgid "Math, Science, & Engineering"
-msgstr "Matematică, Știință și Inginerie"
-
-#: src/Widgets/CategoryFlowBox.vala:88
-msgid "Media Production"
-msgstr "Producție Media"
-
-#: src/Widgets/CategoryFlowBox.vala:95
-msgid "Office"
-msgstr "Birou"
-
-#: src/Widgets/CategoryFlowBox.vala:102
-msgid "System"
-msgstr "Sistem"
-
-#: src/Widgets/CategoryFlowBox.vala:106
-msgid "Universal Access"
-msgstr "Accesibilitate"
-
-#: src/Widgets/CategoryFlowBox.vala:107
-msgid "Video"
-msgstr "Video"
-
-#: src/Widgets/CategoryFlowBox.vala:112
-msgid "Writing & Language"
-msgstr "Scris și Limbă"
-
-#: src/Widgets/CategoryFlowBox.vala:122
-#, fuzzy
-#| msgid "Privacy Policy"
-msgid "Privacy & Security"
-msgstr "Politica de intimitate"
-
-#: src/Widgets/CategoryFlowBox.vala:231
-#, fuzzy
-#| msgid "Games"
-msgid "Fun & Games"
-msgstr "Jocuri"
-
-#: src/Widgets/CategoryFlowBox.vala:259
-msgid "Fun &"
-msgstr ""
-
-#: src/Widgets/CategoryFlowBox.vala:268
-msgid "Games"
-msgstr "Jocuri"
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
@@ -952,53 +1022,45 @@ msgstr "$%dUSD"
 msgid "$%d"
 msgstr "$%dUSD"
 
-#: src/Widgets/NetworkInfoBar.vala:28
-msgid "Network Not Available."
-msgstr "Lipsă conexiune la internet."
+#: src/Widgets/ReleaseRow.vala:66
+msgid "Fixed Issues"
+msgstr ""
 
-#: src/Widgets/NetworkInfoBar.vala:29
-msgid "Connect to the Internet to browse and install apps."
-msgstr "Conectați-vă la Internet pentru căutat și instalat aplicații."
+#: src/Widgets/ReleaseRow.vala:94
+#, fuzzy
+#| msgid "Unknown state"
+msgid "Unknown date"
+msgstr "Stare necunoscută"
 
-#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:37
-msgid "Network Settings…"
-msgstr "Setări de rețea…"
-
-#: src/Widgets/ReleaseRow.vala:67
-#, c-format
-msgid "<b>%s</b> – %s"
-msgstr "<b>%s</b> – %s"
-
-#: src/Widgets/ReleaseRow.vala:74
+#: src/Widgets/ReleaseRow.vala:101
 msgid "Unknown version"
 msgstr "Versiune necunoscută"
 
-#: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
+#: src/Widgets/ReleaseRow.vala:118
 msgid "No description available"
 msgstr "Lipsă descriere"
 
-#: src/Widgets/SharePopover.vala:44
+#: src/Widgets/SharePopover.vala:35
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/Widgets/SharePopover.vala:48
+#: src/Widgets/SharePopover.vala:39
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:52
+#: src/Widgets/SharePopover.vala:43
 msgid "Reddit"
 msgstr "Reddit"
 
-#: src/Widgets/SharePopover.vala:56
+#: src/Widgets/SharePopover.vala:47
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:60
+#: src/Widgets/SharePopover.vala:51
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:64
+#: src/Widgets/SharePopover.vala:55
 msgid "Copy link"
 msgstr "Copiere link"
 
@@ -1015,25 +1077,26 @@ msgstr "Numai părțile necesare din aplicații și actualizări vor fi descărc
 msgid "Up to %s"
 msgstr "Până la %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:41
-#, c-format
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u actualizare disponibilă"
-msgstr[1] "%u actualizări disponibile"
-msgstr[2] "%u de actualizări disponibile"
-
-#: src/Widgets/UpdateHeaderRow.vala:54
-msgid "Drivers"
-msgstr "Drivere"
-
-#: src/Widgets/UpdateHeaderRow.vala:58
-msgid "Up to Date"
-msgstr "Aplicații la zi"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "Actualizează"
+
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
+msgid "Release notes"
+msgstr ""
+
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
+#, fuzzy, c-format
+#| msgid "What's New:"
+msgid "What's new in %s"
+msgstr "Ce este nou:"
+
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
+msgid "Close"
+msgstr "Închide"
+
+#~ msgid "<b>%s</b> – %s"
+#~ msgstr "<b>%s</b> – %s"
 
 #~ msgid "Non-Curated Warning"
 #~ msgstr "Avertisment pentru aplicații neverificate"
@@ -1131,9 +1194,6 @@ msgstr "Actualizează"
 #~ msgctxt "view"
 #~ msgid "Updates"
 #~ msgstr "Actualizări"
-
-#~ msgid "Close"
-#~ msgstr "Închide"
 
 #~ msgid "App Center"
 #~ msgstr "Centru de aplicații"

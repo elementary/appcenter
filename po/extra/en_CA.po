@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:16+0000\n"
+"POT-Creation-Date: 2022-09-30 12:16-0700\n"
 "PO-Revision-Date: 2018-04-20 00:14+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
@@ -729,10 +729,6 @@ msgstr ""
 msgid "@APP_NAME@"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@PROJECT_NAME@"
-msgstr ""
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -740,10 +736,6 @@ msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
-
-#: data/io.elementary.appcenter.desktop.in.in:19
-msgid "system-software-update"
 msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
