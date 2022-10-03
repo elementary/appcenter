@@ -10,7 +10,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     
     container:
       image: elementary/docker:next-unstable
@@ -44,12 +44,12 @@ jobs:
 
   lint:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     
     container:
       image: valalang/lint
       
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Lint
       run: io.elementary.vala-lint -d .
