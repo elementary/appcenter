@@ -307,7 +307,7 @@ public class AppCenter.App : Gtk.Application {
                         break;
                     }
 
-                    var dialog = new InstallFailDialog (package, error);
+                    var dialog = new InstallFailDialog (package, (owned) error.message);
                     dialog.present ();
                 }
 
