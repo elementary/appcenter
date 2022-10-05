@@ -289,7 +289,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
         email_entry.changed.connect (() => {
             if (" " in email_entry.text) {
-                email_entry.text = card_expiration_entry.text.replace (" ", "");
+                email_entry.text = email_entry.text.replace (" ", "");
             }
 
             is_payment_sensitive ();
