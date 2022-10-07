@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-05-14 07:37+0000\n"
+"PO-Revision-Date: 2022-10-07 23:27+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -46,11 +46,11 @@ msgstr "יכולות חדשות:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr ""
+msgstr "הניווט נכתב מחדש לתמיכה במחוות עם מספר אצבעות כדי לחזור אחורה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
+msgstr "היישומים שעודכנו לאחרונה מופיעים בראש תצוגות הקטגוריות"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "A status overlay bar is now shown when tasks are in progress"
