@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-07-01 14:52+0000\n"
+"PO-Revision-Date: 2022-10-08 12:48+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,38 +41,28 @@ msgid "“%s” has been installed"
 msgstr "“%s” をインストールしました"
 
 #: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "情報を取得しています"
+msgstr "アプリの情報を取得しています…"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
-msgstr ""
+msgstr "ダウンロードサイズを取得しています…"
 
 #: src/MainWindow.vala:101
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "アップデートを確認しています"
+msgstr "アップデートを確認しています…"
 
 #: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "インストールしています"
+msgstr "インストールしています…"
 
 #: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "アップデートをインストールしています"
+msgstr "アップデートをインストールしています…"
 
 #: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "アンインストールしています"
+msgstr "アンインストールしています…"
 
 #: src/MainWindow.vala:140
 #, c-format
@@ -79,11 +70,9 @@ msgid "Failed to launch “%s“"
 msgstr "“%s” を起動できませんでした"
 
 #: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "アプリをインストールできませんでした"
+msgstr "アップデートとインストール済みアプリ"
 
 #: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
 msgid "Search Apps"
@@ -595,10 +584,10 @@ msgid "Try Again"
 msgstr "再試行"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
-msgstr "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルにより発生した可能性があります。"
+msgstr ""
+"これは、AppCenter "
+"を経由せずにインストールしたソフトウェアや、サードパーティーのソフトウェアリポジトリ、パッケージマネージャーのエラーなどに起因している可能性があります。"
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"
@@ -995,17 +984,15 @@ msgstr "%dドル"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
-msgstr ""
+msgstr "修正した不具合"
 
 #: src/Widgets/ReleaseRow.vala:94
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "不明な状態"
+msgstr "日付不明"
 
 #: src/Widgets/ReleaseRow.vala:101
 msgid "Unknown version"
-msgstr "不明なバージョン"
+msgstr "バージョン不明"
 
 #: src/Widgets/ReleaseRow.vala:118
 msgid "No description available"
@@ -1054,13 +1041,12 @@ msgstr "アップデート"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
-msgstr ""
+msgstr "リリースノート"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "更新情報:"
+msgstr "%s の更新情報"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
