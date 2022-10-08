@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-10-07 23:27+0000\n"
+"PO-Revision-Date: 2022-10-08 12:48+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
@@ -79,43 +79,43 @@ msgstr "Kolor akcentu aplikacji jest teraz pokazany za zrzutami ekranu"
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
+"Kolory marek są teraz uzyskiwane ze standardu AppStream dla większego "
+"wsparcia aplikacji"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr ""
+msgstr "Linki na dole stron są teraz łamane, zamiast przycinania"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Better dark style support"
-msgstr ""
+msgstr "Lepsze wsparcie dla ciemnego motywu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Updates View Improvements:"
-msgstr "Ulepszenia:"
+msgstr "Ulepszenia widoku aktualizacji:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Release notes are shown in a dialog"
-msgstr ""
+msgstr "Informacje o wydaniu są pokazane w oknie dialogowym"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Better fallback icons for components"
-msgstr ""
+msgstr "Lepsze alternatywne ikony dla komponentów"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
 msgstr ""
+"Nagłówek „Zaktualizuj wszystkie” jest teraz przyczepiony do góry okna "
+"podczas przewijania"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Other Improvements:"
-msgstr "Ulepszenia:"
+msgstr "Inne ulepszenia:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr ""
+msgstr "Przeprojektowane kartę kategorii „Gry i zabawy”"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 #: data/io.elementary.appcenter.appdata.xml.in:69
@@ -126,10 +126,8 @@ msgid "Performance improvements"
 msgstr "Poprawki wydajności"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
-#, fuzzy
-#| msgid "Extension improvements"
 msgid "Stability improvements"
-msgstr "Poprawki rozszerzeń"
+msgstr "Poprawki stabilności"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 #: data/io.elementary.appcenter.appdata.xml.in:70
