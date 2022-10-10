@@ -13,9 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-06-01 18:45+0000\n"
+"PO-Revision-Date: 2022-10-10 08:21+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,38 +50,28 @@ msgid "“%s” has been installed"
 msgstr "»%s« wurde installiert"
 
 #: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Informationen abrufen"
+msgstr "Anwendungsinformationen abrufen …"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
-msgstr ""
+msgstr "Umfang ermitteln …"
 
 #: src/MainWindow.vala:101
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Auf Aktualisierungen prüfen"
+msgstr "Auf Aktualisierungen prüfen …"
 
 #: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Installieren"
+msgstr "Installieren …"
 
 #: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Aktualisierungen installieren"
+msgstr "Aktualisierungen installieren …"
 
 #: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Deinstallation"
+msgstr "Deinstallieren …"
 
 #: src/MainWindow.vala:140
 #, c-format
@@ -88,11 +79,9 @@ msgid "Failed to launch “%s“"
 msgstr "»%s« konnte nicht gestartet werden"
 
 #: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Installation der Anwendung fehlgeschlagen"
+msgstr "Aktualisierungen und installierte Anwendungen"
 
 #: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
 msgid "Search Apps"
@@ -607,10 +596,11 @@ msgid "Try Again"
 msgstr "Wiederholen"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
-msgstr "Dies könnte durch externe, manuell hinzugefügte Software-Repositorien oder eine korrupte sources.list-Datei verursacht worden sein."
+msgstr ""
+"Dies könnte verursacht worden sein durch manuell hinzugefügte oder manuell "
+"kompilierte Software, eine fremde Software-Quelle oder einen Fehler des "
+"Paketmanager."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"
@@ -1008,13 +998,11 @@ msgstr "%d USD"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Behobene Probleme"
 
 #: src/Widgets/ReleaseRow.vala:94
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Unbekannter Status"
+msgstr "Unbekanntes Datum"
 
 #: src/Widgets/ReleaseRow.vala:101
 msgid "Unknown version"
@@ -1067,13 +1055,12 @@ msgstr "Aktualisieren"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
-msgstr ""
+msgstr "Versionshinweise"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Das ist neu:"
+msgstr "Das ist neu in %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
