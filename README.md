@@ -8,13 +8,14 @@ An open, pay-what-you-want app store for indie developers.
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
+
 * gettext
-* libappstream-dev (>= 0.10)
-* libflatpak-dev
+* libadwaita-1-dev
+* libappstream-dev (>= 0.15.2)
+* libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
-* libgranite-dev (>=5.2.5)
-* libgtk-3-dev
-* libhandy-1-dev (>=1.3.0)
+* libgranite-7-dev (>=7.1.0)
+* libgtk-4-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev
@@ -32,7 +33,7 @@ Run `meson build` to configure the build environment. Change to the build direct
 
 To install, use `ninja install`, then execute with `io.elementary.appcenter`
 
-    sudo ninja install
+    ninja install
     io.elementary.appcenter
 
 ## Debugging
