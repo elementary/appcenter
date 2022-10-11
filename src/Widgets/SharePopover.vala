@@ -34,27 +34,22 @@ public class SharePopover : Gtk.Popover {
         var facebook_button = new Gtk.Button.from_icon_name ("online-account-facebook") {
             tooltip_text = _("Facebook")
         };
-        facebook_button.child.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter") {
             tooltip_text = _("Twitter")
         };
-        twitter_button.child.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit") {
             tooltip_text = _("Reddit")
         };
-        reddit_button.child.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr") {
             tooltip_text = _("Tumblr")
         };
-        tumblr_button.child.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var telegram_button = new Gtk.Button.from_icon_name ("online-account-telegram") {
             tooltip_text = _("Telegram")
         };
-        telegram_button.child.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic") {
             tooltip_text = _("Copy link")
@@ -71,6 +66,7 @@ public class SharePopover : Gtk.Popover {
             margin_bottom = 6,
             margin_start = 6
         };
+        service_box.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var mail_appinfo = AppInfo.get_default_for_uri_scheme ("mailto");
         if (mail_appinfo != null) {
@@ -79,7 +75,6 @@ public class SharePopover : Gtk.Popover {
                 tooltip_text = mail_appinfo.get_display_name ()
             };
             email_button.add_css_class ("image-button");
-            email_button.child.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
             service_box.append (email_button);
 
