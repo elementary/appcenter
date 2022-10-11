@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-10-07 23:27+0000\n"
+"PO-Revision-Date: 2022-10-10 09:57+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -54,13 +54,11 @@ msgstr "היישומים שעודכנו לאחרונה מופיעים בראש �
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr ""
+msgstr "סרגל צף מופיע כשמתבצעות משימות ברקע"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
-#, fuzzy
-#| msgid "Improvements:"
 msgid "App Info Page Improvements:"
-msgstr "שיפורים:"
+msgstr "שיפורים בעמוד פרטי היישום:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid ""
