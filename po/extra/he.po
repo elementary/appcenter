@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-10-10 09:57+0000\n"
+"PO-Revision-Date: 2022-10-13 13:36+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -65,51 +65,49 @@ msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
 msgstr ""
+"חלוניות ההצגה של צילומי המסך ממלאים את רוחב המסך, כך שיותר צילומי מסך יופיעו "
+"בו־זמנית"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "An app's accent color is now shown behind screenshots"
-msgstr ""
+msgstr "הצבע המשני של היישום מופיע עכשיו מאחורי צילומי המסך"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr ""
+msgstr "משיכת צבעי המותג מתקן AppStream כדי להציע תמיכה ביותר יישומים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr ""
+msgstr "הקישורים בתחתית העמוד גולשים לשורה הבאה במקום שיקוצרו"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Better dark style support"
-msgstr ""
+msgstr "תמיכה משופרת בסגנון כהה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Updates View Improvements:"
-msgstr "שיפורים:"
+msgstr "שיפורים בתצוגת העדכונים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Release notes are shown in a dialog"
-msgstr ""
+msgstr "הערות ההפצה מופיעות בחלונית"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Better fallback icons for components"
-msgstr ""
+msgstr "סמלי נסיגה משופרים לרכיבים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr ""
+msgstr "שורת הכותרת „לעדכן הכול” נצמדת לראש החלון בעת הגלילה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Other Improvements:"
-msgstr "שיפורים:"
+msgstr "שיפורים נוספים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr ""
+msgstr "כרטיס הקטגוריה „כיף ומשחקים” עוצב מחדש"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 #: data/io.elementary.appcenter.appdata.xml.in:69
@@ -120,10 +118,8 @@ msgid "Performance improvements"
 msgstr "שיפורי ביצועים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
-#, fuzzy
-#| msgid "Extension improvements"
 msgid "Stability improvements"
-msgstr "שיפורי הרחבה"
+msgstr "שיפורי יציבות"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 #: data/io.elementary.appcenter.appdata.xml.in:70
