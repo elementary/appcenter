@@ -5,9 +5,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-24 17:34+0000\n"
-"PO-Revision-Date: 2022-09-30 23:09+0000\n"
+"PO-Revision-Date: 2022-10-25 09:27+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,10 +42,8 @@ msgid "“%s” has been installed"
 msgstr "%s ble installert"
 
 #: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Henter informasjon"
+msgstr "Henter programinfo …"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
@@ -57,22 +56,16 @@ msgid "Checking for updates…"
 msgstr "Ser etter oppgraderinger …"
 
 #: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Installerer"
+msgstr "Installerer …"
 
 #: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Installerer oppdateringer"
+msgstr "Installerer oppgraderinger …"
 
 #: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Avinstaller"
+msgstr "Avinstallerer …"
 
 #: src/MainWindow.vala:140
 #, c-format
@@ -84,7 +77,7 @@ msgstr "Klarte ikke å kjøre «%s»"
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Klarte ikke å installere programmet"
+msgstr "Oppgraderinger og installerte programmer"
 
 #: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
 msgid "Search Apps"
@@ -1018,10 +1011,8 @@ msgid "Fixed Issues"
 msgstr "Fiksede problemer"
 
 #: src/Widgets/ReleaseRow.vala:94
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Ukjent tilstand"
+msgstr "Ukjent dato"
 
 #: src/Widgets/ReleaseRow.vala:101
 msgid "Unknown version"
@@ -1077,10 +1068,9 @@ msgid "Release notes"
 msgstr "Utgivelsesnotater"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Nyheter:"
+msgstr "Nyheter i %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
