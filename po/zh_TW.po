@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2022-07-24 18:47+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -602,7 +602,7 @@ msgstr "重試"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "這可能是因為外部原因、手動添加的軟體庫、或毀損的軟體來源檔造成。"
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -613,6 +613,12 @@ msgstr "無法更新應用程式"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "無法更新 “%s”"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "檢查更新"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"

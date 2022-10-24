@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2022-09-30 23:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
@@ -601,7 +601,7 @@ msgstr "Prøv igjen"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Dette kan ha sitt opphav i ekstern, manuelt tillagte programvarepakkebrønner, eller en skadet kilde-fil."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -612,6 +612,12 @@ msgstr "Klarte ikke å oppdatere programmet"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Klarte ikke å oppdatere «%s»"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "Se etter oppgraderinger"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"

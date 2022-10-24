@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2022-09-30 23:09+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
@@ -597,7 +597,9 @@ msgid "Try Again"
 msgstr "Спробувати знову"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+#, fuzzy
+#| msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Це могло бути спричинено завантаженим або скомпільованим вручну програмним забезпеченням, стороннім джерелом програмного забезпечення або помилкою менеджера пакунків."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -608,6 +610,12 @@ msgstr "Не вдалося оновити застосунок"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Не вдалося оновити «%s»"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "Перевірити наявність оновлень"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"

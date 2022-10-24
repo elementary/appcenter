@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2020-11-02 17:15+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -616,7 +616,7 @@ msgstr "Prøv Igen"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Dette kan have været forårsaget af eksterne manuelt tilføjede software repositories eller en beskadiget kilde fil."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -630,6 +630,12 @@ msgstr "Det lykkedes ikke at afinstallere applikationen"
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to update “%s”"
 msgstr "Det lykkedes ikke at afinstallere \"%s\""
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Refresh Updates"
+msgstr "Søger efter opdateringer"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
