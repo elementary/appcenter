@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/appcenter/appcenter/hr/>\n"
@@ -620,7 +620,7 @@ msgid "Try Again"
 msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -632,6 +632,12 @@ msgstr "Potraži i instaliraj aplikacije"
 #, fuzzy, c-format
 msgid "Failed to update “%s”"
 msgstr "Potraži i instaliraj aplikacije"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Refresh Updates"
+msgstr "Pretraživanje nadopuna…"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"

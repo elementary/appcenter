@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-01-15 16:12+0000\n"
-"Last-Translator: MB <barendregt@fastmail.com>\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"PO-Revision-Date: 2022-10-15 15:57+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -45,38 +45,28 @@ msgid "“%s” has been installed"
 msgstr "“%s” is geïnstalleerd"
 
 #: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Informatie ophalen"
+msgstr "App-informatie wordt opgehaald…"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
-msgstr ""
+msgstr "Downloadgrootte wordt opgehaald…"
 
 #: src/MainWindow.vala:101
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Updates zoeken"
+msgstr "Controleren op updates…"
 
 #: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Installeren"
+msgstr "Installeren…"
 
 #: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Updates installeren"
+msgstr "Updates installeren…"
 
 #: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Deïnstalleren"
+msgstr "Deïnstalleren…"
 
 #: src/MainWindow.vala:140
 #, c-format
@@ -84,31 +74,25 @@ msgid "Failed to launch “%s“"
 msgstr "Het starten van “%s” is mislukt"
 
 #: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Installeren van de app is mislukt"
+msgstr "Updates & geïnstalleerde apps"
 
 #: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
 msgid "Search Apps"
 msgstr "Zoek Apps"
 
 #: src/MainWindow.vala:207
-#, fuzzy
-#| msgid "Automatic Updates"
 msgid "Automatic App Updates"
-msgstr "Automatische updates"
+msgstr "Automatische app-updates"
 
 #: src/MainWindow.vala:208
 msgid "System updates and unpaid apps will not update automatically"
-msgstr ""
+msgstr "Systeemupdates en onbetaalde apps zullen niet automatisch updaten"
 
 #: src/MainWindow.vala:212
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Check for Updates"
-msgstr "Updates zoeken"
+msgstr "Controleer op updates"
 
 #: src/MainWindow.vala:236
 msgid "Settings"
@@ -474,7 +458,7 @@ msgstr "Betaal $ %d.00"
 
 #: src/Dialogs/StripeDialog.vala:251
 msgid "Try for Free"
-msgstr ""
+msgstr "Probeer gratis"
 
 #: src/Dialogs/StripeDialog.vala:314
 msgid "Processing"
@@ -608,9 +592,9 @@ msgstr "Probeer opnieuw"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
-msgstr "Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde softwarebronnen of een gecorrumpeerd bronnenbestand."
+#| msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
+msgstr "Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde software, softwarebronnen van een derde partij of een error in de pakketbeheerder."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"
@@ -620,6 +604,12 @@ msgstr "Het bijwerken van de app is mislukt"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Het bijwerken van “%s” is mislukt"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "Controleer op updates"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
@@ -764,23 +754,19 @@ msgstr "Deel"
 
 #: src/Views/AppInfoView.vala:857
 msgid "End of Life"
-msgstr ""
+msgstr "Levenscyclus beëindigt"
 
 #: src/Views/AppInfoView.vala:858
-#, fuzzy
-#| msgid "Built with older technologies that may not work as expected or receive security updates"
 msgid "May not work as expected or receive security updates"
-msgstr "Gemaakt met verouderde technologieën die mogelijk niet zoals verwacht zullen functioneren of niet langer beveiligingsupdates krijgen"
+msgstr "Kan mogelijk onverwacht gedrag vertonen of geen beveiligingsupdates ontvangen"
 
 #: src/Views/AppInfoView.vala:864
 msgid "Outdated"
 msgstr "Verouderd"
 
 #: src/Views/AppInfoView.vala:865
-#, fuzzy
-#| msgid "Built for an older version of %s; might not support the latest features"
 msgid "May not work as expected or support the latest features"
-msgstr "Gemaakt voor een oudere versie van %s; mogelijk wordt de nieuwste functionaliteit niet ondersteund"
+msgstr "Kan mogelijk onverwacht gedrag vertonen of niet beschikken over de nieuwste functionaliteit"
 
 #: src/Views/AppInfoView.vala:873
 msgid "Unstable"
@@ -850,7 +836,7 @@ msgstr "U zult opnieuw moeten opstarten om de installatie van de updates af te r
 
 #: src/Views/AppListUpdateView.vala:96
 msgid "Restart Now"
-msgstr "Start nu opnieuw op"
+msgstr "Nu opnieuw opstarten"
 
 #: src/Views/AppListUpdateView.vala:108
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
@@ -956,14 +942,12 @@ msgid "Privacy & Security"
 msgstr "Privacy & veiligheid"
 
 #: src/Views/Homepage.vala:454
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Spellen"
+msgstr "Plezier & Spelletjes"
 
 #: src/Views/Homepage.vala:482
 msgid "Fun &"
-msgstr ""
+msgstr "Plezier &"
 
 #: src/Views/Homepage.vala:491
 msgid "Games"
@@ -1014,13 +998,11 @@ msgstr "$ %d"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Opgeloste problemen"
 
 #: src/Widgets/ReleaseRow.vala:94
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Onbekende toestand"
+msgstr "Onbekende datum"
 
 #: src/Widgets/ReleaseRow.vala:101
 msgid "Unknown version"
@@ -1073,13 +1055,12 @@ msgstr "Bijwerken"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
-msgstr ""
+msgstr "Opmerkingen bij uitgave"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Wat er nieuw is:"
+msgstr "Wat is er nieuw in %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"

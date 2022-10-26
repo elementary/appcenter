@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-01-16 20:07+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"PO-Revision-Date: 2022-10-12 09:57+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -59,10 +59,8 @@ msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
-#, fuzzy
-#| msgid "Improvements:"
 msgid "App Info Page Improvements:"
-msgstr "İyileştirmeler:"
+msgstr "Uygulama Bilgi Sayfası İyileştirmeleri:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid ""
@@ -87,10 +85,8 @@ msgid "Better dark style support"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Updates View Improvements:"
-msgstr "İyileştirmeler:"
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Release notes are shown in a dialog"
@@ -106,10 +102,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Other Improvements:"
-msgstr "İyileştirmeler:"
+msgstr "Diğer İyileştirmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Redesigned \"Fun &amp; Games\" category card"
@@ -124,10 +118,8 @@ msgid "Performance improvements"
 msgstr "Performans iyileştirmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
-#, fuzzy
-#| msgid "Extension improvements"
 msgid "Stability improvements"
-msgstr "Eklenti iyileştirmeleri"
+msgstr "Kararlılık iyileştirmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 #: data/io.elementary.appcenter.appdata.xml.in:70
@@ -158,10 +150,8 @@ msgid "Added an option to automatically update apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "Güncellemeleri Denetle"
+msgstr "Yeni güncellemeleri el ile denetle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 msgid "Warn when apps are built against older runtimes"

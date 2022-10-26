@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -628,7 +628,7 @@ msgstr "Bandyti dar kartą"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Tai galėjo būti sukelta išorinės, rankiniu būdu pridėtos programinės įrangos saugyklos arba pažeisto šaltinių failo."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -642,6 +642,12 @@ msgstr "Nepavyko pašalinti programos"
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to update “%s”"
 msgstr "Nepavyko pašalinti \"%s\""
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Refresh Updates"
+msgstr "Ieškoma atnaujinimų…"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"

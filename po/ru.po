@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-10-05 10:57+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"PO-Revision-Date: 2022-10-22 13:57+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
@@ -295,9 +295,9 @@ msgstr "выполняются операции с пакетами"
 #: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Доступно обновление"
+msgstr[0] "Доступны обновления"
 msgstr[1] "Доступны обновления"
-msgstr[2] "Доступно обновлений"
+msgstr[2] "Доступны обновления"
 
 #: src/Core/Client.vala:73
 #, c-format
@@ -425,7 +425,7 @@ msgstr "Перевести %d,00 USD для %s"
 
 #: src/Dialogs/StripeDialog.vala:98
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Это разовый платёж, предложенный разработчиком. Также Вы можете выбрать свою цену."
+msgstr "Это разовый платёж, предложенный разработчиком. Также вы можете выбрать свою цену."
 
 #: src/Dialogs/StripeDialog.vala:119
 msgid "or"
@@ -598,7 +598,9 @@ msgid "Try Again"
 msgstr "Повторить попытку"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+#, fuzzy
+#| msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Это может быть вызвано сторонним или вручную скомпилированным программным обеспечением, сторонними репозиториями или ошибкой пакетного менеджера."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -609,6 +611,12 @@ msgstr "Не удалось обновить приложение"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Не удалось обновить «%s»"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "Проверить обновления"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
@@ -846,8 +854,8 @@ msgstr "Запрос на перезапуск не удался. Перезап
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "Доступно %u обновление"
-msgstr[1] "Доступны %u обновления"
-msgstr[2] "Доступны %u обновлений"
+msgstr[1] "Доступно %u обновления"
+msgstr[2] "Доступно %u обновлений"
 
 #: src/Views/AppListUpdateView.vala:310
 msgid "Drivers"
@@ -947,7 +955,7 @@ msgstr "Развлечения и Игры"
 
 #: src/Views/Homepage.vala:482
 msgid "Fun &"
-msgstr "Развлечения и"
+msgstr "Игры и"
 
 #: src/Views/Homepage.vala:491
 msgid "Games"

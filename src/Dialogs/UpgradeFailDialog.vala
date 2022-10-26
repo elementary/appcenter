@@ -23,7 +23,7 @@ public class UpgradeFailDialog : Granite.MessageDialog {
     public UpgradeFailDialog (AppCenterCore.Package? package, string error_message) {
         Object (
             title: "",
-            secondary_text: _("This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."),
+            secondary_text: _("This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."),
             buttons: Gtk.ButtonsType.CLOSE,
             badge_icon: new ThemedIcon ("dialog-error"),
             error_message: error_message,
@@ -40,8 +40,16 @@ public class UpgradeFailDialog : Granite.MessageDialog {
             image_icon = package.get_icon (48, get_scale_factor ());
         }
 
+        var refresh_button = add_button (_("Refresh Updates"), Gtk.ResponseType.ACCEPT);
+
         show_error_details (error_message);
 
-        response.connect (() => destroy ());
+        response.connect ((response_type) => {
+            if (response_type == Gtk.ResponseType.ACCEPT) {
+                Application.get_default ().activate_action ("app.refresh", null);
+            }
+
+            destroy ();
+        });
     }
 }
