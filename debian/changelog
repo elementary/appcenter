@@ -1,3 +1,113 @@
+appcenter (4.0.0) bionic; urgency=medium
+
+  * Release 4.0.0 (#1939)
+  * Update translation files
+  * Update translation template
+  * UpgradeFailDialog: offer refresh option (#1942)
+  * AppData: add 4.0.0 release notes (#1938)
+  * Fix CI (#1937)
+  * fix: Segfault from error message being freed in dialogs (#1936)
+  * gettext: use ubuntu 22.04
+  * gettext: Use next branch by default
+  * Revert "gettext: Set the next version as action runner"
+  * gettext: Set the next version as action runner
+  * Update pot files
+  * UpdateManager: count updates size, flatpak, unpaid (#1924)
+  * ReleaseRow: support issues tag (#1931)
+  * Remove redundant null check
+  * AppInfoView: get newest releases in this class
+  * ReleaseRow: cleanup and design update
+  * AppListUpdateView: make update all header sticky (#1921)
+  * MainWindow: don't rely selected_package (#1918)
+  * Show current job type in overlaybar (#1919)
+  * Remove AbstractAppList (#1916)
+  * AppListUpdateView: Fix typo in package row compare (#1917)
+  * AbstractAppList: Remove redundant package_changing (#1915)
+  * Move get_packages from AbstractAppList to AppListUpdateView (#1912)
+  * Package: assign icons for more componentkinds (#1914)
+  * AbstractAppList: Remove add_package (#1913)
+  * AbstractAppList: Remove sort func (#1911)
+  * Move remove_package from AbstractAppList to AppListUpdateView
+    (#1910)
+  * Homepage categories (#1907)
+  * AbstractAppList: Remove list.add connect (#1909)
+  * CategoryView: change append to add_package (#1908)
+  * Application: use active_window (#1903)
+  * Arrow.css: fix blurry border (#1902)
+  * MainWindow: message_dialog.present
+  * InstalledPackageRowGrid: ReleasesDialog subclass Granite.Dialog
+  * Application: installfaildialog present
+  * DBusServer: connect to uninstall_confirm response
+  * StripeDialog: code style and boxes (#1905)
+  * AppInfoView: absorb ReleaseListBox (#1899)
+  * SharePopover: code style and DRY (#1900)
+  * Homepage: absorb CategoryFlowBox (#1898)
+  * CategoryView: don't subclass Gtk.FlowBox (#1895)
+  * Package: Remove should_nag_update (#1891)
+  * Package: use AppCenter origin in should_pay (#1892)
+  * Replace Gtk.Grid with Gtk.Box (#1886)
+  * Move Deck to MainWindow (#1882)
+  * meson: require appstream >= 0.15.2 (#1893)
+  * Package: expose ComponentKind as property (#1887)
+  * Move NetworkInfoBar to MainWindow (#1888)
+  * AppInfoView: use a flowbox for links (#1884)
+  * CategoryView: highlight recently updated apps (#1856)
+  * Use explicit properties (#1889)
+  * MainWindow: remove window position code (#1885)
+  * Package: get branding from appstream (#1883)
+  * AppListUpdateView: Don't re-use cancellable (#1863)
+  * Banner, AppInfoView: Use a single accent color, auto text color
+    (#1880)
+  * Use a single Hdy.Deck for navigation (#1874)
+  * MainWindow: Use icons for view mode switcher and center search
+    (#1873)
+  * AppInfoView: Add background and caption to screenshots (#1878)
+  * Remove dead NonCuratedWarningDialog.css (#1879)
+  * UpgradeFailDialog: avoid crash from null GLib.Error (#1877)
+  * AppInfoView: create accent provider per-view (#1872)
+  * Homepage: remove dead currently_viewed_category (#1876)
+  * InstalledPackageRowGrid: release notes in a dialog (#1875)
+  * AppInfoView: Make screenshot carousel full page width (#1572)
+  * Disallow scrolling with mouse wheel on screenshot carousel (#1868)
+  * AppInfoView: Wrap package_name instead of ellipsize (#1867)
+  * AppListUpdateView: move list population from InstalledView to here
+    (#1860)
+  * Provide default case for switches (#1858)
+  * CategoryFlowBox: create Fun & Games (#1763)
+  * AppListView → SearchView (#1859)
+  * AbstractView: Replace Stack with Deck (#1769)
+  * Release 3.10.0 (#1846)
+  * AppInfoView: move uninstall button here (#1855)
+  * PackageKitBackend: don't load Ubuntu components with AppStream 0.15
+    (#1852)
+  * AbstractAppContainer: Remove progress_grid (#1854)
+  * CategoryView: load packages async (#1851)
+  * HumbleButton: move show_stripe_dialog here (#1847)
+  * Core: set AppStream.FormatStyle to COLLECTION (#1845)
+  * Homepage: remove unuseed page_loaded (#1843)
+  * AbstractAppContainer: Remove curated warning dialog (#1841)
+  * Core: fix appstream deprecations (#1835)
+  * AppListView: Don't sort native apps first in search (#1840)
+  * MainWindow: misc menu fixes (#1842)
+  * Add a manual refresh button to update all caches (#1791)
+  * Pull apt updates less frequently (#1790)
+  * Homepage: more accurate navigation (#1837)
+  * AppInfoView: new icon and copy for old runtimes (#1838)
+  * Homepage: Only scroll carousel when banner is visible (#1836)
+  * UpdateManager: notify for unpaid apps
+  * Client: auto update non-native apps
+  * MainWindow: Reliably update on view change (#1831)
+  * AppInfoView: Set banner provider for context, not screen (#1692)
+  * Client: Trigger auto-updates when opening the app (#1811)
+  * Show try for free label  (#1820)
+  * AppInfoView: Warn about OS runtime mismatch (#1807)
+  * Automatically install curated Flatpak updates (#1793)
+  * Make back button behaviour more consistant (#1752)
+  * Expose screenshot captions (#1801)
+  * Fix AppStream.PoolFlags being renamed (#1794)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 27 Oct 2022 04:16:59 +0000
+
 appcenter (3.10.0) bionic; urgency=medium
 
   * Release 3.10.0 (#1846)
