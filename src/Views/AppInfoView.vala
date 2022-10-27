@@ -1034,6 +1034,8 @@ namespace AppCenter.Views {
 
                 return null;
             });
+
+            action_button.grab_focus ();
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
