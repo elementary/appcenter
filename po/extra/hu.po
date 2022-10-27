@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
-"PO-Revision-Date: 2022-10-07 23:27+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"PO-Revision-Date: 2022-10-26 22:57+0000\n"
+"Last-Translator: Alfika07 <tothalfi07@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
 "Language: hu\n"
@@ -219,7 +219,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:92
 msgid "Categories show as a grid instead of a list"
-msgstr ""
+msgstr "Kategóriák megjelenítése rácsként lista helyett"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
 msgid "Allow window to shrink to much narrower sizes"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2018-02-05 00:10+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/appcenter/appcenter/ku/>\n"
@@ -601,7 +601,7 @@ msgid "Try Again"
 msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -613,6 +613,13 @@ msgstr "Jêrake"
 #, fuzzy, c-format
 msgid "Failed to update “%s”"
 msgstr "Jêrake"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Updates"
+msgid "Refresh Updates"
+msgstr "rojanekirin"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
@@ -1099,10 +1106,6 @@ msgstr ""
 
 #~ msgid "Size: %s"
 #~ msgstr "Mezinahî: %s"
-
-#~ msgctxt "view"
-#~ msgid "Updates"
-#~ msgstr "rojanekirin"
 
 #~ msgid "App Center"
 #~ msgstr "dikanê bername"

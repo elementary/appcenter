@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2022-07-31 11:43+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/appcenter/appcenter/ckb/>\n"
@@ -600,7 +600,7 @@ msgstr "دوبارە هەوڵبدە"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "دەکرێت ئەمە بەهۆی زیادکردنی کۆگای نەرمەکاڵای دەرەکی یان ئەوانەی کە خۆت زیادت کردوون یان پەڕگەی سەرچاوە تێکچووەکانەوە ڕوویدابێت."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -611,6 +611,12 @@ msgstr "نوێکردنەوەی نەرمەکاڵا شکستی هێنا"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "نەتوانرا نەرمەکاڵای \"%s\" نوێبکرێتەوە"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "پشکنین بۆ نوێبوونەوەکان"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"

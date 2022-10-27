@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2022-06-01 08:47+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
@@ -609,7 +609,7 @@ msgstr "Réessayer"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Ceci peut-être provoqué par un dépôt externe ajouté manuellement ou un fichier corrompu."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -620,6 +620,12 @@ msgstr "Échec de la mise à jour de l'application"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Échec de la mise à jour de « %s »"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "Rechercher des mises à jour"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"

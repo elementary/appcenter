@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 18:00+0000\n"
+"POT-Creation-Date: 2022-10-24 17:34+0000\n"
 "PO-Revision-Date: 2022-08-07 23:58+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -597,7 +597,7 @@ msgstr "다시 시도합니다"
 #: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
+msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "아마도 기본 시스템 이외의 외적인 요인이나, 수동으로 지정한 저장소 또는 망가진 소스 파일 때문으로 보입니다."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -608,6 +608,12 @@ msgstr "업데이트 실패"
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "“%s” 업데이트 실패"
+
+#: src/Dialogs/UpgradeFailDialog.vala:43
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Refresh Updates"
+msgstr "업데이트 확인"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
