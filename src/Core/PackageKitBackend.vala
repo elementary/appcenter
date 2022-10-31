@@ -757,6 +757,21 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return job.result.get_boolean ();
     }
 
+    private Gee.ArrayList<string> get_downloaded_updates () {
+        var downloaded_updates = new Gee.ArrayList<string> ();
+
+        var key_file = new KeyFile ();
+        try {
+            key_file.load_from_file ("/var/lib/PackageKit/prepared-update", KeyFileFlags.NONE);
+            var prepared_ids = key_file.get_string ("update", "prepared_ids").split (",");
+            downloaded_updates = new Gee.ArrayList<string>.wrap (prepared_ids);
+        } catch (Error e) {
+            warning ("Unable to read PackageKit prepared ids: %s", e.message);
+        }
+
+        return downloaded_updates;
+    }
+
     private void get_updates_internal (Job job) {
         var args = (GetUpdatesArgs)job.args;
         var cancellable = args.cancellable;
@@ -791,10 +806,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         string[] package_ids = {};
+        var downloaded_updates = get_downloaded_updates ();
         results.get_package_array ().foreach ((pk_package) => {
-            print ("%s: %s\n", pk_package.package_id, pk_package.info.to_string ());
-            print ("%s: %s\n", pk_package.package_id, pk_package.update_state.to_string ());
-            package_ids += pk_package.get_id ();
+            if (!downloaded_updates.contains (pk_package.get_id ())) {
+                package_ids += pk_package.get_id ();
+            }
         });
 
         package_ids += null;
