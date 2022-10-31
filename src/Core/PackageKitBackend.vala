@@ -148,7 +148,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         });
 
         loop.run ();
-        client = new Task ();
+        client = new Task () {
+            only_download = true
+        };
     }
 
     private PackageKitBackend () {
@@ -660,8 +662,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         packages_ids += null;
 
         try {
-            client.only_download = true;
-
             var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
                 change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
@@ -792,6 +792,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         string[] package_ids = {};
         results.get_package_array ().foreach ((pk_package) => {
+            print ("%s: %s\n", pk_package.package_id, pk_package.info.to_string ());
+            print ("%s: %s\n", pk_package.package_id, pk_package.update_state.to_string ());
             package_ids += pk_package.get_id ();
         });
 
