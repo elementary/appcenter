@@ -760,15 +760,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private Gee.ArrayList<string> get_downloaded_updates () {
         var downloaded_updates = new Gee.ArrayList<string> ();
 
-        const string pk_prepared_ids_path = "/var/lib/PackageKit/prepared-update";
+        const string PK_PREPARED_IDS_PATH = "/var/lib/PackageKit/prepared-update";
 
-        if (!FileUtils.test (pk_prepared_ids_path, FileTest.IS_REGULAR)) {
+        if (!FileUtils.test (PK_PREPARED_IDS_PATH, FileTest.IS_REGULAR)) {
             return downloaded_updates;
         }
 
         var key_file = new KeyFile ();
         try {
-            key_file.load_from_file (pk_prepared_ids_path, KeyFileFlags.NONE);
+            key_file.load_from_file (PK_PREPARED_IDS_PATH, KeyFileFlags.NONE);
             var prepared_ids = key_file.get_string ("update", "prepared_ids").split (",");
             downloaded_updates = new Gee.ArrayList<string>.wrap (prepared_ids);
         } catch (Error e) {
