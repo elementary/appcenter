@@ -760,9 +760,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private Gee.ArrayList<string> get_downloaded_updates () {
         var downloaded_updates = new Gee.ArrayList<string> ();
 
+        const string pk_prepared_ids_path = "/var/lib/PackageKit/prepared-update";
+
+        if (!FileUtils.test (pk_prepared_ids_path, FileTest.IS_REGULAR)) {
+            return downloaded_updates;
+        }
+
         var key_file = new KeyFile ();
         try {
-            key_file.load_from_file ("/var/lib/PackageKit/prepared-update", KeyFileFlags.NONE);
+            key_file.load_from_file (pk_prepared_ids_path, KeyFileFlags.NONE);
             var prepared_ids = key_file.get_string ("update", "prepared_ids").split (",");
             downloaded_updates = new Gee.ArrayList<string>.wrap (prepared_ids);
         } catch (Error e) {
@@ -798,13 +804,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             return;
         }
 
-        if (results.get_package_array ().length == 0) {
-            job.result = Value (typeof (Object));
-            job.result.take_object (results);
-            job.results_ready ();
-            return;
-        }
-
         string[] package_ids = {};
         var downloaded_updates = get_downloaded_updates ();
         results.get_package_array ().foreach ((pk_package) => {
@@ -812,6 +811,13 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 package_ids += pk_package.get_id ();
             }
         });
+
+        if (results.get_package_array ().length == 0 || package_ids.length == 0) {
+            job.result = Value (typeof (Object));
+            job.result.take_object (results);
+            job.results_ready ();
+            return;
+        }
 
         package_ids += null;
 
