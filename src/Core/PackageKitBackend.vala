@@ -660,12 +660,17 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         packages_ids += null;
 
         try {
+            client.only_download = true;
+
             var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
                 change_info.callback (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
+            if (exit_status == Pk.Exit.SUCCESS) {
+                Pk.offline_trigger (Pk.OfflineAction.REBOOT, cancellable);
+            }
         } catch (Error e) {
             job.error = e;
             job.results_ready ();
