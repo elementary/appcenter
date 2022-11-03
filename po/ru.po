@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-24 17:34+0000\n"
-"PO-Revision-Date: 2022-10-26 22:57+0000\n"
+"PO-Revision-Date: 2022-11-03 00:38+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -960,7 +960,7 @@ msgstr "Игры и"
 
 #: src/Views/Homepage.vala:491
 msgid "Games"
-msgstr "Игры"
+msgstr "Развлечения"
 
 #: src/Views/SearchView.vala:32 src/Views/SearchView.vala:58
 msgid "Flathub"
