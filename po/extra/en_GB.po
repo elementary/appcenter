@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-24 17:34+0000\n"
-"PO-Revision-Date: 2021-12-08 22:10+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2022-11-09 13:29+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "appcenter/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -47,21 +47,19 @@ msgstr "New features:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr ""
+msgstr "Rewritten navigation with multitouch gestures to go back"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
+msgstr "Recently updated apps are shown at the top of category views"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
-#, fuzzy
-#| msgid "Improvements:"
 msgid "App Info Page Improvements:"
-msgstr "Improvements:"
+msgstr "App Info Page Improvements:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid ""
@@ -86,10 +84,8 @@ msgid "Better dark style support"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Updates View Improvements:"
-msgstr "Improvements:"
+msgstr "Updates View Improvements:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Release notes are shown in a dialog"
@@ -105,10 +101,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Other Improvements:"
-msgstr "Improvements:"
+msgstr "Other Improvements:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Redesigned \"Fun &amp; Games\" category card"
@@ -123,10 +117,8 @@ msgid "Performance improvements"
 msgstr "Performance improvements"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
-#, fuzzy
-#| msgid "Extension improvements"
 msgid "Stability improvements"
-msgstr "Extension improvements"
+msgstr "Stability improvements"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 #: data/io.elementary.appcenter.appdata.xml.in:70
@@ -153,16 +145,12 @@ msgid "Updated translations"
 msgstr "Updated translations"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
-#, fuzzy
-#| msgid "No longer prompt for approval to update non-curated apps"
 msgid "Added an option to automatically update apps"
-msgstr "No longer prompt for approval to update non-curated apps"
+msgstr "Added an option to automatically update apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "Check for Updates"
+msgstr "Manually check for new updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 msgid "Warn when apps are built against older runtimes"
