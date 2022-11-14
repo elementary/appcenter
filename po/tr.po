@@ -13,11 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2022-11-07 17:58+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -346,7 +345,7 @@ msgstr "Bilinmeyen Kaynak (doğrulanmamış)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (yerel)"
@@ -598,10 +597,7 @@ msgstr "Tekrar Dene"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr ""
-"Bunun nedeni, dışarıdan yüklenmiş veya elle derlenmiş bir yazılım, bir "
-"üçüncü taraf yazılım kaynağı veya bir paket yöneticisi hatası olabilir. "
-"Güncellemeleri el ile yenilemek sorunu çözebilir."
+msgstr "Bunun nedeni, dışarıdan yüklenmiş veya elle derlenmiş bir yazılım, bir üçüncü taraf yazılım kaynağı veya bir paket yöneticisi hatası olabilir. Güncellemeleri el ile yenilemek sorunu çözebilir."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"

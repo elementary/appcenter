@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2019-12-12 19:07+0000\n"
 "Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -365,7 +365,7 @@ msgstr "Nekonata Deveno (ne kontrolita)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Aplikaĵa stato ne difinita kiel instalita en la Aplikaĵa Centro, rilate la pakaĵon: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2022-01-31 07:59+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -356,7 +356,7 @@ msgstr "Origine necunoscută (neverificată)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Statutul aplicației nu este setat drept instalat în Centrul de Aplicații pentru pachetul: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"

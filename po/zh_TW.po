@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2022-07-24 18:47+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -350,7 +350,7 @@ msgstr "未知的來源 (未整理)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "未設定為安裝狀態的應用程式：%s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (本機)"
