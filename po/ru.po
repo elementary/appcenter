@@ -1,6 +1,5 @@
 # Kirill Romanov <djaler1@gmail.com>, 2018, 2019.
 # Navalnyan <mk9seven@gmail.com>, 2020.
-# DartDeaDia <jorydit@gmail.com>, 2021.
 # Viacheslav <superslavik24@gmail.com>, 2021.
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 # asdffdsdaf <asdffdsdaf@gmail.com>, 2021, 2022.
