@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-13 01:15+0000\n"
-"PO-Revision-Date: 2022-11-09 13:29+0000\n"
+"PO-Revision-Date: 2022-11-26 14:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -114,6 +114,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
+"Obtention des couleurs avec la norme AppStream pour que davantage "
+"d'applications soient prises en charge"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Wrap links at the bottom pages instead of ellipsize"
