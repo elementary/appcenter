@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -356,7 +356,7 @@ msgstr "ਅਣਜਾਣ ਸਰੋਤ ਤੋਂ (ਅਣ- ਘੜੀ/ਘੜੀਆ�
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "ਇਹਨਾ ਪੈਕੇਜਾਂ ਲਈ ਐਪ-ਸੈਂਟਰ ਵਿੱਚ ਐਪ ਹਾਲਾਤ ਬਤੌਰ ਸਥਾਪਤ ਨਹੀਂ ਤੈਅ ਕੀਤੇ ਹੋਈ: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (ਮਕਾਮੀ)"

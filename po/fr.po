@@ -12,11 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2022-11-09 13:29+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -345,7 +344,7 @@ msgstr "Origine inconnue (non-vérifiée)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'état de l'application n'est pas défini comme installé dans le Centre d'Applications pour le paquet : %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -597,11 +596,7 @@ msgstr "Réessayer"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr ""
-"Ce problème peut avoir été causé par un logiciel chargé séparément ou "
-"compilé manuellement, une source logicielle tierce ou une erreur du "
-"gestionnaire de paquets. L'actualisation manuelle des mises à jour peut "
-"résoudre le problème."
+msgstr "Ce problème peut avoir été causé par un logiciel chargé séparément ou compilé manuellement, une source logicielle tierce ou une erreur du gestionnaire de paquets. L'actualisation manuelle des mises à jour peut résoudre le problème."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"

@@ -2,11 +2,13 @@
 <gresources>
   <gresource prefix="/io/elementary/appcenter/icons">
     <file alias="16x16/categories/applications-accessibility-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-accessibility-symbolic.svg</file>
-    <file alias="16x16/categories/applications-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-audio-symbolic.svg</file>
-    <file alias="16x16/categories/applications-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-games-symbolic.svg</file>
-    <file alias="16x16/categories/applications-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-office-symbolic.svg</file>
-    <file alias="16x16/categories/applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
-    <file alias="16x16/categories/applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
+    <file alias="48x48/categories/applications-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-audio-symbolic.svg</file>
+    <file alias="48x48/categories/applications-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-games-symbolic.svg</file>
+    <file alias="48x48/categories/applications-internet-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-internet-symbolic.svg</file>
+    <file alias="48x48/categories/applications-multimedia-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-multimedia-symbolic.svg</file>
+    <file alias="48x48/categories/applications-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-office-symbolic.svg</file>
+    <file alias="48x48/categories/applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic-rtl.svg</file>
+    <file alias="48x48/categories/applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
     <file alias="16x16/categories/currency-dollar-symbolic.svg" compressed="true" preprocess="xml-stripblanks">currency-dollar-symbolic.svg</file>
     <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">online-account-facebook.svg</file>
     <file alias="16x16/apps/internet-mail-symbolic.svg"compressed="true" preprocess="xml-stripblanks">internet-mail-symbolic.svg</file>

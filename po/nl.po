@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2022-10-15 15:57+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -340,7 +340,7 @@ msgstr "Onbekende bron (niet-gecureerd)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Het volgende pakket is niet geïnstalleerd in AppCenter: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokaal)"

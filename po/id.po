@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2022-01-11 18:13+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -352,7 +352,7 @@ msgstr "Sumber tidak diketahui (tidak dikurasi)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Status aplikasi tidak ditetapkan sebagai terpasang di AppCenter untuk paket: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"

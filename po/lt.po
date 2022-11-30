@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -363,7 +363,7 @@ msgstr "Nežinoma kilmė (nekuruojama)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/appcenter/appcenter/bn/>\n"
@@ -359,7 +359,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr ""

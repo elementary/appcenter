@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2020-11-02 17:15+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -359,7 +359,7 @@ msgstr "Ukendt Oprindelse (ikke-kurateret)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Applikations tilstanden er ikke sat som installeret  i AppCenteret for pakken: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalt)"

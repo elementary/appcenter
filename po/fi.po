@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2022-10-10 08:02+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -337,7 +337,7 @@ msgstr "Tuntematon alkuperä (kuratoimaton)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sovellustilaa ei ole asetettu asennetuksi Sovelluskeskuksessa paketille %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, c-format
 msgid "%s (local)"
 msgstr "%s (paikallinen)"

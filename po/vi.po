@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 17:34+0000\n"
+"POT-Creation-Date: 2022-11-13 01:15+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -364,7 +364,7 @@ msgstr "Nguồn gốc không xác định (không được quản lý)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
 
-#: src/Core/PackageKitBackend.vala:299
+#: src/Core/PackageKitBackend.vala:303
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (cục bộ)"
