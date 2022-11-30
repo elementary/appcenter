@@ -178,7 +178,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         // We don't want to show installed desktop files here
 #if HAS_APPSTREAM_0_15
-        appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.LOAD_OS_DESKTOP_FILES);
+        appstream_pool.set_flags (
+            appstream_pool.get_flags () |
+            AppStream.PoolFlags.RESOLVE_ADDONS &
+            ~AppStream.PoolFlags.LOAD_OS_DESKTOP_FILES
+        );
 #else
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
 #endif
