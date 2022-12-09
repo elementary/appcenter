@@ -33,6 +33,7 @@ namespace AppCenter.Views {
 
         GenericArray<AppStream.Screenshot> screenshots;
 
+        private Gtk.Button back_button;
         private Gtk.CssProvider accent_provider;
         private Gtk.ComboBox origin_combo;
         private Gtk.Grid release_grid;
@@ -80,6 +81,17 @@ namespace AppCenter.Views {
             AppCenterCore.BackendAggregator.get_default ().cache_flush_needed.connect (() => {
                 to_recycle = true;
             });
+
+            back_button = new Gtk.Button.with_label (_("Home")) {
+                action_name = "win.go-back",
+                valign = Gtk.Align.CENTER
+            };
+            back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+
+            var headerbar = new Hdy.HeaderBar () {
+                show_close_button = true
+            };
+            headerbar.pack_start (back_button);
 
             accent_provider = new Gtk.CssProvider ();
             try {
@@ -747,7 +759,11 @@ namespace AppCenter.Views {
             overlay.add (scrolled);
             overlay.add_overlay (toast);
 
-            add (overlay);
+            var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            main_box.add (headerbar);
+            main_box.add (overlay);
+
+            add (main_box);
 
             open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 #if SHARING
@@ -828,6 +844,29 @@ namespace AppCenter.Views {
             update_action ();
         }
 
+        private void label_back_button () {
+            var deck = (Hdy.Deck) get_ancestor (typeof (Hdy.Deck));
+
+            deck.notify["transition-running"].connect (() => {
+                if (!deck.transition_running) {
+                    var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+
+                    if (previous_child is Homepage) {
+                        back_button.label = _("Home");
+                    } else if (previous_child is SearchView) {
+                        /// TRANSLATORS: the name of the Search view
+                        back_button.label = C_("view", "Search");
+                    } else if (previous_child is Views.AppInfoView) {
+                        back_button.label = ((Views.AppInfoView) previous_child).package.get_name ();
+                    } else if (previous_child is CategoryView) {
+                        back_button.label = ((CategoryView) previous_child).category.name;
+                    } else if (previous_child is Views.AppListUpdateView) {
+                        back_button.label = C_("view", "Installed");
+                    }
+                }
+            });
+        }
+
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {
                 var extension_package = package.backend.get_package_for_component_id (extension.id);
@@ -902,6 +941,8 @@ namespace AppCenter.Views {
         }
 
         private void load_more_content () {
+            label_back_button ();
+
             var cache = AppCenterCore.Client.get_default ().screenshot_cache;
 
             Gtk.TreeIter iter;

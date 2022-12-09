@@ -15,13 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class AppCenter.CategoryView : Gtk.Stack {
+public class AppCenter.CategoryView : Gtk.Box {
     public signal void show_app (AppCenterCore.Package package);
 
     public AppStream.Category category { get; construct; }
 
     private Gtk.ScrolledWindow scrolled;
     private Gtk.Box box;
+    private Gtk.Stack stack;
     private SubcategoryFlowbox free_flowbox;
     private SubcategoryFlowbox paid_flowbox;
     private SubcategoryFlowbox recently_updated_flowbox;
@@ -32,6 +33,18 @@ public class AppCenter.CategoryView : Gtk.Stack {
     }
 
     construct {
+        var back_button = new Gtk.Button.with_label (_("Home")) {
+            action_name = "win.go-back",
+            valign = Gtk.Align.CENTER
+        };
+        back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+
+        var headerbar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        // headerbar.set_custom_title (search_clamp);
+        headerbar.pack_start (back_button);
+
         recently_updated_flowbox = new SubcategoryFlowbox (_("Recently Updated"));
 
         paid_flowbox = new SubcategoryFlowbox (_("Paid Apps"));
@@ -61,8 +74,15 @@ public class AppCenter.CategoryView : Gtk.Stack {
         };
         spinner.start ();
 
-        add (spinner);
-        add (scrolled);
+        stack = new Gtk.Stack () {
+            expand = true
+        };
+        stack.add (spinner);
+        stack.add (scrolled);
+
+        orientation = Gtk.Orientation.VERTICAL;
+        add (headerbar);
+        add (stack);
         show_all ();
 
         populate ();
@@ -171,7 +191,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
 #endif
 
             show_all ();
-            visible_child = scrolled;
+            stack.visible_child = scrolled;
         });
     }
 
