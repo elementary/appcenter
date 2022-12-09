@@ -29,15 +29,54 @@ public class AppCenter.Homepage : Gtk.Box {
     private Gtk.ScrolledWindow scrolled_window;
 
     private Hdy.Carousel banner_carousel;
-    private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
+    private Gtk.Label updates_badge;
+    private Gtk.Revealer banner_revealer;
     private Gtk.Revealer recently_updated_revealer;
+    private Gtk.Revealer updates_badge_revealer;
 
     private uint banner_timeout_id;
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
+
+        var updates_button = new Gtk.Button.from_icon_name ("software-update-available", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = "app.show-updates"
+        };
+
+        var badge_provider = new Gtk.CssProvider ();
+        badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
+
+        updates_badge = new Gtk.Label ("!");
+
+        unowned var badge_context = updates_badge.get_style_context ();
+        badge_context.add_class (Granite.STYLE_CLASS_BADGE);
+        badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        updates_badge_revealer = new Gtk.Revealer () {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.START,
+            transition_type = Gtk.RevealerTransitionType.CROSSFADE
+        };
+        updates_badge_revealer.add (updates_badge);
+
+        var eventbox_badge = new Gtk.EventBox () {
+            halign = Gtk.Align.END
+        };
+        eventbox_badge.add (updates_badge_revealer);
+
+        var updates_overlay = new Gtk.Overlay () {
+            tooltip_text = C_("view", "Updates & installed apps")
+        };
+        updates_overlay.add (updates_button);
+        updates_overlay.add_overlay (eventbox_badge);
+
+        var headerbar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        // headerbar.set_custom_title (search_clamp);
+        headerbar.pack_end (updates_overlay);
 
         banner_carousel = new Hdy.Carousel () {
             allow_long_swipes = true
@@ -215,6 +254,7 @@ public class AppCenter.Homepage : Gtk.Box {
         };
         scrolled_window.add (box);
 
+        add (headerbar);
         add (scrolled_window);
 
         var local_package = App.local_package;
@@ -236,7 +276,9 @@ public class AppCenter.Homepage : Gtk.Box {
             show_category (card.category);
         });
 
-        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+        var client = AppCenterCore.Client.get_default ();
+
+        client.installed_apps_changed.connect (() => {
             Idle.add (() => {
                 // Clear the cached categories when the AppStream pool is updated
                 foreach (unowned var child in category_flow.get_children ()) {
@@ -247,6 +289,14 @@ public class AppCenter.Homepage : Gtk.Box {
 
                 return GLib.Source.REMOVE;
             });
+        });
+
+        client.notify["updates-number"].connect (() => {
+            show_update_badge (client.updates_number);
+        });
+
+        eventbox_badge.button_release_event.connect (() => {
+            Application.get_default ().activate_action ("app.show-updates", null);
         });
 
         banner_event_box.enter_notify_event.connect (() => {
@@ -363,6 +413,19 @@ public class AppCenter.Homepage : Gtk.Box {
             Source.remove (banner_timeout_id);
             banner_timeout_id = 0;
         }
+    }
+
+    private void show_update_badge (uint updates_number) {
+        Idle.add (() => {
+            if (updates_number == 0U) {
+                updates_badge_revealer.reveal_child = false;
+            } else {
+                updates_badge.label = updates_number.to_string ();
+                updates_badge_revealer.reveal_child = true;
+            }
+
+            return GLib.Source.REMOVE;
+        });
     }
 
     private abstract class AbstractCategoryCard : Gtk.FlowBoxChild {

@@ -18,12 +18,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
-    private Gtk.Revealer view_mode_revealer;
     private Gtk.SearchEntry search_entry;
     private Gtk.ModelButton refresh_menuitem;
     private Gtk.Button return_button;
-    private Gtk.Label updates_badge;
-    private Gtk.Revealer updates_badge_revealer;
     private Granite.Widgets.Toast toast;
     private Granite.Widgets.OverlayBar overlaybar;
     private Hdy.Deck deck;
@@ -160,41 +157,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        var updates_button = new Gtk.Button.from_icon_name ("software-update-available", Gtk.IconSize.LARGE_TOOLBAR);
-
-        var badge_provider = new Gtk.CssProvider ();
-        badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
-
-        updates_badge = new Gtk.Label ("!");
-
-        unowned var badge_context = updates_badge.get_style_context ();
-        badge_context.add_class (Granite.STYLE_CLASS_BADGE);
-        badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        updates_badge_revealer = new Gtk.Revealer () {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.START,
-            transition_type = Gtk.RevealerTransitionType.CROSSFADE
-        };
-        updates_badge_revealer.add (updates_badge);
-
-        var eventbox_badge = new Gtk.EventBox () {
-            halign = Gtk.Align.END
-        };
-        eventbox_badge.add (updates_badge_revealer);
-
-        var updates_overlay = new Gtk.Overlay () {
-            tooltip_text = C_("view", "Updates & installed apps")
-        };
-        updates_overlay.add (updates_button);
-        updates_overlay.add_overlay (eventbox_badge);
-
-        view_mode_revealer = new Gtk.Revealer () {
-            reveal_child = true,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
-        };
-        view_mode_revealer.add (updates_overlay);
-
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
             placeholder_text = _("Search Apps"),
@@ -243,7 +205,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         headerbar.set_custom_title (search_clamp);
         headerbar.pack_start (return_button);
         headerbar.pack_end (menu_button);
-        headerbar.pack_end (view_mode_revealer);
 
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
@@ -275,7 +236,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        box.add (headerbar);
+        // box.add (headerbar);
         box.add (network_info_bar);
         box.add (overlay);
         box.show_all ();
@@ -307,10 +268,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        client.notify["updates-number"].connect (() => {
-            show_update_badge (client.updates_number);
-        });
-
         var network_monitor = NetworkMonitor.get_default ();
         network_monitor.bind_property ("network-available", network_info_bar, "revealed", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
 
@@ -320,14 +277,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             } catch (GLib.Error e) {
                 critical (e.message);
             }
-        });
-
-        updates_button.clicked.connect (() => {
-            go_to_installed ();
-        });
-
-        eventbox_badge.button_release_event.connect (() => {
-            go_to_installed ();
         });
 
         homepage.show_category.connect ((category) => {
@@ -399,19 +348,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return false;
     }
 
-    private void show_update_badge (uint updates_number) {
-        Idle.add (() => {
-            if (updates_number == 0U) {
-                updates_badge_revealer.reveal_child = false;
-            } else {
-                updates_badge.label = updates_number.to_string ();
-                updates_badge_revealer.reveal_child = true;
-            }
-
-            return GLib.Source.REMOVE;
-        });
-    }
-
     public void show_package (AppCenterCore.Package package, bool remember_history = true) {
         if (deck.transition_running) {
             return;
@@ -455,26 +391,18 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
 
         if (deck.visible_child is Homepage) {
-            view_mode_revealer.reveal_child = true;
             configure_search (true, _("Search Apps"), "");
         } else if (deck.visible_child is CategoryView) {
             var current_category = ((CategoryView) deck.visible_child).category;
-            view_mode_revealer.reveal_child = false;
             configure_search (true, _("Search %s").printf (current_category.name), "");
         } else if (deck.visible_child == search_view) {
             if (previous_child is CategoryView) {
                 var previous_category = ((CategoryView) previous_child).category;
                 configure_search (true, _("Search %s").printf (previous_category.name));
-                view_mode_revealer.reveal_child = false;
             } else {
                 configure_search (true);
-                view_mode_revealer.reveal_child = true;
             }
-        } else if (deck.visible_child is Views.AppInfoView) {
-            view_mode_revealer.reveal_child = false;
-            configure_search (false);
-        } else if (deck.visible_child is Views.AppListUpdateView) {
-            view_mode_revealer.reveal_child = true;
+        } else if (deck.visible_child is Views.AppInfoView || deck.visible_child is Views.AppListUpdateView) {
             configure_search (false);
         }
 
@@ -539,8 +467,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         unowned string search_term = search_entry.text;
         uint query_length = search_term.length;
         bool query_valid = query_length >= VALID_QUERY_LENGTH;
-
-        view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
             if (deck.visible_child != search_view) {
