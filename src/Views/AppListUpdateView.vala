@@ -25,6 +25,7 @@ namespace AppCenter.Views {
         public signal void show_app (AppCenterCore.Package package);
 
         private Granite.HeaderLabel header_label;
+        private Gtk.Button back_button;
         private Gtk.Button update_all_button;
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
@@ -37,6 +38,51 @@ namespace AppCenter.Views {
         construct {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
+
+            back_button = new Gtk.Button.with_label (_("Home")) {
+                action_name = "win.go-back",
+                valign = Gtk.Align.CENTER
+            };
+            back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+
+            var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
+                description = _("System updates and unpaid apps will not update automatically")
+            };
+
+            var refresh_accellabel = new Granite.AccelLabel.from_action_name (
+                _("Check for Updates"),
+                "app.refresh"
+            );
+
+            var refresh_menuitem = new Gtk.ModelButton () {
+                action_name = "app.refresh"
+            };
+            refresh_menuitem.get_child ().destroy ();
+            refresh_menuitem.add (refresh_accellabel);
+
+            var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
+                margin_bottom = 6,
+                margin_top = 6
+            };
+            menu_popover_box.add (automatic_updates_button);
+            menu_popover_box.add (refresh_menuitem);
+            menu_popover_box.show_all ();
+
+            var menu_popover = new Gtk.Popover (null);
+            menu_popover.add (menu_popover_box);
+
+            var menu_button = new Gtk.MenuButton () {
+                image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+                popover = menu_popover,
+                tooltip_text = _("Settings"),
+                valign = Gtk.Align.CENTER
+            };
+
+            var headerbar = new Hdy.HeaderBar () {
+                show_close_button = true
+            };
+            headerbar.pack_start (back_button);
+            headerbar.pack_end (menu_button);
 
             var loading_view = new Granite.Widgets.AlertView (
                 _("Checking for Updates"),
@@ -116,9 +162,17 @@ namespace AppCenter.Views {
             AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             orientation = Gtk.Orientation.VERTICAL;
+            add (headerbar);
             add (infobar);
             add (header_revealer);
             add (scrolled);
+
+            App.settings.bind (
+                "automatic-updates",
+                automatic_updates_button,
+                "active",
+                SettingsBindFlags.DEFAULT
+            );
 
             get_apps.begin ();
 
@@ -130,6 +184,16 @@ namespace AppCenter.Views {
                 });
             });
 
+            automatic_updates_button.notify["active"].connect (() => {
+                if (automatic_updates_button.active) {
+                    client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+                } else {
+                    client.cancel_updates (true);
+                }
+            });
+
+            realize.connect (label_back_button);
+
             list_box.row_activated.connect ((row) => {
                 if (row is Widgets.PackageRow) {
                     show_app (((Widgets.PackageRow) row).get_package ());
@@ -137,6 +201,29 @@ namespace AppCenter.Views {
             });
 
             update_all_button.clicked.connect (on_update_all);
+        }
+
+        private void label_back_button () {
+            var deck = (Hdy.Deck) get_ancestor (typeof (Hdy.Deck));
+
+            deck.notify["transition-running"].connect (() => {
+                if (!deck.transition_running) {
+                    var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+
+                    if (previous_child is Homepage) {
+                        back_button.label = _("Home");
+                    } else if (previous_child is SearchView) {
+                        /// TRANSLATORS: the name of the Search view
+                        back_button.label = C_("view", "Search");
+                    } else if (previous_child is Views.AppInfoView) {
+                        back_button.label = ((Views.AppInfoView) previous_child).package.get_name ();
+                    } else if (previous_child is CategoryView) {
+                        back_button.label = ((CategoryView) previous_child).category.name;
+                    } else if (previous_child is Views.AppListUpdateView) {
+                        back_button.label = C_("view", "Installed");
+                    }
+                }
+            });
         }
 
         private async void get_apps () {

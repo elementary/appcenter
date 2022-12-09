@@ -19,8 +19,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     private AppCenter.SearchView search_view;
     private Gtk.SearchEntry search_entry;
-    private Gtk.ModelButton refresh_menuitem;
-    private Gtk.Button return_button;
     private Granite.Widgets.Toast toast;
     private Granite.Widgets.OverlayBar overlaybar;
     private Hdy.Deck deck;
@@ -150,13 +148,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        return_button = new Gtk.Button () {
-            action_name = "win.go-back",
-            no_show_all = true,
-            valign = Gtk.Align.CENTER
-        };
-        return_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
-
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
             placeholder_text = _("Search Apps"),
@@ -165,46 +156,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         var search_clamp = new Hdy.Clamp ();
         search_clamp.add (search_entry);
-
-        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
-            description = _("System updates and unpaid apps will not update automatically")
-        };
-
-        var refresh_accellabel = new Granite.AccelLabel.from_action_name (
-            _("Check for Updates"),
-            "app.refresh"
-        );
-
-        refresh_menuitem = new Gtk.ModelButton () {
-            action_name = "app.refresh"
-        };
-        refresh_menuitem.get_child ().destroy ();
-        refresh_menuitem.add (refresh_accellabel);
-
-        var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
-            margin_bottom = 6,
-            margin_top = 6
-        };
-        menu_popover_box.add (automatic_updates_button);
-        menu_popover_box.add (refresh_menuitem);
-        menu_popover_box.show_all ();
-
-        var menu_popover = new Gtk.Popover (null);
-        menu_popover.add (menu_popover_box);
-
-        var menu_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
-            popover = menu_popover,
-            tooltip_text = _("Settings"),
-            valign = Gtk.Align.CENTER
-        };
-
-        var headerbar = new Hdy.HeaderBar () {
-            show_close_button = true
-        };
-        headerbar.set_custom_title (search_clamp);
-        headerbar.pack_start (return_button);
-        headerbar.pack_end (menu_button);
 
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
@@ -236,7 +187,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        // box.add (headerbar);
         box.add (network_info_bar);
         box.add (overlay);
         box.show_all ();
@@ -245,28 +195,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         int window_width, window_height;
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
-        App.settings.bind (
-            "automatic-updates",
-            automatic_updates_button,
-            "active",
-            SettingsBindFlags.DEFAULT
-        );
 
         resize (window_width, window_height);
 
         if (App.settings.get_boolean ("window-maximized")) {
             maximize ();
         }
-
-        var client = AppCenterCore.Client.get_default ();
-
-        automatic_updates_button.notify["active"].connect (() => {
-            if (automatic_updates_button.active) {
-                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
-            } else {
-                client.cancel_updates (true);
-            }
-        });
 
         var network_monitor = NetworkMonitor.get_default ();
         network_monitor.bind_property ("network-available", network_info_bar, "revealed", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
@@ -380,9 +314,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
 
             show_package (_package, remember_history);
-            if (remember_history) {
-                set_return_name (package.get_name ());
-            }
             deck.transition_duration = 200;
         });
     }
@@ -404,21 +335,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             }
         } else if (deck.visible_child is Views.AppInfoView || deck.visible_child is Views.AppListUpdateView) {
             configure_search (false);
-        }
-
-        if (previous_child == null) {
-            set_return_name (null);
-        } else if (previous_child is Homepage) {
-            set_return_name (_("Home"));
-        } else if (previous_child == search_view) {
-            /// TRANSLATORS: the name of the Search view
-            set_return_name (C_("view", "Search"));
-        } else if (previous_child is Views.AppInfoView) {
-            set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
-        } else if (previous_child is CategoryView) {
-            set_return_name (((CategoryView) previous_child).category.name);
-        } else if (previous_child is Views.AppListUpdateView) {
-            set_return_name (C_("view", "Installed"));
         }
 
         while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
@@ -515,15 +431,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
-    private void set_return_name (string? return_name) {
-        if (return_name != null) {
-            return_button.label = return_name;
-        }
-
-        return_button.no_show_all = return_name == null;
-        return_button.visible = return_name != null;
-    }
-
     private void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
         search_entry.sensitive = sensitive;
         search_entry.placeholder_text = placeholder_text;
@@ -551,7 +458,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         category_view.show_app.connect ((package) => {
             show_package (package);
-            set_return_name (category.name);
         });
     }
 }
