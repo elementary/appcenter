@@ -88,12 +88,6 @@ namespace AppCenter.Views {
             };
             back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-            var headerbar = new Hdy.HeaderBar () {
-                show_close_button = true
-            };
-            headerbar.pack_start (back_button);
-            headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
             accent_provider = new Gtk.CssProvider ();
             try {
                 string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
@@ -675,6 +669,13 @@ namespace AppCenter.Views {
             button_box.add (uninstall_button_revealer);
             button_box.add (action_stack);
 
+            var headerbar = new Hdy.HeaderBar () {
+                show_close_button = true
+            };
+            headerbar.pack_start (back_button);
+            headerbar.pack_end (button_box);
+            headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
             var header_grid = new Gtk.Grid () {
                 column_spacing = 12,
                 row_spacing = 6,
@@ -684,7 +685,6 @@ namespace AppCenter.Views {
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (author_label, 1, 1);
             header_grid.attach (origin_combo_revealer, 1, 2, 3);
-            header_grid.attach (button_box, 3, 0);
 
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel () {
