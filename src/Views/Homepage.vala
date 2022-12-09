@@ -108,7 +108,7 @@ public class AppCenter.Homepage : Gtk.Box {
         var games_card = new GamesCard ();
 
         category_flow.add (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        category_flow.add (new LegacyCard (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        category_flow.add (new LegacyCard (_("Audio"), "appcenter-audio-symbolic", {"Audio", "Music"}, "audio"));
         category_flow.add (new LegacyCard (_("Communication"), "", {
             "Chat",
             "ContactManagement",
@@ -129,7 +129,7 @@ public class AppCenter.Homepage : Gtk.Box {
             "WebDevelopment"
         }, "development"));
         category_flow.add (new LegacyCard (_("Education"), "", {"Education"}, "education"));
-        category_flow.add (new LegacyCard (_("Finance"), "payment-card-symbolic", {
+        category_flow.add (new LegacyCard (_("Finance"), "appcenter-finance-symbolic", {
             "Economy",
             "Finance"
         }, "finance"));
@@ -166,14 +166,14 @@ public class AppCenter.Homepage : Gtk.Box {
             "Robotics",
             "Science"
         }, "science"));
-        category_flow.add (new LegacyCard (_("Media Production"), "applications-multimedia-symbolic", {
+        category_flow.add (new LegacyCard (_("Media Production"), "appcenter-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
             "Recorder",
             "Sequencer"
         }, "media-production"));
-        category_flow.add (new LegacyCard (_("Office"), "applications-office-symbolic", {
+        category_flow.add (new LegacyCard (_("Office"), "appcenter-office-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
@@ -184,8 +184,8 @@ public class AppCenter.Homepage : Gtk.Box {
             "Monitor",
             "System"
         }, "system"));
-        category_flow.add (new LegacyCard (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
-        category_flow.add (new LegacyCard (_("Video"), "applications-video-symbolic", {
+        category_flow.add (new LegacyCard (_("Universal Access"), "appcenter-accessibility-symbolic", {"Accessibility"}, "accessibility"));
+        category_flow.add (new LegacyCard (_("Video"), "appcenter-video-symbolic", {
             "Tuner",
             "TV",
             "Video"
@@ -452,7 +452,7 @@ public class AppCenter.Homepage : Gtk.Box {
         construct {
             category = new AppStream.Category () {
                 name = _("Fun & Games"),
-                icon = "applications-games-symbolic"
+                icon = "appcenter-games-symbolic"
             };
             category.add_desktop_group ("ActionGame");
             category.add_desktop_group ("AdventureGame");
@@ -471,7 +471,7 @@ public class AppCenter.Homepage : Gtk.Box {
             category.add_desktop_group ("StrategyGame");
 
             var image = new Gtk.Image () {
-                icon_name = "applications-games-symbolic",
+                icon_name = "appcenter-games-symbolic",
                 pixel_size = 64
             };
 
