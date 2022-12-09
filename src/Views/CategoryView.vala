@@ -44,6 +44,7 @@ public class AppCenter.CategoryView : Gtk.Box {
         };
         // headerbar.set_custom_title (search_clamp);
         headerbar.pack_start (back_button);
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         recently_updated_flowbox = new SubcategoryFlowbox (_("Recently Updated"));
 

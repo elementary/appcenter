@@ -83,6 +83,7 @@ namespace AppCenter.Views {
             };
             headerbar.pack_start (back_button);
             headerbar.pack_end (menu_button);
+            headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
             var loading_view = new Granite.Widgets.AlertView (
                 _("Checking for Updates"),

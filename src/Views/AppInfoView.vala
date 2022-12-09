@@ -92,6 +92,7 @@ namespace AppCenter.Views {
                 show_close_button = true
             };
             headerbar.pack_start (back_button);
+            headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
             accent_provider = new Gtk.CssProvider ();
             try {

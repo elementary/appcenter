@@ -77,6 +77,7 @@ public class AppCenter.Homepage : Gtk.Box {
         };
         // headerbar.set_custom_title (search_clamp);
         headerbar.pack_end (updates_overlay);
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         banner_carousel = new Hdy.Carousel () {
             allow_long_swipes = true
