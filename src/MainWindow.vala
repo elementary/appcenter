@@ -95,6 +95,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 case GET_DOWNLOAD_SIZE:
                     overlaybar.label = _("Getting download size…");
                     break;
+                case GET_DOWNLOADED_PACKAGES:
+                    // TODO: Remove custom message before merge
+                    overlaybar.label = _("Checking for prepared updates…");
+                    break;
                 case GET_INSTALLED_PACKAGES:
                 case GET_UPDATES:
                 case REFRESH_CACHE:

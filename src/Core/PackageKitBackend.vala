@@ -91,6 +91,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             job_type = job.operation;
             working = true;
             switch (job.operation) {
+                case Job.Type.GET_DOWNLOADED_PACKAGES:
+                    get_downloaded_packages_internal (job);
+                    break;
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
@@ -327,6 +330,23 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return null;
     }
 
+    public async Gee.Collection<AppCenterCore.Package> get_downloaded_applications (Cancellable? cancellable = null) {
+        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
+        var updated = yield get_downloaded_packages (cancellable);
+        foreach (var pk_package in updated) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
+            var package = populate_basic_package_details (pk_package);
+            if (package != null) {
+                packages.add (package);
+            }
+        }
+
+        return packages;
+    }
+
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages (cancellable);
@@ -479,6 +499,46 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         jobs.push (job);
         yield;
         return job;
+    }
+
+    private void get_downloaded_packages_internal (Job job) {
+        unowned var args = (GetDownloadedPackagesArgs)job.args;
+        unowned var cancellable = args.cancellable;
+
+        Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.DOWNLOADED, Pk.Filter.NEWEST);
+        var installed = new Gee.TreeSet<Pk.Package> ();
+
+        try {
+            Pk.Results results = client.get_packages (filter, cancellable, (prog, type) => {});
+            var packages = results.get_package_array ();
+
+            for (int i = 0; i < packages.length; i++) {
+                if (cancellable != null && cancellable.is_cancelled ()) {
+                    job.result = Value (typeof (Object));
+                    job.result.take_object (installed);
+                    job.results_ready ();
+                    return;
+                }
+
+                unowned Pk.Package pk_package = packages[i];
+                installed.add (pk_package);
+            }
+
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) installed);
+        job.results_ready ();
+    }
+
+    public async Gee.TreeSet<Pk.Package> get_downloaded_packages (Cancellable? cancellable = null) {
+        var job_args = new GetDownloadedPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_DOWNLOADED_PACKAGES, job_args);
+        return (Gee.TreeSet<Pk.Package>)job.result.get_object ();
     }
 
     private void get_installed_packages_internal (Job job) {

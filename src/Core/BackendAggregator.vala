@@ -84,6 +84,22 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         set { }
     }
 
+    public async Gee.Collection<Package> get_downloaded_applications (Cancellable? cancellable = null) {
+        var apps = new Gee.TreeSet<Package> ();
+        foreach (var backend in backends) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
+            var downloaded = yield backend.get_downloaded_applications (cancellable);
+            if (downloaded != null) {
+                apps.add_all (downloaded);
+            }
+        }
+
+        return apps;
+    }
+
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var apps = new Gee.TreeSet<Package> ();
         foreach (var backend in backends) {

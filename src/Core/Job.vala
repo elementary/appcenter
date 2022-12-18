@@ -37,7 +37,8 @@ public class AppCenterCore.Job : Object {
         REMOVE_PACKAGE,
         IS_PACKAGE_INSTALLED,
         GET_PACKAGE_DETAILS,
-        GET_PACKAGE_DEPENDENCIES
+        GET_PACKAGE_DEPENDENCIES,
+        GET_DOWNLOADED_PACKAGES
     }
 
     public Job (Type type) {
@@ -46,6 +47,10 @@ public class AppCenterCore.Job : Object {
 }
 
 public abstract class AppCenterCore.JobArgs { }
+
+public class AppCenterCore.GetDownloadedPackagesArgs : JobArgs {
+    public Cancellable? cancellable;
+}
 
 public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
     public Cancellable? cancellable;

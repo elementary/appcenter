@@ -24,6 +24,11 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
+        private Granite.HeaderLabel waiting_to_install_header_label;
+        private Gtk.Button waiting_to_install_button;
+        private Widgets.SizeLabel waiting_to_install_size_label;
+        private Gtk.Revealer waiting_to_install_header_revealer;
+
         private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
         private Gtk.ListBox list_box;
@@ -44,6 +49,31 @@ namespace AppCenter.Views {
                 "sync-synchronizing"
             );
             loading_view.show_all ();
+
+            waiting_to_install_header_label = new Granite.HeaderLabel ("") {
+                hexpand = true
+            };
+
+            waiting_to_install_size_label = new Widgets.SizeLabel () {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.CENTER
+            };
+
+            waiting_to_install_button = new Gtk.Button.with_label (_("Download")) {
+                valign = Gtk.Align.CENTER
+            };
+            waiting_to_install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+            var waiting_to_install_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 16);
+            waiting_to_install_header.add (waiting_to_install_header_label);
+            waiting_to_install_header.add (waiting_to_install_size_label);
+            waiting_to_install_header.add (waiting_to_install_button);
+            waiting_to_install_header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            waiting_to_install_header_revealer = new Gtk.Revealer ();
+            waiting_to_install_header_revealer.add (waiting_to_install_header);
+            waiting_to_install_header_revealer.get_style_context ().add_class ("header");
+            waiting_to_install_header_revealer.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
@@ -117,6 +147,7 @@ namespace AppCenter.Views {
 
             orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
+            add (waiting_to_install_header_revealer);
             add (header_revealer);
             add (scrolled);
 
@@ -177,6 +208,10 @@ namespace AppCenter.Views {
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
                 add_package (os_updates);
                 add_packages (installed_apps);
+            }
+
+            var downloaded_apps = yield client.get_downloaded_applications (refresh_cancellable);
+            foreach (var app in downloaded_apps) {
             }
 
             refresh_cancellable = null;
