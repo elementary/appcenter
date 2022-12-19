@@ -24,10 +24,6 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
-        private Granite.HeaderLabel waiting_to_install_header_label;
-        private Gtk.Button waiting_to_install_button;
-        private Gtk.Revealer waiting_to_install_header_revealer;
-
         private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
         private Gtk.ListBox list_box;
@@ -48,34 +44,6 @@ namespace AppCenter.Views {
                 "sync-synchronizing"
             );
             loading_view.show_all ();
-
-            waiting_to_install_header_label = new Granite.HeaderLabel ("") {
-                hexpand = true
-            };
-
-            waiting_to_install_button = new Gtk.Button.with_label (_("Restart and Install")) {
-                valign = Gtk.Align.CENTER
-            };
-            waiting_to_install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-            waiting_to_install_button.clicked.connect (() => {
-                try {
-                    SuspendControl.get_default ().reboot ();
-                } catch (GLib.Error e) {
-                    if (!(e is IOError.CANCELLED)) {
-                        warning (_("Requesting a restart failed. Restart manually to finish installing updates"));
-                    }
-                }
-            });
-
-            var waiting_to_install_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 16);
-            waiting_to_install_header.add (waiting_to_install_header_label);
-            waiting_to_install_header.add (waiting_to_install_button);
-            waiting_to_install_header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-            waiting_to_install_header_revealer = new Gtk.Revealer ();
-            waiting_to_install_header_revealer.add (waiting_to_install_header);
-            waiting_to_install_header_revealer.get_style_context ().add_class ("header");
-            waiting_to_install_header_revealer.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
@@ -149,7 +117,6 @@ namespace AppCenter.Views {
 
             orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
-            add (waiting_to_install_header_revealer);
             add (header_revealer);
             add (scrolled);
 
@@ -212,20 +179,7 @@ namespace AppCenter.Views {
                 add_packages (installed_apps);
             }
 
-            var prepared_apps = yield client.get_prepared_applications (refresh_cancellable);
-            if (prepared_apps.size > 0) {
-                waiting_to_install_header_revealer.reveal_child = true;
-
-                waiting_to_install_button.sensitive = true;
-
-                waiting_to_install_header_label.label = ngettext (
-                    "%u Update Waiting to Install",
-                    "%u Updates Waiting to Install",
-                    prepared_apps.size
-                ).printf (prepared_apps.size);
-            } else {
-                waiting_to_install_header_revealer.reveal_child = false;
-            }
+            yield client.get_prepared_applications (refresh_cancellable);
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
