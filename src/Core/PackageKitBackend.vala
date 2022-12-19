@@ -865,7 +865,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     public bool is_restart_required () {
         const string PK_OFFLINE_UPDATE_ACTION_PATH = "/var/lib/PackageKit/offline-update-action";
 
-        if (!FileUtils.test(PK_OFFLINE_UPDATE_ACTION_PATH, FileTest.IS_REGULAR)) {
+        if (!FileUtils.test (PK_OFFLINE_UPDATE_ACTION_PATH, FileTest.IS_REGULAR)) {
             return false;
         }
 
