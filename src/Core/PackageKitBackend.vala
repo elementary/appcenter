@@ -526,9 +526,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             }
         });
 
-        if (results.get_package_array ().length == 0 || package_ids.length == 0) {
+        if (package_ids.length == 0) {
             job.result = Value (typeof (Object));
-            job.result.take_object (results);
+            job.result.take_object (new Pk.Results ());
             job.results_ready ();
             return;
         }
