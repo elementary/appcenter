@@ -91,8 +91,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             job_type = job.operation;
             working = true;
             switch (job.operation) {
-                case Job.Type.GET_DOWNLOADED_PACKAGES:
-                    get_downloaded_packages_internal (job);
+                case Job.Type.GET_PREPARED_PACKAGES:
+                    get_prepared_packages_internal (job);
                     break;
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
@@ -330,9 +330,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return null;
     }
 
-    public async Gee.Collection<AppCenterCore.Package> get_downloaded_applications (Cancellable? cancellable = null) {
+    public async Gee.Collection<AppCenterCore.Package> get_prepared_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var updated = yield get_downloaded_packages (cancellable);
+        var updated = yield get_prepared_packages (cancellable);
         foreach (var pk_package in updated) {
             if (cancellable.is_cancelled ()) {
                 break;
@@ -501,43 +501,43 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return job;
     }
 
-    private void get_downloaded_packages_internal (Job job) {
-        unowned var args = (GetDownloadedPackagesArgs)job.args;
+    private void get_prepared_packages_internal (Job job) {
+        unowned var args = (GetPreparedPackagesArgs)job.args;
         unowned var cancellable = args.cancellable;
 
-        Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.DOWNLOADED, Pk.Filter.NEWEST);
-        var installed = new Gee.TreeSet<Pk.Package> ();
+        //  Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.DOWNLOADED, Pk.Filter.NEWEST);
+        var prepared = new Gee.TreeSet<Pk.Package> ();
 
-        try {
-            Pk.Results results = client.get_packages (filter, cancellable, (prog, type) => {});
-            var packages = results.get_package_array ();
+        //  try {
+        //      Pk.Results results = client.get_packages (filter, cancellable, (prog, type) => {});
+        //      var packages = results.get_package_array ();
 
-            for (int i = 0; i < packages.length; i++) {
-                if (cancellable != null && cancellable.is_cancelled ()) {
-                    job.result = Value (typeof (Object));
-                    job.result.take_object (installed);
-                    job.results_ready ();
-                    return;
-                }
+        //      for (int i = 0; i < packages.length; i++) {
+        //          if (cancellable != null && cancellable.is_cancelled ()) {
+        //              job.result = Value (typeof (Object));
+        //              job.result.take_object (installed);
+        //              job.results_ready ();
+        //              return;
+        //          }
 
-                unowned Pk.Package pk_package = packages[i];
-                installed.add (pk_package);
-            }
+        //          unowned Pk.Package pk_package = packages[i];
+        //          installed.add (pk_package);
+        //      }
 
-        } catch (Error e) {
-            critical (e.message);
-        }
+        //  } catch (Error e) {
+        //      critical (e.message);
+        //  }
 
         job.result = Value (typeof (Object));
-        job.result.take_object ((owned) installed);
+        job.result.take_object ((owned) prepared);
         job.results_ready ();
     }
 
-    public async Gee.TreeSet<Pk.Package> get_downloaded_packages (Cancellable? cancellable = null) {
-        var job_args = new GetDownloadedPackagesArgs ();
+    public async Gee.TreeSet<Pk.Package> get_prepared_packages (Cancellable? cancellable = null) {
+        var job_args = new GetPreparedPackagesArgs ();
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (Job.Type.GET_DOWNLOADED_PACKAGES, job_args);
+        var job = yield launch_job (Job.Type.GET_PREPARED_PACKAGES, job_args);
         return (Gee.TreeSet<Pk.Package>)job.result.get_object ();
     }
 

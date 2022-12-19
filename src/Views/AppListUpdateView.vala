@@ -210,8 +210,8 @@ namespace AppCenter.Views {
                 add_packages (installed_apps);
             }
 
-            var downloaded_apps = yield client.get_downloaded_applications (refresh_cancellable);
-            foreach (var app in downloaded_apps) {
+            var prepared_apps = yield client.get_prepared_applications (refresh_cancellable);
+            foreach (var app in prepared_apps) {
             }
 
             refresh_cancellable = null;

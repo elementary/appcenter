@@ -38,7 +38,7 @@ public class AppCenterCore.Job : Object {
         IS_PACKAGE_INSTALLED,
         GET_PACKAGE_DETAILS,
         GET_PACKAGE_DEPENDENCIES,
-        GET_DOWNLOADED_PACKAGES
+        GET_PREPARED_PACKAGES
     }
 
     public Job (Type type) {
@@ -48,7 +48,7 @@ public class AppCenterCore.Job : Object {
 
 public abstract class AppCenterCore.JobArgs { }
 
-public class AppCenterCore.GetDownloadedPackagesArgs : JobArgs {
+public class AppCenterCore.GetPreparedPackagesArgs : JobArgs {
     public Cancellable? cancellable;
 }
 

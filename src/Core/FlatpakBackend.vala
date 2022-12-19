@@ -226,10 +226,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job;
     }
 
-    public async Gee.Collection<Package> get_downloaded_applications (Cancellable? cancellable = null) {
-        var downloaded_apps = new Gee.HashSet<Package> ();
+    public async Gee.Collection<Package> get_prepared_applications (Cancellable? cancellable = null) {
+        var prepared_apps = new Gee.HashSet<Package> ();
 
-        return downloaded_apps;
+        return prepared_apps;
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
