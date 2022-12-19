@@ -26,7 +26,6 @@ namespace AppCenter.Views {
 
         private Granite.HeaderLabel waiting_to_install_header_label;
         private Gtk.Button waiting_to_install_button;
-        private Widgets.SizeLabel waiting_to_install_size_label;
         private Gtk.Revealer waiting_to_install_header_revealer;
 
         private Granite.HeaderLabel header_label;
@@ -54,19 +53,22 @@ namespace AppCenter.Views {
                 hexpand = true
             };
 
-            waiting_to_install_size_label = new Widgets.SizeLabel () {
-                halign = Gtk.Align.END,
+            waiting_to_install_button = new Gtk.Button.with_label (_("Restart and Install")) {
                 valign = Gtk.Align.CENTER
             };
-
-            waiting_to_install_button = new Gtk.Button.with_label (_("Download")) {
-                valign = Gtk.Align.CENTER
-            };
-            waiting_to_install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            waiting_to_install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            waiting_to_install_button.clicked.connect (() => {
+                try {
+                    SuspendControl.get_default ().reboot ();
+                } catch (GLib.Error e) {
+                    if (!(e is IOError.CANCELLED)) {
+                        warning (_("Requesting a restart failed. Restart manually to finish installing updates"));
+                    }
+                }
+            });
 
             var waiting_to_install_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 16);
             waiting_to_install_header.add (waiting_to_install_header_label);
-            waiting_to_install_header.add (waiting_to_install_size_label);
             waiting_to_install_header.add (waiting_to_install_button);
             waiting_to_install_header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
@@ -211,7 +213,18 @@ namespace AppCenter.Views {
             }
 
             var prepared_apps = yield client.get_prepared_applications (refresh_cancellable);
-            foreach (var app in prepared_apps) {
+            if (prepared_apps.size > 0) {
+                waiting_to_install_header_revealer.reveal_child = true;
+
+                waiting_to_install_button.sensitive = true;
+
+                waiting_to_install_header_label.label = ngettext (
+                    "%u Update Waiting to Install",
+                    "%u Updates Waiting to Install",
+                    prepared_apps.size
+                ).printf (prepared_apps.size);
+            } else {
+                waiting_to_install_header_revealer.reveal_child = false;
             }
 
             refresh_cancellable = null;

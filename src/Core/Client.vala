@@ -45,7 +45,7 @@ public class AppCenterCore.Client : Object {
         last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
     }
 
-    public async Gee.Collection<AppCenterCore.Package> get_prepared_applications (Cancellable? cancellable = null) {
+    public async Gee.Collection<AppCenterCore.PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
         return yield BackendAggregator.get_default ().get_prepared_applications (cancellable);
     }
 

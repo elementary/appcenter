@@ -211,7 +211,9 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public void update_restart_state () {
-        if (restart_file.query_exists ()) {
+        var should_restart = restart_file.query_exists () || PackageKitBackend.get_default ().is_restart_required ();
+
+        if (should_restart) {
             if (!restart_required) {
                 string title = _("Restart Required");
                 string body = _("Please restart your system to finalize updates");

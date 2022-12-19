@@ -41,8 +41,8 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return command.get_exit_status () == 0;
     }
 
-    public async Gee.Collection<Package> get_prepared_applications (Cancellable? cancellable = null) {
-        var prepared_packages = new Gee.HashSet<Package> ();
+    public async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
+        var prepared_packages = new Gee.HashSet<PackageDetails> ();
 
         return prepared_packages;
     }

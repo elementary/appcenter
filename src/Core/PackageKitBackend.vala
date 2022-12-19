@@ -330,18 +330,22 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return null;
     }
 
-    public async Gee.Collection<AppCenterCore.Package> get_prepared_applications (Cancellable? cancellable = null) {
-        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var updated = yield get_prepared_packages (cancellable);
-        foreach (var pk_package in updated) {
-            if (cancellable.is_cancelled ()) {
-                break;
-            }
+    public async Gee.Collection<AppCenterCore.PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
+        var packages = new Gee.TreeSet<AppCenterCore.PackageDetails> ();
 
-            var package = populate_basic_package_details (pk_package);
-            if (package != null) {
-                packages.add (package);
-            }
+        var pk_prepared = yield get_prepared_packages ();
+        var package_array = pk_prepared.get_package_array ();
+        foreach (var pk_package in package_array) {
+            packages.add (new PackageDetails () {
+                name = pk_package.get_name (),
+                description = pk_package.description,
+                summary = pk_package.get_summary (),
+                version = pk_package.get_version ()
+            });
+        }
+
+        if (package_array.length > 0) {
+            updates_changed_callback ();
         }
 
         return packages;
@@ -502,43 +506,59 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void get_prepared_packages_internal (Job job) {
-        unowned var args = (GetPreparedPackagesArgs)job.args;
-        unowned var cancellable = args.cancellable;
+        var args = (GetPreparedPackagesArgs)job.args;
+        var cancellable = args.cancellable;
 
-        //  Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.DOWNLOADED, Pk.Filter.NEWEST);
-        var prepared = new Gee.TreeSet<Pk.Package> ();
+        Pk.Results? results = null;
+        try {
+            results = client.get_updates (0, cancellable, (t, p) => { });
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
 
-        //  try {
-        //      Pk.Results results = client.get_packages (filter, cancellable, (prog, type) => {});
-        //      var packages = results.get_package_array ();
+        string[] package_ids = {};
+        var downloaded_updates = get_downloaded_updates ();
+        results.get_package_array ().foreach ((pk_package) => {
+            if (downloaded_updates.contains (pk_package.get_id ())) {
+                package_ids += pk_package.get_id ();
+            }
+        });
 
-        //      for (int i = 0; i < packages.length; i++) {
-        //          if (cancellable != null && cancellable.is_cancelled ()) {
-        //              job.result = Value (typeof (Object));
-        //              job.result.take_object (installed);
-        //              job.results_ready ();
-        //              return;
-        //          }
+        if (results.get_package_array ().length == 0 || package_ids.length == 0) {
+            job.result = Value (typeof (Object));
+            job.result.take_object (results);
+            job.results_ready ();
+            return;
+        }
 
-        //          unowned Pk.Package pk_package = packages[i];
-        //          installed.add (pk_package);
-        //      }
+        package_ids += null;
 
-        //  } catch (Error e) {
-        //      critical (e.message);
-        //  }
+        Pk.Results details;
+        try {
+            details = client.get_details (package_ids, cancellable, (p, t) => {});
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        details.get_details_array ().foreach ((details) => {
+            results.add_details (details);
+        });
 
         job.result = Value (typeof (Object));
-        job.result.take_object ((owned) prepared);
+        job.result.take_object ((owned) results);
         job.results_ready ();
     }
 
-    public async Gee.TreeSet<Pk.Package> get_prepared_packages (Cancellable? cancellable = null) {
+    public async Pk.Results get_prepared_packages (Cancellable? cancellable = null) {
         var job_args = new GetPreparedPackagesArgs ();
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.GET_PREPARED_PACKAGES, job_args);
-        return (Gee.TreeSet<Pk.Package>)job.result.get_object ();
+        return (Pk.Results)job.result.get_object ();
     }
 
     private void get_installed_packages_internal (Job job) {
@@ -842,6 +862,29 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return downloaded_updates;
     }
 
+    public bool is_restart_required () {
+        const string PK_OFFLINE_UPDATE_ACTION_PATH = "/var/lib/PackageKit/offline-update-action";
+
+        if (!FileUtils.test(PK_OFFLINE_UPDATE_ACTION_PATH, FileTest.IS_REGULAR)) {
+            return false;
+        }
+
+        var pk_offline_update_action = File.new_for_path (PK_OFFLINE_UPDATE_ACTION_PATH);
+        try {
+            var @is = pk_offline_update_action.read ();
+            var dis = new DataInputStream (@is);
+
+            if ("reboot" in dis.read_line ()) {
+                return true;
+            }
+        } catch (Error e) {
+            critical ("Couldn't read PackageKit offline update action: %s", e.message);
+        }
+
+
+        return false;
+    }
+
     private void get_updates_internal (Job job) {
         var args = (GetUpdatesArgs)job.args;
         var cancellable = args.cancellable;
@@ -876,9 +919,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             }
         });
 
-        if (results.get_package_array ().length == 0 || package_ids.length == 0) {
+        if (package_ids.length == 0) {
             job.result = Value (typeof (Object));
-            job.result.take_object (results);
+            job.result.take_object (new Pk.Results ());
             job.results_ready ();
             return;
         }
