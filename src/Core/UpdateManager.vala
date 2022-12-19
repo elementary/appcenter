@@ -178,7 +178,7 @@ public class AppCenterCore.UpdateManager : Object {
             var pk_package = new Pk.Package ();
             pk_package.set_id (pk_detail.get_package_id ());
             var pkg_name = pk_package.get_name ();
-            
+
             var pkgnames = os_updates.component.pkgnames;
             pkgnames += pkg_name;
             os_updates.component.pkgnames = pkgnames;
