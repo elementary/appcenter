@@ -162,7 +162,7 @@ namespace AppCenter {
         }
 
         protected void update_action () {
-            if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
+            if (package == null || package.component == null || !package.is_native || package.is_os_updates || package.is_runtime_updates) {
                 action_button.can_purchase = false;
             } else {
                 var can_purchase = package.get_payments_key () != null;
@@ -190,7 +190,7 @@ namespace AppCenter {
                         action_button.amount = 0;
                     }
 
-                    action_button_revealer.reveal_child = !package.is_os_updates;
+                    action_button_revealer.reveal_child = !(package.is_os_updates || package.is_runtime_updates);
                     open_button_revealer.reveal_child = false;
 
                     break;
