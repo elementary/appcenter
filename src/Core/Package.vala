@@ -83,6 +83,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
+    public const string RUNTIME_UPDATES_ID = "xxx-runtime-updates";
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
@@ -102,7 +103,7 @@ public class AppCenterCore.Package : Object {
     private bool _installed = false;
     public bool installed {
         get {
-            if (component.get_id () == OS_UPDATES_ID) {
+            if (is_os_updates || is_runtime_updates) {
                 return true;
             }
 
@@ -188,6 +189,12 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_runtime_updates {
+        get {
+            return component.id == RUNTIME_UPDATES_ID;
+        }
+    }
+
     public AppStream.ComponentKind kind {
         get {
             return component.get_kind ();
@@ -202,7 +209,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates;
+            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates && !is_runtime_updates;
         }
     }
 
@@ -827,7 +834,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private string convert_version (string version) {
-        if (is_os_updates) {
+        if (is_os_updates || is_runtime_updates) {
             return version;
         }
 
@@ -914,7 +921,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private void populate_backend_details_sync () {
-        if (component.id == OS_UPDATES_ID || is_local) {
+        if (is_os_updates || is_runtime_updates || is_local) {
             backend_details = new PackageDetails ();
             return;
         }
