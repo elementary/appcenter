@@ -45,7 +45,7 @@ public class AppCenterCore.UpdateManager : Object {
         os_updates = new AppCenterCore.Package (BackendAggregator.get_default (), os_updates_component);
 
         var runtime_icon = new AppStream.Icon ();
-        runtime_icon.set_name ("package-x-generic");
+        runtime_icon.set_name ("application-x-sharedlib");
         runtime_icon.set_kind (AppStream.IconKind.STOCK);
 
         var runtime_updates_component = new AppStream.Component ();
