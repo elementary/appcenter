@@ -166,7 +166,7 @@ public class AppCenterCore.UpdateManager : Object {
                 runtime_desc += Markup.printf_escaped (
                     " • %s\n\t%s\n",
                     @ref.get_name (),
-                    _("Flatpak runtime")
+                    _("Version: %s").printf (@ref.get_branch ())
                 );
 
                 uint64 dl_size = 0;
