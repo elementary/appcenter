@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
+"POT-Creation-Date: 2022-12-20 22:46+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:332
 msgid "AppCenter"
 msgstr "آب سنتر"
 
@@ -336,33 +336,33 @@ msgstr "قيد إلغاء التثبيت"
 msgid "Updating"
 msgstr "قيد التحديث"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "مطورو %s"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:334
 msgid "elementary Updates"
 msgstr "تحديثات elementary"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (غير مختارة)"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:341
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (على صعيد النظام بأكمله)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "تعريفات Ubuntu"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "غير معروفة الأصل (غير مختارة)"
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:521
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "حالة التطبيق غير معينة ك \"مثبت\" في آب سنتر للحزمة: %s"
@@ -372,28 +372,34 @@ msgstr "حالة التطبيق غير معينة ك \"مثبت\" في آب سن
 msgid "%s (local)"
 msgstr "%s (محلي)"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "تحديثات نظام التشغيل"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "تحديثات لمكونات النظام"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Runtime Updates"
+msgstr "جاري البحث عن تحديثات"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
 msgid "Version: %s"
 msgstr "الإصدار: %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr "برنامج تشغيل Flatpak"
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:187
 msgid "No components with updates"
 msgstr "لا يوجد مكونات تحتاج تحديثاً"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:192
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -404,16 +410,35 @@ msgstr[3] "هناك تحديثات ل %u مكونات"
 msgstr[4] "هناك تحديثات ل %u مكوناً"
 msgstr[5] "هناك تحديثات ل %u مكون"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:199
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "لا يوجد مكونات تحتاج تحديثاً"
+
+#: src/Core/UpdateManager.vala:204
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "لا يوجد تحديثات للمكونات"
+msgstr[1] "هناك تحديثات لمكون واحد"
+msgstr[2] "هناك تحديثات لمكونين"
+msgstr[3] "هناك تحديثات ل %u مكونات"
+msgstr[4] "هناك تحديثات ل %u مكوناً"
+msgstr[5] "هناك تحديثات ل %u مكون"
+
+#: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
 msgstr "إعادة التشغيل مطلوبة"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:250
 msgid "Please restart your system to finalize updates"
 msgstr "الرجاء إعادة تشغيل نظامك لإنهاء التحديثات"
 
@@ -892,11 +917,11 @@ msgstr[3] "تتوفر %u تحديثات"
 msgstr[4] "يتوفر %u تحديثاً"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:321
 msgid "Drivers"
 msgstr "التعريفات"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:334
 msgid "Up to Date"
 msgstr "محدث بالكامل"
 
@@ -1119,6 +1144,9 @@ msgstr "ما الجديد:"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "إغلاق"
+
+#~ msgid "Flatpak runtime"
+#~ msgstr "برنامج تشغيل Flatpak"
 
 #~ msgid "<b>%s</b> – %s"
 #~ msgstr "<b>%s</b> – %s"
