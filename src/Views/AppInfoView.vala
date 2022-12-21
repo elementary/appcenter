@@ -170,7 +170,7 @@ namespace AppCenter.Views {
             content_warning_clamp.add (oars_flowbox_revealer);
 
 #if CURATED
-            if (!package.is_native && !package.is_os_updates) {
+            if (!package.is_native && !package.is_os_updates && !package.is_runtime_updates) {
                 var uncurated = new ContentType (
                     _("Non-Curated"),
                     _("Not reviewed by elementary for security, privacy, or system integration"),
@@ -489,7 +489,7 @@ namespace AppCenter.Views {
             } else {
                 app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
 
-                if (package.is_os_updates) {
+                if (package.is_os_updates || package.is_runtime_updates) {
                     badge_image.icon_name = "system-software-update";
                     app_icon_overlay.add_overlay (badge_image);
                 }
@@ -816,10 +816,10 @@ namespace AppCenter.Views {
                     uninstall_button_revealer.reveal_child = false;
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_runtime_updates && !package.is_compulsory;
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
-                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_compulsory;
+                    uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_runtime_updates && !package.is_compulsory;
                     break;
                 default:
                     break;
@@ -922,7 +922,7 @@ namespace AppCenter.Views {
             new Thread<void*> ("content-loading", () => {
                 var description = package.get_description ();
                 Idle.add (() => {
-                    if (package.is_os_updates) {
+                    if (package.is_os_updates || package.is_runtime_updates) {
                         author_label.label = package.get_version ();
                     } else {
                         author_label.label = package.author_title;

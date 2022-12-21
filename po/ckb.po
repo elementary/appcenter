@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
+"POT-Creation-Date: 2022-12-20 22:46+0000\n"
 "PO-Revision-Date: 2022-07-31 11:43+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/appcenter/appcenter/ckb/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:332
 msgid "AppCenter"
 msgstr "ناوەندی نەرمەواڵەکان"
 
@@ -316,33 +316,33 @@ msgstr "هەڵوەشاندنەوەی دامەزراندن"
 msgid "Updating"
 msgstr "نوێکردنەوە"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "گەشەپێدەرە %sکان"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:334
 msgid "elementary Updates"
 msgstr "نوێبوونەوەکانی ئێلەمێنتەری"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "ئوبونتو (چارەسەر نەکراو)"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:341
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (سیستەم-واید)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "درایڤەرەکانی ئوبونتو"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "سەرچاوەی نەزانراو (چارەسەر نەکراو)"
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:521
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "دۆخی نەرمەکاڵا لە ئەپسەنتەر وەکو دامەزراو دیارینەکراوە بۆ گورزەی: %s"
@@ -352,44 +352,65 @@ msgstr "دۆخی نەرمەکاڵا لە ئەپسەنتەر وەکو دامەز�
 msgid "%s (local)"
 msgstr "(ناوخۆی) %s"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "نوێکردنەوەی سیستەمی وەگەڕخەر"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "نوێکردنەوەکان بۆ پێکهێنەرەکان سیستەم"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Runtime Updates"
+msgstr "پشکنین بۆ نوێبوونەوەکان"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
 msgid "Version: %s"
 msgstr "وەشان: %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr "ڕەنتایمی فلاتپاک"
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:187
 msgid "No components with updates"
 msgstr "هیچ پێکهێنەرێک لەگەڵ نوێکردنەوەدا نییە"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:192
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u پێکهێنەر لەگەڵ نوێکردنەوە"
 msgstr[1] "%u پێکهێنەر لەگەڵ نوێکردنەوەکان"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:199
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "هیچ پێکهێنەرێک لەگەڵ نوێکردنەوەدا نییە"
+
+#: src/Core/UpdateManager.vala:204
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u پێکهێنەر لەگەڵ نوێکردنەوە"
+msgstr[1] "%u پێکهێنەر لەگەڵ نوێکردنەوەکان"
+
+#: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
 msgstr "دوبارە داگیرساندنەوەی کۆمپیتەرەکەت داواکراوە"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:250
 msgid "Please restart your system to finalize updates"
 msgstr "تکایە دوبارە سیستەمەکەت داگیرسێنەوە بۆ کۆتایی هێنان بە نوێکردنەوەکان"
 
@@ -856,11 +877,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] "%u نوێکاری بەردەستە"
 msgstr[1] "%u نوێکارییەکان بەردەستن"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:321
 msgid "Drivers"
 msgstr "درایڤەرەکان"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:334
 msgid "Up to Date"
 msgstr "نوێ"
 
@@ -1075,6 +1096,9 @@ msgstr "چی نوێیە:"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr ""
+
+#~ msgid "Flatpak runtime"
+#~ msgstr "ڕەنتایمی فلاتپاک"
 
 #~ msgid "<b>%s</b> – %s"
 #~ msgstr "<b>%s</b> – %s"

@@ -176,6 +176,8 @@ namespace AppCenter.Views {
 
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
                 add_package (os_updates);
+                var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
+                add_package (runtime_updates);
                 add_packages (installed_apps);
             }
 
@@ -218,12 +220,14 @@ namespace AppCenter.Views {
             bool a_has_updates = false;
             bool a_is_driver = false;
             bool a_is_os = false;
+            bool a_is_runtime = false;
             bool a_is_updating = false;
             string a_package_name = "";
             if (row1_package != null) {
                 a_has_updates = row1_package.update_available;
                 a_is_driver = row1_package.kind == AppStream.ComponentKind.DRIVER;
                 a_is_os = row1_package.is_os_updates;
+                a_is_runtime = row1_package.is_runtime_updates;
                 a_is_updating = row1_package.is_updating;
                 a_package_name = row1_package.get_name ();
             }
@@ -231,12 +235,14 @@ namespace AppCenter.Views {
             bool b_has_updates = false;
             bool b_is_driver = false;
             bool b_is_os = false;
+            bool b_is_runtime = false;
             bool b_is_updating = false;
             string b_package_name = "";
             if (row2_package != null) {
                 b_has_updates = row2_package.update_available;
                 b_is_driver = row2_package.kind == AppStream.ComponentKind.DRIVER;
                 b_is_os = row2_package.is_os_updates;
+                b_is_runtime = row2_package.is_runtime_updates;
                 b_is_updating = row2_package.is_updating;
                 b_package_name = row2_package.get_name ();
             }
@@ -272,6 +278,11 @@ namespace AppCenter.Views {
             // Ensures OS updates are sorted to the top amongst up-to-date packages
             if (a_is_os || b_is_os) {
                 return a_is_os ? -1 : 1;
+            }
+
+            // Ensures runtime updates are sorted to the top amongst up-to-date packages but below OS updates
+            if (a_is_runtime || b_is_runtime) {
+                return a_is_runtime ? -1 : 1;
             }
 
             return a_package_name.collate (b_package_name); /* Else sort in name order */

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
+"POT-Creation-Date: 2022-12-20 22:46+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:332
 msgid "AppCenter"
 msgstr "Programų centras"
 
@@ -332,33 +332,33 @@ msgstr "Šalinti"
 msgid "Updating"
 msgstr "Atnaujinti"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "%s kūrėjai"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:334
 msgid "elementary Updates"
 msgstr "elementary atnaujinimai"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (nekuruojama)"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:341
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu tvarkyklės"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "Nežinoma kilmė (nekuruojama)"
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:521
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
@@ -369,28 +369,34 @@ msgstr "Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam p
 msgid "%s (local)"
 msgstr "%s (nekuruojama)"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Operacinės sistemos atnaujinimai"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "Atnaujinimai sistemos komponentams"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Runtime Updates"
+msgstr "Ieškoma atnaujinimų…"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
 msgid "Version: %s"
 msgstr "Versija: %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr "Flatpak vykdymo aplinka"
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:187
 msgid "No components with updates"
 msgstr "Nėra komponentų su atnaujinimais"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:192
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -399,16 +405,33 @@ msgstr[1] "%u komponentai su atnaujinimais"
 msgstr[2] "%u komponentų su atnaujinimais"
 msgstr[3] "%u komponentas su atnaujinimais"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:199
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "Nėra komponentų su atnaujinimais"
+
+#: src/Core/UpdateManager.vala:204
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u komponentas su atnaujinimais"
+msgstr[1] "%u komponentai su atnaujinimais"
+msgstr[2] "%u komponentų su atnaujinimais"
+msgstr[3] "%u komponentas su atnaujinimais"
+
+#: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
 msgstr "Reikalingas paleidimas iš naujo"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:250
 msgid "Please restart your system to finalize updates"
 msgstr "Norėdami užbaigti atnaujinimus, paleiskite savo sistemą iš naujo"
 
@@ -896,11 +919,11 @@ msgstr[0] "Yra prieinamas %u atnaujinimas"
 msgstr[1] "Yra prieinami %u atnaujinimai"
 msgstr[2] "Yra prieinama %u atnaujinimų"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:321
 msgid "Drivers"
 msgstr "Tvarkyklės"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:334
 msgid "Up to Date"
 msgstr "Atnaujintos"
 
@@ -1123,6 +1146,9 @@ msgstr "Kas naujo:"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "Užverti"
+
+#~ msgid "Flatpak runtime"
+#~ msgstr "Flatpak vykdymo aplinka"
 
 #~ msgid "<b>%s</b> – %s"
 #~ msgstr "<b>%s</b> – %s"

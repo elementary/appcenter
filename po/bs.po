@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
+"POT-Creation-Date: 2022-12-20 22:46+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:332
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -333,35 +333,35 @@ msgstr "Deinstaliraj"
 msgid "Updating"
 msgstr "Ažuriraj"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "Programeri aplikacije %s"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:334
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nedavno ažurirano"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:341
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:346
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Upravljački programi"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:521
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -371,28 +371,34 @@ msgstr ""
 msgid "%s (local)"
 msgstr "%s (lokalno)"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Ažuriranja operativnog sistema"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "Ažuriranja sistemskih komponenti"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Runtime Updates"
+msgstr "Pretraživanje ažuriranja…"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
 msgid "Version: %s"
 msgstr "Verzija: %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:187
 msgid "No components with updates"
 msgstr "Nema komponenti sa ažuriranjima"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:192
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -400,16 +406,32 @@ msgstr[0] "%u komponenta sa ažuriranjima"
 msgstr[1] "%u komponente sa ažuriranjima"
 msgstr[2] "%u komponenata sa ažuriranjima"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:199
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "Nema komponenti sa ažuriranjima"
+
+#: src/Core/UpdateManager.vala:204
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u komponenta sa ažuriranjima"
+msgstr[1] "%u komponente sa ažuriranjima"
+msgstr[2] "%u komponenata sa ažuriranjima"
+
+#: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
 msgstr "Potrebno je ponovno pokretanje"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:250
 msgid "Please restart your system to finalize updates"
 msgstr "Ponovo pokrenite sistem kako biste dovršili ažuriranja"
 
@@ -897,11 +919,11 @@ msgstr[0] "%u ažuriranje dostupno"
 msgstr[1] "%u ažuriranja dostupna"
 msgstr[2] "%u ažuriranja dostupno"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:321
 msgid "Drivers"
 msgstr "Upravljački programi"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:334
 msgid "Up to Date"
 msgstr "Ažurno"
 

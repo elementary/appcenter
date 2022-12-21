@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
+"POT-Creation-Date: 2022-12-20 22:46+0000\n"
 "PO-Revision-Date: 2022-10-28 10:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:332
 msgid "AppCenter"
 msgstr "应用中心"
 
@@ -311,33 +311,33 @@ msgstr "正在卸载"
 msgid "Updating"
 msgstr "正在更新"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "%s 开发者"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:334
 msgid "elementary Updates"
 msgstr "elementary 更新"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu（未经认证）"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:341
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s （所有用户）"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu 驱动程序"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "未知来源（未经认证）"
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:521
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "应用程序在 AppCenter 中的状态未标记为已安装：%s"
@@ -347,43 +347,63 @@ msgstr "应用程序在 AppCenter 中的状态未标记为已安装：%s"
 msgid "%s (local)"
 msgstr "%s（本地）"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "系统更新"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "组件更新"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Refresh Updates"
+msgid "Runtime Updates"
+msgstr "检查更新"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
 msgid "Version: %s"
 msgstr "版本： %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr "Flatpak 运行组件"
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:187
 msgid "No components with updates"
 msgstr "暂无组件更新"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:192
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "有 %u 个组件需要更新"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
 #, c-format
 msgid "%s:"
 msgstr "%s："
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:199
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "暂无组件更新"
+
+#: src/Core/UpdateManager.vala:204
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "有 %u 个组件需要更新"
+
+#: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
 msgstr "需要重启"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:250
 msgid "Please restart your system to finalize updates"
 msgstr "请重启您的系统来完成更新"
 
@@ -845,11 +865,11 @@ msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u 个可用更新"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:321
 msgid "Drivers"
 msgstr "驱动程序"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:334
 msgid "Up to Date"
 msgstr "已是最新"
 
@@ -1061,6 +1081,9 @@ msgstr "%s 的新特性"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "关闭"
+
+#~ msgid "Flatpak runtime"
+#~ msgstr "Flatpak 运行组件"
 
 #~ msgid "<b>%s</b> – %s"
 #~ msgstr "<b>%s</b> – %s"

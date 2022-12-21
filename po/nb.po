@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
+"POT-Creation-Date: 2022-12-20 22:46+0000\n"
 "PO-Revision-Date: 2022-10-25 09:27+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:332
 msgid "AppCenter"
 msgstr "AppSenter"
 
@@ -309,33 +309,33 @@ msgstr "Avinstaller"
 msgid "Updating"
 msgstr "Oppdaterer"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "%s-utviklerne"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:334
 msgid "elementary Updates"
 msgstr "elementary-oppgraderinger"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (ikke-bekreftet)"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:341
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (på hele systemet)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "Drivere fra Ubuntu"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "Ukjent opprinnelse (ikke-bekreftet)"
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:521
 #, fuzzy, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
@@ -345,44 +345,65 @@ msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
 msgid "%s (local)"
 msgstr "%s (lokal)"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Oppdateringer for operativsystemet"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "Oppdatering av systemkomponenter"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Check for Updates"
+msgid "Runtime Updates"
+msgstr "Se etter oppgraderinger"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
 msgid "Version: %s"
 msgstr "Versjon: %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr "Flatpak-kjøreomgivelse"
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:187
 msgid "No components with updates"
 msgstr "Ingen oppgraderinger til noen komponenter"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:192
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u komponent med oppgraderinger"
 msgstr[1] "%u komponenter med oppgraderinger"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:199
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "Ingen oppgraderinger til noen komponenter"
+
+#: src/Core/UpdateManager.vala:204
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u komponent med oppgraderinger"
+msgstr[1] "%u komponenter med oppgraderinger"
+
+#: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
 msgstr "Omstart kreves"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:250
 msgid "Please restart your system to finalize updates"
 msgstr "Utfør omstart av systemet ditt for å fullføre oppdateringene"
 
@@ -853,11 +874,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] "%u oppdatering tilgjengelig"
 msgstr[1] "%u oppdateringer tilgjengelig"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:321
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:334
 msgid "Up to Date"
 msgstr "Oppdatert"
 
@@ -1074,6 +1095,9 @@ msgstr "Nyheter i %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "Lukk"
+
+#~ msgid "Flatpak runtime"
+#~ msgstr "Flatpak-kjøreomgivelse"
 
 #~ msgid "<b>%s</b> – %s"
 #~ msgstr "<b>%s</b> – %s"
