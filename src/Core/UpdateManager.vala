@@ -161,6 +161,7 @@ public class AppCenterCore.UpdateManager : Object {
 
                 if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
                     runtime_count++;
+                    has_flatpak_updates = true;
                 }
 
                 runtime_desc += Markup.printf_escaped (
