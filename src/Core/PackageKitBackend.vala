@@ -844,6 +844,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private Gee.ArrayList<string> get_downloaded_updates () {
         var downloaded_updates = new Gee.ArrayList<string> ();
 
+        // A PackageKit update query with Filters set to Pk.Filter.DOWNLOADED and Pk.Filter.NOT_INSTALLED
+        // returns all downloaded but not installed packages even if they are not prepared for an update.
+        // So instead we read the prepared updates from the configuration file which would also be read
+        // by the PackageKit daemon on boot.
         const string PK_PREPARED_IDS_PATH = "/var/lib/PackageKit/prepared-update";
 
         if (!FileUtils.test (PK_PREPARED_IDS_PATH, FileTest.IS_REGULAR)) {
