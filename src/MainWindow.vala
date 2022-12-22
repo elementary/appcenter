@@ -95,7 +95,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 case GET_DOWNLOAD_SIZE:
                     overlaybar.label = _("Getting download size…");
                     break;
-                case GET_PREPARED_PACKAGES:
                 case GET_INSTALLED_PACKAGES:
                 case GET_UPDATES:
                 case REFRESH_CACHE:
