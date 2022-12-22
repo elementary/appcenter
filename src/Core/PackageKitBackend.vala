@@ -91,6 +91,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             job_type = job.operation;
             working = true;
             switch (job.operation) {
+                case Job.Type.GET_PREPARED_PACKAGES:
+                    get_prepared_packages_internal (job);
+                    break;
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
@@ -327,6 +330,27 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return null;
     }
 
+    public async Gee.Collection<AppCenterCore.PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
+        var packages = new Gee.TreeSet<AppCenterCore.PackageDetails> ();
+
+        var pk_prepared = yield get_prepared_packages ();
+        var package_array = pk_prepared.get_package_array ();
+        foreach (var pk_package in package_array) {
+            packages.add (new PackageDetails () {
+                name = pk_package.get_name (),
+                description = pk_package.description,
+                summary = pk_package.get_summary (),
+                version = pk_package.get_version ()
+            });
+        }
+
+        if (package_array.length > 0) {
+            updates_changed_callback ();
+        }
+
+        return packages;
+    }
+
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages (cancellable);
@@ -479,6 +503,62 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         jobs.push (job);
         yield;
         return job;
+    }
+
+    private void get_prepared_packages_internal (Job job) {
+        var args = (GetPreparedPackagesArgs)job.args;
+        var cancellable = args.cancellable;
+
+        Pk.Results? results = null;
+        try {
+            results = client.get_updates (0, cancellable, (t, p) => { });
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        string[] package_ids = {};
+        var downloaded_updates = get_downloaded_updates ();
+        results.get_package_array ().foreach ((pk_package) => {
+            if (downloaded_updates.contains (pk_package.get_id ())) {
+                package_ids += pk_package.get_id ();
+            }
+        });
+
+        if (package_ids.length == 0) {
+            job.result = Value (typeof (Object));
+            job.result.take_object (new Pk.Results ());
+            job.results_ready ();
+            return;
+        }
+
+        package_ids += null;
+
+        Pk.Results details;
+        try {
+            details = client.get_details (package_ids, cancellable, (p, t) => {});
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        details.get_details_array ().foreach ((details) => {
+            results.add_details (details);
+        });
+
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) results);
+        job.results_ready ();
+    }
+
+    public async Pk.Results get_prepared_packages (Cancellable? cancellable = null) {
+        var job_args = new GetPreparedPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_PREPARED_PACKAGES, job_args);
+        return (Pk.Results)job.result.get_object ();
     }
 
     private void get_installed_packages_internal (Job job) {
