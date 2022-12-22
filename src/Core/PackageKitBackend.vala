@@ -805,7 +805,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             critical ("Couldn't read PackageKit offline update action: %s", e.message);
         }
 
-
         return false;
     }
 
