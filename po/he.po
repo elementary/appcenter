@@ -4,15 +4,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-20 22:46+0000\n"
-"PO-Revision-Date: 2022-10-25 09:27+0000\n"
+"PO-Revision-Date: 2022-12-22 10:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -349,14 +350,12 @@ msgid "Updates to system components"
 msgstr "עדכונים לרכיבי המערכת"
 
 #: src/Core/UpdateManager.vala:53
-#, fuzzy
-#| msgid "Refresh Updates"
 msgid "Runtime Updates"
-msgstr "רענון עדכונים"
+msgstr "עדכוני זמן ריצה"
 
 #: src/Core/UpdateManager.vala:54
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "עדכונים לזמני ריצה של יישומים"
 
 #: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
@@ -380,19 +379,15 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:199
-#, fuzzy
-#| msgid "No components with updates"
 msgid "No runtimes with updates"
-msgstr "אין רכיבים עם עדכונים"
+msgstr "אין זמני ריצה שיש להם עדכונים"
 
 #: src/Core/UpdateManager.vala:204
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "רכיב אחד עם עדכונים"
-msgstr[1] "%u רכיבים עם עדכונים"
+msgstr[0] "זמן ריצה אחד עם עדכונים"
+msgstr[1] "%u זמני ריצה עם עדכונים"
 
 #: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
