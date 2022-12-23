@@ -965,6 +965,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         unowned var args = (RefreshCacheArgs)job.args;
         unowned var cancellable = args.cancellable;
 
+        // Don't refresh cache if PackageKit prepared updates.
+        // Otherwise PackageKit deletes all information related to prepared updates
+        if (get_downloaded_updates ().size > 0) {
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (true);
+            job.results_ready ();
+            return;
+        }
+
         Pk.Results? results = null;
         try {
             results = client.refresh_cache (false, cancellable, (t, p) => { });
