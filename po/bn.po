@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 22:46+0000\n"
+"POT-Creation-Date: 2022-12-27 22:43+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/appcenter/appcenter/bn/>\n"
@@ -37,7 +37,7 @@ msgstr "লিংকটি '%s' পাওয়া যাচ্ছে না, স�
 msgid "The app has been installed"
 msgstr "%s সফলভাবে ইনস্টল করা হয়েছে"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:298 src/MainWindow.vala:528
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -53,100 +53,100 @@ msgstr "তথ্য নেওয়া হচ্ছে"
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:101
+#: src/MainWindow.vala:102
 #, fuzzy
 #| msgid "Checking signatures"
 msgid "Checking for updates…"
 msgstr "স্বাক্ষর চেক করা হচ্ছে"
 
-#: src/MainWindow.vala:104
+#: src/MainWindow.vala:105
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "ইনস্টল হচ্ছে"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:108
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "আপডেটগুলো ইনস্টল হচ্ছে"
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:111
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling…"
 msgstr "ইনস্টল হচ্ছে"
 
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:141
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:188
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr ""
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
 msgid "Search Apps"
 msgstr "অ্যাপ খুজুন"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 msgid "Automatic App Updates"
 msgstr ""
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:209
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:213
 #, fuzzy
 #| msgid "Checking signatures"
 msgid "Check for Updates"
 msgstr "স্বাক্ষর চেক করা হচ্ছে"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:237
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "শুরু হচ্ছে"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:265
 #, fuzzy
 msgid "Network Not Available."
 msgstr "নেটওয়ার্ক পাওয়া যাচ্ছে না"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:266
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "ইন্টারনেটের সাথে কানেক্ট হোন অ্যাপ ইনস্টল বা আপডেট দেওয়ার জন্য"
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:276
 msgid "Network Settings…"
 msgstr "নেটোয়ার্ক সেটিংস…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:464 src/MainWindow.vala:468
 #, c-format
 msgid "Search %s"
 msgstr ""
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:485
 msgid "Home"
 msgstr "হোম"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:488
 msgctxt "view"
 msgid "Search"
 msgstr ""
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:494
 msgctxt "view"
 msgid "Installed"
 msgstr "ইনস্টল হয়েছে"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:531
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr ""
@@ -155,7 +155,7 @@ msgstr ""
 msgid "Starting"
 msgstr "শুরু হচ্ছে"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "অপেক্ষা করুন"
@@ -180,7 +180,7 @@ msgstr "প্যাকেজ অপসারণ করা হচ্ছে"
 msgid "Downloading"
 msgstr "ডাউনলোড হচ্ছে"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
 msgid "Installing"
 msgstr "ইনস্টল হচ্ছে"
 
@@ -225,9 +225,9 @@ msgid "Finished"
 msgstr "শেষ হয়েছে"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
+#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
+#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
 msgid "Cancelling"
 msgstr "বাতিল করা হচ্ছে"
 
@@ -303,26 +303,26 @@ msgstr ""
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:1278
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "ইনস্টল হচ্ছে"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1448
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -359,7 +359,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:308
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -382,43 +382,43 @@ msgstr "স্বাক্ষর চেক করা হচ্ছে"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
+#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:187
+#: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
+#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:199
+#: src/Core/UpdateManager.vala:191
 msgid "No runtimes with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:204
+#: src/Core/UpdateManager.vala:196
 #, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:249
+#: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:250
+#: src/Core/UpdateManager.vala:238
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
@@ -888,11 +888,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/AppListUpdateView.vala:321
+#: src/Views/AppListUpdateView.vala:323
 msgid "Drivers"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:334
+#: src/Views/AppListUpdateView.vala:336
 msgid "Up to Date"
 msgstr ""
 
@@ -1095,6 +1095,12 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "আপডেট"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "ডাউনলোড হচ্ছে"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

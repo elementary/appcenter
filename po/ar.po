@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 22:46+0000\n"
+"POT-Creation-Date: 2022-12-27 22:43+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -40,7 +40,7 @@ msgstr "الرابط المحدد '%s' غير موجود، سيتم البحث �
 msgid "The app has been installed"
 msgstr "تم تثبيت التطبيق بنجاح"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:298 src/MainWindow.vala:528
 #, c-format
 msgid "“%s” has been installed"
 msgstr "تم تثبيت ”%s“"
@@ -55,102 +55,102 @@ msgstr "قيد الحصول على المعلومات"
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:101
+#: src/MainWindow.vala:102
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "جاري البحث عن تحديثات"
 
-#: src/MainWindow.vala:104
+#: src/MainWindow.vala:105
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "قيد التثبيت"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:108
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "قيد تثبيت التحديثات"
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:111
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "قيد إلغاء التثبيت"
 
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:141
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "فشل تشغيل ”%s“"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:188
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "فشل تثبيت التطبيق"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
 msgid "Search Apps"
 msgstr "ابحث عن تطبيقات"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "فشل في جلب التحديثات"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:209
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:213
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "جاري البحث عن تحديثات"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:237
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "قيد البدء"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:265
 msgid "Network Not Available."
 msgstr "الشبكة غير متوفرة."
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:266
 msgid "Connect to the Internet to browse and install apps."
 msgstr "اتصل بالإنترنت لتصفح وتنزيل التطبيقات."
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:276
 msgid "Network Settings…"
 msgstr "إعدادات الشبكة…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:464 src/MainWindow.vala:468
 #, c-format
 msgid "Search %s"
 msgstr "ابحث في %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:485
 msgid "Home"
 msgstr "الرئيسية"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:488
 msgctxt "view"
 msgid "Search"
 msgstr "البحث"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:494
 msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:531
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "افتح"
@@ -159,7 +159,7 @@ msgstr "افتح"
 msgid "Starting"
 msgstr "قيد البدء"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "قيد الانتظار"
@@ -184,7 +184,7 @@ msgstr "قيد حذف الحزم"
 msgid "Downloading"
 msgstr "قيد التحميل"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
 msgid "Installing"
 msgstr "قيد التثبيت"
 
@@ -229,9 +229,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
+#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
+#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
 msgid "Cancelling"
 msgstr "قيد الإلغاء"
 
@@ -307,7 +307,7 @@ msgstr "حالة غير معروفة"
 msgid "package operations are being performed"
 msgstr "يتم الآن تنفيذ العمليات الخاصة بالحزم"
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "لا تتوفر تحديثات"
@@ -317,7 +317,7 @@ msgstr[3] "تتوفر تحديثات"
 msgstr[4] "تتوفر تحديثات"
 msgstr[5] "تتوفر تحديثات"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -328,11 +328,11 @@ msgstr[3] "تتوفر %u تحديثات لنظامك"
 msgstr[4] "يتوفر %u تحديثاً لنظامك"
 msgstr[5] "يتوفر %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:1278
 msgid "Uninstalling"
 msgstr "قيد إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1448
 msgid "Updating"
 msgstr "قيد التحديث"
 
@@ -367,7 +367,7 @@ msgstr "غير معروفة الأصل (غير مختارة)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "حالة التطبيق غير معينة ك \"مثبت\" في آب سنتر للحزمة: %s"
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:308
 #, c-format
 msgid "%s (local)"
 msgstr "%s (محلي)"
@@ -390,16 +390,16 @@ msgstr "جاري البحث عن تحديثات"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
+#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
 msgid "Version: %s"
 msgstr "الإصدار: %s"
 
-#: src/Core/UpdateManager.vala:187
+#: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
 msgstr "لا يوجد مكونات تحتاج تحديثاً"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -410,18 +410,18 @@ msgstr[3] "هناك تحديثات ل %u مكونات"
 msgstr[4] "هناك تحديثات ل %u مكوناً"
 msgstr[5] "هناك تحديثات ل %u مكون"
 
-#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
+#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:199
+#: src/Core/UpdateManager.vala:191
 #, fuzzy
 #| msgid "No components with updates"
 msgid "No runtimes with updates"
 msgstr "لا يوجد مكونات تحتاج تحديثاً"
 
-#: src/Core/UpdateManager.vala:204
+#: src/Core/UpdateManager.vala:196
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -434,11 +434,11 @@ msgstr[3] "هناك تحديثات ل %u مكونات"
 msgstr[4] "هناك تحديثات ل %u مكوناً"
 msgstr[5] "هناك تحديثات ل %u مكون"
 
-#: src/Core/UpdateManager.vala:249
+#: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
 msgstr "إعادة التشغيل مطلوبة"
 
-#: src/Core/UpdateManager.vala:250
+#: src/Core/UpdateManager.vala:238
 msgid "Please restart your system to finalize updates"
 msgstr "الرجاء إعادة تشغيل نظامك لإنهاء التحديثات"
 
@@ -917,11 +917,11 @@ msgstr[3] "تتوفر %u تحديثات"
 msgstr[4] "يتوفر %u تحديثاً"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Views/AppListUpdateView.vala:321
+#: src/Views/AppListUpdateView.vala:323
 msgid "Drivers"
 msgstr "التعريفات"
 
-#: src/Views/AppListUpdateView.vala:334
+#: src/Views/AppListUpdateView.vala:336
 msgid "Up to Date"
 msgstr "محدث بالكامل"
 
@@ -1130,6 +1130,12 @@ msgstr "يصل إلى %s"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "حدث"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "قيد التحميل"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

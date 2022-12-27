@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 22:46+0000\n"
+"POT-Creation-Date: 2022-12-27 22:43+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -37,7 +37,7 @@ msgstr "ਦਿੱਤਾ ਹੋਇਆ ਲਿੰਕ '%s' ਲੱਭਿਆ ਨਹੀ
 msgid "The app has been installed"
 msgstr "ਐਪ ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:298 src/MainWindow.vala:528
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
@@ -52,102 +52,102 @@ msgstr "ਜਾਣਕਾਰੀ ਲਿਆ ਰਿਹੈ"
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:101
+#: src/MainWindow.vala:102
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
-#: src/MainWindow.vala:104
+#: src/MainWindow.vala:105
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "ਸਥਾਪਤ ਕਰ ਰਿਹੈ"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:108
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "ਅਪਡੇਟਾਂ ਸਥਾਪਤ ਹੋ ਰਹੀਆਂ ਹਨ"
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:111
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "ਅਣ-ਸਥਾਪਨ ਹੋ ਰਿਹੈ"
 
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:141
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "“%s“ ਨੂੰ ਲਾਂਚ ਕਰਨ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:188
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "ਐਪ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
 msgid "Search Apps"
 msgstr "ਐਪਾਂ ਖੋਜੋ"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "ਅਪਡੇਟਾਂ ਲਿਆਉਣਾ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:209
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:213
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:237
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "ਸ਼ੁਰੂ ਕਰ ਰਿਹੈ"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:265
 msgid "Network Not Available."
 msgstr "ਨੈੱਟਵਰਕ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:266
 msgid "Connect to the Internet to browse and install apps."
 msgstr "ਐਪ ਭੰਡਾਰ ਫਰੋਲਣ ਅਤੇ ਐਪਾਂ ਸਥਾਪਤ ਕਰਨ ਲਈ ਨੈੱਟਵਰਕ ਨਾਲ਼ ਜੁੜੋ।"
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:276
 msgid "Network Settings…"
 msgstr "ਨੈੱਟਵਰਕ ਸੈਟਿੰਗਾਂ…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:464 src/MainWindow.vala:468
 #, c-format
 msgid "Search %s"
 msgstr "%s ਖੋਜੋ"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:485
 msgid "Home"
 msgstr "ਮੁੱਖ ਪੰਨਾ"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:488
 msgctxt "view"
 msgid "Search"
 msgstr "ਖੋਜਣਾ/ਲੱਭਣਾ"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:494
 msgctxt "view"
 msgid "Installed"
 msgstr "ਸਥਾਪਤ ਕੀਤੇ ਹੋਏ"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:531
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
@@ -156,7 +156,7 @@ msgstr "ਖੋਲ੍ਹੋ"
 msgid "Starting"
 msgstr "ਸ਼ੁਰੂ ਕਰ ਰਿਹੈ"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "ਉਡੀਕ ਰਿਹੈ"
@@ -181,7 +181,7 @@ msgstr "ਪੈਕੇਜ ਹਟਾ ਰਿਹੈ"
 msgid "Downloading"
 msgstr "ਡਾਊਨਲੋਡ ਕਰ ਰਿਹੈ"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
 msgid "Installing"
 msgstr "ਸਥਾਪਤ ਕਰ ਰਿਹੈ"
 
@@ -226,9 +226,9 @@ msgid "Finished"
 msgstr "ਖ਼ਤਮ ਹੋਇਆ"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
+#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
+#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
 msgid "Cancelling"
 msgstr "ਰੱਦ ਹੋ ਰਿਹੈ"
 
@@ -304,24 +304,24 @@ msgstr "ਅਣਜਾਣ ਹਾਲਤ"
 msgid "package operations are being performed"
 msgstr "ਪੈਕੇਜ ਕਾਰਵਾਈਆਂ ਦੀ ਤਾਮੀਲ ਹੋ ਰਹੀ ਹੈ"
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
 msgstr[1] "ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
 msgstr[1] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:1278
 msgid "Uninstalling"
 msgstr "ਅਣ-ਸਥਾਪਨ ਹੋ ਰਿਹੈ"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1448
 msgid "Updating"
 msgstr "ਅਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
@@ -356,7 +356,7 @@ msgstr "ਅਣਜਾਣ ਸਰੋਤ ਤੋਂ (ਅਣ- ਘੜੀ/ਘੜੀਆ�
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "ਇਹਨਾ ਪੈਕੇਜਾਂ ਲਈ ਐਪ-ਸੈਂਟਰ ਵਿੱਚ ਐਪ ਹਾਲਾਤ ਬਤੌਰ ਸਥਾਪਤ ਨਹੀਂ ਤੈਅ ਕੀਤੇ ਹੋਈ: %s"
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:308
 #, c-format
 msgid "%s (local)"
 msgstr "%s (ਮਕਾਮੀ)"
@@ -379,34 +379,34 @@ msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
+#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
 msgid "Version: %s"
 msgstr "ਵਰਜਨ: %s"
 
-#: src/Core/UpdateManager.vala:187
+#: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
 msgstr "ਕਿਸੇ ਵੀ ਸਿਸਟਮ-ਅੰਗ ਲਈ ਅਪਡੇਟਾਂ ਨਹੀਂ ਹਨ"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "ਅਪਡੇਟਾਂ ਵਾਲ਼ਾ %u ਸਿਸਟਮ-ਅੰਗ"
 msgstr[1] "ਅਪਡੇਟਾਂ ਵਾਲ਼ੇ %u ਸਿਸਟਮ-ਅੰਗ"
 
-#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
+#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:199
+#: src/Core/UpdateManager.vala:191
 #, fuzzy
 #| msgid "No components with updates"
 msgid "No runtimes with updates"
 msgstr "ਕਿਸੇ ਵੀ ਸਿਸਟਮ-ਅੰਗ ਲਈ ਅਪਡੇਟਾਂ ਨਹੀਂ ਹਨ"
 
-#: src/Core/UpdateManager.vala:204
+#: src/Core/UpdateManager.vala:196
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -415,11 +415,11 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "ਅਪਡੇਟਾਂ ਵਾਲ਼ਾ %u ਸਿਸਟਮ-ਅੰਗ"
 msgstr[1] "ਅਪਡੇਟਾਂ ਵਾਲ਼ੇ %u ਸਿਸਟਮ-ਅੰਗ"
 
-#: src/Core/UpdateManager.vala:249
+#: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
 msgstr "ਸਿਸਟਮ ਰੀਸਟਾਰਟ ਕਰਨਾ ਜ਼ਰੂਰੀ ਹੈ"
 
-#: src/Core/UpdateManager.vala:250
+#: src/Core/UpdateManager.vala:238
 msgid "Please restart your system to finalize updates"
 msgstr "ਅਪਡੇਟਾਂ ਪੱਕੀਆਂ ਕਰਨ ਲਈ ਮਿਹਰਬਾਨੀ ਕਰਕੇ ਆਪਣੇ ਸਿਸਟਮ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ"
 
@@ -896,11 +896,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] "%u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
 msgstr[1] "%u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
-#: src/Views/AppListUpdateView.vala:321
+#: src/Views/AppListUpdateView.vala:323
 msgid "Drivers"
 msgstr "ਡਰਾਇਵਰ"
 
-#: src/Views/AppListUpdateView.vala:334
+#: src/Views/AppListUpdateView.vala:336
 msgid "Up to Date"
 msgstr "ਤਰੋ-ਤਾਜ਼ਾ (ਅਪ ਟੂ ਡੇਟ)"
 
@@ -1109,6 +1109,12 @@ msgstr "%s ਤੱਕ"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "ਅਪਡੇਟ"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "ਡਾਊਨਲੋਡ ਕਰ ਰਿਹੈ"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

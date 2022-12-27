@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 22:46+0000\n"
+"POT-Creation-Date: 2022-12-27 22:43+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/th/>\n"
@@ -38,7 +38,7 @@ msgstr "ค้นหาลิ้งค์เฉพาะ '%s' ไม่พบ �
 msgid "The app has been installed"
 msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:298 src/MainWindow.vala:528
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -54,103 +54,103 @@ msgstr "กำลังรับข้อมูล"
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:101
+#: src/MainWindow.vala:102
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "กำลังค้นหาอัปเดต…"
 
-#: src/MainWindow.vala:104
+#: src/MainWindow.vala:105
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "กำลังติดตั้ง"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:108
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "กำลังติตดั้งการอัปเดต"
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:111
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:141
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:188
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
 msgid "Search Apps"
 msgstr "ค้นหาแอป"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "ไม่สามารถตรวจหาอัพเดตได้"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:209
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:213
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "กำลังค้นหาอัปเดต…"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:237
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "กำลังเริ่ม"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:265
 #, fuzzy
 msgid "Network Not Available."
 msgstr "ภาพตัวอย่างยังไม่สามารถใช้งานได้"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:266
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:276
 msgid "Network Settings…"
 msgstr "ตั้งค่าเครือข่าย…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:464 src/MainWindow.vala:468
 #, c-format
 msgid "Search %s"
 msgstr "ค้นหา %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:485
 msgid "Home"
 msgstr "หน้าหลัก"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:488
 msgctxt "view"
 msgid "Search"
 msgstr "ค้นหา"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:494
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "ติดตั้ง"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:531
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr ""
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Starting"
 msgstr "กำลังเริ่ม"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "กำลังรอ"
@@ -184,7 +184,7 @@ msgstr "กำลังถอดถอนแพกเกจ"
 msgid "Downloading"
 msgstr "กำลังดาวน์โหลด"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
 msgid "Installing"
 msgstr "กำลังติดตั้ง"
 
@@ -229,9 +229,9 @@ msgid "Finished"
 msgstr "สำเร็จแล้ว"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
+#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
+#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
 msgid "Cancelling"
 msgstr "กำลังยกเลิก"
 
@@ -307,24 +307,24 @@ msgstr "สถานะที่ไม่รู้จัก"
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "อัปเดตที่พร้อมใช้งานแล้ว"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "การอัปเดต %u รายการพร้อมใช้งานสำหรับระบบของคุณแล้ว"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:1278
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1448
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -361,7 +361,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:308
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -384,41 +384,41 @@ msgstr "กำลังค้นหาอัปเดต…"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
+#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
 msgid "Version: %s"
 msgstr "เวอร์ชั่น: %s"
 
-#: src/Core/UpdateManager.vala:187
+#: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 
-#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
+#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:199
+#: src/Core/UpdateManager.vala:191
 msgid "No runtimes with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:204
+#: src/Core/UpdateManager.vala:196
 #, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] ""
 
-#: src/Core/UpdateManager.vala:249
+#: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:250
+#: src/Core/UpdateManager.vala:238
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
@@ -894,11 +894,11 @@ msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "การอัปเดต %u รายการพร้อมใช้งานแล้ว"
 
-#: src/Views/AppListUpdateView.vala:321
+#: src/Views/AppListUpdateView.vala:323
 msgid "Drivers"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:334
+#: src/Views/AppListUpdateView.vala:336
 msgid "Up to Date"
 msgstr "ล่าสุดแล้ว"
 
@@ -1110,6 +1110,12 @@ msgstr "ล่าสุดแล้ว"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "การอัปเดต"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "กำลังดาวน์โหลด"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

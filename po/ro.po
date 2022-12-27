@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 22:46+0000\n"
+"POT-Creation-Date: 2022-12-27 22:43+0000\n"
 "PO-Revision-Date: 2022-01-31 07:59+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -37,7 +37,7 @@ msgstr "Legătura '%s' nu este disponibilă. Se inițiază o căutare"
 msgid "The app has been installed"
 msgstr "Aplicația s-a instalat"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:298 src/MainWindow.vala:528
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" s-a instalat"
@@ -52,100 +52,100 @@ msgstr "Se obțin informațiile"
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:101
+#: src/MainWindow.vala:102
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "Se caută actualizări"
 
-#: src/MainWindow.vala:104
+#: src/MainWindow.vala:105
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Se instalează"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:108
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Se instalează actualizările"
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:111
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "Dezinstalare"
 
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:141
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "S-a eșuat în pornirea “%s“"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:188
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "S-a eșuat în instalarea aplicației"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
 msgid "Search Apps"
 msgstr "Caută aplicații"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 #, fuzzy
 #| msgid "Automatic Updates"
 msgid "Automatic App Updates"
 msgstr "Actualizări automate"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:209
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:213
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Se caută actualizări"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:237
 msgid "Settings"
 msgstr "Setări"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:265
 msgid "Network Not Available."
 msgstr "Lipsă conexiune la internet."
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:266
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Conectați-vă la Internet pentru căutat și instalat aplicații."
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:276
 msgid "Network Settings…"
 msgstr "Setări de rețea…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:464 src/MainWindow.vala:468
 #, c-format
 msgid "Search %s"
 msgstr "Caută %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:485
 msgid "Home"
 msgstr "Pagina principală"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:488
 msgctxt "view"
 msgid "Search"
 msgstr "Căutare"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:494
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalate"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:531
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Deschide"
@@ -154,7 +154,7 @@ msgstr "Deschide"
 msgid "Starting"
 msgstr "Se începe"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "În așteptare"
@@ -179,7 +179,7 @@ msgstr "Se elimină pachetele"
 msgid "Downloading"
 msgstr "Se descarcă"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
 msgid "Installing"
 msgstr "Se instalează"
 
@@ -224,9 +224,9 @@ msgid "Finished"
 msgstr "Finalizat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
+#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
+#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
 msgid "Cancelling"
 msgstr "În curs de anulare"
 
@@ -302,14 +302,14 @@ msgstr "Stare necunoscută"
 msgid "package operations are being performed"
 msgstr "se desfășoară operațiuni cu pachete"
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "actualizare disponibilă"
 msgstr[1] "actualizări disponibile"
 msgstr[2] "de actualizări disponibile"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -317,11 +317,11 @@ msgstr[0] "%u actualizare de sistem este disponibilă"
 msgstr[1] "%u actualizări de sistem sunt disponibile"
 msgstr[2] "%u de actualizări de sistem sunt disponibile"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:1278
 msgid "Uninstalling"
 msgstr "Dezinstalare"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1448
 msgid "Updating"
 msgstr "Actualizare"
 
@@ -356,7 +356,7 @@ msgstr "Origine necunoscută (neverificată)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Statutul aplicației nu este setat drept instalat în Centrul de Aplicații pentru pachetul: %s"
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:308
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -379,16 +379,16 @@ msgstr "Se caută actualizări"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
+#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
 msgid "Version: %s"
 msgstr "Versiune: %s"
 
-#: src/Core/UpdateManager.vala:187
+#: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
 msgstr "Nici un component cu o actualizare"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -396,18 +396,18 @@ msgstr[0] "%u componentă cu actualizări"
 msgstr[1] "%u componente cu actualizări"
 msgstr[2] "%u componente cu actualizări"
 
-#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
+#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:199
+#: src/Core/UpdateManager.vala:191
 #, fuzzy
 #| msgid "No components with updates"
 msgid "No runtimes with updates"
 msgstr "Nici un component cu o actualizare"
 
-#: src/Core/UpdateManager.vala:204
+#: src/Core/UpdateManager.vala:196
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -417,11 +417,11 @@ msgstr[0] "%u componentă cu actualizări"
 msgstr[1] "%u componente cu actualizări"
 msgstr[2] "%u componente cu actualizări"
 
-#: src/Core/UpdateManager.vala:249
+#: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
 msgstr "Sistemul trebuie repornit"
 
-#: src/Core/UpdateManager.vala:250
+#: src/Core/UpdateManager.vala:238
 msgid "Please restart your system to finalize updates"
 msgstr "Reporniți sistemul pentru a finaliza instalarea"
 
@@ -895,11 +895,11 @@ msgstr[0] "%u actualizare disponibilă"
 msgstr[1] "%u actualizări disponibile"
 msgstr[2] "%u de actualizări disponibile"
 
-#: src/Views/AppListUpdateView.vala:321
+#: src/Views/AppListUpdateView.vala:323
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Views/AppListUpdateView.vala:334
+#: src/Views/AppListUpdateView.vala:336
 msgid "Up to Date"
 msgstr "Aplicații la zi"
 
@@ -1108,6 +1108,12 @@ msgstr "Până la %s"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "Actualizează"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "Se descarcă"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 22:46+0000\n"
+"POT-Creation-Date: 2022-12-27 22:43+0000\n"
 "PO-Revision-Date: 2022-02-28 18:23+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -36,7 +36,7 @@ msgstr "Uvedený odkaz „%s“ sa nenašiel, spúšťa sa vyhľadávanie"
 msgid "The app has been installed"
 msgstr "Aplikácia bola nainštalovaná"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:298 src/MainWindow.vala:528
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Aplikácia „%s“ bola nainštalovaná"
@@ -51,100 +51,100 @@ msgstr "Získavajú sa informácie"
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:101
+#: src/MainWindow.vala:102
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "Kontrolujú sa aktualizácie"
 
-#: src/MainWindow.vala:104
+#: src/MainWindow.vala:105
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Inštaluje sa"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:108
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Inštalujú sa aktualizácie"
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:111
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "Odinštalovanie"
 
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:141
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Nepodarilo sa spustiť „%s“"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:188
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Nepodarilo sa nainštalovať aplikáciu"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
 msgid "Search Apps"
 msgstr "Hľadať aplikácie"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 #, fuzzy
 #| msgid "Automatic Updates"
 msgid "Automatic App Updates"
 msgstr "Automatické aktualizácie"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:209
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:213
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Kontrolujú sa aktualizácie"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:237
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:265
 msgid "Network Not Available."
 msgstr "Sieťové pripojenie je nedostupné."
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:266
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Pre prehliadanie a inštaláciu aplikácií sa pripojte k internetu."
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:276
 msgid "Network Settings…"
 msgstr "Nastavenia siete…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:464 src/MainWindow.vala:468
 #, c-format
 msgid "Search %s"
 msgstr "Hľadať %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:485
 msgid "Home"
 msgstr "Domov"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:488
 msgctxt "view"
 msgid "Search"
 msgstr "Vyhľadávanie"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:494
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainštalované"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:531
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Otvoriť"
@@ -153,7 +153,7 @@ msgstr "Otvoriť"
 msgid "Starting"
 msgstr "Spúšťanie"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "Čaká sa"
@@ -178,7 +178,7 @@ msgstr "Odstraňujú sa balíčky"
 msgid "Downloading"
 msgstr "Sťahuje sa"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
 msgid "Installing"
 msgstr "Inštaluje sa"
 
@@ -223,9 +223,9 @@ msgid "Finished"
 msgstr "Dokončené"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
+#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
+#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
 msgid "Cancelling"
 msgstr "Ruší sa"
 
@@ -301,14 +301,14 @@ msgstr "Neznámy stav"
 msgid "package operations are being performed"
 msgstr "vykonávajú sa operácie s balíčkami"
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Dostupná aktualizácia"
 msgstr[1] "Dostupné aktualizácie"
 msgstr[2] "Dostupných aktualizácií"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -316,11 +316,11 @@ msgstr[0] "%u aktualizácia je dostupná pre váš systém"
 msgstr[1] "%u aktualizácie sú dostupné pre váš systém"
 msgstr[2] "%u aktualizácií je dostupných pre váš systém"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:1278
 msgid "Uninstalling"
 msgstr "Odinštalovanie"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1448
 msgid "Updating"
 msgstr "Aktualizovanie"
 
@@ -355,7 +355,7 @@ msgstr "Neznámy pôvod (nepreverené)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stav aplikácie v AppCentre nie je nastavený ako inštalovaný pre balíček: %s"
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:308
 #, c-format
 msgid "%s (local)"
 msgstr "%s (miestny)"
@@ -378,16 +378,16 @@ msgstr "Kontrolujú sa aktualizácie"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
+#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
 msgid "Version: %s"
 msgstr "Verzia: %s"
 
-#: src/Core/UpdateManager.vala:187
+#: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
 msgstr "Žiadne súčasti nevyžadujú aktualizácie"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -395,18 +395,18 @@ msgstr[0] "%u súčasť vyžaduje aktualizáciu"
 msgstr[1] "%u súčasti vyžadujú aktualizáciu"
 msgstr[2] "%u súčastí vyžaduje aktualizáciu"
 
-#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
+#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:199
+#: src/Core/UpdateManager.vala:191
 #, fuzzy
 #| msgid "No components with updates"
 msgid "No runtimes with updates"
 msgstr "Žiadne súčasti nevyžadujú aktualizácie"
 
-#: src/Core/UpdateManager.vala:204
+#: src/Core/UpdateManager.vala:196
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -416,11 +416,11 @@ msgstr[0] "%u súčasť vyžaduje aktualizáciu"
 msgstr[1] "%u súčasti vyžadujú aktualizáciu"
 msgstr[2] "%u súčastí vyžaduje aktualizáciu"
 
-#: src/Core/UpdateManager.vala:249
+#: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
 msgstr "Požadovaný reštart"
 
-#: src/Core/UpdateManager.vala:250
+#: src/Core/UpdateManager.vala:238
 msgid "Please restart your system to finalize updates"
 msgstr "Prosím, dokončite aktualizáciu reštartovaním systému"
 
@@ -892,11 +892,11 @@ msgstr[0] "%u dostupná aktualizácia"
 msgstr[1] "%u dostupné aktualizácie"
 msgstr[2] "%u dostupných aktualizácií"
 
-#: src/Views/AppListUpdateView.vala:321
+#: src/Views/AppListUpdateView.vala:323
 msgid "Drivers"
 msgstr "Ovládače"
 
-#: src/Views/AppListUpdateView.vala:334
+#: src/Views/AppListUpdateView.vala:336
 msgid "Up to Date"
 msgstr "Aktuálne"
 
@@ -1099,6 +1099,12 @@ msgstr "Až do %s"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "Aktualizovať"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "Sťahuje sa"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

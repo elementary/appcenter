@@ -4,11 +4,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 22:46+0000\n"
+"POT-Creation-Date: 2022-12-27 22:43+0000\n"
 "PO-Revision-Date: 2022-12-22 10:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +35,7 @@ msgstr "Fant ikke oppgitt lenke «%s», søker istedenfor"
 msgid "The app has been installed"
 msgstr "Programmet har blitt installert"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:298 src/MainWindow.vala:528
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ble installert"
@@ -49,90 +48,90 @@ msgstr "Henter programinfo …"
 msgid "Getting download size…"
 msgstr "Henter nedlastingsstørrelse …"
 
-#: src/MainWindow.vala:101
+#: src/MainWindow.vala:102
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "Ser etter oppgraderinger …"
 
-#: src/MainWindow.vala:104
+#: src/MainWindow.vala:105
 msgid "Installing…"
 msgstr "Installerer …"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:108
 msgid "Installing updates…"
 msgstr "Installerer oppgraderinger …"
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:111
 msgid "Uninstalling…"
 msgstr "Avinstallerer …"
 
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:141
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Klarte ikke å kjøre «%s»"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:188
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Oppgraderinger og installerte programmer"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
 msgid "Search Apps"
 msgstr "Programsøk"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:208
 msgid "Automatic App Updates"
 msgstr "Automatiske programoppgraderinger"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:209
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "Systemoppgraderinger og ubetalte programmer vil ikke oppgraderes automatisk"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:213
 msgid "Check for Updates"
 msgstr "Se etter oppgraderinger"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:237
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:265
 msgid "Network Not Available."
 msgstr "Nettverk ikke tilgjengelig."
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:266
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Du må koble til Internett for å bla gjennom eller installere apper."
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:276
 msgid "Network Settings…"
 msgstr "Nettverksinnstillinger…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:464 src/MainWindow.vala:468
 #, c-format
 msgid "Search %s"
 msgstr "Søk %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:485
 msgid "Home"
 msgstr "Startside"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:488
 msgctxt "view"
 msgid "Search"
 msgstr "Søk"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:494
 msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:531
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Åpne"
@@ -141,7 +140,7 @@ msgstr "Åpne"
 msgid "Starting"
 msgstr "Starter"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "Venter"
@@ -166,7 +165,7 @@ msgstr "Fjerner pakker"
 msgid "Downloading"
 msgstr "Laster ned"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
 msgid "Installing"
 msgstr "Installerer"
 
@@ -211,9 +210,9 @@ msgid "Finished"
 msgstr "Ferdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
+#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
+#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
 msgid "Cancelling"
 msgstr "Avbryter"
 
@@ -289,24 +288,24 @@ msgstr "Ukjent tilstand"
 msgid "package operations are being performed"
 msgstr "pakkeoperasjoner utføres"
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Oppdatering tilgjengelig"
 msgstr[1] "Oppdateringer tilgjengelige"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengelig for ditt system"
 msgstr[1] "%u oppdateringer er tilgjengelige for ditt system"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:1278
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1448
 msgid "Updating"
 msgstr "Oppdaterer"
 
@@ -341,7 +340,7 @@ msgstr "Ukjent opprinnelse (ikke-bekreftet)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:308
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -364,34 +363,34 @@ msgstr "Se etter oppgraderinger"
 msgid "Updates to app runtimes"
 msgstr "Oppdateringer av kjøretidsrutiner"
 
-#: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
+#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
 msgid "Version: %s"
 msgstr "Versjon: %s"
 
-#: src/Core/UpdateManager.vala:187
+#: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
 msgstr "Ingen oppgraderinger til noen komponenter"
 
-#: src/Core/UpdateManager.vala:192
+#: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u komponent med oppgraderinger"
 msgstr[1] "%u komponenter med oppgraderinger"
 
-#: src/Core/UpdateManager.vala:194 src/Core/UpdateManager.vala:206
+#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:199
+#: src/Core/UpdateManager.vala:191
 #, fuzzy
 #| msgid "No components with updates"
 msgid "No runtimes with updates"
 msgstr "Ingen oppgraderinger til noen komponenter"
 
-#: src/Core/UpdateManager.vala:204
+#: src/Core/UpdateManager.vala:196
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -400,11 +399,11 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "%u komponent med oppgraderinger"
 msgstr[1] "%u komponenter med oppgraderinger"
 
-#: src/Core/UpdateManager.vala:249
+#: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
 msgstr "Omstart kreves"
 
-#: src/Core/UpdateManager.vala:250
+#: src/Core/UpdateManager.vala:238
 msgid "Please restart your system to finalize updates"
 msgstr "Utfør omstart av systemet ditt for å fullføre oppdateringene"
 
@@ -875,11 +874,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] "%u oppdatering tilgjengelig"
 msgstr[1] "%u oppdateringer tilgjengelig"
 
-#: src/Views/AppListUpdateView.vala:321
+#: src/Views/AppListUpdateView.vala:323
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Views/AppListUpdateView.vala:334
+#: src/Views/AppListUpdateView.vala:336
 msgid "Up to Date"
 msgstr "Oppdatert"
 
@@ -1083,6 +1082,12 @@ msgstr "Opptil %s"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "Oppdater"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "Laster ned"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
