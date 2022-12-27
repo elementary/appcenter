@@ -181,6 +181,8 @@ namespace AppCenter.Views {
                 add_packages (installed_apps);
             }
 
+            yield client.get_prepared_applications (refresh_cancellable);
+
             refresh_cancellable = null;
             refresh_mutex.unlock ();
         }
