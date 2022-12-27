@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-20 22:46+0000\n"
-"PO-Revision-Date: 2022-10-26 22:57+0000\n"
+"PO-Revision-Date: 2022-12-27 22:43+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -351,14 +352,12 @@ msgid "Updates to system components"
 msgstr "Rendszerösszetevők frissítése"
 
 #: src/Core/UpdateManager.vala:53
-#, fuzzy
-#| msgid "Refresh Updates"
 msgid "Runtime Updates"
-msgstr "Frissítések keresése"
+msgstr "Futttatókörnyezetek frissítései"
 
 #: src/Core/UpdateManager.vala:54
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Az alkalmazásfuttató környezetek frissítései"
 
 #: src/Core/UpdateManager.vala:107 src/Core/UpdateManager.vala:169
 #, c-format
@@ -382,19 +381,15 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:199
-#, fuzzy
-#| msgid "No components with updates"
 msgid "No runtimes with updates"
-msgstr "Nincsenek frissíthető összetevők"
+msgstr "Nincsenek frissíthető futtatókörnyezetek"
 
 #: src/Core/UpdateManager.vala:204
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u frissíthető összetevő"
-msgstr[1] "%u frissíthető összetevő"
+msgstr[0] "%u frissíthető futtatókörnyezet"
+msgstr[1] "%u frissíthető futtatókörnyezet"
 
 #: src/Core/UpdateManager.vala:249
 msgid "Restart Required"
