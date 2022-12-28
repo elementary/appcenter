@@ -181,7 +181,11 @@ namespace AppCenter.Views {
                 }
 
                 var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
-                add_package (runtime_updates);
+                var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
+                if (runtime_updates_size > 0) {
+                    add_package (runtime_updates);
+                }
+
                 add_packages (installed_apps);
             }
 
