@@ -279,9 +279,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         box.add (headerbar);
         box.add (network_info_bar);
 
-        if (Utils.is_running_on_live_session ()) {
+        if (Utils.is_running_in_demo_mode ()) {
             var live_session_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
-                _("Running As Live Session"),
+                _("Running in Demo Mode"),
                 _("Install %s to browse and install apps.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME))
             )) {
                 use_markup = true,
