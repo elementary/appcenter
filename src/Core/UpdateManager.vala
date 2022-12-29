@@ -21,6 +21,7 @@ public class AppCenterCore.UpdateManager : Object {
     public bool restart_required { public get; private set; default = false; }
     public Package os_updates { public get; private set; }
     public Package runtime_updates { public get; private set; }
+    public Package offline_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
     public uint64 updates_size { get; private set; default = 0ULL; }
     public bool has_flatpak_updates { get; private set; default = false; }
@@ -55,6 +56,14 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates_component.add_icon (runtime_icon);
 
         runtime_updates = new AppCenterCore.Package (BackendAggregator.get_default (), runtime_updates_component);
+
+        var offline_updates_component = new AppStream.Component ();
+        offline_updates_component.id = AppCenterCore.Package.OFFLINE_UPDATES_ID;
+        offline_updates_component.name = _("Updates that require a restart");
+        offline_updates_component.summary = _("Updates to system components");
+        offline_updates_component.add_icon (os_icon);
+
+        offline_updates = new AppCenterCore.Package (BackendAggregator.get_default (), offline_updates_component);
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
@@ -111,6 +120,9 @@ public class AppCenterCore.UpdateManager : Object {
 
         os_updates.component.set_pkgnames ({});
         os_updates.change_information.clear_update_info ();
+
+        offline_updates.component.set_pkgnames ({});
+        offline_updates.change_information.clear_update_info ();
 
         uint runtime_count = 0;
         string runtime_desc = "";
@@ -234,6 +246,13 @@ public class AppCenterCore.UpdateManager : Object {
                     os_updates.change_information.updatable_packages.@set (client, pk_package.get_id ());
                     os_updates.change_information.size += pk_detail.size;
                 }
+
+                var pkgnames = offline_updates.component.pkgnames;
+                pkgnames += pkg_name;
+                offline_updates.component.pkgnames = pkgnames;
+
+                offline_updates.change_information.updatable_packages.@set (client, pk_package.get_id ());
+                offline_updates.change_information.size += pk_detail.size;
             } catch (Error e) {
                 critical (e.message);
             }
@@ -241,6 +260,7 @@ public class AppCenterCore.UpdateManager : Object {
 
         os_updates.update_state ();
         runtime_updates.update_state ();
+        offline_updates.update_state ();
         return count;
     }
 

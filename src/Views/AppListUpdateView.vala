@@ -396,6 +396,21 @@ namespace AppCenter.Views {
                 }
             }
 
+            var offline_updates = AppCenterCore.UpdateManager.get_default ().offline_updates;
+            try {
+                yield offline_updates.update (false);
+            } catch (Error e) {
+                // If one package update was cancelled, drop out of the loop of updating the rest
+                if (e is GLib.IOError.CANCELLED) {
+                } else {
+                    var fail_dialog = new UpgradeFailDialog (offline_updates, e.message) {
+                        modal = true,
+                        transient_for = (Gtk.Window) get_toplevel ()
+                    };
+                    fail_dialog.present ();
+                }
+            }
+
             unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
             yield client.refresh_updates ();
 

@@ -84,6 +84,7 @@ public class AppCenterCore.Package : Object {
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
     public const string RUNTIME_UPDATES_ID = "xxx-runtime-updates";
+    public const string OFFLINE_UPDATES_ID = "xxx-offline-updates";
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
@@ -103,7 +104,7 @@ public class AppCenterCore.Package : Object {
     private bool _installed = false;
     public bool installed {
         get {
-            if (is_os_updates || is_runtime_updates) {
+            if (is_os_updates || is_runtime_updates || is_offline_updates) {
                 return true;
             }
 
@@ -195,9 +196,15 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_offline_updates {
+        get {
+            return component.id == OFFLINE_UPDATES_ID;
+        }
+    }
+
     public bool requires_reboot {
         get {
-            return is_os_updates || backend == AppCenterCore.PackageKitBackend.get_default ();
+            return backend == AppCenterCore.PackageKitBackend.get_default ();
         }
     }
 
@@ -215,7 +222,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates && !is_runtime_updates;
+            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates && !is_runtime_updates && !is_offline_updates;
         }
     }
 
@@ -840,7 +847,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private string convert_version (string version) {
-        if (is_os_updates || is_runtime_updates) {
+        if (is_os_updates || is_runtime_updates || is_offline_updates) {
             return version;
         }
 
@@ -927,7 +934,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private void populate_backend_details_sync () {
-        if (is_os_updates || is_runtime_updates || is_local) {
+        if (is_os_updates || is_runtime_updates || is_offline_updates || is_local) {
             backend_details = new PackageDetails ();
             return;
         }
