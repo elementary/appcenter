@@ -146,7 +146,6 @@ namespace Utils {
             var @is = proc_cmdline.read ();
             var dis = new DataInputStream (@is);
 
-            // BOOT_IMAGE=/casper/vmlinuz boot=casper maybe-ubiquity quiet splash initrd=/casper/initrd.lz
             if ("casper" in dis.read_line ()) {
                 return true;
             }
