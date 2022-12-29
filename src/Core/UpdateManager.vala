@@ -88,16 +88,25 @@ public class AppCenterCore.UpdateManager : Object {
 
         package_array.foreach ((pk_package) => {
             var pkg_name = pk_package.get_name ();
-            debug ("Added %s to OS updates", pkg_name);
-            os_count++;
-            unowned string pkg_summary = pk_package.get_summary ();
-            unowned string pkg_version = pk_package.get_version ();
-            os_desc += Markup.printf_escaped (
-                " • %s\n\t%s\n\t%s\n",
-                pkg_name,
-                pkg_summary,
-                _("Version: %s").printf (pkg_version)
-            );
+            var appcenter_package = client.lookup_package_by_id (pkg_name);
+            if (appcenter_package != null) {
+                debug ("Added %s to app updates", pkg_name);
+                apps_with_updates.add (appcenter_package);
+                count++;
+                appcenter_package.latest_version = pk_package.get_version ();
+                updates_size += appcenter_package.change_information.size;
+            } else {
+                debug ("Added %s to OS updates", pkg_name);
+                os_count++;
+                unowned string pkg_summary = pk_package.get_summary ();
+                unowned string pkg_version = pk_package.get_version ();
+                os_desc += Markup.printf_escaped (
+                    " • %s\n\t%s\n\t%s\n",
+                    pkg_name,
+                    pkg_summary,
+                    _("Version: %s").printf (pkg_version)
+                );
+            }
         });
 
         os_updates.component.set_pkgnames ({});
@@ -212,13 +221,19 @@ public class AppCenterCore.UpdateManager : Object {
             try {
                 pk_package.set_id (pk_detail.get_package_id ());
                 var pkg_name = pk_package.get_name ();
+                var appcenter_package = client.lookup_package_by_id (pkg_name);
+                if (appcenter_package != null) {
+                    appcenter_package.change_information.updatable_packages.@set (client, pk_package.get_id ());
+                    appcenter_package.change_information.size += pk_detail.size;
+                    appcenter_package.update_state ();
+                } else {
+                    var pkgnames = os_updates.component.pkgnames;
+                    pkgnames += pkg_name;
+                    os_updates.component.pkgnames = pkgnames;
 
-                var pkgnames = os_updates.component.pkgnames;
-                pkgnames += pkg_name;
-                os_updates.component.pkgnames = pkgnames;
-
-                os_updates.change_information.updatable_packages.@set (client, pk_package.get_id ());
-                os_updates.change_information.size += pk_detail.size;
+                    os_updates.change_information.updatable_packages.@set (client, pk_package.get_id ());
+                    os_updates.change_information.size += pk_detail.size;
+                }
             } catch (Error e) {
                 critical (e.message);
             }

@@ -290,26 +290,42 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
+            bool requires_reboot = false;
             bool update_available = false;
             bool is_driver = false;
             var row_package = row.get_package ();
             if (row_package != null) {
+                requires_reboot = row_package.requires_reboot;
                 update_available = row_package.update_available || row_package.is_updating;
                 is_driver = row_package.kind == AppStream.ComponentKind.DRIVER;
             }
 
-
+            bool before_requires_reboot = false;
             bool before_update_available = false;
             bool before_is_driver = false;
             if (before != null) {
                 var before_package = before.get_package ();
                 if (before_package != null) {
+                    before_requires_reboot = before_package.requires_reboot;
                     before_update_available = before_package.update_available || before_package.is_updating;
                     before_is_driver = before_package.kind == AppStream.ComponentKind.DRIVER;
                 }
             }
 
-            if (update_available) {
+            if (requires_reboot && update_available) {
+                if (before != null && requires_reboot == before_requires_reboot) {
+                    row.set_header (null);
+                    return;
+                }
+
+                var header = new Granite.HeaderLabel (_("Requires Restart")) {
+                    margin_top = 12,
+                    margin_end = 9,
+                    margin_start = 9
+                };
+                header.show_all ();
+                row.set_header (header);
+            } else if (update_available) {
                 if (before != null && update_available == before_update_available) {
                     row.set_header (null);
                     return;
@@ -423,3 +439,4 @@ namespace AppCenter.Views {
         }
     }
 }
+    

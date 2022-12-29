@@ -195,6 +195,12 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool requires_reboot {
+        get {
+            return is_os_updates || backend == AppCenterCore.PackageKitBackend.get_default ();
+        }
+    }
+
     public AppStream.ComponentKind kind {
         get {
             return component.get_kind ();

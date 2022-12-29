@@ -203,15 +203,11 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.free_string = _("Update");
 
-                    if (package.is_os_updates) {
-                        action_button.free_string = _("Download");
-                    }
-
                     if (!package.should_pay) {
                         action_button.amount = 0;
                     }
 
-                    action_button_revealer.reveal_child = true;
+                    action_button_revealer.reveal_child = !package.requires_reboot;
                     open_button_revealer.reveal_child = false;
 
                     break;
