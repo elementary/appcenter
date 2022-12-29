@@ -280,7 +280,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         box.add (network_info_bar);
 
         if (Utils.is_running_in_demo_mode ()) {
-            var live_session_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
+            var demo_mode_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
                 _("Running in Demo Mode"),
                 _("Install %s to browse and install apps.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME))
             )) {
@@ -288,12 +288,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 wrap = true
             };
 
-            var live_session_info_bar = new Gtk.InfoBar () {
+            var demo_mode_info_bar = new Gtk.InfoBar () {
                 message_type = Gtk.MessageType.WARNING
             };
-            live_session_info_bar.get_content_area ().add (live_session_info_bar_label);
+            demo_mode_info_bar.get_content_area ().add (demo_mode_info_bar_label);
 
-            box.add (live_session_info_bar);
+            box.add (demo_mode_info_bar);
         }
 
         box.add (overlay);
