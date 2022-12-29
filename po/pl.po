@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
-"PO-Revision-Date: 2022-12-22 10:25+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
+"PO-Revision-Date: 2022-12-29 18:51+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
 "Language: pl\n"
@@ -167,7 +167,7 @@ msgstr "Usuwanie pakietów"
 msgid "Downloading"
 msgstr "Pobieranie"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -212,9 +212,9 @@ msgid "Finished"
 msgstr "Zakończono"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Anulowanie"
 
@@ -305,11 +305,16 @@ msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
 msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
 msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (systemowy)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "Odinstalowywanie"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "Aktualizowanie"
 
@@ -325,11 +330,6 @@ msgstr "Aktualizacje elementary"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (bez przeglądu)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (systemowy)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
@@ -1072,10 +1072,8 @@ msgid "Update"
 msgstr "Zaktualizuj"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
-msgstr "Pobieranie"
+msgstr "Pobierz"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

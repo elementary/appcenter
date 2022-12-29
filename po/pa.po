@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -181,7 +181,7 @@ msgstr "ਪੈਕੇਜ ਹਟਾ ਰਿਹੈ"
 msgid "Downloading"
 msgstr "ਡਾਊਨਲੋਡ ਕਰ ਰਿਹੈ"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "ਸਥਾਪਤ ਕਰ ਰਿਹੈ"
 
@@ -226,9 +226,9 @@ msgid "Finished"
 msgstr "ਖ਼ਤਮ ਹੋਇਆ"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "ਰੱਦ ਹੋ ਰਿਹੈ"
 
@@ -317,11 +317,16 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
 msgstr[1] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (ਸਾਰੇ ਸਿਸਟਮ 'ਤੇ)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "ਅਣ-ਸਥਾਪਨ ਹੋ ਰਿਹੈ"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "ਅਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
@@ -337,11 +342,6 @@ msgstr "ਐਲੀਮੈਂਟਰੀ ਅਪਡੇਟਾਂ"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "ਉਬੂੰਟੂ (ਅਣ-ਘੜੀਆਂ)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (ਸਾਰੇ ਸਿਸਟਮ 'ਤੇ)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

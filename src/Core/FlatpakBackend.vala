@@ -27,6 +27,26 @@ public class AppCenterCore.FlatpakPackage : Package {
             component: component
         );
     }
+
+    public string remote_title {
+        owned get {
+            unowned string origin = component.get_origin ();
+            var description = origin;
+
+            try {
+                var remote = installation.get_remote_by_name (origin, null);
+                description = remote.get_title ();
+            } catch (Error e) {
+                warning ("Unable to fetch remote: %s", description);
+            }
+
+            if (installation == FlatpakBackend.system_installation) {
+                return _("%s (system-wide)").printf (description);
+            }
+
+            return description;
+        }
+    }
 }
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {

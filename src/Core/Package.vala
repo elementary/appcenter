@@ -337,11 +337,11 @@ public class AppCenterCore.Package : Object {
                 }
             } else if (backend is FlatpakBackend) {
                 var fp_package = this as FlatpakPackage;
-                if (fp_package != null && fp_package.installation == FlatpakBackend.system_installation) {
-                    return _("%s (system-wide)").printf (origin);
+                if (fp_package == null) {
+                    return origin;
                 }
 
-                return origin;
+                return fp_package.remote_title;
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
