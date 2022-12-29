@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2022-01-11 18:13+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -179,7 +179,7 @@ msgstr "Menghapus paket"
 msgid "Downloading"
 msgstr "Mengunduh"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Memasang"
 
@@ -224,9 +224,9 @@ msgid "Finished"
 msgstr "Selesai"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Membatalkan"
 
@@ -313,11 +313,16 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (seluruh sistem)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "Menghapus pemasangan"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "Memperbarui"
 
@@ -333,11 +338,6 @@ msgstr "Pembaruan elementary"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (tidak dikuratori)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (seluruh sistem)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2022-08-07 23:58+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -172,7 +172,7 @@ msgstr "패키지를 제거하고 있습니다"
 msgid "Downloading"
 msgstr "내려받고 있습니다"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "설치중"
 
@@ -217,9 +217,9 @@ msgid "Finished"
 msgstr "마쳤습니다"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "취소하고 있습니다"
 
@@ -306,11 +306,16 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "시스템에 %u개의 업데이트할 항목이 있습니다"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (시스템 전체)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "제거 중"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "업데이트 중"
 
@@ -326,11 +331,6 @@ msgstr "elementary 업데이트"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (검수 안 함)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (시스템 전체)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

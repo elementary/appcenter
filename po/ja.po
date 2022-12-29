@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2022-12-29 18:51+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -161,7 +160,7 @@ msgstr "パッケージを削除しています"
 msgid "Downloading"
 msgstr "ダウンロードしています"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "インストールしています"
 
@@ -206,9 +205,9 @@ msgid "Finished"
 msgstr "完了しました"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "キャンセルしています"
 
@@ -295,11 +294,16 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "システムに%u件のアップデートが利用可能です"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (システム全体で利用可能)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "アンインストールしています"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "アップデートしています"
 
@@ -315,11 +319,6 @@ msgstr "elementary のアップデート"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (キュレーションされていないアプリ)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (システム全体で利用可能)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
