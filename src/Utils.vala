@@ -139,4 +139,20 @@ namespace Utils {
                            .replace ("&gt;", ">")
                            .replace ("&#39;", "'");
     }
+
+    public static bool is_running_on_live_session () {
+        var proc_cmdline = File.new_for_path ("/proc/cmdline");
+        try {
+            var @is = proc_cmdline.read ();
+            var dis = new DataInputStream (@is);
+
+            if ("casper" in dis.read_line ()) {
+                return true;
+            }
+        } catch (Error e) {
+            critical ("Couldn't detect if running on live session: %s", e.message);
+        }
+
+        return false;
+    }
 }
