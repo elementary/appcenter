@@ -44,7 +44,6 @@ public enum RuntimeStatus {
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
-    private const string FLATHUB_PACKAGE_ORIGIN = "flathub";
 
     public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
 
@@ -342,18 +341,7 @@ public class AppCenterCore.Package : Object {
                     return origin;
                 }
 
-                var description = origin;
-                if (origin == APPCENTER_PACKAGE_ORIGIN) {
-                    description = _("AppCenter");
-                } else if (origin == FLATHUB_PACKAGE_ORIGIN) {
-                    description = _("Flathub");
-                }
-
-                if (fp_package.installation == FlatpakBackend.system_installation) {
-                    description = _("%s (system-wide)").printf (description);
-                }
-
-                return description;
+                return fp_package.remote_title;
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
