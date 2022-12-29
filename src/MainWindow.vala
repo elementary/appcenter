@@ -287,7 +287,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 use_markup = true,
                 wrap = true
             };
-    
+
             var live_session_info_bar = new Gtk.InfoBar () {
                 message_type = Gtk.MessageType.WARNING
             };
