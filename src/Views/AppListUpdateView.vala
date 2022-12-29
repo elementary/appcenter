@@ -376,7 +376,7 @@ namespace AppCenter.Views {
                     ((Widgets.PackageRow) child).set_action_sensitive (false);
 
                     var package = ((Widgets.PackageRow) child).get_package ();
-                    if (package.update_available && !package.should_pay) {
+                    if (package.update_available && !package.should_pay && !package.requires_reboot) {
                         try {
                             yield package.update (false);
                         } catch (Error e) {
