@@ -101,6 +101,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.REMOVE_PACKAGE:
                     remove_package_internal (job);
                     break;
+                case Job.Type.GET_DOWNLOAD_SIZE:
+                    get_download_size_by_id_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -504,12 +507,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return yield get_download_size_by_id (id, cancellable, is_update, package);
     }
 
-    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
+    private void get_download_size_by_id_internal (Job job) {
+        unowned var args = (GetDownloadSizeByIdArgs)job.args;
+        unowned var id = args.id;
+        unowned var is_update = args.is_update;
+        unowned var package = args.package;
+        unowned var cancellable = args.cancellable;
+
         bool system;
         string origin, bundle_id;
         var split_success = get_package_list_key_parts (id, out system, out origin, out bundle_id);
         if (!split_success) {
-            return 0;
+            job.result = Value (typeof (uint64));
+            job.result.set_uint64 (0);
+            job.results_ready ();
+            return;
         }
 
         unowned Flatpak.Installation? installation = null;
@@ -520,10 +532,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         if (installation == null) {
-            return 0;
+            job.result = Value (typeof (uint64));
+            job.result.set_uint64 (0);
+            job.results_ready ();
+            return;
         }
 
-        var flatpak_ref = Flatpak.Ref.parse (bundle_id);
+        Flatpak.Ref flatpak_ref;
+        
+        try {
+            flatpak_ref = Flatpak.Ref.parse (bundle_id);
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
         bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
 
         uint64 download_size = 0;
@@ -610,11 +634,30 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         } catch (Error e) {
             if (!(e is Flatpak.Error.ABORTED)) {
-                throw e;
+                job.error = e;
+                job.results_ready ();
+                return;
             }
         }
 
-        return download_size;
+        job.result = Value (typeof (uint64));
+        job.result.set_uint64 (download_size);
+        job.results_ready ();
+    }
+
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
+        var job_args = new GetDownloadSizeByIdArgs ();
+        job_args.id = id;
+        job_args.is_update = is_update;
+        job_args.package = package;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_DOWNLOAD_SIZE, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_uint64 ();
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {

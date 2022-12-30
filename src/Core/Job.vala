@@ -79,6 +79,13 @@ public class AppCenterCore.GetDownloadSizeArgs : JobArgs {
     public Cancellable? cancellable;
 }
 
+public class AppCenterCore.GetDownloadSizeByIdArgs : JobArgs {
+    public string id;
+    public bool is_update;
+    public Package? package;
+    public Cancellable? cancellable;
+}
+
 public class AppCenterCore.GetUpdatesArgs : JobArgs {
     public Cancellable? cancellable;
 }
