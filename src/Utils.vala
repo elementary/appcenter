@@ -146,7 +146,8 @@ namespace Utils {
             var @is = proc_cmdline.read ();
             var dis = new DataInputStream (@is);
 
-            if ("casper" in dis.read_line ()) {
+            var line = dis.read_line ();
+            if ("boot=casper" in  line|| "boot=live" in line || "rd.live.image" in line) {
                 return true;
             }
         } catch (Error e) {
