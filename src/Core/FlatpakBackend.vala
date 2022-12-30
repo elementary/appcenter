@@ -539,7 +539,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         Flatpak.Ref flatpak_ref;
-        
         try {
             flatpak_ref = Flatpak.Ref.parse (bundle_id);
         } catch (Error e) {
