@@ -1,12 +1,13 @@
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020, 2021, 2022.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-29 18:51+0000\n"
-"PO-Revision-Date: 2022-12-22 10:25+0000\n"
+"PO-Revision-Date: 2023-01-01 16:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1060,10 +1061,8 @@ msgid "Update"
 msgstr "עדכון"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
-msgstr "מתבצעת הורדה"
+msgstr "הורדה"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
