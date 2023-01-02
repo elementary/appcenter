@@ -1,14 +1,15 @@
-# David M <rbndavid@gmail.com>, 2018, 2019, 2020, 2021, 2022.
+# David M <rbndavid@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023.
 # Seifer23 <salvador.rodo@gmail.com>, 2019.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
-"PO-Revision-Date: 2022-12-25 15:25+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
+"PO-Revision-Date: 2023-01-01 16:25+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -162,7 +163,7 @@ msgstr "Se suprimeixen paquets"
 msgid "Downloading"
 msgstr "Es baixa"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "S'instal·la"
 
@@ -207,9 +208,9 @@ msgid "Finished"
 msgstr "S'ha acabat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Es cancel·la"
 
@@ -298,11 +299,16 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (a tot el sistema)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "Es desinstal·la"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "S'actualitza"
 
@@ -318,11 +324,6 @@ msgstr "Actualitzacions de l'elementary"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (sense cura)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (a tot el sistema)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
@@ -1062,10 +1063,8 @@ msgid "Update"
 msgstr "Actualitza"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
-msgstr "Es baixa"
+msgstr "Baixa"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"

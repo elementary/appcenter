@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -179,7 +179,7 @@ msgstr "पॅकेज मिटवत आहे"
 msgid "Downloading"
 msgstr "डाउनलोड करित आहे"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "इन्स्टॉल होत आहे"
 
@@ -224,9 +224,9 @@ msgid "Finished"
 msgstr "पूर्ण झाले"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "रद्द करीत आहे"
 
@@ -315,11 +315,16 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहे"
 msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (सिस्टम-व्यापी)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "विस्थापित करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
@@ -335,11 +340,6 @@ msgstr "एलिमेंटरी अपडेट"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "उबंटू (नॉन-क्युरेटेड)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (सिस्टम-व्यापी)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2022-10-10 08:02+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -162,7 +162,7 @@ msgstr "Poistetaan paketteja"
 msgid "Downloading"
 msgstr "Ladataan"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Asennetaan"
 
@@ -207,9 +207,9 @@ msgid "Finished"
 msgstr "Valmis"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Perutaan"
 
@@ -298,11 +298,16 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
 msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (järjestelmänlaajuinen)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "Poistetaan"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "Päivitetään"
 
@@ -318,11 +323,6 @@ msgstr "elementary-päivitykset"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (kuratoimaton)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (järjestelmänlaajuinen)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

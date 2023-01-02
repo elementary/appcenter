@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/appcenter/appcenter/bn/>\n"
@@ -180,7 +180,7 @@ msgstr "প্যাকেজ অপসারণ করা হচ্ছে"
 msgid "Downloading"
 msgstr "ডাউনলোড হচ্ছে"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "ইনস্টল হচ্ছে"
 
@@ -225,9 +225,9 @@ msgid "Finished"
 msgstr "শেষ হয়েছে"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "বাতিল করা হচ্ছে"
 
@@ -316,13 +316,18 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1298
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "ইনস্টল হচ্ছে"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -339,11 +344,6 @@ msgstr ""
 
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
 msgstr ""
 
 #: src/Core/Package.vala:346

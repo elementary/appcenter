@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2022-12-29 18:51+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
@@ -181,7 +181,7 @@ msgstr "Ɛreyi dwumadie no"
 msgid "Downloading"
 msgstr "Ɛretwe"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Ɛde regu so"
 
@@ -226,9 +226,9 @@ msgid "Finished"
 msgstr "Awie"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Ɛregyae"
 
@@ -317,13 +317,18 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Dwumadie foforɔ %u aba"
 msgstr[1] "Dwumadie foforɔ %u aba"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1298
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Yi fi so"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -341,11 +346,6 @@ msgstr "Nea Wode Guu So Nkyɛe"
 
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
 msgstr ""
 
 #: src/Core/Package.vala:346
