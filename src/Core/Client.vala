@@ -110,6 +110,10 @@ public class AppCenterCore.Client : Object {
     public async void update_cache (bool force = false, CacheUpdateType cache_update_type = CacheUpdateType.ALL) {
         cancellable.reset ();
 
+        if (Utils.is_running_in_demo_mode ()) {
+            return;
+        }
+
         debug ("update cache called %s", force.to_string ());
         bool success = false;
 
