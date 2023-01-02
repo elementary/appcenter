@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2023-01-02 17:44+0000\n"
 "PO-Revision-Date: 2018-06-17 00:06+0000\n"
 "Last-Translator: Musa Abbasov <abbasov13@outlook.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/appcenter/appcenter/az/>\n"
@@ -35,7 +35,7 @@ msgstr "Bildirilən link '%s' tapılmadı, bunun yerinə axtar"
 msgid "The app has been installed"
 msgstr "%s uğurla quruldu"
 
-#: src/Application.vala:298 src/MainWindow.vala:528
+#: src/Application.vala:298 src/MainWindow.vala:546
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -86,7 +86,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Sil"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
+#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
 msgid "Search Apps"
 msgstr "Tətbiqlər Axtar"
 
@@ -124,28 +124,37 @@ msgstr "Tətbiqləri yükləmək və ya yeniləmək üçün internetə qoşulun.
 msgid "Network Settings…"
 msgstr "Şəbəkə Parametrələri…"
 
-#: src/MainWindow.vala:464 src/MainWindow.vala:468
+#: src/MainWindow.vala:284
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:285
+#, fuzzy, c-format
+msgid "Install %s to browse and install apps."
+msgstr "Tətbiqləri yükləmək və ya yeniləmək üçün internetə qoşulun."
+
+#: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
 msgid "Search %s"
 msgstr ""
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:503
 msgid "Home"
 msgstr "Ana Səhifə"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:488
+#: src/MainWindow.vala:506
 msgctxt "view"
 msgid "Search"
 msgstr "Axtarış"
 
-#: src/MainWindow.vala:494
+#: src/MainWindow.vala:512
 msgctxt "view"
 msgid "Installed"
 msgstr "Quraşdırılıb"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:531
+#: src/MainWindow.vala:549
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr ""
@@ -179,7 +188,7 @@ msgstr "Paketlər silinir"
 msgid "Downloading"
 msgstr "Yüklənilir"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Qurulur"
 
@@ -224,9 +233,9 @@ msgid "Finished"
 msgstr "Bitdi"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Ləğv edilir"
 
@@ -316,13 +325,18 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Sisteminiz üçün %u yeniləmə mövcuddur"
 msgstr[1] "Sisteminiz üçün %u yeniləmələr mövcuddur"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1298
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Sil"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -339,11 +353,6 @@ msgstr ""
 
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
 msgstr ""
 
 #: src/Core/Package.vala:346

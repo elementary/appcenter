@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2023-01-02 17:44+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -39,7 +39,7 @@ msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm 
 msgid "The app has been installed"
 msgstr "%s đã được cài đặt thành công"
 
-#: src/Application.vala:298 src/MainWindow.vala:528
+#: src/Application.vala:298 src/MainWindow.vala:546
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -90,7 +90,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Gỡ cài đặt"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
+#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
 msgid "Search Apps"
 msgstr "Tìm kiếm ứng dụng"
 
@@ -130,29 +130,38 @@ msgstr "Kết nối đến internet để cài đặt hoặc cập nhật ứng 
 msgid "Network Settings…"
 msgstr "Cài đặt truy cập mạng…"
 
-#: src/MainWindow.vala:464 src/MainWindow.vala:468
+#: src/MainWindow.vala:284
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:285
+#, fuzzy, c-format
+msgid "Install %s to browse and install apps."
+msgstr "Kết nối đến internet để cài đặt hoặc cập nhật ứng dụng."
+
+#: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
 msgid "Search %s"
 msgstr "Tìm %s"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:503
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:488
+#: src/MainWindow.vala:506
 msgctxt "view"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: src/MainWindow.vala:494
+#: src/MainWindow.vala:512
 msgctxt "view"
 msgid "Installed"
 msgstr "Đã cài đặt"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:531
+#: src/MainWindow.vala:549
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Mở"
@@ -186,7 +195,7 @@ msgstr "Đang xóa gói"
 msgid "Downloading"
 msgstr "Đang tải về"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Đang cài đặt"
 
@@ -231,9 +240,9 @@ msgid "Finished"
 msgstr "Đã hoàn tất"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Đang hủy"
 
@@ -320,13 +329,18 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u bản cập nhật khả dụng cho hệ thống của bạn"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (system-wide)"
+
+#: src/Core/FlatpakBackend.vala:1298
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Gỡ cài đặt"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -344,11 +358,6 @@ msgstr "Cập nhật cơ bản"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (Không quản lý)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (system-wide)"
 
 #: src/Core/Package.vala:346
 #, fuzzy

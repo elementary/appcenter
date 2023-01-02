@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2023-01-02 17:44+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Albanian <https://l10n.elementary.io/projects/appcenter/appcenter/sq/>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "%s është instaluar me sukses"
 
-#: src/Application.vala:298 src/MainWindow.vala:528
+#: src/Application.vala:298 src/MainWindow.vala:546
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -88,7 +88,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Gjeni dhe instaloni aplikacione"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
+#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
 msgid "Search Apps"
 msgstr "Kërko aplikacione"
 
@@ -122,29 +122,38 @@ msgstr ""
 msgid "Network Settings…"
 msgstr ""
 
-#: src/MainWindow.vala:464 src/MainWindow.vala:468
+#: src/MainWindow.vala:284
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:285
+#, c-format
+msgid "Install %s to browse and install apps."
+msgstr ""
+
+#: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
 msgid "Search %s"
 msgstr ""
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:503
 #, fuzzy
 msgid "Home"
 msgstr "Faqja kryesore"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:488
+#: src/MainWindow.vala:506
 msgctxt "view"
 msgid "Search"
 msgstr "Kërko"
 
-#: src/MainWindow.vala:494
+#: src/MainWindow.vala:512
 msgctxt "view"
 msgid "Installed"
 msgstr "Instaluar"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:531
+#: src/MainWindow.vala:549
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr ""
@@ -178,7 +187,7 @@ msgstr "Duke hequr paketat"
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Duke instaluar"
 
@@ -223,9 +232,9 @@ msgid "Finished"
 msgstr "Përfundoi"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Duke anuluar"
 
@@ -314,13 +323,18 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1298
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Hiq"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -337,11 +351,6 @@ msgstr ""
 
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
 msgstr ""
 
 #: src/Core/Package.vala:346

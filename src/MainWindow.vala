@@ -278,6 +278,24 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         box.add (headerbar);
         box.add (network_info_bar);
+
+        if (Utils.is_running_in_demo_mode ()) {
+            var demo_mode_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
+                _("Running in Demo Mode"),
+                _("Install %s to browse and install apps.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME))
+            )) {
+                use_markup = true,
+                wrap = true
+            };
+
+            var demo_mode_info_bar = new Gtk.InfoBar () {
+                message_type = Gtk.MessageType.WARNING
+            };
+            demo_mode_info_bar.get_content_area ().add (demo_mode_info_bar_label);
+
+            box.add (demo_mode_info_bar);
+        }
+
         box.add (overlay);
         box.show_all ();
 

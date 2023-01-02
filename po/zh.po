@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2023-01-02 17:44+0000\n"
 "PO-Revision-Date: 2022-06-08 18:35+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -38,7 +38,7 @@ msgstr "未找到指定的链接'%s'，请使用搜索"
 msgid "The app has been installed"
 msgstr "应用安装成功"
 
-#: src/Application.vala:298 src/MainWindow.vala:528
+#: src/Application.vala:298 src/MainWindow.vala:546
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s已被安装"
@@ -89,7 +89,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "安装应用失败"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
+#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
 msgid "Search Apps"
 msgstr "搜索应用"
 
@@ -121,28 +121,38 @@ msgstr "连接到互联网以浏览或安装应用。"
 msgid "Network Settings…"
 msgstr "网络设置…"
 
-#: src/MainWindow.vala:464 src/MainWindow.vala:468
+#: src/MainWindow.vala:284
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:285
+#, fuzzy, c-format
+#| msgid "Connect to the Internet to browse and install apps."
+msgid "Install %s to browse and install apps."
+msgstr "连接到互联网以浏览或安装应用。"
+
+#: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:503
 msgid "Home"
 msgstr "首页"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:488
+#: src/MainWindow.vala:506
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"
 
-#: src/MainWindow.vala:494
+#: src/MainWindow.vala:512
 msgctxt "view"
 msgid "Installed"
 msgstr "已安装"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:531
+#: src/MainWindow.vala:549
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "打开"
@@ -176,7 +186,7 @@ msgstr "正在移除软件包"
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "正在安装"
 
@@ -221,9 +231,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -310,11 +320,16 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s （系統級）"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "正在卸载"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "正在更新"
 
@@ -330,11 +345,6 @@ msgstr "elementary 更新"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (非官方渠道发布)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s （系統級）"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

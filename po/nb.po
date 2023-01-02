@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2023-01-02 17:44+0000\n"
 "PO-Revision-Date: 2022-12-22 10:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
@@ -35,7 +35,7 @@ msgstr "Fant ikke oppgitt lenke «%s», søker istedenfor"
 msgid "The app has been installed"
 msgstr "Programmet har blitt installert"
 
-#: src/Application.vala:298 src/MainWindow.vala:528
+#: src/Application.vala:298 src/MainWindow.vala:546
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ble installert"
@@ -78,7 +78,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Oppgraderinger og installerte programmer"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
+#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
 msgid "Search Apps"
 msgstr "Programsøk"
 
@@ -110,28 +110,38 @@ msgstr "Du må koble til Internett for å bla gjennom eller installere apper."
 msgid "Network Settings…"
 msgstr "Nettverksinnstillinger…"
 
-#: src/MainWindow.vala:464 src/MainWindow.vala:468
+#: src/MainWindow.vala:284
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:285
+#, fuzzy, c-format
+#| msgid "Connect to the Internet to browse and install apps."
+msgid "Install %s to browse and install apps."
+msgstr "Du må koble til Internett for å bla gjennom eller installere apper."
+
+#: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
 msgid "Search %s"
 msgstr "Søk %s"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:503
 msgid "Home"
 msgstr "Startside"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:488
+#: src/MainWindow.vala:506
 msgctxt "view"
 msgid "Search"
 msgstr "Søk"
 
-#: src/MainWindow.vala:494
+#: src/MainWindow.vala:512
 msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:531
+#: src/MainWindow.vala:549
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Åpne"
@@ -165,7 +175,7 @@ msgstr "Fjerner pakker"
 msgid "Downloading"
 msgstr "Laster ned"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Installerer"
 
@@ -210,9 +220,9 @@ msgid "Finished"
 msgstr "Ferdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Avbryter"
 
@@ -301,11 +311,16 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengelig for ditt system"
 msgstr[1] "%u oppdateringer er tilgjengelige for ditt system"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (på hele systemet)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "Oppdaterer"
 
@@ -321,11 +336,6 @@ msgstr "elementary-oppgraderinger"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (ikke-bekreftet)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (på hele systemet)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

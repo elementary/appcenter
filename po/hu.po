@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 22:43+0000\n"
+"POT-Creation-Date: 2023-01-02 17:44+0000\n"
 "PO-Revision-Date: 2022-12-27 22:43+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -36,7 +36,7 @@ msgstr "A(z) '%s' hivatkozás nem található, keresés helyette"
 msgid "The app has been installed"
 msgstr "Az alkalmazás telepítésre került"
 
-#: src/Application.vala:298 src/MainWindow.vala:528
+#: src/Application.vala:298 src/MainWindow.vala:546
 #, c-format
 msgid "“%s” has been installed"
 msgstr "A(z) \"%s\" telepítésre került"
@@ -75,7 +75,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Frissítések és telepített alkalmazások"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
+#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
 msgid "Search Apps"
 msgstr "Alkalmazások keresése"
 
@@ -107,28 +107,38 @@ msgstr "Az alkalmazások böngészéséhez vagy telepítéséhez csatlakozzon az
 msgid "Network Settings…"
 msgstr "Hálózati beállítások…"
 
-#: src/MainWindow.vala:464 src/MainWindow.vala:468
+#: src/MainWindow.vala:284
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:285
+#, fuzzy, c-format
+#| msgid "Connect to the Internet to browse and install apps."
+msgid "Install %s to browse and install apps."
+msgstr "Az alkalmazások böngészéséhez vagy telepítéséhez csatlakozzon az internetre."
+
+#: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
 msgid "Search %s"
 msgstr "A(z) %s keresése"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:503
 msgid "Home"
 msgstr "Kezdőlap"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:488
+#: src/MainWindow.vala:506
 msgctxt "view"
 msgid "Search"
 msgstr "Keresés"
 
-#: src/MainWindow.vala:494
+#: src/MainWindow.vala:512
 msgctxt "view"
 msgid "Installed"
 msgstr "Telepítve"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:531
+#: src/MainWindow.vala:549
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Megnyitás"
@@ -162,7 +172,7 @@ msgstr "Csomagok eltávolítása"
 msgid "Downloading"
 msgstr "Letöltés"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1146
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
 msgid "Installing"
 msgstr "Telepítés"
 
@@ -207,9 +217,9 @@ msgid "Finished"
 msgstr "Befejeződött"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1155 src/Core/FlatpakBackend.vala:1179
-#: src/Core/FlatpakBackend.vala:1287 src/Core/FlatpakBackend.vala:1311
-#: src/Core/FlatpakBackend.vala:1457 src/Core/FlatpakBackend.vala:1479
+#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
+#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
+#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
 msgid "Cancelling"
 msgstr "Megszakítás"
 
@@ -298,11 +308,16 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u frissítés érhető el a rendszerhez"
 msgstr[1] "%u frissítés érhető el a rendszerhez"
 
-#: src/Core/FlatpakBackend.vala:1278
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (rendszerszintű)"
+
+#: src/Core/FlatpakBackend.vala:1298
 msgid "Uninstalling"
 msgstr "Eltávolítás"
 
-#: src/Core/FlatpakBackend.vala:1448
+#: src/Core/FlatpakBackend.vala:1468
 msgid "Updating"
 msgstr "Frissítés"
 
@@ -318,11 +333,6 @@ msgstr "elementary-frissítések"
 #: src/Core/Package.vala:336
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (nem ellenőrzött)"
-
-#: src/Core/Package.vala:341
-#, c-format
-msgid "%s (system-wide)"
-msgstr "%s (rendszerszintű)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"

@@ -175,9 +175,17 @@ namespace AppCenter.Views {
                 clear ();
 
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
-                add_package (os_updates);
+                var os_updates_size = yield os_updates.get_download_size_including_deps ();
+                if (os_updates_size > 0) {
+                    add_package (os_updates);
+                }
+
                 var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
-                add_package (runtime_updates);
+                var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
+                if (runtime_updates_size > 0) {
+                    add_package (runtime_updates);
+                }
+
                 add_packages (installed_apps);
             }
 
