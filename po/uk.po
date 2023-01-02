@@ -3,7 +3,7 @@
 # Andrii Alforov <andrevpost@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # pandreyko <andrii.pavloshchuk@gmail.com>, 2019.
-# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022.
+# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022, 2023.
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 # DartDeaDia <dartdeadia@protonmail.com>, 2021.
 # Ryo Nakano <ryonakaknock3@gmail.com>, 2022.
@@ -12,14 +12,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 17:44+0000\n"
-"PO-Revision-Date: 2022-12-29 18:51+0000\n"
+"PO-Revision-Date: 2023-01-04 09:25+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -115,13 +117,12 @@ msgstr "Налаштування мережі…"
 
 #: src/MainWindow.vala:284
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Робота в демонстраційному режимі"
 
 #: src/MainWindow.vala:285
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Необхідне з'єднання з Інтернетом для перегляду чи встановлення застосунків."
+msgstr "Установіть %s для перегляду і встановлення застосунків."
 
 #: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
