@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-29 18:51+0000\n"
+"POT-Creation-Date: 2023-01-02 17:44+0000\n"
 "PO-Revision-Date: 2021-02-27 00:32+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: French (Canada) <https://l10n.elementary.io/projects/appcenter/appcenter/fr_CA/>\n"
@@ -36,7 +36,7 @@ msgstr "Le lien '%s' spécifié n'a pas été trouvé, recherche au lieu"
 msgid "The app has been installed"
 msgstr "L'application %s  a été installée avec succès"
 
-#: src/Application.vala:298 src/MainWindow.vala:528
+#: src/Application.vala:298 src/MainWindow.vala:546
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -87,7 +87,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Chercher et installer des applications"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:460 src/MainWindow.vala:602
+#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
 msgid "Search Apps"
 msgstr "Rechercher des Applications"
 
@@ -125,31 +125,40 @@ msgstr "Connectez-vous à Internet pour installer ou mettre à jour des applicat
 msgid "Network Settings…"
 msgstr "Paramètres du réseau…"
 
-#: src/MainWindow.vala:464 src/MainWindow.vala:468
+#: src/MainWindow.vala:284
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:285
+#, fuzzy, c-format
+msgid "Install %s to browse and install apps."
+msgstr "Connectez-vous à Internet pour installer ou mettre à jour des applications."
+
+#: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
 msgid "Search %s"
 msgstr ""
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:503
 #, fuzzy
 msgid "Home"
 msgstr "Page d'accueil"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:488
+#: src/MainWindow.vala:506
 #, fuzzy
 msgctxt "view"
 msgid "Search"
 msgstr "Rechercher des Applications"
 
-#: src/MainWindow.vala:494
+#: src/MainWindow.vala:512
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Installer"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:531
+#: src/MainWindow.vala:549
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr ""
