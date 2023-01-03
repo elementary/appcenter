@@ -715,17 +715,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var key = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
 
-        var installed_refs = fp_package.installation.list_installed_refs ();
-        for (int j = 0; j < installed_refs.length; j++) {
-            unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
+        try {
+            var installed_refs = fp_package.installation.list_installed_refs ();
+            for (int j = 0; j < installed_refs.length; j++) {
+                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
-            var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
-            if (key == bundle_id) {
-                job.result = Value (typeof (bool));
-                job.result = true;
-                job.results_ready ();
-                return;
+                var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
+                if (key == bundle_id) {
+                    job.result = Value (typeof (bool));
+                    job.result = true;
+                    job.results_ready ();
+                    return;
+                }
             }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
         }
 
         job.result = Value (typeof (bool));
