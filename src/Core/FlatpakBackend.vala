@@ -311,7 +311,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
-        return (Gee.Collection<Package>)job.result.get_object ();        
+        return (Gee.Collection<Package>)job.result.get_object ();
     }
 
     private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
