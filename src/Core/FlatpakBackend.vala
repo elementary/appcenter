@@ -110,6 +110,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
+                case Job.Type.IS_PACKAGE_INSTALLED:
+                    is_package_installed_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -687,16 +690,25 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job.result.get_uint64 ();
     }
 
-    public async bool is_package_installed (Package package) throws GLib.Error {
+    private void is_package_installed_internal (Job job) {
+        var args = (IsPackageInstalledArgs)job.args;
+        unowned var package = args.package;
+
         unowned var fp_package = package as FlatpakPackage;
         if (fp_package == null || fp_package.installation == null) {
             critical ("Could not check installed state of package due to no flatpak installation");
-            return false;
+            job.result = Value (typeof (bool));
+            job.result = false;
+            job.results_ready ();
+            return;
         }
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            return false;
+            job.result = Value (typeof (bool));
+            job.result = false;
+            job.results_ready ();
+            return;
         }
 
         bool system = fp_package.installation == system_installation;
@@ -709,11 +721,25 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
             var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
             if (key == bundle_id) {
-                return true;
+                job.result = Value (typeof (bool));
+                job.result = true;
+                job.results_ready ();
+                return;
             }
         }
 
-        return false;
+        job.result = Value (typeof (bool));
+        job.result = false;
+        job.results_ready ();
+    }
+
+    public async bool is_package_installed (Package package) throws GLib.Error {
+        var job_args = new IsPackageInstalledArgs ();
+        job_args.package = package;
+
+        var job = yield launch_job (Job.Type.IS_PACKAGE_INSTALLED, job_args);
+
+        return job.result.get_boolean ();
     }
 
     public async PackageDetails get_package_details (Package package) throws GLib.Error {
