@@ -104,6 +104,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.GET_DOWNLOAD_SIZE:
                     get_download_size_by_id_internal (job);
                     break;
+                case Job.Type.GET_UPDATES:
+                    get_updates_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -1562,12 +1565,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+    private void get_updates_internal (Job job) {
+        var args = (GetUpdatesArgs)job.args;
+        var cancellable = args.cancellable;
+
         var updatable_ids = new Gee.ArrayList<string> ();
 
         if (user_installation == null && system_installation == null) {
             critical ("Unable to get flatpak installation when checking for updates");
-            return updatable_ids;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) updatable_ids);
+            job.results_ready ();
+            return;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> update_refs;
@@ -1581,7 +1590,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             } catch (Error e) {
                 critical ("Unable to get list of updatable flatpaks: %s", e.message);
-                return updatable_ids;
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) updatable_ids);
+                job.results_ready ();
+                return;
             }
         }
 
@@ -1595,11 +1607,26 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             } catch (Error e) {
                 critical ("Unable to get list of updatable flatpaks: %s", e.message);
-                return updatable_ids;
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) updatable_ids);
+                job.results_ready ();
+                return;
             }
         }
 
-        return updatable_ids;
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) updatable_ids);
+        job.results_ready ();
+        return;
+    }
+
+    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+        var job_args = new GetUpdatesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
+
+        return (Gee.ArrayList<string>)job.result.get_object ();
     }
 
     public Package? lookup_package_by_id (string id) {
