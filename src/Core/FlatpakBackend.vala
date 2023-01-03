@@ -107,6 +107,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.GET_UPDATES:
                     get_updates_internal (job);
                     break;
+                case Job.Type.GET_INSTALLED_PACKAGES:
+                    get_installed_packages_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -258,12 +261,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return prepared_apps;
     }
 
-    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+    private void get_installed_packages_internal (Job job) {
+        unowned var args = (GetInstalledPackagesArgs)job.args;
+        unowned var cancellable = args.cancellable;
+
         var installed_apps = new Gee.HashSet<Package> ();
 
         if (user_installation == null && system_installation == null) {
             critical ("Couldn't get installed apps due to no flatpak installation");
-            return installed_apps;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) installed_apps);
+            job.results_ready ();
+            return;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
@@ -272,7 +281,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
         } catch (Error e) {
             critical ("Unable to get installed flatpaks: %s", e.message);
-            return installed_apps;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) installed_apps);
+            job.results_ready ();
+            return;
         }
 
         try {
@@ -280,10 +292,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
         } catch (Error e) {
             critical ("Unable to get installed flatpaks: %s", e.message);
-            return installed_apps;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) installed_apps);
+            job.results_ready ();
+            return;
         }
 
-        return installed_apps;
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) installed_apps);
+        job.results_ready ();
+    }
+
+    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+        var job_args = new GetInstalledPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
+        return (Gee.Collection<Package>)job.result.get_object ();        
     }
 
     private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
