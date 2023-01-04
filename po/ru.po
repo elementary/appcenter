@@ -5,15 +5,15 @@
 # asdffdsdaf <asdffdsdaf@gmail.com>, 2021, 2022.
 # DartDeaDia <dartdeadia@protonmail.com>, 2021, 2022.
 # Camellan <camellan@yandex.ru>, 2021.
-# lenemter <lenemter@gmail.com>, 2022.
+# lenemter <lenemter@gmail.com>, 2022, 2023.
 # кубик круглый <megarainbow29@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 17:44+0000\n"
-"PO-Revision-Date: 2023-01-04 09:25+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2023-01-05 18:25+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -117,7 +117,7 @@ msgstr "Параметры сети…"
 
 #: src/MainWindow.vala:284
 msgid "Running in Demo Mode"
-msgstr "Работает в демо-режиме"
+msgstr "Запущено в демо-режиме"
 
 #: src/MainWindow.vala:285
 #, c-format
