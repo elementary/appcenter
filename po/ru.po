@@ -6,20 +6,22 @@
 # DartDeaDia <dartdeadia@protonmail.com>, 2021, 2022.
 # Camellan <camellan@yandex.ru>, 2021.
 # lenemter <lenemter@gmail.com>, 2022.
-# кубик круглый <megarainbow29@gmail.com>, 2022.
+# кубик круглый <megarainbow29@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 17:44+0000\n"
-"PO-Revision-Date: 2022-12-29 18:51+0000\n"
+"PO-Revision-Date: 2023-01-04 09:25+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -115,13 +117,12 @@ msgstr "Параметры сети…"
 
 #: src/MainWindow.vala:284
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Работает в демо-режиме"
 
 #: src/MainWindow.vala:285
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Необходимо соединение с Интернетом для просмотра или установки приложений."
+msgstr "Установите %s для просмотра и установки приложений."
 
 #: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
