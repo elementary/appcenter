@@ -1,12 +1,13 @@
-# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 17:44+0000\n"
-"PO-Revision-Date: 2022-12-29 18:51+0000\n"
+"PO-Revision-Date: 2023-01-05 18:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,13 +108,12 @@ msgstr "ネットワークの設定…"
 
 #: src/MainWindow.vala:284
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "デモモードで実行しています"
 
 #: src/MainWindow.vala:285
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "アプリを検索したりインストールしたりするには、インターネットに接続してください。"
+msgstr "アプリを検索したりインストールしたりするには、%s をインストールしてください。"
 
 #: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
