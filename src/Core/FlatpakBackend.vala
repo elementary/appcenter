@@ -101,6 +101,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.REMOVE_PACKAGE:
                     remove_package_internal (job);
                     break;
+                case Job.Type.GET_DOWNLOAD_SIZE:
+                    get_download_size_by_id_internal (job);
+                    break;
+                case Job.Type.GET_UPDATES:
+                    get_updates_internal (job);
+                    break;
+                case Job.Type.GET_INSTALLED_PACKAGES:
+                    get_installed_packages_internal (job);
+                    break;
+                case Job.Type.IS_PACKAGE_INSTALLED:
+                    is_package_installed_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -252,12 +264,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return prepared_apps;
     }
 
-    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+    private void get_installed_packages_internal (Job job) {
+        unowned var args = (GetInstalledPackagesArgs)job.args;
+        unowned var cancellable = args.cancellable;
+
         var installed_apps = new Gee.HashSet<Package> ();
 
         if (user_installation == null && system_installation == null) {
             critical ("Couldn't get installed apps due to no flatpak installation");
-            return installed_apps;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) installed_apps);
+            job.results_ready ();
+            return;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
@@ -266,7 +284,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
         } catch (Error e) {
             critical ("Unable to get installed flatpaks: %s", e.message);
-            return installed_apps;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) installed_apps);
+            job.results_ready ();
+            return;
         }
 
         try {
@@ -274,10 +295,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
         } catch (Error e) {
             critical ("Unable to get installed flatpaks: %s", e.message);
-            return installed_apps;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) installed_apps);
+            job.results_ready ();
+            return;
         }
 
-        return installed_apps;
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) installed_apps);
+        job.results_ready ();
+    }
+
+    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+        var job_args = new GetInstalledPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
+        return (Gee.Collection<Package>)job.result.get_object ();
     }
 
     private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
@@ -504,12 +538,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return yield get_download_size_by_id (id, cancellable, is_update, package);
     }
 
-    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
+    private void get_download_size_by_id_internal (Job job) {
+        unowned var args = (GetDownloadSizeByIdArgs)job.args;
+        unowned var id = args.id;
+        unowned var is_update = args.is_update;
+        unowned var package = args.package;
+        unowned var cancellable = args.cancellable;
+
         bool system;
         string origin, bundle_id;
         var split_success = get_package_list_key_parts (id, out system, out origin, out bundle_id);
         if (!split_success) {
-            return 0;
+            job.result = Value (typeof (uint64));
+            job.result.set_uint64 (0);
+            job.results_ready ();
+            return;
         }
 
         unowned Flatpak.Installation? installation = null;
@@ -520,10 +563,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         if (installation == null) {
-            return 0;
+            job.result = Value (typeof (uint64));
+            job.result.set_uint64 (0);
+            job.results_ready ();
+            return;
         }
 
-        var flatpak_ref = Flatpak.Ref.parse (bundle_id);
+        Flatpak.Ref flatpak_ref;
+        try {
+            flatpak_ref = Flatpak.Ref.parse (bundle_id);
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
         bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
 
         uint64 download_size = 0;
@@ -610,40 +664,88 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         } catch (Error e) {
             if (!(e is Flatpak.Error.ABORTED)) {
-                throw e;
+                job.error = e;
+                job.results_ready ();
+                return;
             }
         }
 
-        return download_size;
+        job.result = Value (typeof (uint64));
+        job.result.set_uint64 (download_size);
+        job.results_ready ();
     }
 
-    public async bool is_package_installed (Package package) throws GLib.Error {
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
+        var job_args = new GetDownloadSizeByIdArgs ();
+        job_args.id = id;
+        job_args.is_update = is_update;
+        job_args.package = package;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_DOWNLOAD_SIZE, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_uint64 ();
+    }
+
+    private void is_package_installed_internal (Job job) {
+        var args = (IsPackageInstalledArgs)job.args;
+        unowned var package = args.package;
+
         unowned var fp_package = package as FlatpakPackage;
         if (fp_package == null || fp_package.installation == null) {
             critical ("Could not check installed state of package due to no flatpak installation");
-            return false;
+            job.result = Value (typeof (bool));
+            job.result = false;
+            job.results_ready ();
+            return;
         }
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            return false;
+            job.result = Value (typeof (bool));
+            job.result = false;
+            job.results_ready ();
+            return;
         }
 
         bool system = fp_package.installation == system_installation;
 
         var key = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
 
-        var installed_refs = fp_package.installation.list_installed_refs ();
-        for (int j = 0; j < installed_refs.length; j++) {
-            unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
+        try {
+            var installed_refs = fp_package.installation.list_installed_refs ();
+            for (int j = 0; j < installed_refs.length; j++) {
+                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
-            var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
-            if (key == bundle_id) {
-                return true;
+                var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
+                if (key == bundle_id) {
+                    job.result = Value (typeof (bool));
+                    job.result = true;
+                    job.results_ready ();
+                    return;
+                }
             }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
         }
 
-        return false;
+        job.result = Value (typeof (bool));
+        job.result = false;
+        job.results_ready ();
+    }
+
+    public async bool is_package_installed (Package package) throws GLib.Error {
+        var job_args = new IsPackageInstalledArgs ();
+        job_args.package = package;
+
+        var job = yield launch_job (Job.Type.IS_PACKAGE_INSTALLED, job_args);
+
+        return job.result.get_boolean ();
     }
 
     public async PackageDetails get_package_details (Package package) throws GLib.Error {
@@ -1520,12 +1622,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+    private void get_updates_internal (Job job) {
+        var args = (GetUpdatesArgs)job.args;
+        var cancellable = args.cancellable;
+
         var updatable_ids = new Gee.ArrayList<string> ();
 
         if (user_installation == null && system_installation == null) {
             critical ("Unable to get flatpak installation when checking for updates");
-            return updatable_ids;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) updatable_ids);
+            job.results_ready ();
+            return;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> update_refs;
@@ -1539,7 +1647,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             } catch (Error e) {
                 critical ("Unable to get list of updatable flatpaks: %s", e.message);
-                return updatable_ids;
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) updatable_ids);
+                job.results_ready ();
+                return;
             }
         }
 
@@ -1553,11 +1664,26 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             } catch (Error e) {
                 critical ("Unable to get list of updatable flatpaks: %s", e.message);
-                return updatable_ids;
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) updatable_ids);
+                job.results_ready ();
+                return;
             }
         }
 
-        return updatable_ids;
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) updatable_ids);
+        job.results_ready ();
+        return;
+    }
+
+    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+        var job_args = new GetUpdatesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
+
+        return (Gee.ArrayList<string>)job.result.get_object ();
     }
 
     public Package? lookup_package_by_id (string id) {
