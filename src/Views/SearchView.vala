@@ -23,6 +23,7 @@ public class AppCenter.SearchView : Gtk.Box {
     public signal void show_app (AppCenterCore.Package package);
 
     public string? current_search_term { get; set; default = null; }
+    public bool is_flathub_enabled { get; set; default = false; }
 
     private Gtk.ListBox list_box;
     private uint current_visible_index = 0U;
@@ -32,10 +33,15 @@ public class AppCenter.SearchView : Gtk.Box {
         var flathub_link = "<a href='https://flathub.org'>%s</a>".printf (_("Flathub"));
         var alert_view = new Granite.Widgets.AlertView (
             _("No Apps Found"),
-            _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
+            _("Try changing search terms. You can also sideload Flatpak apps."),
             "edit-find-symbolic"
         );
         alert_view.show_all ();
+
+        is_flathub_enabled = AppCenterCore.FlatpakBackend.get_default ().is_flathub_enabled ();
+        if (!is_flathub_enabled) {
+            alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link);
+        }
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
 
@@ -55,6 +61,10 @@ public class AppCenter.SearchView : Gtk.Box {
         add (scrolled);
 
         notify["current-search-term"].connect (() => {
+            if (is_flathub_enabled) {
+                return;
+            }
+
             var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (current_search_term, _("Flathub"));
             alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
         });
