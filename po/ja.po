@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 17:44+0000\n"
-"PO-Revision-Date: 2023-01-05 18:25+0000\n"
+"PO-Revision-Date: 2023-01-08 15:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -1009,7 +1009,7 @@ msgstr "%dドル"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
-msgstr "修正した不具合"
+msgstr "修正された不具合"
 
 #: src/Widgets/ReleaseRow.vala:94
 msgid "Unknown date"
