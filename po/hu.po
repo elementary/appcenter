@@ -1,4 +1,4 @@
-# TomiOhl <ohlslager.tom@gmail.com>, 2021, 2022.
+# TomiOhl <ohlslager.tom@gmail.com>, 2021, 2022, 2023.
 # Sziráki Bálint <blntsziraki@gmail.com>, 2021.
 # Adam Szatyin <szatyinadam@gmail.com>, 2021.
 msgid ""
@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 17:44+0000\n"
-"PO-Revision-Date: 2022-12-27 22:43+0000\n"
+"PO-Revision-Date: 2023-01-08 15:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,13 +110,13 @@ msgstr "Hálózati beállítások…"
 
 #: src/MainWindow.vala:284
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Demó módban való futás"
 
 #: src/MainWindow.vala:285
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Az alkalmazások böngészéséhez vagy telepítéséhez csatlakozzon az internetre."
+msgstr ""
+"Az alkalmazások böngészéséhez vagy telepítéséhez telepítse a következőt: %s."
 
 #: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
@@ -1072,8 +1073,6 @@ msgid "Update"
 msgstr "Frissítés"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
 msgstr "Letöltés"
 
