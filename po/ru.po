@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 17:44+0000\n"
-"PO-Revision-Date: 2023-01-05 18:25+0000\n"
+"PO-Revision-Date: 2023-01-08 15:25+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -994,7 +994,9 @@ msgstr "Приложения не найдены"
 #: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Попробуйте перефразировать запрос. Вы также можете загрузить приложения Flatpak, например с %s"
+msgstr ""
+"Попробуйте перефразировать запрос. Вы также можете загружать сторонние "
+"приложения Flatpak, например с %s"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
