@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-02 17:44+0000\n"
+"POT-Creation-Date: 2023-01-09 21:44+0000\n"
 "PO-Revision-Date: 2021-07-11 16:58+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Downloading"
 msgstr "බාගත වෙමින්"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
 msgid "Installing"
 msgstr "ස්ථාපනය වෙමින්"
 
@@ -231,9 +231,9 @@ msgid "Finished"
 msgstr "අවසානයි"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
-#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
-#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
+#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
+#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
 msgid "Cancelling"
 msgstr "අවලංගු වෙමින්"
 
@@ -327,11 +327,11 @@ msgstr[1] ""
 msgid "%s (system-wide)"
 msgstr "%s (පද්ධතිය-පුරා)"
 
-#: src/Core/FlatpakBackend.vala:1298
+#: src/Core/FlatpakBackend.vala:1400
 msgid "Uninstalling"
 msgstr "අස්ථාපනය වෙමින්"
 
-#: src/Core/FlatpakBackend.vala:1468
+#: src/Core/FlatpakBackend.vala:1570
 msgid "Updating"
 msgstr "යාවත්කාලින වෙමින්"
 
@@ -887,11 +887,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:331
 msgid "Drivers"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:336
+#: src/Views/AppListUpdateView.vala:344
 msgid "Up to Date"
 msgstr ""
 

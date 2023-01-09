@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-02 17:44+0000\n"
+"POT-Creation-Date: 2023-01-09 21:44+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/appcenter/appcenter/ka/>\n"
@@ -185,7 +185,7 @@ msgstr "პაკეტები იშლება"
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
 msgid "Installing"
 msgstr ""
 
@@ -230,9 +230,9 @@ msgid "Finished"
 msgstr "დასრულდა"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
-#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
-#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
+#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
+#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
 msgid "Cancelling"
 msgstr "უქმდება"
 
@@ -326,13 +326,13 @@ msgstr[1] ""
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1298
+#: src/Core/FlatpakBackend.vala:1400
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "წაშლა"
 
-#: src/Core/FlatpakBackend.vala:1468
+#: src/Core/FlatpakBackend.vala:1570
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -894,11 +894,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:331
 msgid "Drivers"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:336
+#: src/Views/AppListUpdateView.vala:344
 msgid "Up to Date"
 msgstr ""
 

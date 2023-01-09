@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-02 17:44+0000\n"
+"POT-Creation-Date: 2023-01-09 21:44+0000\n"
 "PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
@@ -187,7 +187,7 @@ msgstr "بنڈل ہٹاءے جا رہے ہیں"
 msgid "Downloading"
 msgstr "اتارا جارہا ہے"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
 msgid "Installing"
 msgstr "انسٹال کیا جارہا ہے"
 
@@ -232,9 +232,9 @@ msgid "Finished"
 msgstr "ختم شد"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
-#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
-#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
+#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
+#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
 msgid "Cancelling"
 msgstr "منسوخ کیا جا رھا ھے"
 
@@ -328,13 +328,13 @@ msgstr[1] "%u تازہ کاریاں آپ کے سسٹم کے لیے دستیا�
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1298
+#: src/Core/FlatpakBackend.vala:1400
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "غیر تنصیب"
 
-#: src/Core/FlatpakBackend.vala:1468
+#: src/Core/FlatpakBackend.vala:1570
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -899,11 +899,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] "%u اپ ڈیٹس دستیاب"
 msgstr[1] "%u اپ ڈیٹس دستیاب"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:331
 msgid "Drivers"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:336
+#: src/Views/AppListUpdateView.vala:344
 msgid "Up to Date"
 msgstr "بلکل جدید ہے"
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-02 17:44+0000\n"
+"POT-Creation-Date: 2023-01-09 21:44+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -189,7 +189,7 @@ msgstr "पॅकेज मिटवत आहे"
 msgid "Downloading"
 msgstr "डाउनलोड करित आहे"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1166
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
 msgid "Installing"
 msgstr "इन्स्टॉल होत आहे"
 
@@ -234,9 +234,9 @@ msgid "Finished"
 msgstr "पूर्ण झाले"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1175 src/Core/FlatpakBackend.vala:1199
-#: src/Core/FlatpakBackend.vala:1307 src/Core/FlatpakBackend.vala:1331
-#: src/Core/FlatpakBackend.vala:1477 src/Core/FlatpakBackend.vala:1499
+#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
+#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
 msgid "Cancelling"
 msgstr "रद्द करीत आहे"
 
@@ -330,11 +330,11 @@ msgstr[1] "%u अपडेट आपल्या सिस्टिम साठ
 msgid "%s (system-wide)"
 msgstr "%s (सिस्टम-व्यापी)"
 
-#: src/Core/FlatpakBackend.vala:1298
+#: src/Core/FlatpakBackend.vala:1400
 msgid "Uninstalling"
 msgstr "विस्थापित करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:1468
+#: src/Core/FlatpakBackend.vala:1570
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
@@ -904,11 +904,11 @@ msgid_plural "%u Updates Available"
 msgstr[0] "%u अपडेट उपलब्ध"
 msgstr[1] "%u अपडेट्स उपलब्ध"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:331
 msgid "Drivers"
 msgstr "ड्राइव्हर्स"
 
-#: src/Views/AppListUpdateView.vala:336
+#: src/Views/AppListUpdateView.vala:344
 msgid "Up to Date"
 msgstr "अद्ययावत"
 
