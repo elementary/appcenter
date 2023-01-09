@@ -12,8 +12,12 @@
   </description>
 
   <releases>
-    <release version="4.0.1" date="2022-11-04">
+    <release version="4.1.0" date="2023-01-08">
       <description>
+        <p>New features:</p>
+        <ul>
+          <li>Install OS Updates offline</li>
+        </ul>
         <p>Other Improvements:</p>
         <ul>
           <li>Updated translations</li>
@@ -21,6 +25,11 @@
       </description>
       <issues>
         <issue url="https://github.com/elementary/appcenter/pull/1946">Fix showing addons in app info view</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1953">Fix visual issues with category icons</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1786">Don't show Flatpak runtimes as OS Updates</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1310">Get Flatpak remote names from Title field</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/62">Warn when running in Demo Mode</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1471">Make loading updates async from main window</issue>
       </issues>
     </release>
 
