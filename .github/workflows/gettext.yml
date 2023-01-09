@@ -24,5 +24,6 @@ jobs:
     - name: Update Translation Files
       uses: elementary/actions/gettext-template@next
       env:
+        GIT_USER_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
         GIT_USER_NAME: "elementaryBot"
         GIT_USER_EMAIL: "builds@elementary.io"
