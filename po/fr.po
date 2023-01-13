@@ -3,7 +3,7 @@
 # Eliott Lavier <eliott.lavier@gmail.com>, 2018.
 # David Marcel BAUM <david.baum@tuta.io>, 2018.
 # Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
-# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020, 2021, 2022.
+# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023.
 # Franck STAUFFER <franck.stauffer@e.email>, 2019.
 # Kristien <kristien@mailo.com>, 2019.
 # Corentin Noël <tintou@noel.tf>, 2021.
@@ -13,9 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-09 21:44+0000\n"
-"PO-Revision-Date: 2022-11-09 13:29+0000\n"
+"PO-Revision-Date: 2023-01-14 09:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,13 +117,12 @@ msgstr "Paramètres réseau…"
 
 #: src/MainWindow.vala:284
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Exécution en mode de démonstration"
 
 #: src/MainWindow.vala:285
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Connectez-vous à Internet pour parcourir et installer des applications."
+msgstr "Installez %s pour découvrir et installer des applications."
 
 #: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
@@ -368,14 +368,12 @@ msgid "Updates to system components"
 msgstr "Mise à jour des composants du système"
 
 #: src/Core/UpdateManager.vala:53
-#, fuzzy
-#| msgid "Refresh Updates"
 msgid "Runtime Updates"
-msgstr "Actualiser les mises à jour"
+msgstr "Mises à jour des exécutables"
 
 #: src/Core/UpdateManager.vala:54
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Mises à jour de l'exécutable des applications"
 
 #: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
@@ -384,7 +382,7 @@ msgstr "Version : %s"
 
 #: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
-msgstr "Aucune mise à jour disponible"
+msgstr "Aucune mise à jour des composants disponible"
 
 #: src/Core/UpdateManager.vala:184
 #, c-format
@@ -399,19 +397,15 @@ msgid "%s:"
 msgstr "%s :"
 
 #: src/Core/UpdateManager.vala:191
-#, fuzzy
-#| msgid "No components with updates"
 msgid "No runtimes with updates"
-msgstr "Aucune mise à jour disponible"
+msgstr "Aucune mise à jour des exécutables disponible"
 
 #: src/Core/UpdateManager.vala:196
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u composant avec mise à jour"
-msgstr[1] "%u composants avec mise à jour"
+msgstr[0] "%u exécutable avec mise à jour"
+msgstr[1] "%u exécutables avec mise à jour"
 
 #: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
@@ -1085,10 +1079,8 @@ msgid "Update"
 msgstr "Mettre à jour"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
-msgstr "Téléchargement"
+msgstr "Télécharget"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
