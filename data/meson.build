@@ -35,14 +35,13 @@ configure_file(
     install_dir: join_paths(get_option('datadir'), 'gnome-shell', 'search-providers')
 )
 
-# AppData file
 i18n.merge_file(
-    input: meson.project_name() + '.appdata.xml.in',
-    output: '@BASENAME@',
-    po_dir: join_paths(meson.source_root (), 'po', 'extra'),
+    input: 'appcenter.metainfo.xml.in',
+    output: meson.project_name() + '.metainfo.xml',
+    po_dir: meson.source_root() / 'po' / 'extra',
     type: 'xml',
-    install_dir: join_paths(get_option('datadir'), 'metainfo'),
-    install: true
+    install: true,
+    install_dir: get_option('datadir') / 'metainfo',
 )
 
 # Desktop File
