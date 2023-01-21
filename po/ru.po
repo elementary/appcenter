@@ -12,14 +12,16 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-17 18:08+0000\n"
-"PO-Revision-Date: 2023-01-08 15:25+0000\n"
+"PO-Revision-Date: 2023-01-20 15:25+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -303,7 +305,7 @@ msgstr "выполняются операции с пакетами"
 #: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Доступны обновления"
+msgstr[0] "Доступно обновление"
 msgstr[1] "Доступны обновления"
 msgstr[2] "Доступны обновления"
 
@@ -419,7 +421,9 @@ msgstr "Перезагрузите систему, чтобы завершить
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Это может быть временной проблемой, вызванной программным обеспечением установленным из внешних источников или собранным вручную."
+msgstr ""
+"Это может быть временной проблемой или может быть вызвано внешним или "
+"скомпилированным вручную программным обеспечением."
 
 #: src/Dialogs/InstallFailDialog.vala:36
 msgid "Failed to install app"
@@ -445,11 +449,13 @@ msgstr "Оплата"
 #: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Перевести %d,00 USD для %s"
+msgstr "Перевести %d,00 USD за %s"
 
 #: src/Dialogs/StripeDialog.vala:98
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Это разовый платёж, предложенный разработчиком. Также вы можете выбрать свою цену."
+msgstr ""
+"Это предложенный разработчиком разовый платёж. Вы также можете выбрать и "
+"свою цену."
 
 #: src/Dialogs/StripeDialog.vala:119
 msgid "or"
@@ -461,7 +467,9 @@ msgstr "Почта"
 
 #: src/Dialogs/StripeDialog.vala:159
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Будет использован только для отправки вам квитанции. Вы не будете подписаны ни на один список рассылки."
+msgstr ""
+"Будет использована только для отправки квитанции. Вы не будете подписаны ни "
+"на один список рассылки."
 
 #: src/Dialogs/StripeDialog.vala:160
 msgid "Privacy Policy"
@@ -594,7 +602,9 @@ msgstr "Удалить"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Это могло быть вызвано внешним или скомпилированным вручную программным обеспечением."
+msgstr ""
+"Это может быть вызвано внешним или скомпилированным вручную программным "
+"обеспечением."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
@@ -676,7 +686,9 @@ msgstr "Не курируется"
 
 #: src/Views/AppInfoView.vala:176
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr "Не проверяется elementary на безопасность, конфиденциальность или системную интеграцию"
+msgstr ""
+"Не проверяется elementary на безопасность, конфиденциальность и системную "
+"интеграцию"
 
 #: src/Views/AppInfoView.vala:198
 msgid "Conflict"
@@ -789,7 +801,7 @@ msgstr "Может не работать должным образом или н
 
 #: src/Views/AppInfoView.vala:864
 msgid "Outdated"
-msgstr "Устаревший"
+msgstr "Устарело"
 
 #: src/Views/AppInfoView.vala:865
 msgid "May not work as expected or support the latest features"
@@ -802,7 +814,9 @@ msgstr "Нестабильный"
 #: src/Views/AppInfoView.vala:874
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr "Создан для нестабильной версии %s; может содержать серьёзные проблемы. Не рекомендуется для использования на рабочей системе."
+msgstr ""
+"Создан для нестабильной версии %s. Может содержать серьёзные проблемы. Не "
+"рекомендуется для использования на рабочей системе."
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1133
@@ -851,7 +865,8 @@ msgstr "Проверка обновлений"
 
 #: src/Views/AppListUpdateView.vala:43
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr "Загрузка списка доступных обновлений операционной системы и установленных приложений"
+msgstr ""
+"Загрузка списка доступных обновлений для операционной системы и приложений"
 
 #: src/Views/AppListUpdateView.vala:57
 msgid "Update All"
@@ -971,7 +986,7 @@ msgstr "Конфиденциальность и безопасность"
 
 #: src/Views/Homepage.vala:454
 msgid "Fun & Games"
-msgstr "Развлечения и Игры"
+msgstr "Игры и развлечения"
 
 #: src/Views/Homepage.vala:482
 msgid "Fun &"

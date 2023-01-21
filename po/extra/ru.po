@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-17 18:08+0000\n"
-"PO-Revision-Date: 2023-01-11 08:18+0000\n"
+"PO-Revision-Date: 2023-01-20 15:25+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -43,15 +43,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:18
 msgid "Discover new apps"
-msgstr ""
+msgstr "Открывайте новые приложения"
 
 #: data/appcenter.metainfo.xml.in:22
 msgid "Stay up to date"
-msgstr ""
+msgstr "Оставайтесь обновлёнными"
 
 #: data/appcenter.metainfo.xml.in:26
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Платите сколько сможете, чтобы поддержать разработчиков"
 
 #: data/appcenter.metainfo.xml.in:60
 msgid "elementary, Inc."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-17 18:08+0000\n"
-"PO-Revision-Date: 2022-10-26 22:57+0000\n"
-"Last-Translator: Alfika07 <tothalfi07@gmail.com>\n"
+"PO-Revision-Date: 2023-01-20 15:25+0000\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
 "Language: hu\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:10
@@ -40,15 +40,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:18
 msgid "Discover new apps"
-msgstr ""
+msgstr "Fedezzen fel új alkalmazásokat"
 
 #: data/appcenter.metainfo.xml.in:22
 msgid "Stay up to date"
-msgstr ""
+msgstr "Maradjon naprakész"
 
 #: data/appcenter.metainfo.xml.in:26
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Fizessen a fejlesztőknek amennyit tud, hogy támogassa őket"
 
 #: data/appcenter.metainfo.xml.in:60
 msgid "elementary, Inc."
@@ -61,7 +61,7 @@ msgstr "Új funkciók:"
 
 #: data/appcenter.metainfo.xml.in:69
 msgid "Install OS Updates offline"
-msgstr ""
+msgstr "Rendszerfrissítések telepítése kikapcsolt állapotban"
 
 #: data/appcenter.metainfo.xml.in:71 data/appcenter.metainfo.xml.in:108
 msgid "Other Improvements:"
