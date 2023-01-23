@@ -241,6 +241,9 @@ public class AppCenter.Homepage : Gtk.Box {
                 // Clear the cached categories when the AppStream pool is updated
                 foreach (unowned var child in category_flow.get_children ()) {
                     var item = (AbstractCategoryCard) child;
+                    if (item.visible) {
+                        continue;
+                    }
                     var category_components = item.category.get_components ();
                     category_components.remove_range (0, category_components.length);
                 }
