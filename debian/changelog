@@ -1,3 +1,9 @@
+appcenter (7.0.0) jammy; urgency=medium
+
+  * Release 7.0.0
+
+ -- Danielle Fore <danielle@elementary.io>  Tue, 24 Jan 2023 09:19:14 -0800
+
 appcenter (4.0.0) bionic; urgency=medium
 
   * Release 4.0.0 (#1939)
