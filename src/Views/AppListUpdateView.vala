@@ -304,31 +304,21 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
-            bool update_available = false;
             bool is_driver = false;
             var row_package = row.get_package ();
             if (row_package != null) {
-                update_available = row_package.update_available || row_package.is_updating;
                 is_driver = row_package.kind == AppStream.ComponentKind.DRIVER;
             }
 
-
-            bool before_update_available = false;
             bool before_is_driver = false;
             if (before != null) {
                 var before_package = before.get_package ();
                 if (before_package != null) {
-                    before_update_available = before_package.update_available || before_package.is_updating;
                     before_is_driver = before_package.kind == AppStream.ComponentKind.DRIVER;
                 }
             }
 
-            if (update_available) {
-                if (before != null && update_available == before_update_available) {
-                    row.set_header (null);
-                    return;
-                }
-            } else if (is_driver) {
+            if (is_driver) {
                 if (before != null && is_driver == before_is_driver) {
                     row.set_header (null);
                     return;
@@ -341,6 +331,8 @@ namespace AppCenter.Views {
                 };
                 header.show_all ();
                 row.set_header (header);
+            } else {
+                row.set_header (null);
             }
         }
 
