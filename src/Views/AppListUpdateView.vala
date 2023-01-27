@@ -24,12 +24,16 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
+        private Granite.Widgets.AlertView loading_view;
+        private Granite.Widgets.AlertView updated_placeholder;
+        private Granite.Widgets.AlertView restart_placeholder;
         private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
         private Gtk.FlowBox installed_flowbox;
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
         private Gtk.SizeGroup action_button_group;
+        private Gtk.Stack placeholder_stack;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
@@ -39,12 +43,33 @@ namespace AppCenter.Views {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
-            var loading_view = new Granite.Widgets.AlertView (
+            loading_view = new Granite.Widgets.AlertView (
                 _("Checking for Updates"),
                 _("Downloading a list of available updates to the OS and installed apps"),
                 "sync-synchronizing"
             );
             loading_view.show_all ();
+
+            restart_placeholder = new Granite.Widgets.AlertView (
+                _("Updates Are Ready to Install"),
+                _("A restart is required to finish installing updates"),
+                "software-update-available"
+            );
+            restart_placeholder.show_action (_("Restart Now"));
+            restart_placeholder.show_all ();
+
+            updated_placeholder = new Granite.Widgets.AlertView (
+                _("Everything Is Up to Date"),
+                "",
+                "process-completed"
+            );
+            updated_placeholder.show_all ();
+
+            placeholder_stack = new Gtk.Stack ();
+            placeholder_stack.add (loading_view);
+            placeholder_stack.add (restart_placeholder);
+            placeholder_stack.add (updated_placeholder);
+            placeholder_stack.show_all ();
 
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
@@ -78,7 +103,7 @@ namespace AppCenter.Views {
             };
             list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
-            list_box.set_placeholder (loading_view);
+            list_box.set_placeholder (placeholder_stack);
 
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 24,
@@ -107,38 +132,28 @@ namespace AppCenter.Views {
             scrolled.add (box);
             scrolled.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
-            info_label.show ();
-
-            var infobar = new Gtk.InfoBar ();
-            infobar.message_type = Gtk.MessageType.WARNING;
-            infobar.no_show_all = true;
-            infobar.get_content_area ().add (info_label);
-
-            var restart_button = infobar.add_button (_("Restart Now"), 0);
-
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
-            action_button_group.add_widget (restart_button);
 
-            infobar.response.connect ((response) => {
-                if (response == 0) {
-                    try {
-                        SuspendControl.get_default ().reboot ();
-                    } catch (GLib.Error e) {
-                        if (!(e is IOError.CANCELLED)) {
-                            info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
-                            infobar.message_type = Gtk.MessageType.ERROR;
-                            restart_button.visible = false;
-                        }
+            restart_placeholder.action_activated.connect (() => {
+                try {
+                    SuspendControl.get_default ().reboot ();
+                } catch (GLib.Error e) {
+                    if (!(e is IOError.CANCELLED)) {
+                        restart_placeholder.description = _("Requesting a restart failed. Restart manually to finish installing updates");
+                        restart_placeholder.hide_action ();
                     }
                 }
             });
 
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            update_manager.notify["restart-required"].connect (() => {
+                if (update_manager.restart_required) {
+                    placeholder_stack.visible_child = restart_placeholder;
+                }
+            });
 
             orientation = Gtk.Orientation.VERTICAL;
-            add (infobar);
             add (header_revealer);
             add (scrolled);
 
@@ -168,6 +183,8 @@ namespace AppCenter.Views {
         }
 
         private async void get_apps () {
+            placeholder_stack.visible_child = loading_view;
+
             if (refresh_cancellable != null) {
                 refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
             }
@@ -176,10 +193,10 @@ namespace AppCenter.Views {
             // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
             refresh_cancellable = new Cancellable ();
             unowned var client = AppCenterCore.Client.get_default ();
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
             if (client.updates_number > 0) {
                 header_revealer.reveal_child = true;
 
-                unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
                 if (client.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
@@ -221,6 +238,17 @@ namespace AppCenter.Views {
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
+
+            if (update_manager.restart_required) {
+                placeholder_stack.visible_child = restart_placeholder;
+            } else {
+                placeholder_stack.visible_child = updated_placeholder;
+        		updated_placeholder.description = _("There are no updates available to install. Last checked %s.").printf (
+                    Granite.DateTime.get_relative_datetime (
+                        new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
+                    )
+        		);
+            }
         }
 
         public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
