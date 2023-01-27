@@ -73,7 +73,8 @@ namespace AppCenter.Views {
 
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
-                hexpand = true
+                hexpand = true,
+                vexpand = true
             };
             list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
@@ -94,9 +95,7 @@ namespace AppCenter.Views {
             };
             installed_flowbox.set_sort_func ((Gtk.FlowBoxSortFunc) installed_sort_func);
 
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
-                vexpand = true
-            };
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (list_box);
             box.add (installed_header);
             box.add (installed_flowbox);
@@ -156,6 +155,12 @@ namespace AppCenter.Views {
             list_box.row_activated.connect ((row) => {
                 if (row is Widgets.PackageRow) {
                     show_app (((Widgets.PackageRow) row).get_package ());
+                }
+            });
+
+            installed_flowbox.child_activated.connect ((child) => {
+                if (child.get_child () is Widgets.InstalledPackageRowGrid) {
+                    show_app (((Widgets.InstalledPackageRowGrid) child.get_child ()).package);
                 }
             });
 
