@@ -11,22 +11,3 @@
             alpha(black, 0.0) 4px
         );
 }
-
-infobar revealer > box {
-    margin: 12px;
-}
-
-infobar.success revealer > box {
-    background-color: @LIME_300;
-    background-image: -gtk-icontheme("process-completed-symbolic");
-    border-color: @LIME_500;
-    color: mix(black, @LIME_900, 0.6);
-    -gtk-icon-palette: success mix(black, @LIME_900, 0.6);
-}
-
-infobar.updates revealer > box {
-    background-color: @ORANGE_100;
-    background-image: -gtk-icontheme("software-update-available-symbolic");
-    border-color: @ORANGE_300;
-    color: mix(black, @ORANGE_900, 0.7);
-}

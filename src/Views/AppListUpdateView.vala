@@ -27,7 +27,7 @@ namespace AppCenter.Views {
         private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
         private Gtk.FlowBox installed_flowbox;
-        private Gtk.InfoBar updated_infobar;
+        private Gtk.Revealer updated_revealer;
         private Gtk.Label updated_label;
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
@@ -41,27 +41,38 @@ namespace AppCenter.Views {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
-            var restart_label = new Gtk.Label (_("A restart is required to finish installing updates"));
-
-            var restart_infobar = new Gtk.InfoBar () {
-                message_type = Gtk.MessageType.WARNING
+            var restart_label = new Gtk.Label (_("A restart is required to finish installing updates")) {
+                halign = Gtk.Align.START,
+                hexpand = true
             };
-            restart_infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
-            restart_infobar.get_style_context ().add_class ("updates");
-            restart_infobar.get_content_area ().parent.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            restart_infobar.get_content_area ().add (restart_label);
 
-            var restart_button = restart_infobar.add_button (_("Restart Now"), 0);
+            var restart_button = new Gtk.Button.with_label (_("Restart Now")) {
+                valign = Gtk.Align.CENTER
+            };
+
+            var restart_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+                margin = 12
+            };
+            restart_box.add (new Gtk.Image.from_icon_name ("software-update-available-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+            restart_box.add (restart_label);
+            restart_box.add (restart_button);
+            restart_box.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            restart_box.get_style_context ().add_class ("orange");
+
+            var restart_revealer = new Gtk.Revealer ();
+            restart_revealer.add (restart_box);
 
             updated_label = new Gtk.Label ("");
+            updated_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            updated_infobar = new Gtk.InfoBar () {
-                revealed = false
+            var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+                margin = 12
             };
-            updated_infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
-            updated_infobar.get_style_context ().add_class ("success");
-            updated_infobar.get_content_area ().parent.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            updated_infobar.get_content_area ().add (updated_label);
+            updated_box.add (new Gtk.Image.from_icon_name ("process-completed-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+            updated_box.add (updated_label);
+
+            updated_revealer = new Gtk.Revealer ();
+            updated_revealer.add (updated_box);
 
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
@@ -127,8 +138,8 @@ namespace AppCenter.Views {
             action_button_group.add_widget (restart_button);
 
             orientation = Gtk.Orientation.VERTICAL;
-            add (restart_infobar);
-            add (updated_infobar);
+            add (restart_revealer);
+            add (updated_revealer);
             add (header_revealer);
             add (scrolled);
             get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
@@ -143,22 +154,18 @@ namespace AppCenter.Views {
                 });
             });
 
-            restart_infobar.response.connect ((response) => {
-                if (response == 0) {
-                    try {
-                        SuspendControl.get_default ().reboot ();
-                    } catch (GLib.Error e) {
-                        if (!(e is IOError.CANCELLED)) {
-                            restart_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
-                            restart_infobar.message_type = Gtk.MessageType.ERROR;
-                            restart_infobar.get_style_context ().remove_class ("updates");
-                            restart_button.visible = false;
-                        }
+            restart_button.clicked.connect (() => {
+                try {
+                    SuspendControl.get_default ().reboot ();
+                } catch (GLib.Error e) {
+                    if (!(e is IOError.CANCELLED)) {
+                        restart_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
+                        restart_button.visible = false;
                     }
                 }
             });
 
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", restart_infobar, "revealed", BindingFlags.SYNC_CREATE);
+            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", restart_revealer, "reveal-child", BindingFlags.SYNC_CREATE);
 
             list_box.row_activated.connect ((row) => {
                 if (row is Widgets.PackageRow) {
@@ -176,7 +183,7 @@ namespace AppCenter.Views {
         }
 
         private async void get_apps () {
-            updated_infobar.revealed = false;
+            updated_revealer.reveal_child = false;
 
             if (refresh_cancellable != null) {
                 refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
@@ -207,7 +214,7 @@ namespace AppCenter.Views {
                 header_revealer.reveal_child = false;
 
                 if (!update_manager.restart_required) {
-                    updated_infobar.revealed = true;
+                    updated_revealer.reveal_child = true;
                     updated_label.label = _("Everything is up to date. Last checked %s.").printf (
                         Granite.DateTime.get_relative_datetime (
                             new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
