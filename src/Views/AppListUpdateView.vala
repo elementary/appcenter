@@ -243,11 +243,11 @@ namespace AppCenter.Views {
                 placeholder_stack.visible_child = restart_placeholder;
             } else {
                 placeholder_stack.visible_child = updated_placeholder;
-        		updated_placeholder.description = _("There are no updates available to install. Last checked %s.").printf (
+                updated_placeholder.description = _("There are no updates available to install. Last checked %s.").printf (
                     Granite.DateTime.get_relative_datetime (
                         new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
                     )
-        		);
+                );
             }
         }
 
