@@ -181,39 +181,37 @@ namespace AppCenter.Views {
             }
 #endif
 
-            try {
-                var connection = Bus.get_sync (BusType.SYSTEM);
+            var percent_translated = package_component.get_language (
+                // Expects language without locale
+                package_component.get_active_locale ().split ("_")[0]
+            );
 
-                var account_proxy = connection.get_proxy_sync<AccountProxy> (
-                    "org.freedesktop.Accounts",
-                    "/org/freedesktop/Accounts/User%u".printf ((uint) Posix.getuid ()),
-                    DBusProxyFlags.NONE
-                );
+            if (percent_translated < 100) {
+                if (percent_translated == -1) {
+                    var locale = new ContentType (
+                        _("May Not Be Translated"),
+                        _("This app does not provide language information"),
+                        "metainfo-locale"
+                    );
 
-                if (account_proxy != null) {
-                    var percent_translated = package_component.get_language (account_proxy.language);
-                    if (percent_translated < 100 && percent_translated >= 0) {
-                        if (percent_translated == 0) {
-                            var locale = new ContentType (
-                                _("Not Translated"),
-                                _("This app is not available in your language"),
-                                "metainfo-locale"
-                            );
+                    oars_flowbox.add (locale);
+                } else if (percent_translated == 0) {
+                    var locale = new ContentType (
+                        _("Not Translated"),
+                        _("This app is not available in your language"),
+                        "metainfo-locale"
+                    );
 
-                            oars_flowbox.add (locale);
-                        } else {
-                            var locale = new ContentType (
-                                _("Not Fully Translated"),
-                                _("This app is %i%% translated in your language").printf (percent_translated),
-                                "metainfo-locale"
-                            );
+                    oars_flowbox.add (locale);
+                } else {
+                    var locale = new ContentType (
+                        _("Not Fully Translated"),
+                        _("This app is %i%% translated in your language").printf (percent_translated),
+                        "metainfo-locale"
+                    );
 
-                            oars_flowbox.add (locale);
-                        }
-                    }
+                    oars_flowbox.add (locale);
                 }
-            } catch (IOError e) {
-                critical (e.message);
             }
 
             var ratings = package_component.get_content_ratings ();
