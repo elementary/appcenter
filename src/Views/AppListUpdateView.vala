@@ -177,13 +177,13 @@ namespace AppCenter.Views {
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
                 var os_updates_size = yield os_updates.get_download_size_including_deps ();
                 if (os_updates_size > 0) {
-                    add_package (os_updates);
+                    add_row_for_package (os_updates);
                 }
 
                 var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
                 var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
                 if (runtime_updates_size > 0) {
-                    add_package (runtime_updates);
+                    add_row_for_package (runtime_updates);
                 }
 
                 add_packages (installed_apps);
@@ -200,11 +200,6 @@ namespace AppCenter.Views {
                 add_row_for_package (package);
             }
 
-            list_box.invalidate_sort ();
-        }
-
-        public void add_package (AppCenterCore.Package package) {
-            add_row_for_package (package);
             list_box.invalidate_sort ();
         }
 
@@ -399,7 +394,8 @@ namespace AppCenter.Views {
             var installed_apps = yield client.get_installed_applications ();
             foreach (var app in installed_apps) {
                 if (app == package) {
-                    add_package (app);
+                    add_row_for_package (app);
+                    list_box.invalidate_sort ();
                     break;
                 }
             }
