@@ -62,6 +62,19 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.0" date="2023-01-27">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Show when an app isn't available in your language</li>
+        </ul>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="7.0.0" date="2023-01-24">
       <description>
         <p>New features:</p>
