@@ -397,15 +397,6 @@ namespace AppCenter.Views {
             }
         }
 
-        public async void remove_app (AppCenterCore.Package package) {
-            uint position = -1;
-            package_liststore.find (package, out position);
-
-            if (position != -1) {
-                package_liststore.remove (position);
-            }
-        }
-
         public void clear () {
             package_liststore.remove_all ();
         }
