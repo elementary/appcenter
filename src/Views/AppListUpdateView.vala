@@ -179,7 +179,7 @@ namespace AppCenter.Views {
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);
 
             if (!refresh_cancellable.is_cancelled ()) {
-                clear ();
+                package_liststore.remove_all ();
 
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
                 var os_updates_size = yield os_updates.get_download_size_including_deps ();
