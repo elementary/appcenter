@@ -358,23 +358,25 @@ namespace AppCenter.Views {
             foreach (unowned var child in list_box.get_children ()) {
                 if (child is Widgets.PackageRow) {
                     ((Widgets.PackageRow) child).set_action_sensitive (false);
+                }
+            }
 
-                    var package = ((Widgets.PackageRow) child).get_package ();
-                    if (package.update_available && !package.should_pay) {
-                        try {
-                            yield package.update (false);
-                        } catch (Error e) {
-                            // If one package update was cancelled, drop out of the loop of updating the rest
-                            if (e is GLib.IOError.CANCELLED) {
-                                break;
-                            } else {
-                                var fail_dialog = new UpgradeFailDialog (package, e.message) {
-                                    modal = true,
-                                    transient_for = (Gtk.Window) get_toplevel ()
-                                };
-                                fail_dialog.present ();
-                                break;
-                            }
+            for (int i = 0; i < package_liststore.get_n_items (); i++) {
+                var package = (AppCenterCore.Package) package_liststore.get_item (i);
+                if (package.update_available && !package.should_pay) {
+                    try {
+                        yield package.update (false);
+                    } catch (Error e) {
+                        // If one package update was cancelled, drop out of the loop of updating the rest
+                        if (e is GLib.IOError.CANCELLED) {
+                            break;
+                        } else {
+                            var fail_dialog = new UpgradeFailDialog (package, e.message) {
+                                modal = true,
+                                transient_for = (Gtk.Window) get_toplevel ()
+                            };
+                            fail_dialog.present ();
+                            break;
                         }
                     }
                 }
