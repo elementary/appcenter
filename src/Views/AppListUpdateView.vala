@@ -186,21 +186,17 @@ namespace AppCenter.Views {
                     add_row_for_package (runtime_updates);
                 }
 
-                add_packages (installed_apps);
+                foreach (var package in installed_apps) {
+                    add_row_for_package (package);
+                }
+
+                list_box.invalidate_sort ();
             }
 
             yield client.get_prepared_applications (refresh_cancellable);
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
-        }
-
-        public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
-            foreach (var package in packages) {
-                add_row_for_package (package);
-            }
-
-            list_box.invalidate_sort ();
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
