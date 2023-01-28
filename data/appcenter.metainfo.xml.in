@@ -3,6 +3,7 @@
 <component type="desktop-application">
   <id>io.elementary.appcenter</id>
   <launchable type="desktop-id">io.elementary.appcenter.desktop</launchable>
+  <translation type="gettext">io.elementary.appcenter</translation>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
@@ -62,6 +63,19 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.0" date="2023-01-27">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Show when an app isn't available in your language</li>
+        </ul>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="7.0.0" date="2023-01-24">
       <description>
         <p>New features:</p>
@@ -157,18 +171,7 @@
       </description>
     </release>
 
-    <release version="3.9.0" date="2021-11-23">
-      <description>
-        <p>Improvements:</p>
-        <ul>
-          <li>Amusements appear in the Games category</li>
-          <li>Categories show as a grid instead of a list</li>
-          <li>Allow window to shrink to much narrower sizes</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="3.9.0" date="2021-11-23"/>
     <release version="3.8.2" date="2021-10-29"/>
     <release version="3.8.0" date="2021-09-21"/>
     <release version="3.7.1" date="2021-08-30"/>
