@@ -43,7 +43,7 @@ public enum RuntimeStatus {
 
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-jammy-main";
 
     public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
 
