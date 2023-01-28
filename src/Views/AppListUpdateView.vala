@@ -177,19 +177,22 @@ namespace AppCenter.Views {
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
                 var os_updates_size = yield os_updates.get_download_size_including_deps ();
                 if (os_updates_size > 0) {
-                    add_row_for_package (os_updates);
+                    var row = new Widgets.PackageRow.installed (os_updates, action_button_group);
+                    list_box.add (row);
                 }
 
                 var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
                 var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
                 if (runtime_updates_size > 0) {
-                    add_row_for_package (runtime_updates);
+                    var row = new Widgets.PackageRow.installed (runtime_updates, action_button_group);
+                    list_box.add (row);
                 }
 
                 foreach (var package in installed_apps) {
                     add_row_for_package (package);
                 }
 
+                list_box.show_all ();
                 list_box.invalidate_sort ();
             }
 
@@ -201,12 +204,9 @@ namespace AppCenter.Views {
 
         private void add_row_for_package (AppCenterCore.Package package) {
             var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
-
             // Only add row if this package needs an update or it's not a font or plugin
             if (needs_update || (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT)) {
                 var row = new Widgets.PackageRow.installed (package, action_button_group);
-                row.show_all ();
-
                 list_box.add (row);
             }
         }
@@ -391,6 +391,7 @@ namespace AppCenter.Views {
             foreach (var app in installed_apps) {
                 if (app == package) {
                     add_row_for_package (app);
+                    list_box.show_all ();
                     list_box.invalidate_sort ();
                     break;
                 }
