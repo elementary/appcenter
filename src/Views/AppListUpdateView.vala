@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2014-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,12 +32,15 @@ namespace AppCenter.Views {
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
         private Gtk.SizeGroup action_button_group;
+        private ListStore package_liststore;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
+            package_liststore = new ListStore (typeof (AppCenterCore.Package));
+
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
@@ -104,7 +107,7 @@ namespace AppCenter.Views {
                 hexpand = true,
                 vexpand = true
             };
-            list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
+            list_box.bind_model (package_liststore, create_row_from_package);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
@@ -166,6 +169,10 @@ namespace AppCenter.Views {
             });
 
             AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", restart_revealer, "reveal-child", BindingFlags.SYNC_CREATE);
+
+            package_liststore.items_changed.connect (() => {
+                list_box.show_all ();
+            });
 
             list_box.row_activated.connect ((row) => {
                 if (row is Widgets.PackageRow) {
@@ -231,16 +238,28 @@ namespace AppCenter.Views {
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
                 var os_updates_size = yield os_updates.get_download_size_including_deps ();
                 if (os_updates_size > 0) {
-                    add_row_for_package (os_updates);
+                    package_liststore.insert_sorted (os_updates, compare_package_func);
                 }
 
                 var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
                 var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
                 if (runtime_updates_size > 0) {
-                    add_row_for_package (runtime_updates);
+                    package_liststore.insert_sorted (runtime_updates, compare_package_func);
                 }
 
-                add_packages (installed_apps);
+                foreach (var package in installed_apps) {
+                    var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
+                    // Only add row if this package needs an update or it's not a font or plugin
+                    if (needs_update) {
+                        package_liststore.insert_sorted (package, compare_package_func);
+                    } else if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
+                        var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
+                        installed_flowbox.add (row);
+                    }
+                }
+
+                installed_flowbox.show_all ();
+                installed_flowbox.invalidate_sort ();
             }
 
             yield client.get_prepared_applications (refresh_cancellable);
@@ -249,45 +268,26 @@ namespace AppCenter.Views {
             refresh_mutex.unlock ();
         }
 
-        public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
-            foreach (var package in packages) {
-                add_row_for_package (package);
-            }
-
-            list_box.invalidate_sort ();
-            installed_flowbox.invalidate_sort ();
+        private Gtk.Widget create_row_from_package (Object object) {
+            unowned var package = (AppCenterCore.Package) object;
+            return new Widgets.PackageRow.installed (package, action_button_group);
         }
 
-        private void add_row_for_package (AppCenterCore.Package package) {
-            if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
-                var row = new Widgets.PackageRow.installed (package, action_button_group);
-                row.show_all ();
-
-                list_box.add (row);
-            } else if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
-                var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
-                row.show_all ();
-
-                installed_flowbox.add (row);
-            }
-        }
-
-        [CCode (instance_pos = -1)]
-        private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
-            var row1_package = row1.get_package ();
-            var row2_package = row2.get_package ();
+        private int compare_package_func (Object object1, Object object2) {
+            var package1 = (AppCenterCore.Package) object1;
+            var package2 = (AppCenterCore.Package) object2;
 
             bool a_is_driver = false;
             bool a_is_os = false;
             bool a_is_runtime = false;
             bool a_is_updating = false;
             string a_package_name = "";
-            if (row1_package != null) {
-                a_is_driver = row1_package.kind == AppStream.ComponentKind.DRIVER;
-                a_is_os = row1_package.is_os_updates;
-                a_is_runtime = row1_package.is_runtime_updates;
-                a_is_updating = row1_package.is_updating;
-                a_package_name = row1_package.get_name ();
+            if (package1 != null) {
+                a_is_driver = package1.kind == AppStream.ComponentKind.DRIVER;
+                a_is_os = package1.is_os_updates;
+                a_is_runtime = package1.is_runtime_updates;
+                a_is_updating = package1.is_updating;
+                a_package_name = package1.get_name ();
             }
 
             bool b_is_driver = false;
@@ -295,12 +295,12 @@ namespace AppCenter.Views {
             bool b_is_runtime = false;
             bool b_is_updating = false;
             string b_package_name = "";
-            if (row2_package != null) {
-                b_is_driver = row2_package.kind == AppStream.ComponentKind.DRIVER;
-                b_is_os = row2_package.is_os_updates;
-                b_is_runtime = row2_package.is_runtime_updates;
-                b_is_updating = row2_package.is_updating;
-                b_package_name = row2_package.get_name ();
+            if (package2 != null) {
+                b_is_driver = package2.kind == AppStream.ComponentKind.DRIVER;
+                b_is_os = package2.is_os_updates;
+                b_is_runtime = package2.is_runtime_updates;
+                b_is_updating = package2.is_updating;
+                b_package_name = package2.get_name ();
             }
 
             // The currently updating package is always top of the list
@@ -382,23 +382,25 @@ namespace AppCenter.Views {
             foreach (unowned var child in list_box.get_children ()) {
                 if (child is Widgets.PackageRow) {
                     ((Widgets.PackageRow) child).set_action_sensitive (false);
+                }
+            }
 
-                    var package = ((Widgets.PackageRow) child).get_package ();
-                    if (package.update_available && !package.should_pay) {
-                        try {
-                            yield package.update (false);
-                        } catch (Error e) {
-                            // If one package update was cancelled, drop out of the loop of updating the rest
-                            if (e is GLib.IOError.CANCELLED) {
-                                break;
-                            } else {
-                                var fail_dialog = new UpgradeFailDialog (package, e.message) {
-                                    modal = true,
-                                    transient_for = (Gtk.Window) get_toplevel ()
-                                };
-                                fail_dialog.present ();
-                                break;
-                            }
+            for (int i = 0; i < package_liststore.get_n_items (); i++) {
+                var package = (AppCenterCore.Package) package_liststore.get_item (i);
+                if (package.update_available && !package.should_pay) {
+                    try {
+                        yield package.update (false);
+                    } catch (Error e) {
+                        // If one package update was cancelled, drop out of the loop of updating the rest
+                        if (e is GLib.IOError.CANCELLED) {
+                            break;
+                        } else {
+                            var fail_dialog = new UpgradeFailDialog (package, e.message) {
+                                modal = true,
+                                transient_for = (Gtk.Window) get_toplevel ()
+                            };
+                            fail_dialog.present ();
+                            break;
                         }
                     }
                 }
@@ -415,48 +417,14 @@ namespace AppCenter.Views {
             var installed_apps = yield client.get_installed_applications ();
             foreach (var app in installed_apps) {
                 if (app == package) {
-                    add_row_for_package (app);
-                    list_box.invalidate_sort ();
-                    installed_flowbox.invalidate_sort ();
+                    package_liststore.insert_sorted (package, compare_package_func);
                     break;
                 }
             }
         }
 
-        public async void remove_app (AppCenterCore.Package package) {
-            foreach (unowned var child in list_box.get_children ()) {
-                if (child is Widgets.PackageRow) {
-                    unowned var row = (Widgets.PackageRow) child;
-
-                    if (row.get_package () == package) {
-                        row.destroy ();
-                        list_box.invalidate_sort ();
-                        return;
-                    }
-                }
-            }
-
-            foreach (unowned var child in installed_flowbox.get_children ()) {
-                var row_child = ((Gtk.FlowBoxChild) child).get_child ();
-                if (row_child is Widgets.InstalledPackageRowGrid) {
-                    unowned var row = (Widgets.InstalledPackageRowGrid) row_child;
-
-                    if (row.package == package) {
-                        row.destroy ();
-                        installed_flowbox.invalidate_sort ();
-                        break;
-                    }
-                }
-            }
-        }
-
         public void clear () {
-            foreach (unowned var child in list_box.get_children ()) {
-                if (child is Widgets.PackageRow) {
-                    child.destroy ();
-                }
-            };
-            list_box.invalidate_sort ();
+            package_liststore.remove_all ();
 
             foreach (unowned var child in installed_flowbox.get_children ()) {
                 var row_child = ((Gtk.FlowBoxChild) child).get_child ();

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-17 18:08+0000\n"
+"POT-Creation-Date: 2023-01-28 00:16+0000\n"
 "PO-Revision-Date: 2022-11-07 17:58+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
@@ -593,7 +593,7 @@ msgstr "Uygulama kaldırılsın mı?"
 msgid "Uninstall “%s”?"
 msgstr "\"%s\" kaldırılsın mı?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:641
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:674
 msgid "Uninstall"
 msgstr "Kaldır"
 
@@ -683,169 +683,200 @@ msgstr "Doğrulanmamış"
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "Güvenlik, gizlilik veya sistem entegrasyonu elementary tarafından incelenmemiştir"
 
-#: src/Views/AppInfoView.vala:198
+#: src/Views/AppInfoView.vala:192
+#, fuzzy
+#| msgid "Translate"
+msgid "May Not Be Translated"
+msgstr "Çevir"
+
+#: src/Views/AppInfoView.vala:193
+msgid "This app does not provide language information"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:200
+#, fuzzy
+#| msgid "Translate"
+msgid "Not Translated"
+msgstr "Çevir"
+
+#: src/Views/AppInfoView.vala:201
+msgid "This app is not available in your language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:208
+#, fuzzy
+#| msgid "Translate"
+msgid "Not Fully Translated"
+msgstr "Çevir"
+
+#: src/Views/AppInfoView.vala:209
+#, c-format
+msgid "This app is %i%% translated in your language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:231
 msgid "Conflict"
 msgstr "Çakışma"
 
-#: src/Views/AppInfoView.vala:199
+#: src/Views/AppInfoView.vala:232
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Güvenli olmayan durumların veya agresif çatışmaların tasvirleri"
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:245
 msgid "Violence"
 msgstr "Şiddet"
 
-#: src/Views/AppInfoView.vala:217
+#: src/Views/AppInfoView.vala:250
 msgid "Fantasy Violence"
 msgstr "Hayal Ürünü Şiddet"
 
-#: src/Views/AppInfoView.vala:222
+#: src/Views/AppInfoView.vala:255
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Çarpıcı şiddet, kan dökülmesi veya ölüm"
 
-#: src/Views/AppInfoView.vala:266
+#: src/Views/AppInfoView.vala:299
 msgid "Multiplayer"
 msgstr "Çok Oyunculu"
 
-#: src/Views/AppInfoView.vala:267
+#: src/Views/AppInfoView.vala:300
 msgid "Online play with other people"
 msgstr "Diğer insanlarla çevrimiçi oyun"
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:316
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Başkalarıyla yönetilmeyen Ses, Video veya Metin mesajlaşması"
 
-#: src/Views/AppInfoView.vala:285
+#: src/Views/AppInfoView.vala:318
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Başkalarıyla yönetilen Ses, Video veya Metin mesajlaşması"
 
-#: src/Views/AppInfoView.vala:289
+#: src/Views/AppInfoView.vala:322
 msgid "Online Interactions"
 msgstr "Çevrimiçi Etkileşimler"
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:332
 msgid "Location Sharing"
 msgstr "Konum Paylaşımı"
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:333
 msgid "Other people can see your real-world location"
 msgstr "Diğer insanlar gerçek dünyadaki konumunuzu görebilir"
 
-#: src/Views/AppInfoView.vala:312
+#: src/Views/AppInfoView.vala:345
 msgid "Collects anonymous usage data"
 msgstr "Anonim kullanım verileri toplar"
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:348
 msgid "Collects usage data that could be used to identify you"
 msgstr "Sizi tanımlamak için kullanılabilecek kullanım verileri toplar"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:353
 msgid "Info Sharing"
 msgstr "Bilgi Paylaşımı"
 
-#: src/Views/AppInfoView.vala:440
+#: src/Views/AppInfoView.vala:473
 msgid "Screenshot Not Available"
 msgstr "Ekran Görüntüsü Yok"
 
-#: src/Views/AppInfoView.vala:551
+#: src/Views/AppInfoView.vala:584
 msgid "Homepage"
 msgstr "Ana Sayfa"
 
-#: src/Views/AppInfoView.vala:557
+#: src/Views/AppInfoView.vala:590
 msgid "Translate"
 msgstr "Çevir"
 
-#: src/Views/AppInfoView.vala:563
+#: src/Views/AppInfoView.vala:596
 msgid "Send Feedback"
 msgstr "Geri Bildirim Gönder"
 
-#: src/Views/AppInfoView.vala:569
+#: src/Views/AppInfoView.vala:602
 msgid "Help"
 msgstr "Yardım"
 
-#: src/Views/AppInfoView.vala:580
+#: src/Views/AppInfoView.vala:613
 msgid "What's New:"
 msgstr "Yenilikler:"
 
-#: src/Views/AppInfoView.vala:615
+#: src/Views/AppInfoView.vala:648
 msgid "Extensions:"
 msgstr "Eklentiler:"
 
-#: src/Views/AppInfoView.vala:744
+#: src/Views/AppInfoView.vala:777
 msgid "Link copied to clipboard"
 msgstr "Bağlantı panoya kopyalandı"
 
-#: src/Views/AppInfoView.vala:755
+#: src/Views/AppInfoView.vala:788
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "%s uygulamasına göz atın:"
 
-#: src/Views/AppInfoView.vala:763
+#: src/Views/AppInfoView.vala:796
 msgid "Share"
 msgstr "Paylaş"
 
-#: src/Views/AppInfoView.vala:857
+#: src/Views/AppInfoView.vala:890
 msgid "End of Life"
 msgstr "Destek Sonlandırıldı"
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:891
 msgid "May not work as expected or receive security updates"
 msgstr "Beklendiği gibi çalışmayabilir veya güvenlik güncellemelerini almayabilir"
 
-#: src/Views/AppInfoView.vala:864
+#: src/Views/AppInfoView.vala:897
 msgid "Outdated"
 msgstr "Güncel değil"
 
-#: src/Views/AppInfoView.vala:865
+#: src/Views/AppInfoView.vala:898
 msgid "May not work as expected or support the latest features"
 msgstr "Beklendiği gibi çalışmayabilir veya en son özellikleri desteklemeyebilir"
 
-#: src/Views/AppInfoView.vala:873
+#: src/Views/AppInfoView.vala:906
 msgid "Unstable"
 msgstr "Kararlı durumda değil"
 
-#: src/Views/AppInfoView.vala:874
+#: src/Views/AppInfoView.vala:907
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "%s işletim sisteminin kararsız bir sürümü için oluşturuldu; önemli sorunlar içerebilir. Bir üretim sisteminde kullanılması önerilmez."
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1133
+#: src/Views/AppInfoView.vala:1166
 msgid "Public Domain"
 msgstr "Kamu Malı"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1136
+#: src/Views/AppInfoView.vala:1169
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://tr.wikipedia.org/wiki/Kamu_malı"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1141
+#: src/Views/AppInfoView.vala:1174
 msgid "Free Software"
 msgstr "Özgür Yazılım"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1144
+#: src/Views/AppInfoView.vala:1177
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.tr.html"
 
-#: src/Views/AppInfoView.vala:1148
+#: src/Views/AppInfoView.vala:1181
 msgid "Proprietary"
 msgstr "Özel"
 
-#: src/Views/AppInfoView.vala:1151
+#: src/Views/AppInfoView.vala:1184
 msgid "Unknown License"
 msgstr "Bilinmeyen Lisans"
 
-#: src/Views/AppInfoView.vala:1243
+#: src/Views/AppInfoView.vala:1276
 msgid "Fund"
 msgstr "Bağış yap"
 
-#: src/Views/AppInfoView.vala:1249
+#: src/Views/AppInfoView.vala:1282
 msgid "Fund the development of this app"
 msgstr "Bu uygulamanın geliştirilmesini destekle"
 
-#: src/Views/AppInfoView.vala:1367
+#: src/Views/AppInfoView.vala:1400
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s tarafından geliştirilen diğer uygulamalar"
@@ -973,15 +1004,15 @@ msgstr "Yazı ve Dil"
 msgid "Privacy & Security"
 msgstr "Gizlilik ve Güvenlik"
 
-#: src/Views/Homepage.vala:454
+#: src/Views/Homepage.vala:457
 msgid "Fun & Games"
 msgstr "Eğlence ve Oyunlar"
 
-#: src/Views/Homepage.vala:482
+#: src/Views/Homepage.vala:485
 msgid "Fun &"
 msgstr "Eğlence ve"
 
-#: src/Views/Homepage.vala:491
+#: src/Views/Homepage.vala:494
 msgid "Games"
 msgstr "Oyunlar"
 
