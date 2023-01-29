@@ -1220,9 +1220,7 @@ namespace AppCenter.Views {
         private async void uninstall_clicked () {
             package.uninstall.begin ((obj, res) => {
                 try {
-                    if (package.uninstall.end (res)) {
-                        MainWindow.installed_view.remove_app.begin (package);
-                    }
+                    package.uninstall.end (res);
                 } catch (Error e) {
                     // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
                     // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
