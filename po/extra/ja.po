@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-28 00:16+0000\n"
-"PO-Revision-Date: 2023-01-20 15:25+0000\n"
+"PO-Revision-Date: 2023-01-30 17:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -62,7 +62,7 @@ msgstr "新機能:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Show when an app isn't available in your language"
-msgstr ""
+msgstr "アプリがお使いの言語で表示されないことを表示する機能を追加"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
 #: data/appcenter.metainfo.xml.in:122
