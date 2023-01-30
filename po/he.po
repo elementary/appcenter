@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
-"PO-Revision-Date: 2023-01-30 17:55+0000\n"
+"PO-Revision-Date: 2023-01-31 18:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -892,7 +893,7 @@ msgstr[1] "%u עדכונים זמינים"
 #: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
+msgstr "הכול עדכני. בדיקה אחרונה: %s."
 
 #: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
