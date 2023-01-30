@@ -28,6 +28,8 @@ namespace AppCenter.Views {
         private Gtk.Button update_all_button;
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
+        private Gtk.Revealer updated_revealer;
+        private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
         private ListStore package_liststore;
         private Widgets.SizeLabel size_label;
@@ -56,6 +58,18 @@ namespace AppCenter.Views {
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER
             };
+
+            updated_label = new Gtk.Label ("");
+            updated_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+                margin = 12
+            };
+            updated_box.add (new Gtk.Image.from_icon_name ("process-completed-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+            updated_box.add (updated_label);
+
+            updated_revealer = new Gtk.Revealer ();
+            updated_revealer.add (updated_box);
 
             update_all_button = new Gtk.Button.with_label (_("Update All")) {
                 valign = Gtk.Align.CENTER
@@ -120,8 +134,10 @@ namespace AppCenter.Views {
 
             orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
+            add (updated_revealer);
             add (header_revealer);
             add (scrolled);
+            get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
             get_apps.begin ();
 
@@ -144,6 +160,21 @@ namespace AppCenter.Views {
             });
 
             update_all_button.clicked.connect (on_update_all);
+
+            unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
+            aggregator.notify ["job-type"].connect (() => {
+                switch (aggregator.job_type) {
+                    case GET_PREPARED_PACKAGES:
+                    case GET_INSTALLED_PACKAGES:
+                    case GET_UPDATES:
+                    case REFRESH_CACHE:
+                    case INSTALL_PACKAGE:
+                    case UPDATE_PACKAGE:
+                    case REMOVE_PACKAGE:
+                        updated_revealer.reveal_child = false;
+                        break;
+                }
+            });
         }
 
         private async void get_apps () {
@@ -155,10 +186,10 @@ namespace AppCenter.Views {
             // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
             refresh_cancellable = new Cancellable ();
             unowned var client = AppCenterCore.Client.get_default ();
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
             if (client.updates_number > 0) {
                 header_revealer.reveal_child = true;
 
-                unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
                 if (client.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
@@ -174,6 +205,15 @@ namespace AppCenter.Views {
                 size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
             } else {
                 header_revealer.reveal_child = false;
+
+                if (!update_manager.restart_required) {
+                    updated_revealer.reveal_child = true;
+                    updated_label.label = _("Everything is up to date. Last checked %s.").printf (
+                        Granite.DateTime.get_relative_datetime (
+                            new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
+                        )
+                    );
+                }
             }
 
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);
