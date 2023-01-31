@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
-"PO-Revision-Date: 2023-01-31 18:04+0000\n"
+"PO-Revision-Date: 2023-01-31 18:07+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -394,19 +394,15 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:191
-#, fuzzy
-#| msgid "No components with updates"
 msgid "No runtimes with updates"
-msgstr "Geen onderdelen met updates"
+msgstr "Geen runtimes met updates"
 
 #: src/Core/UpdateManager.vala:196
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u onderdeel met updates"
-msgstr[1] "%u onderdelen met updates"
+msgstr[0] "%u runtime met updates"
+msgstr[1] "%u runtimes met updates"
 
 #: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
@@ -621,10 +617,11 @@ msgid "Try Again"
 msgstr "Probeer opnieuw"
 
 #: src/Dialogs/UpgradeFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde software, softwarebronnen van een derde partij of een error in de pakketbeheerder."
+msgstr ""
+"Dit zou veroorzaakt kunnen zijn door sideloaded of handmatig gecompileerde "
+"software, softwarebronnen van een derde partij of een pakketbeheer-"
+"gerelateerde fout."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
 msgid "Failed to update app"
