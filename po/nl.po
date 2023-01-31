@@ -1,7 +1,7 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
 # Jaimie85 <alsemgeest@gmail.com>, 2019, 2020.
 # Lieven Hanssen <lhanssen@freedommail.co>, 2020.
-# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022.
+# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023.
 # MB <barendregt@fastmail.com>, 2022.
 # Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 # DutchVipperloid <svenroelof@e.email>, 2023.
@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
 "PO-Revision-Date: 2023-01-31 18:07+0000\n"
-"Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -370,7 +370,7 @@ msgstr "Runtime updates"
 
 #: src/Core/UpdateManager.vala:54
 msgid "Updates to app runtimes"
-msgstr "Updates aan app runtimes"
+msgstr "Updates aan app-runtimes"
 
 #: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
