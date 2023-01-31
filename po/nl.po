@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
-"PO-Revision-Date: 2023-01-31 18:07+0000\n"
+"PO-Revision-Date: 2023-02-02 09:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -620,7 +620,7 @@ msgstr "Probeer opnieuw"
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr ""
 "Dit zou veroorzaakt kunnen zijn door sideloaded of handmatig gecompileerde "
-"software, softwarebronnen van een derde partij of een pakketbeheer-"
+"software, softwarebronnen van een derde partij of een pakketbeheer "
 "gerelateerde fout."
 
 #: src/Dialogs/UpgradeFailDialog.vala:36
@@ -633,10 +633,8 @@ msgid "Failed to update “%s”"
 msgstr "Het bijwerken van “%s” is mislukt"
 
 #: src/Dialogs/UpgradeFailDialog.vala:43
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Refresh Updates"
-msgstr "Controleer op updates"
+msgstr "Updates verversen"
 
 #: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
@@ -679,35 +677,29 @@ msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "Niet gecontroleerd door elementary op veiligheid, privacy of systeemintegratie"
 
 #: src/Views/AppInfoView.vala:194
-#, fuzzy
-#| msgid "Translate"
 msgid "May Not Be Translated"
-msgstr "Vertalen"
+msgstr "Is mogelijk niet vertaald"
 
 #: src/Views/AppInfoView.vala:195
 msgid "This app does not provide language information"
-msgstr ""
+msgstr "Deze app geeft geen taalinformatie vrij"
 
 #: src/Views/AppInfoView.vala:202
-#, fuzzy
-#| msgid "Translate"
 msgid "Not Translated"
-msgstr "Vertalen"
+msgstr "Niet vertaald"
 
 #: src/Views/AppInfoView.vala:203
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Deze app is niet beschikbaar in uw taal"
 
 #: src/Views/AppInfoView.vala:210
-#, fuzzy
-#| msgid "Translate"
 msgid "Not Fully Translated"
-msgstr "Vertalen"
+msgstr "Niet volledig vertaald"
 
 #: src/Views/AppInfoView.vala:211
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr ""
+msgstr "Deze app is voor %i%% vertaald naar uw taal"
 
 #: src/Views/AppInfoView.vala:235
 msgid "Conflict"
@@ -910,7 +902,7 @@ msgstr[1] "%u updates beschikbaar"
 #: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
+msgstr "Alles is up-to-date. Als laatste gecontroleerd op %s."
 
 #: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
@@ -1117,10 +1109,8 @@ msgid "Update"
 msgstr "Bijwerken"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
-msgstr "Downloaden"
+msgstr "Download"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
