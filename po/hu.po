@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
-"PO-Revision-Date: 2023-01-31 18:04+0000\n"
+"PO-Revision-Date: 2023-02-02 09:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hu/>\n"
@@ -115,7 +115,7 @@ msgstr "Demó módban való futás"
 #: src/MainWindow.vala:285
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Az alkalmazások böngészéséhez vagy telepítéséhez telepítse a következőt: %s."
+msgstr "Az alkalmazások böngészéséhez vagy telepítéséhez telepítse az %s-t."
 
 #: src/MainWindow.vala:482 src/MainWindow.vala:486
 #, c-format
