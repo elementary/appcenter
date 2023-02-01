@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
-"PO-Revision-Date: 2023-01-14 09:25+0000\n"
+"PO-Revision-Date: 2023-02-02 09:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -41,15 +41,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Découvrez de nouvelles applications"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Restez à jour"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Payez ce que vous pouvez pour soutenir les développeurs"
 
 #: data/appcenter.metainfo.xml.in:61
 msgid "elementary, Inc."
@@ -63,6 +63,8 @@ msgstr "Nouvelles fonctionnalités :"
 #: data/appcenter.metainfo.xml.in:70
 msgid "Show when an app isn't available in your language"
 msgstr ""
+"Vous savez désormais lorsqu'une application n'est pas disponible dans votre "
+"langue"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
 #: data/appcenter.metainfo.xml.in:122
