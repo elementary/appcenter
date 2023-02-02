@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Flatpak Repair
+Exec=/usr/bin/flatpak repair --user
+Terminal=false
+Type=Application
+NoDisplay=true
+X-GNOME-AutoRestart=false
+X-GNOME-Autostart-Delay=60
+X-GNOME-Autostart-Phase=Applications
