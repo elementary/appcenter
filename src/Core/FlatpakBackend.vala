@@ -1703,7 +1703,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             string[] spawn_args = {"flatpak", "--user", "repair"};
             string[] spawn_env = Environ.get ();
             int status;
-    
+
             Process.spawn_sync ("/",
                                 spawn_args,
                                 spawn_env,
@@ -1732,7 +1732,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             string[] spawn_args = {"pkexec", "flatpak", "--system", "repair"};
             string[] spawn_env = Environ.get ();
             int status;
-    
+
             Process.spawn_sync ("/",
                                 spawn_args,
                                 spawn_env,
@@ -1741,7 +1741,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                                 null,
                                 null,
                                 out status);
-    
+
             if (status != 0) {
                 success = false;
             }
