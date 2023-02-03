@@ -91,16 +91,3 @@ icons_gresource = gnome.compile_resources(
     'icons/categories.gresource.xml',
     source_dir: 'icons'
 )
-
-install_data(
-    meson.project_name() + '-flatpak-repair-user.desktop',
-    install_dir: join_paths(get_option('datadir'), 'applications')
-)
-
-systemd = dependency('systemd')
-systemd_system_unit_dir = systemd.get_pkgconfig_variable('systemdsystemunitdir')
-
-install_data(
-    meson.project_name() + '-flatpak-repair-system.service',
-    install_dir: systemd_system_unit_dir
-)
