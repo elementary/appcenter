@@ -113,6 +113,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.IS_PACKAGE_INSTALLED:
                     is_package_installed_internal (job);
                     break;
+                case Job.Type.REPAIR:
+                    repair_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -1688,6 +1691,82 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Package? lookup_package_by_id (string id) {
         return package_list[id];
+    }
+
+    private void repair_internal (Job job) {
+        unowned var args = (RepairArgs)job.args;
+        unowned var cancellable = args.cancellable;
+
+        bool success = true;
+
+        try {
+            string[] spawn_args = {"flatpak", "--user", "repair"};
+            string[] spawn_env = Environ.get ();
+            int status;
+    
+            Process.spawn_sync ("/",
+                                spawn_args,
+                                spawn_env,
+                                SpawnFlags.SEARCH_PATH | SpawnFlags.STDERR_TO_DEV_NULL | SpawnFlags.STDOUT_TO_DEV_NULL,
+                                null,
+                                null,
+                                null,
+                                out status);
+
+            if (status != 0) {
+                success = false;
+            }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        if (!success || cancellable.is_cancelled ()) {
+            job.result = Value (typeof (bool));
+            job.result = success;
+            job.results_ready ();
+        }
+
+        try {
+            string[] spawn_args = {"pkexec", "flatpak", "--system", "repair"};
+            string[] spawn_env = Environ.get ();
+            int status;
+    
+            Process.spawn_sync ("/",
+                                spawn_args,
+                                spawn_env,
+                                SpawnFlags.SEARCH_PATH | SpawnFlags.STDERR_TO_DEV_NULL | SpawnFlags.STDOUT_TO_DEV_NULL,
+                                null,
+                                null,
+                                null,
+                                out status);
+    
+            if (status != 0) {
+                success = false;
+            }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (bool));
+        job.result = success;
+        job.results_ready ();
+    }
+
+    public async bool repair (Cancellable? cancellable = null) throws GLib.Error {
+        var job_args = new RepairArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.REPAIR, job_args);
+        if (job.error != null) {
+            warning ("Could not repair user Flatpak: %s", job.error.message);
+            return false;
+        }
+
+        return job.result.get_boolean ();
     }
 
     private static GLib.Once<FlatpakBackend> instance;
