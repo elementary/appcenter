@@ -40,7 +40,18 @@ public class InstallFailDialog : Granite.MessageDialog {
             image_icon = package.get_icon (48, get_scale_factor ());
         }
 
-        response.connect (() => destroy ());
+        if (package.is_flatpak) {
+            var repair_button = add_button (_("Repair"), Gtk.ResponseType.ACCEPT);
+            repair_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        }
+
+        response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                AppCenter.App.repair_action.activate (null);
+            }
+
+            destroy ();
+        });
 
         show_error_details (error_message);
     }
