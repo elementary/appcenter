@@ -63,6 +63,19 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.2.0" date="2023-02-05">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Offer a Repair option if Flatpak updates fail</li>
+        </ul>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="7.1.0" date="2023-01-28">
       <description>
         <p>New features:</p>
