@@ -21,7 +21,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Revealer view_mode_revealer;
     private Gtk.SearchEntry search_entry;
     private Gtk.ModelButton refresh_menuitem;
-    private Gtk.ModelButton repair_menuitem;
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
@@ -225,24 +224,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         refresh_menuitem.get_child ().destroy ();
         refresh_menuitem.add (refresh_accellabel);
 
-        var repair_accellabel = new Granite.AccelLabel.from_action_name (
-            _("Repair"),
-            "app.repair"
-        );
-
-        repair_menuitem = new Gtk.ModelButton () {
-            action_name = "app.repair"
-        };
-        repair_menuitem.get_child ().destroy ();
-        repair_menuitem.add (repair_accellabel);
-
         var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
             margin_bottom = 6,
             margin_top = 6
         };
         menu_popover_box.add (automatic_updates_button);
         menu_popover_box.add (refresh_menuitem);
-        menu_popover_box.add (repair_menuitem);
         menu_popover_box.show_all ();
 
         var menu_popover = new Gtk.Popover (null);
