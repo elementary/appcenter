@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 20:53+0000\n"
-"PO-Revision-Date: 2023-02-06 16:25+0000\n"
+"PO-Revision-Date: 2023-02-07 08:15+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -62,7 +62,7 @@ msgstr "Új funkciók:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Javítás opció felajánlása, ha a Flatpak-frissítések nem sikeresek"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
 #: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:135
@@ -227,13 +227,11 @@ msgstr "A szoftverfrissítéshez hitelesítés szükséges"
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Szoftverforrások javítása"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "A szoftverfrissítéshez hitelesítés szükséges"
+msgstr "A szoftverforrások javításához hitelesítés szükséges"
 
 #~ msgid "Categories show as a grid instead of a list"
 #~ msgstr "Kategóriák megjelenítése rácsként lista helyett"
