@@ -19,6 +19,7 @@ public class InstallFailDialog : Granite.MessageDialog {
     public AppCenterCore.Package? package { get; construct; }
     public string error_message { get; construct; }
     private const string FALLBACK_ICON = "application-default-icon";
+    private const int REPAIR_RESPONSE_ID = 1;
 
     public InstallFailDialog (AppCenterCore.Package? package, string error_message) {
         Object (
@@ -41,12 +42,12 @@ public class InstallFailDialog : Granite.MessageDialog {
         }
 
         if (package.is_flatpak) {
-            var repair_button = add_button (_("Repair"), Gtk.ResponseType.ACCEPT);
+            var repair_button = add_button (_("Repair"), REPAIR_RESPONSE_ID);
             repair_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         }
 
         response.connect ((response) => {
-            if (response == Gtk.ResponseType.ACCEPT) {
+            if (response == REPAIR_RESPONSE_ID) {
                 AppCenter.App.repair_action.activate (null);
             }
 
