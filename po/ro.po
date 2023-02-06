@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2022-01-31 07:59+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -23,21 +23,21 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Centru de Aplicații"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Nu s-a putut analiza tipul media %s"
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Legătura '%s' nu este disponibilă. Se inițiază o căutare"
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 msgid "The app has been installed"
 msgstr "Aplicația s-a instalat"
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" s-a instalat"
@@ -76,86 +76,90 @@ msgstr "Se instalează actualizările"
 msgid "Uninstalling…"
 msgstr "Dezinstalare"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "S-a eșuat în pornirea “%s“"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "S-a eșuat în instalarea aplicației"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "Caută aplicații"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 #, fuzzy
 #| msgid "Automatic Updates"
 msgid "Automatic App Updates"
 msgstr "Actualizări automate"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "Se caută actualizări"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 msgid "Settings"
 msgstr "Setări"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Network Not Available."
 msgstr "Lipsă conexiune la internet."
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Conectați-vă la Internet pentru căutat și instalat aplicații."
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr "Setări de rețea…"
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, fuzzy, c-format
 #| msgid "Connect to the Internet to browse and install apps."
 msgid "Install %s to browse and install apps."
 msgstr "Conectați-vă la Internet pentru căutat și instalat aplicații."
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr "Caută %s"
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 msgid "Home"
 msgstr "Pagina principală"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr "Căutare"
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalate"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Deschide"
@@ -189,7 +193,7 @@ msgstr "Se elimină pachetele"
 msgid "Downloading"
 msgstr "Se descarcă"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "Se instalează"
 
@@ -234,9 +238,9 @@ msgid "Finished"
 msgstr "Finalizat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr "În curs de anulare"
 
@@ -332,11 +336,11 @@ msgstr[2] "%u de actualizări de sistem sunt disponibile"
 msgid "%s (system-wide)"
 msgstr "%s (pe tot sistemul)"
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 msgid "Uninstalling"
 msgstr "Dezinstalare"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 msgid "Updating"
 msgstr "Actualizare"
 
@@ -435,18 +439,22 @@ msgstr "Sistemul trebuie repornit"
 msgid "Please restart your system to finalize updates"
 msgstr "Reporniți sistemul pentru a finaliza instalarea"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Aceasta poate fi o problemă temporară sau ar putea fi cauzată de software extern sau compilat manual."
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
 msgstr "S-a eșuat în instalarea aplicației"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
 msgstr "S-a eșuat în instalarea “%s”"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -639,22 +647,22 @@ msgstr "Ignoră"
 msgid "Try Again"
 msgstr "Reîncearcă"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Aceasta poate fi cauzată de arhivele externe adăugate manual sau de un fişier cu surse corupt."
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
 msgstr "S-a eșuat în actualizarea aplicației"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "S-a eșuat în actualizarea pentru “%s”"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Refresh Updates"

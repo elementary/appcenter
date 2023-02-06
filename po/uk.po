@@ -11,17 +11,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2023-01-31 18:04+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/uk/>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -30,21 +28,21 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Центр застосунків"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Не вдалося визначити медіа тип %s"
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 msgid "The app has been installed"
 msgstr "Застосунок було встановлено"
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» було встановлено"
@@ -73,79 +71,83 @@ msgstr "Встановлення оновлень…"
 msgid "Uninstalling…"
 msgstr "Видалення…"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Не вдалося запустити «%s»"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Оновлення й установлені застосунки"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "Шукати застосунки"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 msgid "Automatic App Updates"
 msgstr "Автооновлення застосунків"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "Системні та неоплачувані застосунки не оновлюватимуться автоматично"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 msgid "Check for Updates"
 msgstr "Перевірити наявність оновлень"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Network Not Available."
 msgstr "Мережа не доступна."
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Необхідне з'єднання з Інтернетом для перегляду чи встановлення застосунків."
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr "Налаштування мережі…"
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr "Робота в демонстраційному режимі"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Установіть %s для перегляду і встановлення застосунків."
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr "Пошук %s"
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 msgid "Home"
 msgstr "Головна"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr "Знайти"
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 msgctxt "view"
 msgid "Installed"
 msgstr "Установлені"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Відкрити"
@@ -179,7 +181,7 @@ msgstr "Вилучення пакунків"
 msgid "Downloading"
 msgstr "Завантаження"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "Встановлення"
 
@@ -224,9 +226,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr "Скасування"
 
@@ -322,11 +324,11 @@ msgstr[2] "Доступні %u оновлень для вашої системи
 msgid "%s (system-wide)"
 msgstr "%s (загальносистемний)"
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 msgid "Uninstalling"
 msgstr "Видалення"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 msgid "Updating"
 msgstr "Оновлення"
 
@@ -419,18 +421,22 @@ msgstr "Необхідний перезапуск"
 msgid "Please restart your system to finalize updates"
 msgstr "Перезапустіть систему для завершення оновлення"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Це може бути тимчасовою проблемою, викликаною програмним забезпеченням встановленим із зовнішніх джерел або зібраним власноруч."
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
 msgstr "Не вдалося встановити застосунок"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
 msgstr "Не вдалося встановити «%s»"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -623,20 +629,20 @@ msgstr "Знехтувати"
 msgid "Try Again"
 msgstr "Спробувати знову"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Це могло спричинити завантажене або скомпільоване вручну програмне забезпечення, стороннє джерело програмного забезпечення або помилка менеджера пакунків. Проблема може бути усунена шляхом ручного поновлення оновлень."
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
 msgstr "Не вдалося оновити застосунок"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Не вдалося оновити «%s»"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
 msgstr "Поновити оновлення"
 

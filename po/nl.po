@@ -9,11 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2023-02-02 09:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/nl/>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,21 +26,21 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Kon het media type %s niet lezen"
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als zoekterm gebruiken"
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 msgid "The app has been installed"
 msgstr "De app is met succes geïnstalleerd"
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” is geïnstalleerd"
@@ -70,79 +69,83 @@ msgstr "Updates installeren…"
 msgid "Uninstalling…"
 msgstr "Deïnstalleren…"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Het starten van “%s” is mislukt"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Updates & geïnstalleerde apps"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "Zoek Apps"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 msgid "Automatic App Updates"
 msgstr "Automatische app-updates"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "Systeemupdates en onbetaalde apps zullen niet automatisch updaten"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 msgid "Check for Updates"
 msgstr "Controleer op updates"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 msgid "Settings"
 msgstr "Instellingen"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Network Not Available."
 msgstr "Geen netwerkverbinding."
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Maak verbinding met het internet om apps te ontdekken en te installeren."
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr "Netwerkinstellingen…"
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr "Draait in demo-modus"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Installeer %s om apps te bekijken en te installeren."
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr "Zoek %s"
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 msgid "Home"
 msgstr "Startpagina"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr "Zoeken"
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 msgctxt "view"
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Open"
@@ -176,7 +179,7 @@ msgstr "Pakketten verwijderen"
 msgid "Downloading"
 msgstr "Downloaden"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "Installeren"
 
@@ -221,9 +224,9 @@ msgid "Finished"
 msgstr "Klaar"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr "Annuleren"
 
@@ -317,11 +320,11 @@ msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
 msgid "%s (system-wide)"
 msgstr "%s (systeem-breed)"
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 msgid "Uninstalling"
 msgstr "Deïnstalleren"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 msgid "Updating"
 msgstr "Updaten"
 
@@ -412,18 +415,22 @@ msgstr "Opnieuw opstarten vereist"
 msgid "Please restart your system to finalize updates"
 msgstr "Gelieve uw systeem opnieuw op te starten om de updates te voltooien"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Dit kan een tijdelijk probleem zijn of veroorzaakt worden door externe of handmatig gecompileerde software."
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
 msgstr "Installeren van de app is mislukt"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
 msgstr "Het installeren van “%s” is mislukt"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -616,23 +623,20 @@ msgstr "Negeer"
 msgid "Try Again"
 msgstr "Probeer opnieuw"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr ""
-"Dit zou veroorzaakt kunnen zijn door sideloaded of handmatig gecompileerde "
-"software, softwarebronnen van een derde partij of een pakketbeheer "
-"gerelateerde fout."
+msgstr "Dit zou veroorzaakt kunnen zijn door sideloaded of handmatig gecompileerde software, softwarebronnen van een derde partij of een pakketbeheer gerelateerde fout."
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
 msgstr "Het bijwerken van de app is mislukt"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Het bijwerken van “%s” is mislukt"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
 msgstr "Updates verversen"
 

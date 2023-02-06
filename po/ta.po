@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -19,22 +19,22 @@ msgstr ""
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 #, fuzzy
 msgid "The app has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, fuzzy, c-format
 msgid "“%s” has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
@@ -73,87 +73,91 @@ msgstr "புதுப்பிப்புகளை நிறுவுகி�
 msgid "Uninstalling…"
 msgstr "நீக்குதல்"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "பயன்பாடுகளை தேடு"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 msgid "Automatic App Updates"
 msgstr ""
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "தொடங்குகிறது"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 #, fuzzy
 msgid "Network Not Available."
 msgstr "நெட்வொர்க் கிடைக்கவில்லை"
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "மென்பொருளை நிறுவ அல்லது புதுப்பிப்பதற்கு இணையத்துடன் இணைக்கவும்."
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr "நெட்வொர்க் அமைப்புகள் …"
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, fuzzy, c-format
 msgid "Install %s to browse and install apps."
 msgstr "மென்பொருளை நிறுவ அல்லது புதுப்பிப்பதற்கு இணையத்துடன் இணைக்கவும்."
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr "தேடுக %s"
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr "தேடுதல்"
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "திற"
@@ -187,7 +191,7 @@ msgstr "தொகுப்புகளை நீக்குகிறது"
 msgid "Downloading"
 msgstr "பதிவிறக்குகிறது"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "நிறுவுகிறது"
 
@@ -232,9 +236,9 @@ msgid "Finished"
 msgstr "முடிந்தது"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
@@ -328,13 +332,13 @@ msgstr[1] "%u உங்கள் கணினிக்கு புதுப்�
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "நீக்குதல்"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -431,19 +435,23 @@ msgstr "மறுதொடக்கம் தேவை"
 msgid "Please restart your system to finalize updates"
 msgstr "புதுப்பிப்புகளை முடிக்க உங்கள் கணினியை மீண்டும் தொடங்கவும்"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
 msgid "Failed to install app"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, fuzzy, c-format
 msgid "Failed to install “%s”"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -642,21 +650,21 @@ msgstr ""
 msgid "Try Again"
 msgstr ""
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr ""
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
 msgid "Failed to update app"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, fuzzy, c-format
 msgid "Failed to update “%s”"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Refresh Updates"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -20,23 +20,23 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Programų centras"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Nepavyko išnagrinėti medijos tipo %s"
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Nurodytos nuorodos \"%s\" rasti nepavyko, vietoj to, atliekama paieška"
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -76,89 +76,93 @@ msgstr "Įdiegiami atnaujinimai"
 msgid "Uninstalling…"
 msgstr "Šalinti"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, fuzzy, c-format
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to launch “%s“"
 msgstr "Nepavyko pašalinti \"%s\""
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 #, fuzzy
 #| msgid "Failed to uninstall app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Nepavyko pašalinti programos"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "Ieškoti programų"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "Nepavyko gauti atnaujinimų"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Ieškoma atnaujinimų…"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Pradedama"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Network Not Available."
 msgstr "Tinklas neprieinamas."
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Norėdami naršyti ir įdiegti programas, prisijunkite prie interneto."
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr "Tinklo nustatymai…"
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, fuzzy, c-format
 #| msgid "Connect to the Internet to browse and install apps."
 msgid "Install %s to browse and install apps."
 msgstr "Norėdami naršyti ir įdiegti programas, prisijunkite prie interneto."
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr "Ieškoti %s"
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 msgid "Home"
 msgstr "Pradžia"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr "Ieškoti"
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 msgctxt "view"
 msgid "Installed"
 msgstr "Įdiegtos"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Atverti"
@@ -192,7 +196,7 @@ msgstr "Šalinami paketai"
 msgid "Downloading"
 msgstr "Atsiunčiama"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "Diegiama"
 
@@ -237,9 +241,9 @@ msgid "Finished"
 msgstr "Užbaigta"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr "Atšaukiama"
 
@@ -335,13 +339,13 @@ msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Šalinti"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -445,23 +449,27 @@ msgstr "Reikalingas paleidimas iš naujo"
 msgid "Please restart your system to finalize updates"
 msgstr "Norėdami užbaigti atnaujinimus, paleiskite savo sistemą iš naujo"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 #, fuzzy
 #| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Tai galėjo būti sukelta išorinės ar rankiniu būdu kompiliuotos programinės įrangos."
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
 #| msgid "Failed to uninstall app"
 msgid "Failed to install app"
 msgstr "Nepavyko pašalinti programos"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, fuzzy, c-format
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to install “%s”"
 msgstr "Nepavyko pašalinti \"%s\""
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -658,25 +666,25 @@ msgstr "Nepaisyti"
 msgid "Try Again"
 msgstr "Bandyti dar kartą"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Tai galėjo būti sukelta išorinės, rankiniu būdu pridėtos programinės įrangos saugyklos arba pažeisto šaltinių failo."
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
 #| msgid "Failed to uninstall app"
 msgid "Failed to update app"
 msgstr "Nepavyko pašalinti programos"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, fuzzy, c-format
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to update “%s”"
 msgstr "Nepavyko pašalinti \"%s\""
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Refresh Updates"

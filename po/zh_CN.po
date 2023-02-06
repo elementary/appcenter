@@ -12,11 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,21 +29,21 @@ msgstr ""
 msgid "AppCenter"
 msgstr "应用中心"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "无法解析文件类型 %s"
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "无法找到定向连接 '%s' ，改为搜索"
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 msgid "The app has been installed"
 msgstr "应用已安装"
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” 已安装"
@@ -73,79 +72,83 @@ msgstr "正在安装更新…"
 msgid "Uninstalling…"
 msgstr "正在卸载…"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "启动 “%s” 失败"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "更新 & 已安装应用"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "搜索应用"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 msgid "Automatic App Updates"
 msgstr "自动更新软件"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "系统更新及未付款的应用更新将不会自动进行"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 msgid "Check for Updates"
 msgstr "检查更新"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Network Not Available."
 msgstr "网络连接不可用。"
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid "Connect to the Internet to browse and install apps."
 msgstr "连接网络以浏览和安装应用程序。"
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr "网络设置…"
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr "正以演示模式运行"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "安装 %s 以浏览及安装应用。"
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr "搜索 %s"
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 msgid "Home"
 msgstr "主页"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 msgctxt "view"
 msgid "Installed"
 msgstr "已安装"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "打开"
@@ -179,7 +182,7 @@ msgstr "正在删除软件包"
 msgid "Downloading"
 msgstr "下载中"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "正在安装"
 
@@ -224,9 +227,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr "取消中"
 
@@ -318,11 +321,11 @@ msgstr[0] "您的系统有 %u 个可用更新"
 msgid "%s (system-wide)"
 msgstr "%s （所有用户）"
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 msgid "Uninstalling"
 msgstr "正在卸载"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 msgid "Updating"
 msgstr "正在更新"
 
@@ -411,18 +414,22 @@ msgstr "需要重启"
 msgid "Please restart your system to finalize updates"
 msgstr "请重启您的系统来完成更新"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "此问题可能只是暂时的，也可能是外部、手动添加的软件源或源文件损坏造成的。"
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
 msgstr "安装应用失败"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
 msgstr "安装 “%s” 失败"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -615,20 +622,20 @@ msgstr "忽略"
 msgid "Try Again"
 msgstr "重试"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "这可能是外部、手动添加的第三方软件源或包管理器错误造成的。手动刷新源或能解决此问题。"
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
 msgstr "更新应用失败"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "更新 “%s” 失败"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
 msgstr "检查更新"
 
