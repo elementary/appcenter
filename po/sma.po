@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Southern Sami <https://l10n.elementary.io/projects/appcenter/appcenter/sma/>\n"
@@ -20,21 +20,21 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 msgid "The app has been installed"
 msgstr ""
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
@@ -69,82 +69,86 @@ msgstr "Sijjiedehtedh"
 msgid "Uninstalling…"
 msgstr "Sijjiedehtedh"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "Gaavnh jih installerh appeh"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Gaavnh jih installerh appeh"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "appeh ohtsh"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 msgid "Automatic App Updates"
 msgstr ""
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 msgid "Check for Updates"
 msgstr ""
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Network Not Available."
 msgstr ""
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr ""
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr ""
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 #, fuzzy
 msgid "Home"
 msgstr "Gåetiebielie"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr ""
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Sijjiedehtedh"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr ""
@@ -178,7 +182,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "Sijjiedehtedh"
 
@@ -223,9 +227,9 @@ msgid "Finished"
 msgstr ""
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr ""
 
@@ -319,13 +323,13 @@ msgstr[1] ""
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "Sijjiedehtedh"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 #, fuzzy
 #| msgid "Updates"
 msgid "Updating"
@@ -419,19 +423,23 @@ msgstr ""
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
 msgid "Failed to install app"
 msgstr "Gaavnh jih installerh appeh"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, fuzzy, c-format
 msgid "Failed to install “%s”"
 msgstr "Gaavnh jih installerh appeh"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -626,21 +634,21 @@ msgstr ""
 msgid "Try Again"
 msgstr ""
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr ""
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
 msgid "Failed to update app"
 msgstr "Gaavnh jih installerh appeh"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, fuzzy, c-format
 msgid "Failed to update “%s”"
 msgstr "Gaavnh jih installerh appeh"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
 msgstr ""
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-06 20:53+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/th/>\n"
@@ -22,23 +22,23 @@ msgstr ""
 msgid "AppCenter"
 msgstr "ศูนย์รวมแอพ"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "ค้นหาลิ้งค์เฉพาะ '%s' ไม่พบ กรุณาค้นหาด้วยตนเอง"
 
-#: src/Application.vala:297
+#: src/Application.vala:320
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
 
-#: src/Application.vala:298 src/MainWindow.vala:546
+#: src/Application.vala:321 src/MainWindow.vala:550
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -78,88 +78,92 @@ msgstr "กำลังติตดั้งการอัปเดต"
 msgid "Uninstalling…"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:114
+msgid "Repairing…"
+msgstr ""
+
+#: src/MainWindow.vala:145
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:201 src/MainWindow.vala:478 src/MainWindow.vala:620
+#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "ค้นหาแอป"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:212
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "ไม่สามารถตรวจหาอัพเดตได้"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:217
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "กำลังค้นหาอัปเดต…"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:241
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "กำลังเริ่ม"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 #, fuzzy
 msgid "Network Not Available."
 msgstr "ภาพตัวอย่างยังไม่สามารถใช้งานได้"
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:276
+#: src/MainWindow.vala:280
 msgid "Network Settings…"
 msgstr "ตั้งค่าเครือข่าย…"
 
-#: src/MainWindow.vala:284
+#: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:482 src/MainWindow.vala:486
+#: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
 msgid "Search %s"
 msgstr "ค้นหา %s"
 
-#: src/MainWindow.vala:503
+#: src/MainWindow.vala:507
 msgid "Home"
 msgstr "หน้าหลัก"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:506
+#: src/MainWindow.vala:510
 msgctxt "view"
 msgid "Search"
 msgstr "ค้นหา"
 
-#: src/MainWindow.vala:512
+#: src/MainWindow.vala:516
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "ติดตั้ง"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:553
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr ""
@@ -193,7 +197,7 @@ msgstr "กำลังถอดถอนแพกเกจ"
 msgid "Downloading"
 msgstr "กำลังดาวน์โหลด"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1268
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
 msgid "Installing"
 msgstr "กำลังติดตั้ง"
 
@@ -238,9 +242,9 @@ msgid "Finished"
 msgstr "สำเร็จแล้ว"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1277 src/Core/FlatpakBackend.vala:1301
-#: src/Core/FlatpakBackend.vala:1409 src/Core/FlatpakBackend.vala:1433
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
+#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
+#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
 msgid "Cancelling"
 msgstr "กำลังยกเลิก"
 
@@ -332,13 +336,13 @@ msgstr[0] "การอัปเดต %u รายการพร้อมใ�
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1400
+#: src/Core/FlatpakBackend.vala:1403
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1570
+#: src/Core/FlatpakBackend.vala:1585
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -431,20 +435,24 @@ msgstr ""
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 #, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
 msgid "Failed to install app"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, fuzzy, c-format
 msgid "Failed to install “%s”"
 msgstr "ถอนการติดตั้ง"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -640,22 +648,22 @@ msgstr "ไม่สนใจ"
 msgid "Try Again"
 msgstr "ลองอีกครั้ง"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
 msgid "Failed to update app"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, fuzzy, c-format
 msgid "Failed to update “%s”"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Refresh Updates"
