@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
-"PO-Revision-Date: 2023-01-29 08:25+0000\n"
+"PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -360,14 +361,12 @@ msgid "Updates to system components"
 msgstr "Päivitykset järjestelmän komponentteihin"
 
 #: src/Core/UpdateManager.vala:53
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Runtime Updates"
-msgstr "Tarkista päivitykset"
+msgstr "Runtime-pakettien päivitykset"
 
 #: src/Core/UpdateManager.vala:54
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Päivityksiä sovellusten runtime-paketteihin"
 
 #: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
@@ -391,19 +390,15 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:191
-#, fuzzy
-#| msgid "No components with updates"
 msgid "No runtimes with updates"
-msgstr "Ei päivitettäviä komponentteja"
+msgstr "Ei runtime-pakettien päivityksiä"
 
 #: src/Core/UpdateManager.vala:196
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u päivitettävä komponentti"
-msgstr[1] "%u päivitettävää komponenttia"
+msgstr[0] "%u runtime-paketin päivitys"
+msgstr[1] "%u runtime-pakettien päivitystä"
 
 #: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
@@ -904,7 +899,7 @@ msgstr[1] "%u päivitystä saatavilla"
 #: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
+msgstr "Kaikki on ajan tasalla. Viimeksi tarkistettu %s."
 
 #: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
