@@ -113,6 +113,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.IS_PACKAGE_INSTALLED:
                     is_package_installed_internal (job);
                     break;
+                case Job.Type.REPAIR:
+                    repair_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -1510,14 +1513,26 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         bool success = true;
 
         if (run_system) {
-            if (!run_updates_transaction (true, system_updates, change_info, cancellable)) {
-                success = false;
+            try {
+                if (!run_updates_transaction (true, system_updates, change_info, cancellable)) {
+                    success = false;
+                }
+            } catch (Error e) {
+                job.error = e;
+                job.results_ready ();
+                return;
             }
         }
 
         if (run_user) {
-            if (!run_updates_transaction (false, user_updates, change_info, cancellable)) {
-                success = false;
+            try {
+                if (!run_updates_transaction (false, user_updates, change_info, cancellable)) {
+                    success = false;
+                }
+            } catch (Error e) {
+                job.error = e;
+                job.results_ready ();
+                return;
             }
         }
 
@@ -1526,7 +1541,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         job.results_ready ();
     }
 
-    private bool run_updates_transaction (bool system, string[] ids, ChangeInformation? change_info, Cancellable? cancellable) {
+    private bool run_updates_transaction (bool system, string[] ids, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         Flatpak.Transaction transaction;
         try {
             if (system) {
@@ -1578,13 +1593,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-                // The user hit cancel, don't go any further
-                return false;
-            } else {
-                // If there was an error while updating a single package in the transaction, we probably still want
-                // the rest updated, continue.
-                return true;
             }
+
+            return false;
         });
 
         transaction.ready.connect (() => {
@@ -1601,7 +1612,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
-                success = false;
+                throw e;
             }
         }
 
@@ -1688,6 +1699,64 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Package? lookup_package_by_id (string id) {
         return package_list[id];
+    }
+
+    private void repair_internal (Job job) {
+        unowned var args = (RepairArgs)job.args;
+        unowned var cancellable = args.cancellable;
+
+        bool success = true;
+
+        try {
+            int status;
+
+            Process.spawn_command_line_sync ("flatpak --user repair", null, null, out status);
+
+            if (status != 0) {
+                success = false;
+            }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        if (!success || cancellable.is_cancelled ()) {
+            job.result = Value (typeof (bool));
+            job.result = success;
+            job.results_ready ();
+            return;
+        }
+
+        try {
+            int status;
+
+            Process.spawn_command_line_sync ("pkexec flatpak --system repair", null, null, out status);
+
+            if (status != 0) {
+                success = false;
+            }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (bool));
+        job.result = success;
+        job.results_ready ();
+    }
+
+    public async bool repair (Cancellable? cancellable = null) throws GLib.Error {
+        var job_args = new RepairArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.REPAIR, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_boolean ();
     }
 
     private static GLib.Once<FlatpakBackend> instance;

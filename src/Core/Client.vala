@@ -217,6 +217,10 @@ public class AppCenterCore.Client : Object {
         return BackendAggregator.get_default ().get_packages_by_author (author, max);
     }
 
+    public async bool repair (Cancellable? cancellable = null) throws GLib.Error {
+        return yield BackendAggregator.get_default ().repair (cancellable);
+    }
+
     private static GLib.Once<Client> instance;
     public static unowned Client get_default () {
         return instance.once (() => { return new Client (); });

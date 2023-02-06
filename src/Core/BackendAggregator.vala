@@ -310,6 +310,24 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         real_change_info.callback (can_cancel, _("Waiting"), calculated_progress, consolidated_status);
     }
 
+    public async bool repair (Cancellable? cancellable) throws GLib.Error {
+        var success = true;
+
+        foreach (var backend in backends) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
+            var backend_succeeded = yield backend.repair (cancellable);
+
+            if (!backend_succeeded) {
+                success = false;
+            }
+        }
+
+        return success;
+    }
+
     private static GLib.Once<BackendAggregator> instance;
     public static unowned BackendAggregator get_default () {
         return instance.once (() => { return new BackendAggregator (); });

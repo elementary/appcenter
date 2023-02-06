@@ -49,6 +49,7 @@ public class AppCenter.App : Gtk.Application {
     public static GLib.Settings settings;
 
     public static SimpleAction refresh_action;
+    public static SimpleAction repair_action;
 
     static construct {
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
@@ -163,9 +164,31 @@ public class AppCenter.App : Gtk.Application {
             client.update_cache.begin (true);
         });
 
+        repair_action = new SimpleAction ("repair", null);
+        repair_action.activate.connect (() => {
+            client.repair.begin (null, (obj, res) => {
+                bool success = false;
+                string message = "";
+                try {
+                    success = client.repair.end (res);
+                } catch (Error e) {
+                    success = false;
+                    message = e.message;
+                }
+
+                if (!success) {
+                    var fail_dialog = new RepairFailDialog (message) {
+                        transient_for = active_window
+                    };
+                    fail_dialog.present ();
+                }
+            });
+        });
+
         add_action (quit_action);
         add_action (show_updates_action);
         add_action (refresh_action);
+        add_action (repair_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
         set_accels_for_action ("app.refresh", {"<Control>r"});
 

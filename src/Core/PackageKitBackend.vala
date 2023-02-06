@@ -1285,6 +1285,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         progress = 0.0f;
     }
 
+    public async bool repair (Cancellable? cancellable = null) {
+        return true;
+    }
+
     private static GLib.Once<PackageKitBackend> instance;
     public static unowned PackageKitBackend get_default () {
         return instance.once (() => { return new PackageKitBackend (); });

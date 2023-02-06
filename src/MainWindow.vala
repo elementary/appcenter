@@ -110,12 +110,16 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 case REMOVE_PACKAGE:
                     overlaybar.label = _("Uninstalling…");
                     break;
+                case REPAIR:
+                    overlaybar.label = _("Repairing…");
+                    break;
             }
         });
 
         notify["working"].connect (() => {
             Idle.add (() => {
                 App.refresh_action.set_enabled (!working);
+                App.repair_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
         });
