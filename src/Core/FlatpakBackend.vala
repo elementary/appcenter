@@ -1690,6 +1690,38 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return package_list[id];
     }
 
+    public bool is_flathub_enabled () {
+        if (user_installation != null) {
+            try {
+                var remotes = user_installation.list_remotes (null);
+                for (int i = 0; i < remotes.length; i++) {
+                    if (remotes[i].get_title () == "Flathub") {
+                        return true;
+                    }
+                }
+            } catch (Error e) {
+                critical ("Unable to check if Flathub is enabled: %s", e.message);
+                return false;
+            }
+        }
+
+        if (system_installation != null) {
+            try {
+                var remotes = system_installation.list_remotes (null);
+                for (int i = 0; i < remotes.length; i++) {
+                    if (remotes[i].get_title () == "Flathub") {
+                        return true;
+                    }
+                }
+            } catch (Error e) {
+                critical ("Unable to check if Flathub is enabled: %s", e.message);
+                return false;
+            }
+        }
+
+        return false;
+    }
+
     private static GLib.Once<FlatpakBackend> instance;
     public static unowned FlatpakBackend get_default () {
         return instance.once (() => { return new FlatpakBackend (); });
