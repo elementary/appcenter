@@ -166,7 +166,23 @@ public class AppCenter.App : Gtk.Application {
 
         repair_action = new SimpleAction ("repair", null);
         repair_action.activate.connect (() => {
-            client.repair.begin ();
+            client.repair.begin (null, (obj, res) => {
+                bool success = false;
+                string message = "";
+                try {
+                    success = client.repair.end (res);
+                } catch (Error e) {
+                    success = false;
+                    message = e.message;
+                }
+
+                if (!success) {
+                    var fail_dialog = new RepairFailDialog (message) {
+                        transient_for = active_window
+                    };
+                    fail_dialog.present ();
+                }
+            });
         });
 
         add_action (quit_action);
