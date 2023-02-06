@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 20:53+0000\n"
-"PO-Revision-Date: 2023-01-29 08:25+0000\n"
+"PO-Revision-Date: 2023-02-07 08:15+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -65,7 +65,7 @@ msgstr "Новые возможности:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Предлагать опцию «Починить» при ошибке обновления Flatpak"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
 #: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:135
@@ -231,13 +231,12 @@ msgstr "Для обновления программного обеспечен�
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Починка источников програмного обеспечения"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Для обновления программного обеспечения требуется аутентификация"
+msgstr ""
+"Для починки источников программного обеспечения требуется аутентификация"
 
 #~ msgid "Amusements appear in the Games category"
 #~ msgstr "Развлечения появляются в категории Игры"
