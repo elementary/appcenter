@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-30 17:55+0000\n"
-"PO-Revision-Date: 2023-01-20 15:25+0000\n"
+"PO-Revision-Date: 2023-02-06 16:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -61,7 +61,7 @@ msgstr "Új funkciók:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Show when an app isn't available in your language"
-msgstr ""
+msgstr "Alkalmazások nyelvi támogatásának megjelenítése"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
 #: data/appcenter.metainfo.xml.in:122
@@ -178,6 +178,8 @@ msgstr "Fejlesztések:"
 #: data/appcenter.metainfo.xml.in:151
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
+"Az alternatív forrásokból elérhető alkalmazásokra már nem jelenik meg "
+"figyelmeztetés"
 
 #: data/appcenter.metainfo.xml.in:152
 msgid "Show screenshot captions in a tooltip"
@@ -186,14 +188,15 @@ msgstr "Képernyőképek feliratának megjelenítése lebegő címkén"
 #: data/appcenter.metainfo.xml.in:153
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
+"\"Kipróbálás ingyen\" megjelenítése, ha egy alkalmazás árát 0-ra állítja"
 
 #: data/appcenter.metainfo.xml.in:164
 msgid "Prevent potential crashes when updating"
-msgstr ""
+msgstr "Frissítések közbeni összeomlások megelőzése"
 
 #: data/appcenter.metainfo.xml.in:168
 msgid "Link to Flathub's search page when no search results are found"
-msgstr ""
+msgstr "A Flathub keresőoldalára mutató link megjelenítése, ha nincs találat"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -211,11 +214,11 @@ msgstr "Frissítések keresése"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Szoftverfrissítés"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "A szoftverfrissítéshez hitelesítés szükséges"
 
 #~ msgid "Categories show as a grid instead of a list"
 #~ msgstr "Kategóriák megjelenítése rácsként lista helyett"
