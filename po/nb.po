@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 20:53+0000\n"
-"PO-Revision-Date: 2023-01-31 18:04+0000\n"
+"POT-Creation-Date: 2023-02-07 08:14+0000\n"
+"PO-Revision-Date: 2023-02-07 08:15+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
 "Language: nb\n"
@@ -66,7 +66,7 @@ msgstr "Avinstallerer …"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "Reparerer …"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -427,7 +427,7 @@ msgstr "Klarte ikke å avinstallere «%s»"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr ""
+msgstr "Reparer"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."

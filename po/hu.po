@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 20:53+0000\n"
-"PO-Revision-Date: 2023-02-02 09:25+0000\n"
+"POT-Creation-Date: 2023-02-07 08:14+0000\n"
+"PO-Revision-Date: 2023-02-07 08:15+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -67,7 +67,7 @@ msgstr "Eltávolítás…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "Javítás…"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -426,7 +426,7 @@ msgstr "\"%s\" telepítése sikertelen"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr ""
+msgstr "Javítás"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."

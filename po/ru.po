@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 20:53+0000\n"
-"PO-Revision-Date: 2023-01-31 18:04+0000\n"
+"POT-Creation-Date: 2023-02-07 08:14+0000\n"
+"PO-Revision-Date: 2023-02-07 08:15+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
@@ -73,7 +73,7 @@ msgstr "Удаление…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "Починка…"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -436,7 +436,7 @@ msgstr "Не удалось установить «%s»"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr ""
+msgstr "Починить"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 20:53+0000\n"
-"PO-Revision-Date: 2023-01-29 08:25+0000\n"
+"POT-Creation-Date: 2023-02-07 08:14+0000\n"
+"PO-Revision-Date: 2023-02-07 08:15+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -56,54 +56,60 @@ msgstr "Платіть що можете, щоб підтримати розро
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:81
-#: data/appcenter.metainfo.xml.in:94 data/appcenter.metainfo.xml.in:115
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
+#: data/appcenter.metainfo.xml.in:95 data/appcenter.metainfo.xml.in:116
+#: data/appcenter.metainfo.xml.in:153
 msgid "New features:"
 msgstr "Нові можливості:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Offer a Repair option if Flatpak updates fail"
+msgstr "Пропозиція Полагодити, якщо стається збій оновлення з Flatpak"
+
+#: data/appcenter.metainfo.xml.in:71
+msgid ""
+"Show a message in the updates view when up to date, including when updates "
+"were last checked"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:135
+#: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136
 msgid "Other Improvements:"
 msgstr "Інші вдосконалення:"
 
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:87
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:140
-#: data/appcenter.metainfo.xml.in:168 data/appcenter.metainfo.xml.in:182
+#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:141
+#: data/appcenter.metainfo.xml.in:169
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/appcenter.metainfo.xml.in:83
+#: data/appcenter.metainfo.xml.in:84
 msgid "Show when an app isn't available in your language"
 msgstr "Показує, коли застосунок недоступний вашою мовою"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:97
 msgid "Install OS Updates offline"
 msgstr "Встановлення оновлень ОС офлайн"
 
-#: data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:118
 msgid "Rewritten navigation with multitouch gestures to go back"
 msgstr "Переписана навігація з мультитач жестами для повернення назад"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:119
 msgid "Recently updated apps are shown at the top of category views"
 msgstr ""
 "Нещодавно оновлені застосунки показуються у верхній частині переглядів "
 "категорій"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:120
 msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr "Під час виконання завдань відтепер показується панель стану"
 
-#: data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:122
 msgid "App Info Page Improvements:"
 msgstr "Вдосконалення сторінки відомостей про застосунок:"
 
-#: data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:124
 msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
@@ -111,104 +117,96 @@ msgstr ""
 "Каруселі знімків екрана заповнюють всю ширину вікна, показуючи більше "
 "знімків екрана одночасно"
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:125
 msgid "An app's accent color is now shown behind screenshots"
 msgstr "За знімками екрана відтепер показується основний колір застосунку"
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:126
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
 "Отримання фірмових кольорів зі стандарту AppStream для підтримки більшої "
 "кількості застосунків"
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:127
 msgid "Wrap links at the bottom pages instead of ellipsize"
 msgstr "Обгортання посилань внизу сторінок замість додавання еліпсису"
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:128
 msgid "Better dark style support"
 msgstr "Краща підтримка темного стилю"
 
-#: data/appcenter.metainfo.xml.in:129
+#: data/appcenter.metainfo.xml.in:130
 msgid "Updates View Improvements:"
 msgstr "Удосконалення вкладки оновлень:"
 
-#: data/appcenter.metainfo.xml.in:131
+#: data/appcenter.metainfo.xml.in:132
 msgid "Release notes are shown in a dialog"
 msgstr "Примітки до випуску показуються в діалоговому вікні"
 
-#: data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:133
 msgid "Better fallback icons for components"
 msgstr "Покращені запасні піктограми для компонентів"
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:134
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
 msgstr ""
 "Заголовок «Оновити все» під час гортання відтепер прилипає до верхньої "
 "частини вікна"
 
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:138
 msgid "Redesigned \"Fun &amp; Games\" category card"
 msgstr "Перероблена картка категорії Розваги та ігри»"
 
-#: data/appcenter.metainfo.xml.in:138 data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:139 data/appcenter.metainfo.xml.in:168
 msgid "Performance improvements"
 msgstr "Поліпшено швидкодію"
 
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:140
 msgid "Stability improvements"
 msgstr "Поліпшення стабільності"
 
-#: data/appcenter.metainfo.xml.in:154
+#: data/appcenter.metainfo.xml.in:155
 msgid "Added an option to automatically update apps"
 msgstr "Додано опцію автооновлення застосунків"
 
-#: data/appcenter.metainfo.xml.in:155
+#: data/appcenter.metainfo.xml.in:156
 msgid "Manually check for new updates"
 msgstr "Перевірка наявності нових оновлень вручну"
 
-#: data/appcenter.metainfo.xml.in:156
+#: data/appcenter.metainfo.xml.in:157
 msgid "Warn when apps are built against older runtimes"
 msgstr ""
 "Додано попередження, якщо застосунки створено для давніших середовищ "
 "виконання"
 
-#: data/appcenter.metainfo.xml.in:158 data/appcenter.metainfo.xml.in:175
+#: data/appcenter.metainfo.xml.in:159
 msgid "Fixes:"
 msgstr "Виправлення:"
 
-#: data/appcenter.metainfo.xml.in:160
+#: data/appcenter.metainfo.xml.in:161
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
 "Виправлено зникнення кнопки «Назад» або необхідність її кількаразового "
 "натискання"
 
-#: data/appcenter.metainfo.xml.in:162 data/appcenter.metainfo.xml.in:179
+#: data/appcenter.metainfo.xml.in:163
 msgid "Improvements:"
 msgstr "Вдосконалення:"
 
-#: data/appcenter.metainfo.xml.in:164
+#: data/appcenter.metainfo.xml.in:165
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
 "Не показується діалогове вікно попереджень про застосунки з альтернативних "
 "крамниць"
 
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:166
 msgid "Show screenshot captions in a tooltip"
 msgstr "Показувати підписи до знімків екрана у підказці"
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:167
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr "Показ «Спробувати безплатно», якщо ціною за застосунок вказано 0"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Prevent potential crashes when updating"
-msgstr "Усунено ймовірність збоїв під час оновлення"
-
-#: data/appcenter.metainfo.xml.in:181
-msgid "Link to Flathub's search page when no search results are found"
-msgstr "Посилання на сторінку пошуку Flathub у разі безрезультатного пошуку"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -233,13 +231,18 @@ msgstr "Для оновлення програмного забезпеченн�
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Налагодження джерел програмного забезпечення"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Для оновлення програмного забезпечення потрібна автентифікація"
+msgstr ""
+"Для налагодження джерел програмного забезпечення потрібна автентифікація"
+
+#~ msgid "Prevent potential crashes when updating"
+#~ msgstr "Усунено ймовірність збоїв під час оновлення"
+
+#~ msgid "Link to Flathub's search page when no search results are found"
+#~ msgstr "Посилання на сторінку пошуку Flathub у разі безрезультатного пошуку"
 
 #~ msgid "Amusements appear in the Games category"
 #~ msgstr "У категорії Ігри з'являються розваги"

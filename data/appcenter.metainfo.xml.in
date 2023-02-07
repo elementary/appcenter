@@ -68,12 +68,16 @@
         <p>New features:</p>
         <ul>
           <li>Offer a Repair option if Flatpak updates fail</li>
+          <li>Show a message in the updates view when up to date, including when updates were last checked</li>
         </ul>
         <p>Other Improvements:</p>
         <ul>
           <li>Updated translations</li>
         </ul>
       </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/1861">Crash on Category View</issue>
+      </issues>
     </release>
 
     <release version="7.1.0" date="2023-01-28">
@@ -170,20 +174,7 @@
       </description>
     </release>
 
-    <release version="3.9.1" date="2021-12-10" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Prevent potential crashes when updating</li>
-        </ul>
-        <p>Improvements:</p>
-        <ul>
-          <li>Link to Flathub's search page when no search results are found</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="3.9.1" date="2021-12-10"/>
     <release version="3.9.0" date="2021-11-23"/>
     <release version="3.8.2" date="2021-10-29"/>
     <release version="3.8.0" date="2021-09-21"/>
@@ -221,7 +212,7 @@
     <release version="0.1.4" date="2017-03-16"/>
     <release version="0.1.3" date="2016-12-05"/>
     <release version="0.1.2" date="2016-10-29"/>
-    <release version="0.1.1" date="2016-09-26" />
+    <release version="0.1.1" date="2016-09-26"/>
     <release version="0.1.0" date="2016-08-15"/>
   </releases>
 </component>
