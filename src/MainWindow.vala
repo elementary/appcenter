@@ -85,35 +85,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         aggregator.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
 
         aggregator.notify ["job-type"].connect (() => {
-            switch (aggregator.job_type) {
-                case GET_DETAILS_FOR_PACKAGE_IDS:
-                case GET_PACKAGE_DEPENDENCIES:
-                case GET_PACKAGE_DETAILS:
-                case IS_PACKAGE_INSTALLED:
-                    overlaybar.label = _("Getting app information…");
-                    break;
-                case GET_DOWNLOAD_SIZE:
-                    overlaybar.label = _("Getting download size…");
-                    break;
-                case GET_PREPARED_PACKAGES:
-                case GET_INSTALLED_PACKAGES:
-                case GET_UPDATES:
-                case REFRESH_CACHE:
-                    overlaybar.label = _("Checking for updates…");
-                    break;
-                case INSTALL_PACKAGE:
-                    overlaybar.label = _("Installing…");
-                    break;
-                case UPDATE_PACKAGE:
-                    overlaybar.label = _("Installing updates…");
-                    break;
-                case REMOVE_PACKAGE:
-                    overlaybar.label = _("Uninstalling…");
-                    break;
-                case REPAIR:
-                    overlaybar.label = _("Repairing…");
-                    break;
-            }
+            update_overlaybar_label (aggregator.job_type);
         });
 
         notify["working"].connect (() => {
@@ -123,6 +95,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 return GLib.Source.REMOVE;
             });
         });
+
+        update_overlaybar_label (aggregator.job_type);
     }
 
     construct {
@@ -650,5 +624,37 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             show_package (package);
             set_return_name (category.name);
         });
+    }
+
+    private void update_overlaybar_label (AppCenterCore.Job.Type job_type) {
+        switch (job_type) {
+            case GET_DETAILS_FOR_PACKAGE_IDS:
+            case GET_PACKAGE_DEPENDENCIES:
+            case GET_PACKAGE_DETAILS:
+            case IS_PACKAGE_INSTALLED:
+                overlaybar.label = _("Getting app information…");
+                break;
+            case GET_DOWNLOAD_SIZE:
+                overlaybar.label = _("Getting download size…");
+                break;
+            case GET_PREPARED_PACKAGES:
+            case GET_INSTALLED_PACKAGES:
+            case GET_UPDATES:
+            case REFRESH_CACHE:
+                overlaybar.label = _("Checking for updates…");
+                break;
+            case INSTALL_PACKAGE:
+                overlaybar.label = _("Installing…");
+                break;
+            case UPDATE_PACKAGE:
+                overlaybar.label = _("Installing updates…");
+                break;
+            case REMOVE_PACKAGE:
+                overlaybar.label = _("Uninstalling…");
+                break;
+            case REPAIR:
+                overlaybar.label = _("Repairing…");
+                break;
+        }
     }
 }
