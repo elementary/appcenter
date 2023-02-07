@@ -68,6 +68,7 @@
         <p>New features:</p>
         <ul>
           <li>Offer a Repair option if Flatpak updates fail</li>
+          <li>Show a message in the updates view when up to date, including when updates were last checked<li>
         </ul>
         <p>Other Improvements:</p>
         <ul>
@@ -170,20 +171,7 @@
       </description>
     </release>
 
-    <release version="3.9.1" date="2021-12-10" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Prevent potential crashes when updating</li>
-        </ul>
-        <p>Improvements:</p>
-        <ul>
-          <li>Link to Flathub's search page when no search results are found</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="3.9.1" date="2021-12-10"/>
     <release version="3.9.0" date="2021-11-23"/>
     <release version="3.8.2" date="2021-10-29"/>
     <release version="3.8.0" date="2021-09-21"/>
