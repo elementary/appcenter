@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2023-01-30 17:55+0000\n"
+"PO-Revision-Date: 2023-02-08 18:25+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -64,12 +64,16 @@ msgstr "Funcions noves:"
 #: data/appcenter.metainfo.xml.in:70
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
+"Ofereix una opció de reparació si les actualitzacions de Flatpak fallen."
 
 #: data/appcenter.metainfo.xml.in:71
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Mostra un missatge a la visualització d'actualitzacions quan estigui "
+"actualitzat que inclou l'última vegada que es van comprovar les "
+"actualitzacions."
 
 #: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
 #: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136
@@ -233,13 +237,11 @@ msgstr "Cal autenticació per actualitzar programari."
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Repara les fonts de programari"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Cal autenticació per actualitzar programari."
+msgstr "Cal autenticació per reparar les fonts de programari."
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "Prevenció de possibles bloquejos en actualitzar"
