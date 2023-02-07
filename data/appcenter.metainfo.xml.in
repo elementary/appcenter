@@ -68,7 +68,7 @@
         <p>New features:</p>
         <ul>
           <li>Offer a Repair option if Flatpak updates fail</li>
-          <li>Show a message in the updates view when up to date, including when updates were last checked<li>
+          <li>Show a message in the updates view when up to date, including when updates were last checked</li>
         </ul>
         <p>Other Improvements:</p>
         <ul>
@@ -209,7 +209,7 @@
     <release version="0.1.4" date="2017-03-16"/>
     <release version="0.1.3" date="2016-12-05"/>
     <release version="0.1.2" date="2016-10-29"/>
-    <release version="0.1.1" date="2016-09-26" />
+    <release version="0.1.1" date="2016-09-26"/>
     <release version="0.1.0" date="2016-08-15"/>
   </releases>
 </component>
