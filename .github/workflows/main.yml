@@ -46,7 +46,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson configure -Dpackagekit_backend=false -Dubuntu_drivers_backend=false
+        meson configure -Dpackagekit_backend=false -Dubuntu_drivers_backend=false build
         ninja -C build install
 
   lint:
