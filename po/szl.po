@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 20:53+0000\n"
+"POT-Creation-Date: 2023-02-07 08:14+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
