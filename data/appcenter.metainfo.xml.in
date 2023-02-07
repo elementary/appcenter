@@ -75,6 +75,9 @@
           <li>Updated translations</li>
         </ul>
       </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/1861">Crash on Category View</issue>
+      </issues>
     </release>
 
     <release version="7.1.0" date="2023-01-28">
