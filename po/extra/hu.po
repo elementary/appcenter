@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2023-02-07 08:15+0000\n"
+"PO-Revision-Date: 2023-02-08 18:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -69,6 +69,8 @@ msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Üzenet kijelzése a frissítések nézetben, ha naprakész, a legutóbbi "
+"ellenőrzés dátumával együtt"
 
 #: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
 #: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136

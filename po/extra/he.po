@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2023-01-30 17:55+0000\n"
+"PO-Revision-Date: 2023-02-08 18:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -61,13 +61,15 @@ msgstr "יכולות חדשות:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "מוצעת אפשרות תיקון אם עדכון Flatpak נכשל"
 
 #: data/appcenter.metainfo.xml.in:71
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"להציג הודעה בתצוגת העדכונים כאשר עדכני, כולל מתי בוצעה בדיקה לאיתור עדכונים "
+"חדשים"
 
 #: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
 #: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136
@@ -217,13 +219,11 @@ msgstr "נדרש אימות כדי לבצע עדכון תוכנה"
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "תיקון מקורות תוכנה"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "נדרש אימות כדי לבצע עדכון תוכנה"
+msgstr "נדרש אימות כדי לתקן מקורות תוכנה"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "נמנעות קריסות שעלולות לקרות בעת עדכון"
