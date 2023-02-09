@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-09 11:53+0000\n"
-"Last-Translator: Thierry Flament <thierry.flament@outlook.com>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -73,7 +73,7 @@ msgstr "Verwijderen…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "Repareren…"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -433,13 +433,11 @@ msgstr "Het installeren van “%s” is mislukt"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr ""
+msgstr "Repareer"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "De updates konden niet worden opgehaald"
+msgstr "Reparatie mislukt"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
