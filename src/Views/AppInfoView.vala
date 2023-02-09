@@ -922,10 +922,22 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                     _("Can access all devices such as webcams, microphones, and connected USB devices"),
                     "camera-web-symbolic"
                 );
-                devices.show_all ();
 
                 oars_flowbox.add (devices);
             }
+
+            if (AppCenterCore.Package.PermissionsFlags.NETWORK in package.permissions_flags) {
+                var network = new ContentType (
+                    _("Network"),
+                    _("Can access the internet and local networks"),
+                    "preferences-system-network-symbolic"
+                );
+
+                oars_flowbox.add (network);
+            }
+
+            oars_flowbox.show_all ();
+            oars_flowbox_revealer.reveal_child = true;
         }
 
         if (runtime_warning != null && !is_runtime_warning_shown) {
