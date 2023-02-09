@@ -45,8 +45,8 @@ public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-jammy-main";
 
+    public PermissionsFlags permissions_flags { get; set; default = PermissionsFlags.UNKNOWN; }
     public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
-    public KeyFile flatpak_metadata { get; set; default = null; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -81,6 +81,26 @@ public class AppCenterCore.Package : Object {
         UPDATE_AVAILABLE,
         UPDATING,
         REMOVING
+    }
+
+    public enum PermissionsFlags {
+        UNKNOWN = 0,
+        NONE = 1 << 0,
+        NETWORK = 1 << 1,
+        SYSTEM_BUS = 1 << 2,
+        SESSION_BUS = 1 << 3,
+        DEVICES = 1 << 4,
+        HOME_FULL = 1 << 5,
+        HOME_READ = 1 << 6,
+        FILESYSTEM_FULL	= 1 << 7,
+        FILESYSTEM_READ	= 1 << 8,
+        DOWNLOADS_FULL = 1 << 9,
+        DOWNLOADS_READ = 1 << 10,
+        SETTINGS = 1 << 11,
+        X11 = 1 << 12,
+        ESCAPE_SANDBOX = 1 << 13,
+        FILESYSTEM_OTHER = 1 << 14,
+        LAST  /*< skip >*/
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";

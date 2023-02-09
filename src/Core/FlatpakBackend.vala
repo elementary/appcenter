@@ -627,8 +627,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                             var remote_metadata = installation.fetch_remote_metadata_sync (remote_name, remote_ref, cancellable);
 
                             if (remote_metadata != null) {
-                                package.flatpak_metadata = new KeyFile ();
-                                package.flatpak_metadata.load_from_bytes (remote_metadata, KeyFileFlags.NONE);
+                                var metadata = new KeyFile ();
+                                metadata.load_from_bytes (remote_metadata, KeyFileFlags.NONE);
+                                set_permissionflags_from_metadata (metadata, package);
                             }
 
                             if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
@@ -697,6 +698,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         return job.result.get_uint64 ();
+    }
+
+    private void set_permissionflags_from_metadata (KeyFile keyfile, Package package) {
+        var devices_context = keyfile.get_string_list ("Context", "devices");
+        if (devices_context != null && "all" in devices_context) {
+            package.permissions_flags |= Package.PermissionsFlags.DEVICES;
+        }
     }
 
     private void is_package_installed_internal (Job job) {

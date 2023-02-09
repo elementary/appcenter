@@ -915,21 +915,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 break;
         }
 
-        if (package.flatpak_metadata != null) {
-            try {
-                var devices_context = package.flatpak_metadata.get_string_list ("Context", "devices");
-                if (devices_context != null && "all" in devices_context) {
-                    var devices = new ContentType (
-                        _("Devices"),
-                        _("Can access all devices such as webcams, microphones, and connected USB devices"),
-                        "camera-web-symbolic"
-                    );
-                    devices.show_all ();
+        if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN) {
+            if (AppCenterCore.Package.PermissionsFlags.DEVICES in package.permissions_flags) {
+                var devices = new ContentType (
+                    _("Devices"),
+                    _("Can access all devices such as webcams, microphones, and connected USB devices"),
+                    "camera-web-symbolic"
+                );
+                devices.show_all ();
 
-                    oars_flowbox.add (devices);
-                }
-            } catch (Error e) {
-                critical ("keyfile error");
+                oars_flowbox.add (devices);
             }
         }
 
