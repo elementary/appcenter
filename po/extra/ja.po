@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-09 11:06+0000\n"
+"PO-Revision-Date: 2023-02-09 11:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -232,13 +232,11 @@ msgstr "ソフトウェアをアップデートするには認証が必要です
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "ソフトウェアソースを修復"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "ソフトウェアをアップデートするには認証が必要です"
+msgstr "ソフトウェアソースを修復するには認証が必要です"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "アップデート中にクラッシュする可能性のある不具合を修正"
