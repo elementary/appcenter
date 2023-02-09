@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-10 12:15+0000\n"
-"Last-Translator: Pepijn Joost <pepijnvlug@gmail.com>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -636,7 +636,8 @@ msgid "This may have been caused by sideloaded or manually compiled software, a 
 msgstr ""
 "Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde "
 "software, softwarebronnen van een derde partij of een fout in de "
-"pakketbeheerder."
+"pakketbeheerder. Het handmatig vernieuwen van de updates zou dit probleem "
+"mogelijk kunnen verhelpen."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
