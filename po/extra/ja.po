@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2023-01-30 17:55+0000\n"
+"PO-Revision-Date: 2023-02-09 11:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -63,13 +63,14 @@ msgstr "新機能:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Flatpak のアップデートが失敗した場合に修復オプションを表示する機能を追加"
 
 #: data/appcenter.metainfo.xml.in:71
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
-msgstr ""
+msgstr "システムが最新の場合、最新だというメッセージとアップデートの最終確認日時を表"
+"示する機能を追加"
 
 #: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
 #: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136
