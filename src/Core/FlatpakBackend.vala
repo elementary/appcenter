@@ -701,9 +701,52 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     private void set_permissionflags_from_metadata (KeyFile keyfile, Package package) {
+        var sockets_context = keyfile.get_string_list ("Context", "sockets");
+        if (sockets_context != null) {
+            if ("system-bus" in sockets_context) {
+                package.permissions_flags |= Package.PermissionsFlags.SYSTEM_BUS;
+            }
+            if ("session-bus" in sockets_context) {
+                package.permissions_flags |= Package.PermissionsFlags.SESSION_BUS;
+            }
+            if (!("fallback-x11" in sockets_context) && "x11" in sockets_context) {
+                package.permissions_flags |= Package.PermissionsFlags.X11;
+            }
+        }
+
         var devices_context = keyfile.get_string_list ("Context", "devices");
         if (devices_context != null && "all" in devices_context) {
             package.permissions_flags |= Package.PermissionsFlags.DEVICES;
+        }
+
+        var shared_context = keyfile.get_string_list ("Context", "shared");
+        if (shared_context != null && "network" in shared_context) {
+            package.permissions_flags |= Package.PermissionsFlags.NETWORK;
+        }
+
+        var dconf_policy = keyfile.get_string ("Session Bus Policy", "ca.desrt.dconf");
+        if (dconf_policy != null && dconf_policy == "talk") {
+            package.permissions_flags |= Package.PermissionsFlags.SETTINGS;
+        }
+
+        var flatpak_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Flatpak");
+        if (flatpak_policy != null && flatpak_policy == "talk") {
+            package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+        } else {
+            var portal_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore");
+            if (portal_policy != null && portal_policy == "talk") {
+                package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+            }
+        }
+
+        var filesystems_context = keyfile.get_string_list ("Context", "filesystems");
+        if (filesystems_context != null) {
+            // TODO: holy shit
+        }
+
+        // We didn't find anything, so call it NONE
+        if (package.permissions_flags == Package.PermissionsFlags.UNKNOWN) {
+            package.permissions_flags = Package.PermissionsFlags.NONE;
         }
     }
 
