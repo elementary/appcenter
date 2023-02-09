@@ -6,13 +6,14 @@
 # Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 # DutchVipperloid <svenroelof@e.email>, 2023.
 # Thierry Flament <thierry.flament@outlook.com>, 2023.
+# Pepijn Joost <pepijnvlug@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-09 11:53+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"PO-Revision-Date: 2023-02-10 12:15+0000\n"
+"Last-Translator: Pepijn Joost <pepijnvlug@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -648,7 +649,7 @@ msgstr "Het bijwerken van “%s” is mislukt"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
-msgstr "Updates verversen"
+msgstr "Controleer op updates"
 
 #: src/Views/AppInfoView.vala:130
 msgid "Illicit Substances"
