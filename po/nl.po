@@ -5,14 +5,16 @@
 # MB <barendregt@fastmail.com>, 2022.
 # Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 # DutchVipperloid <svenroelof@e.email>, 2023.
+# Thierry Flament <thierry.flament@outlook.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-02 09:25+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
+"PO-Revision-Date: 2023-02-09 11:53+0000\n"
+"Last-Translator: Thierry Flament <thierry.flament@outlook.com>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +31,7 @@ msgstr "AppCenter"
 #: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Kon het media type %s niet lezen"
+msgstr "Kon het media-type %s niet lezen"
 
 #: src/Application.vala:106
 #, c-format
@@ -67,7 +69,7 @@ msgstr "Updates installeren…"
 
 #: src/MainWindow.vala:111
 msgid "Uninstalling…"
-msgstr "Deïnstalleren…"
+msgstr "Verwijderen…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
@@ -93,7 +95,8 @@ msgstr "Automatische app-updates"
 
 #: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
-msgstr "Systeemupdates en onbetaalde apps zullen niet automatisch updaten"
+msgstr ""
+"Systeemupdates en onbetaalde apps zullen niet automatisch geüpdatet worden"
 
 #: src/MainWindow.vala:217
 msgid "Check for Updates"
@@ -631,7 +634,10 @@ msgstr "Probeer opnieuw"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Dit zou veroorzaakt kunnen zijn door sideloaded of handmatig gecompileerde software, softwarebronnen van een derde partij of een pakketbeheer gerelateerde fout."
+msgstr ""
+"Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde "
+"software, softwarebronnen van een derde partij of een fout in de "
+"pakketbeheerder."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
