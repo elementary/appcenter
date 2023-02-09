@@ -46,6 +46,7 @@ public class AppCenterCore.Package : Object {
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-jammy-main";
 
     public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
+    public KeyFile flatpak_metadata { get; set; default = null; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"

@@ -915,6 +915,24 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 break;
         }
 
+        if (package.flatpak_metadata != null) {
+            try {
+                var devices_context = package.flatpak_metadata.get_string_list ("Context", "devices");
+                if (devices_context != null && "all" in devices_context) {
+                    var devices = new ContentType (
+                        _("Devices"),
+                        _("Can access all devices such as webcams, microphones, and connected USB devices"),
+                        "camera-web-symbolic"
+                    );
+                    devices.show_all ();
+
+                    oars_flowbox.add (devices);
+                }
+            } catch (Error e) {
+                critical ("keyfile error");
+            }
+        }
+
         if (runtime_warning != null && !is_runtime_warning_shown) {
             is_runtime_warning_shown = true;
 

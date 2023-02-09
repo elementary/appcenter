@@ -624,6 +624,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                             var arch = entry_ref.arch;
                             var branch = entry_ref.branch;
                             var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
+                            var remote_metadata = installation.fetch_remote_metadata_sync (remote_name, remote_ref, cancellable);
+
+                            if (remote_metadata != null) {
+                                package.flatpak_metadata = new KeyFile ();
+                                package.flatpak_metadata.load_from_bytes (remote_metadata, KeyFileFlags.NONE);
+                            }
 
                             if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
                                 package.runtime_status = RuntimeStatus.END_OF_LIFE;
