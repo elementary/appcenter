@@ -705,6 +705,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         public Package.PermissionsFlags permission;
     }
 
+    // Based on: https://github.com/GNOME/gnome-software/blob/fdb8568693d9d62f0480e558775f70cd83f6cf4f/plugins/flatpak/gs-flatpak.c#L238
     private void set_permissionflags_from_metadata (KeyFile keyfile, Package package) {
         try {
             if (keyfile.has_group ("Context")) {
