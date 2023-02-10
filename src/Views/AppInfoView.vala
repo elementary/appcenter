@@ -919,14 +919,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN && !permissions_shown) {
             permissions_shown = true;
 
-            if (AppCenterCore.Package.PermissionsFlags.NETWORK in package.permissions_flags) {
-                var network = new ContentType (
-                    _("Network Access"),
-                    _("Can access the internet and local networks"),
-                    "preferences-system-network-symbolic"
+            if (AppCenterCore.Package.PermissionsFlags.FILESYSTEM_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.FILESYSTEM_READ in package.permissions_flags) {
+                var filesystem = new ContentType (
+                    _("System Folder Access"),
+                    _("Including everyone's Home folders, but not including system internals"),
+                    "drive-harddisk-symbolic"
                 );
 
-                oars_flowbox.add (network);
+                oars_flowbox.add (filesystem);
             }
         }
 
