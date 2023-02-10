@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-10 12:21+0000\n"
+"PO-Revision-Date: 2023-02-10 12:22+0000\n"
 "Last-Translator: Thierry Flament <thierry.flament@outlook.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
@@ -157,7 +157,7 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:141
 msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr ""
+msgstr "\"Ontspanning &amp; Games\" categoriekaart herontworpen"
 
 #: data/appcenter.metainfo.xml.in:142 data/appcenter.metainfo.xml.in:171
 msgid "Performance improvements"
@@ -177,7 +177,7 @@ msgstr "Controleer handmatig op nieuwe updates"
 
 #: data/appcenter.metainfo.xml.in:160
 msgid "Warn when apps are built against older runtimes"
-msgstr ""
+msgstr "Waarschuw me wanneer applicaties gebouwd werden op oudere versies"
 
 #: data/appcenter.metainfo.xml.in:162
 msgid "Fixes:"
