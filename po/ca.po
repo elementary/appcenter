@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-08 18:25+0000\n"
+"PO-Revision-Date: 2023-02-10 22:29+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -429,10 +430,8 @@ msgid "Repair"
 msgstr "Repara"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "Ha fallat recuperar les actualitzacions."
+msgstr "Ha fallat la reparació."
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
