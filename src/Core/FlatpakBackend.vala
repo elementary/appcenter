@@ -700,49 +700,97 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job.result.get_uint64 ();
     }
 
+    private struct FilesystemsAccess {
+        public string key;
+        public Package.PermissionsFlags permission;
+    }
+
     private void set_permissionflags_from_metadata (KeyFile keyfile, Package package) {
         try {
-            var sockets_context = keyfile.get_string_list ("Context", "sockets");
-            if (sockets_context != null) {
-                if ("system-bus" in sockets_context) {
-                    package.permissions_flags |= Package.PermissionsFlags.SYSTEM_BUS;
+            if (keyfile.has_group ("Context")) {
+                var sockets_context = keyfile.get_string_list ("Context", "sockets");
+                if (sockets_context != null) {
+                    if ("system-bus" in sockets_context) {
+                        package.permissions_flags |= Package.PermissionsFlags.SYSTEM_BUS;
+                    }
+                    if ("session-bus" in sockets_context) {
+                        package.permissions_flags |= Package.PermissionsFlags.SESSION_BUS;
+                    }
+                    if (!("fallback-x11" in sockets_context) && "x11" in sockets_context) {
+                        package.permissions_flags |= Package.PermissionsFlags.X11;
+                    }
                 }
-                if ("session-bus" in sockets_context) {
-                    package.permissions_flags |= Package.PermissionsFlags.SESSION_BUS;
+
+                var devices_context = keyfile.get_string_list ("Context", "devices");
+                if (devices_context != null && "all" in devices_context) {
+                    package.permissions_flags |= Package.PermissionsFlags.DEVICES;
                 }
-                if (!("fallback-x11" in sockets_context) && "x11" in sockets_context) {
-                    package.permissions_flags |= Package.PermissionsFlags.X11;
+
+                var shared_context = keyfile.get_string_list ("Context", "shared");
+                if (shared_context != null && "network" in shared_context) {
+                    package.permissions_flags |= Package.PermissionsFlags.NETWORK;
+                }
+
+                var filesystems_context = keyfile.get_string_list ("Context", "filesystems");
+                if (filesystems_context != null) {
+                    FilesystemsAccess filesystems_access[] = {
+                        /* Reference: https://docs.flatpak.org/en/latest/flatpak-command-reference.html#idm45858571325264 */
+                        { "home", Package.PermissionsFlags.HOME_FULL },
+                        { "home:rw", Package.PermissionsFlags.HOME_FULL },
+                        { "home:ro", Package.PermissionsFlags.HOME_READ },
+                        { "~", Package.PermissionsFlags.HOME_FULL },
+                        { "~:rw", Package.PermissionsFlags.HOME_FULL },
+                        { "~:ro", Package.PermissionsFlags.HOME_READ },
+                        { "host", Package.PermissionsFlags.FILESYSTEM_FULL },
+                        { "host:rw", Package.PermissionsFlags.FILESYSTEM_FULL },
+                        { "host:ro", Package.PermissionsFlags.FILESYSTEM_READ },
+                        { "xdg-download", Package.PermissionsFlags.DOWNLOADS_FULL },
+                        { "xdg-download:rw", Package.PermissionsFlags.DOWNLOADS_FULL },
+                        { "xdg-download:ro", Package.PermissionsFlags.DOWNLOADS_READ },
+                        { "xdg-data/flatpak/overrides:create", Package.PermissionsFlags.ESCAPE_SANDBOX }
+                    };
+
+                    var filesystems_hits = 0;
+                    for (int i = 0; i < filesystems_access.length; i++) {
+                        if (filesystems_access[i].key in filesystems_context) {
+                            package.permissions_flags |= filesystems_access[i].permission;
+                            filesystems_hits++;
+                        }
+                    }
+
+                    if (filesystems_context.length > filesystems_hits) {
+                        package.permissions_flags |= Package.PermissionsFlags.FILESYSTEM_OTHER;
+                    }
+
+                    if ((package.permissions_flags & Package.PermissionsFlags.HOME_FULL) != 0) {
+                        package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.HOME_READ;
+                    }
+
+                    if ((package.permissions_flags & Package.PermissionsFlags.FILESYSTEM_FULL) != 0) {
+                        package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.FILESYSTEM_READ;
+                    }
+
+                    if ((package.permissions_flags & Package.PermissionsFlags.DOWNLOADS_FULL) != 0) {
+                        package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.DOWNLOADS_READ;
+                    }
                 }
             }
 
-            var devices_context = keyfile.get_string_list ("Context", "devices");
-            if (devices_context != null && "all" in devices_context) {
-                package.permissions_flags |= Package.PermissionsFlags.DEVICES;
-            }
+            if (keyfile.has_group ("Session Bus Policy")) {
+                var dconf_policy = keyfile.get_string ("Session Bus Policy", "ca.desrt.dconf");
+                if (dconf_policy != null && dconf_policy == "talk") {
+                    package.permissions_flags |= Package.PermissionsFlags.SETTINGS;
+                }
 
-            var shared_context = keyfile.get_string_list ("Context", "shared");
-            if (shared_context != null && "network" in shared_context) {
-                package.permissions_flags |= Package.PermissionsFlags.NETWORK;
-            }
-
-            var dconf_policy = keyfile.get_string ("Session Bus Policy", "ca.desrt.dconf");
-            if (dconf_policy != null && dconf_policy == "talk") {
-                package.permissions_flags |= Package.PermissionsFlags.SETTINGS;
-            }
-
-            var flatpak_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Flatpak");
-            if (flatpak_policy != null && flatpak_policy == "talk") {
-                package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
-            } else {
-                var portal_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore");
-                if (portal_policy != null && portal_policy == "talk") {
+                var flatpak_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Flatpak");
+                if (flatpak_policy != null && flatpak_policy == "talk") {
                     package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+                } else {
+                    var portal_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore");
+                    if (portal_policy != null && portal_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+                    }
                 }
-            }
-
-            var filesystems_context = keyfile.get_string_list ("Context", "filesystems");
-            if (filesystems_context != null) {
-                // TODO: holy shit
             }
         } catch (Error e) {
             debug ("Error getting Flatpak permissions: %s", e.message);
