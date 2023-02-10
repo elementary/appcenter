@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-10 12:59+0000\n"
-"Last-Translator: Thierry Flament <thierry.flament@outlook.com>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
 "Language: nl\n"
@@ -177,7 +177,7 @@ msgstr "Controleer handmatig op nieuwe updates"
 
 #: data/appcenter.metainfo.xml.in:160
 msgid "Warn when apps are built against older runtimes"
-msgstr "Waarschuw me wanneer applicaties gebouwd werden op oudere versies"
+msgstr "Waarschuw wanneer applicaties gebouwd werden tegen oudere runtimes"
 
 #: data/appcenter.metainfo.xml.in:162
 msgid "Fixes:"
