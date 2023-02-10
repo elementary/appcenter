@@ -173,14 +173,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 #if CURATED
             if (!package.is_native) {
                 var uncurated = new ContentType (
-                _("Non-Curated"),
-                _("Not reviewed by elementary for security, privacy, or system integration"),
-                "security-low-symbolic"
+                    _("Non-Curated"),
+                    _("Not reviewed by elementary for security, privacy, or system integration"),
+                    "security-low-symbolic"
                 );
 
                 oars_flowbox.add (uncurated);
             }
- #endif
+#endif
             var active_locale = package_component.get_active_locale ();
             if (active_locale != "en_US") {
                 var percent_translated = package_component.get_language (
