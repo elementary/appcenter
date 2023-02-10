@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-10 12:15+0000\n"
-"Last-Translator: Rick Klaasboer <rick@klaasboer.org>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
 "Language: nl\n"
@@ -140,10 +140,8 @@ msgid "Better dark style support"
 msgstr ""
 
 #: data/appcenter.metainfo.xml.in:133
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Updates View Improvements:"
-msgstr "Toetsenbord verbeteringen"
+msgstr "Weergave verbeteringen:"
 
 #: data/appcenter.metainfo.xml.in:135
 msgid "Release notes are shown in a dialog"
@@ -167,42 +165,32 @@ msgid "Performance improvements"
 msgstr "Prestaties zijn verbeterd"
 
 #: data/appcenter.metainfo.xml.in:143
-#, fuzzy
-#| msgid "Extension improvements"
 msgid "Stability improvements"
-msgstr "Extensies zijn verbeterd"
+msgstr "Verbeterde stabiliteit"
 
 #: data/appcenter.metainfo.xml.in:158
-#, fuzzy
-#| msgid "No longer prompt for approval to update non-curated apps"
 msgid "Added an option to automatically update apps"
-msgstr "Vraagt niet langer om toestemming om niet-beheerde apps te updaten"
+msgstr "Voeg een optie toe om automatisch apps te updaten"
 
 #: data/appcenter.metainfo.xml.in:159
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Manually check for new updates"
-msgstr "Controleer op updates"
+msgstr "Controleer handmatig op nieuwe updates"
 
 #: data/appcenter.metainfo.xml.in:160
 msgid "Warn when apps are built against older runtimes"
 msgstr ""
 
 #: data/appcenter.metainfo.xml.in:162
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Oplossingen"
+msgstr "Oplossingen:"
 
 #: data/appcenter.metainfo.xml.in:164
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
 
 #: data/appcenter.metainfo.xml.in:166
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Improvements:"
-msgstr "Toetsenbord verbeteringen"
+msgstr "Verbeteringen:"
 
 #: data/appcenter.metainfo.xml.in:168
 msgid "Don't show a warning dialog about apps from alt stores"
@@ -243,10 +231,8 @@ msgid "Repair software sources"
 msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Inloggen is vereist om software te updaten"
+msgstr "Authenticatie is vereist om de softwarebronnen te repareren"
 
 #, fuzzy
 #~| msgid "Add support for Flatpak apps"
