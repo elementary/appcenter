@@ -83,24 +83,24 @@ public class AppCenterCore.Package : Object {
         REMOVING
     }
 
+    [Flags]
     public enum PermissionsFlags {
-        UNKNOWN = 0,
-        NONE = 1 << 0,
-        NETWORK = 1 << 1,
-        SYSTEM_BUS = 1 << 2,
-        SESSION_BUS = 1 << 3,
-        DEVICES = 1 << 4,
-        HOME_FULL = 1 << 5,
-        HOME_READ = 1 << 6,
-        FILESYSTEM_FULL = 1 << 7,
-        FILESYSTEM_READ = 1 << 8,
-        DOWNLOADS_FULL = 1 << 9,
-        DOWNLOADS_READ = 1 << 10,
-        SETTINGS = 1 << 11,
-        X11 = 1 << 12,
-        ESCAPE_SANDBOX = 1 << 13,
-        FILESYSTEM_OTHER = 1 << 14,
-        LAST  /*< skip >*/
+        DEVICES,
+        DOWNLOADS_FULL,
+        DOWNLOADS_READ,
+        ESCAPE_SANDBOX,
+        FILESYSTEM_FULL,
+        FILESYSTEM_OTHER,
+        FILESYSTEM_READ,
+        HOME_FULL,
+        HOME_READ,
+        NETWORK,
+        NONE,
+        SESSION_BUS,
+        SETTINGS,
+        SYSTEM_BUS,
+        UNKNOWN,
+        X11
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
