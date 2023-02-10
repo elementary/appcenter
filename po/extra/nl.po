@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-10 12:19+0000\n"
-"Last-Translator: Rick Klaasboer <rick@klaasboer.org>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
 "Language: nl\n"
@@ -85,7 +85,7 @@ msgstr "Bijgewerkte vertalingen"
 
 #: data/appcenter.metainfo.xml.in:87
 msgid "Show when an app isn't available in your language"
-msgstr "Laat zien wanneer een app niet beschikbaar is in jouw taal"
+msgstr "Laat zien wanneer een app niet beschikbaar is in uw taal"
 
 #: data/appcenter.metainfo.xml.in:100
 msgid "Install OS Updates offline"
