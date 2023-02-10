@@ -55,6 +55,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     private Gtk.Revealer uninstall_button_revealer;
 
     private bool is_runtime_warning_shown = false;
+    private bool permissions_shown = false;
 
     private unowned Gtk.StyleContext stack_context;
 
@@ -904,35 +905,27 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 break;
         }
 
-        if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN) {
-            if (AppCenterCore.Package.PermissionsFlags.DEVICES in package.permissions_flags) {
-                var devices = new ContentType (
-                    _("Devices"),
-                    _("Can access all devices such as webcams, microphones, and connected USB devices"),
-                    "camera-web-symbolic"
-                );
-
-                oars_flowbox.add (devices);
-            }
+        if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN && !permissions_shown) {
+            permissions_shown = true;
 
             if (AppCenterCore.Package.PermissionsFlags.NETWORK in package.permissions_flags) {
                 var network = new ContentType (
-                    _("Network"),
+                    _("Network Access"),
                     _("Can access the internet and local networks"),
                     "preferences-system-network-symbolic"
                 );
 
                 oars_flowbox.add (network);
             }
-
-            oars_flowbox.show_all ();
-            oars_flowbox_revealer.reveal_child = true;
         }
 
         if (runtime_warning != null && !is_runtime_warning_shown) {
             is_runtime_warning_shown = true;
 
             oars_flowbox.insert (runtime_warning, 0);
+        }
+
+        if (oars_flowbox.get_children ().length () > 0) {
             oars_flowbox.show_all ();
             oars_flowbox_revealer.reveal_child = true;
         }
