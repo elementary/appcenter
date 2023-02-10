@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-10 12:59+0000\n"
+"PO-Revision-Date: 2023-02-10 22:29+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:102 data/appcenter.metainfo.xml.in:139
 msgid "Other Improvements:"
-msgstr "Andere verbeteringen"
+msgstr "Andere verbeteringen:"
 
 #: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:91
 #: data/appcenter.metainfo.xml.in:104 data/appcenter.metainfo.xml.in:144
@@ -186,7 +186,8 @@ msgstr "Oplossingen:"
 #: data/appcenter.metainfo.xml.in:164
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
-"Voorkom het verdwijnen van de terugkeerknop of de nood voor meerdere kliks"
+"Voorkom het verdwijnen van de terugkeerknop of om voor meerdere klikken te "
+"vereisen"
 
 #: data/appcenter.metainfo.xml.in:166
 msgid "Improvements:"
@@ -228,7 +229,7 @@ msgstr "Inloggen is vereist om software te updaten"
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Repareer softwarebronnen"
 
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
