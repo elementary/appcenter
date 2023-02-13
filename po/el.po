@@ -1,12 +1,13 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Zisis Avouris <zisisavouris@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Last-Translator: Zisis Avouris <zisisavouris@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/el/>\n"
 "Language: el\n"
@@ -448,9 +449,9 @@ msgid "Failed to install app"
 msgstr "Βρείτε και εγκαταστήστε εφαρμογές"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Βρείτε και εγκαταστήστε εφαρμογές"
+msgstr "Αποτυχία εγκατάστασης “%s”"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
