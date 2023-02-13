@@ -1,20 +1,22 @@
 # Athiwat Tiprasaharn <hiyakutake@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
-"Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/th/>\n"
+"PO-Revision-Date: 2023-02-14 12:03+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
+"th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -349,9 +351,9 @@ msgid "Updating"
 msgstr "การอัปเดต"
 
 #: src/Core/Package.vala:308
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "การพัฒนาโปรแกรม"
+msgstr ""
 
 #: src/Core/Package.vala:334
 msgid "elementary Updates"
@@ -1161,9 +1163,9 @@ msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "ล่าสุดแล้ว"
+msgstr ""
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
