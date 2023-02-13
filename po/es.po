@@ -12,13 +12,14 @@
 # Daniel R. <riesp@pm.me>, 2019.
 # Jose Manuel Hernandez Farias <ing.josemhf@gmail.com>, 2022.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Santiago Leon <santiagoleon747@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -146,10 +147,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Conéctese a Internet para explorar e instalar aplicaciones."
+msgstr "Instale %s para buscar e instalar aplicaciones"
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
