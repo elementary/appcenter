@@ -1,18 +1,20 @@
 # Fredrik B <frbo9002@gmail.com>, 2018.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2018-10-28 09:52+0000\n"
-"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
-"Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
+"PO-Revision-Date: 2023-02-14 12:03+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Swedish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -28,7 +30,7 @@ msgstr "Kunde inte tolka mimetypen %s"
 #: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Specificerade länken '% s' kunde inte hittas, söker i stället"
+msgstr "Specificerade länken '%s' kunde inte hittas, söker i stället"
 
 #: src/Application.vala:320
 #, fuzzy
@@ -136,9 +138,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Anslut till Internet för att installera eller uppdatera program."
+msgstr ""
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
@@ -1203,10 +1205,9 @@ msgid "Release notes"
 msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Nyheter:"
+msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
