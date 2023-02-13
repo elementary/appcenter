@@ -1,12 +1,13 @@
 # Fredrik B <frbo9002@gmail.com>, 2018.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# AndreasTNT <andreas.westrell@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Last-Translator: AndreasTNT <andreas.westrell@gmail.com>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/sv/>\n"
 "Language: sv\n"
@@ -83,9 +84,9 @@ msgid "Repairing…"
 msgstr ""
 
 #: src/MainWindow.vala:145
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Sök och installera program"
+msgstr "Lyckades inte starta \"%s\""
 
 #: src/MainWindow.vala:192
 #, fuzzy
@@ -456,9 +457,9 @@ msgid "Failed to install app"
 msgstr "Sök och installera program"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Sök och installera program"
+msgstr "Misslyckades att installera \"%s\""
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
@@ -633,9 +634,9 @@ msgid "Uninstall app?"
 msgstr "Avinstallera"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Avinstallera"
+msgstr "Avinstallera \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
 msgid "Uninstall"
@@ -680,9 +681,9 @@ msgid "Failed to update app"
 msgstr "Sök och installera program"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "Sök och installera program"
+msgstr "Misslyckades att uppdatera \"%s\""
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
@@ -1186,9 +1187,9 @@ msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Uppdaterad"
+msgstr "Upp till %s"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
