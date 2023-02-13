@@ -3,13 +3,14 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Trkien618 <hacngoctrungkien@gmail.com>, 2020.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# PomiNOTa199a5c29c914220 <ppminet@protonmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Last-Translator: PomiNOTa199a5c29c914220 <ppminet@protonmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/vi/>\n"
 "Language: vi\n"
@@ -86,9 +87,9 @@ msgid "Repairing…"
 msgstr ""
 
 #: src/MainWindow.vala:145
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Gỡ cài đặt"
+msgstr "Mở \"%s\" thất bại"
 
 #: src/MainWindow.vala:192
 #, fuzzy
