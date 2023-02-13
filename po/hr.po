@@ -1,13 +1,14 @@
 # Aleksandar Kovač <alex.open.design@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Marki <jaiwjwkw@gmail.com>, 2023.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: Marki <jaiwjwkw@gmail.com>\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hr/>\n"
 "Language: hr\n"
@@ -430,13 +431,12 @@ msgid "No runtimes with updates"
 msgstr "Komponentama sustava nije potrebna nadopuna"
 
 #: src/Core/UpdateManager.vala:196
-#, fuzzy, c-format
-#| msgid "No components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "Komponentama sustava nije potrebna nadopuna"
-msgstr[1] "Komponentama sustava nije potrebna nadopuna"
-msgstr[2] "Komponentama sustava nije potrebna nadopuna"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
