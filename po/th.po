@@ -2,13 +2,14 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Khuanchai <zodiacjb@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -85,9 +86,9 @@ msgid "Repairing…"
 msgstr ""
 
 #: src/MainWindow.vala:145
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "ถอนการติดตั้ง"
+msgstr "เริ่มต้นล้มเหลว “%s“"
 
 #: src/MainWindow.vala:192
 #, fuzzy
@@ -448,9 +449,9 @@ msgid "Failed to install app"
 msgstr "ถอนการติดตั้ง"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "ถอนการติดตั้ง"
+msgstr "ไม่สามารถติดตั้ง “%s”"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
@@ -622,9 +623,9 @@ msgid "Uninstall app?"
 msgstr "ถอนการติดตั้ง"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "ถอนการติดตั้ง"
+msgstr "ถอนการติดตั้ง “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
 msgid "Uninstall"
@@ -667,9 +668,9 @@ msgid "Failed to update app"
 msgstr "ถอนการติดตั้ง"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "ถอนการติดตั้ง"
+msgstr "ไม่สามารถอัปเดต “%s”"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
