@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-14 12:03+0000\n"
+"PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Burmese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/my/>\n"
@@ -441,9 +441,9 @@ msgid "Failed to install app"
 msgstr "ဖယ်ထုတ်မယ်"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "ဖယ်ထုတ်မယ်"
+msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
@@ -613,9 +613,9 @@ msgid "Uninstall app?"
 msgstr "ဖယ်ထုတ်မယ်"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "ဖယ်ထုတ်မယ်"
+msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
 msgid "Uninstall"
@@ -656,9 +656,9 @@ msgid "Failed to update app"
 msgstr "ဖယ်ထုတ်မယ်"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "ဖယ်ထုတ်မယ်"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
@@ -1151,9 +1151,9 @@ msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "နောက်ဆုံးပေါ် ခေတ်မီ ပြင်ဆင်ပြီး"
+msgstr ""
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
