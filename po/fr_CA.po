@@ -1,18 +1,19 @@
-# David Hewitt <davidmhewitt@gmail.com>, 2021.
+# David Hewitt <davidmhewitt@gmail.com>, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2021-02-27 00:32+0000\n"
+"PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: French (Canada) <https://l10n.elementary.io/projects/appcenter/appcenter/fr_CA/>\n"
+"Language-Team: French (Canada) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/fr_CA/>\n"
 "Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -134,9 +135,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Connectez-vous à Internet pour installer ou mettre à jour des applications."
+msgstr ""
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
