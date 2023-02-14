@@ -6,20 +6,22 @@
 # Martin Šťastný <martin@stastni.cz>, 2022.
 # Jenda <bugwebcz@centrum.cz>, 2022.
 # filipboucek <filoveccz@gmail.com>, 2022.
+# hnklp <hynek.puta@seznam.cz>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2022-01-21 19:36+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
+"PO-Revision-Date: 2023-02-14 14:20+0000\n"
+"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -1176,10 +1178,9 @@ msgid "Release notes"
 msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Co je nového:"
+msgstr "Co je nového v %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
