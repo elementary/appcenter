@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 14:20+0000\n"
+"POT-Creation-Date: 2023-02-14 14:28+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Tagalog <https://l10n.elementary.io/projects/appcenter/appcenter/tl/>\n"
@@ -474,8 +474,8 @@ msgid "Payment"
 msgstr ""
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
-#. being purchased. The order can be changed with "%$2s %$1d". For example:
-#. "Buy %$2s for $%$1d", this would result in a string like "Buy GreatApp for $3"
+#. being purchased. The order can be changed with "%2$s %1$d". For example:
+#. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
 #: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
 #, c-format
 msgid "Pay $%d for %s"
