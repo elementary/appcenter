@@ -7,13 +7,14 @@
 # Jenda <bugwebcz@centrum.cz>, 2022.
 # filipboucek <filoveccz@gmail.com>, 2022.
 # hnklp <hynek.puta@seznam.cz>, 2023.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-09 11:06+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
-"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -139,10 +140,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Pro procházení a instalaci aplikací se připojte k Internetu."
+msgstr ""
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
