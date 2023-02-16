@@ -4,20 +4,22 @@
 # Fabio Rifici <fabio.rifici@microtechsrl.com>, 2018.
 # icyc0re <tiziano.signo@gmail.com>, 2018.
 # Fabio Zaramella <fabiozaramella@hotmail.it>, 2019, 2020, 2021.
+# OdiMath <angeloschirinzi@outlook.it>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
-"PO-Revision-Date: 2021-07-29 12:40+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
+"PO-Revision-Date: 2023-02-16 09:45+0000\n"
+"Last-Translator: OdiMath <angeloschirinzi@outlook.it>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -137,10 +139,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Connettiti a Internet per installare o aggiornare le applicazioni."
+msgstr "Installare %s per cercare e installare applicazioni"
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
@@ -1186,10 +1187,9 @@ msgid "Release notes"
 msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Cosa c'è di nuovo:"
+msgstr "Cosa c'è di nuovo in %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
