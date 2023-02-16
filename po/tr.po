@@ -10,14 +10,16 @@
 # Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019, 2020, 2021.
 # Özgür Baskin <queeup@zoho.com>, 2021, 2022.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Mustafa Yalin Aydin <myaydin@mun.ca>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
-"PO-Revision-Date: 2023-02-14 14:28+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"PO-Revision-Date: 2023-02-17 15:25+0000\n"
+"Last-Translator: Mustafa Yalin Aydin <myaydin@mun.ca>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -125,10 +127,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Uygulamalara göz atmak ve yüklemek için İnternet'e bağlanın."
+msgstr "Uygulamalara göz atmak ve yüklemek için %s yükleyin."
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
