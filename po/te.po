@@ -1,18 +1,20 @@
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
-"PO-Revision-Date: 2016-01-09 14:46+0000\n"
-"Last-Translator: nrao <nagamalli.s@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2023-02-17 15:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Telugu <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/te/>\n"
+"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:332
@@ -77,9 +79,9 @@ msgid "Repairing…"
 msgstr ""
 
 #: src/MainWindow.vala:145
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "వ్యవస్థాపనను తీసివెయ్యి"
+msgstr ""
 
 #: src/MainWindow.vala:192
 #, fuzzy
@@ -614,9 +616,9 @@ msgid "Uninstall app?"
 msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "వ్యవస్థాపనను తీసివెయ్యి"
+msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
 msgid "Uninstall"
@@ -657,9 +659,9 @@ msgid "Failed to update app"
 msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "వ్యవస్థాపనను తీసివెయ్యి"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
@@ -1150,9 +1152,9 @@ msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "మిక్కిలి నూతనమైన"
+msgstr ""
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
