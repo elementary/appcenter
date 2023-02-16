@@ -3,13 +3,14 @@
 # HeyLinux <heylinux.me@gmail.com>, 2019.
 # Silviu Popescu <teodorspopescu@gmail.com>, 2020, 2021, 2022.
 # Marius Arfire <marius.arfire@gmail.com>, 2023.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: Marius Arfire <marius.arfire@gmail.com>\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ro/>\n"
 "Language: ro\n"
@@ -138,7 +139,7 @@ msgstr ""
 #: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Instalați % pentru a naviga și instala aplicații"
+msgstr "Instalați %s pentru a naviga și instala aplicații"
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
