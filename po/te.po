@@ -1,11 +1,12 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Naresh Kumar <nkumar@veenamtech.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Last-Translator: Naresh Kumar <nkumar@veenamtech.com>\n"
 "Language-Team: Telugu <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/te/>\n"
 "Language: te\n"
@@ -441,9 +442,9 @@ msgid "Failed to install app"
 msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "వ్యవస్థాపనను తీసివెయ్యి"
+msgstr "\"%s\" ఇన్‌స్టాల్ చేయడంలో విఫలమైంది"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
