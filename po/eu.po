@@ -1,18 +1,20 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Basque <https://l10n.elementary.io/projects/appcenter/appcenter/eu/>\n"
+"PO-Revision-Date: 2023-02-16 09:45+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Basque <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/eu/>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -77,9 +79,9 @@ msgid "Repairing…"
 msgstr ""
 
 #: src/MainWindow.vala:145
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Bilatu eta instalatu aplikazioak"
+msgstr ""
 
 #: src/MainWindow.vala:192
 #, fuzzy
@@ -436,9 +438,9 @@ msgid "Failed to install app"
 msgstr "Bilatu eta instalatu aplikazioak"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Bilatu eta instalatu aplikazioak"
+msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
@@ -655,9 +657,9 @@ msgid "Failed to update app"
 msgstr "Bilatu eta instalatu aplikazioak"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "Bilatu eta instalatu aplikazioak"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
