@@ -1,20 +1,22 @@
 # KSingh1980 <ksingh@sysmethod.com>, 2019.
 # Prachi Joshi <josprachi@yahoo.com>, 2019.
 # Cody Garver <cody@elementary.io>, 2019.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
-"PO-Revision-Date: 2019-04-12 00:57+0000\n"
-"Last-Translator: Cody Garver <cody@elementary.io>\n"
-"Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/appcenter/hi/>\n"
+"PO-Revision-Date: 2023-02-16 09:45+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -76,10 +78,9 @@ msgid "Repairing…"
 msgstr ""
 
 #: src/MainWindow.vala:145
-#, fuzzy, c-format
-#| msgid "Failed to Fetch Updates"
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "अपडेट प्राप्त करने में"
+msgstr ""
 
 #: src/MainWindow.vala:192
 msgctxt "view"
@@ -129,9 +130,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "एप्लिकेशन इंस्टॉल करने या अपडेट करने के लिए इंटरनेट से कनेक्ट करें।"
+msgstr ""
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
@@ -656,10 +657,9 @@ msgid "Failed to update app"
 msgstr "अपडेट प्राप्त करने में"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to Fetch Updates"
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "अपडेट प्राप्त करने में"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
