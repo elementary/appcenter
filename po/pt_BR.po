@@ -8,13 +8,14 @@
 # lucaspifonseca <lucaspifonseca@gmail.com>, 2021.
 # DanielPonte01 <daniel98ponte@gmail.com>, 2021.
 # Ewerton Souza <ewvertton@gmail.com>, 2023.
+# matheustorresc <matheustorrescarvalho@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: matheustorresc <matheustorrescarvalho@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -142,10 +143,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Conecte-se à Internet para navegar e instalar aplicativos."
+msgstr "Instale %s para navegar e instalar aplicativos."
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
