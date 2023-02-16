@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
+"PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ro/>\n"
@@ -1188,7 +1188,7 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
 #, c-format
 msgid "What's new in %s"
-msgstr "Ce este nou în %:"
+msgstr "Ce este nou în %s:"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
