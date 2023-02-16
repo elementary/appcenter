@@ -1185,10 +1185,9 @@ msgid "Release notes"
 msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Ce este nou:"
+msgstr "Ce este nou în %:"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
