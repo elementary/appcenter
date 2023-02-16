@@ -1,11 +1,12 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Alaksiej Kaśpiarovič <aleksyzakupy@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-14 14:28+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2023-02-17 15:25+0000\n"
+"Last-Translator: Alaksiej Kaśpiarovič <aleksyzakupy@gmail.com>\n"
 "Language-Team: Belarusian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/be/>\n"
 "Language: be\n"
@@ -25,16 +26,16 @@ msgstr ""
 #: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "Не ўдалося распазнаць тып дадзеных %s"
 
 #: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Указаная спасылка «%s» не знойдзена, пошук замены"
 
 #: src/Application.vala:320
 msgid "The app has been installed"
-msgstr ""
+msgstr "Дадатак паспяхова ўсталяваны"
 
 #: src/Application.vala:321 src/MainWindow.vala:550
 #, c-format
@@ -80,7 +81,7 @@ msgstr ""
 #: src/MainWindow.vala:145
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr ""
+msgstr "Не атрымалася запусціць «%s»"
 
 #: src/MainWindow.vala:192
 #, fuzzy
