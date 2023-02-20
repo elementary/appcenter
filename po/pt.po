@@ -2,20 +2,22 @@
 # Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>, 2018, 2019.
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2019, 2020, 2021, 2022.
 # fabioasguerra <fabio-guerra@hotmail.com>, 2022.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2022-05-25 18:59+0000\n"
-"Last-Translator: fabioasguerra <fabio-guerra@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
+"POT-Creation-Date: 2023-02-14 14:28+0000\n"
+"PO-Revision-Date: 2023-02-16 09:45+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -129,10 +131,9 @@ msgid "Running in Demo Mode"
 msgstr ""
 
 #: src/MainWindow.vala:289
-#, fuzzy, c-format
-#| msgid "Connect to the Internet to browse and install apps."
+#, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Ligue-se à Internet para navegar ou atualizar aplicações."
+msgstr ""
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
@@ -470,136 +471,139 @@ msgstr "Por favor verifique os seus dados de pagamento e tente novamente."
 msgid "Payment"
 msgstr "Pagamento"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
+#. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
+#. being purchased. The order can be changed with "%2$s %1$d". For example:
+#. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
+#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Pagar %d$ por %s"
 
-#: src/Dialogs/StripeDialog.vala:98
+#: src/Dialogs/StripeDialog.vala:101
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Este é um pagamento único sugerido pelo programador. Você também pode escolher o seu próprio preço."
 
-#: src/Dialogs/StripeDialog.vala:119
+#: src/Dialogs/StripeDialog.vala:122
 msgid "or"
 msgstr "ou"
 
-#: src/Dialogs/StripeDialog.vala:154
+#: src/Dialogs/StripeDialog.vala:157
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Dialogs/StripeDialog.vala:159
+#: src/Dialogs/StripeDialog.vala:162
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Apenas utilizado para o envio de um recibo. Não será inscrito em nenhuma lista de correio."
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:163
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:184
+#: src/Dialogs/StripeDialog.vala:187
 msgid "MM / YY"
 msgstr "MM / AA"
 
-#: src/Dialogs/StripeDialog.vala:192
+#: src/Dialogs/StripeDialog.vala:195
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
+#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:393
+#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
+#: src/Dialogs/StripeDialog.vala:396
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Pagar $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:251
+#: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
 msgstr "Experimentar gratuitamente"
 
-#: src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
 msgstr "A processar"
 
-#: src/Dialogs/StripeDialog.vala:341
+#: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Houve um problema a processar o seu pagamento"
 
-#: src/Dialogs/StripeDialog.vala:385
+#: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
 msgstr "Pagar depois"
 
-#: src/Dialogs/StripeDialog.vala:386
+#: src/Dialogs/StripeDialog.vala:389
 msgid "Retry"
 msgstr "Tentar novamente"
 
-#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "O número do cartão está incorreto. Por favor tente novamente com um número de cartão válido."
 
-#: src/Dialogs/StripeDialog.vala:569
+#: src/Dialogs/StripeDialog.vala:572
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "O mês de expiração é inválido. Por favor tente novamente com a data de validade correta."
 
-#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "O ano de expiração é inválido. Por favor tente novamente com a data de validade correta."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "O número CVC está incorreto. Por favor tente novamente com o CVC correto."
 
-#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
 msgid "The card has expired. Please try again with a different card."
 msgstr "O cartão está expirado. Por favor tente novamente com um cartão diferente."
 
-#: src/Dialogs/StripeDialog.vala:596
+#: src/Dialogs/StripeDialog.vala:599
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Existem demasiados pedidos para pagamento neste momento, por favor tente novamente mais tarde."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:615
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "O cartão não suporta este tipo de transação. Por favor tente novamente com um cartão diferente."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:617
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Esta moeda não é suportada pelo cartão. Por favor tente novamente com um cartão diferente."
 
-#: src/Dialogs/StripeDialog.vala:616
+#: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
 msgstr "A transação já foi processada."
 
-#: src/Dialogs/StripeDialog.vala:620
+#: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "O código postal está incorreto. Por favor tente novamente utilizando um código postal válido."
 
-#: src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:625
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Não tem fundos suficientes. Por favor use um método de pagamento alternativo."
 
-#: src/Dialogs/StripeDialog.vala:624
+#: src/Dialogs/StripeDialog.vala:627
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "O montante está incorreto. Por favor tente de novo com um montante válido."
 
-#: src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "O número PIN está incorreto. Por favor tente novamente com o PIN correto."
 
-#: src/Dialogs/StripeDialog.vala:637
+#: src/Dialogs/StripeDialog.vala:640
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Foram usadas muitas tentativas para inserir o PIN. Por favor tente novamente com um cartão diferente."
 
-#: src/Dialogs/StripeDialog.vala:657
+#: src/Dialogs/StripeDialog.vala:660
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Impossível concluir a transação. Por favor contacte o seu banco para mais informações."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The balance or credit limit on the card has been reached."
 msgstr "O saldo ou limite de crédito do cartão foi atingido."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:666
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "O cartão fornecido é um cartão provisório. Por favor, use um cartão verdadeiro para prosseguir."
 
@@ -1167,10 +1171,9 @@ msgid "Release notes"
 msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Novidades:"
+msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"

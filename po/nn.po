@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 11:06+0000\n"
+"POT-Creation-Date: 2023-02-14 14:28+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -449,136 +449,139 @@ msgstr "Sjå over betalingsinformasjonen din og forsøk om att."
 msgid "Payment"
 msgstr "Betaling"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
+#. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
+#. being purchased. The order can be changed with "%2$s %1$d". For example:
+#. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
+#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Betal %d$ for %s"
 
-#: src/Dialogs/StripeDialog.vala:98
+#: src/Dialogs/StripeDialog.vala:101
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Dette er eit eingongsbeløp som er anbefalt av utviklaren. Du kan óg velja ditt eget beløp."
 
-#: src/Dialogs/StripeDialog.vala:119
+#: src/Dialogs/StripeDialog.vala:122
 msgid "or"
 msgstr "eller"
 
-#: src/Dialogs/StripeDialog.vala:154
+#: src/Dialogs/StripeDialog.vala:157
 msgid "Email"
 msgstr "E-post"
 
-#: src/Dialogs/StripeDialog.vala:159
+#: src/Dialogs/StripeDialog.vala:162
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Blir kun brukt for å senda deg ein kvittering. Du blir ikkje lagt til på noko nyhetsbrev og liknande."
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:163
 msgid "Privacy Policy"
 msgstr "Personvernreglar"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:184
+#: src/Dialogs/StripeDialog.vala:187
 msgid "MM / YY"
 msgstr "MM / ÅÅ"
 
-#: src/Dialogs/StripeDialog.vala:192
+#: src/Dialogs/StripeDialog.vala:195
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
+#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:393
+#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
+#: src/Dialogs/StripeDialog.vala:396
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Betal %d.00$"
 
-#: src/Dialogs/StripeDialog.vala:251
+#: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
 msgstr "Prøv den gratis"
 
-#: src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
 msgstr "Behandlar"
 
-#: src/Dialogs/StripeDialog.vala:341
+#: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Det oppstod eit problem med behandlinga av betalinga di"
 
-#: src/Dialogs/StripeDialog.vala:385
+#: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
 msgstr "Betal seinare"
 
-#: src/Dialogs/StripeDialog.vala:386
+#: src/Dialogs/StripeDialog.vala:389
 msgid "Retry"
 msgstr "Prøv om att"
 
-#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Kortnummeret er feil. Prøv igjen seinare med rett kortnummer."
 
-#: src/Dialogs/StripeDialog.vala:569
+#: src/Dialogs/StripeDialog.vala:572
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Utløpsmånaden er ugyldig. Prøv igjen med korrekt dato."
 
-#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Utløpsåret er ugyldig. Prøv igjen med korrekt dato."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC-nummeret er ikkje rett. Prøv igjen med rett CVC."
 
-#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kortet har gått ut på dato. Prøv igjen med eit anna kort."
 
-#: src/Dialogs/StripeDialog.vala:596
+#: src/Dialogs/StripeDialog.vala:599
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "I augneblinken er det for mange betalingsførespurnader. Prøv igjen seinare."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:615
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Dette kortet støttar ikkje denne typen transaksjonar. Prøv igjen med eit anna kort."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:617
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Dette kortet støttar ikkje denne valutaen. Prøv igjen med eit anna kort."
 
-#: src/Dialogs/StripeDialog.vala:616
+#: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
 msgstr "Overføringa er allereie gått igjennom."
 
-#: src/Dialogs/StripeDialog.vala:620
+#: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Postnummeret er feil. Prøv igjen med rett postnummer."
 
-#: src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:625
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Du har ikkje nok midlar på konto. Vurder å nytte ei alternativ betalingsmetode."
 
-#: src/Dialogs/StripeDialog.vala:624
+#: src/Dialogs/StripeDialog.vala:627
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Beløpet er feil. Prøv igjen med rett beløp."
 
-#: src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN-nummeret er ikkje rett. Prøv igjen med rett PIN."
 
-#: src/Dialogs/StripeDialog.vala:637
+#: src/Dialogs/StripeDialog.vala:640
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "For mange PIN-forsøk. Prøv igjen med eit anna kort."
 
-#: src/Dialogs/StripeDialog.vala:657
+#: src/Dialogs/StripeDialog.vala:660
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Kunne ikkje fullføre overføringa. Kontakt banken din for meir informasjon."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Betalingsgrensa eller beløpsgrensa på kortet ditt er nådd."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:666
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Det oppgjevne kortet er eit test-kort. Bruk eit ordentleg kort for å halde fram."
 

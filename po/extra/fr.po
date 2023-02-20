@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-02 09:25+0000\n"
+"POT-Creation-Date: 2023-02-14 14:28+0000\n"
+"PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -63,13 +63,15 @@ msgstr "Nouvelles fonctionnalités :"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Nouvelle option de réparation si la mise à jour d'un Flatpak échoue"
 
 #: data/appcenter.metainfo.xml.in:71
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Affichage dans la page des mises à jour d'un message indiquant la date de la "
+"dernière vérification des mises à jour"
 
 #: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:102 data/appcenter.metainfo.xml.in:139
@@ -242,13 +244,12 @@ msgstr "Une authentification est nécessaire pour mettre à jour le logiciel"
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Réparer les sources logicielles"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Une authentification est nécessaire pour mettre à jour le logiciel"
+msgstr ""
+"Une authentification est nécessaire pour réparer les ressources logicielles"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "Correction d'un plantage potentiel lors des mises à jour"

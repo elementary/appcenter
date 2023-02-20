@@ -11,11 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 11:06+0000\n"
+"POT-Creation-Date: 2023-02-14 14:28+0000\n"
 "PO-Revision-Date: 2023-02-10 12:15+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/nl/>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,8 +95,7 @@ msgstr "Automatische app-updates"
 
 #: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
-msgstr ""
-"Systeemupdates en onbetaalde apps zullen niet automatisch geüpdatet worden"
+msgstr "Systeemupdates en onbetaalde apps zullen niet automatisch geüpdatet worden"
 
 #: src/MainWindow.vala:217
 msgid "Check for Updates"
@@ -456,136 +454,139 @@ msgstr "Gelieve uw betaalgegevens te controleren en daarna het opnieuw te prober
 msgid "Payment"
 msgstr "Betaling"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
+#. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
+#. being purchased. The order can be changed with "%2$s %1$d". For example:
+#. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
+#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Betaal $%d voor %s"
 
-#: src/Dialogs/StripeDialog.vala:98
+#: src/Dialogs/StripeDialog.vala:101
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Dit is een eenmalige betaling voorgesteld door de ontwikkelaar. U kunt een andere prijs opgeven."
 
-#: src/Dialogs/StripeDialog.vala:119
+#: src/Dialogs/StripeDialog.vala:122
 msgid "or"
 msgstr "of"
 
-#: src/Dialogs/StripeDialog.vala:154
+#: src/Dialogs/StripeDialog.vala:157
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Dialogs/StripeDialog.vala:159
+#: src/Dialogs/StripeDialog.vala:162
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te sturen. Uw e-mailadres wordt niet toegevoegd aan een mailingslijst."
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:163
 msgid "Privacy Policy"
 msgstr "Privacybeleid"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:184
+#: src/Dialogs/StripeDialog.vala:187
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:192
+#: src/Dialogs/StripeDialog.vala:195
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
+#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:393
+#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
+#: src/Dialogs/StripeDialog.vala:396
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Betaal $ %d.00"
 
-#: src/Dialogs/StripeDialog.vala:251
+#: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
 msgstr "Probeer gratis"
 
-#: src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
 msgstr "Verwerken"
 
-#: src/Dialogs/StripeDialog.vala:341
+#: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Er was een probleem met het verwerken van uw betaling"
 
-#: src/Dialogs/StripeDialog.vala:385
+#: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
 msgstr "Betaal later"
 
-#: src/Dialogs/StripeDialog.vala:386
+#: src/Dialogs/StripeDialog.vala:389
 msgid "Retry"
 msgstr "Probeer opnieuw"
 
-#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Het kaartnummer is onjuist. Gelieve het opnieuw te proberen met het juiste kaartnummer."
 
-#: src/Dialogs/StripeDialog.vala:569
+#: src/Dialogs/StripeDialog.vala:572
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "De maand van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te proberen met de juiste vervaldatum."
 
-#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Het jaar van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te proberen met de juiste vervaldatum."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste CVC-nummer."
 
-#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
 msgid "The card has expired. Please try again with a different card."
 msgstr "De kaart is vervallen. Gelieve het opnieuw te proberen met een andere kaart."
 
-#: src/Dialogs/StripeDialog.vala:596
+#: src/Dialogs/StripeDialog.vala:599
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Er zijn momenteel te veel betaalverzoeken, gelieve het later opnieuw te proberen."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:615
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Deze kaart ondersteunt dit soort transacties niet. Gelieve het opnieuw te proberen met een andere kaart."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:617
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "De valuta wordt niet ondersteund door deze kaart. Gelieve het opnieuw te proberen met een andere kaart."
 
-#: src/Dialogs/StripeDialog.vala:616
+#: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
 msgstr "De transactie is al verwerkt."
 
-#: src/Dialogs/StripeDialog.vala:620
+#: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "De postcode is onjuist. Gelieve het opnieuw te proberen met de juiste postcode."
 
-#: src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:625
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruiken."
 
-#: src/Dialogs/StripeDialog.vala:624
+#: src/Dialogs/StripeDialog.vala:627
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Het bedrag is onjuist. Gelieve het opnieuw te proberen met een geldig bedrag."
 
-#: src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste CVC-nummer."
 
-#: src/Dialogs/StripeDialog.vala:637
+#: src/Dialogs/StripeDialog.vala:640
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "U heeft te veel pogingen gedaan om uw pincode in te voeren. Gelieve het opnieuw te proberen met een andere kaart."
 
-#: src/Dialogs/StripeDialog.vala:657
+#: src/Dialogs/StripeDialog.vala:660
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Het is niet mogelijk om de transactie af te ronden. Gelieve uw bank te contacteren voor meer informatie."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The balance or credit limit on the card has been reached."
 msgstr "U heeft onvoldoende saldo of de limiet van uw kaart is bereikt."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:666
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "De ingevoerde kaart is een proefkaart. Gelieve een geldige kaart te gebruiken om verder te gaan."
 
@@ -633,11 +634,7 @@ msgstr "Probeer opnieuw"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr ""
-"Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde "
-"software, softwarebronnen van een derde partij of een fout in de "
-"pakketbeheerder. Het handmatig vernieuwen van de updates zou dit probleem "
-"mogelijk kunnen verhelpen."
+msgstr "Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde software, softwarebronnen van een derde partij of een fout in de pakketbeheerder. Het handmatig vernieuwen van de updates zou dit probleem mogelijk kunnen verhelpen."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"

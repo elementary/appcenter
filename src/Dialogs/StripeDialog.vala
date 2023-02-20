@@ -89,6 +89,9 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         overlay.add (image);
         overlay.add_overlay (overlay_image);
 
+        /* TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
+           being purchased. The order can be changed with "%2$s %1$d". For example:
+           "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3" */
         var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name)) {
             xalign = 0
         };

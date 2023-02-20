@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 11:06+0000\n"
-"PO-Revision-Date: 2023-02-10 12:59+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"POT-Creation-Date: 2023-02-14 14:28+0000\n"
+"PO-Revision-Date: 2023-02-10 22:29+0000\n"
+"Last-Translator: Thierry Flament <thierry.flament@outlook.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
 "Language: nl\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:102 data/appcenter.metainfo.xml.in:139
 msgid "Other Improvements:"
-msgstr "Andere verbeteringen"
+msgstr "Andere verbeteringen:"
 
 #: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:91
 #: data/appcenter.metainfo.xml.in:104 data/appcenter.metainfo.xml.in:144
@@ -186,7 +186,8 @@ msgstr "Oplossingen:"
 #: data/appcenter.metainfo.xml.in:164
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
-"Voorkom het verdwijnen van de terugkeerknop of de nood voor meerdere kliks"
+"Voorkom het verdwijnen van de terugkeerknop of om voor meerdere klikken te "
+"vereisen"
 
 #: data/appcenter.metainfo.xml.in:166
 msgid "Improvements:"
@@ -195,14 +196,16 @@ msgstr "Verbeteringen:"
 #: data/appcenter.metainfo.xml.in:168
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
+"Toon geen waarschuwingsdialoogvenster over applicaties van alternatieve "
+"winkels"
 
 #: data/appcenter.metainfo.xml.in:169
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "Toon een screenshot in een tooltip"
 
 #: data/appcenter.metainfo.xml.in:170
 msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
+msgstr "Toon \"Probeer gratis\" wanneer de prijs van een applicatie 0 bedraagt"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -228,7 +231,7 @@ msgstr "Inloggen is vereist om software te updaten"
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Repareer softwarebronnen"
 
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
