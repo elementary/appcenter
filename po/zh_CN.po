@@ -2,7 +2,7 @@
 # YISH <mokeyish@163.com>, 2018, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2018, 2023.
 # WANG, Wei <ww460160885@gmail.com>, 2019.
-# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021.
+# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021, 2023.
 # Zang Jiucheng <zangjiucheng@gmail.com>, 2021.
 # Yuchen Deng <loaden@gmail.com>, 2021, 2022.
 # Yuchen Deng <inbz@qq.com>, 2021.
@@ -13,9 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-24 13:28+0000\n"
-"PO-Revision-Date: 2023-02-14 14:28+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
+"PO-Revision-Date: 2023-03-01 16:25+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +75,7 @@ msgstr "正在卸载…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "修复中……"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -429,13 +430,11 @@ msgstr "安装 “%s” 失败"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr ""
+msgstr "修复"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "获取更新失败"
+msgstr "修复失败"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
