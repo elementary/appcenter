@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-24 13:28+0000\n"
-"PO-Revision-Date: 2022-07-08 13:43+0000\n"
+"PO-Revision-Date: 2023-03-01 16:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -43,15 +43,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Oppdag nye programmer"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Hold deg oppdatert"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Betal det du kan for å støtte utviklere"
 
 #: data/appcenter.metainfo.xml.in:61
 #, fuzzy
@@ -96,7 +96,7 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:109
 msgid "Install OS Updates offline"
-msgstr ""
+msgstr "Installer OS-oppgraderinger frakoblet"
 
 #: data/appcenter.metainfo.xml.in:130
 msgid "Rewritten navigation with multitouch gestures to go back"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:140
 msgid "Better dark style support"
-msgstr ""
+msgstr "Bedre støtte for mørk stil"
 
 #: data/appcenter.metainfo.xml.in:142
 #, fuzzy
@@ -232,7 +232,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Reparer programvarekilder"
 
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
