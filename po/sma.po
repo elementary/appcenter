@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-24 13:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Sami (Southern) <https://l10n.elementary.io/projects/appcenter/appcenter/sma/>\n"
@@ -896,11 +896,6 @@ msgstr ""
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1400
-#, c-format
-msgid "Other Apps by %s"
-msgstr ""
-
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr ""
@@ -943,6 +938,11 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
+msgstr ""
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
 msgstr ""
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62

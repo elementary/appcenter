@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-24 13:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: Zisis Avouris <zisisavouris@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/appcenter/el/>\n"
@@ -924,11 +924,6 @@ msgstr ""
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1400
-#, c-format
-msgid "Other Apps by %s"
-msgstr ""
-
 #: src/Views/AppListUpdateView.vala:47
 #, fuzzy
 #| msgid "Searching for updates…"
@@ -976,6 +971,11 @@ msgstr ""
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Ενημερωμένες"
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr ""
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"

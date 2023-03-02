@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-24 13:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2023-02-10 12:15+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -876,11 +876,6 @@ msgstr "Financier"
 msgid "Fund the development of this app"
 msgstr "Financier de ontwikkeling van deze app"
 
-#: src/Views/AppInfoView.vala:1400
-#, c-format
-msgid "Other Apps by %s"
-msgstr "Andere applicaties van %s"
-
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Updates zoeken"
@@ -924,6 +919,11 @@ msgstr "Stuurprogramma's"
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Actueel"
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "Andere applicaties van %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"

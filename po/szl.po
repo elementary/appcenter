@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-24 13:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -919,11 +919,6 @@ msgstr "Zafunduj"
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozrost tego programu"
 
-#: src/Views/AppInfoView.vala:1400
-#, c-format
-msgid "Other Apps by %s"
-msgstr "Inksze programy autorstwa %s"
-
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Wybadowanie aktualizacyji"
@@ -970,6 +965,11 @@ msgstr "Kludzocze"
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Teroźne"
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "Inksze programy autorstwa %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"

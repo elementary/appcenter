@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-24 13:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -934,11 +934,6 @@ msgstr "Podpri"
 msgid "Fund the development of this app"
 msgstr "Podpri razvoj te aplikacije"
 
-#: src/Views/AppInfoView.vala:1400
-#, c-format
-msgid "Other Apps by %s"
-msgstr "Druge aplikacije od %s"
-
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Iskanje posodobitev"
@@ -986,6 +981,11 @@ msgstr "Gonilniki"
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Posodobljeno"
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "Druge aplikacije od %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
