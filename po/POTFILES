@@ -27,6 +27,7 @@ src/Services/DBusServer.vala
 src/Services/SearchProvider.vala
 src/Views/AppInfoView.vala
 src/Views/AppListUpdateView.vala
+src/Views/AuthorView.vala
 src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/SearchView.vala

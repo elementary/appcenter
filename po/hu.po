@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 14:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2023-02-10 12:15+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -870,11 +870,6 @@ msgstr "Támogatás"
 msgid "Fund the development of this app"
 msgstr "Támogassa az alkalmazás fejlesztését"
 
-#: src/Views/AppInfoView.vala:1400
-#, c-format
-msgid "Other Apps by %s"
-msgstr "%s további alkalmazásai"
-
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Frissítések keresése"
@@ -918,6 +913,11 @@ msgstr "Driverek"
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Naprakész"
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "%s további alkalmazásai"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"

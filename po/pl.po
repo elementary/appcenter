@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 14:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2023-02-10 12:15+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -879,11 +879,6 @@ msgstr "Zafunduj"
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozwój tego programu"
 
-#: src/Views/AppInfoView.vala:1400
-#, c-format
-msgid "Other Apps by %s"
-msgstr "Inne programy autorstwa %s"
-
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Sprawdzanie aktualizacji"
@@ -928,6 +923,11 @@ msgstr "Sterowniki"
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Aktualne"
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "Inne programy autorstwa %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"

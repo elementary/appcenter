@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 14:28+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
 "PO-Revision-Date: 2021-08-20 19:49+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -56,151 +56,152 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary LLC."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:85
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:119
-#: data/appcenter.metainfo.xml.in:156
-msgid "New features:"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:70
-msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:71
-msgid ""
-"Show a message in the updates view when up to date, including when updates "
-"were last checked"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:89
-#: data/appcenter.metainfo.xml.in:102 data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:148
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Other Improvements:"
 msgstr "Vylepšenia:"
 
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:91
-#: data/appcenter.metainfo.xml.in:104 data/appcenter.metainfo.xml.in:144
-#: data/appcenter.metainfo.xml.in:172
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
 msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
-#: data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:165
+msgid "New features:"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:79
+msgid "Offer a Repair option if Flatpak updates fail"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:80
+msgid ""
+"Show a message in the updates view when up to date, including when updates "
+"were last checked"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:96
 msgid "Show when an app isn't available in your language"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:100
+#: data/appcenter.metainfo.xml.in:109
 msgid "Install OS Updates offline"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:130
 msgid "Rewritten navigation with multitouch gestures to go back"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:131
 msgid "Recently updated apps are shown at the top of category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:132
 msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:134
 #, fuzzy
 #| msgid "Improvements:"
 msgid "App Info Page Improvements:"
 msgstr "Vylepšenia:"
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:136
 msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:137
 msgid "An app's accent color is now shown behind screenshots"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:129
+#: data/appcenter.metainfo.xml.in:138
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:130
+#: data/appcenter.metainfo.xml.in:139
 msgid "Wrap links at the bottom pages instead of ellipsize"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:131
+#: data/appcenter.metainfo.xml.in:140
 msgid "Better dark style support"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:142
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Updates View Improvements:"
 msgstr "Vylepšenia:"
 
-#: data/appcenter.metainfo.xml.in:135
+#: data/appcenter.metainfo.xml.in:144
 msgid "Release notes are shown in a dialog"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:136
+#: data/appcenter.metainfo.xml.in:145
 msgid "Better fallback icons for components"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:146
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:141
+#: data/appcenter.metainfo.xml.in:150
 msgid "Redesigned \"Fun &amp; Games\" category card"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:142 data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
 msgid "Performance improvements"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:143
+#: data/appcenter.metainfo.xml.in:152
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Stability improvements"
 msgstr "Vylepšenia:"
 
-#: data/appcenter.metainfo.xml.in:158
+#: data/appcenter.metainfo.xml.in:167
 msgid "Added an option to automatically update apps"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:159
+#: data/appcenter.metainfo.xml.in:168
 #, fuzzy
 #| msgid "Check for Updates"
 msgid "Manually check for new updates"
 msgstr "Kontrola aktualizácií"
 
-#: data/appcenter.metainfo.xml.in:160
+#: data/appcenter.metainfo.xml.in:169
 msgid "Warn when apps are built against older runtimes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:162
+#: data/appcenter.metainfo.xml.in:171
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/appcenter.metainfo.xml.in:164
+#: data/appcenter.metainfo.xml.in:173
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:175
 msgid "Improvements:"
 msgstr "Vylepšenia:"
 
-#: data/appcenter.metainfo.xml.in:168
+#: data/appcenter.metainfo.xml.in:177
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:169
+#: data/appcenter.metainfo.xml.in:178
 msgid "Show screenshot captions in a tooltip"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:170
+#: data/appcenter.metainfo.xml.in:179
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
 
