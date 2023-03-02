@@ -749,9 +749,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         body_clamp.add (content_box);
 
-        var other_apps_bar = new OtherAppsBar (package, MAX_WIDTH);
+        var author_view = new AuthorView (package, MAX_WIDTH);
 
-        other_apps_bar.show_other_package.connect ((package) => {
+        author_view.show_other_package.connect ((package) => {
             show_other_package (package);
         });
 
@@ -768,7 +768,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         }
 
         box.add (body_clamp);
-        box.add (other_apps_bar);
+        box.add (author_view);
 
         var scrolled = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
@@ -1369,73 +1369,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             box.add (description_label);
 
             add (box);
-        }
-    }
-
-    private class OtherAppsBar : Gtk.Grid {
-        public signal void show_other_package (AppCenterCore.Package package);
-
-        public AppCenterCore.Package package { get; construct; }
-        public int max_width { get; construct; }
-
-        private const int AUTHOR_OTHER_APPS_MAX = 10;
-
-        public OtherAppsBar (AppCenterCore.Package package, int max_width) {
-            Object (
-                package: package,
-                max_width: max_width
-            );
-        }
-
-        construct {
-            if (package.author == null) {
-                return;
-            }
-
-            var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
-            if (author_packages.size <= 1) {
-                return;
-            }
-
-            var header = new Granite.HeaderLabel (_("Other Apps by %s").printf (package.author_title));
-
-            var flowbox = new Gtk.FlowBox () {
-                activate_on_single_click = true,
-                column_spacing = 12,
-                row_spacing = 12,
-                homogeneous = true
-            };
-
-            foreach (var author_package in author_packages) {
-                if (author_package.component.get_id () == package.component.get_id ()) {
-                    continue;
-                }
-
-                var other_app = new AppCenter.Widgets.ListPackageRowGrid (author_package);
-                flowbox.add (other_app);
-            }
-
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
-            box.add (header);
-            box.add (flowbox);
-
-            var clamp = new Hdy.Clamp () {
-                margin_top = 24,
-                margin_end = 24,
-                margin_bottom = 24,
-                margin_start = 24,
-                maximum_size = max_width
-            };
-            clamp.add (box);
-
-            add (clamp);
-            get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-
-            flowbox.child_activated.connect ((child) => {
-                var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
-
-                show_other_package (package_row_grid.package);
-            });
         }
     }
 }
