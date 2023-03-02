@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2023-01-30 17:55+0000\n"
+"POT-Creation-Date: 2023-02-24 13:28+0000\n"
+"PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -34,10 +34,10 @@ msgid ""
 msgstr ""
 "elementary が提供する、オープンソースで価格はあなた次第のアプリストアです。ネ"
 "イティブに動作しプライバシーを尊重しており、セキュアなユーザーエクスペリエン"
-"スを得られるアプリだけを、elementary が審査・キュレーションして提供していま"
-"す。カテゴリー別で閲覧したり検索したりして、新しいアプリを見つけましょう。"
-"AppCenter は、新機能や修正によってシステムを最新で最高のバージョンへアップ"
-"デートするときにも使われます。"
+"スを得られるアプリだけを、elementary が安全性確認・キュレーションして提供して"
+"います。カテゴリー別で閲覧したり検索したりして、新しいアプリを見つけましょ"
+"う。AppCenter は、新機能や修正によってシステムを最新で最高のバージョンへアッ"
+"プデートするときにも使われます。"
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -56,59 +56,63 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:95 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:153
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:148
+msgid "Other Improvements:"
+msgstr "そのほかの改善点:"
+
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
+msgid "Updated translations"
+msgstr "翻訳の更新"
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:165
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/appcenter.metainfo.xml.in:70
+#: data/appcenter.metainfo.xml.in:79
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
+"Flatpak のアップデートが失敗した場合に修復オプションを表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:71
+#: data/appcenter.metainfo.xml.in:80
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"システムが最新の場合、最新だというメッセージとアップデートの最終確認日時を表"
+"示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136
-msgid "Other Improvements:"
-msgstr "そのほかの改善点:"
-
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:141
-#: data/appcenter.metainfo.xml.in:169
-msgid "Updated translations"
-msgstr "翻訳の更新"
-
-#: data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:96
 msgid "Show when an app isn't available in your language"
 msgstr "アプリがお使いの言語で表示されないことを表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:97
+#: data/appcenter.metainfo.xml.in:109
 msgid "Install OS Updates offline"
 msgstr "OS のアップデートをオフラインインストールする機能を追加"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:130
 msgid "Rewritten navigation with multitouch gestures to go back"
 msgstr ""
 "マルチタッチジェスチャーで前のページに戻るなど、ナビゲーション機能を再設計"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:131
 msgid "Recently updated apps are shown at the top of category views"
 msgstr ""
 "最近アップデートされたアプリが、カテゴリー画面の最上部に表示されるように修正"
 
-#: data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:132
 msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr "実行中のタスクのステータスを表示するオーバーレイバーを追加"
 
-#: data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:134
 msgid "App Info Page Improvements:"
 msgstr "アプリ情報ページの改善点:"
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:136
 msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
@@ -116,91 +120,91 @@ msgstr ""
 "スクリーンショットの表示領域をウィンドウの幅と一致させ、一度により多くのスク"
 "リーンショットを表示できるように修正"
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:137
 msgid "An app's accent color is now shown behind screenshots"
 msgstr "アプリのアクセントカラーをスクリーンショットの背景色として表示"
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:138
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
 "さらに多くのアプリが対応できるよう、ブランドカラーを AppStream の仕様から取得"
 "するように修正"
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:139
 msgid "Wrap links at the bottom pages instead of ellipsize"
 msgstr "ページ下部のリンクを省略表記するのではなく折り返すように修正"
 
-#: data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:140
 msgid "Better dark style support"
 msgstr "ダークスタイルへの対応を改善"
 
-#: data/appcenter.metainfo.xml.in:130
+#: data/appcenter.metainfo.xml.in:142
 msgid "Updates View Improvements:"
 msgstr "アップデート画面の改善点:"
 
-#: data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:144
 msgid "Release notes are shown in a dialog"
 msgstr "リリースノートをダイアログで表示するように修正"
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:145
 msgid "Better fallback icons for components"
 msgstr "コンポーネントのフォールバックアイコンを改善"
 
-#: data/appcenter.metainfo.xml.in:134
+#: data/appcenter.metainfo.xml.in:146
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
 msgstr ""
 "\"すべてアップデート\" ボタンを含むヘッダーが、スクロール時もウィンドウ上部に"
 "固定表示されるように修正"
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:150
 msgid "Redesigned \"Fun &amp; Games\" category card"
 msgstr "\"エンタメとゲーム\" カテゴリーカードをデザイン変更"
 
-#: data/appcenter.metainfo.xml.in:139 data/appcenter.metainfo.xml.in:168
+#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
 msgid "Performance improvements"
 msgstr "パフォーマンスの改善"
 
-#: data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:152
 msgid "Stability improvements"
 msgstr "安定性の改善"
 
-#: data/appcenter.metainfo.xml.in:155
+#: data/appcenter.metainfo.xml.in:167
 msgid "Added an option to automatically update apps"
 msgstr "アプリを自動的にアップデートするオプションを追加"
 
-#: data/appcenter.metainfo.xml.in:156
+#: data/appcenter.metainfo.xml.in:168
 msgid "Manually check for new updates"
 msgstr "手動で新しいアップデートを確認できる機能を追加"
 
-#: data/appcenter.metainfo.xml.in:157
+#: data/appcenter.metainfo.xml.in:169
 msgid "Warn when apps are built against older runtimes"
 msgstr "アプリが使用するランタイムが古い場合に警告を表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:159
+#: data/appcenter.metainfo.xml.in:171
 msgid "Fixes:"
 msgstr "修正点:"
 
-#: data/appcenter.metainfo.xml.in:161
+#: data/appcenter.metainfo.xml.in:173
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
 "ヘッダーの戻るボタンが消えたり複数回のクリックを要したりしていた不具合を修正"
 
-#: data/appcenter.metainfo.xml.in:163
+#: data/appcenter.metainfo.xml.in:175
 msgid "Improvements:"
 msgstr "改善点:"
 
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:177
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
 "外部のアプリストアが提供するアプリに対しては、警告ダイアログを表示しないよう"
 "に修正"
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:178
 msgid "Show screenshot captions in a tooltip"
 msgstr "スクリーンショットのキャプションをツールチップに表示"
 
-#: data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:179
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
 "アプリの価格を0円に設定すると、ボタンに“無料で入手”と表示するように修正"
@@ -229,13 +233,11 @@ msgstr "ソフトウェアをアップデートするには認証が必要です
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "ソフトウェアソースを修復"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "ソフトウェアをアップデートするには認証が必要です"
+msgstr "ソフトウェアソースを修復するには認証が必要です"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "アップデート中にクラッシュする可能性のある不具合を修正"

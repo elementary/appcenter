@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2023-02-02 09:25+0000\n"
+"POT-Creation-Date: 2023-02-24 13:28+0000\n"
+"PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -56,64 +56,67 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:95 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:153
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:148
+msgid "Other Improvements:"
+msgstr "Autres améliorations :"
+
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
+msgid "Updated translations"
+msgstr "Mise à jour des traductions"
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:165
 msgid "New features:"
 msgstr "Nouvelles fonctionnalités :"
 
-#: data/appcenter.metainfo.xml.in:70
+#: data/appcenter.metainfo.xml.in:79
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Nouvelle option de réparation si la mise à jour d'un Flatpak échoue"
 
-#: data/appcenter.metainfo.xml.in:71
+#: data/appcenter.metainfo.xml.in:80
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Affichage dans la page des mises à jour d'un message indiquant la date de la "
+"dernière vérification des mises à jour"
 
-#: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136
-msgid "Other Improvements:"
-msgstr "Autres améliorations :"
-
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:141
-#: data/appcenter.metainfo.xml.in:169
-msgid "Updated translations"
-msgstr "Mise à jour des traductions"
-
-#: data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:96
 msgid "Show when an app isn't available in your language"
 msgstr ""
 "Vous savez désormais lorsqu'une application n'est pas disponible dans votre "
 "langue"
 
-#: data/appcenter.metainfo.xml.in:97
+#: data/appcenter.metainfo.xml.in:109
 msgid "Install OS Updates offline"
 msgstr "Installer les mises à jour du système hors connexion"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:130
 msgid "Rewritten navigation with multitouch gestures to go back"
 msgstr ""
 "Réécriture de la navigation avec des gestes multi-touch pour revenir en "
 "arrière"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:131
 msgid "Recently updated apps are shown at the top of category views"
 msgstr ""
 "Les applications récemment mises à jour sont affichées en haut de l'écran "
 "des catégories"
 
-#: data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:132
 msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr ""
 "Une barre d'état est désormais affichée lorsque des tâches sont en cours"
 
-#: data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:134
 msgid "App Info Page Improvements:"
 msgstr "Améliorations de la page d'information de l'application :"
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:136
 msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
@@ -121,98 +124,98 @@ msgstr ""
 "Le carrousel des captures d'écran occupe toute la largeur de la fenêtre, ce "
 "qui permet d'afficher plusieurs captures d'écran à la fois"
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:137
 msgid "An app's accent color is now shown behind screenshots"
 msgstr ""
 "La couleur d'accentuation de l'application est désormais affichée derrière "
 "les captures d'écran"
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:138
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
 "Obtention des couleurs avec la norme AppStream pour que davantage "
 "d'applications soient prises en charge"
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:139
 msgid "Wrap links at the bottom pages instead of ellipsize"
 msgstr ""
 "Les liens de bas de page retournent désormais à la ligne au lieu d'être "
 "coupés"
 
-#: data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:140
 msgid "Better dark style support"
 msgstr "Meilleure prise en charge du thème sombre"
 
-#: data/appcenter.metainfo.xml.in:130
+#: data/appcenter.metainfo.xml.in:142
 msgid "Updates View Improvements:"
 msgstr "Améliorations le la vue des mises à jour :"
 
-#: data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:144
 msgid "Release notes are shown in a dialog"
 msgstr "Les notes de version sont affichées dans une boîte de dialogue"
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:145
 msgid "Better fallback icons for components"
 msgstr "Meilleures icônes par défaut pour les composants"
 
-#: data/appcenter.metainfo.xml.in:134
+#: data/appcenter.metainfo.xml.in:146
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
 msgstr ""
 "L'en-tête « Tout mettre à jour » reste désormais en haut de la fenêtre lors "
 "du défilement"
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:150
 msgid "Redesigned \"Fun &amp; Games\" category card"
 msgstr "Reconception de la carte de catégorie « Loisirs et jeux »"
 
-#: data/appcenter.metainfo.xml.in:139 data/appcenter.metainfo.xml.in:168
+#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
 msgid "Performance improvements"
 msgstr "Améliorations des performances"
 
-#: data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:152
 msgid "Stability improvements"
 msgstr "Améliorations de la stabilité"
 
-#: data/appcenter.metainfo.xml.in:155
+#: data/appcenter.metainfo.xml.in:167
 msgid "Added an option to automatically update apps"
 msgstr "Ajout d'une option pour mettre à jour automatiquement les applications"
 
-#: data/appcenter.metainfo.xml.in:156
+#: data/appcenter.metainfo.xml.in:168
 msgid "Manually check for new updates"
 msgstr "Rechercher des mises à jour manuellement"
 
-#: data/appcenter.metainfo.xml.in:157
+#: data/appcenter.metainfo.xml.in:169
 msgid "Warn when apps are built against older runtimes"
 msgstr ""
 "Avertissement lorsque les applications sont conçues avec des environnements "
 "d'exécution plus anciens"
 
-#: data/appcenter.metainfo.xml.in:159
+#: data/appcenter.metainfo.xml.in:171
 msgid "Fixes:"
 msgstr "Corrections :"
 
-#: data/appcenter.metainfo.xml.in:161
+#: data/appcenter.metainfo.xml.in:173
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
 "Nous avons empêché le bouton retour de disparaître ou de nécessiter "
 "plusieurs clics"
 
-#: data/appcenter.metainfo.xml.in:163
+#: data/appcenter.metainfo.xml.in:175
 msgid "Improvements:"
 msgstr "Améliorations :"
 
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:177
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
 "Ne pas afficher de boîte de dialogue d'avertissement pour les applications "
 "provenant de magasins alternatifs"
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:178
 msgid "Show screenshot captions in a tooltip"
 msgstr "Affichage de la description des captures d'écran dans une infobulle"
 
-#: data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:179
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
 "Affichage du message « Essayer gratuitement » lorsque le prix d'une "
@@ -242,13 +245,12 @@ msgstr "Une authentification est nécessaire pour mettre à jour le logiciel"
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Réparer les sources logicielles"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Une authentification est nécessaire pour mettre à jour le logiciel"
+msgstr ""
+"Une authentification est nécessaire pour réparer les ressources logicielles"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "Correction d'un plantage potentiel lors des mises à jour"
