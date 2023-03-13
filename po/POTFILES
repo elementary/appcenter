@@ -17,6 +17,7 @@ src/Core/Task.vala
 src/Core/UbuntuDriversBackend.vala
 src/Core/UpdateManager.vala
 src/Dialogs/InstallFailDialog.vala
+src/Dialogs/RepairFailDialog.vala
 src/Dialogs/StripeDialog.vala
 src/Dialogs/UninstallConfirmDialog.vala
 src/Dialogs/UninstallFailDialog.vala
@@ -26,6 +27,7 @@ src/Services/DBusServer.vala
 src/Services/SearchProvider.vala
 src/Views/AppInfoView.vala
 src/Views/AppListUpdateView.vala
+src/Views/AuthorView.vala
 src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/SearchView.vala

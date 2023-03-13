@@ -25,6 +25,7 @@ appcenter_files = files(
     'Services/SearchProvider.vala',
     'Views/AppInfoView.vala',
     'Views/AppListUpdateView.vala',
+    'Views/AuthorView.vala',
     'Views/CategoryView.vala',
     'Views/Homepage.vala',
     'Views/SearchView.vala',

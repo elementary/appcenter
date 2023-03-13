@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2022-07-08 13:43+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
+"PO-Revision-Date: 2023-03-01 16:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -43,15 +43,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Oppdag nye programmer"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Hold deg oppdatert"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Betal det du kan for å støtte utviklere"
 
 #: data/appcenter.metainfo.xml.in:61
 #, fuzzy
@@ -59,151 +59,152 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:95 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:153
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:148
+#, fuzzy
+msgid "Other Improvements:"
+msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
+
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
+#, fuzzy
+msgid "Updated translations"
+msgstr "Nye oversettelser"
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:165
 #, fuzzy
 #| msgid "New features"
 msgid "New features:"
 msgstr "Nye funksjoner"
 
-#: data/appcenter.metainfo.xml.in:70
+#: data/appcenter.metainfo.xml.in:79
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:71
+#: data/appcenter.metainfo.xml.in:80
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:73 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:136
-#, fuzzy
-msgid "Other Improvements:"
-msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
-
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:141
-#: data/appcenter.metainfo.xml.in:169
-#, fuzzy
-msgid "Updated translations"
-msgstr "Nye oversettelser"
-
-#: data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:96
 msgid "Show when an app isn't available in your language"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:97
+#: data/appcenter.metainfo.xml.in:109
 msgid "Install OS Updates offline"
-msgstr ""
+msgstr "Installer OS-oppgraderinger frakoblet"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:130
 msgid "Rewritten navigation with multitouch gestures to go back"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:131
 msgid "Recently updated apps are shown at the top of category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:132
 msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:134
 #, fuzzy
 msgid "App Info Page Improvements:"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:136
 msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:137
 msgid "An app's accent color is now shown behind screenshots"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:138
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:139
 msgid "Wrap links at the bottom pages instead of ellipsize"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:140
 msgid "Better dark style support"
-msgstr ""
+msgstr "Bedre støtte for mørk stil"
 
-#: data/appcenter.metainfo.xml.in:130
+#: data/appcenter.metainfo.xml.in:142
 #, fuzzy
 msgid "Updates View Improvements:"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
-#: data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:144
 msgid "Release notes are shown in a dialog"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:145
 msgid "Better fallback icons for components"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:134
+#: data/appcenter.metainfo.xml.in:146
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:150
 msgid "Redesigned \"Fun &amp; Games\" category card"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:139 data/appcenter.metainfo.xml.in:168
+#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
 #, fuzzy
 msgid "Performance improvements"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
-#: data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:152
 #, fuzzy
 msgid "Stability improvements"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
-#: data/appcenter.metainfo.xml.in:155
+#: data/appcenter.metainfo.xml.in:167
 msgid "Added an option to automatically update apps"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:156
+#: data/appcenter.metainfo.xml.in:168
 msgid "Manually check for new updates"
 msgstr "Se etter oppgraderinger manuelt"
 
-#: data/appcenter.metainfo.xml.in:157
+#: data/appcenter.metainfo.xml.in:169
 msgid "Warn when apps are built against older runtimes"
 msgstr "Advar når programmer er bygget med eldre kjøretidsrutiner"
 
-#: data/appcenter.metainfo.xml.in:159
+#: data/appcenter.metainfo.xml.in:171
 #, fuzzy
 #| msgid "Fixes"
 msgid "Fixes:"
 msgstr "Fikser"
 
-#: data/appcenter.metainfo.xml.in:161
+#: data/appcenter.metainfo.xml.in:173
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:163
+#: data/appcenter.metainfo.xml.in:175
 #, fuzzy
 msgid "Improvements:"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:177
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:178
 msgid "Show screenshot captions in a tooltip"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:179
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
 
@@ -231,7 +232,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
-msgstr ""
+msgstr "Reparer programvarekilder"
 
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"

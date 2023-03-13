@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 08:14+0000\n"
-"PO-Revision-Date: 2023-01-31 18:04+0000\n"
+"POT-Creation-Date: 2023-03-02 18:37+0000\n"
+"PO-Revision-Date: 2023-02-10 12:15+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
 "Language: he\n"
@@ -65,7 +65,7 @@ msgstr "מתבצעת הסרה…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "מתבצע תיקון…"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -424,7 +424,15 @@ msgstr "התקנת „%s” נכשלה"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr ""
+msgstr "תיקון"
+
+#: src/Dialogs/RepairFailDialog.vala:24
+msgid "Failed to Repair"
+msgstr "התיקון נכשל"
+
+#: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "יתכן שבעיה זו נגרמה עקב מאגרי תכניות חיצוניים שנוספו באופן ידני או קובצי מקור פגומים."
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -438,136 +446,139 @@ msgstr "נא לסקור את פרטי התשלום שלך ולנסות שוב."
 msgid "Payment"
 msgstr "תשלום"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
+#. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
+#. being purchased. The order can be changed with "%2$s %1$d". For example:
+#. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
+#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "לשלם $%d עבור %s"
 
-#: src/Dialogs/StripeDialog.vala:98
+#: src/Dialogs/StripeDialog.vala:101
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "זהו תשלום חד פעמי שהוצע על ידי המפתח. ניתן גם לבחור בסכום אחר."
 
-#: src/Dialogs/StripeDialog.vala:119
+#: src/Dialogs/StripeDialog.vala:122
 msgid "or"
 msgstr "או"
 
-#: src/Dialogs/StripeDialog.vala:154
+#: src/Dialogs/StripeDialog.vala:157
 msgid "Email"
 msgstr "דוא״ל"
 
-#: src/Dialogs/StripeDialog.vala:159
+#: src/Dialogs/StripeDialog.vala:162
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "משמשת לשליחת קבלה בלבד. לא נרשום אותך לרשימות דיוור בלא הסכמתך."
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:163
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:184
+#: src/Dialogs/StripeDialog.vala:187
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:192
+#: src/Dialogs/StripeDialog.vala:195
 msgid "CVC"
 msgstr "קוד אבטחה (CVC)"
 
-#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
+#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "ביטול"
 
-#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:393
+#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
+#: src/Dialogs/StripeDialog.vala:396
 #, c-format
 msgid "Pay $%d.00"
 msgstr "לשלם $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:251
+#: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
 msgstr "התנסות בחינם"
 
-#: src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
 msgstr "בהליכי עיבוד"
 
-#: src/Dialogs/StripeDialog.vala:341
+#: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
 msgstr "אירעה שגיאה בעת עיבוד התשלום שלך"
 
-#: src/Dialogs/StripeDialog.vala:385
+#: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
 msgstr "לשלם מאוחר יותר"
 
-#: src/Dialogs/StripeDialog.vala:386
+#: src/Dialogs/StripeDialog.vala:389
 msgid "Retry"
 msgstr "ניסיון חוזר"
 
-#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "מספר הכרטיס שגוי. נא לנסות שוב עם מספר הכרטיס הנכון."
 
-#: src/Dialogs/StripeDialog.vala:569
+#: src/Dialogs/StripeDialog.vala:572
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "חודש התפוגה שגוי. נא לנסות שוב עם תאריך תפוגה נכון."
 
-#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "שנת התפוגה שגויה. נא לנסות שוב עם תאריך תפוגה נכון."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "קוד האבטחה (CVC) שגוי. נא לנסות שוב עם קוד האבטחה הנכון."
 
-#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
 msgid "The card has expired. Please try again with a different card."
 msgstr "תוקף הכרטיס פג. נא לנסות שוב עם כרטיס אחר."
 
-#: src/Dialogs/StripeDialog.vala:596
+#: src/Dialogs/StripeDialog.vala:599
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "מתבצעות יותר מדי בקשות תשלום כרגע, נא לנסות שוב מאוחר יותר."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:615
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "כרטיס זה אינו תומך בסוג כזה של העברה. נא לנסות שוב עם כרטיס אחר."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:617
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "המטבע אינו נתמך בכרטיס זה. נא לנסות שוב עם כרטיס אחר."
 
-#: src/Dialogs/StripeDialog.vala:616
+#: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
 msgstr "כבר בוצע עיבוד על ההעברה."
 
-#: src/Dialogs/StripeDialog.vala:620
+#: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "המיקוד שגוי. נא להשתמש במיקוד הנכון."
 
-#: src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:625
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "מכסת האשראי שלך אינה מספקת. נא להשתמש בשיטת תשלום חלופית."
 
-#: src/Dialogs/StripeDialog.vala:624
+#: src/Dialogs/StripeDialog.vala:627
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "הסכום שגוי. נא לנסות שוב עם סכום נכון."
 
-#: src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "המספר הסודי (pin) שגוי. נא לנסות שוב עם המספר הסודי הנכון."
 
-#: src/Dialogs/StripeDialog.vala:637
+#: src/Dialogs/StripeDialog.vala:640
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "בוצעו ניסיונות רבים מדי להזנת מספר סודי (pin). נא לנסות שוב עם כרטיס שונה."
 
-#: src/Dialogs/StripeDialog.vala:657
+#: src/Dialogs/StripeDialog.vala:660
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "לא ניתן להשלים את ההעברה. נא ליצור קשר עם הבנק שלך לקבלת פרטים נוספים."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The balance or credit limit on the card has been reached."
 msgstr "הגעת לתקרת המשיכה בכרטיס."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:666
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "הכרטיס שסיפקת הוא כרטיס בדיקה. נא להשתמש בכרטיס אמתי כדי להמשיך."
 
@@ -584,7 +595,7 @@ msgstr "להסיר את היישום?"
 msgid "Uninstall “%s”?"
 msgstr "להסיר את „%s”?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:678
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
 msgid "Uninstall"
 msgstr "הסרה"
 
@@ -604,10 +615,6 @@ msgstr "הסרת „%s” נכשלה"
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
 msgstr "קבלת העדכונים נכשלה"
-
-#: src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "יתכן שבעיה זו נגרמה עקב מאגרי תכניות חיצוניים שנוספו באופן ידני או קובצי מקור פגומים."
 
 #: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
@@ -634,237 +641,232 @@ msgstr "העדכון של „%s” נכשל"
 msgid "Refresh Updates"
 msgstr "רענון עדכונים"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:130
 msgid "Illicit Substances"
 msgstr "חומרים אסורים"
 
-#: src/Views/AppInfoView.vala:132
+#: src/Views/AppInfoView.vala:131
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "הצגה או אזכורים של אלכוהול, חומרים ממכרים או טבק"
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:136
 msgid "Sex & Nudity"
 msgstr "מין ועירום"
 
-#: src/Views/AppInfoView.vala:138
+#: src/Views/AppInfoView.vala:137
 msgid "Adult nudity or sexual themes"
 msgstr "עירום של בגירים או נושאים מיניים"
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:142
 msgid "Offensive Language"
 msgstr "שפה פוגענית"
 
-#: src/Views/AppInfoView.vala:144
+#: src/Views/AppInfoView.vala:143
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "גידופים, שפה מפלה או הומור גס"
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:148
 msgid "Gambling"
 msgstr "הימורים"
 
-#: src/Views/AppInfoView.vala:150
+#: src/Views/AppInfoView.vala:149
 msgid "Realistic or participatory gambling"
 msgstr "הימור מציאותי או השתתפות בכזה"
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:175
 msgid "Non-Curated"
 msgstr "לא נאספו"
 
-#: src/Views/AppInfoView.vala:177
+#: src/Views/AppInfoView.vala:176
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "לא נסקר על ידי elementary בהיבטים של אבטחה, פרטיות או שילוב עם המערכת"
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:193
 msgid "May Not Be Translated"
 msgstr "אולי לא מתורגם"
 
-#: src/Views/AppInfoView.vala:195
+#: src/Views/AppInfoView.vala:194
 msgid "This app does not provide language information"
 msgstr "יישום זה לא מספק פרטי שפה"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:201
 msgid "Not Translated"
 msgstr "לא מתורגם"
 
-#: src/Views/AppInfoView.vala:203
+#: src/Views/AppInfoView.vala:202
 msgid "This app is not available in your language"
 msgstr "יישום זה לא זמין בשפה שלך"
 
-#: src/Views/AppInfoView.vala:210
+#: src/Views/AppInfoView.vala:209
 msgid "Not Fully Translated"
 msgstr "לא מתורגם במלואו"
 
-#: src/Views/AppInfoView.vala:211
+#: src/Views/AppInfoView.vala:210
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "יישום זה מתורגם ב־%i%% לשפה שלך"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:234
 msgid "Conflict"
 msgstr "עימות"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:235
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "תיאורים גרפיים של מצבים מסוכנים או עימות כוחני"
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:248
 msgid "Violence"
 msgstr "אלימות"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:253
 msgid "Fantasy Violence"
 msgstr "אלימות בפנטזיה"
 
-#: src/Views/AppInfoView.vala:259
+#: src/Views/AppInfoView.vala:258
 msgid "Graphic violence, bloodshed, or death"
 msgstr "אלימות חזותית, שפיכות דמים או מוות"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:302
 msgid "Multiplayer"
 msgstr "מרובה שחקנים"
 
-#: src/Views/AppInfoView.vala:304
+#: src/Views/AppInfoView.vala:303
 msgid "Online play with other people"
 msgstr "משחק מקוון עם אנשים זרים"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:319
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "מסרי שמע, וידאו או טקסט בלתי מפוקחים מול אנשים זרים"
 
-#: src/Views/AppInfoView.vala:322
+#: src/Views/AppInfoView.vala:321
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "מסרי שמע, וידאו או טקסט מפוקחים מול אנשים זרים"
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:325
 msgid "Online Interactions"
 msgstr "תקשורת מקוונת"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:335
 msgid "Location Sharing"
 msgstr "שיתוף המיקום"
 
-#: src/Views/AppInfoView.vala:337
+#: src/Views/AppInfoView.vala:336
 msgid "Other people can see your real-world location"
 msgstr "אנשים זרים יכולים לראות את המיקום שלך בעולם האמתי"
 
-#: src/Views/AppInfoView.vala:349
+#: src/Views/AppInfoView.vala:348
 msgid "Collects anonymous usage data"
 msgstr "אוסף נתוני שימוש אלמוניים"
 
-#: src/Views/AppInfoView.vala:352
+#: src/Views/AppInfoView.vala:351
 msgid "Collects usage data that could be used to identify you"
 msgstr "אוסף נתוני שימוש שיכולים לסייע בזיהוי שלך"
 
-#: src/Views/AppInfoView.vala:357
+#: src/Views/AppInfoView.vala:356
 msgid "Info Sharing"
 msgstr "שיתוף מידע"
 
-#: src/Views/AppInfoView.vala:477
+#: src/Views/AppInfoView.vala:476
 msgid "Screenshot Not Available"
 msgstr "אין צילום מסך"
 
-#: src/Views/AppInfoView.vala:588
+#: src/Views/AppInfoView.vala:587
 msgid "Homepage"
 msgstr "דף הבית"
 
-#: src/Views/AppInfoView.vala:594
+#: src/Views/AppInfoView.vala:593
 msgid "Translate"
 msgstr "תרגום"
 
-#: src/Views/AppInfoView.vala:600
+#: src/Views/AppInfoView.vala:599
 msgid "Send Feedback"
 msgstr "שליחת משוב"
 
-#: src/Views/AppInfoView.vala:606
+#: src/Views/AppInfoView.vala:605
 msgid "Help"
 msgstr "עזרה"
 
-#: src/Views/AppInfoView.vala:617
+#: src/Views/AppInfoView.vala:616
 msgid "What's New:"
 msgstr "מה חדש:"
 
-#: src/Views/AppInfoView.vala:652
+#: src/Views/AppInfoView.vala:651
 msgid "Extensions:"
 msgstr "הרחבות:"
 
-#: src/Views/AppInfoView.vala:781
+#: src/Views/AppInfoView.vala:780
 msgid "Link copied to clipboard"
 msgstr "הקישור הועתק ללוח הגזירים"
 
-#: src/Views/AppInfoView.vala:792
+#: src/Views/AppInfoView.vala:791
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "מומלץ לבדוק את %s במרכז היישומים:"
 
-#: src/Views/AppInfoView.vala:800
+#: src/Views/AppInfoView.vala:799
 msgid "Share"
 msgstr "שיתוף"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:893
 msgid "End of Life"
 msgstr "סוף החיים"
 
-#: src/Views/AppInfoView.vala:895
+#: src/Views/AppInfoView.vala:894
 msgid "May not work as expected or receive security updates"
 msgstr "עלול לא לעבוד כצפוי או לקבל עדכוני אבטחה"
 
-#: src/Views/AppInfoView.vala:901
+#: src/Views/AppInfoView.vala:900
 msgid "Outdated"
 msgstr "מיושן"
 
-#: src/Views/AppInfoView.vala:902
+#: src/Views/AppInfoView.vala:901
 msgid "May not work as expected or support the latest features"
 msgstr "עלול לא לעבוד כראוי או לא לתמוך ביכולות העדכניות ביותר"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:909
 msgid "Unstable"
 msgstr "רעוע"
 
-#: src/Views/AppInfoView.vala:911
+#: src/Views/AppInfoView.vala:910
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "נבנה לגירסה רעועה של %s, עשוי להכיל תקלות קריטיות. לא מומלץ לשימוש במערכת מבצעית."
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1170
+#: src/Views/AppInfoView.vala:1169
 msgid "Public Domain"
 msgstr "רשות הציבור"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1173
+#: src/Views/AppInfoView.vala:1172
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://he.wikipedia.org/wiki/רשות_הציבור"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1178
+#: src/Views/AppInfoView.vala:1177
 msgid "Free Software"
 msgstr "תכנה חופשית"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1181
+#: src/Views/AppInfoView.vala:1180
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.he.html"
 
-#: src/Views/AppInfoView.vala:1185
+#: src/Views/AppInfoView.vala:1184
 msgid "Proprietary"
 msgstr "קנייני"
 
-#: src/Views/AppInfoView.vala:1188
+#: src/Views/AppInfoView.vala:1187
 msgid "Unknown License"
 msgstr "רישיון לא ידוע"
 
-#: src/Views/AppInfoView.vala:1278
+#: src/Views/AppInfoView.vala:1277
 msgid "Fund"
 msgstr "מימון"
 
-#: src/Views/AppInfoView.vala:1284
+#: src/Views/AppInfoView.vala:1283
 msgid "Fund the development of this app"
 msgstr "מימון המפתחים שעומדים מאחורי היישום הזה"
-
-#: src/Views/AppInfoView.vala:1402
-#, c-format
-msgid "Other Apps by %s"
-msgstr "יישום אחרים מאת %s"
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
@@ -909,6 +911,11 @@ msgstr "מנהלי התקנים"
 #: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "עדכני"
+
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "יישום אחרים מאת %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
