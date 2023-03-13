@@ -3,19 +3,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-02 18:37+0000\n"
-"PO-Revision-Date: 2015-12-16 07:07+0000\n"
-"Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2023-03-12 12:25+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.elementary.io/projects/appcenter/extra/"
+"ka/>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: data/appcenter.metainfo.xml.in:11
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -45,7 +47,7 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:61
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
 #: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
@@ -57,13 +59,13 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
 #: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
 msgid "Updated translations"
-msgstr ""
+msgstr "განახლებული თარგმანები"
 
 #: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
 #: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
 #: data/appcenter.metainfo.xml.in:165
 msgid "New features:"
-msgstr ""
+msgstr "ახალი ფუნქციები:"
 
 #: data/appcenter.metainfo.xml.in:79
 msgid "Offer a Repair option if Flatpak updates fail"
@@ -144,7 +146,7 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
 msgid "Performance improvements"
-msgstr ""
+msgstr "წარმადობის გაუმჯობესებები"
 
 #: data/appcenter.metainfo.xml.in:152
 msgid "Stability improvements"
@@ -164,7 +166,7 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:171
 msgid "Fixes:"
-msgstr ""
+msgstr "შეცდომების გასწორებები:"
 
 #: data/appcenter.metainfo.xml.in:173
 msgid "Prevent back button from disappearing or requiring multiple clicks"
@@ -172,7 +174,7 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:175
 msgid "Improvements:"
-msgstr ""
+msgstr "გაუმჯობესებები:"
 
 #: data/appcenter.metainfo.xml.in:177
 msgid "Don't show a warning dialog about apps from alt stores"
@@ -196,11 +198,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "განახლებების შემოწმება"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "პროგრამების განახლება"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
