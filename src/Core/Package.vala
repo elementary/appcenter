@@ -336,7 +336,7 @@ public class AppCenterCore.Package : Object {
                 return fp_package.remote_title;
             }
 #if PACKAGEKIT_BACKEND
-            if (backend is PackageKitBackend) {
+            else if (backend is PackageKitBackend) {
                 if (origin == APPCENTER_PACKAGE_ORIGIN) {
                     return _("AppCenter");
                 } else if (origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
