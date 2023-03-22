@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 18:37+0000\n"
+"POT-Creation-Date: 2023-03-22 18:42+0000\n"
 "PO-Revision-Date: 2023-02-10 12:15+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:332
+#: src/Application.vala:38 src/Core/Package.vala:353
 msgid "AppCenter"
 msgstr "מרכז היישומים"
 
@@ -173,7 +173,7 @@ msgstr "חבילות בהסרה"
 msgid "Downloading"
 msgstr "מתבצעת הורדה"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1381
 msgid "Installing"
 msgstr "בהליך התקנה"
 
@@ -218,9 +218,9 @@ msgid "Finished"
 msgstr "הסתיים"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
-#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
-#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
+#: src/Core/FlatpakBackend.vala:1390 src/Core/FlatpakBackend.vala:1414
+#: src/Core/FlatpakBackend.vala:1522 src/Core/FlatpakBackend.vala:1546
+#: src/Core/FlatpakBackend.vala:1704 src/Core/FlatpakBackend.vala:1722
 msgid "Cancelling"
 msgstr "מתבצע ביטול"
 
@@ -314,36 +314,36 @@ msgstr[1] "%u עדכונים זמינים עבור המערכת"
 msgid "%s (system-wide)"
 msgstr "%s (כלל מערכתי)"
 
-#: src/Core/FlatpakBackend.vala:1403
+#: src/Core/FlatpakBackend.vala:1513
 msgid "Uninstalling"
 msgstr "מתבצעת הסרה"
 
-#: src/Core/FlatpakBackend.vala:1585
+#: src/Core/FlatpakBackend.vala:1695
 msgid "Updating"
 msgstr "מתבצע עדכון"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:329
 #, c-format
 msgid "%s Developers"
 msgstr "המפתחים שמאחורי %s"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:355
 msgid "elementary Updates"
 msgstr "עדכונים ל־elementary"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:357
 msgid "Ubuntu (non-curated)"
 msgstr "אובונטו (לא מאורגן)"
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:367
 msgid "Ubuntu Drivers"
 msgstr "מנהלי התקנים של אובונטו"
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:370
 msgid "Unknown Origin (non-curated)"
 msgstr "מקור לא ידוע (לא מאורגן)"
 
-#: src/Core/Package.vala:521
+#: src/Core/Package.vala:542
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "מצב היישום לא מוגדר כמותקן בחנות היישומים לחבילה: %s"
@@ -595,7 +595,7 @@ msgstr "להסיר את היישום?"
 msgid "Uninstall “%s”?"
 msgstr "להסיר את „%s”?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:678
 msgid "Uninstall"
 msgstr "הסרה"
 
@@ -641,230 +641,238 @@ msgstr "העדכון של „%s” נכשל"
 msgid "Refresh Updates"
 msgstr "רענון עדכונים"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:131
 msgid "Illicit Substances"
 msgstr "חומרים אסורים"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:132
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "הצגה או אזכורים של אלכוהול, חומרים ממכרים או טבק"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:137
 msgid "Sex & Nudity"
 msgstr "מין ועירום"
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:138
 msgid "Adult nudity or sexual themes"
 msgstr "עירום של בגירים או נושאים מיניים"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:143
 msgid "Offensive Language"
 msgstr "שפה פוגענית"
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:144
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "גידופים, שפה מפלה או הומור גס"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:149
 msgid "Gambling"
 msgstr "הימורים"
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:150
 msgid "Realistic or participatory gambling"
 msgstr "הימור מציאותי או השתתפות בכזה"
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:176
 msgid "Non-Curated"
 msgstr "לא נאספו"
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:177
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "לא נסקר על ידי elementary בהיבטים של אבטחה, פרטיות או שילוב עם המערכת"
 
-#: src/Views/AppInfoView.vala:193
+#: src/Views/AppInfoView.vala:194
 msgid "May Not Be Translated"
 msgstr "אולי לא מתורגם"
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:195
 msgid "This app does not provide language information"
 msgstr "יישום זה לא מספק פרטי שפה"
 
-#: src/Views/AppInfoView.vala:201
+#: src/Views/AppInfoView.vala:202
 msgid "Not Translated"
 msgstr "לא מתורגם"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:203
 msgid "This app is not available in your language"
 msgstr "יישום זה לא זמין בשפה שלך"
 
-#: src/Views/AppInfoView.vala:209
+#: src/Views/AppInfoView.vala:210
 msgid "Not Fully Translated"
 msgstr "לא מתורגם במלואו"
 
-#: src/Views/AppInfoView.vala:210
+#: src/Views/AppInfoView.vala:211
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "יישום זה מתורגם ב־%i%% לשפה שלך"
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:235
 msgid "Conflict"
 msgstr "עימות"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:236
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "תיאורים גרפיים של מצבים מסוכנים או עימות כוחני"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:249
 msgid "Violence"
 msgstr "אלימות"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:254
 msgid "Fantasy Violence"
 msgstr "אלימות בפנטזיה"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:259
 msgid "Graphic violence, bloodshed, or death"
 msgstr "אלימות חזותית, שפיכות דמים או מוות"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:303
 msgid "Multiplayer"
 msgstr "מרובה שחקנים"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:304
 msgid "Online play with other people"
 msgstr "משחק מקוון עם אנשים זרים"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:320
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "מסרי שמע, וידאו או טקסט בלתי מפוקחים מול אנשים זרים"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:322
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "מסרי שמע, וידאו או טקסט מפוקחים מול אנשים זרים"
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:326
 msgid "Online Interactions"
 msgstr "תקשורת מקוונת"
 
-#: src/Views/AppInfoView.vala:335
+#: src/Views/AppInfoView.vala:336
 msgid "Location Sharing"
 msgstr "שיתוף המיקום"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:337
 msgid "Other people can see your real-world location"
 msgstr "אנשים זרים יכולים לראות את המיקום שלך בעולם האמתי"
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:349
 msgid "Collects anonymous usage data"
 msgstr "אוסף נתוני שימוש אלמוניים"
 
-#: src/Views/AppInfoView.vala:351
+#: src/Views/AppInfoView.vala:352
 msgid "Collects usage data that could be used to identify you"
 msgstr "אוסף נתוני שימוש שיכולים לסייע בזיהוי שלך"
 
-#: src/Views/AppInfoView.vala:356
+#: src/Views/AppInfoView.vala:357
 msgid "Info Sharing"
 msgstr "שיתוף מידע"
 
-#: src/Views/AppInfoView.vala:476
+#: src/Views/AppInfoView.vala:477
 msgid "Screenshot Not Available"
 msgstr "אין צילום מסך"
 
-#: src/Views/AppInfoView.vala:587
+#: src/Views/AppInfoView.vala:588
 msgid "Homepage"
 msgstr "דף הבית"
 
-#: src/Views/AppInfoView.vala:593
+#: src/Views/AppInfoView.vala:594
 msgid "Translate"
 msgstr "תרגום"
 
-#: src/Views/AppInfoView.vala:599
+#: src/Views/AppInfoView.vala:600
 msgid "Send Feedback"
 msgstr "שליחת משוב"
 
-#: src/Views/AppInfoView.vala:605
+#: src/Views/AppInfoView.vala:606
 msgid "Help"
 msgstr "עזרה"
 
-#: src/Views/AppInfoView.vala:616
+#: src/Views/AppInfoView.vala:617
 msgid "What's New:"
 msgstr "מה חדש:"
 
-#: src/Views/AppInfoView.vala:651
+#: src/Views/AppInfoView.vala:652
 msgid "Extensions:"
 msgstr "הרחבות:"
 
-#: src/Views/AppInfoView.vala:780
+#: src/Views/AppInfoView.vala:781
 msgid "Link copied to clipboard"
 msgstr "הקישור הועתק ללוח הגזירים"
 
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:792
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "מומלץ לבדוק את %s במרכז היישומים:"
 
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:800
 msgid "Share"
 msgstr "שיתוף"
 
-#: src/Views/AppInfoView.vala:893
+#: src/Views/AppInfoView.vala:894
 msgid "End of Life"
 msgstr "סוף החיים"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:895
 msgid "May not work as expected or receive security updates"
 msgstr "עלול לא לעבוד כצפוי או לקבל עדכוני אבטחה"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:901
 msgid "Outdated"
 msgstr "מיושן"
 
-#: src/Views/AppInfoView.vala:901
+#: src/Views/AppInfoView.vala:902
 msgid "May not work as expected or support the latest features"
 msgstr "עלול לא לעבוד כראוי או לא לתמוך ביכולות העדכניות ביותר"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:910
 msgid "Unstable"
 msgstr "רעוע"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:911
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "נבנה לגירסה רעועה של %s, עשוי להכיל תקלות קריטיות. לא מומלץ לשימוש במערכת מבצעית."
 
+#: src/Views/AppInfoView.vala:924
+msgid "System Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:925
+msgid "Including everyone's Home folders, but not including system internals"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1169
+#: src/Views/AppInfoView.vala:1187
 msgid "Public Domain"
 msgstr "רשות הציבור"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1172
+#: src/Views/AppInfoView.vala:1190
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://he.wikipedia.org/wiki/רשות_הציבור"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1195
 msgid "Free Software"
 msgstr "תכנה חופשית"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1198
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.he.html"
 
-#: src/Views/AppInfoView.vala:1184
+#: src/Views/AppInfoView.vala:1202
 msgid "Proprietary"
 msgstr "קנייני"
 
-#: src/Views/AppInfoView.vala:1187
+#: src/Views/AppInfoView.vala:1205
 msgid "Unknown License"
 msgstr "רישיון לא ידוע"
 
-#: src/Views/AppInfoView.vala:1277
+#: src/Views/AppInfoView.vala:1295
 msgid "Fund"
 msgstr "מימון"
 
-#: src/Views/AppInfoView.vala:1283
+#: src/Views/AppInfoView.vala:1301
 msgid "Fund the development of this app"
 msgstr "מימון המפתחים שעומדים מאחורי היישום הזה"
 
