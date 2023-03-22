@@ -55,6 +55,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     private Gtk.Revealer uninstall_button_revealer;
 
     private bool is_runtime_warning_shown = false;
+    private bool permissions_shown = false;
 
     private unowned Gtk.StyleContext stack_context;
 
@@ -915,10 +916,27 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 break;
         }
 
+        if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN && !permissions_shown) {
+            permissions_shown = true;
+
+            if (AppCenterCore.Package.PermissionsFlags.FILESYSTEM_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.FILESYSTEM_READ in package.permissions_flags) {
+                var filesystem = new ContentType (
+                    _("System Folder Access"),
+                    _("Including everyone's Home folders, but not including system internals"),
+                    "drive-harddisk-symbolic"
+                );
+
+                oars_flowbox.add (filesystem);
+            }
+        }
+
         if (runtime_warning != null && !is_runtime_warning_shown) {
             is_runtime_warning_shown = true;
 
             oars_flowbox.insert (runtime_warning, 0);
+        }
+
+        if (oars_flowbox.get_children ().length () > 0) {
             oars_flowbox.show_all ();
             oars_flowbox_revealer.reveal_child = true;
         }

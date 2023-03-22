@@ -45,6 +45,7 @@ public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-jammy-main";
 
+    public PermissionsFlags permissions_flags { get; set; default = PermissionsFlags.UNKNOWN; }
     public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
@@ -80,6 +81,26 @@ public class AppCenterCore.Package : Object {
         UPDATE_AVAILABLE,
         UPDATING,
         REMOVING
+    }
+
+    [Flags]
+    public enum PermissionsFlags {
+        DEVICES,
+        DOWNLOADS_FULL,
+        DOWNLOADS_READ,
+        ESCAPE_SANDBOX,
+        FILESYSTEM_FULL,
+        FILESYSTEM_OTHER,
+        FILESYSTEM_READ,
+        HOME_FULL,
+        HOME_READ,
+        NETWORK,
+        NONE,
+        SESSION_BUS,
+        SETTINGS,
+        SYSTEM_BUS,
+        UNKNOWN,
+        X11
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
