@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 18:42+0000\n"
-"PO-Revision-Date: 2023-03-25 14:59+0000\n"
+"PO-Revision-Date: 2023-04-05 22:59+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -623,7 +623,10 @@ msgstr "再試行"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "これは、AppCenter を経由せずにインストールしたソフトウェアや、サードパーティーのソフトウェアリポジトリ、パッケージマネージャーのエラーなどに起因している可能性があります。この問題は、アップデートを明示的に再取得することで解決することがあります。"
+msgstr ""
+"これは、サイドロードしたソフトウェアや、サードパーティーのソフトウェアリポジ"
+"トリ、パッケージマネージャーのエラーなどに起因している可能性があります。この"
+"問題は、アップデートを明示的に再取得することで解決することがあります。"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -1028,7 +1031,8 @@ msgstr "アプリが見つかりません"
 #: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "検索用語を変更してみてください。%s などから、AppCenter を経由せずに Flatpak アプリをインストールすることもできます"
+msgstr "検索用語を変更してみてください。%s などから Flatpak "
+"アプリをサイドロードすることもできます"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
