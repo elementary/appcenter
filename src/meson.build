@@ -72,6 +72,10 @@ if appstream.version().version_compare('>=0.15')
     args += '--define=HAS_APPSTREAM_0_15'
 endif
 
+if appstream.version().version_compare('>=0.16')
+    args += '--define=HAS_APPSTREAM_0_16'
+endif
+
 executable(
     meson.project_name(),
     appcenter_files,
