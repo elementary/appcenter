@@ -129,7 +129,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
+#elif HAS_APPSTREAM_0_15
         user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
 #else
         user_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
@@ -137,7 +139,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 #endif
 
         system_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
+#elif HAS_APPSTREAM_0_15
         system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
 #else
         system_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
