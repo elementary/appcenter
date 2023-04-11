@@ -1043,7 +1043,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void reload_appstream_pool () {
         var new_package_list = new Gee.HashMap<string, Package> ();
 
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        user_appstream_pool.reset_extra_data_locations ();
+        user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.CATALOG);
+#elif HAS_APPSTREAM_0_15
         user_appstream_pool.reset_extra_data_locations ();
         user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.COLLECTION);
 #else
@@ -1078,7 +1081,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         }
 
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        system_appstream_pool.reset_extra_data_locations ();
+        system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.CATALOG);
+#elif HAS_APPSTREAM_0_15
         system_appstream_pool.reset_extra_data_locations ();
         system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.COLLECTION);
 #else
