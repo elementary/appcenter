@@ -18,6 +18,7 @@ appcenter_files = files(
     'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
     'Dialogs/InstallFailDialog.vala',
+    'Dialogs/RepairFailDialog.vala',
     'Dialogs/StripeDialog.vala',
     'Dialogs/UninstallConfirmDialog.vala',
     'Dialogs/UninstallFailDialog.vala',
@@ -27,6 +28,7 @@ appcenter_files = files(
     'Services/SearchProvider.vala',
     'Views/AppInfoView.vala',
     'Views/AppListUpdateView.vala',
+    'Views/AuthorView.vala',
     'Views/CategoryView.vala',
     'Views/Homepage.vala',
     'Views/SearchView.vala',
@@ -68,6 +70,10 @@ endif
 
 if appstream.version().version_compare('>=0.15')
     args += '--define=HAS_APPSTREAM_0_15'
+endif
+
+if appstream.version().version_compare('>=0.16')
+    args += '--define=HAS_APPSTREAM_0_16'
 endif
 
 executable(

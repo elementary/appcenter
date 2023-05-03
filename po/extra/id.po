@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-28 00:16+0000\n"
+"POT-Creation-Date: 2023-03-22 18:42+0000\n"
 "PO-Revision-Date: 2022-01-07 20:57+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
@@ -55,155 +55,157 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, PT."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:81
-#: data/appcenter.metainfo.xml.in:102 data/appcenter.metainfo.xml.in:139
-msgid "New features:"
-msgstr "Fitur baru:"
-
-#: data/appcenter.metainfo.xml.in:70
-msgid "Show when an app isn't available in your language"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
-#: data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:148
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Other Improvements:"
 msgstr "Peningkatan:"
 
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:87
-#: data/appcenter.metainfo.xml.in:127 data/appcenter.metainfo.xml.in:155
-#: data/appcenter.metainfo.xml.in:169
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
 msgid "Updated translations"
 msgstr "Terjemahan diperbarui"
 
-#: data/appcenter.metainfo.xml.in:83
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
+#: data/appcenter.metainfo.xml.in:165
+msgid "New features:"
+msgstr "Fitur baru:"
+
+#: data/appcenter.metainfo.xml.in:79
+msgid "Offer a Repair option if Flatpak updates fail"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:80
+msgid ""
+"Show a message in the updates view when up to date, including when updates "
+"were last checked"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:96
+msgid "Show when an app isn't available in your language"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:109
 msgid "Install OS Updates offline"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:104
+#: data/appcenter.metainfo.xml.in:130
 msgid "Rewritten navigation with multitouch gestures to go back"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:105
+#: data/appcenter.metainfo.xml.in:131
 msgid "Recently updated apps are shown at the top of category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:106
+#: data/appcenter.metainfo.xml.in:132
 msgid "A status overlay bar is now shown when tasks are in progress"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:108
+#: data/appcenter.metainfo.xml.in:134
 #, fuzzy
 #| msgid "Improvements:"
 msgid "App Info Page Improvements:"
 msgstr "Peningkatan:"
 
-#: data/appcenter.metainfo.xml.in:110
+#: data/appcenter.metainfo.xml.in:136
 msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:137
 msgid "An app's accent color is now shown behind screenshots"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:112
+#: data/appcenter.metainfo.xml.in:138
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:139
 msgid "Wrap links at the bottom pages instead of ellipsize"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:114
+#: data/appcenter.metainfo.xml.in:140
 msgid "Better dark style support"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:116
+#: data/appcenter.metainfo.xml.in:142
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Updates View Improvements:"
 msgstr "Peningkatan:"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:144
 msgid "Release notes are shown in a dialog"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:145
 msgid "Better fallback icons for components"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:146
 msgid ""
 "The \"Update All\" header now sticks to the top of the window when scrolling"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:150
 msgid "Redesigned \"Fun &amp; Games\" category card"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:125 data/appcenter.metainfo.xml.in:154
+#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
 msgid "Performance improvements"
 msgstr "Peningkatan performa"
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:152
 #, fuzzy
 #| msgid "Extension improvements"
 msgid "Stability improvements"
 msgstr "Peningkatan Ekstensi"
 
-#: data/appcenter.metainfo.xml.in:141
+#: data/appcenter.metainfo.xml.in:167
 #, fuzzy
 #| msgid "Added an option to automatically update curated apps"
 msgid "Added an option to automatically update apps"
 msgstr ""
 "Menambahkan pilihan untuk memperbarui secara otomatis aplikasi yang dikurasi"
 
-#: data/appcenter.metainfo.xml.in:142
+#: data/appcenter.metainfo.xml.in:168
 #, fuzzy
 #| msgid "Check for Updates"
 msgid "Manually check for new updates"
 msgstr "Memeriksa Pembaruan"
 
-#: data/appcenter.metainfo.xml.in:143
+#: data/appcenter.metainfo.xml.in:169
 msgid "Warn when apps are built against older runtimes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:145 data/appcenter.metainfo.xml.in:162
+#: data/appcenter.metainfo.xml.in:171
 msgid "Fixes:"
 msgstr "Perbaikan:"
 
-#: data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:173
 msgid "Prevent back button from disappearing or requiring multiple clicks"
 msgstr "Cegah tombol kembali menghilang atau membutuhkan banyak klik"
 
-#: data/appcenter.metainfo.xml.in:149 data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:175
 msgid "Improvements:"
 msgstr "Peningkatan:"
 
-#: data/appcenter.metainfo.xml.in:151
+#: data/appcenter.metainfo.xml.in:177
 msgid "Don't show a warning dialog about apps from alt stores"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:178
 msgid "Show screenshot captions in a tooltip"
 msgstr "Tampilkan keterangan cuplikan layar di tooltip"
 
-#: data/appcenter.metainfo.xml.in:153
+#: data/appcenter.metainfo.xml.in:179
 msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
-
-#: data/appcenter.metainfo.xml.in:164
-msgid "Prevent potential crashes when updating"
-msgstr "Cegah potensi macet saat memperbarui"
-
-#: data/appcenter.metainfo.xml.in:168
-msgid "Link to Flathub's search page when no search results are found"
-msgstr ""
-"Tautan ke halaman pencarian Flathub ketika tidak ada hasil pencarian yang "
-"ditemukan"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -224,6 +226,24 @@ msgstr "Pembaruan perangkat lunak"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Otentikasi diperlukan untuk pembaruan perangkat lunak"
+
+#: data/io.elementary.appcenter.policy.in:22
+msgid "Repair software sources"
+msgstr ""
+
+#: data/io.elementary.appcenter.policy.in:23
+#, fuzzy
+#| msgid "Authentication is required to update software"
+msgid "Authentication is required to repair software sources"
+msgstr "Otentikasi diperlukan untuk pembaruan perangkat lunak"
+
+#~ msgid "Prevent potential crashes when updating"
+#~ msgstr "Cegah potensi macet saat memperbarui"
+
+#~ msgid "Link to Flathub's search page when no search results are found"
+#~ msgstr ""
+#~ "Tautan ke halaman pencarian Flathub ketika tidak ada hasil pencarian yang "
+#~ "ditemukan"
 
 #~ msgid "Amusements appear in the Games category"
 #~ msgstr "Hiburan muncul di kategori Permainan"

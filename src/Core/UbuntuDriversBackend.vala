@@ -231,6 +231,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return yield PackageKitBackend.get_default ().update_package (package, change_info, cancellable);
     }
 
+    public async bool repair (Cancellable? cancellable = null) {
+        return true;
+    }
+
     private static GLib.Once<UbuntuDriversBackend> instance;
     public static unowned UbuntuDriversBackend get_default () {
         return instance.once (() => { return new UbuntuDriversBackend (); });

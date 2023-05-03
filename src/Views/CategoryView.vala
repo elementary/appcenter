@@ -139,8 +139,13 @@ public class AppCenter.CategoryView : Gtk.Stack {
                     break;
                 }
 
+                var newest_release = recent_package.get_newest_release ();
+                if (newest_release == null) {
+                    continue;
+                }
+
                 // Don't add packages over 6 months old
-                if (recent_package.get_newest_release ().get_timestamp () < datetime.to_unix ()) {
+                if (newest_release.get_timestamp () < datetime.to_unix ()) {
                     continue;
                 }
 

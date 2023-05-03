@@ -24,19 +24,19 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
 
+        private AsyncMutex refresh_mutex = new AsyncMutex ();
+        private bool updating_all_apps = false;
+        private Cancellable? refresh_cancellable = null;
         private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
         private Gtk.FlowBox installed_flowbox;
-        private Gtk.Revealer updated_revealer;
         private Gtk.Label updated_label;
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
+        private Gtk.Revealer updated_revealer;
         private Gtk.SizeGroup action_button_group;
         private ListStore package_liststore;
         private Widgets.SizeLabel size_label;
-        private bool updating_all_apps = false;
-        private Cancellable? refresh_cancellable = null;
-        private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
             package_liststore = new ListStore (typeof (AppCenterCore.Package));
@@ -68,15 +68,6 @@ namespace AppCenter.Views {
             updated_label = new Gtk.Label ("");
             updated_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
-                margin = 12
-            };
-            updated_box.add (new Gtk.Image.from_icon_name ("process-completed-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-            updated_box.add (updated_label);
-
-            updated_revealer = new Gtk.Revealer ();
-            updated_revealer.add (updated_box);
-
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
             };
@@ -85,6 +76,18 @@ namespace AppCenter.Views {
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER
             };
+
+            updated_label = new Gtk.Label ("");
+            updated_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+                margin = 12
+            };
+            updated_box.add (new Gtk.Image.from_icon_name ("process-completed-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+            updated_box.add (updated_label);
+
+            updated_revealer = new Gtk.Revealer ();
+            updated_revealer.add (updated_box);
 
             update_all_button = new Gtk.Button.with_label (_("Update All")) {
                 valign = Gtk.Align.CENTER
@@ -187,6 +190,21 @@ namespace AppCenter.Views {
             });
 
             update_all_button.clicked.connect (on_update_all);
+
+            unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
+            aggregator.notify ["job-type"].connect (() => {
+                switch (aggregator.job_type) {
+                    case GET_PREPARED_PACKAGES:
+                    case GET_INSTALLED_PACKAGES:
+                    case GET_UPDATES:
+                    case REFRESH_CACHE:
+                    case INSTALL_PACKAGE:
+                    case UPDATE_PACKAGE:
+                    case REMOVE_PACKAGE:
+                        updated_revealer.reveal_child = false;
+                        break;
+                }
+            });
         }
 
         private async void get_apps () {
