@@ -51,9 +51,6 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
-            updated_label = new Gtk.Label ("");
-            updated_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
             };
@@ -62,6 +59,9 @@ namespace AppCenter.Views {
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER
             };
+
+            updated_label = new Gtk.Label ("");
+            updated_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
                 margin = 12
@@ -137,6 +137,22 @@ namespace AppCenter.Views {
             action_button_group.add_widget (update_all_button);
             action_button_group.add_widget (restart_button);
 
+            infobar.response.connect ((response) => {
+                if (response == 0) {
+                    try {
+                        SuspendControl.get_default ().reboot ();
+                    } catch (GLib.Error e) {
+                        if (!(e is IOError.CANCELLED)) {
+                            info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
+                            infobar.message_type = Gtk.MessageType.ERROR;
+                            restart_button.visible = false;
+                        }
+                    }
+                }
+            });
+
+            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+
             orientation = Gtk.Orientation.VERTICAL;
             add (infobar);
             add (updated_revealer);
@@ -153,22 +169,6 @@ namespace AppCenter.Views {
                     return GLib.Source.REMOVE;
                 });
             });
-
-            infobar.response.connect ((response) => {
-                if (response == 0) {
-                    try {
-                        SuspendControl.get_default ().reboot ();
-                    } catch (GLib.Error e) {
-                        if (!(e is IOError.CANCELLED)) {
-                            info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
-                            infobar.message_type = Gtk.MessageType.ERROR;
-                            restart_button.visible = false;
-                        }
-                    }
-                }
-            });
-
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             package_liststore.items_changed.connect (() => {
                 list_box.show_all ();
