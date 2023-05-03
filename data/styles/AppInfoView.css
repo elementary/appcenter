@@ -1,0 +1,34 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2023 elementary, Inc. (https://elementary.io)
+ */
+
+appinfoview .banner clamp {
+    padding: 1.333rem; /*12px*/;
+}
+
+appinfoview .banner combobox {
+    margin-top: 1.333rem; /*12px*/;
+}
+
+appinfoview .content-warning-box {
+    margin: 1.333rem 1.333rem 0; /*12px 12px 0*/;
+}
+
+appinfoview .screenshot {
+    background: @selected_bg_color;
+    border-radius: 0.666rem; /*6px*/
+    color: @selected_fg_color;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1.333rem; /*12px*/
+    padding: 1.333rem; /*12px*/
+}
+
+appinfoview .content-box {
+    margin: 0 1.333rem 1.333rem 1.333rem; /*12px*/;
+}
+
+appinfoview .content-box > label {
+    font-size: 1.25em;
+}

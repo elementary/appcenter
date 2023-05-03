@@ -70,7 +70,7 @@ namespace AppCenter {
             };
             cancel_button.clicked.connect (() => action_cancelled ());
 
-            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (action_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
