@@ -112,7 +112,7 @@ namespace AppCenter.Views {
                 max_children_per_line = 4,
                 row_spacing = 12
             };
-            installed_flowbox.bind_model (installed_liststore, create_child_from_package);
+            installed_flowbox.bind_model (installed_liststore, create_installed_from_package);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (list_box);
@@ -270,7 +270,7 @@ namespace AppCenter.Views {
                     if (needs_update) {
                         updates_liststore.insert_sorted (package, compare_package_func);
                     } else if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
-                        installed_liststore.insert_sorted (package, installed_sort_func);
+                        installed_liststore.insert_sorted (package, compare_package_func);
                     }
                 }
 
@@ -289,7 +289,7 @@ namespace AppCenter.Views {
             return new Widgets.PackageRow.installed (package, action_button_group);
         }
 
-        private Gtk.Widget create_child_from_package (Object object) {
+        private Gtk.Widget create_installed_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
             return new Widgets.InstalledPackageRowGrid (package, action_button_group);
         }
@@ -344,13 +344,6 @@ namespace AppCenter.Views {
             }
 
             return a_package_name.collate (b_package_name); /* Else sort in name order */
-        }
-
-        private int installed_sort_func (Object object1, Object object2) {
-            var package1 = (AppCenterCore.Package) object1;
-            var package2 = (AppCenterCore.Package) object2;
-
-            return package1.get_name ().collate (package2.get_name ());
         }
 
         [CCode (instance_pos = -1)]
