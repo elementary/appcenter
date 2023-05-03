@@ -176,6 +176,10 @@ namespace AppCenter.Views {
                 list_box.show_all ();
             });
 
+            installed_liststore.items_changed.connect (() => {
+                installed_flowbox.show_all ();
+            });
+
             list_box.row_activated.connect ((row) => {
                 if (row is Widgets.PackageRow) {
                     show_app (((Widgets.PackageRow) row).get_package ());
@@ -273,9 +277,6 @@ namespace AppCenter.Views {
                         installed_liststore.insert_sorted (package, compare_package_func);
                     }
                 }
-
-                installed_flowbox.show_all ();
-                installed_flowbox.invalidate_sort ();
             }
 
             yield client.get_prepared_applications (refresh_cancellable);
