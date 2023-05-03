@@ -32,14 +32,16 @@ namespace AppCenter.Views {
         private Gtk.Revealer updated_revealer;
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
-        private ListStore package_liststore;
+        private ListStore updates_liststore;
+        private ListStore installed_liststore;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
-            package_liststore = new ListStore (typeof (AppCenterCore.Package));
+            updates_liststore = new ListStore (typeof (AppCenterCore.Package));
+            installed_liststore = new ListStore (typeof (AppCenterCore.Package));
 
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
@@ -93,7 +95,7 @@ namespace AppCenter.Views {
                 hexpand = true,
                 vexpand = true
             };
-            list_box.bind_model (package_liststore, create_row_from_package);
+            list_box.bind_model (updates_liststore, create_row_from_package);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
 
@@ -110,7 +112,7 @@ namespace AppCenter.Views {
                 max_children_per_line = 4,
                 row_spacing = 12
             };
-            installed_flowbox.set_sort_func ((Gtk.FlowBoxSortFunc) installed_sort_func);
+            installed_flowbox.bind_model (installed_liststore, create_child_from_package);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (list_box);
@@ -170,7 +172,7 @@ namespace AppCenter.Views {
                 });
             });
 
-            package_liststore.items_changed.connect (() => {
+            updates_liststore.items_changed.connect (() => {
                 list_box.show_all ();
             });
 
@@ -253,23 +255,22 @@ namespace AppCenter.Views {
                 var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
                 var os_updates_size = yield os_updates.get_download_size_including_deps ();
                 if (os_updates_size > 0) {
-                    package_liststore.insert_sorted (os_updates, compare_package_func);
+                    updates_liststore.insert_sorted (os_updates, compare_package_func);
                 }
 
                 var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
                 var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
                 if (runtime_updates_size > 0) {
-                    package_liststore.insert_sorted (runtime_updates, compare_package_func);
+                    updates_liststore.insert_sorted (runtime_updates, compare_package_func);
                 }
 
                 foreach (var package in installed_apps) {
                     var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
                     // Only add row if this package needs an update or it's not a font or plugin
                     if (needs_update) {
-                        package_liststore.insert_sorted (package, compare_package_func);
+                        updates_liststore.insert_sorted (package, compare_package_func);
                     } else if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
-                        var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
-                        installed_flowbox.add (row);
+                        installed_liststore.insert_sorted (package, installed_sort_func);
                     }
                 }
 
@@ -286,6 +287,11 @@ namespace AppCenter.Views {
         private Gtk.Widget create_row_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
             return new Widgets.PackageRow.installed (package, action_button_group);
+        }
+
+        private Gtk.Widget create_child_from_package (Object object) {
+            unowned var package = (AppCenterCore.Package) object;
+            return new Widgets.InstalledPackageRowGrid (package, action_button_group);
         }
 
         private int compare_package_func (Object object1, Object object2) {
@@ -340,12 +346,11 @@ namespace AppCenter.Views {
             return a_package_name.collate (b_package_name); /* Else sort in name order */
         }
 
-        [CCode (instance_pos = -1)]
-        protected virtual int installed_sort_func (Gtk.FlowBoxChild child1, Gtk.FlowBoxChild child2) {
-            var row1 = (Widgets.InstalledPackageRowGrid) child1.get_child ();
-            var row2 = (Widgets.InstalledPackageRowGrid) child2.get_child ();
+        private int installed_sort_func (Object object1, Object object2) {
+            var package1 = (AppCenterCore.Package) object1;
+            var package2 = (AppCenterCore.Package) object2;
 
-            return row1.package.get_name ().collate (row2.package.get_name ());
+            return package1.get_name ().collate (package2.get_name ());
         }
 
         [CCode (instance_pos = -1)]
@@ -400,8 +405,8 @@ namespace AppCenter.Views {
                 }
             }
 
-            for (int i = 0; i < package_liststore.get_n_items (); i++) {
-                var package = (AppCenterCore.Package) package_liststore.get_item (i);
+            for (int i = 0; i < updates_liststore.get_n_items (); i++) {
+                var package = (AppCenterCore.Package) updates_liststore.get_item (i);
                 if (package.update_available && !package.should_pay) {
                     try {
                         yield package.update (false);
@@ -432,22 +437,15 @@ namespace AppCenter.Views {
             var installed_apps = yield client.get_installed_applications ();
             foreach (var app in installed_apps) {
                 if (app == package) {
-                    package_liststore.insert_sorted (package, compare_package_func);
+                    updates_liststore.insert_sorted (package, compare_package_func);
                     break;
                 }
             }
         }
 
         public void clear () {
-            package_liststore.remove_all ();
-
-            foreach (unowned var child in installed_flowbox.get_children ()) {
-                var row_child = ((Gtk.FlowBoxChild) child).get_child ();
-                if (row_child is Widgets.InstalledPackageRowGrid) {
-                    child.destroy ();
-                }
-            };
-            installed_flowbox.invalidate_sort ();
+            updates_liststore.remove_all ();
+            installed_liststore.remove_all ();
         }
     }
 }
