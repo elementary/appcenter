@@ -348,13 +348,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         foreach (var package in package_list.values) {
             if (!package.is_explicit && package.kind != AppStream.ComponentKind.ADDON) {
-#if CURATED
-                if (package.is_native) {
-                    apps.add (package);
-                }
-#else
                 apps.add (package);
-#endif
             }
         }
 
