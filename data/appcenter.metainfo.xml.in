@@ -63,6 +63,18 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.2.2" date="2023-05-03">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/2026">Show recommended apps from flathub</issue>
+      </issues>
+    </release>
+
     <release version="7.2.1" date="2023-02-27">
       <description>
         <p>Other Improvements:</p>
