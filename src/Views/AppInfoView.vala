@@ -640,8 +640,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             xalign = 0
         };
 
-        whats_new_label = new Granite.HeaderLabel (_("What's New:"));
-        whats_new_label.hide ();
+        whats_new_label = new Granite.HeaderLabel (_("What's New:")) {
+            no_show_all = true
+        };
 
         release_carousel = new Hdy.Carousel () {
             allow_mouse_drag = true,
@@ -994,6 +995,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                         }
                     }
 
+                    whats_new_label.no_show_all = false;
                     whats_new_label.show ();
                     release_carousel.show_all ();
                 }
