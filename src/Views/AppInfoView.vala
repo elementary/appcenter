@@ -987,11 +987,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                         var release_row = new Widgets.ReleaseRow (release);
                         release_row.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-                        // var release_clamp =new Hdy.Clamp () {
-                        //     maximum_size = MAX_WIDTH
-                        // };
-                        // release_clamp.add (release_row);
-
                         release_carousel.add (release_row);
 
                         if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
