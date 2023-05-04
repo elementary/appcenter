@@ -31,19 +31,19 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
     GenericArray<AppStream.Screenshot> screenshots;
 
+    private Granite.HeaderLabel whats_new_label;
     private Gtk.CssProvider accent_provider;
     private Gtk.ComboBox origin_combo;
-    private Gtk.Grid release_grid;
     private Gtk.Label app_subtitle;
     private Gtk.ListBox extension_box;
     private Gtk.ListStore origin_liststore;
     private Gtk.Overlay screenshot_overlay;
     private Gtk.Revealer origin_combo_revealer;
+    private Hdy.Carousel release_carousel;
     private Hdy.Carousel screenshot_carousel;
     private Hdy.Clamp screenshot_not_found_clamp;
     private Gtk.Stack screenshot_stack;
     private Gtk.Label app_description;
-    private Gtk.ListBox release_list_box;
     private Widgets.SizeLabel size_label;
     private ArrowButton screenshot_next;
     private ArrowButton screenshot_previous;
@@ -640,27 +640,18 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             xalign = 0
         };
 
-        var whats_new_label = new Gtk.Label (_("What's New:")) {
-            xalign = 0
-        };
-        whats_new_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        whats_new_label = new Granite.HeaderLabel (_("What's New:"));
+        whats_new_label.hide ();
 
-        release_list_box = new Gtk.ListBox () {
-            selection_mode = Gtk.SelectionMode.NONE
+        release_carousel = new Hdy.Carousel () {
+            allow_mouse_drag = true,
+            allow_long_swipes = true,
+            allow_scroll_wheel = false
         };
-        release_list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
-
-        release_grid = new Gtk.Grid () {
-            no_show_all = true,
-            row_spacing = 12
-        };
-        release_grid.attach (whats_new_label, 0, 0);
-        release_grid.attach (release_list_box, 0, 1);
-        release_grid.hide ();
 
         var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 24);
         content_box.add (app_description);
-        content_box.add (release_grid);
+        content_box.add (whats_new_label);
         content_box.get_style_context ().add_class ("content-box");
 
         if (package_component.get_addons ().length > 0) {
@@ -735,12 +726,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         }
 #endif
 
-        content_box.add (links_flowbox);
-
         var body_clamp = new Hdy.Clamp () {
             maximum_size = MAX_WIDTH
         };
         body_clamp.add (content_box);
+
+        var links_clamp = new Hdy.Clamp () {
+            maximum_size = MAX_WIDTH
+        };
+        links_clamp.add (links_flowbox);
+        links_clamp.get_style_context ().add_class ("content-box");
 
         var author_view = new AuthorView (package, MAX_WIDTH);
 
@@ -757,6 +752,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         }
 
         box.add (body_clamp);
+        box.add (release_carousel);
+        box.add (links_clamp);
         box.add (author_view);
 
         var scrolled = new Gtk.ScrolledWindow (null, null) {
@@ -987,22 +984,23 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                     });
 
                     foreach (unowned var release in releases) {
-                        var row = new Widgets.ReleaseRow (release) {
-                            margin_bottom = 24
-                        };
-                        release_list_box.add (row);
+                        var release_row = new Widgets.ReleaseRow (release);
+                        release_row.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                        // var release_clamp =new Hdy.Clamp () {
+                        //     maximum_size = MAX_WIDTH
+                        // };
+                        // release_clamp.add (release_row);
+
+                        release_carousel.add (release_row);
 
                         if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
                             break;
                         }
-
-                        if (release_list_box.get_children ().length () == 5) {
-                            break;
-                        }
                     }
 
-                    release_grid.no_show_all = false;
-                    release_grid.show_all ();
+                    whats_new_label.show ();
+                    release_carousel.show_all ();
                 }
 
                 return false;

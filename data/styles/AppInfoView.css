@@ -26,9 +26,22 @@ appinfoview .screenshot {
 }
 
 appinfoview .content-box {
-    margin: 0 1.333rem 1.333rem 1.333rem; /*12px*/;
+    margin: 0 1.333rem; /*12px*/;
 }
 
 appinfoview .content-box > label {
     font-size: 1.25em;
+}
+
+appinfoview .h4 {
+    font-size: 1.5rem;
+    opacity: 1;
+    padding-bottom: 0;
+}
+
+appinfoview release {
+    background: @selected_bg_color;
+    border-radius: 0.666rem; /*6px*/
+    margin: 0.666rem 1.333rem 1.333rem; /* 6px 12px 12px 12px*/
+    padding: 1.333rem; /*12px*/
 }
