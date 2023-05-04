@@ -29,9 +29,9 @@ public class AppCenter.Homepage : Gtk.Box {
     private Gtk.ScrolledWindow scrolled_window;
 
     private Hdy.Carousel banner_carousel;
-    private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
+    private Widgets.Banner appcenter_banner;
 
     private uint banner_timeout_id;
 
@@ -51,13 +51,6 @@ public class AppCenter.Homepage : Gtk.Box {
         var banner_dots = new Hdy.CarouselIndicatorDots () {
             carousel = banner_carousel
         };
-
-        var banner_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        banner_box.add (banner_event_box);
-        banner_box.add (banner_dots);
-
-        banner_revealer = new Gtk.Revealer ();
-        banner_revealer.add (banner_box);
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
             margin_start = 12
@@ -205,7 +198,8 @@ public class AppCenter.Homepage : Gtk.Box {
         }, "privacy-security"));
 
         var box = new Gtk.Box (orientation = Gtk.Orientation.VERTICAL, 0);
-        box.add (banner_revealer);
+        box.add (banner_event_box);
+        box.add (banner_dots);
         box.add (recently_updated_revealer);
         box.add (categories_label);
         box.add (category_flow);
@@ -226,10 +220,18 @@ public class AppCenter.Homepage : Gtk.Box {
             banner.clicked.connect (() => {
                 show_package (local_package);
             });
+        } else {
+            appcenter_banner = new Widgets.Banner (
+                AppCenterCore.PackageKitBackend.get_default ().lookup_package_by_id ("appcenter")
+            );
+            banner_carousel.add (appcenter_banner);
+            banner_carousel.page_changed.connect (page_changed_handler );
         }
 
-        banner_timeout_start ();
-        load_banners_and_carousels.begin ();
+        load_banners_and_carousels.begin ((obj, res) => {
+            load_banners_and_carousels.end (res);
+            banner_timeout_start ();
+        });
 
         category_flow.child_activated.connect ((child) => {
             var card = (AbstractCategoryCard) child;
@@ -271,6 +273,11 @@ public class AppCenter.Homepage : Gtk.Box {
         });
     }
 
+    private void page_changed_handler () {
+        banner_carousel.remove (appcenter_banner);
+        banner_carousel.page_changed.disconnect (page_changed_handler );
+    }
+
     private async void load_banners_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
@@ -309,8 +316,8 @@ public class AppCenter.Homepage : Gtk.Box {
             banner_carousel.add (banner);
         }
 
+        banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
         banner_carousel.show_all ();
-        banner_revealer.reveal_child = true;
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
