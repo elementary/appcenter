@@ -39,7 +39,7 @@ appinfoview .content-box > label {
     font-size: 1.25em;
 }
 
-appinfoview .h4 {
+appinfoview .content-box .h4 {
     font-size: 1.5rem;
     opacity: 1;
     padding-bottom: 0;
