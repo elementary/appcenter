@@ -46,13 +46,6 @@ namespace AppCenter.Views {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
-            var loading_view = new Granite.Widgets.AlertView (
-                _("Checking for Updates"),
-                _("Downloading a list of available updates to the OS and installed apps"),
-                "sync-synchronizing"
-            );
-            loading_view.show_all ();
-
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
             };
@@ -97,7 +90,6 @@ namespace AppCenter.Views {
             };
             list_box.bind_model (updates_liststore, create_row_from_package);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
-            list_box.set_placeholder (loading_view);
 
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
