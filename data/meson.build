@@ -38,7 +38,7 @@ configure_file(
 i18n.merge_file(
     input: 'appcenter.metainfo.xml.in',
     output: meson.project_name() + '.metainfo.xml',
-    po_dir: meson.source_root() / 'po' / 'extra',
+    po_dir: meson.project_source_root() / 'po' / 'extra',
     type: 'xml',
     install: true,
     install_dir: get_option('datadir') / 'metainfo',
@@ -54,7 +54,7 @@ desktop_in = configure_file(
 i18n.merge_file(
     input: desktop_in,
     output: meson.project_name() + '.desktop',
-    po_dir: join_paths(meson.source_root (), 'po', 'extra'),
+    po_dir: join_paths(meson.project_source_root (), 'po', 'extra'),
     type: 'desktop',
     install_dir: join_paths(get_option('datadir'), 'applications'),
     install: true
@@ -63,7 +63,7 @@ i18n.merge_file(
 i18n.merge_file(
     input: 'io.elementary.appcenter.policy.in',
     output: 'io.elementary.appcenter.policy',
-    po_dir: join_paths(meson.source_root (), 'po', 'extra'),
+    po_dir: join_paths(meson.project_source_root (), 'po', 'extra'),
     install_dir: join_paths(get_option('datadir'), 'polkit-1', 'actions'),
     install: true
 )
