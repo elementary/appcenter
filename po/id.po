@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-11 13:58+0000\n"
 "PO-Revision-Date: 2023-05-11 14:07+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
+"Last-Translator: Adek Lanin <adeklanin@me.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/id/>\n"
 "Language: id\n"
@@ -500,7 +500,7 @@ msgstr "Bayar $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
-msgstr ""
+msgstr "Uji coba gratis"
 
 #: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
