@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 18:42+0000\n"
-"PO-Revision-Date: 2023-05-11 13:56+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
+"PO-Revision-Date: 2023-05-11 13:58+0000\n"
+"Last-Translator: Okta Arif Cahyawan <111201609421@mhs.dinus.ac.id>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/id/>\n"
 "Language: id\n"
@@ -71,7 +71,7 @@ msgstr "Sedang menghapus pemasangan…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "Sedang memperbaiki…"
 
 #: src/MainWindow.vala:145
 #, c-format
