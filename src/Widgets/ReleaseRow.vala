@@ -24,6 +24,10 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         Object (release: release);
     }
 
+    class construct {
+        set_css_name ("release");
+    }
+
     construct {
         var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic", Gtk.IconSize.MENU);
 
@@ -72,11 +76,18 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         }
 
         foreach (unowned AppStream.Issue issue in issues) {
-            var issue_image = new Gtk.Image.from_icon_name ("bug-symbolic", Gtk.IconSize.MENU);
+            var issue_image = new Gtk.Image.from_icon_name ("bug-symbolic", Gtk.IconSize.MENU) {
+                valign = Gtk.Align.START
+            };
 
-            var issue_linkbutton = new Gtk.LinkButton.with_label (issue.get_url (), issue.get_id ()) {
+            var issue_label = new Gtk.Label (issue.get_id ()) {
+                wrap = true,
                 xalign = 0
             };
+
+            var issue_linkbutton = new Gtk.LinkButton (issue.get_url ());
+            issue_linkbutton.get_child ().destroy ();
+            issue_linkbutton.add (issue_label);
 
             var issue_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
             issue_box.add (issue_image);

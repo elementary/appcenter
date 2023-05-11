@@ -16,7 +16,7 @@
 *
 */
 
-public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
+public class AppCenter.Widgets.SizeLabel : Gtk.Box {
     public bool using_flatpak { get; construct; }
     public uint64 size { get; construct; }
 
@@ -35,15 +35,15 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
             _("Actual Download Size Likely to Be Smaller"),
             _("Only the parts of apps and updates that are needed will be downloaded.")
         );
+
         size_label = new Gtk.Label (null);
-        size_label.hexpand = true;
-        size_label.xalign = 1;
 
         var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.BUTTON);
         icon.margin_start = 6;
 
-        icon_revealer = new Gtk.Revealer ();
-        icon_revealer.transition_type = Gtk.RevealerTransitionType.NONE;
+        icon_revealer = new Gtk.Revealer () {
+            transition_type = Gtk.RevealerTransitionType.NONE
+        };
         icon_revealer.add (icon);
 
         add (size_label);
