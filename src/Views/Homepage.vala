@@ -275,7 +275,7 @@ public class AppCenter.Homepage : Gtk.Box {
 
     private void page_changed_handler () {
         banner_carousel.remove (appcenter_banner);
-        banner_carousel.page_changed.disconnect (page_changed_handler );
+        banner_carousel.page_changed.disconnect (page_changed_handler);
     }
 
     private async void load_banners_and_carousels () {
