@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 18:42+0000\n"
+"POT-Creation-Date: 2023-05-11 13:58+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/appcenter/appcenter/ckb/>\n"
@@ -186,7 +186,7 @@ msgstr "ڕەشکردنەوەی پاکێجەکان"
 msgid "Downloading"
 msgstr "داگرتن"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1381
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
 msgid "Installing"
 msgstr "دامەزراندن"
 
@@ -231,9 +231,9 @@ msgid "Finished"
 msgstr "تەواوبوو"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1390 src/Core/FlatpakBackend.vala:1414
-#: src/Core/FlatpakBackend.vala:1522 src/Core/FlatpakBackend.vala:1546
-#: src/Core/FlatpakBackend.vala:1704 src/Core/FlatpakBackend.vala:1722
+#: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
+#: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
+#: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
 msgid "Cancelling"
 msgstr "هەڵوەشاندنەوە"
 
@@ -327,11 +327,11 @@ msgstr[1] "نوێکردنەوەکانی %u بەردەستە بۆ سیستەمە�
 msgid "%s (system-wide)"
 msgstr "%s (سیستەم-واید)"
 
-#: src/Core/FlatpakBackend.vala:1513
+#: src/Core/FlatpakBackend.vala:1523
 msgid "Uninstalling"
 msgstr "هەڵوەشاندنەوەی دامەزراندن"
 
-#: src/Core/FlatpakBackend.vala:1695
+#: src/Core/FlatpakBackend.vala:1705
 msgid "Updating"
 msgstr "نوێکردنەوە"
 
@@ -361,7 +361,7 @@ msgstr "سەرچاوەی نەزانراو (چارەسەر نەکراو)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "دۆخی نەرمەکاڵا لە ئەپسەنتەر وەکو دامەزراو دیارینەکراوە بۆ گورزەی: %s"
 
-#: src/Core/PackageKitBackend.vala:308
+#: src/Core/PackageKitBackend.vala:313
 #, c-format
 msgid "%s (local)"
 msgstr "(ناوخۆی) %s"
@@ -616,7 +616,7 @@ msgstr "ڕەشکردنەوەی نەرمەکاڵا؟"
 msgid "Uninstall “%s”?"
 msgstr "رەشکردنەوەی \"%s\"؟"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:678
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
 msgstr "ڕەشکردنەوە"
 
@@ -666,244 +666,244 @@ msgstr "نەتوانرا نەرمەکاڵای \"%s\" نوێبکرێتەوە"
 msgid "Refresh Updates"
 msgstr "پشکنین بۆ نوێبوونەوەکان"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:264
 msgid "Illicit Substances"
 msgstr "ماددە قەدەغەکراوەکان"
 
-#: src/Views/AppInfoView.vala:132
+#: src/Views/AppInfoView.vala:265
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "بوونی یان سەرچاوەیە بۆ کحول و ماددە هۆشبەرەکان یان توتن"
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:270
 msgid "Sex & Nudity"
 msgstr "سێکس & ڕووتی"
 
-#: src/Views/AppInfoView.vala:138
+#: src/Views/AppInfoView.vala:271
 msgid "Adult nudity or sexual themes"
 msgstr "ڕووتی کەسانی پێگەیشتوو یان بابەتی سێکسی"
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:276
 msgid "Offensive Language"
 msgstr "زمانی ڕەنجێنەر"
 
-#: src/Views/AppInfoView.vala:144
+#: src/Views/AppInfoView.vala:277
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "جنێودان، زمانی جیاکاری، یان گاڵتەجاڕی پێگەیشتووان"
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:282
 msgid "Gambling"
 msgstr "قومارکردن"
 
-#: src/Views/AppInfoView.vala:150
+#: src/Views/AppInfoView.vala:283
 msgid "Realistic or participatory gambling"
 msgstr "قومارکردنی ڕاستەقینە یان بەشداری"
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:306
 msgid "Non-Curated"
 msgstr "چارەسەر نەکراو"
 
-#: src/Views/AppInfoView.vala:177
+#: src/Views/AppInfoView.vala:307
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "ئێلەمێنتەری پێداچوونەوەی لە ڕوی ئاسایش، سیاسەت یان یەکخستنی لەگەڵ سیستەمەکە بۆ نەکردووە"
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:324
 #, fuzzy
 #| msgid "Translate"
 msgid "May Not Be Translated"
 msgstr "وەرگێڕان"
 
-#: src/Views/AppInfoView.vala:195
+#: src/Views/AppInfoView.vala:325
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:332
 #, fuzzy
 #| msgid "Translate"
 msgid "Not Translated"
 msgstr "وەرگێڕان"
 
-#: src/Views/AppInfoView.vala:203
+#: src/Views/AppInfoView.vala:333
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:210
+#: src/Views/AppInfoView.vala:340
 #, fuzzy
 #| msgid "Translate"
 msgid "Not Fully Translated"
 msgstr "وەرگێڕان"
 
-#: src/Views/AppInfoView.vala:211
+#: src/Views/AppInfoView.vala:341
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:365
 msgid "Conflict"
 msgstr "پێکداکێشان"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:366
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "وێناکردنی بارودۆخی نائاسایش یان ململانێی شەڕانگێزانە"
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:379
 msgid "Violence"
 msgstr "توندوتیژی"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:384
 msgid "Fantasy Violence"
 msgstr "توندوتیژی فەنتازیا"
 
-#: src/Views/AppInfoView.vala:259
+#: src/Views/AppInfoView.vala:389
 msgid "Graphic violence, bloodshed, or death"
 msgstr "توندوتیژی گرافیکی، خوێنڕشتن، یان مردن"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:433
 msgid "Multiplayer"
 msgstr "فرەیاریکەر"
 
-#: src/Views/AppInfoView.vala:304
+#: src/Views/AppInfoView.vala:434
 msgid "Online play with other people"
 msgstr "یاریکردنی سەرهێڵ لەگەڵ خەڵکی تر"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:450
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "‮گۆڕینەوەی پەیامی دەنگی، ڤیدیۆیی، دەقی چاودێرینەکراو لەگەڵ خەڵکی تر"
 
-#: src/Views/AppInfoView.vala:322
+#: src/Views/AppInfoView.vala:452
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "‮گۆڕینەوەی پەیامی دەنگی، ڤیدیۆیی، دەقی چاودێری کراو لەگەڵ خەڵکی تر"
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:456
 msgid "Online Interactions"
 msgstr "کارلێککردنە سەرهێڵییەکان"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:466
 msgid "Location Sharing"
 msgstr "هاوبەشی پێکردنی شوێن"
 
-#: src/Views/AppInfoView.vala:337
+#: src/Views/AppInfoView.vala:467
 msgid "Other people can see your real-world location"
 msgstr "خەڵکی تر دەتوانن شوێنی ڕاستەقینەت بزانن"
 
-#: src/Views/AppInfoView.vala:349
+#: src/Views/AppInfoView.vala:479
 msgid "Collects anonymous usage data"
 msgstr "کۆکردنەوەی داتای بەکارهێنان بەشێوەی نەناسراوی"
 
-#: src/Views/AppInfoView.vala:352
+#: src/Views/AppInfoView.vala:482
 msgid "Collects usage data that could be used to identify you"
 msgstr "کۆکردنەوەی داتای بەکارهێنان کە دەکرێت بەکارىیت بۆ ناسینەوەت"
 
-#: src/Views/AppInfoView.vala:357
+#: src/Views/AppInfoView.vala:487
 msgid "Info Sharing"
 msgstr "هاوبەشی پێکردنی زانیاری"
 
-#: src/Views/AppInfoView.vala:477
+#: src/Views/AppInfoView.vala:611
 msgid "Screenshot Not Available"
 msgstr "سکرینشۆت بەردەست نییە"
 
-#: src/Views/AppInfoView.vala:588
-msgid "Homepage"
-msgstr "پەڕەی سەرەکی"
-
-#: src/Views/AppInfoView.vala:594
-msgid "Translate"
-msgstr "وەرگێڕان"
-
-#: src/Views/AppInfoView.vala:600
-msgid "Send Feedback"
-msgstr "ناردنی فیدباک"
-
-#: src/Views/AppInfoView.vala:606
-msgid "Help"
-msgstr "یارمەتی"
-
-#: src/Views/AppInfoView.vala:617
+#: src/Views/AppInfoView.vala:643
 msgid "What's New:"
 msgstr "چی نوێیە:"
 
-#: src/Views/AppInfoView.vala:652
+#: src/Views/AppInfoView.vala:670
 msgid "Extensions:"
 msgstr "زیادکراوەکان:"
 
-#: src/Views/AppInfoView.vala:781
+#: src/Views/AppInfoView.vala:701
+msgid "Homepage"
+msgstr "پەڕەی سەرەکی"
+
+#: src/Views/AppInfoView.vala:707
+msgid "Translate"
+msgstr "وەرگێڕان"
+
+#: src/Views/AppInfoView.vala:713
+msgid "Send Feedback"
+msgstr "ناردنی فیدباک"
+
+#: src/Views/AppInfoView.vala:719
+msgid "Help"
+msgstr "یارمەتی"
+
+#: src/Views/AppInfoView.vala:767
 msgid "Link copied to clipboard"
 msgstr "بەستەر کۆپی کرا بۆ کلیپبۆرد"
 
-#: src/Views/AppInfoView.vala:792
+#: src/Views/AppInfoView.vala:778
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "هاتنە دەر %s لە ئەپسەنتەر:"
 
-#: src/Views/AppInfoView.vala:800
+#: src/Views/AppInfoView.vala:786
 msgid "Share"
 msgstr "هاوبەشیکردن"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:880
 msgid "End of Life"
 msgstr "کۆتایی ژیان"
 
-#: src/Views/AppInfoView.vala:895
+#: src/Views/AppInfoView.vala:881
 msgid "May not work as expected or receive security updates"
 msgstr "لەوانەیە بەو شێوەیە کار نەکات کە پێشبینی دەکەیت یان نوێنکردنەوەی ئاسایشی بۆ نێیەت"
 
-#: src/Views/AppInfoView.vala:901
+#: src/Views/AppInfoView.vala:887
 msgid "Outdated"
 msgstr "بەسەرچوو"
 
-#: src/Views/AppInfoView.vala:902
+#: src/Views/AppInfoView.vala:888
 msgid "May not work as expected or support the latest features"
 msgstr "لەوانەیە پاڵپشتی کۆتا تایبەتمەندییەکان نەکات"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:896
 msgid "Unstable"
 msgstr "ناجێگیر"
 
-#: src/Views/AppInfoView.vala:911
+#: src/Views/AppInfoView.vala:897
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "بۆ وەشانی ناجێگیری %s دروستکراوە؛ بۆیە لەوەیە هەندێک کێشەی هەبێت. پێشنیار نەکراوە لەسەر سیستەمی بەرهەم بەکاری بهێندرێت."
 
-#: src/Views/AppInfoView.vala:924
+#: src/Views/AppInfoView.vala:910
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:925
+#: src/Views/AppInfoView.vala:911
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1187
+#: src/Views/AppInfoView.vala:1162
 msgid "Public Domain"
 msgstr "پاوانی گشتی (پەبلیک)"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1190
+#: src/Views/AppInfoView.vala:1165
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ckb.wikipedia.org/wiki/%D9%BE%D8%A7%D9%88%D8%A7%D9%86%DB%8C_%DA%AF%D8%B4%D8%AA%DB%8C"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1195
+#: src/Views/AppInfoView.vala:1170
 msgid "Free Software"
 msgstr "نەرمەکاڵای بەخۆڕایی"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1198
+#: src/Views/AppInfoView.vala:1173
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1202
+#: src/Views/AppInfoView.vala:1177
 msgid "Proprietary"
 msgstr "خاوەنداریەتی"
 
-#: src/Views/AppInfoView.vala:1205
+#: src/Views/AppInfoView.vala:1180
 msgid "Unknown License"
 msgstr "مۆڵەتی نەناسراو"
 
-#: src/Views/AppInfoView.vala:1295
+#: src/Views/AppInfoView.vala:1270
 msgid "Fund"
 msgstr "پارە (فەند)"
 
-#: src/Views/AppInfoView.vala:1301
+#: src/Views/AppInfoView.vala:1276
 msgid "Fund the development of this app"
 msgstr "یارمەتی گەشەپێدانی ئەم ئەپە بکە بە پارە"
 
@@ -1095,21 +1095,21 @@ msgstr "$%d.00"
 msgid "$%d"
 msgstr "$%d"
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:70
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:94
+#: src/Widgets/ReleaseRow.vala:105
 #, fuzzy
 #| msgid "Unknown state"
 msgid "Unknown date"
 msgstr "دۆخی نەزانراو"
 
-#: src/Widgets/ReleaseRow.vala:101
+#: src/Widgets/ReleaseRow.vala:112
 msgid "Unknown version"
 msgstr "وەشانی نەزاندراو"
 
-#: src/Widgets/ReleaseRow.vala:118
+#: src/Widgets/ReleaseRow.vala:129
 msgid "No description available"
 msgstr "هیچ ڕوونکردنەوەیک بەردەست نییە"
 
