@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-11 13:58+0000\n"
-"PO-Revision-Date: 2022-01-07 20:57+0000\n"
+"PO-Revision-Date: 2023-05-11 14:00+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "extra/id/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -217,7 +217,7 @@ msgstr "pasang;copot pemasangan;hapus;katalog;toko;aplikasi;perangkat lunak;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr "Memeriksa Pembaruan"
+msgstr "Periksa Pemutakhiran"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
