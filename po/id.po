@@ -5,12 +5,13 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Okta Arif Cahyawan <111201609421@mhs.dinus.ac.id>, 2023.
 # Adek Lanin <adeklanin@me.com>, 2023.
+# Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary.io>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-11 13:58+0000\n"
-"PO-Revision-Date: 2023-05-11 14:12+0000\n"
+"PO-Revision-Date: 2023-05-12 15:06+0000\n"
 "Last-Translator: Adek Lanin <adeklanin@me.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/id/>\n"
@@ -30,7 +31,7 @@ msgstr "AppCenter"
 #: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Tidak dapat mengurai tipe media %s"
+msgstr "Tidak dapat mengurai jenis media %s"
 
 #: src/Application.vala:106
 #, c-format
@@ -48,7 +49,7 @@ msgstr "\"%s\" sudah terpasang"
 
 #: src/MainWindow.vala:93
 msgid "Getting app information…"
-msgstr "Mengambil informasi aplikasi…"
+msgstr "Mendapatkan informasi aplikasi…"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
@@ -60,19 +61,19 @@ msgstr "Memeriksa pembaruan…"
 
 #: src/MainWindow.vala:105
 msgid "Installing…"
-msgstr "Sedang memasang…"
+msgstr "Memasang…"
 
 #: src/MainWindow.vala:108
 msgid "Installing updates…"
-msgstr "Memasang pembaruan.."
+msgstr "Memasang pembaruan…"
 
 #: src/MainWindow.vala:111
 msgid "Uninstalling…"
-msgstr "Sedang menghapus pemasangan…"
+msgstr "Mencopot pemasangan…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr "Sedang memperbaiki…"
+msgstr "Memperbaiki…"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -82,7 +83,7 @@ msgstr "Gagal meluncurkan “%s”"
 #: src/MainWindow.vala:192
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Pembaruan & aplikasi terinstal"
+msgstr "Pembaruan & aplikasi terpasang"
 
 #: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
@@ -95,11 +96,12 @@ msgstr "Pembaruan Aplikasi Otomatis"
 #: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
-"Pemutakhiran sistem dan aplikasi gratis tidak akan dimutakhirkan otomatis"
+"Pembaruan sistem dan aplikasi tidak berbayar tidak akan diperbarui secara "
+"otomatis"
 
 #: src/MainWindow.vala:217
 msgid "Check for Updates"
-msgstr "Periksa Pemutakhiran"
+msgstr "Periksa Pembaruan"
 
 #: src/MainWindow.vala:241
 msgid "Settings"
@@ -124,7 +126,7 @@ msgstr "Berjalan pada Mode Demo"
 #: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Instal %s untuk menelusuri and menginstal aplikasi."
+msgstr "Pasang %s untuk menelusuri and memasang aplikasi."
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
@@ -159,11 +161,11 @@ msgstr "Memulai"
 #: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
-msgstr "Sedang menunggu"
+msgstr "Menunggu"
 
 #: src/Utils.vala:66
 msgid "Running"
-msgstr "Sedang berjalan"
+msgstr "Berjalan"
 
 #: src/Utils.vala:68
 msgid "Querying"
@@ -171,7 +173,7 @@ msgstr "Melakukan queri"
 
 #: src/Utils.vala:70
 msgid "Getting information"
-msgstr "Mengambil informasi"
+msgstr "Mendapatkan informasi"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
@@ -199,11 +201,11 @@ msgstr "Membersihkan paket"
 
 #: src/Utils.vala:84
 msgid "Obsoleting packages"
-msgstr "Menjadikan paket kadaluarsa"
+msgstr "Mengusangkan paket"
 
 #: src/Utils.vala:86
 msgid "Resolving dependencies"
-msgstr "Menyelesaikan ketergantungan"
+msgstr "Mengatasi dependensi"
 
 #: src/Utils.vala:88
 msgid "Checking signatures"
@@ -322,7 +324,7 @@ msgstr "%s (seluruh sistem)"
 
 #: src/Core/FlatpakBackend.vala:1523
 msgid "Uninstalling"
-msgstr "Menghapus pemasangan"
+msgstr "Mencopot pemasangan"
 
 #: src/Core/FlatpakBackend.vala:1705
 msgid "Updating"
@@ -339,7 +341,7 @@ msgstr "Pembaruan elementary"
 
 #: src/Core/Package.vala:357
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (tidak dikuratori)"
+msgstr "Ubuntu (tidak dikurasi)"
 
 #: src/Core/Package.vala:367
 msgid "Ubuntu Drivers"
@@ -369,7 +371,7 @@ msgstr "Pembaruan untuk komponen sistem"
 
 #: src/Core/UpdateManager.vala:53
 msgid "Runtime Updates"
-msgstr "Pemutakhiran Runtime"
+msgstr "Pembaruan Runtime"
 
 #: src/Core/UpdateManager.vala:54
 msgid "Updates to app runtimes"
@@ -382,13 +384,13 @@ msgstr "Versi: %s"
 
 #: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
-msgstr "Tidak ada komponen yang perlu diperbarui"
+msgstr "Tidak ada komponen dengan pembaruan"
 
 #: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u komponen perlu diperbarui"
+msgstr[0] "%u komponen dengan pembaruan"
 
 #: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
@@ -397,7 +399,7 @@ msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:191
 msgid "No runtimes with updates"
-msgstr "Tidak ada runtime yang perlu diperbarui"
+msgstr "Tidak ada runtime dengan pembaruan"
 
 #: src/Core/UpdateManager.vala:196
 #, c-format
@@ -436,7 +438,9 @@ msgstr "Gagal Memperbaiki"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Ini mungkin disebabkan oleh repositori perangkat lunak eksternal atau perangkat lunak yang ditambahkan secara manual atau file sumber yang rusak."
+msgstr ""
+"Ini mungkin disebabkan oleh repositori perangkat lunak eksternal atau "
+"perangkat lunak yang ditambahkan secara manual atau berkas sumber yang rusak."
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -504,11 +508,11 @@ msgstr "Coba Gratis"
 
 #: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
-msgstr "Mengolah"
+msgstr "Memroses"
 
 #: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Ada Masalah Saat Mengolah Pembayaran Anda"
+msgstr "Ada Masalah Saat Memroses Pembayaran Anda"
 
 #: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
@@ -552,7 +556,7 @@ msgstr "Mata uang tidak didukung oleh kartu ini. Silakan coba lagi dengan kartu 
 
 #: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
-msgstr "Transaksi telah diolah."
+msgstr "Transaksi telah diproses."
 
 #: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
@@ -592,7 +596,7 @@ msgstr "Mencopot pemasangan aplikasi ini juga dapat menghapus datanya."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr "Hapus Pemasangan?"
+msgstr "Copot pemasangan aplikasi?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
@@ -601,7 +605,7 @@ msgstr "Mencopot pemasangan %s?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
-msgstr "Hapus Pemasangan"
+msgstr "Copot Pemasangan"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
@@ -779,7 +783,7 @@ msgstr "Tangkapan Layar Tidak Tersedia"
 
 #: src/Views/AppInfoView.vala:643
 msgid "What's New:"
-msgstr "Apa yang baru:"
+msgstr "Apa yang Baru:"
 
 #: src/Views/AppInfoView.vala:670
 msgid "Extensions:"
@@ -821,34 +825,37 @@ msgstr "Akhir Hidup"
 #: src/Views/AppInfoView.vala:881
 msgid "May not work as expected or receive security updates"
 msgstr ""
-"Mungkin bekerja tidak sesuai harapan atau mendapatkan pemutakhiran keamanan"
+"Mungkin tidak berfungsi seperti yang diharapkan atau menerima pembaruan "
+"keamanan"
 
 #: src/Views/AppInfoView.vala:887
 msgid "Outdated"
-msgstr ""
+msgstr "Usang"
 
 #: src/Views/AppInfoView.vala:888
 msgid "May not work as expected or support the latest features"
 msgstr ""
+"Mungkin tidak berfungsi seperti yang diharapkan atau mendukung fitur terbaru"
 
 #: src/Views/AppInfoView.vala:896
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Unstable"
-msgstr "Hapus Pemasangan"
+msgstr "Tidak Stabil"
 
 #: src/Views/AppInfoView.vala:897
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
+"Dibuat untuk versi %s yang tidak stabil; mungkin berisi masalah besar. Tidak "
+"direkomendasikan untuk digunakan pada sistem produksi."
 
 #: src/Views/AppInfoView.vala:910
 msgid "System Folder Access"
-msgstr ""
+msgstr "Akses Folder Sistem"
 
 #: src/Views/AppInfoView.vala:911
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
+"Termasuk folder Beranda semua orang, tetapi tidak termasuk internal sistem"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1162
@@ -900,7 +907,7 @@ msgstr "Perbarui Semua"
 
 #: src/Views/AppListUpdateView.vala:105
 msgid "A restart is required to finish installing updates"
-msgstr "Mulai ulang diperlukan untuk menyelesaikan instalasi pembaruan"
+msgstr "Mulai ulang diperlukan untuk menyelesaikan pemasangan pembaruan"
 
 #: src/Views/AppListUpdateView.vala:113
 msgid "Restart Now"
@@ -908,7 +915,9 @@ msgstr "Mulai Ulang Sekarang"
 
 #: src/Views/AppListUpdateView.vala:125
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr "Permintaan mulai ulang gagal. Mulai ulang secara manual untuk menyelesaikan instalasi pembaruan"
+msgstr ""
+"Permintaan mulai ulang gagal. Mulai ulang secara manual untuk menyelesaikan "
+"pemasangan pembaruan"
 
 #: src/Views/AppListUpdateView.vala:200
 #, c-format
@@ -919,7 +928,7 @@ msgstr[0] "%u Pembaruan Tersedia"
 #: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
+msgstr "Semuanya terbaru. Terakhir diperiksa %s."
 
 #: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
@@ -1019,14 +1028,12 @@ msgid "Privacy & Security"
 msgstr "Privasi & Kemananan"
 
 #: src/Views/Homepage.vala:457
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Permainan"
+msgstr "Hiburan & Permainan"
 
 #: src/Views/Homepage.vala:485
 msgid "Fun &"
-msgstr ""
+msgstr "Hiburan &"
 
 #: src/Views/Homepage.vala:494
 msgid "Games"
@@ -1043,7 +1050,9 @@ msgstr "Tidak Ada Aplikasi yang Ditemukan"
 #: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Coba ubah istilah penelusuran. Anda juga dapat melakukan sideload aplikasi Flatpak misalnya dari %s"
+msgstr ""
+"Coba ubah istilah penelusuran. Anda juga dapat melakukan pemuatan-samping "
+"aplikasi Flatpak misalnya dari %s"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -1077,13 +1086,11 @@ msgstr "$%d"
 
 #: src/Widgets/ReleaseRow.vala:70
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Memperbaiki Masalah"
 
 #: src/Widgets/ReleaseRow.vala:105
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Keadaan tidak dikenal"
+msgstr "Tanggal tidak diketahui"
 
 #: src/Widgets/ReleaseRow.vala:112
 msgid "Unknown version"
@@ -1123,7 +1130,9 @@ msgstr "Ukuran Unduhan Sesungguhnya Kemungkinan Lebih Kecil"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Hanya bagian-bagian yang diperlukan dari aplikasi dan pembaruan yang akan diunduh."
+msgstr ""
+"Hanya mengunduh bagian-bagian dari aplikasi dan pembaruan yang diperlukan "
+"saja."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
@@ -1135,19 +1144,17 @@ msgid "Update"
 msgstr "Perbarui"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
-msgstr "Mengunduh"
+msgstr "Unduh"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
-msgstr ""
+msgstr "Catatan rilis"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
 #, c-format
 msgid "What's new in %s"
-msgstr ""
+msgstr "Apa yang Baru di %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
