@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
+"POT-Creation-Date: 2023-05-15 22:33+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
@@ -981,110 +981,106 @@ msgstr "Програми с последна версия"
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "Наскоро Обновени"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Търсене из приложения"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Безплатно"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr ""
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "Категории"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "Помощни програми"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "Звук"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 #, fuzzy
 msgid "Communication"
 msgstr "Образование"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "Разработка"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "Образование"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 #, fuzzy
 msgid "Finance"
 msgstr "Отказ"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "Графика"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "Мрежа"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Наука и техника"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr ""
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "Офисни програми"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "Системни програми"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "Улеснен достъп"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "Видео"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr ""
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Декларация за Поверителност"
 
-#: src/Views/Homepage.vala:457
+#: src/Views/Homepage.vala:464
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "Игри"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:492
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:494
+#: src/Views/Homepage.vala:501
 msgid "Games"
 msgstr "Игри"
 
