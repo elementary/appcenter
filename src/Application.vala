@@ -387,6 +387,14 @@ public class AppCenter.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
-    var application = new AppCenter.App ();
-    return application.run (args);
+    //  var application = new AppCenter.App ();
+    //  return application.run (args);
+
+    if (!FileUtils.test ("/run/ostree-booted", FileTest.EXISTS)) {
+        print ("Not running OSTree image\n");
+
+        return 0;
+    }
+
+    return 0;
 }
