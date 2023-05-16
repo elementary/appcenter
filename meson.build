@@ -49,7 +49,8 @@ dependencies = [
     flatpak,
     xml,
     polkit,
-    posix
+    posix,
+    ostree
 ]
 
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
