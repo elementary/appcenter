@@ -1,7 +1,8 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '7.2.1'
+    version: '7.2.1',
+    meson_version: '>=0.56.0'
 )
 
 gettext_name = meson.project_name()

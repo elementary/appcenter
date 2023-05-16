@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 18:37+0000\n"
+"POT-Creation-Date: 2023-05-15 22:33+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:332
+#: src/Application.vala:38 src/Core/Package.vala:353
 msgid "AppCenter"
 msgstr "Centrum Aplikací"
 
@@ -198,7 +198,7 @@ msgstr "Odstraňování balíčků"
 msgid "Downloading"
 msgstr "Stahování"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
 msgid "Installing"
 msgstr "Instalace"
 
@@ -243,9 +243,9 @@ msgid "Finished"
 msgstr "Hotovo"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
-#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
-#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
+#: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
+#: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
+#: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
 msgid "Cancelling"
 msgstr "Rušení"
 
@@ -341,41 +341,41 @@ msgstr[2] "%u aktualizací je pro váš systém k dispozici"
 msgid "%s (system-wide)"
 msgstr "%s (celosystémově)"
 
-#: src/Core/FlatpakBackend.vala:1403
+#: src/Core/FlatpakBackend.vala:1523
 msgid "Uninstalling"
 msgstr "Odebírání"
 
-#: src/Core/FlatpakBackend.vala:1585
+#: src/Core/FlatpakBackend.vala:1705
 msgid "Updating"
 msgstr "Aktualizování"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:329
 #, c-format
 msgid "%s Developers"
 msgstr "Vývojáři %s"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:355
 msgid "elementary Updates"
 msgstr "Aktualizace elementary"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:357
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (neprověřované)"
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:367
 msgid "Ubuntu Drivers"
 msgstr "Ovladače z Ubuntu"
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:370
 msgid "Unknown Origin (non-curated)"
 msgstr "Neznámý původ (neprověřené)"
 
-#: src/Core/Package.vala:521
+#: src/Core/Package.vala:542
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stav aplikace v Centru aplikací není nastaven jako instalovaná pro balíček:%s"
 
-#: src/Core/PackageKitBackend.vala:308
+#: src/Core/PackageKitBackend.vala:313
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokální)"
@@ -632,7 +632,7 @@ msgstr "Odinstalovat aplikaci?"
 msgid "Uninstall “%s”?"
 msgstr "Odinstalovat „%s“?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
 msgstr "Odinstalovat"
 
@@ -682,240 +682,248 @@ msgstr "Aktualizace „%s“ se nezdařila"
 msgid "Refresh Updates"
 msgstr "Hledají se aktualizace"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:264
 msgid "Illicit Substances"
 msgstr "Zakázané látky"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:265
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Přítomnost nebo odkazy na alkohol, drogy nebo kouření"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:270
 msgid "Sex & Nudity"
 msgstr "Sex a nahota"
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:271
 msgid "Adult nudity or sexual themes"
 msgstr "Nahota nebo sexuální podtext"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:276
 msgid "Offensive Language"
 msgstr "Urážlivé výrazy"
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:277
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Neuctivost, diskriminující výrazy nebo humor pro dospělé"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:282
 msgid "Gambling"
 msgstr "Gambling"
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:283
 msgid "Realistic or participatory gambling"
 msgstr "Realistický nebo účastnický gambling"
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:306
 msgid "Non-Curated"
 msgstr "Neprověřované"
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:307
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "Není prověřené v elementary ohledně zabezpečení, respektování soukromí či začlenění do systému"
 
-#: src/Views/AppInfoView.vala:193
+#: src/Views/AppInfoView.vala:324
 #, fuzzy
 #| msgid "Translate"
 msgid "May Not Be Translated"
 msgstr "Přeložit"
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:325
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:201
+#: src/Views/AppInfoView.vala:332
 #, fuzzy
 #| msgid "Translate"
 msgid "Not Translated"
 msgstr "Přeložit"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:333
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:209
+#: src/Views/AppInfoView.vala:340
 #, fuzzy
 #| msgid "Translate"
 msgid "Not Fully Translated"
 msgstr "Přeložit"
 
-#: src/Views/AppInfoView.vala:210
+#: src/Views/AppInfoView.vala:341
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:365
 msgid "Conflict"
 msgstr "Konflikt"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:366
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Znázornění nebezpečných situací nebo agresivního konfliktu"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:379
 msgid "Violence"
 msgstr "Násilí"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:384
 msgid "Fantasy Violence"
 msgstr "Fantazijní násilí"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:389
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Zobrazování násilí, krvácení nebo úmrtí"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:433
 msgid "Multiplayer"
 msgstr "Pro vícero hráčů"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:434
 msgid "Online play with other people"
 msgstr "Hraní s ostatními lidmi přes Internet"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:450
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Nekontrolovaná audio, video, nebo textová komunikace s ostatními lidmi"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:452
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Kontrolovaná audio, video, nebo textová komunikace s ostatními lidmi"
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:456
 msgid "Online Interactions"
 msgstr "Online interakce"
 
-#: src/Views/AppInfoView.vala:335
+#: src/Views/AppInfoView.vala:466
 msgid "Location Sharing"
 msgstr "Sdílení polohy"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:467
 msgid "Other people can see your real-world location"
 msgstr "Ostatní mohou vidět vaši reálnou polohu"
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:479
 msgid "Collects anonymous usage data"
 msgstr "Sbírá anonymní data o používání"
 
-#: src/Views/AppInfoView.vala:351
+#: src/Views/AppInfoView.vala:482
 msgid "Collects usage data that could be used to identify you"
 msgstr "Shromažďuje data o používání, která by mohla být použita pro vaší identifikaci"
 
-#: src/Views/AppInfoView.vala:356
+#: src/Views/AppInfoView.vala:487
 msgid "Info Sharing"
 msgstr "Sdílení informací"
 
-#: src/Views/AppInfoView.vala:476
+#: src/Views/AppInfoView.vala:611
 msgid "Screenshot Not Available"
 msgstr "Snímek obrazovky není k dispozici"
 
-#: src/Views/AppInfoView.vala:587
-msgid "Homepage"
-msgstr "Domovská stránka"
-
-#: src/Views/AppInfoView.vala:593
-msgid "Translate"
-msgstr "Přeložit"
-
-#: src/Views/AppInfoView.vala:599
-msgid "Send Feedback"
-msgstr "Poslat zpětnou vazbu"
-
-#: src/Views/AppInfoView.vala:605
-msgid "Help"
-msgstr "Pomoc"
-
-#: src/Views/AppInfoView.vala:616
+#: src/Views/AppInfoView.vala:643
 msgid "What's New:"
 msgstr "Co je nového:"
 
-#: src/Views/AppInfoView.vala:651
+#: src/Views/AppInfoView.vala:670
 msgid "Extensions:"
 msgstr "Rozšíření:"
 
-#: src/Views/AppInfoView.vala:780
+#: src/Views/AppInfoView.vala:701
+msgid "Homepage"
+msgstr "Domovská stránka"
+
+#: src/Views/AppInfoView.vala:707
+msgid "Translate"
+msgstr "Přeložit"
+
+#: src/Views/AppInfoView.vala:713
+msgid "Send Feedback"
+msgstr "Poslat zpětnou vazbu"
+
+#: src/Views/AppInfoView.vala:719
+msgid "Help"
+msgstr "Pomoc"
+
+#: src/Views/AppInfoView.vala:767
 msgid "Link copied to clipboard"
 msgstr "Odkaz zkopírován do schránky"
 
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:778
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Prohlédněte si %s v Centru aplikací:"
 
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:786
 msgid "Share"
 msgstr "Sdílet"
 
-#: src/Views/AppInfoView.vala:893
+#: src/Views/AppInfoView.vala:880
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:881
 #, fuzzy
 #| msgid "Built with older technologies that may not work as expected or receive security updates"
 msgid "May not work as expected or receive security updates"
 msgstr "Postaveno na starších technologiích, které nemusí fungovat dle předpokladu nebo dostávat aktualizace zabezpečení"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:887
 msgid "Outdated"
 msgstr "Zastaralé"
 
-#: src/Views/AppInfoView.vala:901
+#: src/Views/AppInfoView.vala:888
 #, fuzzy
 #| msgid "Built for an older version of %s; might not support the latest features"
 msgid "May not work as expected or support the latest features"
 msgstr "Vytvořeno pro starší verzi %s, může se proto stát, že nebude podporovat nejnovější funkce"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:896
 msgid "Unstable"
 msgstr "Nestabilní"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:897
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "Sestavení pro teprve vyvíjenou verzi %s – může se proto stát, že má závažné chyby. Nedoporučeno pro použití na produkčním systému."
 
+#: src/Views/AppInfoView.vala:910
+msgid "System Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:911
+msgid "Including everyone's Home folders, but not including system internals"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1169
+#: src/Views/AppInfoView.vala:1162
 msgid "Public Domain"
 msgstr "Volné dílo"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1172
+#: src/Views/AppInfoView.vala:1165
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://cs.wikipedia.org/wiki/Volné_dílo"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1170
 msgid "Free Software"
 msgstr "Svobodný Software"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1173
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.cs.html"
 
-#: src/Views/AppInfoView.vala:1184
+#: src/Views/AppInfoView.vala:1177
 msgid "Proprietary"
 msgstr "Proprietární"
 
-#: src/Views/AppInfoView.vala:1187
+#: src/Views/AppInfoView.vala:1180
 msgid "Unknown License"
 msgstr "Neznámá licence"
 
-#: src/Views/AppInfoView.vala:1277
+#: src/Views/AppInfoView.vala:1270
 msgid "Fund"
 msgstr "Financovat"
 
-#: src/Views/AppInfoView.vala:1283
+#: src/Views/AppInfoView.vala:1276
 msgid "Fund the development of this app"
 msgstr "Financovat vývoj této aplikace"
 
@@ -969,101 +977,97 @@ msgstr "Aktuální"
 msgid "Other Apps by %s"
 msgstr "Ostatní aplikace od %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "Nedávno aktualizované"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 msgid "Paid Apps"
 msgstr "Placené aplikace"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 msgid "Free Apps"
 msgstr "Aplikace zdarma"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr "Neprověřované aplikace"
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "Příslušenství"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "Zvuk"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 msgid "Communication"
 msgstr "Komunikace"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "Vývoj software"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "Vzdělání"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 msgid "Finance"
 msgstr "Finance"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 msgid "Math, Science, & Engineering"
 msgstr "Matematika, věda a technika"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr "Mediální tvorba"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "Kancelář"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "Systém"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "Univerzální přístup"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "Video"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr "Psaní a jazyky"
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 msgid "Privacy & Security"
 msgstr "Soukromí a zabezpečení"
 
-#: src/Views/Homepage.vala:457
+#: src/Views/Homepage.vala:464
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "Hry"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:492
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:494
+#: src/Views/Homepage.vala:501
 msgid "Games"
 msgstr "Hry"
 
@@ -1110,21 +1114,21 @@ msgstr "$%dUSD"
 msgid "$%d"
 msgstr "$%dUSD"
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:70
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:94
+#: src/Widgets/ReleaseRow.vala:105
 #, fuzzy
 #| msgid "Unknown state"
 msgid "Unknown date"
 msgstr "Neznámý stav"
 
-#: src/Widgets/ReleaseRow.vala:101
+#: src/Widgets/ReleaseRow.vala:112
 msgid "Unknown version"
 msgstr "Neznámá verze"
 
-#: src/Widgets/ReleaseRow.vala:118
+#: src/Widgets/ReleaseRow.vala:129
 msgid "No description available"
 msgstr "Není k dispozici žádný popis"
 
@@ -1187,6 +1191,9 @@ msgstr "Co je nového v %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "Zavřít"
+
+#~ msgid "Non-Curated Apps"
+#~ msgstr "Neprověřované aplikace"
 
 #~ msgid "Flatpak runtime"
 #~ msgstr "Běhové prostředí Flatpak"

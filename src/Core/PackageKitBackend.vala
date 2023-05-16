@@ -165,7 +165,12 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         // Clear out the default set of metadata locations and only use the folder that gets populated
         // with elementary's AppStream data.
 #if HIDE_UPSTREAM_DISTRO_APPS
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        // Don't load Ubuntu components
+        appstream_pool.set_load_std_data_locations (false);
+        appstream_pool.reset_extra_data_locations ();
+        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.CATALOG);
+#elif HAS_APPSTREAM_0_15
         // Don't load Ubuntu components
         appstream_pool.set_load_std_data_locations (false);
         appstream_pool.reset_extra_data_locations ();

@@ -1,33 +1,36 @@
 # Eri Hidayat <eriwhidayat@gmail.com>, 2018, 2019, 2020.
 # Yusnur Rofiq <yusnurrofiq@gmail.com>, 2019.
-# Faisal Rachmadin <frachmadin@gmail.com>, 2022.
-# Gusti Ahmad Fanshuri Alfarisy <gusti.alfarisy@gmail.com>, 2022.
+# Faisal Rachmadin <frachmadin@gmail.com>, 2022, 2023.
+# Gusti Ahmad Fanshuri Alfarisy <gusti.alfarisy@gmail.com>, 2022, 2023.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Okta Arif Cahyawan <111201609421@mhs.dinus.ac.id>, 2023.
+# Adek Lanin <adeklanin@me.com>, 2023.
+# Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary.io>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 18:37+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"POT-Creation-Date: 2023-05-15 22:33+0000\n"
+"PO-Revision-Date: 2023-05-12 15:06+0000\n"
+"Last-Translator: Adek Lanin <adeklanin@me.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:332
+#: src/Application.vala:38 src/Core/Package.vala:353
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Tidak dapat mengurai tipe media %s"
+msgstr "Tidak dapat mengurai jenis media %s"
 
 #: src/Application.vala:106
 #, c-format
@@ -44,42 +47,32 @@ msgid "“%s” has been installed"
 msgstr "\"%s\" sudah terpasang"
 
 #: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Mengambil informasi"
+msgstr "Mendapatkan informasi aplikasi…"
 
 #: src/MainWindow.vala:96
 msgid "Getting download size…"
-msgstr ""
+msgstr "Mendapatkan ukuran unduhan…"
 
 #: src/MainWindow.vala:102
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Memeriksa Pembaruan"
+msgstr "Memeriksa pembaruan…"
 
 #: src/MainWindow.vala:105
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Memasang"
+msgstr "Memasang…"
 
 #: src/MainWindow.vala:108
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Memasang pembaruan"
+msgstr "Memasang pembaruan…"
 
 #: src/MainWindow.vala:111
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Menghapus pemasangan"
+msgstr "Mencopot pemasangan…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "Memperbaiki…"
 
 #: src/MainWindow.vala:145
 #, c-format
@@ -87,31 +80,25 @@ msgid "Failed to launch “%s“"
 msgstr "Gagal meluncurkan “%s”"
 
 #: src/MainWindow.vala:192
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Gagal memasang aplikasi"
+msgstr "Pembaruan & aplikasi terpasang"
 
 #: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
 msgid "Search Apps"
 msgstr "Cari Aplikasi"
 
 #: src/MainWindow.vala:212
-#, fuzzy
-#| msgid "Automatic Updates"
 msgid "Automatic App Updates"
-msgstr "Pembaruan Otomatis"
+msgstr "Pembaruan Aplikasi Otomatis"
 
 #: src/MainWindow.vala:213
 msgid "System updates and unpaid apps will not update automatically"
-msgstr ""
+msgstr "Pembaruan sistem dan aplikasi tidak berbayar tidak akan diperbarui secara otomatis"
 
 #: src/MainWindow.vala:217
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Check for Updates"
-msgstr "Memeriksa Pembaruan"
+msgstr "Periksa Pembaruan"
 
 #: src/MainWindow.vala:241
 msgid "Settings"
@@ -131,12 +118,12 @@ msgstr "Pengaturan Jaringan…"
 
 #: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Berjalan pada Mode Demo"
 
 #: src/MainWindow.vala:289
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "Pasang %s untuk menelusuri and memasang aplikasi."
 
 #: src/MainWindow.vala:486 src/MainWindow.vala:490
 #, c-format
@@ -171,11 +158,11 @@ msgstr "Memulai"
 #: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
-msgstr "Sedang menunggu"
+msgstr "Menunggu"
 
 #: src/Utils.vala:66
 msgid "Running"
-msgstr "Sedang berjalan"
+msgstr "Berjalan"
 
 #: src/Utils.vala:68
 msgid "Querying"
@@ -183,7 +170,7 @@ msgstr "Melakukan queri"
 
 #: src/Utils.vala:70
 msgid "Getting information"
-msgstr "Mengambil informasi"
+msgstr "Mendapatkan informasi"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
@@ -193,7 +180,7 @@ msgstr "Menghapus paket"
 msgid "Downloading"
 msgstr "Mengunduh"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
 msgid "Installing"
 msgstr "Memasang"
 
@@ -211,11 +198,11 @@ msgstr "Membersihkan paket"
 
 #: src/Utils.vala:84
 msgid "Obsoleting packages"
-msgstr "Menjadikan paket kadaluarsa"
+msgstr "Mengusangkan paket"
 
 #: src/Utils.vala:86
 msgid "Resolving dependencies"
-msgstr "Menyelesaikan ketergantungan"
+msgstr "Mengatasi dependensi"
 
 #: src/Utils.vala:88
 msgid "Checking signatures"
@@ -238,9 +225,9 @@ msgid "Finished"
 msgstr "Selesai"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
-#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
-#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
+#: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
+#: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
+#: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
 msgid "Cancelling"
 msgstr "Membatalkan"
 
@@ -332,41 +319,41 @@ msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 msgid "%s (system-wide)"
 msgstr "%s (seluruh sistem)"
 
-#: src/Core/FlatpakBackend.vala:1403
+#: src/Core/FlatpakBackend.vala:1523
 msgid "Uninstalling"
-msgstr "Menghapus pemasangan"
+msgstr "Mencopot pemasangan"
 
-#: src/Core/FlatpakBackend.vala:1585
+#: src/Core/FlatpakBackend.vala:1705
 msgid "Updating"
 msgstr "Memperbarui"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:329
 #, c-format
 msgid "%s Developers"
 msgstr "%s Pengembang"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:355
 msgid "elementary Updates"
 msgstr "Pembaruan elementary"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:357
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (tidak dikuratori)"
+msgstr "Ubuntu (tidak dikurasi)"
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:367
 msgid "Ubuntu Drivers"
 msgstr "Driver Ubuntu"
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:370
 msgid "Unknown Origin (non-curated)"
 msgstr "Sumber tidak diketahui (tidak dikurasi)"
 
-#: src/Core/Package.vala:521
+#: src/Core/Package.vala:542
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Status aplikasi tidak ditetapkan sebagai terpasang di AppCenter untuk paket: %s"
 
-#: src/Core/PackageKitBackend.vala:308
+#: src/Core/PackageKitBackend.vala:313
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -380,14 +367,12 @@ msgid "Updates to system components"
 msgstr "Pembaruan untuk komponen sistem"
 
 #: src/Core/UpdateManager.vala:53
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Runtime Updates"
-msgstr "Memeriksa Pembaruan"
+msgstr "Pembaruan Runtime"
 
 #: src/Core/UpdateManager.vala:54
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Pembaruan pada runtime aplikasi"
 
 #: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
 #, c-format
@@ -396,13 +381,13 @@ msgstr "Versi: %s"
 
 #: src/Core/UpdateManager.vala:179
 msgid "No components with updates"
-msgstr "Tidak ada komponen yang perlu diperbarui"
+msgstr "Tidak ada komponen dengan pembaruan"
 
 #: src/Core/UpdateManager.vala:184
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u komponen perlu diperbarui"
+msgstr[0] "%u komponen dengan pembaruan"
 
 #: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
 #, c-format
@@ -410,18 +395,14 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:191
-#, fuzzy
-#| msgid "No components with updates"
 msgid "No runtimes with updates"
-msgstr "Tidak ada komponen yang perlu diperbarui"
+msgstr "Tidak ada runtime dengan pembaruan"
 
 #: src/Core/UpdateManager.vala:196
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u komponen perlu diperbarui"
+msgstr[0] "%u runtime dengan pembaruan"
 
 #: src/Core/UpdateManager.vala:237
 msgid "Restart Required"
@@ -446,17 +427,15 @@ msgstr "Gagal memasang “%s”"
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr ""
+msgstr "Perbaikan"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "Gagal Mengambil Pembaruan"
+msgstr "Gagal Memperbaiki"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Ini mungkin disebabkan oleh repositori perangkat lunak eksternal atau perangkat lunak yang ditambahkan secara manual atau file sumber yang rusak."
+msgstr "Ini mungkin disebabkan oleh repositori perangkat lunak eksternal atau perangkat lunak yang ditambahkan secara manual atau berkas sumber yang rusak."
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -520,15 +499,15 @@ msgstr "Bayar $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
-msgstr ""
+msgstr "Coba Gratis"
 
 #: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
-msgstr "Mengolah"
+msgstr "Memroses"
 
 #: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Ada Masalah Saat Mengolah Pembayaran Anda"
+msgstr "Ada Masalah Saat Memroses Pembayaran Anda"
 
 #: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
@@ -572,7 +551,7 @@ msgstr "Mata uang tidak didukung oleh kartu ini. Silakan coba lagi dengan kartu 
 
 #: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
-msgstr "Transaksi telah diolah."
+msgstr "Transaksi telah diproses."
 
 #: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
@@ -612,16 +591,16 @@ msgstr "Mencopot pemasangan aplikasi ini juga dapat menghapus datanya."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr "Hapus Pemasangan?"
+msgstr "Copot pemasangan aplikasi?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
 msgstr "Mencopot pemasangan %s?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
-msgstr "Hapus Pemasangan"
+msgstr "Copot Pemasangan"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
@@ -649,10 +628,8 @@ msgid "Try Again"
 msgstr "Coba Kembali"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-#, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Ini mungkin disebabkan oleh repositori perangkat lunak eksternal atau perangkat lunak yang ditambahkan secara manual atau file sumber yang rusak."
+msgstr "Ini mungkin disebabkan oleh perangkat lunak yang dimuat atau dikompilasi secara manual, sumber perangkat lunak pihak ketiga, atau kesalahan manajer paket. Menyegarkan pembaruan secara manual dapat menyelesaikan masalah."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -664,243 +641,241 @@ msgid "Failed to update “%s”"
 msgstr "Gagal memperbarui “%s”"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Refresh Updates"
-msgstr "Memeriksa Pembaruan"
+msgstr "Segarkan Pembaruan"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:264
 msgid "Illicit Substances"
 msgstr "Zat Terlarang"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:265
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Kehadiran atau referensi kepada alkohol, narkotika, atau tembakau"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:270
 msgid "Sex & Nudity"
 msgstr "Seks & Ketelanjangan"
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:271
 msgid "Adult nudity or sexual themes"
 msgstr "Ketelanjangan dewasa atau tema seksual"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:276
 msgid "Offensive Language"
 msgstr "Bahasa Kasar"
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:277
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Kata-kata kotor, bahasa diskriminatif, atau humor dewasa"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:282
 msgid "Gambling"
 msgstr "Judi"
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:283
 msgid "Realistic or participatory gambling"
 msgstr "Perjudian yang realistis atau partisipatif"
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:306
 msgid "Non-Curated"
 msgstr "Tidak-Dikurasi"
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:307
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "Tidak ditinjau oleh elementary untuk keamanan, privasi, atau integrasi sistemnya"
 
-#: src/Views/AppInfoView.vala:193
-#, fuzzy
-#| msgid "Translate"
+#: src/Views/AppInfoView.vala:324
 msgid "May Not Be Translated"
-msgstr "Terjemahkan"
+msgstr "Mungkin Tidak Diterjemahkan"
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:325
 msgid "This app does not provide language information"
-msgstr ""
+msgstr "Aplikasi ini tidak menyediakan informasi bahasa"
 
-#: src/Views/AppInfoView.vala:201
-#, fuzzy
-#| msgid "Translate"
+#: src/Views/AppInfoView.vala:332
 msgid "Not Translated"
-msgstr "Terjemahkan"
+msgstr "Tidak Diterjemahkan"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:333
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Aplikasi ini tidak tersedia dalam bahasa Anda"
 
-#: src/Views/AppInfoView.vala:209
-#, fuzzy
-#| msgid "Translate"
+#: src/Views/AppInfoView.vala:340
 msgid "Not Fully Translated"
-msgstr "Terjemahkan"
+msgstr "Tidak Sepenuhnya Diterjemahkan"
 
-#: src/Views/AppInfoView.vala:210
+#: src/Views/AppInfoView.vala:341
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr ""
+msgstr "Aplikasi ini %i%% diterjemahkan dalam bahasa Anda"
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:365
 msgid "Conflict"
 msgstr "Konflik"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:366
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Penggambaran situasi tidak aman atau konflik agresif"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:379
 msgid "Violence"
 msgstr "Kekerasan"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:384
 msgid "Fantasy Violence"
 msgstr "Kekerasan Fantasi"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:389
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Kekerasan grafis, pertumpahan darah, atau kematian"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:433
 msgid "Multiplayer"
 msgstr "Multipemain"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:434
 msgid "Online play with other people"
 msgstr "Bermain secara luring dengan orang lain"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:450
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Audio, Video, atau Pesan teks tanpa moderasi dengan orang lain"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:452
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Audio, Video, atau Pesan teks yang dimoderasi dengan orang lain"
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:456
 msgid "Online Interactions"
 msgstr "Interaksi Luring"
 
-#: src/Views/AppInfoView.vala:335
+#: src/Views/AppInfoView.vala:466
 msgid "Location Sharing"
 msgstr "Berbagi Lokasi"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:467
 msgid "Other people can see your real-world location"
 msgstr "Orang lain dapat melihat lokasi dunia nyata Anda"
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:479
 msgid "Collects anonymous usage data"
 msgstr "Mengumpulkan data penggunaan anonim"
 
-#: src/Views/AppInfoView.vala:351
+#: src/Views/AppInfoView.vala:482
 msgid "Collects usage data that could be used to identify you"
 msgstr "Mengumpulkan data penggunaan yang dapat digunakan untuk mengidentifikasi Anda"
 
-#: src/Views/AppInfoView.vala:356
+#: src/Views/AppInfoView.vala:487
 msgid "Info Sharing"
 msgstr "Berbagi Info"
 
-#: src/Views/AppInfoView.vala:476
+#: src/Views/AppInfoView.vala:611
 msgid "Screenshot Not Available"
 msgstr "Tangkapan Layar Tidak Tersedia"
 
-#: src/Views/AppInfoView.vala:587
-msgid "Homepage"
-msgstr "Beranda"
-
-#: src/Views/AppInfoView.vala:593
-msgid "Translate"
-msgstr "Terjemahkan"
-
-#: src/Views/AppInfoView.vala:599
-msgid "Send Feedback"
-msgstr "Kirimkan Umpan Balik"
-
-#: src/Views/AppInfoView.vala:605
-msgid "Help"
-msgstr "Bantuan"
-
-#: src/Views/AppInfoView.vala:616
+#: src/Views/AppInfoView.vala:643
 msgid "What's New:"
-msgstr "Apa yang baru:"
+msgstr "Apa yang Baru:"
 
-#: src/Views/AppInfoView.vala:651
+#: src/Views/AppInfoView.vala:670
 msgid "Extensions:"
 msgstr "Ekstensi:"
 
-#: src/Views/AppInfoView.vala:780
+#: src/Views/AppInfoView.vala:701
+msgid "Homepage"
+msgstr "Beranda"
+
+#: src/Views/AppInfoView.vala:707
+msgid "Translate"
+msgstr "Terjemahkan"
+
+#: src/Views/AppInfoView.vala:713
+msgid "Send Feedback"
+msgstr "Kirimkan Umpan Balik"
+
+#: src/Views/AppInfoView.vala:719
+msgid "Help"
+msgstr "Bantuan"
+
+#: src/Views/AppInfoView.vala:767
 msgid "Link copied to clipboard"
 msgstr "Tautan disalin ke clipboard"
 
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:778
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Lihat %s di AppCenter:"
 
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:786
 msgid "Share"
 msgstr "Bagikan"
 
-#: src/Views/AppInfoView.vala:893
+#: src/Views/AppInfoView.vala:880
 msgid "End of Life"
-msgstr ""
+msgstr "Akhir Hidup"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:881
 msgid "May not work as expected or receive security updates"
-msgstr ""
+msgstr "Mungkin tidak berfungsi seperti yang diharapkan atau menerima pembaruan keamanan"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:887
 msgid "Outdated"
-msgstr ""
+msgstr "Usang"
 
-#: src/Views/AppInfoView.vala:901
+#: src/Views/AppInfoView.vala:888
 msgid "May not work as expected or support the latest features"
-msgstr ""
+msgstr "Mungkin tidak berfungsi seperti yang diharapkan atau mendukung fitur terbaru"
 
-#: src/Views/AppInfoView.vala:909
-#, fuzzy
-#| msgid "Uninstall"
+#: src/Views/AppInfoView.vala:896
 msgid "Unstable"
-msgstr "Hapus Pemasangan"
+msgstr "Tidak Stabil"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:897
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr ""
+msgstr "Dibuat untuk versi %s yang tidak stabil; mungkin berisi masalah besar. Tidak direkomendasikan untuk digunakan pada sistem produksi."
+
+#: src/Views/AppInfoView.vala:910
+msgid "System Folder Access"
+msgstr "Akses Folder Sistem"
+
+#: src/Views/AppInfoView.vala:911
+msgid "Including everyone's Home folders, but not including system internals"
+msgstr "Termasuk folder Beranda semua orang, tetapi tidak termasuk internal sistem"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1169
+#: src/Views/AppInfoView.vala:1162
 msgid "Public Domain"
 msgstr "Domain Publik"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1172
+#: src/Views/AppInfoView.vala:1165
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://id.wikipedia.org/wiki/Domain_publik"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1170
 msgid "Free Software"
 msgstr "Perangkat Lunak Bebas"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1173
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.id.html"
 
-#: src/Views/AppInfoView.vala:1184
+#: src/Views/AppInfoView.vala:1177
 msgid "Proprietary"
 msgstr "Hak Milik"
 
-#: src/Views/AppInfoView.vala:1187
+#: src/Views/AppInfoView.vala:1180
 msgid "Unknown License"
 msgstr "Lisensi Tidak Dikenal"
 
-#: src/Views/AppInfoView.vala:1277
+#: src/Views/AppInfoView.vala:1270
 msgid "Fund"
 msgstr "Dana"
 
-#: src/Views/AppInfoView.vala:1283
+#: src/Views/AppInfoView.vala:1276
 msgid "Fund the development of this app"
 msgstr "Danai pengembangan aplikasi ini"
 
@@ -918,7 +893,7 @@ msgstr "Perbarui Semua"
 
 #: src/Views/AppListUpdateView.vala:105
 msgid "A restart is required to finish installing updates"
-msgstr "Mulai ulang diperlukan untuk menyelesaikan instalasi pembaruan"
+msgstr "Mulai ulang diperlukan untuk menyelesaikan pemasangan pembaruan"
 
 #: src/Views/AppListUpdateView.vala:113
 msgid "Restart Now"
@@ -926,7 +901,7 @@ msgstr "Mulai Ulang Sekarang"
 
 #: src/Views/AppListUpdateView.vala:125
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr "Permintaan mulai ulang gagal. Mulai ulang secara manual untuk menyelesaikan instalasi pembaruan"
+msgstr "Permintaan mulai ulang gagal. Mulai ulang secara manual untuk menyelesaikan pemasangan pembaruan"
 
 #: src/Views/AppListUpdateView.vala:200
 #, c-format
@@ -937,7 +912,7 @@ msgstr[0] "%u Pembaruan Tersedia"
 #: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
+msgstr "Semuanya terbaru. Terakhir diperiksa %s."
 
 #: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
@@ -952,101 +927,95 @@ msgstr "Terbaru"
 msgid "Other Apps by %s"
 msgstr "Aplikasi Lainnya oleh %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "Baru Saja Diperbarui"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 msgid "Paid Apps"
 msgstr "Aplikasi Berbayar"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 msgid "Free Apps"
 msgstr "Aplikasi Gratis"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr "Aplikasi Tidak-Dikurasi"
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "Kategori"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "Aksesoris"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "Suara"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 msgid "Communication"
 msgstr "Komunikasi"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "Pengembangan"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "Pendidikan"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 msgid "Finance"
 msgstr "Keuangan"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "Grafis"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 msgid "Math, Science, & Engineering"
 msgstr "Matematika, Sains & Teknik"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr "Media Produksi"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "Perkantoran"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "Sistem"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "Akses Universal"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "Video"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr "Penulisan & Bahasa"
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 msgid "Privacy & Security"
 msgstr "Privasi & Kemananan"
 
-#: src/Views/Homepage.vala:457
-#, fuzzy
-#| msgid "Games"
+#: src/Views/Homepage.vala:464
 msgid "Fun & Games"
-msgstr "Permainan"
+msgstr "Hiburan & Permainan"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:492
 msgid "Fun &"
-msgstr ""
+msgstr "Hiburan &"
 
-#: src/Views/Homepage.vala:494
+#: src/Views/Homepage.vala:501
 msgid "Games"
 msgstr "Permainan"
 
@@ -1061,7 +1030,7 @@ msgstr "Tidak Ada Aplikasi yang Ditemukan"
 #: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Coba ubah istilah penelusuran. Anda juga dapat melakukan sideload aplikasi Flatpak misalnya dari %s"
+msgstr "Coba ubah istilah penelusuran. Anda juga dapat melakukan pemuatan-samping aplikasi Flatpak misalnya dari %s"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -1093,21 +1062,19 @@ msgstr "$%d.00"
 msgid "$%d"
 msgstr "$%d"
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:70
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Memperbaiki Masalah"
 
-#: src/Widgets/ReleaseRow.vala:94
-#, fuzzy
-#| msgid "Unknown state"
+#: src/Widgets/ReleaseRow.vala:105
 msgid "Unknown date"
-msgstr "Keadaan tidak dikenal"
+msgstr "Tanggal tidak diketahui"
 
-#: src/Widgets/ReleaseRow.vala:101
+#: src/Widgets/ReleaseRow.vala:112
 msgid "Unknown version"
 msgstr "Versi tidak diketahui"
 
-#: src/Widgets/ReleaseRow.vala:118
+#: src/Widgets/ReleaseRow.vala:129
 msgid "No description available"
 msgstr "Deskripsi tidak tersedia"
 
@@ -1141,7 +1108,7 @@ msgstr "Ukuran Unduhan Sesungguhnya Kemungkinan Lebih Kecil"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Hanya bagian-bagian yang diperlukan dari aplikasi dan pembaruan yang akan diunduh."
+msgstr "Hanya mengunduh bagian-bagian dari aplikasi dan pembaruan yang diperlukan saja."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
@@ -1153,23 +1120,24 @@ msgid "Update"
 msgstr "Perbarui"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:207
-#, fuzzy
-#| msgid "Downloading"
 msgid "Download"
-msgstr "Mengunduh"
+msgstr "Unduh"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
-msgstr ""
+msgstr "Catatan rilis"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
 #, c-format
 msgid "What's new in %s"
-msgstr ""
+msgstr "Apa yang Baru di %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "Tutup"
+
+#~ msgid "Non-Curated Apps"
+#~ msgstr "Aplikasi Tidak-Dikurasi"
 
 #~ msgid "Flatpak runtime"
 #~ msgstr "Runtime Flatpak"

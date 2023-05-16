@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 18:37+0000\n"
+"POT-Creation-Date: 2023-05-15 22:33+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Sami (Southern) <https://l10n.elementary.io/projects/appcenter/appcenter/sma/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:332
+#: src/Application.vala:38 src/Core/Package.vala:353
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1271
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
 msgid "Installing"
 msgstr "Sijjiedehtedh"
 
@@ -228,9 +228,9 @@ msgid "Finished"
 msgstr ""
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1304
-#: src/Core/FlatpakBackend.vala:1412 src/Core/FlatpakBackend.vala:1436
-#: src/Core/FlatpakBackend.vala:1594 src/Core/FlatpakBackend.vala:1612
+#: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
+#: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
+#: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
 msgid "Cancelling"
 msgstr ""
 
@@ -324,45 +324,45 @@ msgstr[1] ""
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1403
+#: src/Core/FlatpakBackend.vala:1523
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "Sijjiedehtedh"
 
-#: src/Core/FlatpakBackend.vala:1585
+#: src/Core/FlatpakBackend.vala:1705
 #, fuzzy
 #| msgid "Updates"
 msgid "Updating"
 msgstr "Orrestieh"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:329
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:355
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:357
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:367
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:370
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:521
+#: src/Core/Package.vala:542
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:308
+#: src/Core/PackageKitBackend.vala:313
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -613,7 +613,7 @@ msgstr "Gaavnh jih installerh appeh"
 msgid "Uninstall “%s”?"
 msgstr ""
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:677
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
 msgstr ""
 
@@ -661,55 +661,55 @@ msgstr ""
 msgid "Refresh Updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:264
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:265
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:270
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:271
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:276
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:277
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:282
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:283
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:306
 msgid "Non-Curated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:307
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:193
+#: src/Views/AppInfoView.vala:324
 msgid "May Not Be Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:325
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:201
+#: src/Views/AppInfoView.vala:332
 #, fuzzy
 #| msgid "translator-credits"
 msgid "Not Translated"
@@ -718,181 +718,189 @@ msgstr ""
 "  Skandee https://launchpad.net/~skandee\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:333
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:209
+#: src/Views/AppInfoView.vala:340
 msgid "Not Fully Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:210
+#: src/Views/AppInfoView.vala:341
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:365
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:366
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:379
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:384
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:389
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:433
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:434
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:450
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:452
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:456
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:335
+#: src/Views/AppInfoView.vala:466
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:467
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:479
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:351
+#: src/Views/AppInfoView.vala:482
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:356
+#: src/Views/AppInfoView.vala:487
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:476
+#: src/Views/AppInfoView.vala:611
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:587
+#: src/Views/AppInfoView.vala:643
+msgid "What's New:"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:670
+msgid "Extensions:"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:701
 #, fuzzy
 msgid "Homepage"
 msgstr "Gåetiebielie"
 
-#: src/Views/AppInfoView.vala:593
+#: src/Views/AppInfoView.vala:707
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:599
+#: src/Views/AppInfoView.vala:713
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:605
+#: src/Views/AppInfoView.vala:719
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:616
-msgid "What's New:"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:651
-msgid "Extensions:"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:780
+#: src/Views/AppInfoView.vala:767
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:778
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:786
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:893
+#: src/Views/AppInfoView.vala:880
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:881
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:887
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:901
+#: src/Views/AppInfoView.vala:888
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:896
 #, fuzzy
 msgid "Unstable"
 msgstr "Sijjiedehtedh"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:897
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
+#: src/Views/AppInfoView.vala:910
+msgid "System Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:911
+msgid "Including everyone's Home folders, but not including system internals"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1169
+#: src/Views/AppInfoView.vala:1162
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1172
+#: src/Views/AppInfoView.vala:1165
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1170
 #, fuzzy
 msgid "Free Software"
 msgstr "Aajegeh molsesovveminie"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1173
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1184
+#: src/Views/AppInfoView.vala:1177
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1187
+#: src/Views/AppInfoView.vala:1180
 msgid "Unknown License"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1277
+#: src/Views/AppInfoView.vala:1270
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1283
+#: src/Views/AppInfoView.vala:1276
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -945,103 +953,99 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "appeh ohtsh"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Free Apps"
 msgstr "appeh ohtsh"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr ""
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "Tjïerteh"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr ""
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr ""
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 msgid "Communication"
 msgstr ""
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr ""
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr ""
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 msgid "Finance"
 msgstr ""
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr ""
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr ""
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 msgid "Math, Science, & Engineering"
 msgstr ""
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr ""
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr ""
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr ""
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr ""
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr ""
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr ""
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 msgid "Privacy & Security"
 msgstr ""
 
-#: src/Views/Homepage.vala:457
+#: src/Views/Homepage.vala:464
 msgid "Fun & Games"
 msgstr ""
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:492
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:494
+#: src/Views/Homepage.vala:501
 msgid "Games"
 msgstr ""
 
@@ -1089,19 +1093,19 @@ msgstr ""
 msgid "$%d"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:70
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:94
+#: src/Widgets/ReleaseRow.vala:105
 msgid "Unknown date"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:101
+#: src/Widgets/ReleaseRow.vala:112
 msgid "Unknown version"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:118
+#: src/Widgets/ReleaseRow.vala:129
 msgid "No description available"
 msgstr ""
 
