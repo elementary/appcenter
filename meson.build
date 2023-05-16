@@ -32,6 +32,7 @@ flatpak = dependency ('flatpak')
 xml = dependency ('libxml-2.0')
 polkit = dependency ('polkit-gobject-1')
 posix = meson.get_compiler('vala').find_library('posix')
+ostree = dependency ('ostree-1')
 
 dbus = dependency ('dbus-1')
 
