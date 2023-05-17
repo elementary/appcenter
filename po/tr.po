@@ -8,7 +8,7 @@
 # Turker <turkerbol@gmail.com>, 2018, 2019.
 # Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018, 2019.
 # Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019, 2020, 2021.
-# Özgür Baskin <queeup@zoho.com>, 2021, 2022.
+# Özgür Baskin <queeup@zoho.com>, 2021, 2022, 2023.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Mustafa Yalin Aydin <myaydin@mun.ca>, 2023.
 msgid ""
@@ -16,15 +16,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-15 22:33+0000\n"
-"PO-Revision-Date: 2023-02-17 15:25+0000\n"
-"Last-Translator: Mustafa Yalin Aydin <myaydin@mun.ca>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"PO-Revision-Date: 2023-05-17 19:27+0000\n"
+"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -77,7 +78,7 @@ msgstr "Kaldırılıyor…"
 
 #: src/MainWindow.vala:114
 msgid "Repairing…"
-msgstr ""
+msgstr "Onarılıyor…"
 
 #: src/MainWindow.vala:145
 #, c-format
