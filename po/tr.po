@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-15 22:33+0000\n"
 "PO-Revision-Date: 2023-05-17 19:27+0000\n"
-"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
+"Last-Translator: Mustafa Yalin Aydin <myaydin@mun.ca>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -124,7 +124,7 @@ msgstr "Ağ Ayarları…"
 
 #: src/MainWindow.vala:288
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Demo Modunda Çalışıyor"
 
 #: src/MainWindow.vala:289
 #, c-format
