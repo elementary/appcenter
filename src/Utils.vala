@@ -56,6 +56,7 @@ namespace Utils {
         return (uint) (now - mtime);
     }
 
+#if PACKAGEKIT_BACKEND
     public static unowned string pk_status_to_string (Pk.Status status) {
         switch (status) {
             case Pk.Status.SETUP:
@@ -132,6 +133,7 @@ namespace Utils {
                 return _("Unknown state");
         }
     }
+#endif
 
     public static string unescape_markup (string escaped_text) {
         return escaped_text.replace ("&amp;", "&")

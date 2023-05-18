@@ -47,6 +47,13 @@ jobs:
         meson configure -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
         ninja -C build install
 
+    - name: Build (Flatpak-only)
+      env:
+        DESTDIR: out
+      run: |
+        meson configure -Dpackagekit_backend=false -Dubuntu_drivers_backend=false build
+        ninja -C build install
+
   lint:
 
     runs-on: ubuntu-22.04
