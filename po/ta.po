@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-15 22:33+0000\n"
+"POT-Creation-Date: 2023-05-18 10:52+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:353
+#: src/Application.vala:38 src/Core/Package.vala:362
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
@@ -30,288 +30,288 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:320
+#: src/Application.vala:324
 #, fuzzy
 msgid "The app has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: src/Application.vala:321 src/MainWindow.vala:550
+#: src/Application.vala:325 src/MainWindow.vala:524
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
 
-#: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
-msgid "Getting app information…"
-msgstr "தகவலைப் பெறுகிறது"
-
-#: src/MainWindow.vala:96
-msgid "Getting download size…"
-msgstr ""
-
-#: src/MainWindow.vala:102
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for updates…"
-msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
-
-#: src/MainWindow.vala:105
-#, fuzzy
-#| msgid "Installing"
-msgid "Installing…"
-msgstr "நிறுவுகிறது"
-
-#: src/MainWindow.vala:108
-#, fuzzy
-#| msgid "Installing updates"
-msgid "Installing updates…"
-msgstr "புதுப்பிப்புகளை நிறுவுகிறது"
-
-#: src/MainWindow.vala:111
-#, fuzzy
-#| msgid "Uninstall"
-msgid "Uninstalling…"
-msgstr "நீக்குதல்"
-
-#: src/MainWindow.vala:114
-msgid "Repairing…"
-msgstr ""
-
-#: src/MainWindow.vala:145
+#: src/MainWindow.vala:119
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:166
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
+#: src/MainWindow.vala:179 src/MainWindow.vala:456 src/MainWindow.vala:598
 msgid "Search Apps"
 msgstr "பயன்பாடுகளை தேடு"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:186
 msgid "Automatic App Updates"
 msgstr ""
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:187
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:191
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/MainWindow.vala:241
+#: src/MainWindow.vala:215
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "தொடங்குகிறது"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:243
 #, fuzzy
 msgid "Network Not Available."
 msgstr "நெட்வொர்க் கிடைக்கவில்லை"
 
-#: src/MainWindow.vala:270
+#: src/MainWindow.vala:244
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "மென்பொருளை நிறுவ அல்லது புதுப்பிப்பதற்கு இணையத்துடன் இணைக்கவும்."
 
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:254
 msgid "Network Settings…"
 msgstr "நெட்வொர்க் அமைப்புகள் …"
 
-#: src/MainWindow.vala:288
+#: src/MainWindow.vala:262
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:289
+#: src/MainWindow.vala:263
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:486 src/MainWindow.vala:490
+#: src/MainWindow.vala:460 src/MainWindow.vala:464
 #, c-format
 msgid "Search %s"
 msgstr "தேடுக %s"
 
-#: src/MainWindow.vala:507
+#: src/MainWindow.vala:481
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:510
+#: src/MainWindow.vala:484
 msgctxt "view"
 msgid "Search"
 msgstr "தேடுதல்"
 
-#: src/MainWindow.vala:516
+#: src/MainWindow.vala:490
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:553
+#: src/MainWindow.vala:527
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "திற"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
+#: src/MainWindow.vala:635
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "தகவலைப் பெறுகிறது"
+
+#: src/MainWindow.vala:638
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:644
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for updates…"
+msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
+
+#: src/MainWindow.vala:647
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "நிறுவுகிறது"
+
+#: src/MainWindow.vala:650
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "புதுப்பிப்புகளை நிறுவுகிறது"
+
+#: src/MainWindow.vala:653
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling…"
+msgstr "நீக்குதல்"
+
+#: src/MainWindow.vala:656
+msgid "Repairing…"
+msgstr ""
+
+#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "தொடங்குகிறது"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
+#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "காத்திருக்கிறது"
 
-#: src/Utils.vala:66
+#: src/Utils.vala:67
 msgid "Running"
 msgstr "இயங்குகிறது"
 
-#: src/Utils.vala:68
+#: src/Utils.vala:69
 msgid "Querying"
 msgstr ""
 
-#: src/Utils.vala:70
+#: src/Utils.vala:71
 msgid "Getting information"
 msgstr "தகவலைப் பெறுகிறது"
 
-#: src/Utils.vala:72
+#: src/Utils.vala:73
 msgid "Removing packages"
 msgstr "தொகுப்புகளை நீக்குகிறது"
 
-#: src/Utils.vala:74
+#: src/Utils.vala:75
 msgid "Downloading"
 msgstr "பதிவிறக்குகிறது"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1391
 msgid "Installing"
 msgstr "நிறுவுகிறது"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:79
 msgid "Refreshing software list"
 msgstr "மென்பொருள் பட்டியலை புதுப்பிக்கிறது"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:81
 msgid "Installing updates"
 msgstr "புதுப்பிப்புகளை நிறுவுகிறது"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:83
 msgid "Cleaning up packages"
 msgstr "தொகுப்புகளை சீர்செய்கிறது"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:85
 msgid "Obsoleting packages"
 msgstr "தேவையற்ற தொகுப்புகளை நீக்குகிறது"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:87
 msgid "Resolving dependencies"
 msgstr "சார்புகளைத் தீர்த்துக் கொள்கிறது"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:89
 msgid "Checking signatures"
 msgstr "கையொப்பங்களைச் சரிபார்க்கிறது"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:91
 msgid "Testing changes"
 msgstr "மாற்றங்களை சோதிக்கிறது"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:93
 msgid "Committing changes"
 msgstr "மாற்றங்களைச் செய்கிறது"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:95
 msgid "Requesting data"
 msgstr "தரவு கோருகிறது"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "முடிந்தது"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
+#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
 #: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
 #: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
 #: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:101
 msgid "Downloading repository information"
 msgstr "களஞ்சியத் தகவலைப் பதிவிறக்குகிறது"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:103
 msgid "Downloading list of packages"
 msgstr "தொகுப்புகள் பட்டியலைப் பதிவிறக்குகிறது"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:105
 msgid "Downloading file lists"
 msgstr "கோப்பு பட்டியல்களைப் பதிவிறக்குகிறது"
 
-#: src/Utils.vala:106
+#: src/Utils.vala:107
 msgid "Downloading lists of changes"
 msgstr "மாற்றங்களின் பட்டியல்களை பதிவிறக்குகிறது"
 
-#: src/Utils.vala:108
+#: src/Utils.vala:109
 msgid "Downloading groups"
 msgstr "குழுக்களை பதிவிறக்குகிறது"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:111
 msgid "Downloading update information"
 msgstr "மேம்படுத்தல் தகவலை பதிவிறக்குகிறது"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:113
 msgid "Repackaging files"
 msgstr "கோப்புகளை மறுபதிப்பு செய்கிறது"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:115
 msgid "Loading cache"
 msgstr "கேச் ஏற்றுகிறது"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:117
 msgid "Scanning applications"
 msgstr "மென்பொருள்களை ஸ்கேன் செய்கிறது"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:119
 msgid "Generating package lists"
 msgstr "தொகுப்பு பட்டியலை உருவாக்குகிறது"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:121
 msgid "Waiting for package manager lock"
 msgstr "தொகுப்பு மேலாளர் பூட்டுக்காக காத்திருக்கிறது"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:123
 msgid "Waiting for authentication"
 msgstr "அங்கீகாரத்திற்காக காத்திருக்கிறது"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:125
 msgid "Updating running applications"
 msgstr "இயங்கும் மென்பொருள்களை புதுப்பிக்கப்படுகின்றன"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:127
 msgid "Checking applications in use"
 msgstr "பயன்பாட்டில் உள்ள மென்பொருள்களை சரிபார்க்கிறது"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:129
 msgid "Checking libraries in use"
 msgstr "பயன்பாட்டில் உள்ள நூலகங்களைச் சரிபார்க்கிறது"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:131
 msgid "Copying files"
 msgstr "கோப்புகளை நகலெடுக்கிறது"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:133
 msgid "Unknown state"
 msgstr "தெரியாத நிலை"
 
-#: src/Core/BackendAggregator.vala:46
+#: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
 msgstr ""
 
@@ -350,25 +350,25 @@ msgstr "புதுப்பிக்கவும்"
 msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:364
 #, fuzzy
 msgid "elementary Updates"
 msgstr "சமீபத்தில் புதுப்பிக்கப்பட்டது"
 
-#: src/Core/Package.vala:357
+#: src/Core/Package.vala:366
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:367
+#: src/Core/Package.vala:372
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "இயக்கிகள்"
 
-#: src/Core/Package.vala:370
+#: src/Core/Package.vala:376
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:542
+#: src/Core/Package.vala:550
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -396,43 +396,43 @@ msgstr "புதுப்பிப்புகளுக்குத் தே�
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
+#: src/Core/UpdateManager.vala:101 src/Core/UpdateManager.vala:164
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:179
+#: src/Core/UpdateManager.vala:182
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:184
+#: src/Core/UpdateManager.vala:187
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
+#: src/Core/UpdateManager.vala:189 src/Core/UpdateManager.vala:201
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:191
+#: src/Core/UpdateManager.vala:194
 msgid "No runtimes with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:196
+#: src/Core/UpdateManager.vala:199
 #, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:237
+#: src/Core/UpdateManager.vala:246
 msgid "Restart Required"
 msgstr "மறுதொடக்கம் தேவை"
 
-#: src/Core/UpdateManager.vala:238
+#: src/Core/UpdateManager.vala:247
 msgid "Please restart your system to finalize updates"
 msgstr "புதுப்பிப்புகளை முடிக்க உங்கள் கணினியை மீண்டும் தொடங்கவும்"
 
@@ -912,11 +912,11 @@ msgstr ""
 msgid "Unknown License"
 msgstr "தெரியாத நிலை"
 
-#: src/Views/AppInfoView.vala:1270
+#: src/Views/AppInfoView.vala:1272
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1276
+#: src/Views/AppInfoView.vala:1278
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -1062,17 +1062,17 @@ msgstr ""
 msgid "Privacy & Security"
 msgstr "தனியுரிமை கொள்கை"
 
-#: src/Views/Homepage.vala:464
+#: src/Views/Homepage.vala:467
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "விளையாட்டுகள்"
 
-#: src/Views/Homepage.vala:492
+#: src/Views/Homepage.vala:495
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:501
+#: src/Views/Homepage.vala:504
 msgid "Games"
 msgstr "விளையாட்டுகள்"
 
