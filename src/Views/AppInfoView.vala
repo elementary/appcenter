@@ -916,7 +916,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             } else if (AppCenterCore.Package.PermissionsFlags.HOME_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.HOME_READ in package.permissions_flags) {
                 var home = new ContentType (
                     _("Home Folder Access"),
-                    _("Including all documents, downloads, music, pictures, videos, etc"),
+                    _("Including all documents, downloads, music, pictures, videos, and any hidden folders"),
                     "sandbox-files-symbolic"
                 );
 
