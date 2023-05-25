@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
+"POT-Creation-Date: 2023-05-18 10:52+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:353
+#: src/Application.vala:38 src/Core/Package.vala:362
 msgid "AppCenter"
 msgstr "Център за приложения"
 
@@ -30,291 +30,291 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:320
+#: src/Application.vala:324
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s беше успешно инсталирана"
 
-#: src/Application.vala:321 src/MainWindow.vala:550
+#: src/Application.vala:325 src/MainWindow.vala:524
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s беше успешно инсталирана"
 
-#: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
-msgid "Getting app information…"
-msgstr "Получаване на сведения"
-
-#: src/MainWindow.vala:96
-msgid "Getting download size…"
-msgstr ""
-
-#: src/MainWindow.vala:102
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for updates…"
-msgstr "Търсене за обновления…"
-
-#: src/MainWindow.vala:105
-#, fuzzy
-#| msgid "Installing"
-msgid "Installing…"
-msgstr "Инсталиране"
-
-#: src/MainWindow.vala:108
-#, fuzzy
-#| msgid "Installing updates"
-msgid "Installing updates…"
-msgstr "Инсталиране на обновления"
-
-#: src/MainWindow.vala:111
-#, fuzzy
-#| msgid "Uninstall"
-msgid "Uninstalling…"
-msgstr "Деинсталиране"
-
-#: src/MainWindow.vala:114
-msgid "Repairing…"
-msgstr ""
-
-#: src/MainWindow.vala:145
+#: src/MainWindow.vala:119
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:166
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Намиране и инсталиране на приложения"
 
-#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
+#: src/MainWindow.vala:179 src/MainWindow.vala:456 src/MainWindow.vala:598
 msgid "Search Apps"
 msgstr "Търсене из приложения"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:186
 msgid "Automatic App Updates"
 msgstr ""
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:187
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:191
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Търсене за обновления…"
 
-#: src/MainWindow.vala:241
+#: src/MainWindow.vala:215
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Пускане"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:243
 #, fuzzy
 msgid "Network Not Available."
 msgstr "Не е налична интернет свързаност"
 
-#: src/MainWindow.vala:270
+#: src/MainWindow.vala:244
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Свържее се с Интернет за да инсталирате или обновявате приложения."
 
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:254
 msgid "Network Settings…"
 msgstr "Мрежови Настройки…"
 
-#: src/MainWindow.vala:288
+#: src/MainWindow.vala:262
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:289
+#: src/MainWindow.vala:263
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:486 src/MainWindow.vala:490
+#: src/MainWindow.vala:460 src/MainWindow.vala:464
 #, c-format
 msgid "Search %s"
 msgstr "Търсене на %s"
 
-#: src/MainWindow.vala:507
+#: src/MainWindow.vala:481
 #, fuzzy
 msgid "Home"
 msgstr "Начална страница"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:510
+#: src/MainWindow.vala:484
 msgctxt "view"
 msgid "Search"
 msgstr "Търсене"
 
-#: src/MainWindow.vala:516
+#: src/MainWindow.vala:490
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Инсталиране"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:553
+#: src/MainWindow.vala:527
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Отвори"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
+#: src/MainWindow.vala:635
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "Получаване на сведения"
+
+#: src/MainWindow.vala:638
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:644
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for updates…"
+msgstr "Търсене за обновления…"
+
+#: src/MainWindow.vala:647
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "Инсталиране"
+
+#: src/MainWindow.vala:650
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "Инсталиране на обновления"
+
+#: src/MainWindow.vala:653
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling…"
+msgstr "Деинсталиране"
+
+#: src/MainWindow.vala:656
+msgid "Repairing…"
+msgstr ""
+
+#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "Пускане"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
+#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "Изчакване"
 
-#: src/Utils.vala:66
+#: src/Utils.vala:67
 msgid "Running"
 msgstr "Изпълняване"
 
-#: src/Utils.vala:68
+#: src/Utils.vala:69
 msgid "Querying"
 msgstr "Запитване"
 
-#: src/Utils.vala:70
+#: src/Utils.vala:71
 msgid "Getting information"
 msgstr "Получаване на сведения"
 
-#: src/Utils.vala:72
+#: src/Utils.vala:73
 msgid "Removing packages"
 msgstr "Премахване на пакeти"
 
-#: src/Utils.vala:74
+#: src/Utils.vala:75
 msgid "Downloading"
 msgstr "Изтегляне"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1391
 msgid "Installing"
 msgstr "Инсталиране"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:79
 msgid "Refreshing software list"
 msgstr "Обновяване на списъка с програми"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:81
 msgid "Installing updates"
 msgstr "Инсталиране на обновления"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:83
 msgid "Cleaning up packages"
 msgstr "Почистване на пакети"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:85
 msgid "Obsoleting packages"
 msgstr "Обявяване на пакети за остарели"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:87
 msgid "Resolving dependencies"
 msgstr "Разрешаване на зависимости"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:89
 msgid "Checking signatures"
 msgstr "Проверка на подписи"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:91
 msgid "Testing changes"
 msgstr "Проверка на промените"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:93
 msgid "Committing changes"
 msgstr "Подаване на промените"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:95
 msgid "Requesting data"
 msgstr "Запитване за данни"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "Готово"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
+#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
 #: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
 #: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
 #: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
 msgid "Cancelling"
 msgstr "Отменяне"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:101
 msgid "Downloading repository information"
 msgstr "Изтегляне на данни за хранилището"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:103
 msgid "Downloading list of packages"
 msgstr "Изтегляне на списък с пакети"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:105
 msgid "Downloading file lists"
 msgstr "Изтегляне на списъците с файлове"
 
-#: src/Utils.vala:106
+#: src/Utils.vala:107
 msgid "Downloading lists of changes"
 msgstr "Изтегляне на списъците с промени"
 
-#: src/Utils.vala:108
+#: src/Utils.vala:109
 msgid "Downloading groups"
 msgstr "Изтегляне на групите"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:111
 msgid "Downloading update information"
 msgstr "Изтегляне на данни за обновленията"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:113
 msgid "Repackaging files"
 msgstr "Повторно пакетиране на файлове"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:115
 msgid "Loading cache"
 msgstr "Зареждане на временните файлове"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:117
 msgid "Scanning applications"
 msgstr "Сканиране на приложенията"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:119
 msgid "Generating package lists"
 msgstr "Създаване на списъци с пакети"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:121
 msgid "Waiting for package manager lock"
 msgstr "Изчакване на заключването от управлението на пакети"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:123
 msgid "Waiting for authentication"
 msgstr "Изчакване за удостоверяване"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:125
 msgid "Updating running applications"
 msgstr "Обновяване на работеща в момента програма"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:127
 msgid "Checking applications in use"
 msgstr "Проверка на ползваните програми"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:129
 msgid "Checking libraries in use"
 msgstr "Проверка на ползваните библиотеки"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:131
 msgid "Copying files"
 msgstr "Копиране на файлове"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:133
 msgid "Unknown state"
 msgstr "Неизвестно състояние"
 
-#: src/Core/BackendAggregator.vala:46
+#: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
 msgstr ""
 
@@ -353,24 +353,24 @@ msgstr "Обновяване"
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:364
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Наскоро Обновени"
 
-#: src/Core/Package.vala:357
+#: src/Core/Package.vala:366
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:367
+#: src/Core/Package.vala:372
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:370
+#: src/Core/Package.vala:376
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:542
+#: src/Core/Package.vala:550
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -398,43 +398,43 @@ msgstr "Търсене за обновления…"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
+#: src/Core/UpdateManager.vala:101 src/Core/UpdateManager.vala:164
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:179
+#: src/Core/UpdateManager.vala:182
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:184
+#: src/Core/UpdateManager.vala:187
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
+#: src/Core/UpdateManager.vala:189 src/Core/UpdateManager.vala:201
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:191
+#: src/Core/UpdateManager.vala:194
 msgid "No runtimes with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:196
+#: src/Core/UpdateManager.vala:199
 #, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:237
+#: src/Core/UpdateManager.vala:246
 msgid "Restart Required"
 msgstr "Необходимо е Рестартиране"
 
-#: src/Core/UpdateManager.vala:238
+#: src/Core/UpdateManager.vala:247
 msgid "Please restart your system to finalize updates"
 msgstr "Моля рестартирайте системата за да завършите обновленията"
 
@@ -920,11 +920,11 @@ msgstr ""
 msgid "Unknown License"
 msgstr "Неизвестно състояние"
 
-#: src/Views/AppInfoView.vala:1270
+#: src/Views/AppInfoView.vala:1272
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1276
+#: src/Views/AppInfoView.vala:1278
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -981,110 +981,106 @@ msgstr "Програми с последна версия"
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "Наскоро Обновени"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Търсене из приложения"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Безплатно"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr ""
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "Категории"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "Помощни програми"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "Звук"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 #, fuzzy
 msgid "Communication"
 msgstr "Образование"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "Разработка"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "Образование"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 #, fuzzy
 msgid "Finance"
 msgstr "Отказ"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "Графика"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "Мрежа"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Наука и техника"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr ""
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "Офисни програми"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "Системни програми"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "Улеснен достъп"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "Видео"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr ""
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Декларация за Поверителност"
 
-#: src/Views/Homepage.vala:457
+#: src/Views/Homepage.vala:467
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "Игри"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:495
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:494
+#: src/Views/Homepage.vala:504
 msgid "Games"
 msgstr "Игри"
 

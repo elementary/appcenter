@@ -17,11 +17,6 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public enum BackendType {
-    PACKAGEKIT,
-    UBUNTU_DRIVERS
-}
-
 public interface AppCenterCore.Backend : Object {
     public abstract Job.Type job_type { get; protected set; }
     public abstract bool working { public get; protected set; }

@@ -221,10 +221,13 @@ public class AppCenter.Homepage : Gtk.Box {
                 show_package (local_package);
             });
         } else {
+#if PACKAGEKIT_BACKEND
             appcenter_banner = new Widgets.Banner (
                 AppCenterCore.PackageKitBackend.get_default ().lookup_package_by_id ("appcenter")
             );
             banner_carousel.add (appcenter_banner);
+#endif
+
             banner_carousel.page_changed.connect (page_changed_handler );
         }
 
