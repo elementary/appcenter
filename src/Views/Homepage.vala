@@ -292,9 +292,8 @@ public class AppCenter.Homepage : Gtk.Box {
         var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
-        int package_count = 0;
         foreach (var package in packages_by_release_date) {
-            if (package_count >= MAX_PACKAGES_IN_BANNER) {
+            if (packages_in_banner.size >= MAX_PACKAGES_IN_BANNER) {
                 break;
             }
 
@@ -312,17 +311,14 @@ public class AppCenter.Homepage : Gtk.Box {
 
             if (!installed) {
                 packages_in_banner.add (package);
-                package_count++;
+
+                var banner = new Widgets.Banner (package);
+                banner.clicked.connect (() => {
+                    show_package (package);
+                });
+
+                banner_carousel.add (banner);
             }
-        }
-
-        foreach (var package in packages_in_banner) {
-            var banner = new Widgets.Banner (package);
-            banner.clicked.connect (() => {
-                show_package (package);
-            });
-
-            banner_carousel.add (banner);
         }
 
         foreach (var package in packages_by_release_date) {
