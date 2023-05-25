@@ -326,6 +326,10 @@ public class AppCenter.Homepage : Gtk.Box {
                 break;
             }
 
+            if (package in packages_in_banner) {
+                continue;
+            }
+
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
@@ -338,7 +342,7 @@ public class AppCenter.Homepage : Gtk.Box {
                 }
             }
 
-            if (!installed && !(package in packages_in_banner)) {
+            if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
                 recently_updated_carousel.add (package_row);
             }
