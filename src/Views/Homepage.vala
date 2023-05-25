@@ -233,6 +233,8 @@ public class AppCenter.Homepage : Gtk.Box {
 
         load_banners_and_carousels.begin ((obj, res) => {
             load_banners_and_carousels.end (res);
+            banner_carousel.show_all ();
+            banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
             banner_timeout_start ();
         });
 
@@ -318,9 +320,6 @@ public class AppCenter.Homepage : Gtk.Box {
 
             banner_carousel.add (banner);
         }
-
-        banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
-        banner_carousel.show_all ();
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
