@@ -20,6 +20,7 @@
     <file alias="16x16/mimetypes/text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
 
     <file alias="scalable/categories/flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>
+    <file alias="scalable/categories/sandbox-settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-settings.svg</file>
 
     <file alias="scalable/categories/oars-chat-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/chat.svg</file>
     <file alias="scalable/categories/oars-conflict-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/conflict.svg</file>
