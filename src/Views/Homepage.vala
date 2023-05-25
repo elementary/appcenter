@@ -233,9 +233,13 @@ public class AppCenter.Homepage : Gtk.Box {
 
         load_banners_and_carousels.begin ((obj, res) => {
             load_banners_and_carousels.end (res);
+
             banner_carousel.show_all ();
             banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
             banner_timeout_start ();
+
+            recently_updated_carousel.show_all ();
+            recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
         });
 
         category_flow.child_activated.connect ((child) => {
@@ -343,8 +347,6 @@ public class AppCenter.Homepage : Gtk.Box {
                 recently_updated_carousel.add (package_row);
             }
         }
-        recently_updated_carousel.show_all ();
-        recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
     }
 
     private void banner_timeout_start () {
