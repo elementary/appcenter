@@ -300,17 +300,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         content_warning_clamp.add (oars_flowbox_revealer);
 
         if (!package.is_os_updates && !package.is_runtime_updates) {
-#if CURATED
-            if (!package.is_native) {
-                var uncurated = new ContentType (
-                    _("Non-Curated"),
-                    _("Not reviewed by elementary for security, privacy, or system integration"),
-                    "security-low-symbolic"
-                );
-
-                oars_flowbox.add (uncurated);
-            }
-#endif
             var active_locale = package_component.get_active_locale ();
             if (active_locale != "en_US") {
                 var percent_translated = package_component.get_language (
