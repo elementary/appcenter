@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-18 10:52+0000\n"
+"POT-Creation-Date: 2023-05-28 01:17+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Urdu <https://l10n.elementary.io/projects/appcenter/appcenter/ur/>\n"
@@ -880,40 +880,48 @@ msgstr ""
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
+#: src/Views/AppInfoView.vala:918
+msgid "Home Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:919
+msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1162
+#: src/Views/AppInfoView.vala:1170
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1165
+#: src/Views/AppInfoView.vala:1173
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1170
+#: src/Views/AppInfoView.vala:1178
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1173
+#: src/Views/AppInfoView.vala:1181
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1185
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1188
 #, fuzzy
 msgid "Unknown License"
 msgstr "نامعلوم حالت"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1280
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1278
+#: src/Views/AppInfoView.vala:1286
 msgid "Fund the development of this app"
 msgstr ""
 

@@ -909,10 +909,18 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 var filesystem = new ContentType (
                     _("System Folder Access"),
                     _("Including everyone's Home folders, but not including system internals"),
-                    "drive-harddisk-symbolic"
+                    "sandbox-files-warning-symbolic"
                 );
 
                 oars_flowbox.add (filesystem);
+            } else if (AppCenterCore.Package.PermissionsFlags.HOME_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.HOME_READ in package.permissions_flags) {
+                var home = new ContentType (
+                    _("Home Folder Access"),
+                    _("Including all documents, downloads, music, pictures, videos, and any hidden folders"),
+                    "sandbox-files-symbolic"
+                );
+
+                oars_flowbox.add (home);
             }
 
             if (AppCenterCore.Package.PermissionsFlags.LOCATION in package.permissions_flags) {
