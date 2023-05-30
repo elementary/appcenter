@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-30 16:15+0000\n"
-"PO-Revision-Date: 2023-05-30 16:15+0000\n"
+"PO-Revision-Date: 2023-06-01 01:47+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -850,11 +851,11 @@ msgstr "לרבות כל המסמכים, הורדות, מוזיקה, תמונות
 
 #: src/Views/AppInfoView.vala:928
 msgid "Location Access"
-msgstr ""
+msgstr "גישה למיקום"
 
 #: src/Views/AppInfoView.vala:929
 msgid "Can see your precise location at any time without asking"
-msgstr ""
+msgstr "אפשרות לצפות במיקום המדויק בכל עת מבלי לבקש"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1180
