@@ -809,8 +809,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     }
                 }
             }
+
+            if (keyfile.has_group ("System Bus Policy")) {
+                if (keyfile.has_key ("System Bus Policy", "org.freedesktop.GeoClue2")) {
+                    var geoclue_policy = keyfile.get_string ("System Bus Policy", "org.freedesktop.GeoClue2");
+                    if (geoclue_policy != null && geoclue_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.LOCATION;
+                    }
+                }
+            }
         } catch (Error e) {
-            debug ("Error getting Flatpak permissions: %s", e.message);
+            critical ("Error getting Flatpak permissions: %s", e.message);
         }
 
         // We didn't find anything, so call it NONE
