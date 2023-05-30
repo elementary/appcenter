@@ -94,6 +94,7 @@ public class AppCenterCore.Package : Object {
         FILESYSTEM_READ,
         HOME_FULL,
         HOME_READ,
+        LOCATION,
         NETWORK,
         NONE,
         SESSION_BUS,
