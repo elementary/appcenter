@@ -923,6 +923,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 oars_flowbox.add (home);
             }
 
+            if (AppCenterCore.Package.PermissionsFlags.LOCATION in package.permissions_flags) {
+                var location = new ContentType (
+                    _("Location Access"),
+                    _("Can see your precise location at any time without asking"),
+                    "sandbox-location-symbolic"
+                );
+
+                oars_flowbox.add (location);
+            }
+
             if (AppCenterCore.Package.PermissionsFlags.SETTINGS in package.permissions_flags) {
                 var filesystem = new ContentType (
                     _("System Settings Access"),
