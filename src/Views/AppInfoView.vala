@@ -905,6 +905,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN && !permissions_shown) {
             permissions_shown = true;
 
+            if (AppCenterCore.Package.PermissionsFlags.ESCAPE_SANDBOX in package.permissions_flags) {
+                var sandbox_escape = new ContentType (
+                    _("Insecure Sandbox"),
+                    _("Can ignore or modify its own system permissions"),
+                    "sandbox-escape-symbolic"
+                );
+
+                oars_flowbox.add (sandbox_escape);
+            }
+
             if (AppCenterCore.Package.PermissionsFlags.FILESYSTEM_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.FILESYSTEM_READ in package.permissions_flags) {
                 var filesystem = new ContentType (
                     _("System Folder Access"),
