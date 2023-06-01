@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 16:15+0000\n"
+"POT-Creation-Date: 2023-06-01 01:46+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/appcenter/appcenter/ckb/>\n"
@@ -864,62 +864,78 @@ msgid "Built for an unstable version of %s; may contain major issues. Not recomm
 msgstr "بۆ وەشانی ناجێگیری %s دروستکراوە؛ بۆیە لەوەیە هەندێک کێشەی هەبێت. پێشنیار نەکراوە لەسەر سیستەمی بەرهەم بەکاری بهێندرێت."
 
 #: src/Views/AppInfoView.vala:910
-msgid "System Folder Access"
+msgid "Insecure Sandbox"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:911
+msgid "Can ignore or modify its own system permissions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:920
+msgid "System Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:921
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:918
+#: src/Views/AppInfoView.vala:928
 msgid "Home Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:929
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:928
+#: src/Views/AppInfoView.vala:938
 msgid "Location Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:929
+#: src/Views/AppInfoView.vala:939
 msgid "Can see your precise location at any time without asking"
 msgstr ""
 
+#: src/Views/AppInfoView.vala:948
+msgid "System Settings Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:949
+msgid "Can read and modify system settings"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1200
 msgid "Public Domain"
 msgstr "پاوانی گشتی (پەبلیک)"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1183
+#: src/Views/AppInfoView.vala:1203
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ckb.wikipedia.org/wiki/%D9%BE%D8%A7%D9%88%D8%A7%D9%86%DB%8C_%DA%AF%D8%B4%D8%AA%DB%8C"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1188
+#: src/Views/AppInfoView.vala:1208
 msgid "Free Software"
 msgstr "نەرمەکاڵای بەخۆڕایی"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1191
+#: src/Views/AppInfoView.vala:1211
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1195
+#: src/Views/AppInfoView.vala:1215
 msgid "Proprietary"
 msgstr "خاوەنداریەتی"
 
-#: src/Views/AppInfoView.vala:1198
+#: src/Views/AppInfoView.vala:1218
 msgid "Unknown License"
 msgstr "مۆڵەتی نەناسراو"
 
-#: src/Views/AppInfoView.vala:1290
+#: src/Views/AppInfoView.vala:1310
 msgid "Fund"
 msgstr "پارە (فەند)"
 
-#: src/Views/AppInfoView.vala:1296
+#: src/Views/AppInfoView.vala:1316
 msgid "Fund the development of this app"
 msgstr "یارمەتی گەشەپێدانی ئەم ئەپە بکە بە پارە"
 
@@ -1052,15 +1068,15 @@ msgstr "نووسین & زمان"
 msgid "Privacy & Security"
 msgstr "تایبه‌تێتی & ئاسایش"
 
-#: src/Views/Homepage.vala:467
+#: src/Views/Homepage.vala:468
 msgid "Fun & Games"
 msgstr "خۆشی & یارییه‌كان"
 
-#: src/Views/Homepage.vala:495
+#: src/Views/Homepage.vala:496
 msgid "Fun &"
 msgstr "خۆشی &"
 
-#: src/Views/Homepage.vala:504
+#: src/Views/Homepage.vala:505
 msgid "Games"
 msgstr "یارییه‌كان"
 
