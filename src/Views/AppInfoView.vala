@@ -942,6 +942,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
                 oars_flowbox.add (location);
             }
+
+            if (AppCenterCore.Package.PermissionsFlags.SETTINGS in package.permissions_flags) {
+                var filesystem = new ContentType (
+                    _("System Settings Access"),
+                    _("Can read and modify system settings"),
+                    "sandbox-settings-symbolic"
+                );
+
+                oars_flowbox.add (filesystem);
+            }
         }
 
         if (runtime_warning != null && !is_runtime_warning_shown) {
