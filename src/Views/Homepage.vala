@@ -286,9 +286,8 @@ public class AppCenter.Homepage : Gtk.Box {
         var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
-        int package_count = 0;
         foreach (var package in packages_by_release_date) {
-            if (package_count >= MAX_PACKAGES_IN_BANNER) {
+            if (packages_in_banner.size >= MAX_PACKAGES_IN_BANNER) {
                 break;
             }
 
@@ -306,25 +305,26 @@ public class AppCenter.Homepage : Gtk.Box {
 
             if (!installed) {
                 packages_in_banner.add (package);
-                package_count++;
+
+                var banner = new Widgets.Banner (package);
+                banner.clicked.connect (() => {
+                    show_package (package);
+                });
+
+                banner_carousel.add (banner);
             }
         }
 
-        foreach (var package in packages_in_banner) {
-            var banner = new Widgets.Banner (package);
-            banner.clicked.connect (() => {
-                show_package (package);
-            });
-
-            banner_carousel.add (banner);
-        }
-
-        banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
         banner_carousel.show_all ();
+        banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
                 break;
+            }
+
+            if (package in packages_in_banner) {
+                continue;
             }
 
             var installed = false;
@@ -339,11 +339,12 @@ public class AppCenter.Homepage : Gtk.Box {
                 }
             }
 
-            if (!installed && !(package in packages_in_banner)) {
+            if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
                 recently_updated_carousel.add (package_row);
             }
         }
+
         recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
     }
