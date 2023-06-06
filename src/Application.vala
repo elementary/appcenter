@@ -398,6 +398,37 @@ public class AppCenter.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
-    var application = new AppCenter.App ();
-    return application.run (args);
+    //  var application = new AppCenter.App ();
+    //  return application.run (args);
+
+    var sysroot = new Ostree.Sysroot.default ();
+
+    var initialized = sysroot.initialize ();
+    print ("initialized: %s\n", initialized ? "true" : "false");
+
+    var booted = sysroot.is_booted ();
+    print ("booted: %s\n", booted ? "true" : "false");
+
+    var loaded = sysroot.load (null);
+    print ("loaded: %s\n", loaded ? "true" : "false");
+
+    unowned var repo = sysroot.repo ();
+
+    //  public bool list_refs (string? refspec_prefix, out GLib.HashTable<weak string,weak string> out_all_refs, GLib.Cancellable? cancellable = null) throws GLib.Error;
+
+    GLib.HashTable<weak string,weak string> out_all_refs;
+    var success = repo.list_refs (null, out out_all_refs, null);
+    print ("success: %s\n", success ? "true" : "false");
+
+    out_all_refs.foreach ((key, val) => {
+		print ("    %s => %s\n", key, val);
+	});
+
+    //  var packages = RpmOstree.db_query_all (repo, "", null);
+
+    //  var upgrader = new Ostree.SysrootUpgrader (sysroot, null);
+
+    //  print ("description: %s\n", upgrader.get_origin_description ());
+
+    return 0;
 }
