@@ -92,6 +92,12 @@ if get_option('ubuntu_drivers_backend')
     args += '--define=UBUNTU_DRIVERS_BACKEND'
 endif
 
+if get_option('rpm_ostree_backend')
+    appcenter_files += files('Core/RpmOstreeBackend.vala')
+
+    args += '--define=RPM_OSTREE_BACKEND'
+endif
+
 executable(
     meson.project_name(),
     appcenter_files,

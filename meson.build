@@ -53,6 +53,13 @@ if get_option('packagekit_backend')
     dependencies += [dependency ('packagekit-glib2')]
 endif
 
+if get_option('rpm_ostree_backend')
+    dependencies += [
+        dependency ('rpm-ostree-1'),
+        dependency ('ostree-1'),
+    ]
+endif
+
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
 conf_data = configuration_data()
 conf_data.set('PROJECT_NAME', meson.project_name())
