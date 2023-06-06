@@ -373,6 +373,11 @@ public class AppCenterCore.Package : Object {
                 return _("Ubuntu Drivers");
             }
 #endif
+#if RPM_OSTREE_BACKEND
+            else if (backend is RpmOstreeBackend) {
+                return _("Immutable");
+            }
+#endif
 
             return _("Unknown Origin (non-curated)");
         }

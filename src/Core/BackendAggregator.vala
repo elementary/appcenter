@@ -32,6 +32,9 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 #if UBUNTU_DRIVERS_BACKEND
         backends.add (UbuntuDriversBackend.get_default ());
 #endif
+#if RPM_OSTREE_BACKEND
+        backends.add (RpmOstreeBackend.get_default ());
+#endif
         backends.add (FlatpakBackend.get_default ());
 
         unowned Gtk.Application app = (Gtk.Application) GLib.Application.get_default ();
