@@ -286,15 +286,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
-        try {
-            installed_refs = user_installation.list_installed_refs ();
-            installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
-        } catch (Error e) {
-            critical ("Unable to get installed flatpaks: %s", e.message);
-            job.result = Value (typeof (Object));
-            job.result.take_object ((owned) installed_apps);
-            job.results_ready ();
-            return;
+        if (user_installation != null) {
+            try {
+                installed_refs = user_installation.list_installed_refs ();
+                installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
+            } catch (Error e) {
+                critical ("Unable to get installed flatpaks: %s", e.message);
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) installed_apps);
+                job.results_ready ();
+                return;
+            }
         }
 
         try {
