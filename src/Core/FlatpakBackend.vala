@@ -299,15 +299,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         }
 
-        try {
-            installed_refs = system_installation.list_installed_refs ();
-            installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
-        } catch (Error e) {
-            critical ("Unable to get installed flatpaks: %s", e.message);
-            job.result = Value (typeof (Object));
-            job.result.take_object ((owned) installed_apps);
-            job.results_ready ();
-            return;
+        if (system_installation != null) {
+            try {
+                installed_refs = system_installation.list_installed_refs ();
+                installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
+            } catch (Error e) {
+                critical ("Unable to get installed flatpaks: %s", e.message);
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) installed_apps);
+                job.results_ready ();
+                return;
+            }
         }
 
         job.result = Value (typeof (Object));
