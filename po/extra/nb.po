@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-01 01:46+0000\n"
-"PO-Revision-Date: 2023-03-01 16:25+0000\n"
+"PO-Revision-Date: 2023-06-16 10:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -82,17 +82,19 @@ msgstr "Nye funksjoner"
 
 #: data/appcenter.metainfo.xml.in:79
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "«Reparer»-alternativ hvis Flatpak-oppgraderinger mislykkes"
 
 #: data/appcenter.metainfo.xml.in:80
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Melding i oppgraderingsvisning når alt er av nyeste dato, inkludert når det "
+"sist ble sjekket"
 
 #: data/appcenter.metainfo.xml.in:96
 msgid "Show when an app isn't available in your language"
-msgstr ""
+msgstr "Vis når et program ikke er tilgjengelig på valgt språk"
 
 #: data/appcenter.metainfo.xml.in:109
 msgid "Install OS Updates offline"
@@ -100,15 +102,15 @@ msgstr "Installer OS-oppgraderinger frakoblet"
 
 #: data/appcenter.metainfo.xml.in:130
 msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr ""
+msgstr "Omskrevet navigasjon med multitrykkshåndvendinger for å gå tilbake"
 
 #: data/appcenter.metainfo.xml.in:131
 msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
+msgstr "Nylig oppgraderte programmer vises på toppen av kategorivisninger"
 
 #: data/appcenter.metainfo.xml.in:132
 msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr ""
+msgstr "Statusoverlagsfelt viser nå når gjøremål er underveis"
 
 #: data/appcenter.metainfo.xml.in:134
 #, fuzzy
@@ -120,18 +122,21 @@ msgid ""
 "Screenshot carousels fill the width of the window, showing more screenshots "
 "at once"
 msgstr ""
+"Skjermavbildningskarusellen fyller bredden av vinduet, noe som viser flere "
+"skjermavbildninger om gangen"
 
 #: data/appcenter.metainfo.xml.in:137
 msgid "An app's accent color is now shown behind screenshots"
-msgstr ""
+msgstr "Et programs aksentfarger vises nå bak skjermavbildningene"
 
 #: data/appcenter.metainfo.xml.in:138
 msgid "Get brand colors from the AppStream standard so more apps are supported"
 msgstr ""
+"Hent merkefarger fra AppStream-standard, slik at flere programmer støttes"
 
 #: data/appcenter.metainfo.xml.in:139
 msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr ""
+msgstr "Linjebryt lenker på bunnen av sider istedenfor elliptisering"
 
 #: data/appcenter.metainfo.xml.in:140
 msgid "Better dark style support"
@@ -144,11 +149,11 @@ msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
 #: data/appcenter.metainfo.xml.in:144
 msgid "Release notes are shown in a dialog"
-msgstr ""
+msgstr "Utgivelsesnotater vises nå i en dialog"
 
 #: data/appcenter.metainfo.xml.in:145
 msgid "Better fallback icons for components"
-msgstr ""
+msgstr "Bedre tilbakefallsikoner for komponenter"
 
 #: data/appcenter.metainfo.xml.in:146
 msgid ""
@@ -198,15 +203,15 @@ msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
 #: data/appcenter.metainfo.xml.in:177
 msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
+msgstr "Ikke vis advarselsdialog om programmer fra alternative butikker"
 
 #: data/appcenter.metainfo.xml.in:178
 msgid "Show screenshot captions in a tooltip"
-msgstr ""
+msgstr "Skjermavbildingsundertekster vist i verktøytips"
 
 #: data/appcenter.metainfo.xml.in:179
 msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
+msgstr "Vis «Prøv nå gratis» når et programs pris settes til «0»."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -223,12 +228,13 @@ msgid "Check for Updates"
 msgstr "Se etter oppgraderinger"
 
 #: data/io.elementary.appcenter.policy.in:10
+#, fuzzy
 msgid "Update software"
-msgstr ""
+msgstr "Oppgrader programvare"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Identitetsbekreftelse kreves for å oppgradere programvare"
 
 #: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
@@ -236,7 +242,7 @@ msgstr "Reparer programvarekilder"
 
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
-msgstr ""
+msgstr "Identitetsbekreftelse kreves for å reparere programvarekilder"
 
 #, fuzzy
 #~| msgid "Add support for Flatpak apps"
