@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-01 01:46+0000\n"
-"PO-Revision-Date: 2023-06-03 20:07+0000\n"
+"PO-Revision-Date: 2023-06-16 10:07+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -957,7 +957,7 @@ msgstr[2] "Доступно %u обновлений"
 #: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr "Всё обновлено. Последняя проверка %s."
+msgstr "Всё обновлено. Последняя проверка: %s."
 
 #: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
