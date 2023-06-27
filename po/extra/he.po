@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-27 17:12+0000\n"
-"PO-Revision-Date: 2023-02-08 18:25+0000\n"
+"PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -63,6 +63,8 @@ msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"להזהיר כאשר ליישומים יש גישה לתיקיית הבית או לתיקיות המערכת, מיקום, הגדרות "
+"או שיש להם ארגז חול לא מאובטח."
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
 #: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
@@ -71,20 +73,17 @@ msgid "Other Improvements:"
 msgstr "שיפורים נוספים:"
 
 #: data/appcenter.metainfo.xml.in:74
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
-msgstr "קיצור שמות ארוכים של יישומים בתצוגות פרטי היישומון"
+msgstr "הריווח והשוליים הודקו בתצוגות פרטי יישומים"
 
 #: data/appcenter.metainfo.xml.in:75
-#, fuzzy
-#| msgid "Navigate banners on the home page with multitouch gestures"
 msgid "Show a placeholder banner on the home page when loading"
-msgstr "כרזות ניווט בעמוד הבית עם מחוות עם כמה אצבעות"
+msgstr "הצגת כרזות מילוי מקום בעמוד הבית בזמן הטעינה"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"לא להציג יישומים שאינם של מרכז היישומים תחת כותרת נפרדת בתצוגות קטגוריות"
 
 #: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
