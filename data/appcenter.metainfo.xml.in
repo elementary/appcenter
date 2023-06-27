@@ -63,6 +63,25 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.3.0" date="2023-02-27">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Warn when apps have access to Home or system folders, location, settings, or have an insecure sandbox.</li>
+        </ul>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Tighten up spacing and margins in App Info views</li>
+          <li>Show a placeholder banner on the home page when loading</li>
+          <li>Don't list non-AppCenter apps under a separate header in category views</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/1829">Appcenter closing on its own</issue>
+      </issues>
+    </release>
+
     <release version="7.2.1" date="2023-02-27">
       <description>
         <p>Other Improvements:</p>
@@ -124,35 +143,6 @@
     </release>
 
     <release version="4.0.0" date="2022-10-06">
-      <description>
-        <p>New features:</p>
-        <ul>
-          <li>Rewritten navigation with multitouch gestures to go back</li>
-          <li>Recently updated apps are shown at the top of category views</li>
-          <li>A status overlay bar is now shown when tasks are in progress</li>
-        </ul>
-        <p>App Info Page Improvements:</p>
-        <ul>
-          <li>Screenshot carousels fill the width of the window, showing more screenshots at once</li>
-          <li>An app's accent color is now shown behind screenshots</li>
-          <li>Get brand colors from the AppStream standard so more apps are supported</li>
-          <li>Wrap links at the bottom pages instead of ellipsize</li>
-          <li>Better dark style support</li>
-        </ul>
-        <p>Updates View Improvements:</p>
-        <ul>
-          <li>Release notes are shown in a dialog</li>
-          <li>Better fallback icons for components</li>
-          <li>The "Update All" header now sticks to the top of the window when scrolling</li>
-        </ul>
-        <p>Other Improvements:</p>
-        <ul>
-          <li>Redesigned "Fun &amp; Games" category card</li>
-          <li>Performance improvements</li>
-          <li>Stability improvements</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
       <issues>
         <issue url="https://github.com/elementary/appcenter/issues/1923">Linked issue reports are now shown in release notes</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1864">Wrap titles in app info pages instead of ellipsize</issue>
@@ -160,29 +150,7 @@
       </issues>
     </release>
 
-    <release version="3.10.0" date="2022-05-25" urgency="medium">
-      <description>
-        <p>New features:</p>
-        <ul>
-          <li>Added an option to automatically update apps</li>
-          <li>Manually check for new updates</li>
-          <li>Warn when apps are built against older runtimes</li>
-        </ul>
-        <p>Fixes:</p>
-        <ul>
-          <li>Prevent back button from disappearing or requiring multiple clicks</li>
-        </ul>
-        <p>Improvements:</p>
-        <ul>
-          <li>Don't show a warning dialog about apps from alt stores</li>
-          <li>Show screenshot captions in a tooltip</li>
-          <li>Show "Try for Free" when setting an app's price to 0</li>
-          <li>Performance improvements</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="3.10.0" date="2022-05-25"/>
     <release version="3.9.1" date="2021-12-10"/>
     <release version="3.9.0" date="2021-11-23"/>
     <release version="3.8.2" date="2021-10-29"/>
