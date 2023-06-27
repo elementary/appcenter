@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 01:46+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2023-04-05 22:59+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -55,30 +55,52 @@ msgstr "支払えるだけ支払う方式 (pay-what-you-can) で開発者を支�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:148
-msgid "Other Improvements:"
-msgstr "そのほかの改善点:"
-
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
-msgid "Updated translations"
-msgstr "翻訳の更新"
-
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/appcenter.metainfo.xml.in:79
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
+msgid "Other Improvements:"
+msgstr "そのほかの改善点:"
+
+#: data/appcenter.metainfo.xml.in:74
+#, fuzzy
+#| msgid "Ellipsize long app names in App Info views"
+msgid "Tighten up spacing and margins in App Info views"
+msgstr "アプリ情報ビューでアプリ名が長い場合に省略表示するように修正"
+
+#: data/appcenter.metainfo.xml.in:75
+#, fuzzy
+#| msgid "Navigate banners on the home page with multitouch gestures"
+msgid "Show a placeholder banner on the home page when loading"
+msgstr ""
+"“ホーム”ページのバナーをマルチタッチジェスチャーで切り替えられるように修正"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
+msgid "Updated translations"
+msgstr "翻訳の更新"
+
+#: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 "Flatpak のアップデートが失敗した場合に修復オプションを表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:80
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -86,128 +108,13 @@ msgstr ""
 "システムが最新の場合、最新だというメッセージとアップデートの最終確認日時を表"
 "示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
 msgstr "アプリがお使いの言語で表示されないことを表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:109
+#: data/appcenter.metainfo.xml.in:128
 msgid "Install OS Updates offline"
 msgstr "OS のアップデートをオフラインインストールする機能を追加"
-
-#: data/appcenter.metainfo.xml.in:130
-msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr ""
-"マルチタッチジェスチャーで前のページに戻るなど、ナビゲーション機能を再設計"
-
-#: data/appcenter.metainfo.xml.in:131
-msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
-"最近アップデートされたアプリが、カテゴリー画面の最上部に表示されるように修正"
-
-#: data/appcenter.metainfo.xml.in:132
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr "実行中のタスクのステータスを表示するオーバーレイバーを追加"
-
-#: data/appcenter.metainfo.xml.in:134
-msgid "App Info Page Improvements:"
-msgstr "アプリ情報ページの改善点:"
-
-#: data/appcenter.metainfo.xml.in:136
-msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
-msgstr ""
-"スクリーンショットの表示領域をウィンドウの幅と一致させ、一度により多くのスク"
-"リーンショットを表示できるように修正"
-
-#: data/appcenter.metainfo.xml.in:137
-msgid "An app's accent color is now shown behind screenshots"
-msgstr "アプリのアクセントカラーをスクリーンショットの背景色として表示"
-
-#: data/appcenter.metainfo.xml.in:138
-msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr ""
-"さらに多くのアプリが対応できるよう、ブランドカラーを AppStream の仕様から取得"
-"するように修正"
-
-#: data/appcenter.metainfo.xml.in:139
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr "ページ下部のリンクを省略表記するのではなく折り返すように修正"
-
-#: data/appcenter.metainfo.xml.in:140
-msgid "Better dark style support"
-msgstr "ダークスタイルへの対応を改善"
-
-#: data/appcenter.metainfo.xml.in:142
-msgid "Updates View Improvements:"
-msgstr "アップデート画面の改善点:"
-
-#: data/appcenter.metainfo.xml.in:144
-msgid "Release notes are shown in a dialog"
-msgstr "リリースノートをダイアログで表示するように修正"
-
-#: data/appcenter.metainfo.xml.in:145
-msgid "Better fallback icons for components"
-msgstr "コンポーネントのフォールバックアイコンを改善"
-
-#: data/appcenter.metainfo.xml.in:146
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr ""
-"\"すべてアップデート\" ボタンを含むヘッダーが、スクロール時もウィンドウ上部に"
-"固定表示されるように修正"
-
-#: data/appcenter.metainfo.xml.in:150
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr "\"エンタメとゲーム\" カテゴリーカードをデザイン変更"
-
-#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
-msgid "Performance improvements"
-msgstr "パフォーマンスの改善"
-
-#: data/appcenter.metainfo.xml.in:152
-msgid "Stability improvements"
-msgstr "安定性の改善"
-
-#: data/appcenter.metainfo.xml.in:167
-msgid "Added an option to automatically update apps"
-msgstr "アプリを自動的にアップデートするオプションを追加"
-
-#: data/appcenter.metainfo.xml.in:168
-msgid "Manually check for new updates"
-msgstr "手動で新しいアップデートを確認できる機能を追加"
-
-#: data/appcenter.metainfo.xml.in:169
-msgid "Warn when apps are built against older runtimes"
-msgstr "アプリが使用するランタイムが古い場合に警告を表示する機能を追加"
-
-#: data/appcenter.metainfo.xml.in:171
-msgid "Fixes:"
-msgstr "修正点:"
-
-#: data/appcenter.metainfo.xml.in:173
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
-"ヘッダーの戻るボタンが消えたり複数回のクリックを要したりしていた不具合を修正"
-
-#: data/appcenter.metainfo.xml.in:175
-msgid "Improvements:"
-msgstr "改善点:"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
-"サードパーティーのリモートリポジトリが提供するアプリに関して警告ダイアログを"
-"表示しないように修正"
-
-#: data/appcenter.metainfo.xml.in:178
-msgid "Show screenshot captions in a tooltip"
-msgstr "スクリーンショットのキャプションをツールチップに表示"
-
-#: data/appcenter.metainfo.xml.in:179
-msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
-"アプリの価格を0円に設定すると、ボタンに“無料で入手”と表示するように修正"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -238,6 +145,100 @@ msgstr "ソフトウェアソースを修復"
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr "ソフトウェアソースを修復するには認証が必要です"
+
+#~ msgid "Rewritten navigation with multitouch gestures to go back"
+#~ msgstr ""
+#~ "マルチタッチジェスチャーで前のページに戻るなど、ナビゲーション機能を再設計"
+
+#~ msgid "Recently updated apps are shown at the top of category views"
+#~ msgstr ""
+#~ "最近アップデートされたアプリが、カテゴリー画面の最上部に表示されるように修"
+#~ "正"
+
+#~ msgid "A status overlay bar is now shown when tasks are in progress"
+#~ msgstr "実行中のタスクのステータスを表示するオーバーレイバーを追加"
+
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "アプリ情報ページの改善点:"
+
+#~ msgid ""
+#~ "Screenshot carousels fill the width of the window, showing more "
+#~ "screenshots at once"
+#~ msgstr ""
+#~ "スクリーンショットの表示領域をウィンドウの幅と一致させ、一度により多くのス"
+#~ "クリーンショットを表示できるように修正"
+
+#~ msgid "An app's accent color is now shown behind screenshots"
+#~ msgstr "アプリのアクセントカラーをスクリーンショットの背景色として表示"
+
+#~ msgid ""
+#~ "Get brand colors from the AppStream standard so more apps are supported"
+#~ msgstr ""
+#~ "さらに多くのアプリが対応できるよう、ブランドカラーを AppStream の仕様から"
+#~ "取得するように修正"
+
+#~ msgid "Wrap links at the bottom pages instead of ellipsize"
+#~ msgstr "ページ下部のリンクを省略表記するのではなく折り返すように修正"
+
+#~ msgid "Better dark style support"
+#~ msgstr "ダークスタイルへの対応を改善"
+
+#~ msgid "Updates View Improvements:"
+#~ msgstr "アップデート画面の改善点:"
+
+#~ msgid "Release notes are shown in a dialog"
+#~ msgstr "リリースノートをダイアログで表示するように修正"
+
+#~ msgid "Better fallback icons for components"
+#~ msgstr "コンポーネントのフォールバックアイコンを改善"
+
+#~ msgid ""
+#~ "The \"Update All\" header now sticks to the top of the window when "
+#~ "scrolling"
+#~ msgstr ""
+#~ "\"すべてアップデート\" ボタンを含むヘッダーが、スクロール時もウィンドウ上"
+#~ "部に固定表示されるように修正"
+
+#~ msgid "Redesigned \"Fun &amp; Games\" category card"
+#~ msgstr "\"エンタメとゲーム\" カテゴリーカードをデザイン変更"
+
+#~ msgid "Performance improvements"
+#~ msgstr "パフォーマンスの改善"
+
+#~ msgid "Stability improvements"
+#~ msgstr "安定性の改善"
+
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr "アプリを自動的にアップデートするオプションを追加"
+
+#~ msgid "Manually check for new updates"
+#~ msgstr "手動で新しいアップデートを確認できる機能を追加"
+
+#~ msgid "Warn when apps are built against older runtimes"
+#~ msgstr "アプリが使用するランタイムが古い場合に警告を表示する機能を追加"
+
+#~ msgid "Fixes:"
+#~ msgstr "修正点:"
+
+#~ msgid "Prevent back button from disappearing or requiring multiple clicks"
+#~ msgstr ""
+#~ "ヘッダーの戻るボタンが消えたり複数回のクリックを要したりしていた不具合を修"
+#~ "正"
+
+#~ msgid "Improvements:"
+#~ msgstr "改善点:"
+
+#~ msgid "Don't show a warning dialog about apps from alt stores"
+#~ msgstr ""
+#~ "サードパーティーのリモートリポジトリが提供するアプリに関して警告ダイアログ"
+#~ "を表示しないように修正"
+
+#~ msgid "Show screenshot captions in a tooltip"
+#~ msgstr "スクリーンショットのキャプションをツールチップに表示"
+
+#~ msgid "Show \"Try for Free\" when setting an app's price to 0"
+#~ msgstr ""
+#~ "アプリの価格を0円に設定すると、ボタンに“無料で入手”と表示するように修正"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "アップデート中にクラッシュする可能性のある不具合を修正"
@@ -295,10 +296,6 @@ msgstr "ソフトウェアソースを修復するには認証が必要です"
 #~ msgstr ""
 #~ "“ホーム”ページに表示される“最近アップデートされたアプリ”の項目数を大幅に増"
 #~ "加"
-
-#~ msgid "Navigate banners on the home page with multitouch gestures"
-#~ msgstr ""
-#~ "“ホーム”ページのバナーをマルチタッチジェスチャーで切り替えられるように修正"
 
 #~ msgid "Show apps from newly sideloaded remotes without requiring a restart"
 #~ msgstr ""
@@ -524,9 +521,6 @@ msgstr "ソフトウェアソースを修復するには認証が必要です"
 #~ msgstr ""
 #~ "アップデート終了後に OS のアップデートの見出しに正しいテキストが表示される"
 #~ "ように修正"
-
-#~ msgid "Ellipsize long app names in App Info views"
-#~ msgstr "アプリ情報ビューでアプリ名が長い場合に省略表示するように修正"
 
 #~ msgid "And more"
 #~ msgstr "そのほかの修正"
