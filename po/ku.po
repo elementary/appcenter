@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 01:46+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish <https://l10n.elementary.io/projects/appcenter/appcenter/ku/>\n"
@@ -183,7 +183,7 @@ msgstr "Pakêt tên rakirin"
 msgid "Downloading"
 msgstr "Dadixe"
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1412
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "Saz dike"
 
@@ -228,9 +228,9 @@ msgid "Finished"
 msgstr "Bi dawî bû"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1421 src/Core/FlatpakBackend.vala:1445
-#: src/Core/FlatpakBackend.vala:1553 src/Core/FlatpakBackend.vala:1577
-#: src/Core/FlatpakBackend.vala:1735 src/Core/FlatpakBackend.vala:1753
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "Tê betalkirin"
 
@@ -324,13 +324,13 @@ msgstr[1] ""
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1544
+#: src/Core/FlatpakBackend.vala:1548
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Jêrake"
 
-#: src/Core/FlatpakBackend.vala:1726
+#: src/Core/FlatpakBackend.vala:1730
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"

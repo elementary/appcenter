@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 01:46+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -186,7 +186,7 @@ msgstr "패키지를 제거하고 있습니다"
 msgid "Downloading"
 msgstr "내려받고 있습니다"
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1412
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "설치중"
 
@@ -231,9 +231,9 @@ msgid "Finished"
 msgstr "마쳤습니다"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1421 src/Core/FlatpakBackend.vala:1445
-#: src/Core/FlatpakBackend.vala:1553 src/Core/FlatpakBackend.vala:1577
-#: src/Core/FlatpakBackend.vala:1735 src/Core/FlatpakBackend.vala:1753
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "취소하고 있습니다"
 
@@ -325,11 +325,11 @@ msgstr[0] "시스템에 %u개의 업데이트할 항목이 있습니다"
 msgid "%s (system-wide)"
 msgstr "%s (시스템 전체)"
 
-#: src/Core/FlatpakBackend.vala:1544
+#: src/Core/FlatpakBackend.vala:1548
 msgid "Uninstalling"
 msgstr "제거 중"
 
-#: src/Core/FlatpakBackend.vala:1726
+#: src/Core/FlatpakBackend.vala:1730
 msgid "Updating"
 msgstr "업데이트 중"
 
