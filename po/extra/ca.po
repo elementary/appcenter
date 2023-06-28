@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-27 17:12+0000\n"
-"PO-Revision-Date: 2023-02-08 18:25+0000\n"
+"PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -65,6 +65,8 @@ msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Avisa quan les aplicacions tenen accés a les carpetes d'inici o del sistema, "
+"a la ubicació, a la configuració o tenen una zona de proves insegura."
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
 #: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
@@ -73,21 +75,21 @@ msgid "Other Improvements:"
 msgstr "Altres millores:"
 
 #: data/appcenter.metainfo.xml.in:74
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
-msgstr "El·lipsi de noms llargs d'aplicacions a la vista d'informació"
+msgstr ""
+"Reforç de l'espaiat i els marges a les vistes d'informació de l'aplicació"
 
 #: data/appcenter.metainfo.xml.in:75
-#, fuzzy
-#| msgid "Navigate banners on the home page with multitouch gestures"
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
-"Navegació de les pancartes de la pàgina d'inici amb gestos multitàctils"
+"Mostra una pancarta de marcador de posició a la pàgina d'inici quan es "
+"carregui"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"No enumera aplicacions que no siguin del Centre d'aplicacions sota una "
+"capçalera independent a les visualitzacions de categoria"
 
 #: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
