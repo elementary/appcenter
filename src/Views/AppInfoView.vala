@@ -173,9 +173,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
 
         origin_combo_revealer = new Gtk.Revealer () {
+            child = origin_combo,
             transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN
         };
-        origin_combo_revealer.add (origin_combo);
 
         var renderer = new Gtk.CellRendererText ();
         origin_combo.pack_start (renderer, true);
@@ -192,9 +192,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         uninstall_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         uninstall_button_revealer = new Gtk.Revealer () {
+            child = uninstall_button,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
-        uninstall_button_revealer.add (uninstall_button);
 
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             halign = Gtk.Align.END,
@@ -291,13 +291,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         oars_flowbox.get_style_context ().add_class ("content-warning-box");
 
-        oars_flowbox_revealer = new Gtk.Revealer ();
-        oars_flowbox_revealer.add (oars_flowbox);
+        oars_flowbox_revealer = new Gtk.Revealer () {
+            child = oars_flowbox
+        };
 
         var content_warning_clamp = new Hdy.Clamp () {
+            child = oars_flowbox_revealer,
             maximum_size = MAX_WIDTH
         };
-        content_warning_clamp.add (oars_flowbox_revealer);
 
         if (!package.is_os_updates && !package.is_runtime_updates) {
 #if CURATED
@@ -546,21 +547,22 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             });
 
             var screenshot_arrow_revealer_p = new Gtk.Revealer () {
+                child = screenshot_previous,
                 halign = Gtk.Align.START,
                 valign = Gtk.Align.CENTER,
                 transition_type = Gtk.RevealerTransitionType.CROSSFADE
             };
-            screenshot_arrow_revealer_p.add (screenshot_previous);
 
             var screenshot_arrow_revealer_n = new Gtk.Revealer () {
+                child = screenshot_next,
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER,
                 transition_type = Gtk.RevealerTransitionType.CROSSFADE
             };
-            screenshot_arrow_revealer_n.add (screenshot_next);
 
-            screenshot_overlay = new Gtk.Overlay ();
-            screenshot_overlay.add (screenshot_box);
+            screenshot_overlay = new Gtk.Overlay () {
+                child = screenshot_box
+            };
             screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
             screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
 
@@ -616,9 +618,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             screenshot_not_found_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             screenshot_not_found_clamp = new Hdy.Clamp () {
+                child = screenshot_not_found,
                 maximum_size = MAX_WIDTH
             };
-            screenshot_not_found_clamp.add (screenshot_not_found);
 
             screenshot_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.CROSSFADE
@@ -728,14 +730,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 #endif
 
         var body_clamp = new Hdy.Clamp () {
+            child = content_box,
             maximum_size = MAX_WIDTH
         };
-        body_clamp.add (content_box);
 
         var links_clamp = new Hdy.Clamp () {
+            child = links_flowbox,
             maximum_size = MAX_WIDTH
         };
-        links_clamp.add (links_flowbox);
         links_clamp.get_style_context ().add_class ("content-box");
 
         var author_view = new AuthorView (package, MAX_WIDTH);
@@ -758,16 +760,17 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         box.add (author_view);
 
         var scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             hexpand = true,
             vexpand = true
         };
-        scrolled.add (box);
 
         var toast = new Granite.Widgets.Toast (_("Link copied to clipboard"));
 
-        var overlay = new Gtk.Overlay ();
-        overlay.add (scrolled);
+        var overlay = new Gtk.Overlay () {
+            child = scrolled
+        };
         overlay.add_overlay (toast);
 
         add (overlay);
@@ -790,10 +793,10 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             share_box.add (share_label);
 
             var share_button = new Gtk.MenuButton () {
+                child = share_box,
                 direction = Gtk.ArrowType.UP,
                 popover = share_popover
             };
-            share_button.add (share_box);
 
             unowned var share_button_context = share_button.get_style_context ();
             share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -1315,7 +1318,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
             tooltip_text = _("Fund the development of this app");
 
-            add (box);
+            child = box;
 
             clicked.connect (() => {
                 var stripe = new Widgets.StripeDialog (
@@ -1401,7 +1404,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             box.add (label);
             box.add (description_label);
 
-            add (box);
+            child = box;
         }
     }
 }
