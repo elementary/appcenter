@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-27 17:12+0000\n"
-"PO-Revision-Date: 2023-02-08 18:25+0000\n"
+"PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -64,6 +64,9 @@ msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Figyelmeztetés, ha az alkalmazások hozzáférnek a rendszermappákhoz, "
+"tartózkodási helyhez, beállításokhoz, illetve ha nem biztonságos sandboxot "
+"használnak."
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
 #: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
@@ -73,15 +76,17 @@ msgstr "Egyéb fejlesztések:"
 
 #: data/appcenter.metainfo.xml.in:74
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
+msgstr "Margók és helyközök átszabása az alkalmazásinformációs oldalakon"
 
 #: data/appcenter.metainfo.xml.in:75
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Egy helykitöltő használata a főoldalon betöltés közben"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Ne legyenek az Appközponton kívüli alkalmazások különválasztva a "
+"kategórianézetekben"
 
 #: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
