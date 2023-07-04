@@ -9,13 +9,14 @@
 # hnklp <hynek.puta@seznam.cz>, 2023.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Jakub Kyzr <jakubkyzr@gmail.com>, 2023.
+# Jan <sebek_jan@yahoo.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2023-07-05 11:10+0000\n"
-"Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
+"Last-Translator: Jan <sebek_jan@yahoo.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -70,7 +71,7 @@ msgstr "Automatické aktualizace aplikací"
 
 #: src/MainWindow.vala:187
 msgid "System updates and unpaid apps will not update automatically"
-msgstr ""
+msgstr "Systém a neplacené aplikace se nebudou automaticky aktualizovat"
 
 #: src/MainWindow.vala:191
 msgid "Check for Updates"
