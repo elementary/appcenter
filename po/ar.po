@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-18 10:52+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:362
+#: src/Application.vala:38 src/Core/Package.vala:363
 msgid "AppCenter"
 msgstr "آب سنتر"
 
@@ -198,7 +198,7 @@ msgstr "قيد حذف الحزم"
 msgid "Downloading"
 msgstr "قيد التحميل"
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1391
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "قيد التثبيت"
 
@@ -243,9 +243,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
-#: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
-#: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "قيد الإلغاء"
 
@@ -347,36 +347,36 @@ msgstr[5] "يتوفر %u تحديث لنظامك"
 msgid "%s (system-wide)"
 msgstr "%s (على صعيد النظام بأكمله)"
 
-#: src/Core/FlatpakBackend.vala:1523
+#: src/Core/FlatpakBackend.vala:1548
 msgid "Uninstalling"
 msgstr "قيد إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1705
+#: src/Core/FlatpakBackend.vala:1730
 msgid "Updating"
 msgstr "قيد التحديث"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:330
 #, c-format
 msgid "%s Developers"
 msgstr "مطورو %s"
 
-#: src/Core/Package.vala:364
+#: src/Core/Package.vala:365
 msgid "elementary Updates"
 msgstr "تحديثات elementary"
 
-#: src/Core/Package.vala:366
+#: src/Core/Package.vala:367
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (غير مختارة)"
 
-#: src/Core/Package.vala:372
+#: src/Core/Package.vala:373
 msgid "Ubuntu Drivers"
 msgstr "تعريفات Ubuntu"
 
-#: src/Core/Package.vala:376
+#: src/Core/Package.vala:377
 msgid "Unknown Origin (non-curated)"
 msgstr "غير معروفة الأصل (غير مختارة)"
 
-#: src/Core/Package.vala:550
+#: src/Core/Package.vala:551
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "حالة التطبيق غير معينة ك \"مثبت\" في آب سنتر للحزمة: %s"
@@ -900,46 +900,78 @@ msgid "Built for an unstable version of %s; may contain major issues. Not recomm
 msgstr ""
 
 #: src/Views/AppInfoView.vala:910
-msgid "System Folder Access"
+msgid "Insecure Sandbox"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:911
+msgid "Can ignore or modify its own system permissions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:920
+msgid "System Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:921
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
+#: src/Views/AppInfoView.vala:928
+msgid "Home Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:929
+msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:938
+msgid "Location Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:939
+msgid "Can see your precise location at any time without asking"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:948
+msgid "System Settings Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:949
+msgid "Can read and modify system settings"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1162
+#: src/Views/AppInfoView.vala:1200
 msgid "Public Domain"
 msgstr "ملكية عامة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1165
+#: src/Views/AppInfoView.vala:1203
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%83%D9%8A%D8%A9_%D8%B9%D8%A7%D9%85%D8%A9"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1170
+#: src/Views/AppInfoView.vala:1208
 msgid "Free Software"
 msgstr "برمجية حرة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1173
+#: src/Views/AppInfoView.vala:1211
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ar.html"
 
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1215
 msgid "Proprietary"
 msgstr "احتكاري"
 
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1218
 msgid "Unknown License"
 msgstr "رخصة غير معروفة"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1310
 msgid "Fund"
 msgstr "قم بالتمويل"
 
-#: src/Views/AppInfoView.vala:1278
+#: src/Views/AppInfoView.vala:1316
 msgid "Fund the development of this app"
 msgstr "ادعم عملية تطوير هذا التطبيق"
 
@@ -1082,17 +1114,17 @@ msgstr "الكتابة واللغة"
 msgid "Privacy & Security"
 msgstr "سياسة الخصوصية"
 
-#: src/Views/Homepage.vala:467
+#: src/Views/Homepage.vala:468
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "الألعاب"
 
-#: src/Views/Homepage.vala:495
+#: src/Views/Homepage.vala:496
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:504
+#: src/Views/Homepage.vala:505
 msgid "Games"
 msgstr "الألعاب"
 

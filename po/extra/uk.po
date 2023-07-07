@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-18 10:52+0000\n"
-"PO-Revision-Date: 2023-02-08 18:25+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
+"PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -11,9 +11,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -56,29 +56,50 @@ msgstr "Платіть що можете, щоб підтримати розро
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:148
-msgid "Other Improvements:"
-msgstr "Інші вдосконалення:"
-
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
-msgid "Updated translations"
-msgstr "Оновлено переклади"
-
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
 msgid "New features:"
 msgstr "Нові можливості:"
 
-#: data/appcenter.metainfo.xml.in:79
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+"Попередження, коли застосунки мають доступ до домашньої або системної теки, "
+"розташування, налаштувань або мають незахищену пісочницю."
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
+msgid "Other Improvements:"
+msgstr "Інші вдосконалення:"
+
+#: data/appcenter.metainfo.xml.in:74
+msgid "Tighten up spacing and margins in App Info views"
+msgstr "Збільшення інтервалів та полів у вікнах відомостей про застосунок"
+
+#: data/appcenter.metainfo.xml.in:75
+msgid "Show a placeholder banner on the home page when loading"
+msgstr "Показ банера-заповнювача на головній сторінці під час завантаження"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+"Не показувати застосунки, що не належать до Центру застосунків, під окремим "
+"заголовком у поданні категорій"
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
+msgid "Updated translations"
+msgstr "Оновлено переклади"
+
+#: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Пропозиція Полагодити, якщо стається збій оновлення з Flatpak"
 
-#: data/appcenter.metainfo.xml.in:80
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -86,130 +107,13 @@ msgstr ""
 "Показувати повідомлення в огляді оновлень, коли вони актуальні, зокрема, "
 "коли востаннє було перевірено наявність оновлень"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
 msgstr "Показує, коли застосунок недоступний вашою мовою"
 
-#: data/appcenter.metainfo.xml.in:109
+#: data/appcenter.metainfo.xml.in:128
 msgid "Install OS Updates offline"
 msgstr "Встановлення оновлень ОС офлайн"
-
-#: data/appcenter.metainfo.xml.in:130
-msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr "Переписана навігація з мультитач жестами для повернення назад"
-
-#: data/appcenter.metainfo.xml.in:131
-msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
-"Нещодавно оновлені застосунки показуються у верхній частині переглядів "
-"категорій"
-
-#: data/appcenter.metainfo.xml.in:132
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr "Під час виконання завдань відтепер показується панель стану"
-
-#: data/appcenter.metainfo.xml.in:134
-msgid "App Info Page Improvements:"
-msgstr "Вдосконалення сторінки відомостей про застосунок:"
-
-#: data/appcenter.metainfo.xml.in:136
-msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
-msgstr ""
-"Каруселі знімків екрана заповнюють всю ширину вікна, показуючи більше "
-"знімків екрана одночасно"
-
-#: data/appcenter.metainfo.xml.in:137
-msgid "An app's accent color is now shown behind screenshots"
-msgstr "За знімками екрана відтепер показується основний колір застосунку"
-
-#: data/appcenter.metainfo.xml.in:138
-msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr ""
-"Отримання фірмових кольорів зі стандарту AppStream для підтримки більшої "
-"кількості застосунків"
-
-#: data/appcenter.metainfo.xml.in:139
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr "Обгортання посилань внизу сторінок замість додавання еліпсису"
-
-#: data/appcenter.metainfo.xml.in:140
-msgid "Better dark style support"
-msgstr "Краща підтримка темного стилю"
-
-#: data/appcenter.metainfo.xml.in:142
-msgid "Updates View Improvements:"
-msgstr "Удосконалення вкладки оновлень:"
-
-#: data/appcenter.metainfo.xml.in:144
-msgid "Release notes are shown in a dialog"
-msgstr "Примітки до випуску показуються в діалоговому вікні"
-
-#: data/appcenter.metainfo.xml.in:145
-msgid "Better fallback icons for components"
-msgstr "Покращені запасні піктограми для компонентів"
-
-#: data/appcenter.metainfo.xml.in:146
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr ""
-"Заголовок «Оновити все» під час гортання відтепер прилипає до верхньої "
-"частини вікна"
-
-#: data/appcenter.metainfo.xml.in:150
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr "Перероблена картка категорії Розваги та ігри»"
-
-#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
-msgid "Performance improvements"
-msgstr "Поліпшено швидкодію"
-
-#: data/appcenter.metainfo.xml.in:152
-msgid "Stability improvements"
-msgstr "Поліпшення стабільності"
-
-#: data/appcenter.metainfo.xml.in:167
-msgid "Added an option to automatically update apps"
-msgstr "Додано опцію автооновлення застосунків"
-
-#: data/appcenter.metainfo.xml.in:168
-msgid "Manually check for new updates"
-msgstr "Перевірка наявності нових оновлень вручну"
-
-#: data/appcenter.metainfo.xml.in:169
-msgid "Warn when apps are built against older runtimes"
-msgstr ""
-"Додано попередження, якщо застосунки створено для давніших середовищ "
-"виконання"
-
-#: data/appcenter.metainfo.xml.in:171
-msgid "Fixes:"
-msgstr "Виправлення:"
-
-#: data/appcenter.metainfo.xml.in:173
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
-"Виправлено зникнення кнопки «Назад» або необхідність її кількаразового "
-"натискання"
-
-#: data/appcenter.metainfo.xml.in:175
-msgid "Improvements:"
-msgstr "Вдосконалення:"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
-"Не показується діалогове вікно попереджень про застосунки з альтернативних "
-"крамниць"
-
-#: data/appcenter.metainfo.xml.in:178
-msgid "Show screenshot captions in a tooltip"
-msgstr "Показувати підписи до знімків екрана у підказці"
-
-#: data/appcenter.metainfo.xml.in:179
-msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr "Показ «Спробувати безплатно», якщо ціною за застосунок вказано 0"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -240,6 +144,100 @@ msgstr "Налагодження джерел програмного забез�
 msgid "Authentication is required to repair software sources"
 msgstr ""
 "Для налагодження джерел програмного забезпечення потрібна автентифікація"
+
+#~ msgid "Rewritten navigation with multitouch gestures to go back"
+#~ msgstr "Переписана навігація з мультитач жестами для повернення назад"
+
+#~ msgid "Recently updated apps are shown at the top of category views"
+#~ msgstr ""
+#~ "Нещодавно оновлені застосунки показуються у верхній частині переглядів "
+#~ "категорій"
+
+#~ msgid "A status overlay bar is now shown when tasks are in progress"
+#~ msgstr "Під час виконання завдань відтепер показується панель стану"
+
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "Вдосконалення сторінки відомостей про застосунок:"
+
+#~ msgid ""
+#~ "Screenshot carousels fill the width of the window, showing more "
+#~ "screenshots at once"
+#~ msgstr ""
+#~ "Каруселі знімків екрана заповнюють всю ширину вікна, показуючи більше "
+#~ "знімків екрана одночасно"
+
+#~ msgid "An app's accent color is now shown behind screenshots"
+#~ msgstr "За знімками екрана відтепер показується основний колір застосунку"
+
+#~ msgid ""
+#~ "Get brand colors from the AppStream standard so more apps are supported"
+#~ msgstr ""
+#~ "Отримання фірмових кольорів зі стандарту AppStream для підтримки більшої "
+#~ "кількості застосунків"
+
+#~ msgid "Wrap links at the bottom pages instead of ellipsize"
+#~ msgstr "Обгортання посилань внизу сторінок замість додавання еліпсису"
+
+#~ msgid "Better dark style support"
+#~ msgstr "Краща підтримка темного стилю"
+
+#~ msgid "Updates View Improvements:"
+#~ msgstr "Удосконалення вкладки оновлень:"
+
+#~ msgid "Release notes are shown in a dialog"
+#~ msgstr "Примітки до випуску показуються в діалоговому вікні"
+
+#~ msgid "Better fallback icons for components"
+#~ msgstr "Покращені запасні піктограми для компонентів"
+
+#~ msgid ""
+#~ "The \"Update All\" header now sticks to the top of the window when "
+#~ "scrolling"
+#~ msgstr ""
+#~ "Заголовок «Оновити все» під час гортання відтепер прилипає до верхньої "
+#~ "частини вікна"
+
+#~ msgid "Redesigned \"Fun &amp; Games\" category card"
+#~ msgstr "Перероблена картка категорії Розваги та ігри»"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Поліпшено швидкодію"
+
+#~ msgid "Stability improvements"
+#~ msgstr "Поліпшення стабільності"
+
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr "Додано опцію автооновлення застосунків"
+
+#~ msgid "Manually check for new updates"
+#~ msgstr "Перевірка наявності нових оновлень вручну"
+
+#~ msgid "Warn when apps are built against older runtimes"
+#~ msgstr ""
+#~ "Додано попередження, якщо застосунки створено для давніших середовищ "
+#~ "виконання"
+
+#~ msgid "Fixes:"
+#~ msgstr "Виправлення:"
+
+#~ msgid "Prevent back button from disappearing or requiring multiple clicks"
+#~ msgstr ""
+#~ "Виправлено зникнення кнопки «Назад» або необхідність її кількаразового "
+#~ "натискання"
+
+#~ msgid "Improvements:"
+#~ msgstr "Вдосконалення:"
+
+#~ msgid "Don't show a warning dialog about apps from alt stores"
+#~ msgstr ""
+#~ "Не показується діалогове вікно попереджень про застосунки з "
+#~ "альтернативних крамниць"
+
+#~ msgid "Show screenshot captions in a tooltip"
+#~ msgstr "Показувати підписи до знімків екрана у підказці"
+
+#~ msgid "Show \"Try for Free\" when setting an app's price to 0"
+#~ msgstr "Показ «Спробувати безплатно», якщо ціною за застосунок вказано 0"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "Усунено ймовірність збоїв під час оновлення"
@@ -290,9 +288,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Значно збільшено кількість недавно оновлених застосунків на головній "
 #~ "сторінці"
-
-#~ msgid "Navigate banners on the home page with multitouch gestures"
-#~ msgstr "Переміщення банерів на головній сторінці за допомогою жестів"
 
 #~ msgid "Show apps from newly sideloaded remotes without requiring a restart"
 #~ msgstr "Показ застосунків з нових віддалених сховищ без перезапуску"
@@ -508,11 +503,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Після завершення оновлення переконайтеся, що копія підзаголовка оновлення "
 #~ "ОС правильна"
-
-#~ msgid "Ellipsize long app names in App Info views"
-#~ msgstr ""
-#~ "Частково приховано довгі назви застосунків у вікнах відомостей про "
-#~ "застосунок"
 
 #~ msgid "And more"
 #~ msgstr "І навіть більше"
