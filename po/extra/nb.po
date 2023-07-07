@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-27 17:12+0000\n"
-"PO-Revision-Date: 2023-06-16 10:07+0000\n"
+"PO-Revision-Date: 2023-07-07 12:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
@@ -70,6 +70,8 @@ msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Advar når programmer har tilgang til hjemme- eller systemmapper, posisjon, "
+"innstillinger, eller har usikker sandkasse."
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
 #: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
@@ -80,15 +82,17 @@ msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
 #: data/appcenter.metainfo.xml.in:74
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
+msgstr "Tettere marg og luft i programinnfovisninger"
 
 #: data/appcenter.metainfo.xml.in:75
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Visning av plassholderfalt på hjemmesiden ved innlasting"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Ikke list programmer som ikke er fra AppSenter under egen overskrift i "
+"kategorivisninger"
 
 #: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
