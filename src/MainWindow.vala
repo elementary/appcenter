@@ -15,6 +15,8 @@
 */
 
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
+    public const int VALID_QUERY_LENGTH = 3;
+
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
@@ -33,8 +35,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private uint configure_id;
 
     private bool mimetype;
-
-    public const int VALID_QUERY_LENGTH = 3;
 
     public static Views.AppListUpdateView installed_view { get; private set; }
 
