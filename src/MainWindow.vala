@@ -435,15 +435,24 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         deck.add (app_info_view);
         deck.visible_child = app_info_view;
 
+        if (deck.get_adjacent_child (Hdy.NavigationDirection.BACK) is Views.AppInfoView) {
+            var adjacent_app_info_view = (Views.AppInfoView)deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+            if (
+                !remember_history &&
+                adjacent_app_info_view.package.normalized_component_id == package.normalized_component_id
+            ) {
+                deck.remove (adjacent_app_info_view);
+                update_navigation ();
+            }
+        }
+
         app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
             if (!transition) {
                 deck.transition_duration = 0;
             }
 
             show_package (_package, remember_history);
-            if (remember_history) {
-                set_return_name (package.get_name ());
-            }
+
             deck.transition_duration = 200;
         });
     }
