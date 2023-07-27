@@ -20,6 +20,7 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
     public bool using_flatpak { get; construct; }
     public uint64 size { get; construct; }
 
+    private Gtk.Revealer revealer;
     private Gtk.Label size_label;
     private Gtk.Revealer icon_revealer;
 
@@ -46,14 +47,28 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
         };
         icon_revealer.add (icon);
 
-        add (size_label);
-        add (icon_revealer);
+        var box = new Gtk.Box (HORIZONTAL, 0);
+        box.add (size_label);
+        box.add (icon_revealer);
+
+        revealer = new Gtk.Revealer () {
+            child = box
+        };
+
+        add (revealer);
         show_all ();
 
         update (size, using_flatpak);
     }
 
     public void update (uint64 size = 0, bool using_flatpak = false) {
+        if (size == 0) {
+            revealer.reveal_child = false;
+            return;
+        }
+
+        revealer.reveal_child = true;
+
         has_tooltip = using_flatpak;
         icon_revealer.reveal_child = using_flatpak;
 
@@ -63,14 +78,6 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
             size_label.label = _("Up to %s").printf (human_size);
         } else {
             size_label.label = "%s".printf (human_size);
-        }
-
-        if (size > 0) {
-            no_show_all = false;
-            show ();
-        } else {
-            no_show_all = true;
-            hide ();
         }
     }
 }
