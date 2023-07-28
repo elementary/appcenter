@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 01:46+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/appcenter/appcenter/ckb/>\n"
@@ -186,7 +186,7 @@ msgstr "ڕەشکردنەوەی پاکێجەکان"
 msgid "Downloading"
 msgstr "داگرتن"
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1412
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "دامەزراندن"
 
@@ -231,9 +231,9 @@ msgid "Finished"
 msgstr "تەواوبوو"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1421 src/Core/FlatpakBackend.vala:1445
-#: src/Core/FlatpakBackend.vala:1553 src/Core/FlatpakBackend.vala:1577
-#: src/Core/FlatpakBackend.vala:1735 src/Core/FlatpakBackend.vala:1753
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "هەڵوەشاندنەوە"
 
@@ -327,11 +327,11 @@ msgstr[1] "نوێکردنەوەکانی %u بەردەستە بۆ سیستەمە�
 msgid "%s (system-wide)"
 msgstr "%s (سیستەم-واید)"
 
-#: src/Core/FlatpakBackend.vala:1544
+#: src/Core/FlatpakBackend.vala:1548
 msgid "Uninstalling"
 msgstr "هەڵوەشاندنەوەی دامەزراندن"
 
-#: src/Core/FlatpakBackend.vala:1726
+#: src/Core/FlatpakBackend.vala:1730
 msgid "Updating"
 msgstr "نوێکردنەوە"
 

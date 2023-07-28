@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 01:46+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2022-03-18 12:49+0000\n"
 "Last-Translator: Shukrullo Turgunov <shookrullo@gmail.com>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/appcenter/appcenter/uz/>\n"
@@ -194,7 +194,7 @@ msgstr "Paketlarni o'chirilmoqda"
 msgid "Downloading"
 msgstr "Yuklanmoqda"
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1412
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "O'rnatilmoqda"
 
@@ -239,9 +239,9 @@ msgid "Finished"
 msgstr "Yakunlandi"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1421 src/Core/FlatpakBackend.vala:1445
-#: src/Core/FlatpakBackend.vala:1553 src/Core/FlatpakBackend.vala:1577
-#: src/Core/FlatpakBackend.vala:1735 src/Core/FlatpakBackend.vala:1753
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "Bekor qilinmoqda"
 
@@ -333,11 +333,11 @@ msgstr[0] "Tizim uchun %u yangilanishlar mavjud"
 msgid "%s (system-wide)"
 msgstr "%s (tizim bo'ylab)"
 
-#: src/Core/FlatpakBackend.vala:1544
+#: src/Core/FlatpakBackend.vala:1548
 msgid "Uninstalling"
 msgstr "O'chirish"
 
-#: src/Core/FlatpakBackend.vala:1726
+#: src/Core/FlatpakBackend.vala:1730
 msgid "Updating"
 msgstr "Yangilanishlar"
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 01:46+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: Pewrie Bontal <pewriebontal@gmail.com>\n"
 "Language-Team: Burmese <https://l10n.elementary.io/projects/appcenter/appcenter/my/>\n"
@@ -193,7 +193,7 @@ msgstr "ဖယ်ရှားနေပါသည်"
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1412
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr ""
 
@@ -238,9 +238,9 @@ msgid "Finished"
 msgstr "ပြီးပါပြီ"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1421 src/Core/FlatpakBackend.vala:1445
-#: src/Core/FlatpakBackend.vala:1553 src/Core/FlatpakBackend.vala:1577
-#: src/Core/FlatpakBackend.vala:1735 src/Core/FlatpakBackend.vala:1753
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "မလုပ်တော့"
 
@@ -332,13 +332,13 @@ msgstr[0] "သင့်စနစ်အတွက် မြှင့်တင်�
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1544
+#: src/Core/FlatpakBackend.vala:1548
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ဖယ်ထုတ်မယ်"
 
-#: src/Core/FlatpakBackend.vala:1726
+#: src/Core/FlatpakBackend.vala:1730
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
