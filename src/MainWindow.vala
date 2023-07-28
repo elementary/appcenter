@@ -15,6 +15,8 @@
 */
 
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
+    public const int VALID_QUERY_LENGTH = 3;
+
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
@@ -33,8 +35,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private uint configure_id;
 
     private bool mimetype;
-
-    private const int VALID_QUERY_LENGTH = 3;
 
     public static Views.AppListUpdateView installed_view { get; private set; }
 
@@ -586,7 +586,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         } else {
             // Prevent navigating away from category views when backspacing
             if (deck.visible_child == search_view) {
-                deck.navigate (Hdy.NavigationDirection.BACK);
+                search_view.clear ();
+                search_view.current_search_term = search_entry.text;
+
+                // When replacing text with text don't go back
+                Idle.add (() => {
+                    if (search_entry.text.length == 0) {
+                        deck.navigate (Hdy.NavigationDirection.BACK);
+                    }
+
+                    return Source.REMOVE;
+                });
             }
         }
 
