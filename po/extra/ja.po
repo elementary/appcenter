@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 17:12+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
 "PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -80,12 +80,14 @@ msgstr "アプリ情報画面のスペースと余白を小さくするように
 
 #: data/appcenter.metainfo.xml.in:75
 msgid "Show a placeholder banner on the home page when loading"
-msgstr "“ホーム”ページの読み込み中は、プレースホルダーのバナーを表示するように修正"
+msgstr ""
+"“ホーム”ページの読み込み中は、プレースホルダーのバナーを表示するように修正"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Don't list non-AppCenter apps under a separate header in category views"
-msgstr "カテゴリービュー: "
-"キュレーションの有無に応じてアプリを分けて表示する機能を廃止"
+msgstr ""
+"カテゴリービュー: キュレーションの有無に応じてアプリを分けて表示する機能を廃"
+"止"
 
 #: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
