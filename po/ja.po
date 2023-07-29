@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-28 16:06+0000\n"
-"PO-Revision-Date: 2023-06-03 20:07+0000\n"
+"PO-Revision-Date: 2023-07-30 13:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1059,7 +1060,7 @@ msgstr "検索用語を変更してみてください。%s などから Flatpak 
 
 #: src/Views/SearchView.vala:63
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "検索用語には最低3文字が必要です。"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
