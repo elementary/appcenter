@@ -15,9 +15,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-28 16:06+0000\n"
-"PO-Revision-Date: 2023-07-07 12:07+0000\n"
-"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
+"PO-Revision-Date: 2023-08-03 17:19+0000\n"
+"Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1080,7 +1081,7 @@ msgstr "Zkuste upravit vyhledávaný pojem. Je také možné nainstalovat bokem 
 
 #: src/Views/SearchView.vala:63
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "Hledaný výraz musí být dlouhý alespoň 3 znaky."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
