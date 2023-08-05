@@ -22,6 +22,7 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
 
     private Gtk.Label size_label;
     private Gtk.Revealer icon_revealer;
+    private Gtk.Stack stack;
 
     public SizeLabel (uint64 _size = 0, bool _using_flatpak = false) {
         Object (
@@ -42,12 +43,21 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
         icon.margin_start = 6;
 
         icon_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.NONE
+            transition_type = Gtk.RevealerTransitionType.NONE,
+            child = icon
         };
-        icon_revealer.add (icon);
 
-        add (size_label);
-        add (icon_revealer);
+        var box = new Gtk.Box (HORIZONTAL, 0);
+        box.add (size_label);
+        box.add (icon_revealer);
+
+        stack = new Gtk.Stack () {
+            transition_type = SLIDE_LEFT
+        };
+        stack.add_named (box, "box");
+        stack.add_named (new Gtk.Grid (), "placeholder");
+
+        add (stack);
         show_all ();
 
         update (size, using_flatpak);
@@ -66,11 +76,9 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
         }
 
         if (size > 0) {
-            no_show_all = false;
-            show ();
+            stack.visible_child_name = "box";
         } else {
-            no_show_all = true;
-            hide ();
+            stack.visible_child_name = "placeholder";
         }
     }
 }

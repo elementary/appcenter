@@ -214,7 +214,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         header_grid.attach (button_box, 1, 0);
 
         if (!package.is_local) {
-            size_label = new Widgets.SizeLabel () {
+            size_label = new Widgets.SizeLabel (0, package.is_flatpak) {
                 halign = Gtk.Align.END
             };
             size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -833,7 +833,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
     protected override void update_state (bool first_update = false) {
         if (!package.is_local) {
-            size_label.update ();
+            size_label.update (0, package.is_flatpak);
         }
 
         switch (package.state) {
