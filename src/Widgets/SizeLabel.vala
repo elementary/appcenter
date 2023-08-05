@@ -43,7 +43,7 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
         icon.margin_start = 6;
 
         icon_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.NONE,
+            transition_type = NONE,
             child = icon
         };
 
