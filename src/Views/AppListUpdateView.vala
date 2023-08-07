@@ -61,7 +61,10 @@ namespace AppCenter.Views {
             updated_label.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
-                margin = 12
+                margin_start = 12,
+                margin_end = 12,
+                margin_bottom = 12,
+                margin_top = 12
             };
             updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
             updated_box.append (updated_label);
@@ -145,10 +148,6 @@ namespace AppCenter.Views {
                     get_apps.begin ();
                     return GLib.Source.REMOVE;
                 });
-            });
-
-            package_liststore.items_changed.connect (() => {
-                list_box.show_all ();
             });
 
             list_box.row_activated.connect ((row) => {
@@ -414,7 +413,7 @@ namespace AppCenter.Views {
                         } else {
                             var fail_dialog = new UpgradeFailDialog (package, e.message) {
                                 modal = true,
-                                transient_for = (Gtk.Window) get_toplevel ()
+                                transient_for = (Gtk.Window) get_root ()
                             };
                             fail_dialog.present ();
                             break;

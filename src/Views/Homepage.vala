@@ -225,7 +225,7 @@ public class AppCenter.Homepage : Gtk.Box {
             appcenter_banner = new Widgets.Banner (
                 AppCenterCore.PackageKitBackend.get_default ().lookup_package_by_id ("appcenter")
             );
-            banner_carousel.add (appcenter_banner);
+            banner_carousel.append (appcenter_banner);
 #endif
 
             banner_carousel.page_changed.connect (page_changed_handler );
