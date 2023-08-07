@@ -15,6 +15,8 @@
 */
 
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
+    public const int VALID_QUERY_LENGTH = 3;
+
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
@@ -33,8 +35,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private uint configure_id;
 
     private bool mimetype;
-
-    private const int VALID_QUERY_LENGTH = 3;
 
     public static Views.AppListUpdateView installed_view { get; private set; }
 
@@ -435,15 +435,24 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         deck.add (app_info_view);
         deck.visible_child = app_info_view;
 
+        if (deck.get_adjacent_child (Hdy.NavigationDirection.BACK) is Views.AppInfoView) {
+            var adjacent_app_info_view = (Views.AppInfoView)deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+            if (
+                !remember_history &&
+                adjacent_app_info_view.package.normalized_component_id == package.normalized_component_id
+            ) {
+                deck.remove (adjacent_app_info_view);
+                update_navigation ();
+            }
+        }
+
         app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
             if (!transition) {
                 deck.transition_duration = 0;
             }
 
             show_package (_package, remember_history);
-            if (remember_history) {
-                set_return_name (package.get_name ());
-            }
+
             deck.transition_duration = 200;
         });
     }
@@ -577,7 +586,17 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         } else {
             // Prevent navigating away from category views when backspacing
             if (deck.visible_child == search_view) {
-                deck.navigate (Hdy.NavigationDirection.BACK);
+                search_view.clear ();
+                search_view.current_search_term = search_entry.text;
+
+                // When replacing text with text don't go back
+                Idle.add (() => {
+                    if (search_entry.text.length == 0) {
+                        deck.navigate (Hdy.NavigationDirection.BACK);
+                    }
+
+                    return Source.REMOVE;
+                });
             }
         }
 
