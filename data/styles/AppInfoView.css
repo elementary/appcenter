@@ -4,21 +4,21 @@
  */
 
 appinfoview:dir(ltr) .banner clamp > box {
-    margin: 1.333rem; /*12px*/;
-    margin-left: calc(1.333rem - 12px); /*Offset space inside icon*/;
+    margin: 1.333rem; /*12px*/
+    margin-left: calc(1.333rem - 12px); /*Offset space inside icon*/
 }
 
 appinfoview:dir(rtl) .banner clamp > box {
-    margin: 1.333rem; /*12px*/;
-    margin-right: calc(1.333rem - 12px); /*Offset space inside icon*/;
+    margin: 1.333rem; /*12px*/
+    margin-right: calc(1.333rem - 12px); /*Offset space inside icon*/
 }
 
 appinfoview .banner combobox {
-    margin-top: 1.333rem; /*12px*/;
+    margin-top: 1.333rem; /*12px*/
 }
 
 appinfoview .content-warning-box {
-    margin: 1.333rem 1.333rem 0; /*12px 12px 0*/;
+    margin: 1.333rem 1.333rem 0; /*12px 12px 0*/
 }
 
 appinfoview .screenshot {
@@ -32,7 +32,7 @@ appinfoview .screenshot {
 }
 
 appinfoview .content-box {
-    margin: 0 1.333rem; /*12px*/;
+    margin: 0 1.333rem; /*12px*/
 }
 
 appinfoview .content-box > label {
