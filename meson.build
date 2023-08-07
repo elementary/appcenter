@@ -2,7 +2,7 @@ project(
     'io.elementary.appcenter',
     'vala', 'c',
     version: '7.3.0',
-    meson_version: '>=0.56.0'
+    meson_version: '>=0.57.0'
 )
 
 gettext_name = meson.project_name()
@@ -69,4 +69,4 @@ subdir('data')
 subdir('src')
 subdir('po')
 
-meson.add_install_script('meson/post_install.py')
+gnome.post_install(glib_compile_schemas: true)

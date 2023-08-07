@@ -15,6 +15,8 @@
 */
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
+    public const int VALID_QUERY_LENGTH = 3;
+
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
@@ -31,8 +33,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private AppCenterCore.Package? last_installed_package;
 
     private bool mimetype;
-
-    private const int VALID_QUERY_LENGTH = 3;
 
     public static Views.AppListUpdateView installed_view { get; private set; }
 
@@ -387,15 +387,24 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         leaflet.append (app_info_view);
         leaflet.visible_child = app_info_view;
 
+        if (leaflet.get_adjacent_child (Adw.NavigationDirection.BACK) is Views.AppInfoView) {
+            var adjacent_app_info_view = (Views.AppInfoView)leaflet.get_adjacent_child (Adw.NavigationDirection.BACK);
+            if (
+                !remember_history &&
+                adjacent_app_info_view.package.normalized_component_id == package.normalized_component_id
+            ) {
+                leaflet.remove (adjacent_app_info_view);
+                update_navigation ();
+            }
+        }
+
         app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
             if (!transition) {
                 leaflet.mode_transition_duration = 0;
             }
 
             show_package (_package, remember_history);
-            if (remember_history) {
-                set_return_name (package.get_name ());
-            }
+
             leaflet.mode_transition_duration = 200;
         });
     }
@@ -528,7 +537,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         } else {
             // Prevent navigating away from category views when backspacing
             if (leaflet.visible_child == search_view) {
-                leaflet.navigate (Adw.NavigationDirection.BACK);
+                search_view.clear ();
+                search_view.current_search_term = search_entry.text;
+
+                // When replacing text with text don't go back
+                Idle.add (() => {
+                    if (search_entry.text.length == 0) {
+                        leaflet.navigate (Adw.NavigationDirection.BACK);
+                    }
+
+                    return Source.REMOVE;
+                });
             }
         }
 
