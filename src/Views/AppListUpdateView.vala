@@ -439,24 +439,6 @@ namespace AppCenter.Views {
             }
         }
 
-        // public async void remove_app (AppCenterCore.Package package) {
-        //     var child = list_box.get_first_child ();
-        //     while (child != null) {
-        //         if (child is Widgets.PackageRow) {
-        //             unowned var row = (Widgets.PackageRow) child;
-
-        //             if (row.get_package () == package) {
-        //                 list_box.remove (row);
-        //                 break;
-        //             }
-        //         }
-
-        //         child = child.get_next_sibling ();
-        //     }
-
-        //     list_box.invalidate_sort ();
-        // }
-
         public void clear () {
             package_liststore.remove_all ();
         }

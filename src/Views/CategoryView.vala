@@ -232,7 +232,7 @@ public class AppCenter.CategoryView : Gtk.Box {
         public void clear () {
             while (flowbox.get_first_child () != null) {
                 flowbox.get_first_child ().destroy ();
-            };
+            }
         }
 
         [CCode (instance_pos = -1)]
