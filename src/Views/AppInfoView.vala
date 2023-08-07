@@ -180,7 +180,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         origin_combo.pack_start (renderer, true);
         origin_combo.add_attribute (renderer, "text", 1);
 
-        var uninstall_button = new Gtk.Button.with_label (_("Uninstall")) {
+        var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            tooltip_text = _("Uninstall"),
             margin_end = 12
         };
 
@@ -882,10 +883,65 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 break;
         }
 
+        if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN && !permissions_shown) {
+            permissions_shown = true;
+
+            if (AppCenterCore.Package.PermissionsFlags.ESCAPE_SANDBOX in package.permissions_flags) {
+                var sandbox_escape = new ContentType (
+                    _("Insecure Sandbox"),
+                    _("Can ignore or modify its own system permissions"),
+                    "sandbox-escape-symbolic"
+                );
+
+                oars_flowbox.append (sandbox_escape);
+            }
+
+            if (AppCenterCore.Package.PermissionsFlags.FILESYSTEM_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.FILESYSTEM_READ in package.permissions_flags) {
+                var filesystem = new ContentType (
+                    _("System Folder Access"),
+                    _("Including everyone's Home folders, but not including system internals"),
+                    "sandbox-files-warning-symbolic"
+                );
+
+                oars_flowbox.append (filesystem);
+            } else if (AppCenterCore.Package.PermissionsFlags.HOME_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.HOME_READ in package.permissions_flags) {
+                var home = new ContentType (
+                    _("Home Folder Access"),
+                    _("Including all documents, downloads, music, pictures, videos, and any hidden folders"),
+                    "sandbox-files-symbolic"
+                );
+
+                oars_flowbox.append (home);
+            }
+
+            if (AppCenterCore.Package.PermissionsFlags.LOCATION in package.permissions_flags) {
+                var location = new ContentType (
+                    _("Location Access"),
+                    _("Can see your precise location at any time without asking"),
+                    "sandbox-location-symbolic"
+                );
+
+                oars_flowbox.append (location);
+            }
+
+            if (AppCenterCore.Package.PermissionsFlags.SETTINGS in package.permissions_flags) {
+                var filesystem = new ContentType (
+                    _("System Settings Access"),
+                    _("Can read and modify system settings"),
+                    "sandbox-settings-symbolic"
+                );
+
+                oars_flowbox.append (filesystem);
+            }
+        }
+
         if (runtime_warning != null && !is_runtime_warning_shown) {
             is_runtime_warning_shown = true;
 
             oars_flowbox.insert (runtime_warning, 0);
+        }
+
+        if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
         }
     }

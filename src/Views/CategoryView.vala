@@ -150,6 +150,8 @@ public class AppCenter.CategoryView : Gtk.Box {
             if (free_flowbox.has_children) {
                 box.append (free_flowbox);
             }
+
+            stack.visible_child = scrolled;
         });
     }
 
