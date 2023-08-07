@@ -1,10 +1,10 @@
-# David Hewitt <davidmhewitt@gmail.com>, 2022.
+# David Hewitt <davidmhewitt@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
-"PO-Revision-Date: 2022-04-20 09:08+0000\n"
+"POT-Creation-Date: 2023-06-27 17:12+0000\n"
+"PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (Canada) <https://l10n.elementary.io/projects/appcenter/appcenter/en_CA/>\n"
 "Language: en_CA\n"
@@ -12,417 +12,465 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:363
 msgid "AppCenter"
 msgstr "AppCentre"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specified link '%s' could not be found, searching instead"
 
-#: src/Application.vala:297
+#: src/Application.vala:324
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s has been successfully installed"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:325 src/MainWindow.vala:524
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s has been successfully installed"
 
-#: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
-msgid "Getting app information…"
-msgstr "Getting information"
-
-#: src/MainWindow.vala:96
-msgid "Getting download size…"
-msgstr ""
-
-#: src/MainWindow.vala:101
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for updates…"
-msgstr "Searching for updates…"
-
-#: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
-msgid "Installing…"
-msgstr "Installing"
-
-#: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
-msgid "Installing updates…"
-msgstr "Installing updates"
-
-#: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstall"
-msgid "Uninstalling…"
-msgstr "Uninstall"
-
-#: src/MainWindow.vala:140
+#: src/MainWindow.vala:119
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Failed to launch “%s“"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:166
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Uninstall"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:179 src/MainWindow.vala:456 src/MainWindow.vala:598
 msgid "Search Apps"
 msgstr "Search Apps"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:186
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "Failed to Fetch Updates"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:187
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:191
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Searching for updates…"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:215
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Starting"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:243
 #, fuzzy
 msgid "Network Not Available."
 msgstr "Network Is Not Available"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:244
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Connect to the Internet to install or update apps."
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:254
 msgid "Network Settings…"
 msgstr "Network Settings…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:262
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:263
+#, c-format
+msgid "Install %s to browse and install apps."
+msgstr "Install %s to browse and install apps."
+
+#: src/MainWindow.vala:460 src/MainWindow.vala:464
 #, c-format
 msgid "Search %s"
 msgstr "Search %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:481
 msgid "Home"
 msgstr "Home"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:484
 msgctxt "view"
 msgid "Search"
 msgstr "Search"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:490
 msgctxt "view"
 msgid "Installed"
 msgstr "Installed"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:527
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Open"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
+#: src/MainWindow.vala:635
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "Getting information"
+
+#: src/MainWindow.vala:638
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:644
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for updates…"
+msgstr "Searching for updates…"
+
+#: src/MainWindow.vala:647
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "Installing"
+
+#: src/MainWindow.vala:650
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "Installing updates"
+
+#: src/MainWindow.vala:653
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling…"
+msgstr "Uninstall"
+
+#: src/MainWindow.vala:656
+msgid "Repairing…"
+msgstr ""
+
+#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "Starting"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "Waiting"
 
-#: src/Utils.vala:66
+#: src/Utils.vala:67
 msgid "Running"
 msgstr "Running"
 
-#: src/Utils.vala:68
+#: src/Utils.vala:69
 msgid "Querying"
 msgstr "Querying"
 
-#: src/Utils.vala:70
+#: src/Utils.vala:71
 msgid "Getting information"
 msgstr "Getting information"
 
-#: src/Utils.vala:72
+#: src/Utils.vala:73
 msgid "Removing packages"
 msgstr "Removing packages"
 
-#: src/Utils.vala:74
+#: src/Utils.vala:75
 msgid "Downloading"
 msgstr "Downloading"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "Installing"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:79
 msgid "Refreshing software list"
 msgstr "Refreshing software list"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:81
 msgid "Installing updates"
 msgstr "Installing updates"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:83
 msgid "Cleaning up packages"
 msgstr "Cleaning up packages"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:85
 msgid "Obsoleting packages"
 msgstr "Obsoleting packages"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:87
 msgid "Resolving dependencies"
 msgstr "Resolving dependencies"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:89
 msgid "Checking signatures"
 msgstr "Checking signatures"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:91
 msgid "Testing changes"
 msgstr "Testing changes"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:93
 msgid "Committing changes"
 msgstr "Committing changes"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:95
 msgid "Requesting data"
 msgstr "Requesting data"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "Finished"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "Cancelling"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:101
 msgid "Downloading repository information"
 msgstr "Downloading repository information"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:103
 msgid "Downloading list of packages"
 msgstr "Downloading list of packages"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:105
 msgid "Downloading file lists"
 msgstr "Downloading file lists"
 
-#: src/Utils.vala:106
+#: src/Utils.vala:107
 msgid "Downloading lists of changes"
 msgstr "Downloading lists of changes"
 
-#: src/Utils.vala:108
+#: src/Utils.vala:109
 msgid "Downloading groups"
 msgstr "Downloading groups"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:111
 msgid "Downloading update information"
 msgstr "Downloading update information"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:113
 msgid "Repackaging files"
 msgstr "Repackaging files"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:115
 msgid "Loading cache"
 msgstr "Loading cache"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:117
 msgid "Scanning applications"
 msgstr "Scanning applications"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:119
 msgid "Generating package lists"
 msgstr "Generating package lists"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:121
 msgid "Waiting for package manager lock"
 msgstr "Waiting for package manager lock"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:123
 msgid "Waiting for authentication"
 msgstr "Waiting for authentication"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:125
 msgid "Updating running applications"
 msgstr "Updating running applications"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:127
 msgid "Checking applications in use"
 msgstr "Checking applications in use"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:129
 msgid "Checking libraries in use"
 msgstr "Checking libraries in use"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:131
 msgid "Copying files"
 msgstr "Copying files"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:133
 msgid "Unknown state"
 msgstr "Unknown state"
 
-#: src/Core/BackendAggregator.vala:46
+#: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Update Available"
 msgstr[1] "Updates Available"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u update is available for your system"
 msgstr[1] "%u updates are available for your system"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1548
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Uninstall"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1730
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Update"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:330
 #, c-format
 msgid "%s Developers"
 msgstr "%s Developers"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:365
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Recently Updated"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:367
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:334
-#, c-format
-msgid "%s (system-wide)"
-msgstr ""
-
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:373
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Drivers"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:377
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:551
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:313
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Operating System Updates"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "Updates to system components"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Runtime Updates"
+msgstr "Searching for updates…"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:101 src/Core/UpdateManager.vala:164
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:182
 msgid "No components with updates"
 msgstr "No components with updates"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:187
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u component with updates"
 msgstr[1] "%u components with updates"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:189 src/Core/UpdateManager.vala:201
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:194
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "No components with updates"
+
+#: src/Core/UpdateManager.vala:199
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u component with updates"
+msgstr[1] "%u components with updates"
+
+#: src/Core/UpdateManager.vala:246
 msgid "Restart Required"
 msgstr "Restart Required"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:247
 msgid "Please restart your system to finalize updates"
 msgstr "Please restart your system to finalize updates"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 #, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "This may have been caused by external, manually added software repositories or a corrupted sources file."
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
 msgid "Failed to install app"
 msgstr "Uninstall"
 
-#: src/Dialogs/InstallFailDialog.vala:39
+#: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
 msgstr "Failed to install “%s”"
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
+
+#: src/Dialogs/RepairFailDialog.vala:24
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Failed to Repair"
+msgstr "Failed to Fetch Updates"
+
+#: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "This may have been caused by external, manually added software repositories or a corrupted sources file."
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -436,139 +484,142 @@ msgstr "Please review your payment info and try again."
 msgid "Payment"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
+#. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
+#. being purchased. The order can be changed with "%2$s %1$d". For example:
+#. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
+#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Pay $%d for %s"
 
-#: src/Dialogs/StripeDialog.vala:98
+#: src/Dialogs/StripeDialog.vala:101
 #, fuzzy
 #| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "This is a one time payment. Your email address is only used to send you a receipt."
 
-#: src/Dialogs/StripeDialog.vala:119
+#: src/Dialogs/StripeDialog.vala:122
 msgid "or"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:154
+#: src/Dialogs/StripeDialog.vala:157
 msgid "Email"
 msgstr "Email"
 
-#: src/Dialogs/StripeDialog.vala:159
+#: src/Dialogs/StripeDialog.vala:162
 #, fuzzy
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Your email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list."
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:163
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:184
+#: src/Dialogs/StripeDialog.vala:187
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:192
+#: src/Dialogs/StripeDialog.vala:195
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
+#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:393
+#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
+#: src/Dialogs/StripeDialog.vala:396
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Pay $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:251
+#: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
 msgstr "Processing"
 
-#: src/Dialogs/StripeDialog.vala:341
+#: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
 msgstr "There Was a Problem Processing Your Payment"
 
-#: src/Dialogs/StripeDialog.vala:385
+#: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
 msgstr "Pay Later"
 
-#: src/Dialogs/StripeDialog.vala:386
+#: src/Dialogs/StripeDialog.vala:389
 msgid "Retry"
 msgstr "Retry"
 
-#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "The card number is incorrect. Please try again using the correct card number."
 
-#: src/Dialogs/StripeDialog.vala:569
+#: src/Dialogs/StripeDialog.vala:572
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "The expiration month is invalid. Please try again using the correct expiration date."
 
-#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "The expiration year is invalid. Please try again using the correct expiration date."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "The CVC number is incorrect. Please try again using the correct CVC."
 
-#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
 msgid "The card has expired. Please try again with a different card."
 msgstr "The card has expired. Please try again with a different card."
 
-#: src/Dialogs/StripeDialog.vala:596
+#: src/Dialogs/StripeDialog.vala:599
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "There are too many payment requests at the moment, please retry later."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:615
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "This card does not support this kind of transaction. Please try again with a different card."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:617
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "The currency is not supported by this card. Please try again with a different card."
 
-#: src/Dialogs/StripeDialog.vala:616
+#: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
 msgstr "The transaction has already been processed."
 
-#: src/Dialogs/StripeDialog.vala:620
+#: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 
-#: src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:625
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "You don't have enough funds. Please use an alternative payment method."
 
-#: src/Dialogs/StripeDialog.vala:624
+#: src/Dialogs/StripeDialog.vala:627
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "The amount is incorrect. Please try again using a valid amount."
 
-#: src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "The PIN number is incorrect. Please try again using the correct PIN."
 
-#: src/Dialogs/StripeDialog.vala:637
+#: src/Dialogs/StripeDialog.vala:640
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "There has been too many PIN attempts. Please try again with a different card."
 
-#: src/Dialogs/StripeDialog.vala:657
+#: src/Dialogs/StripeDialog.vala:660
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Unable to complete the transaction. Please contact your bank for further information."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The balance or credit limit on the card has been reached."
 msgstr "The balance or credit limit on the card has been reached."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:666
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "The given card is a test card. Please use a real card to proceed."
 
@@ -586,7 +637,7 @@ msgstr "Uninstall"
 msgid "Uninstall “%s”?"
 msgstr "Uninstall “%s”?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:641
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
 msgstr "Uninstall"
 
@@ -608,10 +659,6 @@ msgstr ""
 msgid "Failed to Fetch Updates"
 msgstr "Failed to Fetch Updates"
 
-#: src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "This may have been caused by external, manually added software repositories or a corrupted sources file."
-
 #: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr "Ignore"
@@ -620,387 +667,460 @@ msgstr "Ignore"
 msgid "Try Again"
 msgstr "Try Again"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "This may have been caused by external, manually added software repositories or a corrupted sources file."
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
 msgid "Failed to update app"
 msgstr "Uninstall"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
+#: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
 msgstr "Failed to update “%s”"
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Refresh Updates"
 msgstr "Searching for updates…"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:264
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:132
+#: src/Views/AppInfoView.vala:265
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:270
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:138
+#: src/Views/AppInfoView.vala:271
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:276
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:144
+#: src/Views/AppInfoView.vala:277
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:282
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:150
+#: src/Views/AppInfoView.vala:283
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:306
 #, fuzzy
 #| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "Non-Curated Apps"
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:307
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:198
+#: src/Views/AppInfoView.vala:324
+msgid "May Not Be Translated"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:325
+msgid "This app does not provide language information"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:332
+#, fuzzy
+#| msgid "translator-credits"
+msgid "Not Translated"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Giovanni Caligaris https://launchpad.net/~giovannicaligaris\n"
+"  chilledfrogs https://launchpad.net/~chilledfrogs\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  wec https://launchpad.net/~tungsten314"
+
+#: src/Views/AppInfoView.vala:333
+msgid "This app is not available in your language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:340
+msgid "Not Fully Translated"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:341
+#, c-format
+msgid "This app is %i%% translated in your language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:365
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:199
+#: src/Views/AppInfoView.vala:366
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:379
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:217
+#: src/Views/AppInfoView.vala:384
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:222
+#: src/Views/AppInfoView.vala:389
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:266
+#: src/Views/AppInfoView.vala:433
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:267
+#: src/Views/AppInfoView.vala:434
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:450
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:285
+#: src/Views/AppInfoView.vala:452
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:289
+#: src/Views/AppInfoView.vala:456
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:466
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:467
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:312
+#: src/Views/AppInfoView.vala:479
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:482
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:487
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:440
+#: src/Views/AppInfoView.vala:611
 msgid "Screenshot Not Available"
 msgstr "Screenshot Not Available"
 
-#: src/Views/AppInfoView.vala:551
-msgid "Homepage"
-msgstr "Homepage"
-
-#: src/Views/AppInfoView.vala:557
-msgid "Translate"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:563
-msgid "Send Feedback"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:569
-msgid "Help"
-msgstr "Help"
-
-#: src/Views/AppInfoView.vala:580
+#: src/Views/AppInfoView.vala:643
 msgid "What's New:"
 msgstr "What's New:"
 
-#: src/Views/AppInfoView.vala:615
+#: src/Views/AppInfoView.vala:670
 msgid "Extensions:"
 msgstr "Extensions:"
 
-#: src/Views/AppInfoView.vala:744
+#: src/Views/AppInfoView.vala:701
+msgid "Homepage"
+msgstr "Homepage"
+
+#: src/Views/AppInfoView.vala:707
+msgid "Translate"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:713
+msgid "Send Feedback"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:719
+msgid "Help"
+msgstr "Help"
+
+#: src/Views/AppInfoView.vala:767
 msgid "Link copied to clipboard"
 msgstr "Link copied to clipboard"
 
-#: src/Views/AppInfoView.vala:755
+#: src/Views/AppInfoView.vala:778
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Check out %s on AppCenter:"
 
-#: src/Views/AppInfoView.vala:763
+#: src/Views/AppInfoView.vala:786
 msgid "Share"
 msgstr "Share"
 
-#: src/Views/AppInfoView.vala:857
+#: src/Views/AppInfoView.vala:880
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:881
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:864
+#: src/Views/AppInfoView.vala:887
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:865
+#: src/Views/AppInfoView.vala:888
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:873
+#: src/Views/AppInfoView.vala:896
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Uninstall"
 
-#: src/Views/AppInfoView.vala:874
+#: src/Views/AppInfoView.vala:897
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
+#: src/Views/AppInfoView.vala:910
+msgid "Insecure Sandbox"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:911
+msgid "Can ignore or modify its own system permissions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:920
+msgid "System Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:921
+msgid "Including everyone's Home folders, but not including system internals"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:928
+msgid "Home Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:929
+msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:938
+msgid "Location Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:939
+msgid "Can see your precise location at any time without asking"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:948
+msgid "System Settings Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:949
+msgid "Can read and modify system settings"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1133
+#: src/Views/AppInfoView.vala:1200
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1136
+#: src/Views/AppInfoView.vala:1203
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1141
+#: src/Views/AppInfoView.vala:1208
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1144
+#: src/Views/AppInfoView.vala:1211
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1148
+#: src/Views/AppInfoView.vala:1215
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1151
+#: src/Views/AppInfoView.vala:1218
 #, fuzzy
 msgid "Unknown License"
 msgstr "Unknown state"
 
-#: src/Views/AppInfoView.vala:1243
+#: src/Views/AppInfoView.vala:1310
 msgid "Fund"
 msgstr "Fund"
 
-#: src/Views/AppInfoView.vala:1249
+#: src/Views/AppInfoView.vala:1316
 msgid "Fund the development of this app"
 msgstr "Fund the development of this app"
 
-#: src/Views/AppInfoView.vala:1367
-#, c-format
-msgid "Other Apps by %s"
-msgstr "Other Apps by %s"
-
-#: src/Views/AppListUpdateView.vala:42
+#: src/Views/AppListUpdateView.vala:47
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Searching for updates…"
 
-#: src/Views/AppListUpdateView.vala:43
+#: src/Views/AppListUpdateView.vala:48
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:57
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Update All"
 
-#: src/Views/AppListUpdateView.vala:88
+#: src/Views/AppListUpdateView.vala:105
 #, fuzzy
 #| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "A restart is required to complete the installation of updates"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:113
 msgid "Restart Now"
 msgstr "Restart Now"
 
-#: src/Views/AppListUpdateView.vala:108
+#: src/Views/AppListUpdateView.vala:125
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u Update Available"
 msgstr[1] "%u Updates Available"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:211
+#, c-format
+msgid "Everything is up to date. Last checked %s."
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
 msgstr "Drivers"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Up to Date"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "Other Apps by %s"
+
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "Recently Updated"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Search Apps"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Free"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr "Non-Curated Apps"
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "Categories"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "Accessories"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "Audio"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 #, fuzzy
 msgid "Communication"
 msgstr "Education"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "Development"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "Education"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 #, fuzzy
 msgid "Finance"
 msgstr "Cancel"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "Graphics"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Science & Engineering"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr ""
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "Office"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "System"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "Universal Access"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "Video"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr ""
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Privacy Policy"
 
-#: src/Views/Homepage.vala:454
+#: src/Views/Homepage.vala:468
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "Games"
 
-#: src/Views/Homepage.vala:482
+#: src/Views/Homepage.vala:496
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:491
+#: src/Views/Homepage.vala:505
 msgid "Games"
 msgstr "Games"
 
@@ -1048,21 +1168,21 @@ msgstr "$%d.00"
 msgid "$%d"
 msgstr "$%d"
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:70
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:94
+#: src/Widgets/ReleaseRow.vala:105
 #, fuzzy
 #| msgid "Unknown state"
 msgid "Unknown date"
 msgstr "Unknown state"
 
-#: src/Widgets/ReleaseRow.vala:101
+#: src/Widgets/ReleaseRow.vala:112
 msgid "Unknown version"
 msgstr "Unknown version"
 
-#: src/Widgets/ReleaseRow.vala:118
+#: src/Widgets/ReleaseRow.vala:129
 msgid "No description available"
 msgstr "No description available"
 
@@ -1108,19 +1228,27 @@ msgstr "Up to %s"
 msgid "Update"
 msgstr "Update"
 
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "Downloading"
+
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
 msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "What's New:"
+msgstr "What's new in %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "Close"
+
+#~ msgid "Non-Curated Apps"
+#~ msgstr "Non-Curated Apps"
 
 #~ msgid "<b>%s</b> – %s"
 #~ msgstr "<b>%s</b> – %s"
@@ -1216,14 +1344,6 @@ msgstr "Close"
 #, fuzzy
 #~ msgid "App Center"
 #~ msgstr "App Centre"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Giovanni Caligaris https://launchpad.net/~giovannicaligaris\n"
-#~ "  chilledfrogs https://launchpad.net/~chilledfrogs\n"
-#~ "  elementaryart (old) https://launchpad.net/~elementaryart\n"
-#~ "  wec https://launchpad.net/~tungsten314"
 
 #~ msgid "Best Rated"
 #~ msgstr "Best Rated"

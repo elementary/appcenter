@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/elementary/appcenter/icons">
-    <file alias="16x16/categories/applications-accessibility-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-accessibility-symbolic.svg</file>
-    <file alias="48x48/categories/applications-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-audio-symbolic.svg</file>
-    <file alias="48x48/categories/applications-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-games-symbolic.svg</file>
-    <file alias="48x48/categories/applications-internet-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-internet-symbolic.svg</file>
-    <file alias="48x48/categories/applications-multimedia-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-multimedia-symbolic.svg</file>
-    <file alias="48x48/categories/applications-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-office-symbolic.svg</file>
-    <file alias="48x48/categories/applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic-rtl.svg</file>
-    <file alias="48x48/categories/applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-accessibility-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-accessibility-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-audio-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-games-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-multimedia-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-multimedia-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-office-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic-rtl.svg</file>
+    <file alias="48x48/categories/appcenter-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-finance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">finance-symbolic.svg</file>
+
     <file alias="16x16/categories/currency-dollar-symbolic.svg" compressed="true" preprocess="xml-stripblanks">currency-dollar-symbolic.svg</file>
     <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">online-account-facebook.svg</file>
     <file alias="16x16/apps/internet-mail-symbolic.svg"compressed="true" preprocess="xml-stripblanks">internet-mail-symbolic.svg</file>
@@ -18,16 +19,22 @@
     <file alias="online-account-telegram.svg" compressed="true" preprocess="xml-stripblanks">online-account-telegram.svg</file>
     <file alias="16x16/mimetypes/text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
 
-    <file alias="32x32/categories/flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>
+    <file alias="scalable/categories/flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>
+    <file alias="scalable/categories/sandbox-escape-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-escape.svg</file>
+    <file alias="scalable/categories/sandbox-files-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-files.svg</file>
+    <file alias="scalable/categories/sandbox-files-warning-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-files-warning.svg</file>
+    <file alias="scalable/categories/sandbox-location-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-location.svg</file>
+    <file alias="scalable/categories/sandbox-settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-settings.svg</file>
 
-    <file alias="16x16/categories/oars-chat-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/chat.svg</file>
-    <file alias="16x16/categories/oars-conflict-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/conflict.svg</file>
-    <file alias="16x16/categories/oars-gambling-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/gambling.svg</file>
-    <file alias="16x16/categories/oars-offensive-language-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/language.svg</file>
-    <file alias="16x16/categories/oars-sex-nudity-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/nudity.svg</file>
-    <file alias="32x32/categories/oars-socal-info-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-info.svg</file>
-    <file alias="16x16/categories/oars-illicit-substance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/substance.svg</file>
-    <file alias="32x32/categories/oars-violence-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/violence.svg</file>
+    <file alias="scalable/categories/oars-chat-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/chat.svg</file>
+    <file alias="scalable/categories/oars-conflict-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/conflict.svg</file>
+    <file alias="scalable/categories/oars-gambling-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/gambling.svg</file>
+    <file alias="scalable/categories/oars-offensive-language-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/language.svg</file>
+    <file alias="scalable/categories/oars-sex-nudity-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/nudity.svg</file>
+    <file alias="scalable/categories/oars-socal-info-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-info.svg</file>
+    <file alias="scalable/categories/metainfo-locale.svg" compressed="true" preprocess="xml-stripblanks">oars/locale.svg</file>
+    <file alias="scalable/categories/oars-illicit-substance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/substance.svg</file>
+    <file alias="scalable/categories/oars-violence-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/violence.svg</file>
   </gresource>
   <gresource prefix="/io/elementary/appcenter/backgrounds">
     <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>

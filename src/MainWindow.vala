@@ -59,39 +59,18 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         aggregator.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
 
         aggregator.notify ["job-type"].connect (() => {
-            switch (aggregator.job_type) {
-                case GET_DETAILS_FOR_PACKAGE_IDS:
-                case GET_PACKAGE_DEPENDENCIES:
-                case GET_PACKAGE_DETAILS:
-                case IS_PACKAGE_INSTALLED:
-                    overlaybar.label = _("Getting app information…");
-                    break;
-                case GET_DOWNLOAD_SIZE:
-                    overlaybar.label = _("Getting download size…");
-                    break;
-                case GET_INSTALLED_PACKAGES:
-                case GET_UPDATES:
-                case REFRESH_CACHE:
-                    overlaybar.label = _("Checking for updates…");
-                    break;
-                case INSTALL_PACKAGE:
-                    overlaybar.label = _("Installing…");
-                    break;
-                case UPDATE_PACKAGE:
-                    overlaybar.label = _("Installing updates…");
-                    break;
-                case REMOVE_PACKAGE:
-                    overlaybar.label = _("Uninstalling…");
-                    break;
-            }
+            update_overlaybar_label (aggregator.job_type);
         });
 
         notify["working"].connect (() => {
             Idle.add (() => {
                 App.refresh_action.set_enabled (!working);
+                App.repair_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
         });
+
+        update_overlaybar_label (aggregator.job_type);
     }
 
     construct {
@@ -253,6 +232,26 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         box.append (network_info_bar);
         box.append (overlay);
+
+        // if (Utils.is_running_in_demo_mode ()) {
+        //     var demo_mode_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
+        //         _("Running in Demo Mode"),
+        //         _("Install %s to browse and install apps.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME))
+        //     )) {
+        //         use_markup = true,
+        //         wrap = true
+        //     };
+
+        //     var demo_mode_info_bar = new Gtk.InfoBar () {
+        //         message_type = Gtk.MessageType.WARNING
+        //     };
+        //     demo_mode_info_bar.get_content_area ().add (demo_mode_info_bar_label);
+
+        //     box.add (demo_mode_info_bar);
+        // }
+
+        // box.add (overlay);
+        // box.show_all ();
 
         child = box;
         set_titlebar (headerbar);
@@ -575,5 +574,37 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             show_package (package);
             set_return_name (category.name);
         });
+    }
+
+    private void update_overlaybar_label (AppCenterCore.Job.Type job_type) {
+        switch (job_type) {
+            case GET_DETAILS_FOR_PACKAGE_IDS:
+            case GET_PACKAGE_DEPENDENCIES:
+            case GET_PACKAGE_DETAILS:
+            case IS_PACKAGE_INSTALLED:
+                overlaybar.label = _("Getting app information…");
+                break;
+            case GET_DOWNLOAD_SIZE:
+                overlaybar.label = _("Getting download size…");
+                break;
+            case GET_PREPARED_PACKAGES:
+            case GET_INSTALLED_PACKAGES:
+            case GET_UPDATES:
+            case REFRESH_CACHE:
+                overlaybar.label = _("Checking for updates…");
+                break;
+            case INSTALL_PACKAGE:
+                overlaybar.label = _("Installing…");
+                break;
+            case UPDATE_PACKAGE:
+                overlaybar.label = _("Installing updates…");
+                break;
+            case REMOVE_PACKAGE:
+                overlaybar.label = _("Uninstalling…");
+                break;
+            case REPAIR:
+                overlaybar.label = _("Repairing…");
+                break;
+        }
     }
 }

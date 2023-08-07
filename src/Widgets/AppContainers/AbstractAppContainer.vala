@@ -73,7 +73,7 @@ namespace AppCenter {
             };
             cancel_button.clicked.connect (() => action_cancelled ());
 
-            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (action_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
@@ -164,7 +164,7 @@ namespace AppCenter {
         }
 
         protected void update_action () {
-            if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
+            if (package == null || package.component == null || !package.is_native || package.is_os_updates || package.is_runtime_updates) {
                 action_button.can_purchase = false;
             } else {
                 var can_purchase = package.get_payments_key () != null;
@@ -192,7 +192,7 @@ namespace AppCenter {
                         action_button.amount = 0;
                     }
 
-                    action_button_revealer.reveal_child = !package.is_os_updates;
+                    action_button_revealer.reveal_child = !(package.is_os_updates || package.is_runtime_updates);
                     open_button_revealer.reveal_child = false;
 
                     break;
@@ -204,6 +204,10 @@ namespace AppCenter {
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.free_string = _("Update");
+
+                    if (package.is_os_updates) {
+                        action_button.free_string = _("Download");
+                    }
 
                     if (!package.should_pay) {
                         action_button.amount = 0;

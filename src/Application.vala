@@ -49,6 +49,7 @@ public class AppCenter.App : Gtk.Application {
     public static GLib.Settings settings;
 
     public static SimpleAction refresh_action;
+    public static SimpleAction repair_action;
 
     static construct {
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
@@ -161,9 +162,31 @@ public class AppCenter.App : Gtk.Application {
             client.update_cache.begin (true);
         });
 
+        repair_action = new SimpleAction ("repair", null);
+        repair_action.activate.connect (() => {
+            client.repair.begin (null, (obj, res) => {
+                bool success = false;
+                string message = "";
+                try {
+                    success = client.repair.end (res);
+                } catch (Error e) {
+                    success = false;
+                    message = e.message;
+                }
+
+                if (!success) {
+                    var fail_dialog = new RepairFailDialog (message) {
+                        transient_for = active_window
+                    };
+                    fail_dialog.present ();
+                }
+            });
+        });
+
         add_action (quit_action);
         add_action (show_updates_action);
         add_action (refresh_action);
+        add_action (repair_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
         set_accels_for_action ("app.refresh", {"<Control>r"});
 
@@ -178,9 +201,11 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
+#if PACKAGEKIT_BACKEND
         if (fake_update_packages != null) {
             AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
         }
+#endif
 
         var client = AppCenterCore.Client.get_default ();
 
@@ -196,6 +221,7 @@ public class AppCenter.App : Gtk.Application {
             return;
         }
 
+#if PACKAGEKIT_BACKEND
         if (local_path != null) {
             var file = File.new_for_commandline_arg (local_path);
 
@@ -205,6 +231,7 @@ public class AppCenter.App : Gtk.Application {
                 warning ("Failed to load local AppStream XML file: %s", e.message);
             }
         }
+#endif
 
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
@@ -310,9 +337,16 @@ public class AppCenter.App : Gtk.Application {
                     }
                 } else {
                     // Check if permission was denied or the operation was cancelled
-                    if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
+                    if (error.matches (IOError.quark (), 19)) {
                         break;
                     }
+
+#if PACKAGEKIT_BACKEND
+                    // Check if permission was denied or the operation was cancelled
+                    if (error.matches (Pk.ClientError.quark (), 303)) {
+                        break;
+                    }
+#endif
 
                     var dialog = new InstallFailDialog (package, (owned) error.message);
                     dialog.present ();

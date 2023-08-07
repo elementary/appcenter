@@ -1,9 +1,0 @@
-.screenshot {
-    background: @selected_bg_color;
-    border-radius: 0.666rem; /*6px*/
-    color: @selected_fg_color;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1.333rem; /*12px*/
-    padding: 1.333rem; /*12px*/
-}

@@ -35,9 +35,8 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
             _("Actual Download Size Likely to Be Smaller"),
             _("Only the parts of apps and updates that are needed will be downloaded.")
         );
+
         size_label = new Gtk.Label (null);
-        size_label.hexpand = true;
-        size_label.xalign = 1;
 
         var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic");
         icon.margin_start = 6;

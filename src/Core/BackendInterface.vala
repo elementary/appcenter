@@ -17,15 +17,11 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public enum BackendType {
-    PACKAGEKIT,
-    UBUNTU_DRIVERS
-}
-
 public interface AppCenterCore.Backend : Object {
     public abstract Job.Type job_type { get; protected set; }
     public abstract bool working { public get; protected set; }
 
+    public abstract async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null);
     public abstract async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null);
     public abstract Gee.Collection<Package> get_applications_for_category (AppStream.Category category);
     public abstract Gee.Collection<Package> search_applications (string query, AppStream.Category? category);
@@ -42,4 +38,5 @@ public interface AppCenterCore.Backend : Object {
     public abstract async bool install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
     public abstract async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
     public abstract async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
+    public abstract async bool repair (Cancellable? cancellable) throws GLib.Error;
 }

@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/io/elementary/appcenter">
     <file alias="application.css" compressed="true">styles/application.css</file>
+    <file alias="AppInfoView.css" compressed="true">styles/AppInfoView.css</file>
     <file alias="AppListUpdateView.css" compressed="true">styles/AppListUpdateView.css</file>
     <file alias="arrow.css" compressed="true">styles/arrow.css</file>
     <file alias="badge.css" compressed="true">styles/badge.css</file>
@@ -10,6 +11,5 @@
     <file alias="fallback.css" compressed="true">styles/fallback.css</file>
     <file alias="loading.css" compressed="true">styles/loading.css</file>
     <file alias="ProgressButton.css" compressed="true">styles/ProgressButton.css</file>
-    <file alias="Screenshot.css" compressed="true">styles/Screenshot.css</file>
   </gresource>
 </gresources>

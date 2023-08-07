@@ -24,6 +24,10 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         Object (release: release);
     }
 
+    class construct {
+        set_css_name ("release");
+    }
+
     construct {
         var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic");
 

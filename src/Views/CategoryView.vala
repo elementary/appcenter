@@ -26,7 +26,6 @@ public class AppCenter.CategoryView : Gtk.Box {
     private SubcategoryFlowbox free_flowbox;
     private SubcategoryFlowbox paid_flowbox;
     private SubcategoryFlowbox recently_updated_flowbox;
-    private SubcategoryFlowbox uncurated_flowbox;
 
     public CategoryView (AppStream.Category category) {
         Object (category: category);
@@ -38,12 +37,6 @@ public class AppCenter.CategoryView : Gtk.Box {
         paid_flowbox = new SubcategoryFlowbox (_("Paid Apps"));
 
         free_flowbox = new SubcategoryFlowbox (_("Free Apps"));
-
-#if CURATED
-        uncurated_flowbox = new SubcategoryFlowbox (_("Non-Curated Apps"));
-#else
-        uncurated_flowbox = new SubcategoryFlowbox ();
-#endif
 
         box = new Gtk.Box (Gtk.Orientation.VERTICAL, 48) {
             margin_top = 12,
@@ -83,10 +76,6 @@ public class AppCenter.CategoryView : Gtk.Box {
             show_app (package);
         });
 
-        uncurated_flowbox.show_package.connect ((package) => {
-            show_app (package);
-        });
-
         AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
             populate ();
         });
@@ -101,23 +90,14 @@ public class AppCenter.CategoryView : Gtk.Box {
             recently_updated_flowbox.clear ();
             free_flowbox.clear ();
             paid_flowbox.clear ();
-            uncurated_flowbox.clear ();
 
             var packages = get_packages.end (res);
             foreach (var package in packages) {
-#if CURATED
-                if (package.is_native) {
-                    if (package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                        paid_flowbox.add_package (package);
-                    } else {
-                        free_flowbox.add_package (package);
-                    }
+                if (package.is_native && package.get_payments_key () != null && package.get_suggested_amount () != "0") {
+                    paid_flowbox.add_package (package);
                 } else {
-                    uncurated_flowbox.add_package (package);
+                    free_flowbox.add_package (package);
                 }
-#else
-                uncurated_flowbox.add_package (package);
-#endif
             }
 
             var recent_packages_list = new Gee.ArrayList<AppCenterCore.Package> ();
@@ -143,8 +123,13 @@ public class AppCenter.CategoryView : Gtk.Box {
                     break;
                 }
 
+                var newest_release = recent_package.get_newest_release ();
+                if (newest_release == null) {
+                    continue;
+                }
+
                 // Don't add packages over 6 months old
-                if (recent_package.get_newest_release ().get_timestamp () < datetime.to_unix ()) {
+                if (newest_release.get_timestamp () < datetime.to_unix ()) {
                     continue;
                 }
 
@@ -154,7 +139,6 @@ public class AppCenter.CategoryView : Gtk.Box {
                 }
             }
 
-#if CURATED
             if (recently_updated_flowbox.has_children) {
                 box.append (recently_updated_flowbox);
             }
@@ -166,15 +150,6 @@ public class AppCenter.CategoryView : Gtk.Box {
             if (free_flowbox.has_children) {
                 box.append (free_flowbox);
             }
-
-            if (uncurated_flowbox.has_children) {
-                box.append (uncurated_flowbox);
-            }
-#else
-            box.append (uncurated_flowbox);
-#endif
-
-            stack.visible_child = scrolled;
         });
     }
 
@@ -262,7 +237,13 @@ public class AppCenter.CategoryView : Gtk.Box {
         protected virtual int package_row_compare (Gtk.FlowBoxChild child1, Gtk.FlowBoxChild child2) {
             var row1 = (Widgets.ListPackageRowGrid) child1.get_child ();
             var row2 = (Widgets.ListPackageRowGrid) child2.get_child ();
-
+#if CURATED
+            if (row1.package.is_native && !row2.package.is_native) {
+                return -1;
+            } else if (!row1.package.is_native && row2.package.is_native) {
+                return 1;
+            }
+#endif
             return row1.package.get_name ().collate (row2.package.get_name ());
         }
     }
