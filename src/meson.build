@@ -12,12 +12,10 @@ appcenter_files = files(
     'Core/FlatpakBackend.vala',
     'Core/Job.vala',
     'Core/Package.vala',
-    'Core/PackageKitBackend.vala',
     'Core/ScreenshotCache.vala',
-    'Core/Task.vala',
-    'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
     'Dialogs/InstallFailDialog.vala',
+    'Dialogs/RepairFailDialog.vala',
     'Dialogs/StripeDialog.vala',
     'Dialogs/UninstallConfirmDialog.vala',
     'Dialogs/UninstallFailDialog.vala',
@@ -27,6 +25,7 @@ appcenter_files = files(
     'Services/SearchProvider.vala',
     'Views/AppInfoView.vala',
     'Views/AppListUpdateView.vala',
+    'Views/AuthorView.vala',
     'Views/CategoryView.vala',
     'Views/Homepage.vala',
     'Views/SearchView.vala',
@@ -68,6 +67,29 @@ endif
 
 if appstream.version().version_compare('>=0.15')
     args += '--define=HAS_APPSTREAM_0_15'
+endif
+
+if appstream.version().version_compare('>=0.16')
+    args += '--define=HAS_APPSTREAM_0_16'
+endif
+
+if get_option('packagekit_backend')
+    appcenter_files += files(
+        'Core/PackageKitBackend.vala',
+        'Core/Task.vala',
+    )
+
+    args += '--define=PACKAGEKIT_BACKEND'
+endif
+
+if get_option('ubuntu_drivers_backend')
+    if not get_option('packagekit_backend')
+        error('Option ubuntu_drivers requires option packagekit_backend')
+    endif
+
+    appcenter_files += files('Core/UbuntuDriversBackend.vala')
+
+    args += '--define=UBUNTU_DRIVERS_BACKEND'
 endif
 
 executable(

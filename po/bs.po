@@ -1,319 +1,333 @@
 # Elvis Mujanović <elvis.mujanovic@gmail.com>, 2018.
 # Alma Ibrašimović <belma.alma@hotmail.com>, 2019.
+# David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
+"PO-Revision-Date: 2023-02-14 12:03+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:325
+#: src/Application.vala:38 src/Core/Package.vala:363
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:85
+#: src/Application.vala:86
 #, fuzzy, c-format
 msgid "Could not parse the media type %s"
 msgstr "MIME tip %s nije prepoznat"
 
-#: src/Application.vala:105
+#: src/Application.vala:106
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Navedeni link %s nije pronađen, traži se"
 
-#: src/Application.vala:297
+#: src/Application.vala:324
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s je uspješno instaliran"
 
-#: src/Application.vala:298 src/MainWindow.vala:527
+#: src/Application.vala:325 src/MainWindow.vala:533
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s je uspješno instaliran"
 
-#: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
-msgid "Getting app information…"
-msgstr "Pribavljanje informacija"
-
-#: src/MainWindow.vala:96
-msgid "Getting download size…"
+#: src/MainWindow.vala:119
+#, c-format
+msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:101
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for updates…"
-msgstr "Pretraživanje ažuriranja…"
-
-#: src/MainWindow.vala:104
-#, fuzzy
-#| msgid "Installing"
-msgid "Installing…"
-msgstr "Instaliranje"
-
-#: src/MainWindow.vala:107
-#, fuzzy
-#| msgid "Installing updates"
-msgid "Installing updates…"
-msgstr "Instaliranje ažuriranja"
-
-#: src/MainWindow.vala:110
-#, fuzzy
-#| msgid "Uninstall"
-msgid "Uninstalling…"
-msgstr "Deinstaliraj"
-
-#: src/MainWindow.vala:140
-#, fuzzy, c-format
-msgid "Failed to launch “%s“"
-msgstr "Nađi i instaliraj aplikacije"
-
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:166
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Nađi i instaliraj aplikacije"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:459 src/MainWindow.vala:601
+#: src/MainWindow.vala:179 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "Pretraži aplikacije"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:186
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "Neuspješno pribavljanje ažuriranja"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:187
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:191
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Pretraživanje ažuriranja…"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:215
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Pokretanje"
 
-#: src/MainWindow.vala:264
+#: src/MainWindow.vala:243
 #, fuzzy
 msgid "Network Not Available."
 msgstr "Mreža nije dostupna"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:244
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Povežite se s Internetom kako biste instalirali ili ažurirali aplikacije."
 
-#: src/MainWindow.vala:275
+#: src/MainWindow.vala:254
 msgid "Network Settings…"
 msgstr "Podešavanja mreže…"
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:262
+msgid "Running in Demo Mode"
+msgstr ""
+
+#: src/MainWindow.vala:263
+#, c-format
+msgid "Install %s to browse and install apps."
+msgstr ""
+
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "Pretraži %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "Naslovnica"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "Pretraga"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalirano"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Otvori"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
+#: src/MainWindow.vala:654
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "Pribavljanje informacija"
+
+#: src/MainWindow.vala:657
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:663
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for updates…"
+msgstr "Pretraživanje ažuriranja…"
+
+#: src/MainWindow.vala:666
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "Instaliranje"
+
+#: src/MainWindow.vala:669
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "Instaliranje ažuriranja"
+
+#: src/MainWindow.vala:672
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling…"
+msgstr "Deinstaliraj"
+
+#: src/MainWindow.vala:675
+msgid "Repairing…"
+msgstr ""
+
+#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "Pokretanje"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:294
+#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "Čekanje"
 
-#: src/Utils.vala:66
+#: src/Utils.vala:67
 msgid "Running"
 msgstr "Pokrenuto"
 
-#: src/Utils.vala:68
+#: src/Utils.vala:69
 msgid "Querying"
 msgstr "Upit u toku"
 
-#: src/Utils.vala:70
+#: src/Utils.vala:71
 msgid "Getting information"
 msgstr "Pribavljanje informacija"
 
-#: src/Utils.vala:72
+#: src/Utils.vala:73
 msgid "Removing packages"
 msgstr "Uklanjanje paketa"
 
-#: src/Utils.vala:74
+#: src/Utils.vala:75
 msgid "Downloading"
 msgstr "Preuzimanje"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1140
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "Instaliranje"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:79
 msgid "Refreshing software list"
 msgstr "Osvježavanje liste softvera"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:81
 msgid "Installing updates"
 msgstr "Instaliranje ažuriranja"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:83
 msgid "Cleaning up packages"
 msgstr "Čišćenje paketa"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:85
 msgid "Obsoleting packages"
 msgstr "Otpisivanje pakete"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:87
 msgid "Resolving dependencies"
 msgstr "Razrješavanje zavisnosti"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:89
 msgid "Checking signatures"
 msgstr "Provjera potpisa"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:91
 msgid "Testing changes"
 msgstr "Testiranje izmjena"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:93
 msgid "Committing changes"
 msgstr "Provedba izmjena"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:95
 msgid "Requesting data"
 msgstr "Zahtijevanje podataka"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "Završeno"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1173
-#: src/Core/FlatpakBackend.vala:1281 src/Core/FlatpakBackend.vala:1305
-#: src/Core/FlatpakBackend.vala:1451 src/Core/FlatpakBackend.vala:1473
+#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "Otkazivanje"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:101
 msgid "Downloading repository information"
 msgstr "Preuzimanje informacija o riznici"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:103
 msgid "Downloading list of packages"
 msgstr "Preuzimanje liste paketa"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:105
 msgid "Downloading file lists"
 msgstr "Preuzimanje liste datoteka"
 
-#: src/Utils.vala:106
+#: src/Utils.vala:107
 msgid "Downloading lists of changes"
 msgstr "Preuzimanje liste izmjena"
 
-#: src/Utils.vala:108
+#: src/Utils.vala:109
 msgid "Downloading groups"
 msgstr "Preuzimanje grupa"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:111
 msgid "Downloading update information"
 msgstr "Preuzimanje informacija o ažuriranju"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:113
 msgid "Repackaging files"
 msgstr "Prepakiranje datoteka"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:115
 msgid "Loading cache"
 msgstr "Učitavanje predmemorije"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:117
 msgid "Scanning applications"
 msgstr "Pretraživanje aplikacija"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:119
 msgid "Generating package lists"
 msgstr "Generiranje liste paketa"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:121
 msgid "Waiting for package manager lock"
 msgstr "Čeka se na otključavanje upravitelja paketa"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:123
 msgid "Waiting for authentication"
 msgstr "Čeka se na autentifikaciju"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:125
 msgid "Updating running applications"
 msgstr "Ažuriranje pokrenutih aplikacija"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:127
 msgid "Checking applications in use"
 msgstr "Provjeravanje aplikacija koje su u upotrebi"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:129
 msgid "Checking libraries in use"
 msgstr "Provjeravanje biblioteka koje su u upotrebi"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:131
 msgid "Copying files"
 msgstr "Kopiranje datoteka"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:133
 msgid "Unknown state"
 msgstr "Nepoznato stanje"
 
-#: src/Core/BackendAggregator.vala:46
+#: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/Client.vala:72
+#: src/Core/Client.vala:76
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Ažuriranje dostupno"
 msgstr[1] "Ažuriranja dostupna"
 msgstr[2] "Ažuriranja dostupna"
 
-#: src/Core/Client.vala:73
+#: src/Core/Client.vala:77
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -321,78 +335,84 @@ msgstr[0] "%u ažuriranje je dostupno za Vaš sistem"
 msgstr[1] "%u ažuriranja su dostupna za Vaš sistem"
 msgstr[2] "%u ažuriranja je dostupno za Vaš sistem"
 
-#: src/Core/FlatpakBackend.vala:1272
+#: src/Core/FlatpakBackend.vala:44
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1548
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Deinstaliraj"
 
-#: src/Core/FlatpakBackend.vala:1442
+#: src/Core/FlatpakBackend.vala:1730
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Ažuriraj"
 
-#: src/Core/Package.vala:301
+#: src/Core/Package.vala:330
 #, c-format
 msgid "%s Developers"
 msgstr "Programeri aplikacije %s"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:365
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nedavno ažurirano"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:367
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:334
-#, c-format
-msgid "%s (system-wide)"
-msgstr ""
-
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:373
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Upravljački programi"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:377
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:514
+#: src/Core/Package.vala:551
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:303
+#: src/Core/PackageKitBackend.vala:313
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (lokalno)"
 
-#: src/Core/UpdateManager.vala:40
+#: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Ažuriranja operativnog sistema"
 
-#: src/Core/UpdateManager.vala:41
+#: src/Core/UpdateManager.vala:42
 msgid "Updates to system components"
 msgstr "Ažuriranja sistemskih komponenti"
 
-#: src/Core/UpdateManager.vala:94
+#: src/Core/UpdateManager.vala:53
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Runtime Updates"
+msgstr "Pretraživanje ažuriranja…"
+
+#: src/Core/UpdateManager.vala:54
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:101 src/Core/UpdateManager.vala:164
 #, c-format
 msgid "Version: %s"
 msgstr "Verzija: %s"
 
-#: src/Core/UpdateManager.vala:153
-msgid "Flatpak runtime"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:171
+#: src/Core/UpdateManager.vala:182
 msgid "No components with updates"
 msgstr "Nema komponenti sa ažuriranjima"
 
-#: src/Core/UpdateManager.vala:176
+#: src/Core/UpdateManager.vala:187
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -400,33 +420,63 @@ msgstr[0] "%u komponenta sa ažuriranjima"
 msgstr[1] "%u komponente sa ažuriranjima"
 msgstr[2] "%u komponenata sa ažuriranjima"
 
-#: src/Core/UpdateManager.vala:178
+#: src/Core/UpdateManager.vala:189 src/Core/UpdateManager.vala:201
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:216
+#: src/Core/UpdateManager.vala:194
+#, fuzzy
+#| msgid "No components with updates"
+msgid "No runtimes with updates"
+msgstr "Nema komponenti sa ažuriranjima"
+
+#: src/Core/UpdateManager.vala:199
+#, fuzzy, c-format
+#| msgid "%u component with updates"
+#| msgid_plural "%u components with updates"
+msgid "%u runtimes with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u komponenta sa ažuriranjima"
+msgstr[1] "%u komponente sa ažuriranjima"
+msgstr[2] "%u komponenata sa ažuriranjima"
+
+#: src/Core/UpdateManager.vala:246
 msgid "Restart Required"
 msgstr "Potrebno je ponovno pokretanje"
 
-#: src/Core/UpdateManager.vala:217
+#: src/Core/UpdateManager.vala:247
 msgid "Please restart your system to finalize updates"
 msgstr "Ponovo pokrenite sistem kako biste dovršili ažuriranja"
 
-#: src/Dialogs/InstallFailDialog.vala:26
+#: src/Dialogs/InstallFailDialog.vala:27
 #, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Uzrok za ovo mogu biti vanjske, ručno dodane riznice softvera ili korumpirana datoteka sa izvorima."
 
-#: src/Dialogs/InstallFailDialog.vala:36
+#: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
 msgid "Failed to install app"
 msgstr "Nađi i instaliraj aplikacije"
 
-#: src/Dialogs/InstallFailDialog.vala:39
-#, fuzzy, c-format
+#: src/Dialogs/InstallFailDialog.vala:40
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Nađi i instaliraj aplikacije"
+msgstr ""
+
+#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+msgid "Repair"
+msgstr ""
+
+#: src/Dialogs/RepairFailDialog.vala:24
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Failed to Repair"
+msgstr "Neuspješno pribavljanje ažuriranja"
+
+#: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Uzrok za ovo mogu biti vanjske, ručno dodane riznice softvera ili korumpirana datoteka sa izvorima."
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -440,140 +490,143 @@ msgstr "Molimo, provjerite svoje podatke za plaćanje i pokušajte opet."
 msgid "Payment"
 msgstr "Plaćanje"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:255
+#. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
+#. being purchased. The order can be changed with "%2$s %1$d". For example:
+#. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
+#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Plati %d USD za %s"
 
-#: src/Dialogs/StripeDialog.vala:98
+#: src/Dialogs/StripeDialog.vala:101
 #, fuzzy
 #| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Ovo je jednokratno plaćanje. Vaša e-mail adresa će biti korištena samo za slanje računa."
 
-#: src/Dialogs/StripeDialog.vala:119
+#: src/Dialogs/StripeDialog.vala:122
 msgid "or"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:154
+#: src/Dialogs/StripeDialog.vala:157
 msgid "Email"
 msgstr "E-pošta"
 
-#: src/Dialogs/StripeDialog.vala:159
+#: src/Dialogs/StripeDialog.vala:162
 #, fuzzy
 #| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Vaša e-mail adresa će biti korištena samo za slanje računa. Nećete biti pretplaćeni ni na kakve distribucione liste."
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:163
 msgid "Privacy Policy"
 msgstr "Politika privatnosti"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:184
+#: src/Dialogs/StripeDialog.vala:187
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:192
+#: src/Dialogs/StripeDialog.vala:195
 msgid "CVC"
 msgstr "CVC kod"
 
-#: src/Dialogs/StripeDialog.vala:237 src/Dialogs/StripeDialog.vala:394
+#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:69
 msgid "Cancel"
 msgstr "Otkaži"
 
-#: src/Dialogs/StripeDialog.vala:239 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:393
+#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
+#: src/Dialogs/StripeDialog.vala:396
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Plati %d.00 USD"
 
-#: src/Dialogs/StripeDialog.vala:251
+#: src/Dialogs/StripeDialog.vala:254
 msgid "Try for Free"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:317
 msgid "Processing"
 msgstr "Obrađuje se"
 
-#: src/Dialogs/StripeDialog.vala:341
+#: src/Dialogs/StripeDialog.vala:344
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Došlo je do problema prilikom obrade Vaše uplate"
 
-#: src/Dialogs/StripeDialog.vala:385
+#: src/Dialogs/StripeDialog.vala:388
 msgid "Pay Later"
 msgstr "Plati kasnije"
 
-#: src/Dialogs/StripeDialog.vala:386
+#: src/Dialogs/StripeDialog.vala:389
 msgid "Retry"
 msgstr "Pokušaj opet"
 
-#: src/Dialogs/StripeDialog.vala:567 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Broj kartice nije ispravan. Molimo, pokušajte opet koristeći ispravan broj kartice."
 
-#: src/Dialogs/StripeDialog.vala:569
+#: src/Dialogs/StripeDialog.vala:572
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Mjesec isteka nije važeći. Molimo, pokušajte opet koristeći ispravan datum isteka."
 
-#: src/Dialogs/StripeDialog.vala:571 src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Godina isteka nije važeća. Molimo, pokušajte opet koristeći ispravan datum isteka."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Sigurnosni kod CVC nije ispravan. Molimo, pokušajte opet koristeći tačan CVC."
 
-#: src/Dialogs/StripeDialog.vala:576 src/Dialogs/StripeDialog.vala:618
+#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kartica je istekla. Molimo, pokušajte opet koristeći drugu karticu."
 
-#: src/Dialogs/StripeDialog.vala:596
+#: src/Dialogs/StripeDialog.vala:599
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Trenutno postoji previše zahtjeva za plaćanjem. Molimo, pokušajte opet kasnije."
 
-#: src/Dialogs/StripeDialog.vala:612
+#: src/Dialogs/StripeDialog.vala:615
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Ova kartica ne podržava ovakvu vrstu transakcije. Molimo, pokušajte opet s drugom karticom."
 
-#: src/Dialogs/StripeDialog.vala:614
+#: src/Dialogs/StripeDialog.vala:617
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Ova kartica ne podržava ovu valutu. Molimo, pokušajte opet s drugom karticom."
 
-#: src/Dialogs/StripeDialog.vala:616
+#: src/Dialogs/StripeDialog.vala:619
 msgid "The transaction has already been processed."
 msgstr "Ova transakcija je već obrađena."
 
-#: src/Dialogs/StripeDialog.vala:620
+#: src/Dialogs/StripeDialog.vala:623
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Poštanski broj je netačan. Molimo, pokušajte opet koristeći tačan poštanski broj."
 
-#: src/Dialogs/StripeDialog.vala:622
+#: src/Dialogs/StripeDialog.vala:625
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Nemate dovoljno sredstava na raspolaganju. Molimo, koristite drugi način plaćanja."
 
-#: src/Dialogs/StripeDialog.vala:624
+#: src/Dialogs/StripeDialog.vala:627
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Iznos nije tačan. Molimo, pokušajte opet koristeći važeći iznos."
 
-#: src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN broj nije tačan. Molimo, pokušajte opet koristeći tačan PIN."
 
-#: src/Dialogs/StripeDialog.vala:637
+#: src/Dialogs/StripeDialog.vala:640
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Previše puta ste pokušali unijeti PIN. Molimo, pokušajte opet s drugom karticom."
 
-#: src/Dialogs/StripeDialog.vala:657
+#: src/Dialogs/StripeDialog.vala:660
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Nemoguće obaviti transakciju. Molimo, kontaktirajte svoju banku za više informacija."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:663
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Dosegnut je limit raspoloživih sredstava ili kredita na kartici."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:666
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Navedena kartica je testna kartica. Molimo, koristite pravu karticu kako biste nastavili."
 
@@ -587,11 +640,11 @@ msgid "Uninstall app?"
 msgstr "Deinstaliraj"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Deinstaliraj"
+msgstr ""
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:641
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
 msgstr "Deinstaliraj"
 
@@ -614,10 +667,6 @@ msgstr ""
 msgid "Failed to Fetch Updates"
 msgstr "Neuspješno pribavljanje ažuriranja"
 
-#: src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Uzrok za ovo mogu biti vanjske, ručno dodane riznice softvera ili korumpirana datoteka sa izvorima."
-
 #: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
 msgstr "Ignoriraj"
@@ -626,270 +675,335 @@ msgstr "Ignoriraj"
 msgid "Try Again"
 msgstr "Pokušaj opet"
 
-#: src/Dialogs/UpgradeFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
 #| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
 msgstr "Uzrok za ovo mogu biti vanjske, ručno dodane riznice softvera ili korumpirana datoteka sa izvorima."
 
-#: src/Dialogs/UpgradeFailDialog.vala:36
+#: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
 msgid "Failed to update app"
 msgstr "Nađi i instaliraj aplikacije"
 
-#: src/Dialogs/UpgradeFailDialog.vala:39
-#, fuzzy, c-format
+#: src/Dialogs/UpgradeFailDialog.vala:40
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "Nađi i instaliraj aplikacije"
+msgstr ""
 
-#: src/Dialogs/UpgradeFailDialog.vala:43
+#: src/Dialogs/UpgradeFailDialog.vala:44
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Refresh Updates"
 msgstr "Pretraživanje ažuriranja…"
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:264
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:132
+#: src/Views/AppInfoView.vala:265
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:137
+#: src/Views/AppInfoView.vala:270
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:138
+#: src/Views/AppInfoView.vala:271
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:143
+#: src/Views/AppInfoView.vala:276
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:144
+#: src/Views/AppInfoView.vala:277
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:149
+#: src/Views/AppInfoView.vala:282
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:150
+#: src/Views/AppInfoView.vala:283
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:307
 #, fuzzy
 #| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "Druge eksterne aplikacije"
 
-#: src/Views/AppInfoView.vala:176
+#: src/Views/AppInfoView.vala:308
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:198
+#: src/Views/AppInfoView.vala:325
+msgid "May Not Be Translated"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:326
+msgid "This app does not provide language information"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:333
+#, fuzzy
+#| msgid "translator-credits"
+msgid "Not Translated"
+msgstr ""
+"Launchpad Contributions:\n"
+"  aleksandar-todorovic https://launchpad.net/~aleksandar-todorovic\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: src/Views/AppInfoView.vala:334
+msgid "This app is not available in your language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:341
+msgid "Not Fully Translated"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:342
+#, c-format
+msgid "This app is %i%% translated in your language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:366
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:199
+#: src/Views/AppInfoView.vala:367
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:380
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:217
+#: src/Views/AppInfoView.vala:385
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:222
+#: src/Views/AppInfoView.vala:390
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:266
+#: src/Views/AppInfoView.vala:434
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:267
+#: src/Views/AppInfoView.vala:435
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:451
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:285
+#: src/Views/AppInfoView.vala:453
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:289
+#: src/Views/AppInfoView.vala:457
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:467
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:468
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:312
+#: src/Views/AppInfoView.vala:480
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:483
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:488
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:440
+#: src/Views/AppInfoView.vala:613
 msgid "Screenshot Not Available"
 msgstr "Snimak ekrana nije dostupan"
 
-#: src/Views/AppInfoView.vala:551
-msgid "Homepage"
-msgstr "Početna stranica"
-
-#: src/Views/AppInfoView.vala:557
-msgid "Translate"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:563
-msgid "Send Feedback"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:569
-msgid "Help"
-msgstr "Pomoć"
-
-#: src/Views/AppInfoView.vala:580
+#: src/Views/AppInfoView.vala:645
 msgid "What's New:"
 msgstr "Šta je novo:"
 
-#: src/Views/AppInfoView.vala:615
+#: src/Views/AppInfoView.vala:672
 msgid "Extensions:"
 msgstr "Proširenja:"
 
-#: src/Views/AppInfoView.vala:744
+#: src/Views/AppInfoView.vala:703
+msgid "Homepage"
+msgstr "Početna stranica"
+
+#: src/Views/AppInfoView.vala:709
+msgid "Translate"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:715
+msgid "Send Feedback"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:721
+msgid "Help"
+msgstr "Pomoć"
+
+#: src/Views/AppInfoView.vala:769
 msgid "Link copied to clipboard"
 msgstr "Link je kopiran u međuspremnik"
 
-#: src/Views/AppInfoView.vala:755
+#: src/Views/AppInfoView.vala:781
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Pogledaj %s u AppCenteru:"
 
-#: src/Views/AppInfoView.vala:763
+#: src/Views/AppInfoView.vala:789
 msgid "Share"
 msgstr "Podijeli"
 
-#: src/Views/AppInfoView.vala:857
+#: src/Views/AppInfoView.vala:883
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:884
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:864
+#: src/Views/AppInfoView.vala:890
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:865
+#: src/Views/AppInfoView.vala:891
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:873
+#: src/Views/AppInfoView.vala:899
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Deinstaliraj"
 
-#: src/Views/AppInfoView.vala:874
+#: src/Views/AppInfoView.vala:900
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
+#: src/Views/AppInfoView.vala:913
+msgid "Insecure Sandbox"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:914
+msgid "Can ignore or modify its own system permissions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:923
+msgid "System Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:924
+msgid "Including everyone's Home folders, but not including system internals"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:931
+msgid "Home Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:932
+msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:941
+msgid "Location Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:942
+msgid "Can see your precise location at any time without asking"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:951
+msgid "System Settings Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:952
+msgid "Can read and modify system settings"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1133
+#: src/Views/AppInfoView.vala:1203
 msgid "Public Domain"
 msgstr "Javna domena"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1136
+#: src/Views/AppInfoView.vala:1206
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1141
+#: src/Views/AppInfoView.vala:1211
 #, fuzzy
 msgid "Free Software"
 msgstr "Uredi izvore softvera"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1144
+#: src/Views/AppInfoView.vala:1214
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1148
+#: src/Views/AppInfoView.vala:1218
 msgid "Proprietary"
 msgstr "Vlasnički"
 
-#: src/Views/AppInfoView.vala:1151
+#: src/Views/AppInfoView.vala:1221
 #, fuzzy
 msgid "Unknown License"
 msgstr "Nepoznato stanje"
 
-#: src/Views/AppInfoView.vala:1243
+#: src/Views/AppInfoView.vala:1313
 msgid "Fund"
 msgstr "Podrži"
 
-#: src/Views/AppInfoView.vala:1249
+#: src/Views/AppInfoView.vala:1319
 msgid "Fund the development of this app"
 msgstr "Podrži razvoj ove aplikacije"
 
-#: src/Views/AppInfoView.vala:1367
-#, c-format
-msgid "Other Apps by %s"
-msgstr "Druge aplikacije od %s"
-
-#: src/Views/AppListUpdateView.vala:42
+#: src/Views/AppListUpdateView.vala:47
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Pretraživanje ažuriranja…"
 
-#: src/Views/AppListUpdateView.vala:43
+#: src/Views/AppListUpdateView.vala:48
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:57
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Ažuriraj sve"
 
-#: src/Views/AppListUpdateView.vala:88
+#: src/Views/AppListUpdateView.vala:105
 #, fuzzy
 #| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "Ponovno pokretanje računara je potrebno kako bi se završila instalacija ažuriranja"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:113
 msgid "Restart Now"
 msgstr "Ponovo pokreni sada"
 
-#: src/Views/AppListUpdateView.vala:108
+#: src/Views/AppListUpdateView.vala:125
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -897,119 +1011,125 @@ msgstr[0] "%u ažuriranje dostupno"
 msgstr[1] "%u ažuriranja dostupna"
 msgstr[2] "%u ažuriranja dostupno"
 
-#: src/Views/AppListUpdateView.vala:310
+#: src/Views/AppListUpdateView.vala:211
+#, c-format
+msgid "Everything is up to date. Last checked %s."
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:363
 msgid "Drivers"
 msgstr "Upravljački programi"
 
-#: src/Views/AppListUpdateView.vala:323
+#: src/Views/AppListUpdateView.vala:376
 msgid "Up to Date"
 msgstr "Ažurno"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/AuthorView.vala:31
+#, c-format
+msgid "Other Apps by %s"
+msgstr "Druge aplikacije od %s"
+
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "Nedavno ažurirano"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Pretraži aplikacije"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Besplatno"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr "Druge eksterne aplikacije"
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "Kategorije"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "Alatke"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "Audio"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 msgid "Communication"
 msgstr "Komunikacija"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "Razvoj softvera"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "Obrazovanje"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 msgid "Finance"
 msgstr "Finansije"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 msgid "Math, Science, & Engineering"
 msgstr "Matematika, prirodne nauke i inženjerstvo"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr "Medijska produkcija"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "Uredske aplikacije"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "Sistem"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "Univerzalni pristup"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "Video"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr "Pisanje i Jezik"
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Politika privatnosti"
 
-#: src/Views/Homepage.vala:454
+#: src/Views/Homepage.vala:468
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "Igre"
 
-#: src/Views/Homepage.vala:482
+#: src/Views/Homepage.vala:496
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:491
+#: src/Views/Homepage.vala:505
 msgid "Games"
 msgstr "Igre"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:58
+#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:65
 msgid "Flathub"
 msgstr ""
 
@@ -1017,9 +1137,13 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
+#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:66
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/SearchView.vala:63
+msgid "The search term must be at least 3 characters long."
 msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
@@ -1052,21 +1176,21 @@ msgstr "$%d.00 USD"
 msgid "$%d"
 msgstr "$%d USD"
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:70
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:94
+#: src/Widgets/ReleaseRow.vala:105
 #, fuzzy
 #| msgid "Unknown state"
 msgid "Unknown date"
 msgstr "Nepoznato stanje"
 
-#: src/Widgets/ReleaseRow.vala:101
+#: src/Widgets/ReleaseRow.vala:112
 msgid "Unknown version"
 msgstr "Nepoznata verzija"
 
-#: src/Widgets/ReleaseRow.vala:118
+#: src/Widgets/ReleaseRow.vala:129
 msgid "No description available"
 msgstr "Nema opisa"
 
@@ -1103,27 +1227,35 @@ msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Ažurno"
+msgstr ""
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:204
 msgid "Update"
 msgstr "Ažuriraj"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#, fuzzy
+#| msgid "Downloading"
+msgid "Download"
+msgstr "Preuzimanje"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:61
 msgid "Release notes"
 msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
-#, fuzzy, c-format
-#| msgid "What's New:"
+#, c-format
 msgid "What's new in %s"
-msgstr "Šta je novo:"
+msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr ""
+
+#~ msgid "Non-Curated Apps"
+#~ msgstr "Druge eksterne aplikacije"
 
 #~ msgid "<b>%s</b> – %s"
 #~ msgstr "<b>%s</b> – %s"
@@ -1225,12 +1357,6 @@ msgstr ""
 
 #~ msgid "Details"
 #~ msgstr "Detalji"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  aleksandar-todorovic https://launchpad.net/~aleksandar-todorovic\n"
-#~ "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #~ msgid "Show available updates"
 #~ msgstr "Prikaži dostupna ažuriranja"

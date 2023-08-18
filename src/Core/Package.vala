@@ -43,8 +43,9 @@ public enum RuntimeStatus {
 
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-focal-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-jammy-main";
 
+    public PermissionsFlags permissions_flags { get; set; default = PermissionsFlags.UNKNOWN; }
     public RuntimeStatus runtime_status { get; set; default = RuntimeStatus.UP_TO_DATE; }
 
     /* Note: These are just a stopgap, and are not a replacement for a more
@@ -82,7 +83,29 @@ public class AppCenterCore.Package : Object {
         REMOVING
     }
 
+    [Flags]
+    public enum PermissionsFlags {
+        DEVICES,
+        DOWNLOADS_FULL,
+        DOWNLOADS_READ,
+        ESCAPE_SANDBOX,
+        FILESYSTEM_FULL,
+        FILESYSTEM_OTHER,
+        FILESYSTEM_READ,
+        HOME_FULL,
+        HOME_READ,
+        LOCATION,
+        NETWORK,
+        NONE,
+        SESSION_BUS,
+        SETTINGS,
+        SYSTEM_BUS,
+        UNKNOWN,
+        X11
+    }
+
     public const string OS_UPDATES_ID = "xxx-os-updates";
+    public const string RUNTIME_UPDATES_ID = "xxx-runtime-updates";
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
@@ -102,7 +125,7 @@ public class AppCenterCore.Package : Object {
     private bool _installed = false;
     public bool installed {
         get {
-            if (component.get_id () == OS_UPDATES_ID) {
+            if (is_os_updates || is_runtime_updates) {
                 return true;
             }
 
@@ -188,6 +211,12 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_runtime_updates {
+        get {
+            return component.id == RUNTIME_UPDATES_ID;
+        }
+    }
+
     public AppStream.ComponentKind kind {
         get {
             return component.get_kind ();
@@ -202,7 +231,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates;
+            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_os_updates && !is_runtime_updates;
         }
     }
 
@@ -320,7 +349,16 @@ public class AppCenterCore.Package : Object {
     public string origin_description {
         owned get {
             unowned string origin = component.get_origin ();
-            if (backend is PackageKitBackend) {
+            if (backend is FlatpakBackend) {
+                var fp_package = this as FlatpakPackage;
+                if (fp_package == null) {
+                    return origin;
+                }
+
+                return fp_package.remote_title;
+            }
+#if PACKAGEKIT_BACKEND
+            else if (backend is PackageKitBackend) {
                 if (origin == APPCENTER_PACKAGE_ORIGIN) {
                     return _("AppCenter");
                 } else if (origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
@@ -328,16 +366,13 @@ public class AppCenterCore.Package : Object {
                 } else if (origin.has_prefix ("ubuntu-")) {
                     return _("Ubuntu (non-curated)");
                 }
-            } else if (backend is FlatpakBackend) {
-                var fp_package = this as FlatpakPackage;
-                if (fp_package != null && fp_package.installation == FlatpakBackend.system_installation) {
-                    return _("%s (system-wide)").printf (origin);
-                }
-
-                return origin;
-            } else if (backend is UbuntuDriversBackend) {
+            }
+#endif
+#if UBUNTU_DRIVERS_BACKEND
+            else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
+#endif
 
             return _("Unknown Origin (non-curated)");
         }
@@ -426,11 +461,13 @@ public class AppCenterCore.Package : Object {
         _author_title = null;
         backend_details = null;
 
+#if PACKAGEKIT_BACKEND
         // The version on a PackageKit package comes from the package not AppStream, so only reset the version
         // on other backends
         if (!(backend is PackageKitBackend)) {
             _latest_version = null;
         }
+#endif
 
         this.component = component;
     }
@@ -838,7 +875,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private string convert_version (string version) {
-        if (is_os_updates) {
+        if (is_os_updates || is_runtime_updates) {
             return version;
         }
 
@@ -925,7 +962,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private void populate_backend_details_sync () {
-        if (component.id == OS_UPDATES_ID || is_local) {
+        if (is_os_updates || is_runtime_updates || is_local) {
             backend_details = new PackageDetails ();
             return;
         }

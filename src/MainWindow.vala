@@ -15,6 +15,7 @@
 */
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
+    public const int VALID_QUERY_LENGTH = 3;
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
@@ -31,8 +32,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private AppCenterCore.Package? last_installed_package;
 
     private bool mimetype;
-
-    private const int VALID_QUERY_LENGTH = 3;
 
     public static Views.AppListUpdateView installed_view { get; private set; }
 
@@ -59,39 +58,18 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         aggregator.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
 
         aggregator.notify ["job-type"].connect (() => {
-            switch (aggregator.job_type) {
-                case GET_DETAILS_FOR_PACKAGE_IDS:
-                case GET_PACKAGE_DEPENDENCIES:
-                case GET_PACKAGE_DETAILS:
-                case IS_PACKAGE_INSTALLED:
-                    overlaybar.label = _("Getting app information…");
-                    break;
-                case GET_DOWNLOAD_SIZE:
-                    overlaybar.label = _("Getting download size…");
-                    break;
-                case GET_INSTALLED_PACKAGES:
-                case GET_UPDATES:
-                case REFRESH_CACHE:
-                    overlaybar.label = _("Checking for updates…");
-                    break;
-                case INSTALL_PACKAGE:
-                    overlaybar.label = _("Installing…");
-                    break;
-                case UPDATE_PACKAGE:
-                    overlaybar.label = _("Installing updates…");
-                    break;
-                case REMOVE_PACKAGE:
-                    overlaybar.label = _("Uninstalling…");
-                    break;
-            }
+            update_overlaybar_label (aggregator.job_type);
         });
 
         notify["working"].connect (() => {
             Idle.add (() => {
                 App.refresh_action.set_enabled (!working);
+                App.repair_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
         });
+
+        update_overlaybar_label (aggregator.job_type);
     }
 
     construct {
@@ -251,7 +229,26 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        box.append (headerbar);
         box.append (network_info_bar);
+
+        if (Utils.is_running_in_demo_mode ()) {
+            var demo_mode_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
+                _("Running in Demo Mode"),
+                _("Install %s to browse and install apps.").printf (Environment.get_os_info (GLib.OsInfoKey.NAME))
+            )) {
+                use_markup = true,
+                wrap = true
+            };
+
+            var demo_mode_info_bar = new Gtk.InfoBar () {
+                message_type = WARNING
+            };
+            demo_mode_info_bar.add_child (demo_mode_info_bar_label);
+
+            box.append (demo_mode_info_bar);
+        }
+
         box.append (overlay);
 
         child = box;
@@ -388,15 +385,24 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         leaflet.append (app_info_view);
         leaflet.visible_child = app_info_view;
 
+        if (leaflet.get_adjacent_child (BACK) is Views.AppInfoView) {
+            var adjacent_app_info_view = (Views.AppInfoView)leaflet.get_adjacent_child (BACK);
+            if (
+                !remember_history &&
+                adjacent_app_info_view.package.normalized_component_id == package.normalized_component_id
+            ) {
+                leaflet.remove (adjacent_app_info_view);
+                update_navigation ();
+            }
+        }
+
         app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
             if (!transition) {
                 leaflet.mode_transition_duration = 0;
             }
 
             show_package (_package, remember_history);
-            if (remember_history) {
-                set_return_name (package.get_name ());
-            }
+
             leaflet.mode_transition_duration = 200;
         });
     }
@@ -529,7 +535,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         } else {
             // Prevent navigating away from category views when backspacing
             if (leaflet.visible_child == search_view) {
-                leaflet.navigate (Adw.NavigationDirection.BACK);
+                search_view.clear ();
+                search_view.current_search_term = search_entry.text;
+
+                // When replacing text with text don't go back
+                Idle.add (() => {
+                    if (search_entry.text.length == 0) {
+                        leaflet.navigate (BACK);
+                    }
+
+                    return Source.REMOVE;
+                });
             }
         }
 
@@ -575,5 +591,37 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             show_package (package);
             set_return_name (category.name);
         });
+    }
+
+    private void update_overlaybar_label (AppCenterCore.Job.Type job_type) {
+        switch (job_type) {
+            case GET_DETAILS_FOR_PACKAGE_IDS:
+            case GET_PACKAGE_DEPENDENCIES:
+            case GET_PACKAGE_DETAILS:
+            case IS_PACKAGE_INSTALLED:
+                overlaybar.label = _("Getting app information…");
+                break;
+            case GET_DOWNLOAD_SIZE:
+                overlaybar.label = _("Getting download size…");
+                break;
+            case GET_PREPARED_PACKAGES:
+            case GET_INSTALLED_PACKAGES:
+            case GET_UPDATES:
+            case REFRESH_CACHE:
+                overlaybar.label = _("Checking for updates…");
+                break;
+            case INSTALL_PACKAGE:
+                overlaybar.label = _("Installing…");
+                break;
+            case UPDATE_PACKAGE:
+                overlaybar.label = _("Installing updates…");
+                break;
+            case REMOVE_PACKAGE:
+                overlaybar.label = _("Uninstalling…");
+                break;
+            case REPAIR:
+                overlaybar.label = _("Repairing…");
+                break;
+        }
     }
 }

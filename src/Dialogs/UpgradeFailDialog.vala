@@ -19,6 +19,7 @@ public class UpgradeFailDialog : Granite.MessageDialog {
     public AppCenterCore.Package? package { get; construct; }
     public string error_message { get; construct; }
     private const string FALLBACK_ICON = "application-default-icon";
+    private const int REPAIR_RESPONSE_ID = 1;
 
     public UpgradeFailDialog (AppCenterCore.Package? package, string error_message) {
         Object (
@@ -42,11 +43,18 @@ public class UpgradeFailDialog : Granite.MessageDialog {
 
         var refresh_button = add_button (_("Refresh Updates"), Gtk.ResponseType.ACCEPT);
 
+        if (package.is_flatpak) {
+            var repair_button = add_button (_("Repair"), REPAIR_RESPONSE_ID);
+            repair_button.get_style_context ().add_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        }
+
         show_error_details (error_message);
 
         response.connect ((response_type) => {
             if (response_type == Gtk.ResponseType.ACCEPT) {
                 Application.get_default ().activate_action ("app.refresh", null);
+            } else if (response_type == REPAIR_RESPONSE_ID) {
+                AppCenter.App.repair_action.activate (null);
             }
 
             destroy ();

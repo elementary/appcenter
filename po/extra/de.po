@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 01:15+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
 "PO-Revision-Date: 2022-07-15 22:32+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -15,16 +15,16 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
-#: data/io.elementary.appcenter.appdata.xml.in:8
+#: data/appcenter.metainfo.xml.in:11
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Apps durchsuchen und verwalten"
 
-#: data/io.elementary.appcenter.appdata.xml.in:11
+#: data/appcenter.metainfo.xml.in:14
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -39,839 +39,80 @@ msgstr ""
 "genutzt. Somit erhalten Sie die aktuellste und beste Software mit allen "
 "neuen Funktionen und Verbesserungen."
 
-#: data/io.elementary.appcenter.appdata.xml.in:17
-#: data/io.elementary.appcenter.appdata.xml.in:49
+#: data/appcenter.metainfo.xml.in:19
+msgid "Discover new apps"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:23
+msgid "Stay up to date"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:27
+msgid "Pay what you can to support developers"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:61
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
+msgid "New features:"
+msgstr "Neue Funktionen:"
+
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Other Improvements:"
 msgstr "Verbesserungen:"
 
-#: data/io.elementary.appcenter.appdata.xml.in:19
-#: data/io.elementary.appcenter.appdata.xml.in:54
-#: data/io.elementary.appcenter.appdata.xml.in:82
-#: data/io.elementary.appcenter.appdata.xml.in:95
-#: data/io.elementary.appcenter.appdata.xml.in:106
-#: data/io.elementary.appcenter.appdata.xml.in:130
-#: data/io.elementary.appcenter.appdata.xml.in:149
-#: data/io.elementary.appcenter.appdata.xml.in:159
-#: data/io.elementary.appcenter.appdata.xml.in:173
-#: data/io.elementary.appcenter.appdata.xml.in:186
-#: data/io.elementary.appcenter.appdata.xml.in:198
-#: data/io.elementary.appcenter.appdata.xml.in:213
-#: data/io.elementary.appcenter.appdata.xml.in:230
-#: data/io.elementary.appcenter.appdata.xml.in:251
-#: data/io.elementary.appcenter.appdata.xml.in:271
-#: data/io.elementary.appcenter.appdata.xml.in:284
-#: data/io.elementary.appcenter.appdata.xml.in:297
-#: data/io.elementary.appcenter.appdata.xml.in:311
-#: data/io.elementary.appcenter.appdata.xml.in:344
-#: data/io.elementary.appcenter.appdata.xml.in:354
-#: data/io.elementary.appcenter.appdata.xml.in:360
-#: data/io.elementary.appcenter.appdata.xml.in:407
+#: data/appcenter.metainfo.xml.in:74
+#, fuzzy
+#| msgid "Ellipsize long app names in App Info views"
+msgid "Tighten up spacing and margins in App Info views"
+msgstr "Lange App-Namen in App-Info-Ansichten durch Auslasspunkte kürzen"
+
+#: data/appcenter.metainfo.xml.in:75
+#, fuzzy
+#| msgid "Navigate banners on the home page with multitouch gestures"
+msgid "Show a placeholder banner on the home page when loading"
+msgstr "Mit Multitouch-Gesten zwischen Bannern auf der Startseite navigieren"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
 msgid "Updated translations"
 msgstr "Aktualisierte Übersetzungen"
 
-#: data/io.elementary.appcenter.appdata.xml.in:29
-#: data/io.elementary.appcenter.appdata.xml.in:66
-#: data/io.elementary.appcenter.appdata.xml.in:136
-#: data/io.elementary.appcenter.appdata.xml.in:219
-msgid "New features:"
-msgstr "Neue Funktionen:"
-
-#: data/io.elementary.appcenter.appdata.xml.in:31
-msgid "Rewritten navigation with multitouch gestures to go back"
+#: data/appcenter.metainfo.xml.in:98
+msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:32
-msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:33
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
-#| msgid "Improvements:"
-msgid "App Info Page Improvements:"
-msgstr "Verbesserungen:"
-
-#: data/io.elementary.appcenter.appdata.xml.in:37
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
+"Show a message in the updates view when up to date, including when updates "
+"were last checked"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:38
-msgid "An app's accent color is now shown behind screenshots"
+#: data/appcenter.metainfo.xml.in:115
+msgid "Show when an app isn't available in your language"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:39
-msgid "Get brand colors from the AppStream standard so more apps are supported"
+#: data/appcenter.metainfo.xml.in:128
+msgid "Install OS Updates offline"
 msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:40
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:41
-msgid "Better dark style support"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#, fuzzy
-#| msgid "Improvements:"
-msgid "Updates View Improvements:"
-msgstr "Verbesserungen:"
-
-#: data/io.elementary.appcenter.appdata.xml.in:45
-msgid "Release notes are shown in a dialog"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:46
-msgid "Better fallback icons for components"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:47
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:51
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:52
-#: data/io.elementary.appcenter.appdata.xml.in:81
-#: data/io.elementary.appcenter.appdata.xml.in:296
-#: data/io.elementary.appcenter.appdata.xml.in:317
-#: data/io.elementary.appcenter.appdata.xml.in:406
-msgid "Performance improvements"
-msgstr "Leistungsverbesserungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:53
-#, fuzzy
-#| msgid "Extension improvements"
-msgid "Stability improvements"
-msgstr "Erweiterungsverbesserungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:68
-msgid "Added an option to automatically update apps"
-msgstr "Eine Option für automatische Updates wurde hinzugefügt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:69
-msgid "Manually check for new updates"
-msgstr "Manuelle Prüfung auf neue Aktualisierungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:70
-msgid "Warn when apps are built against older runtimes"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:72
-#: data/io.elementary.appcenter.appdata.xml.in:88
-#: data/io.elementary.appcenter.appdata.xml.in:112
-#: data/io.elementary.appcenter.appdata.xml.in:120
-#: data/io.elementary.appcenter.appdata.xml.in:140
-#: data/io.elementary.appcenter.appdata.xml.in:165
-#: data/io.elementary.appcenter.appdata.xml.in:179
-#: data/io.elementary.appcenter.appdata.xml.in:192
-#: data/io.elementary.appcenter.appdata.xml.in:204
-#: data/io.elementary.appcenter.appdata.xml.in:232
-msgid "Fixes:"
-msgstr "Fehlerbehebungen:"
-
-#: data/io.elementary.appcenter.appdata.xml.in:74
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:76
-#: data/io.elementary.appcenter.appdata.xml.in:92
-#: data/io.elementary.appcenter.appdata.xml.in:101
-#: data/io.elementary.appcenter.appdata.xml.in:127
-#: data/io.elementary.appcenter.appdata.xml.in:145
-#: data/io.elementary.appcenter.appdata.xml.in:155
-#: data/io.elementary.appcenter.appdata.xml.in:170
-#: data/io.elementary.appcenter.appdata.xml.in:184
-#: data/io.elementary.appcenter.appdata.xml.in:196
-#: data/io.elementary.appcenter.appdata.xml.in:211
-#: data/io.elementary.appcenter.appdata.xml.in:224
-msgid "Improvements:"
-msgstr "Verbesserungen:"
-
-#: data/io.elementary.appcenter.appdata.xml.in:78
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr "Kein Warnungsdialog bei Apps von alternativen Quellen anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:79
-msgid "Show screenshot captions in a tooltip"
-msgstr "Untertiteln zum Bildschirmfoto als Kurzinfo anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:80
-msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
-"\"Kostenlos ausprobieren\" anzeigen, wenn der Preis einer App auf 0 gesetzt "
-"wird"
-
-#: data/io.elementary.appcenter.appdata.xml.in:90
-msgid "Prevent potential crashes when updating"
-msgstr "Verhindert potentielle Abstürze während Updates"
-
-#: data/io.elementary.appcenter.appdata.xml.in:94
-msgid "Link to Flathub's search page when no search results are found"
-msgstr "Verlinke zur Flathub-Seite, wenn keine Ergebnisse gefunden wurden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:103
-msgid "Amusements appear in the Games category"
-msgstr "Unterhaltungsapps erscheinen in der Kategorie für Spiele"
-
-#: data/io.elementary.appcenter.appdata.xml.in:104
-msgid "Categories show as a grid instead of a list"
-msgstr "Kategorien in Kacheln anstatt einer Liste anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:105
-msgid "Allow window to shrink to much narrower sizes"
-msgstr "Fenster erlauben sich auf viel kleinere Größen zu verkleinern"
-
-#: data/io.elementary.appcenter.appdata.xml.in:114
-msgid "Correctly show the installed status of first-party applications"
-msgstr "Installationsstatus von Erstanbieter-Anwendungen korrekt darstellen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:122
-msgid "Don't store $0 app installs as paid"
-msgstr "Kostenlose Apps nicht in gekauften Apps anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:123
-msgid "Fix missing illicit substances icon"
-msgstr "Fehlendes Icon für illegale Substanzen hinzugefügt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:124
-msgid "Don't show plugins on the homepage"
-msgstr "Plugins nicht auf der Startseite anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:125
-msgid "Only show \"Multiplayer\" badge for games"
-msgstr "Nur \"Multiplayer\"-Badge für Spiele anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:129
-msgid "Show installation progress in a more compact way"
-msgstr "Installationsprozess kompakter darstellen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:138
-msgid "Show content warnings on app info pages"
-msgstr "Zeige Inhaltswarnungen auf der Anwendungs-Infoseite"
-
-#: data/io.elementary.appcenter.appdata.xml.in:142
-msgid "Show other apps by an author for Flatpak sources"
-msgstr "Zeige weitere Anwendungen des Autors einer Flatpak-Quelle"
-
-#: data/io.elementary.appcenter.appdata.xml.in:143
-msgid "Populate banner on home locally instead of relying on an external API"
-msgstr ""
-"Banner auf der Startseite lokal bestücken, anstatt sich auf eine externe API "
-"zu verlassen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:147
-msgid "Greatly increased number of recently-updated apps shown on home page"
-msgstr ""
-"Umfangreiche Erhöhung der Anzahl von kürzlich aktualisierten Anwendungen, "
-"die auf der Startseite angezeigt werden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:148
-msgid "Navigate banners on the home page with multitouch gestures"
-msgstr "Mit Multitouch-Gesten zwischen Bannern auf der Startseite navigieren"
-
-#: data/io.elementary.appcenter.appdata.xml.in:157
-msgid "Show apps from newly sideloaded remotes without requiring a restart"
-msgstr ""
-"Anwendungen aus neuen Sideload-Quellen anzeigen ohne einen Neustart zu "
-"erfordern"
-
-#: data/io.elementary.appcenter.appdata.xml.in:158
-msgid "Less abrupt transition when changing app sources"
-msgstr "Weniger abrupte Übergänge beim Wechsel der Anwendungsquellen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:167
-msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr "Linux Kernel Header für Geräte, die DKMS-Treiber nutzen installieren"
-
-#: data/io.elementary.appcenter.appdata.xml.in:168
-msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr "System Flatpack runtimes für lokal installierte Anwendungen benutzen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:172
-msgid "Mention Sideload when search returns no results"
-msgstr ""
-"Möglichkeit zum Sideloading erwähnen, wenn die Suche keine Ergebnisse anzeigt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:181
-msgid ""
-"Ensure user installation is selected by default when navigating from the "
-"homepage"
-msgstr ""
-"Sicherstellen, dass Installation pro Benutzer standardmäßig ausgewählt ist, "
-"wenn von der Startseite aus navigiert wird"
-
-#: data/io.elementary.appcenter.appdata.xml.in:182
-msgid "Fix opening apps from app installed toasts"
-msgstr ""
-"Behebt einen Fehler beim Öffnen von Anwendungen, die über Toasts installiert "
-"wurden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:194
-msgid "Install Linux kernel headers with NVIDIA drivers"
-msgstr "Linux Kernel Header mit NVIDIA-Treibern installieren"
-
-#: data/io.elementary.appcenter.appdata.xml.in:206
-msgid "Show Recently Updated Flatpak apps on home page"
-msgstr "Kürzlich aktualisierte Flatpak-Anwendungen auf der Startseite anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:207
-msgid "Show brand colors and support payments for Flatpak apps"
-msgstr ""
-"Zeigt jetzt Unternehmensfarben und unterstützt Zahlungen für Flatpak-Apps"
-
-#: data/io.elementary.appcenter.appdata.xml.in:208
-msgid "Fix missing mail icon in payments dialog"
-msgstr "Mail Icon im Zahlungsdialog hinzugefügt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:209
-msgid "Fix missing privacy policy in payments dialog"
-msgstr "Fehlende Datenschutzerklärung im Zahlungsdialog hinzugefügt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:221
-msgid "Show in-app notification when an app is installed"
-msgstr "Zeige in-App Benachrichtigung, wenn die App installiert ist"
-
-#: data/io.elementary.appcenter.appdata.xml.in:222
-msgid "Add contextual badges to notifications"
-msgstr "Fügt kontextbezogene Badges zu Benachrichtigungen hinzu"
-
-#: data/io.elementary.appcenter.appdata.xml.in:226
-msgid "Ensure Home button is usable during search"
-msgstr "Sicherstellen, dass der Home-Button während der Suche benutzbar bleibt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:227
-msgid "Ask the user to manually restart if we can't ask the session to prompt"
-msgstr ""
-"User nach manuellem Neustart fragen, falls wir dies nicht in der Session tun "
-"können"
-
-#: data/io.elementary.appcenter.appdata.xml.in:228
-msgid "Improve styling and contrast of buttons"
-msgstr "Gestaltung und Kontrast von Buttons verbessert"
-
-#: data/io.elementary.appcenter.appdata.xml.in:229
-msgid "More concise and consistent language"
-msgstr "Gekürzte und einheitlichere Sprachgebung"
-
-#: data/io.elementary.appcenter.appdata.xml.in:234
-msgid "Fully uninstall Flatpaks, including locales"
-msgstr "Deinstalliert Flatpacks vollständig, inklusive locales"
-
-#: data/io.elementary.appcenter.appdata.xml.in:235
-msgid "Still fetch screenshots from remotes that don't include proper headers"
-msgstr ""
-"Auch Screenshots von Remotes erhalten, die keine korrekten Header enthalten"
-
-#: data/io.elementary.appcenter.appdata.xml.in:236
-msgid "Fix truncated footer buttons"
-msgstr "Beheben eines Fehlers, der zu angeschnittenen Footer Buttons führte"
-
-#: data/io.elementary.appcenter.appdata.xml.in:237
-msgid "Only show Mail button when a usable mail app is installed"
-msgstr "Zeige Mail-Button nur, wenn eine verwendbare Mail-App installiert ist"
-
-#: data/io.elementary.appcenter.appdata.xml.in:238
-msgid "Fix some apps incorrectly showing as not installed during search"
-msgstr ""
-"Fehler behoben, der dazu führte, dass Apps in der Suche fälschlicherweise "
-"als nicht installiert angezeigt wurden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:239
-msgid "Show an error dialog when opening an app fails"
-msgstr "Zeige einen Fehlerdialog, falls das Öffnen einer App fehlschlägt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:245
-#: data/io.elementary.appcenter.appdata.xml.in:261
-#: data/io.elementary.appcenter.appdata.xml.in:277
-#: data/io.elementary.appcenter.appdata.xml.in:290
-#: data/io.elementary.appcenter.appdata.xml.in:333
-#: data/io.elementary.appcenter.appdata.xml.in:350
-msgid "Fixes"
-msgstr "Fehlerbehebungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:247
-msgid "Correctly display names of Flatpak runtime updates"
-msgstr "Namen von Flatpak runtime Updates korrekt anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:249
-#: data/io.elementary.appcenter.appdata.xml.in:266
-#: data/io.elementary.appcenter.appdata.xml.in:282
-#: data/io.elementary.appcenter.appdata.xml.in:294
-#: data/io.elementary.appcenter.appdata.xml.in:307
-msgid "Minor updates"
-msgstr "Kleine Aktualisierungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:257
-#: data/io.elementary.appcenter.appdata.xml.in:303
-msgid "New features"
-msgstr "Neue Funktionen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:259
-msgid "Support system-wide Flatpak remotes"
-msgstr "Unterstützung systemweiter Flatpak Remotes"
-
-#: data/io.elementary.appcenter.appdata.xml.in:263
-msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
-"Behebung eines Fehlers, der dazu führte, dass Flatpak runtime Updates "
-"steckenblieben"
-
-#: data/io.elementary.appcenter.appdata.xml.in:264
-msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
-"Fehler behoben, der dazu führte, dass lange comboboxen das Header-Layout "
-"beeinträchtigten"
-
-#: data/io.elementary.appcenter.appdata.xml.in:268
-msgid ""
-"When apps are available from multiple sources, prefer installed version, "
-"then prefer Flatpak"
-msgstr ""
-"Falls Apps aus mehreren Quellen verfügbar sind, bevorzuge installierte "
-"Version, dann Flatpak"
-
-#: data/io.elementary.appcenter.appdata.xml.in:269
-msgid "Improve search performance"
-msgstr "Leistungsverbesserungen in der Suche"
-
-#: data/io.elementary.appcenter.appdata.xml.in:270
-msgid "Improve update badge styling and category styling"
-msgstr "Gestaltung von Aktualisierungsemblems und Kategorie optimiert"
-
-#: data/io.elementary.appcenter.appdata.xml.in:279
-msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
-"Sicherstellen, dass das AppCenter an der korrekten Stelle erneut geöffnet "
-"wird"
-
-#: data/io.elementary.appcenter.appdata.xml.in:280
-msgid "Clicking the updates badge in the header navigates to the updates view"
-msgstr "Klick auf das Updates-Badge im Header navigiert zur Update-Ansicht"
-
-#: data/io.elementary.appcenter.appdata.xml.in:292
-msgid "Ensure all updatable Flatpak runtimes are listed for update"
-msgstr ""
-"Stellt sicher, dass alle aktualisierbaren Flatpak-Runtimes für die "
-"Aktualisierung aufgelistet sind"
-
-#: data/io.elementary.appcenter.appdata.xml.in:305
-msgid "Perform updates without administrator permissions"
-msgstr "Ausführen von Aktualisierungen ohne Administrator-Berechtigungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:309
-msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
-"Stellt sicher, dass Apps auf der Homepage zuverlässiger angezeigt werden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:310
-msgid "More reliably set the Dock badge number"
-msgstr "Zuverlässigeres Festlegen der Dock Badge-Nummer"
-
-#: data/io.elementary.appcenter.appdata.xml.in:319
-msgid ""
-"Only check for updates at device startup if it's more than 24 hours since we "
-"last checked"
-msgstr ""
-"Beim Hochfahren des Gerätes nur auf Aktualisierungen überprüfen, wenn die "
-"letzte Überprüfung länger als 24 Stunden her ist"
-
-#: data/io.elementary.appcenter.appdata.xml.in:320
-msgid "Reduce slowdowns when opening certain apps"
-msgstr "Reduzierung von Verzögerungen beim Öffnen bestimmter Anwendungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:322
-msgid "Extension improvements"
-msgstr "Erweiterungsverbesserungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:324
-msgid ""
-"To de-clutter the updates view, extensions are now only shown if they "
-"require updates"
-msgstr ""
-"Um die Ansicht der Aktualisierungen übersichtlicher darzustellen, werden "
-"Erweiterungen jetzt nur noch angezeigt, wenn sie Aktualisierungen erfordern"
-
-#: data/io.elementary.appcenter.appdata.xml.in:325
-msgid ""
-"Clicking an extension on an app's info page now shows details for the "
-"extension"
-msgstr ""
-"Beim Anklicken einer Erweiterung auf der Infoseite einer App werden jetzt "
-"Details zu der Erweiterung angezeigt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:326
-msgid ""
-"Swap the main and overlay icons for extensions to more clearly associate "
-"extensions with their app"
-msgstr ""
-"Tauscht die Haupt- und Overlay-Icons von Erweiterungen aus, um Erweiterungen "
-"eindeutiger mit ihrer Anwendung zu verknüpfen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:328
-msgid "Keyboard improvements"
-msgstr "Verbesserungen an der Tastatur"
-
-#: data/io.elementary.appcenter.appdata.xml.in:330
-msgid ""
-"Pressing down in the search field moves the keyboard focus to the search "
-"results list"
-msgstr ""
-"Durch Herunterdrücken im Suchfeld wird der Tastaturfokus auf die "
-"Suchergebnisliste verschoben"
-
-#: data/io.elementary.appcenter.appdata.xml.in:331
-msgid "Ctrl+F now moves the cursor to the search field"
-msgstr "Strg+F bewegt den Mauszeiger nun zum Suchfeld"
-
-#: data/io.elementary.appcenter.appdata.xml.in:335
-msgid "Use configured network proxy settings for apt operations"
-msgstr "Nutzt konfigurierte Netzwerk-Proxy-Einstellungen für apt-Operationen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:336
-msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
-"Aktualisierungen von unbetreuten Anwendungen erfordern keine "
-"Authentifikation mehr"
-
-#: data/io.elementary.appcenter.appdata.xml.in:337
-msgid ""
-"Ensure the OS updates subheading copy is correct after finishing updates"
-msgstr ""
-"Stellt sicher, dass die Kopie der Unterrubrik OS-Updates nach Abschluss der "
-"Updates korrekt ist"
-
-#: data/io.elementary.appcenter.appdata.xml.in:338
-msgid "Ellipsize long app names in App Info views"
-msgstr "Lange App-Namen in App-Info-Ansichten durch Auslasspunkte kürzen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:340
-msgid "And more"
-msgstr "Und mehr"
-
-#: data/io.elementary.appcenter.appdata.xml.in:342
-msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
-"Zeigt einen informativeren Ladebildschirm bei der Überprüfung von "
-"Aktualisierungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:343
-msgid "Don't list fonts alongside apps"
-msgstr "Listet keine Schriftarten neben Apps"
-
-#: data/io.elementary.appcenter.appdata.xml.in:352
-msgid ""
-"Prevent crashes when updating Flatpaks and system packages simultaneously"
-msgstr ""
-"Abstürze beim gleichzeitigen Aktualisieren von Flatpaks und Systempaketen "
-"werden verhindert"
-
-#: data/io.elementary.appcenter.appdata.xml.in:353
-msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
-"Verhindern des Bereitschaftsmodus beim Installieren, Aktualisieren oder "
-"Entfernen von Paketen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:365
-#: data/io.elementary.appcenter.appdata.xml.in:382
-msgid "Minor fixes"
-msgstr "Kleinere Fehlerbehebungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:367
-msgid "Update application details when changes happen outside of AppCenter"
-msgstr ""
-"Aktualisieren der Anwendungsdetails, wenn Änderungen außerhalb von AppCenter "
-"erfolgen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:368
-msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
-"Korrigiert, dass Benachrichtigungen nicht angezeigt werden, wenn ein "
-"Neustart erforderlich ist"
-
-#: data/io.elementary.appcenter.appdata.xml.in:369
-msgid "Apps in list views now load in the correct order when scrolling"
-msgstr ""
-"Apps in der Listenansicht werden jetzt beim Scrollen in der korrekten "
-"Reihenfolge geladen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:370
-msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
-"Verhindern, dass nicht maskierte XML-Elemente in Anwendungsnamen erscheinen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:371
-msgid "Load the \"Installed\" view faster"
-msgstr "Die Ansicht \"Installiert\" läd schneller"
-
-#: data/io.elementary.appcenter.appdata.xml.in:372
-msgid "Ensure flatpak applications show in the category views"
-msgstr ""
-"Stellt sicher, dass Flatpak-Anwendungen in den Kategorien angezeigt werden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:373
-msgid ""
-"Save some bandwidth by downloading smaller screenshots where appropriate"
-msgstr ""
-"Spart Bandbreite, indem gegebenenfalls kleinere Screenshots heruntergeladen "
-"werden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:374
-msgid "System components no longer have an \"Open\" button"
-msgstr "Systemkomponenten haben nun keine Schaltfläche \"Öffnen\" mehr"
-
-#: data/io.elementary.appcenter.appdata.xml.in:375
-msgid ""
-"Applications menu can now remove flatpaks that weren't installed by AppCenter"
-msgstr ""
-"Das Anwendungsmenü kann jetzt Flatpaks entfernen, die nicht vom AppCenter "
-"installiert wurden"
-
-#: data/io.elementary.appcenter.appdata.xml.in:376
-msgid "Make download size estimates more accurate"
-msgstr "Geschätzte Downloadgrößen sind genauer"
-
-#: data/io.elementary.appcenter.appdata.xml.in:384
-msgid "Prevent AppCenter from opening on log in"
-msgstr "Verhindern, dass AppCenter sich bei der Anmeldung öffnet"
-
-#: data/io.elementary.appcenter.appdata.xml.in:385
-msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
-"Verhinderung von Ghost-Update-Benachrichtigungen, wenn keine Updates "
-"verfügbar sind"
-
-#: data/io.elementary.appcenter.appdata.xml.in:386
-msgid "Show correct installation state for extensions"
-msgstr "Korrekten Installationsstatus für Erweiterungen anzeigen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:393
-msgid "Add support for Flatpak apps"
-msgstr "Unterstützung für Flatpak-Apps hinzugefügt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:394
-msgid "Warn about non-curated apps"
-msgstr "Warnung vor nicht kuratierten Apps"
-
-#: data/io.elementary.appcenter.appdata.xml.in:395
-msgid "Show an error dialog if an installation fails"
-msgstr "Zeige einen Fehlerdialog, falls eine Installation fehlschlägt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:396
-msgid ""
-"Fix an issue where some apps couldn't be uninstalled from the Applications "
-"Menu"
-msgstr ""
-"Behebt ein Problem, bei dem einige Apps nicht über das Anwendungsmenü "
-"deinstalliert werden konnten"
-
-#: data/io.elementary.appcenter.appdata.xml.in:397
-msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
-"Ermöglicht das Durchsuchen und Deinstallieren von Apps im Offline-Modus"
-
-#: data/io.elementary.appcenter.appdata.xml.in:398
-msgid "Fix twitter share URLs"
-msgstr "Korrektur von Twitter-Freigabe-URLs"
-
-#: data/io.elementary.appcenter.appdata.xml.in:399
-msgid "Drop Google+ from the share menu"
-msgstr "Google+ wurde aus dem Teilen-Menü entfernt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:400
-msgid "Animate screenshot background while loading"
-msgstr "Animation für den Screenshot-Hintergrund während des Ladens"
-
-#: data/io.elementary.appcenter.appdata.xml.in:401
-msgid "Add navigation arrows for screenshots"
-msgstr "Navigationspfeile für Screenshots hinzugefügt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:402
-msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
-"Deinstallationsschaltflächen für wichtige Systemkomponenten werden nicht "
-"mehr angezeigt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:403
-msgid "Properly display proprietary licenses"
-msgstr "Korrekte Anzeige proprietärer Lizenzen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:404
-msgid "Fix some layout issues"
-msgstr "Es wurden einige Probleme mit dem Layout behoben"
-
-#: data/io.elementary.appcenter.appdata.xml.in:405
-msgid "Fix crashes"
-msgstr "Abstürze behoben"
-
-#: data/io.elementary.appcenter.appdata.xml.in:414
-msgid "Meson build system fixes"
-msgstr "Meson Build System Fehlerbehebungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:415
-msgid "Improve window state restoration"
-msgstr "Verbesserung an der Wiederherstellung des Fensterzustands"
-
-#: data/io.elementary.appcenter.appdata.xml.in:416
-msgid "Prevent action buttons from jumping around"
-msgstr "Verhindern von herumspringenden Aktionsschaltflächen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:417
-msgid "Remove reset paid apps gsettings key"
-msgstr "Entfernen des gsettings-Schlüssels zum Zurücksetzen des Bezahlstatus"
-
-#: data/io.elementary.appcenter.appdata.xml.in:418
-msgid "Memory management refinements"
-msgstr "Optimierungen in der Speicherverwaltung"
-
-#: data/io.elementary.appcenter.appdata.xml.in:419
-msgid ""
-"Add conditional compilation for disabling dynamic remote homepage content"
-msgstr ""
-"Hinzufügen einer bedingten Kompilierung zur Deaktivierung dynamischer Remote-"
-"Homepage-Inhalte"
-
-#: data/io.elementary.appcenter.appdata.xml.in:420
-#: data/io.elementary.appcenter.appdata.xml.in:432
-#: data/io.elementary.appcenter.appdata.xml.in:439
-#: data/io.elementary.appcenter.appdata.xml.in:452
-#: data/io.elementary.appcenter.appdata.xml.in:463
-#: data/io.elementary.appcenter.appdata.xml.in:472
-#: data/io.elementary.appcenter.appdata.xml.in:481
-#: data/io.elementary.appcenter.appdata.xml.in:490
-#: data/io.elementary.appcenter.appdata.xml.in:499
-#: data/io.elementary.appcenter.appdata.xml.in:508
-#: data/io.elementary.appcenter.appdata.xml.in:517
-#: data/io.elementary.appcenter.appdata.xml.in:526
-#: data/io.elementary.appcenter.appdata.xml.in:535
-#: data/io.elementary.appcenter.appdata.xml.in:544
-#: data/io.elementary.appcenter.appdata.xml.in:553
-#: data/io.elementary.appcenter.appdata.xml.in:563
-#: data/io.elementary.appcenter.appdata.xml.in:573
-msgid "New translations"
-msgstr "Neue Übersetzungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:427
-msgid "New categories: Communication, Finance, Media Production"
-msgstr "Neue Kategorien: Kommunikation, Finanzen, Medienproduktion"
-
-#: data/io.elementary.appcenter.appdata.xml.in:428
-msgid "Add Math to Science category"
-msgstr "Mathematik zur Kategorie \"Wissenschaft\" hinzufügen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:429
-msgid "Relax email address validator"
-msgstr "Email Addressen weniger streng validieren"
-
-#: data/io.elementary.appcenter.appdata.xml.in:430
-msgid "Present update availability more accurately"
-msgstr "Verfügbarkeit von Updates ist übersichtlicher dargestellt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:431
-msgid "Category graphics revamped"
-msgstr "Kategorie Grafik überarbeitet"
-
-#: data/io.elementary.appcenter.appdata.xml.in:446
-#: data/io.elementary.appcenter.appdata.xml.in:458
-#: data/io.elementary.appcenter.appdata.xml.in:469
-#: data/io.elementary.appcenter.appdata.xml.in:478
-#: data/io.elementary.appcenter.appdata.xml.in:487
-#: data/io.elementary.appcenter.appdata.xml.in:496
-#: data/io.elementary.appcenter.appdata.xml.in:505
-#: data/io.elementary.appcenter.appdata.xml.in:514
-#: data/io.elementary.appcenter.appdata.xml.in:523
-#: data/io.elementary.appcenter.appdata.xml.in:532
-#: data/io.elementary.appcenter.appdata.xml.in:541
-#: data/io.elementary.appcenter.appdata.xml.in:550
-msgid "Bug fixes and improve performance."
-msgstr "Fehlerbehebungen und Leistungsverbesserungen."
-
-#: data/io.elementary.appcenter.appdata.xml.in:448
-msgid "Improve transaction success rate"
-msgstr "Verbesserung der Erfolgsrate bei Transaktionen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:449
-msgid "Add Publishing to Office category"
-msgstr "Publikation zur Kategorie \"Office\" hinzugefügt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:450
-msgid "Improve descriptions of OS Updates"
-msgstr "Verbesserte Beschreibungen von Betriebssystemupdates"
-
-#: data/io.elementary.appcenter.appdata.xml.in:451
-#: data/io.elementary.appcenter.appdata.xml.in:462
-#: data/io.elementary.appcenter.appdata.xml.in:471
-#: data/io.elementary.appcenter.appdata.xml.in:480
-#: data/io.elementary.appcenter.appdata.xml.in:489
-#: data/io.elementary.appcenter.appdata.xml.in:498
-#: data/io.elementary.appcenter.appdata.xml.in:507
-#: data/io.elementary.appcenter.appdata.xml.in:516
-#: data/io.elementary.appcenter.appdata.xml.in:525
-#: data/io.elementary.appcenter.appdata.xml.in:534
-#: data/io.elementary.appcenter.appdata.xml.in:543
-msgid "Various bug fixes and performance improvements"
-msgstr "Verschiedene Fehlerbehebungen und Leistungsverbesserungen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:460
-msgid "Give details for Operating System Updates"
-msgstr "Details für Betriebssystem-Updates bereitstellen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:461
-msgid "Support mouse button navigation"
-msgstr "Unterstützt die Navigation mit der Maus"
-
-#: data/io.elementary.appcenter.appdata.xml.in:552
-msgid "Fix crash caused by entries with missing packages"
-msgstr ""
-"Folgender Fehler wurde behoben: Absturz nach Aufrufen von Einträgen mit "
-"fehlenden Paketen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:559
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
-"Möglichkeit der Suche nach Kategorien hinzugefügt plus einige kleine "
-"Fehlerbehebungen."
-
-#: data/io.elementary.appcenter.appdata.xml.in:561
-msgid "It is now possible to search apps inside a category"
-msgstr ""
-"Es ist nun möglich, innerhalb einer Kategorie nach Anwendungen zu suchen"
-
-#: data/io.elementary.appcenter.appdata.xml.in:562
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
-"Nach dem Aufwachen aus dem Ruhezustand wird nur noch ein "
-"Authentifizierungsdialog angezeigt"
-
-#: data/io.elementary.appcenter.appdata.xml.in:569
-msgid ""
-"Search performance has been improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-"Die Suchfunktion wurde verbessert, der Name der Kategorie wird nun in der "
-"Kopfzeile angezeigt und kleinere Fehler wurden behoben."
-
-#: data/io.elementary.appcenter.appdata.xml.in:571
-msgid "Fix Steam installation"
-msgstr "Fehler bei der Steam-Installation wurde behoben"
-
-#: data/io.elementary.appcenter.appdata.xml.in:572
-msgid "Make search asynchronous"
-msgstr "Die Suchfunktion arbeitet jetzt asynchron"
-
-#: data/io.elementary.appcenter.appdata.xml.in:599
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -892,6 +133,550 @@ msgstr "Software aktualisieren"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Authentifikation ist erforderlich, um Software zu aktualisieren"
+
+#: data/io.elementary.appcenter.policy.in:22
+msgid "Repair software sources"
+msgstr ""
+
+#: data/io.elementary.appcenter.policy.in:23
+#, fuzzy
+#| msgid "Authentication is required to update software"
+msgid "Authentication is required to repair software sources"
+msgstr "Authentifikation ist erforderlich, um Software zu aktualisieren"
+
+#, fuzzy
+#~| msgid "Improvements:"
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "Verbesserungen:"
+
+#, fuzzy
+#~| msgid "Improvements:"
+#~ msgid "Updates View Improvements:"
+#~ msgstr "Verbesserungen:"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Leistungsverbesserungen"
+
+#, fuzzy
+#~| msgid "Extension improvements"
+#~ msgid "Stability improvements"
+#~ msgstr "Erweiterungsverbesserungen"
+
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr "Eine Option für automatische Updates wurde hinzugefügt"
+
+#~ msgid "Manually check for new updates"
+#~ msgstr "Manuelle Prüfung auf neue Aktualisierungen"
+
+#~ msgid "Fixes:"
+#~ msgstr "Fehlerbehebungen:"
+
+#~ msgid "Improvements:"
+#~ msgstr "Verbesserungen:"
+
+#~ msgid "Don't show a warning dialog about apps from alt stores"
+#~ msgstr "Kein Warnungsdialog bei Apps von alternativen Quellen anzeigen"
+
+#~ msgid "Show screenshot captions in a tooltip"
+#~ msgstr "Untertiteln zum Bildschirmfoto als Kurzinfo anzeigen"
+
+#~ msgid "Show \"Try for Free\" when setting an app's price to 0"
+#~ msgstr ""
+#~ "\"Kostenlos ausprobieren\" anzeigen, wenn der Preis einer App auf 0 "
+#~ "gesetzt wird"
+
+#~ msgid "Prevent potential crashes when updating"
+#~ msgstr "Verhindert potentielle Abstürze während Updates"
+
+#~ msgid "Link to Flathub's search page when no search results are found"
+#~ msgstr "Verlinke zur Flathub-Seite, wenn keine Ergebnisse gefunden wurden"
+
+#~ msgid "Amusements appear in the Games category"
+#~ msgstr "Unterhaltungsapps erscheinen in der Kategorie für Spiele"
+
+#~ msgid "Categories show as a grid instead of a list"
+#~ msgstr "Kategorien in Kacheln anstatt einer Liste anzeigen"
+
+#~ msgid "Allow window to shrink to much narrower sizes"
+#~ msgstr "Fenster erlauben sich auf viel kleinere Größen zu verkleinern"
+
+#~ msgid "Correctly show the installed status of first-party applications"
+#~ msgstr "Installationsstatus von Erstanbieter-Anwendungen korrekt darstellen"
+
+#~ msgid "Don't store $0 app installs as paid"
+#~ msgstr "Kostenlose Apps nicht in gekauften Apps anzeigen"
+
+#~ msgid "Fix missing illicit substances icon"
+#~ msgstr "Fehlendes Icon für illegale Substanzen hinzugefügt"
+
+#~ msgid "Don't show plugins on the homepage"
+#~ msgstr "Plugins nicht auf der Startseite anzeigen"
+
+#~ msgid "Only show \"Multiplayer\" badge for games"
+#~ msgstr "Nur \"Multiplayer\"-Badge für Spiele anzeigen"
+
+#~ msgid "Show installation progress in a more compact way"
+#~ msgstr "Installationsprozess kompakter darstellen"
+
+#~ msgid "Show content warnings on app info pages"
+#~ msgstr "Zeige Inhaltswarnungen auf der Anwendungs-Infoseite"
+
+#~ msgid "Show other apps by an author for Flatpak sources"
+#~ msgstr "Zeige weitere Anwendungen des Autors einer Flatpak-Quelle"
+
+#~ msgid ""
+#~ "Populate banner on home locally instead of relying on an external API"
+#~ msgstr ""
+#~ "Banner auf der Startseite lokal bestücken, anstatt sich auf eine externe "
+#~ "API zu verlassen"
+
+#~ msgid "Greatly increased number of recently-updated apps shown on home page"
+#~ msgstr ""
+#~ "Umfangreiche Erhöhung der Anzahl von kürzlich aktualisierten Anwendungen, "
+#~ "die auf der Startseite angezeigt werden"
+
+#~ msgid "Show apps from newly sideloaded remotes without requiring a restart"
+#~ msgstr ""
+#~ "Anwendungen aus neuen Sideload-Quellen anzeigen ohne einen Neustart zu "
+#~ "erfordern"
+
+#~ msgid "Less abrupt transition when changing app sources"
+#~ msgstr "Weniger abrupte Übergänge beim Wechsel der Anwendungsquellen"
+
+#~ msgid "Install Linux kernel headers for device drivers that use DKMS"
+#~ msgstr ""
+#~ "Linux Kernel Header für Geräte, die DKMS-Treiber nutzen installieren"
+
+#~ msgid "Use system Flatpak runtimes for locally installed apps"
+#~ msgstr ""
+#~ "System Flatpack runtimes für lokal installierte Anwendungen benutzen"
+
+#~ msgid "Mention Sideload when search returns no results"
+#~ msgstr ""
+#~ "Möglichkeit zum Sideloading erwähnen, wenn die Suche keine Ergebnisse "
+#~ "anzeigt"
+
+#~ msgid ""
+#~ "Ensure user installation is selected by default when navigating from the "
+#~ "homepage"
+#~ msgstr ""
+#~ "Sicherstellen, dass Installation pro Benutzer standardmäßig ausgewählt "
+#~ "ist, wenn von der Startseite aus navigiert wird"
+
+#~ msgid "Fix opening apps from app installed toasts"
+#~ msgstr ""
+#~ "Behebt einen Fehler beim Öffnen von Anwendungen, die über Toasts "
+#~ "installiert wurden"
+
+#~ msgid "Install Linux kernel headers with NVIDIA drivers"
+#~ msgstr "Linux Kernel Header mit NVIDIA-Treibern installieren"
+
+#~ msgid "Show Recently Updated Flatpak apps on home page"
+#~ msgstr ""
+#~ "Kürzlich aktualisierte Flatpak-Anwendungen auf der Startseite anzeigen"
+
+#~ msgid "Show brand colors and support payments for Flatpak apps"
+#~ msgstr ""
+#~ "Zeigt jetzt Unternehmensfarben und unterstützt Zahlungen für Flatpak-Apps"
+
+#~ msgid "Fix missing mail icon in payments dialog"
+#~ msgstr "Mail Icon im Zahlungsdialog hinzugefügt"
+
+#~ msgid "Fix missing privacy policy in payments dialog"
+#~ msgstr "Fehlende Datenschutzerklärung im Zahlungsdialog hinzugefügt"
+
+#~ msgid "Show in-app notification when an app is installed"
+#~ msgstr "Zeige in-App Benachrichtigung, wenn die App installiert ist"
+
+#~ msgid "Add contextual badges to notifications"
+#~ msgstr "Fügt kontextbezogene Badges zu Benachrichtigungen hinzu"
+
+#~ msgid "Ensure Home button is usable during search"
+#~ msgstr ""
+#~ "Sicherstellen, dass der Home-Button während der Suche benutzbar bleibt"
+
+#~ msgid ""
+#~ "Ask the user to manually restart if we can't ask the session to prompt"
+#~ msgstr ""
+#~ "User nach manuellem Neustart fragen, falls wir dies nicht in der Session "
+#~ "tun können"
+
+#~ msgid "Improve styling and contrast of buttons"
+#~ msgstr "Gestaltung und Kontrast von Buttons verbessert"
+
+#~ msgid "More concise and consistent language"
+#~ msgstr "Gekürzte und einheitlichere Sprachgebung"
+
+#~ msgid "Fully uninstall Flatpaks, including locales"
+#~ msgstr "Deinstalliert Flatpacks vollständig, inklusive locales"
+
+#~ msgid ""
+#~ "Still fetch screenshots from remotes that don't include proper headers"
+#~ msgstr ""
+#~ "Auch Screenshots von Remotes erhalten, die keine korrekten Header "
+#~ "enthalten"
+
+#~ msgid "Fix truncated footer buttons"
+#~ msgstr "Beheben eines Fehlers, der zu angeschnittenen Footer Buttons führte"
+
+#~ msgid "Only show Mail button when a usable mail app is installed"
+#~ msgstr ""
+#~ "Zeige Mail-Button nur, wenn eine verwendbare Mail-App installiert ist"
+
+#~ msgid "Fix some apps incorrectly showing as not installed during search"
+#~ msgstr ""
+#~ "Fehler behoben, der dazu führte, dass Apps in der Suche fälschlicherweise "
+#~ "als nicht installiert angezeigt wurden"
+
+#~ msgid "Show an error dialog when opening an app fails"
+#~ msgstr "Zeige einen Fehlerdialog, falls das Öffnen einer App fehlschlägt"
+
+#~ msgid "Fixes"
+#~ msgstr "Fehlerbehebungen"
+
+#~ msgid "Correctly display names of Flatpak runtime updates"
+#~ msgstr "Namen von Flatpak runtime Updates korrekt anzeigen"
+
+#~ msgid "Minor updates"
+#~ msgstr "Kleine Aktualisierungen"
+
+#~ msgid "New features"
+#~ msgstr "Neue Funktionen"
+
+#~ msgid "Support system-wide Flatpak remotes"
+#~ msgstr "Unterstützung systemweiter Flatpak Remotes"
+
+#~ msgid "Fix Flatpak runtime updates getting stuck"
+#~ msgstr ""
+#~ "Behebung eines Fehlers, der dazu führte, dass Flatpak runtime Updates "
+#~ "steckenblieben"
+
+#~ msgid "Fix long origin comboboxes breaking the header layout"
+#~ msgstr ""
+#~ "Fehler behoben, der dazu führte, dass lange comboboxen das Header-Layout "
+#~ "beeinträchtigten"
+
+#~ msgid ""
+#~ "When apps are available from multiple sources, prefer installed version, "
+#~ "then prefer Flatpak"
+#~ msgstr ""
+#~ "Falls Apps aus mehreren Quellen verfügbar sind, bevorzuge installierte "
+#~ "Version, dann Flatpak"
+
+#~ msgid "Improve search performance"
+#~ msgstr "Leistungsverbesserungen in der Suche"
+
+#~ msgid "Improve update badge styling and category styling"
+#~ msgstr "Gestaltung von Aktualisierungsemblems und Kategorie optimiert"
+
+#~ msgid "Ensure AppCenter is reopened at the correct position"
+#~ msgstr ""
+#~ "Sicherstellen, dass das AppCenter an der korrekten Stelle erneut geöffnet "
+#~ "wird"
+
+#~ msgid ""
+#~ "Clicking the updates badge in the header navigates to the updates view"
+#~ msgstr "Klick auf das Updates-Badge im Header navigiert zur Update-Ansicht"
+
+#~ msgid "Ensure all updatable Flatpak runtimes are listed for update"
+#~ msgstr ""
+#~ "Stellt sicher, dass alle aktualisierbaren Flatpak-Runtimes für die "
+#~ "Aktualisierung aufgelistet sind"
+
+#~ msgid "Perform updates without administrator permissions"
+#~ msgstr "Ausführen von Aktualisierungen ohne Administrator-Berechtigungen"
+
+#~ msgid "Ensure apps on the homepage are more reliably displayed"
+#~ msgstr ""
+#~ "Stellt sicher, dass Apps auf der Homepage zuverlässiger angezeigt werden"
+
+#~ msgid "More reliably set the Dock badge number"
+#~ msgstr "Zuverlässigeres Festlegen der Dock Badge-Nummer"
+
+#~ msgid ""
+#~ "Only check for updates at device startup if it's more than 24 hours since "
+#~ "we last checked"
+#~ msgstr ""
+#~ "Beim Hochfahren des Gerätes nur auf Aktualisierungen überprüfen, wenn die "
+#~ "letzte Überprüfung länger als 24 Stunden her ist"
+
+#~ msgid "Reduce slowdowns when opening certain apps"
+#~ msgstr "Reduzierung von Verzögerungen beim Öffnen bestimmter Anwendungen"
+
+#~ msgid "Extension improvements"
+#~ msgstr "Erweiterungsverbesserungen"
+
+#~ msgid ""
+#~ "To de-clutter the updates view, extensions are now only shown if they "
+#~ "require updates"
+#~ msgstr ""
+#~ "Um die Ansicht der Aktualisierungen übersichtlicher darzustellen, werden "
+#~ "Erweiterungen jetzt nur noch angezeigt, wenn sie Aktualisierungen "
+#~ "erfordern"
+
+#~ msgid ""
+#~ "Clicking an extension on an app's info page now shows details for the "
+#~ "extension"
+#~ msgstr ""
+#~ "Beim Anklicken einer Erweiterung auf der Infoseite einer App werden jetzt "
+#~ "Details zu der Erweiterung angezeigt"
+
+#~ msgid ""
+#~ "Swap the main and overlay icons for extensions to more clearly associate "
+#~ "extensions with their app"
+#~ msgstr ""
+#~ "Tauscht die Haupt- und Overlay-Icons von Erweiterungen aus, um "
+#~ "Erweiterungen eindeutiger mit ihrer Anwendung zu verknüpfen"
+
+#~ msgid "Keyboard improvements"
+#~ msgstr "Verbesserungen an der Tastatur"
+
+#~ msgid ""
+#~ "Pressing down in the search field moves the keyboard focus to the search "
+#~ "results list"
+#~ msgstr ""
+#~ "Durch Herunterdrücken im Suchfeld wird der Tastaturfokus auf die "
+#~ "Suchergebnisliste verschoben"
+
+#~ msgid "Ctrl+F now moves the cursor to the search field"
+#~ msgstr "Strg+F bewegt den Mauszeiger nun zum Suchfeld"
+
+#~ msgid "Use configured network proxy settings for apt operations"
+#~ msgstr ""
+#~ "Nutzt konfigurierte Netzwerk-Proxy-Einstellungen für apt-Operationen"
+
+#~ msgid "No longer prompt for approval to update non-curated apps"
+#~ msgstr ""
+#~ "Aktualisierungen von unbetreuten Anwendungen erfordern keine "
+#~ "Authentifikation mehr"
+
+#~ msgid ""
+#~ "Ensure the OS updates subheading copy is correct after finishing updates"
+#~ msgstr ""
+#~ "Stellt sicher, dass die Kopie der Unterrubrik OS-Updates nach Abschluss "
+#~ "der Updates korrekt ist"
+
+#~ msgid "And more"
+#~ msgstr "Und mehr"
+
+#~ msgid "Show a more informative loading screen when checking for updates"
+#~ msgstr ""
+#~ "Zeigt einen informativeren Ladebildschirm bei der Überprüfung von "
+#~ "Aktualisierungen"
+
+#~ msgid "Don't list fonts alongside apps"
+#~ msgstr "Listet keine Schriftarten neben Apps"
+
+#~ msgid ""
+#~ "Prevent crashes when updating Flatpaks and system packages simultaneously"
+#~ msgstr ""
+#~ "Abstürze beim gleichzeitigen Aktualisieren von Flatpaks und Systempaketen "
+#~ "werden verhindert"
+
+#~ msgid "Prevent suspending when installing, updating, or removing packages"
+#~ msgstr ""
+#~ "Verhindern des Bereitschaftsmodus beim Installieren, Aktualisieren oder "
+#~ "Entfernen von Paketen"
+
+#~ msgid "Minor fixes"
+#~ msgstr "Kleinere Fehlerbehebungen"
+
+#~ msgid "Update application details when changes happen outside of AppCenter"
+#~ msgstr ""
+#~ "Aktualisieren der Anwendungsdetails, wenn Änderungen außerhalb von "
+#~ "AppCenter erfolgen"
+
+#~ msgid "Fix for notification not appearing when a restart is required"
+#~ msgstr ""
+#~ "Korrigiert, dass Benachrichtigungen nicht angezeigt werden, wenn ein "
+#~ "Neustart erforderlich ist"
+
+#~ msgid "Apps in list views now load in the correct order when scrolling"
+#~ msgstr ""
+#~ "Apps in der Listenansicht werden jetzt beim Scrollen in der korrekten "
+#~ "Reihenfolge geladen"
+
+#~ msgid "Prevent unescaped XML entities from appearing in application names"
+#~ msgstr ""
+#~ "Verhindern, dass nicht maskierte XML-Elemente in Anwendungsnamen "
+#~ "erscheinen"
+
+#~ msgid "Load the \"Installed\" view faster"
+#~ msgstr "Die Ansicht \"Installiert\" läd schneller"
+
+#~ msgid "Ensure flatpak applications show in the category views"
+#~ msgstr ""
+#~ "Stellt sicher, dass Flatpak-Anwendungen in den Kategorien angezeigt werden"
+
+#~ msgid ""
+#~ "Save some bandwidth by downloading smaller screenshots where appropriate"
+#~ msgstr ""
+#~ "Spart Bandbreite, indem gegebenenfalls kleinere Screenshots "
+#~ "heruntergeladen werden"
+
+#~ msgid "System components no longer have an \"Open\" button"
+#~ msgstr "Systemkomponenten haben nun keine Schaltfläche \"Öffnen\" mehr"
+
+#~ msgid ""
+#~ "Applications menu can now remove flatpaks that weren't installed by "
+#~ "AppCenter"
+#~ msgstr ""
+#~ "Das Anwendungsmenü kann jetzt Flatpaks entfernen, die nicht vom AppCenter "
+#~ "installiert wurden"
+
+#~ msgid "Make download size estimates more accurate"
+#~ msgstr "Geschätzte Downloadgrößen sind genauer"
+
+#~ msgid "Prevent AppCenter from opening on log in"
+#~ msgstr "Verhindern, dass AppCenter sich bei der Anmeldung öffnet"
+
+#~ msgid ""
+#~ "Prevent ghost update notification when there are no updates available"
+#~ msgstr ""
+#~ "Verhinderung von Ghost-Update-Benachrichtigungen, wenn keine Updates "
+#~ "verfügbar sind"
+
+#~ msgid "Show correct installation state for extensions"
+#~ msgstr "Korrekten Installationsstatus für Erweiterungen anzeigen"
+
+#~ msgid "Add support for Flatpak apps"
+#~ msgstr "Unterstützung für Flatpak-Apps hinzugefügt"
+
+#~ msgid "Warn about non-curated apps"
+#~ msgstr "Warnung vor nicht kuratierten Apps"
+
+#~ msgid "Show an error dialog if an installation fails"
+#~ msgstr "Zeige einen Fehlerdialog, falls eine Installation fehlschlägt"
+
+#~ msgid ""
+#~ "Fix an issue where some apps couldn't be uninstalled from the "
+#~ "Applications Menu"
+#~ msgstr ""
+#~ "Behebt ein Problem, bei dem einige Apps nicht über das Anwendungsmenü "
+#~ "deinstalliert werden konnten"
+
+#~ msgid "Allow browsing and uninstalling apps while offline"
+#~ msgstr ""
+#~ "Ermöglicht das Durchsuchen und Deinstallieren von Apps im Offline-Modus"
+
+#~ msgid "Fix twitter share URLs"
+#~ msgstr "Korrektur von Twitter-Freigabe-URLs"
+
+#~ msgid "Drop Google+ from the share menu"
+#~ msgstr "Google+ wurde aus dem Teilen-Menü entfernt"
+
+#~ msgid "Animate screenshot background while loading"
+#~ msgstr "Animation für den Screenshot-Hintergrund während des Ladens"
+
+#~ msgid "Add navigation arrows for screenshots"
+#~ msgstr "Navigationspfeile für Screenshots hinzugefügt"
+
+#~ msgid "Don't show uninstall buttons for essential system components"
+#~ msgstr ""
+#~ "Deinstallationsschaltflächen für wichtige Systemkomponenten werden nicht "
+#~ "mehr angezeigt"
+
+#~ msgid "Properly display proprietary licenses"
+#~ msgstr "Korrekte Anzeige proprietärer Lizenzen"
+
+#~ msgid "Fix some layout issues"
+#~ msgstr "Es wurden einige Probleme mit dem Layout behoben"
+
+#~ msgid "Fix crashes"
+#~ msgstr "Abstürze behoben"
+
+#~ msgid "Meson build system fixes"
+#~ msgstr "Meson Build System Fehlerbehebungen"
+
+#~ msgid "Improve window state restoration"
+#~ msgstr "Verbesserung an der Wiederherstellung des Fensterzustands"
+
+#~ msgid "Prevent action buttons from jumping around"
+#~ msgstr "Verhindern von herumspringenden Aktionsschaltflächen"
+
+#~ msgid "Remove reset paid apps gsettings key"
+#~ msgstr ""
+#~ "Entfernen des gsettings-Schlüssels zum Zurücksetzen des Bezahlstatus"
+
+#~ msgid "Memory management refinements"
+#~ msgstr "Optimierungen in der Speicherverwaltung"
+
+#~ msgid ""
+#~ "Add conditional compilation for disabling dynamic remote homepage content"
+#~ msgstr ""
+#~ "Hinzufügen einer bedingten Kompilierung zur Deaktivierung dynamischer "
+#~ "Remote-Homepage-Inhalte"
+
+#~ msgid "New translations"
+#~ msgstr "Neue Übersetzungen"
+
+#~ msgid "New categories: Communication, Finance, Media Production"
+#~ msgstr "Neue Kategorien: Kommunikation, Finanzen, Medienproduktion"
+
+#~ msgid "Add Math to Science category"
+#~ msgstr "Mathematik zur Kategorie \"Wissenschaft\" hinzufügen"
+
+#~ msgid "Relax email address validator"
+#~ msgstr "Email Addressen weniger streng validieren"
+
+#~ msgid "Present update availability more accurately"
+#~ msgstr "Verfügbarkeit von Updates ist übersichtlicher dargestellt"
+
+#~ msgid "Category graphics revamped"
+#~ msgstr "Kategorie Grafik überarbeitet"
+
+#~ msgid "Bug fixes and improve performance."
+#~ msgstr "Fehlerbehebungen und Leistungsverbesserungen."
+
+#~ msgid "Improve transaction success rate"
+#~ msgstr "Verbesserung der Erfolgsrate bei Transaktionen"
+
+#~ msgid "Add Publishing to Office category"
+#~ msgstr "Publikation zur Kategorie \"Office\" hinzugefügt"
+
+#~ msgid "Improve descriptions of OS Updates"
+#~ msgstr "Verbesserte Beschreibungen von Betriebssystemupdates"
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Verschiedene Fehlerbehebungen und Leistungsverbesserungen"
+
+#~ msgid "Give details for Operating System Updates"
+#~ msgstr "Details für Betriebssystem-Updates bereitstellen"
+
+#~ msgid "Support mouse button navigation"
+#~ msgstr "Unterstützt die Navigation mit der Maus"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr ""
+#~ "Folgender Fehler wurde behoben: Absturz nach Aufrufen von Einträgen mit "
+#~ "fehlenden Paketen"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Möglichkeit der Suche nach Kategorien hinzugefügt plus einige kleine "
+#~ "Fehlerbehebungen."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr ""
+#~ "Es ist nun möglich, innerhalb einer Kategorie nach Anwendungen zu suchen"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Nach dem Aufwachen aus dem Ruhezustand wird nur noch ein "
+#~ "Authentifizierungsdialog angezeigt"
+
+#~ msgid ""
+#~ "Search performance has been improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Die Suchfunktion wurde verbessert, der Name der Kategorie wird nun in der "
+#~ "Kopfzeile angezeigt und kleinere Fehler wurden behoben."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Fehler bei der Steam-Installation wurde behoben"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Die Suchfunktion arbeitet jetzt asynchron"
 
 #~ msgid "@PROJECT_NAME@"
 #~ msgstr "@PROJECT_NAME@"

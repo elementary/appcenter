@@ -91,6 +91,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             job_type = job.operation;
             working = true;
             switch (job.operation) {
+                case Job.Type.GET_PREPARED_PACKAGES:
+                    get_prepared_packages_internal (job);
+                    break;
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
@@ -148,7 +151,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         });
 
         loop.run ();
-        client = new Task ();
+        client = new Task () {
+            only_download = true
+        };
     }
 
     private PackageKitBackend () {
@@ -160,7 +165,12 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         // Clear out the default set of metadata locations and only use the folder that gets populated
         // with elementary's AppStream data.
 #if HIDE_UPSTREAM_DISTRO_APPS
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        // Don't load Ubuntu components
+        appstream_pool.set_load_std_data_locations (false);
+        appstream_pool.reset_extra_data_locations ();
+        appstream_pool.add_extra_data_location ("/usr/share/app-info", AppStream.FormatStyle.CATALOG);
+#elif HAS_APPSTREAM_0_15
         // Don't load Ubuntu components
         appstream_pool.set_load_std_data_locations (false);
         appstream_pool.reset_extra_data_locations ();
@@ -325,6 +335,27 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return null;
     }
 
+    public async Gee.Collection<AppCenterCore.PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
+        var packages = new Gee.TreeSet<AppCenterCore.PackageDetails> ();
+
+        var pk_prepared = yield get_prepared_packages ();
+        var package_array = pk_prepared.get_package_array ();
+        foreach (var pk_package in package_array) {
+            packages.add (new PackageDetails () {
+                name = pk_package.get_name (),
+                description = pk_package.description,
+                summary = pk_package.get_summary (),
+                version = pk_package.get_version ()
+            });
+        }
+
+        if (package_array.length > 0) {
+            updates_changed_callback ();
+        }
+
+        return packages;
+    }
+
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages (cancellable);
@@ -477,6 +508,62 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         jobs.push (job);
         yield;
         return job;
+    }
+
+    private void get_prepared_packages_internal (Job job) {
+        var args = (GetPreparedPackagesArgs)job.args;
+        var cancellable = args.cancellable;
+
+        Pk.Results? results = null;
+        try {
+            results = client.get_updates (0, cancellable, (t, p) => { });
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        string[] package_ids = {};
+        var downloaded_updates = get_downloaded_updates ();
+        results.get_package_array ().foreach ((pk_package) => {
+            if (downloaded_updates.contains (pk_package.get_id ())) {
+                package_ids += pk_package.get_id ();
+            }
+        });
+
+        if (package_ids.length == 0) {
+            job.result = Value (typeof (Object));
+            job.result.take_object (new Pk.Results ());
+            job.results_ready ();
+            return;
+        }
+
+        package_ids += null;
+
+        Pk.Results details;
+        try {
+            details = client.get_details (package_ids, cancellable, (p, t) => {});
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        details.get_details_array ().foreach ((details) => {
+            results.add_details (details);
+        });
+
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) results);
+        job.results_ready ();
+    }
+
+    public async Pk.Results get_prepared_packages (Cancellable? cancellable = null) {
+        var job_args = new GetPreparedPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_PREPARED_PACKAGES, job_args);
+        return (Pk.Results)job.result.get_object ();
     }
 
     private void get_installed_packages_internal (Job job) {
@@ -670,6 +757,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             });
 
             exit_status = results.get_exit_code ();
+            if (exit_status == Pk.Exit.SUCCESS) {
+                Pk.offline_trigger (Pk.OfflineAction.REBOOT, cancellable);
+            }
         } catch (Error e) {
             job.error = e;
             job.results_ready ();
@@ -756,6 +846,53 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return job.result.get_boolean ();
     }
 
+    private Gee.ArrayList<string> get_downloaded_updates () {
+        var downloaded_updates = new Gee.ArrayList<string> ();
+
+        // A PackageKit update query with Filters set to Pk.Filter.DOWNLOADED and Pk.Filter.NOT_INSTALLED
+        // returns all downloaded but not installed packages even if they are not prepared for an update.
+        // So instead we read the prepared updates from the configuration file which would also be read
+        // by the PackageKit daemon on boot.
+        const string PK_PREPARED_IDS_PATH = "/var/lib/PackageKit/prepared-update";
+
+        if (!FileUtils.test (PK_PREPARED_IDS_PATH, FileTest.IS_REGULAR)) {
+            return downloaded_updates;
+        }
+
+        var key_file = new KeyFile ();
+        try {
+            key_file.load_from_file (PK_PREPARED_IDS_PATH, KeyFileFlags.NONE);
+            var prepared_ids = key_file.get_string ("update", "prepared_ids").split (",");
+            downloaded_updates = new Gee.ArrayList<string>.wrap (prepared_ids);
+        } catch (Error e) {
+            warning ("Unable to read PackageKit prepared ids: %s", e.message);
+        }
+
+        return downloaded_updates;
+    }
+
+    public bool is_restart_required () {
+        const string PK_OFFLINE_UPDATE_ACTION_PATH = "/var/lib/PackageKit/offline-update-action";
+
+        if (!FileUtils.test (PK_OFFLINE_UPDATE_ACTION_PATH, FileTest.IS_REGULAR)) {
+            return false;
+        }
+
+        var pk_offline_update_action = File.new_for_path (PK_OFFLINE_UPDATE_ACTION_PATH);
+        try {
+            var @is = pk_offline_update_action.read ();
+            var dis = new DataInputStream (@is);
+
+            if ("reboot" in dis.read_line ()) {
+                return true;
+            }
+        } catch (Error e) {
+            critical ("Couldn't read PackageKit offline update action: %s", e.message);
+        }
+
+        return false;
+    }
+
     private void get_updates_internal (Job job) {
         var args = (GetUpdatesArgs)job.args;
         var cancellable = args.cancellable;
@@ -782,17 +919,20 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             return;
         }
 
-        if (results.get_package_array ().length == 0) {
+        string[] package_ids = {};
+        var downloaded_updates = get_downloaded_updates ();
+        results.get_package_array ().foreach ((pk_package) => {
+            if (!downloaded_updates.contains (pk_package.get_id ())) {
+                package_ids += pk_package.get_id ();
+            }
+        });
+
+        if (package_ids.length == 0) {
             job.result = Value (typeof (Object));
-            job.result.take_object (results);
+            job.result.take_object (new Pk.Results ());
             job.results_ready ();
             return;
         }
-
-        string[] package_ids = {};
-        results.get_package_array ().foreach ((pk_package) => {
-            package_ids += pk_package.get_id ();
-        });
 
         package_ids += null;
 
@@ -829,6 +969,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private void refresh_cache_internal (Job job) {
         unowned var args = (RefreshCacheArgs)job.args;
         unowned var cancellable = args.cancellable;
+
+        // Don't refresh cache if PackageKit prepared updates.
+        // Otherwise PackageKit deletes all information related to prepared updates
+        if (get_downloaded_updates ().size > 0) {
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (true);
+            job.results_ready ();
+            return;
+        }
 
         Pk.Results? results = null;
         try {
@@ -1139,6 +1288,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         status = Pk.Status.SETUP;
         progress_denom = 200.0f;
         progress = 0.0f;
+    }
+
+    public async bool repair (Cancellable? cancellable = null) {
+        return true;
     }
 
     private static GLib.Once<PackageKitBackend> instance;

@@ -26,8 +26,12 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
+#if PACKAGEKIT_BACKEND
         backends.add (PackageKitBackend.get_default ());
+#endif
+#if UBUNTU_DRIVERS_BACKEND
         backends.add (UbuntuDriversBackend.get_default ());
+#endif
         backends.add (FlatpakBackend.get_default ());
 
         unowned Gtk.Application app = (Gtk.Application) GLib.Application.get_default ();
@@ -82,6 +86,22 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         }
 
         set { }
+    }
+
+    public async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
+        var apps = new Gee.TreeSet<PackageDetails> ();
+        foreach (var backend in backends) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
+            var prepared = yield backend.get_prepared_applications (cancellable);
+            if (prepared != null) {
+                apps.add_all (prepared);
+            }
+        }
+
+        return apps;
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
@@ -292,6 +312,24 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         }
 
         real_change_info.callback (can_cancel, _("Waiting"), calculated_progress, consolidated_status);
+    }
+
+    public async bool repair (Cancellable? cancellable) throws GLib.Error {
+        var success = true;
+
+        foreach (var backend in backends) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
+            var backend_succeeded = yield backend.repair (cancellable);
+
+            if (!backend_succeeded) {
+                success = false;
+            }
+        }
+
+        return success;
     }
 
     private static GLib.Once<BackendAggregator> instance;

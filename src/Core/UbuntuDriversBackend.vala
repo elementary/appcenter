@@ -41,6 +41,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return command.get_exit_status () == 0;
     }
 
+    public async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
+        var prepared_packages = new Gee.HashSet<PackageDetails> ();
+
+        return prepared_packages;
+    }
+
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         if (cached_packages != null) {
             return cached_packages;
@@ -223,6 +229,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
     public async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().update_package (package, change_info, cancellable);
+    }
+
+    public async bool repair (Cancellable? cancellable = null) {
+        return true;
     }
 
     private static GLib.Once<UbuntuDriversBackend> instance;

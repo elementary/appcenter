@@ -53,8 +53,16 @@ public class AppCenter.SearchView : Gtk.Box {
         append (scrolled);
 
         notify["current-search-term"].connect (() => {
-            var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (current_search_term, _("Flathub"));
-            alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
+            if (current_search_term == null) {
+                return;
+            }
+
+            if (current_search_term.length < MainWindow.VALID_QUERY_LENGTH) {
+                alert_view.description = _("The search term must be at least 3 characters long.");
+            } else {
+                var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (current_search_term, _("Flathub"));
+                alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
+            }
         });
 
         list_box.row_activated.connect ((row) => {

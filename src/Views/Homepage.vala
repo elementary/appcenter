@@ -29,9 +29,9 @@ public class AppCenter.Homepage : Gtk.Box {
     private Gtk.ScrolledWindow scrolled_window;
 
     private Adw.Carousel banner_carousel;
-    private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
+    private Widgets.Banner appcenter_banner;
 
     private uint banner_timeout_id;
 
@@ -49,14 +49,6 @@ public class AppCenter.Homepage : Gtk.Box {
 
         var banner_dots = new Adw.CarouselIndicatorDots () {
             carousel = banner_carousel
-        };
-
-        var banner_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        banner_box.append (banner_carousel);
-        banner_box.append (banner_dots);
-
-        banner_revealer = new Gtk.Revealer () {
-            child = banner_box
         };
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
@@ -109,7 +101,7 @@ public class AppCenter.Homepage : Gtk.Box {
         var games_card = new GamesCard ();
 
         category_flow.append (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        category_flow.append (new LegacyCard (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        category_flow.append (new LegacyCard (_("Audio"), "appcenter-audio-symbolic", {"Audio", "Music"}, "audio"));
         category_flow.append (new LegacyCard (_("Communication"), "", {
             "Chat",
             "ContactManagement",
@@ -130,7 +122,7 @@ public class AppCenter.Homepage : Gtk.Box {
             "WebDevelopment"
         }, "development"));
         category_flow.append (new LegacyCard (_("Education"), "", {"Education"}, "education"));
-        category_flow.append (new LegacyCard (_("Finance"), "payment-card-symbolic", {
+        category_flow.append (new LegacyCard (_("Finance"), "appcenter-finance-symbolic", {
             "Economy",
             "Finance"
         }, "finance"));
@@ -167,14 +159,14 @@ public class AppCenter.Homepage : Gtk.Box {
             "Robotics",
             "Science"
         }, "science"));
-        category_flow.append (new LegacyCard (_("Media Production"), "applications-multimedia-symbolic", {
+        category_flow.append (new LegacyCard (_("Media Production"), "appcenter-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
             "Recorder",
             "Sequencer"
         }, "media-production"));
-        category_flow.append (new LegacyCard (_("Office"), "applications-office-symbolic", {
+        category_flow.append (new LegacyCard (_("Office"), "appcenter-office-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
@@ -185,8 +177,8 @@ public class AppCenter.Homepage : Gtk.Box {
             "Monitor",
             "System"
         }, "system"));
-        category_flow.append (new LegacyCard (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
-        category_flow.append (new LegacyCard (_("Video"), "applications-video-symbolic", {
+        category_flow.append (new LegacyCard (_("Universal Access"), "appcenter-accessibility-symbolic", {"Accessibility"}, "accessibility"));
+        category_flow.append (new LegacyCard (_("Video"), "appcenter-video-symbolic", {
             "Tuner",
             "TV",
             "Video"
@@ -206,7 +198,8 @@ public class AppCenter.Homepage : Gtk.Box {
         }, "privacy-security"));
 
         var box = new Gtk.Box (orientation = Gtk.Orientation.VERTICAL, 0);
-        box.append (banner_revealer);
+        box.append (banner_carousel);
+        box.append (banner_dots);
         box.append (recently_updated_revealer);
         box.append (categories_label);
         box.append (category_flow);
@@ -227,10 +220,21 @@ public class AppCenter.Homepage : Gtk.Box {
             banner.clicked.connect (() => {
                 show_package (local_package);
             });
+        } else {
+#if PACKAGEKIT_BACKEND
+            appcenter_banner = new Widgets.Banner (
+                AppCenterCore.PackageKitBackend.get_default ().lookup_package_by_id ("appcenter")
+            );
+            banner_carousel.append (appcenter_banner);
+#endif
+
+            banner_carousel.page_changed.connect (page_changed_handler );
         }
 
-        banner_timeout_start ();
-        load_banners_and_carousels.begin ();
+        load_banners_and_carousels.begin ((obj, res) => {
+            load_banners_and_carousels.end (res);
+            banner_timeout_start ();
+        });
 
         category_flow.child_activated.connect ((child) => {
             var card = (AbstractCategoryCard) child;
@@ -243,6 +247,9 @@ public class AppCenter.Homepage : Gtk.Box {
                 var child = category_flow.get_first_child ();
                 while (child != null) {
                     var item = (AbstractCategoryCard) child;
+                    if (item.visible) {
+                        continue;
+                    }
                     var category_components = item.category.get_components ();
                     category_components.remove_range (0, category_components.length);
 
@@ -272,14 +279,18 @@ public class AppCenter.Homepage : Gtk.Box {
         });
     }
 
+    private void page_changed_handler () {
+        banner_carousel.remove (appcenter_banner);
+        banner_carousel.page_changed.disconnect (page_changed_handler);
+    }
+
     private async void load_banners_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
-        int package_count = 0;
         foreach (var package in packages_by_release_date) {
-            if (package_count >= MAX_PACKAGES_IN_BANNER) {
+            if (packages_in_banner.size >= MAX_PACKAGES_IN_BANNER) {
                 break;
             }
 
@@ -297,24 +308,25 @@ public class AppCenter.Homepage : Gtk.Box {
 
             if (!installed) {
                 packages_in_banner.add (package);
-                package_count++;
+
+                var banner = new Widgets.Banner (package);
+                banner.clicked.connect (() => {
+                    show_package (package);
+                });
+
+                banner_carousel.append (banner);
             }
         }
 
-        foreach (var package in packages_in_banner) {
-            var banner = new Widgets.Banner (package);
-            banner.clicked.connect (() => {
-                show_package (package);
-            });
-
-            banner_carousel.append (banner);
-        }
-
-        banner_revealer.reveal_child = true;
+        banner_carousel.scroll_to (banner_carousel.get_nth_page (1), true);
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_child_at_index (MAX_PACKAGES_IN_CAROUSEL - 1) != null) {
                 break;
+            }
+
+            if (package in packages_in_banner) {
+                continue;
             }
 
             var installed = false;
@@ -329,12 +341,13 @@ public class AppCenter.Homepage : Gtk.Box {
                 }
             }
 
-            if (!installed && !(package in packages_in_banner)) {
+            if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
                 recently_updated_carousel.append (package_row);
             }
         }
-        recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
+
+        recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child != null;
     }
 
     private void banner_timeout_start () {
@@ -452,7 +465,7 @@ public class AppCenter.Homepage : Gtk.Box {
         construct {
             category = new AppStream.Category () {
                 name = _("Fun & Games"),
-                icon = "applications-games-symbolic"
+                icon = "appcenter-games-symbolic"
             };
             category.add_desktop_group ("ActionGame");
             category.add_desktop_group ("AdventureGame");
@@ -471,7 +484,7 @@ public class AppCenter.Homepage : Gtk.Box {
             category.add_desktop_group ("StrategyGame");
 
             var image = new Gtk.Image () {
-                icon_name = "applications-games-symbolic",
+                icon_name = "appcenter-games-symbolic",
                 pixel_size = 64
             };
             image.add_css_class (Granite.STYLE_CLASS_ACCENT);

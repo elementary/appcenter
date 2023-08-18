@@ -27,6 +27,26 @@ public class AppCenterCore.FlatpakPackage : Package {
             component: component
         );
     }
+
+    public string remote_title {
+        owned get {
+            unowned string origin = component.get_origin ();
+            var description = origin;
+
+            try {
+                var remote = installation.get_remote_by_name (origin, null);
+                description = remote.get_title ();
+            } catch (Error e) {
+                warning ("Unable to fetch remote: %s", description);
+            }
+
+            if (installation == FlatpakBackend.system_installation) {
+                return _("%s (system-wide)").printf (description);
+            }
+
+            return description;
+        }
+    }
 }
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {
@@ -81,6 +101,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.REMOVE_PACKAGE:
                     remove_package_internal (job);
                     break;
+                case Job.Type.GET_DOWNLOAD_SIZE:
+                    get_download_size_by_id_internal (job);
+                    break;
+                case Job.Type.GET_UPDATES:
+                    get_updates_internal (job);
+                    break;
+                case Job.Type.GET_INSTALLED_PACKAGES:
+                    get_installed_packages_internal (job);
+                    break;
+                case Job.Type.IS_PACKAGE_INSTALLED:
+                    is_package_installed_internal (job);
+                    break;
+                case Job.Type.REPAIR:
+                    repair_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -94,7 +129,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
+#elif HAS_APPSTREAM_0_15
         user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
 #else
         user_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
@@ -102,7 +139,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 #endif
 
         system_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
+#elif HAS_APPSTREAM_0_15
         system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
 #else
         system_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
@@ -226,32 +265,64 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job;
     }
 
-    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+    public async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
+        var prepared_apps = new Gee.HashSet<PackageDetails> ();
+
+        return prepared_apps;
+    }
+
+    private void get_installed_packages_internal (Job job) {
+        unowned var args = (GetInstalledPackagesArgs)job.args;
+        unowned var cancellable = args.cancellable;
+
         var installed_apps = new Gee.HashSet<Package> ();
 
         if (user_installation == null && system_installation == null) {
             critical ("Couldn't get installed apps due to no flatpak installation");
-            return installed_apps;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) installed_apps);
+            job.results_ready ();
+            return;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
-        try {
-            installed_refs = user_installation.list_installed_refs ();
-            installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
-        } catch (Error e) {
-            critical ("Unable to get installed flatpaks: %s", e.message);
-            return installed_apps;
+        if (user_installation != null) {
+            try {
+                installed_refs = user_installation.list_installed_refs ();
+                installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
+            } catch (Error e) {
+                critical ("Unable to get installed flatpaks: %s", e.message);
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) installed_apps);
+                job.results_ready ();
+                return;
+            }
         }
 
-        try {
-            installed_refs = system_installation.list_installed_refs ();
-            installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
-        } catch (Error e) {
-            critical ("Unable to get installed flatpaks: %s", e.message);
-            return installed_apps;
+        if (system_installation != null) {
+            try {
+                installed_refs = system_installation.list_installed_refs ();
+                installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
+            } catch (Error e) {
+                critical ("Unable to get installed flatpaks: %s", e.message);
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) installed_apps);
+                job.results_ready ();
+                return;
+            }
         }
 
-        return installed_apps;
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) installed_apps);
+        job.results_ready ();
+    }
+
+    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+        var job_args = new GetInstalledPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
+        return (Gee.Collection<Package>)job.result.get_object ();
     }
 
     private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
@@ -478,12 +549,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return yield get_download_size_by_id (id, cancellable, is_update, package);
     }
 
-    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
+    private void get_download_size_by_id_internal (Job job) {
+        unowned var args = (GetDownloadSizeByIdArgs)job.args;
+        unowned var id = args.id;
+        unowned var is_update = args.is_update;
+        unowned var package = args.package;
+        unowned var cancellable = args.cancellable;
+
         bool system;
         string origin, bundle_id;
         var split_success = get_package_list_key_parts (id, out system, out origin, out bundle_id);
         if (!split_success) {
-            return 0;
+            job.result = Value (typeof (uint64));
+            job.result.set_uint64 (0);
+            job.results_ready ();
+            return;
         }
 
         unowned Flatpak.Installation? installation = null;
@@ -494,10 +574,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         if (installation == null) {
-            return 0;
+            job.result = Value (typeof (uint64));
+            job.result.set_uint64 (0);
+            job.results_ready ();
+            return;
         }
 
-        var flatpak_ref = Flatpak.Ref.parse (bundle_id);
+        Flatpak.Ref flatpak_ref;
+        try {
+            flatpak_ref = Flatpak.Ref.parse (bundle_id);
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
         bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
 
         uint64 download_size = 0;
@@ -541,6 +632,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                             var arch = entry_ref.arch;
                             var branch = entry_ref.branch;
                             var remote_ref = installation.fetch_remote_ref_sync (remote_name, kind, name, arch, branch, cancellable);
+                            var remote_metadata = installation.fetch_remote_metadata_sync (remote_name, remote_ref, cancellable);
+
+                            if (remote_metadata != null) {
+                                var metadata = new KeyFile ();
+                                metadata.load_from_bytes (remote_metadata, KeyFileFlags.NONE);
+                                set_permissionflags_from_metadata (metadata, package);
+                            }
 
                             if (remote_ref.get_eol () != null || remote_ref.get_eol_rebase () != null) {
                                 package.runtime_status = RuntimeStatus.END_OF_LIFE;
@@ -584,40 +682,212 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         } catch (Error e) {
             if (!(e is Flatpak.Error.ABORTED)) {
-                throw e;
+                job.error = e;
+                job.results_ready ();
+                return;
             }
         }
 
-        return download_size;
+        job.result = Value (typeof (uint64));
+        job.result.set_uint64 (download_size);
+        job.results_ready ();
     }
 
-    public async bool is_package_installed (Package package) throws GLib.Error {
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false, Package? package = null) throws GLib.Error {
+        var job_args = new GetDownloadSizeByIdArgs ();
+        job_args.id = id;
+        job_args.is_update = is_update;
+        job_args.package = package;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_DOWNLOAD_SIZE, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_uint64 ();
+    }
+
+    private struct FilesystemsAccess {
+        public string key;
+        public Package.PermissionsFlags permission;
+    }
+
+    // Based on: https://github.com/GNOME/gnome-software/blob/fdb8568693d9d62f0480e558775f70cd83f6cf4f/plugins/flatpak/gs-flatpak.c#L238
+    private void set_permissionflags_from_metadata (KeyFile keyfile, Package package) {
+        try {
+            if (keyfile.has_group ("Context")) {
+                if (keyfile.has_key ("Context", "sockets")) {
+                    var sockets_context = keyfile.get_string_list ("Context", "sockets");
+                    if (sockets_context != null) {
+                        if ("system-bus" in sockets_context) {
+                            package.permissions_flags |= Package.PermissionsFlags.SYSTEM_BUS;
+                        }
+                        if ("session-bus" in sockets_context) {
+                            package.permissions_flags |= Package.PermissionsFlags.SESSION_BUS;
+                        }
+                        if (!("fallback-x11" in sockets_context) && "x11" in sockets_context) {
+                            package.permissions_flags |= Package.PermissionsFlags.X11;
+                        }
+                    }
+                }
+
+                if (keyfile.has_key ("Context", "devices")) {
+                    var devices_context = keyfile.get_string_list ("Context", "devices");
+                    if (devices_context != null && "all" in devices_context) {
+                        package.permissions_flags |= Package.PermissionsFlags.DEVICES;
+                    }
+                }
+
+                if (keyfile.has_key ("Context", "shared")) {
+                    var shared_context = keyfile.get_string_list ("Context", "shared");
+                    if (shared_context != null && "network" in shared_context) {
+                        package.permissions_flags |= Package.PermissionsFlags.NETWORK;
+                    }
+                }
+
+                if (keyfile.has_key ("Context", "filesystems")) {
+                    var filesystems_context = keyfile.get_string_list ("Context", "filesystems");
+                    if (filesystems_context != null) {
+                        FilesystemsAccess filesystems_access[] = {
+                            /* Reference: https://docs.flatpak.org/en/latest/flatpak-command-reference.html#idm45858571325264 */
+                            { "home", Package.PermissionsFlags.HOME_FULL },
+                            { "home:rw", Package.PermissionsFlags.HOME_FULL },
+                            { "home:ro", Package.PermissionsFlags.HOME_READ },
+                            { "~", Package.PermissionsFlags.HOME_FULL },
+                            { "~:rw", Package.PermissionsFlags.HOME_FULL },
+                            { "~:ro", Package.PermissionsFlags.HOME_READ },
+                            { "host", Package.PermissionsFlags.FILESYSTEM_FULL },
+                            { "host:rw", Package.PermissionsFlags.FILESYSTEM_FULL },
+                            { "host:ro", Package.PermissionsFlags.FILESYSTEM_READ },
+                            { "xdg-download", Package.PermissionsFlags.DOWNLOADS_FULL },
+                            { "xdg-download:rw", Package.PermissionsFlags.DOWNLOADS_FULL },
+                            { "xdg-download:ro", Package.PermissionsFlags.DOWNLOADS_READ },
+                            { "xdg-data/flatpak/overrides:create", Package.PermissionsFlags.ESCAPE_SANDBOX }
+                        };
+
+                        var filesystems_hits = 0;
+                        for (int i = 0; i < filesystems_access.length; i++) {
+                            if (filesystems_access[i].key in filesystems_context) {
+                                package.permissions_flags |= filesystems_access[i].permission;
+                                filesystems_hits++;
+                            }
+                        }
+
+                        if (filesystems_context.length > filesystems_hits) {
+                            package.permissions_flags |= Package.PermissionsFlags.FILESYSTEM_OTHER;
+                        }
+
+                        if ((package.permissions_flags & Package.PermissionsFlags.HOME_FULL) != 0) {
+                            package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.HOME_READ;
+                        }
+
+                        if ((package.permissions_flags & Package.PermissionsFlags.FILESYSTEM_FULL) != 0) {
+                            package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.FILESYSTEM_READ;
+                        }
+
+                        if ((package.permissions_flags & Package.PermissionsFlags.DOWNLOADS_FULL) != 0) {
+                            package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.DOWNLOADS_READ;
+                        }
+                    }
+                }
+            }
+
+            if (keyfile.has_group ("Session Bus Policy")) {
+                if (keyfile.has_key ("Session Bus Policy", "ca.desrt.dconf")) {
+                    var dconf_policy = keyfile.get_string ("Session Bus Policy", "ca.desrt.dconf");
+                    if (dconf_policy != null && dconf_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.SETTINGS;
+                    }
+                }
+
+                if (keyfile.has_key ("Session Bus Policy", "org.freedesktop.Flatpak")) {
+                    var flatpak_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Flatpak");
+                    if (flatpak_policy != null && flatpak_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+                    }
+                } else if (keyfile.has_key ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore")) {
+                    var portal_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore");
+                    if (portal_policy != null && portal_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+                    }
+                }
+            }
+
+            if (keyfile.has_group ("System Bus Policy")) {
+                if (keyfile.has_key ("System Bus Policy", "org.freedesktop.GeoClue2")) {
+                    var geoclue_policy = keyfile.get_string ("System Bus Policy", "org.freedesktop.GeoClue2");
+                    if (geoclue_policy != null && geoclue_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.LOCATION;
+                    }
+                }
+            }
+        } catch (Error e) {
+            critical ("Error getting Flatpak permissions: %s", e.message);
+        }
+
+        // We didn't find anything, so call it NONE
+        if (package.permissions_flags == Package.PermissionsFlags.UNKNOWN) {
+            package.permissions_flags = Package.PermissionsFlags.NONE;
+        }
+    }
+
+    private void is_package_installed_internal (Job job) {
+        var args = (IsPackageInstalledArgs)job.args;
+        unowned var package = args.package;
+
         unowned var fp_package = package as FlatpakPackage;
         if (fp_package == null || fp_package.installation == null) {
             critical ("Could not check installed state of package due to no flatpak installation");
-            return false;
+            job.result = Value (typeof (bool));
+            job.result = false;
+            job.results_ready ();
+            return;
         }
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            return false;
+            job.result = Value (typeof (bool));
+            job.result = false;
+            job.results_ready ();
+            return;
         }
 
         bool system = fp_package.installation == system_installation;
 
         var key = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
 
-        var installed_refs = fp_package.installation.list_installed_refs ();
-        for (int j = 0; j < installed_refs.length; j++) {
-            unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
+        try {
+            var installed_refs = fp_package.installation.list_installed_refs ();
+            for (int j = 0; j < installed_refs.length; j++) {
+                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
-            var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
-            if (key == bundle_id) {
-                return true;
+                var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
+                if (key == bundle_id) {
+                    job.result = Value (typeof (bool));
+                    job.result = true;
+                    job.results_ready ();
+                    return;
+                }
             }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
         }
 
-        return false;
+        job.result = Value (typeof (bool));
+        job.result = false;
+        job.results_ready ();
+    }
+
+    public async bool is_package_installed (Package package) throws GLib.Error {
+        var job_args = new IsPackageInstalledArgs ();
+        job_args.package = package;
+
+        var job = yield launch_job (Job.Type.IS_PACKAGE_INSTALLED, job_args);
+
+        return job.result.get_boolean ();
     }
 
     public async PackageDetails get_package_details (Package package) throws GLib.Error {
@@ -798,7 +1068,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void reload_appstream_pool () {
         var new_package_list = new Gee.HashMap<string, Package> ();
 
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        user_appstream_pool.reset_extra_data_locations ();
+        user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.CATALOG);
+#elif HAS_APPSTREAM_0_15
         user_appstream_pool.reset_extra_data_locations ();
         user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.COLLECTION);
 #else
@@ -833,7 +1106,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         }
 
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_0_16
+        system_appstream_pool.reset_extra_data_locations ();
+        system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.CATALOG);
+#elif HAS_APPSTREAM_0_15
         system_appstream_pool.reset_extra_data_locations ();
         system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.COLLECTION);
 #else
@@ -1382,14 +1658,26 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         bool success = true;
 
         if (run_system) {
-            if (!run_updates_transaction (true, system_updates, change_info, cancellable)) {
-                success = false;
+            try {
+                if (!run_updates_transaction (true, system_updates, change_info, cancellable)) {
+                    success = false;
+                }
+            } catch (Error e) {
+                job.error = e;
+                job.results_ready ();
+                return;
             }
         }
 
         if (run_user) {
-            if (!run_updates_transaction (false, user_updates, change_info, cancellable)) {
-                success = false;
+            try {
+                if (!run_updates_transaction (false, user_updates, change_info, cancellable)) {
+                    success = false;
+                }
+            } catch (Error e) {
+                job.error = e;
+                job.results_ready ();
+                return;
             }
         }
 
@@ -1398,7 +1686,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         job.results_ready ();
     }
 
-    private bool run_updates_transaction (bool system, string[] ids, ChangeInformation? change_info, Cancellable? cancellable) {
+    private bool run_updates_transaction (bool system, string[] ids, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         Flatpak.Transaction transaction;
         try {
             if (system) {
@@ -1450,13 +1738,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-                // The user hit cancel, don't go any further
-                return false;
-            } else {
-                // If there was an error while updating a single package in the transaction, we probably still want
-                // the rest updated, continue.
-                return true;
             }
+
+            return false;
         });
 
         transaction.ready.connect (() => {
@@ -1473,7 +1757,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
-                success = false;
+                throw e;
             }
         }
 
@@ -1494,12 +1778,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+    private void get_updates_internal (Job job) {
+        var args = (GetUpdatesArgs)job.args;
+        var cancellable = args.cancellable;
+
         var updatable_ids = new Gee.ArrayList<string> ();
 
         if (user_installation == null && system_installation == null) {
             critical ("Unable to get flatpak installation when checking for updates");
-            return updatable_ids;
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) updatable_ids);
+            job.results_ready ();
+            return;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> update_refs;
@@ -1513,7 +1803,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             } catch (Error e) {
                 critical ("Unable to get list of updatable flatpaks: %s", e.message);
-                return updatable_ids;
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) updatable_ids);
+                job.results_ready ();
+                return;
             }
         }
 
@@ -1527,15 +1820,88 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             } catch (Error e) {
                 critical ("Unable to get list of updatable flatpaks: %s", e.message);
-                return updatable_ids;
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) updatable_ids);
+                job.results_ready ();
+                return;
             }
         }
 
-        return updatable_ids;
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) updatable_ids);
+        job.results_ready ();
+        return;
+    }
+
+    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+        var job_args = new GetUpdatesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
+
+        return (Gee.ArrayList<string>)job.result.get_object ();
     }
 
     public Package? lookup_package_by_id (string id) {
         return package_list[id];
+    }
+
+    private void repair_internal (Job job) {
+        unowned var args = (RepairArgs)job.args;
+        unowned var cancellable = args.cancellable;
+
+        bool success = true;
+
+        try {
+            int status;
+
+            Process.spawn_command_line_sync ("flatpak --user repair", null, null, out status);
+
+            if (status != 0) {
+                success = false;
+            }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        if (!success || cancellable.is_cancelled ()) {
+            job.result = Value (typeof (bool));
+            job.result = success;
+            job.results_ready ();
+            return;
+        }
+
+        try {
+            int status;
+
+            Process.spawn_command_line_sync ("pkexec flatpak --system repair", null, null, out status);
+
+            if (status != 0) {
+                success = false;
+            }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (bool));
+        job.result = success;
+        job.results_ready ();
+    }
+
+    public async bool repair (Cancellable? cancellable = null) throws GLib.Error {
+        var job_args = new RepairArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.REPAIR, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_boolean ();
     }
 
     private static GLib.Once<FlatpakBackend> instance;

@@ -37,7 +37,9 @@ public class AppCenterCore.Job : Object {
         REMOVE_PACKAGE,
         IS_PACKAGE_INSTALLED,
         GET_PACKAGE_DETAILS,
-        GET_PACKAGE_DEPENDENCIES
+        GET_PACKAGE_DEPENDENCIES,
+        GET_PREPARED_PACKAGES,
+        REPAIR,
     }
 
     public Job (Type type) {
@@ -46,6 +48,14 @@ public class AppCenterCore.Job : Object {
 }
 
 public abstract class AppCenterCore.JobArgs { }
+
+public class AppCenterCore.RepairArgs : JobArgs {
+    public Cancellable? cancellable;
+}
+
+public class AppCenterCore.GetPreparedPackagesArgs : JobArgs {
+    public Cancellable? cancellable;
+}
 
 public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
     public Cancellable? cancellable;
@@ -71,6 +81,13 @@ public class AppCenterCore.RemovePackageArgs : JobArgs {
 
 public class AppCenterCore.GetDownloadSizeArgs : JobArgs {
     public Package package;
+    public Cancellable? cancellable;
+}
+
+public class AppCenterCore.GetDownloadSizeByIdArgs : JobArgs {
+    public string id;
+    public bool is_update;
+    public Package? package;
     public Cancellable? cancellable;
 }
 

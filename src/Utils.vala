@@ -56,6 +56,7 @@ namespace Utils {
         return (uint) (now - mtime);
     }
 
+#if PACKAGEKIT_BACKEND
     public static unowned string pk_status_to_string (Pk.Status status) {
         switch (status) {
             case Pk.Status.SETUP:
@@ -132,11 +133,29 @@ namespace Utils {
                 return _("Unknown state");
         }
     }
+#endif
 
     public static string unescape_markup (string escaped_text) {
         return escaped_text.replace ("&amp;", "&")
                            .replace ("&lt;", "<")
                            .replace ("&gt;", ">")
                            .replace ("&#39;", "'");
+    }
+
+    public static bool is_running_in_demo_mode () {
+        var proc_cmdline = File.new_for_path ("/proc/cmdline");
+        try {
+            var @is = proc_cmdline.read ();
+            var dis = new DataInputStream (@is);
+
+            var line = dis.read_line ();
+            if ("boot=casper" in line || "boot=live" in line || "rd.live.image" in line) {
+                return true;
+            }
+        } catch (Error e) {
+            critical ("Couldn't detect if running in Demo Mode: %s", e.message);
+        }
+
+        return false;
     }
 }

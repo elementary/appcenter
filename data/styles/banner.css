@@ -75,6 +75,11 @@
     font-weight: inherit;
 }
 
+/*Hack to make the button square-ish*/
+.banner button.image-button.raised {
+    padding: 0.333rem 0.444rem;
+}
+
 .banner button:not(.suggested-action) {
     opacity: 0.8;
 }
