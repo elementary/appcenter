@@ -20,6 +20,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working { get; set; }
 
     private AppCenter.SearchView search_view;
+    private Gtk.EventControllerKey search_entry_eventcontrollerkey;
     private Gtk.Revealer view_mode_revealer;
     private Gtk.SearchEntry search_entry;
     private Gtk.ModelButton refresh_menuitem;
@@ -44,7 +45,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
-        go_back.activate.connect (() => deck.navigate (Hdy.NavigationDirection.BACK));
+        go_back.activate.connect (() => deck.navigate (BACK));
         add_action (go_back);
 
         var focus_search = new SimpleAction ("focus-search", null);
@@ -57,7 +58,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         button_release_event.connect ((event) => {
             // On back mouse button pressed
             if (event.button == 8) {
-                deck.navigate (Hdy.NavigationDirection.BACK);
+                deck.navigate (BACK);
                 return true;
             }
 
@@ -65,20 +66,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         search_entry.search_changed.connect (() => trigger_search ());
-
-        search_entry.key_press_event.connect ((event) => {
-            if (event.keyval == Gdk.Key.Escape) {
-                search_entry.text = "";
-                return true;
-            }
-
-            if (event.keyval == Gdk.Key.Down) {
-                search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
-                return true;
-            }
-
-            return false;
-        });
 
         unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
         aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
@@ -151,28 +138,29 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         updates_badge_revealer = new Gtk.Revealer () {
+            can_focus = false,
+            child = updates_badge,
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        updates_badge_revealer.add (updates_badge);
 
         var eventbox_badge = new Gtk.EventBox () {
+            child = updates_badge_revealer,
             halign = Gtk.Align.END
         };
-        eventbox_badge.add (updates_badge_revealer);
 
         var updates_overlay = new Gtk.Overlay () {
+            child = updates_button,
             tooltip_text = C_("view", "Updates & installed apps")
         };
-        updates_overlay.add (updates_button);
         updates_overlay.add_overlay (eventbox_badge);
 
         view_mode_revealer = new Gtk.Revealer () {
+            child = updates_overlay,
             reveal_child = true,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
-        view_mode_revealer.add (updates_overlay);
 
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
@@ -180,8 +168,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             valign = Gtk.Align.CENTER
         };
 
-        var search_clamp = new Hdy.Clamp ();
-        search_clamp.add (search_entry);
+        search_entry_eventcontrollerkey = new Gtk.EventControllerKey (search_entry);
+
+        var search_clamp = new Hdy.Clamp () {
+            child = search_entry
+        };
 
         var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
             description = _("System updates and unpaid apps will not update automatically")
@@ -206,8 +197,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         menu_popover_box.add (refresh_menuitem);
         menu_popover_box.show_all ();
 
-        var menu_popover = new Gtk.Popover (null);
-        menu_popover.add (menu_popover_box);
+        var menu_popover = new Gtk.Popover (null) {
+            child = menu_popover_box
+        };
 
         var menu_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
@@ -232,9 +224,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         deck.add (homepage);
 
-        var overlay = new Gtk.Overlay ();
+        var overlay = new Gtk.Overlay () {
+            child = deck
+        };
         overlay.add_overlay (toast);
-        overlay.add (deck);
 
         overlaybar = new Granite.Widgets.OverlayBar (overlay);
         overlaybar.bind_property ("active", overlaybar, "visible");
@@ -277,7 +270,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         box.add (overlay);
         box.show_all ();
 
-        add (box);
+        child = box;
 
         int window_width, window_height;
         App.settings.get ("window-size", "(ii)", out window_width, out window_height);
@@ -339,10 +332,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             show_package (package);
         });
 
-        destroy.connect (() => {
-           installed_view.clear ();
-        });
-
         deck.notify["visible-child"].connect (() => {
             if (!deck.transition_running) {
                 update_navigation ();
@@ -352,6 +341,19 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         deck.notify["transition-running"].connect (() => {
             if (!deck.transition_running) {
                 update_navigation ();
+            }
+        });
+
+        search_entry_eventcontrollerkey.key_released.connect ((keyval, keycode, state) => {
+            switch (keyval) {
+                case Gdk.Key.Down:
+                    search_entry.move_focus (TAB_FORWARD);
+                    break;
+                case Gdk.Key.Escape:
+                    search_entry.text = "";
+                    break;
+                default:
+                    break;
             }
         });
     }
@@ -380,6 +382,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public override bool delete_event (Gdk.EventAny event) {
+        installed_view.clear ();
+
         if (working) {
             hide ();
 
@@ -435,8 +439,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         deck.add (app_info_view);
         deck.visible_child = app_info_view;
 
-        if (deck.get_adjacent_child (Hdy.NavigationDirection.BACK) is Views.AppInfoView) {
-            var adjacent_app_info_view = (Views.AppInfoView)deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+        if (deck.get_adjacent_child (BACK) is Views.AppInfoView) {
+            var adjacent_app_info_view = (Views.AppInfoView)deck.get_adjacent_child (BACK);
             if (
                 !remember_history &&
                 adjacent_app_info_view.package.normalized_component_id == package.normalized_component_id
@@ -458,7 +462,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void update_navigation () {
-        var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+        var previous_child = deck.get_adjacent_child (BACK);
 
         if (deck.visible_child is Homepage) {
             view_mode_revealer.reveal_child = true;
@@ -499,8 +503,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             set_return_name (C_("view", "Installed"));
         }
 
-        while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
-            var next_child = deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD);
+        while (deck.get_adjacent_child (FORWARD) != null) {
+            var next_child = deck.get_adjacent_child (FORWARD);
             if (next_child is AppCenter.Views.AppListUpdateView) {
                 deck.remove (next_child);
             } else {
@@ -510,7 +514,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        if (deck.get_children ().find (installed_view) == null) {
+        if (installed_view.parent == null) {
             deck.add (installed_view);
         }
         installed_view.show_all ();
@@ -574,7 +578,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             } else {
                 AppStream.Category current_category = null;
 
-                var previous_child = deck.get_adjacent_child (Hdy.NavigationDirection.BACK);
+                var previous_child = deck.get_adjacent_child (BACK);
                 if (previous_child is CategoryView) {
                     current_category = ((CategoryView) previous_child).category;
                 }
@@ -592,7 +596,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 // When replacing text with text don't go back
                 Idle.add (() => {
                     if (search_entry.text.length == 0) {
-                        deck.navigate (Hdy.NavigationDirection.BACK);
+                        deck.navigate (BACK);
                     }
 
                     return Source.REMOVE;
