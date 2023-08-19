@@ -138,7 +138,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         updates_badge_revealer = new Gtk.Revealer () {
-            can_focus = false,
             child = updates_badge,
             halign = Gtk.Align.END,
             valign = Gtk.Align.START,
