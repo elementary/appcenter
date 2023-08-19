@@ -283,10 +283,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         resize (window_width, window_height);
 
-        if (App.settings.get_boolean ("window-maximized")) {
-            maximize ();
-        }
-
         var client = AppCenterCore.Client.get_default ();
 
         automatic_updates_button.notify["active"].connect (() => {
@@ -364,11 +360,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             configure_id = Timeout.add (200, () => {
                 configure_id = 0;
 
-                if (is_maximized) {
-                    App.settings.set_boolean ("window-maximized", true);
-                } else {
-                    App.settings.set_boolean ("window-maximized", false);
-
+                if (!is_maximized) {
                     int width, height;
                     get_size (out width, out height);
                     App.settings.set ("window-size", "(ii)", width, height);

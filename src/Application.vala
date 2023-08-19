@@ -241,6 +241,12 @@ public class AppCenter.App : Gtk.Application {
 
             var main_window = new MainWindow (this);
             add_window (main_window);
+
+            if (settings.get_boolean ("window-maximized")) {
+                main_window.maximize ();
+            }
+
+            settings.bind ("window-maximized", main_window, "is-maximized", SET);
         }
 
         if (show_updates) {
