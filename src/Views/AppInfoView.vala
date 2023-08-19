@@ -219,8 +219,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             };
             size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            action_button_group.add_widget (size_label);
-
             header_grid.attach (size_label, 1, 1);
         }
 
@@ -1105,42 +1103,37 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
     // We need to first download the screenshot locally so that it doesn't freeze the interface.
     private void load_screenshot (string? caption, string path) {
-        var scale_factor = get_scale_factor ();
-        try {
-            var image = new Gtk.Picture.for_filename (path) {
-                height_request = 500,
-                vexpand = true
+        var image = new Gtk.Picture.for_filename (path) {
+            height_request = 500,
+            vexpand = true
+        };
+
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
+            halign = Gtk.Align.CENTER
+        };
+
+        unowned var box_context = box.get_style_context ();
+        box_context.add_class ("screenshot");
+        box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        if (caption != null) {
+            var label = new Gtk.Label (caption) {
+                max_width_chars = 50,
+                wrap = true
             };
 
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
-                halign = Gtk.Align.CENTER
-            };
+            unowned var label_context = label.get_style_context ();
+            label_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            unowned var box_context = box.get_style_context ();
-            box_context.add_class ("screenshot");
-            box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-            if (caption != null) {
-                var label = new Gtk.Label (caption) {
-                    max_width_chars = 50,
-                    wrap = true
-                };
-
-                unowned var label_context = label.get_style_context ();
-                label_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-                box.append (label);
-            }
-
-            box.append (image);
-
-            Idle.add (() => {
-                screenshot_carousel.append (box);
-                return GLib.Source.REMOVE;
-            });
-        } catch (Error e) {
-            critical (e.message);
+            box.append (label);
         }
+
+        box.append (image);
+
+        Idle.add (() => {
+            screenshot_carousel.append (box);
+            return GLib.Source.REMOVE;
+        });
     }
 
     private void parse_license (string project_license, out string license_copy, out string license_url) {
@@ -1249,11 +1242,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 append (button);
 
                 button.clicked.connect (() => {
-                    try {
-                        Gtk.show_uri ((Gtk.Window) get_root (), uri, Gdk.CURRENT_TIME);
-                    } catch (Error e) {
-                        critical (e.message);
-                    }
+                    Gtk.show_uri ((Gtk.Window) get_root (), uri, Gdk.CURRENT_TIME);
                 });
             } else {
                 append (box);
