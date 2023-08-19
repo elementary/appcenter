@@ -13,15 +13,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-28 16:06+0000\n"
-"PO-Revision-Date: 2023-04-13 02:00+0000\n"
-"Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
+"PO-Revision-Date: 2023-08-08 09:08+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -839,11 +840,11 @@ msgstr "为 %s 的不稳定版本而构建； 可能包含重大问题。 不建
 
 #: src/Views/AppInfoView.vala:913
 msgid "Insecure Sandbox"
-msgstr ""
+msgstr "不安全的沙盒"
 
 #: src/Views/AppInfoView.vala:914
 msgid "Can ignore or modify its own system permissions"
-msgstr ""
+msgstr "可忽略或自主修改自身系统权限"
 
 #: src/Views/AppInfoView.vala:923
 msgid "System Folder Access"
@@ -854,32 +855,28 @@ msgid "Including everyone's Home folders, but not including system internals"
 msgstr "包括所有人的主文件夹，但不含系统文件"
 
 #: src/Views/AppInfoView.vala:931
-#, fuzzy
-#| msgid "System Folder Access"
 msgid "Home Folder Access"
-msgstr "系统文件夹访问"
+msgstr "主文件夹访问"
 
 #: src/Views/AppInfoView.vala:932
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
-msgstr ""
+msgstr "包括所有文档、下载、音乐、图片、视频及任何隐藏文件夹"
 
 #: src/Views/AppInfoView.vala:941
 msgid "Location Access"
-msgstr ""
+msgstr "位置权限"
 
 #: src/Views/AppInfoView.vala:942
 msgid "Can see your precise location at any time without asking"
-msgstr ""
+msgstr "可随时获取您的精确位置且无需询问"
 
 #: src/Views/AppInfoView.vala:951
-#, fuzzy
-#| msgid "System Folder Access"
 msgid "System Settings Access"
-msgstr "系统文件夹访问"
+msgstr "系统设置访问"
 
 #: src/Views/AppInfoView.vala:952
 msgid "Can read and modify system settings"
-msgstr ""
+msgstr "可读取并修改系统设置"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1203
@@ -1072,7 +1069,7 @@ msgstr "尝试更改搜索词。 您还可以加载 Flatpak 应用程序，例�
 
 #: src/Views/SearchView.vala:63
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "搜索字段最低长度为 3 个字符。"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
