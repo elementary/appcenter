@@ -219,8 +219,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             };
             size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            action_button_group.add_widget (size_label);
-
             header_grid.attach (size_label, 1, 1);
         }
 

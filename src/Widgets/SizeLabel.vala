@@ -21,7 +21,8 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
     public uint64 size { get; construct; }
 
     private Gtk.Label size_label;
-    private Gtk.Revealer icon_revealer;
+    private Gtk.Image icon;
+    private Gtk.Revealer revealer;
 
     public SizeLabel (uint64 _size = 0, bool _using_flatpak = false) {
         Object (
@@ -38,16 +39,20 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
 
         size_label = new Gtk.Label (null);
 
-        var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.BUTTON);
-        icon.margin_start = 6;
-
-        icon_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.NONE
+        icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.BUTTON) {
+            margin_start = 6
         };
-        icon_revealer.add (icon);
 
-        add (size_label);
-        add (icon_revealer);
+        var box = new Gtk.Box (HORIZONTAL, 0);
+        box.add (size_label);
+        box.add (icon);
+
+        revealer = new Gtk.Revealer () {
+            transition_type = SLIDE_LEFT,
+            child = box
+        };
+
+        add (revealer);
         show_all ();
 
         update (size, using_flatpak);
@@ -55,7 +60,7 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
 
     public void update (uint64 size = 0, bool using_flatpak = false) {
         has_tooltip = using_flatpak;
-        icon_revealer.reveal_child = using_flatpak;
+        icon.visible = using_flatpak;
 
         string human_size = GLib.format_size (size);
 
@@ -65,12 +70,6 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
             size_label.label = "%s".printf (human_size);
         }
 
-        if (size > 0) {
-            no_show_all = false;
-            show ();
-        } else {
-            no_show_all = true;
-            hide ();
-        }
+        revealer.reveal_child = size > 0;
     }
 }
