@@ -128,9 +128,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
 
         var app_icon_overlay = new Gtk.Overlay () {
+            child = app_icon,
             valign = Gtk.Align.START
         };
-        app_icon_overlay.add (app_icon);
 
         var scale_factor = get_scale_factor ();
 
@@ -227,9 +227,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         header_box.add (header_grid);
 
         var header_clamp = new Hdy.Clamp () {
+            child = header_box,
             maximum_size = MAX_WIDTH
         };
-        header_clamp.add (header_box);
 
         var header = new Gtk.Grid () {
             hexpand = true
@@ -1280,10 +1280,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             box.add (title);
 
             if (uri != null) {
-                var button = new Gtk.Button ();
+                var button = new Gtk.Button () {
+                    child = box
+                };
                 button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                button.add (box);
                 add (button);
 
                 button.clicked.connect (() => {
@@ -1380,7 +1381,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
                 halign = Gtk.Align.START,
-                margin_bottom = 6
+                margin_bottom = 6,
+                pixel_size = 32
             };
 
             var label = new Gtk.Label (title) {
