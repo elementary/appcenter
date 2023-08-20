@@ -197,7 +197,7 @@ public class AppCenter.Homepage : Gtk.Box {
             "Security",
         }, "privacy-security"));
 
-        var box = new Gtk.Box (orientation = Gtk.Orientation.VERTICAL, 0);
+        var box = new Gtk.Box (VERTICAL, 0);
         box.append (banner_carousel);
         box.append (banner_dots);
         box.append (recently_updated_revealer);
