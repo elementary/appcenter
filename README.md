@@ -32,8 +32,8 @@ Run `meson build` to configure the build environment. Change to the build direct
 
 To install, use `ninja install`, then execute with `io.elementary.appcenter`
 
-    sudo ninja install
-    io.elementary.appcenter
+    ninja install
+    io.elementary.appcenter --gapplication-replace
 
 ## Debugging
 
