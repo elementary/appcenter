@@ -46,6 +46,13 @@ namespace AppCenter.Views {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
+            var loading_view = new Granite.Widgets.AlertView (
+                _("Checking for Updates"),
+                _("Downloading a list of available updates to the OS and installed apps"),
+                "sync-synchronizing"
+            );
+            loading_view.show_all ();
+
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
             };
@@ -112,9 +119,9 @@ namespace AppCenter.Views {
             box.add (installed_flowbox);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
+                child = box,
                 hscrollbar_policy = Gtk.PolicyType.NEVER
             };
-            scrolled.add (box);
             scrolled.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
@@ -147,14 +154,25 @@ namespace AppCenter.Views {
 
             AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
-            orientation = Gtk.Orientation.VERTICAL;
-            add (infobar);
-            add (updated_revealer);
-            add (header_revealer);
-            add (scrolled);
-            get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+            var main_box = new Gtk.Box (VERTICAL, 0);
+            main_box.add (infobar);
+            main_box.add (updated_revealer);
+            main_box.add (header_revealer);
+            main_box.add (scrolled);
+            main_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
-            get_apps.begin ();
+            var stack = new Gtk.Stack () {
+                transition_type = UNDER_UP
+            };
+            stack.add (main_box);
+            stack.add (loading_view);
+
+            add (stack);
+
+            get_apps.begin ((obj, res) => {
+                get_apps.end (res);
+                stack.visible_child = main_box;
+            });
 
             unowned var client = AppCenterCore.Client.get_default ();
             client.installed_apps_changed.connect (() => {
