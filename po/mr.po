@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:353
+#: src/Application.vala:38 src/Core/Package.vala:363
 msgid "AppCenter"
 msgstr "अनुप्रयोग भांडार(अॅप सेंटर)"
 
@@ -32,287 +32,287 @@ msgstr "मीडिया टाईप %s पार्स होऊ शकल�
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
-#: src/Application.vala:320
+#: src/Application.vala:324
 msgid "The app has been installed"
 msgstr "अ‍ॅप स्थापित केले गेले आहे"
 
-#: src/Application.vala:321 src/MainWindow.vala:550
+#: src/Application.vala:325 src/MainWindow.vala:533
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" इन्स्टॉल झाले"
 
-#: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
-msgid "Getting app information…"
-msgstr "माहिती आणत आहे"
-
-#: src/MainWindow.vala:96
-msgid "Getting download size…"
-msgstr ""
-
-#: src/MainWindow.vala:102
-#, fuzzy
-#| msgid "Checking for Updates"
-msgid "Checking for updates…"
-msgstr "अद्यतनांसाठी तपासत आहे"
-
-#: src/MainWindow.vala:105
-#, fuzzy
-#| msgid "Installing"
-msgid "Installing…"
-msgstr "इन्स्टॉल होत आहे"
-
-#: src/MainWindow.vala:108
-#, fuzzy
-#| msgid "Installing updates"
-msgid "Installing updates…"
-msgstr "अपडेट इन्स्टॉल करीत आहे"
-
-#: src/MainWindow.vala:111
-#, fuzzy
-#| msgid "Uninstalling"
-msgid "Uninstalling…"
-msgstr "विस्थापित करीत आहे"
-
-#: src/MainWindow.vala:114
-msgid "Repairing…"
-msgstr ""
-
-#: src/MainWindow.vala:145
+#: src/MainWindow.vala:119
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" लाँच करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:166
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "अ‍ॅप स्थापित करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
+#: src/MainWindow.vala:179 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "अनुप्रयोग शोधा"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:186
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "अपडेट्स आणण्यात अयशस्वी"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:187
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:191
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/MainWindow.vala:241
+#: src/MainWindow.vala:215
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "सुरु होत आहे"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:243
 msgid "Network Not Available."
 msgstr "नेटवर्क उपलब्ध नाही."
 
-#: src/MainWindow.vala:270
+#: src/MainWindow.vala:244
 msgid "Connect to the Internet to browse and install apps."
 msgstr "अ‍ॅप्स ब्राउझ आणि स्थापित करण्यासाठी इंटरनेटशी कनेक्ट व्हा."
 
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:254
 msgid "Network Settings…"
 msgstr "नेटवर्क सेटिंग्ज…"
 
-#: src/MainWindow.vala:288
+#: src/MainWindow.vala:262
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:289
+#: src/MainWindow.vala:263
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:486 src/MainWindow.vala:490
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "%s शोधा"
 
-#: src/MainWindow.vala:507
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:510
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "शोधा"
 
-#: src/MainWindow.vala:516
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "प्रस्थापित"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:553
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "उघडा"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
+#: src/MainWindow.vala:654
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "माहिती आणत आहे"
+
+#: src/MainWindow.vala:657
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:663
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Checking for updates…"
+msgstr "अद्यतनांसाठी तपासत आहे"
+
+#: src/MainWindow.vala:666
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "इन्स्टॉल होत आहे"
+
+#: src/MainWindow.vala:669
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "अपडेट इन्स्टॉल करीत आहे"
+
+#: src/MainWindow.vala:672
+#, fuzzy
+#| msgid "Uninstalling"
+msgid "Uninstalling…"
+msgstr "विस्थापित करीत आहे"
+
+#: src/MainWindow.vala:675
+msgid "Repairing…"
+msgstr ""
+
+#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "सुरु होत आहे"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
+#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "वाट पाहत आहे"
 
-#: src/Utils.vala:66
+#: src/Utils.vala:67
 msgid "Running"
 msgstr "सुरु आहे"
 
-#: src/Utils.vala:68
+#: src/Utils.vala:69
 msgid "Querying"
 msgstr "तपासणी करत आहे"
 
-#: src/Utils.vala:70
+#: src/Utils.vala:71
 msgid "Getting information"
 msgstr "माहिती आणत आहे"
 
-#: src/Utils.vala:72
+#: src/Utils.vala:73
 msgid "Removing packages"
 msgstr "पॅकेज मिटवत आहे"
 
-#: src/Utils.vala:74
+#: src/Utils.vala:75
 msgid "Downloading"
 msgstr "डाउनलोड करित आहे"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "इन्स्टॉल होत आहे"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:79
 msgid "Refreshing software list"
 msgstr "सॉफ्टवेअर यादी रिफ्रेश करीत आहे"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:81
 msgid "Installing updates"
 msgstr "अपडेट इन्स्टॉल करीत आहे"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:83
 msgid "Cleaning up packages"
 msgstr "पॅकेजेस साफ करीत आहे"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:85
 msgid "Obsoleting packages"
 msgstr "पॅकेजेस अॅबसोलेट करीत आहे"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:87
 msgid "Resolving dependencies"
 msgstr "अवलंबित्व दूर करा"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:89
 msgid "Checking signatures"
 msgstr "सह्या तपासत आहे"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:91
 msgid "Testing changes"
 msgstr "बदलांची तपासणी करीत आहे"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:93
 msgid "Committing changes"
 msgstr "बदल कमीट करीत आहे"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:95
 msgid "Requesting data"
 msgstr "डेटाची मागणी करीत आहे"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "पूर्ण झाले"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
-#: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
-#: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
+#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "रद्द करीत आहे"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:101
 msgid "Downloading repository information"
 msgstr "रिपोसिटरी ची माहिती डाउनलोड करीत आहे"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:103
 msgid "Downloading list of packages"
 msgstr "पॅकेजेस ची यादी डाउनलोड करीत आहे"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:105
 msgid "Downloading file lists"
 msgstr "फाईल्स ची यादी डाउनलोड करीत आहे"
 
-#: src/Utils.vala:106
+#: src/Utils.vala:107
 msgid "Downloading lists of changes"
 msgstr "बदलांची यादी डाउनलोड करीत आहे"
 
-#: src/Utils.vala:108
+#: src/Utils.vala:109
 msgid "Downloading groups"
 msgstr "समूह डाउनलोड करीत आहे"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:111
 msgid "Downloading update information"
 msgstr "अपडेट करण्यासाठीची माहिती डाउनलोड करीत आहे"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:113
 msgid "Repackaging files"
 msgstr "फाईल्सचे पुन्हा पॅकेजिंग करीत आहे"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:115
 msgid "Loading cache"
 msgstr "कॅश लोड करीत आहे"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:117
 msgid "Scanning applications"
 msgstr "अप्लिकेशन तपासत आहे"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:119
 msgid "Generating package lists"
 msgstr "पॅकेजेसची यादी बनवीत आहे"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:121
 msgid "Waiting for package manager lock"
 msgstr "पॅकेज मॅनेजर लॉक ची वाट पाहत आहे"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:123
 msgid "Waiting for authentication"
 msgstr "प्रमाणीकरणाची वाट पाहत आहे"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:125
 msgid "Updating running applications"
 msgstr "चालू अप्लिकेशन्स उपडते करीत आहोत"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:127
 msgid "Checking applications in use"
 msgstr "वापरात असलेली अप्लिकेशन्स तपासत आहे"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:129
 msgid "Checking libraries in use"
 msgstr "वापरात असलेली लाइब्ररीस तपासत आहे"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:131
 msgid "Copying files"
 msgstr "फाईल्स कॉपी करीत आहे"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:133
 msgid "Unknown state"
 msgstr "अज्ञात परिस्थिती"
 
-#: src/Core/BackendAggregator.vala:46
+#: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
 msgstr "पॅकेज ऑपरेशन्स सुरू आहेत"
 
@@ -334,36 +334,36 @@ msgstr[1] "%u अपडेट आपल्या सिस्टिम साठ
 msgid "%s (system-wide)"
 msgstr "%s (सिस्टम-व्यापी)"
 
-#: src/Core/FlatpakBackend.vala:1523
+#: src/Core/FlatpakBackend.vala:1548
 msgid "Uninstalling"
 msgstr "विस्थापित करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:1705
+#: src/Core/FlatpakBackend.vala:1730
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:330
 #, c-format
 msgid "%s Developers"
 msgstr "%s डेव्हलपर"
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:365
 msgid "elementary Updates"
 msgstr "एलिमेंटरी अपडेट"
 
-#: src/Core/Package.vala:357
+#: src/Core/Package.vala:367
 msgid "Ubuntu (non-curated)"
 msgstr "उबंटू (नॉन-क्युरेटेड)"
 
-#: src/Core/Package.vala:367
+#: src/Core/Package.vala:373
 msgid "Ubuntu Drivers"
 msgstr "उबंटू ड्राइव्हर्स"
 
-#: src/Core/Package.vala:370
+#: src/Core/Package.vala:377
 msgid "Unknown Origin (non-curated)"
 msgstr "अज्ञात उत्पत्ति (नॉन-क्युरेटेड)"
 
-#: src/Core/Package.vala:542
+#: src/Core/Package.vala:551
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
@@ -391,34 +391,34 @@ msgstr "अद्यतनांसाठी तपासत आहे"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
+#: src/Core/UpdateManager.vala:101 src/Core/UpdateManager.vala:164
 #, c-format
 msgid "Version: %s"
 msgstr "आवृत्ती: %s"
 
-#: src/Core/UpdateManager.vala:179
+#: src/Core/UpdateManager.vala:182
 msgid "No components with updates"
 msgstr "कोणत्याही भागांचे अपडेट्स उपलब्ध नाहीत"
 
-#: src/Core/UpdateManager.vala:184
+#: src/Core/UpdateManager.vala:187
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u अपडेट्स उपलब्ध असलेला भाग"
 msgstr[1] "%u अपडेट्स उपलब्ध असलेले भाग"
 
-#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
+#: src/Core/UpdateManager.vala:189 src/Core/UpdateManager.vala:201
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:191
+#: src/Core/UpdateManager.vala:194
 #, fuzzy
 #| msgid "No components with updates"
 msgid "No runtimes with updates"
 msgstr "कोणत्याही भागांचे अपडेट्स उपलब्ध नाहीत"
 
-#: src/Core/UpdateManager.vala:196
+#: src/Core/UpdateManager.vala:199
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -427,11 +427,11 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "%u अपडेट्स उपलब्ध असलेला भाग"
 msgstr[1] "%u अपडेट्स उपलब्ध असलेले भाग"
 
-#: src/Core/UpdateManager.vala:237
+#: src/Core/UpdateManager.vala:246
 msgid "Restart Required"
 msgstr "पुन्हा सुरु करणे आवश्यक"
 
-#: src/Core/UpdateManager.vala:238
+#: src/Core/UpdateManager.vala:247
 msgid "Please restart your system to finalize updates"
 msgstr "अपडेट्सना अंतिम स्वरूप देण्यासाठी कृपया आपली सिस्टिम पुन्हा सुरु करा"
 
@@ -709,27 +709,27 @@ msgstr ""
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:306
+#: src/Views/AppInfoView.vala:307
 #, fuzzy
 #| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "नॉन-क्युरेटेड अॅप्स"
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:308
 #, fuzzy
 #| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
 
-#: src/Views/AppInfoView.vala:324
+#: src/Views/AppInfoView.vala:325
 msgid "May Not Be Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:326
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:333
 #, fuzzy
 #| msgid "translator-credits"
 msgid "Not Translated"
@@ -738,188 +738,220 @@ msgstr ""
 "  Sandeep Pinge https://launchpad.net/~spinge\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: src/Views/AppInfoView.vala:333
+#: src/Views/AppInfoView.vala:334
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:340
+#: src/Views/AppInfoView.vala:341
 msgid "Not Fully Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:341
+#: src/Views/AppInfoView.vala:342
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:365
+#: src/Views/AppInfoView.vala:366
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:367
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:379
+#: src/Views/AppInfoView.vala:380
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:385
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:389
+#: src/Views/AppInfoView.vala:390
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:433
+#: src/Views/AppInfoView.vala:434
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:434
+#: src/Views/AppInfoView.vala:435
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:450
+#: src/Views/AppInfoView.vala:451
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:452
+#: src/Views/AppInfoView.vala:453
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:456
+#: src/Views/AppInfoView.vala:457
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:467
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:467
+#: src/Views/AppInfoView.vala:468
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:479
+#: src/Views/AppInfoView.vala:480
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:483
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:487
+#: src/Views/AppInfoView.vala:488
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:611
+#: src/Views/AppInfoView.vala:613
 msgid "Screenshot Not Available"
 msgstr "स्क्रीनशॉट उपलब्ध नाही"
 
-#: src/Views/AppInfoView.vala:643
+#: src/Views/AppInfoView.vala:645
 msgid "What's New:"
 msgstr "नवीन काय आहे:"
 
-#: src/Views/AppInfoView.vala:670
+#: src/Views/AppInfoView.vala:672
 msgid "Extensions:"
 msgstr "विस्तार :"
 
-#: src/Views/AppInfoView.vala:701
+#: src/Views/AppInfoView.vala:703
 msgid "Homepage"
 msgstr "मुख्य पृष्ठ"
 
-#: src/Views/AppInfoView.vala:707
+#: src/Views/AppInfoView.vala:709
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:713
+#: src/Views/AppInfoView.vala:715
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:719
+#: src/Views/AppInfoView.vala:721
 msgid "Help"
 msgstr "मदत"
 
-#: src/Views/AppInfoView.vala:767
+#: src/Views/AppInfoView.vala:769
 msgid "Link copied to clipboard"
 msgstr "दुवा क्लिपबोर्डवर कॉपी केला"
 
-#: src/Views/AppInfoView.vala:778
+#: src/Views/AppInfoView.vala:781
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "अँप सेंटर वर %s बघा:"
 
-#: src/Views/AppInfoView.vala:786
+#: src/Views/AppInfoView.vala:789
 msgid "Share"
 msgstr "शेअर करा"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:883
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:881
+#: src/Views/AppInfoView.vala:884
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:887
+#: src/Views/AppInfoView.vala:890
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:888
+#: src/Views/AppInfoView.vala:891
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:896
+#: src/Views/AppInfoView.vala:899
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "विस्थापित करा"
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:900
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:913
+msgid "Insecure Sandbox"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:914
+msgid "Can ignore or modify its own system permissions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:923
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:911
+#: src/Views/AppInfoView.vala:924
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
+#: src/Views/AppInfoView.vala:931
+msgid "Home Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:932
+msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:941
+msgid "Location Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:942
+msgid "Can see your precise location at any time without asking"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:951
+msgid "System Settings Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:952
+msgid "Can read and modify system settings"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1162
+#: src/Views/AppInfoView.vala:1203
 msgid "Public Domain"
 msgstr "सार्वजनिक डोमेन"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1165
+#: src/Views/AppInfoView.vala:1206
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%9C%E0%A4%A8%E0%A4%BF%E0%A4%95_%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1170
+#: src/Views/AppInfoView.vala:1211
 msgid "Free Software"
 msgstr "फ्री सॉफ्टवेअर"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1173
+#: src/Views/AppInfoView.vala:1214
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1218
 msgid "Proprietary"
 msgstr "मालकी"
 
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1221
 msgid "Unknown License"
 msgstr "अज्ञात परवाना"
 
-#: src/Views/AppInfoView.vala:1270
+#: src/Views/AppInfoView.vala:1313
 msgid "Fund"
 msgstr "निधी"
 
-#: src/Views/AppInfoView.vala:1276
+#: src/Views/AppInfoView.vala:1319
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
@@ -972,111 +1004,107 @@ msgstr "अद्ययावत"
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "अलीकडे अपडेट केलेले"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "अनुप्रयोग शोधा"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "विनामुल्य"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr "नॉन-क्युरेटेड अॅप्स"
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "अॅक्सेसरीज"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "ध्वनी"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 msgid "Communication"
 msgstr "संप्रेषण"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "विकास"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "शिक्षण"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 msgid "Finance"
 msgstr "अर्थ व्यवस्था"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "ग्राफिक"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "इंटरनेट"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 msgid "Math, Science, & Engineering"
 msgstr "विज्ञान आणि अभियांत्रिकी"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr "माध्यम उत्पादन"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "कार्यालय"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "सिस्टिम"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "सार्वत्रिक प्रवेश"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "व्हिडिओ"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr "लेखन आणि भाषा"
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "गोपनीयता धोरण"
 
-#: src/Views/Homepage.vala:457
+#: src/Views/Homepage.vala:468
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "खेळ"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:496
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:494
+#: src/Views/Homepage.vala:505
 msgid "Games"
 msgstr "खेळ"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:58
+#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:65
 msgid "Flathub"
 msgstr ""
 
@@ -1084,9 +1112,13 @@ msgstr ""
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
+#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:66
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/SearchView.vala:63
+msgid "The search term must be at least 3 characters long."
 msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
@@ -1196,6 +1228,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr ""
+
+#~ msgid "Non-Curated Apps"
+#~ msgstr "नॉन-क्युरेटेड अॅप्स"
 
 #~ msgid "Flatpak runtime"
 #~ msgstr "फ्लॅटपॅक रनटाइम"

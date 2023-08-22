@@ -25,6 +25,7 @@ public class AppCenter.Homepage : Gtk.Box {
     private const int MAX_PACKAGES_IN_BANNER = 5;
     private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
+    private Gtk.EventControllerMotion banner_motion_controller;
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
 
@@ -37,16 +38,16 @@ public class AppCenter.Homepage : Gtk.Box {
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        expand = true;
+        hexpand = true;
+        vexpand = true;
 
         banner_carousel = new Hdy.Carousel () {
             allow_long_swipes = true
         };
 
-        var banner_event_box = new Gtk.EventBox ();
-        banner_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
-        banner_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
-        banner_event_box.add (banner_carousel);
+        banner_motion_controller = new Gtk.EventControllerMotion (banner_carousel) {
+            propagation_phase = CAPTURE
+        };
 
         var banner_dots = new Hdy.CarouselIndicatorDots () {
             carousel = banner_carousel
@@ -71,8 +72,9 @@ public class AppCenter.Homepage : Gtk.Box {
         recently_updated_grid.attach (recently_updated_label, 0, 0);
         recently_updated_grid.attach (recently_updated_carousel, 0, 1);
 
-        recently_updated_revealer = new Gtk.Revealer ();
-        recently_updated_revealer.add (recently_updated_grid );
+        recently_updated_revealer = new Gtk.Revealer () {
+            child = recently_updated_grid
+        };
 
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
             margin_start = 24,
@@ -197,17 +199,17 @@ public class AppCenter.Homepage : Gtk.Box {
             "Security",
         }, "privacy-security"));
 
-        var box = new Gtk.Box (orientation = Gtk.Orientation.VERTICAL, 0);
-        box.add (banner_event_box);
+        var box = new Gtk.Box (VERTICAL, 0);
+        box.add (banner_carousel);
         box.add (banner_dots);
         box.add (recently_updated_revealer);
         box.add (categories_label);
         box.add (category_flow);
 
         scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
-        scrolled_window.add (box);
 
         add (scrolled_window);
 
@@ -221,10 +223,13 @@ public class AppCenter.Homepage : Gtk.Box {
                 show_package (local_package);
             });
         } else {
+#if PACKAGEKIT_BACKEND
             appcenter_banner = new Widgets.Banner (
                 AppCenterCore.PackageKitBackend.get_default ().lookup_package_by_id ("appcenter")
             );
             banner_carousel.add (appcenter_banner);
+#endif
+
             banner_carousel.page_changed.connect (page_changed_handler );
         }
 
@@ -254,11 +259,11 @@ public class AppCenter.Homepage : Gtk.Box {
             });
         });
 
-        banner_event_box.enter_notify_event.connect (() => {
+        banner_motion_controller.enter.connect (() => {
             banner_timeout_stop ();
         });
 
-        banner_event_box.leave_notify_event.connect (() => {
+        banner_motion_controller.leave.connect (() => {
             banner_timeout_start ();
         });
 
@@ -283,9 +288,8 @@ public class AppCenter.Homepage : Gtk.Box {
         var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
-        int package_count = 0;
         foreach (var package in packages_by_release_date) {
-            if (package_count >= MAX_PACKAGES_IN_BANNER) {
+            if (packages_in_banner.size >= MAX_PACKAGES_IN_BANNER) {
                 break;
             }
 
@@ -303,25 +307,26 @@ public class AppCenter.Homepage : Gtk.Box {
 
             if (!installed) {
                 packages_in_banner.add (package);
-                package_count++;
+
+                var banner = new Widgets.Banner (package);
+                banner.clicked.connect (() => {
+                    show_package (package);
+                });
+
+                banner_carousel.add (banner);
             }
         }
 
-        foreach (var package in packages_in_banner) {
-            var banner = new Widgets.Banner (package);
-            banner.clicked.connect (() => {
-                show_package (package);
-            });
-
-            banner_carousel.add (banner);
-        }
-
-        banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
         banner_carousel.show_all ();
+        banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
                 break;
+            }
+
+            if (package in packages_in_banner) {
+                continue;
             }
 
             var installed = false;
@@ -336,11 +341,12 @@ public class AppCenter.Homepage : Gtk.Box {
                 }
             }
 
-            if (!installed && !(package in packages_in_banner)) {
+            if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
                 recently_updated_carousel.add (package_row);
             }
         }
+
         recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
     }
@@ -427,12 +433,11 @@ public class AppCenter.Homepage : Gtk.Box {
                 valign = Gtk.Align.CENTER
             };
 
-            content_area.attach (box, 0, 0);
-
             if (category.icon != "") {
                 var display_image = new Gtk.Image.from_icon_name (category.icon, Gtk.IconSize.DIALOG) {
                     halign = Gtk.Align.END,
-                    valign = Gtk.Align.CENTER
+                    valign = Gtk.Align.CENTER,
+                    pixel_size = 48
                 };
 
                 box.add (display_image);
@@ -444,6 +449,8 @@ public class AppCenter.Homepage : Gtk.Box {
             }
 
             box.add (name_label);
+
+            content_area.attach (box, 0, 0);
             style_context.add_class (style);
 
             if (style == "accessibility") {

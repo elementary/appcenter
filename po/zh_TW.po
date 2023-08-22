@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:353
+#: src/Application.vala:38 src/Core/Package.vala:363
 msgid "AppCenter"
 msgstr "應用程式中心"
 
@@ -35,281 +35,281 @@ msgstr "無法解析媒體類型 %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "找不到「%s」，而在尋找中"
 
-#: src/Application.vala:320
+#: src/Application.vala:324
 msgid "The app has been installed"
 msgstr "應用已安裝"
 
-#: src/Application.vala:321 src/MainWindow.vala:550
+#: src/Application.vala:325 src/MainWindow.vala:533
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s”已安裝"
 
-#: src/MainWindow.vala:93
-#, fuzzy
-#| msgid "Getting information"
-msgid "Getting app information…"
-msgstr "正在取得資訊"
-
-#: src/MainWindow.vala:96
-msgid "Getting download size…"
-msgstr ""
-
-#: src/MainWindow.vala:102
-#, fuzzy
-#| msgid "Checking for Updates"
-msgid "Checking for updates…"
-msgstr "正在檢查更新"
-
-#: src/MainWindow.vala:105
-#, fuzzy
-#| msgid "Installing"
-msgid "Installing…"
-msgstr "安裝中"
-
-#: src/MainWindow.vala:108
-#, fuzzy
-#| msgid "Installing updates"
-msgid "Installing updates…"
-msgstr "正在安裝更新"
-
-#: src/MainWindow.vala:111
-#, fuzzy
-#| msgid "Uninstalling"
-msgid "Uninstalling…"
-msgstr "解除安裝中"
-
-#: src/MainWindow.vala:114
-msgid "Repairing…"
-msgstr ""
-
-#: src/MainWindow.vala:145
+#: src/MainWindow.vala:119
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "無法開啟 “%s”"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:166
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "安裝應用程序失敗"
 
-#: src/MainWindow.vala:205 src/MainWindow.vala:482 src/MainWindow.vala:624
+#: src/MainWindow.vala:179 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "搜尋應用程式"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:186
 msgid "Automatic App Updates"
 msgstr "自動應用更新"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:187
 msgid "System updates and unpaid apps will not update automatically"
 msgstr "系統和未付費應用不會自動更新"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:191
 msgid "Check for Updates"
 msgstr "檢查更新"
 
-#: src/MainWindow.vala:241
+#: src/MainWindow.vala:215
 msgid "Settings"
 msgstr "设定"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:243
 msgid "Network Not Available."
 msgstr "網絡連接不可用。"
 
-#: src/MainWindow.vala:270
+#: src/MainWindow.vala:244
 msgid "Connect to the Internet to browse and install apps."
 msgstr "請連接至網際網路來瀏覽或安裝應用程式。"
 
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:254
 msgid "Network Settings…"
 msgstr "網路設定值…"
 
-#: src/MainWindow.vala:288
+#: src/MainWindow.vala:262
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:289
+#: src/MainWindow.vala:263
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:486 src/MainWindow.vala:490
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "搜尋 %s"
 
-#: src/MainWindow.vala:507
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "首頁"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:510
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "搜尋"
 
-#: src/MainWindow.vala:516
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "已安裝"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:553
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "開啟"
 
-#: src/Utils.vala:62 src/Core/ChangeInformation.vala:90
+#: src/MainWindow.vala:654
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "正在取得資訊"
+
+#: src/MainWindow.vala:657
+msgid "Getting download size…"
+msgstr ""
+
+#: src/MainWindow.vala:663
+#, fuzzy
+#| msgid "Checking for Updates"
+msgid "Checking for updates…"
+msgstr "正在檢查更新"
+
+#: src/MainWindow.vala:666
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "安裝中"
+
+#: src/MainWindow.vala:669
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "正在安裝更新"
+
+#: src/MainWindow.vala:672
+#, fuzzy
+#| msgid "Uninstalling"
+msgid "Uninstalling…"
+msgstr "解除安裝中"
+
+#: src/MainWindow.vala:675
+msgid "Repairing…"
+msgstr ""
+
+#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
 msgstr "起始中"
 
-#: src/Utils.vala:64 src/Core/BackendAggregator.vala:310
+#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "等候中"
 
-#: src/Utils.vala:66
+#: src/Utils.vala:67
 msgid "Running"
 msgstr "執行中"
 
-#: src/Utils.vala:68
+#: src/Utils.vala:69
 msgid "Querying"
 msgstr "查詢中"
 
-#: src/Utils.vala:70
+#: src/Utils.vala:71
 msgid "Getting information"
 msgstr "正在取得資訊"
 
-#: src/Utils.vala:72
+#: src/Utils.vala:73
 msgid "Removing packages"
 msgstr "正在移除軟體包"
 
-#: src/Utils.vala:74
+#: src/Utils.vala:75
 msgid "Downloading"
 msgstr "下載中"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1391
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
 msgid "Installing"
 msgstr "安裝中"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:79
 msgid "Refreshing software list"
 msgstr "正在重新整理軟體清單"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:81
 msgid "Installing updates"
 msgstr "正在安裝更新"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:83
 msgid "Cleaning up packages"
 msgstr "正在清理軟體包"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:85
 msgid "Obsoleting packages"
 msgstr "正在廢棄軟體包"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:87
 msgid "Resolving dependencies"
 msgstr "正在解析依賴關係"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:89
 msgid "Checking signatures"
 msgstr "正在檢查簽章"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:91
 msgid "Testing changes"
 msgstr "正在測試變更"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:93
 msgid "Committing changes"
 msgstr "正在提交變更"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:95
 msgid "Requesting data"
 msgstr "正在請求資料"
 
-#: src/Utils.vala:96 src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "已完成"
 
-#: src/Utils.vala:98 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1400 src/Core/FlatpakBackend.vala:1424
-#: src/Core/FlatpakBackend.vala:1532 src/Core/FlatpakBackend.vala:1556
-#: src/Core/FlatpakBackend.vala:1714 src/Core/FlatpakBackend.vala:1732
+#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
+#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
+#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
+#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
 msgid "Cancelling"
 msgstr "正在取消"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:101
 msgid "Downloading repository information"
 msgstr "正在下載軟體庫資訊"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:103
 msgid "Downloading list of packages"
 msgstr "正在下載軟體包清單"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:105
 msgid "Downloading file lists"
 msgstr "正在下載檔案清單"
 
-#: src/Utils.vala:106
+#: src/Utils.vala:107
 msgid "Downloading lists of changes"
 msgstr "正在下載變更的清單"
 
-#: src/Utils.vala:108
+#: src/Utils.vala:109
 msgid "Downloading groups"
 msgstr "正在下載群組"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:111
 msgid "Downloading update information"
 msgstr "正在下載更新資訊"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:113
 msgid "Repackaging files"
 msgstr "正在重新打包檔案"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:115
 msgid "Loading cache"
 msgstr "正在載入快取"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:117
 msgid "Scanning applications"
 msgstr "正在掃描應用程式"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:119
 msgid "Generating package lists"
 msgstr "正在生成軟體包清單"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:121
 msgid "Waiting for package manager lock"
 msgstr "正在等候軟體包管理程式解鎖"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:123
 msgid "Waiting for authentication"
 msgstr "正在等候身份核對"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:125
 msgid "Updating running applications"
 msgstr "正在更新正在執行中的應用程式"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:127
 msgid "Checking applications in use"
 msgstr "正在檢查使用中的應用程式"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:129
 msgid "Checking libraries in use"
 msgstr "正在檢查使用中的函式庫"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:131
 msgid "Copying files"
 msgstr "正在複製檔案"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:133
 msgid "Unknown state"
 msgstr "未知的狀態"
 
-#: src/Core/BackendAggregator.vala:46
+#: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
 msgstr "軟件包操作正在進行中"
 
@@ -329,36 +329,36 @@ msgstr[0] "您的系統有 %u 項更新可套用"
 msgid "%s (system-wide)"
 msgstr "%s （系統級）"
 
-#: src/Core/FlatpakBackend.vala:1523
+#: src/Core/FlatpakBackend.vala:1548
 msgid "Uninstalling"
 msgstr "解除安裝中"
 
-#: src/Core/FlatpakBackend.vala:1705
+#: src/Core/FlatpakBackend.vala:1730
 msgid "Updating"
 msgstr "更新"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:330
 #, c-format
 msgid "%s Developers"
 msgstr "%s 開發者"
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:365
 msgid "elementary Updates"
 msgstr "elementary 更新"
 
-#: src/Core/Package.vala:357
+#: src/Core/Package.vala:367
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (未整理)"
 
-#: src/Core/Package.vala:367
+#: src/Core/Package.vala:373
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu 驅動程式"
 
-#: src/Core/Package.vala:370
+#: src/Core/Package.vala:377
 msgid "Unknown Origin (non-curated)"
 msgstr "未知的來源 (未整理)"
 
-#: src/Core/Package.vala:542
+#: src/Core/Package.vala:551
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "未設定為安裝狀態的應用程式：%s"
@@ -386,33 +386,33 @@ msgstr "檢查更新"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:99 src/Core/UpdateManager.vala:161
+#: src/Core/UpdateManager.vala:101 src/Core/UpdateManager.vala:164
 #, c-format
 msgid "Version: %s"
 msgstr "版本：%s"
 
-#: src/Core/UpdateManager.vala:179
+#: src/Core/UpdateManager.vala:182
 msgid "No components with updates"
 msgstr "沒有組件需要更新"
 
-#: src/Core/UpdateManager.vala:184
+#: src/Core/UpdateManager.vala:187
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u 個組件需要更新"
 
-#: src/Core/UpdateManager.vala:186 src/Core/UpdateManager.vala:198
+#: src/Core/UpdateManager.vala:189 src/Core/UpdateManager.vala:201
 #, c-format
 msgid "%s:"
 msgstr "%s："
 
-#: src/Core/UpdateManager.vala:191
+#: src/Core/UpdateManager.vala:194
 #, fuzzy
 #| msgid "No components with updates"
 msgid "No runtimes with updates"
 msgstr "沒有組件需要更新"
 
-#: src/Core/UpdateManager.vala:196
+#: src/Core/UpdateManager.vala:199
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -420,11 +420,11 @@ msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u 個組件需要更新"
 
-#: src/Core/UpdateManager.vala:237
+#: src/Core/UpdateManager.vala:246
 msgid "Restart Required"
 msgstr "需要重新啟動"
 
-#: src/Core/UpdateManager.vala:238
+#: src/Core/UpdateManager.vala:247
 msgid "Please restart your system to finalize updates"
 msgstr "請重新啟動您的系統以完成更新"
 
@@ -698,212 +698,244 @@ msgstr "賭博"
 msgid "Realistic or participatory gambling"
 msgstr "親歷或參與性賭博"
 
-#: src/Views/AppInfoView.vala:306
+#: src/Views/AppInfoView.vala:307
 msgid "Non-Curated"
 msgstr "非官方認證應用程式"
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:308
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "在安全、隱私和系統整合方面未經過 elementary 認證"
 
-#: src/Views/AppInfoView.vala:324
+#: src/Views/AppInfoView.vala:325
 #, fuzzy
 #| msgid "Translate"
 msgid "May Not Be Translated"
 msgstr "翻譯"
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:326
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:333
 #, fuzzy
 #| msgid "Translate"
 msgid "Not Translated"
 msgstr "翻譯"
 
-#: src/Views/AppInfoView.vala:333
+#: src/Views/AppInfoView.vala:334
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:340
+#: src/Views/AppInfoView.vala:341
 #, fuzzy
 #| msgid "Translate"
 msgid "Not Fully Translated"
 msgstr "翻譯"
 
-#: src/Views/AppInfoView.vala:341
+#: src/Views/AppInfoView.vala:342
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:365
+#: src/Views/AppInfoView.vala:366
 msgid "Conflict"
 msgstr "衝突"
 
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:367
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "對不安全情況或侵略性衝突的描述"
 
-#: src/Views/AppInfoView.vala:379
+#: src/Views/AppInfoView.vala:380
 msgid "Violence"
 msgstr "暴力"
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:385
 msgid "Fantasy Violence"
 msgstr "幻想暴力"
 
-#: src/Views/AppInfoView.vala:389
+#: src/Views/AppInfoView.vala:390
 msgid "Graphic violence, bloodshed, or death"
 msgstr "畫面存有暴力、血腥或死亡內容"
 
-#: src/Views/AppInfoView.vala:433
+#: src/Views/AppInfoView.vala:434
 msgid "Multiplayer"
 msgstr "多人遊戲"
 
-#: src/Views/AppInfoView.vala:434
+#: src/Views/AppInfoView.vala:435
 msgid "Online play with other people"
 msgstr "與其他人在線遊戲"
 
-#: src/Views/AppInfoView.vala:450
+#: src/Views/AppInfoView.vala:451
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "與他人無限制地傳送語音、視頻或文字消息"
 
-#: src/Views/AppInfoView.vala:452
+#: src/Views/AppInfoView.vala:453
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "與他人受限地傳送語音、視頻或文字消息"
 
-#: src/Views/AppInfoView.vala:456
+#: src/Views/AppInfoView.vala:457
 msgid "Online Interactions"
 msgstr "線上互動"
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:467
 msgid "Location Sharing"
 msgstr "位置分享"
 
-#: src/Views/AppInfoView.vala:467
+#: src/Views/AppInfoView.vala:468
 msgid "Other people can see your real-world location"
 msgstr "其他人可以看到您的真實位置"
 
-#: src/Views/AppInfoView.vala:479
+#: src/Views/AppInfoView.vala:480
 msgid "Collects anonymous usage data"
 msgstr "匿名收取使用數據"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:483
 msgid "Collects usage data that could be used to identify you"
 msgstr "收集可用於識別您身份的使用數據"
 
-#: src/Views/AppInfoView.vala:487
+#: src/Views/AppInfoView.vala:488
 msgid "Info Sharing"
 msgstr "信息分享"
 
-#: src/Views/AppInfoView.vala:611
+#: src/Views/AppInfoView.vala:613
 msgid "Screenshot Not Available"
 msgstr "沒有畫面快照"
 
-#: src/Views/AppInfoView.vala:643
+#: src/Views/AppInfoView.vala:645
 msgid "What's New:"
 msgstr "最近更新："
 
-#: src/Views/AppInfoView.vala:670
+#: src/Views/AppInfoView.vala:672
 msgid "Extensions:"
 msgstr "擴充套件："
 
-#: src/Views/AppInfoView.vala:701
+#: src/Views/AppInfoView.vala:703
 msgid "Homepage"
 msgstr "大廳首頁"
 
-#: src/Views/AppInfoView.vala:707
+#: src/Views/AppInfoView.vala:709
 msgid "Translate"
 msgstr "翻譯"
 
-#: src/Views/AppInfoView.vala:713
+#: src/Views/AppInfoView.vala:715
 msgid "Send Feedback"
 msgstr "傳送反饋"
 
-#: src/Views/AppInfoView.vala:719
+#: src/Views/AppInfoView.vala:721
 msgid "Help"
 msgstr "幫助"
 
-#: src/Views/AppInfoView.vala:767
+#: src/Views/AppInfoView.vala:769
 msgid "Link copied to clipboard"
 msgstr "連結已複製到剪貼簿"
 
-#: src/Views/AppInfoView.vala:778
+#: src/Views/AppInfoView.vala:781
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "在 AppCenter 查看 %s："
 
-#: src/Views/AppInfoView.vala:786
+#: src/Views/AppInfoView.vala:789
 msgid "Share"
 msgstr "分享"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:883
 msgid "End of Life"
 msgstr "已達生命盡頭"
 
-#: src/Views/AppInfoView.vala:881
+#: src/Views/AppInfoView.vala:884
 msgid "May not work as expected or receive security updates"
 msgstr "可能無法按預期工作或取得安全更新"
 
-#: src/Views/AppInfoView.vala:887
+#: src/Views/AppInfoView.vala:890
 msgid "Outdated"
 msgstr "已過期"
 
-#: src/Views/AppInfoView.vala:888
+#: src/Views/AppInfoView.vala:891
 msgid "May not work as expected or support the latest features"
 msgstr "可能無法按預期運行或支援最新功能"
 
-#: src/Views/AppInfoView.vala:896
+#: src/Views/AppInfoView.vala:899
 msgid "Unstable"
 msgstr "不穩定"
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:900
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "為不穩定版本 %s而構建； 可能包含重大問題。 不建議在生產系統上使用。"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:913
+msgid "Insecure Sandbox"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:914
+msgid "Can ignore or modify its own system permissions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:923
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:911
+#: src/Views/AppInfoView.vala:924
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
+#: src/Views/AppInfoView.vala:931
+msgid "Home Folder Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:932
+msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:941
+msgid "Location Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:942
+msgid "Can see your precise location at any time without asking"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:951
+msgid "System Settings Access"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:952
+msgid "Can read and modify system settings"
+msgstr ""
+
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1162
+#: src/Views/AppInfoView.vala:1203
 msgid "Public Domain"
 msgstr "公眾領域"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1165
+#: src/Views/AppInfoView.vala:1206
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://zh.wikipedia.org/wiki/公有领域"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1170
+#: src/Views/AppInfoView.vala:1211
 msgid "Free Software"
 msgstr "自由軟體"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1173
+#: src/Views/AppInfoView.vala:1214
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.zh-tw.html"
 
-#: src/Views/AppInfoView.vala:1177
+#: src/Views/AppInfoView.vala:1218
 msgid "Proprietary"
 msgstr "專有軟體"
 
-#: src/Views/AppInfoView.vala:1180
+#: src/Views/AppInfoView.vala:1221
 msgid "Unknown License"
 msgstr "不明的授權"
 
-#: src/Views/AppInfoView.vala:1270
+#: src/Views/AppInfoView.vala:1313
 msgid "Fund"
 msgstr "資助"
 
-#: src/Views/AppInfoView.vala:1276
+#: src/Views/AppInfoView.vala:1319
 msgid "Fund the development of this app"
 msgstr "資助此程式的開發"
 
@@ -955,103 +987,99 @@ msgstr "最新狀態"
 msgid "Other Apps by %s"
 msgstr "其他 %s 開發的程式"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/CategoryView.vala:37
+#: src/Views/CategoryView.vala:36
 msgid "Paid Apps"
 msgstr "收費應用程式"
 
-#: src/Views/CategoryView.vala:39
+#: src/Views/CategoryView.vala:38
 msgid "Free Apps"
 msgstr "免費應用程式"
 
-#: src/Views/CategoryView.vala:42
-msgid "Non-Curated Apps"
-msgstr "非策劃應用程式"
-
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:77
 msgid "Categories"
 msgstr "類別"
 
-#: src/Views/Homepage.vala:110
+#: src/Views/Homepage.vala:103
 msgid "Accessories"
 msgstr "附屬應用"
 
-#: src/Views/Homepage.vala:111
+#: src/Views/Homepage.vala:104
 msgid "Audio"
 msgstr "音訊"
 
-#: src/Views/Homepage.vala:112
+#: src/Views/Homepage.vala:105
 msgid "Communication"
 msgstr "通訊"
 
-#: src/Views/Homepage.vala:121
+#: src/Views/Homepage.vala:114
 msgid "Development"
 msgstr "開發"
 
-#: src/Views/Homepage.vala:131
+#: src/Views/Homepage.vala:124
 msgid "Education"
 msgstr "教育"
 
-#: src/Views/Homepage.vala:132
+#: src/Views/Homepage.vala:125
 msgid "Finance"
 msgstr "金融"
 
-#: src/Views/Homepage.vala:137
+#: src/Views/Homepage.vala:130
 msgid "Graphics"
 msgstr "美工繪圖"
 
-#: src/Views/Homepage.vala:146
+#: src/Views/Homepage.vala:139
 msgid "Internet"
 msgstr "網際網路"
 
-#: src/Views/Homepage.vala:150
+#: src/Views/Homepage.vala:143
 msgid "Math, Science, & Engineering"
 msgstr "數學、科學與工程"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:162
 msgid "Media Production"
 msgstr "多媒體製作"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:169
 msgid "Office"
 msgstr "辦公"
 
-#: src/Views/Homepage.vala:183
+#: src/Views/Homepage.vala:176
 msgid "System"
 msgstr "系統"
 
-#: src/Views/Homepage.vala:187
+#: src/Views/Homepage.vala:180
 msgid "Universal Access"
 msgstr "無障礙功能"
 
-#: src/Views/Homepage.vala:188
+#: src/Views/Homepage.vala:181
 msgid "Video"
 msgstr "視訊"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:186
 msgid "Writing & Language"
 msgstr "書寫和語言"
 
-#: src/Views/Homepage.vala:203
+#: src/Views/Homepage.vala:196
 msgid "Privacy & Security"
 msgstr "隱私與安全"
 
-#: src/Views/Homepage.vala:457
+#: src/Views/Homepage.vala:468
 msgid "Fun & Games"
 msgstr "娛樂 & 遊戲"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:496
 msgid "Fun &"
 msgstr "娛樂 &"
 
-#: src/Views/Homepage.vala:494
+#: src/Views/Homepage.vala:505
 msgid "Games"
 msgstr "遊戲"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:58
+#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:65
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -1059,10 +1087,14 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "沒有找到應用程式"
 
-#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:59
+#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:66
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "請嘗試更改搜索詞。您亦可旁加載 Flatpak 應用程序，例如 %s"
+
+#: src/Views/SearchView.vala:63
+msgid "The search term must be at least 3 characters long."
+msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -1171,6 +1203,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:155
 msgid "Close"
 msgstr "關閉"
+
+#~ msgid "Non-Curated Apps"
+#~ msgstr "非策劃應用程式"
 
 #~ msgid "Flatpak runtime"
 #~ msgstr "Flatpak 執行階段"

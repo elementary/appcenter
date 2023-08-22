@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -54,149 +54,58 @@ msgstr "Betal det du kan for å støtte utviklaren"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:148
-msgid "Other Improvements:"
-msgstr "Andre forbetringar:"
-
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
-msgid "Updated translations"
-msgstr "Nye oversettelsar"
-
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
 msgid "New features:"
 msgstr "Nye funksjonar:"
 
-#: data/appcenter.metainfo.xml.in:79
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
+msgid "Other Improvements:"
+msgstr "Andre forbetringar:"
+
+#: data/appcenter.metainfo.xml.in:74
+msgid "Tighten up spacing and margins in App Info views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:75
+msgid "Show a placeholder banner on the home page when loading"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
+msgid "Updated translations"
+msgstr "Nye oversettelsar"
+
+#: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:80
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
 msgstr "Vis når ein app ikkje har oversetning til ditt språk"
 
-#: data/appcenter.metainfo.xml.in:109
+#: data/appcenter.metainfo.xml.in:128
 msgid "Install OS Updates offline"
 msgstr "Installer oppdateringar for operativsystemet i fråkopla modus"
-
-#: data/appcenter.metainfo.xml.in:130
-msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr "Endra navigasjon med fleirpunktstrykk for å gå tilbake"
-
-#: data/appcenter.metainfo.xml.in:131
-msgid "Recently updated apps are shown at the top of category views"
-msgstr "Dei siste oppdaterte appane blir vist øverst i kategorien"
-
-#: data/appcenter.metainfo.xml.in:132
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr "Ei statuslinje blir vist når ei oppgåve er under arbeid"
-
-#: data/appcenter.metainfo.xml.in:134
-msgid "App Info Page Improvements:"
-msgstr "Forbetra visning av informasjon om appen:"
-
-#: data/appcenter.metainfo.xml.in:136
-msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
-msgstr ""
-"Skjermbilete fyller no heile bredda på vindauget slik at du kan sjå fleire "
-"skjermbilete om gongen"
-
-#: data/appcenter.metainfo.xml.in:137
-msgid "An app's accent color is now shown behind screenshots"
-msgstr "Fargen til appen blir vist bak skjermbiletene"
-
-#: data/appcenter.metainfo.xml.in:138
-msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr ""
-"Hent fargane til appen frå AppStream-standarden slik at fleire appar har "
-"støtte"
-
-#: data/appcenter.metainfo.xml.in:139
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr "Pakk lenkjer på botnen av sida istadenfor å korta dei ned"
-
-#: data/appcenter.metainfo.xml.in:140
-msgid "Better dark style support"
-msgstr "Forbetra støtte for mørk modus"
-
-#: data/appcenter.metainfo.xml.in:142
-msgid "Updates View Improvements:"
-msgstr "Forbetra visning av oppdateringar:"
-
-#: data/appcenter.metainfo.xml.in:144
-msgid "Release notes are shown in a dialog"
-msgstr "Versjonsmerknader blir no vist i egen dialogboks"
-
-#: data/appcenter.metainfo.xml.in:145
-msgid "Better fallback icons for components"
-msgstr "Forbetra ikoner for komponentar utan eige ikon"
-
-#: data/appcenter.metainfo.xml.in:146
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr ""
-"\"Oppdater alle\" blir no festa til toppen av vindauge sjølv om du ruller"
-
-#: data/appcenter.metainfo.xml.in:150
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr "Nytt design for kortet til \"Spel\"-kategorien"
-
-#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
-msgid "Performance improvements"
-msgstr "Ytelsesforbetringar"
-
-#: data/appcenter.metainfo.xml.in:152
-msgid "Stability improvements"
-msgstr "Forbetringar i stabilitet"
-
-#: data/appcenter.metainfo.xml.in:167
-msgid "Added an option to automatically update apps"
-msgstr "Lagt til eit valg for å oppdatera appar automatisk"
-
-#: data/appcenter.metainfo.xml.in:168
-msgid "Manually check for new updates"
-msgstr "Sjekk etter oppdateringar manuelt"
-
-#: data/appcenter.metainfo.xml.in:169
-msgid "Warn when apps are built against older runtimes"
-msgstr "Gje varsel når appar er bygd på eldre rammeverk"
-
-#: data/appcenter.metainfo.xml.in:171
-msgid "Fixes:"
-msgstr "Feil som er fiksa:"
-
-#: data/appcenter.metainfo.xml.in:173
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr "Hindra at tilbake-knappen forsvinn eller må trykkast på fleire gonger"
-
-#: data/appcenter.metainfo.xml.in:175
-msgid "Improvements:"
-msgstr "Forbetringar:"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr "Viser ikkje ein varselboks om appar frå andre kjelder"
-
-#: data/appcenter.metainfo.xml.in:178
-msgid "Show screenshot captions in a tooltip"
-msgstr "Vis tekstar for skjermbilete i eit verktøytips"
-
-#: data/appcenter.metainfo.xml.in:179
-msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr "Visar \"Prøv gratis\" når prisen på ein app blir satt til 0"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -227,6 +136,92 @@ msgstr ""
 #| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
 msgstr "Godkjenning er naudsynt for å oppgradera programvara"
+
+#~ msgid "Rewritten navigation with multitouch gestures to go back"
+#~ msgstr "Endra navigasjon med fleirpunktstrykk for å gå tilbake"
+
+#~ msgid "Recently updated apps are shown at the top of category views"
+#~ msgstr "Dei siste oppdaterte appane blir vist øverst i kategorien"
+
+#~ msgid "A status overlay bar is now shown when tasks are in progress"
+#~ msgstr "Ei statuslinje blir vist når ei oppgåve er under arbeid"
+
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "Forbetra visning av informasjon om appen:"
+
+#~ msgid ""
+#~ "Screenshot carousels fill the width of the window, showing more "
+#~ "screenshots at once"
+#~ msgstr ""
+#~ "Skjermbilete fyller no heile bredda på vindauget slik at du kan sjå "
+#~ "fleire skjermbilete om gongen"
+
+#~ msgid "An app's accent color is now shown behind screenshots"
+#~ msgstr "Fargen til appen blir vist bak skjermbiletene"
+
+#~ msgid ""
+#~ "Get brand colors from the AppStream standard so more apps are supported"
+#~ msgstr ""
+#~ "Hent fargane til appen frå AppStream-standarden slik at fleire appar har "
+#~ "støtte"
+
+#~ msgid "Wrap links at the bottom pages instead of ellipsize"
+#~ msgstr "Pakk lenkjer på botnen av sida istadenfor å korta dei ned"
+
+#~ msgid "Better dark style support"
+#~ msgstr "Forbetra støtte for mørk modus"
+
+#~ msgid "Updates View Improvements:"
+#~ msgstr "Forbetra visning av oppdateringar:"
+
+#~ msgid "Release notes are shown in a dialog"
+#~ msgstr "Versjonsmerknader blir no vist i egen dialogboks"
+
+#~ msgid "Better fallback icons for components"
+#~ msgstr "Forbetra ikoner for komponentar utan eige ikon"
+
+#~ msgid ""
+#~ "The \"Update All\" header now sticks to the top of the window when "
+#~ "scrolling"
+#~ msgstr ""
+#~ "\"Oppdater alle\" blir no festa til toppen av vindauge sjølv om du ruller"
+
+#~ msgid "Redesigned \"Fun &amp; Games\" category card"
+#~ msgstr "Nytt design for kortet til \"Spel\"-kategorien"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Ytelsesforbetringar"
+
+#~ msgid "Stability improvements"
+#~ msgstr "Forbetringar i stabilitet"
+
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr "Lagt til eit valg for å oppdatera appar automatisk"
+
+#~ msgid "Manually check for new updates"
+#~ msgstr "Sjekk etter oppdateringar manuelt"
+
+#~ msgid "Warn when apps are built against older runtimes"
+#~ msgstr "Gje varsel når appar er bygd på eldre rammeverk"
+
+#~ msgid "Fixes:"
+#~ msgstr "Feil som er fiksa:"
+
+#~ msgid "Prevent back button from disappearing or requiring multiple clicks"
+#~ msgstr ""
+#~ "Hindra at tilbake-knappen forsvinn eller må trykkast på fleire gonger"
+
+#~ msgid "Improvements:"
+#~ msgstr "Forbetringar:"
+
+#~ msgid "Don't show a warning dialog about apps from alt stores"
+#~ msgstr "Viser ikkje ein varselboks om appar frå andre kjelder"
+
+#~ msgid "Show screenshot captions in a tooltip"
+#~ msgstr "Vis tekstar for skjermbilete i eit verktøytips"
+
+#~ msgid "Show \"Try for Free\" when setting an app's price to 0"
+#~ msgstr "Visar \"Prøv gratis\" når prisen på ein app blir satt til 0"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "Hindrar potensielle krasjar medan oppdatering skjer"

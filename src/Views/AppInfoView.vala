@@ -128,9 +128,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
 
         var app_icon_overlay = new Gtk.Overlay () {
+            child = app_icon,
             valign = Gtk.Align.START
         };
-        app_icon_overlay.add (app_icon);
 
         var scale_factor = get_scale_factor ();
 
@@ -173,9 +173,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
 
         origin_combo_revealer = new Gtk.Revealer () {
+            child = origin_combo,
             transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN
         };
-        origin_combo_revealer.add (origin_combo);
 
         var renderer = new Gtk.CellRendererText ();
         origin_combo.pack_start (renderer, true);
@@ -192,9 +192,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         uninstall_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         uninstall_button_revealer = new Gtk.Revealer () {
+            child = uninstall_button,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
-        uninstall_button_revealer.add (uninstall_button);
 
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             halign = Gtk.Align.END,
@@ -219,8 +219,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             };
             size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            action_button_group.add_widget (size_label);
-
             header_grid.attach (size_label, 1, 1);
         }
 
@@ -229,9 +227,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         header_box.add (header_grid);
 
         var header_clamp = new Hdy.Clamp () {
+            child = header_box,
             maximum_size = MAX_WIDTH
         };
-        header_clamp.add (header_box);
 
         var header = new Gtk.Grid () {
             hexpand = true
@@ -291,13 +289,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         oars_flowbox.get_style_context ().add_class ("content-warning-box");
 
-        oars_flowbox_revealer = new Gtk.Revealer ();
-        oars_flowbox_revealer.add (oars_flowbox);
+        oars_flowbox_revealer = new Gtk.Revealer () {
+            child = oars_flowbox
+        };
 
         var content_warning_clamp = new Hdy.Clamp () {
+            child = oars_flowbox_revealer,
             maximum_size = MAX_WIDTH
         };
-        content_warning_clamp.add (oars_flowbox_revealer);
 
         if (!package.is_os_updates && !package.is_runtime_updates) {
 #if CURATED
@@ -546,21 +545,22 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             });
 
             var screenshot_arrow_revealer_p = new Gtk.Revealer () {
+                child = screenshot_previous,
                 halign = Gtk.Align.START,
                 valign = Gtk.Align.CENTER,
                 transition_type = Gtk.RevealerTransitionType.CROSSFADE
             };
-            screenshot_arrow_revealer_p.add (screenshot_previous);
 
             var screenshot_arrow_revealer_n = new Gtk.Revealer () {
+                child = screenshot_next,
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER,
                 transition_type = Gtk.RevealerTransitionType.CROSSFADE
             };
-            screenshot_arrow_revealer_n.add (screenshot_next);
 
-            screenshot_overlay = new Gtk.Overlay ();
-            screenshot_overlay.add (screenshot_box);
+            screenshot_overlay = new Gtk.Overlay () {
+                child = screenshot_box
+            };
             screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
             screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
 
@@ -616,9 +616,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             screenshot_not_found_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             screenshot_not_found_clamp = new Hdy.Clamp () {
+                child = screenshot_not_found,
                 maximum_size = MAX_WIDTH
             };
-            screenshot_not_found_clamp.add (screenshot_not_found);
 
             screenshot_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.CROSSFADE
@@ -728,14 +728,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 #endif
 
         var body_clamp = new Hdy.Clamp () {
+            child = content_box,
             maximum_size = MAX_WIDTH
         };
-        body_clamp.add (content_box);
 
         var links_clamp = new Hdy.Clamp () {
+            child = links_flowbox,
             maximum_size = MAX_WIDTH
         };
-        links_clamp.add (links_flowbox);
         links_clamp.get_style_context ().add_class ("content-box");
 
         var author_view = new AuthorView (package, MAX_WIDTH);
@@ -758,16 +758,17 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         box.add (author_view);
 
         var scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             hexpand = true,
             vexpand = true
         };
-        scrolled.add (box);
 
         var toast = new Granite.Widgets.Toast (_("Link copied to clipboard"));
 
-        var overlay = new Gtk.Overlay ();
-        overlay.add (scrolled);
+        var overlay = new Gtk.Overlay () {
+            child = scrolled
+        };
         overlay.add_overlay (toast);
 
         add (overlay);
@@ -790,10 +791,10 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             share_box.add (share_label);
 
             var share_button = new Gtk.MenuButton () {
+                child = share_box,
                 direction = Gtk.ArrowType.UP,
                 popover = share_popover
             };
-            share_button.add (share_box);
 
             unowned var share_button_context = share_button.get_style_context ();
             share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -905,11 +906,49 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         if (package.permissions_flags != AppCenterCore.Package.PermissionsFlags.UNKNOWN && !permissions_shown) {
             permissions_shown = true;
 
+            if (AppCenterCore.Package.PermissionsFlags.ESCAPE_SANDBOX in package.permissions_flags) {
+                var sandbox_escape = new ContentType (
+                    _("Insecure Sandbox"),
+                    _("Can ignore or modify its own system permissions"),
+                    "sandbox-escape-symbolic"
+                );
+
+                oars_flowbox.add (sandbox_escape);
+            }
+
             if (AppCenterCore.Package.PermissionsFlags.FILESYSTEM_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.FILESYSTEM_READ in package.permissions_flags) {
                 var filesystem = new ContentType (
                     _("System Folder Access"),
                     _("Including everyone's Home folders, but not including system internals"),
-                    "drive-harddisk-symbolic"
+                    "sandbox-files-warning-symbolic"
+                );
+
+                oars_flowbox.add (filesystem);
+            } else if (AppCenterCore.Package.PermissionsFlags.HOME_FULL in package.permissions_flags || AppCenterCore.Package.PermissionsFlags.HOME_READ in package.permissions_flags) {
+                var home = new ContentType (
+                    _("Home Folder Access"),
+                    _("Including all documents, downloads, music, pictures, videos, and any hidden folders"),
+                    "sandbox-files-symbolic"
+                );
+
+                oars_flowbox.add (home);
+            }
+
+            if (AppCenterCore.Package.PermissionsFlags.LOCATION in package.permissions_flags) {
+                var location = new ContentType (
+                    _("Location Access"),
+                    _("Can see your precise location at any time without asking"),
+                    "sandbox-location-symbolic"
+                );
+
+                oars_flowbox.add (location);
+            }
+
+            if (AppCenterCore.Package.PermissionsFlags.SETTINGS in package.permissions_flags) {
+                var filesystem = new ContentType (
+                    _("System Settings Access"),
+                    _("Can read and modify system settings"),
+                    "sandbox-settings-symbolic"
                 );
 
                 oars_flowbox.add (filesystem);
@@ -1214,11 +1253,13 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             try {
                 package.uninstall.end (res);
             } catch (Error e) {
+#if PACKAGEKIT_BACKEND
                 // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
                 // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
                 if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
                     new UninstallFailDialog (package, (owned) e.message).present ();
                 }
+#endif
             }
         });
     }
@@ -1239,10 +1280,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             box.add (title);
 
             if (uri != null) {
-                var button = new Gtk.Button ();
+                var button = new Gtk.Button () {
+                    child = box
+                };
                 button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                button.add (box);
                 add (button);
 
                 button.clicked.connect (() => {
@@ -1275,7 +1317,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
             tooltip_text = _("Fund the development of this app");
 
-            add (box);
+            child = box;
 
             clicked.connect (() => {
                 var stripe = new Widgets.StripeDialog (
@@ -1339,7 +1381,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
                 halign = Gtk.Align.START,
-                margin_bottom = 6
+                margin_bottom = 6,
+                pixel_size = 32
             };
 
             var label = new Gtk.Label (title) {
@@ -1361,7 +1404,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             box.add (label);
             box.add (description_label);
 
-            add (box);
+            child = box;
         }
     }
 }

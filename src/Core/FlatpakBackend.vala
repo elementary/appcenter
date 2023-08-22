@@ -286,26 +286,30 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
-        try {
-            installed_refs = user_installation.list_installed_refs ();
-            installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
-        } catch (Error e) {
-            critical ("Unable to get installed flatpaks: %s", e.message);
-            job.result = Value (typeof (Object));
-            job.result.take_object ((owned) installed_apps);
-            job.results_ready ();
-            return;
+        if (user_installation != null) {
+            try {
+                installed_refs = user_installation.list_installed_refs ();
+                installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
+            } catch (Error e) {
+                critical ("Unable to get installed flatpaks: %s", e.message);
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) installed_apps);
+                job.results_ready ();
+                return;
+            }
         }
 
-        try {
-            installed_refs = system_installation.list_installed_refs ();
-            installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
-        } catch (Error e) {
-            critical ("Unable to get installed flatpaks: %s", e.message);
-            job.result = Value (typeof (Object));
-            job.result.take_object ((owned) installed_apps);
-            job.results_ready ();
-            return;
+        if (system_installation != null) {
+            try {
+                installed_refs = system_installation.list_installed_refs ();
+                installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
+            } catch (Error e) {
+                critical ("Unable to get installed flatpaks: %s", e.message);
+                job.result = Value (typeof (Object));
+                job.result.take_object ((owned) installed_apps);
+                job.results_ready ();
+                return;
+            }
         }
 
         job.result = Value (typeof (Object));
@@ -713,92 +717,113 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void set_permissionflags_from_metadata (KeyFile keyfile, Package package) {
         try {
             if (keyfile.has_group ("Context")) {
-                var sockets_context = keyfile.get_string_list ("Context", "sockets");
-                if (sockets_context != null) {
-                    if ("system-bus" in sockets_context) {
-                        package.permissions_flags |= Package.PermissionsFlags.SYSTEM_BUS;
-                    }
-                    if ("session-bus" in sockets_context) {
-                        package.permissions_flags |= Package.PermissionsFlags.SESSION_BUS;
-                    }
-                    if (!("fallback-x11" in sockets_context) && "x11" in sockets_context) {
-                        package.permissions_flags |= Package.PermissionsFlags.X11;
-                    }
-                }
-
-                var devices_context = keyfile.get_string_list ("Context", "devices");
-                if (devices_context != null && "all" in devices_context) {
-                    package.permissions_flags |= Package.PermissionsFlags.DEVICES;
-                }
-
-                var shared_context = keyfile.get_string_list ("Context", "shared");
-                if (shared_context != null && "network" in shared_context) {
-                    package.permissions_flags |= Package.PermissionsFlags.NETWORK;
-                }
-
-                var filesystems_context = keyfile.get_string_list ("Context", "filesystems");
-                if (filesystems_context != null) {
-                    FilesystemsAccess filesystems_access[] = {
-                        /* Reference: https://docs.flatpak.org/en/latest/flatpak-command-reference.html#idm45858571325264 */
-                        { "home", Package.PermissionsFlags.HOME_FULL },
-                        { "home:rw", Package.PermissionsFlags.HOME_FULL },
-                        { "home:ro", Package.PermissionsFlags.HOME_READ },
-                        { "~", Package.PermissionsFlags.HOME_FULL },
-                        { "~:rw", Package.PermissionsFlags.HOME_FULL },
-                        { "~:ro", Package.PermissionsFlags.HOME_READ },
-                        { "host", Package.PermissionsFlags.FILESYSTEM_FULL },
-                        { "host:rw", Package.PermissionsFlags.FILESYSTEM_FULL },
-                        { "host:ro", Package.PermissionsFlags.FILESYSTEM_READ },
-                        { "xdg-download", Package.PermissionsFlags.DOWNLOADS_FULL },
-                        { "xdg-download:rw", Package.PermissionsFlags.DOWNLOADS_FULL },
-                        { "xdg-download:ro", Package.PermissionsFlags.DOWNLOADS_READ },
-                        { "xdg-data/flatpak/overrides:create", Package.PermissionsFlags.ESCAPE_SANDBOX }
-                    };
-
-                    var filesystems_hits = 0;
-                    for (int i = 0; i < filesystems_access.length; i++) {
-                        if (filesystems_access[i].key in filesystems_context) {
-                            package.permissions_flags |= filesystems_access[i].permission;
-                            filesystems_hits++;
+                if (keyfile.has_key ("Context", "sockets")) {
+                    var sockets_context = keyfile.get_string_list ("Context", "sockets");
+                    if (sockets_context != null) {
+                        if ("system-bus" in sockets_context) {
+                            package.permissions_flags |= Package.PermissionsFlags.SYSTEM_BUS;
+                        }
+                        if ("session-bus" in sockets_context) {
+                            package.permissions_flags |= Package.PermissionsFlags.SESSION_BUS;
+                        }
+                        if (!("fallback-x11" in sockets_context) && "x11" in sockets_context) {
+                            package.permissions_flags |= Package.PermissionsFlags.X11;
                         }
                     }
+                }
 
-                    if (filesystems_context.length > filesystems_hits) {
-                        package.permissions_flags |= Package.PermissionsFlags.FILESYSTEM_OTHER;
+                if (keyfile.has_key ("Context", "devices")) {
+                    var devices_context = keyfile.get_string_list ("Context", "devices");
+                    if (devices_context != null && "all" in devices_context) {
+                        package.permissions_flags |= Package.PermissionsFlags.DEVICES;
                     }
+                }
 
-                    if ((package.permissions_flags & Package.PermissionsFlags.HOME_FULL) != 0) {
-                        package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.HOME_READ;
+                if (keyfile.has_key ("Context", "shared")) {
+                    var shared_context = keyfile.get_string_list ("Context", "shared");
+                    if (shared_context != null && "network" in shared_context) {
+                        package.permissions_flags |= Package.PermissionsFlags.NETWORK;
                     }
+                }
 
-                    if ((package.permissions_flags & Package.PermissionsFlags.FILESYSTEM_FULL) != 0) {
-                        package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.FILESYSTEM_READ;
-                    }
+                if (keyfile.has_key ("Context", "filesystems")) {
+                    var filesystems_context = keyfile.get_string_list ("Context", "filesystems");
+                    if (filesystems_context != null) {
+                        FilesystemsAccess filesystems_access[] = {
+                            /* Reference: https://docs.flatpak.org/en/latest/flatpak-command-reference.html#idm45858571325264 */
+                            { "home", Package.PermissionsFlags.HOME_FULL },
+                            { "home:rw", Package.PermissionsFlags.HOME_FULL },
+                            { "home:ro", Package.PermissionsFlags.HOME_READ },
+                            { "~", Package.PermissionsFlags.HOME_FULL },
+                            { "~:rw", Package.PermissionsFlags.HOME_FULL },
+                            { "~:ro", Package.PermissionsFlags.HOME_READ },
+                            { "host", Package.PermissionsFlags.FILESYSTEM_FULL },
+                            { "host:rw", Package.PermissionsFlags.FILESYSTEM_FULL },
+                            { "host:ro", Package.PermissionsFlags.FILESYSTEM_READ },
+                            { "xdg-download", Package.PermissionsFlags.DOWNLOADS_FULL },
+                            { "xdg-download:rw", Package.PermissionsFlags.DOWNLOADS_FULL },
+                            { "xdg-download:ro", Package.PermissionsFlags.DOWNLOADS_READ },
+                            { "xdg-data/flatpak/overrides:create", Package.PermissionsFlags.ESCAPE_SANDBOX }
+                        };
 
-                    if ((package.permissions_flags & Package.PermissionsFlags.DOWNLOADS_FULL) != 0) {
-                        package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.DOWNLOADS_READ;
+                        var filesystems_hits = 0;
+                        for (int i = 0; i < filesystems_access.length; i++) {
+                            if (filesystems_access[i].key in filesystems_context) {
+                                package.permissions_flags |= filesystems_access[i].permission;
+                                filesystems_hits++;
+                            }
+                        }
+
+                        if (filesystems_context.length > filesystems_hits) {
+                            package.permissions_flags |= Package.PermissionsFlags.FILESYSTEM_OTHER;
+                        }
+
+                        if ((package.permissions_flags & Package.PermissionsFlags.HOME_FULL) != 0) {
+                            package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.HOME_READ;
+                        }
+
+                        if ((package.permissions_flags & Package.PermissionsFlags.FILESYSTEM_FULL) != 0) {
+                            package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.FILESYSTEM_READ;
+                        }
+
+                        if ((package.permissions_flags & Package.PermissionsFlags.DOWNLOADS_FULL) != 0) {
+                            package.permissions_flags = package.permissions_flags & ~Package.PermissionsFlags.DOWNLOADS_READ;
+                        }
                     }
                 }
             }
 
             if (keyfile.has_group ("Session Bus Policy")) {
-                var dconf_policy = keyfile.get_string ("Session Bus Policy", "ca.desrt.dconf");
-                if (dconf_policy != null && dconf_policy == "talk") {
-                    package.permissions_flags |= Package.PermissionsFlags.SETTINGS;
+                if (keyfile.has_key ("Session Bus Policy", "ca.desrt.dconf")) {
+                    var dconf_policy = keyfile.get_string ("Session Bus Policy", "ca.desrt.dconf");
+                    if (dconf_policy != null && dconf_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.SETTINGS;
+                    }
                 }
 
-                var flatpak_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Flatpak");
-                if (flatpak_policy != null && flatpak_policy == "talk") {
-                    package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
-                } else {
+                if (keyfile.has_key ("Session Bus Policy", "org.freedesktop.Flatpak")) {
+                    var flatpak_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Flatpak");
+                    if (flatpak_policy != null && flatpak_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+                    }
+                } else if (keyfile.has_key ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore")) {
                     var portal_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore");
                     if (portal_policy != null && portal_policy == "talk") {
                         package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
                     }
                 }
             }
+
+            if (keyfile.has_group ("System Bus Policy")) {
+                if (keyfile.has_key ("System Bus Policy", "org.freedesktop.GeoClue2")) {
+                    var geoclue_policy = keyfile.get_string ("System Bus Policy", "org.freedesktop.GeoClue2");
+                    if (geoclue_policy != null && geoclue_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.LOCATION;
+                    }
+                }
+            }
         } catch (Error e) {
-            debug ("Error getting Flatpak permissions: %s", e.message);
+            critical ("Error getting Flatpak permissions: %s", e.message);
         }
 
         // We didn't find anything, so call it NONE

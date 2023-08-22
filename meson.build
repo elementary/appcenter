@@ -1,8 +1,8 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '7.2.1',
-    meson_version: '>=0.56.0'
+    version: '7.3.0',
+    meson_version: '>=0.57.0'
 )
 
 gettext_name = meson.project_name()
@@ -24,7 +24,6 @@ gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
 granite = dependency ('granite', version: '>=6.0.0')
 handy = dependency('libhandy-1', version: '>=1.4.0')
-packagekit = dependency ('packagekit-glib2')
 appstream = dependency ('appstream', version: '>=0.15.2')
 libsoup = dependency ('libsoup-2.4')
 json = dependency ('json-glib-1.0')
@@ -41,7 +40,6 @@ dependencies = [
     gtk,
     granite,
     handy,
-    packagekit,
     appstream,
     libsoup,
     json,
@@ -50,6 +48,10 @@ dependencies = [
     polkit,
     posix
 ]
+
+if get_option('packagekit_backend')
+    dependencies += [dependency ('packagekit-glib2')]
+endif
 
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
 conf_data = configuration_data()
@@ -68,4 +70,4 @@ subdir('data')
 subdir('src')
 subdir('po')
 
-meson.add_install_script('meson/post_install.py')
+gnome.post_install(glib_compile_schemas: true)

@@ -71,6 +71,11 @@ public class AppCenterCore.UpdateManager : Object {
             installed_package.update_state ();
         }
 
+
+        uint os_count = 0;
+        string os_desc = "";
+
+#if PACKAGEKIT_BACKEND
         Pk.Results pk_updates;
         unowned PackageKitBackend client = PackageKitBackend.get_default ();
         try {
@@ -79,9 +84,6 @@ public class AppCenterCore.UpdateManager : Object {
             warning ("Unable to get updates from PackageKit backend: %s", e.message);
             return 0;
         }
-
-        uint os_count = 0;
-        string os_desc = "";
 
         var package_array = pk_updates.get_package_array ();
         debug ("PackageKit backend reports %d updates", package_array.length);
@@ -99,6 +101,7 @@ public class AppCenterCore.UpdateManager : Object {
                 _("Version: %s").printf (pkg_version)
             );
         });
+#endif
 
         os_updates.component.set_pkgnames ({});
         os_updates.change_information.clear_update_info ();
@@ -207,6 +210,7 @@ public class AppCenterCore.UpdateManager : Object {
             count += 1;
         }
 
+#if PACKAGEKIT_BACKEND
         pk_updates.get_details_array ().foreach ((pk_detail) => {
             var pk_package = new Pk.Package ();
             try {
@@ -223,6 +227,7 @@ public class AppCenterCore.UpdateManager : Object {
                 critical (e.message);
             }
         });
+#endif
 
         os_updates.update_state ();
         runtime_updates.update_state ();
@@ -230,7 +235,11 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public void update_restart_state () {
+#if PACKAGEKIT_BACKEND
         var should_restart = restart_file.query_exists () || PackageKitBackend.get_default ().is_restart_required ();
+#else
+        var should_restart = restart_file.query_exists ();
+#endif
 
         if (should_restart) {
             if (!restart_required) {

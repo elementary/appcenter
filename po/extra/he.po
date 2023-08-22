@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
-"PO-Revision-Date: 2023-02-08 18:25+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
+"PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -53,29 +53,49 @@ msgstr "תשלום כראות עיניך לתמיכה במפתחים"
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:148
-msgid "Other Improvements:"
-msgstr "שיפורים נוספים:"
-
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
-msgid "Updated translations"
-msgstr "תרגומים עודכנו"
-
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
 msgid "New features:"
 msgstr "יכולות חדשות:"
 
-#: data/appcenter.metainfo.xml.in:79
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+"להזהיר כאשר ליישומים יש גישה לתיקיית הבית או לתיקיות המערכת, מיקום, הגדרות "
+"או שיש להם ארגז חול לא מאובטח."
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
+msgid "Other Improvements:"
+msgstr "שיפורים נוספים:"
+
+#: data/appcenter.metainfo.xml.in:74
+msgid "Tighten up spacing and margins in App Info views"
+msgstr "הריווח והשוליים הודקו בתצוגות פרטי יישומים"
+
+#: data/appcenter.metainfo.xml.in:75
+msgid "Show a placeholder banner on the home page when loading"
+msgstr "הצגת כרזות מילוי מקום בעמוד הבית בזמן הטעינה"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+"לא להציג יישומים שאינם של מרכז היישומים תחת כותרת נפרדת בתצוגות קטגוריות"
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
+msgid "Updated translations"
+msgstr "תרגומים עודכנו"
+
+#: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "מוצעת אפשרות תיקון אם עדכון Flatpak נכשל"
 
-#: data/appcenter.metainfo.xml.in:80
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -83,118 +103,13 @@ msgstr ""
 "להציג הודעה בתצוגת העדכונים כאשר עדכני, כולל מתי בוצעה בדיקה לאיתור עדכונים "
 "חדשים"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
 msgstr "להציג מתי יישום לא זמין בשפה שלך"
 
-#: data/appcenter.metainfo.xml.in:109
+#: data/appcenter.metainfo.xml.in:128
 msgid "Install OS Updates offline"
 msgstr "להתקין עדכוני מערכת הפעלה ללא אינטרנט"
-
-#: data/appcenter.metainfo.xml.in:130
-msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr "הניווט נכתב מחדש לתמיכה במחוות עם מספר אצבעות כדי לחזור אחורה"
-
-#: data/appcenter.metainfo.xml.in:131
-msgid "Recently updated apps are shown at the top of category views"
-msgstr "היישומים שעודכנו לאחרונה מופיעים בראש תצוגות הקטגוריות"
-
-#: data/appcenter.metainfo.xml.in:132
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr "סרגל צף מופיע כשמתבצעות משימות ברקע"
-
-#: data/appcenter.metainfo.xml.in:134
-msgid "App Info Page Improvements:"
-msgstr "שיפורים בעמוד פרטי היישום:"
-
-#: data/appcenter.metainfo.xml.in:136
-msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
-msgstr ""
-"חלוניות ההצגה של צילומי המסך ממלאים את רוחב המסך, כך שיותר צילומי מסך יופיעו "
-"בו־זמנית"
-
-#: data/appcenter.metainfo.xml.in:137
-msgid "An app's accent color is now shown behind screenshots"
-msgstr "הצבע המשני של היישום מופיע עכשיו מאחורי צילומי המסך"
-
-#: data/appcenter.metainfo.xml.in:138
-msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr "משיכת צבעי המותג מתקן AppStream כדי להציע תמיכה ביותר יישומים"
-
-#: data/appcenter.metainfo.xml.in:139
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr "הקישורים בתחתית העמוד גולשים לשורה הבאה במקום שיקוצרו"
-
-#: data/appcenter.metainfo.xml.in:140
-msgid "Better dark style support"
-msgstr "תמיכה משופרת בסגנון כהה"
-
-#: data/appcenter.metainfo.xml.in:142
-msgid "Updates View Improvements:"
-msgstr "שיפורים בתצוגת העדכונים:"
-
-#: data/appcenter.metainfo.xml.in:144
-msgid "Release notes are shown in a dialog"
-msgstr "הערות ההפצה מופיעות בחלונית"
-
-#: data/appcenter.metainfo.xml.in:145
-msgid "Better fallback icons for components"
-msgstr "סמלי נסיגה משופרים לרכיבים"
-
-#: data/appcenter.metainfo.xml.in:146
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr "שורת הכותרת „לעדכן הכול” נצמדת לראש החלון בעת הגלילה"
-
-#: data/appcenter.metainfo.xml.in:150
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr "כרטיס הקטגוריה „כיף ומשחקים” עוצב מחדש"
-
-#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
-msgid "Performance improvements"
-msgstr "שיפורי ביצועים"
-
-#: data/appcenter.metainfo.xml.in:152
-msgid "Stability improvements"
-msgstr "שיפורי יציבות"
-
-#: data/appcenter.metainfo.xml.in:167
-msgid "Added an option to automatically update apps"
-msgstr "נוספה אפשרות לעדכן יישומים ידנית"
-
-#: data/appcenter.metainfo.xml.in:168
-msgid "Manually check for new updates"
-msgstr "חיפוש עדכונים חדשים ידנית"
-
-#: data/appcenter.metainfo.xml.in:169
-msgid "Warn when apps are built against older runtimes"
-msgstr "להזהיר כאשר יישומנים נבנו כנגד סביבות ריצה מיושנות"
-
-#: data/appcenter.metainfo.xml.in:171
-msgid "Fixes:"
-msgstr "תיקונים:"
-
-#: data/appcenter.metainfo.xml.in:173
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr "נמנע מצב שכפתור החזרה נעלם או דורש מספר לחיצות"
-
-#: data/appcenter.metainfo.xml.in:175
-msgid "Improvements:"
-msgstr "שיפורים:"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr "לא להציג חלונית אזהרה על יישומים מחנויות חלופיות"
-
-#: data/appcenter.metainfo.xml.in:178
-msgid "Show screenshot captions in a tooltip"
-msgstr "יוצגו צילומי מסך בחלוניות העצה"
-
-#: data/appcenter.metainfo.xml.in:179
-msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr "להציג „לנסות בחינם” בעת הגדרת מחיר יישום ל־0"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -225,6 +140,88 @@ msgstr "תיקון מקורות תוכנה"
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr "נדרש אימות כדי לתקן מקורות תוכנה"
+
+#~ msgid "Rewritten navigation with multitouch gestures to go back"
+#~ msgstr "הניווט נכתב מחדש לתמיכה במחוות עם מספר אצבעות כדי לחזור אחורה"
+
+#~ msgid "Recently updated apps are shown at the top of category views"
+#~ msgstr "היישומים שעודכנו לאחרונה מופיעים בראש תצוגות הקטגוריות"
+
+#~ msgid "A status overlay bar is now shown when tasks are in progress"
+#~ msgstr "סרגל צף מופיע כשמתבצעות משימות ברקע"
+
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "שיפורים בעמוד פרטי היישום:"
+
+#~ msgid ""
+#~ "Screenshot carousels fill the width of the window, showing more "
+#~ "screenshots at once"
+#~ msgstr ""
+#~ "חלוניות ההצגה של צילומי המסך ממלאים את רוחב המסך, כך שיותר צילומי מסך "
+#~ "יופיעו בו־זמנית"
+
+#~ msgid "An app's accent color is now shown behind screenshots"
+#~ msgstr "הצבע המשני של היישום מופיע עכשיו מאחורי צילומי המסך"
+
+#~ msgid ""
+#~ "Get brand colors from the AppStream standard so more apps are supported"
+#~ msgstr "משיכת צבעי המותג מתקן AppStream כדי להציע תמיכה ביותר יישומים"
+
+#~ msgid "Wrap links at the bottom pages instead of ellipsize"
+#~ msgstr "הקישורים בתחתית העמוד גולשים לשורה הבאה במקום שיקוצרו"
+
+#~ msgid "Better dark style support"
+#~ msgstr "תמיכה משופרת בסגנון כהה"
+
+#~ msgid "Updates View Improvements:"
+#~ msgstr "שיפורים בתצוגת העדכונים:"
+
+#~ msgid "Release notes are shown in a dialog"
+#~ msgstr "הערות ההפצה מופיעות בחלונית"
+
+#~ msgid "Better fallback icons for components"
+#~ msgstr "סמלי נסיגה משופרים לרכיבים"
+
+#~ msgid ""
+#~ "The \"Update All\" header now sticks to the top of the window when "
+#~ "scrolling"
+#~ msgstr "שורת הכותרת „לעדכן הכול” נצמדת לראש החלון בעת הגלילה"
+
+#~ msgid "Redesigned \"Fun &amp; Games\" category card"
+#~ msgstr "כרטיס הקטגוריה „כיף ומשחקים” עוצב מחדש"
+
+#~ msgid "Performance improvements"
+#~ msgstr "שיפורי ביצועים"
+
+#~ msgid "Stability improvements"
+#~ msgstr "שיפורי יציבות"
+
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr "נוספה אפשרות לעדכן יישומים ידנית"
+
+#~ msgid "Manually check for new updates"
+#~ msgstr "חיפוש עדכונים חדשים ידנית"
+
+#~ msgid "Warn when apps are built against older runtimes"
+#~ msgstr "להזהיר כאשר יישומנים נבנו כנגד סביבות ריצה מיושנות"
+
+#~ msgid "Fixes:"
+#~ msgstr "תיקונים:"
+
+#~ msgid "Prevent back button from disappearing or requiring multiple clicks"
+#~ msgstr "נמנע מצב שכפתור החזרה נעלם או דורש מספר לחיצות"
+
+#~ msgid "Improvements:"
+#~ msgstr "שיפורים:"
+
+#~ msgid "Don't show a warning dialog about apps from alt stores"
+#~ msgstr "לא להציג חלונית אזהרה על יישומים מחנויות חלופיות"
+
+#~ msgid "Show screenshot captions in a tooltip"
+#~ msgstr "יוצגו צילומי מסך בחלוניות העצה"
+
+#~ msgid "Show \"Try for Free\" when setting an app's price to 0"
+#~ msgstr "להציג „לנסות בחינם” בעת הגדרת מחיר יישום ל־0"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "נמנעות קריסות שעלולות לקרות בעת עדכון"
@@ -271,9 +268,6 @@ msgstr "נדרש אימות כדי לתקן מקורות תוכנה"
 
 #~ msgid "Greatly increased number of recently-updated apps shown on home page"
 #~ msgstr "מספר גדול משמעותית של יישומים שעודכנו לאחרונה מופיעים בדף הבית"
-
-#~ msgid "Navigate banners on the home page with multitouch gestures"
-#~ msgstr "כרזות ניווט בעמוד הבית עם מחוות עם כמה אצבעות"
 
 #~ msgid "Show apps from newly sideloaded remotes without requiring a restart"
 #~ msgstr "הצגת יישומים ממרוחקים חדשים שנטענו מהצד מבלי לדרוש הפעלה מחדש"
@@ -461,9 +455,6 @@ msgstr "נדרש אימות כדי לתקן מקורות תוכנה"
 #~ "Ensure the OS updates subheading copy is correct after finishing updates"
 #~ msgstr ""
 #~ "וידאו שעותק תת־כותרת עדכוני מערכת ההפעלה הוא נכון לאחר סיום העדכונים"
-
-#~ msgid "Ellipsize long app names in App Info views"
-#~ msgstr "קיצור שמות ארוכים של יישומים בתצוגות פרטי היישומון"
 
 #~ msgid "And more"
 #~ msgstr "ועוד"

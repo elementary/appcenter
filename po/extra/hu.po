@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
-"PO-Revision-Date: 2023-02-08 18:25+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
+"PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -54,29 +54,51 @@ msgstr "Fizessen a fejlesztőknek amennyit tud, hogy támogassa őket"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:148
-msgid "Other Improvements:"
-msgstr "Egyéb fejlesztések:"
-
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
-msgid "Updated translations"
-msgstr "Frissített fordítások"
-
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
 msgid "New features:"
 msgstr "Új funkciók:"
 
-#: data/appcenter.metainfo.xml.in:79
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+"Figyelmeztetés, ha az alkalmazások hozzáférnek a rendszermappákhoz, "
+"tartózkodási helyhez, beállításokhoz, illetve ha nem biztonságos sandboxot "
+"használnak."
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
+msgid "Other Improvements:"
+msgstr "Egyéb fejlesztések:"
+
+#: data/appcenter.metainfo.xml.in:74
+msgid "Tighten up spacing and margins in App Info views"
+msgstr "Margók és helyközök átszabása az alkalmazásinformációs oldalakon"
+
+#: data/appcenter.metainfo.xml.in:75
+msgid "Show a placeholder banner on the home page when loading"
+msgstr "Egy helykitöltő használata a főoldalon betöltés közben"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+"Ne legyenek az Appközponton kívüli alkalmazások különválasztva a "
+"kategórianézetekben"
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
+msgid "Updated translations"
+msgstr "Frissített fordítások"
+
+#: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Javítás opció felajánlása, ha a Flatpak-frissítések nem sikeresek"
 
-#: data/appcenter.metainfo.xml.in:80
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -84,125 +106,13 @@ msgstr ""
 "Üzenet kijelzése a frissítések nézetben, ha naprakész, a legutóbbi "
 "ellenőrzés dátumával együtt"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
 msgstr "Alkalmazások nyelvi támogatásának megjelenítése"
 
-#: data/appcenter.metainfo.xml.in:109
+#: data/appcenter.metainfo.xml.in:128
 msgid "Install OS Updates offline"
 msgstr "Rendszerfrissítések telepítése kikapcsolt állapotban"
-
-#: data/appcenter.metainfo.xml.in:130
-msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr "Újraírt navigáció többujjas visszalépési gesztusokkal"
-
-#: data/appcenter.metainfo.xml.in:131
-msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
-"Nemrégiben frissített alkalmazások megjelenítése a kategórianézetek tetején"
-
-#: data/appcenter.metainfo.xml.in:132
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr "Egy állapotot megjelenítő átfedő sáv a folyamatban lévő feladatoknak"
-
-#: data/appcenter.metainfo.xml.in:134
-msgid "App Info Page Improvements:"
-msgstr "Alkalmazásinfó-oldal fejlesztései:"
-
-#: data/appcenter.metainfo.xml.in:136
-msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
-msgstr ""
-"A lapozható képernyőképek az ablak teljes szélességét betöltik, egyszerre "
-"több is látszódik"
-
-#: data/appcenter.metainfo.xml.in:137
-msgid "An app's accent color is now shown behind screenshots"
-msgstr "Az alkalmazások témaszíne látható a képernyőképek hátterén"
-
-#: data/appcenter.metainfo.xml.in:138
-msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr ""
-"Az alkalmazások témaszínének lekérése az AppStream szabvány szerint, így "
-"több alkalmazás támogatott"
-
-#: data/appcenter.metainfo.xml.in:139
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr "Az oldalak alján lévő linkek tördelése levágás helyett"
-
-#: data/appcenter.metainfo.xml.in:140
-msgid "Better dark style support"
-msgstr "Sötét téma jobb támogatása"
-
-#: data/appcenter.metainfo.xml.in:142
-msgid "Updates View Improvements:"
-msgstr "Frissítések nézet fejlesztései:"
-
-#: data/appcenter.metainfo.xml.in:144
-msgid "Release notes are shown in a dialog"
-msgstr "Kiadási megjegyzések megjelenítése egy párbeszédablakban"
-
-#: data/appcenter.metainfo.xml.in:145
-msgid "Better fallback icons for components"
-msgstr "Jobb alapértelmezett ikonok a komponensek számára"
-
-#: data/appcenter.metainfo.xml.in:146
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr "Az \"Összes frissítése\" fejléc az ablak tetején marad görgetés során"
-
-#: data/appcenter.metainfo.xml.in:150
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr "Újratervezett \"Szórakozás és játékok\" kategóriakártya"
-
-#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
-msgid "Performance improvements"
-msgstr "Teljesítmény-fejlesztések"
-
-#: data/appcenter.metainfo.xml.in:152
-msgid "Stability improvements"
-msgstr "Továbbfejlesztett stabilitás"
-
-#: data/appcenter.metainfo.xml.in:167
-msgid "Added an option to automatically update apps"
-msgstr "Lehetőség az alkalmazások automatikus frissítésére"
-
-#: data/appcenter.metainfo.xml.in:168
-msgid "Manually check for new updates"
-msgstr "Frissítések manuális keresése"
-
-#: data/appcenter.metainfo.xml.in:169
-msgid "Warn when apps are built against older runtimes"
-msgstr "Figyelmeztetés régebbi futtatókörnyezetre készített alkalmazásoknál"
-
-#: data/appcenter.metainfo.xml.in:171
-msgid "Fixes:"
-msgstr "Javítások:"
-
-#: data/appcenter.metainfo.xml.in:173
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
-"A vissza gomb eltűnésének és többszöri megnyomást igénylésének megelőzése"
-
-#: data/appcenter.metainfo.xml.in:175
-msgid "Improvements:"
-msgstr "Fejlesztések:"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
-"Az alternatív forrásokból elérhető alkalmazásokra már nem jelenik meg "
-"figyelmeztetés"
-
-#: data/appcenter.metainfo.xml.in:178
-msgid "Show screenshot captions in a tooltip"
-msgstr "Képernyőképek feliratának megjelenítése lebegő címkén"
-
-#: data/appcenter.metainfo.xml.in:179
-msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
-"\"Kipróbálás ingyen\" megjelenítése, ha egy alkalmazás árát 0-ra állítja"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -233,6 +143,98 @@ msgstr "Szoftverforrások javítása"
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr "A szoftverforrások javításához hitelesítés szükséges"
+
+#~ msgid "Rewritten navigation with multitouch gestures to go back"
+#~ msgstr "Újraírt navigáció többujjas visszalépési gesztusokkal"
+
+#~ msgid "Recently updated apps are shown at the top of category views"
+#~ msgstr ""
+#~ "Nemrégiben frissített alkalmazások megjelenítése a kategórianézetek "
+#~ "tetején"
+
+#~ msgid "A status overlay bar is now shown when tasks are in progress"
+#~ msgstr ""
+#~ "Egy állapotot megjelenítő átfedő sáv a folyamatban lévő feladatoknak"
+
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "Alkalmazásinfó-oldal fejlesztései:"
+
+#~ msgid ""
+#~ "Screenshot carousels fill the width of the window, showing more "
+#~ "screenshots at once"
+#~ msgstr ""
+#~ "A lapozható képernyőképek az ablak teljes szélességét betöltik, egyszerre "
+#~ "több is látszódik"
+
+#~ msgid "An app's accent color is now shown behind screenshots"
+#~ msgstr "Az alkalmazások témaszíne látható a képernyőképek hátterén"
+
+#~ msgid ""
+#~ "Get brand colors from the AppStream standard so more apps are supported"
+#~ msgstr ""
+#~ "Az alkalmazások témaszínének lekérése az AppStream szabvány szerint, így "
+#~ "több alkalmazás támogatott"
+
+#~ msgid "Wrap links at the bottom pages instead of ellipsize"
+#~ msgstr "Az oldalak alján lévő linkek tördelése levágás helyett"
+
+#~ msgid "Better dark style support"
+#~ msgstr "Sötét téma jobb támogatása"
+
+#~ msgid "Updates View Improvements:"
+#~ msgstr "Frissítések nézet fejlesztései:"
+
+#~ msgid "Release notes are shown in a dialog"
+#~ msgstr "Kiadási megjegyzések megjelenítése egy párbeszédablakban"
+
+#~ msgid "Better fallback icons for components"
+#~ msgstr "Jobb alapértelmezett ikonok a komponensek számára"
+
+#~ msgid ""
+#~ "The \"Update All\" header now sticks to the top of the window when "
+#~ "scrolling"
+#~ msgstr ""
+#~ "Az \"Összes frissítése\" fejléc az ablak tetején marad görgetés során"
+
+#~ msgid "Redesigned \"Fun &amp; Games\" category card"
+#~ msgstr "Újratervezett \"Szórakozás és játékok\" kategóriakártya"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Teljesítmény-fejlesztések"
+
+#~ msgid "Stability improvements"
+#~ msgstr "Továbbfejlesztett stabilitás"
+
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr "Lehetőség az alkalmazások automatikus frissítésére"
+
+#~ msgid "Manually check for new updates"
+#~ msgstr "Frissítések manuális keresése"
+
+#~ msgid "Warn when apps are built against older runtimes"
+#~ msgstr "Figyelmeztetés régebbi futtatókörnyezetre készített alkalmazásoknál"
+
+#~ msgid "Fixes:"
+#~ msgstr "Javítások:"
+
+#~ msgid "Prevent back button from disappearing or requiring multiple clicks"
+#~ msgstr ""
+#~ "A vissza gomb eltűnésének és többszöri megnyomást igénylésének megelőzése"
+
+#~ msgid "Improvements:"
+#~ msgstr "Fejlesztések:"
+
+#~ msgid "Don't show a warning dialog about apps from alt stores"
+#~ msgstr ""
+#~ "Az alternatív forrásokból elérhető alkalmazásokra már nem jelenik meg "
+#~ "figyelmeztetés"
+
+#~ msgid "Show screenshot captions in a tooltip"
+#~ msgstr "Képernyőképek feliratának megjelenítése lebegő címkén"
+
+#~ msgid "Show \"Try for Free\" when setting an app's price to 0"
+#~ msgstr ""
+#~ "\"Kipróbálás ingyen\" megjelenítése, ha egy alkalmazás árát 0-ra állítja"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "Frissítések közbeni összeomlások megelőzése"

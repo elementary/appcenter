@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
 "PO-Revision-Date: 2022-07-15 22:32+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -55,154 +55,64 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:148
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
+msgid "New features:"
+msgstr "Neue Funktionen:"
+
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Other Improvements:"
 msgstr "Verbesserungen:"
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
+#: data/appcenter.metainfo.xml.in:74
+#, fuzzy
+#| msgid "Ellipsize long app names in App Info views"
+msgid "Tighten up spacing and margins in App Info views"
+msgstr "Lange App-Namen in App-Info-Ansichten durch Auslasspunkte kürzen"
+
+#: data/appcenter.metainfo.xml.in:75
+#, fuzzy
+#| msgid "Navigate banners on the home page with multitouch gestures"
+msgid "Show a placeholder banner on the home page when loading"
+msgstr "Mit Multitouch-Gesten zwischen Bannern auf der Startseite navigieren"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
 msgid "Updated translations"
 msgstr "Aktualisierte Übersetzungen"
 
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
-#: data/appcenter.metainfo.xml.in:165
-msgid "New features:"
-msgstr "Neue Funktionen:"
-
-#: data/appcenter.metainfo.xml.in:79
+#: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:80
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:109
+#: data/appcenter.metainfo.xml.in:128
 msgid "Install OS Updates offline"
 msgstr ""
-
-#: data/appcenter.metainfo.xml.in:130
-msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:131
-msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:132
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:134
-#, fuzzy
-#| msgid "Improvements:"
-msgid "App Info Page Improvements:"
-msgstr "Verbesserungen:"
-
-#: data/appcenter.metainfo.xml.in:136
-msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:137
-msgid "An app's accent color is now shown behind screenshots"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:138
-msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:139
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:140
-msgid "Better dark style support"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:142
-#, fuzzy
-#| msgid "Improvements:"
-msgid "Updates View Improvements:"
-msgstr "Verbesserungen:"
-
-#: data/appcenter.metainfo.xml.in:144
-msgid "Release notes are shown in a dialog"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:145
-msgid "Better fallback icons for components"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:146
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:150
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
-msgid "Performance improvements"
-msgstr "Leistungsverbesserungen"
-
-#: data/appcenter.metainfo.xml.in:152
-#, fuzzy
-#| msgid "Extension improvements"
-msgid "Stability improvements"
-msgstr "Erweiterungsverbesserungen"
-
-#: data/appcenter.metainfo.xml.in:167
-msgid "Added an option to automatically update apps"
-msgstr "Eine Option für automatische Updates wurde hinzugefügt"
-
-#: data/appcenter.metainfo.xml.in:168
-msgid "Manually check for new updates"
-msgstr "Manuelle Prüfung auf neue Aktualisierungen"
-
-#: data/appcenter.metainfo.xml.in:169
-msgid "Warn when apps are built against older runtimes"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:171
-msgid "Fixes:"
-msgstr "Fehlerbehebungen:"
-
-#: data/appcenter.metainfo.xml.in:173
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:175
-msgid "Improvements:"
-msgstr "Verbesserungen:"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr "Kein Warnungsdialog bei Apps von alternativen Quellen anzeigen"
-
-#: data/appcenter.metainfo.xml.in:178
-msgid "Show screenshot captions in a tooltip"
-msgstr "Untertiteln zum Bildschirmfoto als Kurzinfo anzeigen"
-
-#: data/appcenter.metainfo.xml.in:179
-msgid "Show \"Try for Free\" when setting an app's price to 0"
-msgstr ""
-"\"Kostenlos ausprobieren\" anzeigen, wenn der Preis einer App auf 0 gesetzt "
-"wird"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -233,6 +143,47 @@ msgstr ""
 #| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
 msgstr "Authentifikation ist erforderlich, um Software zu aktualisieren"
+
+#, fuzzy
+#~| msgid "Improvements:"
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "Verbesserungen:"
+
+#, fuzzy
+#~| msgid "Improvements:"
+#~ msgid "Updates View Improvements:"
+#~ msgstr "Verbesserungen:"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Leistungsverbesserungen"
+
+#, fuzzy
+#~| msgid "Extension improvements"
+#~ msgid "Stability improvements"
+#~ msgstr "Erweiterungsverbesserungen"
+
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr "Eine Option für automatische Updates wurde hinzugefügt"
+
+#~ msgid "Manually check for new updates"
+#~ msgstr "Manuelle Prüfung auf neue Aktualisierungen"
+
+#~ msgid "Fixes:"
+#~ msgstr "Fehlerbehebungen:"
+
+#~ msgid "Improvements:"
+#~ msgstr "Verbesserungen:"
+
+#~ msgid "Don't show a warning dialog about apps from alt stores"
+#~ msgstr "Kein Warnungsdialog bei Apps von alternativen Quellen anzeigen"
+
+#~ msgid "Show screenshot captions in a tooltip"
+#~ msgstr "Untertiteln zum Bildschirmfoto als Kurzinfo anzeigen"
+
+#~ msgid "Show \"Try for Free\" when setting an app's price to 0"
+#~ msgstr ""
+#~ "\"Kostenlos ausprobieren\" anzeigen, wenn der Preis einer App auf 0 "
+#~ "gesetzt wird"
 
 #~ msgid "Prevent potential crashes when updating"
 #~ msgstr "Verhindert potentielle Abstürze während Updates"
@@ -283,10 +234,6 @@ msgstr "Authentifikation ist erforderlich, um Software zu aktualisieren"
 #~ msgstr ""
 #~ "Umfangreiche Erhöhung der Anzahl von kürzlich aktualisierten Anwendungen, "
 #~ "die auf der Startseite angezeigt werden"
-
-#~ msgid "Navigate banners on the home page with multitouch gestures"
-#~ msgstr ""
-#~ "Mit Multitouch-Gesten zwischen Bannern auf der Startseite navigieren"
 
 #~ msgid "Show apps from newly sideloaded remotes without requiring a restart"
 #~ msgstr ""
@@ -508,9 +455,6 @@ msgstr "Authentifikation ist erforderlich, um Software zu aktualisieren"
 #~ msgstr ""
 #~ "Stellt sicher, dass die Kopie der Unterrubrik OS-Updates nach Abschluss "
 #~ "der Updates korrekt ist"
-
-#~ msgid "Ellipsize long app names in App Info views"
-#~ msgstr "Lange App-Namen in App-Info-Ansichten durch Auslasspunkte kürzen"
 
 #~ msgid "And more"
 #~ msgstr "Und mehr"

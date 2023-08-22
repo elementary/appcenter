@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 13:58+0000\n"
+"POT-Creation-Date: 2023-07-28 16:06+0000\n"
 "PO-Revision-Date: 2021-09-21 21:50+0000\n"
 "Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -55,161 +55,66 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:148
-#, fuzzy
-#| msgid "Keyboard improvements"
-msgid "Other Improvements:"
-msgstr "Mejoras de teclado"
-
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:153 data/appcenter.metainfo.xml.in:181
-msgid "Updated translations"
-msgstr "Traducciones actualizadas"
-
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:94
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:128
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
 #, fuzzy
 #| msgid "New features"
 msgid "New features:"
 msgstr "Funcionalidades nuevas"
 
-#: data/appcenter.metainfo.xml.in:79
+#: data/appcenter.metainfo.xml.in:70
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130
+#, fuzzy
+#| msgid "Keyboard improvements"
+msgid "Other Improvements:"
+msgstr "Mejoras de teclado"
+
+#: data/appcenter.metainfo.xml.in:74
+#, fuzzy
+#| msgid "Ellipsize long app names in App Info views"
+msgid "Tighten up spacing and margins in App Info views"
+msgstr ""
+"Se truncan los nombres extensos en las vistas de información de aplicación"
+
+#: data/appcenter.metainfo.xml.in:75
+#, fuzzy
+#| msgid "Navigate banners on the home page with multitouch gestures"
+msgid "Show a placeholder banner on the home page when loading"
+msgstr "Navega por los banners en la página de inicio con gestos multitáctiles"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132
+msgid "Updated translations"
+msgstr "Traducciones actualizadas"
+
+#: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:80
+#: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:109
+#: data/appcenter.metainfo.xml.in:128
 msgid "Install OS Updates offline"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:130
-msgid "Rewritten navigation with multitouch gestures to go back"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:131
-msgid "Recently updated apps are shown at the top of category views"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:132
-msgid "A status overlay bar is now shown when tasks are in progress"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:134
-#, fuzzy
-#| msgid "Keyboard improvements"
-msgid "App Info Page Improvements:"
-msgstr "Mejoras de teclado"
-
-#: data/appcenter.metainfo.xml.in:136
-msgid ""
-"Screenshot carousels fill the width of the window, showing more screenshots "
-"at once"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:137
-msgid "An app's accent color is now shown behind screenshots"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:138
-msgid "Get brand colors from the AppStream standard so more apps are supported"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:139
-msgid "Wrap links at the bottom pages instead of ellipsize"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:140
-msgid "Better dark style support"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:142
-#, fuzzy
-#| msgid "Keyboard improvements"
-msgid "Updates View Improvements:"
-msgstr "Mejoras de teclado"
-
-#: data/appcenter.metainfo.xml.in:144
-msgid "Release notes are shown in a dialog"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:145
-msgid "Better fallback icons for components"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:146
-msgid ""
-"The \"Update All\" header now sticks to the top of the window when scrolling"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:150
-msgid "Redesigned \"Fun &amp; Games\" category card"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:151 data/appcenter.metainfo.xml.in:180
-msgid "Performance improvements"
-msgstr "Mejoras de rendimiento"
-
-#: data/appcenter.metainfo.xml.in:152
-#, fuzzy
-#| msgid "Extension improvements"
-msgid "Stability improvements"
-msgstr "Mejoras en las extensiones"
-
-#: data/appcenter.metainfo.xml.in:167
-#, fuzzy
-#| msgid "No longer prompt for approval to update non-curated apps"
-msgid "Added an option to automatically update apps"
-msgstr ""
-"Ya no se pide su aprobación para actualizar aplicaciones no revisadas por "
-"los editores"
-
-#: data/appcenter.metainfo.xml.in:168
-#, fuzzy
-#| msgid "Check for Updates"
-msgid "Manually check for new updates"
-msgstr "Buscar actualizaciones"
-
-#: data/appcenter.metainfo.xml.in:169
-msgid "Warn when apps are built against older runtimes"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:171
-msgid "Fixes:"
-msgstr "Correcciones:"
-
-#: data/appcenter.metainfo.xml.in:173
-msgid "Prevent back button from disappearing or requiring multiple clicks"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:175
-#, fuzzy
-#| msgid "Keyboard improvements"
-msgid "Improvements:"
-msgstr "Mejoras de teclado"
-
-#: data/appcenter.metainfo.xml.in:177
-msgid "Don't show a warning dialog about apps from alt stores"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:178
-msgid "Show screenshot captions in a tooltip"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:179
-msgid "Show \"Try for Free\" when setting an app's price to 0"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:3
@@ -242,12 +147,46 @@ msgstr ""
 msgid "Authentication is required to repair software sources"
 msgstr "Necesita autenticarse para actualizar el software"
 
+#, fuzzy
+#~| msgid "Keyboard improvements"
+#~ msgid "App Info Page Improvements:"
+#~ msgstr "Mejoras de teclado"
+
+#, fuzzy
+#~| msgid "Keyboard improvements"
+#~ msgid "Updates View Improvements:"
+#~ msgstr "Mejoras de teclado"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Mejoras de rendimiento"
+
+#, fuzzy
+#~| msgid "Extension improvements"
+#~ msgid "Stability improvements"
+#~ msgstr "Mejoras en las extensiones"
+
+#, fuzzy
+#~| msgid "No longer prompt for approval to update non-curated apps"
+#~ msgid "Added an option to automatically update apps"
+#~ msgstr ""
+#~ "Ya no se pide su aprobación para actualizar aplicaciones no revisadas por "
+#~ "los editores"
+
+#, fuzzy
+#~| msgid "Check for Updates"
+#~ msgid "Manually check for new updates"
+#~ msgstr "Buscar actualizaciones"
+
+#~ msgid "Fixes:"
+#~ msgstr "Correcciones:"
+
+#, fuzzy
+#~| msgid "Keyboard improvements"
+#~ msgid "Improvements:"
+#~ msgstr "Mejoras de teclado"
+
 #~ msgid "Show other apps by an author for Flatpak sources"
 #~ msgstr "Mostrar otras aplicaciones de un autor para fuentes de Flatpak"
-
-#~ msgid "Navigate banners on the home page with multitouch gestures"
-#~ msgstr ""
-#~ "Navega por los banners en la página de inicio con gestos multitáctiles"
 
 #, fuzzy
 #~| msgid "Add support for Flatpak apps"
@@ -391,10 +330,6 @@ msgstr "Necesita autenticarse para actualizar el software"
 #~ msgstr ""
 #~ "Se garantiza que el texto del título secundario de actualizaciones del SO "
 #~ "sea correcto tras finalizar las actualizaciones"
-
-#~ msgid "Ellipsize long app names in App Info views"
-#~ msgstr ""
-#~ "Se truncan los nombres extensos en las vistas de información de aplicación"
 
 #~ msgid "And more"
 #~ msgstr "Y más"
