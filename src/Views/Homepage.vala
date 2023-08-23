@@ -241,25 +241,6 @@ public class AppCenter.Homepage : Gtk.Box {
             show_category (card.category);
         });
 
-        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
-            Idle.add (() => {
-                // Clear the cached categories when the AppStream pool is updated
-                var child = category_flow.get_first_child ();
-                while (child != null) {
-                    var item = (AbstractCategoryCard) child;
-                    if (item.visible) {
-                        continue;
-                    }
-                    var category_components = item.category.get_components ();
-                    category_components.remove_range (0, category_components.length);
-
-                    child = child.get_next_sibling ();
-                }
-
-                return GLib.Source.REMOVE;
-            });
-        });
-
         banner_motion_controller.enter.connect (() => {
             banner_timeout_stop ();
         });
@@ -347,7 +328,7 @@ public class AppCenter.Homepage : Gtk.Box {
             }
         }
 
-        recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child != null;
+        recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
     }
 
     private void banner_timeout_start () {
@@ -406,6 +387,20 @@ public class AppCenter.Homepage : Gtk.Box {
             content_area.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             child = content_area;
+
+            AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+                Idle.add (() => {
+                    // Clear the cached categories when the AppStream pool is updated
+                    if (visible) {
+                        return GLib.Source.REMOVE;
+                    }
+
+                    var category_components = category.get_components ();
+                    category_components.remove_range (0, category_components.length);
+
+                    return GLib.Source.REMOVE;
+                });
+            });
         }
     }
 
