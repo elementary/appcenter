@@ -15,11 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class AppCenter.CategoryView : Gtk.Stack {
+public class AppCenter.CategoryView : Gtk.Box {
     public signal void show_app (AppCenterCore.Package package);
 
     public AppStream.Category category { get; construct; }
 
+    private Gtk.Stack stack;
     private Gtk.ScrolledWindow scrolled;
     private Gtk.Box box;
     private SubcategoryFlowbox free_flowbox;
@@ -45,17 +46,21 @@ public class AppCenter.CategoryView : Gtk.Stack {
         };
 
         scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
-        scrolled.add (box);
 
         var spinner = new Gtk.Spinner () {
-            halign = Gtk.Align.CENTER
+            halign = Gtk.Align.CENTER,
+            hexpand = true
         };
         spinner.start ();
 
-        add (spinner);
-        add (scrolled);
+        stack = new Gtk.Stack ();
+        stack.add (spinner);
+        stack.add (scrolled);
+
+        add (stack);
         show_all ();
 
         populate ();
@@ -148,7 +153,7 @@ public class AppCenter.CategoryView : Gtk.Stack {
             }
 
             show_all ();
-            visible_child = scrolled;
+            stack.visible_child = scrolled;
         });
     }
 
