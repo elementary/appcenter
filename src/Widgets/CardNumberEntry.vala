@@ -32,7 +32,6 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
     }
 
     private CardType card_type = CardType.UNKNOWN;
-    private uint timeout = 0;
     private bool insertion = true;
 
     construct {
@@ -49,12 +48,10 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         });
 
         changed.connect (() => {
-            if (timeout > 0) {
-                GLib.Source.remove (timeout);
-            }
             update_number ();
             detect_card ();
             change_card_icon ();
+
             int[] pattern = get_card_pattern ();
             var number_chars = card_number.to_utf8 ();
             var builder = new GLib.StringBuilder ();
@@ -65,14 +62,16 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
                 }
             }
 
-            var end_offset = (text.char_count () - 1) - cursor_position;
-            text = builder.str;
-            var new_offset = (text.char_count () - 1) - cursor_position;
-            if (end_offset != new_offset) {
-                Idle.add (() => {
-                    move_cursor (Gtk.MovementStep.LOGICAL_POSITIONS, new_offset - end_offset, false);
-                    return false;
-                });
+            if (text != builder.str) {
+                var end_offset = (text.char_count () - 1) - cursor_position;
+                text = builder.str;
+                var new_offset = (text.char_count () - 1) - cursor_position;
+                if (end_offset != new_offset) {
+                    Idle.add (() => {
+                        set_position (new_offset + end_offset + 1);
+                        return false;
+                    });
+                }
             }
 
             max_length = get_card_max_length () + pattern.length;
