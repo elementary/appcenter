@@ -125,14 +125,6 @@ public class AppCenter.App : Gtk.Application {
             gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
         });
 
-        var fallback_provider = new Gtk.CssProvider ();
-        fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            fallback_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
-        );
-
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
             if (active_window != null) {
