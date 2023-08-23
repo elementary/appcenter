@@ -764,12 +764,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
             var share_button = new Gtk.MenuButton () {
                 child = share_box,
+                has_frame = false,
                 direction = Gtk.ArrowType.UP,
                 popover = share_popover
             };
-
             share_button.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            share_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
             share_popover.link_copied.connect (() => {
                 toast.send_notification ();
