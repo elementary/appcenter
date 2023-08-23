@@ -72,8 +72,9 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             xalign = 0
         };
 
-        var icon_image = new Gtk.Image () {
-            gicon = package.get_icon (128, get_scale_factor ()),
+        var icon_image = new Gtk.Image.from_gicon (
+            package.get_icon (128, get_scale_factor ())
+        ) {
             pixel_size = 128
         };
 
