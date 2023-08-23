@@ -271,16 +271,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         child = box;
 
-        int window_width, window_height;
-        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
         App.settings.bind (
             "automatic-updates",
             automatic_updates_button,
             "active",
             SettingsBindFlags.DEFAULT
         );
-
-        resize (window_width, window_height);
 
         var client = AppCenterCore.Client.get_default ();
 
@@ -362,7 +358,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 if (!is_maximized) {
                     int width, height;
                     get_size (out width, out height);
-                    App.settings.set ("window-size", "(ii)", width, height);
+                    App.settings.set_int ("window-height", height);
+                    App.settings.set_int ("window-width", width);
                 }
 
                 return GLib.Source.REMOVE;
