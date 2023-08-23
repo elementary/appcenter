@@ -515,8 +515,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             };
             screenshot_previous.clicked.connect (() => {
                 var index = (int) screenshot_carousel.position;
-                if (index < screenshot_carousel.n_pages - 1) {
-                    screenshot_carousel.scroll_to (screenshot_carousel.get_nth_page (index + 1), true);
+                if (index > 0) {
+                    screenshot_carousel.scroll_to (screenshot_carousel.get_nth_page (index - 1), true);
                 }
             });
 
@@ -527,7 +527,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             screenshot_next.clicked.connect (() => {
                 var index = (int) screenshot_carousel.position;
                 if (index < screenshot_carousel.n_pages - 1) {
-                    screenshot_carousel.scroll_to (screenshot_carousel.get_nth_page (index - 1), true);
+                    screenshot_carousel.scroll_to (screenshot_carousel.get_nth_page (index + 1), true);
                 }
             });
 
