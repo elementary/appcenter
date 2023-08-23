@@ -398,6 +398,8 @@ namespace AppCenter.Views {
                 if (child is Widgets.PackageRow) {
                     ((Widgets.PackageRow) child).set_action_sensitive (false);
                 }
+
+                child = child.get_next_sibling ();
             }
 
             for (int i = 0; i < package_liststore.get_n_items (); i++) {
@@ -419,8 +421,6 @@ namespace AppCenter.Views {
                         }
                     }
                 }
-
-                child = child.get_next_sibling ();
             }
 
             unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
