@@ -75,18 +75,20 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG) {
+            pixel_size = 48,
             valign = Gtk.Align.START
         };
 
         var overlay_image = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.LARGE_TOOLBAR) {
             halign = Gtk.Align.END,
-            valign = Gtk.Align.END
+            valign = Gtk.Align.END,
+            pixel_size = 24
         };
 
         var overlay = new Gtk.Overlay () {
+            child = image,
             valign = Gtk.Align.START
         };
-        overlay.add (image);
         overlay.add_overlay (overlay_image);
 
         /* TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
@@ -153,6 +155,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             activates_default = true,
             hexpand = true,
             input_purpose = Gtk.InputPurpose.EMAIL,
+            input_hints = LOWERCASE,
             margin_bottom = 6,
             placeholder_text = _("Email"),
             primary_icon_name = "internet-mail-symbolic"
@@ -176,7 +179,6 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             hexpand = true,
             margin_bottom = 6
         };
-        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
 
         card_expiration_entry = new Granite.ValidatedEntry.from_regex (expiration_regex) {
             activates_default = true,
@@ -208,8 +210,9 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_grid.attach (card_expiration_entry, 0, 3);
         card_grid.attach (card_cvc_entry, 1, 3);
 
-        var card_grid_revealer = new Gtk.Revealer ();
-        card_grid_revealer.add (card_grid);
+        var card_grid_revealer = new Gtk.Revealer () {
+            child = card_grid
+        };
 
         card_layout = new Gtk.Grid () {
             column_spacing = 12
@@ -274,7 +277,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         email_entry.changed.connect (() => {
-            email_entry.text = email_entry.text.replace (" ", "").down ();
+            if (" " in email_entry.text) {
+                email_entry.text = email_entry.text.replace (" ", "");
+            }
+
             is_payment_sensitive ();
         });
 
@@ -283,8 +289,13 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             is_payment_sensitive ();
         });
 
+        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
+
         card_expiration_entry.changed.connect (() => {
-            card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            if (" " in card_expiration_entry.text) {
+                card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            }
+
             if (card_expiration_entry.text.length < 4) {
                 card_expiration_entry.is_valid = false;
             }
@@ -301,7 +312,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         card_cvc_entry.changed.connect (() => {
-            card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            if (" " in card_cvc_entry.text) {
+                card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            }
+
             is_payment_sensitive ();
         });
     }
@@ -354,17 +368,20 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
                 xalign = 0
             };
 
-            var icon = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.DIALOG);
+            var icon = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.DIALOG) {
+                pixel_size = 48
+            };
 
             var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR) {
                 halign = Gtk.Align.END,
-                valign = Gtk.Align.END
+                valign = Gtk.Align.END,
+                pixel_size = 24
             };
 
             var overlay = new Gtk.Overlay () {
+                child = icon,
                 valign = Gtk.Align.START
             };
-            overlay.add (icon);
             overlay.add_overlay (overlay_icon);
 
             var grid = new Gtk.Grid () {
@@ -461,6 +478,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         new Thread<void*> (null, () => {
             string expiration_dateyear = card_expiration_entry.text.replace ("/", "");
             var year = (int.parse (expiration_dateyear[2:4]) + 2000).to_string ();
+
+            email_entry.text = email_entry.text.down ();
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, expiration_dateyear[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
