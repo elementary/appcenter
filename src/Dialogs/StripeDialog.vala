@@ -159,7 +159,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             activates_default = true,
             hexpand = true,
             input_purpose = Gtk.InputPurpose.EMAIL,
-            input_hints = Gtk.InputHints.LOWERCASE,
+            input_hints = LOWERCASE,
             margin_bottom = 6,
             placeholder_text = _("Email"),
             primary_icon_name = "internet-mail-symbolic"
