@@ -249,8 +249,6 @@ public class AppCenter.App : Gtk.Application {
             if (settings.get_boolean ("window-maximized")) {
                 main_window.maximize ();
             }
-
-            settings.bind ("window-maximized", main_window, "is-maximized", SET);
         }
 
         if (show_updates) {

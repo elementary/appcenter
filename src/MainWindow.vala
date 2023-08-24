@@ -355,6 +355,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             configure_id = Timeout.add (200, () => {
                 configure_id = 0;
 
+                App.settings.set_boolean ("window-maximized", is_maximized);
+
                 if (!is_maximized) {
                     int width, height;
                     get_size (out width, out height);
