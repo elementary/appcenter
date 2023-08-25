@@ -241,6 +241,14 @@ public class AppCenter.App : Gtk.Application {
 
             var main_window = new MainWindow (this);
             add_window (main_window);
+
+            var window_height = App.settings.get_int ("window-height");
+            var window_width = App.settings.get_int ("window-width");
+            main_window.resize (window_width, window_height);
+
+            if (settings.get_boolean ("window-maximized")) {
+                main_window.maximize ();
+            }
         }
 
         if (show_updates) {
