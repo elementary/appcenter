@@ -41,7 +41,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.grab_focus ();
 
         var go_back = new SimpleAction ("go-back", null);
-        go_back.activate.connect (() => leaflet.navigate (Adw.NavigationDirection.BACK));
+        go_back.activate.connect (() => leaflet.navigate (BACK));
         add_action (go_back);
 
         var focus_search = new SimpleAction ("focus-search", null);
@@ -312,11 +312,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-
         search_entry_eventcontrollerkey.key_released.connect ((keyval, keycode, state) => {
             switch (keyval) {
                 case Gdk.Key.Down:
-                    search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
+                    search_entry.move_focus (TAB_FORWARD);
                     break;
                 case Gdk.Key.Escape:
                     search_entry.text = "";
@@ -328,7 +327,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public override bool close_request () {
-       installed_view.clear ();
+        installed_view.clear ();
 
         if (working) {
             hide ();
@@ -407,7 +406,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void update_navigation () {
-        var previous_child = leaflet.get_adjacent_child (Adw.NavigationDirection.BACK);
+        var previous_child = leaflet.get_adjacent_child (BACK);
 
         if (leaflet.visible_child is Homepage) {
             view_mode_revealer.reveal_child = true;
@@ -448,8 +447,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             set_return_name (C_("view", "Installed"));
         }
 
-        while (leaflet.get_adjacent_child (Adw.NavigationDirection.FORWARD) != null) {
-            var next_child = leaflet.get_adjacent_child (Adw.NavigationDirection.FORWARD);
+        while (leaflet.get_adjacent_child (FORWARD) != null) {
+            var next_child = leaflet.get_adjacent_child (FORWARD);
             leaflet.remove (next_child);
 
             if (!(next_child is AppCenter.Views.AppListUpdateView)) {
@@ -522,7 +521,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             } else {
                 AppStream.Category current_category = null;
 
-                var previous_child = leaflet.get_adjacent_child (Adw.NavigationDirection.BACK);
+                var previous_child = leaflet.get_adjacent_child (BACK);
                 if (previous_child is CategoryView) {
                     current_category = ((CategoryView) previous_child).category;
                 }
