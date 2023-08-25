@@ -57,7 +57,7 @@ public class AppCenter.App : Gtk.Application {
 
     construct {
         application_id = Build.PROJECT_NAME;
-        flags |= ApplicationFlags.HANDLES_OPEN;
+        flags |= HANDLES_OPEN | ALLOW_REPLACEMENT;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
         Intl.bindtextdomain (Build.GETTEXT_PACKAGE, Build.LOCALEDIR);
