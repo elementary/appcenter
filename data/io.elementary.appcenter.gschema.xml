@@ -6,10 +6,15 @@
       <summary>Whether the window was maximized on last run</summary>
       <description>Whether the window was maximized on last run</description>
     </key>
-    <key name="window-size" type="(ii)">
-      <default>(1100, 660)</default>
-      <summary>Most recent window size</summary>
-      <description>Most recent window size (width, height)</description>
+    <key name="window-height" type="i">
+      <default>660</default>
+      <summary>Most recent window height</summary>
+      <description>Most recent window height</description>
+    </key>
+    <key name="window-width" type="i">
+      <default>1024</default>
+      <summary>Most recent window width</summary>
+      <description>Most recent window width</description>
     </key>
     <key type="b" name="developer-mode">
       <default>false</default>
