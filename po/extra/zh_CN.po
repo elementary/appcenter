@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-28 16:06+0000\n"
-"PO-Revision-Date: 2022-07-20 05:07+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2023-08-29 16:08+0000\n"
+"Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -25,11 +25,6 @@ msgid "Browse and manage apps"
 msgstr "浏览和管理应用程序"
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -37,19 +32,22 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"独立和开源开发者专属应用商店，分类浏览、搜索和发现新应用，更新您的系统。"
+"来自elementary的开源、按需付费的应用商店。经elementary审核并上架，以确保原生"
+"、隐私且安全的体验。按类浏览或通过搜索来发现新应用。 "
+"AppCenter也用来更新您的系统更新到最新、最好的版本，以获取新功能和修复。"
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "发现新应用"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "保持最新"
 
 #: data/appcenter.metainfo.xml.in:27
+#, fuzzy
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "给开发加个鸡腿"
 
 #: data/appcenter.metainfo.xml.in:61
 msgid "elementary, Inc."
@@ -64,27 +62,26 @@ msgstr "新特性："
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
-msgstr ""
+msgstr "当应用有访问主文件夹或系统文件夹、定位、设置的权限或具有不安全的沙盒时发出警"
+"告。"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
 #: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
 #: data/appcenter.metainfo.xml.in:130
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Other Improvements:"
-msgstr "改进："
+msgstr "其他更改："
 
 #: data/appcenter.metainfo.xml.in:74
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
+msgstr "缩小应用程序信息视图中的间距和边距"
 
 #: data/appcenter.metainfo.xml.in:75
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "加载主页时显示占位符横幅"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Don't list non-AppCenter apps under a separate header in category views"
-msgstr ""
+msgstr "不将非 AppCenter 应用程序在类别视图的单独标题下列出"
 
 #: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
 #: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
@@ -94,13 +91,13 @@ msgstr "更新翻译"
 
 #: data/appcenter.metainfo.xml.in:98
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "如果 Flatpak 更新失败，提供修复选项"
 
 #: data/appcenter.metainfo.xml.in:99
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
-msgstr ""
+msgstr "已是最新时，在更新视图中显示提示及最近一次检查更新的时间"
 
 #: data/appcenter.metainfo.xml.in:115
 msgid "Show when an app isn't available in your language"
