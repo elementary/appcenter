@@ -944,6 +944,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 oars_flowbox.add (location);
             }
 
+            if (AppCenterCore.Package.PermissionsFlags.NOTIFICATIONS in package.permissions_flags) {
+                var location = new ContentType (
+                    _("Legacy Notifications"),
+                    _("Notification bubbles may not be configurable. May not identify itself in the notification center"),
+                    "sandbox-notifications-symbolic"
+                );
+
+                oars_flowbox.add (location);
+            }
+
             if (AppCenterCore.Package.PermissionsFlags.SETTINGS in package.permissions_flags) {
                 var filesystem = new ContentType (
                     _("System Settings Access"),

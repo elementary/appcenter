@@ -812,6 +812,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                         package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
                     }
                 }
+
+                if (keyfile.has_key ("Session Bus Policy", "org.freedesktop.Notifications")) {
+                    var notifications_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Notifications");
+                    if (notifications_policy != null && notifications_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.NOTIFICATIONS;
+                    }
+                }
             }
 
             if (keyfile.has_group ("System Bus Policy")) {

@@ -25,6 +25,7 @@
     <file alias="scalable/categories/sandbox-files-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-files.svg</file>
     <file alias="scalable/categories/sandbox-files-warning-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-files-warning.svg</file>
     <file alias="scalable/categories/sandbox-location-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-location.svg</file>
+    <file alias="scalable/categories/sandbox-notifications-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-notifications.svg</file>
     <file alias="scalable/categories/sandbox-settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-settings.svg</file>
 
     <file alias="scalable/categories/oars-chat-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/chat.svg</file>

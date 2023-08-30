@@ -96,6 +96,7 @@ public class AppCenterCore.Package : Object {
         HOME_READ,
         LOCATION,
         NETWORK,
+        NOTIFICATIONS,
         NONE,
         SESSION_BUS,
         SETTINGS,
