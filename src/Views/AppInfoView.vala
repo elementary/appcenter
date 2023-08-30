@@ -947,7 +947,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             if (AppCenterCore.Package.PermissionsFlags.NOTIFICATIONS in package.permissions_flags) {
                 var location = new ContentType (
                     _("Legacy Notifications"),
-                    _("Notification bubbles may not be configurable. May not identify itself in the notification center"),
+                    _("Bubbles may not be configurable or appear in notification center as “Other”"),
                     "sandbox-notifications-symbolic"
                 );
 
