@@ -5,9 +5,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-28 16:06+0000\n"
-"PO-Revision-Date: 2023-06-14 14:07+0000\n"
+"PO-Revision-Date: 2023-08-25 20:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1077,8 +1078,9 @@ msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %
 msgstr "Prøv å endre søket. Du kan også sideinnlaste Flatpak-programmer fra f.eks. %s"
 
 #: src/Views/SearchView.vala:63
+#, fuzzy
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "Søket må inneholde minst tre tegn."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
