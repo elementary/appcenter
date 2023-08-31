@@ -97,6 +97,7 @@ public class AppCenterCore.Package : Object {
         LOCATION,
         NETWORK,
         NONE,
+        NOTIFICATIONS,
         SESSION_BUS,
         SETTINGS,
         SYSTEM_BUS,
