@@ -945,13 +945,13 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             }
 
             if (AppCenterCore.Package.PermissionsFlags.NOTIFICATIONS in package.permissions_flags) {
-                var location = new ContentType (
+                var notifications = new ContentType (
                     _("Legacy Notifications"),
                     _("Bubbles may not be configurable or appear in notification center as “Other”"),
                     "sandbox-notifications-symbolic"
                 );
 
-                oars_flowbox.add (location);
+                oars_flowbox.add (notifications);
             }
 
             if (AppCenterCore.Package.PermissionsFlags.SETTINGS in package.permissions_flags) {
