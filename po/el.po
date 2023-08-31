@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 16:06+0000\n"
+"POT-Creation-Date: 2023-08-31 21:32+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: Zisis Avouris <zisisavouris@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/appcenter/el/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:363
+#: src/Application.vala:38 src/Core/Package.vala:364
 msgid "AppCenter"
 msgstr "Κέντρο εφαρμογών"
 
@@ -32,138 +32,138 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Ο σύνδεσμος '%s' δεν βρέθηκε, αναζήτηση αντί αυτού"
 
-#: src/Application.vala:324
+#: src/Application.vala:332
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s έχει εγκατασταθεί επιτυχώς"
 
-#: src/Application.vala:325 src/MainWindow.vala:533
+#: src/Application.vala:333 src/MainWindow.vala:527
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s έχει εγκατασταθεί επιτυχώς"
 
-#: src/MainWindow.vala:119
+#: src/MainWindow.vala:106
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Αδυναμία εκκίνησης του “%s“"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:154
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Βρείτε και εγκαταστήστε εφαρμογές"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:465 src/MainWindow.vala:617
+#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
 msgid "Search Apps"
 msgstr "Αναζήτηση εφαρμογών"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:176
 msgid "Automatic App Updates"
 msgstr ""
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:177
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:181
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Γίνεται αναζήτηση για ενημερώσεις…"
 
-#: src/MainWindow.vala:215
+#: src/MainWindow.vala:206
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Γίνεται εκκίνηση"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:235
 #, fuzzy
 msgid "Network Not Available."
 msgstr "Το δίκτυο δεν είναι διαθέσιμο"
 
-#: src/MainWindow.vala:244
+#: src/MainWindow.vala:236
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Συνδεθείτε στο διαδίκτυο για να εγκαταστήσετε ή να ενημερώσετε εφαρμογές."
 
-#: src/MainWindow.vala:254
+#: src/MainWindow.vala:246
 msgid "Network Settings…"
 msgstr "Ρυθμίσεις δικτύου…"
 
-#: src/MainWindow.vala:262
+#: src/MainWindow.vala:254
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:255
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:469 src/MainWindow.vala:473
+#: src/MainWindow.vala:463 src/MainWindow.vala:467
 #, c-format
 msgid "Search %s"
 msgstr "Αναζήτηση %s"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:484
 msgid "Home"
 msgstr "Αρχική Σελίδα"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:487
 msgctxt "view"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: src/MainWindow.vala:499
+#: src/MainWindow.vala:493
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Εγκατάσταση"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:530
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: src/MainWindow.vala:654
+#: src/MainWindow.vala:648
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "Πραγματοποιείται λήψη πληροφοριών"
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:651
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:657
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "Γίνεται αναζήτηση για ενημερώσεις…"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:660
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Γίνεται εγκατάσταση"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:663
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Εγκατάσταση ενημερώσεων"
 
-#: src/MainWindow.vala:672
+#: src/MainWindow.vala:666
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "Απεγκατάσταση"
 
-#: src/MainWindow.vala:675
+#: src/MainWindow.vala:669
 msgid "Repairing…"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr "Γίνεται αφαίρεση πακέτων"
 msgid "Downloading"
 msgstr "Πραγματοποιείται λήψη"
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1423
 msgid "Installing"
 msgstr "Γίνεται εγκατάσταση"
 
@@ -241,9 +241,9 @@ msgid "Finished"
 msgstr "Ολοκληρώθηκε"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
-#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
-#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
+#: src/Core/FlatpakBackend.vala:1432 src/Core/FlatpakBackend.vala:1456
+#: src/Core/FlatpakBackend.vala:1564 src/Core/FlatpakBackend.vala:1588
+#: src/Core/FlatpakBackend.vala:1746 src/Core/FlatpakBackend.vala:1764
 msgid "Cancelling"
 msgstr "Γίνεται ακύρωση"
 
@@ -337,40 +337,40 @@ msgstr[1] "%u ενημερώσεις είναι διαθέσιμες για το
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1548
+#: src/Core/FlatpakBackend.vala:1555
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Απεγκατάσταση"
 
-#: src/Core/FlatpakBackend.vala:1730
+#: src/Core/FlatpakBackend.vala:1737
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Ενημέρωση"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:331
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "Οι προγραμματιστές του %s"
 
-#: src/Core/Package.vala:365
+#: src/Core/Package.vala:366
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:367
+#: src/Core/Package.vala:368
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:373
+#: src/Core/Package.vala:374
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:377
+#: src/Core/Package.vala:378
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:551
+#: src/Core/Package.vala:552
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -480,140 +480,140 @@ msgstr ""
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
 #. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
-#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
+#: src/Dialogs/StripeDialog.vala:97 src/Dialogs/StripeDialog.vala:261
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:101
+#: src/Dialogs/StripeDialog.vala:103
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:122
+#: src/Dialogs/StripeDialog.vala:124
 msgid "or"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:157
+#: src/Dialogs/StripeDialog.vala:160
 msgid "Email"
 msgstr "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
 
-#: src/Dialogs/StripeDialog.vala:162
+#: src/Dialogs/StripeDialog.vala:165
 #, fuzzy
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας χρησιμοποιείται για την αποστολή απόδειξης. Δεν θα αποθηκεύτεί πουθενά και δεν θα εγγραφείτε σε κάποια λίστα αλληλογραφίας."
 
-#: src/Dialogs/StripeDialog.vala:163
+#: src/Dialogs/StripeDialog.vala:166
 msgid "Privacy Policy"
 msgstr "Πολιτική Απορρήτου"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:187
+#: src/Dialogs/StripeDialog.vala:189
 msgid "MM / YY"
 msgstr "ΜΜ/ΕΕ"
 
-#: src/Dialogs/StripeDialog.vala:195
+#: src/Dialogs/StripeDialog.vala:197
 msgid "CVC"
 msgstr "Kωδικός επαλήθευσης CVC"
 
-#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Dialogs/StripeDialog.vala:243 src/Dialogs/StripeDialog.vala:414
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:70
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
-#: src/Dialogs/StripeDialog.vala:396
+#: src/Dialogs/StripeDialog.vala:245 src/Dialogs/StripeDialog.vala:259
+#: src/Dialogs/StripeDialog.vala:413
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Πληρωμή $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:254
+#: src/Dialogs/StripeDialog.vala:257
 msgid "Try for Free"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:317
+#: src/Dialogs/StripeDialog.vala:331
 msgid "Processing"
 msgstr "Σε επεξεργασία"
 
-#: src/Dialogs/StripeDialog.vala:344
+#: src/Dialogs/StripeDialog.vala:358
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Παρουσιάστηκε ένα πρόβλημα κατα την επεξεργασία της πληρωμής σας"
 
-#: src/Dialogs/StripeDialog.vala:388
+#: src/Dialogs/StripeDialog.vala:405
 msgid "Pay Later"
 msgstr "Πληρωμή αργότερα"
 
-#: src/Dialogs/StripeDialog.vala:389
+#: src/Dialogs/StripeDialog.vala:406
 msgid "Retry"
 msgstr "Προσπάθησε ξανά"
 
-#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:589 src/Dialogs/StripeDialog.vala:654
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Ο αριθμός κάρτας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό αριθμό κάρτας."
 
-#: src/Dialogs/StripeDialog.vala:572
+#: src/Dialogs/StripeDialog.vala:591
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Ο μήνας λήξης δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή ημερομηνία λήξης."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:593 src/Dialogs/StripeDialog.vala:651
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Το έτος λήξης δεν είναι έγκυρο. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή ημερομηνία λήξης."
 
-#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
+#: src/Dialogs/StripeDialog.vala:596 src/Dialogs/StripeDialog.vala:649
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας το σωστό κωδικό επαλήθευσης CVC."
 
-#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:598 src/Dialogs/StripeDialog.vala:640
 msgid "The card has expired. Please try again with a different card."
 msgstr "Η κάρτα έχει λήξει. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
-#: src/Dialogs/StripeDialog.vala:599
+#: src/Dialogs/StripeDialog.vala:618
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Υπάρχουν υπερβολικά πολλά αιτήματα πληρωμής αυτή την στιγμή, παρακαλούμε προσπαθήστε ξανά αργότερα."
 
-#: src/Dialogs/StripeDialog.vala:615
+#: src/Dialogs/StripeDialog.vala:634
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Αυτή η κάρτα δεν υποστηρίζει αυτό το είδος συναλλαγής. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
-#: src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:636
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Το νόμισμα δεν υποστηρίζεται από αυτήν την κάρτα. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
-#: src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The transaction has already been processed."
 msgstr "Η συναλλαγή έχει ήδη υποβληθεί σε επεξεργασία."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:642
 #, fuzzy
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Ο ταχυδρομικός κώδικας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό ταχυδρομικό κώδικα."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:644
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Δεν έχετε αρκετά χρήματα. Παρακαλώ χρησιμοποιήστε έναν άλλο τρόπο πληρωμής."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Το ποσό είναι λανθασμένο. Δοκιμάστε ξανά χρησιμοποιώντας ένα έγκυρο ποσό."
 
-#: src/Dialogs/StripeDialog.vala:638
+#: src/Dialogs/StripeDialog.vala:657
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας το σωστό κωδικό επαλήθευσης CVC."
 
-#: src/Dialogs/StripeDialog.vala:640
+#: src/Dialogs/StripeDialog.vala:659
 #, fuzzy
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Υπήρξαν πάρα πολλές απόπειρες αριθμού PIN. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:679
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Δεν είναι δυνατή η ολοκλήρωση της συναλλαγής. Παρακαλώ επικοινωνήστε με την τράπεζά σας για περισσότερες πληροφορίες."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:682
 msgid "The balance or credit limit on the card has been reached."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:666
+#: src/Dialogs/StripeDialog.vala:685
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
@@ -681,57 +681,57 @@ msgstr ""
 msgid "Refresh Updates"
 msgstr "Γίνεται αναζήτηση για ενημερώσεις…"
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:262
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:263
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:268
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:269
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:276
+#: src/Views/AppInfoView.vala:274
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:277
+#: src/Views/AppInfoView.vala:275
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:282
+#: src/Views/AppInfoView.vala:280
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:281
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:305
 #, fuzzy
 #| msgid "Content Warning"
 msgid "Non-Curated"
 msgstr "Προειδοποίηση περιεχομένου"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:306
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:323
 msgid "May Not Be Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:324
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:333
+#: src/Views/AppInfoView.vala:331
 #, fuzzy
 #| msgid "translator-credits"
 msgid "Not Translated"
@@ -745,222 +745,230 @@ msgstr ""
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  onIaom https://launchpad.net/~onlaom"
 
-#: src/Views/AppInfoView.vala:334
+#: src/Views/AppInfoView.vala:332
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:341
+#: src/Views/AppInfoView.vala:339
 msgid "Not Fully Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:342
+#: src/Views/AppInfoView.vala:340
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:364
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:365
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:380
+#: src/Views/AppInfoView.vala:378
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:385
+#: src/Views/AppInfoView.vala:383
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:390
+#: src/Views/AppInfoView.vala:388
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:434
+#: src/Views/AppInfoView.vala:432
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:435
+#: src/Views/AppInfoView.vala:433
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:451
+#: src/Views/AppInfoView.vala:449
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:453
+#: src/Views/AppInfoView.vala:451
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:457
+#: src/Views/AppInfoView.vala:455
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:467
+#: src/Views/AppInfoView.vala:465
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:468
+#: src/Views/AppInfoView.vala:466
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:480
+#: src/Views/AppInfoView.vala:478
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:481
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:488
+#: src/Views/AppInfoView.vala:486
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:613
+#: src/Views/AppInfoView.vala:611
 msgid "Screenshot Not Available"
 msgstr "Το στιγμιότυπο οθόνης δεν είναι διαθέσιμο"
 
-#: src/Views/AppInfoView.vala:645
+#: src/Views/AppInfoView.vala:643
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:670
 msgid "Extensions:"
 msgstr "Επεκτάσεις:"
 
-#: src/Views/AppInfoView.vala:703
+#: src/Views/AppInfoView.vala:701
 msgid "Homepage"
 msgstr "Αρχική Σελίδα"
 
-#: src/Views/AppInfoView.vala:709
+#: src/Views/AppInfoView.vala:707
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:715
+#: src/Views/AppInfoView.vala:713
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:721
+#: src/Views/AppInfoView.vala:719
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: src/Views/AppInfoView.vala:769
+#: src/Views/AppInfoView.vala:767
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:781
+#: src/Views/AppInfoView.vala:779
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:789
+#: src/Views/AppInfoView.vala:787
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:883
+#: src/Views/AppInfoView.vala:881
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:884
+#: src/Views/AppInfoView.vala:882
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:888
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:891
+#: src/Views/AppInfoView.vala:889
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:897
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Απεγκατάσταση"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:898
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
-#: src/Views/AppInfoView.vala:913
+#: src/Views/AppInfoView.vala:911
 msgid "Insecure Sandbox"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:914
+#: src/Views/AppInfoView.vala:912
 msgid "Can ignore or modify its own system permissions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:923
+#: src/Views/AppInfoView.vala:921
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:924
+#: src/Views/AppInfoView.vala:922
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:931
+#: src/Views/AppInfoView.vala:929
 msgid "Home Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:932
+#: src/Views/AppInfoView.vala:930
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:941
+#: src/Views/AppInfoView.vala:939
 msgid "Location Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:942
+#: src/Views/AppInfoView.vala:940
 msgid "Can see your precise location at any time without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:951
+#: src/Views/AppInfoView.vala:949
+msgid "Legacy Notifications"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:950
+msgid "Bubbles may not be configurable or appear in notification center as “Other”"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:959
 msgid "System Settings Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:952
+#: src/Views/AppInfoView.vala:960
 msgid "Can read and modify system settings"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1203
+#: src/Views/AppInfoView.vala:1211
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1206
+#: src/Views/AppInfoView.vala:1214
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1211
+#: src/Views/AppInfoView.vala:1219
 #, fuzzy
 msgid "Free Software"
 msgstr "Επεξεργασία πηγής λογισμικού"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1214
+#: src/Views/AppInfoView.vala:1222
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1218
+#: src/Views/AppInfoView.vala:1226
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1221
+#: src/Views/AppInfoView.vala:1229
 #, fuzzy
 msgid "Unknown License"
 msgstr "Άγνωστη κατάσταση"
 
-#: src/Views/AppInfoView.vala:1313
+#: src/Views/AppInfoView.vala:1322
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1319
+#: src/Views/AppInfoView.vala:1328
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -1017,127 +1025,127 @@ msgstr "Ενημερωμένες"
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:56
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/CategoryView.vala:36
+#: src/Views/CategoryView.vala:37
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Αναζήτηση εφαρμογών"
 
-#: src/Views/CategoryView.vala:38
+#: src/Views/CategoryView.vala:39
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Δωρεάν"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:79
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: src/Views/Homepage.vala:103
+#: src/Views/Homepage.vala:105
 msgid "Accessories"
 msgstr "Βοηθήματα"
 
-#: src/Views/Homepage.vala:104
+#: src/Views/Homepage.vala:106
 msgid "Audio"
 msgstr "Ήχος"
 
-#: src/Views/Homepage.vala:105
+#: src/Views/Homepage.vala:107
 #, fuzzy
 msgid "Communication"
 msgstr "Εκπαίδευση"
 
-#: src/Views/Homepage.vala:114
+#: src/Views/Homepage.vala:116
 msgid "Development"
 msgstr "Ανάπτυξη λογισμικού"
 
-#: src/Views/Homepage.vala:124
+#: src/Views/Homepage.vala:126
 msgid "Education"
 msgstr "Εκπαίδευση"
 
-#: src/Views/Homepage.vala:125
+#: src/Views/Homepage.vala:127
 #, fuzzy
 msgid "Finance"
 msgstr "Ακύρωση"
 
-#: src/Views/Homepage.vala:130
+#: src/Views/Homepage.vala:132
 msgid "Graphics"
 msgstr "Γραφικά"
 
-#: src/Views/Homepage.vala:139
+#: src/Views/Homepage.vala:141
 msgid "Internet"
 msgstr "Διαδίκτυο"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:145
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Επιστήμη & μηχανική"
 
-#: src/Views/Homepage.vala:162
+#: src/Views/Homepage.vala:164
 msgid "Media Production"
 msgstr ""
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:171
 msgid "Office"
 msgstr "Γραφείο"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:178
 msgid "System"
 msgstr "Σύστημα"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:182
 msgid "Universal Access"
 msgstr "Καθολική Πρόσβαση"
 
-#: src/Views/Homepage.vala:181
+#: src/Views/Homepage.vala:183
 msgid "Video"
 msgstr "Βίντεο"
 
-#: src/Views/Homepage.vala:186
+#: src/Views/Homepage.vala:188
 msgid "Writing & Language"
 msgstr ""
 
-#: src/Views/Homepage.vala:196
+#: src/Views/Homepage.vala:198
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Πολιτική Απορρήτου"
 
-#: src/Views/Homepage.vala:468
+#: src/Views/Homepage.vala:471
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "ΠΑΙΧΝΙΔΙΑ"
 
-#: src/Views/Homepage.vala:496
+#: src/Views/Homepage.vala:499
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:505
+#: src/Views/Homepage.vala:508
 msgid "Games"
 msgstr "ΠΑΙΧΝΙΔΙΑ"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:65
+#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:67
 msgid "Flathub"
 msgstr ""
 
-#: src/Views/SearchView.vala:34
+#: src/Views/SearchView.vala:32
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:66
+#: src/Views/SearchView.vala:33 src/Views/SearchView.vala:68
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:65
 msgid "The search term must be at least 3 characters long."
 msgstr ""
 
-#: src/Widgets/CardNumberEntry.vala:41
+#: src/Widgets/CardNumberEntry.vala:40
 msgid "Card Number"
 msgstr "Αριθμός Κάρτας"
 
@@ -1146,12 +1154,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:80
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:185
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:186
 msgid "Free"
 msgstr "Δωρεάν"
 
 #: src/Widgets/HumbleButton.vala:82
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:187
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:188
 #, fuzzy
 msgid "Install"
 msgstr "Εγκατάσταση"
@@ -1211,24 +1219,24 @@ msgstr ""
 msgid "Copy link"
 msgstr "Αντιγραφή συνδέσμου"
 
-#: src/Widgets/SizeLabel.vala:35
+#: src/Widgets/SizeLabel.vala:36
 msgid "Actual Download Size Likely to Be Smaller"
 msgstr ""
 
-#: src/Widgets/SizeLabel.vala:36
+#: src/Widgets/SizeLabel.vala:37
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
-#: src/Widgets/SizeLabel.vala:63
+#: src/Widgets/SizeLabel.vala:68
 #, c-format
 msgid "Up to %s"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Update"
 msgstr "Ενημέρωση"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:208
 #, fuzzy
 #| msgid "Downloading"
 msgid "Download"

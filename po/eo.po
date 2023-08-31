@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 16:06+0000\n"
+"POT-Creation-Date: 2023-08-31 21:32+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:363
+#: src/Application.vala:38 src/Core/Package.vala:364
 msgid "AppCenter"
 msgstr "Aplikaĵa Centro"
 
@@ -35,139 +35,139 @@ msgstr "Ne eblas analizi la aŭdovidaĵan tipon %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specifita ligo „%s“ ne troveblas, nun serĉanta"
 
-#: src/Application.vala:324
+#: src/Application.vala:332
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s estis sukcese instalita"
 
-#: src/Application.vala:325 src/MainWindow.vala:533
+#: src/Application.vala:333 src/MainWindow.vala:527
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s estis sukcese instalita"
 
-#: src/MainWindow.vala:119
+#: src/MainWindow.vala:106
 #, fuzzy, c-format
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to launch “%s“"
 msgstr "Fiaskis la malinstalo de „%s“"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:154
 #, fuzzy
 #| msgid "Failed to uninstall app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Fiaskis la aplikaĵa malinstalo"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:465 src/MainWindow.vala:617
+#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
 msgid "Search Apps"
 msgstr "Serĉi Aplikaĵojn"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:176
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
 msgstr "Malsukcesis la Ŝargo de Ĝisdatigoj"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:177
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:181
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Serĉanta ĝisdatigojn…"
 
-#: src/MainWindow.vala:215
+#: src/MainWindow.vala:206
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Komencanta"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:235
 msgid "Network Not Available."
 msgstr "Reto ne disponebla."
 
-#: src/MainWindow.vala:244
+#: src/MainWindow.vala:236
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Konektu al la Interreto por foliumi aŭ  instali aplikaĵojn."
 
-#: src/MainWindow.vala:254
+#: src/MainWindow.vala:246
 msgid "Network Settings…"
 msgstr "Retaj Agordoj…"
 
-#: src/MainWindow.vala:262
+#: src/MainWindow.vala:254
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:255
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:469 src/MainWindow.vala:473
+#: src/MainWindow.vala:463 src/MainWindow.vala:467
 #, c-format
 msgid "Search %s"
 msgstr "Serĉi %s"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:484
 msgid "Home"
 msgstr "Ĉefpaĝo"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:487
 msgctxt "view"
 msgid "Search"
 msgstr "Serĉo"
 
-#: src/MainWindow.vala:499
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalitaj"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:530
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Malfermi"
 
-#: src/MainWindow.vala:654
+#: src/MainWindow.vala:648
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "Ricevi Informojn"
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:651
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:657
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "Serĉanta ĝisdatigojn…"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:660
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Instalanta"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:663
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Instalanta ĝisdatigojn"
 
-#: src/MainWindow.vala:672
+#: src/MainWindow.vala:666
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "Malinstali"
 
-#: src/MainWindow.vala:675
+#: src/MainWindow.vala:669
 msgid "Repairing…"
 msgstr ""
 
@@ -200,7 +200,7 @@ msgstr "Foriganta pakaĵojn"
 msgid "Downloading"
 msgstr "Elŝutanta"
 
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1416
+#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1423
 msgid "Installing"
 msgstr "Instalanta"
 
@@ -245,9 +245,9 @@ msgid "Finished"
 msgstr "Finita"
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1425 src/Core/FlatpakBackend.vala:1449
-#: src/Core/FlatpakBackend.vala:1557 src/Core/FlatpakBackend.vala:1581
-#: src/Core/FlatpakBackend.vala:1739 src/Core/FlatpakBackend.vala:1757
+#: src/Core/FlatpakBackend.vala:1432 src/Core/FlatpakBackend.vala:1456
+#: src/Core/FlatpakBackend.vala:1564 src/Core/FlatpakBackend.vala:1588
+#: src/Core/FlatpakBackend.vala:1746 src/Core/FlatpakBackend.vala:1764
 msgid "Cancelling"
 msgstr "Rezignanta"
 
@@ -341,40 +341,40 @@ msgstr[1] "%u ĝisdatigoj disponeblas por via sistemo"
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1548
+#: src/Core/FlatpakBackend.vala:1555
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Malinstali"
 
-#: src/Core/FlatpakBackend.vala:1730
+#: src/Core/FlatpakBackend.vala:1737
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Ĝisdatigi"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:331
 #, c-format
 msgid "%s Developers"
 msgstr "%s Programistoj"
 
-#: src/Core/Package.vala:365
+#: src/Core/Package.vala:366
 msgid "elementary Updates"
 msgstr "Ĝisdatigoj de elementary"
 
-#: src/Core/Package.vala:367
+#: src/Core/Package.vala:368
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (ne kontrolita)"
 
-#: src/Core/Package.vala:373
+#: src/Core/Package.vala:374
 msgid "Ubuntu Drivers"
 msgstr "Peliloj de Ubuntu"
 
-#: src/Core/Package.vala:377
+#: src/Core/Package.vala:378
 msgid "Unknown Origin (non-curated)"
 msgstr "Nekonata Deveno (ne kontrolita)"
 
-#: src/Core/Package.vala:551
+#: src/Core/Package.vala:552
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Aplikaĵa stato ne difinita kiel instalita en la Aplikaĵa Centro, rilate la pakaĵon: %s"
@@ -494,140 +494,140 @@ msgstr "Pago"
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
 #. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
-#: src/Dialogs/StripeDialog.vala:95 src/Dialogs/StripeDialog.vala:258
+#: src/Dialogs/StripeDialog.vala:97 src/Dialogs/StripeDialog.vala:261
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Pagi %d $ por %s"
 
-#: src/Dialogs/StripeDialog.vala:101
+#: src/Dialogs/StripeDialog.vala:103
 #, fuzzy
 #| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Tio konsistigas ununuran pagon. Via retmesaĝadreso estos uzata nur por sendi la kvitancon."
 
-#: src/Dialogs/StripeDialog.vala:122
+#: src/Dialogs/StripeDialog.vala:124
 msgid "or"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:157
+#: src/Dialogs/StripeDialog.vala:160
 msgid "Email"
 msgstr "Retmesaĝadreso"
 
-#: src/Dialogs/StripeDialog.vala:162
+#: src/Dialogs/StripeDialog.vala:165
 #, fuzzy
 #| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Via retmesaĝadreso estos uzata nur por sendi la kvitancon. Vi abonos neniun dissendoliton."
 
-#: src/Dialogs/StripeDialog.vala:163
+#: src/Dialogs/StripeDialog.vala:166
 msgid "Privacy Policy"
 msgstr "Privateca Politiko"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:187
+#: src/Dialogs/StripeDialog.vala:189
 msgid "MM / YY"
 msgstr "MM / JJ"
 
-#: src/Dialogs/StripeDialog.vala:195
+#: src/Dialogs/StripeDialog.vala:197
 msgid "CVC"
 msgstr "CVC-kodo malantaŭ la bankokarto"
 
-#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:397
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Dialogs/StripeDialog.vala:243 src/Dialogs/StripeDialog.vala:414
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:70
 msgid "Cancel"
 msgstr "Rezigni"
 
-#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:256
-#: src/Dialogs/StripeDialog.vala:396
+#: src/Dialogs/StripeDialog.vala:245 src/Dialogs/StripeDialog.vala:259
+#: src/Dialogs/StripeDialog.vala:413
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Pagi %d,00 $"
 
-#: src/Dialogs/StripeDialog.vala:254
+#: src/Dialogs/StripeDialog.vala:257
 msgid "Try for Free"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:317
+#: src/Dialogs/StripeDialog.vala:331
 msgid "Processing"
 msgstr "Procedanta"
 
-#: src/Dialogs/StripeDialog.vala:344
+#: src/Dialogs/StripeDialog.vala:358
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Okazis problemo dum procedo de via pago"
 
-#: src/Dialogs/StripeDialog.vala:388
+#: src/Dialogs/StripeDialog.vala:405
 msgid "Pay Later"
 msgstr "Pagi Poste"
 
-#: src/Dialogs/StripeDialog.vala:389
+#: src/Dialogs/StripeDialog.vala:406
 msgid "Retry"
 msgstr "Reprovi"
 
-#: src/Dialogs/StripeDialog.vala:570 src/Dialogs/StripeDialog.vala:635
+#: src/Dialogs/StripeDialog.vala:589 src/Dialogs/StripeDialog.vala:654
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "La kartonumero malvalidas. Bonvolu reprovi uzante la ĝustan numeron."
 
-#: src/Dialogs/StripeDialog.vala:572
+#: src/Dialogs/StripeDialog.vala:591
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "La monato de la limdato malvalidas. Bonvolu reprovi uzante la ĝustan limdaton."
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:632
+#: src/Dialogs/StripeDialog.vala:593 src/Dialogs/StripeDialog.vala:651
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "La jaro de la limdato malvalidas. Bonvolu reprovi uzante la ĝustan limdaton."
 
-#: src/Dialogs/StripeDialog.vala:577 src/Dialogs/StripeDialog.vala:630
+#: src/Dialogs/StripeDialog.vala:596 src/Dialogs/StripeDialog.vala:649
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "La CVC-kodo malvalidas. Bonvolu reprovi uzante la ĝustan kodon."
 
-#: src/Dialogs/StripeDialog.vala:579 src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:598 src/Dialogs/StripeDialog.vala:640
 msgid "The card has expired. Please try again with a different card."
 msgstr "La karto eksvalidiĝis. Bonvolu reprovi uzante alian bankokarton."
 
-#: src/Dialogs/StripeDialog.vala:599
+#: src/Dialogs/StripeDialog.vala:618
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Okazas momente tro multaj pago-petoj, bonvolu reprovi pli poste."
 
-#: src/Dialogs/StripeDialog.vala:615
+#: src/Dialogs/StripeDialog.vala:634
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Ĉi karto ne akceptas tian transakcion. Bonvolu reprovi uzante alian bankokarton."
 
-#: src/Dialogs/StripeDialog.vala:617
+#: src/Dialogs/StripeDialog.vala:636
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "La karto ne akceptas la monunuon. Bonvolu reprovi uzante alian bankokarton."
 
-#: src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:638
 msgid "The transaction has already been processed."
 msgstr "La transakcio jam estis procedita."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:642
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "La poŝtkodo malvalidas. Bonvolu reprovi uzante la ĝustan kodon."
 
-#: src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:644
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Ne estas sufiĉa monsumo. Bonvolu reprovi uzante alian pagmanieron."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "La kvanto malvalidas. Bonvolu reprovi uzante validan monsumon."
 
-#: src/Dialogs/StripeDialog.vala:638
+#: src/Dialogs/StripeDialog.vala:657
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "La PIN-persona identiga numero malvalidas. Bonvolu reprovi uzante validan PIN-numeron."
 
-#: src/Dialogs/StripeDialog.vala:640
+#: src/Dialogs/StripeDialog.vala:659
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Okazis tro multaj PIN-numeraj provoj. Bonvolu reprovi uzante alian bankokarton."
 
-#: src/Dialogs/StripeDialog.vala:660
+#: src/Dialogs/StripeDialog.vala:679
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Maleblas pritrakti la transakcion. Bonvolu kontakti vian bankon, pri pliaj informoj."
 
-#: src/Dialogs/StripeDialog.vala:663
+#: src/Dialogs/StripeDialog.vala:682
 msgid "The balance or credit limit on the card has been reached."
 msgstr "La saldo aŭ kreditlimo de la bankokarto estis atingita."
 
-#: src/Dialogs/StripeDialog.vala:666
+#: src/Dialogs/StripeDialog.vala:685
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Tio estas test-karto. Bonvolu uzi veran karton por procedi."
 
@@ -697,57 +697,57 @@ msgstr "Fiaskis la malinstalo de „%s“"
 msgid "Refresh Updates"
 msgstr "Serĉanta ĝisdatigojn…"
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:262
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:263
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:268
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:269
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:276
+#: src/Views/AppInfoView.vala:274
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:277
+#: src/Views/AppInfoView.vala:275
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:282
+#: src/Views/AppInfoView.vala:280
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:281
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:305
 #, fuzzy
 #| msgid "Non-Curated Apps"
 msgid "Non-Curated"
 msgstr "Ne-kontrolitaj Aplikaĵoj"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:306
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:323
 msgid "May Not Be Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:324
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:333
+#: src/Views/AppInfoView.vala:331
 #, fuzzy
 msgid "Not Translated"
 msgstr ""
@@ -756,220 +756,228 @@ msgstr ""
 "  Robin van der Vliet https://launchpad.net/~robinvdv\n"
 "  Yuri Tretyakov https://launchpad.net/~ytret"
 
-#: src/Views/AppInfoView.vala:334
+#: src/Views/AppInfoView.vala:332
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:341
+#: src/Views/AppInfoView.vala:339
 msgid "Not Fully Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:342
+#: src/Views/AppInfoView.vala:340
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:364
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:365
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:380
+#: src/Views/AppInfoView.vala:378
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:385
+#: src/Views/AppInfoView.vala:383
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:390
+#: src/Views/AppInfoView.vala:388
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:434
+#: src/Views/AppInfoView.vala:432
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:435
+#: src/Views/AppInfoView.vala:433
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:451
+#: src/Views/AppInfoView.vala:449
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:453
+#: src/Views/AppInfoView.vala:451
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:457
+#: src/Views/AppInfoView.vala:455
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:467
+#: src/Views/AppInfoView.vala:465
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:468
+#: src/Views/AppInfoView.vala:466
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:480
+#: src/Views/AppInfoView.vala:478
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:481
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:488
+#: src/Views/AppInfoView.vala:486
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:613
+#: src/Views/AppInfoView.vala:611
 msgid "Screenshot Not Available"
 msgstr "Ekrankopio Ne Disponebla"
 
-#: src/Views/AppInfoView.vala:645
+#: src/Views/AppInfoView.vala:643
 msgid "What's New:"
 msgstr "Kio Novas:"
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:670
 msgid "Extensions:"
 msgstr "Kromaĵoj:"
 
-#: src/Views/AppInfoView.vala:703
+#: src/Views/AppInfoView.vala:701
 msgid "Homepage"
 msgstr "Ĉefpaĝo"
 
-#: src/Views/AppInfoView.vala:709
+#: src/Views/AppInfoView.vala:707
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:715
+#: src/Views/AppInfoView.vala:713
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:721
+#: src/Views/AppInfoView.vala:719
 msgid "Help"
 msgstr "Helpo"
 
-#: src/Views/AppInfoView.vala:769
+#: src/Views/AppInfoView.vala:767
 msgid "Link copied to clipboard"
 msgstr "Ligilo en la tondujo"
 
-#: src/Views/AppInfoView.vala:781
+#: src/Views/AppInfoView.vala:779
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Esploru pri %s ĉe la Aplikaĵa Centro:"
 
-#: src/Views/AppInfoView.vala:789
+#: src/Views/AppInfoView.vala:787
 msgid "Share"
 msgstr "Kunhavigi"
 
-#: src/Views/AppInfoView.vala:883
+#: src/Views/AppInfoView.vala:881
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:884
+#: src/Views/AppInfoView.vala:882
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:888
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:891
+#: src/Views/AppInfoView.vala:889
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:897
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Malinstali"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:898
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr ""
 
-#: src/Views/AppInfoView.vala:913
+#: src/Views/AppInfoView.vala:911
 msgid "Insecure Sandbox"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:914
+#: src/Views/AppInfoView.vala:912
 msgid "Can ignore or modify its own system permissions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:923
+#: src/Views/AppInfoView.vala:921
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:924
+#: src/Views/AppInfoView.vala:922
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:931
+#: src/Views/AppInfoView.vala:929
 msgid "Home Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:932
+#: src/Views/AppInfoView.vala:930
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:941
+#: src/Views/AppInfoView.vala:939
 msgid "Location Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:942
+#: src/Views/AppInfoView.vala:940
 msgid "Can see your precise location at any time without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:951
+#: src/Views/AppInfoView.vala:949
+msgid "Legacy Notifications"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:950
+msgid "Bubbles may not be configurable or appear in notification center as “Other”"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:959
 msgid "System Settings Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:952
+#: src/Views/AppInfoView.vala:960
 msgid "Can read and modify system settings"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1203
+#: src/Views/AppInfoView.vala:1211
 msgid "Public Domain"
 msgstr "Publika Havaĵo"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1206
+#: src/Views/AppInfoView.vala:1214
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://eo.wikipedia.org/wiki/Publika_hava%C4%B5o"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1211
+#: src/Views/AppInfoView.vala:1219
 msgid "Free Software"
 msgstr "Libera Programo"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1214
+#: src/Views/AppInfoView.vala:1222
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.eo.html"
 
-#: src/Views/AppInfoView.vala:1218
+#: src/Views/AppInfoView.vala:1226
 msgid "Proprietary"
 msgstr "Proprieta"
 
-#: src/Views/AppInfoView.vala:1221
+#: src/Views/AppInfoView.vala:1229
 msgid "Unknown License"
 msgstr "Nekonata Permesilo"
 
-#: src/Views/AppInfoView.vala:1313
+#: src/Views/AppInfoView.vala:1322
 msgid "Fund"
 msgstr "Financi"
 
-#: src/Views/AppInfoView.vala:1319
+#: src/Views/AppInfoView.vala:1328
 msgid "Fund the development of this app"
 msgstr "Financi la disvolvon de ĉi aplikaĵo"
 
@@ -1026,124 +1034,124 @@ msgstr "Ĝisdata"
 msgid "Other Apps by %s"
 msgstr "Aliaj Aplikaĵoj je %s"
 
-#: src/Views/CategoryView.vala:34 src/Views/Homepage.vala:55
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:56
 msgid "Recently Updated"
 msgstr "Freŝe Ĝisdatigita"
 
-#: src/Views/CategoryView.vala:36
+#: src/Views/CategoryView.vala:37
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Paid Apps"
 msgstr "Serĉi Aplikaĵojn"
 
-#: src/Views/CategoryView.vala:38
+#: src/Views/CategoryView.vala:39
 #, fuzzy
 #| msgid "Free"
 msgid "Free Apps"
 msgstr "Senpaga"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:79
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: src/Views/Homepage.vala:103
+#: src/Views/Homepage.vala:105
 msgid "Accessories"
 msgstr "Akcesoraĵoj"
 
-#: src/Views/Homepage.vala:104
+#: src/Views/Homepage.vala:106
 msgid "Audio"
 msgstr "Aŭdado"
 
-#: src/Views/Homepage.vala:105
+#: src/Views/Homepage.vala:107
 msgid "Communication"
 msgstr "Komunikado"
 
-#: src/Views/Homepage.vala:114
+#: src/Views/Homepage.vala:116
 msgid "Development"
 msgstr "Programado"
 
-#: src/Views/Homepage.vala:124
+#: src/Views/Homepage.vala:126
 msgid "Education"
 msgstr "Edukado"
 
-#: src/Views/Homepage.vala:125
+#: src/Views/Homepage.vala:127
 msgid "Finance"
 msgstr "Financado"
 
-#: src/Views/Homepage.vala:130
+#: src/Views/Homepage.vala:132
 msgid "Graphics"
 msgstr "Desegnado"
 
-#: src/Views/Homepage.vala:139
+#: src/Views/Homepage.vala:141
 msgid "Internet"
 msgstr "Interretado"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:145
 msgid "Math, Science, & Engineering"
 msgstr "Matematiko, Scienco kaj Inĝenierado"
 
-#: src/Views/Homepage.vala:162
+#: src/Views/Homepage.vala:164
 msgid "Media Production"
 msgstr "Aŭdovidaĵa Produktado"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:171
 msgid "Office"
 msgstr "Oficejado"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:178
 msgid "System"
 msgstr "Sistemo"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:182
 msgid "Universal Access"
 msgstr "Faciluziloj"
 
-#: src/Views/Homepage.vala:181
+#: src/Views/Homepage.vala:183
 msgid "Video"
 msgstr "Videado"
 
-#: src/Views/Homepage.vala:186
+#: src/Views/Homepage.vala:188
 msgid "Writing & Language"
 msgstr "Skribado & Lingvoj"
 
-#: src/Views/Homepage.vala:196
+#: src/Views/Homepage.vala:198
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Privateca Politiko"
 
-#: src/Views/Homepage.vala:468
+#: src/Views/Homepage.vala:471
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "Ludado"
 
-#: src/Views/Homepage.vala:496
+#: src/Views/Homepage.vala:499
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:505
+#: src/Views/Homepage.vala:508
 msgid "Games"
 msgstr "Ludado"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:65
+#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:67
 msgid "Flathub"
 msgstr ""
 
-#: src/Views/SearchView.vala:34
+#: src/Views/SearchView.vala:32
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/SearchView.vala:35 src/Views/SearchView.vala:66
+#: src/Views/SearchView.vala:33 src/Views/SearchView.vala:68
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:65
 msgid "The search term must be at least 3 characters long."
 msgstr ""
 
-#: src/Widgets/CardNumberEntry.vala:41
+#: src/Widgets/CardNumberEntry.vala:40
 msgid "Card Number"
 msgstr "Karta Numero"
 
@@ -1152,12 +1160,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Postulas pagadon, kio ne estas ebligita"
 
 #: src/Widgets/HumbleButton.vala:80
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:185
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:186
 msgid "Free"
 msgstr "Senpaga"
 
 #: src/Widgets/HumbleButton.vala:82
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:187
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:188
 msgid "Install"
 msgstr "Instali"
 
@@ -1215,24 +1223,24 @@ msgstr "Telegram"
 msgid "Copy link"
 msgstr "Kopii la ligilon"
 
-#: src/Widgets/SizeLabel.vala:35
+#: src/Widgets/SizeLabel.vala:36
 msgid "Actual Download Size Likely to Be Smaller"
 msgstr "La elŝuto povas esti efektive pli malgranda"
 
-#: src/Widgets/SizeLabel.vala:36
+#: src/Widgets/SizeLabel.vala:37
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr "Nur tiuj aplikaĵoj kaj ĝisdatigoj necesaj estos elŝutitaj."
 
-#: src/Widgets/SizeLabel.vala:63
+#: src/Widgets/SizeLabel.vala:68
 #, c-format
 msgid "Up to %s"
 msgstr "Ĝis %s"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Update"
 msgstr "Ĝisdatigi"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:208
 #, fuzzy
 #| msgid "Downloading"
 msgid "Download"
