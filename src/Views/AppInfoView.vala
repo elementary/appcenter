@@ -464,7 +464,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 var location = new ContentType (
                     _("Location Sharing"),
                     _("Other people can see your real-world location"),
-                    "sandbox-location-symbolic"
+                    "oars-social-location-symbolic"
                 );
 
                 oars_flowbox.add (location);
@@ -938,7 +938,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 var location = new ContentType (
                     _("Location Access"),
                     _("Can see your precise location at any time without asking"),
-                    "sandbox-location-warning-symbolic"
+                    "sandbox-location-symbolic"
                 );
 
                 oars_flowbox.add (location);
