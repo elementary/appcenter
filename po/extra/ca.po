@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 01:27+0000\n"
+"POT-Creation-Date: 2023-09-15 02:26+0000\n"
 "PO-Revision-Date: 2023-06-30 01:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -55,12 +55,32 @@ msgstr "Pagueu el que pugueu per donar suport als desenvolupadors."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
-#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:132
 msgid "New features:"
 msgstr "Funcions noves:"
 
 #: data/appcenter.metainfo.xml.in:70
+msgid "Warn when apps use legacy Autostart, Notifications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:106 data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:136
+msgid "Other Improvements:"
+msgstr "Altres millores:"
+
+#: data/appcenter.metainfo.xml.in:74
+msgid "Fix flickering on AppInfo views when getting install size"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:108 data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:138
+msgid "Updated translations"
+msgstr "Traduccions actualitzades"
+
+#: data/appcenter.metainfo.xml.in:89
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -68,41 +88,29 @@ msgstr ""
 "Avisa quan les aplicacions tenen accés a les carpetes d'inici o del sistema, "
 "a la ubicació, a la configuració o tenen una zona de proves insegura."
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
-#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
-#: data/appcenter.metainfo.xml.in:130
-msgid "Other Improvements:"
-msgstr "Altres millores:"
-
-#: data/appcenter.metainfo.xml.in:74
+#: data/appcenter.metainfo.xml.in:93
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
 "Reforç de l'espaiat i els marges a les vistes d'informació de l'aplicació"
 
-#: data/appcenter.metainfo.xml.in:75
+#: data/appcenter.metainfo.xml.in:94
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 "Mostra una pancarta de marcador de posició a la pàgina d'inici quan es "
 "carregui"
 
-#: data/appcenter.metainfo.xml.in:76
+#: data/appcenter.metainfo.xml.in:95
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "No enumera aplicacions que no siguin del Centre d'aplicacions sota una "
 "capçalera independent a les visualitzacions de categoria"
 
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
-#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
-#: data/appcenter.metainfo.xml.in:132
-msgid "Updated translations"
-msgstr "Traduccions actualitzades"
-
-#: data/appcenter.metainfo.xml.in:98
+#: data/appcenter.metainfo.xml.in:117
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 "Ofereix una opció de reparació si les actualitzacions de Flatpak fallen."
 
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:118
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -111,13 +119,9 @@ msgstr ""
 "actualitzat que inclou l'última vegada que es van comprovar les "
 "actualitzacions."
 
-#: data/appcenter.metainfo.xml.in:115
+#: data/appcenter.metainfo.xml.in:134
 msgid "Show when an app isn't available in your language"
 msgstr "Mostra quan una aplicació no està disponible en la vostra llengua."
-
-#: data/appcenter.metainfo.xml.in:128
-msgid "Install OS Updates offline"
-msgstr "Instal·la les actualitzacions del sistema operatiu fora de línia"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -147,6 +151,9 @@ msgstr "Repara les fonts de programari"
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr "Cal autenticació per reparar les fonts de programari."
+
+#~ msgid "Install OS Updates offline"
+#~ msgstr "Instal·la les actualitzacions del sistema operatiu fora de línia"
 
 #~ msgid "Rewritten navigation with multitouch gestures to go back"
 #~ msgstr "Navegació reescrita amb gestos multitàctils per tornar enrere"
