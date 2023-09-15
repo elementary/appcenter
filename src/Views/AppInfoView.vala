@@ -464,7 +464,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 var location = new ContentType (
                     _("Location Sharing"),
                     _("Other people can see your real-world location"),
-                    "find-location-symbolic"
+                    "oars-social-location-symbolic"
                 );
 
                 oars_flowbox.add (location);

@@ -35,6 +35,7 @@
     <file alias="scalable/categories/oars-offensive-language-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/language.svg</file>
     <file alias="scalable/categories/oars-sex-nudity-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/nudity.svg</file>
     <file alias="scalable/categories/oars-socal-info-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-info.svg</file>
+    <file alias="scalable/categories/oars-socal-location-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-location.svg</file>
     <file alias="scalable/categories/metainfo-locale.svg" compressed="true" preprocess="xml-stripblanks">oars/locale.svg</file>
     <file alias="scalable/categories/oars-illicit-substance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/substance.svg</file>
     <file alias="scalable/categories/oars-violence-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/violence.svg</file>
