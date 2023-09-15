@@ -21,10 +21,12 @@
     <file alias="16x16/mimetypes/text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
 
     <file alias="scalable/categories/flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>
+    <file alias="scalable/categories/sandbox-autostart-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-autostart.svg</file>
     <file alias="scalable/categories/sandbox-escape-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-escape.svg</file>
     <file alias="scalable/categories/sandbox-files-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-files.svg</file>
     <file alias="scalable/categories/sandbox-files-warning-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-files-warning.svg</file>
     <file alias="scalable/categories/sandbox-location-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-location.svg</file>
+    <file alias="scalable/categories/sandbox-notifications-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-notifications.svg</file>
     <file alias="scalable/categories/sandbox-settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-settings.svg</file>
 
     <file alias="scalable/categories/oars-chat-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/chat.svg</file>
@@ -33,6 +35,7 @@
     <file alias="scalable/categories/oars-offensive-language-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/language.svg</file>
     <file alias="scalable/categories/oars-sex-nudity-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/nudity.svg</file>
     <file alias="scalable/categories/oars-socal-info-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-info.svg</file>
+    <file alias="scalable/categories/oars-socal-location-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-location.svg</file>
     <file alias="scalable/categories/metainfo-locale.svg" compressed="true" preprocess="xml-stripblanks">oars/locale.svg</file>
     <file alias="scalable/categories/oars-illicit-substance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/substance.svg</file>
     <file alias="scalable/categories/oars-violence-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/violence.svg</file>

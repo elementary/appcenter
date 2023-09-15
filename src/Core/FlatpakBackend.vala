@@ -757,9 +757,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                             { "~", Package.PermissionsFlags.HOME_FULL },
                             { "~:rw", Package.PermissionsFlags.HOME_FULL },
                             { "~:ro", Package.PermissionsFlags.HOME_READ },
+                            { "~/.config/autostart", Package.PermissionsFlags.AUTOSTART },
                             { "host", Package.PermissionsFlags.FILESYSTEM_FULL },
                             { "host:rw", Package.PermissionsFlags.FILESYSTEM_FULL },
                             { "host:ro", Package.PermissionsFlags.FILESYSTEM_READ },
+                            { "xdg-config/autostart:create", Package.PermissionsFlags.AUTOSTART },
                             { "xdg-download", Package.PermissionsFlags.DOWNLOADS_FULL },
                             { "xdg-download:rw", Package.PermissionsFlags.DOWNLOADS_FULL },
                             { "xdg-download:ro", Package.PermissionsFlags.DOWNLOADS_READ },
@@ -810,6 +812,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     var portal_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.impl.portal.PermissionStore");
                     if (portal_policy != null && portal_policy == "talk") {
                         package.permissions_flags |= Package.PermissionsFlags.ESCAPE_SANDBOX;
+                    }
+                }
+
+                if (keyfile.has_key ("Session Bus Policy", "org.freedesktop.Notifications")) {
+                    var notifications_policy = keyfile.get_string ("Session Bus Policy", "org.freedesktop.Notifications");
+                    if (notifications_policy != null && notifications_policy == "talk") {
+                        package.permissions_flags |= Package.PermissionsFlags.NOTIFICATIONS;
                     }
                 }
             }

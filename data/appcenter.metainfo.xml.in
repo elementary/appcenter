@@ -63,6 +63,25 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+  <release version="7.4.0" date="2023-09-14">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Warn when apps use legacy Autostart, Notifications</li>
+        </ul>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Fix flickering on AppInfo views when getting install size</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/2059">Search bar refreshes when typing over existing text</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1987">AppCenter search box dropping chatacters</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1947">Changing install source adds to navigation stack</issue>
+      </issues>
+    </release>
+
     <release version="7.3.0" date="2023-06-27">
       <description>
         <p>New features:</p>
@@ -122,16 +141,6 @@
     </release>
 
     <release version="7.0.0" date="2023-01-24">
-      <description>
-        <p>New features:</p>
-        <ul>
-          <li>Install OS Updates offline</li>
-        </ul>
-        <p>Other Improvements:</p>
-        <ul>
-          <li>Updated translations</li>
-        </ul>
-      </description>
       <issues>
         <issue url="https://github.com/elementary/appcenter/pull/1946">Fix showing addons in app info view</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1953">Fix visual issues with category icons</issue>
