@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-15 02:26+0000\n"
-"PO-Revision-Date: 2023-06-30 01:07+0000\n"
+"PO-Revision-Date: 2023-09-17 04:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -62,7 +62,7 @@ msgstr "新機能:"
 
 #: data/appcenter.metainfo.xml.in:70
 msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr ""
+msgstr "旧来の自動起動・通知システムを使用するアプリに警告を表示する機能を追加"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
 #: data/appcenter.metainfo.xml.in:106 data/appcenter.metainfo.xml.in:120
@@ -72,7 +72,7 @@ msgstr "そのほかの改善点:"
 
 #: data/appcenter.metainfo.xml.in:74
 msgid "Fix flickering on AppInfo views when getting install size"
-msgstr ""
+msgstr "インストールサイズ取得時のアプリ情報画面のちらつきを修正"
 
 #: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:96
 #: data/appcenter.metainfo.xml.in:108 data/appcenter.metainfo.xml.in:122
