@@ -85,6 +85,7 @@ public class AppCenterCore.Package : Object {
 
     [Flags]
     public enum PermissionsFlags {
+        AUTOSTART,
         DEVICES,
         DOWNLOADS_FULL,
         DOWNLOADS_READ,

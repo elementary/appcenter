@@ -464,7 +464,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 var location = new ContentType (
                     _("Location Sharing"),
                     _("Other people can see your real-world location"),
-                    "find-location-symbolic"
+                    "oars-social-location-symbolic"
                 );
 
                 oars_flowbox.add (location);
@@ -932,6 +932,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 );
 
                 oars_flowbox.add (home);
+            }
+
+            if (AppCenterCore.Package.PermissionsFlags.AUTOSTART in package.permissions_flags) {
+                var autostart = new ContentType (
+                    _("Legacy Autostart"),
+                    _("Can automatically start up and run in the background without asking"),
+                    "sandbox-autostart-symbolic"
+                );
+
+                oars_flowbox.add (autostart);
             }
 
             if (AppCenterCore.Package.PermissionsFlags.LOCATION in package.permissions_flags) {
