@@ -19,34 +19,24 @@ add_project_arguments(
 vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
 add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
 
-glib = dependency ('glib-2.0')
-gee = dependency ('gee-0.8')
-gtk = dependency ('gtk+-3.0', version: '>=3.10')
-granite = dependency ('granite', version: '>=6.0.0')
-handy = dependency('libhandy-1', version: '>=1.4.0')
 appstream = dependency ('appstream', version: '>=0.15.2')
-libsoup = dependency ('libsoup-2.4')
-json = dependency ('json-glib-1.0')
-flatpak = dependency ('flatpak')
-xml = dependency ('libxml-2.0')
-polkit = dependency ('polkit-gobject-1')
-posix = meson.get_compiler('vala').find_library('posix')
-
-dbus = dependency ('dbus-1')
 
 dependencies = [
-    glib,
-    gee,
-    gtk,
-    granite,
-    handy,
+    dependency ('glib-2.0'),
+    dependency ('gee-0.8'),
+    dependency ('gtk+-3.0', version: '>=3.10'),
+    dependency ('granite', version: '>=6.0.0'),
+    dependency ('libhandy-1', version: '>=1.4.0'),
     appstream,
-    libsoup,
-    json,
-    flatpak,
-    xml,
-    polkit,
-    posix
+    dependency ('libsoup-2.4'),
+    dependency ('json-glib-1.0'),
+    dependency ('flatpak'),
+    dependency ('libxml-2.0'),
+    dependency ('polkit-gobject-1'),
+    meson.get_compiler('vala').find_library('posix'),
+    dependency('libical-glib'),
+    dependency('libportal'),
+    dependency('libportal-gtk3')
 ]
 
 if get_option('packagekit_backend')
