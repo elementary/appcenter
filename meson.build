@@ -34,7 +34,6 @@ dependencies = [
     dependency ('libxml-2.0'),
     dependency ('polkit-gobject-1'),
     meson.get_compiler('vala').find_library('posix'),
-    dependency('libical-glib'),
     dependency('libportal'),
     dependency('libportal-gtk3')
 ]
