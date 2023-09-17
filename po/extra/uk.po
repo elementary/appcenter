@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 01:27+0000\n"
-"PO-Revision-Date: 2023-06-30 01:07+0000\n"
+"POT-Creation-Date: 2023-09-15 02:26+0000\n"
+"PO-Revision-Date: 2023-09-17 04:08+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -56,12 +56,35 @@ msgstr "Платіть що можете, щоб підтримати розро
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
-#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:132
 msgid "New features:"
 msgstr "Нові можливості:"
 
 #: data/appcenter.metainfo.xml.in:70
+msgid "Warn when apps use legacy Autostart, Notifications"
+msgstr ""
+"Попередження, коли застосунки використовують застарілі автозапуск, сповіщення"
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:106 data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:136
+msgid "Other Improvements:"
+msgstr "Інші вдосконалення:"
+
+#: data/appcenter.metainfo.xml.in:74
+msgid "Fix flickering on AppInfo views when getting install size"
+msgstr ""
+"Виправлено мерехтіння подання інформації про застосунок під час отримання "
+"розміру встановлення"
+
+#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:108 data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:138
+msgid "Updated translations"
+msgstr "Оновлено переклади"
+
+#: data/appcenter.metainfo.xml.in:89
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -69,37 +92,25 @@ msgstr ""
 "Попередження, коли застосунки мають доступ до домашньої або системної теки, "
 "розташування, налаштувань або мають незахищену пісочницю."
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
-#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
-#: data/appcenter.metainfo.xml.in:130
-msgid "Other Improvements:"
-msgstr "Інші вдосконалення:"
-
-#: data/appcenter.metainfo.xml.in:74
+#: data/appcenter.metainfo.xml.in:93
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Збільшення інтервалів та полів у вікнах відомостей про застосунок"
 
-#: data/appcenter.metainfo.xml.in:75
+#: data/appcenter.metainfo.xml.in:94
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Показ банера-заповнювача на головній сторінці під час завантаження"
 
-#: data/appcenter.metainfo.xml.in:76
+#: data/appcenter.metainfo.xml.in:95
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Не показувати застосунки, що не належать до Центру застосунків, під окремим "
 "заголовком у поданні категорій"
 
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
-#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
-#: data/appcenter.metainfo.xml.in:132
-msgid "Updated translations"
-msgstr "Оновлено переклади"
-
-#: data/appcenter.metainfo.xml.in:98
+#: data/appcenter.metainfo.xml.in:117
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Пропозиція Полагодити, якщо стається збій оновлення з Flatpak"
 
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:118
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -107,13 +118,9 @@ msgstr ""
 "Показувати повідомлення в огляді оновлень, коли вони актуальні, зокрема, "
 "коли востаннє було перевірено наявність оновлень"
 
-#: data/appcenter.metainfo.xml.in:115
+#: data/appcenter.metainfo.xml.in:134
 msgid "Show when an app isn't available in your language"
 msgstr "Показує, коли застосунок недоступний вашою мовою"
-
-#: data/appcenter.metainfo.xml.in:128
-msgid "Install OS Updates offline"
-msgstr "Встановлення оновлень ОС офлайн"
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -144,6 +151,9 @@ msgstr "Налагодження джерел програмного забез�
 msgid "Authentication is required to repair software sources"
 msgstr ""
 "Для налагодження джерел програмного забезпечення потрібна автентифікація"
+
+#~ msgid "Install OS Updates offline"
+#~ msgstr "Встановлення оновлень ОС офлайн"
 
 #~ msgid "Rewritten navigation with multitouch gestures to go back"
 #~ msgstr "Переписана навігація з мультитач жестами для повернення назад"
