@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 02:26+0000\n"
+"POT-Creation-Date: 2023-09-17 10:45+0000\n"
 "PO-Revision-Date: 2023-09-14 07:08+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -931,48 +931,48 @@ msgstr "资助"
 msgid "Fund the development of this app"
 msgstr "资助此应用程序的开发"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:50
 msgid "Checking for Updates"
 msgstr "正在查找更新"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:51
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "正在获取可用系统更新及已安装应用程序列表"
 
-#: src/Views/AppListUpdateView.vala:74
+#: src/Views/AppListUpdateView.vala:77
 msgid "Update All"
 msgstr "全部更新"
 
-#: src/Views/AppListUpdateView.vala:105
+#: src/Views/AppListUpdateView.vala:101
+msgid "Up to Date"
+msgstr "已是最新"
+
+#: src/Views/AppListUpdateView.vala:127
 msgid "A restart is required to finish installing updates"
 msgstr "请重启设备以完成更新"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:135
 msgid "Restart Now"
 msgstr "现在重启"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:147
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr "请求重新启动失败，请手动重启以完成更新"
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u 个可用更新"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:256
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "全部更新完毕。上次检查 %s。"
 
-#: src/Views/AppListUpdateView.vala:363
+#: src/Views/AppListUpdateView.vala:382
 msgid "Drivers"
 msgstr "驱动程序"
-
-#: src/Views/AppListUpdateView.vala:376
-msgid "Up to Date"
-msgstr "已是最新"
 
 #: src/Views/AuthorView.vala:31
 #, c-format

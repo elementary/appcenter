@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 02:26+0000\n"
+"POT-Creation-Date: 2023-09-17 10:45+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: Zisis Avouris <zisisavouris@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/appcenter/el/>\n"
@@ -980,53 +980,53 @@ msgstr ""
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:50
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Γίνεται αναζήτηση για ενημερώσεις…"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:51
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:74
+#: src/Views/AppListUpdateView.vala:77
 msgid "Update All"
 msgstr "Ενημέρωση όλων"
 
-#: src/Views/AppListUpdateView.vala:105
+#: src/Views/AppListUpdateView.vala:101
+msgid "Up to Date"
+msgstr "Ενημερωμένες"
+
+#: src/Views/AppListUpdateView.vala:127
 #, fuzzy
 #| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "Απαιτείται επανεκκίνηση για να ολοκληρωθεί η εγκατάσταση των ενημερώσεων"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:135
 msgid "Restart Now"
 msgstr "Επανεκκίνηση τώρα"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:147
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u  Διαθέσιμη ενημέρωση"
 msgstr[1] "%u Διαθέσιμες ενημερώσεις"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:256
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:363
+#: src/Views/AppListUpdateView.vala:382
 msgid "Drivers"
 msgstr ""
-
-#: src/Views/AppListUpdateView.vala:376
-msgid "Up to Date"
-msgstr "Ενημερωμένες"
 
 #: src/Views/AuthorView.vala:31
 #, c-format

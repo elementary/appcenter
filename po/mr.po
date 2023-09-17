@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 02:26+0000\n"
+"POT-Creation-Date: 2023-09-17 10:45+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -971,49 +971,49 @@ msgstr "निधी"
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:50
 msgid "Checking for Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:51
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "ओएस व स्थापित अ‍ॅप्ससाठी उपलब्ध अद्यतनांची सूची डाउनलोड करत आहे"
 
-#: src/Views/AppListUpdateView.vala:74
+#: src/Views/AppListUpdateView.vala:77
 msgid "Update All"
 msgstr "सर्व अपडेट करा"
 
-#: src/Views/AppListUpdateView.vala:105
+#: src/Views/AppListUpdateView.vala:101
+msgid "Up to Date"
+msgstr "अद्ययावत"
+
+#: src/Views/AppListUpdateView.vala:127
 msgid "A restart is required to finish installing updates"
 msgstr "अद्यतने स्थापित करणे पूर्ण करण्यासाठी रीस्टार्ट आवश्यक आहे"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:135
 msgid "Restart Now"
 msgstr "याक्षणी पुन्हा चालू करा"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:147
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u अपडेट उपलब्ध"
 msgstr[1] "%u अपडेट्स उपलब्ध"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:256
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:363
+#: src/Views/AppListUpdateView.vala:382
 msgid "Drivers"
 msgstr "ड्राइव्हर्स"
-
-#: src/Views/AppListUpdateView.vala:376
-msgid "Up to Date"
-msgstr "अद्ययावत"
 
 #: src/Views/AuthorView.vala:31
 #, c-format

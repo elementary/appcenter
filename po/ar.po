@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 02:26+0000\n"
+"POT-Creation-Date: 2023-09-17 10:45+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -991,31 +991,35 @@ msgstr "قم بالتمويل"
 msgid "Fund the development of this app"
 msgstr "ادعم عملية تطوير هذا التطبيق"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:50
 msgid "Checking for Updates"
 msgstr "جاري البحث عن تحديثات"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:51
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "قيد تحميل قائمة من التحديثات المتوفرة لنظام التشغيل والتطبيقات المثبتة"
 
-#: src/Views/AppListUpdateView.vala:74
+#: src/Views/AppListUpdateView.vala:77
 msgid "Update All"
 msgstr "حدث الكل"
 
-#: src/Views/AppListUpdateView.vala:105
+#: src/Views/AppListUpdateView.vala:101
+msgid "Up to Date"
+msgstr "محدث بالكامل"
+
+#: src/Views/AppListUpdateView.vala:127
 msgid "A restart is required to finish installing updates"
 msgstr "إعادة التشغيل مطلوبة لإنهاء تثبيت التحديثات"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:135
 msgid "Restart Now"
 msgstr "أعد التشغيل الآن"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:147
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr "لم تتم إعادة التشغيل. قم بإعادة التشغيل يدوياً لإنهاء تثبيت التحديثات"
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -1026,18 +1030,14 @@ msgstr[3] "تتوفر %u تحديثات"
 msgstr[4] "يتوفر %u تحديثاً"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:256
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:363
+#: src/Views/AppListUpdateView.vala:382
 msgid "Drivers"
 msgstr "التعريفات"
-
-#: src/Views/AppListUpdateView.vala:376
-msgid "Up to Date"
-msgstr "محدث بالكامل"
 
 #: src/Views/AuthorView.vala:31
 #, c-format
