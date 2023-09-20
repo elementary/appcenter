@@ -158,4 +158,8 @@ namespace Utils {
 
         return false;
     }
+
+    public static bool is_running_in_guest_mode () {
+        return Environment.get_user_name ().has_prefix ("guest-");
+    }
 }
