@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-17 10:45+0000\n"
-"PO-Revision-Date: 2023-06-30 01:07+0000\n"
+"PO-Revision-Date: 2023-09-24 09:08+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
@@ -64,6 +64,8 @@ msgstr "Nowe funkcje:"
 #: data/appcenter.metainfo.xml.in:70
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Ostrzeżenie przy aplikacjach korzystających ze starego autostartu, "
+"powiadomień"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
 #: data/appcenter.metainfo.xml.in:106 data/appcenter.metainfo.xml.in:120
@@ -74,6 +76,7 @@ msgstr "Inne ulepszenia:"
 #: data/appcenter.metainfo.xml.in:74
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Naprawiono miganie w widoku AppInfo podczas pobierania rozmiaru instalacji"
 
 #: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:96
 #: data/appcenter.metainfo.xml.in:108 data/appcenter.metainfo.xml.in:122
