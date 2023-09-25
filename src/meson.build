@@ -6,6 +6,7 @@ appcenter_files = files(
     'Utils.vala',
     'Core/BackendAggregator.vala',
     'Core/BackendInterface.vala',
+    'Core/CardUtils.vala',
     'Core/ChangeInformation.vala',
     'Core/Client.vala',
     'Core/ComponentValidator.vala',

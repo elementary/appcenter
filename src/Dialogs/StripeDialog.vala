@@ -285,7 +285,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         });
 
         card_number_entry.changed.connect (() => {
-            card_valid = is_card_valid (card_number_entry.card_number);
+            card_valid = AppCenterCore.CardUtils.is_card_valid (card_number_entry.card_number);
             is_payment_sensitive ();
         });
 
@@ -423,30 +423,6 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         } else {
             pay_button.sensitive = false;
         }
-    }
-
-    private bool is_card_valid (string numbers) {
-        var char_count = numbers.char_count ();
-
-        if (char_count < 14) return false;
-
-        int hash = int.parse (numbers[char_count - 1:char_count]);
-
-        int j = 1;
-        int sum = 0;
-        for (int i = char_count - 1; i > 0; i--) {
-            var number = int.parse (numbers[i - 1:i]);
-            if (j++ % 2 == 1) {
-                number = number * 2;
-                if (number > 9) {
-                    number = number - 9;
-                }
-            }
-
-            sum += number;
-        }
-
-        return (10 - (sum % 10)) % 10 == hash;
     }
 
     private void on_response (Gtk.Dialog source, int response_id) {
