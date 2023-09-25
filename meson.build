@@ -21,6 +21,7 @@ add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
 
 glib = dependency ('glib-2.0')
 gobject = dependency ('gobject-2.0')
+gio = dependency ('gio-2.0')
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
 granite = dependency ('granite', version: '>=6.0.0')
@@ -36,18 +37,19 @@ posix = meson.get_compiler('vala').find_library('posix')
 dbus = dependency ('dbus-1')
 
 core_deps = [
+    gee,
     glib,
     gobject,
+    gio,
+    json,
 ]
 
 dependencies = core_deps + [
-    gee,
     gtk,
     granite,
     handy,
     appstream,
     libsoup,
-    json,
     flatpak,
     xml,
     polkit,
