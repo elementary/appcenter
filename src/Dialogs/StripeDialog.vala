@@ -461,6 +461,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
                 .app_id (app_id)
                 .stripe_key (stripe_key)
                 .email (email_entry.text)
+                // dollars to cents
                 .amount (amount * 100)
                 .token (token)
                 .build ();

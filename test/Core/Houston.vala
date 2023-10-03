@@ -193,7 +193,7 @@ void add_houston_tests () {
 
         var http_client = new MockHttpClient (
             """
-            {"errors": [ "Something stupid happened" ]}
+            {"errors":[{"code":"StripeCardError","title":"Error","detail":"Your card was declined."}]}
             """
         );
 
