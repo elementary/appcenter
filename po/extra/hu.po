@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-17 10:45+0000\n"
-"PO-Revision-Date: 2023-06-30 01:07+0000\n"
+"PO-Revision-Date: 2023-09-26 22:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -62,6 +62,8 @@ msgstr "Új funkciók:"
 #: data/appcenter.metainfo.xml.in:70
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Figyelmeztetés, ha az alkalmazások elavult automatikus indulást vagy "
+"értesítéseket használnak"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
 #: data/appcenter.metainfo.xml.in:106 data/appcenter.metainfo.xml.in:120
@@ -71,7 +73,7 @@ msgstr "Egyéb fejlesztések:"
 
 #: data/appcenter.metainfo.xml.in:74
 msgid "Fix flickering on AppInfo views when getting install size"
-msgstr ""
+msgstr "Az alkalmazásinformáció oldalakon való villódzás javítva"
 
 #: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:96
 #: data/appcenter.metainfo.xml.in:108 data/appcenter.metainfo.xml.in:122
