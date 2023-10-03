@@ -28,13 +28,15 @@ public class AppCenterCore.Houston {
 
     public class PaymentRequest : Object {
         public string app_id { get; construct; }
+        public string stripe_key { get; construct; }
         public string token { get; construct; }
         public string email { get; construct; }
         public int amount { get; construct; }
 
-        public PaymentRequest (string app_id, string token, string email, int amount) {
+        public PaymentRequest (string app_id, string stripe_key, string token, string email, int amount) {
             Object (
                 app_id: app_id,
+                stripe_key: stripe_key,
                 token: token,
                 email: email,
                 amount: amount
@@ -45,7 +47,7 @@ public class AppCenterCore.Houston {
          * Build the JSON payload in the following format:
          * {
          *   "data": {
-         *     "key": "app_id",
+         *     "key": "stripe_key",
          *     "token": "stripe_token",
          *     "email": "user_email",
          *     "amount": 100,
@@ -59,7 +61,7 @@ public class AppCenterCore.Houston {
                 .set_member_name ("data")
                 .begin_object ()
                 .set_member_name ("key")
-                .add_string_value (app_id)
+                .add_string_value (stripe_key)
                 .set_member_name ("token")
                 .add_string_value (token)
                 .set_member_name ("email")
@@ -70,7 +72,7 @@ public class AppCenterCore.Houston {
                 .add_string_value ("USD")
                 .end_object ()
                 .end_object ();
-            
+
             Json.Generator generator = new Json.Generator ();
             Json.Node root = builder.get_root ();
             generator.set_root (root);
@@ -79,7 +81,7 @@ public class AppCenterCore.Houston {
         }
 
         public async void send (HttpClient client) throws HoustonError {
-            string uri = HOUSTON_URI.printf(app_id);
+            string uri = HOUSTON_URI.printf (app_id);
 
             var payload = _build_payload ();
             var headers = new Gee.HashMap<string, string> ();
@@ -96,6 +98,8 @@ public class AppCenterCore.Houston {
 
             var parser = new Json.Parser ();
             Json.Node? root = null;
+
+            debug ("Response from Houston: %s".printf (response.body));
 
             try {
                 parser.load_from_data (response.body);
@@ -116,6 +120,7 @@ public class AppCenterCore.Houston {
 
     public class PaymentRequestBuilder {
         private string? _app_id = null;
+        private string? _stripe_key = null;
         private string? _token = null;
         private string? _email = null;
         private int? _amount = null;
@@ -123,7 +128,7 @@ public class AppCenterCore.Houston {
         /**
          * @param app_id AppCenter application ID
          */
-        public PaymentRequestBuilder app_id(string app_id) {
+        public PaymentRequestBuilder app_id (string app_id) {
             this._app_id = app_id;
             return this;
         }
@@ -131,7 +136,15 @@ public class AppCenterCore.Houston {
         /**
          * @param token Stripe bearer token
          */
-        public PaymentRequestBuilder token(string token) {
+         public PaymentRequestBuilder stripe_key (string stripe_key) {
+            this._stripe_key = stripe_key;
+            return this;
+        }
+
+        /**
+         * @param token Stripe card token
+         */
+        public PaymentRequestBuilder token (string token) {
             this._token = token;
             return this;
         }
@@ -139,7 +152,7 @@ public class AppCenterCore.Houston {
         /**
          * @param email Email address of the user
          */
-        public PaymentRequestBuilder email(string email) {
+        public PaymentRequestBuilder email (string email) {
             this._email = email;
             return this;
         }
@@ -147,7 +160,7 @@ public class AppCenterCore.Houston {
         /**
          * @param amount Amount in cents
          */
-        public PaymentRequestBuilder amount(int amount) {
+        public PaymentRequestBuilder amount (int amount) {
             this._amount = amount;
             return this;
         }
@@ -158,12 +171,12 @@ public class AppCenterCore.Houston {
          * @return PaymentRequest object
          * @throws HoustonError.MISSING_PARAMETERS if any of the required parameters are missing
          */
-        public PaymentRequest build() throws HoustonError {
-            if (_app_id == null || _token == null || _email == null || _amount == null) {
-                throw new HoustonError.MISSING_PARAMETERS("Missing required parameters");
+        public PaymentRequest build () throws HoustonError {
+            if (_app_id == null || _stripe_key == null || _token == null || _email == null || _amount == null) {
+                throw new HoustonError.MISSING_PARAMETERS ("Missing required parameters");
             }
 
-            return new PaymentRequest(_app_id, _token, _email, _amount);
+            return new PaymentRequest (_app_id, _stripe_key, _token, _email, _amount);
         }
     }
 }

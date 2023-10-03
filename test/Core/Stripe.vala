@@ -20,15 +20,15 @@ void add_stripe_tests () {
     Test.add_func ("/stripe/token_request_builder", () => {
         var builder = new AppCenterCore.Stripe.TokenRequestBuilder ()
             .card_number ("4242424242424242")
-            .exp_month (12)
-            .exp_year (2023)
+            .expiration_month (12)
+            .expiration_year (2023)
             .cvc ("123")
             .stripe_key ("pk_test_123456");
 
         Error? caught_error = null;
         AppCenterCore.Stripe.TokenRequest? request = null;
         try {
-            request = builder.build();
+            request = builder.build ();
         } catch (AppCenterCore.StripeError e) {
             caught_error = e;
         }
@@ -45,14 +45,14 @@ void add_stripe_tests () {
     Test.add_func ("/stripe/token_request_builder/invalid", () => {
         var builder = new AppCenterCore.Stripe.TokenRequestBuilder ()
             .card_number ("4242424242424242")
-            .exp_month (12)
-            .exp_year (2023)
+            .expiration_month (12)
+            .expiration_year (2023)
             .cvc ("123");
 
         Error? caught_error = null;
         AppCenterCore.Stripe.TokenRequest? request = null;
         try {
-            request = builder.build();
+            request = builder.build ();
         } catch (AppCenterCore.StripeError e) {
             caught_error = e;
         }
@@ -63,7 +63,7 @@ void add_stripe_tests () {
     });
 
     Test.add_func ("/stripe/token_request/build_payload", () => {
-        var request = new AppCenterCore.Stripe.TokenRequest("4242424242424242", "123", 12, 2023, "pk_test_123456");
+        var request = new AppCenterCore.Stripe.TokenRequest ("4242424242424242", "123", 12, 2023, "pk_test_123456");
         var payload = request._build_payload ();
 
         GLib.HashTable<string, string>? parsed = null;
@@ -83,7 +83,7 @@ void add_stripe_tests () {
     });
 
     Test.add_func ("/stripe/token_request/success", () => {
-        var request = new AppCenterCore.Stripe.TokenRequest("4242424242424242", "123", 12, 2023, "pk_test_123456");
+        var request = new AppCenterCore.Stripe.TokenRequest ("4242424242424242", "123", 12, 2023, "pk_test_123456");
 
         var http_client = new MockHttpClient (
             """
@@ -142,8 +142,8 @@ void add_stripe_tests () {
         loop.run ();
 
         assert (http_client.request_uri == "https://api.stripe.com/v1/tokens");
-        assert (http_client.headers["Stripe-Version"] == "2023-08-16");    
-        assert (http_client.headers["Authorization"] == "Bearer pk_test_123456");    
+        assert (http_client.headers["Stripe-Version"] == "2023-08-16");
+        assert (http_client.headers["Authorization"] == "Bearer pk_test_123456");
 
         assert (caught_error == null);
         assert (token != null);
@@ -153,5 +153,46 @@ void add_stripe_tests () {
         assert (token.data.object == "token");
         assert (token.data.livemode == false);
         assert (token.data.used == false);
+    });
+
+    Test.add_func ("/stripe/token_request/error", () => {
+        var request = new AppCenterCore.Stripe.TokenRequest ("4242424242424242", "123", 12, 2023, "pk_test_123456");
+
+        var http_client = new MockHttpClient (
+            """
+            {
+                "error": {
+                  "message": "Request validation error: validator 0xc0011ceb10 failed: object property 'card' validation failed: could not validate against any of the constraints",
+                  "type": "invalid_request_error"
+                }
+            }
+            """,
+            false,
+            400
+        );
+
+        var loop = new MainLoop ();
+        Error? caught_error = null;
+        AppCenterCore.Stripe.Response<AppCenterCore.Stripe.Token>? token = null;
+
+        request.send.begin (http_client, (obj, res) => {
+            try {
+                token = request.send.end (res);
+            } catch (Error e) {
+                caught_error = e;
+            } finally {
+                loop.quit ();
+            }
+        });
+        loop.run ();
+
+        assert (http_client.request_uri == "https://api.stripe.com/v1/tokens");
+        assert (http_client.headers["Stripe-Version"] == "2023-08-16");
+        assert (http_client.headers["Authorization"] == "Bearer pk_test_123456");
+
+        assert (caught_error == null);
+        assert (token.error != null);
+        assert (token.error.message == "Request validation error: validator 0xc0011ceb10 failed: object property 'card' validation failed: could not validate against any of the constraints");
+        assert (token.error.error_type == "invalid_request_error");
     });
 }

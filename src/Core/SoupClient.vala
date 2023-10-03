@@ -18,10 +18,10 @@
 */
 
 public class AppCenterCore.SoupClient : Object, AppCenterCore.HttpClient {
-    public async AppCenterCore.HttpClient.Response post (string url, string data, Gee.HashMap<string, string>? headers = null) throws IOError {
+    public async AppCenterCore.HttpClient.Response post (string url, string data, Gee.HashMap<string, string>? headers = null) throws Error {
         var session = new Soup.Session ();
         var message = new Soup.Message ("POST", url);
-        
+
         if (headers != null) {
             foreach (var header in headers) {
                 message.request_headers.append (header.key, header.value);

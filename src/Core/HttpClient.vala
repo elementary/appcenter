@@ -26,12 +26,12 @@ public interface AppCenterCore.HttpClient : Object {
 
     /*
      * Perform a HTTP POST request
-     * 
+     *
      * @param url The URL to post to
      * @param data The data to post
      * @param headers The headers to send
      * @return The response body
      * @throws IOError
     */
-    public abstract async Response post (string url, string data, Gee.HashMap<string, string>? headers = null) throws IOError;
+    public abstract async Response post (string url, string data, Gee.HashMap<string, string>? headers = null) throws Error;
 }

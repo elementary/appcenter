@@ -18,6 +18,7 @@
 
  public class MockHttpClient : Object, AppCenterCore.HttpClient {
     private string response;
+    private int response_code;
     private bool throws_error;
 
     public string? request_uri { get; private set; }
@@ -26,18 +27,20 @@
 
     /*
      * Create a new MockHttpClient.
-     * 
+     *
      * @param response The response to return when request methods are called.
      * @param throws_error If true, the request methods will throw an IOError.
+     * @param response_code The response code to return when request methods are called.
      */
-    public MockHttpClient (string response = "", bool throws_error = false) {
+    public MockHttpClient (string response = "", bool throws_error = false, int response_code = 200) {
         this.response = response;
         this.throws_error = throws_error;
+        this.response_code = response_code;
     }
 
     /*
      * Perform a mock POST request and return the response.
-     * 
+     *
      * The url, data and headers will be stored as properties so they can be
      * inspected after the request is made.
      *
@@ -57,7 +60,7 @@
         this.headers = headers;
 
         return new AppCenterCore.HttpClient.Response () {
-            status_code = 200,
+            status_code = this.response_code,
             body = this.response
         };
     }

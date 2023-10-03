@@ -20,14 +20,15 @@ void add_houston_tests () {
     Test.add_func ("/houston/payment_request_builder", () => {
         var builder = new AppCenterCore.Houston.PaymentRequestBuilder ()
             .amount (100)
-            .token("pk_test_123456")
-            .app_id("com.github.elementary.houston")
-            .email("houston@example.com");
+            .stripe_key ("pk_test_123456")
+            .token ("tok_1NxAA7HS9fmgRLTdMytLPrAi")
+            .app_id ("com.github.elementary.houston")
+            .email ("houston@example.com");
 
         Error? caught_error = null;
         AppCenterCore.Houston.PaymentRequest? request = null;
         try {
-            request = builder.build();
+            request = builder.build ();
         } catch (AppCenterCore.HoustonError e) {
             caught_error = e;
         }
@@ -35,8 +36,9 @@ void add_houston_tests () {
         assert (request != null);
         assert (caught_error == null);
         assert (request.amount == 100);
-        assert (request.token == "pk_test_123456");
+        assert (request.token == "tok_1NxAA7HS9fmgRLTdMytLPrAi");
         assert (request.app_id == "com.github.elementary.houston");
+        assert (request.stripe_key == "pk_test_123456");
         assert (request.email == "houston@example.com");
     });
 
@@ -47,9 +49,9 @@ void add_houston_tests () {
         try {
             builder
                 .amount (100)
-                .token("pk_test_123456")
-                .app_id("com.github.elementary.houston")
-                .build();
+                .token ("pk_test_123456")
+                .app_id ("com.github.elementary.houston")
+                .build ();
         } catch (AppCenterCore.HoustonError e) {
             caught_error = e;
         }
@@ -60,8 +62,9 @@ void add_houston_tests () {
 
     Test.add_func ("/houston/payment_request/build_payload", () => {
         var request = new AppCenterCore.Houston.PaymentRequest (
-            "com.github.elementary.houston", 
-            "pk_test_123456", 
+            "com.github.elementary.houston",
+            "pk_test_123456",
+            "tok_1NxAA7HS9fmgRLTdMytLPrAi",
             "houston@example.com",
             100
         );
@@ -80,7 +83,7 @@ void add_houston_tests () {
 
         assert (root != null);
         assert (root.get_object ().get_size () == 1);
-        
+
         var data = root.get_object ().get_object_member ("data");
         assert (data.get_size () == 5);
         assert (data.has_member ("key"));
@@ -89,17 +92,18 @@ void add_houston_tests () {
         assert (data.has_member ("email"));
         assert (data.has_member ("token"));
 
-        assert (data.get_member ("key").get_string () == "com.github.elementary.houston");
+        assert (data.get_member ("key").get_string () == "pk_test_123456");
         assert (data.get_member ("amount").get_int () == 100);
         assert (data.get_member ("currency").get_string () == "USD");
         assert (data.get_member ("email").get_string () == "houston@example.com");
-        assert (data.get_member ("token").get_string () == "pk_test_123456");
+        assert (data.get_member ("token").get_string () == "tok_1NxAA7HS9fmgRLTdMytLPrAi");
     });
 
     Test.add_func ("/houston/payment_request/send", () => {
         var request = new AppCenterCore.Houston.PaymentRequest (
-            "com.github.elementary.houston", 
-            "pk_test_123456", 
+            "com.github.elementary.houston",
+            "pk_test_123456",
+            "tok_1NxAA7HS9fmgRLTdMytLPrAi",
             "houston@example.com",
             100
         );
@@ -134,7 +138,7 @@ void add_houston_tests () {
 
         assert (root != null);
         assert (root.get_object ().get_size () == 1);
-        
+
         var data = root.get_object ().get_object_member ("data");
         assert (data.get_size () == 5);
         assert (data.has_member ("key"));
@@ -143,17 +147,18 @@ void add_houston_tests () {
         assert (data.has_member ("email"));
         assert (data.has_member ("token"));
 
-        assert (data.get_member ("key").get_string () == "com.github.elementary.houston");
+        assert (data.get_member ("key").get_string () == "pk_test_123456");
         assert (data.get_member ("amount").get_int () == 100);
         assert (data.get_member ("currency").get_string () == "USD");
         assert (data.get_member ("email").get_string () == "houston@example.com");
-        assert (data.get_member ("token").get_string () == "pk_test_123456");
+        assert (data.get_member ("token").get_string () == "tok_1NxAA7HS9fmgRLTdMytLPrAi");
     });
 
     Test.add_func ("/houston/payment_request/send/error", () => {
         var request = new AppCenterCore.Houston.PaymentRequest (
-            "com.github.elementary.houston", 
-            "pk_test_123456", 
+            "com.github.elementary.houston",
+            "pk_test_123456",
+            "tok_1NxAA7HS9fmgRLTdMytLPrAi",
             "houston@example.com",
             100
         );
@@ -172,15 +177,16 @@ void add_houston_tests () {
             }
         });
         loop.run ();
-        
+
         assert (caught_error != null);
         assert (caught_error is AppCenterCore.HoustonError.NETWORK_ERROR);
     });
 
     Test.add_func ("/houston/payment_request/send/error/invalid_response", () => {
         var request = new AppCenterCore.Houston.PaymentRequest (
-            "com.github.elementary.houston", 
-            "pk_test_123456", 
+            "com.github.elementary.houston",
+            "pk_test_123456",
+            "tok_1NxAA7HS9fmgRLTdMytLPrAi",
             "houston@example.com",
             100
         );
@@ -203,7 +209,7 @@ void add_houston_tests () {
             }
         });
         loop.run ();
-        
+
         assert (caught_error != null);
         assert (caught_error is AppCenterCore.HoustonError.SERVER_ERROR);
     });
