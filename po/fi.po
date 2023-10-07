@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-17 10:45+0000\n"
-"PO-Revision-Date: 2023-08-27 12:08+0000\n"
+"PO-Revision-Date: 2023-10-08 20:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -840,11 +841,11 @@ msgstr "Rakennettu %s:n epävakaalle versiolle; saattaa sisältää suuria ongel
 
 #: src/Views/AppInfoView.vala:911
 msgid "Insecure Sandbox"
-msgstr ""
+msgstr "Turvaton eristys"
 
 #: src/Views/AppInfoView.vala:912
 msgid "Can ignore or modify its own system permissions"
-msgstr ""
+msgstr "Voi jättää huomiotta tai muokata omia oikeuksia"
 
 #: src/Views/AppInfoView.vala:921
 msgid "System Folder Access"
@@ -864,23 +865,23 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:939
 msgid "Legacy Autostart"
-msgstr ""
+msgstr "Vanhentunut automaattikäynnistys"
 
 #: src/Views/AppInfoView.vala:940
 msgid "Can automatically start up and run in the background without asking"
-msgstr ""
+msgstr "Voi käynnistyä automaattisesti ja toimia taustalla lupaa kysymättä"
 
 #: src/Views/AppInfoView.vala:949
 msgid "Location Access"
-msgstr ""
+msgstr "Pääsy sijaintiin"
 
 #: src/Views/AppInfoView.vala:950
 msgid "Can see your precise location at any time without asking"
-msgstr ""
+msgstr "Voi nähdä tarkan sijaintisi milloin tahansa kysymättä"
 
 #: src/Views/AppInfoView.vala:959
 msgid "Legacy Notifications"
-msgstr ""
+msgstr "Vanhentuneet ilmoitukset"
 
 #: src/Views/AppInfoView.vala:960
 msgid "Bubbles may not be configurable or appear in notification center as “Other”"
