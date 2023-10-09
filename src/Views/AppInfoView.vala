@@ -105,14 +105,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                     text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
 
                     accent_css = "@define-color accent_color %s;".printf (primary_color);
-                    accent_provider.load_from_data (accent_css, accent_css.length);
+                    accent_provider.load_from_data (accent_css.data);
                 }
             }
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
             colored_css += accent_css;
 
-            accent_provider.load_from_data (colored_css, colored_css.length);
+            accent_provider.load_from_data (colored_css.data);
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
         }
@@ -911,7 +911,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                     "sandbox-autostart-symbolic"
                 );
 
-                oars_flowbox.add (autostart);
+                oars_flowbox.append (autostart);
             }
 
             if (AppCenterCore.Package.PermissionsFlags.LOCATION in package.permissions_flags) {
@@ -931,7 +931,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                     "sandbox-notifications-symbolic"
                 );
 
-                oars_flowbox.add (notifications);
+                oars_flowbox.append (notifications);
             }
 
             if (AppCenterCore.Package.PermissionsFlags.SETTINGS in package.permissions_flags) {

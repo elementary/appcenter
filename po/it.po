@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 01:27+0000\n"
+"POT-Creation-Date: 2023-09-17 10:45+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: OdiMath <angeloschirinzi@outlook.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
@@ -976,49 +976,49 @@ msgstr "Sostieni"
 msgid "Fund the development of this app"
 msgstr "Finanzia lo sviluppo di questa applicazione"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:50
 msgid "Checking for Updates"
 msgstr "Ricerca di aggiornamenti in corso"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:51
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Scaricamento di un elenco di aggiornamenti disponibili per il sistema operativo e le applicazioni installate"
 
-#: src/Views/AppListUpdateView.vala:74
+#: src/Views/AppListUpdateView.vala:77
 msgid "Update All"
 msgstr "Aggiorna tutto"
 
-#: src/Views/AppListUpdateView.vala:105
+#: src/Views/AppListUpdateView.vala:101
+msgid "Up to Date"
+msgstr "Aggiornate"
+
+#: src/Views/AppListUpdateView.vala:127
 msgid "A restart is required to finish installing updates"
 msgstr "Un riavvio è necessario per completare l'installazione degli aggiornamenti"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:135
 msgid "Restart Now"
 msgstr "Riavvia ora"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:147
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr "Il riavvio aumatico non è andato a buon fine. Riavvia manualmente per completare l'installazione degli aggiornamenti."
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u Aggiornamento disponibile"
 msgstr[1] "%u Aggiornamenti disponibili"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:256
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:363
+#: src/Views/AppListUpdateView.vala:382
 msgid "Drivers"
 msgstr "Driver"
-
-#: src/Views/AppListUpdateView.vala:376
-msgid "Up to Date"
-msgstr "Aggiornate"
 
 #: src/Views/AuthorView.vala:31
 #, c-format

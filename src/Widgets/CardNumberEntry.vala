@@ -20,18 +20,7 @@
 public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
     public string card_number { get; set; }
 
-    private enum CardType {
-        UNKNOWN,
-        VISA,
-        MASTERCARD,
-        AMERICAN_EXPRESS,
-        DISCOVER,
-        DINERS_CLUB,
-        JCB,
-        UNIONPAY
-    }
-
-    private CardType card_type = CardType.UNKNOWN;
+    private AppCenterCore.CardUtils.CardType card_type = AppCenterCore.CardUtils.CardType.UNKNOWN;
     private bool insertion = true;
 
     construct {
@@ -49,10 +38,10 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
 
         changed.connect (() => {
             update_number ();
-            detect_card ();
+            card_type = AppCenterCore.CardUtils.detect_card_type (card_number);
             change_card_icon ();
 
-            int[] pattern = get_card_pattern ();
+            int[] pattern = card_type.get_pattern ();
             var number_chars = card_number.to_utf8 ();
             var builder = new GLib.StringBuilder ();
             for (int i = 0; i < number_chars.length; i++) {
@@ -74,7 +63,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
                 }
             }
 
-            max_length = get_card_max_length () + pattern.length;
+            max_length = card_type.get_max_length () + pattern.length;
         });
     }
 
@@ -88,105 +77,32 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         }
     }
 
-    private void detect_card () {
-        var number = card_number;
-
-        if (number.has_prefix ("4")) {
-            card_type = CardType.VISA;
-            return;
-        }
-
-        if (GLib.Regex.match_simple ("^(?:5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[01]|2720)", number)) {
-            card_type = CardType.MASTERCARD;
-            return;
-        }
-
-        if (number.has_prefix ("34") || number.has_prefix ("37")) {
-            card_type = CardType.AMERICAN_EXPRESS;
-            return;
-        }
-
-        if (number.has_prefix ("62")) {
-            card_type = CardType.UNIONPAY;
-            return;
-        }
-
-        if (GLib.Regex.match_simple ("^(2[01]([2-4]|1[4-9])|36|30([0-5]|95)|3[89])", number)) {
-            card_type = CardType.DINERS_CLUB;
-            return;
-        }
-
-        if (GLib.Regex.match_simple ("^(6011|6[45])", number)) {
-            card_type = CardType.DISCOVER;
-            return;
-        }
-
-        if (GLib.Regex.match_simple ("^(35([3-8]|2[89]))", number)) {
-            card_type = CardType.JCB;
-            return;
-        }
-
-        card_type = CardType.UNKNOWN;
-    }
-
     private void change_card_icon () {
         switch (card_type) {
-            case CardType.VISA:
+            case AppCenterCore.CardUtils.CardType.VISA:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-visa");
                 break;
-            case CardType.MASTERCARD:
+            case AppCenterCore.CardUtils.CardType.MASTERCARD:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-mastercard");
                 break;
-            case CardType.AMERICAN_EXPRESS:
+            case AppCenterCore.CardUtils.CardType.AMERICAN_EXPRESS:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-amex");
                 break;
-            case CardType.DISCOVER:
+            case AppCenterCore.CardUtils.CardType.DISCOVER:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-discover");
                 break;
-            case CardType.DINERS_CLUB:
+            case AppCenterCore.CardUtils.CardType.DINERS_CLUB:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-diners-club");
                 break;
-            case CardType.JCB:
+            case AppCenterCore.CardUtils.CardType.JCB:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-jcb");
                 break;
-            case CardType.UNIONPAY:
+            case AppCenterCore.CardUtils.CardType.UNIONPAY:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-unionpay");
                 break;
             default:
                 secondary_icon_gicon = null;
                 break;
-        }
-    }
-
-    // The numbers represents the position of the spaces
-    private int[] get_card_pattern () {
-        switch (card_type) {
-            case CardType.AMERICAN_EXPRESS:
-            case CardType.DINERS_CLUB:
-                return {4, 10};
-            case CardType.VISA:
-            case CardType.MASTERCARD:
-            case CardType.DISCOVER:
-            case CardType.JCB:
-            case CardType.UNIONPAY:
-            default:
-                return {4, 8, 12};
-        }
-    }
-
-    private int get_card_max_length () {
-        switch (card_type) {
-            case CardType.AMERICAN_EXPRESS:
-                return 15;
-            case CardType.MASTERCARD:
-                return 16;
-            case CardType.VISA:
-            case CardType.DISCOVER:
-            case CardType.DINERS_CLUB:
-            case CardType.JCB:
-            case CardType.UNIONPAY:
-            default:
-                return 19;
         }
     }
 }

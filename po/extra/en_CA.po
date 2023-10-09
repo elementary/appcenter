@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 01:27+0000\n"
+"POT-Creation-Date: 2023-09-17 10:45+0000\n"
 "PO-Revision-Date: 2018-04-20 00:14+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
@@ -57,59 +57,63 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:96
-#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:132
 msgid "New features:"
 msgstr ""
 
 #: data/appcenter.metainfo.xml.in:70
-msgid ""
-"Warn when apps have access to Home or system folders, location, settings, or "
-"have an insecure sandbox."
+msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
-#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:117
-#: data/appcenter.metainfo.xml.in:130
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:106 data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:136
 #, fuzzy
 msgid "Other Improvements:"
 msgstr "Various bug fixes and performance improvements"
 
 #: data/appcenter.metainfo.xml.in:74
-msgid "Tighten up spacing and margins in App Info views"
+msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:75
-msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:76
-msgid "Don't list non-AppCenter apps under a separate header in category views"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:77 data/appcenter.metainfo.xml.in:89
-#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:119
-#: data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:108 data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:138
 #, fuzzy
 msgid "Updated translations"
 msgstr "New translations"
 
-#: data/appcenter.metainfo.xml.in:98
+#: data/appcenter.metainfo.xml.in:89
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:93
+msgid "Tighten up spacing and margins in App Info views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:94
+msgid "Show a placeholder banner on the home page when loading"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:95
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:117
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:118
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:115
+#: data/appcenter.metainfo.xml.in:134
 msgid "Show when an app isn't available in your language"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:128
-msgid "Install OS Updates offline"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:3

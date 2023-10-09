@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 01:27+0000\n"
+"POT-Creation-Date: 2023-09-17 10:45+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -969,31 +969,35 @@ msgstr "Financovať"
 msgid "Fund the development of this app"
 msgstr "Financovať vývoj tejto aplikácie"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:50
 msgid "Checking for Updates"
 msgstr "Kontrolujú sa aktualizácie"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:51
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Sťahovanie zoznamu aktualizácií, ktoré sú dostupné pre operačný systém a nainštalované aplikácie"
 
-#: src/Views/AppListUpdateView.vala:74
+#: src/Views/AppListUpdateView.vala:77
 msgid "Update All"
 msgstr "Aktualizovať všetko"
 
-#: src/Views/AppListUpdateView.vala:105
+#: src/Views/AppListUpdateView.vala:101
+msgid "Up to Date"
+msgstr "Aktuálne"
+
+#: src/Views/AppListUpdateView.vala:127
 msgid "A restart is required to finish installing updates"
 msgstr "Na dokončenie inštalácie aktualizácií je potrebný reštart"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:135
 msgid "Restart Now"
 msgstr "Reštartovať teraz"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:147
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr "Žiadosť o reštart sa nepodarila. Reštartujte ručne pre dokončenie inštalácie aktualizácií"
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -1001,18 +1005,14 @@ msgstr[0] "%u dostupná aktualizácia"
 msgstr[1] "%u dostupné aktualizácie"
 msgstr[2] "%u dostupných aktualizácií"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:256
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:363
+#: src/Views/AppListUpdateView.vala:382
 msgid "Drivers"
 msgstr "Ovládače"
-
-#: src/Views/AppListUpdateView.vala:376
-msgid "Up to Date"
-msgstr "Aktuálne"
 
 #: src/Views/AuthorView.vala:31
 #, c-format

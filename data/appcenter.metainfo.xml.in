@@ -17,15 +17,15 @@
   <screenshots>
     <screenshot type="default">
         <caption>Discover new apps</caption>
-      <image>https://raw.githubusercontent.com/elementary/appcenter/7.3.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/appcenter/7.4.0/data/screenshot.png</image>
     </screenshot>
     <screenshot>
       <caption>Stay up to date</caption>
-      <image>https://raw.githubusercontent.com/elementary/appcenter/7.3.0/data/screenshot-updates.png</image>
+      <image>https://raw.githubusercontent.com/elementary/appcenter/7.4.0/data/screenshot-updates.png</image>
     </screenshot>
     <screenshot>
       <caption>Pay what you can to support developers</caption>
-      <image>https://raw.githubusercontent.com/elementary/appcenter/7.3.0/data/screenshot-payment.png</image>
+      <image>https://raw.githubusercontent.com/elementary/appcenter/7.4.0/data/screenshot-payment.png</image>
     </screenshot>
   </screenshots>
 
@@ -63,7 +63,7 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
-  <release version="7.4.0" date="2023-09-14">
+  <release version="7.4.0" date="2023-09-18">
       <description>
         <p>New features:</p>
         <ul>
@@ -77,6 +77,7 @@
       </description>
       <issues>
         <issue url="https://github.com/elementary/appcenter/issues/2059">Search bar refreshes when typing over existing text</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2047">Warn if apps can send notifications directly</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1987">AppCenter search box dropping chatacters</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1947">Changing install source adds to navigation stack</issue>
       </issues>
