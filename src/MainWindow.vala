@@ -63,7 +63,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         notify["working"].connect (() => {
             Idle.add (() => {
-                App.refresh_action.set_enabled (!working);
+                App.refresh_action.set_enabled (!working && !Utils.is_running_in_guest_session ());
                 App.repair_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
