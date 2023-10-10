@@ -188,7 +188,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             title_widget = search_clamp
         };
         headerbar.pack_start (return_button);
-        headerbar.pack_end (menu_button);
+        if (!Utils.is_running_in_guest_session ()) {
+            headerbar.pack_end (menu_button);
+        }
         headerbar.pack_end (view_mode_revealer);
 
         var homepage = new Homepage ();
