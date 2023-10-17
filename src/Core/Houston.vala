@@ -84,10 +84,10 @@ public class AppCenterCore.Houston {
             string uri = HOUSTON_URI.printf (app_id);
 
             var payload = _build_payload ();
-            var headers = new Gee.HashMap<string, string> ();
+            var headers = new GLib.HashTable<string, string> (str_hash, str_equal);
 
-            headers.set ("Accepts", "application/vnd.api+json");
-            headers.set ("Content-Type", "application/vnd.api+json");
+            headers.insert ("Accepts", "application/vnd.api+json");
+            headers.insert ("Content-Type", "application/vnd.api+json");
 
             AppCenterCore.HttpClient.Response? response = null;
             try {

@@ -23,7 +23,7 @@
 
     public string? request_uri { get; private set; }
     public string? data { get; private set; }
-    public Gee.HashMap<string, string>? headers { get; private set; }
+    public GLib.HashTable<string, string>? headers { get; private set; }
 
     /*
      * Create a new MockHttpClient.
@@ -50,7 +50,7 @@
      * @return The response.
      * @throws IOError If throws_error is true.
      */
-    public async AppCenterCore.HttpClient.Response post (string url, string data, Gee.HashMap<string, string>? headers = null) throws IOError {
+    public async AppCenterCore.HttpClient.Response post (string url, string data, GLib.HashTable<string, string>? headers = null) throws IOError {
         if (this.throws_error) {
             throw new IOError.HOST_UNREACHABLE ("Network is unreachable");
         }

@@ -18,14 +18,14 @@
 */
 
 public class AppCenterCore.SoupClient : Object, AppCenterCore.HttpClient {
-    public async AppCenterCore.HttpClient.Response post (string url, string data, Gee.HashMap<string, string>? headers = null) throws Error {
+    public async AppCenterCore.HttpClient.Response post (string url, string data, GLib.HashTable<string, string>? headers = null) throws Error {
         var session = new Soup.Session ();
         var message = new Soup.Message ("POST", url);
 
         if (headers != null) {
-            foreach (var header in headers) {
-                message.request_headers.append (header.key, header.value);
-            }
+            headers.foreach ((key, value) => {
+                message.request_headers.append (key, value);
+            });
         }
 
         message.request_headers.append ("User-Agent", "AppCenterCore.SoupClient/1.0");
@@ -43,7 +43,7 @@ public class AppCenterCore.SoupClient : Object, AppCenterCore.HttpClient {
             result.append_len ((string)buffer, read);
         }
 
-        var response_headers = new Gee.HashMap<string, string> ();
+        var response_headers = new GLib.HashTable<string, string> (str_hash, str_equal);
         message.response_headers.foreach ((name, value) => {
             response_headers.set (name, value);
         });

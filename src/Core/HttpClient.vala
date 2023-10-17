@@ -20,7 +20,7 @@
 public interface AppCenterCore.HttpClient : Object {
     public class Response : GLib.Object {
         public string? body { get; set; }
-        public Gee.HashMap<string, string>? headers { get; set; }
+        public GLib.HashTable<string, string>? headers { get; set; }
         public uint status_code { get; set; }
     }
 
@@ -33,5 +33,5 @@ public interface AppCenterCore.HttpClient : Object {
      * @return The response body
      * @throws IOError
     */
-    public abstract async Response post (string url, string data, Gee.HashMap<string, string>? headers = null) throws Error;
+    public abstract async Response post (string url, string data, GLib.HashTable<string, string>? headers = null) throws Error;
 }

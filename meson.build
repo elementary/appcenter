@@ -37,7 +37,6 @@ posix = meson.get_compiler('vala').find_library('posix')
 dbus = dependency ('dbus-1')
 
 core_deps = [
-    gee,
     glib,
     gobject,
     gio,

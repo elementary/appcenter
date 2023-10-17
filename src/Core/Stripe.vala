@@ -206,12 +206,12 @@ public class AppCenterCore.Stripe {
         }
 
         public async Response<Token> send (HttpClient client) throws StripeError {
-            var headers = new Gee.HashMap<string, string> ();
+            var headers = new GLib.HashTable<string, string> (str_hash, str_equal);
 
             var payload = _build_payload ();
 
-            headers.set ("Stripe-Version", STRIPE_VERSION);
-            headers.set ("Authorization", STRIPE_AUTH.printf (this.stripe_key));
+            headers.insert ("Stripe-Version", STRIPE_VERSION);
+            headers.insert ("Authorization", STRIPE_AUTH.printf (this.stripe_key));
 
             AppCenterCore.HttpClient.Response? response = null;
             try {
