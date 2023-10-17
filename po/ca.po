@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-17 10:45+0000\n"
+"POT-Creation-Date: 2023-10-17 20:17+0000\n"
 "PO-Revision-Date: 2023-09-17 04:08+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -355,6 +355,82 @@ msgstr "L'estat de l'aplicació no està establert com a instal·lada al Centre 
 msgid "%s (local)"
 msgstr "%s (local)"
 
+#: src/Core/Stripe.vala:27
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Hi ha hagut un error mentre es processava la targeta. Torneu-ho a provar més tard. Disculpeu les molèsties."
+
+#: src/Core/Stripe.vala:28
+msgid "Please review your payment info and try again."
+msgstr "Reviseu la informació del pagament i torneu-ho a intentar."
+
+#: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "El número de la targeta no és correcte. Torneu-ho a intentar amb el número correcte."
+
+#: src/Core/Stripe.vala:66
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "El mes de caducitat no és vàlid. Torneu-ho a intentar amb la data de caducitat correcta."
+
+#: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "L'any de caducitat no és vàlid. Torneu-ho a intentar amb la data de caducitat correcta."
+
+#: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr "El número CVC no és correcte. Torneu-ho a intentar amb el número correcte."
+
+#: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
+msgid "The card has expired. Please try again with a different card."
+msgstr "La targeta està caducada. Torneu-ho a intentar amb una targeta diferent."
+
+#: src/Core/Stripe.vala:89
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr "Hi ha massa peticions de pagament en aquests moments. Torneu-ho a intentar més tard."
+
+#: src/Core/Stripe.vala:106
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Aquesta targeta no admet aquest tipus de transacció. Torneu-ho a intentar amb una targeta diferent."
+
+#: src/Core/Stripe.vala:108
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Aquesta targeta no admet el tipus de moneda. Torneu-ho a provar amb una targeta diferent."
+
+#: src/Core/Stripe.vala:110
+msgid "The transaction has already been processed."
+msgstr "Ja s'ha processat la transacció."
+
+#: src/Core/Stripe.vala:114
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "El codi postal no és correcte. Torneu-ho a intentar amb el codi postal correcte."
+
+#: src/Core/Stripe.vala:116
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr "No teniu fons suficient. Feu servir un mètode de pagament alternatiu."
+
+#: src/Core/Stripe.vala:118
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr "La quantitat no és correcta. Torneu-ho a provar amb una quantitat correcta."
+
+#: src/Core/Stripe.vala:129
+msgid "The PIN number is incorrect. Please try again using the correct PIN."
+msgstr "El número PIN no és correcte. Torneu-ho a intentar amb el número correcte."
+
+#: src/Core/Stripe.vala:131
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Hi ha hagut massa intents de número secret. Torneu-ho a provar amb una targeta diferent."
+
+#: src/Core/Stripe.vala:151
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "No s'ha pogut completar la transacció. Contacteu amb el banc per a més informació."
+
+#: src/Core/Stripe.vala:154
+msgid "The balance or credit limit on the card has been reached."
+msgstr "S'ha arribat al límit de saldo o crèdit de la targeta."
+
+#: src/Core/Stripe.vala:157
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr "Aquesta és una targeta de prova. Feu servir una targeta real per continuar."
+
 #: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Actualitzacions del sistema operatiu"
@@ -436,153 +512,77 @@ msgstr "Ha fallat la reparació."
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "Això pot haver estat causat per repositoris externs afegits manualment o per un fitxer de fonts corromput."
 
-#: src/Dialogs/StripeDialog.vala:41
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Hi ha hagut un error mentre es processava la targeta. Torneu-ho a provar més tard. Disculpeu les molèsties."
-
-#: src/Dialogs/StripeDialog.vala:42
-msgid "Please review your payment info and try again."
-msgstr "Reviseu la informació del pagament i torneu-ho a intentar."
-
-#: src/Dialogs/StripeDialog.vala:72
+#: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
 msgstr "Pagament"
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
 #. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
-#: src/Dialogs/StripeDialog.vala:97 src/Dialogs/StripeDialog.vala:261
+#: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:240
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Paga %d USD per %s"
 
-#: src/Dialogs/StripeDialog.vala:103
+#: src/Dialogs/StripeDialog.vala:82
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Es tracta d'un pagament únic suggerit pel desenvolupador. També podeu triar el vostre preu."
 
-#: src/Dialogs/StripeDialog.vala:124
+#: src/Dialogs/StripeDialog.vala:103
 msgid "or"
 msgstr "o"
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:139
 msgid "Email"
 msgstr "Adreça electrònica"
 
-#: src/Dialogs/StripeDialog.vala:165
+#: src/Dialogs/StripeDialog.vala:144
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Només s'usa per a enviar-vos un rebut. No se us subscriurà a cap llista de correu."
 
-#: src/Dialogs/StripeDialog.vala:166
+#: src/Dialogs/StripeDialog.vala:145
 msgid "Privacy Policy"
 msgstr "Política de privadesa"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:189
+#: src/Dialogs/StripeDialog.vala:168
 msgid "MM / YY"
 msgstr "MM / AA"
 
-#: src/Dialogs/StripeDialog.vala:197
+#: src/Dialogs/StripeDialog.vala:176
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:243 src/Dialogs/StripeDialog.vala:414
+#: src/Dialogs/StripeDialog.vala:222 src/Dialogs/StripeDialog.vala:393
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:70
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: src/Dialogs/StripeDialog.vala:245 src/Dialogs/StripeDialog.vala:259
-#: src/Dialogs/StripeDialog.vala:413
+#: src/Dialogs/StripeDialog.vala:224 src/Dialogs/StripeDialog.vala:238
+#: src/Dialogs/StripeDialog.vala:392
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Paga %d,00 USD"
 
-#: src/Dialogs/StripeDialog.vala:257
+#: src/Dialogs/StripeDialog.vala:236
 msgid "Try for Free"
 msgstr "Prova gratuïta"
 
-#: src/Dialogs/StripeDialog.vala:331
+#: src/Dialogs/StripeDialog.vala:310
 msgid "Processing"
 msgstr "Es processa"
 
-#: src/Dialogs/StripeDialog.vala:358
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Hi ha hagut un problema en processar el pagament."
 
-#: src/Dialogs/StripeDialog.vala:405
+#: src/Dialogs/StripeDialog.vala:384
 msgid "Pay Later"
 msgstr "Paga'l més tard"
 
-#: src/Dialogs/StripeDialog.vala:406
+#: src/Dialogs/StripeDialog.vala:385
 msgid "Retry"
 msgstr "Torna-ho a intentar"
-
-#: src/Dialogs/StripeDialog.vala:589 src/Dialogs/StripeDialog.vala:654
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "El número de la targeta no és correcte. Torneu-ho a intentar amb el número correcte."
-
-#: src/Dialogs/StripeDialog.vala:591
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "El mes de caducitat no és vàlid. Torneu-ho a intentar amb la data de caducitat correcta."
-
-#: src/Dialogs/StripeDialog.vala:593 src/Dialogs/StripeDialog.vala:651
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "L'any de caducitat no és vàlid. Torneu-ho a intentar amb la data de caducitat correcta."
-
-#: src/Dialogs/StripeDialog.vala:596 src/Dialogs/StripeDialog.vala:649
-msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "El número CVC no és correcte. Torneu-ho a intentar amb el número correcte."
-
-#: src/Dialogs/StripeDialog.vala:598 src/Dialogs/StripeDialog.vala:640
-msgid "The card has expired. Please try again with a different card."
-msgstr "La targeta està caducada. Torneu-ho a intentar amb una targeta diferent."
-
-#: src/Dialogs/StripeDialog.vala:618
-msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Hi ha massa peticions de pagament en aquests moments. Torneu-ho a intentar més tard."
-
-#: src/Dialogs/StripeDialog.vala:634
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Aquesta targeta no admet aquest tipus de transacció. Torneu-ho a intentar amb una targeta diferent."
-
-#: src/Dialogs/StripeDialog.vala:636
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Aquesta targeta no admet el tipus de moneda. Torneu-ho a provar amb una targeta diferent."
-
-#: src/Dialogs/StripeDialog.vala:638
-msgid "The transaction has already been processed."
-msgstr "Ja s'ha processat la transacció."
-
-#: src/Dialogs/StripeDialog.vala:642
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "El codi postal no és correcte. Torneu-ho a intentar amb el codi postal correcte."
-
-#: src/Dialogs/StripeDialog.vala:644
-msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "No teniu fons suficient. Feu servir un mètode de pagament alternatiu."
-
-#: src/Dialogs/StripeDialog.vala:646
-msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "La quantitat no és correcta. Torneu-ho a provar amb una quantitat correcta."
-
-#: src/Dialogs/StripeDialog.vala:657
-msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "El número PIN no és correcte. Torneu-ho a intentar amb el número correcte."
-
-#: src/Dialogs/StripeDialog.vala:659
-msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Hi ha hagut massa intents de número secret. Torneu-ho a provar amb una targeta diferent."
-
-#: src/Dialogs/StripeDialog.vala:679
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "No s'ha pogut completar la transacció. Contacteu amb el banc per a més informació."
-
-#: src/Dialogs/StripeDialog.vala:682
-msgid "The balance or credit limit on the card has been reached."
-msgstr "S'ha arribat al límit de saldo o crèdit de la targeta."
-
-#: src/Dialogs/StripeDialog.vala:685
-msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "Aquesta és una targeta de prova. Feu servir una targeta real per continuar."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -1084,7 +1084,7 @@ msgstr "Preveu de canviar els termes de la cerca. També podeu carregar lateralm
 msgid "The search term must be at least 3 characters long."
 msgstr "El terme de recerca ha de tenir com a mínim 3 caràcters."
 
-#: src/Widgets/CardNumberEntry.vala:40
+#: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "Número de la targeta"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-17 10:45+0000\n"
+"POT-Creation-Date: 2023-10-17 20:17+0000\n"
 "PO-Revision-Date: 2023-09-14 07:08+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -360,6 +360,82 @@ msgstr "应用程序在 AppCenter 中的状态未标记为已安装：%s"
 msgid "%s (local)"
 msgstr "%s（本地）"
 
+#: src/Core/Stripe.vala:27
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "支付流程出现问题，请稍后再试。为您带来的不便我们深表歉意。"
+
+#: src/Core/Stripe.vala:28
+msgid "Please review your payment info and try again."
+msgstr "请检查您的支付信息后重试。"
+
+#: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "卡号有误，请重新输入。"
+
+#: src/Core/Stripe.vala:66
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "截止月份无效，请输入有效的截止月份后重试。"
+
+#: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "截止年份无效，请输入有效的截止年份后重试。"
+
+#: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr "CVC 号码不正确，请输入正确的 CVC 号码后重试。"
+
+#: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
+msgid "The card has expired. Please try again with a different card."
+msgstr "此卡已过期。请更换可用的卡后重试。"
+
+#: src/Core/Stripe.vala:89
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr "我们目前要处理的付款请求过多，请稍后再试。"
+
+#: src/Core/Stripe.vala:106
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "此卡不支持该交易类型。请换一张卡重试。"
+
+#: src/Core/Stripe.vala:108
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "此卡不支持该币种，请换一张卡重试。"
+
+#: src/Core/Stripe.vala:110
+msgid "The transaction has already been processed."
+msgstr "交易已处理。"
+
+#: src/Core/Stripe.vala:114
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "邮政编码不正确。请输入正确的邮政编码后重试。"
+
+#: src/Core/Stripe.vala:116
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr "余额不足，请更换另一种付款方式。"
+
+#: src/Core/Stripe.vala:118
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr "金额有误。请输入有效金额后重试。"
+
+#: src/Core/Stripe.vala:129
+msgid "The PIN number is incorrect. Please try again using the correct PIN."
+msgstr "PIN 码不正确，请输入正确的 PIN 码后重试。"
+
+#: src/Core/Stripe.vala:131
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "PIN 码错误次数已达上限，请换一张卡重试。"
+
+#: src/Core/Stripe.vala:151
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "无法完成交易。请与您的银行联系以获取更多信息。"
+
+#: src/Core/Stripe.vala:154
+msgid "The balance or credit limit on the card has been reached."
+msgstr "卡内余额或信用额度已达上限。"
+
+#: src/Core/Stripe.vala:157
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr "所示卡号仅为示例，请输入真实有效的卡号。"
+
 #: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "系统更新"
@@ -439,153 +515,77 @@ msgstr "修复失败"
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "这可能是外部、手动添加的软件源或源文件损坏造成的。"
 
-#: src/Dialogs/StripeDialog.vala:41
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "支付流程出现问题，请稍后再试。为您带来的不便我们深表歉意。"
-
-#: src/Dialogs/StripeDialog.vala:42
-msgid "Please review your payment info and try again."
-msgstr "请检查您的支付信息后重试。"
-
-#: src/Dialogs/StripeDialog.vala:72
+#: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
 msgstr "支付方式"
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
 #. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
-#: src/Dialogs/StripeDialog.vala:97 src/Dialogs/StripeDialog.vala:261
+#: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:240
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "为 %2$s 支付 $%1$d"
 
-#: src/Dialogs/StripeDialog.vala:103
+#: src/Dialogs/StripeDialog.vala:82
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "此一次性支付价格由开发者设定。您可以自行修改价格。"
 
-#: src/Dialogs/StripeDialog.vala:124
+#: src/Dialogs/StripeDialog.vala:103
 msgid "or"
 msgstr "或"
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:139
 msgid "Email"
 msgstr "电子邮件"
 
-#: src/Dialogs/StripeDialog.vala:165
+#: src/Dialogs/StripeDialog.vala:144
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "仅用于向您发送收据。 您不会订阅任何邮件列表。"
 
-#: src/Dialogs/StripeDialog.vala:166
+#: src/Dialogs/StripeDialog.vala:145
 msgid "Privacy Policy"
 msgstr "隐私策略"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:189
+#: src/Dialogs/StripeDialog.vala:168
 msgid "MM / YY"
 msgstr "月/年"
 
-#: src/Dialogs/StripeDialog.vala:197
+#: src/Dialogs/StripeDialog.vala:176
 msgid "CVC"
 msgstr "CVC 号码"
 
-#: src/Dialogs/StripeDialog.vala:243 src/Dialogs/StripeDialog.vala:414
+#: src/Dialogs/StripeDialog.vala:222 src/Dialogs/StripeDialog.vala:393
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:70
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Dialogs/StripeDialog.vala:245 src/Dialogs/StripeDialog.vala:259
-#: src/Dialogs/StripeDialog.vala:413
+#: src/Dialogs/StripeDialog.vala:224 src/Dialogs/StripeDialog.vala:238
+#: src/Dialogs/StripeDialog.vala:392
 #, c-format
 msgid "Pay $%d.00"
 msgstr "付款 $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:257
+#: src/Dialogs/StripeDialog.vala:236
 msgid "Try for Free"
 msgstr "免费试用"
 
-#: src/Dialogs/StripeDialog.vala:331
+#: src/Dialogs/StripeDialog.vala:310
 msgid "Processing"
 msgstr "处理中"
 
-#: src/Dialogs/StripeDialog.vala:358
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "支付流程处理时遇到问题"
 
-#: src/Dialogs/StripeDialog.vala:405
+#: src/Dialogs/StripeDialog.vala:384
 msgid "Pay Later"
 msgstr "稍后支付"
 
-#: src/Dialogs/StripeDialog.vala:406
+#: src/Dialogs/StripeDialog.vala:385
 msgid "Retry"
 msgstr "重试"
-
-#: src/Dialogs/StripeDialog.vala:589 src/Dialogs/StripeDialog.vala:654
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "卡号有误，请重新输入。"
-
-#: src/Dialogs/StripeDialog.vala:591
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "截止月份无效，请输入有效的截止月份后重试。"
-
-#: src/Dialogs/StripeDialog.vala:593 src/Dialogs/StripeDialog.vala:651
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "截止年份无效，请输入有效的截止年份后重试。"
-
-#: src/Dialogs/StripeDialog.vala:596 src/Dialogs/StripeDialog.vala:649
-msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "CVC 号码不正确，请输入正确的 CVC 号码后重试。"
-
-#: src/Dialogs/StripeDialog.vala:598 src/Dialogs/StripeDialog.vala:640
-msgid "The card has expired. Please try again with a different card."
-msgstr "此卡已过期。请更换可用的卡后重试。"
-
-#: src/Dialogs/StripeDialog.vala:618
-msgid "There are too many payment requests at the moment, please retry later."
-msgstr "我们目前要处理的付款请求过多，请稍后再试。"
-
-#: src/Dialogs/StripeDialog.vala:634
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "此卡不支持该交易类型。请换一张卡重试。"
-
-#: src/Dialogs/StripeDialog.vala:636
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "此卡不支持该币种，请换一张卡重试。"
-
-#: src/Dialogs/StripeDialog.vala:638
-msgid "The transaction has already been processed."
-msgstr "交易已处理。"
-
-#: src/Dialogs/StripeDialog.vala:642
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "邮政编码不正确。请输入正确的邮政编码后重试。"
-
-#: src/Dialogs/StripeDialog.vala:644
-msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "余额不足，请更换另一种付款方式。"
-
-#: src/Dialogs/StripeDialog.vala:646
-msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "金额有误。请输入有效金额后重试。"
-
-#: src/Dialogs/StripeDialog.vala:657
-msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "PIN 码不正确，请输入正确的 PIN 码后重试。"
-
-#: src/Dialogs/StripeDialog.vala:659
-msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "PIN 码错误次数已达上限，请换一张卡重试。"
-
-#: src/Dialogs/StripeDialog.vala:679
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "无法完成交易。请与您的银行联系以获取更多信息。"
-
-#: src/Dialogs/StripeDialog.vala:682
-msgid "The balance or credit limit on the card has been reached."
-msgstr "卡内余额或信用额度已达上限。"
-
-#: src/Dialogs/StripeDialog.vala:685
-msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "所示卡号仅为示例，请输入真实有效的卡号。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -1088,7 +1088,7 @@ msgstr "尝试更改搜索词。 您还可以加载 Flatpak 应用程序，例�
 msgid "The search term must be at least 3 characters long."
 msgstr "搜索字段最低长度为 3 个字符。"
 
-#: src/Widgets/CardNumberEntry.vala:40
+#: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "卡号"
 

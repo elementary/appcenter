@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-17 10:45+0000\n"
+"POT-Creation-Date: 2023-10-17 20:17+0000\n"
 "PO-Revision-Date: 2023-09-17 04:08+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -363,6 +363,82 @@ msgstr "Состояние приложения не определено как
 msgid "%s (local)"
 msgstr "%s (локальный)"
 
+#: src/Core/Stripe.vala:27
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Ошибка при обработке данных, пожалуйста, повторите попытку позже. Приносим извинения за причинённые неудобства."
+
+#: src/Core/Stripe.vala:28
+msgid "Please review your payment info and try again."
+msgstr "Проверьте информацию о платеже и попробуйте снова."
+
+#: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Некорректный номер карты. Попробуйте снова, используя корректный номер."
+
+#: src/Core/Stripe.vala:66
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Некорректный месяц истечения срока действия карты. Попробуйте снова, используя корректный месяц."
+
+#: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Некорректный год истечения срока действия карты. Попробуйте снова, используя корректный год."
+
+#: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
+
+#: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
+msgid "The card has expired. Please try again with a different card."
+msgstr "Срок действия карты истёк. Попробуйте снова, используя другую карту."
+
+#: src/Core/Stripe.vala:89
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr "Слишком много запросов оплаты в данный момент, повторите попытку позже."
+
+#: src/Core/Stripe.vala:106
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Карта не поддерживает данный тип операций. Попробуйте снова, используя другую карту."
+
+#: src/Core/Stripe.vala:108
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Валюта не поддерживается этой картой. Попробуйте снова, используя другую карту."
+
+#: src/Core/Stripe.vala:110
+msgid "The transaction has already been processed."
+msgstr "Платёж уже был принят."
+
+#: src/Core/Stripe.vala:114
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "Некорректный почтовый индекс. Попробуйте снова, используя корректный индекс."
+
+#: src/Core/Stripe.vala:116
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr "У вас не хватает средств. Используйте другой способ оплаты."
+
+#: src/Core/Stripe.vala:118
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr "Некорректная сумма. Попробуйте снова, используя допустимую сумму."
+
+#: src/Core/Stripe.vala:129
+msgid "The PIN number is incorrect. Please try again using the correct PIN."
+msgstr "Некорректный PIN. Попробуйте снова, используя корректный код."
+
+#: src/Core/Stripe.vala:131
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Слишком много попыток. Попробуйте снова, используя другую карту."
+
+#: src/Core/Stripe.vala:151
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Не удалось завершить транзакцию. Свяжитесь с вашим банком для получения дополнительной информации."
+
+#: src/Core/Stripe.vala:154
+msgid "The balance or credit limit on the card has been reached."
+msgstr "Превышен лимит по карте."
+
+#: src/Core/Stripe.vala:157
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr "Данная карта является тестовой. Используйте настоящую карту, чтобы продолжить."
+
 #: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Обновления операционной системы"
@@ -446,153 +522,77 @@ msgstr "Не удалось починить"
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "Это может быть вызвано внешними (добавленными вручную) репозиториями или повреждённым файлом с источниками."
 
-#: src/Dialogs/StripeDialog.vala:41
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Ошибка при обработке данных, пожалуйста, повторите попытку позже. Приносим извинения за причинённые неудобства."
-
-#: src/Dialogs/StripeDialog.vala:42
-msgid "Please review your payment info and try again."
-msgstr "Проверьте информацию о платеже и попробуйте снова."
-
-#: src/Dialogs/StripeDialog.vala:72
+#: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
 msgstr "Оплата"
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
 #. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
-#: src/Dialogs/StripeDialog.vala:97 src/Dialogs/StripeDialog.vala:261
+#: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:240
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Перевести %d,00 USD за %s"
 
-#: src/Dialogs/StripeDialog.vala:103
+#: src/Dialogs/StripeDialog.vala:82
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Это предложенный разработчиком разовый платёж. Вы также можете выбрать и свою цену."
 
-#: src/Dialogs/StripeDialog.vala:124
+#: src/Dialogs/StripeDialog.vala:103
 msgid "or"
 msgstr "или"
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:139
 msgid "Email"
 msgstr "Почта"
 
-#: src/Dialogs/StripeDialog.vala:165
+#: src/Dialogs/StripeDialog.vala:144
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Будет использована только для отправки квитанции. Вы не будете подписаны ни на один список рассылки."
 
-#: src/Dialogs/StripeDialog.vala:166
+#: src/Dialogs/StripeDialog.vala:145
 msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:189
+#: src/Dialogs/StripeDialog.vala:168
 msgid "MM / YY"
 msgstr "ММ / ГГ"
 
-#: src/Dialogs/StripeDialog.vala:197
+#: src/Dialogs/StripeDialog.vala:176
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:243 src/Dialogs/StripeDialog.vala:414
+#: src/Dialogs/StripeDialog.vala:222 src/Dialogs/StripeDialog.vala:393
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:70
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/Dialogs/StripeDialog.vala:245 src/Dialogs/StripeDialog.vala:259
-#: src/Dialogs/StripeDialog.vala:413
+#: src/Dialogs/StripeDialog.vala:224 src/Dialogs/StripeDialog.vala:238
+#: src/Dialogs/StripeDialog.vala:392
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Заплатить %d,00 USD"
 
-#: src/Dialogs/StripeDialog.vala:257
+#: src/Dialogs/StripeDialog.vala:236
 msgid "Try for Free"
 msgstr "Попробовать бесплатно"
 
-#: src/Dialogs/StripeDialog.vala:331
+#: src/Dialogs/StripeDialog.vala:310
 msgid "Processing"
 msgstr "Обработка"
 
-#: src/Dialogs/StripeDialog.vala:358
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Не удалось обработать ваш платёж"
 
-#: src/Dialogs/StripeDialog.vala:405
+#: src/Dialogs/StripeDialog.vala:384
 msgid "Pay Later"
 msgstr "Оплатить позже"
 
-#: src/Dialogs/StripeDialog.vala:406
+#: src/Dialogs/StripeDialog.vala:385
 msgid "Retry"
 msgstr "Попробовать снова"
-
-#: src/Dialogs/StripeDialog.vala:589 src/Dialogs/StripeDialog.vala:654
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Некорректный номер карты. Попробуйте снова, используя корректный номер."
-
-#: src/Dialogs/StripeDialog.vala:591
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "Некорректный месяц истечения срока действия карты. Попробуйте снова, используя корректный месяц."
-
-#: src/Dialogs/StripeDialog.vala:593 src/Dialogs/StripeDialog.vala:651
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "Некорректный год истечения срока действия карты. Попробуйте снова, используя корректный год."
-
-#: src/Dialogs/StripeDialog.vala:596 src/Dialogs/StripeDialog.vala:649
-msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
-
-#: src/Dialogs/StripeDialog.vala:598 src/Dialogs/StripeDialog.vala:640
-msgid "The card has expired. Please try again with a different card."
-msgstr "Срок действия карты истёк. Попробуйте снова, используя другую карту."
-
-#: src/Dialogs/StripeDialog.vala:618
-msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Слишком много запросов оплаты в данный момент, повторите попытку позже."
-
-#: src/Dialogs/StripeDialog.vala:634
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Карта не поддерживает данный тип операций. Попробуйте снова, используя другую карту."
-
-#: src/Dialogs/StripeDialog.vala:636
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Валюта не поддерживается этой картой. Попробуйте снова, используя другую карту."
-
-#: src/Dialogs/StripeDialog.vala:638
-msgid "The transaction has already been processed."
-msgstr "Платёж уже был принят."
-
-#: src/Dialogs/StripeDialog.vala:642
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "Некорректный почтовый индекс. Попробуйте снова, используя корректный индекс."
-
-#: src/Dialogs/StripeDialog.vala:644
-msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "У вас не хватает средств. Используйте другой способ оплаты."
-
-#: src/Dialogs/StripeDialog.vala:646
-msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Некорректная сумма. Попробуйте снова, используя допустимую сумму."
-
-#: src/Dialogs/StripeDialog.vala:657
-msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Некорректный PIN. Попробуйте снова, используя корректный код."
-
-#: src/Dialogs/StripeDialog.vala:659
-msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Слишком много попыток. Попробуйте снова, используя другую карту."
-
-#: src/Dialogs/StripeDialog.vala:679
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Не удалось завершить транзакцию. Свяжитесь с вашим банком для получения дополнительной информации."
-
-#: src/Dialogs/StripeDialog.vala:682
-msgid "The balance or credit limit on the card has been reached."
-msgstr "Превышен лимит по карте."
-
-#: src/Dialogs/StripeDialog.vala:685
-msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "Данная карта является тестовой. Используйте настоящую карту, чтобы продолжить."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -1095,7 +1095,7 @@ msgstr "Попробуйте перефразировать запрос. Вы �
 msgid "The search term must be at least 3 characters long."
 msgstr "Поисковый запрос должен быть не короче 3 символов."
 
-#: src/Widgets/CardNumberEntry.vala:40
+#: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "Номер карты"
 
