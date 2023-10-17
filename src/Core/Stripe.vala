@@ -51,7 +51,7 @@ public class AppCenterCore.Stripe {
             return get_class ().find_property (name);
         }
 
-        public string to_friendly_string () {
+        public unowned string to_friendly_string () {
             switch (error_type) {
                 case "card_error":
                     if (code == null) {
@@ -96,7 +96,7 @@ public class AppCenterCore.Stripe {
             }
         }
 
-        private string get_decline_reason () {
+        private unowned string get_decline_reason () {
             if (decline_code == null) {
                 return _(DEFAULT_ERROR_MESSAGE);
             }
