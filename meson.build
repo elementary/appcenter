@@ -41,6 +41,7 @@ core_deps = [
     gobject,
     gio,
     json,
+    libsoup,
 ]
 
 dependencies = core_deps + [
@@ -48,7 +49,6 @@ dependencies = core_deps + [
     granite,
     handy,
     appstream,
-    libsoup,
     flatpak,
     xml,
     polkit,
