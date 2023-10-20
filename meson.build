@@ -32,6 +32,8 @@ json = dependency ('json-glib-1.0')
 flatpak = dependency ('flatpak')
 xml = dependency ('libxml-2.0')
 polkit = dependency ('polkit-gobject-1')
+portal = dependency('libportal')
+portal_gtk3 = dependency('libportal-gtk3')
 posix = meson.get_compiler('vala').find_library('posix')
 
 dbus = dependency ('dbus-1')
@@ -52,6 +54,8 @@ dependencies = core_deps + [
     flatpak,
     xml,
     polkit,
+    portal,
+    portal_gtk3,
     posix
 ]
 

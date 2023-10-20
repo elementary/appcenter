@@ -347,6 +347,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                     break;
             }
         });
+
+        delete_event.connect (() => {
+            ((AppCenter.App) application).request_background.begin (() => destroy ());
+
+            return Gdk.EVENT_STOP;
+        });
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
