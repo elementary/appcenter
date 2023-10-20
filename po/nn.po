@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:17+0000\n"
+"POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -21,21 +21,25 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:86
+#: src/Application.vala:88
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Kunne ikkje tolke mediatypen %s"
 
-#: src/Application.vala:106
+#: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Lenka '%s vart ikkje funne. Prøv eit søk i staden"
 
-#: src/Application.vala:332
+#: src/Application.vala:281
+msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+msgstr ""
+
+#: src/Application.vala:369
 msgid "The app has been installed"
 msgstr "Appen er installert"
 
-#: src/Application.vala:333 src/MainWindow.vala:527
+#: src/Application.vala:370 src/MainWindow.vala:533
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” har blitt innstallert"
@@ -50,7 +54,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Oppdateringar og innstallerte appar"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
+#: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "Søk etter applikasjonar"
 
@@ -91,57 +95,57 @@ msgstr "Køyrer i demomodus"
 msgid "Install %s to browse and install apps."
 msgstr "Innstaller %s for å sjå og innstallera appar."
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "Søk %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "Heim"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "Søk"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Opne"
 
-#: src/MainWindow.vala:648
+#: src/MainWindow.vala:654
 msgid "Getting app information…"
 msgstr "Hentar informasjon om appen…"
 
-#: src/MainWindow.vala:651
+#: src/MainWindow.vala:657
 msgid "Getting download size…"
 msgstr "Hentar storleik på nedlastninga…"
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:663
 msgid "Checking for updates…"
 msgstr "Leitar etter oppdateringar…"
 
-#: src/MainWindow.vala:660
+#: src/MainWindow.vala:666
 msgid "Installing…"
 msgstr "Innstallerar…"
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:669
 msgid "Installing updates…"
 msgstr "Installerar oppdateringar…"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:672
 msgid "Uninstalling…"
 msgstr "Slettar app…"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:675
 msgid "Repairing…"
 msgstr ""
 

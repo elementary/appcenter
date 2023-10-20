@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:17+0000\n"
+"POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -23,21 +23,25 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Програмски центар"
 
-#: src/Application.vala:86
+#: src/Application.vala:88
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Не могу да обрадим врсту медија „%s“"
 
-#: src/Application.vala:106
+#: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Не могу да нађем наведену везу „%s“, зато претражујем"
 
-#: src/Application.vala:332
+#: src/Application.vala:281
+msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+msgstr ""
+
+#: src/Application.vala:369
 msgid "The app has been installed"
 msgstr "Програм је инсталиран"
 
-#: src/Application.vala:333 src/MainWindow.vala:527
+#: src/Application.vala:370 src/MainWindow.vala:533
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ је инсталиран"
@@ -54,7 +58,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Не могу да инсталирам програм"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
+#: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "Тражи програме"
 
@@ -101,67 +105,67 @@ msgstr ""
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "Тражи „%s“"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "Матична страница"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "Тражи"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "Инсталиран"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Отвори"
 
-#: src/MainWindow.vala:648
+#: src/MainWindow.vala:654
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "Добављам податке"
 
-#: src/MainWindow.vala:651
+#: src/MainWindow.vala:657
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:663
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "Проверавам има ли ажурирања"
 
-#: src/MainWindow.vala:660
+#: src/MainWindow.vala:666
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Инсталирам"
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:669
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Инсталирам освежења"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:672
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "Уклањам"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:675
 msgid "Repairing…"
 msgstr ""
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:17+0000\n"
+"POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2023-09-17 04:08+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -28,21 +28,25 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:86
+#: src/Application.vala:88
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Не удалось распознать тип данных %s"
 
-#: src/Application.vala:106
+#: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Указанная ссылка «%s» не найдена, поиск замены"
 
-#: src/Application.vala:332
+#: src/Application.vala:281
+msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+msgstr ""
+
+#: src/Application.vala:369
 msgid "The app has been installed"
 msgstr "Приложение установлено"
 
-#: src/Application.vala:333 src/MainWindow.vala:527
+#: src/Application.vala:370 src/MainWindow.vala:533
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» установлено"
@@ -57,7 +61,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Обновления и установленные приложения"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
+#: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
@@ -98,57 +102,57 @@ msgstr "Запущено в демо-режиме"
 msgid "Install %s to browse and install apps."
 msgstr "Установите %s для просмотра и установки приложений."
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "Поиск %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "Главная"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "Поиск"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Открыть"
 
-#: src/MainWindow.vala:648
+#: src/MainWindow.vala:654
 msgid "Getting app information…"
 msgstr "Получение информации о приложении…"
 
-#: src/MainWindow.vala:651
+#: src/MainWindow.vala:657
 msgid "Getting download size…"
 msgstr "Получение размера загрузки…"
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:663
 msgid "Checking for updates…"
 msgstr "Проверка обновлений…"
 
-#: src/MainWindow.vala:660
+#: src/MainWindow.vala:666
 msgid "Installing…"
 msgstr "Установка…"
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:669
 msgid "Installing updates…"
 msgstr "Установка обновлений…"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:672
 msgid "Uninstalling…"
 msgstr "Удаление…"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:675
 msgid "Repairing…"
 msgstr "Починка…"
 

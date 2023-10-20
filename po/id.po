@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:17+0000\n"
+"POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2023-06-03 20:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary.io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -27,21 +27,25 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:86
+#: src/Application.vala:88
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Tidak dapat mengurai jenis media %s"
 
-#: src/Application.vala:106
+#: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Tautan yang ditentukan '%s' tidak dapat ditemukan, cari sebagai gantinya"
 
-#: src/Application.vala:332
+#: src/Application.vala:281
+msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+msgstr ""
+
+#: src/Application.vala:369
 msgid "The app has been installed"
 msgstr "Aplikasi sudah terpasang"
 
-#: src/Application.vala:333 src/MainWindow.vala:527
+#: src/Application.vala:370 src/MainWindow.vala:533
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" sudah terpasang"
@@ -56,7 +60,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Pembaruan & aplikasi terpasang"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
+#: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "Cari Aplikasi"
 
@@ -97,57 +101,57 @@ msgstr "Berjalan pada Mode Demo"
 msgid "Install %s to browse and install apps."
 msgstr "Pasang %s untuk menelusuri and memasang aplikasi."
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "Cari %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "Halaman Utama"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "Cari"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "Terpasang"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Buka"
 
-#: src/MainWindow.vala:648
+#: src/MainWindow.vala:654
 msgid "Getting app information…"
 msgstr "Mendapatkan informasi aplikasi…"
 
-#: src/MainWindow.vala:651
+#: src/MainWindow.vala:657
 msgid "Getting download size…"
 msgstr "Mendapatkan ukuran unduhan…"
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:663
 msgid "Checking for updates…"
 msgstr "Memeriksa pembaruan…"
 
-#: src/MainWindow.vala:660
+#: src/MainWindow.vala:666
 msgid "Installing…"
 msgstr "Memasang…"
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:669
 msgid "Installing updates…"
 msgstr "Memasang pembaruan…"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:672
 msgid "Uninstalling…"
 msgstr "Mencopot pemasangan…"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:675
 msgid "Repairing…"
 msgstr "Memperbaiki…"
 

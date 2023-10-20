@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:17+0000\n"
+"POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: PomiNOTa199a5c29c914220 <ppminet@protonmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -25,23 +25,27 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Trung tâm Ứng dụng"
 
-#: src/Application.vala:86
+#: src/Application.vala:88
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Không thể phân tích kiểu nội dung %s"
 
-#: src/Application.vala:106
+#: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
-#: src/Application.vala:332
+#: src/Application.vala:281
+msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+msgstr ""
+
+#: src/Application.vala:369
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s đã được cài đặt thành công"
 
-#: src/Application.vala:333 src/MainWindow.vala:527
+#: src/Application.vala:370 src/MainWindow.vala:533
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -58,7 +62,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Gỡ cài đặt"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
+#: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "Tìm kiếm ứng dụng"
 
@@ -107,68 +111,68 @@ msgstr ""
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "Tìm %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:490
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:499
 msgctxt "view"
 msgid "Installed"
 msgstr "Đã cài đặt"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "Mở"
 
-#: src/MainWindow.vala:648
+#: src/MainWindow.vala:654
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "Đang lấy thông tin"
 
-#: src/MainWindow.vala:651
+#: src/MainWindow.vala:657
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:663
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "Đang tìm kiếm bản cập nhật…"
 
-#: src/MainWindow.vala:660
+#: src/MainWindow.vala:666
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Đang cài đặt"
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:669
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Đang cài đặt cập nhật"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:672
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "Gỡ cài đặt"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:675
 msgid "Repairing…"
 msgstr ""
 
