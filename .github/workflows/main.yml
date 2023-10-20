@@ -25,27 +25,30 @@ jobs:
     - name: Install Dependencies
       run: |
         apt update
-        apt install -y gettext libappstream-dev libflatpak-dev libportal-dev libportal-gtk3-dev libgee-0.8-dev libgranite-dev libgtk-3-dev libhandy-1-dev libjson-glib-dev libpackagekit-glib2-dev libsoup2.4-dev libxml2-dev libxml2-utils libpolkit-gobject-1-dev meson valac
-    - name: Build
+        apt install -y gettext libappstream-dev libflatpak-dev libportal-dev libportal-gtk3-dev libgee-0.8-dev libgranite-dev libgtk-3-dev libhandy-1-dev libjson-glib-dev libpackagekit-glib2-dev libsoup-3.0-dev libxml2-dev libxml2-utils libpolkit-gobject-1-dev meson valac
+    - name: Build and Test
       env:
         DESTDIR: out
       run: |
         meson build
         ninja -C build install
+        ninja -C build test
 
-    - name: Build (Fedora)
+    - name: Build and Test (Fedora)
       env:
         DESTDIR: out
       run: |
         meson configure -Dcurated=false -Dpayments=false build
         ninja -C build install
+        ninja -C build test
 
-    - name: Build (Pop!_Shop)
+    - name: Build and Test (Pop!_Shop)
       env:
         DESTDIR: out
       run: |
         meson configure -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
         ninja -C build install
+        ninja -C build test
 
     - name: Build (Flatpak-only)
       env:

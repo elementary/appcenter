@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 02:26+0000\n"
-"PO-Revision-Date: 2023-07-30 13:08+0000\n"
+"POT-Creation-Date: 2023-10-17 20:17+0000\n"
+"PO-Revision-Date: 2023-09-26 22:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -355,6 +355,82 @@ msgstr "Az Appközpontban nincs telepítettre állítva: %s"
 msgid "%s (local)"
 msgstr "%s (helyi)"
 
+#: src/Core/Stripe.vala:27
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Hiba történt a kártya feldolgozása során. Kérjük, próbálja meg újra később. Elnézést kérünk a kellemetlenségért."
+
+#: src/Core/Stripe.vala:28
+msgid "Please review your payment info and try again."
+msgstr "Nézze át a fizetési adatait és próbálja újra."
+
+#: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "A kártya száma helytelen. Kérjük, próbálja újra a megfelelő kártyaszámmal."
+
+#: src/Core/Stripe.vala:66
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "A lejárati hónap érvénytelen. Kérjük, próbálja újra a megfelelő lejárati dátumot használva."
+
+#: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "A lejárati év érvénytelen. Kérjük, próbálja újra a megfelelő lejárati dátumot használva."
+
+#: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr "A CVC-szám helytelen. Kérjük, próbálja meg újra a megfelelő CVC-szám használatával."
+
+#: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
+msgid "The card has expired. Please try again with a different card."
+msgstr "A kártya lejárt. Kérjük, próbálja meg újra egy másik kártyával."
+
+#: src/Core/Stripe.vala:89
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr "Jelenleg túl sok fizetési tranzakció fut párhuzamosan. Kérjük, próbálja meg újra később."
+
+#: src/Core/Stripe.vala:106
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Ez a kártya nem támogatja ezt a típusú tranzakciót. Kérjük, próbálja meg egy másik kártyával."
+
+#: src/Core/Stripe.vala:108
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Ez a kártya nem támogatja ezt a valutát. Kérjük, próbálja meg egy másik kártyával."
+
+#: src/Core/Stripe.vala:110
+msgid "The transaction has already been processed."
+msgstr "A tranzakció feldolgozása már megtörtént."
+
+#: src/Core/Stripe.vala:114
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "A postai irányítószám helytelen. Kérjük, próbálja újra egy megfelelő irányítószámmal."
+
+#: src/Core/Stripe.vala:116
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr "Nincs elég fedezet. Kérjük, használjon alternatív fizetési módot."
+
+#: src/Core/Stripe.vala:118
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr "Az összeg helytelen. Kérjük, próbálja meg újra egy érvényes összeg beírásával."
+
+#: src/Core/Stripe.vala:129
+msgid "The PIN number is incorrect. Please try again using the correct PIN."
+msgstr "A PIN-kód helytelen. Kérjük, próbálja meg újra a megfelelő PIN-kód használatával."
+
+#: src/Core/Stripe.vala:131
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Túl sok PIN próbálkozás volt. Kérjük, próbálja meg újra egy másik kártyával."
+
+#: src/Core/Stripe.vala:151
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Nem sikerült befejezni a tranzakciót. További információért forduljon a bankjához."
+
+#: src/Core/Stripe.vala:154
+msgid "The balance or credit limit on the card has been reached."
+msgstr "Elérte a kártyán lévő egyenleget vagy hitelkeretet."
+
+#: src/Core/Stripe.vala:157
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr "A megadott kártya tesztkártya. Kérjük, használjon valódi kártyát a folytatáshoz."
+
 #: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "Az operációs rendszer frissítései"
@@ -436,153 +512,77 @@ msgstr "Nem sikerült a javítás"
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr "Ennek egy külső, kézzel hozzáadott szoftvergyűjtemény vagy egy sérült forrásfájl lehet az oka."
 
-#: src/Dialogs/StripeDialog.vala:41
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Hiba történt a kártya feldolgozása során. Kérjük, próbálja meg újra később. Elnézést kérünk a kellemetlenségért."
-
-#: src/Dialogs/StripeDialog.vala:42
-msgid "Please review your payment info and try again."
-msgstr "Nézze át a fizetési adatait és próbálja újra."
-
-#: src/Dialogs/StripeDialog.vala:72
+#: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
 msgstr "Fizetés"
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
 #. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
-#: src/Dialogs/StripeDialog.vala:97 src/Dialogs/StripeDialog.vala:261
+#: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:240
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%d$ fizetése %s alkalmazásért"
 
-#: src/Dialogs/StripeDialog.vala:103
+#: src/Dialogs/StripeDialog.vala:82
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "Ez a fejlesztő által javasolt egyszeri kifizetés. Választhat saját árat is."
 
-#: src/Dialogs/StripeDialog.vala:124
+#: src/Dialogs/StripeDialog.vala:103
 msgid "or"
 msgstr "vagy"
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:139
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Dialogs/StripeDialog.vala:165
+#: src/Dialogs/StripeDialog.vala:144
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Kizárólag a bizonylat elküldésére szolgál. Nem iratkoztat fel semmilyen levelezőlistára."
 
-#: src/Dialogs/StripeDialog.vala:166
+#: src/Dialogs/StripeDialog.vala:145
 msgid "Privacy Policy"
 msgstr "Adatvédelmi irányelvek"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:189
+#: src/Dialogs/StripeDialog.vala:168
 msgid "MM / YY"
 msgstr "HH / ÉÉ"
 
-#: src/Dialogs/StripeDialog.vala:197
+#: src/Dialogs/StripeDialog.vala:176
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:243 src/Dialogs/StripeDialog.vala:414
+#: src/Dialogs/StripeDialog.vala:222 src/Dialogs/StripeDialog.vala:393
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:70
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/Dialogs/StripeDialog.vala:245 src/Dialogs/StripeDialog.vala:259
-#: src/Dialogs/StripeDialog.vala:413
+#: src/Dialogs/StripeDialog.vala:224 src/Dialogs/StripeDialog.vala:238
+#: src/Dialogs/StripeDialog.vala:392
 #, c-format
 msgid "Pay $%d.00"
 msgstr "%d,00$ fizetése"
 
-#: src/Dialogs/StripeDialog.vala:257
+#: src/Dialogs/StripeDialog.vala:236
 msgid "Try for Free"
 msgstr "Kipróbálás ingyen"
 
-#: src/Dialogs/StripeDialog.vala:331
+#: src/Dialogs/StripeDialog.vala:310
 msgid "Processing"
 msgstr "Feldolgozás"
 
-#: src/Dialogs/StripeDialog.vala:358
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Hiba történt a fizetés feldolgozása során"
 
-#: src/Dialogs/StripeDialog.vala:405
+#: src/Dialogs/StripeDialog.vala:384
 msgid "Pay Later"
 msgstr "Fizetés később"
 
-#: src/Dialogs/StripeDialog.vala:406
+#: src/Dialogs/StripeDialog.vala:385
 msgid "Retry"
 msgstr "Újra"
-
-#: src/Dialogs/StripeDialog.vala:589 src/Dialogs/StripeDialog.vala:654
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "A kártya száma helytelen. Kérjük, próbálja újra a megfelelő kártyaszámmal."
-
-#: src/Dialogs/StripeDialog.vala:591
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "A lejárati hónap érvénytelen. Kérjük, próbálja újra a megfelelő lejárati dátumot használva."
-
-#: src/Dialogs/StripeDialog.vala:593 src/Dialogs/StripeDialog.vala:651
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "A lejárati év érvénytelen. Kérjük, próbálja újra a megfelelő lejárati dátumot használva."
-
-#: src/Dialogs/StripeDialog.vala:596 src/Dialogs/StripeDialog.vala:649
-msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "A CVC-szám helytelen. Kérjük, próbálja meg újra a megfelelő CVC-szám használatával."
-
-#: src/Dialogs/StripeDialog.vala:598 src/Dialogs/StripeDialog.vala:640
-msgid "The card has expired. Please try again with a different card."
-msgstr "A kártya lejárt. Kérjük, próbálja meg újra egy másik kártyával."
-
-#: src/Dialogs/StripeDialog.vala:618
-msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Jelenleg túl sok fizetési tranzakció fut párhuzamosan. Kérjük, próbálja meg újra később."
-
-#: src/Dialogs/StripeDialog.vala:634
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Ez a kártya nem támogatja ezt a típusú tranzakciót. Kérjük, próbálja meg egy másik kártyával."
-
-#: src/Dialogs/StripeDialog.vala:636
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Ez a kártya nem támogatja ezt a valutát. Kérjük, próbálja meg egy másik kártyával."
-
-#: src/Dialogs/StripeDialog.vala:638
-msgid "The transaction has already been processed."
-msgstr "A tranzakció feldolgozása már megtörtént."
-
-#: src/Dialogs/StripeDialog.vala:642
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "A postai irányítószám helytelen. Kérjük, próbálja újra egy megfelelő irányítószámmal."
-
-#: src/Dialogs/StripeDialog.vala:644
-msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "Nincs elég fedezet. Kérjük, használjon alternatív fizetési módot."
-
-#: src/Dialogs/StripeDialog.vala:646
-msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Az összeg helytelen. Kérjük, próbálja meg újra egy érvényes összeg beírásával."
-
-#: src/Dialogs/StripeDialog.vala:657
-msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "A PIN-kód helytelen. Kérjük, próbálja meg újra a megfelelő PIN-kód használatával."
-
-#: src/Dialogs/StripeDialog.vala:659
-msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Túl sok PIN próbálkozás volt. Kérjük, próbálja meg újra egy másik kártyával."
-
-#: src/Dialogs/StripeDialog.vala:679
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Nem sikerült befejezni a tranzakciót. További információért forduljon a bankjához."
-
-#: src/Dialogs/StripeDialog.vala:682
-msgid "The balance or credit limit on the card has been reached."
-msgstr "Elérte a kártyán lévő egyenleget vagy hitelkeretet."
-
-#: src/Dialogs/StripeDialog.vala:685
-msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "A megadott kártya tesztkártya. Kérjük, használjon valódi kártyát a folytatáshoz."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -860,11 +860,11 @@ msgstr "Beleértve az összes dokumentumot, letöltést, zenét, képet, videót
 
 #: src/Views/AppInfoView.vala:939
 msgid "Legacy Autostart"
-msgstr ""
+msgstr "Elavult automatikus indulás"
 
 #: src/Views/AppInfoView.vala:940
 msgid "Can automatically start up and run in the background without asking"
-msgstr ""
+msgstr "Automatikusan elindulhat és futhat a háttérben kérdés nélkül"
 
 #: src/Views/AppInfoView.vala:949
 msgid "Location Access"
@@ -876,11 +876,11 @@ msgstr "Láthatja a pontos tartózkodási helyét bármikor, kérdés nélkül"
 
 #: src/Views/AppInfoView.vala:959
 msgid "Legacy Notifications"
-msgstr ""
+msgstr "Elavult értesítések"
 
 #: src/Views/AppInfoView.vala:960
 msgid "Bubbles may not be configurable or appear in notification center as “Other”"
-msgstr ""
+msgstr "Az értesítések nem biztos, hogy személyre szabhatók lesznek és az \"Egyéb\" kategóriában jelenhetnek meg"
 
 #: src/Views/AppInfoView.vala:969
 msgid "System Settings Access"
@@ -926,49 +926,49 @@ msgstr "Támogatás"
 msgid "Fund the development of this app"
 msgstr "Támogassa az alkalmazás fejlesztését"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:50
 msgid "Checking for Updates"
 msgstr "Frissítések keresése"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:51
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Az operációs rendszer és a telepített alkalmazások frissítéseinek listájának letöltése"
 
-#: src/Views/AppListUpdateView.vala:74
+#: src/Views/AppListUpdateView.vala:77
 msgid "Update All"
 msgstr "Összes frissítése"
 
-#: src/Views/AppListUpdateView.vala:105
+#: src/Views/AppListUpdateView.vala:101
+msgid "Up to Date"
+msgstr "Naprakész"
+
+#: src/Views/AppListUpdateView.vala:127
 msgid "A restart is required to finish installing updates"
 msgstr "A frissítések befejezéséhez újraindításra van szükség"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:135
 msgid "Restart Now"
 msgstr "Újraindítás most"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:147
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr "Újraindítási kérelem sikertelen. Indítsa újra kézzel a frissítések befejezése érdekében"
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u frissítés érhető el"
 msgstr[1] "%u frissítés érhető el"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:256
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Minden naprakész. Legutóbb ellenőrizve %s."
 
-#: src/Views/AppListUpdateView.vala:363
+#: src/Views/AppListUpdateView.vala:382
 msgid "Drivers"
 msgstr "Driverek"
-
-#: src/Views/AppListUpdateView.vala:376
-msgid "Up to Date"
-msgstr "Naprakész"
 
 #: src/Views/AuthorView.vala:31
 #, c-format
@@ -1084,7 +1084,7 @@ msgstr "Próbálja megváltoztatni a keresési kifejezéseket. Lehetősége van 
 msgid "The search term must be at least 3 characters long."
 msgstr "A keresési kifejezésnek legalább 3 karakter hosszúnak kell lennie."
 
-#: src/Widgets/CardNumberEntry.vala:40
+#: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "Kártya száma"
 

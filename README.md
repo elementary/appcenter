@@ -20,7 +20,7 @@ You'll need the following dependencies:
 * libpolkit-gobject-1-dev
 * libportal-dev
 * libportal-gtk3-dev
-* libsoup2.4-dev
+* libsoup-3.0-dev
 * libxml2-dev
 * libxml2-utils
 * meson

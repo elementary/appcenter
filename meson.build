@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '7.3.0',
+    version: '7.4.0',
     meson_version: '>=0.57.0'
 )
 
@@ -19,23 +19,44 @@ add_project_arguments(
 vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
 add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
 
+glib = dependency ('glib-2.0')
+gobject = dependency ('gobject-2.0')
+gio = dependency ('gio-2.0')
+gee = dependency ('gee-0.8')
+gtk = dependency ('gtk+-3.0', version: '>=3.10')
+granite = dependency ('granite', version: '>=6.0.0')
+handy = dependency('libhandy-1', version: '>=1.4.0')
 appstream = dependency ('appstream', version: '>=0.15.2')
+libsoup = dependency ('libsoup-3.0')
+json = dependency ('json-glib-1.0')
+flatpak = dependency ('flatpak')
+xml = dependency ('libxml-2.0')
+polkit = dependency ('polkit-gobject-1')
+portal = dependency('libportal'),
+portal_gtk3 = dependency('libportal-gtk3')
+posix = meson.get_compiler('vala').find_library('posix')
 
-dependencies = [
-    dependency ('glib-2.0'),
-    dependency ('gee-0.8'),
-    dependency ('gtk+-3.0', version: '>=3.10'),
-    dependency ('granite', version: '>=6.0.0'),
-    dependency ('libhandy-1', version: '>=1.4.0'),
+dbus = dependency ('dbus-1')
+
+core_deps = [
+    glib,
+    gobject,
+    gio,
+    json,
+    libsoup,
+]
+
+dependencies = core_deps + [
+    gtk,
+    granite,
+    handy,
     appstream,
-    dependency ('libsoup-2.4'),
-    dependency ('json-glib-1.0'),
-    dependency ('flatpak'),
-    dependency ('libxml-2.0'),
-    dependency ('polkit-gobject-1'),
-    meson.get_compiler('vala').find_library('posix'),
-    dependency('libportal'),
-    dependency('libportal-gtk3')
+    flatpak,
+    xml,
+    polkit,
+    portal,
+    portal_gtk3,
+    posix
 ]
 
 if get_option('packagekit_backend')
@@ -58,5 +79,6 @@ conf_data.set('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedi
 subdir('data')
 subdir('src')
 subdir('po')
+subdir('test')
 
 gnome.post_install(glib_compile_schemas: true)
