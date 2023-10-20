@@ -18,8 +18,13 @@
 */
 
 public class AppCenterCore.SoupClient : Object, AppCenterCore.HttpClient {
+    private Soup.Session session;
+
+    construct {
+        session = new Soup.Session ();
+    }
+
     public async AppCenterCore.HttpClient.Response post (string url, string data, GLib.HashTable<string, string>? headers = null) throws Error {
-        var session = new Soup.Session ();
         var message = new Soup.Message ("POST", url);
 
         if (headers != null) {
@@ -29,9 +34,9 @@ public class AppCenterCore.SoupClient : Object, AppCenterCore.HttpClient {
         }
 
         message.request_headers.append ("User-Agent", "AppCenterCore.SoupClient/1.0");
-        message.request_body.append_take (data.data);
+        message.set_request_body_from_bytes (null, new Bytes (data.data));
 
-        var response = yield session.send_async (message);
+        var response = yield session.send_async (message, GLib.Priority.DEFAULT, null);
         var result = new StringBuilder ();
         var buffer = new uint8[1024];
         while (true) {
