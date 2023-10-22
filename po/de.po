@@ -13,9 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-10-20 18:44+0000\n"
+"PO-Revision-Date: 2023-10-24 15:10+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,6 +43,9 @@ msgstr "Der angegebene Link »%s« konnte nicht ermittelt werden, stattdessen wi
 #: src/Application.vala:281
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
+"AppCenter startet automatisch, sobald dieses Gerät eingeschaltet wird, und "
+"wird nach Schließen seines Fensters weiterhin ausgeführt, damit "
+"Aktualisierungen automatisch gesucht und installiert werden können."
 
 #: src/Application.vala:369
 msgid "The app has been installed"
