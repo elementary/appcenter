@@ -30,7 +30,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson build
+        meson setup -Dintegration_tests=true build
         ninja -C build install
         ninja -C build test
 
@@ -38,7 +38,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson configure -Dcurated=false -Dpayments=false build
+        meson configure -Dintegration_tests=true -Dcurated=false -Dpayments=false build
         ninja -C build install
         ninja -C build test
 
@@ -46,7 +46,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson configure -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
+        meson configure -Dintegration_tests=true -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
         ninja -C build install
         ninja -C build test
 
@@ -54,7 +54,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson configure -Dpackagekit_backend=false -Dubuntu_drivers_backend=false build
+        meson configure -Dintegration_tests=true -Dpackagekit_backend=false -Dubuntu_drivers_backend=false build
         ninja -C build install
 
   lint:
