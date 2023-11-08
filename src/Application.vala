@@ -51,6 +51,8 @@ public class AppCenter.App : Gtk.Application {
     public static SimpleAction refresh_action;
     public static SimpleAction repair_action;
 
+    private bool first_activation = true;
+
     static construct {
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
     }
@@ -195,7 +197,14 @@ public class AppCenter.App : Gtk.Application {
 
         var client = AppCenterCore.Client.get_default ();
 
+        if (first_activation) {
+            first_activation = false;
+            hold ();
+        }
+
         if (silent) {
+            request_background.begin ();
+
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
                 schedule_cache_update (!available);
             });
@@ -203,7 +212,6 @@ public class AppCenter.App : Gtk.Application {
             // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
             client.update_cache.begin (false);
             silent = false;
-            hold ();
             return;
         }
 
@@ -246,6 +254,35 @@ public class AppCenter.App : Gtk.Application {
         }
 
         active_window.present_with_time (Gdk.CURRENT_TIME);
+    }
+
+    public async void request_background () {
+        var portal = new Xdp.Portal ();
+
+        Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
+
+        var command = new GenericArray<weak string> ();
+        command.add ("io.elementary.appcenter");
+        command.add ("--silent");
+
+        try {
+            if (!yield portal.request_background (
+                parent,
+                _("AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."),
+                (owned) command,
+                Xdp.BackgroundFlags.AUTOSTART,
+                null
+            )) {
+                release ();
+            }
+        } catch (Error e) {
+            if (e is IOError.CANCELLED) {
+                debug ("Request for autostart and background permissions denied: %s", e.message);
+                release ();
+            } else {
+                warning ("Failed to request autostart and background permissions: %s", e.message);
+            }
+        }
     }
 
     public override bool dbus_register (DBusConnection connection, string object_path) throws Error {

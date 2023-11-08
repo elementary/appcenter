@@ -324,6 +324,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     break;
             }
         });
+
+        close_request.connect (() => {
+            ((AppCenter.App) application).request_background.begin (() => destroy ());
+
+            return false;
+        });
     }
 
     public override bool close_request () {

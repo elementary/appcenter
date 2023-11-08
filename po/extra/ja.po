@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-17 10:45+0000\n"
+"POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2023-09-17 04:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -55,8 +55,8 @@ msgstr "支払えるだけ支払う方式 (pay-what-you-can) で開発者を支�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:87
-#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:116 data/appcenter.metainfo.xml.in:133
 msgid "New features:"
 msgstr "新機能:"
 
@@ -64,9 +64,9 @@ msgstr "新機能:"
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr "旧来の自動起動・通知システムを使用するアプリに警告を表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
-#: data/appcenter.metainfo.xml.in:106 data/appcenter.metainfo.xml.in:120
-#: data/appcenter.metainfo.xml.in:136
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:92
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:137
 msgid "Other Improvements:"
 msgstr "そのほかの改善点:"
 
@@ -74,13 +74,13 @@ msgstr "そのほかの改善点:"
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr "インストールサイズ取得時のアプリ情報画面のちらつきを修正"
 
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:96
-#: data/appcenter.metainfo.xml.in:108 data/appcenter.metainfo.xml.in:122
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:97
+#: data/appcenter.metainfo.xml.in:109 data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:139
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:90
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -88,27 +88,27 @@ msgstr ""
 "アプリが“ホーム”フォルダーやシステムフォルダー、位置情報、システム設定にアク"
 "セス可能な場合や、サンドボックスが安全でない場合、警告を表示する機能を追加。"
 
-#: data/appcenter.metainfo.xml.in:93
+#: data/appcenter.metainfo.xml.in:94
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "アプリ情報画面のスペースと余白を小さくするように修正"
 
-#: data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:95
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 "“ホーム”ページの読み込み中は、プレースホルダーのバナーを表示するように修正"
 
-#: data/appcenter.metainfo.xml.in:95
+#: data/appcenter.metainfo.xml.in:96
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "カテゴリービュー: キュレーションの有無に応じてアプリを分けて表示する機能を廃"
 "止"
 
-#: data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:118
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 "Flatpak のアップデートが失敗した場合に修復オプションを表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:119
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -116,7 +116,7 @@ msgstr ""
 "システムが最新の場合、最新だというメッセージとアップデートの最終確認日時を表"
 "示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:134
+#: data/appcenter.metainfo.xml.in:135
 msgid "Show when an app isn't available in your language"
 msgstr "アプリがお使いの言語で表示されないことを表示する機能を追加"
 

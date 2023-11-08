@@ -20,16 +20,19 @@ add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
 
 glib = dependency ('glib-2.0')
 gobject = dependency ('gobject-2.0')
+gio = dependency ('gio-2.0')
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk4')
 granite = dependency ('granite-7', version: '>=7.3.0')
 adwaita = dependency('libadwaita-1')
 appstream = dependency ('appstream', version: '>=0.15.2')
-libsoup = dependency ('libsoup-2.4')
+libsoup = dependency ('libsoup-3.0')
 json = dependency ('json-glib-1.0')
 flatpak = dependency ('flatpak')
 xml = dependency ('libxml-2.0')
 polkit = dependency ('polkit-gobject-1')
+portal = dependency('libportal')
+portal_gtk4 = dependency('libportal-gtk4')
 posix = meson.get_compiler('vala').find_library('posix')
 
 dbus = dependency ('dbus-1')
@@ -37,19 +40,21 @@ dbus = dependency ('dbus-1')
 core_deps = [
     glib,
     gobject,
+    gio,
+    json,
+    libsoup,
 ]
 
 dependencies = core_deps + [
-    gee,
     gtk,
     granite,
     adwaita,
     appstream,
-    libsoup,
-    json,
     flatpak,
     xml,
     polkit,
+    portal,
+    portal_gtk4,
     posix
 ]
 

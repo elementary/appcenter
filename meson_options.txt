@@ -7,3 +7,4 @@ option('hide_upstream_distro_apps', type : 'boolean', value : true, description 
 option('runtime_name', type : 'string', value : 'io.elementary.Platform', description : 'The name of the distributor runtime')
 option('packagekit_backend', type : 'boolean', value : true, description : 'Use PackageKit as a backend')
 option('ubuntu_drivers_backend', type : 'boolean', value : true, description : 'Use Ubuntu Drivers as a backend (requires packagekit_backend)')
+option('integration_tests', type : 'boolean', value : false, description : 'Enable integration tests, require internet connection')

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-17 10:45+0000\n"
+"POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -20,22 +20,26 @@ msgstr ""
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
-#: src/Application.vala:86
+#: src/Application.vala:88
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:106
+#: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:332
+#: src/Application.vala:281
+msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+msgstr ""
+
+#: src/Application.vala:369
 #, fuzzy
 msgid "The app has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: src/Application.vala:333 src/MainWindow.vala:527
+#: src/Application.vala:370 src/MainWindow.vala:533
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
@@ -51,7 +55,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:459 src/MainWindow.vala:611
+#: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "பயன்பாடுகளை தேடு"
 
@@ -98,68 +102,68 @@ msgstr ""
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:463 src/MainWindow.vala:467
+#: src/MainWindow.vala:469 src/MainWindow.vala:473
 #, c-format
 msgid "Search %s"
 msgstr "தேடுக %s"
 
-#: src/MainWindow.vala:484
+#: src/MainWindow.vala:490
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:493
 msgctxt "view"
 msgid "Search"
 msgstr "தேடுதல்"
 
-#: src/MainWindow.vala:493
+#: src/MainWindow.vala:499
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:536
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:56
 msgid "Open"
 msgstr "திற"
 
-#: src/MainWindow.vala:648
+#: src/MainWindow.vala:654
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "தகவலைப் பெறுகிறது"
 
-#: src/MainWindow.vala:651
+#: src/MainWindow.vala:657
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:657
+#: src/MainWindow.vala:663
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/MainWindow.vala:660
+#: src/MainWindow.vala:666
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "நிறுவுகிறது"
 
-#: src/MainWindow.vala:663
+#: src/MainWindow.vala:669
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "புதுப்பிப்புகளை நிறுவுகிறது"
 
-#: src/MainWindow.vala:666
+#: src/MainWindow.vala:672
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "நீக்குதல்"
 
-#: src/MainWindow.vala:669
+#: src/MainWindow.vala:675
 msgid "Repairing…"
 msgstr ""
 
@@ -378,6 +382,85 @@ msgstr ""
 msgid "%s (local)"
 msgstr ""
 
+#: src/Core/Stripe.vala:27
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "கார்டைச் செயலாக்குகையில் பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் முயற்சிக்கவும். எந்த சிரமத்திற்கும் நாங்கள் மன்னிப்பு கோருகிறோம்."
+
+#: src/Core/Stripe.vala:28
+msgid "Please review your payment info and try again."
+msgstr "உங்கள் கட்டணத் தகவலை மதிப்பாய்வு செய்து மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "அட்டை எண் தவறானது. சரியான கார்டு எண்ணைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:66
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "காலாவதி மாதம் தவறானது. சரியான காலாவதி தேதி பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "காலாவதி ஆண்டு தவறானது. சரியான காலாவதி தேதியைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும் ."
+
+#: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
+msgid "The card has expired. Please try again with a different card."
+msgstr "அட்டை காலாவதியானது. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:89
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr "தற்போது பல பணம் கோரிக்கைகள் உள்ளன, பின்னர் மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:106
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "இந்த வகையான பரிவர்த்தனைக்கு இந்த அட்டை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:108
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "இந்த அட்டை நாணயத்தை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:110
+msgid "The transaction has already been processed."
+msgstr "பரிவர்த்தனை ஏற்கனவே செயல்படுத்தப்பட்டது."
+
+#: src/Core/Stripe.vala:114
+#, fuzzy
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "ZIP / அஞ்சல் குறியீடு தவறானது. சரியான ZIP / அஞ்சல் குறியீட்டைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:116
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr "உங்களிடம் போதுமான நிதி இல்லை. மாற்று கட்டண முறையைப் பயன்படுத்துக."
+
+#: src/Core/Stripe.vala:118
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr "அளவு தவறானது. சரியான அளவு பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:129
+#, fuzzy
+msgid "The PIN number is incorrect. Please try again using the correct PIN."
+msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:131
+#, fuzzy
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "பல PIN முயற்சிகள் உள்ளன. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
+
+#: src/Core/Stripe.vala:151
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "பரிவர்த்தனை முடிக்க முடியவில்லை. மேலும் தகவலுக்கு உங்கள் வங்கியைத் தொடர்பு கொள்ளவும்."
+
+#: src/Core/Stripe.vala:154
+msgid "The balance or credit limit on the card has been reached."
+msgstr "அட்டையின் இருப்பு அல்லது கடன் வரம்பு அடைந்துள்ளது."
+
+#: src/Core/Stripe.vala:157
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr "கொடுக்கப்பட்ட அட்டை ஒரு சோதனை அட்டை. தொடர உண்மையான கார்டைப் பயன்படுத்தவும்."
+
 #: src/Core/UpdateManager.vala:41
 msgid "Operating System Updates"
 msgstr "இயக்க முறைமைகள் மேம்படுத்தல்கள்"
@@ -463,157 +546,78 @@ msgstr "பயன்பாடுகளை கண்டறிந்து நி�
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:41
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "கார்டைச் செயலாக்குகையில் பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் முயற்சிக்கவும். எந்த சிரமத்திற்கும் நாங்கள் மன்னிப்பு கோருகிறோம்."
-
-#: src/Dialogs/StripeDialog.vala:42
-msgid "Please review your payment info and try again."
-msgstr "உங்கள் கட்டணத் தகவலை மதிப்பாய்வு செய்து மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:72
+#: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
 msgstr ""
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
 #. "Buy %2$s for $%1$d", this would result in a string like "Buy GreatApp for $3"
-#: src/Dialogs/StripeDialog.vala:97 src/Dialogs/StripeDialog.vala:261
+#: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:240
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:103
+#: src/Dialogs/StripeDialog.vala:82
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:124
+#: src/Dialogs/StripeDialog.vala:103
 msgid "or"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:160
+#: src/Dialogs/StripeDialog.vala:139
 msgid "Email"
 msgstr "மின்னஞ்சல்"
 
-#: src/Dialogs/StripeDialog.vala:165
+#: src/Dialogs/StripeDialog.vala:144
 #, fuzzy
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "ரசீது அனுப்ப உங்கள் மின்னஞ்சல் முகவரி பயன்படுத்தப்படுகிறது. இது ஒருபோதும் சேமிக்கப்படவில்லை மற்றும் நீங்கள் அஞ்சல் பட்டியலில் இணைக்கப்படவில்லை."
 
-#: src/Dialogs/StripeDialog.vala:166
+#: src/Dialogs/StripeDialog.vala:145
 msgid "Privacy Policy"
 msgstr "தனியுரிமை கொள்கை"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:189
+#: src/Dialogs/StripeDialog.vala:168
 msgid "MM / YY"
 msgstr "மாதம் / வருடம்"
 
-#: src/Dialogs/StripeDialog.vala:197
+#: src/Dialogs/StripeDialog.vala:176
 msgid "CVC"
 msgstr "சிவிசி"
 
-#: src/Dialogs/StripeDialog.vala:243 src/Dialogs/StripeDialog.vala:414
+#: src/Dialogs/StripeDialog.vala:222 src/Dialogs/StripeDialog.vala:393
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:70
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
-#: src/Dialogs/StripeDialog.vala:245 src/Dialogs/StripeDialog.vala:259
-#: src/Dialogs/StripeDialog.vala:413
+#: src/Dialogs/StripeDialog.vala:224 src/Dialogs/StripeDialog.vala:238
+#: src/Dialogs/StripeDialog.vala:392
 #, c-format
 msgid "Pay $%d.00"
 msgstr "பணம் செலுத்து $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:257
+#: src/Dialogs/StripeDialog.vala:236
 msgid "Try for Free"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:331
+#: src/Dialogs/StripeDialog.vala:310
 msgid "Processing"
 msgstr "செயல்முறை நடக்கிறது"
 
-#: src/Dialogs/StripeDialog.vala:358
+#: src/Dialogs/StripeDialog.vala:337
 msgid "There Was a Problem Processing Your Payment"
 msgstr "உங்களுடைய கொடுப்பனவு ஒரு பிரச்சனை"
 
-#: src/Dialogs/StripeDialog.vala:405
+#: src/Dialogs/StripeDialog.vala:384
 msgid "Pay Later"
 msgstr "பின்னர் பணம் கொடுங்கள்"
 
-#: src/Dialogs/StripeDialog.vala:406
+#: src/Dialogs/StripeDialog.vala:385
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி செய்"
-
-#: src/Dialogs/StripeDialog.vala:589 src/Dialogs/StripeDialog.vala:654
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "அட்டை எண் தவறானது. சரியான கார்டு எண்ணைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:591
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "காலாவதி மாதம் தவறானது. சரியான காலாவதி தேதி பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:593 src/Dialogs/StripeDialog.vala:651
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "காலாவதி ஆண்டு தவறானது. சரியான காலாவதி தேதியைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும் ."
-
-#: src/Dialogs/StripeDialog.vala:596 src/Dialogs/StripeDialog.vala:649
-msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:598 src/Dialogs/StripeDialog.vala:640
-msgid "The card has expired. Please try again with a different card."
-msgstr "அட்டை காலாவதியானது. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:618
-msgid "There are too many payment requests at the moment, please retry later."
-msgstr "தற்போது பல பணம் கோரிக்கைகள் உள்ளன, பின்னர் மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:634
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "இந்த வகையான பரிவர்த்தனைக்கு இந்த அட்டை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:636
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "இந்த அட்டை நாணயத்தை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:638
-msgid "The transaction has already been processed."
-msgstr "பரிவர்த்தனை ஏற்கனவே செயல்படுத்தப்பட்டது."
-
-#: src/Dialogs/StripeDialog.vala:642
-#, fuzzy
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "ZIP / அஞ்சல் குறியீடு தவறானது. சரியான ZIP / அஞ்சல் குறியீட்டைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:644
-msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "உங்களிடம் போதுமான நிதி இல்லை. மாற்று கட்டண முறையைப் பயன்படுத்துக."
-
-#: src/Dialogs/StripeDialog.vala:646
-msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "அளவு தவறானது. சரியான அளவு பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:657
-#, fuzzy
-msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:659
-#, fuzzy
-msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "பல PIN முயற்சிகள் உள்ளன. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
-
-#: src/Dialogs/StripeDialog.vala:679
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "பரிவர்த்தனை முடிக்க முடியவில்லை. மேலும் தகவலுக்கு உங்கள் வங்கியைத் தொடர்பு கொள்ளவும்."
-
-#: src/Dialogs/StripeDialog.vala:682
-msgid "The balance or credit limit on the card has been reached."
-msgstr "அட்டையின் இருப்பு அல்லது கடன் வரம்பு அடைந்துள்ளது."
-
-#: src/Dialogs/StripeDialog.vala:685
-msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "கொடுக்கப்பட்ட அட்டை ஒரு சோதனை அட்டை. தொடர உண்மையான கார்டைப் பயன்படுத்தவும்."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -1141,7 +1145,7 @@ msgstr ""
 msgid "The search term must be at least 3 characters long."
 msgstr ""
 
-#: src/Widgets/CardNumberEntry.vala:40
+#: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "அட்டை எண்"
 

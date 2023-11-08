@@ -19,14 +19,6 @@ install_data(
     rename: meson.project_name() + '-symbolic.svg'
 )
 
-# Daemon Desktop file (for GNOME Session autostart)
-configure_file(
-    input: meson.project_name() + '-daemon.desktop.in',
-    output: meson.project_name() + '-daemon.desktop',
-    configuration: conf_data,
-    install_dir: join_paths(get_option('datadir'), 'applications')
-)
-
 # GNOME Shell Search Provider
 configure_file(
     input: meson.project_name() + '.search-provider.ini.in',
