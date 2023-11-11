@@ -26,6 +26,7 @@ namespace AppCenter.Views {
 
         private Granite.HeaderLabel header_label;
         private Gtk.Button update_all_button;
+        private Gtk.FlowBox suggested_flowbox;
         private Gtk.FlowBox installed_flowbox;
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
@@ -33,6 +34,7 @@ namespace AppCenter.Views {
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
         private ListStore updates_liststore;
+        private ListStore suggested_liststore;
         private ListStore installed_liststore;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
@@ -41,6 +43,7 @@ namespace AppCenter.Views {
 
         construct {
             updates_liststore = new ListStore (typeof (AppCenterCore.Package));
+            suggested_liststore = new ListStore (typeof (AppCenterCore.Package));
             installed_liststore = new ListStore (typeof (AppCenterCore.Package));
 
             var css_provider = new Gtk.CssProvider ();
@@ -98,6 +101,21 @@ namespace AppCenter.Views {
             list_box.bind_model (updates_liststore, create_row_from_package);
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 
+            var suggested_header = new Granite.HeaderLabel (_("Suggested")) {
+                margin_top = 12,
+                margin_end = 12,
+                margin_bottom = 12,
+                margin_start = 12,
+            };
+
+            suggested_flowbox = new Gtk.FlowBox () {
+                column_spacing = 24,
+                homogeneous = true,
+                max_children_per_line = 4,
+                row_spacing = 12
+            };
+            suggested_flowbox.bind_model (suggested_liststore, create_suggested_from_package);
+
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
                 margin_end = 12,
@@ -115,6 +133,8 @@ namespace AppCenter.Views {
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (list_box);
+            box.add (suggested_header);
+            box.add (suggested_flowbox);
             box.add (installed_header);
             box.add (installed_flowbox);
 
@@ -186,6 +206,10 @@ namespace AppCenter.Views {
                 list_box.show_all ();
             });
 
+            suggested_liststore.items_changed.connect (() => {
+                suggested_flowbox.show_all ();
+            });
+
             installed_liststore.items_changed.connect (() => {
                 installed_flowbox.show_all ();
             });
@@ -209,6 +233,7 @@ namespace AppCenter.Views {
                 switch (aggregator.job_type) {
                     case GET_PREPARED_PACKAGES:
                     case GET_INSTALLED_PACKAGES:
+                    case GET_SUGGESTED_PACKAGES:
                     case GET_UPDATES:
                     case REFRESH_CACHE:
                     case INSTALL_PACKAGE:
@@ -263,6 +288,8 @@ namespace AppCenter.Views {
 
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);
 
+            var suggested_apps = yield client.get_suggested_applications (refresh_cancellable);
+
             if (!refresh_cancellable.is_cancelled ()) {
                 clear ();
 
@@ -287,6 +314,11 @@ namespace AppCenter.Views {
                         installed_liststore.insert_sorted (package, compare_package_func);
                     }
                 }
+
+                foreach (var package in suggested_apps) {
+                    print ("Suggested: %s\n", package.normalized_component_id);
+                    suggested_liststore.insert_sorted (package, compare_package_func);
+                }
             }
 
             yield client.get_prepared_applications (refresh_cancellable);
@@ -298,6 +330,11 @@ namespace AppCenter.Views {
         private Gtk.Widget create_row_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
             return new Widgets.PackageRow.installed (package, action_button_group);
+        }
+
+        private Gtk.Widget create_suggested_from_package (Object object) {
+            unowned var package = (AppCenterCore.Package) object;
+            return new Widgets.PackageRow.list (package);
         }
 
         private Gtk.Widget create_installed_from_package (Object object) {
@@ -449,6 +486,7 @@ namespace AppCenter.Views {
 
         public void clear () {
             updates_liststore.remove_all ();
+            suggested_liststore.remove_all ();
             installed_liststore.remove_all ();
         }
     }
