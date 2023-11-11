@@ -107,6 +107,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.GET_UPDATES:
                     get_updates_internal (job);
                     break;
+                case Job.Type.GET_SUGGESTED_PACKAGES:
+                    get_suggested_packages_internal (job);
+                    break;
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
@@ -271,6 +274,118 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return prepared_apps;
     }
 
+    private void get_suggested_packages_internal (Job job) {
+        var suggested_apps = new Gee.HashSet<Package> ();
+
+        if (user_installation == null && system_installation == null) {
+            critical ("Couldn't get suggested apps due to no flatpak installation");
+            job.result = Value (typeof (Object));
+            job.result.take_object ((owned) suggested_apps);
+            job.results_ready ();
+            return;
+        }
+
+        if (user_installation != null) {
+            string appcenter_flatpak_user_config_dir = Path.build_filename (Environment.get_user_config_dir (), "appcenter", "/flatpak.d");
+            if (FileUtils.test (appcenter_flatpak_user_config_dir, FileTest.IS_DIR)) {
+                Dir dir;
+                try {
+                    dir = Dir.open (appcenter_flatpak_user_config_dir);
+
+                    unowned string? file;
+                    while ((file = dir.read_name ()) != null) {
+                        string path = Path.build_filename (appcenter_flatpak_user_config_dir, file);
+                        if (!FileUtils.test (path, FileTest.IS_REGULAR)) {
+                            continue;
+                        }
+
+                        var key_file = new KeyFile ();
+                        try {
+                            key_file.load_from_file (path, KeyFileFlags.NONE);
+                            if (!key_file.has_group ("install")) {
+                                continue;
+                            }
+
+                            var origin = key_file.get_string ("install", "origin");
+                            var type = key_file.get_string ("install", "type");
+                            var id = key_file.get_string ("install", "id");
+                            var branch = key_file.get_string ("install", "branch");
+
+                            Package? package = null;
+                            foreach (var key in package_list.keys) {
+                                if (key.has_prefix ("user/%s/%s/%s/".printf (origin, type, id)) &&
+                                    key.has_suffix (branch)) {
+                                        package = package_list[key];
+                                        break;
+                                    }
+                            }
+
+                            if (package != null && !package.installed) {
+                                suggested_apps.add (package);
+                            }
+                        } catch (Error e) {
+                            critical ("Unable to read Flatpak user configuration %s", e.message);
+                        }
+                    }
+                } catch (Error e) {
+                    critical ("Unable to read flatpak configs: %s", e.message);
+                }
+            }
+        }
+
+        if (system_installation != null) {
+            const string APPCENTER_FLATPAK_SYSTEM_CONFIG_DIR = "/etc/appcenter/flatpak.d";
+            if (FileUtils.test (APPCENTER_FLATPAK_SYSTEM_CONFIG_DIR, FileTest.IS_DIR)) {
+                Dir dir;
+                try {
+                    dir = Dir.open (APPCENTER_FLATPAK_SYSTEM_CONFIG_DIR);
+
+                    unowned string? file;
+                    while ((file = dir.read_name ()) != null) {
+                        string path = Path.build_filename (APPCENTER_FLATPAK_SYSTEM_CONFIG_DIR, file);
+                        if (!FileUtils.test (path, FileTest.IS_REGULAR)) {
+                            continue;
+                        }
+
+                        var key_file = new KeyFile ();
+                        try {
+                            key_file.load_from_file (path, KeyFileFlags.NONE);
+                            if (!key_file.has_group ("install")) {
+                                continue;
+                            }
+
+                            var origin = key_file.get_string ("install", "origin");
+                            var type = key_file.get_string ("install", "type");
+                            var id = key_file.get_string ("install", "id");
+                            var branch = key_file.get_string ("install", "branch");
+
+                            Package? package = null;
+                            foreach (var key in package_list.keys) {
+                                if (key.has_prefix ("system/%s/%s/%s/".printf (origin, type, id)) &&
+                                    key.has_suffix (branch)) {
+                                        package = package_list[key];
+                                        break;
+                                    }
+                            }
+
+                            if (package != null && !package.installed) {
+                                suggested_apps.add (package);
+                            }
+                        } catch (Error e) {
+                            critical ("Unable to read Flatpak system configuration %s", e.message);
+                        }
+                    }
+                } catch (Error e) {
+                    critical ("Unable to read flatpak configs: %s", e.message);
+                }
+            }
+        }
+
+        job.result = Value (typeof (Object));
+        job.result.take_object ((owned) suggested_apps);
+        job.results_ready ();
+    }
+
     private void get_installed_packages_internal (Job job) {
         unowned var args = (GetInstalledPackagesArgs)job.args;
         unowned var cancellable = args.cancellable;
@@ -315,6 +430,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         job.result = Value (typeof (Object));
         job.result.take_object ((owned) installed_apps);
         job.results_ready ();
+    }
+
+    public async Gee.Collection<Package> get_suggested_applications (Cancellable? cancellable = null) {
+        var job_args = new GetSuggestedPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_SUGGESTED_PACKAGES, job_args);
+        return (Gee.Collection<Package>)job.result.get_object ();
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
