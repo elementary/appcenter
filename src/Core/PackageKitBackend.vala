@@ -356,6 +356,12 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return packages;
     }
 
+    public async Gee.Collection<Package> get_suggested_applications (Cancellable? cancellable = null) {
+        var suggested_apps = new Gee.HashSet<Package> ();
+
+        return suggested_apps;
+    }
+
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages (cancellable);
