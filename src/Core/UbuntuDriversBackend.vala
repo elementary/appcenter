@@ -47,6 +47,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return prepared_packages;
     }
 
+    public async Gee.Collection<Package> get_suggested_applications (Cancellable? cancellable = null) {
+        var suggested_apps = new Gee.HashSet<Package> ();
+
+        return suggested_apps;
+    }
+
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         if (cached_packages != null) {
             return cached_packages;
