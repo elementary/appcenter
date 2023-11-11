@@ -658,6 +658,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 break;
             case GET_PREPARED_PACKAGES:
             case GET_INSTALLED_PACKAGES:
+            case GET_SUGGESTED_PACKAGES:
             case GET_UPDATES:
             case REFRESH_CACHE:
                 overlaybar.label = _("Checking for updates…");
