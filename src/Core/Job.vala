@@ -40,6 +40,7 @@ public class AppCenterCore.Job : Object {
         GET_PACKAGE_DEPENDENCIES,
         GET_PREPARED_PACKAGES,
         REPAIR,
+        GET_SUGGESTED_PACKAGES,
     }
 
     public Job (Type type) {
@@ -54,6 +55,10 @@ public class AppCenterCore.RepairArgs : JobArgs {
 }
 
 public class AppCenterCore.GetPreparedPackagesArgs : JobArgs {
+    public Cancellable? cancellable;
+}
+
+public class AppCenterCore.GetSuggestedPackagesArgs : JobArgs {
     public Cancellable? cancellable;
 }
 
