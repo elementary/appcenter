@@ -49,6 +49,10 @@ public class AppCenterCore.Client : Object {
         return yield BackendAggregator.get_default ().get_prepared_applications (cancellable);
     }
 
+    public async Gee.Collection<AppCenterCore.Package> get_suggested_applications (Cancellable? cancellable = null) {
+        return yield BackendAggregator.get_default ().get_suggested_applications (cancellable);
+    }
+
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         return yield BackendAggregator.get_default ().get_installed_applications (cancellable);
     }
