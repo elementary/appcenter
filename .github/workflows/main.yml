@@ -56,8 +56,8 @@ jobs:
       fail-fast: false
       matrix:
         version: [latest, rawhide]
-      container:
-        image: fedora:${{ matrix.version }}
+    container:
+      image: fedora:${{ matrix.version }}
 
     steps:
     - uses: actions/checkout@v4
