@@ -463,7 +463,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 #if HAS_APPSTREAM_1_0
         AppStream.utils_sort_components_into_categories (appstream_pool.get_components ().array (), category_array, true);
 #else
-AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
 #endif
         components = category.get_components ();
 
