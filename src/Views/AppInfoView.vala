@@ -310,11 +310,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 oars_flowbox.add (uncurated);
             }
 #endif
+
+#if HAS_APPSTREAM_1_0
             var active_locale = "en_US";
             var languages = package_component.get_languages ();
             if (languages.length () > 0) {
                 active_locale = languages.nth_data (0);
             }
+#else
+            var active_locale = package_component.get_active_locale ();
+#endif
             if (active_locale != "en_US") {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
