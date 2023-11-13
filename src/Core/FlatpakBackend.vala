@@ -401,8 +401,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
 #if HAS_APPSTREAM_1_0
-        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (). array (), category_array, false);
-        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (). array (), category_array, false);
+        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components ().array (), category_array, false);
+        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components ().array (), category_array, false);
 #else
         AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (), category_array, false);
         AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
