@@ -69,7 +69,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson setup -Dintegration_tests=true -Dcurated=false -Dpayments=false build build
+        meson setup -Dintegration_tests=true -Dcurated=false -Dpayments=false build
         ninja -C build install
         ninja -C build test
 
