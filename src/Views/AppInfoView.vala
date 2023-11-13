@@ -310,7 +310,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 oars_flowbox.add (uncurated);
             }
 #endif
-            var active_locale = package_component.get_active_locale ();
+            var active_locale = "en_US";
+            var languages = package_component.get_languages ();
+            if (languages.length () > 0) {
+                active_locale = languages.nth_data (0);
+            }
             if (active_locale != "en_US") {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
@@ -492,7 +496,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             }
         }
 
+#if HAS_APPSTREAM_1_0
+        screenshots = package_component.get_screenshots_all ();
+#else
         screenshots = package_component.get_screenshots ();
+#endif
 
         if (screenshots.length > 0) {
             screenshot_carousel = new Hdy.Carousel () {
@@ -1030,7 +1038,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             get_app_download_size.begin ();
 
             Idle.add (() => {
+#if HAS_APPSTREAM_1_0
+                var releases = package.component.get_releases_plain ().get_entries ();
+#else
                 var releases = package.component.get_releases ();
+#endif
 
                 foreach (unowned var release in releases) {
                     if (release.get_version () == null) {
@@ -1049,7 +1061,13 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
                         release_carousel.add (release_row);
 
+#if HAS_APPSTREAM_1_0
+                        var release_version = new AppStream.Relation ();
+                        release_version.set_version (release.get_version ());
+                        if (package.installed && release_version.version_compare (package.get_version ())) {
+#else
                         if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
+#endif
                             break;
                         }
                     }
