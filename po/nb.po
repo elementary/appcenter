@@ -5,15 +5,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-09-17 04:08+0000\n"
+"PO-Revision-Date: 2023-11-14 16:10+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -32,8 +33,12 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Fant ikke oppgitt lenke «%s», søker istedenfor"
 
 #: src/Application.vala:281
+#, fuzzy
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
+"ProgramSenter vil automatisk starte når enheten skrur seg på og når vinduet "
+"dens lukkes, slik at den automatisk kan lete etter og installere nye "
+"oppgraderinger."
 
 #: src/Application.vala:369
 msgid "The app has been installed"
