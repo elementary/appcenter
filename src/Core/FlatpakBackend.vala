@@ -401,8 +401,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
 #if HAS_APPSTREAM_1_0
-        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components ().array (), category_array, false);
-        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components ().array (), category_array, false);
+        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components ().as_array (), category_array, false);
+        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components ().as_array (), category_array, false);
 #else
         AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (), category_array, false);
         AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
@@ -423,7 +423,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var comps = user_appstream_pool.search (query);
         if (category == null) {
 #if HAS_APPSTREAM_1_0
-            comps.array ().foreach ((comp) => {
+            comps.as_array ().foreach ((comp) => {
 #else
             comps.foreach ((comp) => {
 #endif
@@ -433,7 +433,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } else {
             var cat_packages = get_applications_for_category (category);
 #if HAS_APPSTREAM_1_0
-            comps.array ().foreach ((comp) => {
+            comps.as_array ().foreach ((comp) => {
 #else
             comps.foreach ((comp) => {
 #endif
@@ -449,7 +449,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         comps = system_appstream_pool.search (query);
         if (category == null) {
 #if HAS_APPSTREAM_1_0
-            comps.array ().foreach ((comp) => {
+            comps.as_array ().foreach ((comp) => {
 #else
             comps.foreach ((comp) => {
 #endif
@@ -459,7 +459,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } else {
             var cat_packages = get_applications_for_category (category);
 #if HAS_APPSTREAM_1_0
-            comps.array ().foreach ((comp) => {
+            comps.as_array ().foreach ((comp) => {
 #else
             comps.foreach ((comp) => {
 #endif
@@ -1121,7 +1121,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } finally {
             var comp_validator = ComponentValidator.get_default ();
 #if HAS_APPSTREAM_1_0
-            user_appstream_pool.get_components ().array ().foreach ((comp) => {
+            user_appstream_pool.get_components ().as_array ().foreach ((comp) => {
 #else
             user_appstream_pool.get_components ().foreach ((comp) => {
 #endif
@@ -1163,7 +1163,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } finally {
             var comp_validator = ComponentValidator.get_default ();
 #if HAS_APPSTREAM_1_0
-            system_appstream_pool.get_components ().array ().foreach ((comp) => {
+            system_appstream_pool.get_components ().as_array ().foreach ((comp) => {
 #else
             system_appstream_pool.get_components ().foreach ((comp) => {
 #endif

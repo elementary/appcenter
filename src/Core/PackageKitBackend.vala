@@ -276,7 +276,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
 #if HAS_APPSTREAM_1_0
-            appstream_pool.get_components ().array ().foreach ((comp) => {
+            appstream_pool.get_components ().as_array ().foreach ((comp) => {
 #else
             appstream_pool.get_components ().foreach ((comp) => {
 #endif
@@ -461,7 +461,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
 #if HAS_APPSTREAM_1_0
-        AppStream.utils_sort_components_into_categories (appstream_pool.get_components ().array (), category_array, true);
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components ().as_array (), category_array, true);
 #else
         AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
 #endif
@@ -483,7 +483,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var comps = appstream_pool.search (query);
         if (category == null) {
 #if HAS_APPSTREAM_1_0
-            comps.array ().foreach ((comp) => {
+            comps.as_array ().foreach ((comp) => {
 #else
             comps.foreach ((comp) => {
 #endif
@@ -495,7 +495,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         } else {
             var cat_packages = get_applications_for_category (category);
 #if HAS_APPSTREAM_1_0
-            comps.array ().foreach ((comp) => {
+            comps.as_array ().foreach ((comp) => {
 #else
             comps.foreach ((comp) => {
 #endif
