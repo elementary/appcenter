@@ -12,9 +12,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-10-17 06:10+0000\n"
+"PO-Revision-Date: 2023-12-06 02:05+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,6 +42,9 @@ msgstr "Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als
 #: src/Application.vala:281
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
+"AppCenter zal automatisch opstarten en blijft op de achtergrond draaien "
+"wanneer het venster gesloten is zodat het automatisch op updates kan "
+"controleren en ze kan installeren."
 
 #: src/Application.vala:369
 msgid "The app has been installed"
@@ -171,7 +175,7 @@ msgstr "In behandeling"
 
 #: src/Utils.vala:69
 msgid "Querying"
-msgstr "Informatie ophalen"
+msgstr "Informatie opvragen"
 
 #: src/Utils.vala:71
 msgid "Getting information"
@@ -423,7 +427,9 @@ msgstr "Het bedrag is onjuist. Gelieve het opnieuw te proberen met een geldig be
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste CVC-nummer."
+msgstr ""
+"Het PIN-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"PIN-nummer."
 
 #: src/Core/Stripe.vala:131
 msgid "There has been too many PIN attempts. Please try again with a different card."
@@ -592,7 +598,7 @@ msgstr "Betaal later"
 
 #: src/Dialogs/StripeDialog.vala:385
 msgid "Retry"
-msgstr "Probeer opnieuw"
+msgstr "Opnieuw proberen"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -634,7 +640,7 @@ msgstr "Negeer"
 
 #: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
-msgstr "Probeer opnieuw"
+msgstr "Opnieuw proberen"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
