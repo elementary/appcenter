@@ -928,7 +928,7 @@ public class AppCenterCore.Package : Object {
 
     public AppStream.Release? get_newest_release () {
 #if HAS_APPSTREAM_1_0
-        var releases = component.get_releases_plain (). get_entries ();
+        var releases = component.get_releases_plain ().get_entries ();
 #else
         var releases = component.get_releases ();
 #endif
