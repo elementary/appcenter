@@ -1,4 +1,4 @@
-# TomiOhl <ohlslager.tom@gmail.com>, 2021, 2022, 2023.
+# TomiOhl <ohlslager.tom@gmail.com>, 2021, 2022, 2023, 2024.
 # Sziráki Bálint <blntsziraki@gmail.com>, 2021.
 # Adam Szatyin <szatyinadam@gmail.com>, 2021.
 msgid ""
@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-12-14 20:10+0000\n"
+"PO-Revision-Date: 2024-01-27 01:11+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hu/>\n"
@@ -240,7 +240,7 @@ msgstr "Tárolóinformációk letöltése"
 
 #: src/Utils.vala:103
 msgid "Downloading list of packages"
-msgstr "Csomaglisták letöltése"
+msgstr "Csomaglista letöltése"
 
 #: src/Utils.vala:105
 msgid "Downloading file lists"
@@ -288,11 +288,11 @@ msgstr "A futó alkalmazások frissítése"
 
 #: src/Utils.vala:127
 msgid "Checking applications in use"
-msgstr "A használt alkalmazások ellenőrzése"
+msgstr "A használatban lévő alkalmazások ellenőrzése"
 
 #: src/Utils.vala:129
 msgid "Checking libraries in use"
-msgstr "A használt könyvtárak ellenőrzése"
+msgstr "A használatban lévő könyvtárak ellenőrzése"
 
 #: src/Utils.vala:131
 msgid "Copying files"
