@@ -5,15 +5,15 @@
 # asdffdsdaf <asdffdsdaf@gmail.com>, 2021, 2022.
 # DartDeaDia <dartdeadia@protonmail.com>, 2021, 2022.
 # Camellan <camellan@yandex.ru>, 2021.
-# lenemter <lenemter@gmail.com>, 2022, 2023.
+# lenemter <lenemter@gmail.com>, 2022, 2023, 2024.
 # кубик круглый <megarainbow29@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-10-24 15:10+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2024-02-03 13:11+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -38,14 +38,14 @@ msgstr "Не удалось распознать тип данных %s"
 #: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Указанная ссылка «%s» не найдена, поиск замены"
+msgstr "Cсылка «%s» не найдена, вместо этого выполняется поиск"
 
 #: src/Application.vala:281
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
 "AppCenter будет автоматически запускаться при включении этого устройства и "
-"работать при закрытии его окна, чтобы он мог автоматически проверять и "
-"устанавливать обновления."
+"работать после закрытия окна для автоматической проверки и установки "
+"обновлений."
 
 #: src/Application.vala:369
 msgid "The app has been installed"
@@ -92,7 +92,8 @@ msgstr "Сеть недоступна."
 
 #: src/MainWindow.vala:236
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Необходимо соединение с Интернетом для просмотра или установки приложений."
+msgstr ""
+"Для просмотра и установки приложений необходимо соединение с Интернетом."
 
 #: src/MainWindow.vala:246
 msgid "Network Settings…"
@@ -374,7 +375,9 @@ msgstr "%s (локальный)"
 
 #: src/Core/Stripe.vala:27
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Ошибка при обработке данных, пожалуйста, повторите попытку позже. Приносим извинения за причинённые неудобства."
+msgstr ""
+"Ошибка при обработке карты. Пожалуйста, повторите попытку позже. Приносим "
+"свои извинения за причинённые неудобства."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
@@ -386,7 +389,9 @@ msgstr "Некорректный номер карты. Попробуйте с�
 
 #: src/Core/Stripe.vala:66
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "Некорректный месяц истечения срока действия карты. Попробуйте снова, используя корректный месяц."
+msgstr ""
+"Некорректный месяц истечения срока действия карты. Попробуйте снова, "
+"используя корректный месяц."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
@@ -471,7 +476,7 @@ msgstr "Версия: %s"
 
 #: src/Core/UpdateManager.vala:182
 msgid "No components with updates"
-msgstr "Нет приложений нуждающихся в обновлении"
+msgstr "Нет приложений, нуждающихся в обновлении"
 
 #: src/Core/UpdateManager.vala:187
 #, c-format
@@ -504,7 +509,7 @@ msgstr "Требуется перезагрузка"
 
 #: src/Core/UpdateManager.vala:247
 msgid "Please restart your system to finalize updates"
-msgstr "Перезагрузите систему, чтобы завершить обновление"
+msgstr "Перезагрузите систему для установки обновлений"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
@@ -545,7 +550,8 @@ msgstr "Перевести %d,00 USD за %s"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Это предложенный разработчиком разовый платёж. Вы также можете выбрать и свою цену."
+msgstr ""
+"Это предложенный разработчиком разовый платёж. Вы можете выбрать и свою цену."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -605,7 +611,7 @@ msgstr "Попробовать снова"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr "Удаление этого приложения также может привести к удалению его данных."
+msgstr "Удаление этого приложения может привести к удалению его данных."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
@@ -647,7 +653,10 @@ msgstr "Повторить попытку"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Это может быть вызвано сторонним или вручную скомпилированным программным обеспечением, сторонними репозиториями или ошибкой пакетного менеджера. Ручная проверка обновлений может решить эту проблему."
+msgstr ""
+"Это может быть вызвано сторонним или вручную скомпилированным программным "
+"обеспечением, сторонними репозиториями или ошибкой менеджера пакетов. Ручная "
+"проверка обновлений может решить эту проблему."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -883,7 +892,7 @@ msgstr "Устаревший автозапуск"
 
 #: src/Views/AppInfoView.vala:940
 msgid "Can automatically start up and run in the background without asking"
-msgstr "Может автоматически запускаться и работать в фоновом режиме без запроса"
+msgstr "Может запускаться автоматически и работать в фоне без разрешения"
 
 #: src/Views/AppInfoView.vala:949
 msgid "Location Access"
@@ -891,7 +900,7 @@ msgstr "Доступ к местоположению"
 
 #: src/Views/AppInfoView.vala:950
 msgid "Can see your precise location at any time without asking"
-msgstr "Может видеть ваше точное местоположение в любое время, без уведомления"
+msgstr "Может в любое время получить ваше точное местоположение без разрешения"
 
 #: src/Views/AppInfoView.vala:959
 msgid "Legacy Notifications"
@@ -931,7 +940,7 @@ msgstr "https://www.gnu.org/philosophy/free-sw.ru.html"
 
 #: src/Views/AppInfoView.vala:1236
 msgid "Proprietary"
-msgstr "Проприетарное"
+msgstr "Проприетарная лицензия"
 
 #: src/Views/AppInfoView.vala:1239
 msgid "Unknown License"
@@ -1176,7 +1185,7 @@ msgstr "Скопировать ссылку"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr "Фактический размер загрузки, вероятно, будет меньше"
+msgstr "Размер загрузки, вероятно, будет меньше"
 
 #: src/Widgets/SizeLabel.vala:37
 msgid "Only the parts of apps and updates that are needed will be downloaded."
