@@ -15,13 +15,14 @@
 # Santiago Leon <santiagoleon747@gmail.com>, 2023.
 # Jorge Garcia Rodriguez <jorge@immutable.pro>, 2024.
 # Sergio Torres <sdtorresl@unal.edu.co>, 2024.
+# Jonay Iglesias <jonayiglesiasp@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2024-02-03 13:11+0000\n"
-"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
+"Last-Translator: Jonay Iglesias <jonayiglesiasp@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -50,6 +51,9 @@ msgstr "No se encontró el enlace «%s» especificado; en busca de alternativas"
 #: src/Application.vala:281
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
+"El centro de aplicaciones se iniciará automaticamente cuando este "
+"dispositivo se encienda y se ejecutará cuando se cierre la ventana para que "
+"pueda comprobar e instalar actualizaciones automáticamente."
 
 #: src/Application.vala:369
 msgid "The app has been installed"
@@ -81,18 +85,16 @@ msgstr "Actualizaciones Automáticas de Aplicaciones"
 #: src/MainWindow.vala:177
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
+"Las actualizaciones del sistema y las aplicaciones no pagadas no se "
+"actualizarán automáticamente"
 
 #: src/MainWindow.vala:181
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Check for Updates"
-msgstr "Buscando actualizaciones"
+msgstr "Buscar actualizaciones"
 
 #: src/MainWindow.vala:206
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Iniciando"
+msgstr "Ajustes"
 
 #: src/MainWindow.vala:235
 msgid "Network Not Available."
