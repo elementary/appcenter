@@ -14,13 +14,14 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Santiago Leon <santiagoleon747@gmail.com>, 2023.
 # Jorge Garcia Rodriguez <jorge@immutable.pro>, 2024.
+# Sergio Torres <sdtorresl@unal.edu.co>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2024-02-03 13:11+0000\n"
-"Last-Translator: Jorge Garcia Rodriguez <jorge@immutable.pro>\n"
+"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -65,11 +66,9 @@ msgid "Failed to launch “%s“"
 msgstr "No se pudo iniciar «%s»"
 
 #: src/MainWindow.vala:154
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "No se pudo instalar la aplicación"
+msgstr "Actualizaciones y aplicaciones instaladas"
 
 #: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
@@ -143,10 +142,8 @@ msgid "Open"
 msgstr "Abrir"
 
 #: src/MainWindow.vala:654
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Obteniendo información"
+msgstr "Obteniendo información de la aplicación…"
 
 #: src/MainWindow.vala:657
 msgid "Getting download size…"
