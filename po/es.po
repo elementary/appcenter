@@ -16,13 +16,14 @@
 # Jorge Garcia Rodriguez <jorge@immutable.pro>, 2024.
 # Sergio Torres <sdtorresl@unal.edu.co>, 2024.
 # Jonay Iglesias <jonayiglesiasp@gmail.com>, 2024.
+# Walter Walls <windowsfan589@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2024-02-03 13:11+0000\n"
-"Last-Translator: Jonay Iglesias <jonayiglesiasp@gmail.com>\n"
+"Last-Translator: Walter Walls <windowsfan589@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -149,7 +150,7 @@ msgstr "Obteniendo información de la aplicación…"
 
 #: src/MainWindow.vala:657
 msgid "Getting download size…"
-msgstr ""
+msgstr "Obteniendo tamaño de descarga…"
 
 #: src/MainWindow.vala:663
 msgid "Checking for updates…"
