@@ -17,13 +17,14 @@
 # Sergio Torres <sdtorresl@unal.edu.co>, 2024.
 # Jonay Iglesias <jonayiglesiasp@gmail.com>, 2024.
 # Walter Walls <windowsfan589@gmail.com>, 2024.
+# gitlares <daniellares@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
 "PO-Revision-Date: 2024-02-03 13:11+0000\n"
-"Last-Translator: Walter Walls <windowsfan589@gmail.com>\n"
+"Last-Translator: gitlares <daniellares@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -111,7 +112,7 @@ msgstr "Configuración de red…"
 
 #: src/MainWindow.vala:254
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Ejecutando en modo Demostración"
 
 #: src/MainWindow.vala:255
 #, c-format
