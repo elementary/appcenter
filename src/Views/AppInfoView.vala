@@ -143,7 +143,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         } else {
             app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
 
-            if (package.is_os_updates || package.is_runtime_updates) {
+            if (package.is_runtime_updates) {
                 badge_image.icon_name = "system-software-update";
                 app_icon_overlay.add_overlay (badge_image);
             }
@@ -298,7 +298,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             maximum_size = MAX_WIDTH
         };
 
-        if (!package.is_os_updates && !package.is_runtime_updates) {
+        if (!package.is_runtime_updates) {
 #if CURATED
             if (!package.is_native) {
                 var uncurated = new ContentType (
@@ -852,10 +852,10 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 uninstall_button_revealer.reveal_child = false;
                 break;
             case AppCenterCore.Package.State.INSTALLED:
-                uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_runtime_updates && !package.is_compulsory;
+                uninstall_button_revealer.reveal_child = !package.is_runtime_updates && !package.is_compulsory;
                 break;
             case AppCenterCore.Package.State.UPDATE_AVAILABLE:
-                uninstall_button_revealer.reveal_child = !package.is_os_updates && !package.is_runtime_updates && !package.is_compulsory;
+                uninstall_button_revealer.reveal_child = !package.is_runtime_updates && !package.is_compulsory;
                 break;
             default:
                 break;
