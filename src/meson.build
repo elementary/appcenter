@@ -78,6 +78,10 @@ if appstream.version().version_compare('>=0.16')
     args += '--define=HAS_APPSTREAM_0_16'
 endif
 
+if appstream.version().version_compare('>=1.0')
+    args += '--define=HAS_APPSTREAM_1_0'
+endif
+
 if get_option('packagekit_backend')
     appcenter_files += files(
         'Core/PackageKitBackend.vala',

@@ -3,7 +3,7 @@
 # karim inabi <karim99tgt@gmail.com>, 2018, 2019.
 # nasserbinlaboun <nasser1990com@gmail.com>, 2019, 2020.
 # alfa <dkotrada@gmail.com>, 2019.
-# aalhaif <aalhaif@hotmail.com>, 2021.
+# aalhaif <aalhaif@hotmail.com>, 2021, 2023.
 # Muhammad Al-Jayyousi <m7md.j99@protonmail.com>, 2021.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
@@ -11,15 +11,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
+"PO-Revision-Date: 2023-11-09 13:10+0000\n"
+"Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.14.2\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -762,13 +764,11 @@ msgstr "ترجم"
 
 #: src/Views/AppInfoView.vala:332
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "هذا التطبيق غير متاح بلغتك"
 
 #: src/Views/AppInfoView.vala:339
-#, fuzzy
-#| msgid "Translate"
 msgid "Not Fully Translated"
-msgstr "ترجم"
+msgstr "غير مترجم بالكامل"
 
 #: src/Views/AppInfoView.vala:340
 #, c-format
