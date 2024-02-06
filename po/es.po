@@ -13,20 +13,26 @@
 # Jose Manuel Hernandez Farias <ing.josemhf@gmail.com>, 2022.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Santiago Leon <santiagoleon747@gmail.com>, 2023.
+# Jorge Garcia Rodriguez <jorge@immutable.pro>, 2024.
+# Sergio Torres <sdtorresl@unal.edu.co>, 2024.
+# Jonay Iglesias <jonayiglesiasp@gmail.com>, 2024.
+# Walter Walls <windowsfan589@gmail.com>, 2024.
+# gitlares <daniellares@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
+"PO-Revision-Date: 2024-02-03 13:11+0000\n"
+"Last-Translator: gitlares <daniellares@gmail.com>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -47,6 +53,9 @@ msgstr "No se encontró el enlace «%s» especificado; en busca de alternativas"
 #: src/Application.vala:281
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
+"El centro de aplicaciones se iniciará automaticamente cuando este "
+"dispositivo se encienda y se ejecutará cuando se cierre la ventana para que "
+"pueda comprobar e instalar actualizaciones automáticamente."
 
 #: src/Application.vala:369
 msgid "The app has been installed"
@@ -63,37 +72,31 @@ msgid "Failed to launch “%s“"
 msgstr "No se pudo iniciar «%s»"
 
 #: src/MainWindow.vala:154
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "No se pudo instalar la aplicación"
+msgstr "Actualizaciones y aplicaciones instaladas"
 
 #: src/MainWindow.vala:166 src/MainWindow.vala:465 src/MainWindow.vala:617
 msgid "Search Apps"
 msgstr "Buscar aplicaciones"
 
 #: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Automatic App Updates"
-msgstr "No se pudieron recuperar las actualizaciones"
+msgstr "Actualizaciones Automáticas de Aplicaciones"
 
 #: src/MainWindow.vala:177
 msgid "System updates and unpaid apps will not update automatically"
 msgstr ""
+"Las actualizaciones del sistema y las aplicaciones no pagadas no se "
+"actualizarán automáticamente"
 
 #: src/MainWindow.vala:181
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Check for Updates"
-msgstr "Buscando actualizaciones"
+msgstr "Buscar actualizaciones"
 
 #: src/MainWindow.vala:206
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Iniciando"
+msgstr "Ajustes"
 
 #: src/MainWindow.vala:235
 msgid "Network Not Available."
@@ -109,7 +112,7 @@ msgstr "Configuración de red…"
 
 #: src/MainWindow.vala:254
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Ejecutando en modo Demostración"
 
 #: src/MainWindow.vala:255
 #, c-format
@@ -143,42 +146,32 @@ msgid "Open"
 msgstr "Abrir"
 
 #: src/MainWindow.vala:654
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Obteniendo información"
+msgstr "Obteniendo información de la aplicación…"
 
 #: src/MainWindow.vala:657
 msgid "Getting download size…"
-msgstr ""
+msgstr "Obteniendo tamaño de descarga…"
 
 #: src/MainWindow.vala:663
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Buscando actualizaciones"
+msgstr "Buscando actualizaciones…"
 
 #: src/MainWindow.vala:666
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Instalando"
+msgstr "Instalando…"
 
 #: src/MainWindow.vala:669
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Instalando actualizaciones"
+msgstr "Instalando actualizaciones…"
 
 #: src/MainWindow.vala:672
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Desinstalando"
+msgstr "Desinstalando…"
 
 #: src/MainWindow.vala:675
 msgid "Repairing…"
-msgstr ""
+msgstr "Reparando…"
 
 #: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
