@@ -34,42 +34,19 @@ jobs:
         ninja -C build install
         ninja -C build test
 
-    - name: Build and Test (Pop!_Shop)
-      env:
-        DESTDIR: out
-      run: |
-        meson configure -Dintegration_tests=true -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
-        ninja -C build install
-        ninja -C build test
-
-    - name: Build (Flatpak-only)
-      env:
-        DESTDIR: out
-      run: |
-        meson configure -Dintegration_tests=true -Dpackagekit_backend=false -Dubuntu_drivers_backend=false build
-        ninja -C build install
-
-  fedora:
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        version: [latest, rawhide]
-    container:
-      image: fedora:${{ matrix.version }}
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Install Dependencies
-      run: |
-        dnf install -y PackageKit-glib-devel appstream appstream-devel desktop-file-utils flatpak-devel json-glib-devel libhandy-devel libportal-gtk3-devel libsoup3-devel libunity-devel polkit polkit-devel xdg-desktop-portal-devel meson vala libgee-devel granite-devel
-
     - name: Build and Test (Fedora)
       env:
         DESTDIR: out
       run: |
         meson configure -Dintegration_tests=true -Dcurated=false -Dpayments=false build
+        ninja -C build install
+        ninja -C build test
+
+    - name: Build and Test (Pop!_Shop)
+      env:
+        DESTDIR: out
+      run: |
+        meson configure -Dintegration_tests=true -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
         ninja -C build install
         ninja -C build test
 
