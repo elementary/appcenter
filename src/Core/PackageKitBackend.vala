@@ -275,7 +275,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         } finally {
             var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
+#if HAS_APPSTREAM_1_0
+            appstream_pool.get_components ().as_array ().foreach ((comp) => {
+#else
             appstream_pool.get_components ().foreach ((comp) => {
+#endif
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
@@ -317,7 +321,12 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
-#if HAS_APPSTREAM_0_15
+#if HAS_APPSTREAM_1_0
+            var components = new AppStream.ComponentBox (AppStream.ComponentBoxFlags.NONE);
+            components.add (component);
+
+            appstream_pool.add_components (components);
+#elif HAS_APPSTREAM_0_15
             var components = new GenericArray<AppStream.Component> ();
             components.add (component);
 
@@ -430,7 +439,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 break;
             }
 
+#if HAS_APPSTREAM_1_0
+            if (package.component.get_developer ().get_name () == author) {
+#else
             if (package.component.developer_name == author) {
+#endif
                 packages.add (package);
             }
         }
@@ -447,7 +460,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
+#if HAS_APPSTREAM_1_0
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components ().as_array (), category_array, true);
+#else
         AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+#endif
         components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
@@ -465,7 +482,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = appstream_pool.search (query);
         if (category == null) {
+#if HAS_APPSTREAM_1_0
+            comps.as_array ().foreach ((comp) => {
+#else
             comps.foreach ((comp) => {
+#endif
                 var package = get_package_for_component_id (comp.get_id ());
                 if (package != null) {
                     apps.add (package);
@@ -473,7 +494,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             });
         } else {
             var cat_packages = get_applications_for_category (category);
+#if HAS_APPSTREAM_1_0
+            comps.as_array ().foreach ((comp) => {
+#else
             comps.foreach ((comp) => {
+#endif
                 var package = get_package_for_component_id (comp.get_id ());
                 if (package != null && package in cat_packages) {
                     apps.add (package);

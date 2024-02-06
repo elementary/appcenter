@@ -116,7 +116,11 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
     private string format_release_description (string? description ) {
         if (description != null) {
             try {
+#if HAS_APPSTREAM_1_0
+                var markup = AppStream.markup_convert (description, TEXT);
+#else
                 var markup = AppStream.markup_convert_simple (description);
+#endif
 
                 if (markup.strip () != "") {
                     return markup;

@@ -400,8 +400,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
+#if HAS_APPSTREAM_1_0
+        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components ().as_array (), category_array, false);
+        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components ().as_array (), category_array, false);
+#else
         AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (), category_array, false);
         AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
+#endif
         components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
@@ -417,13 +422,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = user_appstream_pool.search (query);
         if (category == null) {
+#if HAS_APPSTREAM_1_0
+            comps.as_array ().foreach ((comp) => {
+#else
             comps.foreach ((comp) => {
+#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 apps.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
+#if HAS_APPSTREAM_1_0
+            comps.as_array ().foreach ((comp) => {
+#else
             comps.foreach ((comp) => {
+#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
@@ -435,13 +448,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         comps = system_appstream_pool.search (query);
         if (category == null) {
+#if HAS_APPSTREAM_1_0
+            comps.as_array ().foreach ((comp) => {
+#else
             comps.foreach ((comp) => {
+#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 apps.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
+#if HAS_APPSTREAM_1_0
+            comps.as_array ().foreach ((comp) => {
+#else
             comps.foreach ((comp) => {
+#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
@@ -510,7 +531,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 continue;
             }
 
+#if HAS_APPSTREAM_1_0
+            if (package.component.get_developer ().get_name () == author) {
+#else
             if (package.component.developer_name == author) {
+#endif
                 package_ids.add (package.component.id);
 
                 AppCenterCore.Package? user_package = null;
@@ -1095,7 +1120,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
             var comp_validator = ComponentValidator.get_default ();
+#if HAS_APPSTREAM_1_0
+            user_appstream_pool.get_components ().as_array ().foreach ((comp) => {
+#else
             user_appstream_pool.get_components ().foreach ((comp) => {
+#endif
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
@@ -1133,7 +1162,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
             var comp_validator = ComponentValidator.get_default ();
+#if HAS_APPSTREAM_1_0
+            system_appstream_pool.get_components ().as_array ().foreach ((comp) => {
+#else
             system_appstream_pool.get_components ().foreach ((comp) => {
+#endif
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
