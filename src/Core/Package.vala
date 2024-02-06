@@ -682,7 +682,7 @@ public class AppCenterCore.Package : Object {
 
             try {
 #if HAS_APPSTREAM_1_0
-                description = AppStream.markup_convert (description, AppStream.MarkupKind.XML);
+                description = AppStream.markup_convert (description, TEXT);
 #else
                 description = AppStream.markup_convert_simple (description);
 #endif

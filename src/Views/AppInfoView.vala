@@ -312,15 +312,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 #endif
 
 #if HAS_APPSTREAM_1_0
-            var active_locale = "en_US";
-            var languages = package_component.get_languages ();
-            if (languages.length () > 0) {
-                active_locale = languages.nth_data (0);
+            var active_locale = "en-US";
+            if (package_component.get_context () != null) {
+                active_locale = package_component.get_context ().get_locale () ?? "en-US";
             }
 #else
             var active_locale = package_component.get_active_locale ();
 #endif
-            if (active_locale != "en_US") {
+            if (active_locale != "en_US" && active_locale != "en-US") {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
                     active_locale.split ("_")[0]
@@ -1067,9 +1066,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                         release_carousel.add (release_row);
 
 #if HAS_APPSTREAM_1_0
-                        var release_version = new AppStream.Relation ();
-                        release_version.set_version (release.get_version ());
-                        if (package.installed && release_version.version_compare (package.get_version ())) {
+                        if (package.installed && AppStream.vercmp_simple (release.get_version (), package.get_version ()) <= 0) {
 #else
                         if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
 #endif
