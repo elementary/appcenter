@@ -113,8 +113,6 @@ public class AppCenterCore.UpdateManager : Object {
         var flatpak_updates = yield fp_client.get_updates ();
         debug ("Flatpak backend reports %d updates", flatpak_updates.size);
 
-        var auto_update_enabled = AppCenter.App.settings.get_boolean ("automatic-updates");
-
         foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
@@ -125,11 +123,9 @@ public class AppCenterCore.UpdateManager : Object {
                     unpaid_apps_number++;
                 }
 
-                if (!auto_update_enabled || appcenter_package.should_pay) {
-                    count++;
-                    updates_size += appcenter_package.change_information.size;
-                    has_flatpak_updates = true;
-                }
+                count++;
+                updates_size += appcenter_package.change_information.size;
+                has_flatpak_updates = true;
 
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
                 appcenter_package.update_state ();
@@ -153,10 +149,8 @@ public class AppCenterCore.UpdateManager : Object {
                     continue;
                 }
 
-                if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
-                    runtime_count++;
-                    has_flatpak_updates = true;
-                }
+                runtime_count++;
+                has_flatpak_updates = true;
 
                 runtime_desc += Markup.printf_escaped (
                     " • %s\n\t%s\n",
