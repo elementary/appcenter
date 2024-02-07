@@ -223,6 +223,30 @@ public class AppCenterCore.UpdateManager : Object {
         });
 #endif
 
+        if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
+            var application = Application.get_default ();
+            if (was_empty && updates_number != 0U) {
+                string title = ngettext ("Update Available", "Updates Available", updates_number);
+                string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
+
+                var notification = new Notification (title);
+                notification.set_body (body);
+                notification.set_icon (new ThemedIcon ("software-update-available"));
+                notification.set_default_action ("app.show-updates");
+
+                application.send_notification ("io.elementary.appcenter.updates", notification);
+            } else {
+                application.withdraw_notification ("io.elementary.appcenter.updates");
+            }
+
+            try {
+                yield Granite.Services.Application.set_badge (updates_number);
+                yield Granite.Services.Application.set_badge_visible (updates_number != 0);
+            } catch (Error e) {
+                warning ("Error setting updates badge: %s", e.message);
+            }
+        }
+
         os_updates.update_state ();
         runtime_updates.update_state ();
         return count;
