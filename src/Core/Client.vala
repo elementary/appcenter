@@ -74,7 +74,7 @@ public class AppCenterCore.Client : Object {
         var application = Application.get_default ();
         if (was_empty && updates_number != 0U) {
             string title = ngettext ("Update Available", "Updates Available", updates_number);
-            string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
+            string body = ngettext ("%u app update is available", "%u app updates are available", updates_number).printf (updates_number);
 
             var notification = new Notification (title);
             notification.set_body (body);
