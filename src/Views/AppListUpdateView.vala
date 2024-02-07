@@ -247,7 +247,7 @@ namespace AppCenter.Views {
                     client.updates_number
                 ).printf (client.updates_number);
 
-                size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
+                size_label.update (update_manager.updates_size);
             } else {
                 header_revealer.reveal_child = false;
                 updated_revealer.reveal_child = true;

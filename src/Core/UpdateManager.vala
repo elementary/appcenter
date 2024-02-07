@@ -21,7 +21,6 @@ public class AppCenterCore.UpdateManager : Object {
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
     public uint64 updates_size { get; private set; default = 0ULL; }
-    public bool has_flatpak_updates { get; private set; default = false; }
 
     construct {
         var runtime_icon = new AppStream.Icon ();
@@ -40,7 +39,6 @@ public class AppCenterCore.UpdateManager : Object {
     public async uint get_updates (Cancellable? cancellable = null) {
         var apps_with_updates = new Gee.TreeSet<Package> ();
         uint count = 0;
-        has_flatpak_updates = false;
         unpaid_apps_number = 0;
         updates_size = 0ULL;
 
@@ -70,7 +68,6 @@ public class AppCenterCore.UpdateManager : Object {
 
                 count++;
                 updates_size += appcenter_package.change_information.size;
-                has_flatpak_updates = true;
 
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
                 appcenter_package.update_state ();
@@ -95,7 +92,6 @@ public class AppCenterCore.UpdateManager : Object {
                 }
 
                 runtime_count++;
-                has_flatpak_updates = true;
 
                 runtime_desc += Markup.printf_escaped (
                     " • %s\n\t%s\n",

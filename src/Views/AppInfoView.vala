@@ -884,7 +884,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         }
 
         var size = yield package.get_download_size_including_deps ();
-        size_label.update (size, package.is_flatpak);
+        size_label.update (size);
 
         ContentType? runtime_warning = null;
         switch (package.runtime_status) {
