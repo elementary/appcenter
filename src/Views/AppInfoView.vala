@@ -185,15 +185,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             tooltip_text = _("Uninstall"),
             margin_end = 12
         };
+        uninstall_button.add_css_class ("raised");
 
         unowned var uninstall_button_context = uninstall_button.get_style_context ();
-        uninstall_button_context.add_class ("raised");
         uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         uninstall_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         uninstall_button_revealer = new Gtk.Revealer () {
             child = uninstall_button,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT,
+            overflow = VISIBLE
         };
 
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {

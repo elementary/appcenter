@@ -77,7 +77,7 @@
 
 /*Hack to make the button square-ish*/
 .banner button.image-button.raised {
-    padding: 0.333rem 0.444rem;
+    padding: 0 0.333em;
 }
 
 .banner button:not(.suggested-action) {
