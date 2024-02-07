@@ -310,8 +310,16 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 oars_flowbox.add (uncurated);
             }
 #endif
+
+#if HAS_APPSTREAM_1_0
+            var active_locale = "en-US";
+            if (package_component.get_context () != null) {
+                active_locale = package_component.get_context ().get_locale () ?? "en-US";
+            }
+#else
             var active_locale = package_component.get_active_locale ();
-            if (active_locale != "en_US") {
+#endif
+            if (active_locale != "en_US" && active_locale != "en-US") {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
                     active_locale.split ("_")[0]
@@ -492,7 +500,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             }
         }
 
+#if HAS_APPSTREAM_1_0
+        screenshots = package_component.get_screenshots_all ();
+#else
         screenshots = package_component.get_screenshots ();
+#endif
 
         if (screenshots.length > 0) {
             screenshot_carousel = new Hdy.Carousel () {
@@ -1030,7 +1042,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             get_app_download_size.begin ();
 
             Idle.add (() => {
+#if HAS_APPSTREAM_1_0
+                var releases = package.component.get_releases_plain ().get_entries ();
+#else
                 var releases = package.component.get_releases ();
+#endif
 
                 foreach (unowned var release in releases) {
                     if (release.get_version () == null) {
@@ -1049,7 +1065,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
                         release_carousel.add (release_row);
 
+#if HAS_APPSTREAM_1_0
+                        if (package.installed && AppStream.vercmp_simple (release.get_version (), package.get_version ()) <= 0) {
+#else
                         if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
+#endif
                             break;
                         }
                     }

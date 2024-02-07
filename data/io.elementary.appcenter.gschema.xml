@@ -37,7 +37,7 @@
       <description>Used to determine when AppCenter last refreshed its caches and checked for package updates</description>
     </key>
     <key type="b" name="automatic-updates">
-      <default>false</default>
+      <default>true</default>
       <summary>Automatic updates</summary>
       <description>Whether to automatically install updates to curated Flatpak apps</description>
     </key>
