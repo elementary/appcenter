@@ -250,15 +250,12 @@ namespace AppCenter.Views {
                 size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
             } else {
                 header_revealer.reveal_child = false;
-
-                if (!update_manager.restart_required) {
-                    updated_revealer.reveal_child = true;
-                    updated_label.label = _("Everything is up to date. Last checked %s.").printf (
-                        Granite.DateTime.get_relative_datetime (
-                            new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
-                        )
-                    );
-                }
+                updated_revealer.reveal_child = true;
+                updated_label.label = _("Everything is up to date. Last checked %s.").printf (
+                    Granite.DateTime.get_relative_datetime (
+                        new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
+                    )
+                );
             }
 
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);

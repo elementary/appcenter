@@ -18,19 +18,12 @@
  */
 
 public class AppCenterCore.UpdateManager : Object {
-    public bool restart_required { public get; private set; default = false; }
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
     public uint64 updates_size { get; private set; default = 0ULL; }
     public bool has_flatpak_updates { get; private set; default = false; }
 
-    private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
-
-    private File restart_file;
-
     construct {
-        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
-
         var runtime_icon = new AppStream.Icon ();
         runtime_icon.set_name ("application-vnd.flatpak");
         runtime_icon.set_kind (AppStream.IconKind.STOCK);
@@ -154,31 +147,6 @@ public class AppCenterCore.UpdateManager : Object {
 
         runtime_updates.update_state ();
         return count;
-    }
-
-    public void update_restart_state () {
-#if PACKAGEKIT_BACKEND
-        var should_restart = restart_file.query_exists () || PackageKitBackend.get_default ().is_restart_required ();
-#else
-        var should_restart = restart_file.query_exists ();
-#endif
-
-        if (should_restart) {
-            if (!restart_required) {
-                string title = _("Restart Required");
-                string body = _("Please restart your system to finalize updates");
-                var notification = new Notification (title);
-                notification.set_body (body);
-                notification.set_icon (new ThemedIcon ("system-reboot"));
-                notification.set_priority (NotificationPriority.URGENT);
-                notification.set_default_action ("app.open-application");
-                Application.get_default ().send_notification ("restart", notification);
-            }
-
-            restart_required = true;
-        } else if (restart_required) {
-            restart_required = false;
-        }
     }
 
     private static GLib.Once<UpdateManager> instance;
