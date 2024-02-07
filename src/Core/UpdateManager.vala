@@ -51,17 +51,6 @@ public class AppCenterCore.UpdateManager : Object {
             installed_package.update_state ();
         }
 
-#if PACKAGEKIT_BACKEND
-        Pk.Results pk_updates;
-        unowned PackageKitBackend client = PackageKitBackend.get_default ();
-        try {
-            pk_updates = yield client.get_updates (cancellable);
-        } catch (Error e) {
-            warning ("Unable to get updates from PackageKit backend: %s", e.message);
-            return 0;
-        }
-#endif
-
         uint runtime_count = 0;
         string runtime_desc = "";
 
