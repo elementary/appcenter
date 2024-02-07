@@ -225,9 +225,9 @@ public class AppCenterCore.UpdateManager : Object {
 
         if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
             var application = Application.get_default ();
-            if (was_empty && updates_number != 0U) {
-                string title = ngettext ("Update Available", "Updates Available", updates_number);
-                string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
+            if (count > 0) {
+                string title = ngettext ("Update Available", "Updates Available", count);
+                string body = ngettext ("%u update is available for your system", "%u updates are available for your system", count).printf (count);
 
                 var notification = new Notification (title);
                 notification.set_body (body);
@@ -240,8 +240,8 @@ public class AppCenterCore.UpdateManager : Object {
             }
 
             try {
-                yield Granite.Services.Application.set_badge (updates_number);
-                yield Granite.Services.Application.set_badge_visible (updates_number != 0);
+                yield Granite.Services.Application.set_badge (count);
+                yield Granite.Services.Application.set_badge_visible (count != 0);
             } catch (Error e) {
                 warning ("Error setting updates badge: %s", e.message);
             }

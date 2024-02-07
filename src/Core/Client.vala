@@ -35,8 +35,6 @@ public class AppCenterCore.Client : Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
-    private AsyncMutex update_notification_mutex = new AsyncMutex ();
-
     private Client () { }
 
     construct {
