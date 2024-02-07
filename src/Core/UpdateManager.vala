@@ -226,8 +226,12 @@ public class AppCenterCore.UpdateManager : Object {
         if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
             var application = Application.get_default ();
             if (count > 0) {
-                string title = ngettext ("Update Available", "Updates Available", count);
-                string body = ngettext ("%u update is available for your system", "%u updates are available for your system", count).printf (count);
+                var title = ngettext ("Update Available", "Updates Available", count);
+                var body = ngettext (
+                    "%u update is available for your system",
+                    "%u updates are available for your system",
+                    count
+                ).printf (count);
 
                 var notification = new Notification (title);
                 notification.set_body (body);
