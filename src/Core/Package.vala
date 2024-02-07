@@ -749,31 +749,6 @@ public class AppCenterCore.Package : Object {
                     }
 
                     break;
-                case AppStream.IconKind.REMOTE:
-                    var icon_scale = _icon.get_scale ();
-                    var icon_width = _icon.get_width () * icon_scale;
-                    bool is_bigger = (icon_width > current_size && current_size < pixel_size);
-                    bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
-                    if (is_bigger || has_better_dpi) {
-                        var server_file = File.new_for_uri (_icon.get_url ());
-                        var local_file = File.new_for_path (
-                            Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ())
-                        );
-
-                        // FIXME: Copy this async
-                        try {
-                            server_file.copy (local_file, FileCopyFlags.OVERWRITE, null, null);
-
-                            icon = new FileIcon (local_file);
-                            current_size = icon_width;
-                            current_scale = icon_scale;
-                        } catch (Error e) {
-                            critical ("Unable to download remote icon: %s", e.message);
-                        }
-
-                    }
-
-                    break;
 
                 case AppStream.IconKind.UNKNOWN:
                     warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
