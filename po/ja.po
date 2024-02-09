@@ -1,10 +1,10 @@
-# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2023-10-24 15:10+0000\n"
+"PO-Revision-Date: 2024-02-10 13:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -186,7 +186,7 @@ msgstr "インストールしています"
 
 #: src/Utils.vala:79
 msgid "Refreshing software list"
-msgstr "ソフトウェアリストを更新しています"
+msgstr "ソフトウェアの一覧を更新しています"
 
 #: src/Utils.vala:81
 msgid "Installing updates"
@@ -273,7 +273,7 @@ msgstr "パッケージリストを生成しています"
 
 #: src/Utils.vala:121
 msgid "Waiting for package manager lock"
-msgstr "パッケージマネージャーがロックされるのを待機しています"
+msgstr "パッケージマネージャーのロックを待機しています"
 
 #: src/Utils.vala:123
 msgid "Waiting for authentication"
@@ -629,7 +629,10 @@ msgstr "再試行"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "これは、サイドロードしたソフトウェアや、サードパーティーのソフトウェアリポジトリ、パッケージマネージャーのエラーなどに起因している可能性があります。この問題は、アップデートを明示的に再取得することで解決することがあります。"
+msgstr ""
+"これは、サイドロードしたソフトウェアや、サードパーティーのソフトウェアリポジ"
+"トリ、パッケージマネージャーのエラーなどに起因している可能性があります。この"
+"問題は、手動でアップデートを再読み込みすると解決することがあります。"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -682,7 +685,8 @@ msgstr "キュレーション対象外"
 
 #: src/Views/AppInfoView.vala:306
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr "elementary によるセキュリティー・プライバシー・システム統合の安全性確認の対象外です"
+msgstr "elementary "
+"によるセキュリティ・プライバシー・システム統合の安全性確認の対象外です"
 
 #: src/Views/AppInfoView.vala:323
 msgid "May Not Be Translated"
@@ -816,7 +820,8 @@ msgstr "サポート終了"
 
 #: src/Views/AppInfoView.vala:882
 msgid "May not work as expected or receive security updates"
-msgstr "想定通りに動作しないか、セキュリティーアップデートを受けられない可能性があります"
+msgstr "想定通りに動作しないか、セキュリティアップデートを受けられない可能性がありま"
+"す"
 
 #: src/Views/AppInfoView.vala:888
 msgid "Outdated"
@@ -1053,7 +1058,7 @@ msgstr "文書作成と言語"
 
 #: src/Views/Homepage.vala:198
 msgid "Privacy & Security"
-msgstr "プライバシーとセキュリティー"
+msgstr "プライバシーとセキュリティ"
 
 #: src/Views/Homepage.vala:471
 msgid "Fun & Games"
