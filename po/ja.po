@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 18:44+0000\n"
-"PO-Revision-Date: 2024-02-10 13:11+0000\n"
+"PO-Revision-Date: 2024-02-11 12:29+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -591,12 +591,12 @@ msgstr "このアプリをアンインストールすると、関連するデー
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr "アプリをアンインストールしますか？"
+msgstr "アプリをアンインストールしますか?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr "“%s” をアンインストールしますか？"
+msgstr "“%s” をアンインストールしますか?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:185
 msgid "Uninstall"
