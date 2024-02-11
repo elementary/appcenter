@@ -53,7 +53,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         } else {
             app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
 
-            if (package.is_os_updates || package.is_runtime_updates) {
+            if (package.is_runtime_updates) {
                 badge_image.icon_name = "system-software-update";
                 app_icon_overlay.add_overlay (badge_image);
             }
