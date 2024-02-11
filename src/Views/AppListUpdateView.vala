@@ -241,30 +241,21 @@ namespace AppCenter.Views {
                     client.updates_number
                 ).printf (client.updates_number);
 
-                size_label.update (update_manager.updates_size, update_manager.has_flatpak_updates);
+                size_label.update (update_manager.updates_size);
             } else {
                 header_revealer.reveal_child = false;
-
-                if (!update_manager.restart_required) {
-                    updated_revealer.reveal_child = true;
-                    updated_label.label = _("Everything is up to date. Last checked %s.").printf (
-                        Granite.DateTime.get_relative_datetime (
-                            new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
-                        )
-                    );
-                }
+                updated_revealer.reveal_child = true;
+                updated_label.label = _("Everything is up to date. Last checked %s.").printf (
+                    Granite.DateTime.get_relative_datetime (
+                        new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
+                    )
+                );
             }
 
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);
 
             if (!refresh_cancellable.is_cancelled ()) {
                 clear ();
-
-                var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
-                var os_updates_size = yield os_updates.get_download_size_including_deps ();
-                if (os_updates_size > 0) {
-                    updates_liststore.insert_sorted (os_updates, compare_package_func);
-                }
 
                 var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
                 var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
@@ -310,7 +301,6 @@ namespace AppCenter.Views {
             string a_package_name = "";
             if (package1 != null) {
                 a_is_driver = package1.kind == AppStream.ComponentKind.DRIVER;
-                a_is_os = package1.is_os_updates;
                 a_is_runtime = package1.is_runtime_updates;
                 a_is_updating = package1.is_updating;
                 a_package_name = package1.get_name ();
@@ -323,7 +313,6 @@ namespace AppCenter.Views {
             string b_package_name = "";
             if (package2 != null) {
                 b_is_driver = package2.kind == AppStream.ComponentKind.DRIVER;
-                b_is_os = package2.is_os_updates;
                 b_is_runtime = package2.is_runtime_updates;
                 b_is_updating = package2.is_updating;
                 b_package_name = package2.get_name ();

@@ -163,7 +163,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
     }
 
     protected void update_action () {
-        if (package == null || package.component == null || !package.is_native || package.is_os_updates || package.is_runtime_updates) {
+        if (package == null || package.component == null || !package.is_native || package.is_runtime_updates) {
             action_button.can_purchase = false;
         } else {
             var can_purchase = package.get_payments_key () != null;
@@ -191,7 +191,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
                     action_button.amount = 0;
                 }
 
-                action_button_revealer.reveal_child = !(package.is_os_updates || package.is_runtime_updates);
+                action_button_revealer.reveal_child = !package.is_runtime_updates;
                 open_button_revealer.reveal_child = false;
 
                 break;
@@ -203,10 +203,6 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
                 break;
             case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                 action_button.free_string = _("Update");
-
-                if (package.is_os_updates) {
-                    action_button.free_string = _("Download");
-                }
 
                 if (!package.should_pay) {
                     action_button.amount = 0;

@@ -17,18 +17,14 @@
 */
 
 public class AppCenter.Widgets.SizeLabel : Gtk.Box {
-    public bool using_flatpak { get; construct; }
     public uint64 size { get; construct; }
 
     private Gtk.Label size_label;
     private Gtk.Image icon;
     private Gtk.Revealer revealer;
 
-    public SizeLabel (uint64 _size = 0, bool _using_flatpak = false) {
-        Object (
-            size: _size,
-            using_flatpak: _using_flatpak
-        );
+    public SizeLabel (uint64 _size = 0) {
+        Object (size: _size);
     }
 
     construct {
@@ -54,20 +50,13 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
 
         append (revealer);
 
-        update (size, using_flatpak);
+        update (size);
     }
 
-    public void update (uint64 size = 0, bool using_flatpak = false) {
-        has_tooltip = using_flatpak;
-        icon.visible = using_flatpak;
-
+    public void update (uint64 size = 0) {
         string human_size = GLib.format_size (size);
 
-        if (using_flatpak) {
-            size_label.label = _("Up to %s").printf (human_size);
-        } else {
-            size_label.label = "%s".printf (human_size);
-        }
+        size_label.label = _("Up to %s").printf (human_size);
 
         revealer.reveal_child = size > 0;
     }

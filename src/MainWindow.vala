@@ -157,8 +157,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             child = search_entry
         };
 
-        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatic App Updates")) {
-            description = _("System updates and unpaid apps will not update automatically")
+        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatically Update Free & Purchased Apps")) {
+            description = _("Apps being tried for free will not update automatically")
         };
 
         var refresh_accellabel = new Granite.AccelLabel.from_action_name (
