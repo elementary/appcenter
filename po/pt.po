@@ -6,13 +6,14 @@
 # Joao Pinheiro <joaolopespinheiro@gmail.com>, 2024.
 # DanielDO-WML <dobindad@protonmail.com>, 2024.
 # Max <pereiraalcizmax@gmail.com>, 2024.
+# Francisco Silva <fidde_2003@hotmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-11 12:29+0000\n"
 "PO-Revision-Date: 2024-02-13 06:59+0000\n"
-"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"Last-Translator: Francisco Silva <fidde_2003@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
 "Language: pt\n"
@@ -100,7 +101,7 @@ msgstr "Definições de Rede…"
 
 #: src/MainWindow.vala:254
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "A correr em Modo de Demonstração"
 
 #: src/MainWindow.vala:255
 #, c-format
