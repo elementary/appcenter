@@ -1,6 +1,6 @@
 # Christophe Silva <Christophesilva80@gmail.com>, 2018.
 # Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>, 2018, 2019.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019, 2020, 2021, 2022.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019, 2020, 2021, 2022, 2024.
 # fabioasguerra <fabio-guerra@hotmail.com>, 2022.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Joao Pinheiro <joaolopespinheiro@gmail.com>, 2024.
@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-11 12:29+0000\n"
 "PO-Revision-Date: 2024-02-13 06:59+0000\n"
-"Last-Translator: Max <pereiraalcizmax@gmail.com>\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
 "Language: pt\n"
@@ -41,7 +41,7 @@ msgstr "Não foi possível encontrar a ligação especificada '%s'. A pesquisar,
 #: src/Application.vala:281
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
-"O Centro de aplicações vai iniciar automaticamente no arranque do "
+"O Centro de Aplicações vai iniciar automaticamente no arranque do "
 "dispositivo e permanecer em execução em segundo plano para procurar e "
 "instalar atualizações."
 
@@ -70,13 +70,13 @@ msgstr "Procurar aplicações"
 
 #: src/MainWindow.vala:176
 msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
+msgstr "Atualizar automaticamente as aplicações gratuitas e compradas"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
-msgstr "Atualizações do sistema e aplicações não pagas não serão atualizadas automaticamente"
+msgstr ""
+"As aplicações que estão a ser experimentadas gratuitamente não são "
+"atualizadas automaticamente"
 
 #: src/MainWindow.vala:181
 msgid "Check for Updates"
