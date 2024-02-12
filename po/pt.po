@@ -5,13 +5,14 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Joao Pinheiro <joaolopespinheiro@gmail.com>, 2024.
 # DanielDO-WML <dobindad@protonmail.com>, 2024.
+# Max <pereiraalcizmax@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-11 12:29+0000\n"
 "PO-Revision-Date: 2024-02-13 06:59+0000\n"
-"Last-Translator: DanielDO-WML <dobindad@protonmail.com>\n"
+"Last-Translator: Max <pereiraalcizmax@gmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
 "Language: pt\n"
@@ -149,16 +150,12 @@ msgid "Installing…"
 msgstr "A instalar…"
 
 #: src/MainWindow.vala:669
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "A instalar atualizações"
+msgstr "A instalar atualizações…"
 
 #: src/MainWindow.vala:672
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "A desinstalar"
+msgstr "A desinstalar…"
 
 #: src/MainWindow.vala:675
 msgid "Repairing…"
