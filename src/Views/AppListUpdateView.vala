@@ -127,37 +127,10 @@ namespace AppCenter.Views {
             };
             scrolled.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
-
-            var infobar = new Gtk.InfoBar () {
-                message_type = Gtk.MessageType.WARNING
-            };
-            infobar.add_child (info_label);
-
-            var restart_button = infobar.add_button (_("Restart Now"), 0);
-
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
-            action_button_group.add_widget (restart_button);
-
-            infobar.response.connect ((response) => {
-                if (response == 0) {
-                    try {
-                        SuspendControl.get_default ().reboot ();
-                    } catch (GLib.Error e) {
-                        if (!(e is IOError.CANCELLED)) {
-                            info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
-                            infobar.message_type = Gtk.MessageType.ERROR;
-                            restart_button.visible = false;
-                        }
-                    }
-                }
-            });
-
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             var main_box = new Gtk.Box (VERTICAL, 0);
-            main_box.append (infobar);
             main_box.append (updated_revealer);
             main_box.append (header_revealer);
             main_box.append (scrolled);
