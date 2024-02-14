@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2023 elementary, Inc. (https://elementary.io)
  */
 
-private class AppCenter.AuthorView : Gtk.Grid {
+private class AppCenter.AuthorView : Gtk.Box {
     public signal void show_other_package (AppCenterCore.Package package);
 
     public AppCenterCore.Package package { get; construct; }
@@ -43,24 +43,25 @@ private class AppCenter.AuthorView : Gtk.Grid {
             }
 
             var other_app = new AppCenter.Widgets.ListPackageRowGrid (author_package);
-            flowbox.add (other_app);
+            flowbox.append (other_app);
         }
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
-        box.add (header);
-        box.add (flowbox);
+        box.append (header);
+        box.append (flowbox);
 
-        var clamp = new Hdy.Clamp () {
+        var clamp = new Adw.Clamp () {
+            child = box,
             margin_top = 24,
             margin_end = 24,
             margin_bottom = 24,
             margin_start = 24,
             maximum_size = max_width
         };
-        clamp.add (box);
 
-        add (clamp);
-        get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        append (clamp);
+        add_css_class ("bottom-toolbar");
+        add_css_class (Granite.STYLE_CLASS_FLAT);
 
         flowbox.child_activated.connect ((child) => {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();

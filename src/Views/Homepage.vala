@@ -25,11 +25,10 @@ public class AppCenter.Homepage : Gtk.Box {
     private const int MAX_PACKAGES_IN_BANNER = 5;
     private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
-    private Gtk.EventControllerMotion banner_motion_controller;
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
 
-    private Hdy.Carousel banner_carousel;
+    private Adw.Carousel banner_carousel;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
@@ -37,19 +36,18 @@ public class AppCenter.Homepage : Gtk.Box {
     private uint banner_timeout_id;
 
     construct {
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        add_css_class (Granite.STYLE_CLASS_VIEW);
         hexpand = true;
         vexpand = true;
 
-        banner_carousel = new Hdy.Carousel () {
+        var banner_motion_controller = new Gtk.EventControllerMotion ();
+
+        banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
         };
+        banner_carousel.add_controller (banner_motion_controller);
 
-        banner_motion_controller = new Gtk.EventControllerMotion (banner_carousel) {
-            propagation_phase = CAPTURE
-        };
-
-        var banner_dots = new Hdy.CarouselIndicatorDots () {
+        var banner_dots = new Adw.CarouselIndicatorDots () {
             carousel = banner_carousel
         };
 
@@ -102,9 +100,9 @@ public class AppCenter.Homepage : Gtk.Box {
 
         var games_card = new GamesCard ();
 
-        category_flow.add (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        category_flow.add (new LegacyCard (_("Audio"), "appcenter-audio-symbolic", {"Audio", "Music"}, "audio"));
-        category_flow.add (new LegacyCard (_("Communication"), "", {
+        category_flow.append (new LegacyCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
+        category_flow.append (new LegacyCard (_("Audio"), "appcenter-audio-symbolic", {"Audio", "Music"}, "audio"));
+        category_flow.append (new LegacyCard (_("Communication"), "", {
             "Chat",
             "ContactManagement",
             "Email",
@@ -113,7 +111,7 @@ public class AppCenter.Homepage : Gtk.Box {
             "Telephony",
             "VideoConference"
         }, "communication"));
-        category_flow.add (new LegacyCard (_("Development"), "", {
+        category_flow.append (new LegacyCard (_("Development"), "", {
             "Database",
             "Debugger",
             "Development",
@@ -123,13 +121,13 @@ public class AppCenter.Homepage : Gtk.Box {
             "TerminalEmulator",
             "WebDevelopment"
         }, "development"));
-        category_flow.add (new LegacyCard (_("Education"), "", {"Education"}, "education"));
-        category_flow.add (new LegacyCard (_("Finance"), "appcenter-finance-symbolic", {
+        category_flow.append (new LegacyCard (_("Education"), "", {"Education"}, "education"));
+        category_flow.append (new LegacyCard (_("Finance"), "appcenter-finance-symbolic", {
             "Economy",
             "Finance"
         }, "finance"));
-        category_flow.add (games_card);
-        category_flow.add (new LegacyCard (_("Graphics"), "", {
+        category_flow.append (games_card);
+        category_flow.append (new LegacyCard (_("Graphics"), "", {
             "2DGraphics",
             "3DGraphics",
             "Graphics",
@@ -138,11 +136,11 @@ public class AppCenter.Homepage : Gtk.Box {
             "RasterGraphics",
             "VectorGraphics"
         }, "graphics"));
-        category_flow.add (new LegacyCard (_("Internet"), "applications-internet", {
+        category_flow.append (new LegacyCard (_("Internet"), "applications-internet", {
             "Network",
             "P2P"
         }, "internet"));
-        category_flow.add (new LegacyCard (_("Math, Science, & Engineering"), "", {
+        category_flow.append (new LegacyCard (_("Math, Science, & Engineering"), "", {
             "ArtificialIntelligence",
             "Astronomy",
             "Biology",
@@ -161,31 +159,31 @@ public class AppCenter.Homepage : Gtk.Box {
             "Robotics",
             "Science"
         }, "science"));
-        category_flow.add (new LegacyCard (_("Media Production"), "appcenter-multimedia-symbolic", {
+        category_flow.append (new LegacyCard (_("Media Production"), "appcenter-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
             "Recorder",
             "Sequencer"
         }, "media-production"));
-        category_flow.add (new LegacyCard (_("Office"), "appcenter-office-symbolic", {
+        category_flow.append (new LegacyCard (_("Office"), "appcenter-office-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
             "Spreadsheet",
             "WordProcessor"
         }, "office"));
-        category_flow.add (new LegacyCard (_("System"), "applications-system-symbolic", {
+        category_flow.append (new LegacyCard (_("System"), "applications-system-symbolic", {
             "Monitor",
             "System"
         }, "system"));
-        category_flow.add (new LegacyCard (_("Universal Access"), "appcenter-accessibility-symbolic", {"Accessibility"}, "accessibility"));
-        category_flow.add (new LegacyCard (_("Video"), "appcenter-video-symbolic", {
+        category_flow.append (new LegacyCard (_("Universal Access"), "appcenter-accessibility-symbolic", {"Accessibility"}, "accessibility"));
+        category_flow.append (new LegacyCard (_("Video"), "appcenter-video-symbolic", {
             "Tuner",
             "TV",
             "Video"
         }, "video"));
-        category_flow.add (new LegacyCard (_("Writing & Language"), "preferences-desktop-locale", {
+        category_flow.append (new LegacyCard (_("Writing & Language"), "preferences-desktop-locale", {
             "Dictionary",
             "Languages",
             "Literature",
@@ -195,23 +193,23 @@ public class AppCenter.Homepage : Gtk.Box {
             "Translation",
             "WordProcessor"
         }, "writing-language"));
-        category_flow.add (new LegacyCard (_("Privacy & Security"), "preferences-system-privacy", {
+        category_flow.append (new LegacyCard (_("Privacy & Security"), "preferences-system-privacy", {
             "Security",
         }, "privacy-security"));
 
         var box = new Gtk.Box (VERTICAL, 0);
-        box.add (banner_carousel);
-        box.add (banner_dots);
-        box.add (recently_updated_revealer);
-        box.add (categories_label);
-        box.add (category_flow);
+        box.append (banner_carousel);
+        box.append (banner_dots);
+        box.append (recently_updated_revealer);
+        box.append (categories_label);
+        box.append (category_flow);
 
-        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        scrolled_window = new Gtk.ScrolledWindow () {
             child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        add (scrolled_window);
+        append (scrolled_window);
 
         var local_package = App.local_package;
         if (local_package != null) {
@@ -227,7 +225,7 @@ public class AppCenter.Homepage : Gtk.Box {
             appcenter_banner = new Widgets.Banner (
                 AppCenterCore.PackageKitBackend.get_default ().lookup_package_by_id ("appcenter")
             );
-            banner_carousel.add (appcenter_banner);
+            banner_carousel.append (appcenter_banner);
 #endif
 
             banner_carousel.page_changed.connect (page_changed_handler );
@@ -241,22 +239,6 @@ public class AppCenter.Homepage : Gtk.Box {
         category_flow.child_activated.connect ((child) => {
             var card = (AbstractCategoryCard) child;
             show_category (card.category);
-        });
-
-        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
-            Idle.add (() => {
-                // Clear the cached categories when the AppStream pool is updated
-                foreach (unowned var child in category_flow.get_children ()) {
-                    var item = (AbstractCategoryCard) child;
-                    if (item.visible) {
-                        continue;
-                    }
-                    var category_components = item.category.get_components ();
-                    category_components.remove_range (0, category_components.length);
-                }
-
-                return GLib.Source.REMOVE;
-            });
         });
 
         banner_motion_controller.enter.connect (() => {
@@ -313,15 +295,14 @@ public class AppCenter.Homepage : Gtk.Box {
                     show_package (package);
                 });
 
-                banner_carousel.add (banner);
+                banner_carousel.append (banner);
             }
         }
 
-        banner_carousel.show_all ();
-        banner_carousel.switch_child (1, Granite.TRANSITION_DURATION_OPEN);
+        banner_carousel.scroll_to (banner_carousel.get_nth_page (1), true);
 
         foreach (var package in packages_by_release_date) {
-            if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
+            if (recently_updated_carousel.get_child_at_index (MAX_PACKAGES_IN_CAROUSEL - 1) != null) {
                 break;
             }
 
@@ -343,12 +324,11 @@ public class AppCenter.Homepage : Gtk.Box {
 
             if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
-                recently_updated_carousel.add (package_row);
+                recently_updated_carousel.append (package_row);
             }
         }
 
-        recently_updated_carousel.show_all ();
-        recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
+        recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
     }
 
     private void banner_timeout_start () {
@@ -368,7 +348,7 @@ public class AppCenter.Homepage : Gtk.Box {
                 new_index = 0;
             }
 
-            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+            banner_carousel.scroll_to (banner_carousel.get_nth_page (new_index), true);
 
             return Source.CONTINUE;
         });
@@ -385,7 +365,6 @@ public class AppCenter.Homepage : Gtk.Box {
         public AppStream.Category category { get; protected set; }
 
         protected Gtk.Grid content_area;
-        protected unowned Gtk.StyleContext style_context;
 
         protected static Gtk.CssProvider category_provider;
 
@@ -401,15 +380,27 @@ public class AppCenter.Homepage : Gtk.Box {
             };
 
             content_area = new Gtk.Grid ();
-            content_area.add (expanded_grid);
-
-            style_context = content_area.get_style_context ();
-            style_context.add_class (Granite.STYLE_CLASS_CARD);
-            style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
-            style_context.add_class ("category");
-            style_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            content_area.attach (expanded_grid, 0, 0);
+            content_area.add_css_class (Granite.STYLE_CLASS_CARD);
+            content_area.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+            content_area.add_css_class ("category");
+            content_area.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             child = content_area;
+
+            AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+                Idle.add (() => {
+                    // Clear the cached categories when the AppStream pool is updated
+                    if (visible) {
+                        return GLib.Source.REMOVE;
+                    }
+
+                    var category_components = category.get_components ();
+                    category_components.remove_range (0, category_components.length);
+
+                    return GLib.Source.REMOVE;
+                });
+            });
         }
     }
 
@@ -434,13 +425,13 @@ public class AppCenter.Homepage : Gtk.Box {
             };
 
             if (category.icon != "") {
-                var display_image = new Gtk.Image.from_icon_name (category.icon, Gtk.IconSize.DIALOG) {
+                var display_image = new Gtk.Image.from_icon_name (category.icon) {
                     halign = Gtk.Align.END,
                     valign = Gtk.Align.CENTER,
                     pixel_size = 48
                 };
 
-                box.add (display_image);
+                box.append (display_image);
 
                 name_label.xalign = 0;
                 name_label.halign = Gtk.Align.START;
@@ -448,10 +439,10 @@ public class AppCenter.Homepage : Gtk.Box {
                 name_label.justify = Gtk.Justification.CENTER;
             }
 
-            box.add (name_label);
+            box.append (name_label);
 
             content_area.attach (box, 0, 0);
-            style_context.add_class (style);
+            content_area.add_css_class (style);
 
             if (style == "accessibility") {
                 name_label.label = category.name.up ();
@@ -491,10 +482,8 @@ public class AppCenter.Homepage : Gtk.Box {
                 icon_name = "appcenter-games-symbolic",
                 pixel_size = 64
             };
-
-            unowned var image_context = image.get_style_context ();
-            image_context.add_class (Granite.STYLE_CLASS_ACCENT);
-            image_context.add_class ("slate");
+            image.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            image.add_css_class ("slate");
 
             var fun_label = new Gtk.Label (_("Fun &")) {
                 halign = Gtk.Align.START
@@ -506,11 +495,9 @@ public class AppCenter.Homepage : Gtk.Box {
             fun_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var games_label = new Gtk.Label (_("Games"));
-
-            unowned var games_label_context = games_label.get_style_context ();
-            games_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
-            games_label_context.add_class ("blue");
-            games_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            games_label.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            games_label.add_css_class ("blue");
+            games_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var grid = new Gtk.Grid () {
                 column_spacing = 12,
@@ -522,8 +509,7 @@ public class AppCenter.Homepage : Gtk.Box {
             grid.attach (games_label, 1, 1);
 
             content_area.attach (grid, 0, 0);
-
-            style_context.add_class ("games");
+            content_area.add_css_class ("games");
         }
     }
 }

@@ -45,7 +45,7 @@ public class UpgradeFailDialog : Granite.MessageDialog {
 
         if (package.is_flatpak) {
             var repair_button = add_button (_("Repair"), REPAIR_RESPONSE_ID);
-            repair_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            repair_button.get_style_context ().add_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         }
 
         show_error_details (error_message);

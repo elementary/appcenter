@@ -29,6 +29,7 @@
     margin: 12px;
     padding: 6px;
     color: @text_color;
+    -gtk-icon-size: 24px;
 }
 
 .arrow:active,

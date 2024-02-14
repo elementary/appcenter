@@ -46,7 +46,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             wrap = true,
             xalign = 0
         };
-        package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var grid = new Gtk.Grid () {
             column_spacing = 12,
@@ -57,14 +57,13 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         grid.attach (package_summary, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);
 
-        add (grid);
+        append (grid);
     }
 
     protected override void set_up_package () {
         package_summary.label = package.get_summary ();
 
         if (package.is_local) {
-            action_stack.no_show_all = true;
             action_stack.visible = false;
         }
 

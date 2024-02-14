@@ -718,13 +718,12 @@ public class AppCenterCore.Package : Object {
         uint current_scale = 0;
         uint pixel_size = size * scale_factor;
 
-        weak GenericArray<AppStream.Icon> icons = component.get_icons ();
-        for (int i = 0; i < icons.length; i++) {
-            weak AppStream.Icon _icon = icons[i];
+        unowned var icons = component.get_icons ();
+        foreach (unowned var _icon in icons) {
             switch (_icon.get_kind ()) {
                 case AppStream.IconKind.STOCK:
                     unowned string icon_name = _icon.get_name ();
-                    if (Gtk.IconTheme.get_default ().has_icon (icon_name)) {
+                    if (Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).has_icon (icon_name)) {
                         return new ThemedIcon (icon_name);
                     }
 
@@ -737,19 +736,6 @@ public class AppCenterCore.Package : Object {
                     bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
                     if (is_bigger || has_better_dpi) {
                         var file = File.new_for_path (_icon.get_filename ());
-                        icon = new FileIcon (file);
-                        current_size = icon_width;
-                        current_scale = icon_scale;
-                    }
-
-                    break;
-                case AppStream.IconKind.REMOTE:
-                    var icon_scale = _icon.get_scale ();
-                    var icon_width = _icon.get_width () * icon_scale;
-                    bool is_bigger = (icon_width > current_size && current_size < pixel_size);
-                    bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
-                    if (is_bigger || has_better_dpi) {
-                        var file = File.new_for_uri (_icon.get_url ());
                         icon = new FileIcon (file);
                         current_size = icon_width;
                         current_scale = icon_scale;

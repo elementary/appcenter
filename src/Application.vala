@@ -116,7 +116,7 @@ public class AppCenter.App : Gtk.Application {
     protected override void startup () {
         base.startup ();
 
-        Hdy.init ();
+        Granite.init ();
 
         var granite_settings = Granite.Settings.get_default ();
         var gtk_settings = Gtk.Settings.get_default ();
@@ -126,22 +126,6 @@ public class AppCenter.App : Gtk.Application {
         granite_settings.notify["prefers-color-scheme"].connect (() => {
             gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
         });
-
-        var provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("io/elementary/appcenter/application.css");
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
-            provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-
-        var fallback_provider = new Gtk.CssProvider ();
-        fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
-            fallback_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
-        );
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -250,13 +234,19 @@ public class AppCenter.App : Gtk.Application {
             var main_window = new MainWindow (this);
             add_window (main_window);
 
-            var window_height = App.settings.get_int ("window-height");
-            var window_width = App.settings.get_int ("window-width");
-            main_window.resize (window_width, window_height);
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            settings.bind ("window-height", main_window, "default-height", SettingsBindFlags.DEFAULT);
+            settings.bind ("window-width", main_window, "default-width", SettingsBindFlags.DEFAULT);
 
             if (settings.get_boolean ("window-maximized")) {
                 main_window.maximize ();
             }
+
+            settings.bind ("window-maximized", main_window, "maximized", SettingsBindFlags.SET);
         }
 
         if (show_updates) {
@@ -356,14 +346,9 @@ public class AppCenter.App : Gtk.Application {
                 if (error == null) {
                     if (package.get_can_launch ()) {
                         // Check if window is focused
-                        if (active_window != null) {
-                            var main_window = (MainWindow) active_window;
-                            var win = main_window.get_window ();
-                            if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
-                                main_window.send_installed_toast (package);
-
-                                break;
-                            }
+                        if (active_window != null && active_window.is_active) {
+                            ((MainWindow) active_window).send_installed_toast (package);
+                            break;
                         }
 
                         var notification = new Notification (_("The app has been installed"));
@@ -406,8 +391,9 @@ public class AppCenter.App : Gtk.Application {
                 transient_for = active_window
             };
 
-            update_fail_dialog.destroy.connect (() => {
+            update_fail_dialog.close_request.connect (() => {
                 update_fail_dialog = null;
+                return Gdk.EVENT_PROPAGATE;
             });
         }
 

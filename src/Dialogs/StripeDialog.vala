@@ -53,12 +53,12 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("payment-card") {
             pixel_size = 48,
             valign = Gtk.Align.START
         };
 
-        var overlay_image = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.LARGE_TOOLBAR) {
+        var overlay_image = new Gtk.Image.from_icon_name (Build.PROJECT_NAME) {
             halign = Gtk.Align.END,
             valign = Gtk.Align.END,
             pixel_size = 24
@@ -76,7 +76,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name)) {
             xalign = 0
         };
-        primary_label.get_style_context ().add_class ("primary");
+        primary_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         var secondary_label = new Gtk.Label (
             _("This is a one time payment suggested by the developer. You can also choose your own price.")
@@ -105,19 +105,23 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             margin_end = 3
         };
 
+        var custom_amount_controllerkey = new Gtk.EventControllerKey ();
+
         var custom_amount = new Gtk.SpinButton.with_range (0, 100, 1) {
-            activates_default = true,
             hexpand = true,
-            primary_icon_name = "currency-dollar-symbolic",
             value = amount
         };
+        custom_amount.add_controller (custom_amount_controllerkey);
+
+        var custom_image = new Gtk.Image.from_icon_name ("currency-dollar-symbolic");
+        custom_image.insert_before (custom_amount, custom_amount.get_first_child ());
 
         var selection_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        selection_box.add (custom_amount);
-        selection_box.add (or_label);
-        selection_box.add (one_dollar);
-        selection_box.add (five_dollar);
-        selection_box.add (ten_dollar);
+        selection_box.append (custom_amount);
+        selection_box.append (or_label);
+        selection_box.append (one_dollar);
+        selection_box.append (five_dollar);
+        selection_box.append (ten_dollar);
 
         Regex? email_regex = null;
         Regex? expiration_regex = null;
@@ -151,13 +155,18 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             wrap = true,
             xalign = 0
         };
-        email_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        email_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        var card_number_entry_controllerfocus = new Gtk.EventControllerFocus ();
 
         card_number_entry = new AppCenter.Widgets.CardNumberEntry () {
             activates_default = true,
             hexpand = true,
             margin_bottom = 6
         };
+        card_number_entry.add_controller (card_number_entry_controllerfocus);
+
+        var expiration_focus_controller = new Gtk.EventControllerFocus ();
 
         card_expiration_entry = new Granite.ValidatedEntry.from_regex (expiration_regex) {
             activates_default = true,
@@ -167,6 +176,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             /// TRANSLATORS: Don't change the order, only transliterate
             placeholder_text = _("MM / YY")
         };
+        card_expiration_entry.add_controller (expiration_focus_controller);
 
         card_cvc_entry = new Granite.ValidatedEntry.from_regex (cvc_regex) {
             activates_default = true,
@@ -196,7 +206,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_layout = new Gtk.Grid () {
             column_spacing = 12
         };
-        card_layout.get_style_context ().add_class ("login");
+        card_layout.add_css_class ("login");
         card_layout.attach (overlay, 0, 0, 1, 2);
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
@@ -213,19 +223,17 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
 
-        var content_area = get_content_area ();
-        content_area.add (layouts);
-        content_area.show_all ();
+        get_content_area ().append (layouts);
 
         custom_amount.grab_focus ();
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
         pay_button = (Gtk.Button) add_button (_("Pay $%d.00").printf (amount), Gtk.ResponseType.APPLY);
-        pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        pay_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         pay_button.sensitive = false;
 
-        set_default (pay_button);
+        set_default_widget (pay_button);
 
         response.connect (on_response);
 
@@ -255,6 +263,12 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             amount = 10;
         });
 
+        custom_amount_controllerkey.key_released.connect ((keyval, keycode, state) => {
+            if (keyval == Gdk.Key.Return || keyval == Gdk.Key.KP_Enter) {
+                activate_default ();
+            }
+        });
+
         email_entry.changed.connect (() => {
             if (" " in email_entry.text) {
                 email_entry.text = email_entry.text.replace (" ", "");
@@ -268,7 +282,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             is_payment_sensitive ();
         });
 
-        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
+        card_number_entry_controllerfocus.bind_property ("contains-focus", card_number_entry, "visibility");
 
         card_expiration_entry.changed.connect (() => {
             if (" " in card_expiration_entry.text) {
@@ -282,7 +296,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             is_payment_sensitive ();
         });
 
-        card_expiration_entry.focus_out_event.connect (() => {
+        expiration_focus_controller.leave.connect (() => {
             var expiration_text = card_expiration_entry.text;
             if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
                 int position = 2;
@@ -310,21 +324,19 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             var label = new Gtk.Label (_("Processing")) {
                 hexpand = true
             };
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+            label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
                 valign = Gtk.Align.CENTER,
                 vexpand = true
             };
-
-            box.add (spinner);
-            box.add (label);
+            box.append (spinner);
+            box.append (label);
 
             processing_layout = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            processing_layout.add (box);
+            processing_layout.append (box);
 
             layouts.add_named (processing_layout, "processing");
-            layouts.show_all ();
         }
 
         layouts.set_visible_child_name ("processing");
@@ -339,7 +351,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
                 wrap = true,
                 xalign = 0
             };
-            primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+            primary_label.add_css_class ("primary");
 
             secondary_error_label = new Gtk.Label (error_reason) {
                 max_width_chars = 35,
@@ -347,11 +359,11 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
                 xalign = 0
             };
 
-            var icon = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.DIALOG) {
+            var icon = new Gtk.Image.from_icon_name (Build.PROJECT_NAME) {
                 pixel_size = 48
             };
 
-            var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR) {
+            var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning") {
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.END,
                 pixel_size = 24
@@ -372,10 +384,9 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             grid.attach (secondary_error_label, 1, 1);
 
             error_layout = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            error_layout.add (grid);
+            error_layout.append (grid);
 
             layouts.add_named (error_layout, "error");
-            layouts.show_all ();
         } else {
             secondary_error_label.label = error_reason;
         }

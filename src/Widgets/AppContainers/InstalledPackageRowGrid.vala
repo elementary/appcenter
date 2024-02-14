@@ -49,19 +49,19 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             valign = Gtk.Align.START,
             xalign = 0
         };
-        app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        app_version.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        var release_button = new Gtk.Button.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+        var release_button = new Gtk.Button.from_icon_name ("dialog-information-symbolic") {
             valign = Gtk.Align.CENTER
         };
 
         release_button_revealer = new Gtk.Revealer () {
+            child = release_button,
             halign = Gtk.Align.END,
             hexpand = true,
             tooltip_text = _("Release notes"),
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        release_button_revealer.add (release_button);
 
         action_stack.hexpand = false;
 
@@ -75,11 +75,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         grid.attach (release_button_revealer, 2, 0, 1, 2);
         grid.attach (action_stack, 3, 0, 1, 2);
 
-        add (grid);
+        append (grid);
 
         release_button.clicked.connect (() => {
             var releases_dialog = new ReleaseDialog (package) {
-                transient_for = (Gtk.Window) get_toplevel ()
+                transient_for = ((Gtk.Application) Application.get_default ()).active_window
             };
             releases_dialog.present ();
         });
@@ -146,11 +146,10 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                 margin_start = 12,
                 vexpand = true
             };
-            releases_dialog_box.add (releases_title);
-            releases_dialog_box.add (release_row);
-            releases_dialog_box.show_all ();
+            releases_dialog_box.append (releases_title);
+            releases_dialog_box.append (release_row);
 
-            get_content_area ().add (releases_dialog_box);
+            get_content_area ().append (releases_dialog_box);
 
             add_button (_("Close"), Gtk.ResponseType.CLOSE);
 

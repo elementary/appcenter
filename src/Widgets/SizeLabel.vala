@@ -35,21 +35,20 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
 
         size_label = new Gtk.Label (null);
 
-        icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.BUTTON) {
+        icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic") {
             margin_start = 6
         };
 
         var box = new Gtk.Box (HORIZONTAL, 0);
-        box.add (size_label);
-        box.add (icon);
+        box.append (size_label);
+        box.append (icon);
 
         revealer = new Gtk.Revealer () {
             transition_type = SLIDE_LEFT,
             child = box
         };
 
-        add (revealer);
-        show_all ();
+        append (revealer);
 
         update (size);
     }

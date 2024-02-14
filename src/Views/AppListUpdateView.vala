@@ -46,12 +46,10 @@ namespace AppCenter.Views {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
-            var loading_view = new Granite.Widgets.AlertView (
-                _("Checking for Updates"),
-                _("Downloading a list of available updates to the OS and installed apps"),
-                "sync-synchronizing"
-            );
-            loading_view.show_all ();
+            var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
+                description = _("Downloading a list of available updates to the OS and installed apps"),
+                icon = new ThemedIcon ("sync-synchronizing")
+            };
 
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true
@@ -63,31 +61,36 @@ namespace AppCenter.Views {
             };
 
             updated_label = new Gtk.Label ("");
-            updated_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            updated_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
-                margin = 12
+                margin_top = 12,
+                margin_end = 12,
+                margin_bottom = 12,
+                margin_start = 12
             };
-            updated_box.add (new Gtk.Image.from_icon_name ("process-completed-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-            updated_box.add (updated_label);
+            updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
+            updated_box.append (updated_label);
 
-            updated_revealer = new Gtk.Revealer ();
-            updated_revealer.add (updated_box);
+            updated_revealer = new Gtk.Revealer () {
+                child = updated_box
+            };
 
             update_all_button = new Gtk.Button.with_label (_("Update All")) {
                 valign = Gtk.Align.CENTER
             };
-            update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
             var header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 16);
-            header.add (header_label);
-            header.add (size_label);
-            header.add (update_all_button);
+            header.append (header_label);
+            header.append (size_label);
+            header.append (update_all_button);
             header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            header_revealer = new Gtk.Revealer ();
-            header_revealer.add (header);
-            header_revealer.get_style_context ().add_class ("header");
+            header_revealer = new Gtk.Revealer () {
+                child = header
+            };
+            header_revealer.add_css_class ("header");
             header_revealer.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             list_box = new Gtk.ListBox () {
@@ -114,60 +117,32 @@ namespace AppCenter.Views {
             installed_flowbox.bind_model (installed_liststore, create_installed_from_package);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            box.add (list_box);
-            box.add (installed_header);
-            box.add (installed_flowbox);
+            box.append (list_box);
+            box.append (installed_header);
+            box.append (installed_flowbox);
 
-            var scrolled = new Gtk.ScrolledWindow (null, null) {
+            var scrolled = new Gtk.ScrolledWindow () {
                 child = box,
                 hscrollbar_policy = Gtk.PolicyType.NEVER
             };
             scrolled.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
-            info_label.show ();
-
-            var infobar = new Gtk.InfoBar ();
-            infobar.message_type = Gtk.MessageType.WARNING;
-            infobar.no_show_all = true;
-            infobar.get_content_area ().add (info_label);
-
-            var restart_button = infobar.add_button (_("Restart Now"), 0);
-
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
-            action_button_group.add_widget (restart_button);
-
-            infobar.response.connect ((response) => {
-                if (response == 0) {
-                    try {
-                        SuspendControl.get_default ().reboot ();
-                    } catch (GLib.Error e) {
-                        if (!(e is IOError.CANCELLED)) {
-                            info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
-                            infobar.message_type = Gtk.MessageType.ERROR;
-                            restart_button.visible = false;
-                        }
-                    }
-                }
-            });
-
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             var main_box = new Gtk.Box (VERTICAL, 0);
-            main_box.add (infobar);
-            main_box.add (updated_revealer);
-            main_box.add (header_revealer);
-            main_box.add (scrolled);
-            main_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+            main_box.append (updated_revealer);
+            main_box.append (header_revealer);
+            main_box.append (scrolled);
+            main_box.add_css_class (Granite.STYLE_CLASS_VIEW);
 
             var stack = new Gtk.Stack () {
                 transition_type = UNDER_UP
             };
-            stack.add (main_box);
-            stack.add (loading_view);
+            stack.add_child (main_box);
+            stack.add_child (loading_view);
 
-            add (stack);
+            append (stack);
 
             get_apps.begin ((obj, res) => {
                 get_apps.end (res);
@@ -180,14 +155,6 @@ namespace AppCenter.Views {
                     get_apps.begin ();
                     return GLib.Source.REMOVE;
                 });
-            });
-
-            updates_liststore.items_changed.connect (() => {
-                list_box.show_all ();
-            });
-
-            installed_liststore.items_changed.connect (() => {
-                installed_flowbox.show_all ();
             });
 
             list_box.row_activated.connect ((row) => {
@@ -373,7 +340,7 @@ namespace AppCenter.Views {
                     margin_end = 9,
                     margin_start = 9
                 };
-                header.show_all ();
+
                 row.set_header (header);
             } else {
                 row.set_header (null);
@@ -392,10 +359,13 @@ namespace AppCenter.Views {
             update_all_button.sensitive = false;
             updating_all_apps = true;
 
-            foreach (unowned var child in list_box.get_children ()) {
+            var child = list_box.get_first_child ();
+            while (child != null) {
                 if (child is Widgets.PackageRow) {
                     ((Widgets.PackageRow) child).set_action_sensitive (false);
                 }
+
+                child = child.get_next_sibling ();
             }
 
             for (int i = 0; i < updates_liststore.get_n_items (); i++) {
@@ -410,7 +380,7 @@ namespace AppCenter.Views {
                         } else {
                             var fail_dialog = new UpgradeFailDialog (package, e.message) {
                                 modal = true,
-                                transient_for = (Gtk.Window) get_toplevel ()
+                                transient_for = (Gtk.Window) get_root ()
                             };
                             fail_dialog.present ();
                             break;

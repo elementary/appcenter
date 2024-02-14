@@ -46,6 +46,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
 
         action_button_revealer = new Gtk.Revealer () {
             child = action_button,
+            overflow = Gtk.Overflow.VISIBLE,
             transition_type = SLIDE_LEFT
         };
 
@@ -63,8 +64,8 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         open_button.clicked.connect (launch_package_app);
 
         button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        button_box.add (action_button_revealer);
-        button_box.add (open_button_revealer);
+        button_box.append (action_button_revealer);
+        button_box.append (open_button_revealer);
 
         cancel_button = new ProgressButton () {
             label = _("Cancel")
@@ -84,7 +85,6 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         };
         action_stack.add_named (button_box, "buttons");
         action_stack.add_named (cancel_button, "progress");
-        action_stack.show_all ();
 
         destroy.connect (() => {
             if (state_source > 0) {
@@ -126,7 +126,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
                 var css = CSS.printf ((int) (fraction * 100));
 
                 try {
-                    provider.load_from_data (css, css.length);
+                    provider.load_from_data (css.data);
                     style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
                 } catch (Error e) {
                     critical (e.message);
@@ -268,7 +268,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
                 if (!(e is GLib.IOError.CANCELLED)) {
                     var fail_dialog = new UpgradeFailDialog (package, e.message) {
                         modal = true,
-                        transient_for = (Gtk.Window) get_toplevel ()
+                        transient_for = (Gtk.Window) get_root ()
                     };
                     fail_dialog.present ();
                 }

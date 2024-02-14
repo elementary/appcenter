@@ -28,12 +28,10 @@ public class AppCenter.SearchView : Gtk.Box {
 
     construct {
         var flathub_link = "<a href='https://flathub.org'>%s</a>".printf (_("Flathub"));
-        var alert_view = new Granite.Widgets.AlertView (
-            _("No Apps Found"),
-            _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
-            "edit-find-symbolic"
-        );
-        alert_view.show_all ();
+        var alert_view = new Granite.Placeholder (_("No Apps Found")) {
+            description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
+            icon = new ThemedIcon ("edit-find-symbolic")
+        };
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
 
@@ -45,16 +43,12 @@ public class AppCenter.SearchView : Gtk.Box {
         list_box.bind_model (list_store, create_row_from_package);
         list_box.set_placeholder (alert_view);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null) {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = list_box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        add (scrolled);
-
-        list_store.items_changed.connect (() => {
-            list_box.show_all ();
-        });
+        append (scrolled);
 
         notify["current-search-term"].connect (() => {
             if (current_search_term == null) {
