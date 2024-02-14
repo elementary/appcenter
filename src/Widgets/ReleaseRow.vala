@@ -34,13 +34,13 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         var header_label = new Gtk.Label (format_version (release.get_version ())) {
             use_markup = true
         };
-        header_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        header_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var date_label = new Gtk.Label (format_date (release.get_timestamp ())) {
             halign = Gtk.Align.START,
             hexpand = true
         };
-        date_label.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
+        date_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
             selectable = true,
@@ -48,7 +48,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             wrap = true,
             xalign = 0
         };
-        description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var grid = new Gtk.Grid () {
             column_spacing = 6,
@@ -71,7 +71,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             var issue_header = new Gtk.Label (_("Fixed Issues")) {
                 halign = Gtk.Align.START
             };
-            issue_header.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            issue_header.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             append (issue_header);
         }
