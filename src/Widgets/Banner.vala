@@ -91,9 +91,9 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         package_grid.attach (summary_label, 1, 1);
         package_grid.attach (description_label, 1, 2);
 
-        add_css_class("banner");
-        add_css_class(Granite.STYLE_CLASS_CARD);
-        add_css_class(Granite.STYLE_CLASS_ROUNDED);
+        add_css_class ("banner");
+        add_css_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.STYLE_CLASS_ROUNDED);
         get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         hexpand = true;
