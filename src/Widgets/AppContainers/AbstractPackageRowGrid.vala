@@ -39,8 +39,9 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
             pixel_size = 24
         };
 
-        app_icon_overlay = new Gtk.Overlay ();
-        app_icon_overlay.add (app_icon);
+        app_icon_overlay = new Gtk.Overlay () {
+            child = app_icon
+        };
 
         var scale_factor = get_scale_factor ();
 

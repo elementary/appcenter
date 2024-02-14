@@ -9,12 +9,12 @@ An open, pay-what-you-want app store for indie developers.
 
 You'll need the following dependencies:
 * gettext
-* libappstream-dev (>= 0.10)
-* libflatpak-dev
+* libadwaita-1-dev
+* libappstream-dev (>= 0.15.2)
+* libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
-* libgranite-dev (>=5.2.5)
-* libgtk-3-dev
-* libhandy-1-dev (>=1.3.0)
+* libgranite-7-dev (>=7.1.0)
+* libgtk-4-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev

@@ -29,7 +29,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
     }
 
     construct {
-        var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic", Gtk.IconSize.MENU);
+        var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic");
 
         var header_label = new Gtk.Label (format_version (release.get_version ())) {
             use_markup = true
@@ -40,7 +40,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             halign = Gtk.Align.START,
             hexpand = true
         };
-        date_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        date_label.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
             selectable = true,
@@ -62,7 +62,8 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
 
         orientation = Gtk.Orientation.VERTICAL;
         spacing = 6;
-        add (grid);
+
+        append (grid);
 
         var issues = release.get_issues ();
 
@@ -72,11 +73,11 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             };
             issue_header.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            add (issue_header);
+            append (issue_header);
         }
 
         foreach (unowned AppStream.Issue issue in issues) {
-            var issue_image = new Gtk.Image.from_icon_name ("bug-symbolic", Gtk.IconSize.MENU) {
+            var issue_image = new Gtk.Image.from_icon_name ("bug-symbolic") {
                 valign = Gtk.Align.START
             };
 
@@ -87,13 +88,13 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
 
             var issue_linkbutton = new Gtk.LinkButton (issue.get_url ());
             issue_linkbutton.get_child ().destroy ();
-            issue_linkbutton.add (issue_label);
+            issue_linkbutton.child = issue_label;
 
             var issue_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
-            issue_box.add (issue_image);
-            issue_box.add (issue_linkbutton);
+            issue_box.append (issue_image);
+            issue_box.append (issue_linkbutton);
 
-            add (issue_box);
+            append (issue_box);
         }
     }
 

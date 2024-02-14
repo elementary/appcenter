@@ -45,7 +45,7 @@ public class AppCenter.CategoryView : Gtk.Box {
             margin_start = 12
         };
 
-        scrolled = new Gtk.ScrolledWindow (null, null) {
+        scrolled = new Gtk.ScrolledWindow () {
             child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
@@ -57,11 +57,10 @@ public class AppCenter.CategoryView : Gtk.Box {
         spinner.start ();
 
         stack = new Gtk.Stack ();
-        stack.add (spinner);
-        stack.add (scrolled);
+        stack.add_child (spinner);
+        stack.add_child (scrolled);
 
-        add (stack);
-        show_all ();
+        append (stack);
 
         populate ();
 
@@ -84,9 +83,9 @@ public class AppCenter.CategoryView : Gtk.Box {
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            foreach (unowned var child in box.get_children ()) {
-                box.remove (child);
-            }
+            while (box.get_first_child () != null) {
+                box.remove (box.get_first_child ());
+            };
 
             recently_updated_flowbox.clear ();
             free_flowbox.clear ();
@@ -141,18 +140,17 @@ public class AppCenter.CategoryView : Gtk.Box {
             }
 
             if (recently_updated_flowbox.has_children) {
-                box.add (recently_updated_flowbox);
+                box.append (recently_updated_flowbox);
             }
 
             if (paid_flowbox.has_children) {
-                box.add (paid_flowbox);
+                box.append (paid_flowbox);
             }
 
             if (free_flowbox.has_children) {
-                box.add (free_flowbox);
+                box.append (free_flowbox);
             }
 
-            show_all ();
             stack.visible_child = scrolled;
         });
     }
@@ -182,7 +180,7 @@ public class AppCenter.CategoryView : Gtk.Box {
 
         public bool has_children {
             get {
-                return flowbox.get_child_at_index (0) != null;
+                return flowbox.get_first_child () != null;
             }
         }
 
@@ -214,9 +212,9 @@ public class AppCenter.CategoryView : Gtk.Box {
                     margin_start = 12
                 };
                 header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-                add (header);
+                append (header);
             }
-            add (flowbox);
+            append (flowbox);
 
             flowbox.child_activated.connect ((child) => {
                 var row = (Widgets.ListPackageRowGrid) child.get_child ();
@@ -228,12 +226,12 @@ public class AppCenter.CategoryView : Gtk.Box {
             var package_row = new Widgets.ListPackageRowGrid (package);
 
             size_group.add_widget (package_row);
-            flowbox.add (package_row);
+            flowbox.append (package_row);
         }
 
         public void clear () {
-            foreach (unowned var child in flowbox.get_children ()) {
-                child.destroy ();
+            while (flowbox.get_first_child () != null) {
+                flowbox.remove (flowbox.get_first_child ());
             }
         }
 

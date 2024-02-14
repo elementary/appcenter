@@ -11,7 +11,6 @@ i18n = import('i18n')
 
 add_project_arguments(
     '-DGETTEXT_PACKAGE="@0@"'.format(gettext_name),
-    '-DHANDY_USE_UNSTABLE_API',
     '-DI_KNOW_THE_PACKAGEKIT_GLIB2_API_IS_SUBJECT_TO_CHANGE',
     language:'c'
 )
@@ -23,9 +22,9 @@ glib = dependency ('glib-2.0')
 gobject = dependency ('gobject-2.0')
 gio = dependency ('gio-2.0')
 gee = dependency ('gee-0.8')
-gtk = dependency ('gtk+-3.0', version: '>=3.10')
-granite = dependency ('granite', version: '>=6.0.0')
-handy = dependency('libhandy-1', version: '>=1.4.0')
+gtk = dependency ('gtk4')
+granite = dependency ('granite-7', version: '>=7.3.0')
+adwaita = dependency('libadwaita-1')
 appstream = dependency ('appstream', version: '>=0.15.2')
 libsoup = dependency ('libsoup-3.0')
 json = dependency ('json-glib-1.0')
@@ -33,7 +32,7 @@ flatpak = dependency ('flatpak')
 xml = dependency ('libxml-2.0')
 polkit = dependency ('polkit-gobject-1')
 portal = dependency('libportal')
-portal_gtk3 = dependency('libportal-gtk3')
+portal_gtk4 = dependency('libportal-gtk4')
 posix = meson.get_compiler('vala').find_library('posix')
 
 dbus = dependency ('dbus-1')
@@ -49,13 +48,13 @@ core_deps = [
 dependencies = core_deps + [
     gtk,
     granite,
-    handy,
+    adwaita,
     appstream,
     flatpak,
     xml,
     polkit,
     portal,
-    portal_gtk3,
+    portal_gtk4,
     posix
 ]
 
