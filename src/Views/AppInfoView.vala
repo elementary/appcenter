@@ -26,8 +26,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         bool transition = true
     );
 
-    private static Gtk.CssProvider banner_provider;
-
     GenericArray<AppStream.Screenshot> screenshots;
 
     private Granite.HeaderLabel whats_new_label;
@@ -61,11 +59,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
     class construct {
         set_css_name ("appinfoview");
-    }
-
-    static construct {
-        banner_provider = new Gtk.CssProvider ();
-        banner_provider.load_from_resource ("io/elementary/appcenter/banner.css");
     }
 
     construct {
@@ -171,10 +164,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             margin_end = 12
         };
         uninstall_button.add_css_class ("raised");
-
-        unowned var uninstall_button_context = uninstall_button.get_style_context ();
-        uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        uninstall_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        uninstall_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         uninstall_button_revealer = new Gtk.Revealer () {
             child = uninstall_button,
@@ -222,25 +212,17 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         header.append (header_clamp);
 
-        unowned var header_context = header.get_style_context ();
         header.add_css_class ("banner");
-        header_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        header_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        header.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        unowned var action_button_context = action_button.get_style_context ();
         action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        action_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        unowned var open_button_context = open_button.get_style_context ();
         open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        open_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        unowned var cancel_button_context = cancel_button.get_style_context ();
         cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        cancel_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var package_component = package.component;
 
@@ -1141,8 +1123,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 wrap = true
             };
 
-            unowned var label_context = label.get_style_context ();
-            label_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            label.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             box.append (label);
         }

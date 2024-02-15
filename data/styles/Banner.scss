@@ -1,0 +1,71 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2024 elementary, Inc. (https://elementary.io)
+ */
+
+.banner {
+    background-color: #{'@banner_bg_color'};
+    background-image:
+        linear-gradient(
+            to bottom right,
+            #{'shade(@banner_bg_color, 1.05)'},
+            #{'shade(@banner_bg_color, 0.95)'}
+        );
+    color: #{'@banner_fg_color'};
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+
+    &.card {
+        border: 1px solid #{'shade(@banner_bg_color, 0.8)'};
+        box-shadow:
+            inset 0 0 0 1px #{'alpha(shade(@banner_bg_color, 1.7), 0.05)'},
+            inset 0 1px 0 0 #{'alpha(shade(@banner_bg_color, 1.7), 0.45)'},
+            inset 0 -1px 0 0 #{'alpha(shade(@banner_bg_color, 1.7), 0.15)'},
+            0 3px 2px -1px #{'alpha(shade(@banner_bg_color, 0.5), 0.2)'},
+            0 3px 5px #{'alpha(shade(@banner_bg_color, 0.5), 0.15)'};
+        margin: rem(24px);
+
+        &:hover {
+            box-shadow:
+                inset 0 0 0 1px #{'alpha(shade(@banner_bg_color, 1.7), 0.05)'},
+                inset 0 1px 0 0 #{'alpha(shade(@banner_bg_color, 1.7), 0.45)'},
+                inset 0 -1px 0 0 #{'alpha(shade(@banner_bg_color, 1.7), 0.15)'},
+                0 10px 8px -11px #{'alpha(shade(@banner_bg_color, 0.6), 0.8)'},
+                0 8px 12px #{'alpha(shade(@banner_bg_color, 0.8), 0.6)'};
+        }
+    }
+
+    button {
+        background-color: #{'@banner_fg_color'};
+        background-image: none;
+        border: none;
+        box-shadow: none;
+        color: #{'@banner_bg_color'};
+        font-size: 11pt;
+        font-weight: 600;
+
+        /*Hack to make the button square-ish*/
+        &.image-button.raised {
+            padding: 0 0.333em;
+        }
+
+        &:active,
+        &:checked {
+            opacity: 0.9;
+        }
+
+        &:disabled {
+            opacity: 0.33;
+        }
+
+        &:not(.suggested-action) {
+            opacity: 0.8;
+        }
+
+        label,
+        image {
+            color: inherit;
+            font-weight: inherit;
+        }
+    }
+}
