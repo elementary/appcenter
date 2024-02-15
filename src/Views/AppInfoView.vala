@@ -31,8 +31,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
     GenericArray<AppStream.Screenshot> screenshots;
 
-    private GLib.ListStore origin_listmodel;
-
+    private GLib.ListStore origin_liststore;
     private Granite.HeaderLabel whats_new_label;
     private Gtk.CssProvider accent_provider;
     private Gtk.DropDown origin_dropdown;
@@ -165,13 +164,13 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         app_subtitle.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
         app_subtitle.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        origin_listmodel = new GLib.ListStore (typeof (AppCenterCore.Package));
+        origin_liststore = new GLib.ListStore (typeof (AppCenterCore.Package));
 
         var list_factory = new Gtk.SignalListItemFactory ();
         list_factory.setup.connect (origin_setup_factory);
         list_factory.bind.connect (origin_bind_factory);
 
-        origin_dropdown = new Gtk.DropDown (origin_listmodel, null) {
+        origin_dropdown = new Gtk.DropDown (origin_liststore, null) {
             halign = START,
             valign = CENTER,
             factory = list_factory
@@ -969,7 +968,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
         uint count = 0;
         foreach (var origin_package in package.origin_packages) {
-            origin_listmodel.append (origin_package);
+            origin_liststore.append (origin_package);
             if (origin_package == package) {
                 origin_dropdown.selected = count;
             }
