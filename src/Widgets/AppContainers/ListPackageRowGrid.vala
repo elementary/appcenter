@@ -34,7 +34,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             wrap = true,
             xalign = 0
         };
-        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        package_name.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         package_summary = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
@@ -46,7 +46,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             wrap = true,
             xalign = 0
         };
-        package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
+        package_summary.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var grid = new Gtk.Grid () {
             column_spacing = 12,

@@ -47,7 +47,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             wrap = true,
             xalign = 0
         };
-        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+        name_label.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
         var summary_label = new Gtk.Label (package.get_summary ()) {
             max_width_chars = 50,
@@ -55,7 +55,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             wrap = true,
             xalign = 0
         };
-        summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        summary_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         string description = "";
         if (package.get_description () != null) {
@@ -91,11 +91,10 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         package_grid.attach (summary_label, 1, 1);
         package_grid.attach (description_label, 1, 2);
 
-        unowned var style_context = get_style_context ();
-        style_context.add_class ("banner");
-        style_context.add_class (Granite.STYLE_CLASS_CARD);
-        style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
-        style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        add_css_class ("banner");
+        add_css_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.STYLE_CLASS_ROUNDED);
+        get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         hexpand = true;
         child = package_grid;
@@ -119,7 +118,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
             provider.load_from_data (colored_css.data);
-            style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
         }

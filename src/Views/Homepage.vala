@@ -488,11 +488,9 @@ public class AppCenter.Homepage : Gtk.Box {
             var fun_label = new Gtk.Label (_("Fun &")) {
                 halign = Gtk.Align.START
             };
-
-            unowned var fun_label_context = fun_label.get_style_context ();
-            fun_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
-            fun_label_context.add_class ("pink");
-            fun_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            fun_label.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            fun_label.add_css_class ("pink");
+            fun_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var games_label = new Gtk.Label (_("Games"));
             games_label.add_css_class (Granite.STYLE_CLASS_ACCENT);
