@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/elementary/appcenter">
-    <file alias="Application.css" compressed="true">styles/application.css</file>
-    <file alias="AppInfoView.css" compressed="true">styles/AppInfoView.css</file>
     <file alias="AppListUpdateView.css" compressed="true">styles/AppListUpdateView.css</file>
-    <file alias="arrow.css" compressed="true">styles/arrow.css</file>
     <file alias="badge.css" compressed="true">styles/badge.css</file>
     <file alias="banner.css" compressed="true">styles/banner.css</file>
     <file alias="categories.css" compressed="true">styles/categories.css</file>
-    <file alias="loading.css" compressed="true">styles/loading.css</file>
     <file alias="ProgressButton.css" compressed="true">styles/ProgressButton.css</file>
   </gresource>
 </gresources>

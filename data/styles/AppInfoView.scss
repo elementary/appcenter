@@ -1,0 +1,103 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2023 elementary, Inc. (https://elementary.io)
+ */
+
+appinfoview {
+    .banner {
+        clamp > box {
+            margin: rem(12px);
+
+            &:dir(ltr) {
+                margin-left: calc(#{rem(12px)} - 12px); /*Offset space inside icon*/;
+            }
+
+            &:dir(rtl) {
+                margin-right: calc(#{rem(12px)} - 12px); /*Offset space inside icon*/;
+            }
+        }
+
+        combobox {
+            margin-top: rem(12px);
+        }
+    }
+
+    .content-warning-box {
+        margin: rem(12px) rem(12px) 0;
+    }
+
+    .screenshot {
+        background: #{'@selected_bg_color'};
+        border-radius: rem(6px);
+        color: #{'@selected_fg_color'};
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: rem(12px);
+        padding: rem(12px);
+    }
+
+    .content-box {
+        margin: 0 rem(12px);
+
+        > label {
+            font-size: 1.25em;
+        }
+
+        .h4 {
+            font-size: 1.5rem;
+            opacity: 1;
+            padding-bottom: 0;
+        }
+    }
+
+    .loading {
+        animation: loading 1.5s ease-in infinite;
+        background-image: linear-gradient(
+            to right,
+            #{'@bg_color'} 20%,
+            #{'@base_color'},
+            #{'@bg_color'} 80%
+        );
+    }
+
+    button.arrow {
+        background: #{'@base_color'};
+        border: none;
+        box-shadow:
+            outset-highlight("full"),
+            0 0 0 1px #{'@borders'},
+            0 3px 4px rgba(black, 0.15),
+            0 3px 3px -3px rgba(black, 0.35);
+        margin: 12px;
+        padding: 6px;
+        color: #{'@text_color'};
+        -gtk-icon-size: 24px;
+
+        &:active,
+        &:disabled {
+            background-color: #{'@insensitive_bg_color'};
+            box-shadow:
+                outset-highlight("full"),
+                0 0 0 1px #{'@borders'},
+                0 1px 1px rgba(black, 0.07),
+                0 1px 2px rgba(black, 0.08);
+        }
+    }
+
+    release {
+        background: #{'@selected_bg_color'};
+        border-radius: rem(6px);
+        margin: rem(6px) rem(12px) rem(12px) rem(12px);
+        padding: rem(12px);
+    }
+}
+
+@keyframes loading {
+    from {
+        background-position: -600px center;
+    }
+
+    to {
+        background-position: 600px center;
+    }
+}

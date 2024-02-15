@@ -65,20 +65,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     }
 
     static construct {
-        var appinfoview_provider = new Gtk.CssProvider ();
-        appinfoview_provider.load_from_resource ("io/elementary/appcenter/AppInfoView.css");
-
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            appinfoview_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-
         banner_provider = new Gtk.CssProvider ();
         banner_provider.load_from_resource ("io/elementary/appcenter/banner.css");
-
-        loading_provider = new Gtk.CssProvider ();
-        loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
     }
 
     construct {
@@ -609,7 +597,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             screenshot_stack.add_child (screenshot_not_found_clamp);
 
             screenshot_stack.add_css_class ("loading");
-            screenshot_stack.get_style_context ().add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         app_description = new Gtk.Label (null) {
@@ -1329,11 +1316,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             Object (icon_name: icon_name);
         }
 
-        static construct {
-            arrow_provider = new Gtk.CssProvider ();
-            arrow_provider.load_from_resource ("io/elementary/appcenter/arrow.css");
-        }
-
         construct {
             hexpand = true;
             vexpand = true;
@@ -1342,8 +1324,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             add_css_class (Granite.STYLE_CLASS_FLAT);
             add_css_class (Granite.STYLE_CLASS_CIRCULAR);
             add_css_class ("arrow");
-
-            get_style_context ().add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
     }
 

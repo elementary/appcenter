@@ -83,3 +83,5 @@ icons_gresource = gnome.compile_resources(
     'icons/categories.gresource.xml',
     source_dir: 'icons'
 )
+
+subdir('styles')
