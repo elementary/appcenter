@@ -211,7 +211,7 @@ public class AppCenter.CategoryView : Gtk.Box {
                 var header = new Granite.HeaderLabel (label) {
                     margin_start = 12
                 };
-                header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+                header.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
                 append (header);
             }
             append (flowbox);

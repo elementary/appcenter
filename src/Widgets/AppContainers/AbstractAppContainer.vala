@@ -116,9 +116,8 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         }
 
         construct {
-            unowned var style_context = get_style_context ();
-            style_context.add_class ("progress-button");
-            style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            add_css_class ("progress-button");
+            get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var provider = new Gtk.CssProvider ();
 
@@ -127,7 +126,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
 
                 try {
                     provider.load_from_data (css.data);
-                    style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
                 } catch (Error e) {
                     critical (e.message);
                 }
