@@ -34,38 +34,4 @@
                 0 8px 12px #{'alpha(shade(@banner_bg_color, 0.8), 0.6)'};
         }
     }
-
-    button {
-        background-color: #{'@banner_fg_color'};
-        background-image: none;
-        border: none;
-        box-shadow: none;
-        color: #{'@banner_bg_color'};
-        font-size: 11pt;
-        font-weight: 600;
-
-        /*Hack to make the button square-ish*/
-        &.image-button.raised {
-            padding: 0 0.333em;
-        }
-
-        &:active,
-        &:checked {
-            opacity: 0.9;
-        }
-
-        &:disabled {
-            opacity: 0.33;
-        }
-
-        &:not(.suggested-action) {
-            opacity: 0.8;
-        }
-
-        label,
-        image {
-            color: inherit;
-            font-weight: inherit;
-        }
-    }
 }
