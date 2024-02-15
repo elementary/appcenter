@@ -268,8 +268,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        client.notify["updates-number"].connect (() => {
-            show_update_badge (client.updates_number);
+        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+        update_manager.notify["updates-number"].connect (() => {
+            show_update_badge (update_manager.updates_number);
         });
 
         var network_monitor = NetworkMonitor.get_default ();
