@@ -19,7 +19,7 @@
 *              Atheesh Thirumalairajan <candiedoperation@icloud.com>
 */
 
-public class AppCenter.SearchView : Gtk.Box {
+public class AppCenter.SearchView : Adw.NavigationPage {
     public signal void show_app (AppCenterCore.Package package);
 
     public string? current_search_term { get; set; default = null; }
@@ -48,7 +48,9 @@ public class AppCenter.SearchView : Gtk.Box {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        append (scrolled);
+        child = scrolled;
+        /// TRANSLATORS: the name of the Search view
+        title = C_("view", "Search");
 
         notify["current-search-term"].connect (() => {
             if (current_search_term == null) {

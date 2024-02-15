@@ -18,7 +18,7 @@
 *              Dane Henson <thegreatdane@gmail.com>
 */
 
-public class AppCenter.Homepage : Gtk.Box {
+public class AppCenter.Homepage : Adw.NavigationPage {
     public signal void show_package (AppCenterCore.Package package);
     public signal void show_category (AppStream.Category category);
 
@@ -209,7 +209,8 @@ public class AppCenter.Homepage : Gtk.Box {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        append (scrolled_window);
+        child = scrolled_window;
+        title = _("Home");
 
         var local_package = App.local_package;
         if (local_package != null) {

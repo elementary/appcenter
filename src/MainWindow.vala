@@ -435,17 +435,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (previous_child == null) {
             set_return_name (null);
-        } else if (previous_child is Homepage) {
-            set_return_name (_("Home"));
-        } else if (previous_child == search_view) {
-            /// TRANSLATORS: the name of the Search view
-            set_return_name (C_("view", "Search"));
+        } else if (previous_child is Adw.NavigationPage) {
+            set_return_name (previous_child.title);
         } else if (previous_child is Views.AppInfoView) {
             set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
-        } else if (previous_child is CategoryView) {
-            set_return_name (((CategoryView) previous_child).category.name);
-        } else if (previous_child is Views.AppListUpdateView) {
-            set_return_name (C_("view", "Installed"));
         }
 
         while (leaflet.get_adjacent_child (FORWARD) != null) {
