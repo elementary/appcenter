@@ -374,7 +374,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         if (pk_child != null) {
-            pk_child.view_entered ();
             leaflet.visible_child = pk_child;
             return;
         }

@@ -13,7 +13,7 @@ appinfoview:dir(rtl) .banner clamp > box {
     margin-right: calc(1.333rem - 12px); /*Offset space inside icon*/;
 }
 
-appinfoview .banner combobox {
+appinfoview .banner dropdown {
     margin-top: 1.333rem; /*12px*/;
 }
 
