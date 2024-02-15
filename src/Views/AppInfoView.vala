@@ -27,7 +27,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     );
 
     private static Gtk.CssProvider banner_provider;
-    private static Gtk.CssProvider loading_provider;
 
     GenericArray<AppStream.Screenshot> screenshots;
 
@@ -1310,8 +1309,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     }
 
     private class ArrowButton : Gtk.Button {
-        private static Gtk.CssProvider arrow_provider;
-
         public ArrowButton (string icon_name) {
             Object (icon_name: icon_name);
         }

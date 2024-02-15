@@ -1,0 +1,54 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
+ */
+
+.titlebar {
+    padding-bottom: rem(3px);
+    padding-top: rem(3px);
+}
+
+.badge {
+    font-size: 0.75em;
+    margin: rem(3px);
+    min-height: rem(14px);
+    min-width: rem(14px);
+
+    &:dir(ltr) {
+        margin-right: 0;
+    }
+
+    &:dir(rtl) {
+        margin-left: 0;
+    }
+}
+
+.header > box {
+    background: #{'@base_color'};
+    padding: 1rem;
+}
+
+.header + scrolledwindow {
+    overshoot.top {
+        background:
+            linear-gradient(
+                to top,
+                #{'alpha(@accent_color, 0)'} 80%,
+                #{'alpha(@accent_color, 0.25)'} 100%
+            ),
+            linear-gradient(
+                #{'@borders'},
+                rgba(black, 0.05) 1px,
+                rgba(black, 0.0) rem(3px)
+            );
+    }
+
+    undershoot.top {
+        background:
+            linear-gradient(
+                #{'@borders'},
+                rgba(black, 0.05) 1px,
+                rgba(black, 0.0) rem(3px)
+            );
+    }
+}

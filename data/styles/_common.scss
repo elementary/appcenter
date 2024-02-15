@@ -1,3 +1,8 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
+ */
+
 @function rem($pixels, $text-size: 9pt) {
     @if (unitless($pixels)) {
         $pixels: $pixels * 1px;
@@ -8,9 +13,11 @@
     }
 
     @if ($pixels > 0) {
-        @return ($pixels / $text-size * 1rem);
+        // Workaround GTK clamping instead of rounding up
+        @return ($pixels / $text-size * 1rem) + 0.000000001rem;
     } @else {
-        @return ($pixels / $text-size * 1rem);
+        // Workaround GTK clamping instead of rounding up
+        @return ($pixels / $text-size * 1rem) - 0.000000001rem;
     }
 }
 
@@ -32,9 +39,4 @@
     }
 
     @return $highlight;
-}
-
-.titlebar {
-    padding-bottom: rem(3px);
-    padding-top: rem(3px);
 }

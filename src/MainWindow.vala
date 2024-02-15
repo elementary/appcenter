@@ -115,13 +115,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var updates_button = new Gtk.Button.from_icon_name ("software-update-available");
         updates_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        var badge_provider = new Gtk.CssProvider ();
-        badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
-
         updates_badge = new Gtk.Label ("!");
-
         updates_badge.add_css_class (Granite.STYLE_CLASS_BADGE);
-        updates_badge.get_style_context ().add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         updates_badge_revealer = new Gtk.Revealer () {
             can_target = false,
