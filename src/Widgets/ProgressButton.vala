@@ -4,7 +4,8 @@
  */
 
 public class AppCenter.ProgressButton : Gtk.Button {
-    public double fraction { get; set; }
+    public AppCenterCore.Package package { get; construct; }
+    public double fraction { get; set; default = 0.0; }
 
     // 2px spacing on each side; otherwise it looks weird with button borders
     private const string CSS = """
@@ -14,10 +15,8 @@ public class AppCenter.ProgressButton : Gtk.Button {
     """;
     private static Gtk.CssProvider style_provider;
 
-    public ProgressButton (double fraction = 0.0) {
-        Object (
-            fraction: fraction
-        );
+    public ProgressButton (AppCenterCore.Package package) {
+        Object (package: package);
     }
 
     static construct {
@@ -31,6 +30,12 @@ public class AppCenter.ProgressButton : Gtk.Button {
 
         var provider = new Gtk.CssProvider ();
 
+        package.change_information.progress_changed.connect (update_progress);
+        package.change_information.status_changed.connect (update_progress_status);
+
+        update_progress_status ();
+        update_progress ();
+
         notify["fraction"].connect (() => {
             var css = CSS.printf ((int) (fraction * 100));
 
@@ -40,6 +45,26 @@ public class AppCenter.ProgressButton : Gtk.Button {
             } catch (Error e) {
                 critical (e.message);
             }
+        });
+    }
+
+    private void update_progress () {
+        Idle.add (() => {
+            fraction = package.progress;
+            return GLib.Source.REMOVE;
+        });
+    }
+
+    private void update_progress_status () {
+        Idle.add (() => {
+            tooltip_text = package.get_progress_description ();
+            sensitive = package.change_information.can_cancel && !package.changes_finished;
+            /* Ensure progress bar shows complete to match status (lp:1606902) */
+            if (package.changes_finished) {
+                fraction = 1.0f;
+            }
+
+            return GLib.Source.REMOVE;
         });
     }
 }
