@@ -120,9 +120,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         updates_badge = new Gtk.Label ("!");
 
-        unowned var badge_context = updates_badge.get_style_context ();
-        badge_context.add_class (Granite.STYLE_CLASS_BADGE);
-        badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        updates_badge.add_css_class (Granite.STYLE_CLASS_BADGE);
+        updates_badge.get_style_context ().add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         updates_badge_revealer = new Gtk.Revealer () {
             can_target = false,
