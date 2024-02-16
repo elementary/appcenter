@@ -67,9 +67,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         button_box.append (action_button_revealer);
         button_box.append (open_button_revealer);
 
-        cancel_button = new ProgressButton (package) {
-            label = _("Cancel")
-        };
+        cancel_button = new ProgressButton (package);
         cancel_button.clicked.connect (() => action_cancelled ());
 
         action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
