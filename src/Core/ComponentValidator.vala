@@ -18,35 +18,9 @@
  */
 
 public class AppCenterCore.ComponentValidator : Object {
-    private Gee.HashSet<string> hidden_app_list;
-
     private static GLib.Once<ComponentValidator> instance;
     public static unowned ComponentValidator get_default () {
         return instance.once (() => { return new ComponentValidator (); });
-    }
-
-    construct {
-        hidden_app_list = new Gee.HashSet<string> ();
-
-        string hidden_app_list_path = Path.build_filename (Path.DIR_SEPARATOR_S, Build.CONFIGDIR, Build.HIDDEN_APP_LIST);
-        var file = GLib.File.new_for_path (hidden_app_list_path);
-        if (!file.query_exists ()) {
-            hidden_app_list_path = hidden_app_list_path.replace (".hiddenapps", ".blacklist");
-            file = GLib.File.new_for_path (hidden_app_list_path);
-            if (file.query_exists ()) {
-                critical ("Using .blacklist files is deprecated and will be removed in next version, please use .hiddenapps instead");
-            } else {
-                return;
-            }
-        }
-
-        try {
-            string contents;
-            FileUtils.get_contents (hidden_app_list_path, out contents);
-            parse_and_populate (contents);
-        } catch (FileError e) {
-            warning ("Could not get the contents of hidden app list file: %s", e.message);
-        }
     }
 
     private ComponentValidator () {
@@ -62,23 +36,6 @@ public class AppCenterCore.ComponentValidator : Object {
             return false;
         }
 
-        if (component.get_id () in hidden_app_list) {
-            return false;
-        }
-
         return true;
-    }
-
-    private void parse_and_populate (string contents) {
-        foreach (string line in contents.split ("\n")) {
-            if (line.has_prefix ("#")) {
-                continue;
-            }
-
-            string token = line.strip ();
-            if (token != "") {
-                hidden_app_list.add (token);
-            }
-        }
     }
 }
