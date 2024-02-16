@@ -6,8 +6,6 @@
 public class AppCenter.ProgressButton : Gtk.Button {
     public AppCenterCore.Package package { get; construct; }
 
-    private static Gtk.CssProvider style_provider;
-
     private Gtk.ProgressBar progressbar;
 
     public ProgressButton (AppCenterCore.Package package) {
@@ -15,7 +13,7 @@ public class AppCenter.ProgressButton : Gtk.Button {
     }
 
     static construct {
-        style_provider = new Gtk.CssProvider ();
+        var style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("io/elementary/appcenter/ProgressButton.css");
 
         Gtk.StyleContext.add_provider_for_display (
@@ -27,8 +25,6 @@ public class AppCenter.ProgressButton : Gtk.Button {
 
     construct {
         add_css_class ("progress");
-
-        var provider = new Gtk.CssProvider ();
 
         package.change_information.progress_changed.connect (update_progress);
         package.change_information.status_changed.connect (update_progress_status);
