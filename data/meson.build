@@ -72,12 +72,6 @@ install_data(
     install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
-# Use GResource
-css_gresource = gnome.compile_resources(
-    'gresource_css',
-    meson.project_name() + '.gresource.xml'
-)
-
 icons_gresource = gnome.compile_resources(
     'gresource_icons',
     'icons/categories.gresource.xml',

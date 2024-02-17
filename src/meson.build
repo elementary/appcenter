@@ -106,7 +106,6 @@ executable(
     appcenter_files,
     config_file,
     css_gresource,
-    stylesheet_resource,
     icons_gresource,
     dependencies: dependencies,
     vala_args: args,

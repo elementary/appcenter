@@ -14,8 +14,8 @@ stylesheet_deps = custom_target(
     ]
 )
 
-stylesheet_resource = gnome.compile_resources(
-    'styles-resource',
+css_gresource = gnome.compile_resources(
+    'css-gresource',
     'styles.gresource.xml',
     source_dir: [
         meson.current_build_dir(),
