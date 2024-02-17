@@ -41,5 +41,10 @@
       <summary>Automatic updates</summary>
       <description>Whether to automatically install updates to curated Flatpak apps</description>
     </key>
+    <key type="b" name="show-third-party">
+      <default>false</default>
+      <summary>Show non-curated apps</summary>
+      <description>Shows non-curated apps (e.g. from Flathub) on the homepage or in searches.</description>
+    </key>
   </schema>
 </schemalist>

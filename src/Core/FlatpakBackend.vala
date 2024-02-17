@@ -349,6 +349,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Gee.Collection<Package> get_featured_packages_by_release_date () {
         var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
+        var showThirdPartyApps = AppCenter.App.settings.get_boolean ("show-third-party");
 
         foreach (var package in package_list.values) {
             if (!package.is_explicit && package.kind != AppStream.ComponentKind.ADDON) {
@@ -357,7 +358,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     apps.add (package);
                 }
 #else
-                apps.add (package);
+                if (showThirdPartyApps || package.is_native) {
+                    apps.add (package);
+                }
 #endif
             }
         }
@@ -409,16 +412,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 #endif
         components = category.get_components ();
 
+        var showThirdPartyApps = AppCenter.App.settings.get_boolean ("show-third-party");
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
             var packages = get_packages_for_component_id (comp.get_id ());
-            apps.add_all (packages);
+            foreach (var package in packages) {
+                if (showThirdPartyApps || package.is_native) {
+                    apps.add(package);
+                }
+            }
         });
 
         return apps;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
+        var showThirdPartyApps = AppCenter.App.settings.get_boolean ("show-third-party");
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = user_appstream_pool.search (query);
         if (category == null) {
@@ -428,7 +437,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             comps.foreach ((comp) => {
 #endif
                 var packages = get_packages_for_component_id (comp.get_id ());
-                apps.add_all (packages);
+                foreach (var package in packages) {
+                    if (showThirdPartyApps || package.is_native) {
+                        apps.add (package);
+                    }
+                }
             });
         } else {
             var cat_packages = get_applications_for_category (category);
@@ -440,7 +453,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
-                        apps.add (package);
+                        if (showThirdPartyApps || package.is_native) {
+                            apps.add (package);
+                        }
                     }
                 }
             });
@@ -454,7 +469,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             comps.foreach ((comp) => {
 #endif
                 var packages = get_packages_for_component_id (comp.get_id ());
-                apps.add_all (packages);
+                foreach (var package in packages) {
+                    if (showThirdPartyApps || package.is_native) {
+                        apps.add (package);
+                    }
+                }
             });
         } else {
             var cat_packages = get_applications_for_category (category);
@@ -465,7 +484,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 #endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
-                    if (package in cat_packages) {
+                    if (package in cat_packages && (showThirdPartyApps || package.is_native)) {
                         apps.add (package);
                     }
                 }

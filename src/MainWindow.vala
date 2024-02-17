@@ -160,6 +160,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             description = _("Apps being tried for free will not update automatically")
         };
 
+        var show_third_party_apps_button = new Granite.SwitchModelButton (_("Show Third-Party Apps"));
+
         var refresh_accellabel = new Granite.AccelLabel.from_action_name (
             _("Check for Updates"),
             "app.refresh"
@@ -173,6 +175,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         menu_popover_box.append (automatic_updates_button);
+        menu_popover_box.append (show_third_party_apps_button);
         menu_popover_box.append (refresh_menuitem);
 
         var menu_popover = new Gtk.Popover () {
@@ -259,12 +262,27 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             SettingsBindFlags.DEFAULT
         );
 
+        App.settings.bind (
+            "show-third-party",
+            show_third_party_apps_button,
+            "active",
+            SettingsBindFlags.DEFAULT
+        );
+
         var client = AppCenterCore.Client.get_default ();
         automatic_updates_button.notify["active"].connect (() => {
             if (automatic_updates_button.active) {
                 client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
             } else {
                 client.cancel_updates (true);
+            }
+        });
+
+        show_third_party_apps_button.notify["active"].connect (() => {
+            if (leaflet.visible_child == search_view) {
+                Idle.add (() => {
+                    trigger_search ();
+                });
             }
         });
 
