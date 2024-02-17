@@ -14,7 +14,7 @@ You'll need the following dependencies:
 * libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
 * libgranite-7-dev (>=7.1.0)
-* libgtk-4-dev
+* libgtk-4-dev (>=4.10)
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev
