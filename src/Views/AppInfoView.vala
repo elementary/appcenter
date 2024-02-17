@@ -1242,7 +1242,10 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 append (button);
 
                 button.clicked.connect (() => {
-                    Gtk.show_uri ((Gtk.Window) get_root (), uri, Gdk.CURRENT_TIME);
+                    new Gtk.UriLauncher (uri).launch.begin (
+                        (Gtk.Window) get_root (),
+                        null
+                    );
                 });
             } else {
                 append (box);

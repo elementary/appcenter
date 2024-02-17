@@ -271,11 +271,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         network_monitor.bind_property ("network-available", network_info_bar, "revealed", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
 
         network_info_bar.response.connect (() => {
-            try {
-                Gtk.show_uri (this, "settings://network", Gdk.CURRENT_TIME);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
+            new Gtk.UriLauncher ("settings://network").launch.begin (this, null);
         });
 
         updates_button.clicked.connect (() => {
