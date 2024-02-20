@@ -6,13 +6,14 @@
 # Marcin Serwin <marcin.serwin0@protonmail.com>, 2021, 2022, 2023, 2024.
 # DarkKnightComes <darkknightcomes@gmail.com>, 2021.
 # Janek Pastuszka <windainspektor@gmail.com>, 2021.
+# Sebastian Bernat <srakap330@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-15 18:07+0000\n"
 "PO-Revision-Date: 2024-02-20 11:08+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: Sebastian Bernat <srakap330@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -71,10 +72,9 @@ msgid "Automatically Update Free & Purchased Apps"
 msgstr "Automatycznie aktualizuj darmowe i zakupione aplikacje"
 
 #: src/MainWindow.vala:160
-#, fuzzy
-#| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
-msgstr "System oraz nieopłacone aplikacje nie będą automatycznie aktualizowane"
+msgstr ""
+"aplikacje, które są aktualnie testowane nie będą automatycznie aktualizowane"
 
 #: src/MainWindow.vala:164
 msgid "Check for Updates"
