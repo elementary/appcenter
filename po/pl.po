@@ -3,7 +3,7 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Deleted User <noreply+917@weblate.org>, 2019.
 # Oskar Rygasiewicz <fleepgames@gmail.com>, 2021, 2022.
-# Marcin Serwin <marcin.serwin0@protonmail.com>, 2021, 2022, 2023.
+# Marcin Serwin <marcin.serwin0@protonmail.com>, 2021, 2022, 2023, 2024.
 # DarkKnightComes <darkknightcomes@gmail.com>, 2021.
 # Janek Pastuszka <windainspektor@gmail.com>, 2021.
 msgid ""
@@ -11,14 +11,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-15 18:07+0000\n"
-"PO-Revision-Date: 2023-10-24 15:10+0000\n"
+"PO-Revision-Date: 2024-02-20 11:08+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
-"Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
+"Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -65,10 +67,8 @@ msgid "Search Apps"
 msgstr "Wyszukaj program"
 
 #: src/MainWindow.vala:159
-#, fuzzy
-#| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Automatycznie aktualizuj darmowe i opłacone niewyselekcjonowane aplikacje"
+msgstr "Automatycznie aktualizuj darmowe i zakupione aplikacje"
 
 #: src/MainWindow.vala:160
 #, fuzzy
