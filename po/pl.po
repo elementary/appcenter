@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-15 18:07+0000\n"
-"PO-Revision-Date: 2024-02-20 11:08+0000\n"
-"Last-Translator: Sebastian Bernat <srakap330@gmail.com>\n"
+"PO-Revision-Date: 2024-02-20 13:08+0000\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -74,7 +74,7 @@ msgstr "Automatycznie aktualizuj darmowe i zakupione aplikacje"
 #: src/MainWindow.vala:160
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
-"aplikacje, które są aktualnie testowane nie będą automatycznie aktualizowane"
+"Aplikacje, które są aktualnie testowane nie będą automatycznie aktualizowane"
 
 #: src/MainWindow.vala:164
 msgid "Check for Updates"
@@ -469,14 +469,12 @@ msgstr[1] "Dostępne aktualizacje"
 msgstr[2] "Dostępnych aktualizacji"
 
 #: src/Core/UpdateManager.vala:138
-#, fuzzy, c-format
-#| msgid "%u update is available."
-#| msgid_plural "%u updates are available."
+#, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "Dostępna jest %u aktualizacja"
-msgstr[1] "Dostępne są %u aktualizacje"
-msgstr[2] "Dostępnych jest %u aktualizacji"
+msgstr[0] "Dostępna jest %u aktualizacja aplikacji"
+msgstr[1] "Dostępne są %u aktualizacje aplikacji"
+msgstr[2] "Dostępnych jest %u aktualizacji aplikacji"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
