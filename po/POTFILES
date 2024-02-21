@@ -7,7 +7,6 @@ src/Core/BackendAggregator.vala
 src/Core/BackendInterface.vala
 src/Core/ChangeInformation.vala
 src/Core/Client.vala
-src/Core/ComponentValidator.vala
 src/Core/FlatpakBackend.vala
 src/Core/Job.vala
 src/Core/Package.vala
