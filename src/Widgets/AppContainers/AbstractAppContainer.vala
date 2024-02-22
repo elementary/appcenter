@@ -67,9 +67,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         button_box.append (action_button_revealer);
         button_box.append (open_button_revealer);
 
-        cancel_button = new ProgressButton () {
-            label = _("Cancel")
-        };
+        cancel_button = new ProgressButton (package);
         cancel_button.clicked.connect (() => action_cancelled ());
 
         action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
@@ -93,48 +91,8 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         });
     }
 
-    protected class ProgressButton : Gtk.Button {
-        public double fraction { get; set; }
-
-        // 2px spacing on each side; otherwise it looks weird with button borders
-        private const string CSS = """
-            .progress-button {
-                background-size: calc(%i%% - 4px) calc(100%% - 4px);
-            }
-        """;
-
-        public ProgressButton (double fraction = 0.0) {
-            Object (
-                fraction: fraction
-            );
-        }
-
-        construct {
-            add_css_class ("progress-button");
-
-            var provider = new Gtk.CssProvider ();
-
-            notify["fraction"].connect (() => {
-                var css = CSS.printf ((int) (fraction * 100));
-
-                try {
-                    provider.load_from_data (css.data);
-                    get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                } catch (Error e) {
-                    critical (e.message);
-                }
-            });
-        }
-    }
-
     protected virtual void set_up_package () {
         package.notify["state"].connect (on_package_state_changed);
-
-        package.change_information.progress_changed.connect (update_progress);
-        package.change_information.status_changed.connect (update_progress_status);
-
-        update_progress_status ();
-        update_progress ();
         update_state (true);
     }
 
@@ -215,26 +173,6 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
                 critical ("Unrecognised package state %s", package.state.to_string ());
                 break;
         }
-    }
-
-    protected void update_progress () {
-        Idle.add (() => {
-            cancel_button.fraction = package.progress;
-            return GLib.Source.REMOVE;
-        });
-    }
-
-    protected virtual void update_progress_status () {
-        Idle.add (() => {
-            cancel_button.tooltip_text = package.get_progress_description ();
-            cancel_button.sensitive = package.change_information.can_cancel && !package.changes_finished;
-            /* Ensure progress bar shows complete to match status (lp:1606902) */
-            if (package.changes_finished) {
-                cancel_button.fraction = 1.0f;
-            }
-
-            return GLib.Source.REMOVE;
-        });
     }
 
     private void action_cancelled () {
