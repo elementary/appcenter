@@ -1208,8 +1208,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
 
         var list_item = object as Gtk.ListItem;
-        list_item.set_data ("title", title);
-        list_item.set_child (title);
+        list_item.child = title;
     }
 
     private void origin_bind_factory (Object object) {
