@@ -21,7 +21,7 @@
 namespace AppCenter.Views {
 /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
-    public class AppListUpdateView : Gtk.Box {
+    public class AppListUpdateView : Adw.NavigationPage {
         public signal void show_app (AppCenterCore.Package package);
 
         private Granite.HeaderLabel header_label;
@@ -136,7 +136,9 @@ namespace AppCenter.Views {
             stack.add_child (main_box);
             stack.add_child (loading_view);
 
-            append (stack);
+            child = stack;
+            /// TRANSLATORS: the name of the Installed Apps view
+            title = C_("view", "Installed");
 
             get_apps.begin ((obj, res) => {
                 get_apps.end (res);
