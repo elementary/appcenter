@@ -43,9 +43,6 @@ namespace AppCenter.Views {
             updates_liststore = new ListStore (typeof (AppCenterCore.Package));
             installed_liststore = new ListStore (typeof (AppCenterCore.Package));
 
-            var css_provider = new Gtk.CssProvider ();
-            css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
-
             var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
                 description = _("Downloading a list of available updates to the OS and installed apps"),
                 icon = new ThemedIcon ("sync-synchronizing")
@@ -85,13 +82,11 @@ namespace AppCenter.Views {
             header.append (header_label);
             header.append (size_label);
             header.append (update_all_button);
-            header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             header_revealer = new Gtk.Revealer () {
                 child = header
             };
             header_revealer.add_css_class ("header");
-            header_revealer.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
@@ -125,7 +120,6 @@ namespace AppCenter.Views {
                 child = box,
                 hscrollbar_policy = Gtk.PolicyType.NEVER
             };
-            scrolled.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
