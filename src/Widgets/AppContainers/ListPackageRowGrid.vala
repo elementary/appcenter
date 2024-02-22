@@ -60,13 +60,14 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         append (grid);
     }
 
-    protected override void set_up_package () {
+    private void set_up_package () {
         package_summary.label = package.get_summary ();
 
         if (package.is_local) {
             action_stack.visible = false;
         }
 
-        base.set_up_package ();
+        package.notify["state"].connect (on_package_state_changed);
+        update_state (true);
     }
 }

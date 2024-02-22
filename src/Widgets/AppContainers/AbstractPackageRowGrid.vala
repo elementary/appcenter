@@ -77,16 +77,11 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
         margin_end = 12;
     }
 
-    protected virtual void set_up_package () {
-        package.notify["state"].connect (on_package_state_changed);
-        update_state (true);
-    }
-
     protected virtual void update_state (bool first_update = false) {
         action_stack.update_action ();
     }
 
-    private void on_package_state_changed () {
+    protected void on_package_state_changed () {
         if (action_stack.state_source > 0) {
             return;
         }

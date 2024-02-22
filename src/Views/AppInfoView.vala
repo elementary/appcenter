@@ -760,7 +760,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 #endif
         view_entered ();
         package.notify["state"].connect (on_package_state_changed);
-        update_state (true);
+        update_state ();
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
@@ -793,7 +793,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         });
     }
 
-    private void update_state (bool first_update = false) {
+    private void update_state () {
         if (!package.is_local) {
             size_label.update ();
         }
