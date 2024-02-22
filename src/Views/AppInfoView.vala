@@ -1217,7 +1217,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
         var package = (AppCenterCore.Package) list_item.get_item ();
 
-        var title = list_item.get_data<Gtk.Label> ("title");
+        var title = (Gtk.Label) list_item.child;
         title.label = package.origin_description;
     }
 
