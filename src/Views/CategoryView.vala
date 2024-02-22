@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class AppCenter.CategoryView : Gtk.Box {
+public class AppCenter.CategoryView : Adw.NavigationPage {
     public signal void show_app (AppCenterCore.Package package);
 
     public AppStream.Category category { get; construct; }
@@ -60,7 +60,8 @@ public class AppCenter.CategoryView : Gtk.Box {
         stack.add_child (spinner);
         stack.add_child (scrolled);
 
-        append (stack);
+        child = stack;
+        title = category.name;
 
         populate ();
 

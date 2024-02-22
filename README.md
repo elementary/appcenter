@@ -9,7 +9,7 @@ An open, pay-what-you-want app store for indie developers.
 
 You'll need the following dependencies:
 * gettext
-* libadwaita-1-dev
+* libadwaita-1-dev (>= 1.4)
 * libappstream-dev (>= 0.15.2)
 * libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
