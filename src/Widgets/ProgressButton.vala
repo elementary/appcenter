@@ -14,6 +14,7 @@ public class AppCenter.ProgressButton : Gtk.Button {
 
     construct {
         add_css_class ("progress");
+        add_css_class ("text-button");
 
         package.change_information.progress_changed.connect (update_progress);
         package.change_information.status_changed.connect (update_progress_status);
