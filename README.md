@@ -24,6 +24,7 @@ You'll need the following dependencies:
 * libxml2-dev
 * libxml2-utils
 * meson
+* sassc
 * valac (>= 0.26)
 
 Run `meson build` to configure the build environment. Change to the build directory and run `ninja` to build

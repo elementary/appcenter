@@ -1,0 +1,42 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
+ */
+
+@function rem($pixels, $text-size: 9pt) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($text-size)) {
+        $text-size: $text-size * 1px;
+    }
+
+    @if ($pixels > 0) {
+        // Workaround GTK clamping instead of rounding up
+        @return ($pixels / $text-size * 1rem) + 0.000000001rem;
+    } @else {
+        // Workaround GTK clamping instead of rounding up
+        @return ($pixels / $text-size * 1rem) - 0.000000001rem;
+    }
+}
+
+@function outset-highlight($sides: "full") {
+    $highlight:
+        inset 1px 0 0 0 #{'alpha(@highlight_color, 0.07)'},
+        inset -1px 0 0 0 #{'alpha(@highlight_color, 0.07)'};
+
+    @if $sides == "top" or $sides == "full" {
+        $highlight:
+            inset 0 1px 0 0 #{'alpha(@highlight_color, 0.3)'},
+            $highlight;
+    }
+
+    @if $sides == "bottom" or $sides == "full" {
+        $highlight:
+            inset 0 -1px 0 0 #{'alpha(@highlight_color, 0.2)'},
+            $highlight;
+    }
+
+    @return $highlight;
+}
