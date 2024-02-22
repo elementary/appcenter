@@ -1207,7 +1207,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             xalign = 0
         };
 
-        var list_item = object as Gtk.ListItem;
+        var list_item = (Gtk.ListItem) object;
         list_item.child = title;
     }
 
