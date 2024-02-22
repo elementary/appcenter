@@ -272,13 +272,12 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             critical (e.message);
         } finally {
             var new_package_list = new Gee.HashMap<string, Package> ();
-            var comp_validator = ComponentValidator.get_default ();
 #if HAS_APPSTREAM_1_0
             appstream_pool.get_components ().as_array ().foreach ((comp) => {
 #else
             appstream_pool.get_components ().foreach ((comp) => {
 #endif
-                if (!comp_validator.validate (comp)) {
+                if (!validate (comp)) {
                     return;
                 }
 

@@ -1119,13 +1119,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
-            var comp_validator = ComponentValidator.get_default ();
 #if HAS_APPSTREAM_1_0
             user_appstream_pool.get_components ().as_array ().foreach ((comp) => {
 #else
             user_appstream_pool.get_components ().foreach ((comp) => {
 #endif
-                if (!comp_validator.validate (comp)) {
+                if (!validate (comp)) {
                     return;
                 }
 
@@ -1161,13 +1160,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
-            var comp_validator = ComponentValidator.get_default ();
 #if HAS_APPSTREAM_1_0
             system_appstream_pool.get_components ().as_array ().foreach ((comp) => {
 #else
             system_appstream_pool.get_components ().foreach ((comp) => {
 #endif
-                if (!comp_validator.validate (comp)) {
+                if (!validate (comp)) {
                     return;
                 }
 
