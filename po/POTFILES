@@ -35,6 +35,7 @@ src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/HumbleButton.vala
 src/Widgets/PackageRow.vala
+src/Widgets/ProgressButton.vala
 src/Widgets/ReleaseRow.vala
 src/Widgets/SharePopover.vala
 src/Widgets/SizeLabel.vala

@@ -20,6 +20,7 @@
 public class AppCenterCore.UpdateManager : Object {
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
+    public uint updates_number { get; private set; default = 0U; }
     public uint64 updates_size { get; private set; default = 0ULL; }
 
     construct {
@@ -38,7 +39,7 @@ public class AppCenterCore.UpdateManager : Object {
 
     public async uint get_updates (Cancellable? cancellable = null) {
         var apps_with_updates = new Gee.TreeSet<Package> ();
-        uint count = 0;
+        updates_number = 0;
         unpaid_apps_number = 0;
         updates_size = 0ULL;
 
@@ -66,7 +67,7 @@ public class AppCenterCore.UpdateManager : Object {
                     unpaid_apps_number++;
                 }
 
-                count++;
+                updates_number++;
                 updates_size += appcenter_package.change_information.size;
 
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
@@ -124,21 +125,21 @@ public class AppCenterCore.UpdateManager : Object {
             runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
         }
 
-        debug ("%u app updates found", count);
+        debug ("%u app updates found", updates_number);
 
         if (runtime_count > 0) {
-            count += 1;
+            updates_number += 1;
         }
 
         if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
             var application = Application.get_default ();
-            if (count > 0) {
-                var title = ngettext ("Update Available", "Updates Available", count);
+            if (updates_number > 0) {
+                var title = ngettext ("Update Available", "Updates Available", updates_number);
                 var body = ngettext (
                     "%u app update is available",
                     "%u app updates are available",
-                    count
-                ).printf (count);
+                    updates_number
+                ).printf (updates_number);
 
                 var notification = new Notification (title);
                 notification.set_body (body);
@@ -151,15 +152,15 @@ public class AppCenterCore.UpdateManager : Object {
             }
 
             try {
-                yield Granite.Services.Application.set_badge (count);
-                yield Granite.Services.Application.set_badge_visible (count != 0);
+                yield Granite.Services.Application.set_badge (updates_number);
+                yield Granite.Services.Application.set_badge_visible (updates_number != 0);
             } catch (Error e) {
                 warning ("Error setting updates badge: %s", e.message);
             }
         }
 
         runtime_updates.update_state ();
-        return count;
+        return updates_number;
     }
 
     private static GLib.Once<UpdateManager> instance;

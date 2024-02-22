@@ -1091,6 +1091,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     // We need to first download the screenshot locally so that it doesn't freeze the interface.
     private void load_screenshot (string? caption, string path) {
         var image = new Gtk.Picture.for_filename (path) {
+            content_fit = SCALE_DOWN,
             height_request = 500,
             vexpand = true
         };
