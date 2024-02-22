@@ -33,13 +33,6 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         Object (package: package);
     }
 
-    private static Gtk.CssProvider style_provider;
-
-    static construct {
-        style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("io/elementary/appcenter/banner.css");
-    }
-
     construct {
         var name_label = new Gtk.Label (package.get_name ()) {
             max_width_chars = 50,
@@ -94,7 +87,6 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         add_css_class ("banner");
         add_css_class (Granite.STYLE_CLASS_CARD);
         add_css_class (Granite.STYLE_CLASS_ROUNDED);
-        get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         hexpand = true;
         child = package_grid;

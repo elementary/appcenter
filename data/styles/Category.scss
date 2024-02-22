@@ -1,0 +1,657 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2024 elementary, Inc. (https://elementary.io)
+ */
+
+.category {
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(black, 0.15);
+    box-shadow:
+        inset 0 0 0 1px rgba(white, 0.05),
+        inset 0 1px 0 0 rgba(white, 0.45),
+        inset 0 -1px 0 0 rgba(white, 0.15),
+        0 3px 2px -1px rgba(black, 0.15),
+        0 3px 5px rgba(black, 0.1);
+    font-size: 32px;
+    font-weight: 300;
+    margin: rem(12px);
+    padding: rem(12px);
+    min-height: 3em;
+
+    &.accessibility {
+        background-image:
+            linear-gradient(
+                to bottom,
+                #3ca3e8,
+                #368ae6
+            );
+        border-color: #{'alpha(#2980d1, 0.8)'};
+        color: #fff8ef;
+        font-size: 24px;
+        font-weight: 600;
+        text-shadow: 0 1px 0 rgba(black, 0.3);
+        -gtk-icon-shadow: 0 1px 0 rgba(black, 0.3);
+    }
+
+    &.accessories {
+        border: none;
+        box-shadow:
+            inset 0 0 0 1px #{'alpha(shade(@bg_color, 1.67), 0.05)'},
+            inset 0 1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.45)'},
+            inset 0 -1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.15)'},
+            0 0 0 1px rgba(black, 0.15),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        font-size: 24px;
+    }
+
+    &.audio {
+        background-image:
+            -gtk-scaled(
+                url("resource:///io/elementary/appcenter/backgrounds/audio.svg"),
+                url("resource:///io/elementary/appcenter/backgrounds/audio@2x.svg")
+            ),
+            linear-gradient(
+                to bottom,
+                #{'@ORANGE_300'},
+                #{'@ORANGE_500'}
+            );
+        border-color: #{'alpha(@ORANGE_900, 0.7)'};
+        color: #{'shade(@ORANGE_100, 1.25)'};
+        -gtk-icon-shadow:
+            0 1px 1px #{'alpha(@ORANGE_900, 0.5)'},
+            0 2px 3px #{'alpha(@ORANGE_900, 0.5)'};
+        text-shadow:
+            0 1px 1px #{'alpha(@ORANGE_900, 0.5)'},
+            0 2px 3px #{'alpha(@ORANGE_900, 0.5)'};
+    }
+
+    &.communication {
+        background-image:
+            -gtk-icontheme("call-start-symbolic"),
+            -gtk-icontheme("internet-chat-symbolic"),
+            -gtk-icontheme("document-edit-symbolic"),
+            -gtk-icontheme("mail-send-symbolic"),
+            -gtk-icontheme("document-edit-symbolic"),
+            -gtk-icontheme("preferences-system-sharing-symbolic"),
+            -gtk-icontheme("internet-chat-symbolic"),
+            -gtk-icontheme("mail-send-symbolic"),
+            -gtk-icontheme("call-start-symbolic"),
+            -gtk-icontheme("document-edit-symbolic"),
+            -gtk-icontheme("preferences-system-sharing-symbolic"),
+            -gtk-icontheme("internet-chat-symbolic"),
+            -gtk-icontheme("emoji-objects-symbolic"),
+            -gtk-icontheme("mail-attachment-symbolic"),
+            -gtk-icontheme("non-starred-symbolic"),
+            -gtk-icontheme("face-heart-symbolic"),
+            -gtk-icontheme("internet-mail-symbolic"),
+            -gtk-icontheme("emoji-body-symbolic"),
+            -gtk-icontheme("emoji-objects-symbolic"),
+            -gtk-icontheme("face-heart-symbolic"),
+            -gtk-icontheme("mail-attachment-symbolic"),
+            -gtk-icontheme("emoji-objects-symbolic"),
+            -gtk-icontheme("non-starred-symbolic"),
+            -gtk-icontheme("emoji-body-symbolic"),
+            linear-gradient(
+                175deg,
+                #{'@LIME_300'} 5%,
+                #{'@LIME_500'}
+            );
+        background-size:
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            24px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            16px,
+            cover;
+        background-position:
+            5% 10%,
+            15% 50%,
+            5% 90%,
+            30% 10%,
+            40% 50%,
+            30% 90%,
+            60% 10%,
+            70% 50%,
+            60% 90%,
+            85% 10%,
+            95% 50%,
+            85% 90%,
+            18% 15%,
+            2% 50%,
+            18% 85%,
+            28% 50%,
+            45% 15%,
+            53% 50%,
+            45% 85%,
+            72% 15%,
+            82% 50%,
+            72% 85%,
+            98% 15%,
+            98% 85%,
+            center center;
+        border-color: #{'alpha(@LIME_900, 0.7)'};
+        color: #{'alpha(@LIME_900, 0.15)'};
+        font-size: 26px;
+        font-weight: 500;
+        text-shadow: 0 1px 2px #{'alpha(@LIME_900, 0.9)'};
+
+        label {
+            color: white;
+        }
+    }
+
+    &.development {
+        background-image:
+            linear-gradient(
+                to right,
+                transparent calc(0.5em - 1px),
+                rgba(white, 0.05) calc(0.5em - 1px),
+                rgba(white, 0.05) 0.5em,
+                transparent 0.5em
+            ),
+            linear-gradient(
+                to bottom,
+                transparent calc(0.5em - 1px),
+                rgba(white, 0.05) calc(0.5em - 1px),
+                rgba(white, 0.05) 0.5em,
+                transparent 0.5em
+            ),
+            linear-gradient(
+                to right,
+                transparent calc(1em - 1px),
+                rgba(white, 0.125) calc(1em - 1px)
+            ),
+            linear-gradient(
+                to bottom,
+                transparent calc(1em - 1px),
+                rgba(white, 0.125) calc(1em - 1px)
+            ),
+            linear-gradient(
+                to bottom right,
+                #{'@GRAPE_500'},
+                #{'@GRAPE_700'}
+            );
+        background-position: center center;
+        background-repeat: repeat;
+        background-size:
+            1em 1em,
+            1em 1em,
+            1em 1em,
+            1em 1em,
+            cover;
+        border-color: #{'alpha(@GRAPE_900, 0.7)'};
+        color: white;
+        font-family: "Lobster";
+        text-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.5)'};
+    }
+
+    &.education {
+        background-image:
+            -gtk-scaled(
+                url("resource:///io/elementary/appcenter/backgrounds/education.svg"),
+                url("resource:///io/elementary/appcenter/backgrounds/education@2x.svg")
+            ),
+            radial-gradient(
+                circle,
+                rgba(white, 0) 67%,
+                rgba(white, 0.15)
+            ),
+            linear-gradient(
+                to bottom,
+                #{'mix(@LIME_900, @SLATE_100, 0.5)'},
+                #{'mix(@LIME_900, @SLATE_500, 0.67)'}
+            );
+        border-color: #{'alpha(mix(@LIME_900, @SLATE_900, 0.5), 0.8)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.05),
+            inset 0 1px 0 0 rgba(white, 0.25),
+            inset 0 -1px 0 0 rgba(white, 0.1),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: white;
+        font-family: "HVD Bodedo", serif;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    &.finance {
+        background-image:
+            linear-gradient(
+                to bottom,
+                #{'mix(@BLUEBERRY_500, @SLATE_300, 0.5)'} 5%,
+                #{'mix(@BLUEBERRY_700, @SLATE_500, 0.5)'}
+            );
+        border-color: #{'alpha(@SLATE_900, 0.7)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.02),
+            inset 0 1px 0 0 rgba(white, 0.23),
+            inset 0 -1px 0 0 rgba(white, 0.07),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: #{'@SILVER_100'};
+        text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.5)'};
+        -gtk-icon-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.5)'};
+        font-family: serif;
+        font-size: 28px;
+
+        label {
+            margin-top: 0.125em;
+        }
+    }
+
+    &.games {
+        border: none;
+        box-shadow:
+            inset 0 0 0 1px #{'alpha(shade(@bg_color, 1.67), 0.1)'},
+            inset 0 1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.9)'},
+            inset 0 -1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.3)'},
+            0 0 0 1px rgba(black, 0.15),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        font-weight: 900;
+        letter-spacing: -1px;
+        -gtk-icon-shadow:
+            0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
+            0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
+
+        label.pink {
+            font-size: 30px;
+            text-shadow:
+                0 1px 2px #{'alpha(@BUBBLEGUM_900, 0.2)'},
+                0 2px 6px #{'alpha(@BUBBLEGUM_900, 0.1)'};
+            margin-bottom: -12px;
+        }
+
+        label.blue {
+            font-size: 36px;
+            text-shadow:
+                0 1px 2px #{'alpha(@BLUEBERRY_900, 0.2)'},
+                0 2px 6px #{'alpha(@BLUEBERRY_900, 0.1)'};
+        }
+
+        image {
+            -gtk-icon-size: rem(64px);
+        }
+    }
+
+    &.graphics {
+        background-image:
+            linear-gradient(
+                45deg,
+                #{'alpha(@fg_color, 0.03)'} 25%,
+                transparent 25%,
+                transparent 75%,
+                #{'alpha(@fg_color, 0.03)'} 75%,
+                #{'alpha(@fg_color, 0.03)'}
+            ),
+            linear-gradient(
+                45deg,
+                #{'alpha(@fg_color, 0.03)'} 25%,
+                transparent 25%,
+                transparent 75%,
+                #{'alpha(@fg_color, 0.03)'} 75%,
+                #{'alpha(@fg_color, 0.03)'}
+            ),
+            linear-gradient(
+                rgba(white, 0.03),
+                rgba(black, 0.03)
+            );
+        background-position: 0 0, 12px 12px;
+        background-repeat: repeat;
+        background-size:
+            24px 24px,
+            24px 24px,
+            cover;
+        border: none;
+        box-shadow:
+            inset 0 0 0 1px #{'alpha(shade(@bg_color, 1.67), 0.1)'},
+            inset 0 1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.9)'},
+            inset 0 -1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.3)'},
+            0 0 0 1px rgba(black, 0.15),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: #fe5498;
+        font-weight: normal;
+        text-shadow: 0 1px 3px #{'@bg_color'};
+
+        label {
+            border-image:
+                -gtk-scaled(
+                    url("resource:///io/elementary/appcenter/backgrounds/graphics.svg"),
+                    url("resource:///io/elementary/appcenter/backgrounds/graphics@2x.svg")
+                ) 10 10 10 10 / 10px 10px 10px 10px repeat;
+            padding: 12px;
+
+            &:dir(rtl) {
+                border-image:
+                    -gtk-scaled(
+                        url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl.svg"),
+                        url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl@2x.svg")
+                    ) 10 10 10 10 / 10px 10px 10px 10px repeat;
+            }
+        }
+    }
+
+    &.internet {
+        background-image:
+            -gtk-icontheme("applications-internet-symbolic"),
+            linear-gradient(
+                to bottom,
+                #{'@BLUEBERRY_300'},
+                #{'@BLUEBERRY_500'}
+            );
+        background-position:
+            center 30%,
+            center center;
+        background-size:
+            cover,
+            cover;
+        color: #{'alpha(@BLUEBERRY_100, 0.25)'};
+        border-color: #{'alpha(@BLUEBERRY_700, 0.8)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.05),
+            inset 0 1px 0 0 rgba(white, 0.25),
+            inset 0 -1px 0 0 rgba(white, 0.1),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        text-shadow:
+            0 1px 1px rgba(black, 0.3),
+            0 2px 3px rgba(black, 0.3);
+
+        label {
+            color: white;
+        }
+    }
+
+    &.media-production {
+        background-image:
+            radial-gradient(
+                circle,
+                rgba(150, 111, 195, 0.2) 18px,
+                rgba(150, 111, 195, 0.3) 19px,
+                transparent 20px
+            ),
+            radial-gradient(
+                circle,
+                rgba(224, 124, 203, 0.2) 8px,
+                rgba(224, 124, 203, 0.3) 9px,
+                transparent 10px
+            ),
+            radial-gradient(
+                circle,
+                rgba(224, 124, 203, 0.2) 8px,
+                rgba(224, 124, 203, 0.3) 9px,
+                transparent 10px
+            ),
+            radial-gradient(
+                circle,
+                rgba(145, 75, 113, 0.2) 19px,
+                rgba(145, 75, 113, 0.3) 20px,
+                transparent 46px
+            ),
+            radial-gradient(
+                circle,
+                rgba(145, 75, 113, 0) 10px,
+                rgba(145, 75, 113, 0.2) 19px,
+                transparent 80px
+            ),
+            radial-gradient(
+                circle,
+                rgba(145, 75, 113, 0) 15px,
+                rgba(145, 75, 113, 0.2) 30px,
+                transparent 90px
+            ),
+            radial-gradient(
+                circle,
+                rgba(37, 85, 79, 0.2) 15px,
+                rgba(37, 85, 79, 0.3) 17px,
+                transparent 50px
+            ),
+            radial-gradient(
+                circle,
+                rgba(37, 85, 79, 0.2) 8px,
+                rgba(37, 85, 79, 0.3) 9px,
+                transparent 20px
+            ),
+            radial-gradient(
+                circle,
+                rgba(37, 85, 79, 0.2) 13px,
+                rgba(37, 85, 79, 0.3) 13px,
+                transparent 30px
+            ),
+            radial-gradient(
+                circle,
+                rgba(37, 85, 79, 0.2) 18px,
+                rgba(37, 85, 79, 0.3) 18px,
+                transparent 40px
+            ),
+            radial-gradient(
+                circle,
+                rgba(114, 209, 244, 0.1) 15px,
+                rgba(114, 209, 244, 0.1) 17px,
+                transparent 50px
+            ),
+            radial-gradient(
+                circle,
+                rgba(114, 209, 244, 0.2) 8px,
+                rgba(114, 209, 244, 0.3) 9px,
+                transparent 20px
+            ),
+            radial-gradient(
+                circle,
+                rgba(114, 209, 244, 0.2) 13px,
+                rgba(114, 209, 244, 0.3) 13px,
+                transparent 30px
+            ),
+            radial-gradient(
+                circle,
+                rgba(114, 209, 244, 0.2) 18px,
+                rgba(114, 209, 244, 0.3) 18px,
+                transparent 40px
+            ),
+            linear-gradient(
+                100deg,
+                #{'mix(@SLATE_500, @SLATE_700, 0.5)'} 25%,
+                #{'@SLATE_900'}
+            );
+        background-position:
+            30px 15px,
+            80px -50px,
+            10px -20px,
+            50px -30px,
+            20px -60px,
+            60px 10px,
+            -50px -40px,
+            -60px 0,
+            -80px -60px,
+            -160px -10px,
+            20px -10px,
+            130px -40px,
+            180px -20px,
+            180px 20px,
+            center center;
+        border-color: #{'alpha(@SLATE_900, 0.7)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.02),
+            inset 0 1px 0 0 rgba(white, 0.23),
+            inset 0 -1px 0 0 rgba(white, 0.07),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: #{'@BANANA_300'};
+        font-size: 24px;
+        font-weight: 600;
+        text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
+        -gtk-icon-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
+    }
+
+    &.office {
+        background-image:
+            linear-gradient(
+                to right,
+                #{'@BLUEBERRY_300'},
+                #{'@BLUEBERRY_500'} 20%,
+                #{'@LIME_300'} 20%,
+                #{'@LIME_500'} 40%,
+                #{'@ORANGE_500'} 40%,
+                #{'@ORANGE_700'} 60%,
+                #{'@BANANA_300'} 60%,
+                #{'@BANANA_500'} 80%,
+                #{'@GRAPE_500'} 80%,
+                #{'@GRAPE_700'}
+            ),
+            linear-gradient(
+                rgba(white, 0.05),
+                rgba(black, 0.05)
+            );
+        background-size:
+            100% 6px,
+            cover;
+        background-position: bottom;
+        border: none;
+        box-shadow:
+            inset 0 0 0 1px #{'alpha(shade(@bg_color, 1.67), 0.1)'},
+            inset 0 1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.9)'},
+            inset 0 -1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.3)'},
+            0 0 0 1px rgba(black, 0.15),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: #{'@ORANGE_500'};
+        font-weight: normal;
+    }
+
+    &.science {
+        background-image:
+            url("resource:///io/elementary/appcenter/backgrounds/science.svg"),
+            linear-gradient(
+                to bottom,
+                #374044,
+                #374044
+            );
+        border-color: #{'alpha(#1b2022, 0.8)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.02),
+            inset 0 1px 0 0 rgba(white, 0.23),
+            inset 0 -1px 0 0 rgba(white, 0.07),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: white;
+        font-family: Limelight;
+        font-size: 24px;
+        text-shadow: 0 1px 2px rgba(black, 0.3);
+        -gtk-icon-shadow: 0 1px 2px rgba(black, 0.3);
+    }
+
+    &.system {
+        background-image:
+            linear-gradient(
+                170deg,
+                #{'@SLATE_100'},
+                #{'@SLATE_300'}
+            );
+        border-color: #{'alpha(@SLATE_700, 0.8)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.05),
+            inset 0 1px 0 0 rgba(white, 0.25),
+            inset 0 -1px 0 0 rgba(white, 0.1),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: #{'@SLATE_900'};
+        text-shadow: 0 1px rgba(white, 0.4);
+        -gtk-icon-shadow: 0 1px rgba(white, 0.4);
+    }
+
+    &.video {
+        background-image:
+            radial-gradient(
+                circle,
+                #{'alpha(@STRAWBERRY_900, 0)'} 65%,
+                #{'alpha(shade(@STRAWBERRY_900, 0.6), 0.35)'} 66%
+            ),
+            linear-gradient(
+                to bottom,
+                #{'alpha(shade(@STRAWBERRY_900, 0.6), 0.8)'},
+                #{'alpha(shade(@STRAWBERRY_900, 0.6), 0)'}
+            ),
+            linear-gradient(
+                to right,
+                transparent,
+                #{'alpha(@STRAWBERRY_300, 0.4)'} 17%,
+                transparent 28%,
+                transparent 40%,
+                #{'alpha(@STRAWBERRY_300, 0.4)'} 70%,
+                transparent 80%
+            ),
+            linear-gradient(
+                to bottom,
+                #{'@STRAWBERRY_300'},
+                #{'@STRAWBERRY_700'}
+            );
+        background-repeat:
+            no-repeat,
+            no-repeat,
+            repeat,
+            no-repeat;
+        background-position:
+            50%,
+            0 0,
+            50%,
+            50%;
+        background-size:
+            auto 150%,
+            auto 60%,
+            100px, auto;
+        border-color: #{'alpha(@STRAWBERRY_900, 0.9)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.05),
+            inset 0 1px 0 0 rgba(white, 0.25),
+            inset 0 -1px 0 0 rgba(white, 0.1),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
+        color: white;
+        text-shadow: 0 1px 2px #{'alpha(@STRAWBERRY_900, 0.5)'};
+        -gtk-icon-shadow: 0 1px 2px #{'alpha(@STRAWBERRY_900, 0.5)'};
+    }
+
+    &.writing-language {
+        background-color: white;
+        background-image:
+            linear-gradient(
+                to right,
+                transparent 1.3em,
+                #{'alpha(@STRAWBERRY_100, 0.25)'} 1.3em,
+                #{'alpha(@STRAWBERRY_100, 0.25)'} calc(1.3em + 2px),
+                transparent calc(1.3em + 2px)
+            ),
+            linear-gradient(
+                to bottom,
+                transparent 0.9em,
+                #{'alpha(@BLUEBERRY_100, 0.2)'} 0.9em
+            );
+        background-position: center center, center 0.7em;
+        background-repeat: no-repeat, repeat-y;
+        background-size: auto auto, 110% 1em; /* Gtk.CSS bug requiring over 100% width maybe? */
+        color: #{'@BLACK_300'};
+        font-size: 24px;
+    }
+}

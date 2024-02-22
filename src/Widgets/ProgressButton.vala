@@ -12,17 +12,6 @@ public class AppCenter.ProgressButton : Gtk.Button {
         Object (package: package);
     }
 
-    static construct {
-        var style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("io/elementary/appcenter/ProgressButton.css");
-
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            style_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-    }
-
     construct {
         add_css_class ("progress");
 
