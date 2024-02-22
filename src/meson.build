@@ -9,7 +9,6 @@ appcenter_files = files(
     'Core/CardUtils.vala',
     'Core/ChangeInformation.vala',
     'Core/Client.vala',
-    'Core/ComponentValidator.vala',
     'Core/FlatpakBackend.vala',
     'Core/HttpClient.vala',
     'Core/Job.vala',
