@@ -18,14 +18,21 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
+public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
+    public AppCenterCore.Package package { get; construct set; }
+
+    public bool action_sensitive {
+        set {
+            action_stack.action_sensitive = value;
+        }
+    }
+
+    protected ActionStack action_stack;
     protected Gtk.Label package_name;
     protected Gtk.Overlay app_icon_overlay;
 
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
-        Object (
-            package: package
-        );
+        Object (package: package);
     }
 
     construct {
@@ -41,6 +48,10 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
 
         app_icon_overlay = new Gtk.Overlay () {
             child = app_icon
+        };
+
+        action_stack = new ActionStack (package) {
+            show_open = false
         };
 
         var scale_factor = get_scale_factor ();
@@ -64,7 +75,26 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         margin_start = 12;
         margin_bottom = 6;
         margin_end = 12;
+    }
 
-        show_open = false;
+    protected virtual void set_up_package () {
+        package.notify["state"].connect (on_package_state_changed);
+        update_state (true);
+    }
+
+    protected virtual void update_state (bool first_update = false) {
+        action_stack.update_action ();
+    }
+
+    private void on_package_state_changed () {
+        if (action_stack.state_source > 0) {
+            return;
+        }
+
+        action_stack.state_source = Idle.add (() => {
+            update_state ();
+            action_stack.state_source = 0U;
+            return GLib.Source.REMOVE;
+        });
     }
 }

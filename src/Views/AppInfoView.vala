@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
+public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     public const int MAX_WIDTH = 800;
 
     public signal void show_other_package (
@@ -26,8 +26,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         bool transition = true
     );
 
+    public AppCenterCore.Package package { get; construct set; }
+
     GenericArray<AppStream.Screenshot> screenshots;
 
+    private ActionStack action_stack;
     private Granite.HeaderLabel whats_new_label;
     private Gtk.CssProvider accent_provider;
     private Gtk.ComboBox origin_combo;
@@ -172,6 +175,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             overflow = VISIBLE
         };
 
+        action_stack = new ActionStack (package);
+
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             halign = Gtk.Align.END,
             valign = Gtk.Align.CENTER,
@@ -215,14 +220,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         header.add_css_class ("banner");
         header.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var package_component = package.component;
 
@@ -719,9 +724,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         overlay.add_overlay (toast);
 
-        append (overlay);
+        child = overlay;
+        title = package.get_name ();
 
-        open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 #if SHARING
         if (package.is_shareable) {
             var body = _("Check out %s on AppCenter:").printf (package.get_name ());
@@ -754,7 +759,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         }
 #endif
         view_entered ();
-        set_up_package ();
+        package.notify["state"].connect (on_package_state_changed);
+        update_state (true);
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
@@ -775,7 +781,19 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         realize.connect (load_more_content);
     }
 
-    protected override void update_state (bool first_update = false) {
+    private void on_package_state_changed () {
+        if (action_stack.state_source > 0) {
+            return;
+        }
+
+        action_stack.state_source = Idle.add (() => {
+            update_state ();
+            action_stack.state_source = 0U;
+            return GLib.Source.REMOVE;
+        });
+    }
+
+    private void update_state (bool first_update = false) {
         if (!package.is_local) {
             size_label.update ();
         }
@@ -795,7 +813,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 break;
         }
 
-        update_action ();
+        action_stack.update_action ();
     }
 
     private async void load_extensions () {

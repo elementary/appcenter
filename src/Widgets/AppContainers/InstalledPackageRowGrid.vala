@@ -28,15 +28,15 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         Object (package: package);
 
         if (action_size_group != null) {
-            action_size_group.add_widget (action_button);
-            action_size_group.add_widget (cancel_button);
+            action_size_group.add_widget (action_stack.action_button);
+            action_size_group.add_widget (action_stack.cancel_button);
         }
 
         set_up_package ();
     }
 
     construct {
-        updates_view = true;
+        action_stack.updates_view = true;
 
         var package_name = new Gtk.Label (package.get_name ()) {
             valign = Gtk.Align.END,
@@ -117,7 +117,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             }
         }
 
-        update_action ();
+        action_stack.update_action ();
         changed ();
     }
 

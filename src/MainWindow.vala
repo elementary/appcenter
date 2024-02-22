@@ -429,8 +429,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             set_return_name (null);
         } else if (previous_child is Adw.NavigationPage) {
             set_return_name (previous_child.title);
-        } else if (previous_child is Views.AppInfoView) {
-            set_return_name (((Views.AppInfoView) previous_child).package.get_name ());
         }
 
         while (leaflet.get_adjacent_child (FORWARD) != null) {

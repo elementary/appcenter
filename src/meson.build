@@ -33,6 +33,7 @@ appcenter_files = files(
     'Views/CategoryView.vala',
     'Views/Homepage.vala',
     'Views/SearchView.vala',
+    'Widgets/ActionStack.vala',
     'Widgets/Banner.vala',
     'Widgets/CardNumberEntry.vala',
     'Widgets/HumbleButton.vala',
@@ -41,7 +42,6 @@ appcenter_files = files(
     'Widgets/ReleaseRow.vala',
     'Widgets/SharePopover.vala',
     'Widgets/SizeLabel.vala',
-    'Widgets/AppContainers/AbstractAppContainer.vala',
     'Widgets/AppContainers/AbstractPackageRowGrid.vala',
     'Widgets/AppContainers/InstalledPackageRowGrid.vala',
     'Widgets/AppContainers/ListPackageRowGrid.vala'
