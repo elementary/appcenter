@@ -102,7 +102,6 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
                 background-size: calc(%i%% - 4px) calc(100%% - 4px);
             }
         """;
-        private static Gtk.CssProvider style_provider;
 
         public ProgressButton (double fraction = 0.0) {
             Object (
@@ -110,14 +109,8 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
             );
         }
 
-        static construct {
-            style_provider = new Gtk.CssProvider ();
-            style_provider.load_from_resource ("io/elementary/appcenter/ProgressButton.css");
-        }
-
         construct {
             add_css_class ("progress-button");
-            get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var provider = new Gtk.CssProvider ();
 
