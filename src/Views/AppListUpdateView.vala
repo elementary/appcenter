@@ -391,15 +391,8 @@ namespace AppCenter.Views {
             updating_all_apps = false;
         }
 
-        public async void add_app (AppCenterCore.Package package) {
-            unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-            var installed_apps = yield client.get_installed_applications ();
-            foreach (var app in installed_apps) {
-                if (app == package) {
-                    updates_liststore.insert_sorted (package, compare_package_func);
-                    break;
-                }
-            }
+        public void add_app (AppCenterCore.Package package) {
+            updates_liststore.insert_sorted (package, compare_package_func);
         }
 
         public void clear () {

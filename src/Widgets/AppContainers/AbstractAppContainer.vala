@@ -204,9 +204,8 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
                 }
             }
         } else {
-            if (yield package.install ()) {
-                MainWindow.installed_view.add_app.begin (package);
-            }
+            MainWindow.installed_view.add_app (package);
+            yield package.install ();
         }
     }
 }
