@@ -94,11 +94,13 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             }
         }
 
-        package.notify["state"].connect (on_package_state_changed);
+        package.notify["state"].connect (() => {
+            update_state ();
+        });
         update_state (true);
     }
 
-    protected override void update_state (bool first_update = false) {
+    private void update_state (bool first_update = false) {
         if (!first_update && package.get_version != null) {
             if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
@@ -118,7 +120,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             }
         }
 
-        action_stack.update_action ();
         changed ();
     }
 

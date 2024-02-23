@@ -76,20 +76,4 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
         margin_bottom = 6;
         margin_end = 12;
     }
-
-    protected virtual void update_state (bool first_update = false) {
-        action_stack.update_action ();
-    }
-
-    protected void on_package_state_changed () {
-        if (action_stack.state_source > 0) {
-            return;
-        }
-
-        action_stack.state_source = Idle.add (() => {
-            update_state ();
-            action_stack.state_source = 0U;
-            return GLib.Source.REMOVE;
-        });
-    }
 }

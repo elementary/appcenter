@@ -12,14 +12,13 @@ public class AppCenter.ActionStack : Gtk.Box {
     public Widgets.HumbleButton action_button { get; private set; }
     public ProgressButton cancel_button { get; private set; }
 
-    public uint state_source = 0U;
-
     public bool action_sensitive {
         set {
             action_button.sensitive = value;
         }
     }
 
+    private uint state_source = 0U;
     private Gtk.Stack stack;
     private Gtk.Revealer action_button_revealer;
     private Gtk.Revealer open_button_revealer;
@@ -73,6 +72,9 @@ public class AppCenter.ActionStack : Gtk.Box {
 
         append (stack);
 
+        package.notify["state"].connect (on_package_state_changed);
+        update_action ();
+
         destroy.connect (() => {
             if (state_source > 0) {
                 GLib.Source.remove (state_source);
@@ -80,7 +82,19 @@ public class AppCenter.ActionStack : Gtk.Box {
         });
     }
 
-    public void update_action () {
+    private void on_package_state_changed () {
+        if (state_source > 0) {
+            return;
+        }
+
+        state_source = Idle.add (() => {
+            update_action ();
+            state_source = 0U;
+            return GLib.Source.REMOVE;
+        });
+    }
+
+    private void update_action () {
         if (package == null || package.component == null || !package.is_native || package.is_runtime_updates) {
             action_button.can_purchase = false;
         } else {

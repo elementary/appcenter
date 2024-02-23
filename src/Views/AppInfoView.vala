@@ -782,18 +782,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     private void on_package_state_changed () {
-        if (action_stack.state_source > 0) {
-            return;
-        }
-
-        action_stack.state_source = Idle.add (() => {
-            update_state ();
-            action_stack.state_source = 0U;
-            return GLib.Source.REMOVE;
-        });
-    }
-
-    private void update_state () {
         if (!package.is_local) {
             size_label.update ();
         }
@@ -812,8 +800,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             default:
                 break;
         }
-
-        action_stack.update_action ();
     }
 
     private async void load_extensions () {
