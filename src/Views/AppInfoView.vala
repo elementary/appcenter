@@ -763,7 +763,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 #endif
 
         package.notify["state"].connect (on_package_state_changed);
-        update_state ();
+        on_package_state_changed ();
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
