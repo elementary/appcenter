@@ -20,6 +20,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
     public AppStream.Category category { get; construct; }
 
+    private Gtk.SearchEntry search_entry;
     private Gtk.Stack stack;
     private Gtk.ScrolledWindow scrolled;
     private Gtk.Box box;
@@ -32,6 +33,11 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
     }
 
     construct {
+        search_entry = new Gtk.SearchEntry () {
+            hexpand = true,
+            placeholder_text = _("Search %s").printf (category.name)
+        };
+
         recently_updated_flowbox = new SubcategoryFlowbox (_("Recently Updated"));
 
         paid_flowbox = new SubcategoryFlowbox (_("Paid Apps"));
@@ -42,7 +48,8 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             margin_top = 12,
             margin_end = 12,
             margin_bottom = 24,
-            margin_start = 12
+            margin_start = 12,
+            vexpand = true
         };
 
         scrolled = new Gtk.ScrolledWindow () {
@@ -60,7 +67,11 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         stack.add_child (spinner);
         stack.add_child (scrolled);
 
-        child = stack;
+        var main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.append (search_entry);
+        main_box.append (stack);
+
+        child = main_box;
         title = category.name;
 
         populate ();
@@ -79,6 +90,12 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
             populate ();
+        });
+
+        search_entry.search_changed.connect (() => {
+            recently_updated_flowbox.search_text = search_entry.text;
+            paid_flowbox.search_text = search_entry.text;
+            free_flowbox.search_text = search_entry.text;
         });
     }
 
@@ -177,6 +194,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
     private class SubcategoryFlowbox : Gtk.Box {
         public signal void show_package (AppCenterCore.Package package);
 
+        public string search_text { get; set; default = ""; }
         public string? label { get; construct; }
 
         public bool has_children {
@@ -205,6 +223,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 valign = Gtk.Align.START
             };
             flowbox.set_sort_func ((Gtk.FlowBoxSortFunc) package_row_compare);
+            flowbox.set_filter_func (filter_func);
 
             orientation = Gtk.Orientation.VERTICAL;
 
@@ -221,6 +240,8 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 var row = (Widgets.ListPackageRowGrid) child.get_child ();
                 show_package (row.package);
             });
+
+            notify["search-text"].connect (flowbox.invalidate_filter);
         }
 
         public void add_package (AppCenterCore.Package package) {
@@ -248,6 +269,30 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             }
 #endif
             return row1.package.get_name ().collate (row2.package.get_name ());
+        }
+
+        private bool filter_func (Gtk.FlowBoxChild child) {
+            if (search_text == "") {
+                return true;
+            }
+
+            _search_text = search_text.down ();
+
+            var package = ((Widgets.ListPackageRowGrid) child.get_child ()).package;
+
+            if (_search_text in package.get_name ().down ()) {
+                return true;
+            }
+
+            if (_search_text in package.get_summary ().down ()) {
+                return true;
+            }
+
+            if (_search_text in package.get_description ().down ()) {
+                return true;
+            }
+
+            return false;
         }
     }
 }
