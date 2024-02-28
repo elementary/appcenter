@@ -35,6 +35,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
     private uint banner_timeout_id;
 
+    class construct {
+        set_css_name ("homepage");
+    }
+
     construct {
         add_css_class (Granite.STYLE_CLASS_VIEW);
         hexpand = true;
