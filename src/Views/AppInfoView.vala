@@ -31,12 +31,12 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     GenericArray<AppStream.Screenshot> screenshots;
 
     private ActionStack action_stack;
+    private GLib.ListStore origin_liststore;
     private Granite.HeaderLabel whats_new_label;
     private Gtk.CssProvider accent_provider;
-    private Gtk.ComboBox origin_combo;
+    private Gtk.DropDown origin_dropdown;
     private Gtk.Label app_subtitle;
     private Gtk.ListBox extension_box;
-    private Gtk.ListStore origin_liststore;
     private Gtk.Overlay screenshot_overlay;
     private Gtk.Revealer origin_combo_revealer;
     private Adw.Carousel release_carousel;
@@ -147,20 +147,23 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         app_subtitle.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
         app_subtitle.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
-        origin_combo = new Gtk.ComboBox.with_model (origin_liststore) {
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.CENTER
+        origin_liststore = new GLib.ListStore (typeof (AppCenterCore.Package));
+
+        var list_factory = new Gtk.SignalListItemFactory ();
+        list_factory.setup.connect (origin_setup_factory);
+        list_factory.bind.connect (origin_bind_factory);
+
+        origin_dropdown = new Gtk.DropDown (origin_liststore, null) {
+            halign = START,
+            valign = CENTER,
+            factory = list_factory
         };
 
         origin_combo_revealer = new Gtk.Revealer () {
-            child = origin_combo,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN
+            child = origin_dropdown,
+            overflow = VISIBLE,
+            transition_type = SLIDE_DOWN
         };
-
-        var renderer = new Gtk.CellRendererText ();
-        origin_combo.pack_start (renderer, true);
-        origin_combo.add_attribute (renderer, "text", 1);
 
         var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             tooltip_text = _("Uninstall"),
@@ -758,6 +761,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             links_flowbox.append (share_button);
         }
 #endif
+
         view_entered ();
         package.notify["state"].connect (on_package_state_changed);
         update_state ();
@@ -766,11 +770,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             oars_flowbox_revealer.reveal_child = true;
         }
 
-        origin_combo.changed.connect (() => {
-            Gtk.TreeIter iter;
-            AppCenterCore.Package selected_origin_package;
-            origin_combo.get_active_iter (out iter);
-            origin_liststore.@get (iter, 0, out selected_origin_package);
+        origin_dropdown.notify["selected-item"].connect (() => {
+            var selected_origin_package = (AppCenterCore.Package) origin_dropdown.selected_item;
             if (selected_origin_package != null && selected_origin_package != package) {
                 show_other_package (selected_origin_package, false, false);
             }
@@ -936,29 +937,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         }
     }
 
-    public void view_entered () {
-        Gtk.TreeIter iter;
-        AppCenterCore.Package origin_package;
-        if (origin_liststore.get_iter_first (out iter)) {
-            do {
-                origin_liststore.@get (iter, 0, out origin_package);
-                if (origin_package == package) {
-                    origin_combo.set_active_iter (iter);
-                }
-            } while (origin_liststore.iter_next (ref iter));
-        }
-    }
-
     private void load_more_content () {
         var cache = AppCenterCore.Client.get_default ().screenshot_cache;
 
-        Gtk.TreeIter iter;
         uint count = 0;
         foreach (var origin_package in package.origin_packages) {
-            origin_liststore.append (out iter);
-            origin_liststore.set (iter, 0, origin_package, 1, origin_package.origin_description);
+            origin_liststore.append (origin_package);
             if (origin_package == package) {
-                origin_combo.set_active_iter (iter);
+                origin_dropdown.selected = count;
             }
 
             count++;
@@ -1221,6 +1207,24 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 #endif
             }
         });
+    }
+
+    private void origin_setup_factory (Object object) {
+        var title = new Gtk.Label ("") {
+            xalign = 0
+        };
+
+        var list_item = (Gtk.ListItem) object;
+        list_item.child = title;
+    }
+
+    private void origin_bind_factory (Object object) {
+        var list_item = object as Gtk.ListItem;
+
+        var package = (AppCenterCore.Package) list_item.get_item ();
+
+        var title = (Gtk.Label) list_item.child;
+        title.label = package.origin_description;
     }
 
     class UrlButton : Gtk.Box {

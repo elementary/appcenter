@@ -17,8 +17,12 @@ appinfoview {
             }
         }
 
-        combobox {
+        dropdown {
             margin-top: rem(12px);
+
+            button {
+                background-color: #{'@bg_color'};
+            }
         }
 
         button.text-button,
