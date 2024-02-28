@@ -1,37 +1,16 @@
 /*
-* Copyright 2016–2021 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ * SPDX-FileCopyrightText: 2016-2024 elementary, Inc. (https://elementary.io)
+ */
 
-public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
+public class AppCenter.ActionStack : Gtk.Box {
     public AppCenterCore.Package package { get; construct set; }
-    protected bool show_open { get; set; default = true; }
+    public bool show_open { get; set; default = true; }
+    public bool updates_view = false;
 
-    protected Widgets.HumbleButton action_button;
-    protected Gtk.Button open_button;
-    protected Gtk.Box button_box;
-    protected ProgressButton cancel_button;
-    protected Gtk.SizeGroup action_button_group;
-    protected Gtk.Stack action_stack;
-
-    private Gtk.Revealer action_button_revealer;
-    private Gtk.Revealer open_button_revealer;
-
-    private uint state_source = 0U;
+    public Gtk.Button open_button { get; private set; }
+    public Widgets.HumbleButton action_button { get; private set; }
+    public ProgressButton cancel_button { get; private set; }
 
     public bool action_sensitive {
         set {
@@ -39,7 +18,14 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         }
     }
 
-    protected bool updates_view = false;
+    private uint state_source = 0U;
+    private Gtk.Stack stack;
+    private Gtk.Revealer action_button_revealer;
+    private Gtk.Revealer open_button_revealer;
+
+    public ActionStack (AppCenterCore.Package package) {
+        Object (package: package);
+    }
 
     construct {
         action_button = new Widgets.HumbleButton (package);
@@ -63,26 +49,31 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
 
         open_button.clicked.connect (launch_package_app);
 
-        button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         button_box.append (action_button_revealer);
         button_box.append (open_button_revealer);
 
         cancel_button = new ProgressButton (package);
         cancel_button.clicked.connect (() => action_cancelled ());
 
-        action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+        var action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
         action_button_group.add_widget (action_button);
         action_button_group.add_widget (cancel_button);
         action_button_group.add_widget (open_button);
 
-        action_stack = new Gtk.Stack () {
+        stack = new Gtk.Stack () {
             hhomogeneous = false,
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.CENTER,
-            transition_type = Gtk.StackTransitionType.CROSSFADE
+            halign = END,
+            valign = CENTER,
+            transition_type = CROSSFADE
         };
-        action_stack.add_named (button_box, "buttons");
-        action_stack.add_named (cancel_button, "progress");
+        stack.add_named (button_box, "buttons");
+        stack.add_named (cancel_button, "progress");
+
+        append (stack);
+
+        package.notify["state"].connect (on_package_state_changed);
+        update_action ();
 
         destroy.connect (() => {
             if (state_source > 0) {
@@ -91,28 +82,19 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
         });
     }
 
-    protected virtual void set_up_package () {
-        package.notify["state"].connect (on_package_state_changed);
-        update_state (true);
-    }
-
     private void on_package_state_changed () {
         if (state_source > 0) {
             return;
         }
 
         state_source = Idle.add (() => {
-            update_state ();
+            update_action ();
             state_source = 0U;
             return GLib.Source.REMOVE;
         });
     }
 
-    protected virtual void update_state (bool first_update = false) {
-        update_action ();
-    }
-
-    protected void update_action () {
+    private void update_action () {
         if (package == null || package.component == null || !package.is_native || package.is_runtime_updates) {
             action_button.can_purchase = false;
         } else {
@@ -126,8 +108,8 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
 
         action_button.allow_free = true;
 
-        if (action_stack.get_child_by_name ("buttons") != null) {
-            action_stack.visible_child_name = "buttons";
+        if (stack.get_child_by_name ("buttons") != null) {
+            stack.visible_child_name = "buttons";
         }
 
         switch (package.state) {
@@ -166,7 +148,7 @@ public abstract class AppCenter.AbstractAppContainer : Gtk.Box {
             case AppCenterCore.Package.State.UPDATING:
             case AppCenterCore.Package.State.REMOVING:
 
-                action_stack.set_visible_child_name ("progress");
+                stack.set_visible_child_name ("progress");
                 break;
 
             default:
