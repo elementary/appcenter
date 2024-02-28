@@ -272,27 +272,8 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         }
 
         private bool filter_func (Gtk.FlowBoxChild child) {
-            if (search_text == "") {
-                return true;
-            }
-
-            _search_text = search_text.down ();
-
             var package = ((Widgets.ListPackageRowGrid) child.get_child ()).package;
-
-            if (_search_text in package.get_name ().down ()) {
-                return true;
-            }
-
-            if (_search_text in package.get_summary ().down ()) {
-                return true;
-            }
-
-            if (_search_text in package.get_description ().down ()) {
-                return true;
-            }
-
-            return false;
+            return package.matches_search (search_text);
         }
     }
 }
