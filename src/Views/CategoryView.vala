@@ -22,8 +22,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
     private Gtk.SearchEntry search_entry;
     private Gtk.Stack stack;
-    private Gtk.ScrolledWindow scrolled;
-    private Gtk.Box box;
+    private Gtk.Box main_box;
     private SubcategoryFlowbox free_flowbox;
     private SubcategoryFlowbox paid_flowbox;
     private SubcategoryFlowbox recently_updated_flowbox;
@@ -32,11 +31,20 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         Object (category: category);
     }
 
+    class construct {
+        set_css_name ("categorypage");
+    }
+
     construct {
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
             placeholder_text = _("Search %s").printf (category.name)
         };
+
+        var clamp = new Adw.Clamp () {
+            child = search_entry
+        };
+        clamp.add_css_class ("header");
 
         recently_updated_flowbox = new SubcategoryFlowbox (_("Recently Updated"));
 
@@ -44,7 +52,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         free_flowbox = new SubcategoryFlowbox (_("Free Apps"));
 
-        box = new Gtk.Box (Gtk.Orientation.VERTICAL, 48) {
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 48) {
             margin_top = 12,
             margin_end = 12,
             margin_bottom = 24,
@@ -55,7 +63,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         box.append (paid_flowbox);
         box.append (free_flowbox);
 
-        scrolled = new Gtk.ScrolledWindow () {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
@@ -66,15 +74,15 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         };
         spinner.start ();
 
+        main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.append (clamp);
+        main_box.append (scrolled);
+
         stack = new Gtk.Stack ();
         stack.add_child (spinner);
-        stack.add_child (scrolled);
+        stack.add_child (main_box);
 
-        var main_box = new Gtk.Box (VERTICAL, 0);
-        main_box.append (search_entry);
-        main_box.append (stack);
-
-        child = main_box;
+        child = stack;
         title = category.name;
 
         populate ();
@@ -100,6 +108,26 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             paid_flowbox.search_text = search_entry.text;
             free_flowbox.search_text = search_entry.text;
         });
+
+        // Forward only printable keys, not navigation keys
+        var eventcontrollerkey = new Gtk.EventControllerKey ();
+        eventcontrollerkey.key_pressed.connect ((keyval, keycode, state) => {
+            var mods = state & Gtk.accelerator_get_default_mod_mask ();
+            var is_printable_char = ((unichar) Gdk.keyval_to_unicode (keyval)).isprint ();
+
+            if (
+                (is_printable_char && mods == 0) ||
+                (is_printable_char && mods == SHIFT_MASK)
+            ) {
+                eventcontrollerkey.forward (search_entry.get_delegate ());
+                search_entry.grab_focus ();
+                return Gdk.EVENT_STOP;
+            }
+
+            return Gdk.EVENT_PROPAGATE;
+        });
+
+        add_controller (eventcontrollerkey);
     }
 
     private void populate () {
@@ -160,7 +188,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             paid_flowbox.visible = paid_flowbox.has_children;
             recently_updated_flowbox.visible = recently_updated_flowbox.has_children;
 
-            stack.visible_child = scrolled;
+            stack.visible_child = main_box;
         });
     }
 
