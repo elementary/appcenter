@@ -762,7 +762,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         }
 #endif
 
-        view_entered ();
         package.notify["state"].connect (on_package_state_changed);
         update_state ();
 
