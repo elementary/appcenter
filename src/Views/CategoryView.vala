@@ -51,6 +51,9 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             margin_start = 12,
             vexpand = true
         };
+        box.append (recently_updated_flowbox);
+        box.append (paid_flowbox);
+        box.append (free_flowbox);
 
         scrolled = new Gtk.ScrolledWindow () {
             child = box,
@@ -101,10 +104,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            while (box.get_first_child () != null) {
-                box.remove (box.get_first_child ());
-            };
-
             recently_updated_flowbox.clear ();
             free_flowbox.clear ();
             paid_flowbox.clear ();
@@ -157,17 +156,9 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 }
             }
 
-            if (recently_updated_flowbox.has_children) {
-                box.append (recently_updated_flowbox);
-            }
-
-            if (paid_flowbox.has_children) {
-                box.append (paid_flowbox);
-            }
-
-            if (free_flowbox.has_children) {
-                box.append (free_flowbox);
-            }
+            free_flowbox.visible = free_flowbox.has_children;
+            paid_flowbox.visible = paid_flowbox.has_children;
+            recently_updated_flowbox.visible = recently_updated_flowbox.has_children;
 
             stack.visible_child = scrolled;
         });
@@ -225,7 +216,8 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             flowbox.set_sort_func ((Gtk.FlowBoxSortFunc) package_row_compare);
             flowbox.set_filter_func (filter_func);
 
-            orientation = Gtk.Orientation.VERTICAL;
+            orientation = VERTICAL;
+            visible = false;
 
             if (label != null) {
                 var header = new Granite.HeaderLabel (label) {
@@ -241,7 +233,10 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 show_package (row.package);
             });
 
-            notify["search-text"].connect (flowbox.invalidate_filter);
+            notify["search-text"].connect (() => {
+                flowbox.invalidate_filter ();
+                visible = has_children;
+            });
         }
 
         public void add_package (AppCenterCore.Package package) {
