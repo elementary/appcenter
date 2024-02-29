@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
+public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     public const int MAX_WIDTH = 800;
 
     public signal void show_other_package (
@@ -26,8 +26,11 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         bool transition = true
     );
 
+    public AppCenterCore.Package package { get; construct set; }
+
     GenericArray<AppStream.Screenshot> screenshots;
 
+    private ActionStack action_stack;
     private GLib.ListStore origin_liststore;
     private Granite.HeaderLabel whats_new_label;
     private Gtk.CssProvider accent_provider;
@@ -175,6 +178,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             overflow = VISIBLE
         };
 
+        action_stack = new ActionStack (package);
+
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             halign = Gtk.Align.END,
             valign = Gtk.Align.CENTER,
@@ -218,14 +223,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         header.add_css_class ("banner");
         header.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var package_component = package.component;
 
@@ -722,9 +727,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         overlay.add_overlay (toast);
 
-        append (overlay);
+        child = overlay;
+        title = package.get_name ();
 
-        open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 #if SHARING
         if (package.is_shareable) {
             var body = _("Check out %s on AppCenter:").printf (package.get_name ());
@@ -756,7 +761,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             links_flowbox.append (share_button);
         }
 #endif
-        set_up_package ();
+
+        package.notify["state"].connect (on_package_state_changed);
+        on_package_state_changed ();
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
@@ -774,7 +781,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         realize.connect (load_more_content);
     }
 
-    protected override void update_state (bool first_update = false) {
+    private void on_package_state_changed () {
         if (!package.is_local) {
             size_label.update ();
         }
@@ -793,8 +800,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             default:
                 break;
         }
-
-        update_action ();
     }
 
     private async void load_extensions () {
