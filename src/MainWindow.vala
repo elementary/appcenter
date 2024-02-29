@@ -425,9 +425,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         if (previous_child == null) {
-            set_return_name (null);
+            return_button.visible = false;
         } else if (previous_child is Adw.NavigationPage) {
-            set_return_name (previous_child.title);
+            return_button.label = previous_child.title;
+            return_button.visible = true;
         }
 
         while (leaflet.get_adjacent_child (FORWARD) != null) {
@@ -535,14 +536,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    private void set_return_name (string? return_name) {
-        if (return_name != null) {
-            return_button.label = return_name;
-        }
-
-        return_button.visible = return_name != null;
-    }
-
     private void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
         search_entry.sensitive = sensitive;
         search_entry.placeholder_text = placeholder_text;
@@ -570,7 +563,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         category_view.show_app.connect ((package) => {
             show_package (package);
-            set_return_name (category.name);
         });
     }
 
