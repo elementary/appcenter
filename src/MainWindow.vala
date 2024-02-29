@@ -507,11 +507,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void show_category (AppStream.Category category) {
-        if (navigation_view.find_page (category.name) != null) {
-            navigation_view.push_by_tag (category.name);
-            return;
-        }
-
         var category_view = new CategoryView (category);
 
         navigation_view.push (category_view);

@@ -62,7 +62,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         child = stack;
         title = category.name;
-        tag = category.name;
 
         populate ();
 
