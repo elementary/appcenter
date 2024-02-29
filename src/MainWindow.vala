@@ -347,6 +347,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return;
         }
 
+        if (navigation_view.visible_page is Views.AppInfoView) {
+            var visible_page = (Views.AppInfoView) navigation_view.visible_page;
+            if (visible_page.package.normalized_component_id == package.normalized_component_id) {
+                navigation_view.pop ();
+            }
+        }
+
         var app_info_view = new Views.AppInfoView (package);
         navigation_view.push (app_info_view);
 
