@@ -28,15 +28,15 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         Object (package: package);
 
         if (action_size_group != null) {
-            action_size_group.add_widget (action_button);
-            action_size_group.add_widget (cancel_button);
+            action_size_group.add_widget (action_stack.action_button);
+            action_size_group.add_widget (action_stack.cancel_button);
         }
 
         set_up_package ();
     }
 
     construct {
-        updates_view = true;
+        action_stack.updates_view = true;
 
         var package_name = new Gtk.Label (package.get_name ()) {
             valign = Gtk.Align.END,
@@ -85,7 +85,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         });
     }
 
-    protected override void set_up_package () {
+    private void set_up_package () {
         if (package.get_version () != null) {
             if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
@@ -94,10 +94,13 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             }
         }
 
-        base.set_up_package ();
+        package.notify["state"].connect (() => {
+            update_state ();
+        });
+        update_state (true);
     }
 
-    protected override void update_state (bool first_update = false) {
+    private void update_state (bool first_update = false) {
         if (!first_update && package.get_version != null) {
             if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
@@ -117,7 +120,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             }
         }
 
-        update_action ();
         changed ();
     }
 
