@@ -347,6 +347,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return;
         }
 
+        // Remove old pages when switching package origins
         if (navigation_view.visible_page is Views.AppInfoView) {
             var visible_page = (Views.AppInfoView) navigation_view.visible_page;
             if (visible_page.package.normalized_component_id == package.normalized_component_id) {
