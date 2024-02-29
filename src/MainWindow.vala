@@ -351,22 +351,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if (navigation_view.visible_page is Views.AppInfoView) {
             var visible_page = (Views.AppInfoView) navigation_view.visible_page;
             if (visible_page.package.normalized_component_id == package.normalized_component_id) {
+                navigation_view.animate_transitions = false;
                 navigation_view.pop ();
             }
         }
 
         var app_info_view = new Views.AppInfoView (package);
         navigation_view.push (app_info_view);
+        navigation_view.animate_transitions = true;
 
-        app_info_view.show_other_package.connect ((_package, transition) => {
-            if (!transition) {
-                navigation_view.animate_transitions = false;
-            }
-
-            show_package (_package);
-
-            navigation_view.animate_transitions = true;
-        });
+        app_info_view.show_other_package.connect (show_package);
     }
 
     private void update_navigation () {
