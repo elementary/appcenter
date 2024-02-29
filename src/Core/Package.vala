@@ -967,4 +967,30 @@ public class AppCenterCore.Package : Object {
             backend_details = new PackageDetails ();
         }
     }
+
+    public bool matches_search (string search_term) {
+        if (search_term == "") {
+            return true;
+        }
+
+        var _search_term = search_term.down ();
+
+        if (_search_term in get_name ().down ()) {
+            return true;
+        }
+
+        if (_search_term in get_summary ().down ()) {
+            return true;
+        }
+
+        if (_search_term in get_description ().down ()) {
+            return true;
+        }
+
+        if (_search_term in component.get_keywords_table ()) {
+            return true;
+        }
+
+        return false;
+    }
 }
