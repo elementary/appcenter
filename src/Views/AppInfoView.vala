@@ -20,11 +20,7 @@
 public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     public const int MAX_WIDTH = 800;
 
-    public signal void show_other_package (
-        AppCenterCore.Package package,
-        bool remember_history = true,
-        bool transition = true
-    );
+    public signal void show_other_package (AppCenterCore.Package package);
 
     public AppCenterCore.Package package { get; construct set; }
 
@@ -729,6 +725,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         child = overlay;
         title = package.get_name ();
+        tag = package.hash;
 
 #if SHARING
         if (package.is_shareable) {
@@ -772,7 +769,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         origin_dropdown.notify["selected-item"].connect (() => {
             var selected_origin_package = (AppCenterCore.Package) origin_dropdown.selected_item;
             if (selected_origin_package != null && selected_origin_package != package) {
-                show_other_package (selected_origin_package, false, false);
+                show_other_package (selected_origin_package);
             }
         });
 
