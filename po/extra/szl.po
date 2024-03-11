@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 18:35+0000\n"
+"POT-Creation-Date: 2024-03-11 10:43+0000\n"
 "PO-Revision-Date: 2020-02-24 23:09+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/extra/"
