@@ -8,13 +8,14 @@
 # Kristien <kristien@mailo.com>, 2019.
 # Corentin Noël <tintou@noel.tf>, 2021, 2023.
 # Léo Bidot <toonbunny@gmail.com>, 2021.
+# Bouteiller Thélio <th3liomailg00g1e@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-22 18:35+0000\n"
 "PO-Revision-Date: 2024-03-11 10:42+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"Last-Translator: Bouteiller Thélio <th3liomailg00g1e@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -73,9 +74,7 @@ msgstr "Mettre à jour automatiquement les applications gratuites et achetées"
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
-msgstr ""
-"Les applications avec un essai gratuit ne seront pas mises à jour "
-"automatiquement"
+msgstr "Les  applications gratuites ne seront pas mises à jour automatiquement"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
