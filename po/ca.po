@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 18:35+0000\n"
+"POT-Creation-Date: 2024-03-11 10:43+0000\n"
 "PO-Revision-Date: 2024-02-15 18:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -40,7 +40,7 @@ msgstr "El Centre d'aplicacions s'iniciarà automàticament quan aquest disposit
 msgid "The app has been installed"
 msgstr "L'aplicació s'ha instal·lat"
 
-#: src/Application.vala:355 src/MainWindow.vala:467
+#: src/Application.vala:355 src/MainWindow.vala:418
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s s'ha instal·lat"
@@ -55,7 +55,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Actualitzacions i aplicacions instal·lades"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:406 src/MainWindow.vala:549
+#: src/MainWindow.vala:145 src/MainWindow.vala:371 src/MainWindow.vala:491
 msgid "Search Apps"
 msgstr "Cerca aplicacions"
 
@@ -75,63 +75,62 @@ msgstr "Comprova si hi ha actualitzacions"
 msgid "Settings"
 msgstr "Paràmetres"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:210
 msgid "Network Not Available."
 msgstr "La xarxa no està disponible."
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:211
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Connecteu a Internet per remenar i instal·lar aplicacions."
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:221
 msgid "Network Settings…"
 msgstr "Configuració de la xarxa…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:228
 msgid "Running in Demo Mode"
 msgstr "S'executa en mode de demostració"
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:229
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Instal·leu %s per navegar i instal·lar aplicacions."
 
-#: src/MainWindow.vala:410 src/MainWindow.vala:414
+#: src/MainWindow.vala:375 src/MainWindow.vala:379
 #, c-format
 msgid "Search %s"
 msgstr "Cerca %s"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:470
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:57
+#: src/MainWindow.vala:421 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Obre"
 
-#: src/MainWindow.vala:586
+#: src/MainWindow.vala:520
 msgid "Getting app information…"
 msgstr "S'obté informació de l'aplicació…"
 
-#: src/MainWindow.vala:589
+#: src/MainWindow.vala:523
 msgid "Getting download size…"
 msgstr "S'obté la mida de la baixada…"
 
-#: src/MainWindow.vala:595
+#: src/MainWindow.vala:529
 msgid "Checking for updates…"
 msgstr "Es comprova si hi ha actualitzacions…"
 
-#: src/MainWindow.vala:598
+#: src/MainWindow.vala:532
 msgid "Installing…"
 msgstr "S'instal·la…"
 
-#: src/MainWindow.vala:601
+#: src/MainWindow.vala:535
 msgid "Installing updates…"
 msgstr "S'instal·len les actualitzacions…"
 
-#: src/MainWindow.vala:604
+#: src/MainWindow.vala:538
 msgid "Uninstalling…"
 msgstr "Es desinstal·la…"
 
-#: src/MainWindow.vala:607
+#: src/MainWindow.vala:541
 msgid "Repairing…"
 msgstr "Es repara…"
 
@@ -559,7 +558,7 @@ msgstr "Voleu desinstal·lar l'aplicació?"
 msgid "Uninstall “%s”?"
 msgstr "Voleu desinstal·lar %s?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:163
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:165
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
@@ -605,286 +604,286 @@ msgstr "Ha fallat actualitzar «%s»"
 msgid "Refresh Updates"
 msgstr "Refresca les actualitzacions"
 
-#: src/Views/AppInfoView.vala:230
+#: src/Views/AppInfoView.vala:234
 msgid "Illicit Substances"
 msgstr "Substàncies il·lícites"
 
-#: src/Views/AppInfoView.vala:231
+#: src/Views/AppInfoView.vala:235
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Presència o referències a l'alcohol, estupefaents o tabac"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:240
 msgid "Sex & Nudity"
 msgstr "Sexe i nuesa"
 
-#: src/Views/AppInfoView.vala:237
+#: src/Views/AppInfoView.vala:241
 msgid "Adult nudity or sexual themes"
 msgstr "Nus d'adults o temes sexuals"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:246
 msgid "Offensive Language"
 msgstr "Llenguatge ofensiu"
 
-#: src/Views/AppInfoView.vala:243
+#: src/Views/AppInfoView.vala:247
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Profanitat, llenguatge discriminatori o humor per a adults"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:252
 msgid "Gambling"
 msgstr "Joc"
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:253
 msgid "Realistic or participatory gambling"
 msgstr "Joc realista o participatiu"
 
-#: src/Views/AppInfoView.vala:273
+#: src/Views/AppInfoView.vala:277
 msgid "Non-Curated"
 msgstr "Sense cura"
 
-#: src/Views/AppInfoView.vala:274
+#: src/Views/AppInfoView.vala:278
 msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgstr "L'elementary no n'ha revisat la seguretat, la privadesa ni la integració amb el sistema."
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:303
 msgid "May Not Be Translated"
 msgstr "Pot no estar traduïda."
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:304
 msgid "This app does not provide language information"
 msgstr "Aquesta aplicació no proporciona informació sobre la llengua."
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:311
 msgid "Not Translated"
 msgstr "No traduïda"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:312
 msgid "This app is not available in your language"
 msgstr "Aquesta aplicació no està disponible en la vostra llengua."
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:319
 msgid "Not Fully Translated"
 msgstr "No està totalment traduïda."
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:320
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Aquesta aplicació està %i%% traduïda a la vostra llengua."
 
-#: src/Views/AppInfoView.vala:340
+#: src/Views/AppInfoView.vala:344
 msgid "Conflict"
 msgstr "Conflicte"
 
-#: src/Views/AppInfoView.vala:341
+#: src/Views/AppInfoView.vala:345
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Representacions de situacions insegures o conflictes agressius"
 
-#: src/Views/AppInfoView.vala:354
+#: src/Views/AppInfoView.vala:358
 msgid "Violence"
 msgstr "Violència"
 
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:363
 msgid "Fantasy Violence"
 msgstr "Violència de fantasia"
 
-#: src/Views/AppInfoView.vala:364
+#: src/Views/AppInfoView.vala:368
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Violència gràfica, vessament de sang o mort"
 
-#: src/Views/AppInfoView.vala:408
+#: src/Views/AppInfoView.vala:412
 msgid "Multiplayer"
 msgstr "Multijugador"
 
-#: src/Views/AppInfoView.vala:409
+#: src/Views/AppInfoView.vala:413
 msgid "Online play with other people"
 msgstr "Joc en línia amb altres persones"
 
-#: src/Views/AppInfoView.vala:425
+#: src/Views/AppInfoView.vala:429
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Missatges d'àudio, vídeo o missatges de text sense moderar amb altres persones"
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:431
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Missatges d'àudio, vídeo o text moderats amb altres persones"
 
-#: src/Views/AppInfoView.vala:431
+#: src/Views/AppInfoView.vala:435
 msgid "Online Interactions"
 msgstr "Interaccions en línia"
 
-#: src/Views/AppInfoView.vala:441
+#: src/Views/AppInfoView.vala:445
 msgid "Location Sharing"
 msgstr "Compartició d'ubicació"
 
-#: src/Views/AppInfoView.vala:442
+#: src/Views/AppInfoView.vala:446
 msgid "Other people can see your real-world location"
 msgstr "Altres persones poden veure la vostra ubicació real."
 
-#: src/Views/AppInfoView.vala:454
+#: src/Views/AppInfoView.vala:458
 msgid "Collects anonymous usage data"
 msgstr "Recopila dades d'ús anònimes."
 
-#: src/Views/AppInfoView.vala:457
+#: src/Views/AppInfoView.vala:461
 msgid "Collects usage data that could be used to identify you"
 msgstr "Recopila dades d’ús que es podrien usar per identificar-vos."
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:466
 msgid "Info Sharing"
 msgstr "Compartició d'informació"
 
-#: src/Views/AppInfoView.vala:563
+#: src/Views/AppInfoView.vala:567
 msgid "Screenshot Not Available"
 msgstr "Captura no disponible"
 
-#: src/Views/AppInfoView.vala:591
+#: src/Views/AppInfoView.vala:595
 msgid "What's New:"
 msgstr "Què hi ha de nou:"
 
-#: src/Views/AppInfoView.vala:618
+#: src/Views/AppInfoView.vala:622
 msgid "Extensions:"
 msgstr "Extensions:"
 
-#: src/Views/AppInfoView.vala:649
+#: src/Views/AppInfoView.vala:653
 msgid "Homepage"
 msgstr "Pàgina principal"
 
-#: src/Views/AppInfoView.vala:655
+#: src/Views/AppInfoView.vala:659
 msgid "Translate"
 msgstr "Traducció"
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:665
 msgid "Send Feedback"
 msgstr "Envieu retroacció"
 
-#: src/Views/AppInfoView.vala:667
+#: src/Views/AppInfoView.vala:671
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/Views/AppInfoView.vala:715
+#: src/Views/AppInfoView.vala:719
 msgid "Link copied to clipboard"
 msgstr "Enllaç copiat al porta-retalls"
 
-#: src/Views/AppInfoView.vala:727
+#: src/Views/AppInfoView.vala:732
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Obtingueu %s al Centre d'aplicacions:"
 
-#: src/Views/AppInfoView.vala:735
+#: src/Views/AppInfoView.vala:740
 msgid "Share"
 msgstr "Comparteix"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:828
 msgid "End of Life"
 msgstr "Fi de vida útil"
 
-#: src/Views/AppInfoView.vala:828
+#: src/Views/AppInfoView.vala:829
 msgid "May not work as expected or receive security updates"
 msgstr "És possible que no funcioni com s'espera o que no rebi actualitzacions de seguretat."
 
-#: src/Views/AppInfoView.vala:834
+#: src/Views/AppInfoView.vala:835
 msgid "Outdated"
 msgstr "No actualitzat"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:836
 msgid "May not work as expected or support the latest features"
 msgstr "És possible que no funcioni com s'espera o que no admeti les últimes funcions."
 
-#: src/Views/AppInfoView.vala:843
+#: src/Views/AppInfoView.vala:844
 msgid "Unstable"
 msgstr "Inestable"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:845
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "Creada per a una versió inestable de %s; pot contenir problemes importants. No es recomana usar-la en un sistema de producció."
 
-#: src/Views/AppInfoView.vala:857
+#: src/Views/AppInfoView.vala:858
 msgid "Insecure Sandbox"
 msgstr "Caixa no segura"
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:859
 msgid "Can ignore or modify its own system permissions"
 msgstr "Pot ignorar o modificar els propis permisos del sistema."
 
-#: src/Views/AppInfoView.vala:867
+#: src/Views/AppInfoView.vala:868
 msgid "System Folder Access"
 msgstr "Accés a la carpeta del sistema"
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:869
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "Inclou les carpetes personals de tothom, però no inclou els elements interns del sistema."
 
-#: src/Views/AppInfoView.vala:875
+#: src/Views/AppInfoView.vala:876
 msgid "Home Folder Access"
 msgstr "Accés a la carpeta personal"
 
-#: src/Views/AppInfoView.vala:876
+#: src/Views/AppInfoView.vala:877
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
 msgstr "Inclou tots els documents, baixades, música, imatges, vídeos i qualsevol carpeta amagada."
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:886
 msgid "Legacy Autostart"
 msgstr "Inici automàtic de llegat"
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:887
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Es pot iniciar i executar automàticament en segon pla sense demanar-ho"
 
-#: src/Views/AppInfoView.vala:895
+#: src/Views/AppInfoView.vala:896
 msgid "Location Access"
 msgstr "Accés a la ubicació"
 
-#: src/Views/AppInfoView.vala:896
+#: src/Views/AppInfoView.vala:897
 msgid "Can see your precise location at any time without asking"
 msgstr "Es pot veure la ubicació precisa en qualsevol moment sense demanar-ho."
 
-#: src/Views/AppInfoView.vala:905
+#: src/Views/AppInfoView.vala:906
 msgid "Legacy Notifications"
 msgstr "Notificacions de llegat"
 
-#: src/Views/AppInfoView.vala:906
+#: src/Views/AppInfoView.vala:907
 msgid "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr "És possible que les bombolles no es puguin configurar o que apareguin al centre de notificacions com a altres."
 
-#: src/Views/AppInfoView.vala:915
+#: src/Views/AppInfoView.vala:916
 msgid "System Settings Access"
 msgstr "Accés a la configuració del sistema"
 
-#: src/Views/AppInfoView.vala:916
+#: src/Views/AppInfoView.vala:917
 msgid "Can read and modify system settings"
 msgstr "Es pot llegir i modificar la configuració del sistema."
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1156
+#: src/Views/AppInfoView.vala:1142
 msgid "Public Domain"
 msgstr "Domini públic"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1159
+#: src/Views/AppInfoView.vala:1145
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ca.wikipedia.org/wiki/Domini_p%C3%BAblic"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1164
+#: src/Views/AppInfoView.vala:1150
 msgid "Free Software"
 msgstr "Programari lliure"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1167
+#: src/Views/AppInfoView.vala:1153
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ca.html"
 
-#: src/Views/AppInfoView.vala:1171
+#: src/Views/AppInfoView.vala:1157
 msgid "Proprietary"
 msgstr "De propietat"
 
-#: src/Views/AppInfoView.vala:1174
+#: src/Views/AppInfoView.vala:1160
 msgid "Unknown License"
 msgstr "Llicència desconeguda"
 
-#: src/Views/AppInfoView.vala:1266
+#: src/Views/AppInfoView.vala:1270
 msgid "Fund"
 msgstr "Finançament"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1276
 msgid "Fund the development of this app"
 msgstr "Financeu el desenvolupament d'aquesta aplicació"
 
@@ -1050,6 +1049,18 @@ msgstr "Cerca"
 msgid "The search term must be at least 3 characters long."
 msgstr "El terme de recerca ha de tenir com a mínim 3 caràcters."
 
+#: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
+msgid "Free"
+msgstr "Lliure"
+
+#: src/Widgets/ActionStack.vala:120 src/Widgets/HumbleButton.vala:82
+msgid "Install"
+msgstr "Instal·la"
+
+#: src/Widgets/ActionStack.vala:137
+msgid "Update"
+msgstr "Actualitza"
+
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "Número de la targeta"
@@ -1057,16 +1068,6 @@ msgstr "Número de la targeta"
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
 msgstr "Requereix pagaments, que no estan habilitats."
-
-#: src/Widgets/HumbleButton.vala:80
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:136
-msgid "Free"
-msgstr "Lliure"
-
-#: src/Widgets/HumbleButton.vala:82
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:138
-msgid "Install"
-msgstr "Instal·la"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:118
@@ -1133,20 +1134,16 @@ msgstr "Només es baixaran les parts que calguin de les aplicacions i de les act
 msgid "Up to %s"
 msgstr "Fins a %s"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
-msgid "Update"
-msgstr "Actualitza"
-
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
 msgstr "Notes de la versió"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:134
 #, c-format
 msgid "What's new in %s"
 msgstr "Què hi ha de nou a la versió %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:154
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "Tanca"
 
