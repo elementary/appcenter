@@ -63,7 +63,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         notify["working"].connect (() => {
             Idle.add (() => {
-                App.refresh_action.set_enabled (!working);
+                App.refresh_action.set_enabled (!working && !Utils.is_running_in_guest_session ());
                 App.repair_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
@@ -188,8 +188,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             title_widget = search_clamp
         };
         headerbar.pack_start (return_button);
-        headerbar.pack_end (menu_button);
-        headerbar.pack_end (view_mode_revealer);
+        if (!Utils.is_running_in_guest_session ()) {
+            headerbar.pack_end (menu_button);
+            headerbar.pack_end (view_mode_revealer);
+        }
 
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
