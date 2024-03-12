@@ -191,8 +191,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if (!Utils.is_running_in_guest_session ()) {
             headerbar.pack_end (menu_button);
             headerbar.pack_end (view_mode_revealer);
-        } else {
-            headerbar.pack_end (new Gtk.Label (""));
         }
 
         var homepage = new Homepage ();
