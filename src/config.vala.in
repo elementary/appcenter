@@ -1,5 +1,4 @@
 namespace Build {
-    public const string HIDDEN_APP_LIST = "@HIDDEN_APP_LIST@";
     public const string CONFIGDIR = "@CONFIGDIR@";
     public const string LOCALEDIR = "@LOCALEDIR@";
     public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
