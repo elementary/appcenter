@@ -133,7 +133,7 @@ public class SharePopover : Gtk.Popover {
 
     private void show_uri (string uri) {
         var main_window = ((Gtk.Application) Application.get_default ()).active_window;
-        Gtk.show_uri (main_window, uri, Gdk.CURRENT_TIME);
+        new Gtk.UriLauncher (uri).launch.begin (main_window, null);
         popdown ();
     }
 }

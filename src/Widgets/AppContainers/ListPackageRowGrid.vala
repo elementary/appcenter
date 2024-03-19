@@ -21,8 +21,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     private Gtk.Label package_summary;
 
     public ListPackageRowGrid (AppCenterCore.Package package) {
-        base (package);
-        set_up_package ();
+        Object (package: package);
     }
 
     construct {
@@ -34,9 +33,9 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             wrap = true,
             xalign = 0
         };
-        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        package_name.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        package_summary = new Gtk.Label (null) {
+        package_summary = new Gtk.Label (package.get_summary ()) {
             ellipsize = Pango.EllipsizeMode.END,
             hexpand = true,
             lines = 2,
@@ -46,7 +45,11 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             wrap = true,
             xalign = 0
         };
-        package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
+        package_summary.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+
+        if (package.is_local) {
+            action_stack.visible = false;
+        }
 
         var grid = new Gtk.Grid () {
             column_spacing = 12,
@@ -58,15 +61,5 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         grid.attach (action_stack, 2, 0, 1, 2);
 
         append (grid);
-    }
-
-    protected override void set_up_package () {
-        package_summary.label = package.get_summary ();
-
-        if (package.is_local) {
-            action_stack.visible = false;
-        }
-
-        base.set_up_package ();
     }
 }

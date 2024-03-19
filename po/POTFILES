@@ -7,7 +7,6 @@ src/Core/BackendAggregator.vala
 src/Core/BackendInterface.vala
 src/Core/ChangeInformation.vala
 src/Core/Client.vala
-src/Core/ComponentValidator.vala
 src/Core/FlatpakBackend.vala
 src/Core/Job.vala
 src/Core/Package.vala
@@ -32,14 +31,15 @@ src/Views/AuthorView.vala
 src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/SearchView.vala
+src/Widgets/ActionStack.vala
 src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/HumbleButton.vala
 src/Widgets/PackageRow.vala
+src/Widgets/ProgressButton.vala
 src/Widgets/ReleaseRow.vala
 src/Widgets/SharePopover.vala
 src/Widgets/SizeLabel.vala
-src/Widgets/AppContainers/AbstractAppContainer.vala
 src/Widgets/AppContainers/AbstractPackageRowGrid.vala
 src/Widgets/AppContainers/InstalledPackageRowGrid.vala
 src/Widgets/AppContainers/ListPackageRowGrid.vala

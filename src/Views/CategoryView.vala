@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class AppCenter.CategoryView : Gtk.Box {
+public class AppCenter.CategoryView : Adw.NavigationPage {
     public signal void show_app (AppCenterCore.Package package);
 
     public AppStream.Category category { get; construct; }
@@ -60,7 +60,8 @@ public class AppCenter.CategoryView : Gtk.Box {
         stack.add_child (spinner);
         stack.add_child (scrolled);
 
-        append (stack);
+        child = stack;
+        title = category.name;
 
         populate ();
 
@@ -211,7 +212,7 @@ public class AppCenter.CategoryView : Gtk.Box {
                 var header = new Granite.HeaderLabel (label) {
                     margin_start = 12
                 };
-                header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+                header.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
                 append (header);
             }
             append (flowbox);

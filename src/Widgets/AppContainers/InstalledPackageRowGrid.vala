@@ -28,28 +28,28 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         Object (package: package);
 
         if (action_size_group != null) {
-            action_size_group.add_widget (action_button);
-            action_size_group.add_widget (cancel_button);
+            action_size_group.add_widget (action_stack.action_button);
+            action_size_group.add_widget (action_stack.cancel_button);
         }
 
         set_up_package ();
     }
 
     construct {
-        updates_view = true;
+        action_stack.updates_view = true;
 
         var package_name = new Gtk.Label (package.get_name ()) {
             valign = Gtk.Align.END,
             xalign = 0
         };
-        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        package_name.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         app_version = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
             valign = Gtk.Align.START,
             xalign = 0
         };
-        app_version.get_style_context ().add_class (Granite.STYLE_CLASS_DIM_LABEL);
+        app_version.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var release_button = new Gtk.Button.from_icon_name ("dialog-information-symbolic") {
             valign = Gtk.Align.CENTER
@@ -85,7 +85,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         });
     }
 
-    protected override void set_up_package () {
+    private void set_up_package () {
         if (package.get_version () != null) {
             if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
@@ -94,10 +94,13 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             }
         }
 
-        base.set_up_package ();
+        package.notify["state"].connect (() => {
+            update_state ();
+        });
+        update_state (true);
     }
 
-    protected override void update_state (bool first_update = false) {
+    private void update_state (bool first_update = false) {
         if (!first_update && package.get_version != null) {
             if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
@@ -117,7 +120,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             }
         }
 
-        update_action ();
         changed ();
     }
 
@@ -137,7 +139,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                 width_chars = 20,
                 wrap = true
             };
-            releases_title.get_style_context ().add_class ("primary");
+            releases_title.add_css_class ("primary");
 
             var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ());
 

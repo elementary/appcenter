@@ -9,12 +9,12 @@ An open, pay-what-you-want app store for indie developers.
 
 You'll need the following dependencies:
 * gettext
-* libadwaita-1-dev
+* libadwaita-1-dev (>= 1.4)
 * libappstream-dev (>= 0.15.2)
 * libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
 * libgranite-7-dev (>=7.1.0)
-* libgtk-4-dev
+* libgtk-4-dev (>=4.10)
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev
@@ -24,6 +24,7 @@ You'll need the following dependencies:
 * libxml2-dev
 * libxml2-utils
 * meson
+* sassc
 * valac (>= 0.26)
 
 Run `meson build` to configure the build environment. Change to the build directory and run `ninja` to build

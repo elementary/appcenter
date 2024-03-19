@@ -17,26 +17,22 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
+public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     public const int MAX_WIDTH = 800;
 
-    public signal void show_other_package (
-        AppCenterCore.Package package,
-        bool remember_history = true,
-        bool transition = true
-    );
+    public signal void show_other_package (AppCenterCore.Package package);
 
-    private static Gtk.CssProvider banner_provider;
-    private static Gtk.CssProvider loading_provider;
+    public AppCenterCore.Package package { get; construct set; }
 
     GenericArray<AppStream.Screenshot> screenshots;
 
+    private ActionStack action_stack;
+    private GLib.ListStore origin_liststore;
     private Granite.HeaderLabel whats_new_label;
     private Gtk.CssProvider accent_provider;
-    private Gtk.ComboBox origin_combo;
+    private Gtk.DropDown origin_dropdown;
     private Gtk.Label app_subtitle;
     private Gtk.ListBox extension_box;
-    private Gtk.ListStore origin_liststore;
     private Gtk.Overlay screenshot_overlay;
     private Gtk.Revealer origin_combo_revealer;
     private Adw.Carousel release_carousel;
@@ -54,8 +50,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     private bool is_runtime_warning_shown = false;
     private bool permissions_shown = false;
 
-    private unowned Gtk.StyleContext stack_context;
-
     public bool to_recycle { public get; private set; default = false; }
 
     public AppInfoView (AppCenterCore.Package package) {
@@ -64,23 +58,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
 
     class construct {
         set_css_name ("appinfoview");
-    }
-
-    static construct {
-        var appinfoview_provider = new Gtk.CssProvider ();
-        appinfoview_provider.load_from_resource ("io/elementary/appcenter/AppInfoView.css");
-
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            appinfoview_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-
-        banner_provider = new Gtk.CssProvider ();
-        banner_provider.load_from_resource ("io/elementary/appcenter/banner.css");
-
-        loading_provider = new Gtk.CssProvider ();
-        loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
     }
 
     construct {
@@ -166,36 +143,38 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         app_subtitle.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
         app_subtitle.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
-        origin_combo = new Gtk.ComboBox.with_model (origin_liststore) {
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.CENTER
+        origin_liststore = new GLib.ListStore (typeof (AppCenterCore.Package));
+
+        var list_factory = new Gtk.SignalListItemFactory ();
+        list_factory.setup.connect (origin_setup_factory);
+        list_factory.bind.connect (origin_bind_factory);
+
+        origin_dropdown = new Gtk.DropDown (origin_liststore, null) {
+            halign = START,
+            valign = CENTER,
+            factory = list_factory
         };
 
         origin_combo_revealer = new Gtk.Revealer () {
-            child = origin_combo,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN
+            child = origin_dropdown,
+            overflow = VISIBLE,
+            transition_type = SLIDE_DOWN
         };
-
-        var renderer = new Gtk.CellRendererText ();
-        origin_combo.pack_start (renderer, true);
-        origin_combo.add_attribute (renderer, "text", 1);
 
         var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             tooltip_text = _("Uninstall"),
             margin_end = 12
         };
         uninstall_button.add_css_class ("raised");
-
-        unowned var uninstall_button_context = uninstall_button.get_style_context ();
-        uninstall_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        uninstall_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        uninstall_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         uninstall_button_revealer = new Gtk.Revealer () {
             child = uninstall_button,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT,
             overflow = VISIBLE
         };
+
+        action_stack = new ActionStack (package);
 
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             halign = Gtk.Align.END,
@@ -237,25 +216,17 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         header.append (header_clamp);
 
-        unowned var header_context = header.get_style_context ();
-        header_context.add_class ("banner");
-        header_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        header_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        header.add_css_class ("banner");
+        header.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        unowned var action_button_context = action_button.get_style_context ();
-        action_button_context.add_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        action_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        unowned var open_button_context = open_button.get_style_context ();
-        open_button_context.add_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        open_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        open_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        unowned var cancel_button_context = cancel_button.get_style_context ();
-        cancel_button_context.add_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        cancel_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        cancel_button_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        action_stack.cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var package_component = package.component;
 
@@ -594,11 +565,9 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             };
 
             var screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
-
-            unowned var screenshot_not_found_context = screenshot_not_found.get_style_context ();
-            screenshot_not_found_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            screenshot_not_found_context.add_class ("screenshot");
-            screenshot_not_found_context.add_class (Granite.STYLE_CLASS_DIM_LABEL);
+            screenshot_not_found.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            screenshot_not_found.add_css_class ("screenshot");
+            screenshot_not_found.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             screenshot_not_found_clamp = new Adw.Clamp () {
                 child = screenshot_not_found,
@@ -612,9 +581,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             screenshot_stack.add_child (screenshot_overlay);
             screenshot_stack.add_child (screenshot_not_found_clamp);
 
-            stack_context = screenshot_stack.get_style_context ();
-            stack_context.add_class ("loading");
-            stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            screenshot_stack.add_css_class ("loading");
         }
 
         app_description = new Gtk.Label (null) {
@@ -756,9 +723,10 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         };
         overlay.add_overlay (toast);
 
-        append (overlay);
+        child = overlay;
+        title = package.get_name ();
+        tag = package.hash;
 
-        open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 #if SHARING
         if (package.is_shareable) {
             var body = _("Check out %s on AppCenter:").printf (package.get_name ());
@@ -790,20 +758,18 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             links_flowbox.append (share_button);
         }
 #endif
-        view_entered ();
-        set_up_package ();
+
+        package.notify["state"].connect (on_package_state_changed);
+        on_package_state_changed ();
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
         }
 
-        origin_combo.changed.connect (() => {
-            Gtk.TreeIter iter;
-            AppCenterCore.Package selected_origin_package;
-            origin_combo.get_active_iter (out iter);
-            origin_liststore.@get (iter, 0, out selected_origin_package);
+        origin_dropdown.notify["selected-item"].connect (() => {
+            var selected_origin_package = (AppCenterCore.Package) origin_dropdown.selected_item;
             if (selected_origin_package != null && selected_origin_package != package) {
-                show_other_package (selected_origin_package, false, false);
+                show_other_package (selected_origin_package);
             }
         });
 
@@ -812,7 +778,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         realize.connect (load_more_content);
     }
 
-    protected override void update_state (bool first_update = false) {
+    private void on_package_state_changed () {
         if (!package.is_local) {
             size_label.update ();
         }
@@ -831,8 +797,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             default:
                 break;
         }
-
-        update_action ();
     }
 
     private async void load_extensions () {
@@ -969,29 +933,14 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         }
     }
 
-    public void view_entered () {
-        Gtk.TreeIter iter;
-        AppCenterCore.Package origin_package;
-        if (origin_liststore.get_iter_first (out iter)) {
-            do {
-                origin_liststore.@get (iter, 0, out origin_package);
-                if (origin_package == package) {
-                    origin_combo.set_active_iter (iter);
-                }
-            } while (origin_liststore.iter_next (ref iter));
-        }
-    }
-
     private void load_more_content () {
         var cache = AppCenterCore.Client.get_default ().screenshot_cache;
 
-        Gtk.TreeIter iter;
         uint count = 0;
         foreach (var origin_package in package.origin_packages) {
-            origin_liststore.append (out iter);
-            origin_liststore.set (iter, 0, origin_package, 1, origin_package.origin_description);
+            origin_liststore.append (origin_package);
             if (origin_package == package) {
-                origin_combo.set_active_iter (iter);
+                origin_dropdown.selected = count;
             }
 
             count++;
@@ -1123,7 +1072,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             Idle.add (() => {
                 if (screenshot_carousel.n_pages > 0) {
                     screenshot_stack.visible_child = screenshot_overlay;
-                    stack_context.remove_class ("loading");
+                    screenshot_stack.remove_css_class ("loading");
 
                     if (screenshot_carousel.n_pages > 1) {
                         screenshot_next.visible = true;
@@ -1131,7 +1080,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                     }
                 } else {
                     screenshot_stack.visible_child = screenshot_not_found_clamp;
-                    stack_context.remove_class ("loading");
+                    screenshot_stack.remove_css_class ("loading");
                 }
 
                 return GLib.Source.REMOVE;
@@ -1144,6 +1093,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     // We need to first download the screenshot locally so that it doesn't freeze the interface.
     private void load_screenshot (string? caption, string path) {
         var image = new Gtk.Picture.for_filename (path) {
+            content_fit = SCALE_DOWN,
             height_request = 500,
             vexpand = true
         };
@@ -1151,10 +1101,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
             halign = Gtk.Align.CENTER
         };
-
-        unowned var box_context = box.get_style_context ();
-        box_context.add_class ("screenshot");
-        box_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        box.add_css_class ("screenshot");
+        box.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         if (caption != null) {
             var label = new Gtk.Label (caption) {
@@ -1162,8 +1110,7 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 wrap = true
             };
 
-            unowned var label_context = label.get_style_context ();
-            label_context.add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            label.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             box.append (label);
         }
@@ -1258,6 +1205,24 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
         });
     }
 
+    private void origin_setup_factory (Object object) {
+        var title = new Gtk.Label ("") {
+            xalign = 0
+        };
+
+        var list_item = (Gtk.ListItem) object;
+        list_item.child = title;
+    }
+
+    private void origin_bind_factory (Object object) {
+        var list_item = object as Gtk.ListItem;
+
+        var package = (AppCenterCore.Package) list_item.get_item ();
+
+        var title = (Gtk.Label) list_item.child;
+        title.label = package.origin_description;
+    }
+
     class UrlButton : Gtk.Box {
         public UrlButton (string label, string? uri, string icon_name) {
             add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
@@ -1282,7 +1247,10 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
                 append (button);
 
                 button.clicked.connect (() => {
-                    Gtk.show_uri ((Gtk.Window) get_root (), uri, Gdk.CURRENT_TIME);
+                    new Gtk.UriLauncher (uri).launch.begin (
+                        (Gtk.Window) get_root (),
+                        null
+                    );
                 });
             } else {
                 append (box);
@@ -1330,15 +1298,8 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
     }
 
     private class ArrowButton : Gtk.Button {
-        private static Gtk.CssProvider arrow_provider;
-
         public ArrowButton (string icon_name) {
             Object (icon_name: icon_name);
-        }
-
-        static construct {
-            arrow_provider = new Gtk.CssProvider ();
-            arrow_provider.load_from_resource ("io/elementary/appcenter/arrow.css");
         }
 
         construct {
@@ -1349,8 +1310,6 @@ public class AppCenter.Views.AppInfoView : AppCenter.AbstractAppContainer {
             add_css_class (Granite.STYLE_CLASS_FLAT);
             add_css_class (Granite.STYLE_CLASS_CIRCULAR);
             add_css_class ("arrow");
-
-            get_style_context ().add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
     }
 

@@ -18,7 +18,7 @@
 *              Dane Henson <thegreatdane@gmail.com>
 */
 
-public class AppCenter.Homepage : Gtk.Box {
+public class AppCenter.Homepage : Adw.NavigationPage {
     public signal void show_package (AppCenterCore.Package package);
     public signal void show_category (AppStream.Category category);
 
@@ -209,7 +209,8 @@ public class AppCenter.Homepage : Gtk.Box {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        append (scrolled_window);
+        child = scrolled_window;
+        title = _("Home");
 
         var local_package = App.local_package;
         if (local_package != null) {
@@ -366,13 +367,6 @@ public class AppCenter.Homepage : Gtk.Box {
 
         protected Gtk.Grid content_area;
 
-        protected static Gtk.CssProvider category_provider;
-
-        static construct {
-            category_provider = new Gtk.CssProvider ();
-            category_provider.load_from_resource ("io/elementary/appcenter/categories.css");
-        }
-
         construct {
             var expanded_grid = new Gtk.Grid () {
                 hexpand = true,
@@ -384,7 +378,6 @@ public class AppCenter.Homepage : Gtk.Box {
             content_area.add_css_class (Granite.STYLE_CLASS_CARD);
             content_area.add_css_class (Granite.STYLE_CLASS_ROUNDED);
             content_area.add_css_class ("category");
-            content_area.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             child = content_area;
 
@@ -417,7 +410,6 @@ public class AppCenter.Homepage : Gtk.Box {
             var name_label = new Gtk.Label (null);
             name_label.wrap = true;
             name_label.max_width_chars = 15;
-            name_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
                 halign = Gtk.Align.CENTER,
@@ -479,8 +471,7 @@ public class AppCenter.Homepage : Gtk.Box {
             category.add_desktop_group ("StrategyGame");
 
             var image = new Gtk.Image () {
-                icon_name = "appcenter-games-symbolic",
-                pixel_size = 64
+                icon_name = "appcenter-games-symbolic"
             };
             image.add_css_class (Granite.STYLE_CLASS_ACCENT);
             image.add_css_class ("slate");
@@ -488,16 +479,12 @@ public class AppCenter.Homepage : Gtk.Box {
             var fun_label = new Gtk.Label (_("Fun &")) {
                 halign = Gtk.Align.START
             };
-
-            unowned var fun_label_context = fun_label.get_style_context ();
-            fun_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
-            fun_label_context.add_class ("pink");
-            fun_label_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            fun_label.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            fun_label.add_css_class ("pink");
 
             var games_label = new Gtk.Label (_("Games"));
             games_label.add_css_class (Granite.STYLE_CLASS_ACCENT);
             games_label.add_css_class ("blue");
-            games_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var grid = new Gtk.Grid () {
                 column_spacing = 12,

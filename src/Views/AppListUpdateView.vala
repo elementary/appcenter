@@ -21,7 +21,7 @@
 namespace AppCenter.Views {
 /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
-    public class AppListUpdateView : Gtk.Box {
+    public class AppListUpdateView : Adw.NavigationPage {
         public signal void show_app (AppCenterCore.Package package);
 
         private Granite.HeaderLabel header_label;
@@ -42,9 +42,6 @@ namespace AppCenter.Views {
         construct {
             updates_liststore = new ListStore (typeof (AppCenterCore.Package));
             installed_liststore = new ListStore (typeof (AppCenterCore.Package));
-
-            var css_provider = new Gtk.CssProvider ();
-            css_provider.load_from_resource ("io/elementary/appcenter/AppListUpdateView.css");
 
             var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
                 description = _("Downloading a list of available updates to the OS and installed apps"),
@@ -85,13 +82,11 @@ namespace AppCenter.Views {
             header.append (header_label);
             header.append (size_label);
             header.append (update_all_button);
-            header.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             header_revealer = new Gtk.Revealer () {
                 child = header
             };
             header_revealer.add_css_class ("header");
-            header_revealer.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
@@ -125,7 +120,6 @@ namespace AppCenter.Views {
                 child = box,
                 hscrollbar_policy = Gtk.PolicyType.NEVER
             };
-            scrolled.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
@@ -142,7 +136,9 @@ namespace AppCenter.Views {
             stack.add_child (main_box);
             stack.add_child (loading_view);
 
-            append (stack);
+            child = stack;
+            /// TRANSLATORS: the name of the Installed Apps view
+            title = C_("view", "Installed");
 
             get_apps.begin ((obj, res) => {
                 get_apps.end (res);
@@ -197,12 +193,11 @@ namespace AppCenter.Views {
             yield refresh_mutex.lock (); // Wait for any previous operation to end
             // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
             refresh_cancellable = new Cancellable ();
-            unowned var client = AppCenterCore.Client.get_default ();
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            if (client.updates_number > 0) {
+            if (update_manager.updates_number > 0) {
                 header_revealer.reveal_child = true;
 
-                if (client.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
+                if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
                     update_all_button.sensitive = true;
@@ -211,8 +206,8 @@ namespace AppCenter.Views {
                 header_label.label = ngettext (
                     "%u Update Available",
                     "%u Updates Available",
-                    client.updates_number
-                ).printf (client.updates_number);
+                    update_manager.updates_number
+                ).printf (update_manager.updates_number);
 
                 size_label.update (update_manager.updates_size);
             } else {
@@ -225,6 +220,7 @@ namespace AppCenter.Views {
                 );
             }
 
+            unowned var client = AppCenterCore.Client.get_default ();
             var installed_apps = yield client.get_installed_applications (refresh_cancellable);
 
             if (!refresh_cancellable.is_cancelled ()) {
