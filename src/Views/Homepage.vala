@@ -218,7 +218,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         var local_package = App.local_package;
         if (local_package != null) {
-            var banner = new Widgets.Banner (local_package);
+            var banner = new Widgets.Banner.from_package (local_package);
 
             banner_carousel.prepend (banner);
 
@@ -226,12 +226,14 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 show_package (local_package);
             });
         } else {
-#if PACKAGEKIT_BACKEND
             appcenter_banner = new Widgets.Banner (
-                AppCenterCore.PackageKitBackend.get_default ().lookup_package_by_id ("appcenter")
+                _("AppCenter"),
+                _("Browse and manage apps"),
+                _("The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."),
+                new ThemedIcon ("io.elementary.appcenter"),
+                "#7239b3"
             );
             banner_carousel.append (appcenter_banner);
-#endif
 
             banner_carousel.page_changed.connect (page_changed_handler );
         }
@@ -295,7 +297,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             if (!installed) {
                 packages_in_banner.add (package);
 
-                var banner = new Widgets.Banner (package);
+                var banner = new Widgets.Banner.from_package (package);
                 banner.clicked.connect (() => {
                     show_package (package);
                 });
