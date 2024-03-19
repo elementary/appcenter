@@ -79,7 +79,7 @@ public class AppCenterCore.Client : Object {
     public async void update_cache (bool force = false, CacheUpdateType cache_update_type = CacheUpdateType.ALL) {
         cancellable.reset ();
 
-        if (Utils.is_running_in_demo_mode ()) {
+        if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
             return;
         }
 

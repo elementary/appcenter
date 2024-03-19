@@ -146,6 +146,7 @@ public class AppCenter.App : Gtk.Application {
         client.cache_update_failed.connect (on_cache_update_failed);
 
         refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
             client.update_cache.begin (true);
         });

@@ -27,7 +27,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Revealer updates_badge_revealer;
     private Granite.Toast toast;
     private Granite.OverlayBar overlaybar;
-    private Adw.Leaflet leaflet;
+    private Adw.NavigationView navigation_view;
 
     private AppCenterCore.Package? last_installed_package;
 
@@ -41,14 +41,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.grab_focus ();
 
         var go_back = new SimpleAction ("go-back", null);
-        go_back.activate.connect (() => leaflet.navigate (BACK));
+        go_back.activate.connect (() => navigation_view.pop ());
         add_action (go_back);
 
         var focus_search = new SimpleAction ("focus-search", null);
         focus_search.activate.connect (() => search_entry.grab_focus ());
         add_action (focus_search);
 
-        app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
+        app.set_accels_for_action ("win.go-back", {"<Alt>Left"});
         app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
 
         search_entry.search_changed.connect (() => trigger_search ());
@@ -63,7 +63,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         notify["working"].connect (() => {
             Idle.add (() => {
-                App.refresh_action.set_enabled (!working);
+                App.refresh_action.set_enabled (!working && !Utils.is_running_in_guest_session ());
                 App.repair_action.set_enabled (!working);
                 return GLib.Source.REMOVE;
             });
@@ -188,20 +188,20 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             title_widget = search_clamp
         };
         headerbar.pack_start (return_button);
-        headerbar.pack_end (menu_button);
-        headerbar.pack_end (view_mode_revealer);
+        if (!Utils.is_running_in_guest_session ()) {
+            headerbar.pack_end (menu_button);
+            headerbar.pack_end (view_mode_revealer);
+        }
 
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
 
-        leaflet = new Adw.Leaflet () {
-            can_navigate_back = true,
-            can_unfold = false
-        };
-        leaflet.append (homepage);
+        navigation_view = new Adw.NavigationView ();
+        navigation_view.add (homepage);
+        navigation_view.add (installed_view);
 
         var overlay = new Gtk.Overlay () {
-            child = leaflet
+            child = navigation_view
         };
         overlay.add_overlay (toast);
 
@@ -291,17 +291,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             show_package (package);
         });
 
-        leaflet.notify["visible-child"].connect (() => {
-            if (!leaflet.child_transition_running) {
-                update_navigation ();
-            }
-        });
-
-        leaflet.notify["child-transition-running"].connect (() => {
-            if (!leaflet.child_transition_running) {
-                update_navigation ();
-            }
-        });
+        navigation_view.popped.connect (update_navigation);
+        navigation_view.pushed.connect (update_navigation);
 
         search_entry_eventcontrollerkey.key_released.connect ((keyval, keycode, state) => {
             switch (keyval) {
@@ -351,63 +342,40 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
     }
 
-    public void show_package (AppCenterCore.Package package, bool remember_history = true) {
-        if (leaflet.child_transition_running) {
-            return;
-        }
-
-        var package_hash = package.hash;
-
-        var pk_child = leaflet.get_child_by_name (package_hash) as Views.AppInfoView;
-        if (pk_child != null && pk_child.to_recycle) {
-            // Don't switch to a view that needs recycling
-            pk_child.destroy ();
-            pk_child = null;
-        }
-
+    public void show_package (AppCenterCore.Package package) {
+        var pk_child = navigation_view.find_page (package.hash);
         if (pk_child != null) {
-            leaflet.visible_child = pk_child;
+            navigation_view.pop_to_page (pk_child);
             return;
+        }
+
+        // Remove old pages when switching package origins
+        if (navigation_view.visible_page is Views.AppInfoView) {
+            var visible_page = (Views.AppInfoView) navigation_view.visible_page;
+            if (visible_page.package.normalized_component_id == package.normalized_component_id) {
+                navigation_view.animate_transitions = false;
+                navigation_view.pop ();
+            }
         }
 
         var app_info_view = new Views.AppInfoView (package);
+        navigation_view.push (app_info_view);
+        navigation_view.animate_transitions = true;
 
-        leaflet.append (app_info_view);
-        leaflet.visible_child = app_info_view;
-
-        if (leaflet.get_adjacent_child (BACK) is Views.AppInfoView) {
-            var adjacent_app_info_view = (Views.AppInfoView)leaflet.get_adjacent_child (BACK);
-            if (
-                !remember_history &&
-                adjacent_app_info_view.package.normalized_component_id == package.normalized_component_id
-            ) {
-                leaflet.remove (adjacent_app_info_view);
-                update_navigation ();
-            }
-        }
-
-        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
-            if (!transition) {
-                leaflet.mode_transition_duration = 0;
-            }
-
-            show_package (_package, remember_history);
-
-            leaflet.mode_transition_duration = 200;
-        });
+        app_info_view.show_other_package.connect (show_package);
     }
 
     private void update_navigation () {
-        var previous_child = leaflet.get_adjacent_child (BACK);
+        var previous_child = navigation_view.get_previous_page (navigation_view.visible_page);
 
-        if (leaflet.visible_child is Homepage) {
+        if (navigation_view.visible_page is Homepage) {
             view_mode_revealer.reveal_child = true;
             configure_search (true, _("Search Apps"), "");
-        } else if (leaflet.visible_child is CategoryView) {
-            var current_category = ((CategoryView) leaflet.visible_child).category;
+        } else if (navigation_view.visible_page is CategoryView) {
+            var current_category = ((CategoryView) navigation_view.visible_page).category;
             view_mode_revealer.reveal_child = false;
             configure_search (true, _("Search %s").printf (current_category.name), "");
-        } else if (leaflet.visible_child == search_view) {
+        } else if (navigation_view.visible_page == search_view) {
             if (previous_child is CategoryView) {
                 var previous_category = ((CategoryView) previous_child).category;
                 configure_search (true, _("Search %s").printf (previous_category.name));
@@ -416,36 +384,24 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 configure_search (true);
                 view_mode_revealer.reveal_child = true;
             }
-        } else if (leaflet.visible_child is Views.AppInfoView) {
+        } else if (navigation_view.visible_page is Views.AppInfoView) {
             view_mode_revealer.reveal_child = false;
             configure_search (false);
-        } else if (leaflet.visible_child is Views.AppListUpdateView) {
+        } else if (navigation_view.visible_page is Views.AppListUpdateView) {
             view_mode_revealer.reveal_child = true;
             configure_search (false);
         }
 
         if (previous_child == null) {
-            set_return_name (null);
-        } else if (previous_child is Adw.NavigationPage) {
-            set_return_name (previous_child.title);
-        }
-
-        while (leaflet.get_adjacent_child (FORWARD) != null) {
-            var next_child = leaflet.get_adjacent_child (FORWARD);
-            leaflet.remove (next_child);
-
-            if (!(next_child is AppCenter.Views.AppListUpdateView)) {
-                next_child.destroy ();
-            }
+            return_button.visible = false;
+        } else {
+            return_button.label = previous_child.title;
+            return_button.visible = true;
         }
     }
 
     public void go_to_installed () {
-        if (installed_view.parent == null) {
-            leaflet.append (installed_view);
-        }
-
-        leaflet.visible_child = installed_view;
+        navigation_view.push (installed_view);
     }
 
     public void search (string term, bool mimetype = false) {
@@ -457,7 +413,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         last_installed_package = package;
 
         // Only show a toast when we're not on the installed app's page
-        if (leaflet.visible_child is Views.AppInfoView && ((Views.AppInfoView) leaflet.visible_child).package == package) {
+        if (navigation_view.visible_page is Views.AppInfoView && ((Views.AppInfoView) navigation_view.visible_page).package == package) {
             return;
         }
 
@@ -480,15 +436,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
-            if (leaflet.visible_child != search_view) {
+            if (navigation_view.visible_page != search_view) {
                 search_view = new AppCenter.SearchView ();
 
                 search_view.show_app.connect ((package) => {
                     show_package (package);
                 });
 
-                leaflet.append (search_view);
-                leaflet.visible_child = search_view;
+                navigation_view.push (search_view);
             }
 
             search_view.clear ();
@@ -504,7 +459,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             } else {
                 AppStream.Category current_category = null;
 
-                var previous_child = leaflet.get_adjacent_child (BACK);
+                var previous_child = navigation_view.get_previous_page (navigation_view.visible_page);
                 if (previous_child is CategoryView) {
                     current_category = ((CategoryView) previous_child).category;
                 }
@@ -515,14 +470,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         } else {
             // Prevent navigating away from category views when backspacing
-            if (leaflet.visible_child == search_view) {
+            if (navigation_view.visible_page == search_view) {
                 search_view.clear ();
                 search_view.current_search_term = search_entry.text;
 
                 // When replacing text with text don't go back
                 Idle.add (() => {
                     if (search_entry.text.length == 0) {
-                        leaflet.navigate (BACK);
+                        navigation_view.pop ();
                     }
 
                     return Source.REMOVE;
@@ -533,14 +488,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if (mimetype) {
             mimetype = false;
         }
-    }
-
-    private void set_return_name (string? return_name) {
-        if (return_name != null) {
-            return_button.label = return_name;
-        }
-
-        return_button.visible = return_name != null;
     }
 
     private void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
@@ -557,20 +504,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void show_category (AppStream.Category category) {
-        var child = leaflet.get_child_by_name (category.name);
-        if (child != null) {
-            leaflet.visible_child = child;
-            return;
-        }
-
         var category_view = new CategoryView (category);
 
-        leaflet.append (category_view);
-        leaflet.visible_child = category_view;
+        navigation_view.push (category_view);
 
         category_view.show_app.connect ((package) => {
             show_package (package);
-            set_return_name (category.name);
         });
     }
 

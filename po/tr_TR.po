@@ -1,490 +1,481 @@
-# Piotr Strebski <strebski@gmail.com>, 2018, 2019.
-# Kajetan Rosiak <roskaj@gmail.com>, 2018.
-# Daniel Foré <daniel@elementary.io>, 2019.
-# Deleted User <noreply+917@weblate.org>, 2019.
-# Oskar Rygasiewicz <fleepgames@gmail.com>, 2021, 2022.
-# Marcin Serwin <marcin.serwin0@protonmail.com>, 2021, 2022, 2023, 2024.
-# DarkKnightComes <darkknightcomes@gmail.com>, 2021.
-# Janek Pastuszka <windainspektor@gmail.com>, 2021.
-# Sebastian Bernat <srakap330@gmail.com>, 2024.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.elementary.appcenter package.
+# Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>, 2024.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-19 02:40+0000\n"
-"PO-Revision-Date: 2024-02-20 13:08+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
-"Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
-"Language: pl\n"
+"PO-Revision-Date: 2024-03-07 01:13+0000\n"
+"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr_TR/>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.0.2\n"
-"X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:362
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Uygulama Merkezi"
 
 #: src/Application.vala:88
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Nie można przetworzyć typu mediów %s"
+msgstr "%s medya türü çözümlenemedi"
 
 #: src/Application.vala:108
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Określony odnośnik '%s' nie został odnaleziony, wyszukiwanie"
+msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapılıyor"
 
 #: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
-msgstr "AppCenter zostanie automatycznie uruchomione gdy to urządzenie włączy się i pozostanie uruchomione po zamknięciu okna by móc automatycznie sprawdzać i instalować aktualizacje."
+msgstr "Uygulama Merkezi, bu cihaz açıldığında otomatik olarak başlayacak ve penceresi kapatıldığında çalışacaktır, bu sayede güncellemeleri otomatik olarak kontrol edip yükleyebilecektir."
 
 #: src/Application.vala:355
 msgid "The app has been installed"
-msgstr "Aplikacja została zainstalowana"
+msgstr "Uygulama yüklendi"
 
 #: src/Application.vala:356 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
-msgstr "„%s” zostało zainstalowane"
+msgstr "“%s” yüklendi"
 
 #: src/MainWindow.vala:92
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr "Nie udało się uruchomić „%s”"
+msgstr "\"%s\" başlatılamadı"
 
 #: src/MainWindow.vala:131
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Aktualizacje i zainstalowane aplikacje"
+msgstr "Güncellemeler ve yüklü uygulamalar"
 
 #: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
-msgstr "Wyszukaj program"
+msgstr "Uygulama Ara"
 
 #: src/MainWindow.vala:154
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Automatycznie aktualizuj darmowe i zakupione aplikacje"
+msgstr "Ücretsiz ve Satın Alınan Uygulamaları Otomatik Olarak Güncelle"
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
-msgstr "Aplikacje, które są aktualnie testowane nie będą automatycznie aktualizowane"
+msgstr "Ücretsiz olarak denenen uygulamalar otomatik olarak güncellenmeyecek"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
-msgstr "Sprawdź aktualizacje"
+msgstr "Güncellemeleri Kontrol Et"
 
 #: src/MainWindow.vala:181
 msgid "Settings"
-msgstr "Ustawienia"
+msgstr "Ayarlar"
 
 #: src/MainWindow.vala:212
 msgid "Network Not Available."
-msgstr "Sieć jest niedostępna."
+msgstr "Ağ Kullanılamıyor."
 
 #: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Połącz się z Internetem, aby przeglądać i instalować programy."
+msgstr "Uygulamalara göz atmak ve yüklemek için İnternet'e bağlanın."
 
 #: src/MainWindow.vala:223
 msgid "Network Settings…"
-msgstr "Ustawienia sieci…"
+msgstr "Ağ Ayarları…"
 
 #: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
-msgstr "Działanie w trybie demo"
+msgstr ""
 
 #: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Zainstaluj %s aby przeglądać i instalować programy."
+msgstr "Uygulamalara göz atmak ve uygulama yüklemek için %s'yi yükleyin."
 
 #: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
-msgstr "Wyszukaj %s"
+msgstr "%s'i Ara"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
-msgstr "Otwórz"
+msgstr "Aç"
 
 #: src/MainWindow.vala:522
 msgid "Getting app information…"
-msgstr "Pobieranie informacji o aplikacji…"
+msgstr "Uygulama bilgileri alınıyor…"
 
 #: src/MainWindow.vala:525
 msgid "Getting download size…"
-msgstr "Obliczanie rozmiaru pliku…"
+msgstr ""
 
 #: src/MainWindow.vala:531
 msgid "Checking for updates…"
-msgstr "Sprawdzanie aktualizacji…"
+msgstr ""
 
 #: src/MainWindow.vala:534
 msgid "Installing…"
-msgstr "Instalowanie…"
+msgstr ""
 
 #: src/MainWindow.vala:537
 msgid "Installing updates…"
-msgstr "Instalowanie aktualizacji…"
+msgstr ""
 
 #: src/MainWindow.vala:540
 msgid "Uninstalling…"
-msgstr "Odinstalowywanie…"
+msgstr ""
 
 #: src/MainWindow.vala:543
 msgid "Repairing…"
-msgstr "Naprawianie…"
+msgstr ""
 
 #: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
 msgid "Starting"
-msgstr "Rozpoczynanie"
+msgstr ""
 
 #: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
-msgstr "Oczekiwanie"
+msgstr ""
 
 #: src/Utils.vala:67
 msgid "Running"
-msgstr "Uruchomione"
+msgstr ""
 
 #: src/Utils.vala:69
 msgid "Querying"
-msgstr "Odpytywanie"
+msgstr ""
 
 #: src/Utils.vala:71
 msgid "Getting information"
-msgstr "Pobieranie informacji"
+msgstr ""
 
 #: src/Utils.vala:73
 msgid "Removing packages"
-msgstr "Usuwanie pakietów"
+msgstr ""
 
 #: src/Utils.vala:75
 msgid "Downloading"
-msgstr "Pobieranie"
+msgstr ""
 
 #: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1456
 msgid "Installing"
-msgstr "Instalowanie"
+msgstr ""
 
 #: src/Utils.vala:79
 msgid "Refreshing software list"
-msgstr "Odświeżanie listy oprogramowania"
+msgstr ""
 
 #: src/Utils.vala:81
 msgid "Installing updates"
-msgstr "Instalowanie aktualizacji"
+msgstr ""
 
 #: src/Utils.vala:83
 msgid "Cleaning up packages"
-msgstr "Porządkowanie pakietów"
+msgstr ""
 
 #: src/Utils.vala:85
 msgid "Obsoleting packages"
-msgstr "Określanie zbędności pakietów"
+msgstr ""
 
 #: src/Utils.vala:87
 msgid "Resolving dependencies"
-msgstr "Rozwiązywanie zależności"
+msgstr ""
 
 #: src/Utils.vala:89
 msgid "Checking signatures"
-msgstr "Sprawdzanie podpisów"
+msgstr ""
 
 #: src/Utils.vala:91
 msgid "Testing changes"
-msgstr "Testowanie zmian"
+msgstr ""
 
 #: src/Utils.vala:93
 msgid "Committing changes"
-msgstr "Zatwierdzanie zmian"
+msgstr ""
 
 #: src/Utils.vala:95
 msgid "Requesting data"
-msgstr "Pozyskiwanie danych"
+msgstr ""
 
 #: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
 msgid "Finished"
-msgstr "Zakończono"
+msgstr ""
 
 #: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
 #: src/Core/FlatpakBackend.vala:1465 src/Core/FlatpakBackend.vala:1489
 #: src/Core/FlatpakBackend.vala:1597 src/Core/FlatpakBackend.vala:1621
 #: src/Core/FlatpakBackend.vala:1779 src/Core/FlatpakBackend.vala:1797
 msgid "Cancelling"
-msgstr "Anulowanie"
+msgstr ""
 
 #: src/Utils.vala:101
 msgid "Downloading repository information"
-msgstr "Pobieranie informacji o repozytorium"
+msgstr ""
 
 #: src/Utils.vala:103
 msgid "Downloading list of packages"
-msgstr "Pobieranie listy pakietów"
+msgstr ""
 
 #: src/Utils.vala:105
 msgid "Downloading file lists"
-msgstr "Pobieranie list plików"
+msgstr ""
 
 #: src/Utils.vala:107
 msgid "Downloading lists of changes"
-msgstr "Pobieranie list zmian"
+msgstr ""
 
 #: src/Utils.vala:109
 msgid "Downloading groups"
-msgstr "Pobieranie grup"
+msgstr ""
 
 #: src/Utils.vala:111
 msgid "Downloading update information"
-msgstr "Pobieranie informacji o aktualizacji"
+msgstr ""
 
 #: src/Utils.vala:113
 msgid "Repackaging files"
-msgstr "Ponowne umieszczanie plików w pakietach"
+msgstr ""
 
 #: src/Utils.vala:115
 msgid "Loading cache"
-msgstr "Wczytywanie pamięci podręcznej"
+msgstr ""
 
 #: src/Utils.vala:117
 msgid "Scanning applications"
-msgstr "Skanowanie programów"
+msgstr ""
 
 #: src/Utils.vala:119
 msgid "Generating package lists"
-msgstr "Tworzenie list pakietów"
+msgstr ""
 
 #: src/Utils.vala:121
 msgid "Waiting for package manager lock"
-msgstr "Oczekiwanie na blokadę menedżera pakietów"
+msgstr ""
 
 #: src/Utils.vala:123
 msgid "Waiting for authentication"
-msgstr "Oczekiwanie na uwierzytelnienie"
+msgstr ""
 
 #: src/Utils.vala:125
 msgid "Updating running applications"
-msgstr "Aktualizowanie uruchomionych programów"
+msgstr ""
 
 #: src/Utils.vala:127
 msgid "Checking applications in use"
-msgstr "Sprawdzanie używanych programów"
+msgstr ""
 
 #: src/Utils.vala:129
 msgid "Checking libraries in use"
-msgstr "Sprawdzanie używanych bibliotek"
+msgstr ""
 
 #: src/Utils.vala:131
 msgid "Copying files"
-msgstr "Kopiowanie plików"
+msgstr ""
 
 #: src/Utils.vala:133
 msgid "Unknown state"
-msgstr "Nieznany stan"
+msgstr ""
 
 #: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
-msgstr "operacje na pakietach są wykonywane"
+msgstr ""
 
 #: src/Core/FlatpakBackend.vala:44
 #, c-format
 msgid "%s (system-wide)"
-msgstr "%s (systemowy)"
+msgstr ""
 
 #: src/Core/FlatpakBackend.vala:1588
 msgid "Uninstalling"
-msgstr "Odinstalowywanie"
+msgstr ""
 
 #: src/Core/FlatpakBackend.vala:1770
 msgid "Updating"
-msgstr "Aktualizowanie"
+msgstr ""
 
 #: src/Core/Package.vala:329
 #, c-format
 msgid "%s Developers"
-msgstr "Programiści %s"
+msgstr ""
 
 #: src/Core/Package.vala:364
 msgid "elementary Updates"
-msgstr "Aktualizacje elementary"
+msgstr ""
 
 #: src/Core/Package.vala:366
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (bez przeglądu)"
+msgstr ""
 
 #: src/Core/Package.vala:372
 msgid "Ubuntu Drivers"
-msgstr "Sterowniki Ubuntu"
+msgstr ""
 
 #: src/Core/Package.vala:376
 msgid "Unknown Origin (non-curated)"
-msgstr "Nieznanego pochodzenia (bez przeglądu)"
+msgstr ""
 
 #: src/Core/Package.vala:550
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr "Stan programu nie jest ustawiony jako zainstalowany w AppCenter dla pakietu: %s"
+msgstr ""
 
 #: src/Core/PackageKitBackend.vala:314
 #, c-format
 msgid "%s (local)"
-msgstr "%s (lokalny)"
+msgstr ""
 
 #: src/Core/Stripe.vala:27
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Podczas przetwarzania karty wystąpił błąd. Spróbuj ponownie później. Przepraszamy za wszelkie niedogodności."
+msgstr ""
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr "Proszę przejrzyj informacje dotyczące płatności i spróbuj ponownie."
+msgstr ""
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Numer karty jest nieprawidłowy. Spróbuj ponownie, używając prawidłowego numeru karty."
+msgstr ""
 
 #: src/Core/Stripe.vala:66
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "Miesiąc w dacie wygaśnięcia jest nieprawidłowy. Spróbuj ponownie, używając właściwej daty wygaśnięcia."
+msgstr ""
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "Rok w dacie wygaśnięcia jest nieprawidłowy. Spróbuj ponownie, używając właściwej daty wygaśnięcia."
+msgstr ""
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Numer CVC jest nieprawidłowy. Spróbuj ponownie, używając właściwego numeru CVC."
+msgstr ""
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
-msgstr "Ważność karty wygasła. Spróbuj ponownie z inną kartą."
+msgstr ""
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr "W tej chwili jest zbyt wiele próśb o płatność, proszę spróbować później."
+msgstr ""
 
 #: src/Core/Stripe.vala:106
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Ta karta nie obsługuje tego typu transakcji. Spróbuj ponownie z inną kartą."
+msgstr ""
 
 #: src/Core/Stripe.vala:108
 msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Waluta nie jest obsługiwana przez tę kartę. Spróbuj ponownie z inną kartą."
+msgstr ""
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
-msgstr "Transakcja została już przetworzona."
+msgstr ""
 
 #: src/Core/Stripe.vala:114
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "Kod pocztowy jest niepoprawny. Spróbuj ponownie, używając poprawnego kodu pocztowego."
+msgstr ""
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "Nie masz wystarczających środków. Proszę użyć alternatywnej metody płatności."
+msgstr ""
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Kwota jest nieprawidłowa. Spróbuj ponownie, używając prawidłowej kwoty."
+msgstr ""
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Kod PIN jest nieprawidłowy. Spróbuj ponownie, używając właściwego kodu PIN."
+msgstr ""
 
 #: src/Core/Stripe.vala:131
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Za dużo prób wprowadzenia kodu PIN. Spróbuj ponownie z inną kartą."
+msgstr ""
 
 #: src/Core/Stripe.vala:151
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Nie można zakończyć transakcji. Aby uzyskać dodatkowe informacje, skontaktuj się ze swoim bankiem."
+msgstr ""
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Osiągnięto saldo lub limit kredytowy na karcie."
+msgstr ""
 
 #: src/Core/Stripe.vala:157
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "Podana karta jest kartą testową. Proszę użyć prawdziwej karty, aby kontynuować."
+msgstr ""
 
 #: src/Core/UpdateManager.vala:33
 msgid "Runtime Updates"
-msgstr "Aktualizacje środowiska wykonawczego"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:34
 msgid "Updates to app runtimes"
-msgstr "Aktualizacje środowiska wykonawczego aplikacji"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:100
 #, c-format
 msgid "Version: %s"
-msgstr "Wersja: %s"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:118
 msgid "No runtimes with updates"
-msgstr "Brak środowisk wykonawczych z aktualizacjami"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "Jedno środowisko wykonawcze z aktualizacją"
-msgstr[1] "%u środowiska wykonawcze z aktualizacją"
-msgstr[2] "%u środowisk wykonawczych z aktualizacją"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
-msgstr "%s:"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:137
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Dostępna aktualizacja"
-msgstr[1] "Dostępne aktualizacje"
-msgstr[2] "Dostępnych aktualizacji"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/Core/UpdateManager.vala:139
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "Dostępna jest %u aktualizacja aplikacji"
-msgstr[1] "Dostępne są %u aktualizacje aplikacji"
-msgstr[2] "Dostępnych jest %u aktualizacji aplikacji"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "To może być chwilowy błąd lub mógł być spowodowany przez zewnętrznie lub ręcznie skompilowane oprogramowanie."
+msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
-msgstr "Nie udało się zainstalować aplikacji"
+msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
-msgstr "Nie udało się zainstalować „%s”"
+msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
 msgid "Repair"
-msgstr "Napraw"
+msgstr ""
 
 #: src/Dialogs/RepairFailDialog.vala:24
 msgid "Failed to Repair"
-msgstr "Nie udało się naprawić"
+msgstr ""
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Przyczyną może być zewnętrzne, ręcznie dodane repozytorium oprogramowania lub uszkodzony plik źródłowy."
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
-msgstr "Płatność"
+msgstr ""
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
@@ -492,927 +483,666 @@ msgstr "Płatność"
 #: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:248
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Zapłać $%d za %s"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "To jest jednorazowa płatność sugerowana przez twórców. Możesz także wybrać własną cenę."
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
-msgstr "lub"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
-msgstr "E-mail"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Służy tylko do wysłania potwierdzenia opłaty. Nie zostaniesz zapisany do żadnej subskrypcji listy dyskusyjnej."
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
-msgstr "Polityka prywatności"
+msgstr ""
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:177
 msgid "MM / YY"
-msgstr "MM / RR"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:186
 msgid "CVC"
-msgstr "CVC"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
 #: src/Widgets/ProgressButton.vala:25
 msgid "Cancel"
-msgstr "Anuluj"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:232 src/Dialogs/StripeDialog.vala:246
 #: src/Dialogs/StripeDialog.vala:403
 #, c-format
 msgid "Pay $%d.00"
-msgstr "Zapłać $%d,00"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr "Wypróbuj za darmo"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
-msgstr "Przetwarzanie"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:349
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Wystąpił problem podczas przetwarzania twojej płatności"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:395
 msgid "Pay Later"
-msgstr "Zapłać później"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:396
 msgid "Retry"
-msgstr "Ponów"
+msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr "Odinstalowanie tego programu może skutkować także usunięciem jego danych."
+msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr "Odinstalować program?"
+msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr "Odinstalować „%s”?"
+msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:165
 msgid "Uninstall"
-msgstr "Odinstaluj"
+msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Przyczyną może być zewnętrznie lub ręcznie skompilowane oprogramowanie."
+msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
-msgstr "Błąd odinstalowania programu"
+msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr "Nie udało się odinstalować „%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
-msgstr "Błąd pobrania aktualizacji"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
-msgstr "Zignoruj"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:37
 msgid "Try Again"
-msgstr "Spróbuj ponownie"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Przyczyną może być zewnętrzne lub ręcznie skompilowane oprogramowanie, oprogramowania uzyskane od osób trzecich lub błąd menadżera pakietów. Ręczne odświeżenie aktualizacji może naprawić ten problem."
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
-msgstr "Błąd aktualizacji programu"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
-msgstr "Nie udało się zaktualizować „%s”"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
-msgstr "Odśwież aktualizacje"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:234
 msgid "Illicit Substances"
-msgstr "Niedozwolone substancje"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:235
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr "Obecność lub odniesienia do alkoholu, narkotyków lub tytoniu"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:240
 msgid "Sex & Nudity"
-msgstr "Seks i nagość"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:241
 msgid "Adult nudity or sexual themes"
-msgstr "Nagość dorosłych lub motywy seksualne"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:246
 msgid "Offensive Language"
-msgstr "Obraźliwy język"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:247
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr "Przekleństwa, dyskryminujący język lub dorosły humor"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:252
 msgid "Gambling"
-msgstr "Hazard"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:253
 msgid "Realistic or participatory gambling"
-msgstr "Realistyczny lub uczestniczący hazard"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:277
 msgid "Made for elementary OS"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:278
-#, fuzzy
-#| msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
-msgstr "Nie zweryfikowane przez elementary pod kątem bezpieczeństwa, prywatności lub integracji z systemem"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:303
 msgid "May Not Be Translated"
-msgstr "Może nie być przetłumaczona"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:304
 msgid "This app does not provide language information"
-msgstr "Ta aplikacja nie dostarcza informacji o języku"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:311
 msgid "Not Translated"
-msgstr "Nie przetłumaczona"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:312
 msgid "This app is not available in your language"
-msgstr "Ta aplikacja nie jest dostępna w twoim języku"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:319
 msgid "Not Fully Translated"
-msgstr "Częściowo przetłumaczona"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:320
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr "Ta aplikacja jest przetłumaczona na twój język w %i%%"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:344
 msgid "Conflict"
-msgstr "Konflikt"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:345
 msgid "Depictions of unsafe situations or aggressive conflict"
-msgstr "Przedstawienia niebezpiecznych sytuacji lub agresywnego konfliktu"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:358
 msgid "Violence"
-msgstr "Przemoc"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:363
 msgid "Fantasy Violence"
-msgstr "Fantastyczna przemoc"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:368
 msgid "Graphic violence, bloodshed, or death"
-msgstr "Obrazowa przemoc, przelew krwi lub śmierć"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:412
 msgid "Multiplayer"
-msgstr "Gra wieloosobowa"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:413
 msgid "Online play with other people"
-msgstr "Gra online z innymi osobami"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:429
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
-msgstr "Niemoderowany czat audio, wideo lub tekstowy z innymi osobami"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:431
 msgid "Moderated Audio, Video, or Text messaging with other people"
-msgstr "Moderowany czat audio, wideo lub tekstowy z innymi osobami"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:435
 msgid "Online Interactions"
-msgstr "Interakcje po sieci"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:445
 msgid "Location Sharing"
-msgstr "Udostępnianie lokalizacji"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:446
 msgid "Other people can see your real-world location"
-msgstr "Inne osoby mogą widzieć twoją lokalizację w prawdziwym świecie"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:458
 msgid "Collects anonymous usage data"
-msgstr "Zbiera zanonimizowane dane użytkowe"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:461
 msgid "Collects usage data that could be used to identify you"
-msgstr "Zbiera dane użytkowe które mogą być wykorzystane do identyfikacji ciebie"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:466
 msgid "Info Sharing"
-msgstr "Udostępnianie informacji"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:567
 msgid "Screenshot Not Available"
-msgstr "Zrzut ekranu niedostępny"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:595
 msgid "What's New:"
-msgstr "Co nowego:"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:622
 msgid "Extensions:"
-msgstr "Rozszerzenia:"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:653
 msgid "Homepage"
-msgstr "Strona główna"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:659
 msgid "Translate"
-msgstr "Przetłumacz"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:665
 msgid "Send Feedback"
-msgstr "Wyślij opinię"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:671
 msgid "Help"
-msgstr "Pomoc"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:719
 msgid "Link copied to clipboard"
-msgstr "Odnośnik skopiowany do schowka"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:732
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Wypróbuj %s w AppCenter:"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:740
 msgid "Share"
-msgstr "Udostępnij"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:828
 msgid "End of Life"
-msgstr "Koniec życia"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:829
 msgid "May not work as expected or receive security updates"
-msgstr "Może nie działać tak jak powinno lub nie będzie aktualizowane pod kątem bezpieczeństwa"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:835
 msgid "Outdated"
-msgstr "Przestarzałe"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:836
 msgid "May not work as expected or support the latest features"
-msgstr "Może nie działać tak jak powinno lub wspierać najnowszych funkcji"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:844
 msgid "Unstable"
-msgstr "Niestabilne"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:845
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr "Zbudowane na niestabilnej wersji %s; może zawierać istotne błędy. Nie zalecane do użytku na systemie produkcyjnym."
+msgstr ""
 
 #: src/Views/AppInfoView.vala:858
 msgid "Insecure Sandbox"
-msgstr "Niebezpieczna piaskownica"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:859
 msgid "Can ignore or modify its own system permissions"
-msgstr "Może ignorować lub modyfikować własne ustawienia dostępu"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:868
 msgid "System Folder Access"
-msgstr "Dostęp do katalogu systemowego"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:869
 msgid "Including everyone's Home folders, but not including system internals"
-msgstr "Włączając w to wszystkie Katalogi domowe, ale wyłączając pliki systemowe"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:876
 msgid "Home Folder Access"
-msgstr "Dostęp do katalogu domowego"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:877
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
-msgstr "Włączając w to wszystkie dokumenty, pobrane pliki, muzykę, zdjęcia, filmy i ukryte foldery"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:886
 msgid "Legacy Autostart"
-msgstr "Przestarzałe automatyczne uruchamianie"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:887
 msgid "Can automatically start up and run in the background without asking"
-msgstr "Może automatycznie uruchomić się i działać w tle bez pytania"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:896
 msgid "Location Access"
-msgstr "Dostęp do lokalizacji"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:897
 msgid "Can see your precise location at any time without asking"
-msgstr "Może sprawdzić twoją dokładną lokalizację w dowolnym momencie bez pytania"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:906
 msgid "Legacy Notifications"
-msgstr "Przestarzałe powiadomienia"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:907
 msgid "Bubbles may not be configurable or appear in notification center as “Other”"
-msgstr "Bąbelki mogą nie być konfigurowalne lub będą pokazywać się w centrum powiadomień jako „Inne”"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:916
 msgid "System Settings Access"
-msgstr "Dostęp do ustawień systemowych"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:917
 msgid "Can read and modify system settings"
-msgstr "Może odczytywać i modyfikować ustawienia systemowe"
+msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1142
 msgid "Public Domain"
-msgstr "Domena publiczna"
+msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:1145
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://pl.m.wikipedia.org/wiki/Domena_publiczna"
+msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:1150
 msgid "Free Software"
-msgstr "Wolne oprogramowanie"
+msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:1153
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr "https://www.gnu.org/philosophy/free-sw"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:1157
 msgid "Proprietary"
-msgstr "Prawnie zastrzeżone"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:1160
 msgid "Unknown License"
-msgstr "Nieznana licencja"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:1270
 msgid "Fund"
-msgstr "Zafunduj"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:1276
 msgid "Fund the development of this app"
-msgstr "Zafunduj rozwój tego programu"
+msgstr ""
 
 #: src/Views/AppListUpdateView.vala:46
 msgid "Checking for Updates"
-msgstr "Sprawdzanie aktualizacji"
+msgstr ""
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr "Pobieranie listy dostępnych aktualizacji systemu oraz zainstalowanych programów"
+msgstr ""
 
 #: src/Views/AppListUpdateView.vala:76
 msgid "Update All"
-msgstr "Aktualizuj wszystko"
+msgstr ""
 
 #: src/Views/AppListUpdateView.vala:99
 msgid "Up to Date"
-msgstr "Aktualne"
+msgstr ""
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:141
 msgctxt "view"
 msgid "Installed"
-msgstr "Zainstalowane"
+msgstr ""
 
 #: src/Views/AppListUpdateView.vala:207
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u dostępna aktualizacja"
-msgstr[1] "%u dostępne aktualizacje"
-msgstr[2] "%u dostępnych aktualizacji"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/Views/AppListUpdateView.vala:216
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr "Wszystko jest aktualne. Ostatnio sprawdzano %s."
+msgstr ""
 
 #: src/Views/AppListUpdateView.vala:334
 msgid "Drivers"
-msgstr "Sterowniki"
+msgstr ""
 
 #: src/Views/AuthorView.vala:31
 #, c-format
 msgid "Other Apps by %s"
-msgstr "Inne programy autorstwa %s"
+msgstr ""
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:54
 msgid "Recently Updated"
-msgstr "Ostatnio zaktualizowane"
+msgstr ""
 
 #: src/Views/CategoryView.vala:37
 msgid "Paid Apps"
-msgstr "Płatne aplikacje"
+msgstr ""
 
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
-msgstr "Darmowe aplikacje"
+msgstr ""
 
 #: src/Views/Homepage.vala:77
 msgid "Categories"
-msgstr "Kategorie"
+msgstr ""
 
 #: src/Views/Homepage.vala:103
 msgid "Accessories"
-msgstr "Akcesoria"
+msgstr ""
 
 #: src/Views/Homepage.vala:104
 msgid "Audio"
-msgstr "Dźwięk"
+msgstr ""
 
 #: src/Views/Homepage.vala:105
 msgid "Communication"
-msgstr "Komunikacja"
+msgstr ""
 
 #: src/Views/Homepage.vala:114
 msgid "Development"
-msgstr "Rozwój oprogramowania"
+msgstr ""
 
 #: src/Views/Homepage.vala:124
 msgid "Education"
-msgstr "Edukacja"
+msgstr ""
 
 #: src/Views/Homepage.vala:125
 msgid "Finance"
-msgstr "Finanse"
+msgstr ""
 
 #: src/Views/Homepage.vala:130
 msgid "Graphics"
-msgstr "Grafika"
+msgstr ""
 
 #: src/Views/Homepage.vala:139
 msgid "Internet"
-msgstr "Internet"
+msgstr ""
 
 #: src/Views/Homepage.vala:143
 msgid "Math, Science, & Engineering"
-msgstr "Matematyka, nauka i inżynieria"
+msgstr ""
 
 #: src/Views/Homepage.vala:162
 msgid "Media Production"
-msgstr "Produkcja mediów"
+msgstr ""
 
 #: src/Views/Homepage.vala:169
 msgid "Office"
-msgstr "Biuro"
+msgstr ""
 
 #: src/Views/Homepage.vala:176
 msgid "System"
-msgstr "System"
+msgstr ""
 
 #: src/Views/Homepage.vala:180
 msgid "Universal Access"
-msgstr "Dostęp uniwersalny"
+msgstr ""
 
 #: src/Views/Homepage.vala:181
 msgid "Video"
-msgstr "Wideo"
+msgstr ""
 
 #: src/Views/Homepage.vala:186
 msgid "Writing & Language"
-msgstr "Pisanie i język"
+msgstr ""
 
 #: src/Views/Homepage.vala:196
 msgid "Privacy & Security"
-msgstr "Prywatność i bezpieczeństwo"
+msgstr ""
 
 #: src/Views/Homepage.vala:213
 msgid "Home"
-msgstr "Strona główna"
+msgstr ""
 
 #: src/Views/Homepage.vala:454
 msgid "Fun & Games"
-msgstr "Rozrywka i Gry"
+msgstr ""
 
 #: src/Views/Homepage.vala:479
 msgid "Fun &"
-msgstr "Rozrywka i"
+msgstr ""
 
 #: src/Views/Homepage.vala:485
 msgid "Games"
-msgstr "Gry"
+msgstr ""
 
 #: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
 msgid "Flathub"
-msgstr "Flathub"
+msgstr ""
 
 #: src/Views/SearchView.vala:31
 msgid "No Apps Found"
-msgstr "Nie znaleziono aplikacji"
+msgstr ""
 
 #: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Spróbuj zmienić szukane wyrażenie. Możesz także instalować aplikacji Flatpak np. z %s"
+msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
 msgctxt "view"
 msgid "Search"
-msgstr "Szukaj"
+msgstr ""
 
 #: src/Views/SearchView.vala:61
 msgid "The search term must be at least 3 characters long."
-msgstr "Wyszukiwana fraza musi mieć długość przynajmniej 3 znaków."
+msgstr ""
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"
-msgstr "Darmowe"
+msgstr ""
 
 #: src/Widgets/ActionStack.vala:120 src/Widgets/HumbleButton.vala:82
 msgid "Install"
-msgstr "Zainstaluj"
+msgstr ""
 
 #: src/Widgets/ActionStack.vala:137
 msgid "Update"
-msgstr "Zaktualizuj"
+msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
-msgstr "Numer karty"
+msgstr ""
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
-msgstr "Wymaga dokonania płatności, która jest niedostępna"
+msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:118
 #, c-format
 msgid "$%d.00"
-msgstr "$%d,00"
+msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:121
 #, c-format
 msgid "$%d"
-msgstr "$%d"
+msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
-msgstr "Naprawione błędy"
+msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:106
 msgid "Unknown date"
-msgstr "Nieznana data"
+msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:113
 msgid "Unknown version"
-msgstr "Nieznana wersja"
+msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:134
 msgid "No description available"
-msgstr "Brak dostępnego opisu"
+msgstr ""
 
 #: src/Widgets/SharePopover.vala:35
 msgid "Facebook"
-msgstr "Facebook"
+msgstr ""
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 #: src/Widgets/SharePopover.vala:43
 msgid "Reddit"
-msgstr "Reddit"
+msgstr ""
 
 #: src/Widgets/SharePopover.vala:47
 msgid "Tumblr"
-msgstr "Tumblr"
+msgstr ""
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Copy link"
-msgstr "Kopiuj odnośnik"
+msgstr ""
 
 #: src/Widgets/SizeLabel.vala:32
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr "Realny rozmiar pobrania jest z reguły mniejszy"
+msgstr ""
 
 #: src/Widgets/SizeLabel.vala:33
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Zostaną pobrane tylko potrzebne części programu i jego aktualizacje."
+msgstr ""
 
 #: src/Widgets/SizeLabel.vala:59
 #, c-format
 msgid "Up to %s"
-msgstr "Do %s"
+msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
-msgstr "Informacje o wydaniu"
+msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:134
 #, c-format
 msgid "What's new in %s"
-msgstr "Co nowego w %s"
+msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
-msgstr "Zamknij"
-
-#~ msgid "Non-Curated"
-#~ msgstr "Bez przeglądu"
-
-#~ msgid "A restart is required to finish installing updates"
-#~ msgstr "Ponowne uruchomienie jest wymagane, aby dokończyć instalację aktualizacji"
-
-#~ msgid "Restart Now"
-#~ msgstr "Uruchom ponownie teraz"
-
-#~ msgid "Requesting a restart failed. Restart manually to finish installing updates"
-#~ msgstr "Żądanie restartu nieudane. Uruchom ponownie ręcznie, aby dokończyć instalowanie aktualizacji"
-
-#~ msgid "Automatic App Updates"
-#~ msgstr "Automatyczne aktualizacje aplikacji"
-
-#, c-format
-#~ msgid "%u update is available for your system"
-#~ msgid_plural "%u updates are available for your system"
-#~ msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
-#~ msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
-#~ msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
-
-#~ msgid "Operating System Updates"
-#~ msgstr "Aktualizacje systemu operacyjnego"
-
-#~ msgid "Updates to system components"
-#~ msgstr "Aktualizacje elementów systemu"
-
-#~ msgid "No components with updates"
-#~ msgstr "Brak komponentów z aktualizacjami"
-
-#, c-format
-#~ msgid "%u component with updates"
-#~ msgid_plural "%u components with updates"
-#~ msgstr[0] "Jeden komponent z aktualizacją"
-#~ msgstr[1] "%u komponenty z aktualizacją"
-#~ msgstr[2] "%u komponentów z aktualizacją"
-
-#~ msgid "Restart Required"
-#~ msgstr "Wymagane ponowne uruchomienie"
-
-#~ msgid "Please restart your system to finalize updates"
-#~ msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
-
-#~ msgid "Download"
-#~ msgstr "Pobierz"
-
-#~ msgid "Non-Curated Apps"
-#~ msgstr "Programy bez przeglądu"
-
-#~ msgid "Flatpak runtime"
-#~ msgstr "Biblioteka uruchomieniowa Flatpak"
-
-#~ msgid "<b>%s</b> – %s"
-#~ msgstr "<b>%s</b> – %s"
-
-#~ msgid "Non-Curated Warning"
-#~ msgstr "Ostrzeżenie o braku przeglądu"
-
-#~ msgid "Install non-curated app?"
-#~ msgstr "Zainstalować aplikację bez przeglądu?"
-
-#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-#~ msgstr "„%s” jest aplikacją bez przeglądu elementary i nie została sprawdzona pod kątem bezpieczeństwa, prywatności czy integracji z systemem."
-
-#~ msgid "It may not receive bug fix or feature updates"
-#~ msgstr "Może nie otrzymywać poprawek błędów lub aktualizacji funkcji"
-
-#~ msgid "It may access or change system or personal files without permission"
-#~ msgstr "Może mieć dostęp do plików systemowych i personalnych, a także zmieniać je bez pozwolenia"
-
-#~ msgid "Show non-curated warnings"
-#~ msgstr "Pokaż ostrzeżenia o braku przeglądu"
-
-#~ msgid "Don’t Install"
-#~ msgstr "Nie instaluj"
-
-#~ msgid "Install Anyway"
-#~ msgstr "Zainstaluj mimo to"
-
-#~ msgid "Content Warning"
-#~ msgstr "Ostrzeżenie o zawartości"
-
-#~ msgid "“%s” contains explicit content"
-#~ msgstr "„%s” zawiera nieodpowiednie treści"
-
-#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-#~ msgstr "„%s” może zawierać treści tylko dla dorosłych lub treści o charakterze wrażliwym lub niepokojącym. Ogólnie rzecz biorąc elementary nie recenzuje ani nie popiera zawartości tego programu."
-
-#~ msgid "Show content warnings"
-#~ msgstr "Pokaż ostrzeżenie o zawartości"
-
-#, fuzzy
-#~| msgid "Content Warning"
-#~ msgid "Content Warnings"
-#~ msgstr "Ostrzeżenie o zawartości"
-
-#, fuzzy
-#~| msgid "An open, pay-what-you-want app store"
-#~ msgid "The open source, pay-what-you-can app store"
-#~ msgstr "Otwarty sklep typu płać-ile-chcesz z programami"
-
-#~ msgid "Get the apps that you need at a price you can afford."
-#~ msgstr "Pobierz aplikacje, których potrzebujesz, za cenę, na którą możesz sobie pozwolić."
-
-#~ msgid "Trending"
-#~ msgstr "Zyskujące popularność"
-
-#~ msgid "No Results"
-#~ msgstr "Brak wyników"
-
-#~ msgid "No apps could be found. Try changing search terms."
-#~ msgstr "Nie znaleziono żadnych programów. Spróbuj zmienić kryteria wyszukiwania."
-
-#~ msgid "Suggest Translations"
-#~ msgstr "Zaproponuj tłumaczenie"
-
-#~ msgid "Report a Problem"
-#~ msgstr "Zgłoś problem"
-
-#~ msgid "Are you sure you want to Restart?"
-#~ msgstr "Na pewno uruchomić ponownie?"
-
-#~ msgid "This will close all open applications and restart this device."
-#~ msgstr "Wszystkie otwarte aplikacje zostaną zamknięte, a urządzenie uruchomione ponownie."
-
-#~ msgid "Restart"
-#~ msgstr "Uruchom ponownie"
-
-#, fuzzy
-#~| msgid "Finished"
-#~ msgid "Finishing"
-#~ msgstr "Zakończono"
-
-#~ msgid "Application installed"
-#~ msgstr "Program zainstalowany"
-
-#, fuzzy
-#~ msgid "%s (non-curated)"
-#~ msgstr "%s (bez przeglądu)"
-
-#~ msgid "Searching for updates…"
-#~ msgstr "Szukanie aktualizacji…"
-
-#~ msgid "There Was An Error Installing %s."
-#~ msgstr "Wystąpił błąd podczas instalacji %s."
-
-#~ msgid "Size: %s"
-#~ msgstr "Rozmiar: %s"
-
-#~ msgid "Google+"
-#~ msgstr "Google+"
-
-#~ msgid "Details"
-#~ msgstr "Szczegóły"
-
-#~ msgctxt "view"
-#~ msgid "Updates"
-#~ msgstr "Aktualizacje"
-
-#~ msgid "<b>%s</b>"
-#~ msgstr "<b>%s</b>"
-
-#~ msgid "App Center"
-#~ msgstr "Centrum oprogramowania"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Adrian Widerski https://launchpad.net/~adrian-widerski\n"
-#~ "  Damian Woźniak https://launchpad.net/~fisz\n"
-#~ "  Jonasz https://launchpad.net/~joni99\n"
-#~ "  M https://launchpad.net/~marktechfriend\n"
-#~ "  Mateusz K https://launchpad.net/~mattykom\n"
-#~ "  Oskar M. https://launchpad.net/~oskare3\n"
-#~ "  Pinwheel https://launchpad.net/~pinwheelgm\n"
-#~ "  Piotr Sokół https://launchpad.net/~psokol\n"
-#~ "  Piotr Strębski https://launchpad.net/~strebski\n"
-#~ "  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#~ msgid "The pin number is incorrect. Please try again using the correct pin."
-#~ msgstr "Numer PIN jest niepoprawny. Spróbuj ponownie, używając poprawnego numeru PIN."
-
-#~ msgid "by %s"
-#~ msgstr "od %s"
-
-#~ msgid "Best Rated"
-#~ msgstr "Najlepiej oceniane"
-
-#~ msgid "Latest Apps"
-#~ msgstr "Najnowsze programy"
-
-#~ msgid "Remove"
-#~ msgstr "Usuń"
-
-#~ msgid "Recreates database files"
-#~ msgstr "Odtwarza pliki bazy danych"
-
-#~ msgid "Quit"
-#~ msgstr "Zakończ"
-
-#~ msgid "Error page"
-#~ msgstr "Strona błędu"
-
-#~ msgid "Software Sources"
-#~ msgstr "Zasoby oprogramowania"
-
-#~ msgid "Categories View"
-#~ msgstr "Widok kategorii"
-
-#~ msgid "Updates View"
-#~ msgstr "Widok aktualizacji"
-
-#~ msgid "Show available updates"
-#~ msgstr "Pokaż dostępne aktualizacje"
-
-#~ msgid "Apps View"
-#~ msgstr "Widok programów"
-
-#~ msgid "Apps Info"
-#~ msgstr "Informacje o programach"
-
-#~ msgid "Removing"
-#~ msgstr "Usuwanie"
-
-#~ msgid "Browser apps in categories"
-#~ msgstr "Wyświetla programy w kategoriach"
-
-#~ msgid "application download center"
-#~ msgstr "centrum pobierania aplikacji"
-
-#~ msgid "Updates"
-#~ msgstr "Aktualizacje"
-
-#~ msgid "Use debug quiet mode"
-#~ msgstr "Ukryj informacje debugowania"
-
-#~ msgid "Load a package from the given id"
-#~ msgstr "Załaduj pakiet z określonego ID"
-
-#~ msgid "Waiting in queue"
-#~ msgstr "Oczekujące w kolejce"
-
-#~ msgid "Installing packages"
-#~ msgstr "Instalowanie pakietów"
-
-#~ msgid "Downloading packages"
-#~ msgstr "Pobieranie pakietów"
-
-#~ msgid "Search App"
-#~ msgstr "Szukaj programu"
-
-#~ msgid "You haven't found any app here."
-#~ msgstr "Nie znaleziono tutaj żadnych programów."
-
-#~ msgid "Up to date"
-#~ msgstr "Aktualne"
+msgstr ""
