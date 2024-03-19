@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 10:43+0000\n"
+"POT-Creation-Date: 2024-03-19 02:40+0000\n"
 "PO-Revision-Date: 2024-02-12 23:41+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -38,15 +38,15 @@ msgstr "Не удалось распознать тип данных %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Cсылка «%s» не найдена, вместо этого выполняется поиск"
 
-#: src/Application.vala:271
+#: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr "AppCenter будет автоматически запускаться при включении этого устройства и работать после закрытия окна для автоматической проверки и установки обновлений."
 
-#: src/Application.vala:354
+#: src/Application.vala:355
 msgid "The app has been installed"
 msgstr "Приложение установлено"
 
-#: src/Application.vala:355 src/MainWindow.vala:418
+#: src/Application.vala:356 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» установлено"
@@ -61,7 +61,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Обновления и установленные приложения"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:371 src/MainWindow.vala:491
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
@@ -81,62 +81,62 @@ msgstr "Проверить обновления"
 msgid "Settings"
 msgstr "Параметры"
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:212
 msgid "Network Not Available."
 msgstr "Сеть недоступна."
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Для просмотра и установки приложений необходимо соединение с Интернетом."
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:223
 msgid "Network Settings…"
 msgstr "Параметры сети…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
 msgstr "Запущено в демо-режиме"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Установите %s для просмотра и установки приложений."
 
-#: src/MainWindow.vala:375 src/MainWindow.vala:379
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr "Поиск %s"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:421 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Открыть"
 
-#: src/MainWindow.vala:520
+#: src/MainWindow.vala:522
 msgid "Getting app information…"
 msgstr "Получение информации о приложении…"
 
-#: src/MainWindow.vala:523
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr "Получение размера загрузки…"
 
-#: src/MainWindow.vala:529
+#: src/MainWindow.vala:531
 msgid "Checking for updates…"
 msgstr "Проверка обновлений…"
 
-#: src/MainWindow.vala:532
+#: src/MainWindow.vala:534
 msgid "Installing…"
 msgstr "Установка…"
 
-#: src/MainWindow.vala:535
+#: src/MainWindow.vala:537
 msgid "Installing updates…"
 msgstr "Установка обновлений…"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:540
 msgid "Uninstalling…"
 msgstr "Удаление…"
 
-#: src/MainWindow.vala:541
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr "Починка…"
 
@@ -646,11 +646,13 @@ msgid "Realistic or participatory gambling"
 msgstr "Реалистичная игра или участие в азартных играх"
 
 #: src/Views/AppInfoView.vala:277
-msgid "Non-Curated"
-msgstr "Не курируется"
+msgid "Made for elementary OS"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:278
-msgid "Not reviewed by elementary for security, privacy, or system integration"
+#, fuzzy
+#| msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "Не проверяется elementary на безопасность, конфиденциальность и системную интеграцию"
 
 #: src/Views/AppInfoView.vala:303
@@ -1156,6 +1158,9 @@ msgstr "Что нового в %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "Закрыть"
+
+#~ msgid "Non-Curated"
+#~ msgstr "Не курируется"
 
 #~ msgid "A restart is required to finish installing updates"
 #~ msgstr "Для завершения установки обновлений необходима перезагрузка"

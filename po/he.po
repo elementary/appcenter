@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 10:43+0000\n"
+"POT-Creation-Date: 2024-03-19 02:40+0000\n"
 "PO-Revision-Date: 2024-02-12 23:41+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -30,15 +30,15 @@ msgstr "לא ניתן לפענח את סוג המדיה %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "לא ניתן למצוא את הקישור שצוין ‚%s’, מתבצע חיפוש במקום"
 
-#: src/Application.vala:271
+#: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr "מרכז היישומים יופעל אוטומטית כאשר המכשיר הזה פועל ויישאר לרוץ כאשר החלון שלו סגור כדי שיוכל לבדוק ולהתקין עדכונים אוטומטית."
 
-#: src/Application.vala:354
+#: src/Application.vala:355
 msgid "The app has been installed"
 msgstr "היישום הותקן"
 
-#: src/Application.vala:355 src/MainWindow.vala:418
+#: src/Application.vala:356 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s” הותקן"
@@ -53,7 +53,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "עדכונים ויישומים מותקנים"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:371 src/MainWindow.vala:491
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
 msgstr "חיפוש יישומים"
 
@@ -73,62 +73,62 @@ msgstr "חיפוש עדכונים"
 msgid "Settings"
 msgstr "הגדרות"
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:212
 msgid "Network Not Available."
 msgstr "הרשת אינה זמינה."
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
 msgstr "יש להתחבר לאינטרנט כדי לעיין או להתקין יישומים."
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:223
 msgid "Network Settings…"
 msgstr "הגדרות רשת…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
 msgstr "פועל במצב הדגמה"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "יש להתקין את %s כדי לעיין ולהתקין יישומים."
 
-#: src/MainWindow.vala:375 src/MainWindow.vala:379
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr "חיפוש %s"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:421 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "פתיחה"
 
-#: src/MainWindow.vala:520
+#: src/MainWindow.vala:522
 msgid "Getting app information…"
 msgstr "פרטי היישום מתקבלים…"
 
-#: src/MainWindow.vala:523
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr "גודל ההורדה מתקבל…"
 
-#: src/MainWindow.vala:529
+#: src/MainWindow.vala:531
 msgid "Checking for updates…"
 msgstr "בחיפוש אחר עדכונים…"
 
-#: src/MainWindow.vala:532
+#: src/MainWindow.vala:534
 msgid "Installing…"
 msgstr "מתבצעת התקנה…"
 
-#: src/MainWindow.vala:535
+#: src/MainWindow.vala:537
 msgid "Installing updates…"
 msgstr "עדכונים מותקנים…"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:540
 msgid "Uninstalling…"
 msgstr "מתבצעת הסרה…"
 
-#: src/MainWindow.vala:541
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr "מתבצע תיקון…"
 
@@ -635,11 +635,13 @@ msgid "Realistic or participatory gambling"
 msgstr "הימור מציאותי או השתתפות בכזה"
 
 #: src/Views/AppInfoView.vala:277
-msgid "Non-Curated"
-msgstr "לא נאספו"
+msgid "Made for elementary OS"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:278
-msgid "Not reviewed by elementary for security, privacy, or system integration"
+#, fuzzy
+#| msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "לא נסקר על ידי elementary בהיבטים של אבטחה, פרטיות או שילוב עם המערכת"
 
 #: src/Views/AppInfoView.vala:303
@@ -1144,6 +1146,9 @@ msgstr "מה חדש ב־%s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "סגירה"
+
+#~ msgid "Non-Curated"
+#~ msgstr "לא נאספו"
 
 #~ msgid "A restart is required to finish installing updates"
 #~ msgstr "נדרשת הפעלה מחדש כדי לסיים את התקנת העדכונים"

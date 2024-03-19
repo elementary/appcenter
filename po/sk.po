@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 10:43+0000\n"
+"POT-Creation-Date: 2024-03-19 02:40+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -33,15 +33,15 @@ msgstr "Nepodarilo sa rozpoznať typ média %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Uvedený odkaz „%s“ sa nenašiel, spúšťa sa vyhľadávanie"
 
-#: src/Application.vala:271
+#: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:354
+#: src/Application.vala:355
 msgid "The app has been installed"
 msgstr "Aplikácia bola nainštalovaná"
 
-#: src/Application.vala:355 src/MainWindow.vala:418
+#: src/Application.vala:356 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Aplikácia „%s“ bola nainštalovaná"
@@ -58,7 +58,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Nepodarilo sa nainštalovať aplikáciu"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:371 src/MainWindow.vala:491
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
 msgstr "Hľadať aplikácie"
 
@@ -82,72 +82,72 @@ msgstr "Kontrolujú sa aktualizácie"
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:212
 msgid "Network Not Available."
 msgstr "Sieťové pripojenie je nedostupné."
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Pre prehliadanie a inštaláciu aplikácií sa pripojte k internetu."
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:223
 msgid "Network Settings…"
 msgstr "Nastavenia siete…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:375 src/MainWindow.vala:379
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr "Hľadať %s"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:421 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Otvoriť"
 
-#: src/MainWindow.vala:520
+#: src/MainWindow.vala:522
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "Získavajú sa informácie"
 
-#: src/MainWindow.vala:523
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:529
+#: src/MainWindow.vala:531
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "Kontrolujú sa aktualizácie"
 
-#: src/MainWindow.vala:532
+#: src/MainWindow.vala:534
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Inštaluje sa"
 
-#: src/MainWindow.vala:535
+#: src/MainWindow.vala:537
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Inštalujú sa aktualizácie"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:540
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "Odinštalovanie"
 
-#: src/MainWindow.vala:541
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr ""
 
@@ -671,11 +671,13 @@ msgid "Realistic or participatory gambling"
 msgstr "Realistické alebo participatívne hazardné hry"
 
 #: src/Views/AppInfoView.vala:277
-msgid "Non-Curated"
-msgstr "Nepreverené"
+msgid "Made for elementary OS"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:278
-msgid "Not reviewed by elementary for security, privacy, or system integration"
+#, fuzzy
+#| msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "Nie je preverené spoločnosťou elementary ohľadom zabezpečenia, rešpektovania súkromia či začlenenia do systému"
 
 #: src/Views/AppInfoView.vala:303
@@ -1195,6 +1197,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "Zatvoriť"
+
+#~ msgid "Non-Curated"
+#~ msgstr "Nepreverené"
 
 #~ msgid "A restart is required to finish installing updates"
 #~ msgstr "Na dokončenie inštalácie aktualizácií je potrebný reštart"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 10:43+0000\n"
+"POT-Creation-Date: 2024-03-19 02:40+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/appcenter/appcenter/fa/>\n"
@@ -32,15 +32,15 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "لینک مشخص شده '%s' یافت نشد، در عوض جستجو می شود"
 
-#: src/Application.vala:271
+#: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:354
+#: src/Application.vala:355
 msgid "The app has been installed"
 msgstr "برنامه نصب شده است"
 
-#: src/Application.vala:355 src/MainWindow.vala:418
+#: src/Application.vala:356 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” نصب شده است"
@@ -56,7 +56,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "پیدا کردن و نصب نرم افزار ها"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:371 src/MainWindow.vala:491
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
 msgstr "جستجو ی نرم افزار"
 
@@ -78,72 +78,72 @@ msgstr "بررسی امضا"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:212
 msgid "Network Not Available."
 msgstr ""
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:223
 msgid "Network Settings…"
 msgstr ""
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:375 src/MainWindow.vala:379
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr ""
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:421 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "باز کردن"
 
-#: src/MainWindow.vala:520
+#: src/MainWindow.vala:522
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "دریافت اطلاعات"
 
-#: src/MainWindow.vala:523
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:529
+#: src/MainWindow.vala:531
 #, fuzzy
 #| msgid "Checking signatures"
 msgid "Checking for updates…"
 msgstr "بررسی امضا"
 
-#: src/MainWindow.vala:532
+#: src/MainWindow.vala:534
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "درحال نصب"
 
-#: src/MainWindow.vala:535
+#: src/MainWindow.vala:537
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "در حال نصب به روزسانی"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:540
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "در حال حذف نصب"
 
-#: src/MainWindow.vala:541
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr ""
 
@@ -666,11 +666,11 @@ msgid "Realistic or participatory gambling"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:277
-msgid "Non-Curated"
-msgstr "گزینش-نشده"
+msgid "Made for elementary OS"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:278
-msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:303
@@ -1192,6 +1192,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr ""
+
+#~ msgid "Non-Curated"
+#~ msgstr "گزینش-نشده"
 
 #, fuzzy
 #~| msgid "Automatic Updates"

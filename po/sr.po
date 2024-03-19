@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 10:43+0000\n"
+"POT-Creation-Date: 2024-03-19 02:40+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -33,15 +33,15 @@ msgstr "Не могу да обрадим врсту медија „%s“"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Не могу да нађем наведену везу „%s“, зато претражујем"
 
-#: src/Application.vala:271
+#: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:354
+#: src/Application.vala:355
 msgid "The app has been installed"
 msgstr "Програм је инсталиран"
 
-#: src/Application.vala:355 src/MainWindow.vala:418
+#: src/Application.vala:356 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ је инсталиран"
@@ -58,7 +58,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Не могу да инсталирам програм"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:371 src/MainWindow.vala:491
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
 msgstr "Тражи програме"
 
@@ -82,72 +82,72 @@ msgstr "Проверавам има ли ажурирања"
 msgid "Settings"
 msgstr "Покрећем"
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:212
 msgid "Network Not Available."
 msgstr "Мрежа није доступна."
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Повежите се на Интернет да разгледате и инсталирате програме."
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:223
 msgid "Network Settings…"
 msgstr "Подешавања мреже…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:375 src/MainWindow.vala:379
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr "Тражи „%s“"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:421 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Отвори"
 
-#: src/MainWindow.vala:520
+#: src/MainWindow.vala:522
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "Добављам податке"
 
-#: src/MainWindow.vala:523
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:529
+#: src/MainWindow.vala:531
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "Проверавам има ли ажурирања"
 
-#: src/MainWindow.vala:532
+#: src/MainWindow.vala:534
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Инсталирам"
 
-#: src/MainWindow.vala:535
+#: src/MainWindow.vala:537
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Инсталирам освежења"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:540
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "Уклањам"
 
-#: src/MainWindow.vala:541
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr ""
 
@@ -675,15 +675,13 @@ msgid "Realistic or participatory gambling"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:277
-#, fuzzy
-#| msgid "Non-Curated Apps"
-msgid "Non-Curated"
-msgstr "Неодржавани програми"
+msgid "Made for elementary OS"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:278
 #, fuzzy
 #| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "„elementary“ не одржава „%s“ и није му прегледана безбедност, приватност или системско обједињење."
 
 #: src/Views/AppInfoView.vala:303
@@ -1208,6 +1206,11 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "Затвори"
+
+#, fuzzy
+#~| msgid "Non-Curated Apps"
+#~ msgid "Non-Curated"
+#~ msgstr "Неодржавани програми"
 
 #, fuzzy
 #~| msgid "A restart is required to complete the installation of updates"

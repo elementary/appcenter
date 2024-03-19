@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 10:43+0000\n"
+"POT-Creation-Date: 2024-03-19 02:40+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Urdu <https://l10n.elementary.io/projects/appcenter/appcenter/ur/>\n"
@@ -30,17 +30,17 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:271
+#: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:354
+#: src/Application.vala:355
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
 
-#: src/Application.vala:355 src/MainWindow.vala:418
+#: src/Application.vala:356 src/MainWindow.vala:420
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -57,7 +57,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "غیر تنصیب"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:371 src/MainWindow.vala:491
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
 msgstr "اطلاقیےتلاش کریں"
 
@@ -81,73 +81,73 @@ msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
 msgid "Settings"
 msgstr "شروع ھو رھا ھے"
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:212
 #, fuzzy
 msgid "Network Not Available."
 msgstr "سکرین شاٹ دستیاب نہیں"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:223
 msgid "Network Settings…"
 msgstr ""
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:375 src/MainWindow.vala:379
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr "تلاش کریں %s"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:421 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr ""
 
-#: src/MainWindow.vala:520
+#: src/MainWindow.vala:522
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "معلومات حاصِل کی جارہی ہے"
 
-#: src/MainWindow.vala:523
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:529
+#: src/MainWindow.vala:531
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
 
-#: src/MainWindow.vala:532
+#: src/MainWindow.vala:534
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "انسٹال کیا جارہا ہے"
 
-#: src/MainWindow.vala:535
+#: src/MainWindow.vala:537
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "تجدید نصب کی جا رہی ہیں"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:540
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "غیر تنصیب"
 
-#: src/MainWindow.vala:541
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr ""
 
@@ -668,12 +668,11 @@ msgid "Realistic or participatory gambling"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:277
-#, fuzzy
-msgid "Non-Curated"
-msgstr "کوءی ایپلِی کیشن نہیں"
+msgid "Made for elementary OS"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:278
-msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:303
@@ -1201,6 +1200,10 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Non-Curated"
+#~ msgstr "کوءی ایپلِی کیشن نہیں"
 
 #, c-format
 #~ msgid "%u update is available for your system"
