@@ -284,17 +284,21 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 #endif
 
 #if HAS_APPSTREAM_1_0
-            var active_locale = "en-US";
+            const string DEFAULT_LOCALE = "en-US";
+            const string LOCALE_DELIMITER = "-";
+            var active_locale = DEFAULT_LOCALE;
             if (package_component.get_context () != null) {
-                active_locale = package_component.get_context ().get_locale () ?? "en-US";
+                active_locale = package_component.get_context ().get_locale () ?? DEFAULT_LOCALE;
             }
 #else
+            const string DEFAULT_LOCALE = "en_US";
+            const string LOCALE_DELIMITER = "_";
             var active_locale = package_component.get_active_locale ();
 #endif
-            if (active_locale != "en_US" && active_locale != "en-US") {
+            if (active_locale != DEFAULT_LOCALE) {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
-                    active_locale.split ("_")[0]
+                    active_locale.split (LOCALE_DELIMITER)[0]
                 );
 
                 if (percent_translated < 100) {
