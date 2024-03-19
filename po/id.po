@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 02:40+0000\n"
+"POT-Creation-Date: 2024-03-19 21:28+0000\n"
 "PO-Revision-Date: 2023-06-03 20:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary.io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -24,6 +24,7 @@ msgstr ""
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:362
+#: src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -654,246 +655,246 @@ msgstr ""
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "Tidak ditinjau oleh elementary untuk keamanan, privasi, atau integrasi sistemnya"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
 msgstr "Mungkin Tidak Diterjemahkan"
 
-#: src/Views/AppInfoView.vala:304
+#: src/Views/AppInfoView.vala:308
 msgid "This app does not provide language information"
 msgstr "Aplikasi ini tidak menyediakan informasi bahasa"
 
-#: src/Views/AppInfoView.vala:311
+#: src/Views/AppInfoView.vala:315
 msgid "Not Translated"
 msgstr "Tidak Diterjemahkan"
 
-#: src/Views/AppInfoView.vala:312
+#: src/Views/AppInfoView.vala:316
 msgid "This app is not available in your language"
 msgstr "Aplikasi ini tidak tersedia dalam bahasa Anda"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:323
 msgid "Not Fully Translated"
 msgstr "Tidak Sepenuhnya Diterjemahkan"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:324
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Aplikasi ini %i%% diterjemahkan dalam bahasa Anda"
 
-#: src/Views/AppInfoView.vala:344
+#: src/Views/AppInfoView.vala:348
 msgid "Conflict"
 msgstr "Konflik"
 
-#: src/Views/AppInfoView.vala:345
+#: src/Views/AppInfoView.vala:349
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Penggambaran situasi tidak aman atau konflik agresif"
 
-#: src/Views/AppInfoView.vala:358
+#: src/Views/AppInfoView.vala:362
 msgid "Violence"
 msgstr "Kekerasan"
 
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:367
 msgid "Fantasy Violence"
 msgstr "Kekerasan Fantasi"
 
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:372
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Kekerasan grafis, pertumpahan darah, atau kematian"
 
-#: src/Views/AppInfoView.vala:412
+#: src/Views/AppInfoView.vala:416
 msgid "Multiplayer"
 msgstr "Multipemain"
 
-#: src/Views/AppInfoView.vala:413
+#: src/Views/AppInfoView.vala:417
 msgid "Online play with other people"
 msgstr "Bermain secara luring dengan orang lain"
 
-#: src/Views/AppInfoView.vala:429
+#: src/Views/AppInfoView.vala:433
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Audio, Video, atau Pesan teks tanpa moderasi dengan orang lain"
 
-#: src/Views/AppInfoView.vala:431
+#: src/Views/AppInfoView.vala:435
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Audio, Video, atau Pesan teks yang dimoderasi dengan orang lain"
 
-#: src/Views/AppInfoView.vala:435
+#: src/Views/AppInfoView.vala:439
 msgid "Online Interactions"
 msgstr "Interaksi Luring"
 
-#: src/Views/AppInfoView.vala:445
+#: src/Views/AppInfoView.vala:449
 msgid "Location Sharing"
 msgstr "Berbagi Lokasi"
 
-#: src/Views/AppInfoView.vala:446
+#: src/Views/AppInfoView.vala:450
 msgid "Other people can see your real-world location"
 msgstr "Orang lain dapat melihat lokasi dunia nyata Anda"
 
-#: src/Views/AppInfoView.vala:458
+#: src/Views/AppInfoView.vala:462
 msgid "Collects anonymous usage data"
 msgstr "Mengumpulkan data penggunaan anonim"
 
-#: src/Views/AppInfoView.vala:461
+#: src/Views/AppInfoView.vala:465
 msgid "Collects usage data that could be used to identify you"
 msgstr "Mengumpulkan data penggunaan yang dapat digunakan untuk mengidentifikasi Anda"
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:470
 msgid "Info Sharing"
 msgstr "Berbagi Info"
 
-#: src/Views/AppInfoView.vala:567
+#: src/Views/AppInfoView.vala:571
 msgid "Screenshot Not Available"
 msgstr "Tangkapan Layar Tidak Tersedia"
 
-#: src/Views/AppInfoView.vala:595
+#: src/Views/AppInfoView.vala:599
 msgid "What's New:"
 msgstr "Apa yang Baru:"
 
-#: src/Views/AppInfoView.vala:622
+#: src/Views/AppInfoView.vala:626
 msgid "Extensions:"
 msgstr "Ekstensi:"
 
-#: src/Views/AppInfoView.vala:653
+#: src/Views/AppInfoView.vala:657
 msgid "Homepage"
 msgstr "Beranda"
 
-#: src/Views/AppInfoView.vala:659
+#: src/Views/AppInfoView.vala:663
 msgid "Translate"
 msgstr "Terjemahkan"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:669
 msgid "Send Feedback"
 msgstr "Kirimkan Umpan Balik"
 
-#: src/Views/AppInfoView.vala:671
+#: src/Views/AppInfoView.vala:675
 msgid "Help"
 msgstr "Bantuan"
 
-#: src/Views/AppInfoView.vala:719
+#: src/Views/AppInfoView.vala:723
 msgid "Link copied to clipboard"
 msgstr "Tautan disalin ke clipboard"
 
-#: src/Views/AppInfoView.vala:732
+#: src/Views/AppInfoView.vala:736
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Lihat %s di AppCenter:"
 
-#: src/Views/AppInfoView.vala:740
+#: src/Views/AppInfoView.vala:744
 msgid "Share"
 msgstr "Bagikan"
 
-#: src/Views/AppInfoView.vala:828
+#: src/Views/AppInfoView.vala:832
 msgid "End of Life"
 msgstr "Akhir Hidup"
 
-#: src/Views/AppInfoView.vala:829
+#: src/Views/AppInfoView.vala:833
 msgid "May not work as expected or receive security updates"
 msgstr "Mungkin tidak berfungsi seperti yang diharapkan atau menerima pembaruan keamanan"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:839
 msgid "Outdated"
 msgstr "Usang"
 
-#: src/Views/AppInfoView.vala:836
+#: src/Views/AppInfoView.vala:840
 msgid "May not work as expected or support the latest features"
 msgstr "Mungkin tidak berfungsi seperti yang diharapkan atau mendukung fitur terbaru"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:848
 msgid "Unstable"
 msgstr "Tidak Stabil"
 
-#: src/Views/AppInfoView.vala:845
+#: src/Views/AppInfoView.vala:849
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "Dibuat untuk versi %s yang tidak stabil; mungkin berisi masalah besar. Tidak direkomendasikan untuk digunakan pada sistem produksi."
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:862
 msgid "Insecure Sandbox"
 msgstr "Sandbox Tidak Aman"
 
-#: src/Views/AppInfoView.vala:859
+#: src/Views/AppInfoView.vala:863
 msgid "Can ignore or modify its own system permissions"
 msgstr "Dapat mengabaikan atau memodifikasi izin sistemnya sendiri"
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:872
 msgid "System Folder Access"
 msgstr "Akses Folder Sistem"
 
-#: src/Views/AppInfoView.vala:869
+#: src/Views/AppInfoView.vala:873
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "Termasuk folder Beranda semua orang, tetapi tidak termasuk internal sistem"
 
-#: src/Views/AppInfoView.vala:876
+#: src/Views/AppInfoView.vala:880
 msgid "Home Folder Access"
 msgstr "Akses Folder Beranda"
 
-#: src/Views/AppInfoView.vala:877
+#: src/Views/AppInfoView.vala:881
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
 msgstr "Termasuk semua dokumen, unduhan, musik, gambar, video, dan folder tersembunyi apa pun"
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:890
 msgid "Legacy Autostart"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:887
+#: src/Views/AppInfoView.vala:891
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:896
+#: src/Views/AppInfoView.vala:900
 msgid "Location Access"
 msgstr "Akses Lokasi"
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:901
 msgid "Can see your precise location at any time without asking"
 msgstr "Dapat melihat lokasi persis Anda kapan saja tanpa bertanya"
 
-#: src/Views/AppInfoView.vala:906
+#: src/Views/AppInfoView.vala:910
 msgid "Legacy Notifications"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:907
+#: src/Views/AppInfoView.vala:911
 msgid "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:916
+#: src/Views/AppInfoView.vala:920
 msgid "System Settings Access"
 msgstr "Akses Pengaturan Sistem"
 
-#: src/Views/AppInfoView.vala:917
+#: src/Views/AppInfoView.vala:921
 msgid "Can read and modify system settings"
 msgstr "Dapat membaca dan mengubah pengaturan sistem"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1142
+#: src/Views/AppInfoView.vala:1146
 msgid "Public Domain"
 msgstr "Domain Publik"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1145
+#: src/Views/AppInfoView.vala:1149
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://id.wikipedia.org/wiki/Domain_publik"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1150
+#: src/Views/AppInfoView.vala:1154
 msgid "Free Software"
 msgstr "Perangkat Lunak Bebas"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1153
+#: src/Views/AppInfoView.vala:1157
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.id.html"
 
-#: src/Views/AppInfoView.vala:1157
+#: src/Views/AppInfoView.vala:1161
 msgid "Proprietary"
 msgstr "Hak Milik"
 
-#: src/Views/AppInfoView.vala:1160
+#: src/Views/AppInfoView.vala:1164
 msgid "Unknown License"
 msgstr "Lisensi Tidak Dikenal"
 
-#: src/Views/AppInfoView.vala:1270
+#: src/Views/AppInfoView.vala:1274
 msgid "Fund"
 msgstr "Dana"
 
-#: src/Views/AppInfoView.vala:1276
+#: src/Views/AppInfoView.vala:1280
 msgid "Fund the development of this app"
 msgstr "Danai pengembangan aplikasi ini"
 
@@ -939,7 +940,7 @@ msgstr "Driver"
 msgid "Other Apps by %s"
 msgstr "Aplikasi Lainnya oleh %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:54
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:58
 msgid "Recently Updated"
 msgstr "Baru Saja Diperbarui"
 
@@ -951,87 +952,95 @@ msgstr "Aplikasi Berbayar"
 msgid "Free Apps"
 msgstr "Aplikasi Gratis"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:81
 msgid "Categories"
 msgstr "Kategori"
 
-#: src/Views/Homepage.vala:103
+#: src/Views/Homepage.vala:107
 msgid "Accessories"
 msgstr "Aksesoris"
 
-#: src/Views/Homepage.vala:104
+#: src/Views/Homepage.vala:108
 msgid "Audio"
 msgstr "Suara"
 
-#: src/Views/Homepage.vala:105
+#: src/Views/Homepage.vala:109
 msgid "Communication"
 msgstr "Komunikasi"
 
-#: src/Views/Homepage.vala:114
+#: src/Views/Homepage.vala:118
 msgid "Development"
 msgstr "Pengembangan"
 
-#: src/Views/Homepage.vala:124
+#: src/Views/Homepage.vala:128
 msgid "Education"
 msgstr "Pendidikan"
 
-#: src/Views/Homepage.vala:125
+#: src/Views/Homepage.vala:129
 msgid "Finance"
 msgstr "Keuangan"
 
-#: src/Views/Homepage.vala:130
+#: src/Views/Homepage.vala:134
 msgid "Graphics"
 msgstr "Grafis"
 
-#: src/Views/Homepage.vala:139
+#: src/Views/Homepage.vala:143
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:147
 msgid "Math, Science, & Engineering"
 msgstr "Matematika, Sains & Teknik"
 
-#: src/Views/Homepage.vala:162
+#: src/Views/Homepage.vala:166
 msgid "Media Production"
 msgstr "Media Produksi"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:173
 msgid "Office"
 msgstr "Perkantoran"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:180
 msgid "System"
 msgstr "Sistem"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:184
 msgid "Universal Access"
 msgstr "Akses Universal"
 
-#: src/Views/Homepage.vala:181
+#: src/Views/Homepage.vala:185
 msgid "Video"
 msgstr "Video"
 
-#: src/Views/Homepage.vala:186
+#: src/Views/Homepage.vala:190
 msgid "Writing & Language"
 msgstr "Penulisan & Bahasa"
 
-#: src/Views/Homepage.vala:196
+#: src/Views/Homepage.vala:200
 msgid "Privacy & Security"
 msgstr "Privasi & Kemananan"
 
-#: src/Views/Homepage.vala:213
+#: src/Views/Homepage.vala:217
 msgid "Home"
 msgstr "Halaman Utama"
 
-#: src/Views/Homepage.vala:454
+#: src/Views/Homepage.vala:231
+msgid "Browse and manage apps"
+msgstr ""
+
+#: src/Views/Homepage.vala:232
+msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
+msgstr ""
+
+#: src/Views/Homepage.vala:460
 msgid "Fun & Games"
 msgstr "Hiburan & Permainan"
 
-#: src/Views/Homepage.vala:479
+#: src/Views/Homepage.vala:485
 msgid "Fun &"
 msgstr "Hiburan &"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:491
 msgid "Games"
 msgstr "Permainan"
 
