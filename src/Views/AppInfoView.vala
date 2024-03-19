@@ -731,7 +731,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         title = package.get_name ();
         tag = package.hash;
 
-#if SHARING
         if (package.is_shareable) {
             var body = _("Check out %s on AppCenter:").printf (package.get_name ());
             var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
@@ -761,7 +760,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
             links_flowbox.append (share_button);
         }
-#endif
 
         package.notify["state"].connect (on_package_state_changed);
         on_package_state_changed ();

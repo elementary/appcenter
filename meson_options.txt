@@ -2,7 +2,6 @@ option('hidden_app_list_file', type : 'string', value : 'appcenter.hiddenapps', 
 option('curated', type : 'boolean', value : true, description : 'Differentiate between apps created for elementary OS and not')
 option('name', type : 'string', value : 'AppCenter', description : 'The name of the app, e.g. used in the .desktop file and window title')
 option('payments', type : 'boolean', value : true, description : 'Enable payment features and display paid apps')
-option('sharing', type : 'boolean', value : true, description : 'Display sharing features, i.e. copyable URLs to appcenter.elementary.io')
 option('hide_upstream_distro_apps', type : 'boolean', value : true, description : 'Used for hiding Ubuntu repo apps on elementary OS')
 option('runtime_name', type : 'string', value : 'io.elementary.Platform', description : 'The name of the distributor runtime')
 option('packagekit_backend', type : 'boolean', value : true, description : 'Use PackageKit as a backend')
