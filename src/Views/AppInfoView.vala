@@ -272,14 +272,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         if (!package.is_runtime_updates) {
 #if CURATED
-            if (!package.is_native) {
-                var uncurated = new ContentType (
-                    _("Non-Curated"),
-                    _("Not reviewed by elementary for security, privacy, or system integration"),
-                    "security-low-symbolic"
+            if (package.is_native) {
+                var made_for_elementary = new ContentType (
+                    _("Made for elementary OS"),
+                    _("Reviewed by elementary for security, privacy, and system integration"),
+                    "runtime-elementary-symbolic"
                 );
 
-                oars_flowbox.append (uncurated);
+                oars_flowbox.append (made_for_elementary);
             }
 #endif
 
