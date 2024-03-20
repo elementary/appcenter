@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=@APP_NAME@
+Name=AppCenter
 Comment=Browse and manage apps
 Exec=@EXEC_NAME@ %U
 Icon=@PROJECT_NAME@

@@ -40,14 +40,6 @@ jobs:
         ninja -C build install
         ninja -C build test
 
-    - name: Build and Test (Pop!_Shop)
-      env:
-        DESTDIR: out
-      run: |
-        meson configure -Dintegration_tests=true -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
-        ninja -C build install
-        ninja -C build test
-
     - name: Build (Flatpak-only)
       env:
         DESTDIR: out

@@ -77,7 +77,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         set_default_size (910, 640);
         height_request = 500;
 
-        title = _(Build.APP_NAME);
+        title = _("AppCenter");
 
         toast = new Granite.Toast ("");
 

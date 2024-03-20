@@ -62,10 +62,6 @@ if get_option('payments')
     args += '--define=PAYMENTS'
 endif
 
-if get_option('sharing')
-    args += '--define=SHARING'
-endif
-
 if get_option('hide_upstream_distro_apps')
     args += '--define=HIDE_UPSTREAM_DISTRO_APPS'
 endif
