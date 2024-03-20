@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 02:40+0000\n"
+"POT-Creation-Date: 2024-03-19 21:28+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -18,6 +18,7 @@ msgstr ""
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:362
+#: src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -651,246 +652,246 @@ msgstr ""
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "Ikkje anmeldt og sjekka av elementary for sikkerheit, personvern eller integrasjon mot systemet"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
 msgstr "Kan mangla over­setning"
 
-#: src/Views/AppInfoView.vala:304
+#: src/Views/AppInfoView.vala:308
 msgid "This app does not provide language information"
 msgstr "Denne appen har ikkje gjort til kjenne informasjon om språk"
 
-#: src/Views/AppInfoView.vala:311
+#: src/Views/AppInfoView.vala:315
 msgid "Not Translated"
 msgstr "Manglar oversetning"
 
-#: src/Views/AppInfoView.vala:312
+#: src/Views/AppInfoView.vala:316
 msgid "This app is not available in your language"
 msgstr "Denne appen er ikkje tilgjengeleg i ditt språk"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:323
 msgid "Not Fully Translated"
 msgstr "Manglar fullstendig oversetning"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:324
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Denne appen har %i%% oversetning til ditt språk"
 
-#: src/Views/AppInfoView.vala:344
+#: src/Views/AppInfoView.vala:348
 msgid "Conflict"
 msgstr "Konflikt"
 
-#: src/Views/AppInfoView.vala:345
+#: src/Views/AppInfoView.vala:349
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Visning av farlege situasjonar eller aggressive konfliktar"
 
-#: src/Views/AppInfoView.vala:358
+#: src/Views/AppInfoView.vala:362
 msgid "Violence"
 msgstr "Vald"
 
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:367
 msgid "Fantasy Violence"
 msgstr "Oppdikta vald"
 
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:372
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Grafisk visning av valg, blodbad eller død"
 
-#: src/Views/AppInfoView.vala:412
+#: src/Views/AppInfoView.vala:416
 msgid "Multiplayer"
 msgstr "Fleirspelar"
 
-#: src/Views/AppInfoView.vala:413
+#: src/Views/AppInfoView.vala:417
 msgid "Online play with other people"
 msgstr "Spel med andre personar på nett"
 
-#: src/Views/AppInfoView.vala:429
+#: src/Views/AppInfoView.vala:433
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Lyd, video og tekstmeldingar med andre mennesker utan sensur"
 
-#: src/Views/AppInfoView.vala:431
+#: src/Views/AppInfoView.vala:435
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Lyd, video og tekstmeldingar med andre mennesker med sensur"
 
-#: src/Views/AppInfoView.vala:435
+#: src/Views/AppInfoView.vala:439
 msgid "Online Interactions"
 msgstr "Interaksjonar på nett"
 
-#: src/Views/AppInfoView.vala:445
+#: src/Views/AppInfoView.vala:449
 msgid "Location Sharing"
 msgstr "Deling av lokaliseringsdata"
 
-#: src/Views/AppInfoView.vala:446
+#: src/Views/AppInfoView.vala:450
 msgid "Other people can see your real-world location"
 msgstr "Andre mennesker kan sjå din faktiske posisjon"
 
-#: src/Views/AppInfoView.vala:458
+#: src/Views/AppInfoView.vala:462
 msgid "Collects anonymous usage data"
 msgstr "Samlar inn brukardata anonymt"
 
-#: src/Views/AppInfoView.vala:461
+#: src/Views/AppInfoView.vala:465
 msgid "Collects usage data that could be used to identify you"
 msgstr "Samlar inn brukardata som kan bli nytta til å identifisera deg"
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:470
 msgid "Info Sharing"
 msgstr "Deling av informasjon"
 
-#: src/Views/AppInfoView.vala:567
+#: src/Views/AppInfoView.vala:571
 msgid "Screenshot Not Available"
 msgstr "Skjermbilete er ikkje tilgjengeleg"
 
-#: src/Views/AppInfoView.vala:595
+#: src/Views/AppInfoView.vala:599
 msgid "What's New:"
 msgstr "Nyhende:"
 
-#: src/Views/AppInfoView.vala:622
+#: src/Views/AppInfoView.vala:626
 msgid "Extensions:"
 msgstr "Utvidingar:"
 
-#: src/Views/AppInfoView.vala:653
+#: src/Views/AppInfoView.vala:657
 msgid "Homepage"
 msgstr "Heimeside"
 
-#: src/Views/AppInfoView.vala:659
+#: src/Views/AppInfoView.vala:663
 msgid "Translate"
 msgstr "Oversett"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:669
 msgid "Send Feedback"
 msgstr "Send tilbakemelding"
 
-#: src/Views/AppInfoView.vala:671
+#: src/Views/AppInfoView.vala:675
 msgid "Help"
 msgstr "Hjelp"
 
-#: src/Views/AppInfoView.vala:719
+#: src/Views/AppInfoView.vala:723
 msgid "Link copied to clipboard"
 msgstr "Lenke kopiert til utklippstavle"
 
-#: src/Views/AppInfoView.vala:732
+#: src/Views/AppInfoView.vala:736
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Sjekk ut %s i AppCenter:"
 
-#: src/Views/AppInfoView.vala:740
+#: src/Views/AppInfoView.vala:744
 msgid "Share"
 msgstr "Del"
 
-#: src/Views/AppInfoView.vala:828
+#: src/Views/AppInfoView.vala:832
 msgid "End of Life"
 msgstr "Utdatert"
 
-#: src/Views/AppInfoView.vala:829
+#: src/Views/AppInfoView.vala:833
 msgid "May not work as expected or receive security updates"
 msgstr "Kan henda at appen ikkje fungerar som forventa, eller mottar sikkerhetsoppdateringar"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:839
 msgid "Outdated"
 msgstr "Utdatert"
 
-#: src/Views/AppInfoView.vala:836
+#: src/Views/AppInfoView.vala:840
 msgid "May not work as expected or support the latest features"
 msgstr "Kan henda at appen ikkje fungerer som forventa, eller støtter dei nyaste funksjonane"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:848
 msgid "Unstable"
 msgstr "Ikkje stabil"
 
-#: src/Views/AppInfoView.vala:845
+#: src/Views/AppInfoView.vala:849
 #, c-format
 msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
 msgstr "Laga for ein versjon av %s som ikkje er stabil. Kan difor innehalda store feil, og er ikkje anbefalt for dagleg bruk."
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:862
 msgid "Insecure Sandbox"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:859
+#: src/Views/AppInfoView.vala:863
 msgid "Can ignore or modify its own system permissions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:872
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:869
+#: src/Views/AppInfoView.vala:873
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:876
+#: src/Views/AppInfoView.vala:880
 msgid "Home Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:877
+#: src/Views/AppInfoView.vala:881
 msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:890
 msgid "Legacy Autostart"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:887
+#: src/Views/AppInfoView.vala:891
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:896
+#: src/Views/AppInfoView.vala:900
 msgid "Location Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:901
 msgid "Can see your precise location at any time without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:906
+#: src/Views/AppInfoView.vala:910
 msgid "Legacy Notifications"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:907
+#: src/Views/AppInfoView.vala:911
 msgid "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:916
+#: src/Views/AppInfoView.vala:920
 msgid "System Settings Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:917
+#: src/Views/AppInfoView.vala:921
 msgid "Can read and modify system settings"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1142
+#: src/Views/AppInfoView.vala:1146
 msgid "Public Domain"
 msgstr "Offentleg eigedom"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1145
+#: src/Views/AppInfoView.vala:1149
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://en.wikipedia.org/wiki/Public_domain"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1150
+#: src/Views/AppInfoView.vala:1154
 msgid "Free Software"
 msgstr "Fri programvare"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1153
+#: src/Views/AppInfoView.vala:1157
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1157
+#: src/Views/AppInfoView.vala:1161
 msgid "Proprietary"
 msgstr "Proprietær"
 
-#: src/Views/AppInfoView.vala:1160
+#: src/Views/AppInfoView.vala:1164
 msgid "Unknown License"
 msgstr "Ukjend lisens"
 
-#: src/Views/AppInfoView.vala:1270
+#: src/Views/AppInfoView.vala:1274
 msgid "Fund"
 msgstr "Bidrag"
 
-#: src/Views/AppInfoView.vala:1276
+#: src/Views/AppInfoView.vala:1280
 msgid "Fund the development of this app"
 msgstr "Finansier utviklinga av denne applikasjonen"
 
@@ -937,7 +938,7 @@ msgstr "Drivarar"
 msgid "Other Apps by %s"
 msgstr "Andre applikasjonar av %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:54
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:58
 msgid "Recently Updated"
 msgstr "Nyleg oppdatert"
 
@@ -949,87 +950,95 @@ msgstr "Betalte appar"
 msgid "Free Apps"
 msgstr "Gratis appar"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:81
 msgid "Categories"
 msgstr "Kategoriar"
 
-#: src/Views/Homepage.vala:103
+#: src/Views/Homepage.vala:107
 msgid "Accessories"
 msgstr "Tilbehøyr"
 
-#: src/Views/Homepage.vala:104
+#: src/Views/Homepage.vala:108
 msgid "Audio"
 msgstr "Lyd"
 
-#: src/Views/Homepage.vala:105
+#: src/Views/Homepage.vala:109
 msgid "Communication"
 msgstr "Kommunikasjon"
 
-#: src/Views/Homepage.vala:114
+#: src/Views/Homepage.vala:118
 msgid "Development"
 msgstr "Utvikling"
 
-#: src/Views/Homepage.vala:124
+#: src/Views/Homepage.vala:128
 msgid "Education"
 msgstr "Utdanning"
 
-#: src/Views/Homepage.vala:125
+#: src/Views/Homepage.vala:129
 msgid "Finance"
 msgstr "Finans"
 
-#: src/Views/Homepage.vala:130
+#: src/Views/Homepage.vala:134
 msgid "Graphics"
 msgstr "Grafikk"
 
-#: src/Views/Homepage.vala:139
+#: src/Views/Homepage.vala:143
 msgid "Internet"
 msgstr "Internett"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:147
 msgid "Math, Science, & Engineering"
 msgstr "Matematikk, vitskap og teknikk"
 
-#: src/Views/Homepage.vala:162
+#: src/Views/Homepage.vala:166
 msgid "Media Production"
 msgstr "Medieproduksjon"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:173
 msgid "Office"
 msgstr "Kontor"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:180
 msgid "System"
 msgstr "System"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:184
 msgid "Universal Access"
 msgstr "Universelt tilgjenge"
 
-#: src/Views/Homepage.vala:181
+#: src/Views/Homepage.vala:185
 msgid "Video"
 msgstr "Video"
 
-#: src/Views/Homepage.vala:186
+#: src/Views/Homepage.vala:190
 msgid "Writing & Language"
 msgstr "Skriving og språk"
 
-#: src/Views/Homepage.vala:196
+#: src/Views/Homepage.vala:200
 msgid "Privacy & Security"
 msgstr "Personvern og tryggleik"
 
-#: src/Views/Homepage.vala:213
+#: src/Views/Homepage.vala:217
 msgid "Home"
 msgstr "Heim"
 
-#: src/Views/Homepage.vala:454
+#: src/Views/Homepage.vala:231
+msgid "Browse and manage apps"
+msgstr ""
+
+#: src/Views/Homepage.vala:232
+msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
+msgstr ""
+
+#: src/Views/Homepage.vala:460
 msgid "Fun & Games"
 msgstr "Spel"
 
-#: src/Views/Homepage.vala:479
+#: src/Views/Homepage.vala:485
 msgid "Fun &"
 msgstr "Moro og"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:491
 msgid "Games"
 msgstr "Spel"
 
