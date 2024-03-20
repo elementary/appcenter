@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2021-09-21 21:50+0000\n"
 "Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "Centro de aplicaciones"
 
@@ -121,10 +122,6 @@ msgstr ""
 msgid "Show when an app isn't available in your language"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "instalar;desinstalar;eliminar;catálogo;tienda;aplicaciones;software;"
@@ -150,6 +147,9 @@ msgstr ""
 #| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
 msgstr "Necesita autenticarse para actualizar el software"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
 
 #, fuzzy
 #~| msgid "Keyboard improvements"

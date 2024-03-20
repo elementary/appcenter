@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -111,10 +112,6 @@ msgstr ""
 msgid "Show when an app isn't available in your language"
 msgstr "Vis når ein app ikkje har oversetning til ditt språk"
 
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "innstaller;avinnstaller;fjern;katalog;butikk;appar;programvare;"
@@ -140,6 +137,9 @@ msgstr ""
 #| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
 msgstr "Godkjenning er naudsynt for å oppgradera programvara"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
 
 #~ msgid "Install OS Updates offline"
 #~ msgstr "Installer oppdateringar for operativsystemet i fråkopla modus"

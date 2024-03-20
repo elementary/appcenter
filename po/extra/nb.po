@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2023-07-07 12:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "AppSenter"
 
@@ -125,10 +126,6 @@ msgstr ""
 msgid "Show when an app isn't available in your language"
 msgstr "Vis når et program ikke er tilgjengelig på valgt språk"
 
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -155,6 +152,9 @@ msgstr "Reparer programvarekilder"
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr "Identitetsbekreftelse kreves for å reparere programvarekilder"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
 
 #~ msgid "Install OS Updates offline"
 #~ msgstr "Installer OS-oppgraderinger frakoblet"

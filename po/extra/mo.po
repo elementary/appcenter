@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2018-05-27 00:03+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/appcenter/"
@@ -14,6 +14,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "Centru aplicații"
 
@@ -113,10 +114,6 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:135
 msgid "Show when an app isn't available in your language"
-msgstr ""
-
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7

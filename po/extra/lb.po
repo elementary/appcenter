@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Luxembourgish <https://l10n.elementary.io/projects/appcenter/"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -104,10 +105,6 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:135
 msgid "Show when an app isn't available in your language"
-msgstr ""
-
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7

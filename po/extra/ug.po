@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2016-12-27 14:26+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,7 @@ msgstr ""
 "X-Generator: Launchpad (build 18331)\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "ئەپ مەركىزى"
 
@@ -111,10 +112,6 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:135
 msgid "Show when an app isn't available in your language"
-msgstr ""
-
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7

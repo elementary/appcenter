@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2023-05-27 17:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -119,10 +120,6 @@ msgstr ""
 msgid "Show when an app isn't available in your language"
 msgstr "Tampilkan saat aplikasi tidak tersedia dalam bahasa Anda"
 
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "pasang;copot pemasangan;hapus;katalog;toko;aplikasi;perangkat lunak;"
@@ -146,6 +143,9 @@ msgstr "Perbaiki sumber perangkat lunak"
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr "Autentikasi diperlukan untuk memperbaiki sumber perangkat lunak"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
 
 #~ msgid "Install OS Updates offline"
 #~ msgstr "Memasang Pembaruan OS secara luring"

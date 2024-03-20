@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2023-09-26 22:08+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "Centre d’Applications"
 
@@ -126,10 +127,6 @@ msgstr ""
 "Vous savez désormais lorsqu'une application n'est pas disponible dans votre "
 "langue"
 
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
@@ -156,6 +153,9 @@ msgstr "Réparer les sources logicielles"
 msgid "Authentication is required to repair software sources"
 msgstr ""
 "Une authentification est nécessaire pour réparer les ressources logicielles"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
 
 #~ msgid "Install OS Updates offline"
 #~ msgstr "Installer les mises à jour du système hors connexion"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 21:28+0000\n"
+"POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-03-07 01:13+0000\n"
 "Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -20,6 +20,7 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:3
 msgid "AppCenter"
 msgstr "Uygulama Merkezi"
 
@@ -108,10 +109,6 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:135
 msgid "Show when an app isn't available in your language"
-msgstr ""
-
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7
