@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2024-03-19 21:28+0000\n"
+"PO-Revision-Date: 2024-03-21 22:13+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1015,11 +1016,15 @@ msgstr "בית"
 
 #: src/Views/Homepage.vala:231
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "עיון וניהול יישומים"
 
 #: src/Views/Homepage.vala:232
 msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
 msgstr ""
+"חנות היישומים בקוד פתוח ל־elementary שמאפשרת גם לשלם כראות עיניך. המאגר נסקר "
+"ונאסף על ידי elementary כדי להבטיח חוויה אחידה, מכבדת פרטיות ומאובטחת. ניתן "
+"לעיין לפי קטגוריות או לחפש ולגלות יישומים חדש. מרכז היישומים משמש גם לעדכון "
+"מערכת הפעלה שלך לגרסה העדכנית והטובה ביותר לקבלת יכולות ותיקונים חדשים."
 
 #: src/Views/Homepage.vala:460
 msgid "Fun & Games"
