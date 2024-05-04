@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2024-05-04 12:07+0000\n"
+"PO-Revision-Date: 2024-05-04 12:08+0000\n"
 "Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
@@ -83,7 +83,7 @@ msgstr "Atualizar automaticamente aplicativos gratuitos e comprados"
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
-"Os aplicativos em avaliação gratuita não serão atualizados automaticamente."
+"Os aplicativos em avaliação gratuita não serão atualizados automaticamente"
 
 #: src/MainWindow.vala:159
 #, fuzzy
