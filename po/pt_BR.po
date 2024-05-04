@@ -82,6 +82,7 @@ msgstr "Atualizar automaticamente aplicativos gratuitos e comprados."
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
+"Os aplicativos em avaliação gratuita não serão atualizados automaticamente."
 
 #: src/MainWindow.vala:159
 #, fuzzy
