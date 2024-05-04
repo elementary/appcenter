@@ -11,13 +11,14 @@
 # matheustorresc <matheustorrescarvalho@gmail.com>, 2023, 2024.
 # Alice Emanueli <eu_alice_real@proton.me>, 2024.
 # Matheus Torres Carvalho <matheustcarvalho@hotmail.com>, 2024.
+# codehead01 <thefusrotardis05@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-05-04 12:09+0000\n"
-"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
+"Last-Translator: codehead01 <thefusrotardis05@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -136,7 +137,7 @@ msgstr "Obtendo informações"
 
 #: src/MainWindow.vala:525
 msgid "Getting download size…"
-msgstr ""
+msgstr "Obtendo o tamanho do download…"
 
 #: src/MainWindow.vala:531
 #, fuzzy
