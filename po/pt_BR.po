@@ -12,13 +12,14 @@
 # Alice Emanueli <eu_alice_real@proton.me>, 2024.
 # Matheus Torres Carvalho <matheustcarvalho@hotmail.com>, 2024.
 # codehead01 <thefusrotardis05@gmail.com>, 2024.
+# Breno Prata <brenoprata@hotmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-05-04 12:11+0000\n"
-"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
+"Last-Translator: Breno Prata <brenoprata@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -574,7 +575,7 @@ msgstr "Pagar $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr ""
+msgstr "Experimentar gratuitamente"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
