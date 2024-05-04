@@ -8,7 +8,7 @@
 # lucaspifonseca <lucaspifonseca@gmail.com>, 2021.
 # DanielPonte01 <daniel98ponte@gmail.com>, 2021.
 # Ewerton Souza <ewvertton@gmail.com>, 2023.
-# matheustorresc <matheustorrescarvalho@gmail.com>, 2023.
+# matheustorresc <matheustorrescarvalho@gmail.com>, 2023, 2024.
 # Alice Emanueli <eu_alice_real@proton.me>, 2024.
 # Matheus Torres Carvalho <matheustcarvalho@hotmail.com>, 2024.
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-05-04 12:08+0000\n"
-"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
+"Last-Translator: matheustorresc <matheustorrescarvalho@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -111,7 +111,7 @@ msgstr "Configurações de Rede…"
 
 #: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Rodando em Modo de Demonstração"
 
 #: src/MainWindow.vala:231
 #, c-format
