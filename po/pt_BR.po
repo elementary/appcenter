@@ -13,13 +13,14 @@
 # Matheus Torres Carvalho <matheustcarvalho@hotmail.com>, 2024.
 # codehead01 <thefusrotardis05@gmail.com>, 2024.
 # Breno Prata <brenoprata@hotmail.com>, 2024.
+# Pedro Luiz <pedroluiz51@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-05-04 12:11+0000\n"
-"Last-Translator: Breno Prata <brenoprata@hotmail.com>\n"
+"Last-Translator: Pedro Luiz <pedroluiz51@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -537,7 +538,7 @@ msgstr "Este é um pagamento único. Seu endereço de email é usado apenas para
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
-msgstr ""
+msgstr "ou"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
