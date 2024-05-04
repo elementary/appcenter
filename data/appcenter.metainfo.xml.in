@@ -58,7 +58,9 @@
   <url type="help">https://github.com/elementary/appcenter/discussions/categories/q-a</url>
   <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
 
-  <developer_name>elementary, Inc.</developer_name>
+  <developer id="org.elementaryos">
+    <name>elementary, Inc.</name>
+  </developer>
   <project_group>elementary</project_group>
   <update_contact>contact_at_elementary.io</update_contact>
 
