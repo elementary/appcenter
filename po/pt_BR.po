@@ -7,7 +7,7 @@
 # Leonardo <leonardo@elementary.io>, 2021.
 # lucaspifonseca <lucaspifonseca@gmail.com>, 2021.
 # DanielPonte01 <daniel98ponte@gmail.com>, 2021.
-# Ewerton Souza <ewvertton@gmail.com>, 2023.
+# Ewerton Souza <ewvertton@gmail.com>, 2023, 2024.
 # matheustorresc <matheustorrescarvalho@gmail.com>, 2023, 2024.
 # Alice Emanueli <eu_alice_real@proton.me>, 2024.
 # Matheus Torres Carvalho <matheustcarvalho@hotmail.com>, 2024.
@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2024-05-04 12:09+0000\n"
-"Last-Translator: Alice Emanueli <eu_alice_real@proton.me>\n"
+"PO-Revision-Date: 2024-05-04 12:11+0000\n"
+"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -447,7 +447,7 @@ msgstr "Verificando atualizações"
 
 #: src/Core/UpdateManager.vala:34
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Atualizações para o tempo de execução dos aplicativos"
 
 #: src/Core/UpdateManager.vala:100
 #, c-format
@@ -661,7 +661,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:235
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
+msgstr "Presença de ou referências a álcool, narcóticos ou tabaco."
 
 #: src/Views/AppInfoView.vala:240
 msgid "Sex & Nudity"
