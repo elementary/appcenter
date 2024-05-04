@@ -9,20 +9,22 @@
 # DanielPonte01 <daniel98ponte@gmail.com>, 2021.
 # Ewerton Souza <ewvertton@gmail.com>, 2023.
 # matheustorresc <matheustorrescarvalho@gmail.com>, 2023.
+# Alice Emanueli <eu_alice_real@proton.me>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: matheustorresc <matheustorrescarvalho@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
+"PO-Revision-Date: 2024-05-04 12:07+0000\n"
+"Last-Translator: Alice Emanueli <eu_alice_real@proton.me>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -44,6 +46,9 @@ msgstr "O link especificado '%s' não pôde ser encontrado, buscando"
 #: src/Application.vala:272
 msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
 msgstr ""
+"O AppCenter iniciará automaticamente quando este dispositivo for ligado e "
+"continuará em execução mesmo quando sua janela estiver fechada, para que "
+"possa verificar e instalar atualizações automaticamente."
 
 #: src/Application.vala:355
 msgid "The app has been installed"
@@ -72,7 +77,7 @@ msgstr "Encontrar Aplicativos"
 
 #: src/MainWindow.vala:154
 msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
+msgstr "Atualizar automaticamente aplicativos gratuitos e comprados."
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
