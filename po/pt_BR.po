@@ -10,13 +10,14 @@
 # Ewerton Souza <ewvertton@gmail.com>, 2023.
 # matheustorresc <matheustorrescarvalho@gmail.com>, 2023.
 # Alice Emanueli <eu_alice_real@proton.me>, 2024.
+# Matheus Torres Carvalho <matheustcarvalho@hotmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-05-04 12:07+0000\n"
-"Last-Translator: Alice Emanueli <eu_alice_real@proton.me>\n"
+"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -77,7 +78,7 @@ msgstr "Encontrar Aplicativos"
 
 #: src/MainWindow.vala:154
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Atualizar automaticamente aplicativos gratuitos e comprados."
+msgstr "Atualizar automaticamente aplicativos gratuitos e comprados"
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
