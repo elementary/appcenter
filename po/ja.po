@@ -4,15 +4,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2024-03-20 05:57+0000\n"
+"PO-Revision-Date: 2024-05-07 05:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -426,7 +427,7 @@ msgstr "アップデートのあるランタイムなし"
 #, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "アップデートのあるランタイムが%u項目あります"
+msgstr[0] "アップデートのあるランタイムが %u 項目あります"
 
 #: src/Core/UpdateManager.vala:125
 #, c-format
@@ -442,7 +443,7 @@ msgstr[0] "アップデートが利用可能です"
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u個のアプリのアップデートが利用可能です"
+msgstr[0] "%u 個のアプリのアップデートが利用可能です"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
@@ -909,7 +910,7 @@ msgstr "インストール済み"
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u件のアップデートが利用可能です"
+msgstr[0] "%u 件のアップデートが利用可能です"
 
 #: src/Views/AppListUpdateView.vala:216
 #, c-format
