@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-05-07 05:13+0000\n"
-"Last-Translator: György Viktor <wickdj@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hu/>\n"
 "Language: hu\n"
@@ -644,10 +644,10 @@ msgid "Made for elementary OS"
 msgstr "elementary OS-hez készítve"
 
 #: src/Views/AppInfoView.vala:278
-#, fuzzy
-#| msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
-msgstr "Nem lett jóváhagyva az elementary által sem biztonsági, sem adatvédelmi, sem rendszerintegrációi szempontból"
+msgstr ""
+"Jóváhagyva az elementary által biztonsági, adatvédelmi és "
+"rendszerintegrációi szempontból"
 
 #: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
@@ -1021,11 +1021,16 @@ msgstr "Kezdőlap"
 
 #: src/Views/Homepage.vala:231
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Alkalmazások böngészése és kezelése"
 
 #: src/Views/Homepage.vala:232
 msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
 msgstr ""
+"Az elementary nyílt forráskódú, fizessen-amennyit-akar alkalmazásüzlete. "
+"Ellenőrizve és jóváhagyva az elementary által egy natív, adatvédelmet szem "
+"előtt tartó és biztonságos élményért. Böngésszen kategóriák szerint, vagy "
+"keressen és fedezzen fel új alkalmazásokat. Az Appközpont segítségével "
+"mindig a legújabb és legjobb verzióra frissítheti rendszerét."
 
 #: src/Views/Homepage.vala:460
 msgid "Fun & Games"
