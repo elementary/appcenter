@@ -1,7 +1,7 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
 # Jaimie85 <alsemgeest@gmail.com>, 2019, 2020.
 # Lieven Hanssen <lhanssen@freedommail.co>, 2020.
-# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023.
+# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023, 2024.
 # MB <barendregt@fastmail.com>, 2022.
 # Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 # DutchVipperloid <svenroelof@e.email>, 2023.
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
 "PO-Revision-Date: 2024-05-14 09:13+0000\n"
-"Last-Translator: Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -650,7 +650,7 @@ msgstr "Realistisch of participatief gokken"
 
 #: src/Views/AppInfoView.vala:277
 msgid "Made for elementary OS"
-msgstr "Gemaakt voor elementaryOS"
+msgstr "Gemaakt voor elementary OS"
 
 #: src/Views/AppInfoView.vala:278
 msgid "Reviewed by elementary for security, privacy, and system integration"
