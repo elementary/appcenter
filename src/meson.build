@@ -78,25 +78,6 @@ if appstream.version().version_compare('>=1.0')
     args += '--define=HAS_APPSTREAM_1_0'
 endif
 
-if get_option('packagekit_backend')
-    appcenter_files += files(
-        'Core/PackageKitBackend.vala',
-        'Core/Task.vala',
-    )
-
-    args += '--define=PACKAGEKIT_BACKEND'
-endif
-
-if get_option('ubuntu_drivers_backend')
-    if not get_option('packagekit_backend')
-        error('Option ubuntu_drivers requires option packagekit_backend')
-    endif
-
-    appcenter_files += files('Core/UbuntuDriversBackend.vala')
-
-    args += '--define=UBUNTU_DRIVERS_BACKEND'
-endif
-
 executable(
     meson.project_name(),
     appcenter_files,

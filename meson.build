@@ -11,7 +11,6 @@ i18n = import('i18n')
 
 add_project_arguments(
     '-DGETTEXT_PACKAGE="@0@"'.format(gettext_name),
-    '-DI_KNOW_THE_PACKAGEKIT_GLIB2_API_IS_SUBJECT_TO_CHANGE',
     language:'c'
 )
 
@@ -57,10 +56,6 @@ dependencies = core_deps + [
     portal_gtk4,
     posix
 ]
-
-if get_option('packagekit_backend')
-    dependencies += [dependency ('packagekit-glib2')]
-endif
 
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
 conf_data = configuration_data()

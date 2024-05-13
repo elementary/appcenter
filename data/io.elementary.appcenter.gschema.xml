@@ -26,11 +26,6 @@
       <summary>List of paid-for applications</summary>
       <description>A list of appstream IDs which have been paid for</description>
     </key>
-    <key type="as" name="cached-drivers">
-      <default>[]</default>
-      <summary>List of package names of drivers that may be required</summary>
-      <description>Speeds up loading of updates view by remembering which drivers may be required</description>
-    </key>
     <key type="x" name="last-refresh-time">
       <default>0</default>
       <summary>Unix UTC time of last cache refresh</summary>

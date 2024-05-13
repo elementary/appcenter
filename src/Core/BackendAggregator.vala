@@ -26,12 +26,6 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
-#if PACKAGEKIT_BACKEND
-        backends.add (PackageKitBackend.get_default ());
-#endif
-#if UBUNTU_DRIVERS_BACKEND
-        backends.add (UbuntuDriversBackend.get_default ());
-#endif
         backends.add (FlatpakBackend.get_default ());
 
         unowned Gtk.Application app = (Gtk.Application) GLib.Application.get_default ();
@@ -256,7 +250,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         // updatable_packages is a HashMultiMap of packages to be updated, where the key is
         // a pointer to the backend that is capable of updating them. Most packages only have one
         // backend, but there is the special case of the OS updates package which could contain
-        // flatpaks and/or packagekit packages
+        // flatpaks
 
         var backends = package.change_information.updatable_packages.get_keys ();
         Gee.ArrayList<ChangeInformation>? change_infos = null;
