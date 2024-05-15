@@ -1,7 +1,7 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
 # Jaimie85 <alsemgeest@gmail.com>, 2019, 2020.
 # Lieven Hanssen <lhanssen@freedommail.co>, 2020.
-# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023.
+# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023, 2024.
 # MB <barendregt@fastmail.com>, 2022.
 # Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 # DutchVipperloid <svenroelof@e.email>, 2023.
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2024-05-13 08:32+0000\n"
-"Last-Translator: Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>\n"
+"PO-Revision-Date: 2024-05-14 09:13+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -650,13 +650,12 @@ msgstr "Realistisch of participatief gokken"
 
 #: src/Views/AppInfoView.vala:277
 msgid "Made for elementary OS"
-msgstr "Gemaakt voor elementaryOS"
+msgstr "Gemaakt voor elementary OS"
 
 #: src/Views/AppInfoView.vala:278
-#, fuzzy
-#| msgid "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
-msgstr "Niet gecontroleerd door elementary op veiligheid, privacy of systeemintegratie"
+msgstr ""
+"Gecontroleerd door elementary op veiligheid, privacy en systeemintegratie"
 
 #: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
@@ -1030,11 +1029,16 @@ msgstr "Startpagina"
 
 #: src/Views/Homepage.vala:231
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Apps bekijken en beheren"
 
 #: src/Views/Homepage.vala:232
 msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
 msgstr ""
+"De open source, betaal-wat-je-wilt app store van elementary. Beoordeeld en "
+"samengesteld door elementary om een native, privacy respecterende en veilige "
+"ervaring te garanderen. Blader door categorieën of zoek en ontdek nieuwe "
+"apps. AppCenter wordt ook gebruikt voor het updaten van je systeem naar de "
+"nieuwste en beste versie voor nieuwe functies en verbeteringen."
 
 #: src/Views/Homepage.vala:460
 msgid "Fun & Games"
