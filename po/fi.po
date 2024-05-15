@@ -5,10 +5,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 05:57+0000\n"
+"POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2023-11-01 19:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,30 +19,35 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/MainWindow.vala:80 src/Core/Package.vala:362
+#: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
 #: src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "Sovelluskeskus"
 
-#: src/Application.vala:88
+#: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Mediatyyppiä %s ei voitu jäsentää"
 
-#: src/Application.vala:108
+#: src/Application.vala:98
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Linkkiä '%s' ei löytynyt, haetaan sen sijaan"
 
-#: src/Application.vala:272
-msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
-msgstr "Sovelluskeskus käynnistyy automaattisesti, kun laite käynnistyy, ja pysyy käynnissä kun sen ikkuna suljetaan, jotta se voi automaattisesti tarkistaa ja asentaa päivitykset."
+#: src/Application.vala:262
+msgid ""
+"AppCenter will automatically start when this device turns on and run when "
+"its window is closed so that it can automatically check and install updates."
+msgstr ""
+"Sovelluskeskus käynnistyy automaattisesti, kun laite käynnistyy, ja pysyy "
+"käynnissä kun sen ikkuna suljetaan, jotta se voi automaattisesti tarkistaa "
+"ja asentaa päivitykset."
 
-#: src/Application.vala:355
+#: src/Application.vala:345
 msgid "The app has been installed"
 msgstr "Sovellus on asennettu"
 
-#: src/Application.vala:356 src/MainWindow.vala:420
+#: src/Application.vala:346 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” on asennettu"
@@ -70,7 +76,9 @@ msgstr "Päivitä automaattisesti ilmaiset ja maksulliset kuratoidut sovellukset
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
-msgstr "Järjestelmäpäivitykset ja maksamattomat sovellukset eivät päivity automaattisesti"
+msgstr ""
+"Järjestelmäpäivitykset ja maksamattomat sovellukset eivät päivity "
+"automaattisesti"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
@@ -328,7 +336,8 @@ msgstr "Tuntematon alkuperä (kuratoimaton)"
 #: src/Core/Package.vala:550
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr "Sovellustilaa ei ole asetettu asennetuksi Sovelluskeskuksessa paketille %s"
+msgstr ""
+"Sovellustilaa ei ole asetettu asennetuksi Sovelluskeskuksessa paketille %s"
 
 #: src/Core/PackageKitBackend.vala:314
 #, c-format
@@ -336,7 +345,9 @@ msgid "%s (local)"
 msgstr "%s (paikallinen)"
 
 #: src/Core/Stripe.vala:27
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
 msgstr "Korttiasi käsitellessä tapahtui virhe. Yritä myöhemmin uudelleen."
 
 #: src/Core/Stripe.vala:28
@@ -344,16 +355,26 @@ msgid "Please review your payment info and try again."
 msgstr "Tarkista maksutiedot ja yritä uudelleen."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Kortin numero on väärin. Yritä uudelleen käyttäen oikeaa kortin numeroa."
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
+msgstr ""
+"Kortin numero on väärin. Yritä uudelleen käyttäen oikeaa kortin numeroa."
 
 #: src/Core/Stripe.vala:66
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "Vanhenemiskuukausi on virheellinen. Yritä uudelleen käyttäen oikeaa vanhenemispäiväystä."
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"Vanhenemiskuukausi on virheellinen. Yritä uudelleen käyttäen oikeaa "
+"vanhenemispäiväystä."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "Vanhenemisvuosi on väärin. Yritä uudelleen käyttäen oikeaa vanhenemispäiväystä."
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"Vanhenemisvuosi on väärin. Yritä uudelleen käyttäen oikeaa "
+"vanhenemispäiväystä."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -368,19 +389,29 @@ msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Liian monta samanaikaista maksupyyntöä, yritä myöhemmin uudelleen."
 
 #: src/Core/Stripe.vala:106
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Tämä kortti ei tue tämänkaltaista maksua. Yritä uudelleen käyttäen toista korttia."
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+"Tämä kortti ei tue tämänkaltaista maksua. Yritä uudelleen käyttäen toista "
+"korttia."
 
 #: src/Core/Stripe.vala:108
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Valuutta ei ole tuettu tämän kortin toimesta. Yritä uudelleen käyttäen toista korttia."
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+"Valuutta ei ole tuettu tämän kortin toimesta. Yritä uudelleen käyttäen "
+"toista korttia."
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
 msgstr "Maksu on jo käsitelty."
 
 #: src/Core/Stripe.vala:114
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"postal code."
 msgstr "Postinumero on väärin. Yritä uudelleen käyttäen oikeaa postinumeroa."
 
 #: src/Core/Stripe.vala:116
@@ -396,11 +427,14 @@ msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN-numero on väärin. Yritä uudelleen käyttäen oikeaa PIN-numeroa."
 
 #: src/Core/Stripe.vala:131
-msgid "There has been too many PIN attempts. Please try again with a different card."
+msgid ""
+"There has been too many PIN attempts. Please try again with a different card."
 msgstr "Liian monta PIN-yritystä. Yritä uudelleen käyttäen toista korttia."
 
 #: src/Core/Stripe.vala:151
-msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
 msgstr "Maksun suorittaminen ei onnistu. Pyydä lisätietoja omasta pankistasi."
 
 #: src/Core/Stripe.vala:154
@@ -456,8 +490,12 @@ msgstr[0] "%u päivitys on saatavilla."
 msgstr[1] "%u päivitystä on saatavilla."
 
 #: src/Dialogs/InstallFailDialog.vala:27
-msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Tämä saattaa olla väliaikainen ongelma, tai ongelma voi johtua ulkopuolisesta tai käsin käännetystä ohjelmistosta."
+msgid ""
+"This may be a temporary issue or could have been caused by external or "
+"manually compiled software."
+msgstr ""
+"Tämä saattaa olla väliaikainen ongelma, tai ongelma voi johtua "
+"ulkopuolisesta tai käsin käännetystä ohjelmistosta."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -477,8 +515,12 @@ msgid "Failed to Repair"
 msgstr "Korjaaminen epäonnistui"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Tämä saattaa johtua ulkoisista, käsin lisätyistä ohjelmistolähteistä tai rikkoutuneesta sources-tiedostosta."
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"Tämä saattaa johtua ulkoisista, käsin lisätyistä ohjelmistolähteistä tai "
+"rikkoutuneesta sources-tiedostosta."
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -493,8 +535,12 @@ msgid "Pay $%d for %s"
 msgstr "Maksa $%d kohteesta %s"
 
 #: src/Dialogs/StripeDialog.vala:82
-msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Tämä on kertamaksu, jonka summaa on ehdottanut kehittäjä. Voit valita itse maksun suuruuden."
+msgid ""
+"This is a one time payment suggested by the developer. You can also choose "
+"your own price."
+msgstr ""
+"Tämä on kertamaksu, jonka summaa on ehdottanut kehittäjä. Voit valita itse "
+"maksun suuruuden."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -505,8 +551,12 @@ msgid "Email"
 msgstr "Sähköposti"
 
 #: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Sähköpostiosoitettasi käytetään vain kuitin lähettämiseen. Osoitetta ei lisätä postituslistoille."
+msgid ""
+"Only used to send you a receipt. You will not be subscribed to any mailing "
+"list."
+msgstr ""
+"Sähköpostiosoitettasi käytetään vain kuitin lähettämiseen. Osoitetta ei "
+"lisätä postituslistoille."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -554,7 +604,8 @@ msgstr "Yritä uudelleen"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr "Tämän sovelluksen poistaminen saattaa myös poistaa siihen liittyvät tiedot."
+msgstr ""
+"Tämän sovelluksen poistaminen saattaa myös poistaa siihen liittyvät tiedot."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
@@ -571,7 +622,8 @@ msgstr "Poista asennus"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Tämän on saattanut aiheuttaa ulkopuolinen tai käsin käännetty ohjelmisto."
+msgstr ""
+"Tämän on saattanut aiheuttaa ulkopuolinen tai käsin käännetty ohjelmisto."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
@@ -596,9 +648,16 @@ msgstr "Yritä uudelleen"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Tämä saattaa johtua ulkoisista, käsin lisätyistä ohjelmistolähteistä tai rikkoutuneesta sources-tiedostosta."
+#| msgid ""
+#| "This may have been caused by external, manually added software "
+#| "repositories or a corrupted sources file."
+msgid ""
+"This may have been caused by sideloaded or manually compiled software, a "
+"third-party software source, or a package manager error. Manually refreshing "
+"updates may resolve the issue."
+msgstr ""
+"Tämä saattaa johtua ulkoisista, käsin lisätyistä ohjelmistolähteistä tai "
+"rikkoutuneesta sources-tiedostosta."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -635,7 +694,8 @@ msgstr "Loukkaavaa kielenkäyttöä"
 
 #: src/Views/AppInfoView.vala:247
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr "Kiroilua, syrjivää kielenkäyttöä tai täysi-ikäisille suunnattua huumoria"
+msgstr ""
+"Kiroilua, syrjivää kielenkäyttöä tai täysi-ikäisille suunnattua huumoria"
 
 #: src/Views/AppInfoView.vala:252
 msgid "Gambling"
@@ -651,9 +711,12 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:278
 #, fuzzy
-#| msgid "Not reviewed by elementary for security, privacy, or system integration"
+#| msgid ""
+#| "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
-msgstr "Ei katselmoitu elementaryn toimesta tietoturvan, yksityisyyden tai järjestelmäintegraation osalta"
+msgstr ""
+"Ei katselmoitu elementaryn toimesta tietoturvan, yksityisyyden tai "
+"järjestelmäintegraation osalta"
 
 #: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
@@ -805,8 +868,12 @@ msgstr "Epävakaa"
 
 #: src/Views/AppInfoView.vala:847
 #, c-format
-msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr "Rakennettu %s:n epävakaalle versiolle; saattaa sisältää suuria ongelmia. Ei suositeltu tuotantoympäristöön."
+msgid ""
+"Built for an unstable version of %s; may contain major issues. Not "
+"recommended for use on a production system."
+msgstr ""
+"Rakennettu %s:n epävakaalle versiolle; saattaa sisältää suuria ongelmia. Ei "
+"suositeltu tuotantoympäristöön."
 
 #: src/Views/AppInfoView.vala:860
 msgid "Insecure Sandbox"
@@ -829,8 +896,12 @@ msgid "Home Folder Access"
 msgstr "Pääsy kotikansioon"
 
 #: src/Views/AppInfoView.vala:879
-msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
-msgstr "Sisältäen kaikki asiakirjat, lataukset, musiikin, kuvat, videot ja piilotetut kansiot"
+msgid ""
+"Including all documents, downloads, music, pictures, videos, and any hidden "
+"folders"
+msgstr ""
+"Sisältäen kaikki asiakirjat, lataukset, musiikin, kuvat, videot ja "
+"piilotetut kansiot"
 
 #: src/Views/AppInfoView.vala:888
 msgid "Legacy Autostart"
@@ -853,7 +924,8 @@ msgid "Legacy Notifications"
 msgstr "Vanhentuneet ilmoitukset"
 
 #: src/Views/AppInfoView.vala:909
-msgid "Bubbles may not be configurable or appear in notification center as “Other”"
+msgid ""
+"Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:918
@@ -906,7 +978,9 @@ msgstr "Etsitään päivityksiä"
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr "Ladataan luetteloa käyttöjärjestelmälle ja asennetuille sovelluksille saatavilla olevista päivityksistä"
+msgstr ""
+"Ladataan luetteloa käyttöjärjestelmälle ja asennetuille sovelluksille "
+"saatavilla olevista päivityksistä"
 
 #: src/Views/AppListUpdateView.vala:76
 msgid "Update All"
@@ -1032,7 +1106,12 @@ msgid "Browse and manage apps"
 msgstr ""
 
 #: src/Views/Homepage.vala:232
-msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
 msgstr ""
 
 #: src/Views/Homepage.vala:460
@@ -1057,8 +1136,11 @@ msgstr "Sovelluksia ei löytynyt"
 
 #: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
 #, c-format
-msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Yritä hakea eri hakuehdoilla. Voit myös sivuladata Flatpak-sovelluksia esimerkiksi %s"
+msgid ""
+"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+"Yritä hakea eri hakuehdoilla. Voit myös sivuladata Flatpak-sovelluksia "
+"esimerkiksi %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
@@ -1177,8 +1259,11 @@ msgstr "Sulje"
 #~ msgid "Restart Now"
 #~ msgstr "Käynnistä uudelleen nyt"
 
-#~ msgid "Requesting a restart failed. Restart manually to finish installing updates"
-#~ msgstr "Pyyntö käynnistää uudelleen epäonnistui. Käynnistä uudelleen manuaalisesti viimeistelläksesi päivitysten asentamisen"
+#~ msgid ""
+#~ "Requesting a restart failed. Restart manually to finish installing updates"
+#~ msgstr ""
+#~ "Pyyntö käynnistää uudelleen epäonnistui. Käynnistä uudelleen "
+#~ "manuaalisesti viimeistelläksesi päivitysten asentamisen"
 
 #~ msgid "Automatic App Updates"
 #~ msgstr "Automaattiset sovelluspäivitykset"
@@ -1208,7 +1293,8 @@ msgstr "Sulje"
 #~ msgstr "Uudelleenkäynnistys vaaditaan"
 
 #~ msgid "Please restart your system to finalize updates"
-#~ msgstr "Käynnistä järjestelmä uudelleen viimeistelläksesi päivitysten asennuksen"
+#~ msgstr ""
+#~ "Käynnistä järjestelmä uudelleen viimeistelläksesi päivitysten asennuksen"
 
 #~ msgid "Download"
 #~ msgstr "Lataa"
@@ -1228,14 +1314,20 @@ msgstr "Sulje"
 #~ msgid "Install non-curated app?"
 #~ msgstr "Asennetaanko kuratoimaton sovellus?"
 
-#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-#~ msgstr "“%s” ei ole kuratoitu elementaryn toimesta, eikä sitä ole katselmoitu tietoturvan, yksityisyyden tai järjestelmäintegraation osalta."
+#~ msgid ""
+#~ "“%s” is not curated by elementary and has not been reviewed for security, "
+#~ "privacy, or system integration."
+#~ msgstr ""
+#~ "“%s” ei ole kuratoitu elementaryn toimesta, eikä sitä ole katselmoitu "
+#~ "tietoturvan, yksityisyyden tai järjestelmäintegraation osalta."
 
 #~ msgid "It may not receive bug fix or feature updates"
 #~ msgstr "Se ei välttämättä saa vikakorjauksia tai ominaisuuspäivityksiä"
 
 #~ msgid "It may access or change system or personal files without permission"
-#~ msgstr "Se saattaa käyttää tai muuttaa järjestelmän tiedostoja tai henkilökohtaisia tiedostoja ilman lupaa"
+#~ msgstr ""
+#~ "Se saattaa käyttää tai muuttaa järjestelmän tiedostoja tai "
+#~ "henkilökohtaisia tiedostoja ilman lupaa"
 
 #~ msgid "Show non-curated warnings"
 #~ msgstr "Näytä kuratoimattomien varoitukset"
@@ -1252,8 +1344,14 @@ msgstr "Sulje"
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "“%s” sisältää epäsiveellistä sisältöä"
 
-#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-#~ msgstr "“%s” saattaa sisältää vain aikuisille suunnattua, arkaluonteista tai häiritsevää sisältöä. elementary ei yleisesti ottaen käy läpi tai allekirjoita tämän sovelluksen sisältöä."
+#~ msgid ""
+#~ "“%s” may contain content only suitable for adults or that may be "
+#~ "sensitive or disturbing. In general, elementary does not review or "
+#~ "endorse the contents of this app."
+#~ msgstr ""
+#~ "“%s” saattaa sisältää vain aikuisille suunnattua, arkaluonteista tai "
+#~ "häiritsevää sisältöä. elementary ei yleisesti ottaen käy läpi tai "
+#~ "allekirjoita tämän sovelluksen sisältöä."
 
 #~ msgid "Show content warnings"
 #~ msgstr "Näytä sisältövaroitukset"
@@ -1261,8 +1359,10 @@ msgstr "Sulje"
 #~ msgid "Content Warnings"
 #~ msgstr "Sisältövaroitukset"
 
-#~ msgid "Communication or data is sent to the Internet for other humans to see"
-#~ msgstr "Yhteydenpitoa tai dataa lähetetään internetiin muiden ihmisten nähtäville"
+#~ msgid ""
+#~ "Communication or data is sent to the Internet for other humans to see"
+#~ msgstr ""
+#~ "Yhteydenpitoa tai dataa lähetetään internetiin muiden ihmisten nähtäville"
 
 #~ msgid "Cartoon, fantasy, or realistic violence"
 #~ msgstr "Toden- tai fantasianomaista väkivaltaa"
@@ -1270,8 +1370,12 @@ msgstr "Sulje"
 #~ msgid "The open source, pay-what-you-can app store"
 #~ msgstr "Avoin sovelluskauppa, jossa päätät itse mitä haluat maksaa"
 
-#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-#~ msgstr "Katselmoitu ja kuratoitu natiivia, yksityisyyttä kunnioittavaa ja turvallista kokemusta varten."
+#~ msgid ""
+#~ "Reviewed and curated for a native, privacy-respecting, and secure "
+#~ "experience."
+#~ msgstr ""
+#~ "Katselmoitu ja kuratoitu natiivia, yksityisyyttä kunnioittavaa ja "
+#~ "turvallista kokemusta varten."
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "Käytetään vain kuitin lähettämiseksi."
@@ -1298,7 +1402,8 @@ msgstr "Sulje"
 #~ msgstr "Haluatko varmasti käynnistää uudelleen?"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr "Tämä sulkee kaikki avoimet sovellukset ja käynnistää laitteen uudelleen."
+#~ msgstr ""
+#~ "Tämä sulkee kaikki avoimet sovellukset ja käynnistää laitteen uudelleen."
 
 #~ msgid "Restart"
 #~ msgstr "Käynnistä uudelleen"

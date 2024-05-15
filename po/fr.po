@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 05:57+0000\n"
+"POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-15 14:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
@@ -27,30 +27,35 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/MainWindow.vala:80 src/Core/Package.vala:362
+#: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
 #: src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "Centre d’Applications"
 
-#: src/Application.vala:88
+#: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Impossible d'analyser le type de média %s"
 
-#: src/Application.vala:108
+#: src/Application.vala:98
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Le lien '%s' spécifié n'a pas été trouvé, recherche effectuée"
 
-#: src/Application.vala:272
-msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
-msgstr "Le Centre d'Applications démarrera automatiquement lors du démarrage de cet appareil et fonctionnera même lorsque la fenêtre sera fermée afin de vérifier et installer des mises à jour."
+#: src/Application.vala:262
+msgid ""
+"AppCenter will automatically start when this device turns on and run when "
+"its window is closed so that it can automatically check and install updates."
+msgstr ""
+"Le Centre d'Applications démarrera automatiquement lors du démarrage de cet "
+"appareil et fonctionnera même lorsque la fenêtre sera fermée afin de "
+"vérifier et installer des mises à jour."
 
-#: src/Application.vala:355
+#: src/Application.vala:345
 msgid "The app has been installed"
 msgstr "L’application a été installée"
 
-#: src/Application.vala:356 src/MainWindow.vala:420
+#: src/Application.vala:346 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "L’application « %s » a été installée"
@@ -75,7 +80,9 @@ msgstr "Mettre à jour automatiquement les applications gratuites et achetées"
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
-msgstr "Les applications avec un essai gratuit ne seront pas mises à jour automatiquement"
+msgstr ""
+"Les applications avec un essai gratuit ne seront pas mises à jour "
+"automatiquement"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
@@ -91,7 +98,8 @@ msgstr "Pas de connexion réseau."
 
 #: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Connectez-vous à Internet pour parcourir et installer des applications."
+msgstr ""
+"Connectez-vous à Internet pour parcourir et installer des applications."
 
 #: src/MainWindow.vala:223
 msgid "Network Settings…"
@@ -333,7 +341,9 @@ msgstr "Origine inconnue (non-vérifiée)"
 #: src/Core/Package.vala:550
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr "L'état de l'application n'est pas défini comme installé dans le Centre d'Applications pour le paquet : %s"
+msgstr ""
+"L'état de l'application n'est pas défini comme installé dans le Centre "
+"d'Applications pour le paquet : %s"
 
 #: src/Core/PackageKitBackend.vala:314
 #, c-format
@@ -341,28 +351,45 @@ msgid "%s (local)"
 msgstr "%s (local)"
 
 #: src/Core/Stripe.vala:27
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Une erreur est survenue lors du traitement de la carte. Veuillez réessayer plus tard. Veuillez nous excuser pour la gêne occasionnée."
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
+msgstr ""
+"Une erreur est survenue lors du traitement de la carte. Veuillez réessayer "
+"plus tard. Veuillez nous excuser pour la gêne occasionnée."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
 msgstr "Veuillez vérifier vos informations de paiement et réessayer."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Le numéro de carte est incorrect. Veuillez réessayer avec le bon numéro de carte."
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
+msgstr ""
+"Le numéro de carte est incorrect. Veuillez réessayer avec le bon numéro de "
+"carte."
 
 #: src/Core/Stripe.vala:66
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "Le mois d’expiration de la carte est incorrect. Veuillez réessayer avec la bonne date d’expiration."
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"Le mois d’expiration de la carte est incorrect. Veuillez réessayer avec la "
+"bonne date d’expiration."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "L’année d’expiration de la carte est incorrect. Veuillez réessayer avec la bonne date d’expiration."
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"L’année d’expiration de la carte est incorrect. Veuillez réessayer avec la "
+"bonne date d’expiration."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Le cryptogramme visuel de la carte est incorrect. Veuillez réessayer avec le bon cryptogramme visuel."
+msgstr ""
+"Le cryptogramme visuel de la carte est incorrect. Veuillez réessayer avec le "
+"bon cryptogramme visuel."
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
@@ -370,27 +397,42 @@ msgstr "La carte a expiré. Veuillez utiliser une autre carte."
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Il y a trop de demandes de paiement actuellement, veuillez réessayer plus tard."
+msgstr ""
+"Il y a trop de demandes de paiement actuellement, veuillez réessayer plus "
+"tard."
 
 #: src/Core/Stripe.vala:106
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Cette carte ne permet pas ce type de transaction. Veuillez réessayer avec une autre carte."
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+"Cette carte ne permet pas ce type de transaction. Veuillez réessayer avec "
+"une autre carte."
 
 #: src/Core/Stripe.vala:108
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Cette carte ne permet pas le paiement avec cette devise. Veuillez réessayer avec une autre carte."
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+"Cette carte ne permet pas le paiement avec cette devise. Veuillez réessayer "
+"avec une autre carte."
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
 msgstr "La transaction a déjà été effectuée."
 
 #: src/Core/Stripe.vala:114
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "Le code postal est incorrect. Veuillez réessayer avec le bon code postal."
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"postal code."
+msgstr ""
+"Le code postal est incorrect. Veuillez réessayer avec le bon code postal."
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "Vous n’avez pas assez d’argent pour effectuer cette transaction. Veuillez utiliser une autre méthode de paiement."
+msgstr ""
+"Vous n’avez pas assez d’argent pour effectuer cette transaction. Veuillez "
+"utiliser une autre méthode de paiement."
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
@@ -398,15 +440,24 @@ msgstr "Le montant est incorrect. Veuillez réessayer avec un montant valide."
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Le cryptogramme visuel de la carte est incorrect. Veuillez réessayer avec le bon cryptogramme visuel."
+msgstr ""
+"Le cryptogramme visuel de la carte est incorrect. Veuillez réessayer avec le "
+"bon cryptogramme visuel."
 
 #: src/Core/Stripe.vala:131
-msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "La limite maximale d’essais du cryptogramme visuel est atteinte. Veuillez utiliser une autre carte."
+msgid ""
+"There has been too many PIN attempts. Please try again with a different card."
+msgstr ""
+"La limite maximale d’essais du cryptogramme visuel est atteinte. Veuillez "
+"utiliser une autre carte."
 
 #: src/Core/Stripe.vala:151
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Impossible de traiter la transaction. Veuillez contacter votre banque pour plus d’informations."
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+"Impossible de traiter la transaction. Veuillez contacter votre banque pour "
+"plus d’informations."
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
@@ -414,7 +465,9 @@ msgstr "Le solde est dépensé ou la limite de crédit de la carte est atteinte.
 
 #: src/Core/Stripe.vala:157
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "Cette carte est une carte de test. Veuillez utiliser une vraie carte pour continuer."
+msgstr ""
+"Cette carte est une carte de test. Veuillez utiliser une vraie carte pour "
+"continuer."
 
 #: src/Core/UpdateManager.vala:33
 msgid "Runtime Updates"
@@ -459,8 +512,12 @@ msgstr[0] "%u mise à jour d'application disponible."
 msgstr[1] "%u mises à jour d'applications disponibles."
 
 #: src/Dialogs/InstallFailDialog.vala:27
-msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Cela peut être dû à un problème temporaire ou à des logiciels externes ou compilés manuellement."
+msgid ""
+"This may be a temporary issue or could have been caused by external or "
+"manually compiled software."
+msgstr ""
+"Cela peut être dû à un problème temporaire ou à des logiciels externes ou "
+"compilés manuellement."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -480,8 +537,12 @@ msgid "Failed to Repair"
 msgstr "Échec de la réparation"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Ceci peut-être provoqué par un dépôt externe ajouté manuellement ou un fichier corrompu."
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"Ceci peut-être provoqué par un dépôt externe ajouté manuellement ou un "
+"fichier corrompu."
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -496,8 +557,12 @@ msgid "Pay $%d for %s"
 msgstr "Payer %d $ pour %s"
 
 #: src/Dialogs/StripeDialog.vala:82
-msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Il s'agit d'un paiement ponctuel suggéré par le développeur. Vous pouvez aussi choisir votre propre prix."
+msgid ""
+"This is a one time payment suggested by the developer. You can also choose "
+"your own price."
+msgstr ""
+"Il s'agit d'un paiement ponctuel suggéré par le développeur. Vous pouvez "
+"aussi choisir votre propre prix."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -508,8 +573,12 @@ msgid "Email"
 msgstr "Adresse e-mail"
 
 #: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Utilisée uniquement pour vous envoyer un reçu. Vous ne serez inscrit à aucune liste de diffusion."
+msgid ""
+"Only used to send you a receipt. You will not be subscribed to any mailing "
+"list."
+msgstr ""
+"Utilisée uniquement pour vous envoyer un reçu. Vous ne serez inscrit à "
+"aucune liste de diffusion."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -557,7 +626,8 @@ msgstr "Réessayer"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr "La désinstallation de cette application peut également supprimer ses données."
+msgstr ""
+"La désinstallation de cette application peut également supprimer ses données."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
@@ -598,8 +668,15 @@ msgid "Try Again"
 msgstr "Réessayer"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Ce problème peut avoir été causé par un logiciel chargé séparément ou compilé manuellement, une source logicielle tierce ou une erreur du gestionnaire de paquets. L'actualisation manuelle des mises à jour peut résoudre le problème."
+msgid ""
+"This may have been caused by sideloaded or manually compiled software, a "
+"third-party software source, or a package manager error. Manually refreshing "
+"updates may resolve the issue."
+msgstr ""
+"Ce problème peut avoir été causé par un logiciel chargé séparément ou "
+"compilé manuellement, une source logicielle tierce ou une erreur du "
+"gestionnaire de paquets. L'actualisation manuelle des mises à jour peut "
+"résoudre le problème."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -735,7 +812,9 @@ msgstr "Collecte des données d'utilisation anonymes"
 
 #: src/Views/AppInfoView.vala:465
 msgid "Collects usage data that could be used to identify you"
-msgstr "Collecte des données d'utilisation qui pourraient être utilisées pour vous identifier"
+msgstr ""
+"Collecte des données d'utilisation qui pourraient être utilisées pour vous "
+"identifier"
 
 #: src/Views/AppInfoView.vala:470
 msgid "Info Sharing"
@@ -788,7 +867,9 @@ msgstr "Fin de vie"
 
 #: src/Views/AppInfoView.vala:831
 msgid "May not work as expected or receive security updates"
-msgstr "Pourrait ne pas fonctionner comme prévu ou ne pas recevoir de mises à jour de sécurité"
+msgstr ""
+"Pourrait ne pas fonctionner comme prévu ou ne pas recevoir de mises à jour "
+"de sécurité"
 
 #: src/Views/AppInfoView.vala:837
 msgid "Outdated"
@@ -796,7 +877,9 @@ msgstr "Déprécié"
 
 #: src/Views/AppInfoView.vala:838
 msgid "May not work as expected or support the latest features"
-msgstr "Pourrait ne pas fonctionner correctement et ne pas prendre en charge les dernières fonctionnalités"
+msgstr ""
+"Pourrait ne pas fonctionner correctement et ne pas prendre en charge les "
+"dernières fonctionnalités"
 
 #: src/Views/AppInfoView.vala:846
 msgid "Unstable"
@@ -804,8 +887,12 @@ msgstr "Instable"
 
 #: src/Views/AppInfoView.vala:847
 #, c-format
-msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr "Conçu pour une version de %s non stable ; peut contenir des problèmes majeurs Il n'est pas recommandé de l'utiliser sur un système de production."
+msgid ""
+"Built for an unstable version of %s; may contain major issues. Not "
+"recommended for use on a production system."
+msgstr ""
+"Conçu pour une version de %s non stable ; peut contenir des problèmes "
+"majeurs Il n'est pas recommandé de l'utiliser sur un système de production."
 
 #: src/Views/AppInfoView.vala:860
 msgid "Insecure Sandbox"
@@ -821,15 +908,21 @@ msgstr "Accès au dossier système"
 
 #: src/Views/AppInfoView.vala:871
 msgid "Including everyone's Home folders, but not including system internals"
-msgstr "Y compris les dossiers personnels de chacun, mais pas les éléments internes du système"
+msgstr ""
+"Y compris les dossiers personnels de chacun, mais pas les éléments internes "
+"du système"
 
 #: src/Views/AppInfoView.vala:878
 msgid "Home Folder Access"
 msgstr "Accès au dossier personnel"
 
 #: src/Views/AppInfoView.vala:879
-msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
-msgstr "Y compris tous les documents, les téléchargements, la musique, les images, les vidéos et tous les dossiers cachés"
+msgid ""
+"Including all documents, downloads, music, pictures, videos, and any hidden "
+"folders"
+msgstr ""
+"Y compris tous les documents, les téléchargements, la musique, les images, "
+"les vidéos et tous les dossiers cachés"
 
 #: src/Views/AppInfoView.vala:888
 msgid "Legacy Autostart"
@@ -837,7 +930,9 @@ msgstr "Ancien démarrage automatique"
 
 #: src/Views/AppInfoView.vala:889
 msgid "Can automatically start up and run in the background without asking"
-msgstr "Peut démarrer automatiquement et s'exécuter en arrière-plan sans demande préalable"
+msgstr ""
+"Peut démarrer automatiquement et s'exécuter en arrière-plan sans demande "
+"préalable"
 
 #: src/Views/AppInfoView.vala:898
 msgid "Location Access"
@@ -845,15 +940,20 @@ msgstr "Accès à l'emplacement"
 
 #: src/Views/AppInfoView.vala:899
 msgid "Can see your precise location at any time without asking"
-msgstr "Peut accéder à votre position précise à tout moment, sans avoir à vous le demander"
+msgstr ""
+"Peut accéder à votre position précise à tout moment, sans avoir à vous le "
+"demander"
 
 #: src/Views/AppInfoView.vala:908
 msgid "Legacy Notifications"
 msgstr "Anciennes notifications"
 
 #: src/Views/AppInfoView.vala:909
-msgid "Bubbles may not be configurable or appear in notification center as “Other”"
-msgstr "Les bulles risquent de ne pas être configurables ou d'apparaître dans le centre de notification comme « Autres »"
+msgid ""
+"Bubbles may not be configurable or appear in notification center as “Other”"
+msgstr ""
+"Les bulles risquent de ne pas être configurables ou d'apparaître dans le "
+"centre de notification comme « Autres »"
 
 #: src/Views/AppInfoView.vala:918
 msgid "System Settings Access"
@@ -871,7 +971,9 @@ msgstr "Domaine public"
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:1147
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://fr.wikipedia.org/wiki/Domaine_public_(propri%C3%A9t%C3%A9_intellectuelle)"
+msgstr ""
+"https://fr.wikipedia.org/wiki/"
+"Domaine_public_(propri%C3%A9t%C3%A9_intellectuelle)"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:1152
@@ -905,7 +1007,9 @@ msgstr "Recherche de mises à jour"
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr "Téléchargement d'une liste des mises à jour disponibles pour le système et les applications installées"
+msgstr ""
+"Téléchargement d'une liste des mises à jour disponibles pour le système et "
+"les applications installées"
 
 #: src/Views/AppListUpdateView.vala:76
 msgid "Update All"
@@ -1031,7 +1135,12 @@ msgid "Browse and manage apps"
 msgstr "Parcourez et gérez les applications"
 
 #: src/Views/Homepage.vala:232
-msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
 msgstr ""
 "Le magasin d'applications open source et où vous payez ce que vous voulez "
 "d'elementary. Les applications sont examinées et sélectionnées par "
@@ -1063,8 +1172,11 @@ msgstr "Aucune application trouvée"
 
 #: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
 #, c-format
-msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Essayez de modifier vos termes de recherche. Vous pouvez également installer des applications Flatpak, par ex. depuis %s"
+msgid ""
+"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+"Essayez de modifier vos termes de recherche. Vous pouvez également installer "
+"des applications Flatpak, par ex. depuis %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
@@ -1154,7 +1266,9 @@ msgstr "La taille du téléchargement sera sûrement moindre"
 
 #: src/Widgets/SizeLabel.vala:33
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Seules les parties de l'application nécessitants une mise à jour seront téléchargés."
+msgstr ""
+"Seules les parties de l'application nécessitants une mise à jour seront "
+"téléchargés."
 
 #: src/Widgets/SizeLabel.vala:59
 #, c-format
@@ -1178,13 +1292,18 @@ msgstr "Fermer"
 #~ msgstr "Non vérifiées"
 
 #~ msgid "A restart is required to finish installing updates"
-#~ msgstr "Un redémarrage est nécessaire pour terminer l’installation des mises à jour"
+#~ msgstr ""
+#~ "Un redémarrage est nécessaire pour terminer l’installation des mises à "
+#~ "jour"
 
 #~ msgid "Restart Now"
 #~ msgstr "Redémarrer maintenant"
 
-#~ msgid "Requesting a restart failed. Restart manually to finish installing updates"
-#~ msgstr "Le redémarrage automatique a échoué. Redémarrez manuellement pour terminer l'installation des mises à jour"
+#~ msgid ""
+#~ "Requesting a restart failed. Restart manually to finish installing updates"
+#~ msgstr ""
+#~ "Le redémarrage automatique a échoué. Redémarrez manuellement pour "
+#~ "terminer l'installation des mises à jour"
 
 #~ msgid "Automatic App Updates"
 #~ msgstr "Mises à jour automatiques des applications"
@@ -1234,14 +1353,22 @@ msgstr "Fermer"
 #~ msgid "Install non-curated app?"
 #~ msgstr "Installer l'application non vérifiée ?"
 
-#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-#~ msgstr "« %s » n'a pas été vérifiée par elementary, notamment au regard de la sécurité, de la confidentialité et l’intégration dans le système."
+#~ msgid ""
+#~ "“%s” is not curated by elementary and has not been reviewed for security, "
+#~ "privacy, or system integration."
+#~ msgstr ""
+#~ "« %s » n'a pas été vérifiée par elementary, notamment au regard de la "
+#~ "sécurité, de la confidentialité et l’intégration dans le système."
 
 #~ msgid "It may not receive bug fix or feature updates"
-#~ msgstr "Il se pourrait qu'il n'y ait pas de corrections de bugs ou de mises à jour de fonctionnalités"
+#~ msgstr ""
+#~ "Il se pourrait qu'il n'y ait pas de corrections de bugs ou de mises à "
+#~ "jour de fonctionnalités"
 
 #~ msgid "It may access or change system or personal files without permission"
-#~ msgstr "Il se pourrait qu'elle ait accès au système et qu'elle modifie des paramètres ou des fichiers personnels sans autorisation"
+#~ msgstr ""
+#~ "Il se pourrait qu'elle ait accès au système et qu'elle modifie des "
+#~ "paramètres ou des fichiers personnels sans autorisation"
 
 #~ msgid "Show non-curated warnings"
 #~ msgstr "Afficher des avertissements pour les applications non vérifiées"
@@ -1258,8 +1385,14 @@ msgstr "Fermer"
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "« %s » contient du contenu explicite"
 
-#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-#~ msgstr "« %s » pourrait contenir du contenu pour adultes ou pouvant être offensant ou choquant. Plus généralement, elementary ne vérifie pas, ni promeut le contenu de ce programme."
+#~ msgid ""
+#~ "“%s” may contain content only suitable for adults or that may be "
+#~ "sensitive or disturbing. In general, elementary does not review or "
+#~ "endorse the contents of this app."
+#~ msgstr ""
+#~ "« %s » pourrait contenir du contenu pour adultes ou pouvant être "
+#~ "offensant ou choquant. Plus généralement, elementary ne vérifie pas, ni "
+#~ "promeut le contenu de ce programme."
 
 #~ msgid "Show content warnings"
 #~ msgstr "Afficher les avertissements de contenu"
@@ -1272,8 +1405,12 @@ msgstr "Fermer"
 #~ msgid "The open source, pay-what-you-can app store"
 #~ msgstr "Le magasin d'applications open source et à prix libre"
 
-#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-#~ msgstr "Revu et corrigé pour une expérience native, respectueuse de la vie privée et sécurisée."
+#~ msgid ""
+#~ "Reviewed and curated for a native, privacy-respecting, and secure "
+#~ "experience."
+#~ msgstr ""
+#~ "Revu et corrigé pour une expérience native, respectueuse de la vie privée "
+#~ "et sécurisée."
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Obtenez des applications selon vos besoins, payez selon vos moyens."
@@ -1285,7 +1422,9 @@ msgstr "Fermer"
 #~ msgstr "Aucun résultat"
 
 #~ msgid "No apps could be found. Try changing search terms."
-#~ msgstr "Aucune application n’a été trouvée. Essayez de modifier les termes de la recherche."
+#~ msgstr ""
+#~ "Aucune application n’a été trouvée. Essayez de modifier les termes de la "
+#~ "recherche."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Suggérer des traductions"
