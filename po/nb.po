@@ -4,10 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 05:57+0000\n"
+"POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2023-11-14 16:10+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,31 +18,36 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/MainWindow.vala:80 src/Core/Package.vala:362
+#: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
 #: src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "AppSenter"
 
-#: src/Application.vala:88
+#: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Kunne ikke tolke MIME-type %s"
 
-#: src/Application.vala:108
+#: src/Application.vala:98
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Fant ikke oppgitt lenke «%s», søker istedenfor"
 
-#: src/Application.vala:272
+#: src/Application.vala:262
 #, fuzzy
-msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
-msgstr "ProgramSenter vil automatisk starte når enheten skrur seg på og når vinduet dens lukkes, slik at den automatisk kan lete etter og installere nye oppgraderinger."
+msgid ""
+"AppCenter will automatically start when this device turns on and run when "
+"its window is closed so that it can automatically check and install updates."
+msgstr ""
+"ProgramSenter vil automatisk starte når enheten skrur seg på og når vinduet "
+"dens lukkes, slik at den automatisk kan lete etter og installere nye "
+"oppgraderinger."
 
-#: src/Application.vala:355
+#: src/Application.vala:345
 msgid "The app has been installed"
 msgstr "Programmet har blitt installert"
 
-#: src/Application.vala:356 src/MainWindow.vala:420
+#: src/Application.vala:346 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ble installert"
@@ -71,7 +77,8 @@ msgstr "Oppgrader vurderte programmer om de er gratis eller betalte"
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
-msgstr "Systemoppgraderinger og ubetalte programmer vil ikke oppgraderes automatisk"
+msgstr ""
+"Systemoppgraderinger og ubetalte programmer vil ikke oppgraderes automatisk"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
@@ -337,23 +344,32 @@ msgid "%s (local)"
 msgstr "%s (lokal)"
 
 #: src/Core/Stripe.vala:27
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "En feil inntraff under behandling av kortet. Prøv igjen senere. Ethvert bryderi beklages."
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
+msgstr ""
+"En feil inntraff under behandling av kortet. Prøv igjen senere. Ethvert "
+"bryderi beklages."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
 msgstr "Se over din betalingsinfo og prøv igjen."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
-msgid "The card number is incorrect. Please try again using the correct card number."
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
 msgstr "Kortnummeret er feil. Prøv igjen senere med rett kortnummer."
 
 #: src/Core/Stripe.vala:66
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
 msgstr "Ugyldig utløpsmåned . Prøv igjen med korrekt utløpsdato."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
 msgstr "Ugyldig utløpsår. Prøv igjen med rett utløpsdato."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
@@ -369,24 +385,35 @@ msgid "There are too many payment requests at the moment, please retry later."
 msgstr "For mange betalingsforespørsler for øyeblikket, prøv igjen senere."
 
 #: src/Core/Stripe.vala:106
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Dette kortet støtter ikke denne typen transaksjon. Prøv igjen med et annet kort."
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+"Dette kortet støtter ikke denne typen transaksjon. Prøv igjen med et annet "
+"kort."
 
 #: src/Core/Stripe.vala:108
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Dette kortet støtter ikke denne valutaen. Prøv igjen med et annet kort."
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+"Dette kortet støtter ikke denne valutaen. Prøv igjen med et annet kort."
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
 msgstr "Overføringen har allerede gått igjennom."
 
 #: src/Core/Stripe.vala:114
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"postal code."
 msgstr "Postnummer er feil. Prøv igjen med riktig postnummer."
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "Du kan ikke betale uten aktiva. Overvei å bruke en alternativ betalingsmetode."
+msgstr ""
+"Du kan ikke betale uten aktiva. Overvei å bruke en alternativ "
+"betalingsmetode."
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
@@ -397,12 +424,17 @@ msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN-nummeret er ikke rett. Prøv igjen med riktig PIN."
 
 #: src/Core/Stripe.vala:131
-msgid "There has been too many PIN attempts. Please try again with a different card."
+msgid ""
+"There has been too many PIN attempts. Please try again with a different card."
 msgstr "For mange PIN-forsøk. Prøv igjen med et annet kort."
 
 #: src/Core/Stripe.vala:151
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Kunne ikke fullføre overføringen. Kontakt banken din for ytterligere informasjon."
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+"Kunne ikke fullføre overføringen. Kontakt banken din for ytterligere "
+"informasjon."
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
@@ -457,8 +489,12 @@ msgstr[0] "%u oppdatering tilgjengelig"
 msgstr[1] "%u oppdateringer tilgjengelig."
 
 #: src/Dialogs/InstallFailDialog.vala:27
-msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Dette kan være et midlertidig problem, eller ha sitt opphav i eksterne eller manuelt tillagte programvarepakkebrønner."
+msgid ""
+"This may be a temporary issue or could have been caused by external or "
+"manually compiled software."
+msgstr ""
+"Dette kan være et midlertidig problem, eller ha sitt opphav i eksterne eller "
+"manuelt tillagte programvarepakkebrønner."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -478,8 +514,12 @@ msgid "Failed to Repair"
 msgstr "Klarte ikke å reparere"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Dette kan ha sitt opphav i ekstern, manuelt tillagte programvarepakkebrønner, eller en skadet kilde-fil."
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"Dette kan ha sitt opphav i ekstern, manuelt tillagte "
+"programvarepakkebrønner, eller en skadet kilde-fil."
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -494,8 +534,12 @@ msgid "Pay $%d for %s"
 msgstr "Betal %d$ for %s"
 
 #: src/Dialogs/StripeDialog.vala:82
-msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Dette er en engangsbetaling anbefalt av utvikleren. Du kan også velge din egen pris."
+msgid ""
+"This is a one time payment suggested by the developer. You can also choose "
+"your own price."
+msgstr ""
+"Dette er en engangsbetaling anbefalt av utvikleren. Du kan også velge din "
+"egen pris."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -506,8 +550,12 @@ msgid "Email"
 msgstr "E-post"
 
 #: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Brukes kun til å sende en kvittering. Du vil ikke bli meldt på noen e-postliste."
+msgid ""
+"Only used to send you a receipt. You will not be subscribed to any mailing "
+"list."
+msgstr ""
+"Brukes kun til å sende en kvittering. Du vil ikke bli meldt på noen e-"
+"postliste."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -572,7 +620,9 @@ msgstr "Avinstaller"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Dette kan ha sitt opphav i eksterne eller manuelt tillagte programvarepakkebrønner."
+msgstr ""
+"Dette kan ha sitt opphav i eksterne eller manuelt tillagte "
+"programvarepakkebrønner."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
@@ -596,8 +646,14 @@ msgid "Try Again"
 msgstr "Prøv igjen"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Dette kan ha sitt opphav i sideinnlastet, eller manuelt kompilert programvare, en tredjepartskilde, eller en pakkehåndteringsfeil. Manuell gjenoppfrisking av oppdateringer kan løse dette problemet."
+msgid ""
+"This may have been caused by sideloaded or manually compiled software, a "
+"third-party software source, or a package manager error. Manually refreshing "
+"updates may resolve the issue."
+msgstr ""
+"Dette kan ha sitt opphav i sideinnlastet, eller manuelt kompilert "
+"programvare, en tredjepartskilde, eller en pakkehåndteringsfeil. Manuell "
+"gjenoppfrisking av oppdateringer kan løse dette problemet."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -650,9 +706,12 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:278
 #, fuzzy
-#| msgid "Not reviewed by elementary for security, privacy, or system integration"
+#| msgid ""
+#| "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
-msgstr "Ikke vurdert av elementary mht. sikkerhet, personvern, eller systemintegrasjon."
+msgstr ""
+"Ikke vurdert av elementary mht. sikkerhet, personvern, eller "
+"systemintegrasjon."
 
 #: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
@@ -787,7 +846,9 @@ msgstr "I slutten av livssyklus"
 
 #: src/Views/AppInfoView.vala:831
 msgid "May not work as expected or receive security updates"
-msgstr "Virker muligens ikke som forventet, eller mottar ikke sikkerhetsoppgraderinger"
+msgstr ""
+"Virker muligens ikke som forventet, eller mottar ikke "
+"sikkerhetsoppgraderinger"
 
 #: src/Views/AppInfoView.vala:837
 msgid "Outdated"
@@ -795,7 +856,9 @@ msgstr "Utdatert"
 
 #: src/Views/AppInfoView.vala:838
 msgid "May not work as expected or support the latest features"
-msgstr "Trenger ikke nødvendigvis å virke som forventet, eller kan mangle de siste funksjonene"
+msgstr ""
+"Trenger ikke nødvendigvis å virke som forventet, eller kan mangle de siste "
+"funksjonene"
 
 #: src/Views/AppInfoView.vala:846
 msgid "Unstable"
@@ -803,8 +866,12 @@ msgstr "Ustabil"
 
 #: src/Views/AppInfoView.vala:847
 #, c-format
-msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr "Bygd for en ustabil versjon av %s; kan inneholde store problemer. Ikke anbefalt brukt i produksjonsøyemed."
+msgid ""
+"Built for an unstable version of %s; may contain major issues. Not "
+"recommended for use on a production system."
+msgstr ""
+"Bygd for en ustabil versjon av %s; kan inneholde store problemer. Ikke "
+"anbefalt brukt i produksjonsøyemed."
 
 #: src/Views/AppInfoView.vala:860
 msgid "Insecure Sandbox"
@@ -827,8 +894,12 @@ msgid "Home Folder Access"
 msgstr "Hjemmemappetilgang"
 
 #: src/Views/AppInfoView.vala:879
-msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
-msgstr "Inkludert alle dokumenter, nedlastninger, bilder, videoer, og alle skjulte mapper"
+msgid ""
+"Including all documents, downloads, music, pictures, videos, and any hidden "
+"folders"
+msgstr ""
+"Inkludert alle dokumenter, nedlastninger, bilder, videoer, og alle skjulte "
+"mapper"
 
 #: src/Views/AppInfoView.vala:888
 #, fuzzy
@@ -855,8 +926,11 @@ msgstr "Gammeldagse merknader"
 
 #: src/Views/AppInfoView.vala:909
 #, fuzzy
-msgid "Bubbles may not be configurable or appear in notification center as “Other”"
-msgstr "Det kan hende bobler ikke kan konfigureres eller framtrer i merknader som «Annet»."
+msgid ""
+"Bubbles may not be configurable or appear in notification center as “Other”"
+msgstr ""
+"Det kan hende bobler ikke kan konfigureres eller framtrer i merknader som "
+"«Annet»."
 
 #: src/Views/AppInfoView.vala:918
 #, fuzzy
@@ -912,7 +986,9 @@ msgstr "Ser etter oppgraderinger …"
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr "Laster ned en liste over tilgjengelige oppdateringer til OS-et og installerte programmer"
+msgstr ""
+"Laster ned en liste over tilgjengelige oppdateringer til OS-et og "
+"installerte programmer"
 
 #: src/Views/AppListUpdateView.vala:76
 msgid "Update All"
@@ -1040,7 +1116,12 @@ msgid "Browse and manage apps"
 msgstr ""
 
 #: src/Views/Homepage.vala:232
-msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
 msgstr ""
 
 #: src/Views/Homepage.vala:460
@@ -1066,8 +1147,10 @@ msgstr "Fant ingen programmer"
 
 #: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
 #, fuzzy, c-format
-msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Prøv å endre søket. Du kan også sideinnlaste Flatpak-programmer fra f.eks. %s"
+msgid ""
+"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+"Prøv å endre søket. Du kan også sideinnlaste Flatpak-programmer fra f.eks. %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
@@ -1158,7 +1241,9 @@ msgstr "Størrelsen på nedlastingen vil sannsynlig være mindre"
 
 #: src/Widgets/SizeLabel.vala:33
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Kun de delene av programmene og oppgraderingene som er nødvendige vil bli lastet ned."
+msgstr ""
+"Kun de delene av programmene og oppgraderingene som er nødvendige vil bli "
+"lastet ned."
 
 #: src/Widgets/SizeLabel.vala:59
 #, c-format
@@ -1188,8 +1273,11 @@ msgstr "Lukk"
 #~ msgstr "Omstart nå"
 
 #, fuzzy
-#~ msgid "Requesting a restart failed. Restart manually to finish installing updates"
-#~ msgstr "Kunne ikke forespørre omstart. Start på nytt manuelt for å fullføre installasjonen."
+#~ msgid ""
+#~ "Requesting a restart failed. Restart manually to finish installing updates"
+#~ msgstr ""
+#~ "Kunne ikke forespørre omstart. Start på nytt manuelt for å fullføre "
+#~ "installasjonen."
 
 #~ msgid "Automatic App Updates"
 #~ msgstr "Automatiske programoppgraderinger"
@@ -1239,8 +1327,12 @@ msgstr "Lukk"
 #~ msgid "Install non-curated app?"
 #~ msgstr "Installer ikke-gjennomsett program?"
 
-#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-#~ msgstr "«%s» er ikke gjennomsett av elementary og har ikke blitt vurdert mht. sikkerhet, personvern, eller systemintegrasjon."
+#~ msgid ""
+#~ "“%s” is not curated by elementary and has not been reviewed for security, "
+#~ "privacy, or system integration."
+#~ msgstr ""
+#~ "«%s» er ikke gjennomsett av elementary og har ikke blitt vurdert mht. "
+#~ "sikkerhet, personvern, eller systemintegrasjon."
 
 #~ msgid "It may not receive bug fix or feature updates"
 #~ msgstr "Det kan ikke motta feilrettinger eller funksjonsoppdateringer"
@@ -1263,8 +1355,14 @@ msgstr "Lukk"
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "\"%s\" inneholder saftig innhold"
 
-#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-#~ msgstr "\"%s\" kan inneholde innhold som kun passer for voksne, eller som på annet vis er forstyrrende. Som hovedregel, vurderer eller stiller ikke elementary seg ved programmets innhold."
+#~ msgid ""
+#~ "“%s” may contain content only suitable for adults or that may be "
+#~ "sensitive or disturbing. In general, elementary does not review or "
+#~ "endorse the contents of this app."
+#~ msgstr ""
+#~ "\"%s\" kan inneholde innhold som kun passer for voksne, eller som på "
+#~ "annet vis er forstyrrende. Som hovedregel, vurderer eller stiller ikke "
+#~ "elementary seg ved programmets innhold."
 
 #~ msgid "Show content warnings"
 #~ msgstr "Vis innholdsadvarsler"
@@ -1277,8 +1375,12 @@ msgstr "Lukk"
 #~ msgid "The open source, pay-what-you-can app store"
 #~ msgstr "Den åpne, betal-hva-du-vil -programbutikken"
 
-#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-#~ msgstr "Vurdert og gjennomsett, for å være systemspesifikk, personvernsrespekterende og sikker."
+#~ msgid ""
+#~ "Reviewed and curated for a native, privacy-respecting, and secure "
+#~ "experience."
+#~ msgstr ""
+#~ "Vurdert og gjennomsett, for å være systemspesifikk, "
+#~ "personvernsrespekterende og sikker."
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "Brukes kun for å sende deg en kvittering."
