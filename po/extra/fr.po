@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-15 14:13+0000\n"
+"PO-Revision-Date: 2024-05-17 14:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -74,11 +74,12 @@ msgstr "Autres améliorations :"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Mise à jour automatique des applications par défaut"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
 msgstr ""
+"Les mises à jour du système ont été déplacées dans les paramètres du système"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
