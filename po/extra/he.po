@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-03-21 22:13+0000\n"
+"PO-Revision-Date: 2024-05-16 05:45+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -61,7 +61,7 @@ msgstr "יכולות חדשות:"
 
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "ניהול עלייה אוטומטית דרך הגדרות ← יישוימם"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:97
 #: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:132
@@ -71,16 +71,18 @@ msgstr "שיפורים נוספים:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "עדכוני יישומים אוטומטיים כברירת מחדל"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "עדכוני מערכת ההפעלה עברו להגדרות המערכת"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"יישומי עיטור שנוצרו עבור elementary OS במקום הוספת עיטורים על יישומים "
+"ממקורות זרים"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:100
 #: data/appcenter.metainfo.xml.in:122 data/appcenter.metainfo.xml.in:134
