@@ -36,6 +36,10 @@ posix = meson.get_compiler('vala').find_library('posix')
 
 dbus = dependency ('dbus-1')
 
+if appstream.version().version_compare('>=1.0')
+    add_project_arguments('--define=HAS_APPSTREAM_1_0', language:'vala')
+endif
+
 core_deps = [
     glib,
     gobject,
