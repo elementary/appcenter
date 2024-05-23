@@ -1,16 +1,23 @@
 [Desktop Entry]
-Name=@APP_NAME@
-Comment=Browse and manage apps
-Exec=@EXEC_NAME@ %U
-Icon=@PROJECT_NAME@
-Keywords=install;uninstall;remove;catalogue;store;apps;software;
-Actions=ShowUpdates;
-Terminal=false
+Version=1.5
 Type=Application
-StartupNotify=true
+
+Name=AppCenter
+Comment=Browse and manage apps
 Categories=GNOME;GTK;System;PackageManager;
+Keywords=install;uninstall;remove;catalogue;store;apps;software;
+
+Icon=@PROJECT_NAME@
+Exec=@EXEC_NAME@ %U
+SingleMainWindow=true
+StartupNotify=true
+Terminal=false
+
 MimeType=x-scheme-handler/appstream;
+
 X-GNOME-UsesNotifications=true
+
+Actions=ShowUpdates;
 
 [Desktop Action ShowUpdates]
 Exec=@EXEC_NAME@ --show-updates

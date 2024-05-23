@@ -27,33 +27,53 @@ const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "mix(@accent_color, @text_color
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 public class AppCenter.Widgets.Banner : Gtk.Button {
-    public AppCenterCore.Package package { get; construct; }
+    public Icon icon { get; construct; }
+    public string brand_color { get; construct; }
+    public string description { get; construct; }
+    public string name { get; construct; }
+    public string summary { get; construct; }
 
-    public Banner (AppCenterCore.Package package) {
-        Object (package: package);
+    public Banner (string name, string summary, string description, Icon icon, string brand_color) {
+        Object (
+            brand_color: brand_color,
+            description: description,
+            icon: icon,
+            name: name,
+            summary: summary
+        );
     }
 
+    public Banner.from_package (AppCenterCore.Package package) {
+        Object (
+            name: package.get_name (),
+            summary: package.get_summary (),
+            description: package.get_description (),
+            icon: package.get_icon (128, get_scale_factor ()),
+            brand_color: package.get_color_primary ()
+        );
+    }
+
+
     construct {
-        var name_label = new Gtk.Label (package.get_name ()) {
+        var name_label = new Gtk.Label (name) {
             max_width_chars = 50,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        name_label.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
+        name_label.add_css_class ("name");
 
-        var summary_label = new Gtk.Label (package.get_summary ()) {
+        var summary_label = new Gtk.Label (summary) {
             max_width_chars = 50,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        summary_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+        summary_label.add_css_class ("summary");
 
-        string description = "";
-        if (package.get_description () != null) {
+        if (description != null && description != "") {
             // We only want the first line/paragraph
-            description = package.get_description ().split ("\n")[0];
+            description = description.split ("\n")[0];
         }
 
         var description_label = new Gtk.Label (description) {
@@ -64,48 +84,41 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             wrap = true,
             xalign = 0
         };
+        description_label.add_css_class ("description");
 
-        var icon_image = new Gtk.Image.from_gicon (
-            package.get_icon (128, get_scale_factor ())
-        ) {
-            pixel_size = 128
+        var icon_image = new Gtk.Image.from_gicon (icon);
+
+        var inner_box = new Gtk.Box (VERTICAL, 0) {
+            valign = CENTER
         };
+        inner_box.append (name_label);
+        inner_box.append (summary_label);
+        inner_box.append (description_label);
 
-        var package_grid = new Gtk.Grid () {
-            column_spacing = 24,
-            halign = Gtk.Align.CENTER,
-            margin_bottom = 64,
-            margin_top = 64,
-            valign = Gtk.Align.CENTER
+        var outer_box = new Gtk.Box (HORIZONTAL, 0) {
+            halign = CENTER
         };
-
-        package_grid.attach (icon_image, 0, 0, 1, 3);
-        package_grid.attach (name_label, 1, 0);
-        package_grid.attach (summary_label, 1, 1);
-        package_grid.attach (description_label, 1, 2);
+        outer_box.append (icon_image);
+        outer_box.append (inner_box);
 
         add_css_class ("banner");
         add_css_class (Granite.STYLE_CLASS_CARD);
         add_css_class (Granite.STYLE_CLASS_ROUNDED);
 
         hexpand = true;
-        child = package_grid;
+        child = outer_box;
 
         var provider = new Gtk.CssProvider ();
         try {
             string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
             string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
-            if (package != null) {
-                var primary_color = package.get_color_primary ();
+            if (brand_color != null) {
+                var bg_rgba = Gdk.RGBA ();
+                bg_rgba.parse (brand_color);
 
-                if (primary_color != null) {
-                    var bg_rgba = Gdk.RGBA ();
-                    bg_rgba.parse (primary_color);
-
-                    bg_color = primary_color;
-                    text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
-                }
+                bg_color = brand_color;
+                text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
             }
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);

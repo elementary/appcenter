@@ -5,10 +5,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 18:35+0000\n"
+"POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,29 +19,32 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:362
+#: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
+#: src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "अनुप्रयोग भांडार(अॅप सेंटर)"
 
-#: src/Application.vala:88
+#: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "मीडिया टाईप %s पार्स होऊ शकला नाही"
 
-#: src/Application.vala:108
+#: src/Application.vala:98
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
-#: src/Application.vala:271
-msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+#: src/Application.vala:262
+msgid ""
+"AppCenter will automatically start when this device turns on and run when "
+"its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:354
+#: src/Application.vala:345
 msgid "The app has been installed"
 msgstr "अ‍ॅप स्थापित केले गेले आहे"
 
-#: src/Application.vala:355 src/MainWindow.vala:467
+#: src/Application.vala:346 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" इन्स्टॉल झाले"
@@ -57,7 +61,7 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "अ‍ॅप स्थापित करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:406 src/MainWindow.vala:549
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
 msgstr "अनुप्रयोग शोधा"
 
@@ -102,52 +106,51 @@ msgstr ""
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:410 src/MainWindow.vala:414
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr "%s शोधा"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:470
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:57
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "उघडा"
 
-#: src/MainWindow.vala:586
+#: src/MainWindow.vala:522
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "माहिती आणत आहे"
 
-#: src/MainWindow.vala:589
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:595
+#: src/MainWindow.vala:531
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/MainWindow.vala:598
+#: src/MainWindow.vala:534
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "इन्स्टॉल होत आहे"
 
-#: src/MainWindow.vala:601
+#: src/MainWindow.vala:537
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "अपडेट इन्स्टॉल करीत आहे"
 
-#: src/MainWindow.vala:604
+#: src/MainWindow.vala:540
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "विस्थापित करीत आहे"
 
-#: src/MainWindow.vala:607
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr ""
 
@@ -348,23 +351,33 @@ msgid "%s (local)"
 msgstr "%s (स्थानिक)"
 
 #: src/Core/Stripe.vala:27
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "ह्या कार्डावरुन प्रक्रिया करतांना काही चूक झाली आहे. कृपया पुन्हा प्रयत्न करा. आपणांस होणाऱ्या असुविधेबद्दल क्षमा असावी."
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
+msgstr ""
+"ह्या कार्डावरुन प्रक्रिया करतांना काही चूक झाली आहे. कृपया पुन्हा प्रयत्न करा. आपणांस "
+"होणाऱ्या असुविधेबद्दल क्षमा असावी."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
 msgstr "कृपया आपल्या देयक माहितीचे पुनरावलोकन करा आणि पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
-msgid "The card number is incorrect. Please try again using the correct card number."
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
 msgstr "कार्ड नंबर चुकीचा आहे. कृपया योग्य कार्ड नंबर वापरून पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:66
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "कालबाह्यता महिना अवैध आहे. कृपया योग्य कालबाह्यता तारीख वापरून पुन्हा प्रयत्न करा."
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"कालबाह्यता महिना अवैध आहे. कृपया योग्य कालबाह्यता तारीख वापरून पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
 msgstr "कालबाह्यता वर्ष अवैध आहे. कृपया योग्य कालबाह्यता तारीख वापरून पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
@@ -380,11 +393,16 @@ msgid "There are too many payment requests at the moment, please retry later."
 msgstr "याक्षणी बऱ्याच पेमेंट विनंत्या आहेत, कृपया नंतर पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:106
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "हे कार्ड या प्रकारच्या व्यवहारास समर्थन देत नाही. कृपया वेगळ्या कार्डासह पुन्हा प्रयत्न करा."
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+"हे कार्ड या प्रकारच्या व्यवहारास समर्थन देत नाही. कृपया वेगळ्या कार्डासह पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:108
-msgid "The currency is not supported by this card. Please try again with a different card."
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
 msgstr "या कार्डाद्वारे हे चलन समर्थित नाही. कृपया वेगळ्या कार्डासह पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:110
@@ -392,8 +410,11 @@ msgid "The transaction has already been processed."
 msgstr "हा व्यवहार आधीच प्रक्रिया केला गेला आहे."
 
 #: src/Core/Stripe.vala:114
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "पिन / पोस्टल कोड चुकीचा आहे. कृपया योग्य पिन / पोस्टल कोड वापरून पुन्हा प्रयत्न करा."
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"postal code."
+msgstr ""
+"पिन / पोस्टल कोड चुकीचा आहे. कृपया योग्य पिन / पोस्टल कोड वापरून पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -408,11 +429,14 @@ msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "पिन क्रमांक चुकीचा आहे. कृपया योग्य पिन वापरून पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:131
-msgid "There has been too many PIN attempts. Please try again with a different card."
+msgid ""
+"There has been too many PIN attempts. Please try again with a different card."
 msgstr "खूप पिन प्रयत्न केले गेले आहेत. कृपया वेगळ्या कार्डासह पुन्हा प्रयत्न करा."
 
 #: src/Core/Stripe.vala:151
-msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
 msgstr "व्यवहार पूर्ण करण्यास अक्षम. कृपया अधिक माहितीसाठी आपल्या बँकेशी संपर्क साधा."
 
 #: src/Core/Stripe.vala:154
@@ -474,8 +498,12 @@ msgstr[0] "%u अपडेट उपलब्ध"
 msgstr[1] "%u अपडेट्स उपलब्ध"
 
 #: src/Dialogs/InstallFailDialog.vala:27
-msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "ही तात्पुरती समस्या असू शकते किंवा बाह्य किंवा व्यक्तिचलितपणे तयार केलेल्या सॉफ्टवेअरमुळे उद्भवली असू शकते."
+msgid ""
+"This may be a temporary issue or could have been caused by external or "
+"manually compiled software."
+msgstr ""
+"ही तात्पुरती समस्या असू शकते किंवा बाह्य किंवा व्यक्तिचलितपणे तयार केलेल्या सॉफ्टवेअरमुळे "
+"उद्भवली असू शकते."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -497,8 +525,11 @@ msgid "Failed to Repair"
 msgstr "अपडेट्स आणण्यात अयशस्वी"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअर रेपॉजिटरिज किंवा दूषित स्रोत फायलीमुळे झाले असू शकते."
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअर रेपॉजिटरिज किंवा दूषित स्रोत फायलीमुळे झाले असू शकते."
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -514,8 +545,12 @@ msgstr "%2$s साठी $%1$d देय द्या"
 
 #: src/Dialogs/StripeDialog.vala:82
 #, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgid "This is a one time payment suggested by the developer. You can also choose your own price."
+#| msgid ""
+#| "This is a one time payment. Your email address is only used to send you a "
+#| "receipt."
+msgid ""
+"This is a one time payment suggested by the developer. You can also choose "
+"your own price."
 msgstr "हा एक वेळ पेमेंट आहे. आपला ईमेल केवळ आपल्याला पावती पाठविण्यासाठी वापरला जातो."
 
 #: src/Dialogs/StripeDialog.vala:103
@@ -528,9 +563,15 @@ msgstr "ईमेल"
 
 #: src/Dialogs/StripeDialog.vala:148
 #, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "आपला ईमेल पत्ता केवळ पावती पाठविण्यासाठी वापरला जातो. आपल्याला कोणत्याही मेलिंग यादीमध्ये सदस्य बनविले जाणार नाही."
+#| msgid ""
+#| "Your email address is only used to send a receipt. You will not be "
+#| "subscribed to any mailing list."
+msgid ""
+"Only used to send you a receipt. You will not be subscribed to any mailing "
+"list."
+msgstr ""
+"आपला ईमेल पत्ता केवळ पावती पाठविण्यासाठी वापरला जातो. आपल्याला कोणत्याही मेलिंग "
+"यादीमध्ये सदस्य बनविले जाणार नाही."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -589,7 +630,7 @@ msgstr "अ‍ॅप विस्थापित करायचा?"
 msgid "Uninstall “%s”?"
 msgstr "\"%s\" विस्थापित करायचा?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:163
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:165
 msgid "Uninstall"
 msgstr "विस्थापित करा"
 
@@ -620,9 +661,15 @@ msgstr "पुन्हा प्रयत्न करा"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअर रेपॉजिटरिज किंवा दूषित स्रोत फायलीमुळे झाले असू शकते."
+#| msgid ""
+#| "This may have been caused by external, manually added software "
+#| "repositories or a corrupted sources file."
+msgid ""
+"This may have been caused by sideloaded or manually compiled software, a "
+"third-party software source, or a package manager error. Manually refreshing "
+"updates may resolve the issue."
+msgstr ""
+"हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअर रेपॉजिटरिज किंवा दूषित स्रोत फायलीमुळे झाले असू शकते."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -639,59 +686,61 @@ msgstr "\"%s\" अपडेट करण्यात अयशस्वी"
 msgid "Refresh Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/Views/AppInfoView.vala:230
+#: src/Views/AppInfoView.vala:234
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:231
+#: src/Views/AppInfoView.vala:235
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:240
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:237
+#: src/Views/AppInfoView.vala:241
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:246
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:243
+#: src/Views/AppInfoView.vala:247
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:252
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:253
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:273
-#, fuzzy
-#| msgid "Non-Curated Apps"
-msgid "Non-Curated"
-msgstr "नॉन-क्युरेटेड अॅप्स"
+#: src/Views/AppInfoView.vala:277
+msgid "Made for elementary OS"
+msgstr ""
 
-#: src/Views/AppInfoView.vala:274
+#: src/Views/AppInfoView.vala:278
 #, fuzzy
-#| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
+#| msgid ""
+#| "“%s” is not curated by elementary and has not been reviewed for security, "
+#| "privacy, or system integration."
+msgid "Reviewed by elementary for security, privacy, and system integration"
+msgstr ""
+"\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम "
+"एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:308
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:315
 #, fuzzy
 #| msgid "translator-credits"
 msgid "Not Translated"
@@ -700,236 +749,243 @@ msgstr ""
 "  Sandeep Pinge https://launchpad.net/~spinge\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:316
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:323
 msgid "Not Fully Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:324
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:340
+#: src/Views/AppInfoView.vala:348
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:341
+#: src/Views/AppInfoView.vala:349
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:354
+#: src/Views/AppInfoView.vala:362
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:367
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:364
+#: src/Views/AppInfoView.vala:372
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:408
+#: src/Views/AppInfoView.vala:416
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:409
+#: src/Views/AppInfoView.vala:417
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:425
+#: src/Views/AppInfoView.vala:433
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:435
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:431
+#: src/Views/AppInfoView.vala:439
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:441
+#: src/Views/AppInfoView.vala:449
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:442
+#: src/Views/AppInfoView.vala:450
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:454
+#: src/Views/AppInfoView.vala:462
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:457
+#: src/Views/AppInfoView.vala:465
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:470
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:563
+#: src/Views/AppInfoView.vala:571
 msgid "Screenshot Not Available"
 msgstr "स्क्रीनशॉट उपलब्ध नाही"
 
-#: src/Views/AppInfoView.vala:591
+#: src/Views/AppInfoView.vala:599
 msgid "What's New:"
 msgstr "नवीन काय आहे:"
 
-#: src/Views/AppInfoView.vala:618
+#: src/Views/AppInfoView.vala:626
 msgid "Extensions:"
 msgstr "विस्तार :"
 
-#: src/Views/AppInfoView.vala:649
+#: src/Views/AppInfoView.vala:657
 msgid "Homepage"
 msgstr "मुख्य पृष्ठ"
 
-#: src/Views/AppInfoView.vala:655
+#: src/Views/AppInfoView.vala:663
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:669
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:667
+#: src/Views/AppInfoView.vala:675
 msgid "Help"
 msgstr "मदत"
 
-#: src/Views/AppInfoView.vala:715
+#: src/Views/AppInfoView.vala:723
 msgid "Link copied to clipboard"
 msgstr "दुवा क्लिपबोर्डवर कॉपी केला"
 
-#: src/Views/AppInfoView.vala:727
+#: src/Views/AppInfoView.vala:735
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "अँप सेंटर वर %s बघा:"
 
-#: src/Views/AppInfoView.vala:735
+#: src/Views/AppInfoView.vala:743
 msgid "Share"
 msgstr "शेअर करा"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:830
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:828
+#: src/Views/AppInfoView.vala:831
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:834
+#: src/Views/AppInfoView.vala:837
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:838
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:843
+#: src/Views/AppInfoView.vala:846
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "विस्थापित करा"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:847
 #, c-format
-msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
+msgid ""
+"Built for an unstable version of %s; may contain major issues. Not "
+"recommended for use on a production system."
 msgstr ""
 
-#: src/Views/AppInfoView.vala:857
+#: src/Views/AppInfoView.vala:860
 msgid "Insecure Sandbox"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:861
 msgid "Can ignore or modify its own system permissions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:867
+#: src/Views/AppInfoView.vala:870
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:871
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:875
+#: src/Views/AppInfoView.vala:878
 msgid "Home Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:876
-msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+#: src/Views/AppInfoView.vala:879
+msgid ""
+"Including all documents, downloads, music, pictures, videos, and any hidden "
+"folders"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:888
 msgid "Legacy Autostart"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:889
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:895
+#: src/Views/AppInfoView.vala:898
 msgid "Location Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:896
+#: src/Views/AppInfoView.vala:899
 msgid "Can see your precise location at any time without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:905
+#: src/Views/AppInfoView.vala:908
 msgid "Legacy Notifications"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:906
-msgid "Bubbles may not be configurable or appear in notification center as “Other”"
+#: src/Views/AppInfoView.vala:909
+msgid ""
+"Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:915
+#: src/Views/AppInfoView.vala:918
 msgid "System Settings Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:916
+#: src/Views/AppInfoView.vala:919
 msgid "Can read and modify system settings"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1156
+#: src/Views/AppInfoView.vala:1144
 msgid "Public Domain"
 msgstr "सार्वजनिक डोमेन"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1159
+#: src/Views/AppInfoView.vala:1147
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%9C%E0%A4%A8%E0%A4%BF%E0%A4%95_%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0"
+msgstr ""
+"https://mr.wikipedia.org/wiki/"
+"%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%9C%E0%A4%A8%E0%A4%BF%E0%A4%95_%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1164
+#: src/Views/AppInfoView.vala:1152
 msgid "Free Software"
 msgstr "फ्री सॉफ्टवेअर"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1167
+#: src/Views/AppInfoView.vala:1155
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1171
+#: src/Views/AppInfoView.vala:1159
 msgid "Proprietary"
 msgstr "मालकी"
 
-#: src/Views/AppInfoView.vala:1174
+#: src/Views/AppInfoView.vala:1162
 msgid "Unknown License"
 msgstr "अज्ञात परवाना"
 
-#: src/Views/AppInfoView.vala:1266
+#: src/Views/AppInfoView.vala:1272
 msgid "Fund"
 msgstr "निधी"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1278
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
@@ -976,7 +1032,7 @@ msgstr "ड्राइव्हर्स"
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:54
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:58
 msgid "Recently Updated"
 msgstr "अलीकडे अपडेट केलेले"
 
@@ -992,91 +1048,104 @@ msgstr "अनुप्रयोग शोधा"
 msgid "Free Apps"
 msgstr "विनामुल्य"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:81
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:103
+#: src/Views/Homepage.vala:107
 msgid "Accessories"
 msgstr "अॅक्सेसरीज"
 
-#: src/Views/Homepage.vala:104
+#: src/Views/Homepage.vala:108
 msgid "Audio"
 msgstr "ध्वनी"
 
-#: src/Views/Homepage.vala:105
+#: src/Views/Homepage.vala:109
 msgid "Communication"
 msgstr "संप्रेषण"
 
-#: src/Views/Homepage.vala:114
+#: src/Views/Homepage.vala:118
 msgid "Development"
 msgstr "विकास"
 
-#: src/Views/Homepage.vala:124
+#: src/Views/Homepage.vala:128
 msgid "Education"
 msgstr "शिक्षण"
 
-#: src/Views/Homepage.vala:125
+#: src/Views/Homepage.vala:129
 msgid "Finance"
 msgstr "अर्थ व्यवस्था"
 
-#: src/Views/Homepage.vala:130
+#: src/Views/Homepage.vala:134
 msgid "Graphics"
 msgstr "ग्राफिक"
 
-#: src/Views/Homepage.vala:139
+#: src/Views/Homepage.vala:143
 msgid "Internet"
 msgstr "इंटरनेट"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:147
 msgid "Math, Science, & Engineering"
 msgstr "विज्ञान आणि अभियांत्रिकी"
 
-#: src/Views/Homepage.vala:162
+#: src/Views/Homepage.vala:166
 msgid "Media Production"
 msgstr "माध्यम उत्पादन"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:173
 msgid "Office"
 msgstr "कार्यालय"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:180
 msgid "System"
 msgstr "सिस्टिम"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:184
 msgid "Universal Access"
 msgstr "सार्वत्रिक प्रवेश"
 
-#: src/Views/Homepage.vala:181
+#: src/Views/Homepage.vala:185
 msgid "Video"
 msgstr "व्हिडिओ"
 
-#: src/Views/Homepage.vala:186
+#: src/Views/Homepage.vala:190
 msgid "Writing & Language"
 msgstr "लेखन आणि भाषा"
 
-#: src/Views/Homepage.vala:196
+#: src/Views/Homepage.vala:200
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "गोपनीयता धोरण"
 
-#: src/Views/Homepage.vala:213
+#: src/Views/Homepage.vala:217
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
-#: src/Views/Homepage.vala:454
+#: src/Views/Homepage.vala:231
+msgid "Browse and manage apps"
+msgstr ""
+
+#: src/Views/Homepage.vala:232
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
+msgstr ""
+
+#: src/Views/Homepage.vala:460
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "खेळ"
 
-#: src/Views/Homepage.vala:479
+#: src/Views/Homepage.vala:485
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:491
 msgid "Games"
 msgstr "खेळ"
 
@@ -1090,7 +1159,8 @@ msgstr ""
 
 #: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
 #, c-format
-msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgid ""
+"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
@@ -1103,6 +1173,18 @@ msgstr "शोधा"
 msgid "The search term must be at least 3 characters long."
 msgstr ""
 
+#: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
+msgid "Free"
+msgstr "विनामुल्य"
+
+#: src/Widgets/ActionStack.vala:120 src/Widgets/HumbleButton.vala:82
+msgid "Install"
+msgstr "प्रस्थापित"
+
+#: src/Widgets/ActionStack.vala:137
+msgid "Update"
+msgstr "अद्ययावत (अपडेट) करा"
+
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "कार्ड नंबर"
@@ -1110,16 +1192,6 @@ msgstr "कार्ड नंबर"
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
 msgstr "जे सक्षम नाहीत, त्यांसाठी पेमेंट आवश्यक आहे"
-
-#: src/Widgets/HumbleButton.vala:80
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:136
-msgid "Free"
-msgstr "विनामुल्य"
-
-#: src/Widgets/HumbleButton.vala:82
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:138
-msgid "Install"
-msgstr "प्रस्थापित"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:118
@@ -1188,22 +1260,23 @@ msgstr "केवळ अॅप्सचे आवश्यक भाग आण�
 msgid "Up to %s"
 msgstr "%s पर्यंत"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
-msgid "Update"
-msgstr "अद्ययावत (अपडेट) करा"
-
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:134
 #, c-format
 msgid "What's new in %s"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:154
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Non-Curated Apps"
+#~ msgid "Non-Curated"
+#~ msgstr "नॉन-क्युरेटेड अॅप्स"
 
 #~ msgid "A restart is required to finish installing updates"
 #~ msgstr "अद्यतने स्थापित करणे पूर्ण करण्यासाठी रीस्टार्ट आवश्यक आहे"
@@ -1263,8 +1336,12 @@ msgstr ""
 #~ msgid "Install non-curated app?"
 #~ msgstr "नॉन-क्युरेटेड अ‍ॅप स्थापित करायचा?"
 
-#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-#~ msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
+#~ msgid ""
+#~ "“%s” is not curated by elementary and has not been reviewed for security, "
+#~ "privacy, or system integration."
+#~ msgstr ""
+#~ "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम "
+#~ "एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
 
 #~ msgid "It may not receive bug fix or feature updates"
 #~ msgstr "हे दोष निराकरण किंवा वैशिष्ट्य अद्यतने प्राप्त करू शकत नाही"
@@ -1287,8 +1364,14 @@ msgstr ""
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "\"%s\" मध्ये स्पष्ट मजकूर आहे"
 
-#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-#~ msgstr "\"%s\" मध्ये केवळ वयस्कांसाठी उपयुक्त असलेला मजकूर असू शकतो किंवा तो मजकूर संवेदनशील किंवा त्रासदायक असू शकतो. सर्वसाधारणपणे, एलिमेंटरी या अॅपच्या समाविष्ट सामग्री किंवा मजकुराचे पुनरावलोकन किंवा समर्थन करीत नाही."
+#~ msgid ""
+#~ "“%s” may contain content only suitable for adults or that may be "
+#~ "sensitive or disturbing. In general, elementary does not review or "
+#~ "endorse the contents of this app."
+#~ msgstr ""
+#~ "\"%s\" मध्ये केवळ वयस्कांसाठी उपयुक्त असलेला मजकूर असू शकतो किंवा तो मजकूर संवेदनशील "
+#~ "किंवा त्रासदायक असू शकतो. सर्वसाधारणपणे, एलिमेंटरी या अॅपच्या समाविष्ट सामग्री किंवा "
+#~ "मजकुराचे पुनरावलोकन किंवा समर्थन करीत नाही."
 
 #~ msgid "Show content warnings"
 #~ msgstr "मजकूर चेतावण्या दाखवा"

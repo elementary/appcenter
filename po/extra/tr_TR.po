@@ -1,34 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2016-12-27 14:26+0000\n"
-"Last-Translator: ablimet <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2024-03-07 01:13+0000\n"
+"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
+"tr_TR/>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: data/appcenter.metainfo.xml.in:11
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
-msgstr "ئەپ مەركىزى"
+msgstr "Uygulama Merkezi"
 
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "ئەپلەرنى كۆرۈش ۋە باشقۇرۇش"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -36,10 +37,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"مۇستەقىل ۋە ئوچۇق كودلۇق ئەپ ئاچقۇچىلار ئۈچۈن مەخسۈس ئەپ مەركىزى، تۈرلەر "
-"بويىچە كۆرۈڭ ياكى ئىزدەش ئارقىلىق يىڭى ئەپلەرنى تىپىڭ. ئەپ مەركىزىدىن "
-"پايدىلىنىپ يەنە سىستېمىنى يىڭى نەشىرىگە يىڭىلىيالايسىز، يىڭى ئىقتىدارلارنى "
-"ئىشلىتەلەيسىز ۋە سىستېما خاتالىقلىرىنى تۈزىتەلەيسىز."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -128,15 +125,12 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:9
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"ئورنىتىش؛ يۇيۇش؛ ئۆچۈرۈش؛ تۈرگە ئايرىش؛ ساقلاش؛ ئەپلەر؛ يىڭىلاش؛ يۇمشاق "
-"دىتاللار؛;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr ""
+msgstr "Güncellemeleri Kontrol Et"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
@@ -153,10 +147,3 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr ""
-
-#~ msgid "About AppCenter"
-#~ msgstr "ئەپ مەركىزى ھەققىدە"
-
-#, fuzzy
-#~ msgid "App Center"
-#~ msgstr "ئەپ مەركىزى"

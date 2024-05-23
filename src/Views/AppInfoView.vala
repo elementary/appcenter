@@ -20,11 +20,7 @@
 public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     public const int MAX_WIDTH = 800;
 
-    public signal void show_other_package (
-        AppCenterCore.Package package,
-        bool remember_history = true,
-        bool transition = true
-    );
+    public signal void show_other_package (AppCenterCore.Package package);
 
     public AppCenterCore.Package package { get; construct set; }
 
@@ -276,29 +272,33 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         if (!package.is_runtime_updates) {
 #if CURATED
-            if (!package.is_native) {
-                var uncurated = new ContentType (
-                    _("Non-Curated"),
-                    _("Not reviewed by elementary for security, privacy, or system integration"),
-                    "security-low-symbolic"
+            if (package.is_native) {
+                var made_for_elementary = new ContentType (
+                    _("Made for elementary OS"),
+                    _("Reviewed by elementary for security, privacy, and system integration"),
+                    "runtime-elementary-symbolic"
                 );
 
-                oars_flowbox.append (uncurated);
+                oars_flowbox.append (made_for_elementary);
             }
 #endif
 
 #if HAS_APPSTREAM_1_0
-            var active_locale = "en-US";
+            const string DEFAULT_LOCALE = "en-US";
+            const string LOCALE_DELIMITER = "-";
+            var active_locale = DEFAULT_LOCALE;
             if (package_component.get_context () != null) {
-                active_locale = package_component.get_context ().get_locale () ?? "en-US";
+                active_locale = package_component.get_context ().get_locale () ?? DEFAULT_LOCALE;
             }
 #else
+            const string DEFAULT_LOCALE = "en_US";
+            const string LOCALE_DELIMITER = "_";
             var active_locale = package_component.get_active_locale ();
 #endif
-            if (active_locale != "en_US" && active_locale != "en-US") {
+            if (active_locale != DEFAULT_LOCALE) {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
-                    active_locale.split ("_")[0]
+                    active_locale.split (LOCALE_DELIMITER)[0]
                 );
 
                 if (percent_translated < 100) {
@@ -729,8 +729,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         child = overlay;
         title = package.get_name ();
+        tag = package.hash;
 
-#if SHARING
         if (package.is_shareable) {
             var body = _("Check out %s on AppCenter:").printf (package.get_name ());
             var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
@@ -760,7 +760,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
             links_flowbox.append (share_button);
         }
-#endif
 
         package.notify["state"].connect (on_package_state_changed);
         on_package_state_changed ();
@@ -772,7 +771,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         origin_dropdown.notify["selected-item"].connect (() => {
             var selected_origin_package = (AppCenterCore.Package) origin_dropdown.selected_item;
             if (selected_origin_package != null && selected_origin_package != package) {
-                show_other_package (selected_origin_package, false, false);
+                show_other_package (selected_origin_package);
             }
         });
 

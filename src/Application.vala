@@ -1,18 +1,8 @@
-/* Copyright 2015 Marvin Beckers <beckersmarvin@gmail.com>
-*
-* This program is free software: you can redistribute it
-* and/or modify it under the terms of the GNU General Public License as
-* published by the Free Software Foundation, either version 3 of the
-* License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be
-* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-* Public License for more details.
-*
-* You should have received a copy of the GNU General Public License along
-* with this program. If not, see http://www.gnu.org/licenses/.
-*/
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
+ *                         2015 Marvin Beckers <beckersmarvin@gmail.com>
+ */
 
 public class AppCenter.App : Gtk.Application {
     public const OptionEntry[] APPCENTER_OPTIONS = {
@@ -146,6 +136,7 @@ public class AppCenter.App : Gtk.Application {
         client.cache_update_failed.connect (on_cache_update_failed);
 
         refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
             client.update_cache.begin (true);
         });

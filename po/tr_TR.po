@@ -1,95 +1,98 @@
-# Daniel Foré <daniel@elementary.io>, 2019.
-# David Hewitt <davidmhewitt@gmail.com>, 2023.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.elementary.appcenter package.
+# Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>, 2024.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Latvian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/lv/>\n"
-"Language: lv\n"
+"PO-Revision-Date: 2024-03-07 01:13+0000\n"
+"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr_TR/>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
-"X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
 #: src/Views/Homepage.vala:230
 msgid "AppCenter"
-msgstr ""
+msgstr "Uygulama Merkezi"
 
 #: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "%s medya türü çözümlenemedi"
 
 #: src/Application.vala:98
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapılıyor"
 
 #: src/Application.vala:262
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
+"Uygulama Merkezi, bu cihaz açıldığında otomatik olarak başlayacak ve "
+"penceresi kapatıldığında çalışacaktır, bu sayede güncellemeleri otomatik "
+"olarak kontrol edip yükleyebilecektir."
 
 #: src/Application.vala:345
 msgid "The app has been installed"
-msgstr ""
+msgstr "Uygulama yüklendi"
 
 #: src/Application.vala:346 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
-msgstr ""
+msgstr "“%s” yüklendi"
 
 #: src/MainWindow.vala:92
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr ""
+msgstr "\"%s\" başlatılamadı"
 
 #: src/MainWindow.vala:131
-#, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr "Güncellemeler ve yüklü uygulamalar"
 
 #: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
-msgstr "Meklēt aplikācijas"
+msgstr "Uygulama Ara"
 
 #: src/MainWindow.vala:154
 msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
+msgstr "Ücretsiz ve Satın Alınan Uygulamaları Otomatik Olarak Güncelle"
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
-msgstr ""
+msgstr "Ücretsiz olarak denenen uygulamalar otomatik olarak güncellenmeyecek"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
-msgstr ""
+msgstr "Güncellemeleri Kontrol Et"
 
 #: src/MainWindow.vala:181
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #: src/MainWindow.vala:212
 msgid "Network Not Available."
-msgstr ""
+msgstr "Ağ Kullanılamıyor."
 
 #: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "Uygulamalara göz atmak ve yüklemek için İnternet'e bağlanın."
 
 #: src/MainWindow.vala:223
 msgid "Network Settings…"
-msgstr ""
+msgstr "Ağ Ayarları…"
 
 #: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
@@ -98,21 +101,21 @@ msgstr ""
 #: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "Uygulamalara göz atmak ve uygulama yüklemek için %s'yi yükleyin."
 
 #: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
-msgstr ""
+msgstr "%s'i Ara"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
-msgstr ""
+msgstr "Aç"
 
 #: src/MainWindow.vala:522
 msgid "Getting app information…"
-msgstr ""
+msgstr "Uygulama bilgileri alınıyor…"
 
 #: src/MainWindow.vala:525
 msgid "Getting download size…"
@@ -123,22 +126,16 @@ msgid "Checking for updates…"
 msgstr ""
 
 #: src/MainWindow.vala:534
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Instalē"
+msgstr ""
 
 #: src/MainWindow.vala:537
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing updates…"
-msgstr "Instalē"
+msgstr ""
 
 #: src/MainWindow.vala:540
-#, fuzzy
-#| msgid "Installing"
 msgid "Uninstalling…"
-msgstr "Instalē"
+msgstr ""
 
 #: src/MainWindow.vala:543
 msgid "Repairing…"
@@ -175,7 +172,7 @@ msgstr ""
 
 #: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1456
 msgid "Installing"
-msgstr "Instalē"
+msgstr ""
 
 #: src/Utils.vala:79
 msgid "Refreshing software list"
@@ -302,16 +299,12 @@ msgid "%s (system-wide)"
 msgstr ""
 
 #: src/Core/FlatpakBackend.vala:1588
-#, fuzzy
-#| msgid "Installing"
 msgid "Uninstalling"
-msgstr "Instalē"
+msgstr ""
 
 #: src/Core/FlatpakBackend.vala:1770
-#, fuzzy
-#| msgid "Updates"
 msgid "Updating"
-msgstr "Jauninājumi"
+msgstr ""
 
 #: src/Core/Package.vala:329
 #, c-format
@@ -459,7 +452,6 @@ msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 #: src/Core/UpdateManager.vala:125
 #, c-format
@@ -478,7 +470,6 @@ msgid "%u app update is available"
 msgid_plural "%u app updates are available"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -487,9 +478,8 @@ msgid ""
 msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
@@ -501,9 +491,8 @@ msgid "Repair"
 msgstr ""
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
 msgid "Failed to Repair"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr ""
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid ""
@@ -592,9 +581,8 @@ msgid "Uninstalling this app may also delete its data."
 msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
@@ -610,9 +598,8 @@ msgid "This may have been caused by external or manually compiled software."
 msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:36
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
@@ -639,9 +626,8 @@ msgid ""
 msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
@@ -701,14 +687,8 @@ msgid "This app does not provide language information"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:315
-#, fuzzy
-#| msgid "translator-credits"
 msgid "Not Translated"
 msgstr ""
-"Launchpad Contributions:\n"
-"  Matiss Treinis https://launchpad.net/~mrtreinis\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  marhis https://launchpad.net/~marhis"
 
 #: src/Views/AppInfoView.vala:316
 msgid "This app is not available in your language"
@@ -796,9 +776,8 @@ msgid "Extensions:"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:657
-#, fuzzy
 msgid "Homepage"
-msgstr "Mājas lapa"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:663
 msgid "Translate"
@@ -842,9 +821,8 @@ msgid "May not work as expected or support the latest features"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:846
-#, fuzzy
 msgid "Unstable"
-msgstr "Instalēt"
+msgstr ""
 
 #: src/Views/AppInfoView.vala:847
 #, c-format
@@ -924,9 +902,8 @@ msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:1152
-#, fuzzy
 msgid "Free Software"
-msgstr "Rediģēt programmatūras avotus"
+msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:1155
@@ -967,10 +944,9 @@ msgstr ""
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:141
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Instalēt"
+msgstr ""
 
 #: src/Views/AppListUpdateView.vala:207
 #, c-format
@@ -998,20 +974,16 @@ msgid "Recently Updated"
 msgstr ""
 
 #: src/Views/CategoryView.vala:37
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Paid Apps"
-msgstr "Meklēt aplikācijas"
+msgstr ""
 
 #: src/Views/CategoryView.vala:39
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Free Apps"
-msgstr "Meklēt aplikācijas"
+msgstr ""
 
 #: src/Views/Homepage.vala:81
 msgid "Categories"
-msgstr "Kategorijas"
+msgstr ""
 
 #: src/Views/Homepage.vala:107
 msgid "Accessories"
@@ -1078,9 +1050,8 @@ msgid "Privacy & Security"
 msgstr ""
 
 #: src/Views/Homepage.vala:217
-#, fuzzy
 msgid "Home"
-msgstr "Mājas lapa"
+msgstr ""
 
 #: src/Views/Homepage.vala:231
 msgid "Browse and manage apps"
@@ -1123,10 +1094,9 @@ msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
-#, fuzzy
 msgctxt "view"
 msgid "Search"
-msgstr "Meklēt aplikācijas"
+msgstr ""
 
 #: src/Views/SearchView.vala:61
 msgid "The search term must be at least 3 characters long."
@@ -1137,9 +1107,8 @@ msgid "Free"
 msgstr ""
 
 #: src/Widgets/ActionStack.vala:120 src/Widgets/HumbleButton.vala:82
-#, fuzzy
 msgid "Install"
-msgstr "Instalēt"
+msgstr ""
 
 #: src/Widgets/ActionStack.vala:137
 msgid "Update"
@@ -1230,55 +1199,3 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Install Anyway"
-#~ msgstr "Instalē"
-
-#~ msgid "Application installed"
-#~ msgstr "Aplikācija instalēta"
-
-#~ msgid "Quit"
-#~ msgstr "Beigt"
-
-#~ msgid "Software Sources"
-#~ msgstr "Programmatūras avoti"
-
-#~ msgid "Remove"
-#~ msgstr "Aizvākt"
-
-#~ msgid "Show available updates"
-#~ msgstr "Parādīt pieejamos atjauninājumus"
-
-#~ msgid "Categories View"
-#~ msgstr "Kategoriju skats"
-
-#~ msgid "Load a package from the given id"
-#~ msgstr "Ielādēt pakotni izmantojot sekojošu id"
-
-#~ msgid "application download center"
-#~ msgstr "aplikāciju lejupielādes centrs"
-
-#~ msgid "Apps View"
-#~ msgstr "Aplikāciju skats"
-
-#~ msgid "Recreates database files"
-#~ msgstr "Atkārtoti izveidot datubāzes failus"
-
-#~ msgid "Apps Info"
-#~ msgstr "Aplikāciju informācija"
-
-#~ msgid "Use debug quiet mode"
-#~ msgstr "Lietot kluso atkļūdošanas režīmu"
-
-#~ msgid "Updates View"
-#~ msgstr "Jauninājumu skats"
-
-#~ msgid "Removing"
-#~ msgstr "Noņem"
-
-#~ msgid "Error page"
-#~ msgstr "Kļūdu paziņojumu lapa"
-
-#~ msgid "Browser apps in categories"
-#~ msgstr "Pārlūku aplikācijas kategorijās"

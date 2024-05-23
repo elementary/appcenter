@@ -1,52 +1,62 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
 # Jaimie85 <alsemgeest@gmail.com>, 2019, 2020.
 # Lieven Hanssen <lhanssen@freedommail.co>, 2020.
-# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023.
+# Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023, 2024.
 # MB <barendregt@fastmail.com>, 2022.
 # Niels Van Laerhoven <niels1995@gmail.com>, 2022.
 # DutchVipperloid <svenroelof@e.email>, 2023.
 # Thierry Flament <thierry.flament@outlook.com>, 2023.
 # Pepijn Joost <pepijnvlug@gmail.com>, 2023.
+# Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 18:35+0000\n"
-"PO-Revision-Date: 2023-12-06 02:05+0000\n"
+"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"PO-Revision-Date: 2024-05-14 09:13+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:362
+#: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
+#: src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:88
+#: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Kon het media-type %s niet lezen"
 
-#: src/Application.vala:108
+#: src/Application.vala:98
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als zoekterm gebruiken"
+msgstr ""
+"Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als "
+"zoekterm gebruiken"
 
-#: src/Application.vala:271
-msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
-msgstr "AppCenter zal automatisch opstarten en blijft op de achtergrond draaien wanneer het venster gesloten is zodat het automatisch op updates kan controleren en ze kan installeren."
+#: src/Application.vala:262
+msgid ""
+"AppCenter will automatically start when this device turns on and run when "
+"its window is closed so that it can automatically check and install updates."
+msgstr ""
+"AppCenter zal automatisch opstarten en blijft op de achtergrond draaien "
+"wanneer het venster gesloten is zodat het automatisch op updates kan "
+"controleren en ze kan installeren."
 
-#: src/Application.vala:354
+#: src/Application.vala:345
 msgid "The app has been installed"
 msgstr "De app is met succes geïnstalleerd"
 
-#: src/Application.vala:355 src/MainWindow.vala:467
+#: src/Application.vala:346 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” is geïnstalleerd"
@@ -61,21 +71,18 @@ msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Updates & geïnstalleerde apps"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:406 src/MainWindow.vala:549
+#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
-msgstr "Zoek Apps"
+msgstr "Zoek apps"
 
 #: src/MainWindow.vala:154
-#, fuzzy
-#| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Update gratis en betaalde gecureerde apps automatisch"
+msgstr "Update gratis en betaalde apps automatisch"
 
 #: src/MainWindow.vala:155
-#, fuzzy
-#| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
-msgstr "Systeemupdates en onbetaalde apps zullen niet automatisch geüpdatet worden"
+msgstr ""
+"Systeemupdates en onbetaalde apps zullen niet automatisch worden bijgewerkt"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
@@ -91,7 +98,8 @@ msgstr "Geen netwerkverbinding."
 
 #: src/MainWindow.vala:213
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Maak verbinding met het internet om apps te ontdekken en te installeren."
+msgstr ""
+"Maak verbinding met het internet om apps te ontdekken en te installeren."
 
 #: src/MainWindow.vala:223
 msgid "Network Settings…"
@@ -106,42 +114,41 @@ msgstr "Draait in demo-modus"
 msgid "Install %s to browse and install apps."
 msgstr "Installeer %s om apps te bekijken en te installeren."
 
-#: src/MainWindow.vala:410 src/MainWindow.vala:414
+#: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
 msgid "Search %s"
 msgstr "Zoek %s"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:470
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:57
+#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Open"
 
-#: src/MainWindow.vala:586
+#: src/MainWindow.vala:522
 msgid "Getting app information…"
 msgstr "App-informatie wordt opgehaald…"
 
-#: src/MainWindow.vala:589
+#: src/MainWindow.vala:525
 msgid "Getting download size…"
 msgstr "Downloadgrootte wordt opgehaald…"
 
-#: src/MainWindow.vala:595
+#: src/MainWindow.vala:531
 msgid "Checking for updates…"
 msgstr "Controleren op updates…"
 
-#: src/MainWindow.vala:598
+#: src/MainWindow.vala:534
 msgid "Installing…"
 msgstr "Installeren…"
 
-#: src/MainWindow.vala:601
+#: src/MainWindow.vala:537
 msgid "Installing updates…"
 msgstr "Updates installeren…"
 
-#: src/MainWindow.vala:604
+#: src/MainWindow.vala:540
 msgid "Uninstalling…"
 msgstr "Verwijderen…"
 
-#: src/MainWindow.vala:607
+#: src/MainWindow.vala:543
 msgid "Repairing…"
 msgstr "Repareren…"
 
@@ -342,72 +349,116 @@ msgid "%s (local)"
 msgstr "%s (lokaal)"
 
 #: src/Core/Stripe.vala:27
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Er is een fout opgetreden bij het verwerken van de kaart. Probeer het later opnieuw. Onze excuses voor het ongemak."
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
+msgstr ""
+"Er is een fout opgetreden bij het verwerken van de kaart. Probeer het later "
+"opnieuw. Onze excuses voor het ongemak."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr "Gelieve uw betaalgegevens te controleren en daarna het opnieuw te proberen."
+msgstr ""
+"Gelieve uw betaalgegevens te controleren en daarna het opnieuw te proberen."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
-msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Het kaartnummer is onjuist. Gelieve het opnieuw te proberen met het juiste kaartnummer."
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
+msgstr ""
+"Het kaartnummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"kaartnummer."
 
 #: src/Core/Stripe.vala:66
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "De maand van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te proberen met de juiste vervaldatum."
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"De maand van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te "
+"proberen met de juiste vervaldatum."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "Het jaar van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te proberen met de juiste vervaldatum."
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"Het jaar van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te "
+"proberen met de juiste vervaldatum."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste CVC-nummer."
+msgstr ""
+"Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"CVC-nummer."
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
-msgstr "De kaart is vervallen. Gelieve het opnieuw te proberen met een andere kaart."
+msgstr ""
+"De kaart is vervallen. Gelieve het opnieuw te proberen met een andere kaart."
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Er zijn momenteel te veel betaalverzoeken, gelieve het later opnieuw te proberen."
+msgstr ""
+"Er zijn momenteel te veel betaalverzoeken, gelieve het later opnieuw te "
+"proberen."
 
 #: src/Core/Stripe.vala:106
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Deze kaart ondersteunt dit soort transacties niet. Gelieve het opnieuw te proberen met een andere kaart."
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+"Deze kaart ondersteunt dit soort transacties niet. Gelieve het opnieuw te "
+"proberen met een andere kaart."
 
 #: src/Core/Stripe.vala:108
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "De valuta wordt niet ondersteund door deze kaart. Gelieve het opnieuw te proberen met een andere kaart."
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+"De valuta wordt niet ondersteund door deze kaart. Gelieve het opnieuw te "
+"proberen met een andere kaart."
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
 msgstr "De transactie is al verwerkt."
 
 #: src/Core/Stripe.vala:114
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "De postcode is onjuist. Gelieve het opnieuw te proberen met de juiste postcode."
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"postal code."
+msgstr ""
+"De postcode is onjuist. Gelieve het opnieuw te proberen met de juiste "
+"postcode."
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruiken."
+msgstr ""
+"U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruiken."
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Het bedrag is onjuist. Gelieve het opnieuw te proberen met een geldig bedrag."
+msgstr ""
+"Het bedrag is onjuist. Gelieve het opnieuw te proberen met een geldig bedrag."
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Het PIN-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste PIN-nummer."
+msgstr ""
+"Het PIN-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"PIN-nummer."
 
 #: src/Core/Stripe.vala:131
-msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "U heeft te veel pogingen gedaan om uw pincode in te voeren. Gelieve het opnieuw te proberen met een andere kaart."
+msgid ""
+"There has been too many PIN attempts. Please try again with a different card."
+msgstr ""
+"U heeft te veel pogingen gedaan om uw pincode in te voeren. Gelieve het "
+"opnieuw te proberen met een andere kaart."
 
 #: src/Core/Stripe.vala:151
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Het is niet mogelijk om de transactie af te ronden. Gelieve uw bank te contacteren voor meer informatie."
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+"Het is niet mogelijk om de transactie af te ronden. Gelieve uw bank te "
+"contacteren voor meer informatie."
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
@@ -415,7 +466,9 @@ msgstr "U heeft onvoldoende saldo of de limiet van uw kaart is bereikt."
 
 #: src/Core/Stripe.vala:157
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "De ingevoerde kaart is een proefkaart. Gelieve een geldige kaart te gebruiken om verder te gaan."
+msgstr ""
+"De ingevoerde kaart is een proefkaart. Gelieve een geldige kaart te "
+"gebruiken om verder te gaan."
 
 #: src/Core/UpdateManager.vala:33
 msgid "Runtime Updates"
@@ -462,8 +515,12 @@ msgstr[0] "%u update beschikbaar"
 msgstr[1] "%u updates beschikbaar"
 
 #: src/Dialogs/InstallFailDialog.vala:27
-msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Dit kan een tijdelijk probleem zijn of veroorzaakt worden door externe of handmatig gecompileerde software."
+msgid ""
+"This may be a temporary issue or could have been caused by external or "
+"manually compiled software."
+msgstr ""
+"Dit kan een tijdelijk probleem zijn of veroorzaakt worden door externe of "
+"handmatig gecompileerde software."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -483,8 +540,12 @@ msgid "Failed to Repair"
 msgstr "Reparatie mislukt"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde softwarebronnen of een gecorrumpeerd bronnenbestand."
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde "
+"softwarebronnen of een gecorrumpeerd bronnenbestand."
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -499,8 +560,12 @@ msgid "Pay $%d for %s"
 msgstr "Betaal $%d voor %s"
 
 #: src/Dialogs/StripeDialog.vala:82
-msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Dit is een eenmalige betaling voorgesteld door de ontwikkelaar. U kunt een andere prijs opgeven."
+msgid ""
+"This is a one time payment suggested by the developer. You can also choose "
+"your own price."
+msgstr ""
+"Dit is een eenmalige betaling voorgesteld door de ontwikkelaar. U kunt een "
+"andere prijs opgeven."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -511,8 +576,12 @@ msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te sturen. Uw e-mailadres wordt niet toegevoegd aan een mailingslijst."
+msgid ""
+"Only used to send you a receipt. You will not be subscribed to any mailing "
+"list."
+msgstr ""
+"Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te "
+"sturen. Uw e-mailadres wordt niet toegevoegd aan een mailingslijst."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -571,13 +640,15 @@ msgstr "App verwijderen?"
 msgid "Uninstall “%s”?"
 msgstr "“%s” verwijderen?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:163
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:165
 msgid "Uninstall"
 msgstr "Verwijderen"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Dit werd mogelijk veroorzaakt door externe of handmatig gecompileerde software."
+msgstr ""
+"Dit werd mogelijk veroorzaakt door externe of handmatig gecompileerde "
+"software."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
@@ -601,8 +672,15 @@ msgid "Try Again"
 msgstr "Opnieuw proberen"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde software, softwarebronnen van een derde partij of een fout in de pakketbeheerder. Het handmatig vernieuwen van de updates zou dit probleem mogelijk kunnen verhelpen."
+msgid ""
+"This may have been caused by sideloaded or manually compiled software, a "
+"third-party software source, or a package manager error. Manually refreshing "
+"updates may resolve the issue."
+msgstr ""
+"Dit zou kunnen zijn veroorzaakt door sideloaded of handmatig gecompileerde "
+"software, softwarebronnen van een derde partij of een fout in de "
+"pakketbeheerder. Het handmatig vernieuwen van de updates zou dit probleem "
+"mogelijk kunnen verhelpen."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -617,286 +695,310 @@ msgstr "Het bijwerken van “%s” is mislukt"
 msgid "Refresh Updates"
 msgstr "Controleer op updates"
 
-#: src/Views/AppInfoView.vala:230
+#: src/Views/AppInfoView.vala:234
 msgid "Illicit Substances"
 msgstr "Illegale middelen"
 
-#: src/Views/AppInfoView.vala:231
+#: src/Views/AppInfoView.vala:235
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Bevat verwijzingen naar alcohol, verdovende middelen of tabak"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:240
 msgid "Sex & Nudity"
 msgstr "Seks & naaktheid"
 
-#: src/Views/AppInfoView.vala:237
+#: src/Views/AppInfoView.vala:241
 msgid "Adult nudity or sexual themes"
 msgstr "Naaktheid of seksuele thema's"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:246
 msgid "Offensive Language"
 msgstr "Aanstootgevend taalgebruik"
 
-#: src/Views/AppInfoView.vala:243
+#: src/Views/AppInfoView.vala:247
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr "Aanstootgevend taalgebruik, discriminerend taalgebruik of humor voor volwassenen"
+msgstr ""
+"Aanstootgevend taalgebruik, discriminerend taalgebruik of humor voor "
+"volwassenen"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:252
 msgid "Gambling"
 msgstr "Gokken"
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:253
 msgid "Realistic or participatory gambling"
 msgstr "Realistisch of participatief gokken"
 
-#: src/Views/AppInfoView.vala:273
-msgid "Non-Curated"
-msgstr "Niet-gecureerd"
+#: src/Views/AppInfoView.vala:277
+msgid "Made for elementary OS"
+msgstr "Gemaakt voor elementary OS"
 
-#: src/Views/AppInfoView.vala:274
-msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr "Niet gecontroleerd door elementary op veiligheid, privacy of systeemintegratie"
+#: src/Views/AppInfoView.vala:278
+msgid "Reviewed by elementary for security, privacy, and system integration"
+msgstr ""
+"Gecontroleerd door elementary op veiligheid, privacy en systeemintegratie"
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:307
 msgid "May Not Be Translated"
 msgstr "Is mogelijk niet vertaald"
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:308
 msgid "This app does not provide language information"
 msgstr "Deze app geeft geen taalinformatie vrij"
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:315
 msgid "Not Translated"
 msgstr "Niet vertaald"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:316
 msgid "This app is not available in your language"
 msgstr "Deze app is niet beschikbaar in uw taal"
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:323
 msgid "Not Fully Translated"
 msgstr "Niet volledig vertaald"
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:324
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Deze app is voor %i%% vertaald naar uw taal"
 
-#: src/Views/AppInfoView.vala:340
+#: src/Views/AppInfoView.vala:348
 msgid "Conflict"
 msgstr "Conflict"
 
-#: src/Views/AppInfoView.vala:341
+#: src/Views/AppInfoView.vala:349
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Afbeelding van onveilige situaties of gewelddadige conflicten"
 
-#: src/Views/AppInfoView.vala:354
+#: src/Views/AppInfoView.vala:362
 msgid "Violence"
 msgstr "Geweld"
 
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:367
 msgid "Fantasy Violence"
 msgstr "Fantasiegeweld"
 
-#: src/Views/AppInfoView.vala:364
+#: src/Views/AppInfoView.vala:372
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Grafisch geweld, bloedvergieten of dood"
 
-#: src/Views/AppInfoView.vala:408
+#: src/Views/AppInfoView.vala:416
 msgid "Multiplayer"
 msgstr "Multiplayer"
 
-#: src/Views/AppInfoView.vala:409
+#: src/Views/AppInfoView.vala:417
 msgid "Online play with other people"
 msgstr "Online samen spelen met andere mensen"
 
-#: src/Views/AppInfoView.vala:425
+#: src/Views/AppInfoView.vala:433
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Ongemodereerde Audio, Video of Tekst communicatie met andere mensen"
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:435
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Gemodereerde Audio, Video of Tekst communicatie met andere mensen"
 
-#: src/Views/AppInfoView.vala:431
+#: src/Views/AppInfoView.vala:439
 msgid "Online Interactions"
 msgstr "Online interactie"
 
-#: src/Views/AppInfoView.vala:441
+#: src/Views/AppInfoView.vala:449
 msgid "Location Sharing"
 msgstr "Locatie delen"
 
-#: src/Views/AppInfoView.vala:442
+#: src/Views/AppInfoView.vala:450
 msgid "Other people can see your real-world location"
 msgstr "Andere mensen kunnen uw werkelijke locatie zien"
 
-#: src/Views/AppInfoView.vala:454
+#: src/Views/AppInfoView.vala:462
 msgid "Collects anonymous usage data"
 msgstr "Verzameld anonieme gebruiksgegevens"
 
-#: src/Views/AppInfoView.vala:457
+#: src/Views/AppInfoView.vala:465
 msgid "Collects usage data that could be used to identify you"
-msgstr "Verzameld gebruiksgegevens die mogelijk kunnen worden gebruikt om u te identificeren"
+msgstr ""
+"Verzameld gebruiksgegevens die mogelijk kunnen worden gebruikt om u te "
+"identificeren"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:470
 msgid "Info Sharing"
 msgstr "Informatie delen"
 
-#: src/Views/AppInfoView.vala:563
+#: src/Views/AppInfoView.vala:571
 msgid "Screenshot Not Available"
 msgstr "Geen schermafbeelding beschikbaar"
 
-#: src/Views/AppInfoView.vala:591
+#: src/Views/AppInfoView.vala:599
 msgid "What's New:"
 msgstr "Wat er nieuw is:"
 
-#: src/Views/AppInfoView.vala:618
+#: src/Views/AppInfoView.vala:626
 msgid "Extensions:"
 msgstr "Uitbreidingen:"
 
-#: src/Views/AppInfoView.vala:649
+#: src/Views/AppInfoView.vala:657
 msgid "Homepage"
 msgstr "Startpagina"
 
-#: src/Views/AppInfoView.vala:655
+#: src/Views/AppInfoView.vala:663
 msgid "Translate"
 msgstr "Vertalen"
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:669
 msgid "Send Feedback"
 msgstr "Feedback geven"
 
-#: src/Views/AppInfoView.vala:667
+#: src/Views/AppInfoView.vala:675
 msgid "Help"
 msgstr "Hulp"
 
-#: src/Views/AppInfoView.vala:715
+#: src/Views/AppInfoView.vala:723
 msgid "Link copied to clipboard"
 msgstr "Link gekopieerd naar het klembord"
 
-#: src/Views/AppInfoView.vala:727
+#: src/Views/AppInfoView.vala:735
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Ontdek %s in het AppCenter:"
 
-#: src/Views/AppInfoView.vala:735
+#: src/Views/AppInfoView.vala:743
 msgid "Share"
 msgstr "Deel"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:830
 msgid "End of Life"
 msgstr "Levenscyclus beëindigt"
 
-#: src/Views/AppInfoView.vala:828
+#: src/Views/AppInfoView.vala:831
 msgid "May not work as expected or receive security updates"
-msgstr "Kan mogelijk onverwacht gedrag vertonen of geen beveiligingsupdates ontvangen"
+msgstr ""
+"Kan mogelijk onverwacht gedrag vertonen of geen beveiligingsupdates ontvangen"
 
-#: src/Views/AppInfoView.vala:834
+#: src/Views/AppInfoView.vala:837
 msgid "Outdated"
 msgstr "Verouderd"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:838
 msgid "May not work as expected or support the latest features"
-msgstr "Kan mogelijk onverwacht gedrag vertonen of niet beschikken over de nieuwste functionaliteit"
+msgstr ""
+"Kan mogelijk onverwacht gedrag vertonen of niet beschikken over de nieuwste "
+"functionaliteit"
 
-#: src/Views/AppInfoView.vala:843
+#: src/Views/AppInfoView.vala:846
 msgid "Unstable"
 msgstr "Onstabiel"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:847
 #, c-format
-msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
-msgstr "Gemaakt voor een onstabiele versie van %s; kan mogelijk grote fouten bevatten. Het gebruik ervan wordt afgeraden op een productiesysteem."
+msgid ""
+"Built for an unstable version of %s; may contain major issues. Not "
+"recommended for use on a production system."
+msgstr ""
+"Gemaakt voor een onstabiele versie van %s; kan mogelijk grote fouten "
+"bevatten. Het gebruik ervan wordt afgeraden op een productiesysteem."
 
-#: src/Views/AppInfoView.vala:857
+#: src/Views/AppInfoView.vala:860
 msgid "Insecure Sandbox"
 msgstr "Onveilige sandbox"
 
-#: src/Views/AppInfoView.vala:858
+#: src/Views/AppInfoView.vala:861
 msgid "Can ignore or modify its own system permissions"
 msgstr "Kan zijn eigen systeemrechten negeren of aanpassen"
 
-#: src/Views/AppInfoView.vala:867
+#: src/Views/AppInfoView.vala:870
 msgid "System Folder Access"
 msgstr "Toegang tot de systeemmap"
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:871
 msgid "Including everyone's Home folders, but not including system internals"
-msgstr "Inclusief de Persoonlijke mappen van alle gebruikers, met uitzondering interne systeemonderdelen"
+msgstr ""
+"Inclusief de Persoonlijke mappen van alle gebruikers, met uitzondering "
+"interne systeemonderdelen"
 
-#: src/Views/AppInfoView.vala:875
+#: src/Views/AppInfoView.vala:878
 msgid "Home Folder Access"
 msgstr "Toegang tot Persoonlijke map"
 
-#: src/Views/AppInfoView.vala:876
-msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
-msgstr "Inclusief alle documenten, downloads, muziek, foto's, video's, en alle verborgen mappen"
+#: src/Views/AppInfoView.vala:879
+msgid ""
+"Including all documents, downloads, music, pictures, videos, and any hidden "
+"folders"
+msgstr ""
+"Inclusief alle documenten, downloads, muziek, foto's, video's, en alle "
+"verborgen mappen"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:888
 msgid "Legacy Autostart"
 msgstr "Verouderde autostart"
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:889
 msgid "Can automatically start up and run in the background without asking"
-msgstr "Kan automatisch starten en op de achtergrond draaien zonder toestemming te vragen"
+msgstr ""
+"Kan automatisch starten en op de achtergrond draaien zonder toestemming te "
+"vragen"
 
-#: src/Views/AppInfoView.vala:895
+#: src/Views/AppInfoView.vala:898
 msgid "Location Access"
 msgstr "Locatietoegang"
 
-#: src/Views/AppInfoView.vala:896
+#: src/Views/AppInfoView.vala:899
 msgid "Can see your precise location at any time without asking"
-msgstr "Kan altijd uw exacte locatie achterhalen zonder u om toestemming te vragen"
+msgstr ""
+"Kan altijd uw exacte locatie achterhalen zonder u om toestemming te vragen"
 
-#: src/Views/AppInfoView.vala:905
+#: src/Views/AppInfoView.vala:908
 msgid "Legacy Notifications"
 msgstr "Verouderde notificaties"
 
-#: src/Views/AppInfoView.vala:906
-msgid "Bubbles may not be configurable or appear in notification center as “Other”"
-msgstr "Bubbels zijn mogelijk niet configureerbaar of verschijnen in het meldingscentrum als \"Andere\""
+#: src/Views/AppInfoView.vala:909
+msgid ""
+"Bubbles may not be configurable or appear in notification center as “Other”"
+msgstr ""
+"Bubbels zijn mogelijk niet configureerbaar of verschijnen in het "
+"meldingscentrum als \"Andere\""
 
-#: src/Views/AppInfoView.vala:915
+#: src/Views/AppInfoView.vala:918
 msgid "System Settings Access"
 msgstr "Toegang tot systeeminstellingen"
 
-#: src/Views/AppInfoView.vala:916
+#: src/Views/AppInfoView.vala:919
 msgid "Can read and modify system settings"
 msgstr "Kan de systeeminstellingen lezen en aanpassen"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1156
+#: src/Views/AppInfoView.vala:1144
 msgid "Public Domain"
 msgstr "Publiek domein"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1159
+#: src/Views/AppInfoView.vala:1147
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://nl.wikipedia.org/wiki/Publiek_domein"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1164
+#: src/Views/AppInfoView.vala:1152
 msgid "Free Software"
 msgstr "Vrije software"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1167
+#: src/Views/AppInfoView.vala:1155
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1171
+#: src/Views/AppInfoView.vala:1159
 msgid "Proprietary"
 msgstr "Propriëtair"
 
-#: src/Views/AppInfoView.vala:1174
+#: src/Views/AppInfoView.vala:1162
 msgid "Unknown License"
 msgstr "Onbekende licentie"
 
-#: src/Views/AppInfoView.vala:1266
+#: src/Views/AppInfoView.vala:1272
 msgid "Fund"
 msgstr "Financier"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1278
 msgid "Fund the development of this app"
 msgstr "Financier de ontwikkeling van deze app"
 
@@ -906,7 +1008,9 @@ msgstr "Updates zoeken"
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr "Een lijst met beschikbare updates voor het systeem en geïnstalleerde apps downloaden"
+msgstr ""
+"Een lijst met beschikbare updates voor het systeem en geïnstalleerde apps "
+"downloaden"
 
 #: src/Views/AppListUpdateView.vala:76
 msgid "Update All"
@@ -943,7 +1047,7 @@ msgstr "Stuurprogramma's"
 msgid "Other Apps by %s"
 msgstr "Andere applicaties van %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:54
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:58
 msgid "Recently Updated"
 msgstr "Onlangs bijgewerkt"
 
@@ -955,87 +1059,105 @@ msgstr "Betaalde apps"
 msgid "Free Apps"
 msgstr "Gratis apps"
 
-#: src/Views/Homepage.vala:77
+#: src/Views/Homepage.vala:81
 msgid "Categories"
 msgstr "Categorieën"
 
-#: src/Views/Homepage.vala:103
+#: src/Views/Homepage.vala:107
 msgid "Accessories"
 msgstr "Hulpmiddelen"
 
-#: src/Views/Homepage.vala:104
+#: src/Views/Homepage.vala:108
 msgid "Audio"
 msgstr "Geluid"
 
-#: src/Views/Homepage.vala:105
+#: src/Views/Homepage.vala:109
 msgid "Communication"
 msgstr "Communicatie"
 
-#: src/Views/Homepage.vala:114
+#: src/Views/Homepage.vala:118
 msgid "Development"
 msgstr "Ontwikkeling"
 
-#: src/Views/Homepage.vala:124
+#: src/Views/Homepage.vala:128
 msgid "Education"
 msgstr "Onderwijs"
 
-#: src/Views/Homepage.vala:125
+#: src/Views/Homepage.vala:129
 msgid "Finance"
 msgstr "Financieel"
 
-#: src/Views/Homepage.vala:130
+#: src/Views/Homepage.vala:134
 msgid "Graphics"
 msgstr "Beeld"
 
-#: src/Views/Homepage.vala:139
+#: src/Views/Homepage.vala:143
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:147
 msgid "Math, Science, & Engineering"
 msgstr "Wiskunde, Wetenschap & Techniek"
 
-#: src/Views/Homepage.vala:162
+#: src/Views/Homepage.vala:166
 msgid "Media Production"
 msgstr "Media"
 
-#: src/Views/Homepage.vala:169
+#: src/Views/Homepage.vala:173
 msgid "Office"
 msgstr "Kantoor"
 
-#: src/Views/Homepage.vala:176
+#: src/Views/Homepage.vala:180
 msgid "System"
 msgstr "Systeem"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:184
 msgid "Universal Access"
 msgstr "Toegankelijkheid"
 
-#: src/Views/Homepage.vala:181
+#: src/Views/Homepage.vala:185
 msgid "Video"
 msgstr "Video"
 
-#: src/Views/Homepage.vala:186
+#: src/Views/Homepage.vala:190
 msgid "Writing & Language"
 msgstr "Schrijven & Taal"
 
-#: src/Views/Homepage.vala:196
+#: src/Views/Homepage.vala:200
 msgid "Privacy & Security"
 msgstr "Privacy & veiligheid"
 
-#: src/Views/Homepage.vala:213
+#: src/Views/Homepage.vala:217
 msgid "Home"
 msgstr "Startpagina"
 
-#: src/Views/Homepage.vala:454
+#: src/Views/Homepage.vala:231
+msgid "Browse and manage apps"
+msgstr "Apps bekijken en beheren"
+
+#: src/Views/Homepage.vala:232
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
+msgstr ""
+"De open source, betaal-wat-je-wilt app store van elementary. Beoordeeld en "
+"samengesteld door elementary om een native, privacy respecterende en veilige "
+"ervaring te garanderen. Blader door categorieën of zoek en ontdek nieuwe "
+"apps. AppCenter wordt ook gebruikt voor het updaten van je systeem naar de "
+"nieuwste en beste versie voor nieuwe functies en verbeteringen."
+
+#: src/Views/Homepage.vala:460
 msgid "Fun & Games"
 msgstr "Plezier & Spelletjes"
 
-#: src/Views/Homepage.vala:479
+#: src/Views/Homepage.vala:485
 msgid "Fun &"
 msgstr "Plezier &"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:491
 msgid "Games"
 msgstr "Spellen"
 
@@ -1049,8 +1171,11 @@ msgstr "Geen apps gevonden"
 
 #: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
 #, c-format
-msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr "Probeer een andere zoekterm. U kunt ook Flatpak apps sideloaden bijvoorbeeld vanaf %s"
+msgid ""
+"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+"Probeer een andere zoekterm. U kunt ook Flatpak apps sideloaden bijvoorbeeld "
+"vanaf %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
@@ -1062,6 +1187,18 @@ msgstr "Zoeken"
 msgid "The search term must be at least 3 characters long."
 msgstr "De zoekterm moet minimaal 3 karakters lang zijn."
 
+#: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
+msgid "Free"
+msgstr "Gratis"
+
+#: src/Widgets/ActionStack.vala:120 src/Widgets/HumbleButton.vala:82
+msgid "Install"
+msgstr "Installeren"
+
+#: src/Widgets/ActionStack.vala:137
+msgid "Update"
+msgstr "Bijwerken"
+
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
 msgstr "Kaartnummer"
@@ -1069,16 +1206,6 @@ msgstr "Kaartnummer"
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
 msgstr "Vereist betalingen, die niet ingeschakeld zijn"
-
-#: src/Widgets/HumbleButton.vala:80
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:136
-msgid "Free"
-msgstr "Gratis"
-
-#: src/Widgets/HumbleButton.vala:82
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:138
-msgid "Install"
-msgstr "Installeren"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:118
@@ -1134,7 +1261,8 @@ msgstr "Kopieer link"
 
 #: src/Widgets/SizeLabel.vala:32
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr "De werkelijke bestandsgrootte van de download is waarschijnlijk kleiner"
+msgstr ""
+"De werkelijke bestandsgrootte van de download is waarschijnlijk kleiner"
 
 #: src/Widgets/SizeLabel.vala:33
 msgid "Only the parts of apps and updates that are needed will be downloaded."
@@ -1145,31 +1273,35 @@ msgstr "Alleen de benodigde gegevens van de apps en updates worden gedownload."
 msgid "Up to %s"
 msgstr "Tot %s"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
-msgid "Update"
-msgstr "Bijwerken"
-
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
 msgstr "Opmerkingen bij uitgave"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:132
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:134
 #, c-format
 msgid "What's new in %s"
 msgstr "Wat is er nieuw in %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:154
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "Sluiten"
 
+#~ msgid "Non-Curated"
+#~ msgstr "Niet-gecureerd"
+
 #~ msgid "A restart is required to finish installing updates"
-#~ msgstr "U zult opnieuw moeten opstarten om de installatie van de updates af te ronden"
+#~ msgstr ""
+#~ "U zult opnieuw moeten opstarten om de installatie van de updates af te "
+#~ "ronden"
 
 #~ msgid "Restart Now"
 #~ msgstr "Nu opnieuw opstarten"
 
-#~ msgid "Requesting a restart failed. Restart manually to finish installing updates"
-#~ msgstr "De aanvraag om het apparaat te herstart is mislukt. Herstart het apparaat handmatig om het installeren van de updates af te ronden"
+#~ msgid ""
+#~ "Requesting a restart failed. Restart manually to finish installing updates"
+#~ msgstr ""
+#~ "De aanvraag om het apparaat te herstart is mislukt. Herstart het apparaat "
+#~ "handmatig om het installeren van de updates af te ronden"
 
 #~ msgid "Automatic App Updates"
 #~ msgstr "Automatische app-updates"
@@ -1219,14 +1351,20 @@ msgstr "Sluiten"
 #~ msgid "Install non-curated app?"
 #~ msgstr "Niet-gecureerde app installeren?"
 
-#~ msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-#~ msgstr "“%s” wordt niet gecureerd door elementary en is niet beoordeeld op veiligheid, privacy of systeemintegratie."
+#~ msgid ""
+#~ "“%s” is not curated by elementary and has not been reviewed for security, "
+#~ "privacy, or system integration."
+#~ msgstr ""
+#~ "“%s” wordt niet gecureerd door elementary en is niet beoordeeld op "
+#~ "veiligheid, privacy of systeemintegratie."
 
 #~ msgid "It may not receive bug fix or feature updates"
 #~ msgstr "Mogelijk kan het geen bugfixes of functie-updates krijgen"
 
 #~ msgid "It may access or change system or personal files without permission"
-#~ msgstr "Mogelijkerwijs kan het zonder toestemming toegang krijgen tot systeem- en persoonlijke bestanden of ze aanpassen"
+#~ msgstr ""
+#~ "Mogelijkerwijs kan het zonder toestemming toegang krijgen tot systeem- en "
+#~ "persoonlijke bestanden of ze aanpassen"
 
 #~ msgid "Show non-curated warnings"
 #~ msgstr "Toon waarschuwingen voor niet-gecureerde applicaties"
@@ -1243,8 +1381,14 @@ msgstr "Sluiten"
 #~ msgid "“%s” contains explicit content"
 #~ msgstr "“%s” bevat expliciete inhoud"
 
-#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-#~ msgstr "“%s” bevat mogelijk inhoud die alleen geschikt is voor volwassenen of inhoud die gevoelig of storend is. elementary beoordeelt of ondersteunt de inhoud van deze app niet."
+#~ msgid ""
+#~ "“%s” may contain content only suitable for adults or that may be "
+#~ "sensitive or disturbing. In general, elementary does not review or "
+#~ "endorse the contents of this app."
+#~ msgstr ""
+#~ "“%s” bevat mogelijk inhoud die alleen geschikt is voor volwassenen of "
+#~ "inhoud die gevoelig of storend is. elementary beoordeelt of ondersteunt "
+#~ "de inhoud van deze app niet."
 
 #~ msgid "Show content warnings"
 #~ msgstr "Toon inhoudswaarschuwingen"
@@ -1260,7 +1404,9 @@ msgstr "Sluiten"
 #~ msgstr "Een open toepassingenwinkel waarbij u de prijzen bepaalt"
 
 #~ msgid "Get the apps that you need at a price you can afford."
-#~ msgstr "Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt veroorloven."
+#~ msgstr ""
+#~ "Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt "
+#~ "veroorloven."
 
 #~ msgid "Trending"
 #~ msgstr "Populair"
@@ -1281,7 +1427,9 @@ msgstr "Sluiten"
 #~ msgstr "Weet u zeker dat u opnieuw wilt opstarten?"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr "Dit zal alle openstaande toepassingen sluiten en dit apparaat opnieuw opstarten."
+#~ msgstr ""
+#~ "Dit zal alle openstaande toepassingen sluiten en dit apparaat opnieuw "
+#~ "opstarten."
 
 #~ msgid "Restart"
 #~ msgstr "Opnieuw opstarten"
@@ -1325,7 +1473,8 @@ msgstr "Sluiten"
 #~ "  kay van der Zander https://launchpad.net/~kay20"
 
 #~ msgid "The pin number is incorrect. Please try again using the correct pin."
-#~ msgstr "De pincode is onjuist. Probeert u het nogmaals met de juiste pincode."
+#~ msgstr ""
+#~ "De pincode is onjuist. Probeert u het nogmaals met de juiste pincode."
 
 #~ msgid "by %s"
 #~ msgstr "door %s"

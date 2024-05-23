@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 18:35+0000\n"
-"PO-Revision-Date: 2023-09-17 04:08+0000\n"
+"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"PO-Revision-Date: 2024-05-16 05:45+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -12,17 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
 msgstr "מרכז היישומים"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:4
+#: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "עיון ביישומים וניהולם"
+msgstr "עיון וניהול יישומים"
 
 #: data/appcenter.metainfo.xml.in:14
 msgid ""
@@ -49,36 +50,55 @@ msgstr "להתעדכן כל הזמן"
 msgid "Pay what you can to support developers"
 msgstr "תשלום כראות עיניך לתמיכה במפתחים"
 
-#: data/appcenter.metainfo.xml.in:61
+#: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:116 data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:93
+#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:141
 msgid "New features:"
 msgstr "יכולות חדשות:"
 
-#: data/appcenter.metainfo.xml.in:70
-msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr "להזהיר כאשר יישומונים משתמשים בהפעלה אוטומטית או התראות מיושנות"
+#: data/appcenter.metainfo.xml.in:72
+msgid "Manage autostart in System Settings → Applications"
+msgstr "ניהול עלייה אוטומטית דרך הגדרות ← יישוימם"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:92
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:121
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:97
+#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:146
 msgid "Other Improvements:"
 msgstr "שיפורים נוספים:"
 
-#: data/appcenter.metainfo.xml.in:74
-msgid "Fix flickering on AppInfo views when getting install size"
-msgstr "תוקן הבהוב בתצוגות מידע על היישומון בעת אחזור גודל התקנה"
+#: data/appcenter.metainfo.xml.in:76
+msgid "Automatic app updates by default"
+msgstr "עדכוני יישומים אוטומטיים כברירת מחדל"
 
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:109 data/appcenter.metainfo.xml.in:123
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:77
+msgid "OS Updates have moved to System Settings"
+msgstr "עדכוני מערכת ההפעלה עברו להגדרות המערכת"
+
+#: data/appcenter.metainfo.xml.in:78
+msgid ""
+"Badge apps made for elementary OS instead of badging apps from other remotes"
+msgstr ""
+"יישומי עיטור שנוצרו עבור elementary OS במקום הוספת עיטורים על יישומים "
+"ממקורות זרים"
+
+#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:100
+#: data/appcenter.metainfo.xml.in:122 data/appcenter.metainfo.xml.in:134
+#: data/appcenter.metainfo.xml.in:148
 msgid "Updated translations"
 msgstr "תרגומים עודכנו"
 
-#: data/appcenter.metainfo.xml.in:90
+#: data/appcenter.metainfo.xml.in:95
+msgid "Warn when apps use legacy Autostart, Notifications"
+msgstr "להזהיר כאשר יישומונים משתמשים בהפעלה אוטומטית או התראות מיושנות"
+
+#: data/appcenter.metainfo.xml.in:99
+msgid "Fix flickering on AppInfo views when getting install size"
+msgstr "תוקן הבהוב בתצוגות מידע על היישומון בעת אחזור גודל התקנה"
+
+#: data/appcenter.metainfo.xml.in:115
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -86,24 +106,24 @@ msgstr ""
 "להזהיר כאשר ליישומים יש גישה לתיקיית הבית או לתיקיות המערכת, מיקום, הגדרות "
 "או שיש להם ארגז חול לא מאובטח."
 
-#: data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:119
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "הריווח והשוליים הודקו בתצוגות פרטי יישומים"
 
-#: data/appcenter.metainfo.xml.in:95
+#: data/appcenter.metainfo.xml.in:120
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "הצגת כרזות מילוי מקום בעמוד הבית בזמן הטעינה"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:121
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "לא להציג יישומים שאינם של מרכז היישומים תחת כותרת נפרדת בתצוגות קטגוריות"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:143
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "מוצעת אפשרות תיקון אם עדכון Flatpak נכשל"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:144
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -111,21 +131,13 @@ msgstr ""
 "להציג הודעה בתצוגת העדכונים כאשר עדכני, כולל מתי בוצעה בדיקה לאיתור עדכונים "
 "חדשים"
 
-#: data/appcenter.metainfo.xml.in:135
-msgid "Show when an app isn't available in your language"
-msgstr "להציג מתי יישום לא זמין בשפה שלך"
-
-#: data/io.elementary.appcenter.desktop.in.in:3
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 "install;uninstall;remove;catalogue;store;apps;updates;software;תכנה;התקנה;"
 "קטלוג;עדכון;עדכונים;הסרה;יישומים;יישום;חנות;"
 
-#: data/io.elementary.appcenter.desktop.in.in:18
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "חיפוש עדכונים"
 
@@ -144,6 +156,12 @@ msgstr "תיקון מקורות תוכנה"
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
 msgstr "נדרש אימות כדי לתקן מקורות תוכנה"
+
+#~ msgid "Show when an app isn't available in your language"
+#~ msgstr "להציג מתי יישום לא זמין בשפה שלך"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
 
 #~ msgid "Install OS Updates offline"
 #~ msgstr "להתקין עדכוני מערכת הפעלה ללא אינטרנט"
