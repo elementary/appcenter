@@ -370,7 +370,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (navigation_view.visible_page is Homepage) {
             view_mode_revealer.reveal_child = true;
-            configure_search (true, _("Search Apps"), "");
+            configure_search (true);
         } else if (navigation_view.visible_page is CategoryView) {
             var current_category = ((CategoryView) navigation_view.visible_page).category;
             view_mode_revealer.reveal_child = false;
