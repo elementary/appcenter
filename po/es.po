@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 21:24+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Lucas Dondo <lucasdondo203@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -543,7 +543,7 @@ msgstr "Reparar"
 
 #: src/Dialogs/RepairFailDialog.vala:24
 msgid "Failed to Repair"
-msgstr "Falló al Reparar"
+msgstr "No se pudo reparar"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid ""
@@ -680,17 +680,14 @@ msgid "Try Again"
 msgstr "Intentar nuevamente"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-#, fuzzy
-#| msgid ""
-#| "This may have been caused by external, manually added software "
-#| "repositories or a corrupted sources file."
 msgid ""
 "This may have been caused by sideloaded or manually compiled software, a "
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
 msgstr ""
-"Esto pudo haberlo causado la adición manual de repositorios de programas o "
-"un daño en el archivo «sources»."
+"Esto pudo haber sido causado por la carga lateral de aplicaciones o su "
+"compilación manual, una fuente de terceros o un error en el gestor de "
+"paquetes. Buscando actualizaciones manualmente se podría solucionar el error."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
