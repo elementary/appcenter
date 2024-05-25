@@ -22,13 +22,14 @@
 # Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>, 2024.
 # Ezequiel Veliz <ezequiel_veliz@hotmail.com>, 2024.
 # Lucas Dondo <lucasdondo203@gmail.com>, 2024.
+# Jesus Lanau Fantova <jesuslanaufantova@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 19:02+0000\n"
-"Last-Translator: Jorge Garcia Rodriguez <jorge@immutable.pro>\n"
+"Last-Translator: Jesus Lanau Fantova <jesuslanaufantova@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -138,7 +139,7 @@ msgstr "Abrir"
 
 #: src/MainWindow.vala:522
 msgid "Getting app information…"
-msgstr "Obteniendo información de la app…"
+msgstr "Obteniendo información de la app"
 
 #: src/MainWindow.vala:525
 msgid "Getting download size…"
