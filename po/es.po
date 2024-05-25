@@ -948,7 +948,7 @@ msgstr "Acceso a la ubicación"
 
 #: src/Views/AppInfoView.vala:899
 msgid "Can see your precise location at any time without asking"
-msgstr ""
+msgstr "Puede ver tu ubicación precisa en todo momento sin preguntar"
 
 #: src/Views/AppInfoView.vala:908
 msgid "Legacy Notifications"
