@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:36+0000\n"
-"Last-Translator: Gabriel Perren <gabrielperren@gmail.com>\n"
+"PO-Revision-Date: 2024-05-25 22:39+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
 "Language: es\n"
@@ -75,16 +75,19 @@ msgstr "Otras mejoras:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Actualización automática de aplicaciones por defecto"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
 msgstr ""
+"Las actualizaciones del sistema se han movido a la Configuración del sistema"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Las aplicaciones que se les otorgue insignia estarán hechas para elementary "
+"OS en vez de otros sistemas"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:100
 #: data/appcenter.metainfo.xml.in:122 data/appcenter.metainfo.xml.in:134
@@ -95,33 +98,40 @@ msgstr "Traducciones actualizadas"
 #: data/appcenter.metainfo.xml.in:95
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Ahora se advierte cuando las aplicaciones utilizan el Inicio automático "
+"heredado y las Notificaciones heredadas"
 
 #: data/appcenter.metainfo.xml.in:99
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Arreglado el parpadeo de la vista de «Información de aplicación» cuando se "
+"obtiene el tamaño de la instalación"
 
 #: data/appcenter.metainfo.xml.in:115
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Ahora se advierte cuando las aplicaciones tengan acceso a la Carpeta "
+"personal o a las carpetas del sistema, acceso a la ubicación, acceso a la "
+"configuración del sistema o tienen un espacio aislado inseguro."
 
 #: data/appcenter.metainfo.xml.in:119
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
-"Se truncan los nombres extensos en las vistas de información de aplicación"
+"Ajustes de espaciado y márgenes de la vista de «Información de aplicación»"
 
 #: data/appcenter.metainfo.xml.in:120
-#, fuzzy
-#| msgid "Navigate banners on the home page with multitouch gestures"
 msgid "Show a placeholder banner on the home page when loading"
-msgstr "Navega por los banners en la página de inicio con gestos multitáctiles"
+msgstr ""
+"Se muestra una imagen temporal en el sitio web principal cuando se está "
+"cargando"
 
 #: data/appcenter.metainfo.xml.in:121
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Ya no se listan aplicaciones que no pertenezcan al Centro de aplicaciones "
+"bajo un encabezado diferente en la vista de categorías"
 
 #: data/appcenter.metainfo.xml.in:143
 msgid "Offer a Repair option if Flatpak updates fail"
