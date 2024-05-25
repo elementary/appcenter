@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:59+0000\n"
-"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
+"PO-Revision-Date: 2024-05-25 22:13+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -967,7 +967,7 @@ msgstr "Acceso a la configuración del sistema"
 
 #: src/Views/AppInfoView.vala:919
 msgid "Can read and modify system settings"
-msgstr "Puede leer y modificar las configuraciones del sistema"
+msgstr "Puede leer y modificar la configuración del sistema"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1144
@@ -991,7 +991,7 @@ msgstr "https://www.gnu.org/philosophy/free-sw.es.html"
 
 #: src/Views/AppInfoView.vala:1159
 msgid "Proprietary"
-msgstr "Privativo"
+msgstr "Propietario"
 
 #: src/Views/AppInfoView.vala:1162
 msgid "Unknown License"
@@ -1003,17 +1003,17 @@ msgstr "Financiar"
 
 #: src/Views/AppInfoView.vala:1278
 msgid "Fund the development of this app"
-msgstr "Financiar el desarrollo de esta aplicación"
+msgstr "Financie el desarrollo de esta aplicación"
 
 #: src/Views/AppListUpdateView.vala:46
 msgid "Checking for Updates"
-msgstr "Buscando actualizaciones"
+msgstr "Comprobando actualizaciones"
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 "Descargando una lista de actualizaciones disponibles para el sistema y las "
-"aplicaciones"
+"aplicaciones instaladas"
 
 #: src/Views/AppListUpdateView.vala:76
 msgid "Update All"
@@ -1039,7 +1039,7 @@ msgstr[1] "%u actualizaciones disponibles"
 #: src/Views/AppListUpdateView.vala:216
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
+msgstr "Todo se encuentra al día. Última revisión %s."
 
 #: src/Views/AppListUpdateView.vala:334
 msgid "Drivers"
@@ -1048,7 +1048,7 @@ msgstr "Controladores"
 #: src/Views/AuthorView.vala:31
 #, c-format
 msgid "Other Apps by %s"
-msgstr "Otras aplicaciones de %s"
+msgstr "Otras aplicaciones por %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:58
 msgid "Recently Updated"
