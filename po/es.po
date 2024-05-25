@@ -27,8 +27,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 18:54+0000\n"
-"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
+"PO-Revision-Date: 2024-05-25 18:58+0000\n"
+"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -119,7 +119,7 @@ msgstr "Configuración de red…"
 
 #: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
-msgstr "Ejecutando en modo Demostración"
+msgstr "Corriendo en modo Demo"
 
 #: src/MainWindow.vala:231
 #, c-format
