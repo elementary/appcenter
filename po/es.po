@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 19:04+0000\n"
-"Last-Translator: Jesus <jesuscopc@gmail.com>\n"
+"PO-Revision-Date: 2024-05-25 19:05+0000\n"
+"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -157,7 +157,7 @@ msgstr "Instalando"
 
 #: src/MainWindow.vala:537
 msgid "Installing updates…"
-msgstr "Instalando actualizaciones…"
+msgstr "Instalando actualizaciones,,,"
 
 #: src/MainWindow.vala:540
 msgid "Uninstalling…"
