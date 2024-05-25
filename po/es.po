@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:15+0000\n"
-"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
+"PO-Revision-Date: 2024-05-25 22:22+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -1128,7 +1128,7 @@ msgstr "Escritura e idiomas"
 
 #: src/Views/Homepage.vala:200
 msgid "Privacy & Security"
-msgstr "Privacidad y Seguridad"
+msgstr "Privacidad y seguridad"
 
 #: src/Views/Homepage.vala:217
 msgid "Home"
@@ -1136,7 +1136,7 @@ msgstr "Inicio"
 
 #: src/Views/Homepage.vala:231
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Explora y administra aplicaciones"
 
 #: src/Views/Homepage.vala:232
 msgid ""
@@ -1146,12 +1146,16 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
+"La tienda de aplicaciones de elementary, de código abierto y que permite que "
+"pagues lo que tú quieras. Revisada y verificada por elementary para "
+"garantizar una experiencia nativa, segura y que respete tu privacidad. "
+"Explora por categorías, o busca y descubre nuevas aplicaciones. El Centro de "
+"aplicaciones también se utiliza para actualizar su sistema a la versión más "
+"reciente con las características y correcciones más recientes."
 
 #: src/Views/Homepage.vala:460
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Juegos"
+msgstr "Diversión y juegos"
 
 #: src/Views/Homepage.vala:485
 msgid "Fun &"
