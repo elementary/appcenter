@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:29+0000\n"
+"PO-Revision-Date: 2024-05-25 21:37+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -687,8 +687,7 @@ msgid ""
 msgstr ""
 "Esto puede deberse a una instalación local o compilación manual de una "
 "aplicación, una fuente de aplicaciones de terceros, o un error en el gestor "
-"de paquetes. Refrescar el panel de actualizaciones podría solucionar el "
-"problema."
+"de paquetes. Refrescar las actualizaciones podría solucionar el problema."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -701,7 +700,7 @@ msgstr "No se pudo actualizar «%s»"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
-msgstr "Buscar Actualizaciones"
+msgstr "Refrescar actualizaciones"
 
 #: src/Views/AppInfoView.vala:234
 msgid "Illicit Substances"
@@ -709,7 +708,7 @@ msgstr "Sustancias ilícitas"
 
 #: src/Views/AppInfoView.vala:235
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr "Presencia o referencias a alcohol, narcóticos o tabaco"
+msgstr "Presencia o referencias al alcohol, narcóticos o tabaco"
 
 #: src/Views/AppInfoView.vala:240
 msgid "Sex & Nudity"
@@ -717,7 +716,7 @@ msgstr "Sexo y desnudez"
 
 #: src/Views/AppInfoView.vala:241
 msgid "Adult nudity or sexual themes"
-msgstr "Desnudez de adultos o temas sexuales"
+msgstr "Desnudez adulta o temas sexuales"
 
 #: src/Views/AppInfoView.vala:246
 msgid "Offensive Language"
