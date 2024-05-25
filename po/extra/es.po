@@ -50,7 +50,7 @@ msgstr "Mantente al día"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Paga lo que puedas para apoyar a los desarrolladores"
 
 #: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
