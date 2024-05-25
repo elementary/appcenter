@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 15:48+0000\n"
+"PO-Revision-Date: 2024-05-25 18:51+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 #: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
 #: src/Views/Homepage.vala:230
 msgid "AppCenter"
-msgstr "Centro de aplicaciones"
+msgstr "Centro de Aplicaciones"
 
 #: src/Application.vala:78
 #, c-format
@@ -58,9 +58,9 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
-"El centro de aplicacion se iniciará automaticamente cuando este dispositivo "
-"encienda y se ejecutará cuando se cierre la ventana para que pueda verificar "
-"e instalar actualizaciones automáticamente."
+"El Centro de Aplicaciones se iniciará automáticamente cuando este "
+"dispositivo encienda y se ejecutará cuando se cierre la ventana para que se "
+"puedan comprobar e instalar actualizaciones automáticamente."
 
 #: src/Application.vala:345
 msgid "The app has been installed"
