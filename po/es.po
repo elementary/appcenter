@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 20:58+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -479,10 +479,8 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "La tarjeta proporcionada es de prueba. Utilice una real para proceder."
 
 #: src/Core/UpdateManager.vala:33
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Runtime Updates"
-msgstr "Buscando actualizaciones"
+msgstr "Actualizaciones de tiempo de ejecución"
 
 #: src/Core/UpdateManager.vala:34
 msgid "Updates to app runtimes"
