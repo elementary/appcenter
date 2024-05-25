@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 21:07+0000\n"
-"Last-Translator: Lucas Dondo <lucasdondo203@gmail.com>\n"
+"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -514,13 +514,11 @@ msgstr[0] "Actualización disponible"
 msgstr[1] "Actualizaciones disponibles"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u update is available."
-#| msgid_plural "%u updates are available."
+#, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "Hay %u actualización disponible."
-msgstr[1] "Hay %u actualizaciones disponibles."
+msgstr[0] "Hay %u actualización disponible"
+msgstr[1] "Hay %u actualizaciones disponibles"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -544,10 +542,8 @@ msgid "Repair"
 msgstr "Reparar"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "No se pudieron recuperar las actualizaciones"
+msgstr "Falló al Reparar"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
 msgid ""
