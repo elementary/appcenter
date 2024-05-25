@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:33+0000\n"
+"PO-Revision-Date: 2024-05-25 22:34+0000\n"
 "Last-Translator: gitlares <daniellares@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -46,7 +46,7 @@ msgstr "Descubra nuevas aplicaciones"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Mantengase actualizado"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
