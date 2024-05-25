@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 18:53+0000\n"
+"PO-Revision-Date: 2024-05-25 18:54+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -141,7 +141,7 @@ msgstr "instalar;desinstalar;eliminar;catálogo;tienda;aplicaciones;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Busca actualizaciones"
+msgstr "Buscando Actualizaciones"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
