@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 19:05+0000\n"
-"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
+"PO-Revision-Date: 2024-05-25 20:58+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -178,7 +178,7 @@ msgstr "Esperando"
 
 #: src/Utils.vala:67
 msgid "Running"
-msgstr "En proceso"
+msgstr "Ejecutando"
 
 #: src/Utils.vala:69
 msgid "Querying"
@@ -202,7 +202,7 @@ msgstr "Instalando"
 
 #: src/Utils.vala:79
 msgid "Refreshing software list"
-msgstr "Actualizando lista de programas"
+msgstr "Actualizando lista de aplicaciones"
 
 #: src/Utils.vala:81
 msgid "Installing updates"
@@ -230,7 +230,7 @@ msgstr "Probando los cambios"
 
 #: src/Utils.vala:93
 msgid "Committing changes"
-msgstr "Realizando modificaciones"
+msgstr "Aplicando los cambios"
 
 #: src/Utils.vala:95
 msgid "Requesting data"
@@ -269,7 +269,7 @@ msgstr "Descargando grupos"
 
 #: src/Utils.vala:111
 msgid "Downloading update information"
-msgstr "Descargando información de la actualización"
+msgstr "Descargando información de actualizaciones"
 
 #: src/Utils.vala:113
 msgid "Repackaging files"
@@ -277,11 +277,11 @@ msgstr "Reempaquetando archivos"
 
 #: src/Utils.vala:115
 msgid "Loading cache"
-msgstr "Cargando antememoria"
+msgstr "Cargando el caché"
 
 #: src/Utils.vala:117
 msgid "Scanning applications"
-msgstr "Analizando aplicaciones"
+msgstr "Detectando aplicaciones"
 
 #: src/Utils.vala:119
 msgid "Generating package lists"
@@ -289,15 +289,15 @@ msgstr "Generando listas de paquetes"
 
 #: src/Utils.vala:121
 msgid "Waiting for package manager lock"
-msgstr "Esperando el bloqueo del gestor de paquetes"
+msgstr "Esperando al gestor de paquetes"
 
 #: src/Utils.vala:123
 msgid "Waiting for authentication"
-msgstr "Esperando la autenticación"
+msgstr "Esperando autenticación"
 
 #: src/Utils.vala:125
 msgid "Updating running applications"
-msgstr "Actualizando aplicaciones ejecutadas"
+msgstr "Actualizando aplicaciones en ejecución"
 
 #: src/Utils.vala:127
 msgid "Checking applications in use"
@@ -305,7 +305,7 @@ msgstr "Comprobando aplicaciones en uso"
 
 #: src/Utils.vala:129
 msgid "Checking libraries in use"
-msgstr "Comprobando bibliotecas utilizadas"
+msgstr "Comprobando bibliotecas en uso"
 
 #: src/Utils.vala:131
 msgid "Copying files"
@@ -317,12 +317,12 @@ msgstr "Estado desconocido"
 
 #: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
-msgstr "se están efectuando operaciones en los paquetes"
+msgstr "efectuando operaciones en los paquetes"
 
 #: src/Core/FlatpakBackend.vala:44
 #, c-format
 msgid "%s (system-wide)"
-msgstr "%s (a escala sistema)"
+msgstr "%s (en todo el sistema)"
 
 #: src/Core/FlatpakBackend.vala:1588
 msgid "Uninstalling"
@@ -357,8 +357,7 @@ msgstr "Origen desconocido (no revisadas)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
-"El paquete %s consta como aplicación no instalada en el Centro de "
-"aplicaciones"
+"El paquete %s no está catalogado como instalado en el Centro de Aplicaciones"
 
 #: src/Core/PackageKitBackend.vala:314
 #, c-format
@@ -403,7 +402,7 @@ msgstr ""
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
-"El número CVT es incorrecto. Vuelva a intentarlo utilizando el CVT correcto."
+"El número CVV es incorrecto. Vuelva a intentarlo utilizando el CVV correcto."
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
@@ -454,12 +453,14 @@ msgstr "La cantidad es incorrecta. Pruebe de nuevo con una cantidad válida."
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"El número CVC es incorrecto. Vuelva a intentarlo utilizando el CVC correcto."
+"El número NIP es incorrecto. Vuelva a intentarlo utilizando el NIP correcto."
 
 #: src/Core/Stripe.vala:131
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Se intentó con ese NIP demasiadas veces. Pruebe una tarjeta distinta."
+msgstr ""
+"Hubo demasiados intentos de validación de NIP. Pruebe con una tarjeta "
+"distinta."
 
 #: src/Core/Stripe.vala:151
 msgid ""
@@ -475,8 +476,7 @@ msgstr "Se ha alcanzado el saldo límite de la tarjeta."
 
 #: src/Core/Stripe.vala:157
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"La tarjeta proporcionada es de pruebas. Utilice una real para proceder."
+msgstr "La tarjeta proporcionada es de prueba. Utilice una real para proceder."
 
 #: src/Core/UpdateManager.vala:33
 #, fuzzy
