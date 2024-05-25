@@ -29,8 +29,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 19:03+0000\n"
-"Last-Translator: Jorge Garcia Rodriguez <jorge@immutable.pro>\n"
+"PO-Revision-Date: 2024-05-25 19:04+0000\n"
+"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -148,7 +148,7 @@ msgstr "Obteniendo el tamaño de la descarga…"
 
 #: src/MainWindow.vala:531
 msgid "Checking for updates…"
-msgstr "Buscando actualizaciones…"
+msgstr "Buscando actualizaciones"
 
 #: src/MainWindow.vala:534
 msgid "Installing…"
