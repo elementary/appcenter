@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 18:58+0000\n"
+"PO-Revision-Date: 2024-05-25 19:02+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -119,12 +119,12 @@ msgstr "Configuración de red…"
 
 #: src/MainWindow.vala:230
 msgid "Running in Demo Mode"
-msgstr "Corriendo en modo Demo"
+msgstr "Ejecutando en modo demostración"
 
 #: src/MainWindow.vala:231
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Instale %s para buscar e instalar aplicaciones"
+msgstr "Instale %s para explorar e instalar aplicaciones."
 
 #: src/MainWindow.vala:377 src/MainWindow.vala:381
 #, c-format
