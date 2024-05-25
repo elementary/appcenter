@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 19:05+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -161,7 +161,7 @@ msgstr "Instalando actualizaciones…"
 
 #: src/MainWindow.vala:540
 msgid "Uninstalling…"
-msgstr "Desinstalando…"
+msgstr "Desinstalando"
 
 #: src/MainWindow.vala:543
 msgid "Repairing…"
