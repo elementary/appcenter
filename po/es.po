@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 21:38+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -739,12 +739,9 @@ msgid "Made for elementary OS"
 msgstr "Hecha para elementary OS"
 
 #: src/Views/AppInfoView.vala:278
-#, fuzzy
-#| msgid ""
-#| "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
-"elementary no las ha revisado para comprobar que sean seguras, privadas o "
+"Revisado por elementary para comprobar que sean seguras, privadas o "
 "integrables con el sistema"
 
 #: src/Views/AppInfoView.vala:307
