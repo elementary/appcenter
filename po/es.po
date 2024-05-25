@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:07+0000\n"
-"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
+"PO-Revision-Date: 2024-05-25 21:24+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -550,8 +550,8 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
-"Esto pudo haberlo causado la adición manual de repositorios de programas o "
-"un daño en el archivo «sources»."
+"Esto puede deberse a repositorios de software externos agregados manualmente "
+"o a un archivo de fuentes dañado."
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -563,7 +563,7 @@ msgstr "Pago"
 #: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:248
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Pagar %d USD por %s"
+msgstr "Pagar %d USD por %s"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
@@ -600,7 +600,7 @@ msgstr "MM / AA"
 
 #: src/Dialogs/StripeDialog.vala:186
 msgid "CVC"
-msgstr "CVC"
+msgstr "CVV"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
 #: src/Widgets/ProgressButton.vala:25
@@ -611,11 +611,11 @@ msgstr "Cancelar"
 #: src/Dialogs/StripeDialog.vala:403
 #, c-format
 msgid "Pay $%d.00"
-msgstr "Pagar %d,00 USD"
+msgstr "Pagar %d,00 USD"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr "Prueba gratis"
+msgstr "Pruébalo gratis"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
@@ -636,16 +636,17 @@ msgstr "Intentar de nuevo"
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
 msgstr ""
-"La desinstalación de esta aplicación también podría eliminarle los datos."
+"La desinstalación de esta aplicación también podría eliminar los datos "
+"asociados a la misma."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr "¿Quiere desinstalar la aplicación?"
+msgstr "¿Desea desinstalar la aplicación?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr "¿Quiere desinstalar «%s»?"
+msgstr "¿Desea desinstalar «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:165
 msgid "Uninstall"
@@ -654,7 +655,7 @@ msgstr "Desinstalar"
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Esto pudo haber sido causado por software compilado de forma externa o "
+"Esto pudo haber sido causado por aplicaciones externas o compiladas de forma "
 "manual."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
@@ -668,7 +669,7 @@ msgstr "No se pudo desinstalar «%s»"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "Failed to Fetch Updates"
-msgstr "No se pudieron recuperar las actualizaciones"
+msgstr "No se pudieron obtener las actualizaciones"
 
 #: src/Dialogs/UpdateFailDialog.vala:36
 msgid "Ignore"
