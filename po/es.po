@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:24+0000\n"
+"PO-Revision-Date: 2024-05-25 21:29+0000\n"
 "Last-Translator: Lucas Dondo <lucasdondo203@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -699,10 +699,8 @@ msgid "Failed to update “%s”"
 msgstr "No se pudo actualizar «%s»"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Refresh Updates"
-msgstr "Buscando actualizaciones"
+msgstr "Buscar Actualizaciones"
 
 #: src/Views/AppInfoView.vala:234
 msgid "Illicit Substances"
