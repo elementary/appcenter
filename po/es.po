@@ -758,13 +758,11 @@ msgstr "No Traducido"
 
 #: src/Views/AppInfoView.vala:316
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Esta aplicación no está disponible en tu idioma"
 
 #: src/Views/AppInfoView.vala:323
-#, fuzzy
-#| msgid "Translate"
 msgid "Not Fully Translated"
-msgstr "Traducir"
+msgstr "No Traducido Completamente"
 
 #: src/Views/AppInfoView.vala:324
 #, c-format
