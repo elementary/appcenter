@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:57+0000\n"
-"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
+"PO-Revision-Date: 2024-05-25 21:58+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -930,16 +930,17 @@ msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
 msgstr ""
-"Incluyendo todos los documentos, descargas, música, imágenes, videos y "
+"Incluye todos los documentos, descargas, música, imágenes, videos y "
 "cualquier carpeta oculta"
 
 #: src/Views/AppInfoView.vala:888
 msgid "Legacy Autostart"
-msgstr ""
+msgstr "Inicio automático heredado"
 
 #: src/Views/AppInfoView.vala:889
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
+"Puede que se se inicie ejecute automáticamente en segundo plano sin preguntar"
 
 #: src/Views/AppInfoView.vala:898
 msgid "Location Access"
