@@ -27,7 +27,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 18:52+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -91,12 +91,10 @@ msgid "Automatically Update Free & Purchased Apps"
 msgstr "Actualizar automáticamente aplicaciones gratuitas y pagadas"
 
 #: src/MainWindow.vala:155
-#, fuzzy
-#| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
-"Las actualizaciones del sistema y las aplicaciones no pagadas no se "
-"actualizarán automáticamente"
+"Las aplicaciones que están siendo probadas gratuitamente no se actualizarán "
+"automáticamente"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
