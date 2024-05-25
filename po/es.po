@@ -26,8 +26,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 18:51+0000\n"
-"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
+"PO-Revision-Date: 2024-05-25 18:52+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -88,7 +88,7 @@ msgstr "Buscar aplicaciones"
 
 #: src/MainWindow.vala:154
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Actualizar Automáticamente Aplicaciones Gratuitas y Pagadas"
+msgstr "Actualizar automáticamente aplicaciones gratuitas y pagadas"
 
 #: src/MainWindow.vala:155
 #, fuzzy
