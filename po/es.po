@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 21:59+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -963,7 +963,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:918
 msgid "System Settings Access"
-msgstr ""
+msgstr "Acceso a las Configuraciones del Sistema"
 
 #: src/Views/AppInfoView.vala:919
 msgid "Can read and modify system settings"
