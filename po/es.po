@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:05+0000\n"
-"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
+"PO-Revision-Date: 2024-05-25 21:07+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -484,27 +484,23 @@ msgstr "Actualizaciones de entornos de ejecución"
 
 #: src/Core/UpdateManager.vala:34
 msgid "Updates to app runtimes"
-msgstr "Actualizaciones de los tiempos de ejecución de la aplicación"
+msgstr "Actualizaciones de entornos de ejecución para aplicaciones"
 
 #: src/Core/UpdateManager.vala:100
 #, c-format
 msgid "Version: %s"
-msgstr "Version: %s"
+msgstr "Versión: %s"
 
 #: src/Core/UpdateManager.vala:118
-#, fuzzy
-#| msgid "No components with updates"
 msgid "No runtimes with updates"
-msgstr "Sin componentes para actualizar"
+msgstr "Sin entornos de ejecución para actualizar"
 
 #: src/Core/UpdateManager.vala:123
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtimes with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u componente con actualizaciones"
-msgstr[1] "%u componentes con actualizaciones"
+msgstr[0] "%u entorno de ejecución con actualizaciones"
+msgstr[1] "%u entornos de ejecución con actualizaciones"
 
 #: src/Core/UpdateManager.vala:125
 #, c-format
@@ -531,8 +527,8 @@ msgid ""
 "This may be a temporary issue or could have been caused by external or "
 "manually compiled software."
 msgstr ""
-"Puede tratarse de un problema temporal o un error causado por software "
-"externo o compilado manualmente."
+"Puede tratarse de un problema temporal o un error causado por aplicaciones "
+"externas o compiladas manualmente."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
