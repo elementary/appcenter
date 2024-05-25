@@ -19,13 +19,14 @@
 # Walter Walls <windowsfan589@gmail.com>, 2024.
 # gitlares <daniellares@gmail.com>, 2024.
 # Augusto Lopez <augusto.bet4@gmail.com>, 2024.
+# Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 15:48+0000\n"
-"Last-Translator: Augusto Lopez <augusto.bet4@gmail.com>\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -50,7 +51,7 @@ msgstr "No se pudo analizar el tipo de medio %s"
 #: src/Application.vala:98
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "No se encontró el enlace «%s» especificado; en busca de alternativas"
+msgstr "No se encontró el enlace «%s» especificado; buscando alternativas"
 
 #: src/Application.vala:262
 msgid ""
