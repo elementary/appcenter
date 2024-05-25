@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 21:39+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Lucas Dondo <lucasdondo203@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -745,10 +745,8 @@ msgstr ""
 "con el sistema"
 
 #: src/Views/AppInfoView.vala:307
-#, fuzzy
-#| msgid "Translate"
 msgid "May Not Be Translated"
-msgstr "Traducir"
+msgstr "Podría No Estar Traducido"
 
 #: src/Views/AppInfoView.vala:308
 msgid "This app does not provide language information"
