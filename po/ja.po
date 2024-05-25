@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-07 05:13+0000\n"
+"PO-Revision-Date: 2024-05-25 15:05+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -661,7 +661,7 @@ msgstr "“%s” をアップデートできませんでした"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
-msgstr "アップデートを再取得"
+msgstr "アップデートを再読み込み"
 
 #: src/Views/AppInfoView.vala:234
 msgid "Illicit Substances"
@@ -1144,7 +1144,7 @@ msgstr "検索"
 
 #: src/Views/SearchView.vala:61
 msgid "The search term must be at least 3 characters long."
-msgstr "検索用語には最低3文字が必要です。"
+msgstr "検索用語には最低 3 文字が必要です。"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"
