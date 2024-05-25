@@ -28,7 +28,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 18:58+0000\n"
-"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -103,7 +103,7 @@ msgstr "Comprobar si hay actualizaciones"
 
 #: src/MainWindow.vala:181
 msgid "Settings"
-msgstr "Configuraciones"
+msgstr "Ajustes"
 
 #: src/MainWindow.vala:212
 msgid "Network Not Available."
