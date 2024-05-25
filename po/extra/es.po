@@ -141,7 +141,7 @@ msgstr "instalar;desinstalar;eliminar;catálogo;tienda;aplicaciones;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Buscando actualizaciones"
+msgstr "Busca actualizaciones"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
