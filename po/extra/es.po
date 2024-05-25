@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 22:39+0000\n"
-"Last-Translator: Gabriel Perren <gabrielperren@gmail.com>\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
 "Language: es\n"
@@ -136,7 +136,7 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:143
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
-"Ofrecer una opción de reparación si fallan las actualizaciones de Flatpak"
+"Se ofrece una opción de reparación si fallan las actualizaciones de Flatpak"
 
 #: data/appcenter.metainfo.xml.in:144
 msgid ""
