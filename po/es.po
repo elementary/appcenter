@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:41+0000\n"
-"Last-Translator: Lucas Dondo <lucasdondo203@gmail.com>\n"
+"PO-Revision-Date: 2024-05-25 21:49+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -767,7 +767,7 @@ msgstr "No está completamente traducida"
 #: src/Views/AppInfoView.vala:324
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr "Esta aplicación está traducida a tu idioma un %i%%"
+msgstr "Esta aplicación está traducida a tu idioma en un %i%%"
 
 #: src/Views/AppInfoView.vala:348
 msgid "Conflict"
@@ -783,11 +783,11 @@ msgstr "Violencia"
 
 #: src/Views/AppInfoView.vala:367
 msgid "Fantasy Violence"
-msgstr "Violencia fantástica"
+msgstr "Violencia de fantasía"
 
 #: src/Views/AppInfoView.vala:372
 msgid "Graphic violence, bloodshed, or death"
-msgstr "Violencia, derramamiento de sangre o muerte en explícito"
+msgstr "Violencia explícita, derramamiento de sangre, o muerte"
 
 #: src/Views/AppInfoView.vala:416
 msgid "Multiplayer"
@@ -843,7 +843,7 @@ msgstr "Extensiones:"
 
 #: src/Views/AppInfoView.vala:657
 msgid "Homepage"
-msgstr "Sitio web"
+msgstr "Página web"
 
 #: src/Views/AppInfoView.vala:663
 msgid "Translate"
@@ -855,7 +855,7 @@ msgstr "Enviar comentarios"
 
 #: src/Views/AppInfoView.vala:675
 msgid "Help"
-msgstr "Ayuda"
+msgstr "Ayudar"
 
 #: src/Views/AppInfoView.vala:723
 msgid "Link copied to clipboard"
@@ -864,7 +864,7 @@ msgstr "Enlace copiado en el portapapeles"
 #: src/Views/AppInfoView.vala:735
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Eche un vistazo a %s en AppCenter:"
+msgstr "Eche un vistazo a %s en el Centro de Aplicaciones:"
 
 #: src/Views/AppInfoView.vala:743
 msgid "Share"
@@ -872,7 +872,7 @@ msgstr "Compartir"
 
 #: src/Views/AppInfoView.vala:830
 msgid "End of Life"
-msgstr ""
+msgstr "término de la vida"
 
 #: src/Views/AppInfoView.vala:831
 #, fuzzy
