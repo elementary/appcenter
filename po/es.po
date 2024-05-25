@@ -31,7 +31,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 21:52+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Lucas Dondo <lucasdondo203@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -885,13 +885,8 @@ msgid "Outdated"
 msgstr "Desactualizada"
 
 #: src/Views/AppInfoView.vala:838
-#, fuzzy
-#| msgid ""
-#| "Built for an older version of %s; might not support the latest features"
 msgid "May not work as expected or support the latest features"
-msgstr ""
-"Construido para una versión antigua de %s; puede no tener soporte para las "
-"funcionalidades más recientes"
+msgstr "Podría no funcionar como se espera o soportar las últimas funciones"
 
 #: src/Views/AppInfoView.vala:846
 #, fuzzy
