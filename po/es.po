@@ -31,8 +31,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:23+0000\n"
-"Last-Translator: trubiso <crishipohola@gmail.com>\n"
+"PO-Revision-Date: 2024-05-25 22:29+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -1179,8 +1179,8 @@ msgstr "No se encontraron aplicaciones"
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
-"Prueba a cambiar los términos de búsqueda. También puedes descargar "
-"aplicaciones Flatpak, por ejemplo, desde %s"
+"Intente cambiar los términos de búsqueda. También puede instalar "
+"aplicaciones Flatpak desde, por ejemplo, %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
@@ -1190,11 +1190,11 @@ msgstr "Búsqueda"
 
 #: src/Views/SearchView.vala:61
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "El término de búsqueda debe tener al menos 3 caracteres."
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"
-msgstr "Gratis"
+msgstr "Gratuita"
 
 #: src/Widgets/ActionStack.vala:120 src/Widgets/HumbleButton.vala:82
 msgid "Install"
@@ -1216,13 +1216,13 @@ msgstr "Requiere pagos, los cuales no están activados"
 #: src/Widgets/HumbleButton.vala:118
 #, c-format
 msgid "$%d.00"
-msgstr "%d,00 USD"
+msgstr "%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:121
 #, c-format
 msgid "$%d"
-msgstr "%d USD"
+msgstr "%d USD"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
