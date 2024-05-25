@@ -30,7 +30,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 19:03+0000\n"
-"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
+"Last-Translator: Jorge Garcia Rodriguez <jorge@immutable.pro>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -144,7 +144,7 @@ msgstr "Obteniendo información de la aplicación…"
 
 #: src/MainWindow.vala:525
 msgid "Getting download size…"
-msgstr "Obteniendo el tamaño de descarga"
+msgstr "Obteniendo el tamaño de la descarga…"
 
 #: src/MainWindow.vala:531
 msgid "Checking for updates…"
