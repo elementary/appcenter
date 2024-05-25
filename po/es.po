@@ -26,13 +26,14 @@
 # Hector Toledo <hgatoledo@gmail.com>, 2024.
 # Jesus <jesuscopc@gmail.com>, 2024.
 # trubiso <crishipohola@gmail.com>, 2024.
+# Enrique Ochoa <eochoa11@ucol.mx>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 22:32+0000\n"
-"Last-Translator: Jorge Garcia Rodriguez <jorge@immutable.pro>\n"
+"Last-Translator: Enrique Ochoa <eochoa11@ucol.mx>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -85,7 +86,7 @@ msgstr "No se pudo iniciar «%s»"
 #: src/MainWindow.vala:131
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Aplicaciones instaladas y actualizaciones"
+msgstr "No se pudo instalar la aplicación"
 
 #: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
