@@ -32,8 +32,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:32+0000\n"
-"Last-Translator: Enrique Ochoa <eochoa11@ucol.mx>\n"
+"PO-Revision-Date: 2024-05-25 22:33+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -86,7 +86,7 @@ msgstr "No se pudo iniciar «%s»"
 #: src/MainWindow.vala:131
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "No se pudo instalar la aplicación"
+msgstr "Aplicaciones instaladas y actualizaciones"
 
 #: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
 msgid "Search Apps"
@@ -942,7 +942,7 @@ msgstr "Inicio automático heredado"
 #: src/Views/AppInfoView.vala:889
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
-"Puede que se se inicie ejecute automáticamente en segundo plano sin preguntar"
+"Puede que se inicie y ejecute automáticamente en segundo plano sin preguntar"
 
 #: src/Views/AppInfoView.vala:898
 msgid "Location Access"
