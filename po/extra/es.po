@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 22:35+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: gitlares <daniellares@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
 "Language: es\n"
@@ -58,10 +58,8 @@ msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:93
 #: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:141
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Funcionalidades nuevas"
+msgstr "Nuevas funcionalidades"
 
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
