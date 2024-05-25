@@ -152,7 +152,7 @@ msgstr "Buscando actualizaciones"
 
 #: src/MainWindow.vala:534
 msgid "Installing…"
-msgstr "Instalando…"
+msgstr "Instalando"
 
 #: src/MainWindow.vala:537
 msgid "Installing updates…"
