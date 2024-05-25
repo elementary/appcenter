@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 22:41+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Danny Villarreal <vidaniel057@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
 "Language: es\n"
@@ -168,10 +168,8 @@ msgid "Repair software sources"
 msgstr "Reparar las fuentes de software"
 
 #: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Necesita autenticarse para actualizar el software"
+msgstr "Necesita autenticarse para Reparar paquetes de software"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"
