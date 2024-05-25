@@ -18,13 +18,14 @@
 # Jonay Iglesias <jonayiglesiasp@gmail.com>, 2024.
 # Walter Walls <windowsfan589@gmail.com>, 2024.
 # gitlares <daniellares@gmail.com>, 2024.
+# Augusto Lopez <augusto.bet4@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-02-03 13:11+0000\n"
-"Last-Translator: gitlares <daniellares@gmail.com>\n"
+"PO-Revision-Date: 2024-05-25 15:48+0000\n"
+"Last-Translator: Augusto Lopez <augusto.bet4@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -32,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -56,9 +57,9 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
-"El centro de aplicaciones se iniciará automaticamente cuando este "
-"dispositivo se encienda y se ejecutará cuando se cierre la ventana para que "
-"pueda comprobar e instalar actualizaciones automáticamente."
+"El centro de aplicacion se iniciará automaticamente cuando este dispositivo "
+"encienda y se ejecutará cuando se cierre la ventana para que pueda verificar "
+"e instalar actualizaciones automáticamente."
 
 #: src/Application.vala:345
 msgid "The app has been installed"
