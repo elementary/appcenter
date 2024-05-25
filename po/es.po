@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 21:04+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"PO-Revision-Date: 2024-05-25 21:05+0000\n"
+"Last-Translator: Sergio Torres <sdtorresl@unal.edu.co>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -484,7 +484,7 @@ msgstr "Actualizaciones de entornos de ejecución"
 
 #: src/Core/UpdateManager.vala:34
 msgid "Updates to app runtimes"
-msgstr "Actualizaciones de entornos de ejecución para aplicaciones"
+msgstr "Actualizaciones de los tiempos de ejecución de la aplicación"
 
 #: src/Core/UpdateManager.vala:100
 #, c-format
