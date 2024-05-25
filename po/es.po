@@ -12,7 +12,7 @@
 # Daniel R. <riesp@pm.me>, 2019.
 # Jose Manuel Hernandez Farias <ing.josemhf@gmail.com>, 2022.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
-# Santiago Leon <santiagoleon747@gmail.com>, 2023.
+# Santiago Leon <santiagoleon747@gmail.com>, 2023, 2024.
 # Jorge Garcia Rodriguez <jorge@immutable.pro>, 2024.
 # Sergio Torres <sdtorresl@unal.edu.co>, 2024.
 # Jonay Iglesias <jonayiglesiasp@gmail.com>, 2024.
@@ -27,7 +27,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
 "PO-Revision-Date: 2024-05-25 18:53+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Santiago Leon <santiagoleon747@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -98,7 +98,7 @@ msgstr ""
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
-msgstr "Buscando actualizaciones"
+msgstr "Busca actualizaciones"
 
 #: src/MainWindow.vala:181
 msgid "Settings"
