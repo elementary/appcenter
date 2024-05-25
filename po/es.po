@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:13+0000\n"
-"Last-Translator: Ezequiel Veliz <ezequiel_veliz@hotmail.com>\n"
+"PO-Revision-Date: 2024-05-25 22:15+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -1060,7 +1060,7 @@ msgstr "Aplicaciones de pago"
 
 #: src/Views/CategoryView.vala:39
 msgid "Free Apps"
-msgstr "Aplicaciones Gratuitas"
+msgstr "Aplicaciones gratuitas"
 
 #: src/Views/Homepage.vala:81
 msgid "Categories"
@@ -1120,7 +1120,7 @@ msgstr "Acceso universal"
 
 #: src/Views/Homepage.vala:185
 msgid "Video"
-msgstr "Vídeo"
+msgstr "Video"
 
 #: src/Views/Homepage.vala:190
 msgid "Writing & Language"
