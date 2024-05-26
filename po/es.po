@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:33+0000\n"
+"PO-Revision-Date: 2024-05-26 23:13+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -307,7 +307,7 @@ msgstr "Comprobando aplicaciones en uso"
 
 #: src/Utils.vala:129
 msgid "Checking libraries in use"
-msgstr "Comprobando bibliotecas en uso"
+msgstr "Comprobando librerías en uso"
 
 #: src/Utils.vala:131
 msgid "Copying files"
@@ -319,7 +319,7 @@ msgstr "Estado desconocido"
 
 #: src/Core/BackendAggregator.vala:50
 msgid "package operations are being performed"
-msgstr "efectuando operaciones en los paquetes"
+msgstr "efectuando operaciones de paquetes"
 
 #: src/Core/FlatpakBackend.vala:44
 #, c-format
@@ -593,7 +593,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
-msgstr "Normativa de privacidad"
+msgstr "Política de privacidad"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:177
@@ -643,7 +643,7 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr "¿Desea desinstalar la aplicación?"
+msgstr "¿Desinstalar aplicación?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
@@ -760,7 +760,7 @@ msgstr "No traducida"
 
 #: src/Views/AppInfoView.vala:316
 msgid "This app is not available in your language"
-msgstr "Esta aplicación no está disponible en tu idioma"
+msgstr "Esta aplicación no está disponible en su idioma"
 
 #: src/Views/AppInfoView.vala:323
 msgid "Not Fully Translated"
@@ -769,7 +769,7 @@ msgstr "No está completamente traducida"
 #: src/Views/AppInfoView.vala:324
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr "Esta aplicación está traducida a tu idioma en un %i%%"
+msgstr "Esta aplicación está traducida a su idioma en un %i%%"
 
 #: src/Views/AppInfoView.vala:348
 msgid "Conflict"
@@ -857,7 +857,7 @@ msgstr "Enviar comentarios"
 
 #: src/Views/AppInfoView.vala:675
 msgid "Help"
-msgstr "Ayudar"
+msgstr "Ayuda"
 
 #: src/Views/AppInfoView.vala:723
 msgid "Link copied to clipboard"
@@ -965,7 +965,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:918
 msgid "System Settings Access"
-msgstr "Acceso a la configuración del sistema"
+msgstr "Acceso a Configuración del Sistema"
 
 #: src/Views/AppInfoView.vala:919
 msgid "Can read and modify system settings"
@@ -1149,7 +1149,7 @@ msgid ""
 "new features and fixes."
 msgstr ""
 "La tienda de aplicaciones de elementary, de código abierto y que permite que "
-"pagues lo que tú quieras. Revisada y verificada por elementary para "
+"pagues lo que tú quieras. Revisada y seleccionada por elementary para "
 "garantizar una experiencia nativa, segura y que respete tu privacidad. "
 "Explora por categorías, o busca y descubre nuevas aplicaciones. El Centro de "
 "aplicaciones también se utiliza para actualizar su sistema a la versión más "
