@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-25 22:41+0000\n"
-"Last-Translator: Danny Villarreal <vidaniel057@gmail.com>\n"
+"PO-Revision-Date: 2024-05-26 23:13+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
 "Language: es\n"
@@ -34,7 +34,7 @@ msgid ""
 "new features and fixes."
 msgstr ""
 "La tienda de aplicaciones de elementary, de código abierto y que permite que "
-"pagues lo que tú quieras. Revisada y verificada por elementary para "
+"pagues lo que tú quieras. Revisada y seleccionada por elementary para "
 "garantizar una experiencia nativa, segura y que respete tu privacidad. "
 "Explora por categorías, o busca y descubre nuevas aplicaciones. El Centro de "
 "aplicaciones también se utiliza para actualizar su sistema a la versión más "
@@ -64,7 +64,7 @@ msgstr "Nuevas características:"
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
-"Se puede administrar el inicio automático en Configuración del sistema → "
+"Se puede administrar el inicio automático en Configuración del Sistema → "
 "Aplicaciones"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:97
@@ -75,12 +75,12 @@ msgstr "Otras mejoras:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr "Actualización automática de aplicaciones por defecto"
+msgstr "Actualización automática de aplicaciones de manera predeterminada"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
 msgstr ""
-"Las actualizaciones del sistema se han movido a la Configuración del sistema"
+"Las actualizaciones del sistema se han movido a Configuración del Sistema"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
@@ -169,7 +169,7 @@ msgstr "Reparar las fuentes de software"
 
 #: data/io.elementary.appcenter.policy.in:23
 msgid "Authentication is required to repair software sources"
-msgstr "Necesita autenticarse para Reparar paquetes de software"
+msgstr "Necesita autenticarse para reparar las fuentes de software"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"
