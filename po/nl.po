@@ -4,7 +4,7 @@
 # Dennis ten Hoove <dennistenhoove@protonmail.com>, 2022, 2023, 2024.
 # MB <barendregt@fastmail.com>, 2022.
 # Niels Van Laerhoven <niels1995@gmail.com>, 2022.
-# DutchVipperloid <svenroelof@e.email>, 2023.
+# DutchVipperloid <svenroelof@e.email>, 2023, 2024.
 # Thierry Flament <thierry.flament@outlook.com>, 2023.
 # Pepijn Joost <pepijnvlug@gmail.com>, 2023.
 # Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>, 2024.
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-14 09:13+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"PO-Revision-Date: 2024-05-31 08:13+0000\n"
+"Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -506,13 +506,11 @@ msgstr[0] "Update beschikbaar"
 msgstr[1] "Updates beschikbaar"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u Update Available"
-#| msgid_plural "%u Updates Available"
+#, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u update beschikbaar"
-msgstr[1] "%u updates beschikbaar"
+msgstr[0] "%u app update beschikbaar"
+msgstr[1] "%u app updates beschikbaar"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
