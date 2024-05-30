@@ -180,12 +180,6 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
-#if PACKAGEKIT_BACKEND
-        if (fake_update_packages != null) {
-            AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
-        }
-#endif
-
         var client = AppCenterCore.Client.get_default ();
 
         if (first_activation) {
@@ -205,18 +199,6 @@ public class AppCenter.App : Gtk.Application {
             silent = false;
             return;
         }
-
-#if PACKAGEKIT_BACKEND
-        if (local_path != null) {
-            var file = File.new_for_commandline_arg (local_path);
-
-            try {
-                local_package = AppCenterCore.PackageKitBackend.get_default ().add_local_component_file (file);
-            } catch (Error e) {
-                warning ("Failed to load local AppStream XML file: %s", e.message);
-            }
-        }
-#endif
 
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
@@ -354,13 +336,6 @@ public class AppCenter.App : Gtk.Application {
                     if (error.matches (IOError.quark (), 19)) {
                         break;
                     }
-
-#if PACKAGEKIT_BACKEND
-                    // Check if permission was denied or the operation was cancelled
-                    if (error.matches (Pk.ClientError.quark (), 303)) {
-                        break;
-                    }
-#endif
 
                     var dialog = new InstallFailDialog (package, (owned) error.message);
                     dialog.present ();
