@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-05-31 14:44+0000\n"
 "PO-Revision-Date: 2024-05-16 12:32+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -81,8 +81,9 @@ msgstr "OS アップデート機能を“システム設定”に移動"
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
-msgstr "ほかのリポジトリにあるアプリに対してではなく、elementary OS "
-"向けに開発されたアプリに対してバッジを表示するように修正"
+msgstr ""
+"ほかのリポジトリにあるアプリに対してではなく、elementary OS 向けに開発された"
+"アプリに対してバッジを表示するように修正"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:100
 #: data/appcenter.metainfo.xml.in:122 data/appcenter.metainfo.xml.in:134
@@ -145,20 +146,18 @@ msgid "Check for Updates"
 msgstr "アップデートを確認"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "ソフトウェアをアップデートします"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "ソフトウェアをアップデートするには認証が必要です"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "ソフトウェアソースを修復"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "ソフトウェアソースを修復するには認証が必要です"
+
+#~ msgid "Update software"
+#~ msgstr "ソフトウェアをアップデートします"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "ソフトウェアをアップデートするには認証が必要です"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "アプリがお使いの言語で表示されないことを表示する機能を追加"

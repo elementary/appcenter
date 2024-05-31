@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-05-31 14:44+0000\n"
 "PO-Revision-Date: 2024-05-26 23:13+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -156,20 +156,18 @@ msgid "Check for Updates"
 msgstr "Comprobar si hay actualizaciones"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Actualizar software"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Necesita autenticarse para actualizar software"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Reparar las fuentes de software"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Necesita autenticarse para reparar las fuentes de software"
+
+#~ msgid "Update software"
+#~ msgstr "Actualizar software"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Necesita autenticarse para actualizar software"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

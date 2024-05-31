@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-05-31 14:44+0000\n"
 "PO-Revision-Date: 2024-05-21 23:13+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
@@ -148,20 +148,18 @@ msgid "Check for Updates"
 msgstr "Frissítések keresése"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Szoftverfrissítés"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "A szoftverfrissítéshez hitelesítés szükséges"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Szoftverforrások javítása"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "A szoftverforrások javításához hitelesítés szükséges"
+
+#~ msgid "Update software"
+#~ msgstr "Szoftverfrissítés"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "A szoftverfrissítéshez hitelesítés szükséges"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "Alkalmazások nyelvi támogatásának megjelenítése"

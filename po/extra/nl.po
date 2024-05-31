@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-05-31 14:44+0000\n"
 "PO-Revision-Date: 2024-05-14 09:13+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
@@ -140,20 +140,18 @@ msgid "Check for Updates"
 msgstr "Controleer op updates"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Update software"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Inloggen is vereist om software te updaten"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Repareer softwarebronnen"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Authenticatie is vereist om de softwarebronnen te repareren"
+
+#~ msgid "Update software"
+#~ msgstr "Update software"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Inloggen is vereist om software te updaten"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "Laat zien wanneer een app niet beschikbaar is in uw taal"

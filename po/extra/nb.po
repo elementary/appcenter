@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-05-31 14:44+0000\n"
 "PO-Revision-Date: 2024-05-31 08:13+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -151,21 +151,19 @@ msgid "Check for Updates"
 msgstr "Se etter oppgraderinger"
 
 #: data/io.elementary.appcenter.policy.in:10
-#, fuzzy
-msgid "Update software"
-msgstr "Oppgrader programvare"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Identitetsbekreftelse kreves for å oppgradere programvare"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Reparer programvarekilder"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Identitetsbekreftelse kreves for å reparere programvarekilder"
+
+#, fuzzy
+#~ msgid "Update software"
+#~ msgstr "Oppgrader programvare"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Identitetsbekreftelse kreves for å oppgradere programvare"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "Vis når et program ikke er tilgjengelig på valgt språk"
