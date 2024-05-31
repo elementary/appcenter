@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-05-31 14:44+0000\n"
 "PO-Revision-Date: 2022-10-12 09:57+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -140,22 +140,20 @@ msgid "Check for Updates"
 msgstr "Güncellemeleri Denetle"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Yazılımı güncelle"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Yazılımı güncellemek için kimlik doğrulama gerekiyor"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr ""
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 #, fuzzy
 #| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
 msgstr "Yazılımı güncellemek için kimlik doğrulama gerekiyor"
+
+#~ msgid "Update software"
+#~ msgstr "Yazılımı güncelle"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Yazılımı güncellemek için kimlik doğrulama gerekiyor"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

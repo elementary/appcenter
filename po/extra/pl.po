@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-05-31 14:44+0000\n"
 "PO-Revision-Date: 2024-05-24 16:13+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -149,20 +149,18 @@ msgid "Check for Updates"
 msgstr "Sprawdź aktualizacje"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Aktualizacja oprogramowania"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Uwierzytelnianie jest wymagane aby zaktualizować oprogramowanie"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Naprawa źródeł aplikacji"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Uwierzytelnianie jest wymagane aby naprawić źródła oprogramowania"
+
+#~ msgid "Update software"
+#~ msgstr "Aktualizacja oprogramowania"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Uwierzytelnianie jest wymagane aby zaktualizować oprogramowanie"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "Dodano informację, gdy aplikacja nie jest dostępna w twoim języku"
