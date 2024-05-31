@@ -1163,31 +1163,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                     break;
             }
         } else {
+#if HAS_APPSTREAM_1_0
+            license_copy = AppStream.get_license_name (project_license);
+#else
             license_copy = project_license;
-            license_url = "https://choosealicense.com/licenses/";
+#endif
 
-            switch (project_license) {
-                case "Apache-2.0":
-                    license_url = license_url + "apache-2.0";
-                    break;
-                case "GPL-2":
-                case "GPL-2.0":
-                case "GPL-2.0+":
-                    license_url = license_url + "gpl-2.0";
-                    break;
-                case "GPL-3":
-                case "GPL-3.0":
-                case "GPL-3.0+":
-                    license_url = license_url + "gpl-3.0";
-                    break;
-                case "LGPL-2.1":
-                case "LGPL-2.1+":
-                    license_url = license_url + "lgpl-2.1";
-                    break;
-                case "MIT":
-                    license_url = license_url + "mit";
-                    break;
-            }
+            license_url = AppStream.get_license_url (project_license);
         }
     }
 
