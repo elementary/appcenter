@@ -10,11 +10,8 @@ src/Core/Client.vala
 src/Core/FlatpakBackend.vala
 src/Core/Job.vala
 src/Core/Package.vala
-src/Core/PackageKitBackend.vala
 src/Core/ScreenshotCache.vala
 src/Core/Stripe.vala
-src/Core/Task.vala
-src/Core/UbuntuDriversBackend.vala
 src/Core/UpdateManager.vala
 src/Dialogs/InstallFailDialog.vala
 src/Dialogs/RepairFailDialog.vala
