@@ -166,7 +166,7 @@ namespace AppCenter.Views {
 
             update_all_button.clicked.connect (on_update_all);
 
-            unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
+            unowned var aggregator = AppCenterCore.FlatpakBackend.get_default ();
             aggregator.notify ["job-type"].connect (() => {
                 switch (aggregator.job_type) {
                     case GET_PREPARED_PACKAGES:

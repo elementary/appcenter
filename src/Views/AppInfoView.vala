@@ -61,7 +61,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     construct {
-        AppCenterCore.BackendAggregator.get_default ().cache_flush_needed.connect (() => {
+        AppCenterCore.FlatpakBackend.get_default ().cache_flush_needed.connect (() => {
             to_recycle = true;
         });
 
