@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-31 14:44+0000\n"
-"PO-Revision-Date: 2024-05-29 02:13+0000\n"
+"PO-Revision-Date: 2024-06-05 03:52+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -52,7 +52,7 @@ msgstr "Centro de Aplicaciones"
 #: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "No se pudo analizar el tipo de medio %s"
+msgstr "No se pudo analizar el tipo MIME %s"
 
 #: src/Application.vala:98
 #, c-format
@@ -65,8 +65,8 @@ msgid ""
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 "El Centro de Aplicaciones se iniciará automáticamente cuando este "
-"dispositivo encienda y se ejecutará cuando se cierre la ventana para que se "
-"puedan comprobar e instalar actualizaciones automáticamente."
+"dispositivo encienda y se continuará ejecutando cuando se cierre la ventana "
+"para que se puedan comprobar e instalar actualizaciones automáticamente."
 
 #: src/Application.vala:327
 msgid "The app has been installed"
@@ -216,7 +216,7 @@ msgstr "Desarrolladores de %s"
 
 #: src/Core/Package.vala:360
 msgid "Unknown Origin (non-curated)"
-msgstr "Origen desconocido (no revisadas)"
+msgstr "Origen desconocido (no revisado)"
 
 #: src/Core/Package.vala:526
 #, c-format
