@@ -285,13 +285,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool is_flatpak {
-        get {
-            return (backend is FlatpakBackend)
-                || change_information.updatable_packages.contains (FlatpakBackend.get_default ());
-        }
-    }
-
     private string? _author = null;
     public string author {
         get {
@@ -373,13 +366,9 @@ public class AppCenterCore.Package : Object {
                 score += 5;
             }
 
-            if (is_flatpak) {
+            var fp_package = this as FlatpakPackage;
+            if (fp_package != null && fp_package.installation == FlatpakBackend.user_installation) {
                 score++;
-
-                var fp_package = this as FlatpakPackage;
-                if (fp_package != null && fp_package.installation == FlatpakBackend.user_installation) {
-                    score++;
-                }
             }
 
             return score;
