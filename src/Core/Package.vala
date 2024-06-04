@@ -341,16 +341,12 @@ public class AppCenterCore.Package : Object {
     public string origin_description {
         owned get {
             unowned string origin = component.get_origin ();
-            if (backend is FlatpakBackend) {
-                var fp_package = this as FlatpakPackage;
-                if (fp_package == null) {
-                    return origin;
-                }
-
-                return fp_package.remote_title;
+            var fp_package = this as FlatpakPackage;
+            if (fp_package == null) {
+                return origin;
             }
 
-            return _("Unknown Origin (non-curated)");
+            return fp_package.remote_title;
         }
     }
 
@@ -378,13 +374,11 @@ public class AppCenterCore.Package : Object {
     public string hash {
         owned get {
             string key = "";
-            if (backend is FlatpakBackend) {
-                var fp_package = this as FlatpakPackage;
-                if (fp_package.installation != null && fp_package.installation == FlatpakBackend.system_installation) {
-                    key += "system/";
-                } else {
-                    key += "user/";
-                }
+            var fp_package = this as FlatpakPackage;
+            if (fp_package.installation != null && fp_package.installation == FlatpakBackend.system_installation) {
+                key += "system/";
+            } else {
+                key += "user/";
             }
 
             key += component.get_origin () + "/";
