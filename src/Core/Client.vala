@@ -51,11 +51,39 @@ public class AppCenterCore.Client : Object {
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        return FlatpakBackend.get_default ().get_applications_for_category (category);
+        var apps = new Gee.HashMap<string, Package> ();
+        var results = FlatpakBackend.get_default ().get_applications_for_category (category);
+
+        foreach (var result in results) {
+            var result_component_id = result.normalized_component_id;
+            if (apps.has_key (result_component_id)) {
+                if (result.origin_score > apps[result_component_id].origin_score) {
+                    apps[result_component_id] = result;
+                }
+            } else {
+                apps[result_component_id] = result;
+            }
+        }
+
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        return FlatpakBackend.get_default ().search_applications (query, category);
+        var apps = new Gee.HashMap<string, Package> ();
+        var results = FlatpakBackend.get_default ().search_applications (query, category);
+
+        foreach (var result in results) {
+            var result_component_id = result.normalized_component_id;
+            if (apps.has_key (result_component_id)) {
+                if (result.origin_score > apps[result_component_id].origin_score) {
+                    apps[result_component_id] = result;
+                }
+            } else {
+                apps[result_component_id] = result;
+            }
+        }
+
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications_mime (string query) {
