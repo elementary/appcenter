@@ -803,7 +803,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     private async void load_extensions () {
         package.component.get_addons ().@foreach ((extension) => {
-            var extension_package = package.backend.get_package_for_component_id (extension.id);
+            var extension_package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (extension.id);
             if (extension_package == null) {
                 return;
             }
