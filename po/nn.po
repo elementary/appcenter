@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-31 14:44+0000\n"
+"POT-Creation-Date: 2024-06-05 03:52+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -138,12 +138,7 @@ msgstr "Slettar app…"
 msgid "Repairing…"
 msgstr ""
 
-#: src/Core/BackendAggregator.vala:44
-msgid "package operations are being performed"
-msgstr "pakkearbeid blir gjennomført"
-
-#: src/Core/BackendAggregator.vala:308 src/Core/ChangeInformation.vala:47
-#: src/Core/ChangeInformation.vala:62
+#: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "Ventar"
 
@@ -151,10 +146,10 @@ msgstr "Ventar"
 msgid "Finished"
 msgstr "Ferdig"
 
-#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1465
-#: src/Core/FlatpakBackend.vala:1489 src/Core/FlatpakBackend.vala:1597
-#: src/Core/FlatpakBackend.vala:1621 src/Core/FlatpakBackend.vala:1779
-#: src/Core/FlatpakBackend.vala:1797
+#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1501
+#: src/Core/FlatpakBackend.vala:1525 src/Core/FlatpakBackend.vala:1633
+#: src/Core/FlatpakBackend.vala:1657 src/Core/FlatpakBackend.vala:1815
+#: src/Core/FlatpakBackend.vala:1833
 msgid "Cancelling"
 msgstr "Avbryt"
 
@@ -167,15 +162,19 @@ msgstr "Startar"
 msgid "%s (system-wide)"
 msgstr "%s (for heile systemet)"
 
-#: src/Core/FlatpakBackend.vala:1456
+#: src/Core/FlatpakBackend.vala:108
+msgid "package operations are being performed"
+msgstr "pakkearbeid blir gjennomført"
+
+#: src/Core/FlatpakBackend.vala:1492
 msgid "Installing"
 msgstr "Installerer"
 
-#: src/Core/FlatpakBackend.vala:1588
+#: src/Core/FlatpakBackend.vala:1624
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1770
+#: src/Core/FlatpakBackend.vala:1806
 msgid "Updating"
 msgstr "Oppdaterar"
 
@@ -814,11 +813,11 @@ msgstr "Proprietær"
 msgid "Unknown License"
 msgstr "Ukjend lisens"
 
-#: src/Views/AppInfoView.vala:1266
+#: src/Views/AppInfoView.vala:1248
 msgid "Fund"
 msgstr "Bidrag"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1254
 msgid "Fund the development of this app"
 msgstr "Finansier utviklinga av denne applikasjonen"
 

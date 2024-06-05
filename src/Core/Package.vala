@@ -328,7 +328,7 @@ public class AppCenterCore.Package : Object {
 
     public Gee.Collection<Package> origin_packages {
         owned get {
-            return BackendAggregator.get_default ().get_packages_for_component_id (component.get_id ());
+            return FlatpakBackend.get_default ().get_packages_for_component_id (component.get_id ());
         }
     }
 
