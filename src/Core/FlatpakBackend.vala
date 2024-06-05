@@ -20,10 +20,9 @@
 public class AppCenterCore.FlatpakPackage : Package {
     public weak Flatpak.Installation installation { public get; construct; }
 
-    public FlatpakPackage (Flatpak.Installation installation, Backend backend, AppStream.Component component) {
+    public FlatpakPackage (Flatpak.Installation installation, AppStream.Component component) {
         Object (
             installation: installation,
-            backend: backend,
             component: component
         );
     }
@@ -1171,7 +1170,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (user_installation, this, comp);
+                        package = new FlatpakPackage (user_installation, comp);
                     }
 
                     new_package_list[key] = package;
@@ -1212,7 +1211,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (system_installation, this, comp);
+                        package = new FlatpakPackage (system_installation, comp);
                     }
 
                     new_package_list[key] = package;
