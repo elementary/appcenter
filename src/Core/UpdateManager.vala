@@ -34,7 +34,7 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates_component.summary = _("Updates to app runtimes");
         runtime_updates_component.add_icon (runtime_icon);
 
-        runtime_updates = new AppCenterCore.Package (FlatpakBackend.get_default (), runtime_updates_component);
+        runtime_updates = new AppCenterCore.Package (runtime_updates_component);
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {

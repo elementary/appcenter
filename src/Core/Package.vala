@@ -409,7 +409,7 @@ public class AppCenterCore.Package : Object {
         action_cancellable = new GLib.Cancellable ();
     }
 
-    public Package (Backend backend, AppStream.Component component) {
+    public Package (AppStream.Component component) {
         Object (component: component);
     }
 
