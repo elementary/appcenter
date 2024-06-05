@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 03:52+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
@@ -166,10 +166,10 @@ msgstr "กำลังรอ"
 msgid "Finished"
 msgstr "สำเร็จแล้ว"
 
-#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1501
-#: src/Core/FlatpakBackend.vala:1525 src/Core/FlatpakBackend.vala:1633
-#: src/Core/FlatpakBackend.vala:1657 src/Core/FlatpakBackend.vala:1815
-#: src/Core/FlatpakBackend.vala:1833
+#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1500
+#: src/Core/FlatpakBackend.vala:1524 src/Core/FlatpakBackend.vala:1632
+#: src/Core/FlatpakBackend.vala:1656 src/Core/FlatpakBackend.vala:1814
+#: src/Core/FlatpakBackend.vala:1832
 msgid "Cancelling"
 msgstr "กำลังยกเลิก"
 
@@ -177,41 +177,37 @@ msgstr "กำลังยกเลิก"
 msgid "Starting"
 msgstr "กำลังเริ่ม"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:108
+#: src/Core/FlatpakBackend.vala:107
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1492
+#: src/Core/FlatpakBackend.vala:1491
 msgid "Installing"
 msgstr "กำลังติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1624
+#: src/Core/FlatpakBackend.vala:1623
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1806
+#: src/Core/FlatpakBackend.vala:1805
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "การอัปเดต"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:320
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:360
-msgid "Unknown Origin (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:526
+#: src/Core/Package.vala:507
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -368,7 +364,7 @@ msgstr "ถอนการติดตั้ง"
 msgid "Failed to install “%s”"
 msgstr "ไม่สามารถติดตั้ง “%s”"
 
-#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+#: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
 msgstr ""
 
