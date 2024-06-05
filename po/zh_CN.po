@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 03:52+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2023-10-24 15:10+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -158,10 +158,10 @@ msgstr "等待中"
 msgid "Finished"
 msgstr "已完成"
 
-#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1501
-#: src/Core/FlatpakBackend.vala:1525 src/Core/FlatpakBackend.vala:1633
-#: src/Core/FlatpakBackend.vala:1657 src/Core/FlatpakBackend.vala:1815
-#: src/Core/FlatpakBackend.vala:1833
+#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1500
+#: src/Core/FlatpakBackend.vala:1524 src/Core/FlatpakBackend.vala:1632
+#: src/Core/FlatpakBackend.vala:1656 src/Core/FlatpakBackend.vala:1814
+#: src/Core/FlatpakBackend.vala:1832
 msgid "Cancelling"
 msgstr "取消中"
 
@@ -169,37 +169,33 @@ msgstr "取消中"
 msgid "Starting"
 msgstr "正在开始"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s （所有用户）"
 
-#: src/Core/FlatpakBackend.vala:108
+#: src/Core/FlatpakBackend.vala:107
 msgid "package operations are being performed"
 msgstr "软件包操作正在处理中"
 
-#: src/Core/FlatpakBackend.vala:1492
+#: src/Core/FlatpakBackend.vala:1491
 msgid "Installing"
 msgstr "正在安装"
 
-#: src/Core/FlatpakBackend.vala:1624
+#: src/Core/FlatpakBackend.vala:1623
 msgid "Uninstalling"
 msgstr "正在卸载"
 
-#: src/Core/FlatpakBackend.vala:1806
+#: src/Core/FlatpakBackend.vala:1805
 msgid "Updating"
 msgstr "正在更新"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:320
 #, c-format
 msgid "%s Developers"
 msgstr "%s 开发者"
 
-#: src/Core/Package.vala:360
-msgid "Unknown Origin (non-curated)"
-msgstr "未知来源（未经认证）"
-
-#: src/Core/Package.vala:526
+#: src/Core/Package.vala:507
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "应用程序在 AppCenter 中的状态未标记为已安装：%s"
@@ -353,7 +349,7 @@ msgstr "安装应用失败"
 msgid "Failed to install “%s”"
 msgstr "安装 “%s” 失败"
 
-#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+#: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
 msgstr "修复"
 
@@ -1066,6 +1062,9 @@ msgstr "%s 的新特性"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "关闭"
+
+#~ msgid "Unknown Origin (non-curated)"
+#~ msgstr "未知来源（未经认证）"
 
 #~ msgid "Running"
 #~ msgstr "正在运行"

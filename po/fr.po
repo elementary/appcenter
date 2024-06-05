@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 03:52+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2024-05-15 14:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
@@ -159,10 +159,10 @@ msgstr "En attente"
 msgid "Finished"
 msgstr "Terminé"
 
-#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1501
-#: src/Core/FlatpakBackend.vala:1525 src/Core/FlatpakBackend.vala:1633
-#: src/Core/FlatpakBackend.vala:1657 src/Core/FlatpakBackend.vala:1815
-#: src/Core/FlatpakBackend.vala:1833
+#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1500
+#: src/Core/FlatpakBackend.vala:1524 src/Core/FlatpakBackend.vala:1632
+#: src/Core/FlatpakBackend.vala:1656 src/Core/FlatpakBackend.vala:1814
+#: src/Core/FlatpakBackend.vala:1832
 msgid "Cancelling"
 msgstr "Annulation"
 
@@ -170,37 +170,33 @@ msgstr "Annulation"
 msgid "Starting"
 msgstr "Démarrage"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (système)"
 
-#: src/Core/FlatpakBackend.vala:108
+#: src/Core/FlatpakBackend.vala:107
 msgid "package operations are being performed"
 msgstr "des opérations sur le paquet sont en cours"
 
-#: src/Core/FlatpakBackend.vala:1492
+#: src/Core/FlatpakBackend.vala:1491
 msgid "Installing"
 msgstr "Installation"
 
-#: src/Core/FlatpakBackend.vala:1624
+#: src/Core/FlatpakBackend.vala:1623
 msgid "Uninstalling"
 msgstr "Désinstallation"
 
-#: src/Core/FlatpakBackend.vala:1806
+#: src/Core/FlatpakBackend.vala:1805
 msgid "Updating"
 msgstr "Mise à jour"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:320
 #, c-format
 msgid "%s Developers"
 msgstr "Les développeurs de %s"
 
-#: src/Core/Package.vala:360
-msgid "Unknown Origin (non-curated)"
-msgstr "Origine inconnue (non-vérifiée)"
-
-#: src/Core/Package.vala:526
+#: src/Core/Package.vala:507
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -385,7 +381,7 @@ msgstr "Échec de l'installation de l'application"
 msgid "Failed to install “%s”"
 msgstr "Échec de l'installation de « %s »"
 
-#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+#: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
 msgstr "Réparer"
 
@@ -1140,6 +1136,9 @@ msgstr "Nouveautés de %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "Fermer"
+
+#~ msgid "Unknown Origin (non-curated)"
+#~ msgstr "Origine inconnue (non-vérifiée)"
 
 #~ msgid "Running"
 #~ msgstr "Exécution"
