@@ -40,7 +40,8 @@ public class AppCenterCore.ChangeInformation : Object {
      */
     public signal void progress_changed ();
 
-    public Gee.MultiMap<unowned Backend, string> updatable_packages { public get; private set; }
+    public Gee.ArrayList<string> updatable_packages { get; private set; }
+
     public bool can_cancel { public get; private set; default=true; }
     public double progress { public get; private set; default=0.0f; }
     public Status status { public get; private set; default=Status.UNKNOWN; }
@@ -48,7 +49,7 @@ public class AppCenterCore.ChangeInformation : Object {
     public uint64 size;
 
     construct {
-        updatable_packages = new Gee.HashMultiMap<unowned Backend, string> ();
+        updatable_packages = new Gee.ArrayList<string> ();
         size = 0;
     }
 

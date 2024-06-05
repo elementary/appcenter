@@ -4,7 +4,6 @@ appcenter_files = files(
     'MainWindow.vala',
     'SuspendControl.vala',
     'Utils.vala',
-    'Core/BackendInterface.vala',
     'Core/CardUtils.vala',
     'Core/ChangeInformation.vala',
     'Core/Client.vala',
