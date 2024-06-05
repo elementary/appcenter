@@ -1223,6 +1223,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         package_list = new_package_list;
     }
 
+    private bool validate (AppStream.Component component) {
+        if (component.get_kind () == CONSOLE_APP) {
+            return false;
+        }
+
+        if (component.get_kind () == RUNTIME) {
+            return false;
+        }
+
+        return true;
+    }
+
     private string generate_package_list_key (bool system, string origin, string bundle_id) {
         unowned string installation = system ? "system" : "user";
         return "%s/%s/%s".printf (installation, origin, bundle_id);
