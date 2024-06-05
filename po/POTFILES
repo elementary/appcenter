@@ -3,7 +3,6 @@ src/AsyncMutex.vala
 src/MainWindow.vala
 src/SuspendControl.vala
 src/Utils.vala
-src/Core/BackendAggregator.vala
 src/Core/BackendInterface.vala
 src/Core/ChangeInformation.vala
 src/Core/Client.vala

@@ -34,7 +34,7 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates_component.summary = _("Updates to app runtimes");
         runtime_updates_component.add_icon (runtime_icon);
 
-        runtime_updates = new AppCenterCore.Package (BackendAggregator.get_default (), runtime_updates_component);
+        runtime_updates = new AppCenterCore.Package (FlatpakBackend.get_default (), runtime_updates_component);
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
@@ -44,7 +44,7 @@ public class AppCenterCore.UpdateManager : Object {
         updates_size = 0ULL;
 
         // Clear any packages previously marked as updatable
-        var installed_packages = yield BackendAggregator.get_default ().get_installed_applications ();
+        var installed_packages = yield FlatpakBackend.get_default ().get_installed_applications ();
         foreach (var installed_package in installed_packages) {
             installed_package.change_information.clear_update_info ();
             installed_package.update_state ();

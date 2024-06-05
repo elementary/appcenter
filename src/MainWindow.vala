@@ -53,12 +53,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
-        aggregator.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
-        aggregator.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
+        backend.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
+        backend.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
 
-        aggregator.notify ["job-type"].connect (() => {
-            update_overlaybar_label (aggregator.job_type);
+        backend.notify ["job-type"].connect (() => {
+            update_overlaybar_label (backend.job_type);
         });
 
         notify["working"].connect (() => {
@@ -69,7 +69,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             });
         });
 
-        update_overlaybar_label (aggregator.job_type);
+        update_overlaybar_label (backend.job_type);
     }
 
     construct {
