@@ -20,10 +20,9 @@
 public class AppCenterCore.FlatpakPackage : Package {
     public weak Flatpak.Installation installation { public get; construct; }
 
-    public FlatpakPackage (Flatpak.Installation installation, Backend backend, AppStream.Component component) {
+    public FlatpakPackage (Flatpak.Installation installation, AppStream.Component component) {
         Object (
             installation: installation,
-            backend: backend,
             component: component
         );
     }
@@ -50,6 +49,8 @@ public class AppCenterCore.FlatpakPackage : Package {
 }
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {
+    public signal void cache_flush_needed ();
+
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
     private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
     private const string FLATPAK_METADATA_KEY_RUNTIME = "runtime";
@@ -83,11 +84,30 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private uint total_operations;
     private int current_operation;
 
+    private uint remove_inhibit_timeout = 0;
+    private uint inhibit_token = 0;
+
     private bool worker_func () {
         while (thread_should_run) {
             var job = jobs.pop ();
             job_type = job.operation;
             working = true;
+
+            if (remove_inhibit_timeout != 0) {
+                Source.remove (remove_inhibit_timeout);
+                remove_inhibit_timeout = 0;
+            }
+
+            unowned var app = (Gtk.Application) GLib.Application.get_default ();
+
+            if (inhibit_token == 0) {
+                inhibit_token = app.inhibit (
+                    app.get_active_window (),
+                    Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+                    _("package operations are being performed")
+                );
+            }
+
             switch (job.operation) {
                 case Job.Type.REFRESH_CACHE:
                     refresh_cache_internal (job);
@@ -118,6 +138,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     break;
                 default:
                     assert_not_reached ();
+            }
+
+            // Wait for 5 seconds of inactivity before uninhibiting as we may be
+            // rapidly switching between working states on different backends etc...
+            if (remove_inhibit_timeout == 0) {
+                remove_inhibit_timeout = Timeout.add_seconds (5, () => {
+                    if (inhibit_token != 0) {
+                        app.uninhibit (inhibit_token);
+                        inhibit_token = 0;
+                    }
+
+                    remove_inhibit_timeout = 0;
+
+                    return false;
+                });
             }
 
             working = false;
@@ -970,7 +1005,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         reload_appstream_pool ();
-        BackendAggregator.get_default ().cache_flush_needed ();
+        cache_flush_needed ();
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
@@ -1135,7 +1170,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (user_installation, this, comp);
+                        package = new FlatpakPackage (user_installation, comp);
                     }
 
                     new_package_list[key] = package;
@@ -1176,7 +1211,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (system_installation, this, comp);
+                        package = new FlatpakPackage (system_installation, comp);
                     }
 
                     new_package_list[key] = package;
@@ -1185,6 +1220,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         package_list = new_package_list;
+    }
+
+    private bool validate (AppStream.Component component) {
+        if (component.get_kind () == CONSOLE_APP) {
+            return false;
+        }
+
+        if (component.get_kind () == RUNTIME) {
+            return false;
+        }
+
+        return true;
     }
 
     private string generate_package_list_key (bool system, string origin, string bundle_id) {

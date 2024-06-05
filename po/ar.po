@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2023-11-09 13:10+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
@@ -25,8 +25,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
-#: src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "آب سنتر"
 
@@ -40,17 +39,17 @@ msgstr "لا يمكن تحليل نوع الوسائط %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "الرابط المحدد '%s' غير موجود، سيتم البحث بدلاً من ذلك"
 
-#: src/Application.vala:262
+#: src/Application.vala:244
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:345
+#: src/Application.vala:327
 msgid "The app has been installed"
 msgstr "تم تثبيت التطبيق بنجاح"
 
-#: src/Application.vala:346 src/MainWindow.vala:420
+#: src/Application.vala:328 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr "تم تثبيت ”%s“"
@@ -160,201 +159,55 @@ msgstr "قيد إلغاء التثبيت"
 msgid "Repairing…"
 msgstr ""
 
-#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
-msgid "Starting"
-msgstr "قيد البدء"
-
-#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr "قيد الانتظار"
 
-#: src/Utils.vala:67
-msgid "Running"
-msgstr "قيد التشغيل"
-
-#: src/Utils.vala:69
-msgid "Querying"
-msgstr "قيد الاستعلام"
-
-#: src/Utils.vala:71
-msgid "Getting information"
-msgstr "قيد الحصول على المعلومات"
-
-#: src/Utils.vala:73
-msgid "Removing packages"
-msgstr "قيد حذف الحزم"
-
-#: src/Utils.vala:75
-msgid "Downloading"
-msgstr "قيد التحميل"
-
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1456
-msgid "Installing"
-msgstr "قيد التثبيت"
-
-#: src/Utils.vala:79
-msgid "Refreshing software list"
-msgstr "قيد تحديث قائمة التطبيقات"
-
-#: src/Utils.vala:81
-msgid "Installing updates"
-msgstr "قيد تثبيت التحديثات"
-
-#: src/Utils.vala:83
-msgid "Cleaning up packages"
-msgstr "قيد تنظيف الحزم"
-
-#: src/Utils.vala:85
-msgid "Obsoleting packages"
-msgstr "قيد إلغاء الحزم القديمة"
-
-#: src/Utils.vala:87
-msgid "Resolving dependencies"
-msgstr "قيد معالجة الحزم الاعتمادية"
-
-#: src/Utils.vala:89
-msgid "Checking signatures"
-msgstr "قيد التحقق من التواقيع"
-
-#: src/Utils.vala:91
-msgid "Testing changes"
-msgstr "قيد فحص التغييرات"
-
-#: src/Utils.vala:93
-msgid "Committing changes"
-msgstr "قيد إتمام التغييرات"
-
-#: src/Utils.vala:95
-msgid "Requesting data"
-msgstr "قيد طلب البيانات"
-
-#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
+#: src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "انتهى"
 
-#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1465 src/Core/FlatpakBackend.vala:1489
-#: src/Core/FlatpakBackend.vala:1597 src/Core/FlatpakBackend.vala:1621
-#: src/Core/FlatpakBackend.vala:1779 src/Core/FlatpakBackend.vala:1797
+#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1500
+#: src/Core/FlatpakBackend.vala:1524 src/Core/FlatpakBackend.vala:1632
+#: src/Core/FlatpakBackend.vala:1656 src/Core/FlatpakBackend.vala:1814
+#: src/Core/FlatpakBackend.vala:1832
 msgid "Cancelling"
 msgstr "قيد الإلغاء"
 
-#: src/Utils.vala:101
-msgid "Downloading repository information"
-msgstr "قيد تنزيل معلومات المستودعات"
+#: src/Core/ChangeInformation.vala:90
+msgid "Starting"
+msgstr "قيد البدء"
 
-#: src/Utils.vala:103
-msgid "Downloading list of packages"
-msgstr "قيد تنزيل قائمة الحزم"
-
-#: src/Utils.vala:105
-msgid "Downloading file lists"
-msgstr "قيد تنزيل قوائم الملفات"
-
-#: src/Utils.vala:107
-msgid "Downloading lists of changes"
-msgstr "قيد تنزيل القوائم بالتغييرات"
-
-#: src/Utils.vala:109
-msgid "Downloading groups"
-msgstr "قيد تنزيل المجموعات"
-
-#: src/Utils.vala:111
-msgid "Downloading update information"
-msgstr "قيد تنزيل معلومات التحديث"
-
-#: src/Utils.vala:113
-msgid "Repackaging files"
-msgstr "قيد إعادة تحزيم الملفات"
-
-#: src/Utils.vala:115
-msgid "Loading cache"
-msgstr "قيد تحميل الملفات المؤقتة"
-
-#: src/Utils.vala:117
-msgid "Scanning applications"
-msgstr "قيد فحص التطبيقات"
-
-#: src/Utils.vala:119
-msgid "Generating package lists"
-msgstr "قيد توليد قوائم الحزم"
-
-#: src/Utils.vala:121
-msgid "Waiting for package manager lock"
-msgstr "في انتظار قفل مدير الحزم"
-
-#: src/Utils.vala:123
-msgid "Waiting for authentication"
-msgstr "في انتظار التوثيق"
-
-#: src/Utils.vala:125
-msgid "Updating running applications"
-msgstr "قيد تحديث التطبيقات المشغلة"
-
-#: src/Utils.vala:127
-msgid "Checking applications in use"
-msgstr "قيد التأكد من التطبيقات المستخدمة"
-
-#: src/Utils.vala:129
-msgid "Checking libraries in use"
-msgstr "قيد التأكد من المكتبات المستخدمة"
-
-#: src/Utils.vala:131
-msgid "Copying files"
-msgstr "قيد نسخ الملفات"
-
-#: src/Utils.vala:133
-msgid "Unknown state"
-msgstr "حالة غير معروفة"
-
-#: src/Core/BackendAggregator.vala:50
-msgid "package operations are being performed"
-msgstr "يتم الآن تنفيذ العمليات الخاصة بالحزم"
-
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (على صعيد النظام بأكمله)"
 
-#: src/Core/FlatpakBackend.vala:1588
+#: src/Core/FlatpakBackend.vala:107
+msgid "package operations are being performed"
+msgstr "يتم الآن تنفيذ العمليات الخاصة بالحزم"
+
+#: src/Core/FlatpakBackend.vala:1491
+msgid "Installing"
+msgstr "قيد التثبيت"
+
+#: src/Core/FlatpakBackend.vala:1623
 msgid "Uninstalling"
 msgstr "قيد إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1770
+#: src/Core/FlatpakBackend.vala:1805
 msgid "Updating"
 msgstr "قيد التحديث"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:320
 #, c-format
 msgid "%s Developers"
 msgstr "مطورو %s"
 
-#: src/Core/Package.vala:364
-msgid "elementary Updates"
-msgstr "تحديثات elementary"
-
-#: src/Core/Package.vala:366
-msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (غير مختارة)"
-
-#: src/Core/Package.vala:372
-msgid "Ubuntu Drivers"
-msgstr "تعريفات Ubuntu"
-
-#: src/Core/Package.vala:376
-msgid "Unknown Origin (non-curated)"
-msgstr "غير معروفة الأصل (غير مختارة)"
-
-#: src/Core/Package.vala:550
+#: src/Core/Package.vala:507
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "حالة التطبيق غير معينة ك \"مثبت\" في آب سنتر للحزمة: %s"
-
-#: src/Core/PackageKitBackend.vala:314
-#, c-format
-msgid "%s (local)"
-msgstr "%s (محلي)"
 
 #: src/Core/Stripe.vala:27
 msgid ""
@@ -536,7 +389,7 @@ msgstr "فشل تثبيت التطبيق"
 msgid "Failed to install “%s”"
 msgstr "فشل تثبيت ”%s“"
 
-#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+#: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
 msgstr ""
 
@@ -1003,11 +856,11 @@ msgstr "احتكاري"
 msgid "Unknown License"
 msgstr "رخصة غير معروفة"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1248
 msgid "Fund"
 msgstr "قم بالتمويل"
 
-#: src/Views/AppInfoView.vala:1278
+#: src/Views/AppInfoView.vala:1254
 msgid "Fund the development of this app"
 msgstr "ادعم عملية تطوير هذا التطبيق"
 
@@ -1023,17 +876,17 @@ msgstr "قيد تحميل قائمة من التحديثات المتوفرة ل
 msgid "Update All"
 msgstr "حدث الكل"
 
-#: src/Views/AppListUpdateView.vala:99
+#: src/Views/AppListUpdateView.vala:98
 msgid "Up to Date"
 msgstr "محدث بالكامل"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:140
 msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
-#: src/Views/AppListUpdateView.vala:207
+#: src/Views/AppListUpdateView.vala:206
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -1044,14 +897,10 @@ msgstr[3] "تتوفر %u تحديثات"
 msgstr[4] "يتوفر %u تحديثاً"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Views/AppListUpdateView.vala:216
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
-
-#: src/Views/AppListUpdateView.vala:334
-msgid "Drivers"
-msgstr "التعريفات"
 
 #: src/Views/AuthorView.vala:31
 #, c-format
@@ -1300,6 +1149,118 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr "إغلاق"
+
+#~ msgid "Unknown Origin (non-curated)"
+#~ msgstr "غير معروفة الأصل (غير مختارة)"
+
+#~ msgid "Running"
+#~ msgstr "قيد التشغيل"
+
+#~ msgid "Querying"
+#~ msgstr "قيد الاستعلام"
+
+#~ msgid "Getting information"
+#~ msgstr "قيد الحصول على المعلومات"
+
+#~ msgid "Removing packages"
+#~ msgstr "قيد حذف الحزم"
+
+#~ msgid "Downloading"
+#~ msgstr "قيد التحميل"
+
+#~ msgid "Refreshing software list"
+#~ msgstr "قيد تحديث قائمة التطبيقات"
+
+#~ msgid "Installing updates"
+#~ msgstr "قيد تثبيت التحديثات"
+
+#~ msgid "Cleaning up packages"
+#~ msgstr "قيد تنظيف الحزم"
+
+#~ msgid "Obsoleting packages"
+#~ msgstr "قيد إلغاء الحزم القديمة"
+
+#~ msgid "Resolving dependencies"
+#~ msgstr "قيد معالجة الحزم الاعتمادية"
+
+#~ msgid "Checking signatures"
+#~ msgstr "قيد التحقق من التواقيع"
+
+#~ msgid "Testing changes"
+#~ msgstr "قيد فحص التغييرات"
+
+#~ msgid "Committing changes"
+#~ msgstr "قيد إتمام التغييرات"
+
+#~ msgid "Requesting data"
+#~ msgstr "قيد طلب البيانات"
+
+#~ msgid "Downloading repository information"
+#~ msgstr "قيد تنزيل معلومات المستودعات"
+
+#~ msgid "Downloading list of packages"
+#~ msgstr "قيد تنزيل قائمة الحزم"
+
+#~ msgid "Downloading file lists"
+#~ msgstr "قيد تنزيل قوائم الملفات"
+
+#~ msgid "Downloading lists of changes"
+#~ msgstr "قيد تنزيل القوائم بالتغييرات"
+
+#~ msgid "Downloading groups"
+#~ msgstr "قيد تنزيل المجموعات"
+
+#~ msgid "Downloading update information"
+#~ msgstr "قيد تنزيل معلومات التحديث"
+
+#~ msgid "Repackaging files"
+#~ msgstr "قيد إعادة تحزيم الملفات"
+
+#~ msgid "Loading cache"
+#~ msgstr "قيد تحميل الملفات المؤقتة"
+
+#~ msgid "Scanning applications"
+#~ msgstr "قيد فحص التطبيقات"
+
+#~ msgid "Generating package lists"
+#~ msgstr "قيد توليد قوائم الحزم"
+
+#~ msgid "Waiting for package manager lock"
+#~ msgstr "في انتظار قفل مدير الحزم"
+
+#~ msgid "Waiting for authentication"
+#~ msgstr "في انتظار التوثيق"
+
+#~ msgid "Updating running applications"
+#~ msgstr "قيد تحديث التطبيقات المشغلة"
+
+#~ msgid "Checking applications in use"
+#~ msgstr "قيد التأكد من التطبيقات المستخدمة"
+
+#~ msgid "Checking libraries in use"
+#~ msgstr "قيد التأكد من المكتبات المستخدمة"
+
+#~ msgid "Copying files"
+#~ msgstr "قيد نسخ الملفات"
+
+#~ msgid "Unknown state"
+#~ msgstr "حالة غير معروفة"
+
+#~ msgid "elementary Updates"
+#~ msgstr "تحديثات elementary"
+
+#~ msgid "Ubuntu (non-curated)"
+#~ msgstr "Ubuntu (غير مختارة)"
+
+#~ msgid "Ubuntu Drivers"
+#~ msgstr "تعريفات Ubuntu"
+
+#, c-format
+#~ msgid "%s (local)"
+#~ msgstr "%s (محلي)"
+
+#~ msgid "Drivers"
+#~ msgstr "التعريفات"
 
 #, fuzzy
 #~| msgid "Non-Curated Apps"

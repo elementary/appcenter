@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2024-03-23 18:13+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
+"PO-Revision-Date: 2024-05-24 16:13+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -64,7 +64,7 @@ msgstr "Nowe funkcje:"
 
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Auto uruchamianie może być teraz zarządzane w Ustawienia → Aplikacje"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:97
 #: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:132
@@ -74,16 +74,18 @@ msgstr "Inne ulepszenia:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Automatyczne aktualizacje aplikacji są domyślnie włączone"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "Aktualizacje systemu zostały przeniesione do ustawień systemu"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Odznaki przydzielane są teraz aplikacjom stworzonym dla elementary OS "
+"zamiast dla aplikacji z innych repozytoriów"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:100
 #: data/appcenter.metainfo.xml.in:122 data/appcenter.metainfo.xml.in:134
@@ -147,20 +149,18 @@ msgid "Check for Updates"
 msgstr "Sprawdź aktualizacje"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Aktualizacja oprogramowania"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Uwierzytelnianie jest wymagane aby zaktualizować oprogramowanie"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Naprawa źródeł aplikacji"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Uwierzytelnianie jest wymagane aby naprawić źródła oprogramowania"
+
+#~ msgid "Update software"
+#~ msgstr "Aktualizacja oprogramowania"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Uwierzytelnianie jest wymagane aby zaktualizować oprogramowanie"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "Dodano informację, gdy aplikacja nie jest dostępna w twoim języku"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: Naresh Kumar <nkumar@veenamtech.com>\n"
 "Language-Team: Telugu <https://l10n.elementary.io/projects/appcenter/"
@@ -18,8 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Core/Package.vala:362
-#: src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "వినియోగకేంద్రం"
 
@@ -33,17 +32,17 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:262
+#: src/Application.vala:244
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:345
+#: src/Application.vala:327
 msgid "The app has been installed"
 msgstr ""
 
-#: src/Application.vala:346 src/MainWindow.vala:420
+#: src/Application.vala:328 src/MainWindow.vala:420
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
@@ -152,204 +151,58 @@ msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 msgid "Repairing…"
 msgstr ""
 
-#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
-msgid "Starting"
-msgstr "మొదలవుతూంది"
-
-#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
 #: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
 msgid "Waiting"
 msgstr ""
 
-#: src/Utils.vala:67
-msgid "Running"
-msgstr "నడుస్తోంది"
-
-#: src/Utils.vala:69
-msgid "Querying"
-msgstr "అన్వేషిస్తున్నది"
-
-#: src/Utils.vala:71
-msgid "Getting information"
-msgstr "సమాచారమును పొందుచున్నది"
-
-#: src/Utils.vala:73
-msgid "Removing packages"
-msgstr "ప్యాకేజీలు తొలగించబడుతున్నాయి"
-
-#: src/Utils.vala:75
-msgid "Downloading"
-msgstr ""
-
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1456
-msgid "Installing"
-msgstr ""
-
-#: src/Utils.vala:79
-msgid "Refreshing software list"
-msgstr "సాఫ్టువేరు జాబితాను తాజాపర్చుచున్నది"
-
-#: src/Utils.vala:81
-msgid "Installing updates"
-msgstr "నవీకరణలు స్థాపించబడుతున్నాయి"
-
-#: src/Utils.vala:83
-msgid "Cleaning up packages"
-msgstr "సంకలనాలను శుభ్రపరచుచున్నది చేయుచున్నది"
-
-#: src/Utils.vala:85
-msgid "Obsoleting packages"
-msgstr "సంకలనాలను తీసివేయుచున్నది"
-
-#: src/Utils.vala:87
-msgid "Resolving dependencies"
-msgstr "ఆధారాలను పరిష్కరించుచున్నది"
-
-#: src/Utils.vala:89
-msgid "Checking signatures"
-msgstr "సంతకాలను పరిశీలించుచున్నది"
-
-#: src/Utils.vala:91
-msgid "Testing changes"
-msgstr "మార్పులను పరిశీలించుచున్నది"
-
-#: src/Utils.vala:93
-msgid "Committing changes"
-msgstr "మార్పులను అప్పగించుతోంది"
-
-#: src/Utils.vala:95
-msgid "Requesting data"
-msgstr "సమాచరమును కోరుతున్నది"
-
-#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
+#: src/Core/ChangeInformation.vala:69
 msgid "Finished"
 msgstr "పూర్తయింది"
 
-#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1465 src/Core/FlatpakBackend.vala:1489
-#: src/Core/FlatpakBackend.vala:1597 src/Core/FlatpakBackend.vala:1621
-#: src/Core/FlatpakBackend.vala:1779 src/Core/FlatpakBackend.vala:1797
+#: src/Core/ChangeInformation.vala:77 src/Core/FlatpakBackend.vala:1500
+#: src/Core/FlatpakBackend.vala:1524 src/Core/FlatpakBackend.vala:1632
+#: src/Core/FlatpakBackend.vala:1656 src/Core/FlatpakBackend.vala:1814
+#: src/Core/FlatpakBackend.vala:1832
 msgid "Cancelling"
 msgstr "రద్దుచేస్తోంది"
 
-#: src/Utils.vala:101
-msgid "Downloading repository information"
-msgstr "రిపోజిటరీ సమాచారమును డౌనులోడుచేయుచున్నది"
+#: src/Core/ChangeInformation.vala:90
+msgid "Starting"
+msgstr "మొదలవుతూంది"
 
-#: src/Utils.vala:103
-msgid "Downloading list of packages"
-msgstr "సంకలనాల జాబితాను డౌనులోడుచేస్తోంది"
-
-#: src/Utils.vala:105
-msgid "Downloading file lists"
-msgstr "దస్త్రముల జాబితాను డౌనులోడుచేయుచున్నది"
-
-#: src/Utils.vala:107
-msgid "Downloading lists of changes"
-msgstr "మార్పుల జాబితాను డౌనులోడుచేయుచున్నది"
-
-#: src/Utils.vala:109
-msgid "Downloading groups"
-msgstr "సమూహాలను డౌనులోడు చేయుచున్నది"
-
-#: src/Utils.vala:111
-msgid "Downloading update information"
-msgstr "నవీకరణ సమాచారమును డౌనులోడుచేస్తున్నది"
-
-#: src/Utils.vala:113
-msgid "Repackaging files"
-msgstr "దస్త్రములు పునఃసంకలనము చేయుచున్నది"
-
-#: src/Utils.vala:115
-msgid "Loading cache"
-msgstr "క్యాచీను లోడుచేయుచున్నది"
-
-#: src/Utils.vala:117
-msgid "Scanning applications"
-msgstr "అనువర్తనములను స్కానుచేయుచున్నది"
-
-#: src/Utils.vala:119
-msgid "Generating package lists"
-msgstr "సంకలన జాబితాలను జనియింపచేయుచున్నది"
-
-#: src/Utils.vala:121
-msgid "Waiting for package manager lock"
-msgstr "ప్యాకేజి నిర్వాహకుని అనుమతి కోసం వేచియున్నది"
-
-#: src/Utils.vala:123
-msgid "Waiting for authentication"
-msgstr "దృవీకరణము కొరకు వేచివుంది"
-
-#: src/Utils.vala:125
-msgid "Updating running applications"
-msgstr "నడుస్తున్న అనువర్తనములను నవీకరించుచున్నది"
-
-#: src/Utils.vala:127
-msgid "Checking applications in use"
-msgstr "ఉపయోగంలోవున్న అనువర్తనములను పరిశీలించుచున్నది"
-
-#: src/Utils.vala:129
-msgid "Checking libraries in use"
-msgstr "ఉపయోగంలో వున్న లైబ్రరీలను పరిశీలించుచున్నది"
-
-#: src/Utils.vala:131
-msgid "Copying files"
-msgstr "దస్త్రములను నకలుతీయుచున్నది"
-
-#: src/Utils.vala:133
-msgid "Unknown state"
-msgstr "అజ్ఞాత స్థితి"
-
-#: src/Core/BackendAggregator.vala:50
-msgid "package operations are being performed"
-msgstr ""
-
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1588
+#: src/Core/FlatpakBackend.vala:107
+msgid "package operations are being performed"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1491
+msgid "Installing"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1623
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
-#: src/Core/FlatpakBackend.vala:1770
+#: src/Core/FlatpakBackend.vala:1805
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "నవీకరించుము"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:320
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:364
-msgid "elementary Updates"
-msgstr ""
-
-#: src/Core/Package.vala:366
-msgid "Ubuntu (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:372
-msgid "Ubuntu Drivers"
-msgstr ""
-
-#: src/Core/Package.vala:376
-msgid "Unknown Origin (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:550
+#: src/Core/Package.vala:507
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-
-#: src/Core/PackageKitBackend.vala:314
-#, c-format
-msgid "%s (local)"
 msgstr ""
 
 #: src/Core/Stripe.vala:27
@@ -506,7 +359,7 @@ msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 msgid "Failed to install “%s”"
 msgstr "\"%s\" ఇన్‌స్టాల్ చేయడంలో విఫలమైంది"
 
-#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+#: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
 msgstr ""
 
@@ -950,11 +803,11 @@ msgstr ""
 msgid "Unknown License"
 msgstr "అజ్ఞాత స్థితి"
 
-#: src/Views/AppInfoView.vala:1272
+#: src/Views/AppInfoView.vala:1248
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1278
+#: src/Views/AppInfoView.vala:1254
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -972,30 +825,26 @@ msgstr ""
 msgid "Update All"
 msgstr "అన్నీ సవరణ చెయ్యి"
 
-#: src/Views/AppListUpdateView.vala:99
+#: src/Views/AppListUpdateView.vala:98
 msgid "Up to Date"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:140
 msgctxt "view"
 msgid "Installed"
 msgstr "స్థాపించబడింది"
 
-#: src/Views/AppListUpdateView.vala:207
+#: src/Views/AppListUpdateView.vala:206
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/AppListUpdateView.vala:216
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:334
-msgid "Drivers"
 msgstr ""
 
 #: src/Views/AuthorView.vala:31
@@ -1241,6 +1090,96 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
 msgid "Close"
 msgstr ""
+
+#~ msgid "Running"
+#~ msgstr "నడుస్తోంది"
+
+#~ msgid "Querying"
+#~ msgstr "అన్వేషిస్తున్నది"
+
+#~ msgid "Getting information"
+#~ msgstr "సమాచారమును పొందుచున్నది"
+
+#~ msgid "Removing packages"
+#~ msgstr "ప్యాకేజీలు తొలగించబడుతున్నాయి"
+
+#~ msgid "Refreshing software list"
+#~ msgstr "సాఫ్టువేరు జాబితాను తాజాపర్చుచున్నది"
+
+#~ msgid "Installing updates"
+#~ msgstr "నవీకరణలు స్థాపించబడుతున్నాయి"
+
+#~ msgid "Cleaning up packages"
+#~ msgstr "సంకలనాలను శుభ్రపరచుచున్నది చేయుచున్నది"
+
+#~ msgid "Obsoleting packages"
+#~ msgstr "సంకలనాలను తీసివేయుచున్నది"
+
+#~ msgid "Resolving dependencies"
+#~ msgstr "ఆధారాలను పరిష్కరించుచున్నది"
+
+#~ msgid "Checking signatures"
+#~ msgstr "సంతకాలను పరిశీలించుచున్నది"
+
+#~ msgid "Testing changes"
+#~ msgstr "మార్పులను పరిశీలించుచున్నది"
+
+#~ msgid "Committing changes"
+#~ msgstr "మార్పులను అప్పగించుతోంది"
+
+#~ msgid "Requesting data"
+#~ msgstr "సమాచరమును కోరుతున్నది"
+
+#~ msgid "Downloading repository information"
+#~ msgstr "రిపోజిటరీ సమాచారమును డౌనులోడుచేయుచున్నది"
+
+#~ msgid "Downloading list of packages"
+#~ msgstr "సంకలనాల జాబితాను డౌనులోడుచేస్తోంది"
+
+#~ msgid "Downloading file lists"
+#~ msgstr "దస్త్రముల జాబితాను డౌనులోడుచేయుచున్నది"
+
+#~ msgid "Downloading lists of changes"
+#~ msgstr "మార్పుల జాబితాను డౌనులోడుచేయుచున్నది"
+
+#~ msgid "Downloading groups"
+#~ msgstr "సమూహాలను డౌనులోడు చేయుచున్నది"
+
+#~ msgid "Downloading update information"
+#~ msgstr "నవీకరణ సమాచారమును డౌనులోడుచేస్తున్నది"
+
+#~ msgid "Repackaging files"
+#~ msgstr "దస్త్రములు పునఃసంకలనము చేయుచున్నది"
+
+#~ msgid "Loading cache"
+#~ msgstr "క్యాచీను లోడుచేయుచున్నది"
+
+#~ msgid "Scanning applications"
+#~ msgstr "అనువర్తనములను స్కానుచేయుచున్నది"
+
+#~ msgid "Generating package lists"
+#~ msgstr "సంకలన జాబితాలను జనియింపచేయుచున్నది"
+
+#~ msgid "Waiting for package manager lock"
+#~ msgstr "ప్యాకేజి నిర్వాహకుని అనుమతి కోసం వేచియున్నది"
+
+#~ msgid "Waiting for authentication"
+#~ msgstr "దృవీకరణము కొరకు వేచివుంది"
+
+#~ msgid "Updating running applications"
+#~ msgstr "నడుస్తున్న అనువర్తనములను నవీకరించుచున్నది"
+
+#~ msgid "Checking applications in use"
+#~ msgstr "ఉపయోగంలోవున్న అనువర్తనములను పరిశీలించుచున్నది"
+
+#~ msgid "Checking libraries in use"
+#~ msgstr "ఉపయోగంలో వున్న లైబ్రరీలను పరిశీలించుచున్నది"
+
+#~ msgid "Copying files"
+#~ msgstr "దస్త్రములను నకలుతీయుచున్నది"
+
+#~ msgid "Unknown state"
+#~ msgstr "అజ్ఞాత స్థితి"
 
 #, fuzzy
 #~ msgid "Non-Curated"

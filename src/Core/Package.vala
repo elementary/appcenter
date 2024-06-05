@@ -115,8 +115,6 @@ public class AppCenterCore.Package : Object {
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
-    public Backend backend { public get; construct; }
-
     public double progress {
         get {
             return change_information.progress;
@@ -226,7 +224,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return is_native && component.get_kind () != AppStream.ComponentKind.DRIVER && !is_runtime_updates;
+            return is_native && !is_runtime_updates;
         }
     }
 
@@ -285,13 +283,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool is_flatpak {
-        get {
-            return (backend is FlatpakBackend)
-                || change_information.updatable_packages.contains (FlatpakBackend.get_default ());
-        }
-    }
-
     private string? _author = null;
     public string author {
         get {
@@ -335,7 +326,7 @@ public class AppCenterCore.Package : Object {
 
     public Gee.Collection<Package> origin_packages {
         owned get {
-            return BackendAggregator.get_default ().get_packages_for_component_id (component.get_id ());
+            return FlatpakBackend.get_default ().get_packages_for_component_id (component.get_id ());
         }
     }
 
@@ -348,32 +339,12 @@ public class AppCenterCore.Package : Object {
     public string origin_description {
         owned get {
             unowned string origin = component.get_origin ();
-            if (backend is FlatpakBackend) {
-                var fp_package = this as FlatpakPackage;
-                if (fp_package == null) {
-                    return origin;
-                }
+            var fp_package = this as FlatpakPackage;
+            if (fp_package == null) {
+                return origin;
+            }
 
-                return fp_package.remote_title;
-            }
-#if PACKAGEKIT_BACKEND
-            else if (backend is PackageKitBackend) {
-                if (origin == APPCENTER_PACKAGE_ORIGIN) {
-                    return _("AppCenter");
-                } else if (origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
-                    return _("elementary Updates");
-                } else if (origin.has_prefix ("ubuntu-")) {
-                    return _("Ubuntu (non-curated)");
-                }
-            }
-#endif
-#if UBUNTU_DRIVERS_BACKEND
-            else if (backend is UbuntuDriversBackend) {
-                return _("Ubuntu Drivers");
-            }
-#endif
-
-            return _("Unknown Origin (non-curated)");
+            return fp_package.remote_title;
         }
     }
 
@@ -389,13 +360,9 @@ public class AppCenterCore.Package : Object {
                 score += 5;
             }
 
-            if (is_flatpak) {
+            var fp_package = this as FlatpakPackage;
+            if (fp_package != null && fp_package.installation == FlatpakBackend.user_installation) {
                 score++;
-
-                var fp_package = this as FlatpakPackage;
-                if (fp_package != null && fp_package.installation == FlatpakBackend.user_installation) {
-                    score++;
-                }
             }
 
             return score;
@@ -405,13 +372,11 @@ public class AppCenterCore.Package : Object {
     public string hash {
         owned get {
             string key = "";
-            if (backend is FlatpakBackend) {
-                var fp_package = this as FlatpakPackage;
-                if (fp_package.installation != null && fp_package.installation == FlatpakBackend.system_installation) {
-                    key += "system/";
-                } else {
-                    key += "user/";
-                }
+            var fp_package = this as FlatpakPackage;
+            if (fp_package.installation != null && fp_package.installation == FlatpakBackend.system_installation) {
+                key += "system/";
+            } else {
+                key += "user/";
             }
 
             key += component.get_origin () + "/";
@@ -445,7 +410,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public Package (Backend backend, AppStream.Component component) {
-        Object (backend: backend, component: component);
+        Object (component: component);
     }
 
     public void replace_component (AppStream.Component component) {
@@ -459,14 +424,6 @@ public class AppCenterCore.Package : Object {
         _author = null;
         _author_title = null;
         backend_details = null;
-
-#if PACKAGEKIT_BACKEND
-        // The version on a PackageKit package comes from the package not AppStream, so only reset the version
-        // on other backends
-        if (!(backend is PackageKitBackend)) {
-            _latest_version = null;
-        }
-#endif
 
         this.component = component;
     }
@@ -535,7 +492,7 @@ public class AppCenterCore.Package : Object {
 
     public async bool uninstall () throws Error {
         // We possibly don't know if this package is installed or not yet, so trigger that check first
-        _installed = yield backend.is_package_installed (this);
+        _installed = yield AppCenterCore.FlatpakBackend.get_default ().is_package_installed (this);
 
         update_state ();
 
@@ -586,6 +543,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
+        var backend = AppCenterCore.FlatpakBackend.get_default ();
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
@@ -792,7 +750,7 @@ public class AppCenterCore.Package : Object {
         }
 
         for (int i = 0; i < extends.length; i++) {
-            var package = backend.get_package_for_component_id (extends[i]);
+            var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (extends[i]);
             if (package != null) {
                 return package;
             }
@@ -935,7 +893,7 @@ public class AppCenterCore.Package : Object {
     public async uint64 get_download_size_including_deps () {
         uint64 size = 0;
         try {
-            size = yield backend.get_download_size (this, null);
+            size = yield AppCenterCore.FlatpakBackend.get_default ().get_download_size (this, null);
         } catch (Error e) {
             warning ("Error getting download size: %s", e.message);
         }
@@ -951,9 +909,9 @@ public class AppCenterCore.Package : Object {
 
         var loop = new MainLoop ();
         PackageDetails? result = null;
-        backend.get_package_details.begin (this, (obj, res) => {
+        AppCenterCore.FlatpakBackend.get_default ().get_package_details.begin (this, (obj, res) => {
             try {
-                result = backend.get_package_details.end (res);
+                result = AppCenterCore.FlatpakBackend.get_default ().get_package_details.end (res);
             } catch (Error e) {
                 warning (e.message);
             } finally {

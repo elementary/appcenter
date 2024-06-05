@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2018-06-13 00:05+0000\n"
 "Last-Translator: Timothy <timty97@gmail.com>\n"
 "Language-Team: Malay <https://weblate.elementary.io/projects/appcenter/extra/"
@@ -141,18 +141,10 @@ msgid "Check for Updates"
 msgstr "Mencari untuk kemas kini"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr ""
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr ""
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr ""
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr ""
 

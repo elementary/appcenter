@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2021-03-21 01:40+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -143,22 +143,20 @@ msgid "Check for Updates"
 msgstr "अपडेट्ससाठी तपासा"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "सॉफ्टवेअर अद्यतनित करा"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "सॉफ्टवेअर अद्यतनित करण्यासाठी प्रमाणीकरण आवश्यक आहे"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr ""
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 #, fuzzy
 #| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
 msgstr "सॉफ्टवेअर अद्यतनित करण्यासाठी प्रमाणीकरण आवश्यक आहे"
+
+#~ msgid "Update software"
+#~ msgstr "सॉफ्टवेअर अद्यतनित करा"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "सॉफ्टवेअर अद्यतनित करण्यासाठी प्रमाणीकरण आवश्यक आहे"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

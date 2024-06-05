@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
 "PO-Revision-Date: 2023-05-27 17:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -142,20 +142,18 @@ msgid "Check for Updates"
 msgstr "Periksa Pembaruan"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Pembaruan perangkat lunak"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Otentikasi diperlukan untuk pembaruan perangkat lunak"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Perbaiki sumber perangkat lunak"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Autentikasi diperlukan untuk memperbaiki sumber perangkat lunak"
+
+#~ msgid "Update software"
+#~ msgstr "Pembaruan perangkat lunak"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Otentikasi diperlukan untuk pembaruan perangkat lunak"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "Tampilkan saat aplikasi tidak tersedia dalam bahasa Anda"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2023-07-07 12:07+0000\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
+"PO-Revision-Date: 2024-05-31 08:13+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -23,7 +23,7 @@ msgstr "AppSenter"
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Bla gjennom og administrer apper"
+msgstr "Utforsk og håndter programmer"
 
 #: data/appcenter.metainfo.xml.in:14
 #, fuzzy
@@ -68,7 +68,7 @@ msgstr "Nye funksjoner"
 
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Håndter autostart i Systeminnstillinger → Programmer"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:97
 #: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:132
@@ -78,12 +78,13 @@ msgid "Other Improvements:"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
 #: data/appcenter.metainfo.xml.in:76
+#, fuzzy
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Automatiske programoppgraderinger som forvalg"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "OS-oppgraderinger har blitt flyttet til Systeminnstillinger"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
@@ -150,21 +151,19 @@ msgid "Check for Updates"
 msgstr "Se etter oppgraderinger"
 
 #: data/io.elementary.appcenter.policy.in:10
-#, fuzzy
-msgid "Update software"
-msgstr "Oppgrader programvare"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Identitetsbekreftelse kreves for å oppgradere programvare"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Reparer programvarekilder"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Identitetsbekreftelse kreves for å reparere programvarekilder"
+
+#, fuzzy
+#~ msgid "Update software"
+#~ msgstr "Oppgrader programvare"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Identitetsbekreftelse kreves for å oppgradere programvare"
 
 #~ msgid "Show when an app isn't available in your language"
 #~ msgstr "Vis når et program ikke er tilgjengelig på valgt språk"

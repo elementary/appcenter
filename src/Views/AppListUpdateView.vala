@@ -94,7 +94,6 @@ namespace AppCenter.Views {
                 vexpand = true
             };
             list_box.bind_model (updates_liststore, create_row_from_package);
-            list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
@@ -167,7 +166,7 @@ namespace AppCenter.Views {
 
             update_all_button.clicked.connect (on_update_all);
 
-            unowned var aggregator = AppCenterCore.BackendAggregator.get_default ();
+            unowned var aggregator = AppCenterCore.FlatpakBackend.get_default ();
             aggregator.notify ["job-type"].connect (() => {
                 switch (aggregator.job_type) {
                     case GET_PREPARED_PACKAGES:
@@ -263,25 +262,21 @@ namespace AppCenter.Views {
             var package1 = (AppCenterCore.Package) object1;
             var package2 = (AppCenterCore.Package) object2;
 
-            bool a_is_driver = false;
             bool a_is_os = false;
             bool a_is_runtime = false;
             bool a_is_updating = false;
             string a_package_name = "";
             if (package1 != null) {
-                a_is_driver = package1.kind == AppStream.ComponentKind.DRIVER;
                 a_is_runtime = package1.is_runtime_updates;
                 a_is_updating = package1.is_updating;
                 a_package_name = package1.get_name ();
             }
 
-            bool b_is_driver = false;
             bool b_is_os = false;
             bool b_is_runtime = false;
             bool b_is_updating = false;
             string b_package_name = "";
             if (package2 != null) {
-                b_is_driver = package2.kind == AppStream.ComponentKind.DRIVER;
                 b_is_runtime = package2.is_runtime_updates;
                 b_is_updating = package2.is_updating;
                 b_package_name = package2.get_name ();
@@ -297,50 +292,12 @@ namespace AppCenter.Views {
                 return a_is_os ? -1 : 1;
             }
 
-            if (a_is_driver != b_is_driver) {
-                return a_is_driver ? - 1 : 1;
-            }
-
             // Ensures runtime updates are sorted to the top amongst up-to-date packages but below OS updates
             if (a_is_runtime || b_is_runtime) {
                 return a_is_runtime ? -1 : 1;
             }
 
             return a_package_name.collate (b_package_name); /* Else sort in name order */
-        }
-
-        [CCode (instance_pos = -1)]
-        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
-            bool is_driver = false;
-            var row_package = row.get_package ();
-            if (row_package != null) {
-                is_driver = row_package.kind == AppStream.ComponentKind.DRIVER;
-            }
-
-            bool before_is_driver = false;
-            if (before != null) {
-                var before_package = before.get_package ();
-                if (before_package != null) {
-                    before_is_driver = before_package.kind == AppStream.ComponentKind.DRIVER;
-                }
-            }
-
-            if (is_driver) {
-                if (before != null && is_driver == before_is_driver) {
-                    row.set_header (null);
-                    return;
-                }
-
-                var header = new Granite.HeaderLabel (_("Drivers")) {
-                    margin_top = 12,
-                    margin_end = 9,
-                    margin_start = 9
-                };
-
-                row.set_header (header);
-            } else {
-                row.set_header (null);
-            }
         }
 
         private void on_update_all () {

@@ -16,7 +16,6 @@ You'll need the following dependencies:
 * libgranite-7-dev (>=7.1.0)
 * libgtk-4-dev (>=4.10)
 * libjson-glib-dev
-* libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev
 * libportal-dev
 * libportal-gtk3-dev
@@ -52,10 +51,6 @@ Show restart required messaging:
 Hide restart required messaging:
 
     sudo rm /var/run/reboot-required
-
-Fake updates with the `-f` flag followed by PackageKit package name, **not** appstream id:
-
-    io.elementary.appcenter -f inkscape
 
 Load and preview a local AppStream XML metadata file, your local metadata will show up in the featured banner and will also be searchable. Metadata loaded this way will have a `(local)` suffix in it's name.
 

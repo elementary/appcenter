@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 18:09+0000\n"
-"PO-Revision-Date: 2021-09-21 21:50+0000\n"
-"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
+"POT-Creation-Date: 2024-06-05 21:00+0000\n"
+"PO-Revision-Date: 2024-05-26 23:13+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
 "Language: es\n"
@@ -12,18 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
-msgstr "Centro de aplicaciones"
+msgstr "Centro de Aplicaciones"
 
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Explorar y gestionar aplicaciones"
+msgstr "Explora y administra aplicaciones"
 
 #: data/appcenter.metainfo.xml.in:14
 msgid ""
@@ -33,24 +33,24 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"La tienda de aplicaciones de código abierto y precio libre de elementary. "
-"Revisada y examinada por elementary para garantizar una experiencia nativa, "
-"respetuosa de la privacidad y segura. Explore las categorías o efectúe "
-"búsquedas para descubrir aplicaciones. El Centro de aplicaciones también se "
-"utiliza para actualizar el sistema a la versión más reciente y así obtener "
-"funcionalidades y arreglos nuevos."
+"La tienda de aplicaciones de elementary, de código abierto y que permite que "
+"pagues lo que tú quieras. Revisada y seleccionada por elementary para "
+"garantizar una experiencia nativa, segura y que respete tu privacidad. "
+"Explora por categorías, o busca y descubre nuevas aplicaciones. El Centro de "
+"aplicaciones también se utiliza para actualizar su sistema a la versión más "
+"reciente con las características y correcciones más recientes."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Descubra nuevas aplicaciones"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Manténgase al día"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Pague lo que pueda para ayudar a los desarrolladores"
 
 #: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
@@ -58,35 +58,36 @@ msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:93
 #: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:141
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Funcionalidades nuevas"
+msgstr "Nuevas características:"
 
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
+"Se puede administrar el inicio automático en Configuración del Sistema → "
+"Aplicaciones"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:97
 #: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:132
 #: data/appcenter.metainfo.xml.in:146
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Other Improvements:"
-msgstr "Mejoras de teclado"
+msgstr "Otras mejoras:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Actualización automática de aplicaciones de manera predeterminada"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
 msgstr ""
+"Las actualizaciones del sistema se han movido a Configuración del Sistema"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Las aplicaciones que se les otorgue insignia estarán hechas para elementary "
+"OS en vez de otros sistemas"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:100
 #: data/appcenter.metainfo.xml.in:122 data/appcenter.metainfo.xml.in:134
@@ -97,43 +98,54 @@ msgstr "Traducciones actualizadas"
 #: data/appcenter.metainfo.xml.in:95
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Ahora se advierte cuando las aplicaciones utilizan el Inicio automático "
+"heredado y las Notificaciones heredadas"
 
 #: data/appcenter.metainfo.xml.in:99
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Arreglado el parpadeo de la vista de «Información de aplicación» cuando se "
+"obtiene el tamaño de la instalación"
 
 #: data/appcenter.metainfo.xml.in:115
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Ahora se advierte cuando las aplicaciones tengan acceso a la Carpeta "
+"personal o a las carpetas del sistema, acceso a la ubicación, acceso a la "
+"configuración del sistema o tienen un espacio aislado inseguro."
 
 #: data/appcenter.metainfo.xml.in:119
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
-"Se truncan los nombres extensos en las vistas de información de aplicación"
+"Ajustes de espaciado y márgenes de la vista de «Información de aplicación»"
 
 #: data/appcenter.metainfo.xml.in:120
-#, fuzzy
-#| msgid "Navigate banners on the home page with multitouch gestures"
 msgid "Show a placeholder banner on the home page when loading"
-msgstr "Navega por los banners en la página de inicio con gestos multitáctiles"
+msgstr ""
+"Se muestra una imagen temporal en el sitio web principal cuando se está "
+"cargando"
 
 #: data/appcenter.metainfo.xml.in:121
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Ya no se listan aplicaciones que no pertenezcan al Centro de aplicaciones "
+"bajo un encabezado diferente en la vista de categorías"
 
 #: data/appcenter.metainfo.xml.in:143
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
+"Se ofrece una opción de reparación si fallan las actualizaciones de Flatpak"
 
 #: data/appcenter.metainfo.xml.in:144
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Se muestra un mensaje en la vista de actualizaciones cuando todo esté "
+"actualizado, incluyendo cuándo se verificaron las actualizaciones por última "
+"vez"
 
 #: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -141,25 +153,21 @@ msgstr "instalar;desinstalar;eliminar;catálogo;tienda;aplicaciones;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Buscar actualizaciones"
+msgstr "Comprobar si hay actualizaciones"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Actualizar software"
+msgid "Repair software sources"
+msgstr "Reparar las fuentes de software"
 
 #: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Necesita autenticarse para actualizar el software"
-
-#: data/io.elementary.appcenter.policy.in:22
-msgid "Repair software sources"
-msgstr ""
-
-#: data/io.elementary.appcenter.policy.in:23
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Necesita autenticarse para actualizar el software"
+msgstr "Necesita autenticarse para reparar las fuentes de software"
+
+#~ msgid "Update software"
+#~ msgstr "Actualizar software"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Necesita autenticarse para actualizar software"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"
