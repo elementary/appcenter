@@ -39,16 +39,4 @@ public interface AppCenterCore.Backend : Object {
     public abstract async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
     public abstract async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error;
     public abstract async bool repair (Cancellable? cancellable) throws GLib.Error;
-
-    protected bool validate (AppStream.Component component) {
-        if (component.get_kind () == AppStream.ComponentKind.CONSOLE_APP) {
-            return false;
-        }
-
-        if (component.get_kind () == AppStream.ComponentKind.RUNTIME) {
-            return false;
-        }
-
-        return true;
-    }
 }
