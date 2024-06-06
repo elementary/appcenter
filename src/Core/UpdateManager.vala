@@ -34,7 +34,7 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates_component.summary = _("Updates to app runtimes");
         runtime_updates_component.add_icon (runtime_icon);
 
-        runtime_updates = new AppCenterCore.Package (FlatpakBackend.get_default (), runtime_updates_component);
+        runtime_updates = new AppCenterCore.Package (runtime_updates_component);
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
@@ -70,7 +70,7 @@ public class AppCenterCore.UpdateManager : Object {
                 updates_number++;
                 updates_size += appcenter_package.change_information.size;
 
-                appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
+                appcenter_package.change_information.updatable_packages.add (flatpak_update);
                 appcenter_package.update_state ();
                 try {
                     appcenter_package.change_information.size = yield fp_client.get_download_size (appcenter_package, null, true);
@@ -109,7 +109,7 @@ public class AppCenterCore.UpdateManager : Object {
 
                 updates_size += dl_size;
                 runtime_updates.change_information.size += dl_size;
-                runtime_updates.change_information.updatable_packages.@set (fp_client, flatpak_update);
+                runtime_updates.change_information.updatable_packages.add (flatpak_update);
             }
         }
 

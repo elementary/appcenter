@@ -48,7 +48,7 @@ public class AppCenterCore.FlatpakPackage : Package {
     }
 }
 
-public class AppCenterCore.FlatpakBackend : Backend, Object {
+public class AppCenterCore.FlatpakBackend : Object {
     public signal void cache_flush_needed ();
 
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
@@ -1711,7 +1711,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         string[] user_updates = {};
         string[] system_updates = {};
 
-        foreach (var updatable in package.change_information.updatable_packages[this]) {
+        foreach (var updatable in package.change_information.updatable_packages) {
             bool system = false;
             string bundle_id = "";
 
