@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-05 21:00+0000\n"
-"PO-Revision-Date: 2024-06-08 01:13+0000\n"
+"PO-Revision-Date: 2024-06-11 17:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -97,9 +97,7 @@ msgstr "Actualizar automáticamente aplicaciones gratuitas y pagadas"
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
-msgstr ""
-"Las aplicaciones que estén en prueba gratuita no se actualizarán "
-"automáticamente"
+msgstr "Las aplicaciones en modo de prueba no se actualizarán automáticamente"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
