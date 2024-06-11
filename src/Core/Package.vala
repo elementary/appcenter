@@ -290,11 +290,7 @@ public class AppCenterCore.Package : Object {
                 return _author;
             }
 
-#if HAS_APPSTREAM_1_0
             _author = component.get_developer ().get_name ();
-#else
-            _author = component.developer_name;
-#endif
 
             if (_author == null) {
                 var project_group = component.project_group;
@@ -632,11 +628,7 @@ public class AppCenterCore.Package : Object {
             }
 
             try {
-#if HAS_APPSTREAM_1_0
                 description = AppStream.markup_convert (description, TEXT);
-#else
-                description = AppStream.markup_convert_simple (description);
-#endif
             } catch (Error e) {
                 warning ("Failed to convert description to markup: %s", e.message);
             }
@@ -864,11 +856,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public AppStream.Release? get_newest_release () {
-#if HAS_APPSTREAM_1_0
         var releases = component.get_releases_plain ().get_entries ();
-#else
-        var releases = component.get_releases ();
-#endif
         releases.sort_with_data ((a, b) => {
             if (a.get_version () == null || b.get_version () == null) {
                 if (a.get_version () != null) {
