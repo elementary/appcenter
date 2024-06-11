@@ -161,7 +161,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         var packages = new Gee.TreeSet <AppCenterCore.Package> ();
         new Thread<void> ("get_packages", () => {
-            foreach (var package in AppCenterCore.Client.get_default ().get_applications_for_category (category)) {
+            foreach (var package in AppCenterCore.FlatpakBackend.get_default ().get_applications_for_category (category)) {
                 if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
                     packages.add (package);
                 }
