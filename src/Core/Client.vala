@@ -42,24 +42,6 @@ public class AppCenterCore.Client : Object {
         last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
     }
 
-    public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.HashMap<string, Package> ();
-        var results = FlatpakBackend.get_default ().search_applications (query, category);
-
-        foreach (var result in results) {
-            var result_component_id = result.normalized_component_id;
-            if (apps.has_key (result_component_id)) {
-                if (result.origin_score > apps[result_component_id].origin_score) {
-                    apps[result_component_id] = result;
-                }
-            } else {
-                apps[result_component_id] = result;
-            }
-        }
-
-        return apps.values;
-    }
-
     public async void refresh_updates () {
         yield UpdateManager.get_default ().get_updates (null);
         installed_apps_changed ();

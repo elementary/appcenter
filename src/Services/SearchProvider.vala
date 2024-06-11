@@ -25,8 +25,7 @@ public class SearchProvider : Object {
 
         string query = string.joinv (" ", terms);
 
-        var client = AppCenterCore.Client.get_default ();
-        var packages = client.search_applications (query, null);
+        var packages = AppCenterCore.FlatpakBackend.get_default ().search_applications (query, null);
         foreach (var package in packages) {
             result.add (package.component.get_id ());
         }

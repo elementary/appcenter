@@ -449,12 +449,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_view.clear ();
             search_view.current_search_term = search_term;
 
-            unowned var client = AppCenterCore.Client.get_default ();
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
             Gee.Collection<AppCenterCore.Package> found_apps;
 
             if (mimetype) {
-                found_apps = AppCenterCore.FlatpakBackend.get_default ().search_applications_mime (search_term);
+                found_apps = flatpak_backend.search_applications_mime (search_term);
                 search_view.add_packages (found_apps);
             } else {
                 AppStream.Category current_category = null;
@@ -464,7 +464,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     current_category = ((CategoryView) previous_child).category;
                 }
 
-                found_apps = client.search_applications (search_term, current_category);
+                found_apps = flatpak_backend.search_applications (search_term, current_category);
                 search_view.add_packages (found_apps);
             }
 
