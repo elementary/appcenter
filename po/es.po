@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-05 21:00+0000\n"
-"PO-Revision-Date: 2024-06-05 03:52+0000\n"
+"PO-Revision-Date: 2024-06-11 17:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -97,9 +97,7 @@ msgstr "Actualizar automáticamente aplicaciones gratuitas y pagadas"
 
 #: src/MainWindow.vala:155
 msgid "Apps being tried for free will not update automatically"
-msgstr ""
-"Las aplicaciones que estén en prueba gratuita no se actualizarán "
-"automáticamente"
+msgstr "Las aplicaciones en modo de prueba no se actualizarán automáticamente"
 
 #: src/MainWindow.vala:159
 msgid "Check for Updates"
@@ -496,7 +494,7 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr "¿Desinstalar aplicación?"
+msgstr "¿Desea desinstalar la aplicación?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
@@ -540,7 +538,7 @@ msgid ""
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
 msgstr ""
-"Esto puede deberse a una instalación local o compilación manual de una "
+"Esto puede deberse a una instalación externa o compilación manual de una "
 "aplicación, una fuente de aplicaciones de terceros, o un error en el gestor "
 "de paquetes. Refrescar las actualizaciones podría solucionar el problema."
 
@@ -1030,7 +1028,7 @@ msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 "Intente cambiar los términos de búsqueda. También puede instalar "
-"aplicaciones Flatpak desde, por ejemplo, %s"
+"aplicaciones externas Flatpak desde, por ejemplo, %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:53
