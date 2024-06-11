@@ -454,7 +454,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             Gee.Collection<AppCenterCore.Package> found_apps;
 
             if (mimetype) {
-                found_apps = client.search_applications_mime (search_term);
+                found_apps = AppCenterCore.FlatpakBackend.get_default ().search_applications_mime (search_term);
                 search_view.add_packages (found_apps);
             } else {
                 AppStream.Category current_category = null;
