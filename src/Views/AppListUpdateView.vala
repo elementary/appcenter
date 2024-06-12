@@ -147,7 +147,7 @@ namespace AppCenter.Views {
 
             update_manager.updates_liststore.items_changed.connect (() => {
                 Idle.add (() => {
-                    on_updates_changed.begin ();
+                    on_updates_changed;
                     return GLib.Source.REMOVE;
                 });
             });
@@ -189,7 +189,7 @@ namespace AppCenter.Views {
             });
         }
 
-        private async void on_updates_changed () {
+        private void on_updates_changed () {
             updated_revealer.reveal_child = false;
 
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
