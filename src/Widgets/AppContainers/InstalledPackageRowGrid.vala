@@ -51,7 +51,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         };
         app_version.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        var release_button = new Gtk.Button.from_icon_name ("dialog-information-symbolic") {
+        var release_button = new Gtk.Button.from_icon_name ("view-reader-symbolic") {
             valign = Gtk.Align.CENTER
         };
 
