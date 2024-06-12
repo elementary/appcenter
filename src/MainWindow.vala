@@ -254,16 +254,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             SettingsBindFlags.DEFAULT
         );
 
-        var client = AppCenterCore.Client.get_default ();
+        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
         automatic_updates_button.notify["active"].connect (() => {
             if (automatic_updates_button.active) {
-                client.update_cache.begin (true);
+                update_manager.update_cache.begin (true);
             } else {
-                client.cancel_updates (true);
+                update_manager.cancel_updates (true);
             }
         });
 
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
         update_manager.notify["updates-number"].connect (() => {
             show_update_badge (update_manager.updates_number);
         });
@@ -320,7 +319,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 }
             });
 
-            AppCenterCore.Client.get_default ().cancel_updates (false); //Timeouts keep running
+            AppCenterCore.UpdateManager.get_default ().cancel_updates (false); //Timeouts keep running
             return true;
         }
 

@@ -49,6 +49,7 @@ public class AppCenterCore.FlatpakPackage : Package {
 }
 
 public class AppCenterCore.FlatpakBackend : Object {
+    public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_flush_needed ();
 
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
@@ -251,7 +252,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             warning ("Unable to refresh cache after external change: %s", e.message);
         }
 
-        yield Client.get_default ().refresh_updates ();
+        yield UpdateManager.get_default ().get_updates ();
     }
 
     static construct {

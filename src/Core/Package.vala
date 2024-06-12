@@ -459,8 +459,7 @@ public class AppCenterCore.Package : Object {
 
         var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
         if (success && refresh_updates_after) {
-            unowned Client client = Client.get_default ();
-            yield client.refresh_updates ();
+            yield UpdateManager.get_default ().get_updates ();
         }
 
         return success;
@@ -471,17 +470,17 @@ public class AppCenterCore.Package : Object {
             return false;
         }
 
+        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+
         try {
             bool success = yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED);
             if (success) {
-                var client = AppCenterCore.Client.get_default ();
-                client.operation_finished (this, State.INSTALLING, null);
+                flatpak_backend.operation_finished (this, State.INSTALLING, null);
             }
 
             return success;
         } catch (Error e) {
-            var client = AppCenterCore.Client.get_default ();
-            client.operation_finished (this, State.INSTALLING, e);
+            flatpak_backend.operation_finished (this, State.INSTALLING, e);
             return false;
         }
     }
@@ -539,8 +538,8 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        var backend = AppCenterCore.FlatpakBackend.get_default ();
-        var client = AppCenterCore.Client.get_default ();
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
+        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         switch (state) {
             case State.UPDATING:
@@ -560,7 +559,7 @@ public class AppCenterCore.Package : Object {
                 var success = yield backend.remove_package (this, change_information, action_cancellable);
                 _installed = !success;
                 update_state ();
-                yield client.refresh_updates ();
+                yield update_manager.get_updates ();
                 return success;
             default:
                 return false;
