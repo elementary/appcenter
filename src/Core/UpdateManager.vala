@@ -25,6 +25,7 @@ public class AppCenterCore.UpdateManager : Object {
     public signal void installed_apps_changed ();
     public signal void cache_update_failed (Error error);
 
+    public ListStore updates_liststore { public get; private set; }
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
     public uint updates_number { get; private set; default = 0U; }
@@ -38,6 +39,8 @@ public class AppCenterCore.UpdateManager : Object {
     private bool refresh_in_progress = false;
 
     construct {
+        updates_liststore = new ListStore (typeof (AppCenterCore.Package));
+
         var runtime_icon = new AppStream.Icon ();
         runtime_icon.set_name ("application-vnd.flatpak");
         runtime_icon.set_kind (AppStream.IconKind.STOCK);

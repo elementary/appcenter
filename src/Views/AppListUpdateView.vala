@@ -32,7 +32,6 @@ namespace AppCenter.Views {
         private Gtk.Revealer updated_revealer;
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
-        private ListStore updates_liststore;
         private ListStore installed_liststore;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
@@ -40,7 +39,8 @@ namespace AppCenter.Views {
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
-            updates_liststore = new ListStore (typeof (AppCenterCore.Package));
+            var update_manager = AppCenterCore.UpdateManager.get_default ();
+
             installed_liststore = new ListStore (typeof (AppCenterCore.Package));
 
             var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
@@ -93,7 +93,7 @@ namespace AppCenter.Views {
                 hexpand = true,
                 vexpand = true
             };
-            list_box.bind_model (updates_liststore, create_row_from_package);
+            list_box.bind_model (update_manager.updates_liststore, create_row_from_package);
 
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
@@ -144,7 +144,7 @@ namespace AppCenter.Views {
                 stack.visible_child = main_box;
             });
 
-            AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
+            update_manager.installed_apps_changed.connect (() => {
                 Idle.add (() => {
                     get_apps.begin ();
                     return GLib.Source.REMOVE;
@@ -194,12 +194,12 @@ namespace AppCenter.Views {
 
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
             if (update_manager.updates_number > 0) {
-                updates_liststore.remove_all ();
+                update_manager.updates_liststore.remove_all ();
 
                 var runtime_updates = update_manager.runtime_updates;
                 var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
                 if (runtime_updates_size > 0) {
-                    updates_liststore.insert_sorted (runtime_updates, compare_package_func);
+                    update_manager.updates_liststore.insert_sorted (runtime_updates, compare_package_func);
                 }
 
                 header_revealer.reveal_child = true;
@@ -236,7 +236,7 @@ namespace AppCenter.Views {
                 foreach (var package in installed_apps) {
                     // Only add row if this package needs an update or it's not a font or plugin
                     if (package.state == UPDATE_AVAILABLE) {
-                        updates_liststore.insert_sorted (package, compare_package_func);
+                        update_manager.updates_liststore.insert_sorted (package, compare_package_func);
                     } else if (package.kind != ADDON && package.kind != FONT) {
                         installed_liststore.insert_sorted (package, compare_package_func);
                     }
@@ -320,8 +320,9 @@ namespace AppCenter.Views {
                 child = child.get_next_sibling ();
             }
 
-            for (int i = 0; i < updates_liststore.get_n_items (); i++) {
-                var package = (AppCenterCore.Package) updates_liststore.get_item (i);
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            for (int i = 0; i < update_manager.updates_liststore.get_n_items (); i++) {
+                var package = (AppCenterCore.Package) update_manager.updates_liststore.get_item (i);
                 if (package.update_available && !package.should_pay) {
                     try {
                         yield package.update (false);
@@ -350,14 +351,14 @@ namespace AppCenter.Views {
             var installed_apps = yield AppCenterCore.FlatpakBackend.get_default ().get_installed_applications ();
             foreach (var app in installed_apps) {
                 if (app == package) {
-                    updates_liststore.insert_sorted (package, compare_package_func);
+                    AppCenterCore.UpdateManager.get_default ().updates_liststore.insert_sorted (package, compare_package_func);
                     break;
                 }
             }
         }
 
         public void clear () {
-            updates_liststore.remove_all ();
+            AppCenterCore.UpdateManager.get_default ().updates_liststore.remove_all ();
             installed_liststore.remove_all ();
         }
     }
