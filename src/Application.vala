@@ -203,7 +203,7 @@ public class AppCenter.App : Gtk.Application {
 
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
-            client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+            client.update_cache.begin (true);
 
             var main_window = new MainWindow (this);
             add_window (main_window);
@@ -348,13 +348,13 @@ public class AppCenter.App : Gtk.Application {
         }
     }
 
-    private void on_cache_update_failed (Error error, AppCenterCore.Client.CacheUpdateType cache_update_type) {
+    private void on_cache_update_failed (Error error) {
         if (active_window == null) {
             return;
         }
 
         if (update_fail_dialog == null) {
-            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type) {
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message)) {
                 transient_for = active_window
             };
 

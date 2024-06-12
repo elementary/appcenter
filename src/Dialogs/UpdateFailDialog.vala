@@ -18,17 +18,15 @@
 public class UpdateFailDialog : Granite.MessageDialog {
     private const int TRY_AGAIN_RESPONSE_ID = 1;
     public string error_message { get; construct; }
-    public AppCenterCore.Client.CacheUpdateType cache_update_type { get; construct; }
 
-    public UpdateFailDialog (string error_message, AppCenterCore.Client.CacheUpdateType cache_update_type) {
+    public UpdateFailDialog (string error_message) {
         Object (
             title: "",
             primary_text: _("Failed to Fetch Updates"),
             secondary_text: _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
             image_icon: new ThemedIcon ("dialog-error"),
             buttons: Gtk.ButtonsType.NONE,
-            error_message: error_message,
-            cache_update_type: cache_update_type
+            error_message: error_message
         );
     }
 
@@ -39,7 +37,7 @@ public class UpdateFailDialog : Granite.MessageDialog {
 
         response.connect ((response_id) => {
             if (response_id == TRY_AGAIN_RESPONSE_ID) {
-                AppCenterCore.Client.get_default ().update_cache.begin (true, cache_update_type);
+                AppCenterCore.Client.get_default ().update_cache.begin (true);
             }
             destroy ();
         });
