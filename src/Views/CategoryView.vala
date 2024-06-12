@@ -77,7 +77,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             show_app (package);
         });
 
-        AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+        AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
             populate ();
         });
     }

@@ -52,12 +52,18 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     public bool to_recycle { public get; private set; default = false; }
 
+    private static AppCenterCore.ScreenshotCache? screenshot_cache;
+
     public AppInfoView (AppCenterCore.Package package) {
         Object (package: package);
     }
 
     class construct {
         set_css_name ("appinfoview");
+    }
+
+    static construct {
+        screenshot_cache = new AppCenterCore.ScreenshotCache ();
     }
 
     construct {
@@ -936,8 +942,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     private void load_more_content () {
-        var cache = AppCenterCore.Client.get_default ().screenshot_cache;
-
         uint count = 0;
         foreach (var origin_package in package.origin_packages) {
             origin_liststore.append (origin_package);
@@ -1051,8 +1055,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 string? file = null;
                 int index = i;
 
-                cache.fetch.begin (url, (obj, res) => {
-                    results[index] = cache.fetch.end (res, out file);
+                screenshot_cache.fetch.begin (url, (obj, res) => {
+                    results[index] = screenshot_cache.fetch.end (res, out file);
                     screenshot_files[index] = file;
                     completed++;
                 });

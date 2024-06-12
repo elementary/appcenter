@@ -4,7 +4,6 @@ src/MainWindow.vala
 src/SuspendControl.vala
 src/Utils.vala
 src/Core/ChangeInformation.vala
-src/Core/Client.vala
 src/Core/FlatpakBackend.vala
 src/Core/Job.vala
 src/Core/Package.vala

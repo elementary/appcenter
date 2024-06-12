@@ -387,7 +387,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             child = content_area;
 
-            AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
+            AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
                 Idle.add (() => {
                     // Clear the cached categories when the AppStream pool is updated
                     if (visible) {

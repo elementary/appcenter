@@ -130,16 +130,16 @@ public class AppCenter.App : Gtk.Application {
             activate ();
         });
 
-        var client = AppCenterCore.Client.get_default ();
-        client.operation_finished.connect (on_operation_finished);
-        client.cache_update_failed.connect (on_cache_update_failed);
-
         var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        flatpak_backend.operation_finished.connect (on_operation_finished);
+
+        var update_manager = AppCenterCore.UpdateManager.get_default ();
+        update_manager.cache_update_failed.connect (on_cache_update_failed);
 
         refresh_action = new SimpleAction ("refresh", null);
         refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
-            client.update_cache.begin (true);
+            update_manager.update_cache.begin (true);
         });
 
         repair_action = new SimpleAction ("repair", null);
@@ -181,7 +181,7 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
-        var client = AppCenterCore.Client.get_default ();
+        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         if (first_activation) {
             first_activation = false;
@@ -196,14 +196,14 @@ public class AppCenter.App : Gtk.Application {
             });
 
             // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
-            client.update_cache.begin (false);
+            update_manager.update_cache.begin (false);
             silent = false;
             return;
         }
 
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
-            client.update_cache.begin (true);
+            update_manager.update_cache.begin (true);
 
             var main_window = new MainWindow (this);
             add_window (main_window);
@@ -295,7 +295,7 @@ public class AppCenter.App : Gtk.Application {
 
     private uint cache_update_timeout_id = 0;
     private void schedule_cache_update (bool cancel = false) {
-        var client = AppCenterCore.Client.get_default ();
+        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         if (cache_update_timeout_id > 0) {
             Source.remove (cache_update_timeout_id);
@@ -303,11 +303,11 @@ public class AppCenter.App : Gtk.Application {
         }
 
         if (cancel) {
-            client.cancel_updates (true); // Also stops timeouts.
+            update_manager.cancel_updates (true); // Also stops timeouts.
             return;
         } else {
             cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
-                client.update_cache.begin ();
+                update_manager.update_cache.begin ();
                 cache_update_timeout_id = 0;
                 return false;
             });

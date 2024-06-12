@@ -18,10 +18,24 @@
  */
 
 public class AppCenterCore.UpdateManager : Object {
+    /**
+     * This signal is likely to be fired from a non-main thread. Ensure any UI
+     * logic driven from this runs on the GTK thread
+     */
+    public signal void installed_apps_changed ();
+    public signal void cache_update_failed (Error error);
+
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
     public uint updates_number { get; private set; default = 0U; }
     public uint64 updates_size { get; private set; default = 0ULL; }
+
+    private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
+
+    private GLib.Cancellable cancellable;
+    private GLib.DateTime last_cache_update = null;
+    private uint update_cache_timeout_id = 0;
+    private bool refresh_in_progress = false;
 
     construct {
         var runtime_icon = new AppStream.Icon ();
@@ -35,6 +49,10 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates_component.add_icon (runtime_icon);
 
         runtime_updates = new AppCenterCore.Package (runtime_updates_component);
+
+        cancellable = new GLib.Cancellable ();
+
+        last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
@@ -160,7 +178,109 @@ public class AppCenterCore.UpdateManager : Object {
         }
 
         runtime_updates.update_state ();
+
+        installed_apps_changed ();
+
         return updates_number;
+    }
+
+    public void cancel_updates (bool cancel_timeout) {
+        cancellable.cancel ();
+
+        if (update_cache_timeout_id > 0 && cancel_timeout) {
+            Source.remove (update_cache_timeout_id);
+            update_cache_timeout_id = 0;
+        }
+    }
+
+    public async void update_cache (bool force = false) {
+        cancellable.reset ();
+
+        if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
+            return;
+        }
+
+        debug ("update cache called %s", force.to_string ());
+        bool success = false;
+
+        /* Make sure only one update cache can run at a time */
+        if (refresh_in_progress) {
+            debug ("Update cache already in progress - returning");
+            return;
+        }
+
+        if (update_cache_timeout_id > 0) {
+            if (force) {
+                debug ("Forced update_cache called when there is an on-going timeout - cancelling timeout");
+                Source.remove (update_cache_timeout_id);
+                update_cache_timeout_id = 0;
+            } else {
+                debug ("Refresh timeout running and not forced - returning");
+                return;
+            }
+        }
+
+        var nm = NetworkMonitor.get_default ();
+
+        /* One cache update a day, keeps the doctor away! */
+        var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
+        bool last_cache_update_is_old = seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES;
+        if (force || last_cache_update_is_old) {
+            if (nm.get_network_available ()) {
+                debug ("New refresh task");
+
+                refresh_in_progress = true;
+                try {
+                    success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
+
+                    if (success) {
+                        last_cache_update = new DateTime.now_utc ();
+                        AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
+                    }
+
+                    seconds_since_last_refresh = 0;
+                } catch (Error e) {
+                    if (!(e is GLib.IOError.CANCELLED)) {
+                        critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                        cache_update_failed (e);
+                    }
+                } finally {
+                    refresh_in_progress = false;
+                }
+            }
+        } else {
+            debug ("Too soon to refresh and not forced");
+        }
+
+
+        var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
+        debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
+        update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
+            update_cache_timeout_id = 0;
+            update_cache.begin (true);
+
+            return GLib.Source.REMOVE;
+        });
+
+        if (nm.get_network_available ()) {
+            if ((force || last_cache_update_is_old) && AppCenter.App.settings.get_boolean ("automatic-updates")) {
+                yield get_updates ();
+                debug ("Update Flatpaks");
+                var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
+                foreach (var app in installed_apps) {
+                    if (app.update_available && !app.should_pay) {
+                        debug ("Update: %s", app.get_name ());
+                        try {
+                            yield app.update (false);
+                        } catch (Error e) {
+                            warning ("Updating %s failed: %s", app.get_name (), e.message);
+                        }
+                    }
+                }
+            }
+
+            get_updates.begin ();
+        }
     }
 
     private static GLib.Once<UpdateManager> instance;

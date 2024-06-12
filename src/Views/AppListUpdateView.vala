@@ -144,8 +144,7 @@ namespace AppCenter.Views {
                 stack.visible_child = main_box;
             });
 
-            unowned var client = AppCenterCore.Client.get_default ();
-            client.installed_apps_changed.connect (() => {
+            AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
                 Idle.add (() => {
                     get_apps.begin ();
                     return GLib.Source.REMOVE;
@@ -342,8 +341,7 @@ namespace AppCenter.Views {
                 }
             }
 
-            unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-            yield client.refresh_updates ();
+            yield AppCenterCore.UpdateManager.get_default ().get_updates ();
 
             updating_all_apps = false;
         }
