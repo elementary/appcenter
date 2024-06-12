@@ -164,24 +164,11 @@ public class AppCenterCore.FlatpakBackend : Object {
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_16
         user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
-#elif HAS_APPSTREAM_0_15
-        user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
-#else
-        user_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
-        user_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
-#endif
 
         system_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_16
         system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
-#elif HAS_APPSTREAM_0_15
-        system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
-#else
-        system_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
-        system_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
-#endif
+
         package_list = new Gee.HashMap<string, Package> (null, null);
 
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
@@ -435,13 +422,8 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
-#if HAS_APPSTREAM_1_0
         AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components ().as_array (), category_array, false);
         AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components ().as_array (), category_array, false);
-#else
-        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (), category_array, false);
-        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
-#endif
         components = category.get_components ();
 
         var apps = new Gee.HashMap<string, Package> ();
@@ -467,21 +449,13 @@ public class AppCenterCore.FlatpakBackend : Object {
         var results = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = user_appstream_pool.search (query);
         if (category == null) {
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 results.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
@@ -493,21 +467,13 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         comps = system_appstream_pool.search (query);
         if (category == null) {
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 results.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
@@ -588,11 +554,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                 continue;
             }
 
-#if HAS_APPSTREAM_1_0
             if (package.component.get_developer ().get_name () == author) {
-#else
-            if (package.component.developer_name == author) {
-#endif
                 package_ids.add (package.component.id);
 
                 AppCenterCore.Package? user_package = null;
@@ -1159,16 +1121,8 @@ public class AppCenterCore.FlatpakBackend : Object {
     private void reload_appstream_pool () {
         var new_package_list = new Gee.HashMap<string, Package> ();
 
-#if HAS_APPSTREAM_0_16
         user_appstream_pool.reset_extra_data_locations ();
         user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.CATALOG);
-#elif HAS_APPSTREAM_0_15
-        user_appstream_pool.reset_extra_data_locations ();
-        user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.COLLECTION);
-#else
-        user_appstream_pool.clear_metadata_locations ();
-        user_appstream_pool.add_metadata_location (user_metadata_path);
-#endif
 
         try {
             debug ("Loading flatpak user pool");
@@ -1176,11 +1130,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
-#if HAS_APPSTREAM_1_0
             user_appstream_pool.get_components ().as_array ().foreach ((comp) => {
-#else
-            user_appstream_pool.get_components ().foreach ((comp) => {
-#endif
                 if (!validate (comp)) {
                     return;
                 }
@@ -1200,16 +1150,8 @@ public class AppCenterCore.FlatpakBackend : Object {
             });
         }
 
-#if HAS_APPSTREAM_0_16
         system_appstream_pool.reset_extra_data_locations ();
         system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.CATALOG);
-#elif HAS_APPSTREAM_0_15
-        system_appstream_pool.reset_extra_data_locations ();
-        system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.COLLECTION);
-#else
-        system_appstream_pool.clear_metadata_locations ();
-        system_appstream_pool.add_metadata_location (system_metadata_path);
-#endif
 
         try {
             debug ("Loading flatpak system pool");
@@ -1217,11 +1159,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
-#if HAS_APPSTREAM_1_0
             system_appstream_pool.get_components ().as_array ().foreach ((comp) => {
-#else
-            system_appstream_pool.get_components ().foreach ((comp) => {
-#endif
                 if (!validate (comp)) {
                     return;
                 }
