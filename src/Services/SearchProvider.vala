@@ -25,8 +25,7 @@ public class SearchProvider : Object {
 
         string query = string.joinv (" ", terms);
 
-        var client = AppCenterCore.Client.get_default ();
-        var packages = client.search_applications (query, null);
+        var packages = AppCenterCore.FlatpakBackend.get_default ().search_applications (query, null);
         foreach (var package in packages) {
             result.add (package.component.get_id ());
         }
@@ -42,9 +41,9 @@ public class SearchProvider : Object {
     public HashTable<string, Variant>[] get_result_metas (string[] results) throws GLib.Error {
         var result = new GenericArray<HashTable<string, Variant>> ();
 
-        var client = AppCenterCore.Client.get_default ();
+        var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
         foreach (var str in results) {
-            var package = client.get_package_for_component_id (str);
+            var package = flatpak_backend.get_package_for_component_id (str);
             if (package != null) {
                 var meta = new HashTable<string, Variant> (str_hash, str_equal);
                 meta.insert ("id", str);

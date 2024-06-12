@@ -90,8 +90,7 @@ public class AppCenter.App : Gtk.Application {
             link = link.substring (0, link.last_index_of_char ('/'));
         }
 
-        var client = AppCenterCore.Client.get_default ();
-        var package = client.get_package_for_component_id (link);
+        var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (link);
         if (package != null) {
             main_window.show_package (package);
         } else {
@@ -135,6 +134,8 @@ public class AppCenter.App : Gtk.Application {
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
 
+        var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+
         refresh_action = new SimpleAction ("refresh", null);
         refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
@@ -143,11 +144,11 @@ public class AppCenter.App : Gtk.Application {
 
         repair_action = new SimpleAction ("repair", null);
         repair_action.activate.connect (() => {
-            client.repair.begin (null, (obj, res) => {
+            flatpak_backend.repair.begin (null, (obj, res) => {
                 bool success = false;
                 string message = "";
                 try {
-                    success = client.repair.end (res);
+                    success = flatpak_backend.repair.end (res);
                 } catch (Error e) {
                     success = false;
                     message = e.message;
