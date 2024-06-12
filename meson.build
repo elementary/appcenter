@@ -24,7 +24,7 @@ gee = dependency ('gee-0.8')
 gtk = dependency ('gtk4', version: '>=4.10')
 granite = dependency ('granite-7', version: '>=7.3.0')
 adwaita = dependency('libadwaita-1', version: '>=1.4')
-appstream = dependency ('appstream', version: '>=0.15.2')
+appstream = dependency ('appstream', version: '>=1.0')
 libsoup = dependency ('libsoup-3.0')
 json = dependency ('json-glib-1.0')
 flatpak = dependency ('flatpak')
@@ -35,10 +35,6 @@ portal_gtk4 = dependency('libportal-gtk4')
 posix = meson.get_compiler('vala').find_library('posix')
 
 dbus = dependency ('dbus-1')
-
-if appstream.version().version_compare('>=1.0')
-    add_project_arguments('--define=HAS_APPSTREAM_1_0', language:'vala')
-endif
 
 core_deps = [
     glib,

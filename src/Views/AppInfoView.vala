@@ -288,19 +288,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 oars_flowbox.append (made_for_elementary);
             }
 #endif
-
-#if HAS_APPSTREAM_1_0
             const string DEFAULT_LOCALE = "en-US";
             const string LOCALE_DELIMITER = "-";
             var active_locale = DEFAULT_LOCALE;
             if (package_component.get_context () != null) {
                 active_locale = package_component.get_context ().get_locale () ?? DEFAULT_LOCALE;
             }
-#else
-            const string DEFAULT_LOCALE = "en_US";
-            const string LOCALE_DELIMITER = "_";
-            var active_locale = package_component.get_active_locale ();
-#endif
+
             if (active_locale != DEFAULT_LOCALE) {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
@@ -482,11 +476,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             }
         }
 
-#if HAS_APPSTREAM_1_0
         screenshots = package_component.get_screenshots_all ();
-#else
-        screenshots = package_component.get_screenshots ();
-#endif
 
         if (screenshots.length > 0) {
             screenshot_carousel = new Adw.Carousel () {
@@ -967,11 +957,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             get_app_download_size.begin ();
 
             Idle.add (() => {
-#if HAS_APPSTREAM_1_0
                 var releases = package.component.get_releases_plain ().get_entries ();
-#else
-                var releases = package.component.get_releases ();
-#endif
 
                 foreach (unowned var release in releases) {
                     if (release.get_version () == null) {
@@ -990,11 +976,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
                         release_carousel.append (release_row);
 
-#if HAS_APPSTREAM_1_0
                         if (package.installed && AppStream.vercmp_simple (release.get_version (), package.get_version ()) <= 0) {
-#else
-                        if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
-#endif
                             break;
                         }
                     }
@@ -1167,12 +1149,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                     break;
             }
         } else {
-#if HAS_APPSTREAM_1_0
             license_copy = AppStream.get_license_name (project_license);
-#else
-            license_copy = project_license;
-#endif
-
             license_url = AppStream.get_license_url (project_license);
         }
     }
