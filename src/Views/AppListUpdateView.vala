@@ -147,7 +147,7 @@ namespace AppCenter.Views {
 
             update_manager.updates_liststore.items_changed.connect (() => {
                 Idle.add (() => {
-                    on_updates_changed;
+                    on_updates_changed ();
                     return GLib.Source.REMOVE;
                 });
             });
@@ -190,12 +190,12 @@ namespace AppCenter.Views {
         }
 
         private void on_updates_changed () {
-            updated_revealer.reveal_child = false;
-
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            if (update_manager.updates_number > 0) {
-                header_revealer.reveal_child = true;
 
+            header_revealer.reveal_child = update_manager.updates_number > 0;
+            updated_revealer.reveal_child = update_manager.updates_number == 0;
+
+            if (update_manager.updates_number > 0) {
                 if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
@@ -210,8 +210,6 @@ namespace AppCenter.Views {
 
                 size_label.update (update_manager.updates_size);
             } else {
-                header_revealer.reveal_child = false;
-                updated_revealer.reveal_child = true;
                 updated_label.label = _("Everything is up to date. Last checked %s.").printf (
                     Granite.DateTime.get_relative_datetime (
                         new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
