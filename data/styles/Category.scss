@@ -13,8 +13,8 @@
         inset 0 -1px 0 0 rgba(white, 0.15),
         0 3px 2px -1px rgba(black, 0.15),
         0 3px 5px rgba(black, 0.1);
-    font-size: 32px;
-    font-weight: 300;
+    font-size: 2em;
+    font-weight: 600;
     margin: rem(12px);
     padding: rem(12px);
     min-height: 3em;
@@ -28,8 +28,6 @@
             );
         border-color: #{'alpha(#2980d1, 0.8)'};
         color: #fff8ef;
-        font-size: 24px;
-        font-weight: 600;
         text-shadow: 0 1px 0 rgba(black, 0.3);
         -gtk-icon-shadow: 0 1px 0 rgba(black, 0.3);
     }
@@ -43,7 +41,6 @@
             0 0 0 1px rgba(black, 0.15),
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
-        font-size: 24px;
     }
 
     &.audio {
@@ -152,8 +149,6 @@
             center center;
         border-color: #{'alpha(@LIME_900, 0.7)'};
         color: #{'alpha(@LIME_900, 0.15)'};
-        font-size: 26px;
-        font-weight: 500;
         text-shadow: 0 1px 2px #{'alpha(@LIME_900, 0.9)'};
 
         label {
@@ -202,7 +197,6 @@
             cover;
         border-color: #{'alpha(@GRAPE_900, 0.7)'};
         color: white;
-        font-family: "Lobster";
         text-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.5)'};
     }
 
@@ -230,9 +224,6 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: white;
-        font-family: "HVD Bodedo", serif;
-        font-size: 24px;
-        font-weight: 400;
     }
 
     &.finance {
@@ -252,8 +243,6 @@
         color: #{'@SILVER_100'};
         text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.5)'};
         -gtk-icon-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.5)'};
-        font-family: serif;
-        font-size: 28px;
 
         label {
             margin-top: 0.125em;
@@ -276,7 +265,7 @@
             0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
 
         label.pink {
-            font-size: 30px;
+            font-size: 1em;
             text-shadow:
                 0 1px 2px #{'alpha(@BUBBLEGUM_900, 0.2)'},
                 0 2px 6px #{'alpha(@BUBBLEGUM_900, 0.1)'};
@@ -284,7 +273,7 @@
         }
 
         label.blue {
-            font-size: 36px;
+            font-size: 1.5em;
             text-shadow:
                 0 1px 2px #{'alpha(@BLUEBERRY_900, 0.2)'},
                 0 2px 6px #{'alpha(@BLUEBERRY_900, 0.1)'};
@@ -332,7 +321,6 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: #fe5498;
-        font-weight: normal;
         text-shadow: 0 1px 3px #{'@bg_color'};
 
         label {
@@ -499,8 +487,6 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: #{'@BANANA_300'};
-        font-size: 24px;
-        font-weight: 600;
         text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
         -gtk-icon-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
     }
@@ -537,7 +523,6 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: #{'@ORANGE_500'};
-        font-weight: normal;
     }
 
     &.science {
@@ -556,8 +541,6 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: white;
-        font-family: Limelight;
-        font-size: 24px;
         text-shadow: 0 1px 2px rgba(black, 0.3);
         -gtk-icon-shadow: 0 1px 2px rgba(black, 0.3);
     }
@@ -652,6 +635,5 @@
         background-repeat: no-repeat, repeat-y;
         background-size: auto auto, 110% 1em; /* Gtk.CSS bug requiring over 100% width maybe? */
         color: #{'@BLACK_300'};
-        font-size: 24px;
     }
 }
