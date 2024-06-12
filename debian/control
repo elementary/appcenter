@@ -1,7 +1,7 @@
 Source: appcenter
 Section: utils
 Maintainer: elementary Builds Team <builds@elementary.io>
-Build-Depends: appstream,
+Build-Depends: appstream (>= 1.0.0),
                debhelper (>= 10.5.1),
                desktop-file-utils,
                gettext,
