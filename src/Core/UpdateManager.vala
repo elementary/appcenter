@@ -133,21 +133,20 @@ public class AppCenterCore.UpdateManager : Object {
             }
         }
 
-        var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
-        if (runtime_updates_size > 0) {
-            updates_liststore.insert_sorted (runtime_updates, compare_package_func);
-        }
-
-        if (runtime_count == 0) {
-            debug ("No runtime updates found");
-            var latest_version = _("No runtimes with updates");
-            runtime_updates.latest_version = latest_version;
-            runtime_updates.description = GLib.Markup.printf_escaped ("%s\n", latest_version);
-        } else {
+        if (runtime_count > 0) {
             debug ("%u runtime updates found", runtime_count);
-            var latest_version = ngettext ("%u runtimes with updates", "%u runtimes with updates", runtime_count).printf (runtime_count);
+            var latest_version = ngettext (
+                "%u runtimes with updates",
+                "%u runtimes with updates",
+                runtime_count
+            ).printf (runtime_count);
             runtime_updates.latest_version = latest_version;
             runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
+
+            var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
+            if (runtime_updates_size > 0) {
+                updates_liststore.insert_sorted (runtime_updates, compare_package_func);
+            }
         }
 
         debug ("%u app updates found", updates_number);
