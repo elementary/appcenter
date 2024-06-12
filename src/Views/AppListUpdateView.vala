@@ -134,19 +134,27 @@ namespace AppCenter.Views {
             };
             stack.add_child (main_box);
             stack.add_child (loading_view);
+            stack.visible_child = loading_view;
 
             child = stack;
             /// TRANSLATORS: the name of the Installed Apps view
             title = C_("view", "Installed");
 
-            get_apps.begin ((obj, res) => {
-                get_apps.end (res);
+            on_installed_changed.begin ((obj, res) => {
+                on_installed_changed.end (res);
                 stack.visible_child = main_box;
+            });
+
+            update_manager.updates_liststore.items_changed.connect (() => {
+                Idle.add (() => {
+                    on_updates_changed.begin ();
+                    return GLib.Source.REMOVE;
+                });
             });
 
             update_manager.installed_apps_changed.connect (() => {
                 Idle.add (() => {
-                    get_apps.begin ();
+                    on_installed_changed.begin ();
                     return GLib.Source.REMOVE;
                 });
             });
@@ -181,16 +189,8 @@ namespace AppCenter.Views {
             });
         }
 
-        private async void get_apps () {
+        private async void on_updates_changed () {
             updated_revealer.reveal_child = false;
-
-            if (refresh_cancellable != null) {
-                refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
-            }
-
-            yield refresh_mutex.lock (); // Wait for any previous operation to end
-            // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
-            refresh_cancellable = new Cancellable ();
 
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
             if (update_manager.updates_number > 0) {
@@ -218,6 +218,16 @@ namespace AppCenter.Views {
                     )
                 );
             }
+        }
+
+        private async void on_installed_changed () {
+            if (refresh_cancellable != null) {
+                refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
+            }
+
+            yield refresh_mutex.lock (); // Wait for any previous operation to end
+            // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
+            refresh_cancellable = new Cancellable ();
 
             if (!refresh_cancellable.is_cancelled ()) {
                 installed_liststore.remove_all ();
