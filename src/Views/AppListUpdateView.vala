@@ -322,8 +322,9 @@ namespace AppCenter.Views {
         }
 
         public void clear () {
-            AppCenterCore.UpdateManager.get_default ().updates_liststore.remove_all ();
-            installed_liststore.remove_all ();
+            // Free widgets with all their connected signals https://github.com/elementary/appcenter/pull/846
+            list_box.remove_all ();
+            installed_flowbox.remove_all ();
         }
     }
 }
