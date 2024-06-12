@@ -194,14 +194,6 @@ namespace AppCenter.Views {
 
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
             if (update_manager.updates_number > 0) {
-                update_manager.updates_liststore.remove_all ();
-
-                var runtime_updates = update_manager.runtime_updates;
-                var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
-                if (runtime_updates_size > 0) {
-                    update_manager.updates_liststore.insert_sorted (runtime_updates, compare_package_func);
-                }
-
                 header_revealer.reveal_child = true;
 
                 if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
@@ -227,18 +219,15 @@ namespace AppCenter.Views {
                 );
             }
 
-            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-            var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
-
             if (!refresh_cancellable.is_cancelled ()) {
                 installed_liststore.remove_all ();
 
+                unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+                var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
+
                 foreach (var package in installed_apps) {
-                    // Only add row if this package needs an update or it's not a font or plugin
-                    if (package.state == UPDATE_AVAILABLE) {
-                        update_manager.updates_liststore.insert_sorted (package, compare_package_func);
-                    } else if (package.kind != ADDON && package.kind != FONT) {
-                        installed_liststore.insert_sorted (package, compare_package_func);
+                    if (package.state != UPDATE_AVAILABLE && package.kind != ADDON && package.kind != FONT) {
+                        installed_liststore.insert_sorted (package, compare_installed_func);
                     }
                 }
             }
@@ -255,48 +244,6 @@ namespace AppCenter.Views {
         private Gtk.Widget create_installed_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
             return new Widgets.InstalledPackageRowGrid (package, action_button_group);
-        }
-
-        private int compare_package_func (Object object1, Object object2) {
-            var package1 = (AppCenterCore.Package) object1;
-            var package2 = (AppCenterCore.Package) object2;
-
-            bool a_is_os = false;
-            bool a_is_runtime = false;
-            bool a_is_updating = false;
-            string a_package_name = "";
-            if (package1 != null) {
-                a_is_runtime = package1.is_runtime_updates;
-                a_is_updating = package1.is_updating;
-                a_package_name = package1.get_name ();
-            }
-
-            bool b_is_os = false;
-            bool b_is_runtime = false;
-            bool b_is_updating = false;
-            string b_package_name = "";
-            if (package2 != null) {
-                b_is_runtime = package2.is_runtime_updates;
-                b_is_updating = package2.is_updating;
-                b_package_name = package2.get_name ();
-            }
-
-            // The currently updating package is always top of the list
-            if (a_is_updating || b_is_updating) {
-                return a_is_updating ? -1 : 1;
-            }
-
-            // Sort updatable OS updates first
-            if (a_is_os || b_is_os) {
-                return a_is_os ? -1 : 1;
-            }
-
-            // Ensures runtime updates are sorted to the top amongst up-to-date packages but below OS updates
-            if (a_is_runtime || b_is_runtime) {
-                return a_is_runtime ? -1 : 1;
-            }
-
-            return a_package_name.collate (b_package_name); /* Else sort in name order */
         }
 
         private void on_update_all () {
@@ -347,14 +294,21 @@ namespace AppCenter.Views {
             updating_all_apps = false;
         }
 
-        public async void add_app (AppCenterCore.Package package) {
-            var installed_apps = yield AppCenterCore.FlatpakBackend.get_default ().get_installed_applications ();
-            foreach (var app in installed_apps) {
-                if (app == package) {
-                    AppCenterCore.UpdateManager.get_default ().updates_liststore.insert_sorted (package, compare_package_func);
-                    break;
-                }
+        private int compare_installed_func (Object object1, Object object2) {
+            var package1 = (AppCenterCore.Package) object1;
+            var package2 = (AppCenterCore.Package) object2;
+
+            string a_package_name = "";
+            if (package1 != null) {
+                a_package_name = package1.get_name ();
             }
+
+            string b_package_name = "";
+            if (package2 != null) {
+                b_package_name = package2.get_name ();
+            }
+
+            return a_package_name.collate (b_package_name);
         }
 
         public void clear () {
