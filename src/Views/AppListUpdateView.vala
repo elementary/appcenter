@@ -191,8 +191,17 @@ namespace AppCenter.Views {
             yield refresh_mutex.lock (); // Wait for any previous operation to end
             // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
             refresh_cancellable = new Cancellable ();
+
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
             if (update_manager.updates_number > 0) {
+                updates_liststore.remove_all ();
+
+                var runtime_updates = update_manager.runtime_updates;
+                var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
+                if (runtime_updates_size > 0) {
+                    updates_liststore.insert_sorted (runtime_updates, compare_package_func);
+                }
+
                 header_revealer.reveal_child = true;
 
                 if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
@@ -222,26 +231,17 @@ namespace AppCenter.Views {
             var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
 
             if (!refresh_cancellable.is_cancelled ()) {
-                clear ();
-
-                var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
-                var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
-                if (runtime_updates_size > 0) {
-                    updates_liststore.insert_sorted (runtime_updates, compare_package_func);
-                }
+                installed_liststore.remove_all ();
 
                 foreach (var package in installed_apps) {
-                    var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
                     // Only add row if this package needs an update or it's not a font or plugin
-                    if (needs_update) {
+                    if (package.state == UPDATE_AVAILABLE) {
                         updates_liststore.insert_sorted (package, compare_package_func);
-                    } else if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
+                    } else if (package.kind != ADDON && package.kind != FONT) {
                         installed_liststore.insert_sorted (package, compare_package_func);
                     }
                 }
             }
-
-            yield flatpak_backend.get_prepared_applications (refresh_cancellable);
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
