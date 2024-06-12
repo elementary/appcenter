@@ -28,7 +28,7 @@ public class AppCenterCore.UpdateManager : Object {
     public ListStore updates_liststore { public get; private set; }
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
-    public uint updates_number { get; private set; default = 0U; }
+    public uint updates_number { get; set; default = 0U; }
     public uint64 updates_size { get; private set; default = 0ULL; }
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
@@ -40,6 +40,7 @@ public class AppCenterCore.UpdateManager : Object {
 
     construct {
         updates_liststore = new ListStore (typeof (AppCenterCore.Package));
+        updates_liststore.bind_property ("n-items", this, "updates-number");
 
         var runtime_icon = new AppStream.Icon ();
         runtime_icon.set_name ("application-vnd.flatpak");
@@ -60,7 +61,6 @@ public class AppCenterCore.UpdateManager : Object {
 
     public async uint get_updates (Cancellable? cancellable = null) {
         updates_liststore.remove_all ();
-        updates_number = 0;
         unpaid_apps_number = 0;
         updates_size = 0ULL;
 
@@ -88,7 +88,6 @@ public class AppCenterCore.UpdateManager : Object {
                     unpaid_apps_number++;
                 }
 
-                updates_number++;
                 updates_size += appcenter_package.change_information.size;
 
                 appcenter_package.change_information.updatable_packages.add (flatpak_update);
@@ -152,10 +151,6 @@ public class AppCenterCore.UpdateManager : Object {
         }
 
         debug ("%u app updates found", updates_number);
-
-        if (runtime_count > 0) {
-            updates_number += 1;
-        }
 
         if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
             var application = Application.get_default ();
