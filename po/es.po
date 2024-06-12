@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-05 21:00+0000\n"
-"PO-Revision-Date: 2024-06-11 17:16+0000\n"
+"PO-Revision-Date: 2024-06-12 18:51+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -64,9 +64,9 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
-"El Centro de Aplicaciones se iniciará automáticamente cuando este "
-"dispositivo encienda y se continuará ejecutando cuando se cierre la ventana "
-"para que se puedan comprobar e instalar actualizaciones automáticamente."
+"Centro de Aplicaciones se iniciará automáticamente cuando este equipo se "
+"encienda y seguirá ejecutándose cuando se cierre la ventana para que se "
+"puedan comprobar e instalar actualizaciones automáticamente."
 
 #: src/Application.vala:327
 msgid "The app has been installed"
@@ -816,11 +816,11 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:918
 msgid "System Settings Access"
-msgstr "Acceso a Configuración del Sistema"
+msgstr "Acceso a configuraciones del sistema"
 
 #: src/Views/AppInfoView.vala:919
 msgid "Can read and modify system settings"
-msgstr "Puede leer y modificar la configuración del sistema"
+msgstr "Puede leer y modificar configuraciones del sistema"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:1144
