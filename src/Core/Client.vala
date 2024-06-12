@@ -42,54 +42,6 @@ public class AppCenterCore.Client : Object {
         last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
     }
 
-    public async Gee.Collection<AppCenterCore.PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
-        return yield FlatpakBackend.get_default ().get_prepared_applications (cancellable);
-    }
-
-    public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
-        return yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
-    }
-
-    public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        var apps = new Gee.HashMap<string, Package> ();
-        var results = FlatpakBackend.get_default ().get_applications_for_category (category);
-
-        foreach (var result in results) {
-            var result_component_id = result.normalized_component_id;
-            if (apps.has_key (result_component_id)) {
-                if (result.origin_score > apps[result_component_id].origin_score) {
-                    apps[result_component_id] = result;
-                }
-            } else {
-                apps[result_component_id] = result;
-            }
-        }
-
-        return apps.values;
-    }
-
-    public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.HashMap<string, Package> ();
-        var results = FlatpakBackend.get_default ().search_applications (query, category);
-
-        foreach (var result in results) {
-            var result_component_id = result.normalized_component_id;
-            if (apps.has_key (result_component_id)) {
-                if (result.origin_score > apps[result_component_id].origin_score) {
-                    apps[result_component_id] = result;
-                }
-            } else {
-                apps[result_component_id] = result;
-            }
-        }
-
-        return apps.values;
-    }
-
-    public Gee.Collection<Package> search_applications_mime (string query) {
-        return FlatpakBackend.get_default ().search_applications_mime (query);
-    }
-
     public async void refresh_updates () {
         yield UpdateManager.get_default ().get_updates (null);
         installed_apps_changed ();
@@ -192,22 +144,6 @@ public class AppCenterCore.Client : Object {
 
             refresh_updates.begin ();
         }
-    }
-
-    public Package? get_package_for_component_id (string id) {
-        return FlatpakBackend.get_default ().get_package_for_component_id (id);
-    }
-
-    public Package? get_package_for_desktop_id (string desktop_id) {
-        return FlatpakBackend.get_default ().get_package_for_desktop_id (desktop_id);
-    }
-
-    public Gee.Collection<Package> get_packages_by_author (string author, int max) {
-        return FlatpakBackend.get_default ().get_packages_by_author (author, max);
-    }
-
-    public async bool repair (Cancellable? cancellable = null) throws GLib.Error {
-        return yield FlatpakBackend.get_default ().repair (cancellable);
     }
 
     private static GLib.Once<Client> instance;

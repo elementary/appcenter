@@ -219,8 +219,8 @@ namespace AppCenter.Views {
                 );
             }
 
-            unowned var client = AppCenterCore.Client.get_default ();
-            var installed_apps = yield client.get_installed_applications (refresh_cancellable);
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+            var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
 
             if (!refresh_cancellable.is_cancelled ()) {
                 clear ();
@@ -242,7 +242,7 @@ namespace AppCenter.Views {
                 }
             }
 
-            yield client.get_prepared_applications (refresh_cancellable);
+            yield flatpak_backend.get_prepared_applications (refresh_cancellable);
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
@@ -349,8 +349,7 @@ namespace AppCenter.Views {
         }
 
         public async void add_app (AppCenterCore.Package package) {
-            unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-            var installed_apps = yield client.get_installed_applications ();
+            var installed_apps = yield AppCenterCore.FlatpakBackend.get_default ().get_installed_applications ();
             foreach (var app in installed_apps) {
                 if (app == package) {
                     updates_liststore.insert_sorted (package, compare_package_func);

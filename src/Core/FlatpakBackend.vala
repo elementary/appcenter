@@ -444,17 +444,27 @@ public class AppCenterCore.FlatpakBackend : Object {
 #endif
         components = category.get_components ();
 
-        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        var apps = new Gee.HashMap<string, Package> ();
         components.foreach ((comp) => {
             var packages = get_packages_for_component_id (comp.get_id ());
-            apps.add_all (packages);
+
+            foreach (var package in packages) {
+                var package_component_id = package.normalized_component_id;
+                if (apps.has_key (package_component_id)) {
+                    if (package.origin_score > apps[package_component_id].origin_score) {
+                        apps[package_component_id] = package;
+                    }
+                } else {
+                    apps[package_component_id] = package;
+                }
+            }
         });
 
-        return apps;
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        var results = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = user_appstream_pool.search (query);
         if (category == null) {
 #if HAS_APPSTREAM_1_0
@@ -463,7 +473,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             comps.foreach ((comp) => {
 #endif
                 var packages = get_packages_for_component_id (comp.get_id ());
-                apps.add_all (packages);
+                results.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
@@ -475,7 +485,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
-                        apps.add (package);
+                        results.add (package);
                     }
                 }
             });
@@ -489,7 +499,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             comps.foreach ((comp) => {
 #endif
                 var packages = get_packages_for_component_id (comp.get_id ());
-                apps.add_all (packages);
+                results.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
@@ -501,13 +511,25 @@ public class AppCenterCore.FlatpakBackend : Object {
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
-                        apps.add (package);
+                        results.add (package);
                     }
                 }
             });
         }
 
-        return apps;
+        var apps = new Gee.HashMap<string, Package> ();
+        foreach (var result in results) {
+            var result_component_id = result.normalized_component_id;
+            if (apps.has_key (result_component_id)) {
+                if (result.origin_score > apps[result_component_id].origin_score) {
+                    apps[result_component_id] = result;
+                }
+            } else {
+                apps[result_component_id] = result;
+            }
+        }
+
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications_mime (string query) {
