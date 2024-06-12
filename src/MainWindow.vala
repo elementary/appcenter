@@ -257,7 +257,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var client = AppCenterCore.Client.get_default ();
         automatic_updates_button.notify["active"].connect (() => {
             if (automatic_updates_button.active) {
-                client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+                client.update_cache.begin (true);
             } else {
                 client.cancel_updates (true);
             }
