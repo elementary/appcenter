@@ -233,15 +233,13 @@ public class AppCenter.App : Gtk.Application {
     public async void request_background () {
         var portal = new Xdp.Portal ();
 
-        Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
-
         var command = new GenericArray<weak string> ();
         command.add ("io.elementary.appcenter");
         command.add ("--silent");
 
         try {
             if (!yield portal.request_background (
-                parent,
+                null,
                 _("AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."),
                 (owned) command,
                 Xdp.BackgroundFlags.AUTOSTART,
