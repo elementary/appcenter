@@ -369,20 +369,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (navigation_view.visible_page is Homepage) {
             view_mode_revealer.reveal_child = true;
-            configure_search (true, _("Search Apps"), "");
+            configure_search (true);
         } else if (navigation_view.visible_page is CategoryView) {
             var current_category = ((CategoryView) navigation_view.visible_page).category;
             view_mode_revealer.reveal_child = false;
-            configure_search (true, _("Search %s").printf (current_category.name), "");
+            configure_search (false);
         } else if (navigation_view.visible_page == search_view) {
-            if (previous_child is CategoryView) {
-                var previous_category = ((CategoryView) previous_child).category;
-                configure_search (true, _("Search %s").printf (previous_category.name));
-                view_mode_revealer.reveal_child = false;
-            } else {
-                configure_search (true);
-                view_mode_revealer.reveal_child = true;
-            }
+              configure_search (true);
+              view_mode_revealer.reveal_child = true;
         } else if (navigation_view.visible_page is Views.AppInfoView) {
             view_mode_revealer.reveal_child = false;
             configure_search (false);
@@ -489,11 +483,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    private void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
+    private void configure_search (bool sensitive, bool? clear = false) {
         search_entry.sensitive = sensitive;
-        search_entry.placeholder_text = placeholder_text;
+        search_entry.visible = sensitive;
 
-        if (search_term != null) {
+        if (clear) {
             search_entry.text = "";
         }
 

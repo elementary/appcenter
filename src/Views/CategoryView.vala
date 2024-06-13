@@ -20,9 +20,9 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
     public AppStream.Category category { get; construct; }
 
+    private Gtk.SearchEntry search_entry;
     private Gtk.Stack stack;
-    private Gtk.ScrolledWindow scrolled;
-    private Gtk.Box box;
+    private Gtk.Box main_box;
     private SubcategoryFlowbox free_flowbox;
     private SubcategoryFlowbox paid_flowbox;
     private SubcategoryFlowbox recently_updated_flowbox;
@@ -31,21 +31,39 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         Object (category: category);
     }
 
+    class construct {
+        set_css_name ("categorypage");
+    }
+
     construct {
+        search_entry = new Gtk.SearchEntry () {
+            hexpand = true,
+            placeholder_text = _("Search %s").printf (category.name)
+        };
+
+        var clamp = new Adw.Clamp () {
+            child = search_entry
+        };
+        clamp.add_css_class ("header");
+
         recently_updated_flowbox = new SubcategoryFlowbox (_("Recently Updated"));
 
         paid_flowbox = new SubcategoryFlowbox (_("Paid Apps"));
 
         free_flowbox = new SubcategoryFlowbox (_("Free Apps"));
 
-        box = new Gtk.Box (Gtk.Orientation.VERTICAL, 48) {
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 48) {
             margin_top = 12,
             margin_end = 12,
             margin_bottom = 24,
-            margin_start = 12
+            margin_start = 12,
+            vexpand = true
         };
+        box.append (recently_updated_flowbox);
+        box.append (paid_flowbox);
+        box.append (free_flowbox);
 
-        scrolled = new Gtk.ScrolledWindow () {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
@@ -56,9 +74,13 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         };
         spinner.start ();
 
+        main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.append (clamp);
+        main_box.append (scrolled);
+
         stack = new Gtk.Stack ();
         stack.add_child (spinner);
-        stack.add_child (scrolled);
+        stack.add_child (main_box);
 
         child = stack;
         title = category.name;
@@ -80,14 +102,36 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
             populate ();
         });
+
+        search_entry.search_changed.connect (() => {
+            recently_updated_flowbox.search_text = search_entry.text;
+            paid_flowbox.search_text = search_entry.text;
+            free_flowbox.search_text = search_entry.text;
+        });
+
+        // Forward only printable keys, not navigation keys
+        var eventcontrollerkey = new Gtk.EventControllerKey ();
+        eventcontrollerkey.key_pressed.connect ((keyval, keycode, state) => {
+            var mods = state & Gtk.accelerator_get_default_mod_mask ();
+            var is_printable_char = ((unichar) Gdk.keyval_to_unicode (keyval)).isprint ();
+
+            if (
+                (is_printable_char && mods == 0) ||
+                (is_printable_char && mods == SHIFT_MASK)
+            ) {
+                eventcontrollerkey.forward (search_entry.get_delegate ());
+                search_entry.grab_focus ();
+                return Gdk.EVENT_STOP;
+            }
+
+            return Gdk.EVENT_PROPAGATE;
+        });
+
+        add_controller (eventcontrollerkey);
     }
 
     private void populate () {
         get_packages.begin ((obj, res) => {
-            while (box.get_first_child () != null) {
-                box.remove (box.get_first_child ());
-            };
-
             recently_updated_flowbox.clear ();
             free_flowbox.clear ();
             paid_flowbox.clear ();
@@ -140,19 +184,11 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 }
             }
 
-            if (recently_updated_flowbox.has_children) {
-                box.append (recently_updated_flowbox);
-            }
+            free_flowbox.visible = free_flowbox.has_children;
+            paid_flowbox.visible = paid_flowbox.has_children;
+            recently_updated_flowbox.visible = recently_updated_flowbox.has_children;
 
-            if (paid_flowbox.has_children) {
-                box.append (paid_flowbox);
-            }
-
-            if (free_flowbox.has_children) {
-                box.append (free_flowbox);
-            }
-
-            stack.visible_child = scrolled;
+            stack.visible_child = main_box;
         });
     }
 
@@ -177,6 +213,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
     private class SubcategoryFlowbox : Gtk.Box {
         public signal void show_package (AppCenterCore.Package package);
 
+        public string search_text { get; set; default = ""; }
         public string? label { get; construct; }
 
         public bool has_children {
@@ -205,8 +242,10 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 valign = Gtk.Align.START
             };
             flowbox.set_sort_func ((Gtk.FlowBoxSortFunc) package_row_compare);
+            flowbox.set_filter_func (filter_func);
 
-            orientation = Gtk.Orientation.VERTICAL;
+            orientation = VERTICAL;
+            visible = false;
 
             if (label != null) {
                 var header = new Granite.HeaderLabel (label) {
@@ -220,6 +259,11 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             flowbox.child_activated.connect ((child) => {
                 var row = (Widgets.ListPackageRowGrid) child.get_child ();
                 show_package (row.package);
+            });
+
+            notify["search-text"].connect (() => {
+                flowbox.invalidate_filter ();
+                visible = has_children;
             });
         }
 
@@ -248,6 +292,11 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             }
 #endif
             return row1.package.get_name ().collate (row2.package.get_name ());
+        }
+
+        private bool filter_func (Gtk.FlowBoxChild child) {
+            var package = ((Widgets.ListPackageRowGrid) child.get_child ()).package;
+            return package.matches_search (search_text);
         }
     }
 }
