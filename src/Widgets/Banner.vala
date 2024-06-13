@@ -44,11 +44,14 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     }
 
     public Banner.from_package (AppCenterCore.Package package) {
+        // Can't get widget scale factor before it's realized
+        var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+
         Object (
             name: package.get_name (),
             summary: package.get_summary (),
             description: package.get_description (),
-            icon: package.get_icon (128, get_scale_factor ()),
+            icon: package.get_icon (128, scale_factor),
             brand_color: package.get_color_primary ()
         );
     }
