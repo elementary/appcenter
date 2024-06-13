@@ -22,15 +22,42 @@
 public class AppCenter.SearchView : Adw.NavigationPage {
     public signal void show_app (AppCenterCore.Package package);
 
-    public string? current_search_term { get; set; default = null; }
+    public const int VALID_QUERY_LENGTH = 3;
+
+    public string search_term { get; construct; }
+    public bool mimetype { get; set; default = false; }
 
     private GLib.ListStore list_store;
+    private Gtk.SearchEntry search_entry;
+    private Granite.Placeholder alert_view;
+
+    public SearchView (string search_term) {
+        Object (search_term: search_term);
+    }
 
     construct {
         var flathub_link = "<a href='https://flathub.org'>%s</a>".printf (_("Flathub"));
-        var alert_view = new Granite.Placeholder (_("No Apps Found")) {
+        alert_view = new Granite.Placeholder (_("No Apps Found")) {
             description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
             icon = new ThemedIcon ("edit-find-symbolic")
+        };
+
+        var search_entry_eventcontrollerkey = new Gtk.EventControllerKey ();
+
+        search_entry = new Gtk.SearchEntry () {
+            hexpand = true,
+            placeholder_text = _("Search Apps"),
+            text = search_term
+        };
+        search_entry.add_controller (search_entry_eventcontrollerkey);
+        search_entry.set_key_capture_widget (this);
+
+        var search_clamp = new Adw.Clamp () {
+            child = search_entry,
+            margin_top = 6,
+            margin_bottom = 6,
+            margin_end = 12,
+            margin_start = 12
         };
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
@@ -48,21 +75,19 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        child = scrolled;
+        var toolbarview = new Adw.ToolbarView () {
+            content = scrolled
+        };
+        toolbarview.add_top_bar (search_clamp);
+
+        add_css_class (Granite.STYLE_CLASS_VIEW);
+        child = toolbarview;
         /// TRANSLATORS: the name of the Search view
         title = C_("view", "Search");
 
-        notify["current-search-term"].connect (() => {
-            if (current_search_term == null) {
-                return;
-            }
-
-            if (current_search_term.length < MainWindow.VALID_QUERY_LENGTH) {
-                alert_view.description = _("The search term must be at least 3 characters long.");
-            } else {
-                var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (current_search_term, _("Flathub"));
-                alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
-            }
+        shown.connect (() => {
+            update_category ();
+            search_entry.grab_focus ();
         });
 
         list_box.row_activated.connect ((row) => {
@@ -70,6 +95,65 @@ public class AppCenter.SearchView : Adw.NavigationPage {
                 show_app (((Widgets.PackageRow) row).get_package ());
             }
         });
+
+        search_entry.search_changed.connect (search);
+
+        search_entry_eventcontrollerkey.key_released.connect ((keyval, keycode, state) => {
+            switch (keyval) {
+                case Gdk.Key.Down:
+                    search_entry.move_focus (TAB_FORWARD);
+                    break;
+                case Gdk.Key.Escape:
+                    search_entry.text = "";
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+
+    private void search () {
+        list_store.remove_all ();
+
+        if (search_entry.text.length >= VALID_QUERY_LENGTH) {
+            var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (search_entry.text, _("Flathub"));
+            alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
+
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+
+            Gee.Collection<AppCenterCore.Package> found_apps;
+
+            if (mimetype) {
+                found_apps = flatpak_backend.search_applications_mime (search_entry.text);
+                add_packages (found_apps);
+            } else {
+                var category = update_category ();
+
+                found_apps = flatpak_backend.search_applications (search_entry.text, category);
+                add_packages (found_apps);
+            }
+
+        } else {
+            alert_view.description = _("The search term must be at least 3 characters long.");
+        }
+
+        if (mimetype) {
+            mimetype = false;
+        }
+    }
+
+    private AppStream.Category? update_category () {
+        var navigation_view = (Adw.NavigationView) get_ancestor (typeof (Adw.NavigationView));
+        var previous_page = navigation_view.get_previous_page (navigation_view.visible_page);
+        if (previous_page is CategoryView) {
+            var category = ((CategoryView) previous_page).category;
+            search_entry.placeholder_text = _("Search %s").printf (category.name);
+
+            return category;
+        }
+
+        search_entry.placeholder_text = _("Search Apps");
+        return null;
     }
 
     public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
@@ -90,15 +174,10 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         return new Widgets.PackageRow.list (package);
     }
 
-    public void clear () {
-        list_store.remove_all ();
-        current_search_term = null;
-    }
-
     private int search_priority (string name) {
-        if (name != null && current_search_term != null) {
+        if (name != null && search_entry.text != "") {
             var name_lower = name.down ();
-            var term_lower = current_search_term.down ();
+            var term_lower = search_entry.text.down ();
 
             var term_position = name_lower.index_of (term_lower);
 
