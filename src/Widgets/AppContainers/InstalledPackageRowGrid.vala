@@ -52,6 +52,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         app_version.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var release_button = new Gtk.Button.from_icon_name ("view-reader-symbolic") {
+            tooltip_text = _("Release notes"),
             valign = Gtk.Align.CENTER
         };
 
@@ -59,7 +60,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             child = release_button,
             halign = Gtk.Align.END,
             hexpand = true,
-            tooltip_text = _("Release notes"),
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
 
@@ -112,7 +112,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
             if (newest == null) {
                 newest = package.get_newest_release ();
-                if (newest != null) {
+                if (newest != null && newest.get_description () != null) {
                     release_button_revealer.reveal_child = true;
                 }
             } else {
