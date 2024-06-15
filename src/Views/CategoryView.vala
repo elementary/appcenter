@@ -60,7 +60,14 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         stack.add_child (spinner);
         stack.add_child (scrolled);
 
-        child = stack;
+        var headerbar = new Gtk.HeaderBar ();
+
+        var toolbar_view = new Adw.ToolbarView () {
+            content = stack
+        };
+        toolbar_view.add_top_bar (headerbar);
+
+        child = toolbar_view;
         title = category.name;
 
         populate ();

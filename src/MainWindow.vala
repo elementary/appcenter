@@ -17,11 +17,6 @@
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public bool working { get; set; }
 
-    private Gtk.Revealer view_mode_revealer;
-    private Gtk.Button refresh_menuitem;
-    private Gtk.Button return_button;
-    private Gtk.Label updates_badge;
-    private Gtk.Revealer updates_badge_revealer;
     private Granite.Toast toast;
     private Granite.OverlayBar overlaybar;
     private Adw.NavigationView navigation_view;
@@ -96,89 +91,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        return_button = new Gtk.Button () {
-            action_name = "win.go-back",
-            valign = Gtk.Align.CENTER,
-            visible = false
-        };
-        return_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
-
-        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
-            action_name = "win.search",
-            /// TRANSLATORS: the action of searching
-            tooltip_text = C_("action", "Search"),
-            valign = CENTER
-        };
-        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-
-        var updates_button = new Gtk.Button.from_icon_name ("software-update-available");
-        updates_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-
-        updates_badge = new Gtk.Label ("!");
-        updates_badge.add_css_class (Granite.STYLE_CLASS_BADGE);
-
-        updates_badge_revealer = new Gtk.Revealer () {
-            can_target = false,
-            child = updates_badge,
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.START,
-            transition_type = Gtk.RevealerTransitionType.CROSSFADE
-        };
-
-        var updates_overlay = new Gtk.Overlay () {
-            child = updates_button,
-            tooltip_text = C_("view", "Updates & installed apps")
-        };
-        updates_overlay.add_overlay (updates_badge_revealer);
-
-        view_mode_revealer = new Gtk.Revealer () {
-            child = updates_overlay,
-            reveal_child = true,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
-        };
-
-        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatically Update Free & Purchased Apps")) {
-            description = _("Apps being tried for free will not update automatically")
-        };
-
-        var refresh_accellabel = new Granite.AccelLabel.from_action_name (
-            _("Check for Updates"),
-            "app.refresh"
-        );
-
-        refresh_menuitem = new Gtk.Button () {
-            action_name = "app.refresh",
-            child = refresh_accellabel
-        };
-        refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-
-        var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        menu_popover_box.append (automatic_updates_button);
-        menu_popover_box.append (refresh_menuitem);
-
-        var menu_popover = new Gtk.Popover () {
-            child = menu_popover_box
-        };
-        menu_popover.add_css_class (Granite.STYLE_CLASS_MENU);
-
-        var menu_button = new Gtk.MenuButton () {
-            icon_name = "open-menu",
-            popover = menu_popover,
-            tooltip_text = _("Settings"),
-            valign = Gtk.Align.CENTER
-        };
-        menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-
-        var headerbar = new Gtk.HeaderBar () {
-            show_title_buttons = true
-        };
-        headerbar.pack_start (return_button);
-        if (!Utils.is_running_in_guest_session ()) {
-            headerbar.pack_end (menu_button);
-            headerbar.pack_end (view_mode_revealer);
-        }
-        headerbar.pack_end (search_button);
-
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
 
@@ -231,37 +143,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         box.append (overlay);
 
         child = box;
-        set_titlebar (headerbar);
-
-        App.settings.bind (
-            "automatic-updates",
-            automatic_updates_button,
-            "active",
-            SettingsBindFlags.DEFAULT
-        );
-
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-        automatic_updates_button.notify["active"].connect (() => {
-            if (automatic_updates_button.active) {
-                update_manager.update_cache.begin (true);
-            } else {
-                update_manager.cancel_updates (true);
-            }
-        });
-
-        update_manager.notify["updates-number"].connect (() => {
-            show_update_badge (update_manager.updates_number);
-        });
+        titlebar = new Gtk.Grid () { visible = false };
 
         var network_monitor = NetworkMonitor.get_default ();
         network_monitor.bind_property ("network-available", network_info_bar, "revealed", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
 
         network_info_bar.response.connect (() => {
             new Gtk.UriLauncher ("settings://network").launch.begin (this, null);
-        });
-
-        updates_button.clicked.connect (() => {
-            go_to_installed ();
         });
 
         homepage.show_category.connect ((category) => {
@@ -301,19 +189,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return false;
     }
 
-    private void show_update_badge (uint updates_number) {
-        Idle.add (() => {
-            if (updates_number == 0U) {
-                updates_badge_revealer.reveal_child = false;
-            } else {
-                updates_badge.label = updates_number.to_string ();
-                updates_badge_revealer.reveal_child = true;
-            }
-
-            return GLib.Source.REMOVE;
-        });
-    }
-
     public void show_package (AppCenterCore.Package package) {
         var pk_child = navigation_view.find_page (package.hash);
         if (pk_child != null) {
@@ -338,33 +213,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void update_navigation () {
-        var previous_child = navigation_view.get_previous_page (navigation_view.visible_page);
-
         ((SimpleAction) lookup_action ("search")).set_enabled (!(navigation_view.visible_page is SearchView));
-
-        if (navigation_view.visible_page is Homepage) {
-            view_mode_revealer.reveal_child = true;
-        } else if (navigation_view.visible_page is CategoryView) {
-            var current_category = ((CategoryView) navigation_view.visible_page).category;
-            view_mode_revealer.reveal_child = false;
-        } else if (navigation_view.visible_page is SearchView) {
-            if (previous_child is CategoryView) {
-                view_mode_revealer.reveal_child = false;
-            } else {
-                view_mode_revealer.reveal_child = true;
-            }
-        } else if (navigation_view.visible_page is Views.AppInfoView) {
-            view_mode_revealer.reveal_child = false;
-        } else if (navigation_view.visible_page is Views.AppListUpdateView) {
-            view_mode_revealer.reveal_child = true;
-        }
-
-        if (previous_child == null) {
-            return_button.visible = false;
-        } else {
-            return_button.label = previous_child.title;
-            return_button.visible = true;
-        }
     }
 
     public void go_to_installed () {
