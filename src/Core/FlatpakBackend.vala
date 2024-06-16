@@ -288,12 +288,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         return job;
     }
 
-    public async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
-        var prepared_apps = new Gee.HashSet<PackageDetails> ();
-
-        return prepared_apps;
-    }
-
     private void get_installed_packages_internal (Job job) {
         unowned var args = (GetInstalledPackagesArgs)job.args;
         unowned var cancellable = args.cancellable;
