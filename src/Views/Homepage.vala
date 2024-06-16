@@ -33,8 +33,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
 
-    private Gtk.Revealer view_mode_revealer;
-    private Gtk.Button refresh_menuitem;
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
@@ -219,13 +217,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        return_button = new Gtk.Button () {
-            action_name = "win.go-back",
-            valign = Gtk.Align.CENTER,
-            visible = false
-        };
-        return_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
-
         var search_button = new Gtk.Button.from_icon_name ("edit-find") {
             action_name = "win.search",
             /// TRANSLATORS: the action of searching
@@ -256,51 +247,12 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         };
         updates_overlay.add_overlay (updates_badge_revealer);
 
-        view_mode_revealer = new Gtk.Revealer () {
-            child = updates_overlay,
-            reveal_child = true,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
-        };
-
-        var automatic_updates_button = new Granite.SwitchModelButton (_("Automatically Update Free & Purchased Apps")) {
-            description = _("Apps being tried for free will not update automatically")
-        };
-
-        var refresh_accellabel = new Granite.AccelLabel.from_action_name (
-            _("Check for Updates"),
-            "app.refresh"
-        );
-
-        refresh_menuitem = new Gtk.Button () {
-            action_name = "app.refresh",
-            child = refresh_accellabel
-        };
-        refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-
-        var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        menu_popover_box.append (automatic_updates_button);
-        menu_popover_box.append (refresh_menuitem);
-
-        var menu_popover = new Gtk.Popover () {
-            child = menu_popover_box
-        };
-        menu_popover.add_css_class (Granite.STYLE_CLASS_MENU);
-
-        var menu_button = new Gtk.MenuButton () {
-            icon_name = "open-menu",
-            popover = menu_popover,
-            tooltip_text = _("Settings"),
-            valign = Gtk.Align.CENTER
-        };
-        menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-
         var headerbar = new Gtk.HeaderBar () {
             show_title_buttons = true
         };
         headerbar.pack_start (return_button);
         if (!Utils.is_running_in_guest_session ()) {
-            headerbar.pack_end (menu_button);
-            headerbar.pack_end (view_mode_revealer);
+            headerbar.pack_end (updates_overlay);
         }
         headerbar.pack_end (search_button);
 
@@ -358,22 +310,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             show_package (package_row_grid.package);
         });
 
-        App.settings.bind (
-            "automatic-updates",
-            automatic_updates_button,
-            "active",
-            SettingsBindFlags.DEFAULT
-        );
-
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-        automatic_updates_button.notify["active"].connect (() => {
-            if (automatic_updates_button.active) {
-                update_manager.update_cache.begin (true);
-            } else {
-                update_manager.cancel_updates (true);
-            }
-        });
-
+        var update_manager = AppCenterCore.UpdateManager.get_default ();
         update_manager.notify["updates-number"].connect (() => {
             show_update_badge (update_manager.updates_number);
         });

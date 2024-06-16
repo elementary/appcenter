@@ -71,6 +71,19 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             to_recycle = true;
         });
 
+        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
+            action_name = "win.search",
+            /// TRANSLATORS: the action of searching
+            tooltip_text = C_("action", "Search")
+        };
+        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+        var headerbar = new Gtk.HeaderBar () {
+            title_widget = new Gtk.Grid () { visible = false }
+        };
+        headerbar.pack_start (new BackButton ());
+        headerbar.pack_end (search_button);
+
         accent_provider = new Gtk.CssProvider ();
         try {
             string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
@@ -723,7 +736,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         };
         overlay.add_overlay (toast);
 
-        child = overlay;
+        var toolbar_view = new Adw.ToolbarView () {
+            content = overlay,
+            top_bar_style = RAISED
+        };
+        toolbar_view.add_top_bar (headerbar);
+
+        child = toolbar_view;
         title = package.get_name ();
         tag = package.hash;
 
