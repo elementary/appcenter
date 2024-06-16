@@ -176,7 +176,6 @@ namespace AppCenter.Views {
             unowned var aggregator = AppCenterCore.FlatpakBackend.get_default ();
             aggregator.notify ["job-type"].connect (() => {
                 switch (aggregator.job_type) {
-                    case GET_PREPARED_PACKAGES:
                     case GET_INSTALLED_PACKAGES:
                     case GET_UPDATES:
                     case REFRESH_CACHE:
