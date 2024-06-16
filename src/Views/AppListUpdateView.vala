@@ -32,7 +32,6 @@ namespace AppCenter.Views {
         private Gtk.Revealer updated_revealer;
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
-        private ListStore updates_liststore;
         private ListStore installed_liststore;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
@@ -40,7 +39,8 @@ namespace AppCenter.Views {
         private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
-            updates_liststore = new ListStore (typeof (AppCenterCore.Package));
+            var update_manager = AppCenterCore.UpdateManager.get_default ();
+
             installed_liststore = new ListStore (typeof (AppCenterCore.Package));
 
             var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
@@ -49,7 +49,8 @@ namespace AppCenter.Views {
             };
 
             header_label = new Granite.HeaderLabel ("") {
-                hexpand = true
+                hexpand = true,
+                valign = CENTER
             };
 
             size_label = new Widgets.SizeLabel () {
@@ -60,25 +61,21 @@ namespace AppCenter.Views {
             updated_label = new Gtk.Label ("");
             updated_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
-                margin_top = 12,
-                margin_end = 12,
-                margin_bottom = 12,
-                margin_start = 12
-            };
+            var updated_box = new Gtk.Box (HORIZONTAL, 6);
             updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
             updated_box.append (updated_label);
 
             updated_revealer = new Gtk.Revealer () {
                 child = updated_box
             };
+            updated_revealer.add_css_class ("header");
 
             update_all_button = new Gtk.Button.with_label (_("Update All")) {
                 valign = Gtk.Align.CENTER
             };
             update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-            var header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 16);
+            var header = new Gtk.Box (HORIZONTAL, 16);
             header.append (header_label);
             header.append (size_label);
             header.append (update_all_button);
@@ -93,7 +90,7 @@ namespace AppCenter.Views {
                 hexpand = true,
                 vexpand = true
             };
-            list_box.bind_model (updates_liststore, create_row_from_package);
+            list_box.bind_model (update_manager.updates_liststore, create_row_from_package);
 
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
@@ -123,30 +120,39 @@ namespace AppCenter.Views {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
 
-            var main_box = new Gtk.Box (VERTICAL, 0);
-            main_box.append (updated_revealer);
-            main_box.append (header_revealer);
-            main_box.append (scrolled);
-            main_box.add_css_class (Granite.STYLE_CLASS_VIEW);
+            var toolbarview = new Adw.ToolbarView () {
+                content = scrolled
+            };
+            toolbarview.add_top_bar (updated_revealer);
+            toolbarview.add_top_bar (header_revealer);
+            toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
             var stack = new Gtk.Stack () {
                 transition_type = UNDER_UP
             };
-            stack.add_child (main_box);
+            stack.add_child (toolbarview);
             stack.add_child (loading_view);
+            stack.visible_child = loading_view;
 
             child = stack;
             /// TRANSLATORS: the name of the Installed Apps view
             title = C_("view", "Installed");
 
-            get_apps.begin ((obj, res) => {
-                get_apps.end (res);
-                stack.visible_child = main_box;
+            on_installed_changed.begin ((obj, res) => {
+                on_installed_changed.end (res);
+                stack.visible_child = toolbarview;
             });
 
-            AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
+            update_manager.updates_liststore.items_changed.connect (() => {
                 Idle.add (() => {
-                    get_apps.begin ();
+                    on_updates_changed ();
+                    return GLib.Source.REMOVE;
+                });
+            });
+
+            update_manager.installed_apps_changed.connect (() => {
+                Idle.add (() => {
+                    on_installed_changed.begin ();
                     return GLib.Source.REMOVE;
                 });
             });
@@ -181,20 +187,13 @@ namespace AppCenter.Views {
             });
         }
 
-        private async void get_apps () {
-            updated_revealer.reveal_child = false;
-
-            if (refresh_cancellable != null) {
-                refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
-            }
-
-            yield refresh_mutex.lock (); // Wait for any previous operation to end
-            // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
-            refresh_cancellable = new Cancellable ();
+        private void on_updates_changed () {
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            if (update_manager.updates_number > 0) {
-                header_revealer.reveal_child = true;
 
+            header_revealer.reveal_child = update_manager.updates_number > 0;
+            updated_revealer.reveal_child = update_manager.updates_number == 0;
+
+            if (update_manager.updates_number > 0) {
                 if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
@@ -209,39 +208,35 @@ namespace AppCenter.Views {
 
                 size_label.update (update_manager.updates_size);
             } else {
-                header_revealer.reveal_child = false;
-                updated_revealer.reveal_child = true;
                 updated_label.label = _("Everything is up to date. Last checked %s.").printf (
                     Granite.DateTime.get_relative_datetime (
                         new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
                     )
                 );
             }
+        }
 
-            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-            var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
+        private async void on_installed_changed () {
+            if (refresh_cancellable != null) {
+                refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
+            }
+
+            yield refresh_mutex.lock (); // Wait for any previous operation to end
+            // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
+            refresh_cancellable = new Cancellable ();
 
             if (!refresh_cancellable.is_cancelled ()) {
-                clear ();
+                installed_liststore.remove_all ();
 
-                var runtime_updates = AppCenterCore.UpdateManager.get_default ().runtime_updates;
-                var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
-                if (runtime_updates_size > 0) {
-                    updates_liststore.insert_sorted (runtime_updates, compare_package_func);
-                }
+                unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+                var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
 
                 foreach (var package in installed_apps) {
-                    var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
-                    // Only add row if this package needs an update or it's not a font or plugin
-                    if (needs_update) {
-                        updates_liststore.insert_sorted (package, compare_package_func);
-                    } else if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
-                        installed_liststore.insert_sorted (package, compare_package_func);
+                    if (package.state != UPDATE_AVAILABLE && package.kind != ADDON && package.kind != FONT) {
+                        installed_liststore.insert_sorted (package, compare_installed_func);
                     }
                 }
             }
-
-            yield flatpak_backend.get_prepared_applications (refresh_cancellable);
 
             refresh_cancellable = null;
             refresh_mutex.unlock ();
@@ -255,48 +250,6 @@ namespace AppCenter.Views {
         private Gtk.Widget create_installed_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
             return new Widgets.InstalledPackageRowGrid (package, action_button_group);
-        }
-
-        private int compare_package_func (Object object1, Object object2) {
-            var package1 = (AppCenterCore.Package) object1;
-            var package2 = (AppCenterCore.Package) object2;
-
-            bool a_is_os = false;
-            bool a_is_runtime = false;
-            bool a_is_updating = false;
-            string a_package_name = "";
-            if (package1 != null) {
-                a_is_runtime = package1.is_runtime_updates;
-                a_is_updating = package1.is_updating;
-                a_package_name = package1.get_name ();
-            }
-
-            bool b_is_os = false;
-            bool b_is_runtime = false;
-            bool b_is_updating = false;
-            string b_package_name = "";
-            if (package2 != null) {
-                b_is_runtime = package2.is_runtime_updates;
-                b_is_updating = package2.is_updating;
-                b_package_name = package2.get_name ();
-            }
-
-            // The currently updating package is always top of the list
-            if (a_is_updating || b_is_updating) {
-                return a_is_updating ? -1 : 1;
-            }
-
-            // Sort updatable OS updates first
-            if (a_is_os || b_is_os) {
-                return a_is_os ? -1 : 1;
-            }
-
-            // Ensures runtime updates are sorted to the top amongst up-to-date packages but below OS updates
-            if (a_is_runtime || b_is_runtime) {
-                return a_is_runtime ? -1 : 1;
-            }
-
-            return a_package_name.collate (b_package_name); /* Else sort in name order */
         }
 
         private void on_update_all () {
@@ -320,8 +273,9 @@ namespace AppCenter.Views {
                 child = child.get_next_sibling ();
             }
 
-            for (int i = 0; i < updates_liststore.get_n_items (); i++) {
-                var package = (AppCenterCore.Package) updates_liststore.get_item (i);
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            for (int i = 0; i < update_manager.updates_liststore.get_n_items (); i++) {
+                var package = (AppCenterCore.Package) update_manager.updates_liststore.get_item (i);
                 if (package.update_available && !package.should_pay) {
                     try {
                         yield package.update (false);
@@ -346,19 +300,27 @@ namespace AppCenter.Views {
             updating_all_apps = false;
         }
 
-        public async void add_app (AppCenterCore.Package package) {
-            var installed_apps = yield AppCenterCore.FlatpakBackend.get_default ().get_installed_applications ();
-            foreach (var app in installed_apps) {
-                if (app == package) {
-                    updates_liststore.insert_sorted (package, compare_package_func);
-                    break;
-                }
+        private int compare_installed_func (Object object1, Object object2) {
+            var package1 = (AppCenterCore.Package) object1;
+            var package2 = (AppCenterCore.Package) object2;
+
+            string a_package_name = "";
+            if (package1 != null) {
+                a_package_name = package1.get_name ();
             }
+
+            string b_package_name = "";
+            if (package2 != null) {
+                b_package_name = package2.get_name ();
+            }
+
+            return a_package_name.collate (b_package_name);
         }
 
         public void clear () {
-            updates_liststore.remove_all ();
-            installed_liststore.remove_all ();
+            // Free widgets with all their connected signals https://github.com/elementary/appcenter/pull/846
+            list_box.remove_all ();
+            installed_flowbox.remove_all ();
         }
     }
 }
