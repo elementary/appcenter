@@ -38,7 +38,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     construct {
         var flathub_link = "<a href='https://flathub.org'>%s</a>".printf (_("Flathub"));
         alert_view = new Granite.Placeholder (_("No Apps Found")) {
-            description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (flathub_link),
+            description = _("The search term must be at least 3 characters long."),
             icon = new ThemedIcon ("edit-find-symbolic")
         };
 
