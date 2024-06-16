@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 16:21+0000\n"
+"POT-Creation-Date: 2024-06-16 18:30+0000\n"
 "PO-Revision-Date: 2024-06-16 03:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
@@ -45,7 +45,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "Centro de Aplicaciones"
 
@@ -72,97 +72,97 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Se instaló la aplicación"
 
-#: src/Application.vala:329 src/MainWindow.vala:419
+#: src/Application.vala:329 src/MainWindow.vala:394
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Se instaló «%s»"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:83
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "No se pudo iniciar «%s»"
 
-#: src/MainWindow.vala:131
+#. / TRANSLATORS: the action of searching
+#: src/MainWindow.vala:109
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "Búsqueda"
+
+#: src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Aplicaciones instaladas y actualizaciones"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:372 src/MainWindow.vala:492
-msgid "Search Apps"
-msgstr "Buscar aplicaciones"
-
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:140
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Actualizar automáticamente aplicaciones gratuitas y pagadas"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:141
 msgid "Apps being tried for free will not update automatically"
 msgstr "Las aplicaciones en modo de prueba no se actualizarán automáticamente"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:145
 msgid "Check for Updates"
 msgstr "Comprobar si hay actualizaciones"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:167
 msgid "Settings"
 msgstr "Ajustes"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "Red no disponible."
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:199
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Conéctese a Internet para explorar e instalar aplicaciones."
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:209
 msgid "Network Settings…"
 msgstr "Configuración de red…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:216
 msgid "Running in Demo Mode"
 msgstr "Ejecutando en modo demostración"
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:217
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Instale %s para explorar e instalar aplicaciones."
 
-#: src/MainWindow.vala:376 src/MainWindow.vala:380
-#, c-format
-msgid "Search %s"
-msgstr "Buscar %s"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:422 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Abrir"
 
-#: src/MainWindow.vala:521
+#: src/MainWindow.vala:421
 msgid "Getting app information…"
 msgstr "Obteniendo información de la aplicación…"
 
-#: src/MainWindow.vala:524
+#: src/MainWindow.vala:424
 msgid "Getting download size…"
 msgstr "Obteniendo el tamaño de la descarga…"
 
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:430
 msgid "Checking for updates…"
 msgstr "Comprobando actualizaciones…"
 
-#: src/MainWindow.vala:533
+#: src/MainWindow.vala:433
 msgid "Installing…"
 msgstr "Instalando…"
 
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:436
 msgid "Installing updates…"
 msgstr "Instalando actualizaciones…"
 
-#: src/MainWindow.vala:539
+#: src/MainWindow.vala:439
 msgid "Uninstalling…"
 msgstr "Desinstalando…"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:442
 msgid "Repairing…"
 msgstr "Reparando…"
 
@@ -864,28 +864,28 @@ msgstr ""
 "Descargando una lista de actualizaciones disponibles para el sistema y las "
 "aplicaciones instaladas"
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "Actualizar todo"
 
-#: src/Views/AppListUpdateView.vala:98
+#: src/Views/AppListUpdateView.vala:95
 msgid "Up to Date"
 msgstr "Actualizado"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:139
 msgctxt "view"
 msgid "Installed"
 msgstr "Instaladas"
 
-#: src/Views/AppListUpdateView.vala:206
+#: src/Views/AppListUpdateView.vala:204
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u actualización disponible"
 msgstr[1] "%u actualizaciones disponibles"
 
-#: src/Views/AppListUpdateView.vala:213
+#: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Todo se encuentra al día. Última revisión %s."
@@ -1010,15 +1010,29 @@ msgstr "Diversión y"
 msgid "Games"
 msgstr "juegos"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr "No se encontraron aplicaciones"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+msgid "The search term must be at least 3 characters long."
+msgstr "El término de búsqueda debe tener al menos 3 caracteres."
+
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+msgid "Search Apps"
+msgstr "Buscar aplicaciones"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:86
+msgctxt "view"
+msgid "Search"
+msgstr "Búsqueda"
+
+#: src/Views/SearchView.vala:120
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
@@ -1026,15 +1040,10 @@ msgstr ""
 "Intente cambiar los términos de búsqueda. También puede instalar "
 "aplicaciones externas Flatpak desde, por ejemplo, %s"
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
-msgctxt "view"
-msgid "Search"
-msgstr "Búsqueda"
-
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
-msgstr "El término de búsqueda debe tener al menos 3 caracteres."
+#: src/Views/SearchView.vala:150
+#, c-format
+msgid "Search %s"
+msgstr "Buscar %s"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"

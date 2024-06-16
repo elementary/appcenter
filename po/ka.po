@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 16:21+0000\n"
+"POT-Creation-Date: 2024-06-16 18:30+0000\n"
 "PO-Revision-Date: 2023-03-12 12:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/appcenter/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -43,97 +43,97 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "აპი დაყენებულია"
 
-#: src/Application.vala:329 src/MainWindow.vala:419
+#: src/Application.vala:329 src/MainWindow.vala:394
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" დაყენებულია"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:83
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "%s-ის გაშვების შეცდომა"
 
-#: src/MainWindow.vala:131
+#. / TRANSLATORS: the action of searching
+#: src/MainWindow.vala:109
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "ძებნა"
+
+#: src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "განახლებები და დაყენებული აპები"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:372 src/MainWindow.vala:492
-msgid "Search Apps"
-msgstr "აპების ძებნა"
-
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:140
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:141
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:145
 msgid "Check for Updates"
 msgstr "განახლებების შემოწმება"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:167
 msgid "Settings"
 msgstr "მორგება"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "ქსელური შეერთებების გარეშე."
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:199
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:209
 msgid "Network Settings…"
 msgstr "ქსელის მორგება…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:216
 msgid "Running in Demo Mode"
 msgstr "დემო რეჟიმში გაშვება"
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:217
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:376 src/MainWindow.vala:380
-#, c-format
-msgid "Search %s"
-msgstr "%s-ის ძებნა"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:422 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "გახსნა"
 
-#: src/MainWindow.vala:521
+#: src/MainWindow.vala:421
 msgid "Getting app information…"
 msgstr "აპის ინფორმაციის მიღება…"
 
-#: src/MainWindow.vala:524
+#: src/MainWindow.vala:424
 msgid "Getting download size…"
 msgstr "გადმოწერის ზომის მიღება…"
 
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:430
 msgid "Checking for updates…"
 msgstr "განახლებების შემოწმება…"
 
-#: src/MainWindow.vala:533
+#: src/MainWindow.vala:433
 msgid "Installing…"
 msgstr "დაყენება…"
 
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:436
 msgid "Installing updates…"
 msgstr "განახლებების დაყენება…"
 
-#: src/MainWindow.vala:539
+#: src/MainWindow.vala:439
 msgid "Uninstalling…"
 msgstr "წაშლა…"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:442
 msgid "Repairing…"
 msgstr "შეკეთება…"
 
@@ -779,27 +779,27 @@ msgstr "მიმდინარეობს განახლებები�
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "ყველას განახლება"
 
-#: src/Views/AppListUpdateView.vala:98
+#: src/Views/AppListUpdateView.vala:95
 msgid "Up to Date"
 msgstr "განახლებულია"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:139
 msgctxt "view"
 msgid "Installed"
 msgstr "დაყენებულია"
 
-#: src/Views/AppListUpdateView.vala:206
+#: src/Views/AppListUpdateView.vala:204
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "ხელმისაწვდომია %u განახლება"
 
-#: src/Views/AppListUpdateView.vala:213
+#: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -918,29 +918,38 @@ msgstr "გართობა და"
 msgid "Games"
 msgstr "თამაშები"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+msgid "The search term must be at least 3 characters long."
+msgstr ""
+
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+msgid "Search Apps"
+msgstr "აპების ძებნა"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:86
+msgctxt "view"
+msgid "Search"
+msgstr "ძებნა"
+
+#: src/Views/SearchView.vala:120
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
-msgctxt "view"
-msgid "Search"
-msgstr "ძებნა"
-
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
-msgstr ""
+#: src/Views/SearchView.vala:150
+#, c-format
+msgid "Search %s"
+msgstr "%s-ის ძებნა"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"

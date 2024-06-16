@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 16:21+0000\n"
+"POT-Creation-Date: 2024-06-16 18:30+0000\n"
 "PO-Revision-Date: 2024-04-04 12:13+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -53,98 +53,98 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Приложение установлено"
 
-#: src/Application.vala:329 src/MainWindow.vala:419
+#: src/Application.vala:329 src/MainWindow.vala:394
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» установлено"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:83
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Не удалось запустить «%s»"
 
-#: src/MainWindow.vala:131
+#. / TRANSLATORS: the action of searching
+#: src/MainWindow.vala:109
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "Поиск"
+
+#: src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Обновления и установленные приложения"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:372 src/MainWindow.vala:492
-msgid "Search Apps"
-msgstr "Поиск приложений"
-
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:140
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Автоматически обновлять бесплатные и приобретённые приложения"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:141
 msgid "Apps being tried for free will not update automatically"
 msgstr "Приложения, испытываемые бесплатно, не будут обновляться автоматически"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:145
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:167
 msgid "Settings"
 msgstr "Параметры"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "Сеть недоступна."
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:199
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "Для просмотра и установки приложений необходимо соединение с Интернетом."
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:209
 msgid "Network Settings…"
 msgstr "Параметры сети…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:216
 msgid "Running in Demo Mode"
 msgstr "Запущено в демо-режиме"
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:217
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Установите %s для просмотра и установки приложений."
 
-#: src/MainWindow.vala:376 src/MainWindow.vala:380
-#, c-format
-msgid "Search %s"
-msgstr "Поиск %s"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:422 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Открыть"
 
-#: src/MainWindow.vala:521
+#: src/MainWindow.vala:421
 msgid "Getting app information…"
 msgstr "Получение информации о приложении…"
 
-#: src/MainWindow.vala:524
+#: src/MainWindow.vala:424
 msgid "Getting download size…"
 msgstr "Получение размера загрузки…"
 
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:430
 msgid "Checking for updates…"
 msgstr "Проверка обновлений…"
 
-#: src/MainWindow.vala:533
+#: src/MainWindow.vala:433
 msgid "Installing…"
 msgstr "Установка…"
 
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:436
 msgid "Installing updates…"
 msgstr "Установка обновлений…"
 
-#: src/MainWindow.vala:539
+#: src/MainWindow.vala:439
 msgid "Uninstalling…"
 msgstr "Удаление…"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:442
 msgid "Repairing…"
 msgstr "Починка…"
 
@@ -845,21 +845,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 "Загрузка списка доступных обновлений для операционной системы и приложений"
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListUpdateView.vala:98
+#: src/Views/AppListUpdateView.vala:95
 msgid "Up to Date"
 msgstr "Обновления не требуются"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:139
 msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
-#: src/Views/AppListUpdateView.vala:206
+#: src/Views/AppListUpdateView.vala:204
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -867,7 +867,7 @@ msgstr[0] "Доступно %u обновление"
 msgstr[1] "Доступно %u обновления"
 msgstr[2] "Доступно %u обновлений"
 
-#: src/Views/AppListUpdateView.vala:213
+#: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Всё обновлено. Последняя проверка: %s."
@@ -993,15 +993,29 @@ msgstr "Игры и"
 msgid "Games"
 msgstr "Развлечения"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr "Приложения не найдены"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+msgid "The search term must be at least 3 characters long."
+msgstr "Поисковый запрос должен быть не короче 3 символов."
+
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+msgid "Search Apps"
+msgstr "Поиск приложений"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:86
+msgctxt "view"
+msgid "Search"
+msgstr "Поиск"
+
+#: src/Views/SearchView.vala:120
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
@@ -1009,15 +1023,10 @@ msgstr ""
 "Попробуйте перефразировать запрос. Вы также можете загружать сторонние "
 "приложения Flatpak, например с %s"
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
-msgctxt "view"
-msgid "Search"
-msgstr "Поиск"
-
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
-msgstr "Поисковый запрос должен быть не короче 3 символов."
+#: src/Views/SearchView.vala:150
+#, c-format
+msgid "Search %s"
+msgstr "Поиск %s"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"
