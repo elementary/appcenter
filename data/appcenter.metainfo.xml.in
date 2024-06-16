@@ -83,6 +83,7 @@
         <issue url="https://github.com/elementary/appcenter/issues/366">Cover SPDX licenses</issue>
         <issue url="https://github.com/elementary/appcenter/issues/470">Screenshots are being stretched</issue>
         <issue url="https://github.com/elementary/appcenter/issues/554">Can't search from an external source while open on an app from search</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/736">Fonts of some categories don't support some diacritics</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1590">When an app installs, the cancel button is not properly highlighted at the right edge</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1940">Weird previous/next buttons behaviour in screenshots carousel</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2035">Only show update info icon when there is info available</issue>
