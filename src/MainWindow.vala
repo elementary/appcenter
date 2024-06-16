@@ -15,12 +15,9 @@
 */
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
-    public const int VALID_QUERY_LENGTH = 3;
     public bool working { get; set; }
 
-    private AppCenter.SearchView search_view;
     private Gtk.Revealer view_mode_revealer;
-    private Gtk.SearchEntry search_entry;
     private Gtk.Button refresh_menuitem;
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
@@ -31,27 +28,21 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     private AppCenterCore.Package? last_installed_package;
 
-    private bool mimetype;
-
     public static Views.AppListUpdateView installed_view { get; private set; }
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
-        search_entry.grab_focus ();
-
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (() => navigation_view.pop ());
         add_action (go_back);
 
-        var focus_search = new SimpleAction ("focus-search", null);
-        focus_search.activate.connect (() => search_entry.grab_focus ());
+        var focus_search = new SimpleAction ("search", null);
+        focus_search.activate.connect (() => search ());
         add_action (focus_search);
 
         app.set_accels_for_action ("win.go-back", {"<Alt>Left"});
-        app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
-
-        search_entry.search_changed.connect (() => trigger_search ());
+        app.set_accels_for_action ("win.search", {"<Ctrl>f"});
 
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
         backend.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
@@ -112,6 +103,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         };
         return_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
+        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
+            action_name = "win.search",
+            /// TRANSLATORS: the action of searching
+            tooltip_text = C_("action", "Search"),
+            valign = CENTER
+        };
+        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
         var updates_button = new Gtk.Button.from_icon_name ("software-update-available");
         updates_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
@@ -136,19 +135,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             child = updates_overlay,
             reveal_child = true,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
-        };
-
-        var search_entry_eventcontrollerkey = new Gtk.EventControllerKey ();
-
-        search_entry = new Gtk.SearchEntry () {
-            hexpand = true,
-            placeholder_text = _("Search Apps"),
-            valign = Gtk.Align.CENTER
-        };
-        search_entry.add_controller (search_entry_eventcontrollerkey);
-
-        var search_clamp = new Adw.Clamp () {
-            child = search_entry
         };
 
         var automatic_updates_button = new Granite.SwitchModelButton (_("Automatically Update Free & Purchased Apps")) {
@@ -184,14 +170,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var headerbar = new Gtk.HeaderBar () {
-            show_title_buttons = true,
-            title_widget = search_clamp
+            show_title_buttons = true
         };
         headerbar.pack_start (return_button);
         if (!Utils.is_running_in_guest_session ()) {
             headerbar.pack_end (menu_button);
             headerbar.pack_end (view_mode_revealer);
         }
+        headerbar.pack_end (search_button);
 
         var homepage = new Homepage ();
         installed_view = new Views.AppListUpdateView ();
@@ -292,19 +278,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         navigation_view.popped.connect (update_navigation);
         navigation_view.pushed.connect (update_navigation);
-
-        search_entry_eventcontrollerkey.key_released.connect ((keyval, keycode, state) => {
-            switch (keyval) {
-                case Gdk.Key.Down:
-                    search_entry.move_focus (TAB_FORWARD);
-                    break;
-                case Gdk.Key.Escape:
-                    search_entry.text = "";
-                    break;
-                default:
-                    break;
-            }
-        });
     }
 
     public override bool close_request () {
@@ -367,28 +340,23 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void update_navigation () {
         var previous_child = navigation_view.get_previous_page (navigation_view.visible_page);
 
+        ((SimpleAction) lookup_action ("search")).set_enabled (!(navigation_view.visible_page is SearchView));
+
         if (navigation_view.visible_page is Homepage) {
             view_mode_revealer.reveal_child = true;
-            configure_search (true, _("Search Apps"), "");
         } else if (navigation_view.visible_page is CategoryView) {
             var current_category = ((CategoryView) navigation_view.visible_page).category;
             view_mode_revealer.reveal_child = false;
-            configure_search (true, _("Search %s").printf (current_category.name), "");
-        } else if (navigation_view.visible_page == search_view) {
+        } else if (navigation_view.visible_page is SearchView) {
             if (previous_child is CategoryView) {
-                var previous_category = ((CategoryView) previous_child).category;
-                configure_search (true, _("Search %s").printf (previous_category.name));
                 view_mode_revealer.reveal_child = false;
             } else {
-                configure_search (true);
                 view_mode_revealer.reveal_child = true;
             }
         } else if (navigation_view.visible_page is Views.AppInfoView) {
             view_mode_revealer.reveal_child = false;
-            configure_search (false);
         } else if (navigation_view.visible_page is Views.AppListUpdateView) {
             view_mode_revealer.reveal_child = true;
-            configure_search (false);
         }
 
         if (previous_child == null) {
@@ -403,9 +371,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         navigation_view.push (installed_view);
     }
 
-    public void search (string term, bool mimetype = false) {
-        this.mimetype = mimetype;
-        search_entry.text = term;
+    public void search (string term = "", bool mimetype = false) {
+        var search_view = new AppCenter.SearchView (term) {
+            mimetype = mimetype
+        };
+
+        search_view.show_app.connect ((package) => {
+            show_package (package);
+        });
+
+        navigation_view.push (search_view);
     }
 
     public void send_installed_toast (AppCenterCore.Package package) {
@@ -425,81 +400,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         toast.send_notification ();
-    }
-
-    private void trigger_search () {
-        unowned string search_term = search_entry.text;
-        uint query_length = search_term.length;
-        bool query_valid = query_length >= VALID_QUERY_LENGTH;
-
-        view_mode_revealer.reveal_child = !query_valid;
-
-        if (query_valid) {
-            if (navigation_view.visible_page != search_view) {
-                search_view = new AppCenter.SearchView ();
-
-                search_view.show_app.connect ((package) => {
-                    show_package (package);
-                });
-
-                navigation_view.push (search_view);
-            }
-
-            search_view.clear ();
-            search_view.current_search_term = search_term;
-
-            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-
-            Gee.Collection<AppCenterCore.Package> found_apps;
-
-            if (mimetype) {
-                found_apps = flatpak_backend.search_applications_mime (search_term);
-                search_view.add_packages (found_apps);
-            } else {
-                AppStream.Category current_category = null;
-
-                var previous_child = navigation_view.get_previous_page (navigation_view.visible_page);
-                if (previous_child is CategoryView) {
-                    current_category = ((CategoryView) previous_child).category;
-                }
-
-                found_apps = flatpak_backend.search_applications (search_term, current_category);
-                search_view.add_packages (found_apps);
-            }
-
-        } else {
-            // Prevent navigating away from category views when backspacing
-            if (navigation_view.visible_page == search_view) {
-                search_view.clear ();
-                search_view.current_search_term = search_entry.text;
-
-                // When replacing text with text don't go back
-                Idle.add (() => {
-                    if (search_entry.text.length == 0) {
-                        navigation_view.pop ();
-                    }
-
-                    return Source.REMOVE;
-                });
-            }
-        }
-
-        if (mimetype) {
-            mimetype = false;
-        }
-    }
-
-    private void configure_search (bool sensitive, string? placeholder_text = _("Search Apps"), string? search_term = null) {
-        search_entry.sensitive = sensitive;
-        search_entry.placeholder_text = placeholder_text;
-
-        if (search_term != null) {
-            search_entry.text = "";
-        }
-
-        if (sensitive) {
-            search_entry.grab_focus ();
-        }
     }
 
     private void show_category (AppStream.Category category) {
