@@ -91,12 +91,14 @@ namespace AppCenter.Views {
                 vexpand = true
             };
             list_box.bind_model (update_manager.updates_liststore, create_row_from_package);
+            list_box.set_placeholder (loading_view);
 
             var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
                 margin_end = 12,
                 margin_bottom = 12,
                 margin_start = 12,
+                visible = false
             };
 
             installed_flowbox = new Gtk.FlowBox () {
@@ -127,20 +129,13 @@ namespace AppCenter.Views {
             toolbarview.add_top_bar (header_revealer);
             toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
-            var stack = new Gtk.Stack () {
-                transition_type = UNDER_UP
-            };
-            stack.add_child (toolbarview);
-            stack.add_child (loading_view);
-            stack.visible_child = loading_view;
-
-            child = stack;
+            child = toolbarview;
             /// TRANSLATORS: the name of the Installed Apps view
             title = C_("view", "Installed");
 
             on_installed_changed.begin ((obj, res) => {
                 on_installed_changed.end (res);
-                stack.visible_child = toolbarview;
+                installed_header.visible = true;
             });
 
             update_manager.updates_liststore.items_changed.connect (() => {
@@ -171,18 +166,24 @@ namespace AppCenter.Views {
 
             update_all_button.clicked.connect (on_update_all);
 
-            unowned var aggregator = AppCenterCore.FlatpakBackend.get_default ();
-            aggregator.notify ["job-type"].connect (() => {
-                switch (aggregator.job_type) {
-                    case GET_PREPARED_PACKAGES:
-                    case GET_INSTALLED_PACKAGES:
-                    case GET_UPDATES:
-                    case REFRESH_CACHE:
-                    case INSTALL_PACKAGE:
-                    case UPDATE_PACKAGE:
-                    case REMOVE_PACKAGE:
-                        updated_revealer.reveal_child = false;
-                        break;
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+            flatpak_backend.notify ["working"].connect (() => {
+                if (flatpak_backend.working) {
+                    updated_revealer.reveal_child = false;
+
+                    switch (flatpak_backend.job_type) {
+                        case GET_PREPARED_PACKAGES:
+                        case GET_UPDATES:
+                        case REFRESH_CACHE:
+                        case UPDATE_PACKAGE:
+                            list_box.set_placeholder (loading_view);
+                            break;
+                        default:
+                            list_box.set_placeholder (null);
+                            break;
+                    }
+                } else {
+                    list_box.set_placeholder (null);
                 }
             });
         }
