@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 16:21+0000\n"
+"POT-Creation-Date: 2024-06-16 18:30+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -42,99 +42,99 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Appen er installert"
 
-#: src/Application.vala:329 src/MainWindow.vala:419
+#: src/Application.vala:329 src/MainWindow.vala:394
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” har blitt innstallert"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:83
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Klarte ikkje å opna “%s”"
 
-#: src/MainWindow.vala:131
+#. / TRANSLATORS: the action of searching
+#: src/MainWindow.vala:109
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "Søk"
+
+#: src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Oppdateringar og innstallerte appar"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:372 src/MainWindow.vala:492
-msgid "Search Apps"
-msgstr "Søk etter applikasjonar"
-
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:140
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:141
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr "Systemoppdateringar og gratis-appar vil ikkje oppdaterast automatisk"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:145
 msgid "Check for Updates"
 msgstr "Leit etter oppdateringar"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:167
 msgid "Settings"
 msgstr "Innstillingar"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "Nettverk er ikkje tilgjengeleg."
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:199
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Kople til internett for å installere eller oppdatere appar."
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:209
 msgid "Network Settings…"
 msgstr "Nettverksinnstillingar…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:216
 msgid "Running in Demo Mode"
 msgstr "Køyrer i demomodus"
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:217
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Innstaller %s for å sjå og innstallera appar."
 
-#: src/MainWindow.vala:376 src/MainWindow.vala:380
-#, c-format
-msgid "Search %s"
-msgstr "Søk %s"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:422 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Opne"
 
-#: src/MainWindow.vala:521
+#: src/MainWindow.vala:421
 msgid "Getting app information…"
 msgstr "Hentar informasjon om appen…"
 
-#: src/MainWindow.vala:524
+#: src/MainWindow.vala:424
 msgid "Getting download size…"
 msgstr "Hentar storleik på nedlastninga…"
 
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:430
 msgid "Checking for updates…"
 msgstr "Leitar etter oppdateringar…"
 
-#: src/MainWindow.vala:533
+#: src/MainWindow.vala:433
 msgid "Installing…"
 msgstr "Innstallerar…"
 
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:436
 msgid "Installing updates…"
 msgstr "Installerar oppdateringar…"
 
-#: src/MainWindow.vala:539
+#: src/MainWindow.vala:439
 msgid "Uninstalling…"
 msgstr "Slettar app…"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:442
 msgid "Repairing…"
 msgstr ""
 
@@ -823,28 +823,28 @@ msgstr ""
 "Hentar ei liste med tilgjengelege oppdateringar for operativsystemet og "
 "installerte appar"
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "Oppdater alle"
 
-#: src/Views/AppListUpdateView.vala:98
+#: src/Views/AppListUpdateView.vala:95
 msgid "Up to Date"
 msgstr "Alt er oppdatert"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:139
 msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/Views/AppListUpdateView.vala:206
+#: src/Views/AppListUpdateView.vala:204
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u oppdatering er tilgjengeleg"
 msgstr[1] "%u oppdateringar er tilgjengeleg"
 
-#: src/Views/AppListUpdateView.vala:213
+#: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Alt er oppdatert. Sjekka sist %s."
@@ -963,29 +963,38 @@ msgstr "Moro og"
 msgid "Games"
 msgstr "Spel"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr "Fann ingen appar"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+msgid "The search term must be at least 3 characters long."
+msgstr ""
+
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+msgid "Search Apps"
+msgstr "Søk etter applikasjonar"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:86
+msgctxt "view"
+msgid "Search"
+msgstr "Søk"
+
+#: src/Views/SearchView.vala:120
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "Prøv å endra på søket ditt. Du kan óg lasta ned Flatpak-appar frå %s"
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
-msgctxt "view"
-msgid "Search"
-msgstr "Søk"
-
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
-msgstr ""
+#: src/Views/SearchView.vala:150
+#, c-format
+msgid "Search %s"
+msgstr "Søk %s"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"

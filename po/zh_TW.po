@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 16:21+0000\n"
+"POT-Creation-Date: 2024-06-16 18:30+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "應用程式中心"
 
@@ -46,113 +46,113 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "應用已安裝"
 
-#: src/Application.vala:329 src/MainWindow.vala:419
+#: src/Application.vala:329 src/MainWindow.vala:394
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s”已安裝"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:83
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "無法開啟 “%s”"
 
-#: src/MainWindow.vala:131
+#. / TRANSLATORS: the action of searching
+#: src/MainWindow.vala:109
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "搜尋"
+
+#: src/MainWindow.vala:130
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "安裝應用程序失敗"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:372 src/MainWindow.vala:492
-msgid "Search Apps"
-msgstr "搜尋應用程式"
-
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:140
 #, fuzzy
 #| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "自動更新免費應用及經過認證的付費應用"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:141
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr "系統和未付費應用不會自動更新"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:145
 msgid "Check for Updates"
 msgstr "檢查更新"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:167
 msgid "Settings"
 msgstr "设定"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "網絡連接不可用。"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:199
 msgid "Connect to the Internet to browse and install apps."
 msgstr "請連接至網際網路來瀏覽或安裝應用程式。"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:209
 msgid "Network Settings…"
 msgstr "網路設定值…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:216
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:217
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:376 src/MainWindow.vala:380
-#, c-format
-msgid "Search %s"
-msgstr "搜尋 %s"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:422 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "開啟"
 
-#: src/MainWindow.vala:521
+#: src/MainWindow.vala:421
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "正在取得資訊"
 
-#: src/MainWindow.vala:524
+#: src/MainWindow.vala:424
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:430
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "正在檢查更新"
 
-#: src/MainWindow.vala:533
+#: src/MainWindow.vala:433
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "安裝中"
 
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:436
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "正在安裝更新"
 
-#: src/MainWindow.vala:539
+#: src/MainWindow.vala:439
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "解除安裝中"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:442
 msgid "Repairing…"
 msgstr ""
 
@@ -821,27 +821,27 @@ msgstr "正在檢查更新"
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "下載並安裝應用程序"
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "全部更新"
 
-#: src/Views/AppListUpdateView.vala:98
+#: src/Views/AppListUpdateView.vala:95
 msgid "Up to Date"
 msgstr "最新狀態"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:139
 msgctxt "view"
 msgid "Installed"
 msgstr "已安裝"
 
-#: src/Views/AppListUpdateView.vala:206
+#: src/Views/AppListUpdateView.vala:204
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "有 %u 項更新"
 
-#: src/Views/AppListUpdateView.vala:213
+#: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -960,29 +960,38 @@ msgstr "娛樂 &"
 msgid "Games"
 msgstr "遊戲"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr "沒有找到應用程式"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+msgid "The search term must be at least 3 characters long."
+msgstr ""
+
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+msgid "Search Apps"
+msgstr "搜尋應用程式"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:86
+msgctxt "view"
+msgid "Search"
+msgstr "搜尋"
+
+#: src/Views/SearchView.vala:120
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "請嘗試更改搜索詞。您亦可旁加載 Flatpak 應用程序，例如 %s"
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
-msgctxt "view"
-msgid "Search"
-msgstr "搜尋"
-
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
-msgstr ""
+#: src/Views/SearchView.vala:150
+#, c-format
+msgid "Search %s"
+msgstr "搜尋 %s"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"

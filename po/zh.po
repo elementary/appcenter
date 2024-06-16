@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 16:21+0000\n"
+"POT-Creation-Date: 2024-06-16 18:30+0000\n"
 "PO-Revision-Date: 2023-02-17 15:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "应用中心"
 
@@ -45,113 +45,113 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "应用安装成功"
 
-#: src/Application.vala:329 src/MainWindow.vala:419
+#: src/Application.vala:329 src/MainWindow.vala:394
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s已被安装"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:83
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "无法打开 “%s“"
 
-#: src/MainWindow.vala:131
+#. / TRANSLATORS: the action of searching
+#: src/MainWindow.vala:109
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "搜索"
+
+#: src/MainWindow.vala:130
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "安装应用失败"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:372 src/MainWindow.vala:492
-msgid "Search Apps"
-msgstr "搜索应用"
-
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:140
 #, fuzzy
 #| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "自动更新免费和付费的认证应用"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:141
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr "系统及未付款的应用的更新将不会自动进行"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:145
 msgid "Check for Updates"
 msgstr "检查更新"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:167
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "网络不可用"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:199
 msgid "Connect to the Internet to browse and install apps."
 msgstr "连接到互联网以浏览或安装应用。"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:209
 msgid "Network Settings…"
 msgstr "网络设置…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:216
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:217
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:376 src/MainWindow.vala:380
-#, c-format
-msgid "Search %s"
-msgstr "搜索%s"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:422 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "打开"
 
-#: src/MainWindow.vala:521
+#: src/MainWindow.vala:421
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "正在获取相关信息"
 
-#: src/MainWindow.vala:524
+#: src/MainWindow.vala:424
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:430
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Checking for updates…"
 msgstr "正在检查更新"
 
-#: src/MainWindow.vala:533
+#: src/MainWindow.vala:433
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "正在安装"
 
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:436
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "正在安装更新"
 
-#: src/MainWindow.vala:539
+#: src/MainWindow.vala:439
 #, fuzzy
 #| msgid "Uninstalling"
 msgid "Uninstalling…"
 msgstr "正在卸载"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:442
 msgid "Repairing…"
 msgstr ""
 
@@ -820,27 +820,27 @@ msgstr "正在检查更新"
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "正在下载系统及已安装应用程序的更新"
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "全部更新"
 
-#: src/Views/AppListUpdateView.vala:98
+#: src/Views/AppListUpdateView.vala:95
 msgid "Up to Date"
 msgstr "最新"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:139
 msgctxt "view"
 msgid "Installed"
 msgstr "已安装"
 
-#: src/Views/AppListUpdateView.vala:206
+#: src/Views/AppListUpdateView.vala:204
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u更新可用"
 
-#: src/Views/AppListUpdateView.vala:213
+#: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -959,29 +959,38 @@ msgstr "娱乐 &"
 msgid "Games"
 msgstr "游戏"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
 msgid "Flathub"
 msgstr "Flathub"
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr "未找到应用程序"
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+msgid "The search term must be at least 3 characters long."
+msgstr ""
+
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+msgid "Search Apps"
+msgstr "搜索应用"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:86
+msgctxt "view"
+msgid "Search"
+msgstr "搜索"
+
+#: src/Views/SearchView.vala:120
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "尝试更改索引词。 您还可以侧加载 Flatpak 应用程序，例如 %s"
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
-msgctxt "view"
-msgid "Search"
-msgstr "搜索"
-
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
-msgstr ""
+#: src/Views/SearchView.vala:150
+#, c-format
+msgid "Search %s"
+msgstr "搜索%s"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"

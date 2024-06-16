@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 16:21+0000\n"
+"POT-Creation-Date: 2024-06-16 18:30+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:80 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
 msgid "AppCenter"
 msgstr "Programų centras"
 
@@ -45,115 +45,115 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
-#: src/Application.vala:329 src/MainWindow.vala:419
+#: src/Application.vala:329 src/MainWindow.vala:394
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:83
 #, fuzzy, c-format
 #| msgid "Failed to uninstall “%s”"
 msgid "Failed to launch “%s“"
 msgstr "Nepavyko pašalinti \"%s\""
 
-#: src/MainWindow.vala:131
+#. / TRANSLATORS: the action of searching
+#: src/MainWindow.vala:109
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "Ieškoti"
+
+#: src/MainWindow.vala:130
 #, fuzzy
 #| msgid "Failed to uninstall app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Nepavyko pašalinti programos"
 
-#: src/MainWindow.vala:145 src/MainWindow.vala:372 src/MainWindow.vala:492
-msgid "Search Apps"
-msgstr "Ieškoti programų"
-
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:140
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:141
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:145
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Ieškoma atnaujinimų…"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:167
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Pradedama"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "Tinklas neprieinamas."
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:199
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Norėdami naršyti ir įdiegti programas, prisijunkite prie interneto."
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:209
 msgid "Network Settings…"
 msgstr "Tinklo nustatymai…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:216
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:217
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:376 src/MainWindow.vala:380
-#, c-format
-msgid "Search %s"
-msgstr "Ieškoti %s"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:422 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Atverti"
 
-#: src/MainWindow.vala:521
+#: src/MainWindow.vala:421
 #, fuzzy
 #| msgid "Getting information"
 msgid "Getting app information…"
 msgstr "Gaunama informacija"
 
-#: src/MainWindow.vala:524
+#: src/MainWindow.vala:424
 msgid "Getting download size…"
 msgstr ""
 
-#: src/MainWindow.vala:530
+#: src/MainWindow.vala:430
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "Ieškoma atnaujinimų…"
 
-#: src/MainWindow.vala:533
+#: src/MainWindow.vala:433
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "Diegiama"
 
-#: src/MainWindow.vala:536
+#: src/MainWindow.vala:436
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "Įdiegiami atnaujinimai"
 
-#: src/MainWindow.vala:539
+#: src/MainWindow.vala:439
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "Šalinti"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:442
 msgid "Repairing…"
 msgstr ""
 
@@ -893,21 +893,21 @@ msgstr "Ieškoma atnaujinimų…"
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "Atnaujinti viską"
 
-#: src/Views/AppListUpdateView.vala:98
+#: src/Views/AppListUpdateView.vala:95
 msgid "Up to Date"
 msgstr "Atnaujintos"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:139
 msgctxt "view"
 msgid "Installed"
 msgstr "Įdiegtos"
 
-#: src/Views/AppListUpdateView.vala:206
+#: src/Views/AppListUpdateView.vala:204
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -915,7 +915,7 @@ msgstr[0] "Yra prieinamas %u atnaujinimas"
 msgstr[1] "Yra prieinami %u atnaujinimai"
 msgstr[2] "Yra prieinama %u atnaujinimų"
 
-#: src/Views/AppListUpdateView.vala:213
+#: src/Views/AppListUpdateView.vala:211
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -1042,29 +1042,38 @@ msgstr ""
 msgid "Games"
 msgstr "Žaidimai"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
 msgid "Flathub"
 msgstr ""
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+msgid "The search term must be at least 3 characters long."
+msgstr ""
+
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+msgid "Search Apps"
+msgstr "Ieškoti programų"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:86
+msgctxt "view"
+msgid "Search"
+msgstr "Ieškoti"
+
+#: src/Views/SearchView.vala:120
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
-msgctxt "view"
-msgid "Search"
-msgstr "Ieškoti"
-
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
-msgstr ""
+#: src/Views/SearchView.vala:150
+#, c-format
+msgid "Search %s"
+msgstr "Ieškoti %s"
 
 #: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
 msgid "Free"
