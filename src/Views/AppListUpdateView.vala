@@ -49,7 +49,8 @@ namespace AppCenter.Views {
             };
 
             header_label = new Granite.HeaderLabel ("") {
-                hexpand = true
+                hexpand = true,
+                valign = CENTER
             };
 
             size_label = new Widgets.SizeLabel () {
@@ -60,25 +61,21 @@ namespace AppCenter.Views {
             updated_label = new Gtk.Label ("");
             updated_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            var updated_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
-                margin_top = 12,
-                margin_end = 12,
-                margin_bottom = 12,
-                margin_start = 12
-            };
+            var updated_box = new Gtk.Box (HORIZONTAL, 6);
             updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
             updated_box.append (updated_label);
 
             updated_revealer = new Gtk.Revealer () {
                 child = updated_box
             };
+            updated_revealer.add_css_class ("header");
 
             update_all_button = new Gtk.Button.with_label (_("Update All")) {
                 valign = Gtk.Align.CENTER
             };
             update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-            var header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 16);
+            var header = new Gtk.Box (HORIZONTAL, 16);
             header.append (header_label);
             header.append (size_label);
             header.append (update_all_button);
@@ -123,16 +120,17 @@ namespace AppCenter.Views {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
 
-            var main_box = new Gtk.Box (VERTICAL, 0);
-            main_box.append (updated_revealer);
-            main_box.append (header_revealer);
-            main_box.append (scrolled);
-            main_box.add_css_class (Granite.STYLE_CLASS_VIEW);
+            var toolbarview = new Adw.ToolbarView () {
+                content = scrolled
+            };
+            toolbarview.add_top_bar (updated_revealer);
+            toolbarview.add_top_bar (header_revealer);
+            toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
             var stack = new Gtk.Stack () {
                 transition_type = UNDER_UP
             };
-            stack.add_child (main_box);
+            stack.add_child (toolbarview);
             stack.add_child (loading_view);
             stack.visible_child = loading_view;
 
@@ -142,7 +140,7 @@ namespace AppCenter.Views {
 
             on_installed_changed.begin ((obj, res) => {
                 on_installed_changed.end (res);
-                stack.visible_child = main_box;
+                stack.visible_child = toolbarview;
             });
 
             update_manager.updates_liststore.items_changed.connect (() => {
