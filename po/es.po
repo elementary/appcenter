@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-16 18:30+0000\n"
-"PO-Revision-Date: 2024-06-16 03:16+0000\n"
+"PO-Revision-Date: 2024-06-17 19:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -84,9 +84,6 @@ msgstr "No se pudo iniciar «%s»"
 
 #. / TRANSLATORS: the action of searching
 #: src/MainWindow.vala:109
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
 msgstr "Búsqueda"
