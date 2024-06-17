@@ -36,7 +36,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         focus_search.activate.connect (() => search ());
         add_action (focus_search);
 
-        app.set_accels_for_action ("win.go-back", {"<Alt>Left"});
         app.set_accels_for_action ("win.search", {"<Ctrl>f"});
 
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();

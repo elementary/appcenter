@@ -17,6 +17,7 @@ public class AppCenter.BackButton : Gtk.Button {
 
         action_name = "win.go-back";
         child = box;
+        tooltip_markup = Granite.markup_accel_tooltip ({"<alt>Left"});
         valign = CENTER;
 
         map.connect (() => {
