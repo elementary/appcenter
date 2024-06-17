@@ -212,19 +212,24 @@ namespace AppCenter.Views {
 
             update_all_button.clicked.connect (on_update_all);
 
-            unowned var aggregator = AppCenterCore.FlatpakBackend.get_default ();
-            aggregator.notify ["working"].connect (() => {
-                switch (aggregator.job_type) {
-                    case GET_PREPARED_PACKAGES:
-                    case GET_UPDATES:
-                    case REFRESH_CACHE:
-                    case UPDATE_PACKAGE:
-                        list_box.set_placeholder (loading_view);
-                        updated_revealer.reveal_child = false;
-                        break;
-                    default:
-                        list_box.set_placeholder (null);
-                        break;
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+            flatpak_backend.notify ["working"].connect (() => {
+                if (flatpak_backend.working) {
+                    updated_revealer.reveal_child = false;
+
+                    switch (flatpak_backend.job_type) {
+                        case GET_PREPARED_PACKAGES:
+                        case GET_UPDATES:
+                        case REFRESH_CACHE:
+                        case UPDATE_PACKAGE:
+                            list_box.set_placeholder (loading_view);
+                            break;
+                        default:
+                            list_box.set_placeholder (null);
+                            break;
+                    }
+                } else {
+                    list_box.set_placeholder (null);
                 }
             });
 
