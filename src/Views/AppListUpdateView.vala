@@ -153,8 +153,8 @@ namespace AppCenter.Views {
             });
 
             list_box.row_activated.connect ((row) => {
-                if (row is Widgets.PackageRow) {
-                    show_app (((Widgets.PackageRow) row).get_package ());
+                if (row.get_child () is Widgets.InstalledPackageRowGrid) {
+                    show_app (((Widgets.InstalledPackageRowGrid) row.get_child ()).package);
                 }
             });
 
@@ -245,7 +245,7 @@ namespace AppCenter.Views {
 
         private Gtk.Widget create_row_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
-            return new Widgets.PackageRow.installed (package, action_button_group);
+            return new Widgets.InstalledPackageRowGrid (package, action_button_group);
         }
 
         private Gtk.Widget create_installed_from_package (Object object) {
@@ -265,13 +265,13 @@ namespace AppCenter.Views {
             update_all_button.sensitive = false;
             updating_all_apps = true;
 
-            var child = list_box.get_first_child ();
-            while (child != null) {
-                if (child is Widgets.PackageRow) {
-                    ((Widgets.PackageRow) child).set_action_sensitive (false);
+            var row = list_box.get_first_child ();
+            while (row != null) {
+                if (row is Gtk.ListBoxRow) {
+                    ((Widgets.InstalledPackageRowGrid) row.get_child ()).action_sensitive = false;
                 }
 
-                child = child.get_next_sibling ();
+                row = row.get_next_sibling ();
             }
 
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
