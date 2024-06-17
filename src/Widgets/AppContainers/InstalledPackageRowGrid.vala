@@ -36,38 +36,44 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     }
 
     construct {
+        app_icon_overlay.margin_end = 12;
+
         action_stack.updates_view = true;
+        action_stack.margin_start = 12;
 
         var package_name = new Gtk.Label (package.get_name ()) {
-            valign = Gtk.Align.END,
+            wrap = true,
+            max_width_chars = 25,
+            valign = END,
             xalign = 0
         };
         package_name.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         app_version = new Gtk.Label (null) {
-            ellipsize = Pango.EllipsizeMode.END,
-            valign = Gtk.Align.START,
+            ellipsize = END,
+            valign = START,
             xalign = 0
         };
         app_version.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        app_version.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         var release_button = new Gtk.Button.from_icon_name ("dialog-information-symbolic") {
+            margin_start = 12,
             tooltip_text = _("Release notes"),
             valign = Gtk.Align.CENTER
         };
 
         release_button_revealer = new Gtk.Revealer () {
             child = release_button,
-            halign = Gtk.Align.END,
+            halign = END,
             hexpand = true,
-            transition_type = Gtk.RevealerTransitionType.CROSSFADE
+            transition_type = SLIDE_RIGHT
         };
 
         action_stack.hexpand = false;
 
         var grid = new Gtk.Grid () {
-            column_spacing = 12,
-            row_spacing = 6
+            row_spacing = 3
         };
         grid.attach (app_icon_overlay, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
@@ -88,7 +94,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private void set_up_package () {
         if (package.get_version () != null) {
             if (package.has_multiple_origins) {
-                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+                app_version.label = "%s — %s".printf (package.get_version (), package.origin_description);
             } else {
                 app_version.label = package.get_version ();
             }
