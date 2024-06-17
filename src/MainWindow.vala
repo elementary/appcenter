@@ -121,6 +121,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         network_info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        box.append (overlay);
         box.append (network_info_bar);
 
         if (Utils.is_running_in_demo_mode ()) {
@@ -139,8 +140,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
             box.append (demo_mode_info_bar);
         }
-
-        box.append (overlay);
 
         child = box;
         titlebar = new Gtk.Grid () { visible = false };
