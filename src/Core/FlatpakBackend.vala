@@ -938,20 +938,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         return job.result.get_boolean ();
     }
 
-    public async PackageDetails get_package_details (Package package) throws GLib.Error {
-        var details = new PackageDetails ();
-        details.name = package.component.get_name ();
-        details.description = package.component.get_description ();
-        details.summary = package.component.get_summary ();
-
-        var newest_version = package.get_newest_release ();
-        if (newest_version != null) {
-            details.version = newest_version.get_version ();
-        }
-
-        return details;
-    }
-
     private void refresh_cache_internal (Job job) {
         unowned var args = (RefreshCacheArgs)job.args;
         unowned var cancellable = args.cancellable;
