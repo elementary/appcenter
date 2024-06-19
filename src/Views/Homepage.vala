@@ -33,6 +33,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
 
+    private Gtk.Button return_button;
+    private Gtk.Label updates_badge;
+    private Gtk.Revealer updates_badge_revealer;
+
     private uint banner_timeout_id;
 
     class construct {
@@ -213,7 +217,51 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        child = scrolled_window;
+        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
+            action_name = "win.search",
+            /// TRANSLATORS: the action of searching
+            tooltip_text = C_("action", "Search"),
+            valign = CENTER
+        };
+        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+        var updates_button = new Gtk.Button.from_icon_name ("software-update-available") {
+            action_name = "app.show-updates"
+        };
+        updates_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+        updates_badge = new Gtk.Label ("!");
+        updates_badge.add_css_class (Granite.STYLE_CLASS_BADGE);
+
+        updates_badge_revealer = new Gtk.Revealer () {
+            can_target = false,
+            child = updates_badge,
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.START,
+            transition_type = Gtk.RevealerTransitionType.CROSSFADE
+        };
+
+        var updates_overlay = new Gtk.Overlay () {
+            child = updates_button,
+            tooltip_text = C_("view", "Updates & installed apps")
+        };
+        updates_overlay.add_overlay (updates_badge_revealer);
+
+        var headerbar = new Gtk.HeaderBar () {
+            show_title_buttons = true
+        };
+        headerbar.pack_start (return_button);
+        if (!Utils.is_running_in_guest_session ()) {
+            headerbar.pack_end (updates_overlay);
+        }
+        headerbar.pack_end (search_button);
+
+        var toolbar_view = new Adw.ToolbarView () {
+            content = scrolled_window
+        };
+        toolbar_view.add_top_bar (headerbar);
+
+        child = toolbar_view;
         title = _("Home");
 
         var local_package = App.local_package;
@@ -260,6 +308,11 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
 
             show_package (package_row_grid.package);
+        });
+
+        var update_manager = AppCenterCore.UpdateManager.get_default ();
+        update_manager.notify["updates-number"].connect (() => {
+            show_update_badge (update_manager.updates_number);
         });
 
         destroy.connect (() => {
@@ -366,6 +419,19 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             Source.remove (banner_timeout_id);
             banner_timeout_id = 0;
         }
+    }
+
+    private void show_update_badge (uint updates_number) {
+        Idle.add (() => {
+            if (updates_number == 0U) {
+                updates_badge_revealer.reveal_child = false;
+            } else {
+                updates_badge.label = updates_number.to_string ();
+                updates_badge_revealer.reveal_child = true;
+            }
+
+            return GLib.Source.REMOVE;
+        });
     }
 
     private abstract class AbstractCategoryCard : Gtk.FlowBoxChild {
