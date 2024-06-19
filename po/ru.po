@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 18:30+0000\n"
-"PO-Revision-Date: 2024-04-04 12:13+0000\n"
+"POT-Creation-Date: 2024-06-19 15:35+0000\n"
+"PO-Revision-Date: 2024-06-19 15:35+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:71 src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:65 src/Views/Homepage.vala:278
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -53,98 +53,68 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Приложение установлено"
 
-#: src/Application.vala:329 src/MainWindow.vala:394
+#: src/Application.vala:329 src/MainWindow.vala:241
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» установлено"
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:77
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Не удалось запустить «%s»"
 
-#. / TRANSLATORS: the action of searching
 #: src/MainWindow.vala:109
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
-msgctxt "action"
-msgid "Search"
-msgstr "Поиск"
-
-#: src/MainWindow.vala:130
-msgctxt "view"
-msgid "Updates & installed apps"
-msgstr "Обновления и установленные приложения"
-
-#: src/MainWindow.vala:140
-msgid "Automatically Update Free & Purchased Apps"
-msgstr "Автоматически обновлять бесплатные и приобретённые приложения"
-
-#: src/MainWindow.vala:141
-msgid "Apps being tried for free will not update automatically"
-msgstr "Приложения, испытываемые бесплатно, не будут обновляться автоматически"
-
-#: src/MainWindow.vala:145
-msgid "Check for Updates"
-msgstr "Проверить обновления"
-
-#: src/MainWindow.vala:167
-msgid "Settings"
-msgstr "Параметры"
-
-#: src/MainWindow.vala:198
 msgid "Network Not Available."
 msgstr "Сеть недоступна."
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:110
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "Для просмотра и установки приложений необходимо соединение с Интернетом."
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:120
 msgid "Network Settings…"
 msgstr "Параметры сети…"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:128
 msgid "Running in Demo Mode"
 msgstr "Запущено в демо-режиме"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:129
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Установите %s для просмотра и установки приложений."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:397 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:244 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Открыть"
 
-#: src/MainWindow.vala:421
+#: src/MainWindow.vala:268
 msgid "Getting app information…"
 msgstr "Получение информации о приложении…"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:271
 msgid "Getting download size…"
 msgstr "Получение размера загрузки…"
 
-#: src/MainWindow.vala:430
+#: src/MainWindow.vala:277
 msgid "Checking for updates…"
 msgstr "Проверка обновлений…"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:280
 msgid "Installing…"
 msgstr "Установка…"
 
-#: src/MainWindow.vala:436
+#: src/MainWindow.vala:283
 msgid "Installing updates…"
 msgstr "Установка обновлений…"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:286
 msgid "Uninstalling…"
 msgstr "Удаление…"
 
-#: src/MainWindow.vala:442
+#: src/MainWindow.vala:289
 msgid "Repairing…"
 msgstr "Починка…"
 
@@ -346,9 +316,9 @@ msgstr[2] "Доступны обновления"
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u обновление приложений доступно."
-msgstr[1] "%u обновления приложений доступно."
-msgstr[2] "%u обновлений приложений доступно."
+msgstr[0] "Доступно %u обновление приложения"
+msgstr[1] "Доступно %u обновления приложений"
+msgstr[2] "Доступно %u обновлений приложений"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -475,7 +445,7 @@ msgstr "Удалить приложение?"
 msgid "Uninstall “%s”?"
 msgstr "Удалить «%s»?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:171
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:184
 msgid "Uninstall"
 msgstr "Удалить"
 
@@ -529,202 +499,209 @@ msgstr "Не удалось обновить «%s»"
 msgid "Refresh Updates"
 msgstr "Проверить обновления"
 
-#: src/Views/AppInfoView.vala:240
+#. / TRANSLATORS: the action of searching
+#: src/Views/AppInfoView.vala:77 src/Views/AppListUpdateView.vala:158
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
+msgctxt "action"
+msgid "Search"
+msgstr "Искать"
+
+#: src/Views/AppInfoView.vala:253
 msgid "Illicit Substances"
 msgstr "Запрещённые вещества"
 
-#: src/Views/AppInfoView.vala:241
+#: src/Views/AppInfoView.vala:254
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Наличие или упоминание об алкоголе, наркотиках или табаке"
 
-#: src/Views/AppInfoView.vala:246
+#: src/Views/AppInfoView.vala:259
 msgid "Sex & Nudity"
 msgstr "Секс и нагота"
 
-#: src/Views/AppInfoView.vala:247
+#: src/Views/AppInfoView.vala:260
 msgid "Adult nudity or sexual themes"
 msgstr "Обнажение взрослых или сексуальные темы"
 
-#: src/Views/AppInfoView.vala:252
+#: src/Views/AppInfoView.vala:265
 msgid "Offensive Language"
 msgstr "Оскорбительные выражения"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:266
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 "Ненормативная лексика, дискриминационные высказывания или юмор для взрослых"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:271
 msgid "Gambling"
 msgstr "Азартные игры"
 
-#: src/Views/AppInfoView.vala:259
+#: src/Views/AppInfoView.vala:272
 msgid "Realistic or participatory gambling"
 msgstr "Реалистичная игра или участие в азартных играх"
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:296
 msgid "Made for elementary OS"
 msgstr "Сделано для elementary OS"
 
-#: src/Views/AppInfoView.vala:284
+#: src/Views/AppInfoView.vala:297
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 "Проверено elementary на безопасность, конфиденциальность и системную "
 "интеграцию"
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:320
 msgid "May Not Be Translated"
 msgstr "Может быть не переведённым"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:321
 msgid "This app does not provide language information"
 msgstr "Это приложение не предоставляет информацию о переводах"
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:328
 msgid "Not Translated"
 msgstr "Не переведено"
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:329
 msgid "This app is not available in your language"
 msgstr "Это приложение не доступно на вашем языке"
 
-#: src/Views/AppInfoView.vala:323
+#: src/Views/AppInfoView.vala:336
 msgid "Not Fully Translated"
 msgstr "Переведено не полностью"
 
-#: src/Views/AppInfoView.vala:324
+#: src/Views/AppInfoView.vala:337
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Это приложение на %i%% переведено на ваш язык"
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:361
 msgid "Conflict"
 msgstr "Конфликты"
 
-#: src/Views/AppInfoView.vala:349
+#: src/Views/AppInfoView.vala:362
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Изображение небезопасных ситуаций или агрессивных конфликтов"
 
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:375
 msgid "Violence"
 msgstr "Насилие"
 
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:380
 msgid "Fantasy Violence"
 msgstr "Насилие в фантазиях"
 
-#: src/Views/AppInfoView.vala:372
+#: src/Views/AppInfoView.vala:385
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Изображение насилия, кровопролития или смерти"
 
-#: src/Views/AppInfoView.vala:416
+#: src/Views/AppInfoView.vala:429
 msgid "Multiplayer"
 msgstr "Многопользовательская игра"
 
-#: src/Views/AppInfoView.vala:417
+#: src/Views/AppInfoView.vala:430
 msgid "Online play with other people"
 msgstr "Онлайн-игра с другими людьми"
 
-#: src/Views/AppInfoView.vala:433
+#: src/Views/AppInfoView.vala:446
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 "Немодерируемый обмен аудио, видео или текстовыми сообщениями с другими людьми"
 
-#: src/Views/AppInfoView.vala:435
+#: src/Views/AppInfoView.vala:448
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 "Модерируемый обмен аудио, видео или текстовыми сообщениями с другими людьми"
 
-#: src/Views/AppInfoView.vala:439
+#: src/Views/AppInfoView.vala:452
 msgid "Online Interactions"
 msgstr "Онлайн-взаимодействия"
 
-#: src/Views/AppInfoView.vala:449
+#: src/Views/AppInfoView.vala:462
 msgid "Location Sharing"
 msgstr "Передача местоположения"
 
-#: src/Views/AppInfoView.vala:450
+#: src/Views/AppInfoView.vala:463
 msgid "Other people can see your real-world location"
 msgstr "Другие люди могут видеть ваше местоположение в реальном мире"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:475
 msgid "Collects anonymous usage data"
 msgstr "Сбор обезличенных данных об использовании"
 
-#: src/Views/AppInfoView.vala:465
+#: src/Views/AppInfoView.vala:478
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 "Собирает данные об использовании, которые могут быть использованы для "
 "идентификации вашей личности"
 
-#: src/Views/AppInfoView.vala:470
+#: src/Views/AppInfoView.vala:483
 msgid "Info Sharing"
 msgstr "Отправка информации"
 
-#: src/Views/AppInfoView.vala:567
+#: src/Views/AppInfoView.vala:580
 msgid "Screenshot Not Available"
 msgstr "Снимок экрана недоступен"
 
-#: src/Views/AppInfoView.vala:595
+#: src/Views/AppInfoView.vala:608
 msgid "What's New:"
 msgstr "Что нового:"
 
-#: src/Views/AppInfoView.vala:622
+#: src/Views/AppInfoView.vala:635
 msgid "Extensions:"
 msgstr "Расширения:"
 
-#: src/Views/AppInfoView.vala:653
+#: src/Views/AppInfoView.vala:666
 msgid "Homepage"
 msgstr "Домашняя страница"
 
-#: src/Views/AppInfoView.vala:659
+#: src/Views/AppInfoView.vala:672
 msgid "Translate"
 msgstr "Перевести"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:678
 msgid "Send Feedback"
 msgstr "Отправить отзыв"
 
-#: src/Views/AppInfoView.vala:671
+#: src/Views/AppInfoView.vala:684
 msgid "Help"
 msgstr "Помощь"
 
-#: src/Views/AppInfoView.vala:719
+#: src/Views/AppInfoView.vala:732
 msgid "Link copied to clipboard"
 msgstr "Ссылка скопирована в буфер обмена"
 
-#: src/Views/AppInfoView.vala:731
+#: src/Views/AppInfoView.vala:750
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Ознакомьтесь с %s в AppCenter:"
 
-#: src/Views/AppInfoView.vala:739
+#: src/Views/AppInfoView.vala:758
 msgid "Share"
 msgstr "Поделиться"
 
-#: src/Views/AppInfoView.vala:826
+#: src/Views/AppInfoView.vala:845
 msgid "End of Life"
 msgstr "Окончание поддержки"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:846
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "Может не работать должным образом или не получать обновления безопасности"
 
-#: src/Views/AppInfoView.vala:833
+#: src/Views/AppInfoView.vala:852
 msgid "Outdated"
 msgstr "Устарело"
 
-#: src/Views/AppInfoView.vala:834
+#: src/Views/AppInfoView.vala:853
 msgid "May not work as expected or support the latest features"
 msgstr ""
 "Может не работать должным образом или не поддерживать новые возможности"
 
-#: src/Views/AppInfoView.vala:842
+#: src/Views/AppInfoView.vala:861
 msgid "Unstable"
 msgstr "Нестабильный"
 
-#: src/Views/AppInfoView.vala:843
+#: src/Views/AppInfoView.vala:862
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -733,29 +710,29 @@ msgstr ""
 "Создан для нестабильной версии %s. Может содержать серьёзные проблемы. Не "
 "рекомендуется для использования на рабочей системе."
 
-#: src/Views/AppInfoView.vala:856
+#: src/Views/AppInfoView.vala:875
 msgid "Insecure Sandbox"
 msgstr "Небезопасная песочница"
 
-#: src/Views/AppInfoView.vala:857
+#: src/Views/AppInfoView.vala:876
 msgid "Can ignore or modify its own system permissions"
 msgstr "Может игнорировать или изменять собственные системные разрешения"
 
-#: src/Views/AppInfoView.vala:866
+#: src/Views/AppInfoView.vala:885
 msgid "System Folder Access"
 msgstr "Доступ к папкам системы"
 
-#: src/Views/AppInfoView.vala:867
+#: src/Views/AppInfoView.vala:886
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "Включая доступ к папкам всех пользователей, но не включая внутренние папки "
 "системы"
 
-#: src/Views/AppInfoView.vala:874
+#: src/Views/AppInfoView.vala:893
 msgid "Home Folder Access"
 msgstr "Доступ к папке пользователя"
 
-#: src/Views/AppInfoView.vala:875
+#: src/Views/AppInfoView.vala:894
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -763,76 +740,76 @@ msgstr ""
 "Включая все документы, загрузки, музыку, фотографии, видео и все скрытые "
 "папки"
 
-#: src/Views/AppInfoView.vala:884
+#: src/Views/AppInfoView.vala:903
 msgid "Legacy Autostart"
 msgstr "Устаревший автозапуск"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:904
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Может запускаться автоматически и работать в фоне без разрешения"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:913
 msgid "Location Access"
 msgstr "Доступ к местоположению"
 
-#: src/Views/AppInfoView.vala:895
+#: src/Views/AppInfoView.vala:914
 msgid "Can see your precise location at any time without asking"
 msgstr "Может в любое время получить ваше точное местоположение без разрешения"
 
-#: src/Views/AppInfoView.vala:904
+#: src/Views/AppInfoView.vala:923
 msgid "Legacy Notifications"
 msgstr "Устаревшие уведомления"
 
-#: src/Views/AppInfoView.vala:905
+#: src/Views/AppInfoView.vala:924
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Баннеры могут быть недоступны для настройки или отображаться в центре "
 "уведомлений как «Другое»"
 
-#: src/Views/AppInfoView.vala:914
+#: src/Views/AppInfoView.vala:933
 msgid "System Settings Access"
 msgstr "Доступ к системным настройкам"
 
-#: src/Views/AppInfoView.vala:915
+#: src/Views/AppInfoView.vala:934
 msgid "Can read and modify system settings"
 msgstr "Может читать и изменять системные настройки"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1130
+#: src/Views/AppInfoView.vala:1149
 msgid "Public Domain"
 msgstr "Общественное достояние"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1133
+#: src/Views/AppInfoView.vala:1152
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 "https://ru.wikipedia.org/wiki/"
 "%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B4%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1138
+#: src/Views/AppInfoView.vala:1157
 msgid "Free Software"
 msgstr "Свободное программное обеспечение"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1141
+#: src/Views/AppInfoView.vala:1160
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ru.html"
 
-#: src/Views/AppInfoView.vala:1145
+#: src/Views/AppInfoView.vala:1164
 msgid "Proprietary"
 msgstr "Проприетарная лицензия"
 
-#: src/Views/AppInfoView.vala:1148
+#: src/Views/AppInfoView.vala:1167
 msgid "Unknown License"
 msgstr "Неизвестная лицензия"
 
-#: src/Views/AppInfoView.vala:1229
+#: src/Views/AppInfoView.vala:1248
 msgid "Fund"
 msgstr "Поддержать"
 
-#: src/Views/AppInfoView.vala:1235
+#: src/Views/AppInfoView.vala:1254
 msgid "Fund the development of this app"
 msgstr "Поддержать разработку этого приложения"
 
@@ -849,17 +826,33 @@ msgstr ""
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListUpdateView.vala:95
+#: src/Views/AppListUpdateView.vala:96
 msgid "Up to Date"
 msgstr "Обновления не требуются"
 
+#: src/Views/AppListUpdateView.vala:124
+msgid "Automatically Update Free & Purchased Apps"
+msgstr "Автоматически обновлять бесплатные и приобретённые приложения"
+
+#: src/Views/AppListUpdateView.vala:125
+msgid "Apps being tried for free will not update automatically"
+msgstr "Приложения, испытываемые бесплатно, не будут обновляться автоматически"
+
+#: src/Views/AppListUpdateView.vala:129
+msgid "Check for Updates"
+msgstr "Проверить обновления"
+
+#: src/Views/AppListUpdateView.vala:151
+msgid "Settings"
+msgstr "Параметры"
+
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:139
+#: src/Views/AppListUpdateView.vala:179
 msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
-#: src/Views/AppListUpdateView.vala:204
+#: src/Views/AppListUpdateView.vala:265
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -867,7 +860,7 @@ msgstr[0] "Доступно %u обновление"
 msgstr[1] "Доступно %u обновления"
 msgstr[2] "Доступно %u обновлений"
 
-#: src/Views/AppListUpdateView.vala:211
+#: src/Views/AppListUpdateView.vala:272
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Всё обновлено. Последняя проверка: %s."
@@ -877,7 +870,7 @@ msgstr "Всё обновлено. Последняя проверка: %s."
 msgid "Other Apps by %s"
 msgstr "Другие приложения от %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:58
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "Недавно обновлённые"
 
@@ -889,83 +882,88 @@ msgstr "Платные приложения"
 msgid "Free Apps"
 msgstr "Бесплатные приложения"
 
-#: src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "Категории"
 
-#: src/Views/Homepage.vala:107
+#: src/Views/Homepage.vala:111
 msgid "Accessories"
 msgstr "Утилиты"
 
-#: src/Views/Homepage.vala:108
+#: src/Views/Homepage.vala:112
 msgid "Audio"
 msgstr "Аудио"
 
-#: src/Views/Homepage.vala:109
+#: src/Views/Homepage.vala:113
 msgid "Communication"
 msgstr "Общение"
 
-#: src/Views/Homepage.vala:118
+#: src/Views/Homepage.vala:122
 msgid "Development"
 msgstr "Разработка"
 
-#: src/Views/Homepage.vala:128
+#: src/Views/Homepage.vala:132
 msgid "Education"
 msgstr "Обучение"
 
-#: src/Views/Homepage.vala:129
+#: src/Views/Homepage.vala:133
 msgid "Finance"
 msgstr "Финансы"
 
-#: src/Views/Homepage.vala:134
+#: src/Views/Homepage.vala:138
 msgid "Graphics"
 msgstr "Графика"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:147
 msgid "Internet"
 msgstr "Интернет"
 
-#: src/Views/Homepage.vala:147
+#: src/Views/Homepage.vala:151
 msgid "Math, Science, & Engineering"
 msgstr "Математика, наука и инженерия"
 
-#: src/Views/Homepage.vala:166
+#: src/Views/Homepage.vala:170
 msgid "Media Production"
 msgstr "Медиапроизводство"
 
-#: src/Views/Homepage.vala:173
+#: src/Views/Homepage.vala:177
 msgid "Office"
 msgstr "Офис"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:184
 msgid "System"
 msgstr "Система"
 
-#: src/Views/Homepage.vala:184
+#: src/Views/Homepage.vala:188
 msgid "Universal Access"
 msgstr "Универсальный доступ"
 
-#: src/Views/Homepage.vala:185
+#: src/Views/Homepage.vala:189
 msgid "Video"
 msgstr "Видео"
 
-#: src/Views/Homepage.vala:190
+#: src/Views/Homepage.vala:194
 msgid "Writing & Language"
 msgstr "Писательство и язык"
 
-#: src/Views/Homepage.vala:200
+#: src/Views/Homepage.vala:204
 msgid "Privacy & Security"
 msgstr "Конфиденциальность и безопасность"
 
-#: src/Views/Homepage.vala:217
+#: src/Views/Homepage.vala:246
+msgctxt "view"
+msgid "Updates & installed apps"
+msgstr "Обновления и установленные приложения"
+
+#: src/Views/Homepage.vala:265
 msgid "Home"
 msgstr "Главная"
 
-#: src/Views/Homepage.vala:231
+#: src/Views/Homepage.vala:279
 msgid "Browse and manage apps"
 msgstr "Просмотр и управление приложениями"
 
-#: src/Views/Homepage.vala:232
+#: src/Views/Homepage.vala:280
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -981,19 +979,19 @@ msgstr ""
 "обновления системы до новой версии, чтобы вы получали новые функции и "
 "исправления."
 
-#: src/Views/Homepage.vala:460
+#: src/Views/Homepage.vala:526
 msgid "Fun & Games"
 msgstr "Игры и развлечения"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:551
 msgid "Fun &"
 msgstr "Игры и"
 
-#: src/Views/Homepage.vala:491
+#: src/Views/Homepage.vala:557
 msgid "Games"
 msgstr "Развлечения"
 
-#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:119
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:120
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -1001,21 +999,21 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Приложения не найдены"
 
-#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:137
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:138
 msgid "The search term must be at least 3 characters long."
 msgstr "Поисковый запрос должен быть не короче 3 символов."
 
-#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:155
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:156
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:86
+#: src/Views/SearchView.vala:87
 msgctxt "view"
 msgid "Search"
 msgstr "Поиск"
 
-#: src/Views/SearchView.vala:120
+#: src/Views/SearchView.vala:121
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
@@ -1023,7 +1021,7 @@ msgstr ""
 "Попробуйте перефразировать запрос. Вы также можете загружать сторонние "
 "приложения Flatpak, например с %s"
 
-#: src/Views/SearchView.vala:150
+#: src/Views/SearchView.vala:151
 #, c-format
 msgid "Search %s"
 msgstr "Поиск %s"
@@ -1113,16 +1111,16 @@ msgstr "Будут загружены только необходимые час
 msgid "Up to %s"
 msgstr "До %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:55
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
 msgstr "Примечания к выпуску"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:134
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
 #, c-format
 msgid "What's new in %s"
 msgstr "Что нового в %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
 msgstr "Закрыть"
 
