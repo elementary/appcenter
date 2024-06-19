@@ -103,8 +103,7 @@ namespace AppCenter.Views {
 
             installed_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
-                homogeneous = true,
-                max_children_per_line = 4,
+                max_children_per_line = 5,
                 row_spacing = 12
             };
             installed_flowbox.bind_model (installed_liststore, create_installed_from_package);
