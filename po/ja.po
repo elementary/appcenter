@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-16 18:30+0000\n"
-"PO-Revision-Date: 2024-06-17 19:16+0000\n"
+"PO-Revision-Date: 2024-06-19 15:35+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -46,12 +46,12 @@ msgstr "アプリをインストールしました"
 #: src/Application.vala:329 src/MainWindow.vala:394
 #, c-format
 msgid "“%s” has been installed"
-msgstr "“%s” をインストールしました"
+msgstr "“%s”をインストールしました"
 
 #: src/MainWindow.vala:83
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr "“%s” を起動できませんでした"
+msgstr "“%s”を起動できませんでした"
 
 #. / TRANSLATORS: the action of searching
 #: src/MainWindow.vala:109
@@ -343,7 +343,7 @@ msgstr "アプリをインストールできませんでした"
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
-msgstr "“%s” をインストールできませんでした"
+msgstr "“%s”をインストールできませんでした"
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
@@ -453,7 +453,7 @@ msgstr "アプリをアンインストールしますか?"
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr "“%s” をアンインストールしますか?"
+msgstr "“%s”をアンインストールしますか?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:171
 msgid "Uninstall"
@@ -472,7 +472,7 @@ msgstr "アプリをアンインストールできませんでした"
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr "“%s” をアンインストールできませんでした"
+msgstr "“%s”をアンインストールできませんでした"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -503,7 +503,7 @@ msgstr "アプリをアップデートできませんでした"
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
-msgstr "“%s” をアップデートできませんでした"
+msgstr "“%s”をアップデートできませんでした"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
