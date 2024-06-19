@@ -103,8 +103,7 @@ namespace AppCenter.Views {
 
             installed_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
-                homogeneous = true,
-                max_children_per_line = 4,
+                max_children_per_line = 5,
                 row_spacing = 12
             };
             installed_flowbox.bind_model (installed_liststore, create_installed_from_package);
@@ -122,9 +121,55 @@ namespace AppCenter.Views {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             action_button_group.add_widget (update_all_button);
 
+            var automatic_updates_button = new Granite.SwitchModelButton (_("Automatically Update Free & Purchased Apps")) {
+                description = _("Apps being tried for free will not update automatically")
+            };
+
+            var refresh_accellabel = new Granite.AccelLabel.from_action_name (
+                _("Check for Updates"),
+                "app.refresh"
+            );
+
+            var refresh_menuitem = new Gtk.Button () {
+                action_name = "app.refresh",
+                child = refresh_accellabel
+            };
+            refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
+
+            var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            menu_popover_box.append (automatic_updates_button);
+            menu_popover_box.append (refresh_menuitem);
+
+            var menu_popover = new Gtk.Popover () {
+                child = menu_popover_box
+            };
+            menu_popover.add_css_class (Granite.STYLE_CLASS_MENU);
+
+            var menu_button = new Gtk.MenuButton () {
+                icon_name = "open-menu",
+                popover = menu_popover,
+                tooltip_text = _("Settings")
+            };
+            menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+            var search_button = new Gtk.Button.from_icon_name ("edit-find") {
+                action_name = "win.search",
+                /// TRANSLATORS: the action of searching
+                tooltip_text = C_("action", "Search")
+            };
+            search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+            var headerbar = new Gtk.HeaderBar () {
+                title_widget = new Gtk.Grid () { visible = false }
+            };
+            headerbar.pack_start (new BackButton ());
+            headerbar.pack_end (menu_button);
+            headerbar.pack_end (search_button);
+
             var toolbarview = new Adw.ToolbarView () {
                 content = scrolled
             };
+            toolbarview.add_top_bar (headerbar);
             toolbarview.add_top_bar (updated_revealer);
             toolbarview.add_top_bar (header_revealer);
             toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
@@ -186,6 +231,21 @@ namespace AppCenter.Views {
                     list_box.set_placeholder (null);
                 }
             });
+
+            automatic_updates_button.notify["active"].connect (() => {
+                if (automatic_updates_button.active) {
+                    update_manager.update_cache.begin (true);
+                } else {
+                    update_manager.cancel_updates (true);
+                }
+            });
+
+            App.settings.bind (
+                "automatic-updates",
+                automatic_updates_button,
+                "active",
+                SettingsBindFlags.DEFAULT
+            );
         }
 
         private void on_updates_changed () {

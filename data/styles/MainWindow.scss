@@ -3,27 +3,6 @@
  * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
  */
 
-.titlebar {
-    min-height: rem(32px);
-    padding-bottom: rem(3px);
-    padding-top: rem(3px);
-}
-
-.badge {
-    font-size: 0.75em;
-    margin: rem(3px);
-    min-height: rem(14px);
-    min-width: rem(14px);
-
-    &:dir(ltr) {
-        margin-right: 0;
-    }
-
-    &:dir(rtl) {
-        margin-left: 0;
-    }
-}
-
 .header > box {
     padding: 1rem;
 }
