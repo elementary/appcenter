@@ -53,12 +53,13 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         search_entry.set_key_capture_widget (this);
 
         var search_clamp = new Adw.Clamp () {
-            child = search_entry,
-            margin_top = 6,
-            margin_bottom = 6,
-            margin_end = 12,
-            margin_start = 12
+            child = search_entry
         };
+
+        var headerbar = new Gtk.HeaderBar () {
+            title_widget = search_clamp
+        };
+        headerbar.pack_start (new BackButton ());
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
 
@@ -78,7 +79,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         var toolbarview = new Adw.ToolbarView () {
             content = scrolled
         };
-        toolbarview.add_top_bar (search_clamp);
+        toolbarview.add_top_bar (headerbar);
 
         add_css_class (Granite.STYLE_CLASS_VIEW);
         child = toolbarview;
