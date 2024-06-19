@@ -71,6 +71,23 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             to_recycle = true;
         });
 
+        var title_image = new Gtk.Image.from_gicon (package.get_icon (32, scale_factor)) {
+            icon_size = LARGE
+        };
+        var title_label = new Gtk.Label (package.get_name ()) {
+            ellipsize = END
+        };
+
+        var title_widget = new Gtk.Box (HORIZONTAL, 0);
+        title_widget.append (title_image);
+        title_widget.append (title_label);
+        title_widget.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
+
+        var title_revealer = new Gtk.Revealer () {
+            child = title_widget,
+            transition_type = CROSSFADE
+        };
+
         var search_button = new Gtk.Button.from_icon_name ("edit-find") {
             action_name = "win.search",
             /// TRANSLATORS: the action of searching
@@ -79,7 +96,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var headerbar = new Gtk.HeaderBar () {
-            title_widget = new Gtk.Grid () { visible = false }
+            title_widget = title_revealer
         };
         headerbar.pack_start (new BackButton ());
         headerbar.pack_end (search_button);
@@ -778,6 +795,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         package.notify["state"].connect (on_package_state_changed);
         on_package_state_changed ();
+
+        scrolled.vadjustment.value_changed.connect (() => {
+           title_revealer.reveal_child = scrolled.vadjustment.value > header.get_height ();
+        });
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
