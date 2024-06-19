@@ -26,13 +26,6 @@ public errordomain PackageUninstallError {
     APP_STATE_NOT_INSTALLED
 }
 
-public class AppCenterCore.PackageDetails : Object {
-    public string? name { get; set; }
-    public string? description { get; set; }
-    public string? summary { get; set; }
-    public string? version { get; set; }
-}
-
 public enum RuntimeStatus {
     UP_TO_DATE,
     END_OF_LIFE,
@@ -394,7 +387,6 @@ public class AppCenterCore.Package : Object {
         internal set { _latest_version = convert_version (value); }
     }
 
-    private PackageDetails? backend_details = null;
     private AppInfo? app_info;
     private bool app_info_retrieved = false;
 
@@ -419,7 +411,6 @@ public class AppCenterCore.Package : Object {
         suggested_amount = null;
         _author = null;
         _author_title = null;
-        backend_details = null;
 
         this.component = component;
     }
@@ -585,14 +576,6 @@ public class AppCenterCore.Package : Object {
         }
 
         name = component.get_name ();
-        if (name == null) {
-            if (backend_details == null) {
-                populate_backend_details_sync ();
-            }
-
-            name = backend_details.name;
-        }
-
         name = Utils.unescape_markup (name);
 
         return name;
@@ -605,14 +588,6 @@ public class AppCenterCore.Package : Object {
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();
-
-            if (description == null) {
-                if (backend_details == null) {
-                    populate_backend_details_sync ();
-                }
-
-                description = backend_details.description;
-            }
 
             if (description == null) {
                 return null;
@@ -642,13 +617,6 @@ public class AppCenterCore.Package : Object {
         }
 
         summary = component.get_summary ();
-        if (summary == null) {
-            if (backend_details == null) {
-                populate_backend_details_sync ();
-            }
-
-            summary = backend_details.summary;
-        }
 
         return summary;
     }
@@ -755,15 +723,12 @@ public class AppCenterCore.Package : Object {
             return latest_version;
         }
 
-        if (backend_details == null) {
-            populate_backend_details_sync ();
+        var newest_release = get_newest_release ();
+        if (newest_release != null) {
+            return newest_release.get_version ();
         }
 
-        if (backend_details.version != null) {
-            latest_version = backend_details.version;
-        }
-
-        return latest_version;
+        return null;
     }
 
     public string? get_color_primary () {
@@ -886,30 +851,5 @@ public class AppCenterCore.Package : Object {
         }
 
         return size;
-    }
-
-    private void populate_backend_details_sync () {
-        if (is_runtime_updates || is_local) {
-            backend_details = new PackageDetails ();
-            return;
-        }
-
-        var loop = new MainLoop ();
-        PackageDetails? result = null;
-        AppCenterCore.FlatpakBackend.get_default ().get_package_details.begin (this, (obj, res) => {
-            try {
-                result = AppCenterCore.FlatpakBackend.get_default ().get_package_details.end (res);
-            } catch (Error e) {
-                warning (e.message);
-            } finally {
-                loop.quit ();
-            }
-        });
-
-        loop.run ();
-        backend_details = result;
-        if (backend_details == null) {
-            backend_details = new PackageDetails ();
-        }
     }
 }
