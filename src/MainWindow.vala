@@ -16,7 +16,6 @@
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Granite.Toast toast;
-    private Granite.OverlayBar overlaybar;
     private Adw.NavigationView navigation_view;
 
     private AppCenterCore.Package? last_installed_package;
@@ -82,7 +81,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         };
         overlay.add_overlay (toast);
 
-        overlaybar = new Granite.OverlayBar (overlay);
+        var overlaybar = new Granite.OverlayBar (overlay);
         overlaybar.bind_property ("active", overlaybar, "visible");
 
         var network_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
@@ -149,10 +148,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         backend.bind_property ("working", overlaybar, "active", SYNC_CREATE);
 
         backend.notify ["job-type"].connect (() => {
-            update_overlaybar_label (backend.job_type);
+            overlaybar.label = backend.job_type.to_string ();
         });
 
-        update_overlaybar_label (backend.job_type);
+        overlaybar.label = backend.job_type.to_string ();
     }
 
     public override bool close_request () {
@@ -247,37 +246,5 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         category_view.show_app.connect ((package) => {
             show_package (package);
         });
-    }
-
-    private void update_overlaybar_label (AppCenterCore.Job.Type job_type) {
-        switch (job_type) {
-            case GET_DETAILS_FOR_PACKAGE_IDS:
-            case GET_PACKAGE_DEPENDENCIES:
-            case GET_PACKAGE_DETAILS:
-            case IS_PACKAGE_INSTALLED:
-                overlaybar.label = _("Getting app information…");
-                break;
-            case GET_DOWNLOAD_SIZE:
-                overlaybar.label = _("Getting download size…");
-                break;
-            case GET_PREPARED_PACKAGES:
-            case GET_INSTALLED_PACKAGES:
-            case GET_UPDATES:
-            case REFRESH_CACHE:
-                overlaybar.label = _("Checking for updates…");
-                break;
-            case INSTALL_PACKAGE:
-                overlaybar.label = _("Installing…");
-                break;
-            case UPDATE_PACKAGE:
-                overlaybar.label = _("Installing updates…");
-                break;
-            case REMOVE_PACKAGE:
-                overlaybar.label = _("Uninstalling…");
-                break;
-            case REPAIR:
-                overlaybar.label = _("Repairing…");
-                break;
-        }
     }
 }
