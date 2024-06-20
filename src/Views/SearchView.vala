@@ -27,7 +27,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     public string search_term { get; construct; }
     public bool mimetype { get; set; default = false; }
 
-    private AppCenterCore.SearchManager search_manager;
+    private AppCenterCore.SearchEngine search_engine;
     private GLib.ListModel list_store;
     private Gtk.SearchEntry search_entry;
     private Granite.Placeholder alert_view;
@@ -64,9 +64,9 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
 
-        search_manager = AppCenterCore.FlatpakBackend.get_default ().get_search_manager ();
+        search_engine = AppCenterCore.FlatpakBackend.get_default ().get_search_engine ();
 
-        var selection_model = new Gtk.NoSelection (search_manager.results);
+        var selection_model = new Gtk.NoSelection (search_engine.results);
 
         var factory = new Gtk.SignalListItemFactory ();
         factory.setup.connect ((obj) => {
@@ -119,7 +119,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         });
 
         list_view.activate.connect ((index) => {
-            show_app ((AppCenterCore.Package) search_manager.results.get_item (index));
+            show_app ((AppCenterCore.Package) search_engine.results.get_item (index));
         });
 
         search_entry.search_changed.connect (search);
@@ -144,9 +144,9 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
 
             if (mimetype) {
-                // This didn't do anything
+                // This didn't do anything so TODO
             } else {
-                search_manager.search (search_entry.text, update_category ());
+                search_engine.search (search_entry.text, update_category ());
             }
 
         } else {

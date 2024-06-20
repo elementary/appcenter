@@ -12,7 +12,7 @@ appcenter_files = files(
     'Core/Houston.vala',
     'Core/Package.vala',
     'Core/ScreenshotCache.vala',
-    'Core/SearchManager.vala',
+    'Core/SearchEngine.vala',
     'Core/SoupClient.vala',
     'Core/Stripe.vala',
     'Core/UpdateManager.vala',

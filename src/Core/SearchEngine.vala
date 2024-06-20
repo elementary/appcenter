@@ -1,5 +1,5 @@
 
-public class AppCenterCore.SearchManager : Object {
+public class AppCenterCore.SearchEngine : Object {
     public ListModel results { get; construct; }
 
     private ListStore packages;
@@ -8,7 +8,7 @@ public class AppCenterCore.SearchManager : Object {
     private string[] query;
     private AppStream.Category? category;
 
-    public SearchManager (Package[] packages, AppStream.Pool pool) {
+    public SearchEngine (Package[] packages, AppStream.Pool pool) {
         var unique_packages = new Gee.HashMap<string, Package> ();
         foreach (var package in packages) {
             var package_component_id = package.normalized_component_id;
