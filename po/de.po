@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 15:35+0000\n"
+"POT-Creation-Date: 2024-06-20 19:40+0000\n"
 "PO-Revision-Date: 2024-03-21 22:13+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:65 src/Views/Homepage.vala:278
+#: src/Application.vala:28 src/MainWindow.vala:44 src/Views/Homepage.vala:278
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -55,35 +55,35 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Die Anwendung wurde installiert"
 
-#: src/Application.vala:329 src/MainWindow.vala:241
+#: src/Application.vala:329 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "»%s« wurde installiert"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:56
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "»%s« konnte nicht gestartet werden"
 
-#: src/MainWindow.vala:109
+#: src/MainWindow.vala:88
 msgid "Network Not Available."
 msgstr "Netzwerk nicht verfügbar."
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:89
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "Verbindung mit dem Internet herstellen, um Anwendungen zu durchsuchen und zu "
 "installieren."
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:99
 msgid "Network Settings…"
 msgstr "Netzwerkeinstellungen …"
 
-#: src/MainWindow.vala:128
+#: src/MainWindow.vala:107
 msgid "Running in Demo Mode"
 msgstr "Im Demomodus ausgeführt"
 
-#: src/MainWindow.vala:129
+#: src/MainWindow.vala:108
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
@@ -91,37 +91,9 @@ msgstr ""
 "installieren."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:244 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Öffnen"
-
-#: src/MainWindow.vala:268
-msgid "Getting app information…"
-msgstr "Anwendungsinformationen abrufen …"
-
-#: src/MainWindow.vala:271
-msgid "Getting download size…"
-msgstr "Umfang ermitteln …"
-
-#: src/MainWindow.vala:277
-msgid "Checking for updates…"
-msgstr "Auf Aktualisierungen prüfen …"
-
-#: src/MainWindow.vala:280
-msgid "Installing…"
-msgstr "Installieren …"
-
-#: src/MainWindow.vala:283
-msgid "Installing updates…"
-msgstr "Aktualisierungen installieren …"
-
-#: src/MainWindow.vala:286
-msgid "Uninstalling…"
-msgstr "Deinstallieren …"
-
-#: src/MainWindow.vala:289
-msgid "Repairing…"
-msgstr "Reparieren …"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -131,10 +103,10 @@ msgstr "Warten"
 msgid "Finished"
 msgstr "Beendet"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1467
-#: src/Core/FlatpakBackend.vala:1491 src/Core/FlatpakBackend.vala:1599
-#: src/Core/FlatpakBackend.vala:1623 src/Core/FlatpakBackend.vala:1781
-#: src/Core/FlatpakBackend.vala:1799
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1485 src/Core/FlatpakBackend.vala:1593
+#: src/Core/FlatpakBackend.vala:1617 src/Core/FlatpakBackend.vala:1775
+#: src/Core/FlatpakBackend.vala:1793
 msgid "Cancelling"
 msgstr "Abbrechen"
 
@@ -147,28 +119,56 @@ msgstr "Starten"
 msgid "%s (system-wide)"
 msgstr "%s (systemweit)"
 
-#: src/Core/FlatpakBackend.vala:108
+#: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
 msgstr "Pakete werden verarbeitet"
 
-#: src/Core/FlatpakBackend.vala:1458
+#: src/Core/FlatpakBackend.vala:1452
 msgid "Installing"
 msgstr "Installieren"
 
-#: src/Core/FlatpakBackend.vala:1590
+#: src/Core/FlatpakBackend.vala:1584
 msgid "Uninstalling"
 msgstr "Deinstallation"
 
-#: src/Core/FlatpakBackend.vala:1772
+#: src/Core/FlatpakBackend.vala:1766
 msgid "Updating"
 msgstr "Aktualisierung"
 
-#: src/Core/Package.vala:316
+#: src/Core/Job.vala:50
+msgid "Getting app information…"
+msgstr "Anwendungsinformationen abrufen …"
+
+#: src/Core/Job.vala:52
+msgid "Getting download size…"
+msgstr "Umfang ermitteln …"
+
+#: src/Core/Job.vala:57
+msgid "Checking for updates…"
+msgstr "Auf Aktualisierungen prüfen …"
+
+#: src/Core/Job.vala:59
+msgid "Installing…"
+msgstr "Installieren …"
+
+#: src/Core/Job.vala:61
+msgid "Installing updates…"
+msgstr "Aktualisierungen installieren …"
+
+#: src/Core/Job.vala:63
+msgid "Uninstalling…"
+msgstr "Deinstallieren …"
+
+#: src/Core/Job.vala:65
+msgid "Repairing…"
+msgstr "Reparieren …"
+
+#: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
 msgstr "Die Entwickler von %s"
 
-#: src/Core/Package.vala:502
+#: src/Core/Package.vala:493
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Anwendung ist im AppCenter nicht als »installiert« markiert: %s"
@@ -321,13 +321,13 @@ msgstr[1] "Für %u Runtimes sind Aktualisierungen verfügbar"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:157
+#: src/Core/UpdateManager.vala:154
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualisierung verfügbar"
 msgstr[1] "Aktualisierungen verfügbar"
 
-#: src/Core/UpdateManager.vala:159
+#: src/Core/UpdateManager.vala:156
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
