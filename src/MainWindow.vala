@@ -20,7 +20,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     private AppCenterCore.Package? last_installed_package;
 
-    public static Views.AppListUpdateView installed_view { get; private set; }
+    private Views.AppListUpdateView? installed_view;
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);
@@ -70,11 +70,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
 
         var homepage = new Homepage ();
-        installed_view = new Views.AppListUpdateView ();
 
         navigation_view = new Adw.NavigationView ();
         navigation_view.add (homepage);
-        navigation_view.add (installed_view);
 
         var overlay = new Gtk.Overlay () {
             child = navigation_view
@@ -137,10 +135,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             show_package (package);
         });
 
-        installed_view.show_app.connect ((package) => {
-            show_package (package);
-        });
-
         navigation_view.popped.connect (update_navigation);
         navigation_view.pushed.connect (update_navigation);
 
@@ -155,7 +149,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public override bool close_request () {
-        installed_view.clear ();
+        if (installed_view != null) {
+            installed_view.clear ();
+        }
 
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
         if (backend.working) {
@@ -204,7 +200,19 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        navigation_view.push (installed_view);
+        if (installed_view == null) {
+            installed_view = new Views.AppListUpdateView ();
+
+            installed_view.show_app.connect ((package) => {
+                show_package (package);
+            });
+        }
+
+        if (installed_view.parent != null) {
+            navigation_view.pop_to_page (installed_view);
+        } else {
+            navigation_view.push (installed_view);
+        }
     }
 
     public void search (string term = "", bool mimetype = false) {
