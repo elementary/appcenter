@@ -289,14 +289,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         load_banners_and_carousels.begin ((obj, res) => {
             load_banners_and_carousels.end (res);
             banner_timeout_start ();
-
-            banner_motion_controller.enter.connect (() => {
-                banner_timeout_stop ();
-            });
-
-            banner_motion_controller.leave.connect (() => {
-                banner_timeout_start ();
-            });
+            banner_motion_controller.enter.connect (banner_timeout_stop);
+            banner_motion_controller.leave.connect (banner_timeout_start);
         });
 
         category_flow.child_activated.connect ((child) => {
