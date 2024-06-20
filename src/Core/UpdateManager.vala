@@ -143,10 +143,7 @@ public class AppCenterCore.UpdateManager : Object {
             runtime_updates.latest_version = latest_version;
             runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
 
-            var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
-            if (runtime_updates_size > 0) {
-                updates_liststore.insert_sorted (runtime_updates, compare_package_func);
-            }
+            updates_liststore.insert_sorted (runtime_updates, compare_package_func);
         }
 
         debug ("%u app updates found", updates_number);
