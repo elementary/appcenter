@@ -478,7 +478,7 @@ public class AppCenterCore.Package : Object {
 
     public async bool uninstall () throws Error {
         // We possibly don't know if this package is installed or not yet, so trigger that check first
-        _installed = yield AppCenterCore.FlatpakBackend.get_default ().is_package_installed (this);
+        _installed = AppCenterCore.FlatpakBackend.get_default ().is_package_installed (this);
 
         update_state ();
 

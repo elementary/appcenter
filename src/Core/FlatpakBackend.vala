@@ -132,9 +132,6 @@ public class AppCenterCore.FlatpakBackend : Object {
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
-                case Job.Type.IS_PACKAGE_INSTALLED:
-                    is_package_installed_internal (job);
-                    break;
                 case Job.Type.REPAIR:
                     repair_internal (job);
                     break;
@@ -888,25 +885,16 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
     }
 
-    private void is_package_installed_internal (Job job) {
-        var args = (IsPackageInstalledArgs)job.args;
-        unowned var package = args.package;
-
+    public bool is_package_installed (Package package) throws GLib.Error {
         unowned var fp_package = package as FlatpakPackage;
         if (fp_package == null || fp_package.installation == null) {
             critical ("Could not check installed state of package due to no flatpak installation");
-            job.result = Value (typeof (bool));
-            job.result = false;
-            job.results_ready ();
-            return;
+            return false;
         }
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            job.result = Value (typeof (bool));
-            job.result = false;
-            job.results_ready ();
-            return;
+            return false;
         }
 
         bool system = fp_package.installation == system_installation;
@@ -915,35 +903,17 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         try {
             var installed_refs = fp_package.installation.list_installed_refs ();
-            for (int j = 0; j < installed_refs.length; j++) {
-                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
-
+            foreach (unowned var installed_ref in installed_refs) {
                 var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
                 if (key == bundle_id) {
-                    job.result = Value (typeof (bool));
-                    job.result = true;
-                    job.results_ready ();
-                    return;
+                    return true;
                 }
             }
         } catch (Error e) {
-            job.error = e;
-            job.results_ready ();
-            return;
+            warning ("Failed to check if package is installed: %s", e.message);
         }
 
-        job.result = Value (typeof (bool));
-        job.result = false;
-        job.results_ready ();
-    }
-
-    public async bool is_package_installed (Package package) throws GLib.Error {
-        var job_args = new IsPackageInstalledArgs ();
-        job_args.package = package;
-
-        var job = yield launch_job (Job.Type.IS_PACKAGE_INSTALLED, job_args);
-
-        return job.result.get_boolean ();
+        return false;
     }
 
     private void refresh_cache_internal (Job job) {
