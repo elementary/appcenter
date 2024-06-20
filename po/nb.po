@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 15:35+0000\n"
+"POT-Creation-Date: 2024-06-20 19:40+0000\n"
 "PO-Revision-Date: 2024-06-16 03:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:65 src/Views/Homepage.vala:278
+#: src/Application.vala:28 src/MainWindow.vala:44 src/Views/Homepage.vala:278
 msgid "AppCenter"
 msgstr "AppSenter"
 
@@ -46,69 +46,41 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Programmet har blitt installert"
 
-#: src/Application.vala:329 src/MainWindow.vala:241
+#: src/Application.vala:329 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ble installert"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:56
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Klarte ikke å kjøre «%s»"
 
-#: src/MainWindow.vala:109
+#: src/MainWindow.vala:88
 msgid "Network Not Available."
 msgstr "Nettverk ikke tilgjengelig."
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:89
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Du må koble til Internett for å bla gjennom eller installere apper."
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:99
 msgid "Network Settings…"
 msgstr "Nettverksinnstillinger…"
 
-#: src/MainWindow.vala:128
+#: src/MainWindow.vala:107
 msgid "Running in Demo Mode"
 msgstr "Kjører i demo-modus"
 
-#: src/MainWindow.vala:129
+#: src/MainWindow.vala:108
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Installer %s for å utforske eller installere programmer."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:244 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Åpne"
-
-#: src/MainWindow.vala:268
-msgid "Getting app information…"
-msgstr "Henter programinfo …"
-
-#: src/MainWindow.vala:271
-msgid "Getting download size…"
-msgstr "Henter nedlastingsstørrelse …"
-
-#: src/MainWindow.vala:277
-msgid "Checking for updates…"
-msgstr "Ser etter oppgraderinger …"
-
-#: src/MainWindow.vala:280
-msgid "Installing…"
-msgstr "Installerer …"
-
-#: src/MainWindow.vala:283
-msgid "Installing updates…"
-msgstr "Installerer oppgraderinger …"
-
-#: src/MainWindow.vala:286
-msgid "Uninstalling…"
-msgstr "Avinstallerer …"
-
-#: src/MainWindow.vala:289
-msgid "Repairing…"
-msgstr "Reparerer …"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -118,10 +90,10 @@ msgstr "Venter"
 msgid "Finished"
 msgstr "Ferdig"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1467
-#: src/Core/FlatpakBackend.vala:1491 src/Core/FlatpakBackend.vala:1599
-#: src/Core/FlatpakBackend.vala:1623 src/Core/FlatpakBackend.vala:1781
-#: src/Core/FlatpakBackend.vala:1799
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1485 src/Core/FlatpakBackend.vala:1593
+#: src/Core/FlatpakBackend.vala:1617 src/Core/FlatpakBackend.vala:1775
+#: src/Core/FlatpakBackend.vala:1793
 msgid "Cancelling"
 msgstr "Avbryter"
 
@@ -134,28 +106,56 @@ msgstr "Starter"
 msgid "%s (system-wide)"
 msgstr "%s (på hele systemet)"
 
-#: src/Core/FlatpakBackend.vala:108
+#: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
 msgstr "pakkeoperasjoner utføres"
 
-#: src/Core/FlatpakBackend.vala:1458
+#: src/Core/FlatpakBackend.vala:1452
 msgid "Installing"
 msgstr "Installerer"
 
-#: src/Core/FlatpakBackend.vala:1590
+#: src/Core/FlatpakBackend.vala:1584
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1772
+#: src/Core/FlatpakBackend.vala:1766
 msgid "Updating"
 msgstr "Oppdaterer"
 
-#: src/Core/Package.vala:316
+#: src/Core/Job.vala:50
+msgid "Getting app information…"
+msgstr "Henter programinfo …"
+
+#: src/Core/Job.vala:52
+msgid "Getting download size…"
+msgstr "Henter nedlastingsstørrelse …"
+
+#: src/Core/Job.vala:57
+msgid "Checking for updates…"
+msgstr "Ser etter oppgraderinger …"
+
+#: src/Core/Job.vala:59
+msgid "Installing…"
+msgstr "Installerer …"
+
+#: src/Core/Job.vala:61
+msgid "Installing updates…"
+msgstr "Installerer oppgraderinger …"
+
+#: src/Core/Job.vala:63
+msgid "Uninstalling…"
+msgstr "Avinstallerer …"
+
+#: src/Core/Job.vala:65
+msgid "Repairing…"
+msgstr "Reparerer …"
+
+#: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
 msgstr "%s-utviklerne"
 
-#: src/Core/Package.vala:502
+#: src/Core/Package.vala:493
 #, fuzzy, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
@@ -286,13 +286,13 @@ msgstr[1] "%u kjørerutiner med oppgraderinger"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:157
+#: src/Core/UpdateManager.vala:154
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Oppdatering tilgjengelig"
 msgstr[1] "Oppdateringer tilgjengelige"
 
-#: src/Core/UpdateManager.vala:159
+#: src/Core/UpdateManager.vala:156
 #, fuzzy, c-format
 #| msgid "%u update is available."
 #| msgid_plural "%u updates are available."
