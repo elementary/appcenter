@@ -283,25 +283,25 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             );
             banner_carousel.append (appcenter_banner);
 
-            banner_carousel.page_changed.connect (page_changed_handler );
+            banner_carousel.page_changed.connect (page_changed_handler);
         }
 
         load_banners_and_carousels.begin ((obj, res) => {
             load_banners_and_carousels.end (res);
             banner_timeout_start ();
+
+            banner_motion_controller.enter.connect (() => {
+                banner_timeout_stop ();
+            });
+
+            banner_motion_controller.leave.connect (() => {
+                banner_timeout_start ();
+            });
         });
 
         category_flow.child_activated.connect ((child) => {
             var card = (AbstractCategoryCard) child;
             show_category (card.category);
-        });
-
-        banner_motion_controller.enter.connect (() => {
-            banner_timeout_stop ();
-        });
-
-        banner_motion_controller.leave.connect (() => {
-            banner_timeout_start ();
         });
 
         recently_updated_carousel.child_activated.connect ((child) => {
