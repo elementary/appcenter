@@ -35,7 +35,6 @@ public class AppCenterCore.Job : Object {
         INSTALL_PACKAGE,
         UPDATE_PACKAGE,
         REMOVE_PACKAGE,
-        IS_PACKAGE_INSTALLED,
         GET_PACKAGE_DETAILS,
         GET_PACKAGE_DEPENDENCIES,
         GET_PREPARED_PACKAGES,
@@ -46,7 +45,6 @@ public class AppCenterCore.Job : Object {
                 case GET_DETAILS_FOR_PACKAGE_IDS:
                 case GET_PACKAGE_DEPENDENCIES:
                 case GET_PACKAGE_DETAILS:
-                case IS_PACKAGE_INSTALLED:
                     return _("Getting app information…");
                 case GET_DOWNLOAD_SIZE:
                     return _("Getting download size…");
@@ -124,10 +122,6 @@ public class AppCenterCore.GetUpdatesArgs : JobArgs {
 
 public class AppCenterCore.RefreshCacheArgs : JobArgs {
     public Cancellable? cancellable;
-}
-
-public class AppCenterCore.IsPackageInstalledArgs : JobArgs {
-    public Package package;
 }
 
 public class AppCenterCore.GetPackageDetailsArgs : JobArgs {
