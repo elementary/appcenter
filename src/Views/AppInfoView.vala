@@ -112,10 +112,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         };
 
         action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
         action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var headerbar = new Gtk.HeaderBar () {
             title_widget = title_revealer
