@@ -338,7 +338,9 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
-                    if (yield AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
+                    warning ("CHECK INSTALLED");
+                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
+                        warning ("CHECKED INSTALLED");
                         installed = true;
                         break;
                     }
@@ -373,7 +375,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
-                    if (yield AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
+                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
                         installed = true;
                         break;
                     }
