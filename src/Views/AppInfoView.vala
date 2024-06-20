@@ -746,15 +746,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             vexpand = true
         };
 
-        var toast = new Granite.Toast (_("Link copied to clipboard"));
-
-        var overlay = new Gtk.Overlay () {
-            child = scrolled
-        };
-        overlay.add_overlay (toast);
-
         var toolbar_view = new Adw.ToolbarView () {
-            content = overlay,
+            content = scrolled,
             top_bar_style = RAISED
         };
         toolbar_view.add_top_bar (headerbar);
