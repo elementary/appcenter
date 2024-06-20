@@ -93,6 +93,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             var job = jobs.pop ();
             job_type = job.operation;
             working = true;
+            set_actions_enabled (working);
 
             if (remove_inhibit_timeout != 0) {
                 Source.remove (remove_inhibit_timeout);
@@ -157,6 +158,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
 
             working = false;
+            set_actions_enabled (working);
         }
 
         return true;
@@ -243,6 +245,12 @@ public class AppCenterCore.FlatpakBackend : Object {
         );
 
         reload_appstream_pool ();
+    }
+
+    private void set_actions_enabled (bool working) {
+        var app = Application.get_default ();
+        ((SimpleAction) app.lookup_action ("refresh")).set_enabled (!working && !Utils.is_running_in_guest_session ());
+        ((SimpleAction) app.lookup_action ("repair")).set_enabled (!working);
     }
 
     private async void trigger_update_check () {
