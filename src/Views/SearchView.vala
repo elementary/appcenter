@@ -79,11 +79,10 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         });
 
         var list_view = new Gtk.ListView (selection_model, factory) {
+            single_click_activate = true,
             hexpand = true,
             vexpand = true
         };
-        //  list_box.bind_model (list_store, create_row_from_package);
-        //  list_box.set_placeholder (alert_view);
 
         var scrolled = new Gtk.ScrolledWindow () {
             child = list_view,
@@ -106,7 +105,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         });
 
         list_view.activate.connect ((index) => {
-            show_app ((AppCenterCore.Package) list_store.get_item (index));
+            show_app ((AppCenterCore.Package) search_manager.results.get_item (index));
         });
 
         search_entry.search_changed.connect (search);

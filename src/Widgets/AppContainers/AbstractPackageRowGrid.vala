@@ -31,16 +31,19 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
     protected Gtk.Label package_name;
     protected Gtk.Overlay app_icon_overlay;
 
+    private Gtk.Image app_icon;
+    private Gtk.Image badge_image;
+
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (package: package);
     }
 
     construct {
-        var app_icon = new Gtk.Image () {
+        app_icon = new Gtk.Image () {
             pixel_size = 48
         };
 
-        var badge_image = new Gtk.Image () {
+        badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,
             valign = Gtk.Align.END,
             pixel_size = 24
@@ -54,6 +57,13 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
             show_open = false
         };
 
+        margin_top = 6;
+        margin_start = 12;
+        margin_bottom = 6;
+        margin_end = 12;
+    }
+
+    protected void update_package (AppCenterCore.Package package) {
         var scale_factor = get_scale_factor ();
 
         var plugin_host_package = package.get_plugin_host_package ();
@@ -70,10 +80,5 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
                 app_icon_overlay.add_overlay (badge_image);
             }
         }
-
-        margin_top = 6;
-        margin_start = 12;
-        margin_bottom = 6;
-        margin_end = 12;
     }
 }

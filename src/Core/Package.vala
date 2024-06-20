@@ -766,8 +766,10 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public uint cached_search_prio = 0;
     public uint matches_search (string search_term) {
-        return component.search_matches (search_term);
+        cached_search_prio = component.search_matches (search_term);
+        return cached_search_prio;
         //  if (search_term == "") {
         //      return true;
         //  }

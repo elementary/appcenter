@@ -66,5 +66,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     public void bind (AppCenterCore.Package package) {
         package_name.label = package.get_name ();
         package_summary.label = package.get_summary ();
+
+        update_package (package);
     }
 }

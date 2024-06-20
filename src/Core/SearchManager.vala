@@ -19,7 +19,7 @@ public class AppCenterCore.SearchManager : Object {
         var sort_model = new Gtk.SortListModel (filter_model, new Gtk.CustomSorter ((obj1, obj2) => {
             var package1 = (Package) obj1;
             var package2 = (Package) obj2;
-            return (int) (package2.matches_search (query) - package1.matches_search (query));
+            return (int) (package2.cached_search_prio - package1.cached_search_prio);
         }));
 
         results = sort_model;
