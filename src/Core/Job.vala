@@ -39,7 +39,34 @@ public class AppCenterCore.Job : Object {
         GET_PACKAGE_DETAILS,
         GET_PACKAGE_DEPENDENCIES,
         GET_PREPARED_PACKAGES,
-        REPAIR,
+        REPAIR;
+
+        public string to_string () {
+            switch (this) {
+                case GET_DETAILS_FOR_PACKAGE_IDS:
+                case GET_PACKAGE_DEPENDENCIES:
+                case GET_PACKAGE_DETAILS:
+                case IS_PACKAGE_INSTALLED:
+                    return _("Getting app information…");
+                case GET_DOWNLOAD_SIZE:
+                    return _("Getting download size…");
+                case GET_PREPARED_PACKAGES:
+                case GET_INSTALLED_PACKAGES:
+                case GET_UPDATES:
+                case REFRESH_CACHE:
+                    return _("Checking for updates…");
+                case INSTALL_PACKAGE:
+                    return _("Installing…");
+                case UPDATE_PACKAGE:
+                    return _("Installing updates…");
+                case REMOVE_PACKAGE:
+                    return _("Uninstalling…");
+                case REPAIR:
+                    return _("Repairing…");
+            }
+
+            return "";
+        }
     }
 
     public Job (Type type) {
