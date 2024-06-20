@@ -440,7 +440,31 @@ public class AppCenterCore.FlatpakBackend : Object {
         return apps.values;
     }
 
+    public SearchManager get_search_manager () {
+        return new SearchManager (package_list.values.to_array ());
+    }
+
+    public Gee.Collection<Package> search_applications_fast (string query, AppStream.Category? category) {
+        warning ("SEARCHING FAST");
+        var tokens = user_appstream_pool.build_search_tokens (query);
+        var packages = new ListStore (typeof (Package));
+        var arr = package_list.values.to_array ();
+        packages.splice (0, 0, arr);
+        var filter = new Gtk.FilterListModel (packages, new Gtk.CustomFilter ((obj) => {
+            return ((Package) obj).matches_search (query) > 0;
+        })) {
+            incremental = true
+        };
+        var result = new Gee.TreeSet<Package> ();
+        for (int i = 0; i < filter.n_items; i++) {
+            result.add ((Package) filter.get_item (i));
+        }
+        warning ("SEARCHED FAST");
+        return result;
+    }
+
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
+        return search_applications_fast (query, category);
         var results = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = user_appstream_pool.search (query);
         if (category == null) {
