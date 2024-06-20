@@ -3,10 +3,22 @@ public class AppCenterCore.SearchManager : Object {
 
     public ListModel results { get; construct; }
 
-    public string query { get; set; }
+    public string query { get; private set; }
+    public AppStream.Category? category { get; private set; }
 
     public SearchManager (Package[] packages) {
-        this.packages.splice (0, 0, packages);
+        var unique_packages = new Gee.HashMap<string, Package> ();
+        foreach (var package in packages) {
+            var package_component_id = package.normalized_component_id;
+            if (unique_packages.has_key (package_component_id)) {
+                if (package.origin_score > unique_packages[package_component_id].origin_score) {
+                    unique_packages[package_component_id] = package;
+                }
+            } else {
+                unique_packages[package_component_id] = package;
+            }
+        }
+        this.packages.splice (0, 0, unique_packages.values.to_array ());
     }
 
     construct {
@@ -25,8 +37,9 @@ public class AppCenterCore.SearchManager : Object {
         results = sort_model;
     }
 
-    public void search (string query) {
+    public void search (string query, AppStream.Category? category) {
         this.query = query;
+        this.category = category; // TODO
         packages.items_changed (0, packages.n_items, packages.n_items);
     }
 }

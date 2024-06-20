@@ -89,8 +89,12 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
+        var stack = new Gtk.Stack ();
+        stack.add_child (alert_view);
+        stack.add_child (scrolled);
+
         var toolbarview = new Adw.ToolbarView () {
-            content = scrolled
+            content = stack
         };
         toolbarview.add_top_bar (headerbar);
 
@@ -102,6 +106,16 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         shown.connect (() => {
             update_category ();
             search_entry.grab_focus ();
+        });
+
+        selection_model.items_changed.connect (() => {
+            list_view.scroll_to (0, NONE, null);
+
+            if (selection_model.n_items > 0) {
+                stack.visible_child = scrolled;
+            } else {
+                stack.visible_child = alert_view;
+            }
         });
 
         list_view.activate.connect ((index) => {
@@ -125,34 +139,23 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     }
 
     private void search () {
-        search_manager.search (search_entry.text);
-        //  list_store.remove_all ();
+        if (search_entry.text.length >= VALID_QUERY_LENGTH) {
+            var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (search_entry.text, _("Flathub"));
+            alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
 
-        //  if (search_entry.text.length >= VALID_QUERY_LENGTH) {
-        //      var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (search_entry.text, _("Flathub"));
-        //      alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
+            if (mimetype) {
+                // This didn't do anything
+            } else {
+                search_manager.search (search_entry.text, update_category ());
+            }
 
-        //      unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        } else {
+            alert_view.description = _("The search term must be at least 3 characters long.");
+        }
 
-        //      Gee.Collection<AppCenterCore.Package> found_apps;
-
-        //      if (mimetype) {
-        //          found_apps = flatpak_backend.search_applications_mime (search_entry.text);
-        //          add_packages (found_apps);
-        //      } else {
-        //          var category = update_category ();
-
-        //          found_apps = flatpak_backend.search_applications (search_entry.text, category);
-        //          add_packages (found_apps);
-        //      }
-
-        //  } else {
-        //      alert_view.description = _("The search term must be at least 3 characters long.");
-        //  }
-
-        //  if (mimetype) {
-        //      mimetype = false;
-        //  }
+        if (mimetype) {
+            mimetype = false;
+        }
     }
 
     private AppStream.Category? update_category () {
@@ -167,57 +170,5 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         search_entry.placeholder_text = _("Search Apps");
         return null;
-    }
-
-    public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
-        //  foreach (var package in packages) {
-        //      // Don't show plugins or fonts in search and category views
-        //      if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
-        //          GLib.CompareDataFunc<AppCenterCore.Package> sort_fn = (a, b) => {
-        //              return compare_packages (a, b);
-        //          };
-
-        //          list_store.insert_sorted (package, sort_fn);
-        //      }
-        //  }
-    }
-
-    private Gtk.Widget create_row_from_package (Object object) {
-        unowned var package = (AppCenterCore.Package) object;
-        return new Widgets.PackageRow.list (package);
-    }
-
-    private int search_priority (string name) {
-        if (name != null && search_entry.text != "") {
-            var name_lower = name.down ();
-            var term_lower = search_entry.text.down ();
-
-            var term_position = name_lower.index_of (term_lower);
-
-            // App name starts with our search term, highest priority
-            if (term_position == 0) {
-                return 2;
-            // App name contains our search term, high priority
-            } else if (term_position != -1) {
-                return 1;
-            }
-        }
-
-        // Otherwise, normal appstream search ranking order
-        return 0;
-    }
-
-    private int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-        if ((p1.kind == AppStream.ComponentKind.ADDON) != (p2.kind == AppStream.ComponentKind.ADDON)) {
-            return p1.kind == AppStream.ComponentKind.ADDON ? 1 : -1;
-        }
-
-        int sp1 = search_priority (p1.get_name ());
-        int sp2 = search_priority (p2.get_name ());
-        if (sp1 != sp2) {
-            return sp2 - sp1;
-        }
-
-        return p1.get_name ().collate (p2.get_name ());
     }
 }
