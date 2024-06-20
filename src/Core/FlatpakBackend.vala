@@ -93,6 +93,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             var job = jobs.pop ();
             job_type = job.operation;
             working = true;
+            set_actions_enabled (working);
 
             if (remove_inhibit_timeout != 0) {
                 Source.remove (remove_inhibit_timeout);
@@ -157,6 +158,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
 
             working = false;
+            set_actions_enabled (working);
         }
 
         return true;
