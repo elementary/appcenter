@@ -4,6 +4,15 @@
  */
 
 appinfoview {
+    .title {
+        border-spacing: 0.5rem;
+        font-size: 1.5rem;
+
+        image {
+            -gtk-icon-size: 32px;
+        }
+    }
+
     .banner {
         clamp > box {
             margin: rem(12px);

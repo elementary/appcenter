@@ -212,6 +212,10 @@ namespace AppCenter.Views {
             update_all_button.clicked.connect (on_update_all);
 
             unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+            if (!flatpak_backend.working) {
+                on_updates_changed ();
+            }
+
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
                     updated_revealer.reveal_child = false;

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 15:35+0000\n"
+"POT-Creation-Date: 2024-06-20 19:40+0000\n"
 "PO-Revision-Date: 2023-05-18 10:52+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:65 src/Views/Homepage.vala:278
+#: src/Application.vala:28 src/MainWindow.vala:44 src/Views/Homepage.vala:278
 msgid "AppCenter"
 msgstr "Uygulama Merkezi"
 
@@ -53,69 +53,41 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Uygulama yüklendi"
 
-#: src/Application.vala:329 src/MainWindow.vala:241
+#: src/Application.vala:329 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" yüklendi"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:56
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" başlatılamadı"
 
-#: src/MainWindow.vala:109
+#: src/MainWindow.vala:88
 msgid "Network Not Available."
 msgstr "Ağ Bağlantısı Kullanılamıyor."
 
-#: src/MainWindow.vala:110
+#: src/MainWindow.vala:89
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Uygulamalara göz atmak ve yüklemek için İnternet'e bağlanın."
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:99
 msgid "Network Settings…"
 msgstr "Ağ Ayarları…"
 
-#: src/MainWindow.vala:128
+#: src/MainWindow.vala:107
 msgid "Running in Demo Mode"
 msgstr "Tanıtım Modunda Çalışıyor"
 
-#: src/MainWindow.vala:129
+#: src/MainWindow.vala:108
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Uygulamalara göz atmak ve yüklemek için %s yükleyin."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:244 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Aç"
-
-#: src/MainWindow.vala:268
-msgid "Getting app information…"
-msgstr "Uygulama bilgisi alınıyor…"
-
-#: src/MainWindow.vala:271
-msgid "Getting download size…"
-msgstr "İndirme boyutu alınıyor…"
-
-#: src/MainWindow.vala:277
-msgid "Checking for updates…"
-msgstr "Güncellemeler denetleniyor…"
-
-#: src/MainWindow.vala:280
-msgid "Installing…"
-msgstr "Yükleniyor…"
-
-#: src/MainWindow.vala:283
-msgid "Installing updates…"
-msgstr "Güncellemeler yükleniyor…"
-
-#: src/MainWindow.vala:286
-msgid "Uninstalling…"
-msgstr "Kaldırılıyor…"
-
-#: src/MainWindow.vala:289
-msgid "Repairing…"
-msgstr "Onarılıyor…"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -125,10 +97,10 @@ msgstr "Bekliyor"
 msgid "Finished"
 msgstr "Tamamlandı"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1467
-#: src/Core/FlatpakBackend.vala:1491 src/Core/FlatpakBackend.vala:1599
-#: src/Core/FlatpakBackend.vala:1623 src/Core/FlatpakBackend.vala:1781
-#: src/Core/FlatpakBackend.vala:1799
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1461
+#: src/Core/FlatpakBackend.vala:1485 src/Core/FlatpakBackend.vala:1593
+#: src/Core/FlatpakBackend.vala:1617 src/Core/FlatpakBackend.vala:1775
+#: src/Core/FlatpakBackend.vala:1793
 msgid "Cancelling"
 msgstr "İptal ediliyor"
 
@@ -141,28 +113,56 @@ msgstr "Başlatılıyor"
 msgid "%s (system-wide)"
 msgstr "%s (sistem geneli)"
 
-#: src/Core/FlatpakBackend.vala:108
+#: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
 msgstr "paket işlemleri gerçekleştiriliyor"
 
-#: src/Core/FlatpakBackend.vala:1458
+#: src/Core/FlatpakBackend.vala:1452
 msgid "Installing"
 msgstr "Yükleniyor"
 
-#: src/Core/FlatpakBackend.vala:1590
+#: src/Core/FlatpakBackend.vala:1584
 msgid "Uninstalling"
 msgstr "Kaldırılıyor"
 
-#: src/Core/FlatpakBackend.vala:1772
+#: src/Core/FlatpakBackend.vala:1766
 msgid "Updating"
 msgstr "Güncelleniyor"
 
-#: src/Core/Package.vala:316
+#: src/Core/Job.vala:50
+msgid "Getting app information…"
+msgstr "Uygulama bilgisi alınıyor…"
+
+#: src/Core/Job.vala:52
+msgid "Getting download size…"
+msgstr "İndirme boyutu alınıyor…"
+
+#: src/Core/Job.vala:57
+msgid "Checking for updates…"
+msgstr "Güncellemeler denetleniyor…"
+
+#: src/Core/Job.vala:59
+msgid "Installing…"
+msgstr "Yükleniyor…"
+
+#: src/Core/Job.vala:61
+msgid "Installing updates…"
+msgstr "Güncellemeler yükleniyor…"
+
+#: src/Core/Job.vala:63
+msgid "Uninstalling…"
+msgstr "Kaldırılıyor…"
+
+#: src/Core/Job.vala:65
+msgid "Repairing…"
+msgstr "Onarılıyor…"
+
+#: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
 msgstr "%s Geliştiricileri"
 
-#: src/Core/Package.vala:502
+#: src/Core/Package.vala:493
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
@@ -302,13 +302,13 @@ msgstr[1] "%u çalışma zamanının güncellemesi var"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:157
+#: src/Core/UpdateManager.vala:154
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Güncelleme Var"
 msgstr[1] "Güncellemeler Var"
 
-#: src/Core/UpdateManager.vala:159
+#: src/Core/UpdateManager.vala:156
 #, fuzzy, c-format
 #| msgid "%u update is available."
 #| msgid_plural "%u updates are available."
