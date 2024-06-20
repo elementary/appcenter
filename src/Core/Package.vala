@@ -569,6 +569,31 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public uint cached_search_score = 0;
+    public uint matches_search (string[] queries) {
+        // TODO: We don't use AppStream.Component.search_matches_all because it has some broken vapi
+        // (or at least I think so: the c code takes gchar** but vapi says string)
+
+        if (queries.length == 0) {
+            cached_search_score = 0;
+            return 0;
+        }
+
+        uint score = 0;
+        foreach (var query in queries) {
+            var query_score = component.search_matches (query);
+
+            if (query_score == 0) {
+                score = 0;
+                break;
+            }
+
+            score += query_score;
+        }
+        cached_search_score = score / queries.length;
+        return cached_search_score;
+    }
+
     private string? name = null;
     public string? get_name () {
         if (name != null) {
@@ -764,31 +789,6 @@ public class AppCenterCore.Package : Object {
             suggested_amount = component.get_custom_value ("x-appcenter-suggested-price");
             return suggested_amount == null ? DEFAULT_PRICE_DOLLARS : suggested_amount;
         }
-    }
-
-    public uint cached_search_score = 0;
-    public uint matches_search (string[] queries) {
-        // TODO: We don't use AppStream.Component.search_matches_all because it has some broken vapi
-        // (or at least I think so: the c code takes gchar** but vapi says string)
-
-        if (queries.length == 0) {
-            cached_search_score = 0;
-            return 0;
-        }
-
-        uint score = 0;
-        foreach (var query in queries) {
-            var query_score = component.search_matches (query);
-
-            if (query_score == 0) {
-                score = 0;
-                break;
-            }
-
-            score += query_score;
-        }
-        cached_search_score = score / queries.length;
-        return cached_search_score;
     }
 
     private string convert_version (string version) {
