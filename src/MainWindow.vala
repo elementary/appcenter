@@ -15,8 +15,6 @@
 */
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
-    public bool working { get; set; }
-
     private Granite.Toast toast;
     private Granite.OverlayBar overlaybar;
     private Adw.NavigationView navigation_view;
@@ -37,24 +35,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         add_action (focus_search);
 
         app.set_accels_for_action ("win.search", {"<Ctrl>f"});
-
-        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-        backend.bind_property ("working", this, "working", GLib.BindingFlags.SYNC_CREATE);
-        backend.bind_property ("working", overlaybar, "active", GLib.BindingFlags.SYNC_CREATE);
-
-        backend.notify ["job-type"].connect (() => {
-            update_overlaybar_label (backend.job_type);
-        });
-
-        notify["working"].connect (() => {
-            Idle.add (() => {
-                App.refresh_action.set_enabled (!working && !Utils.is_running_in_guest_session ());
-                App.repair_action.set_enabled (!working);
-                return GLib.Source.REMOVE;
-            });
-        });
-
-        update_overlaybar_label (backend.job_type);
     }
 
     construct {
@@ -164,16 +144,26 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         navigation_view.popped.connect (update_navigation);
         navigation_view.pushed.connect (update_navigation);
+
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
+        backend.bind_property ("working", overlaybar, "active", SYNC_CREATE);
+
+        backend.notify ["job-type"].connect (() => {
+            update_overlaybar_label (backend.job_type);
+        });
+
+        update_overlaybar_label (backend.job_type);
     }
 
     public override bool close_request () {
         installed_view.clear ();
 
-        if (working) {
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
+        if (backend.working) {
             hide ();
 
-            notify["working"].connect (() => {
-                if (!visible && !working) {
+            backend.notify["working"].connect (() => {
+                if (!visible && !backend.working) {
                     destroy ();
                 }
             });
