@@ -28,8 +28,8 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     public bool mimetype { get; set; default = false; }
 
     private AppCenterCore.SearchEngine search_engine;
-    private GLib.ListModel list_store;
     private Gtk.SearchEntry search_entry;
+    private Gtk.Stack stack;
     private Granite.Placeholder alert_view;
 
     public SearchView (string search_term) {
@@ -62,8 +62,6 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         };
         headerbar.pack_start (new BackButton ());
 
-        list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
-
         search_engine = AppCenterCore.FlatpakBackend.get_default ().get_search_engine ();
 
         var selection_model = new Gtk.NoSelection (search_engine.results);
@@ -89,7 +87,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
-        var stack = new Gtk.Stack ();
+        stack = new Gtk.Stack ();
         stack.add_child (alert_view);
         stack.add_child (scrolled);
 
@@ -151,6 +149,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         } else {
             alert_view.description = _("The search term must be at least 3 characters long.");
+            stack.visible_child = alert_view;
         }
 
         if (mimetype) {
