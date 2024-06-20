@@ -18,6 +18,7 @@ public class AppCenterCore.SearchManager : Object {
                 unique_packages[package_component_id] = package;
             }
         }
+
         this.packages.splice (0, 0, unique_packages.values.to_array ());
     }
 
@@ -25,8 +26,16 @@ public class AppCenterCore.SearchManager : Object {
         packages = new ListStore (typeof (Package));
 
         var filter_model = new Gtk.FilterListModel (packages, new Gtk.CustomFilter ((obj) => {
+            var package = (Package) obj;
+
+            if (category != null && !package.component.is_member_of_category (category)) {
+                return false;
+            }
+
             return ((Package) obj).matches_search (query) > 0;
-        }));
+        })) {
+            incremental = true
+        };
 
         var sort_model = new Gtk.SortListModel (filter_model, new Gtk.CustomSorter ((obj1, obj2) => {
             var package1 = (Package) obj1;
