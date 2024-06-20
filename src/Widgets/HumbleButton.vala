@@ -20,7 +20,7 @@
 public class AppCenter.Widgets.HumbleButton : Gtk.Button {
     public signal void download_requested ();
 
-    public AppCenterCore.Package package { get; construct; }
+    public AppCenterCore.Package package { get; set; }
 
     private int _amount = 1;
     public int amount {
@@ -67,10 +67,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
             }
 #endif
         }
-    }
-
-    public HumbleButton (AppCenterCore.Package package) {
-        Object (package: package);
     }
 
     construct {

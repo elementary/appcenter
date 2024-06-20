@@ -19,7 +19,34 @@
  */
 
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
-    public AppCenterCore.Package package { get; construct set; }
+    private AppCenterCore.Package _package;
+    public AppCenterCore.Package package {
+        get {
+            return _package;
+        }
+        set {
+            _package = value;
+
+            action_stack.package = package;
+
+            var scale_factor = get_scale_factor ();
+
+            var plugin_host_package = package.get_plugin_host_package ();
+            if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
+                app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
+                badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
+
+                app_icon_overlay.add_overlay (badge_image);
+            } else {
+                app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
+
+                if (package.is_runtime_updates) {
+                    badge_image.icon_name = "system-software-update";
+                    app_icon_overlay.add_overlay (badge_image);
+                }
+            }
+        }
+    }
 
     public bool action_sensitive {
         set {
@@ -33,10 +60,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
 
     private Gtk.Image app_icon;
     private Gtk.Image badge_image;
-
-    protected AbstractPackageRowGrid (AppCenterCore.Package package) {
-        Object (package: package);
-    }
 
     construct {
         app_icon = new Gtk.Image () {
@@ -53,7 +76,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
             child = app_icon
         };
 
-        action_stack = new ActionStack (package) {
+        action_stack = new ActionStack () {
             show_open = false
         };
 
@@ -61,24 +84,5 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
         margin_start = 12;
         margin_bottom = 6;
         margin_end = 12;
-    }
-
-    protected void update_package (AppCenterCore.Package package) {
-        var scale_factor = get_scale_factor ();
-
-        var plugin_host_package = package.get_plugin_host_package ();
-        if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
-            app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
-            badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
-
-            app_icon_overlay.add_overlay (badge_image);
-        } else {
-            app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
-
-            if (package.is_runtime_updates) {
-                badge_image.icon_name = "system-software-update";
-                app_icon_overlay.add_overlay (badge_image);
-            }
-        }
     }
 }

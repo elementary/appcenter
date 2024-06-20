@@ -4,23 +4,31 @@
  */
 
 public class AppCenter.ProgressButton : Gtk.Button {
-    public AppCenterCore.Package package { get; construct; }
+    private AppCenterCore.Package? _package;
+    public AppCenterCore.Package package {
+        get {
+            return _package;
+        } set {
+            if (package != null) {
+                package.change_information.progress_changed.disconnect (update_progress);
+                package.change_information.status_changed.disconnect (update_progress_status);
+            }
+
+            _package = value;
+
+            package.change_information.progress_changed.connect (update_progress);
+            package.change_information.status_changed.connect (update_progress_status);
+
+            update_progress_status ();
+            update_progress ();
+        }
+    }
 
     private Gtk.ProgressBar progressbar;
-
-    public ProgressButton (AppCenterCore.Package package) {
-        Object (package: package);
-    }
 
     construct {
         add_css_class ("progress");
         add_css_class ("text-button");
-
-        package.change_information.progress_changed.connect (update_progress);
-        package.change_information.status_changed.connect (update_progress_status);
-
-        update_progress_status ();
-        update_progress ();
 
         var cancel_label = new Gtk.Label (_("Cancel")) {
             mnemonic_widget = this

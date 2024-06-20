@@ -193,7 +193,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             overflow = VISIBLE
         };
 
-        action_stack = new ActionStack (package);
+        action_stack = new ActionStack ();
+        action_stack.package = package;
 
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             halign = Gtk.Align.END,

@@ -25,17 +25,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Revealer release_button_revealer;
 
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
-        Object (package: package);
+        this.package = package;
 
-        if (action_size_group != null) {
-            action_size_group.add_widget (action_stack.action_button);
-            action_size_group.add_widget (action_stack.cancel_button);
-        }
-
-        set_up_package ();
-    }
-
-    construct {
         app_icon_overlay.margin_end = 12;
 
         action_stack.updates_view = true;
@@ -89,6 +80,13 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             };
             releases_dialog.present ();
         });
+
+        if (action_size_group != null) {
+            action_size_group.add_widget (action_stack.action_button);
+            action_size_group.add_widget (action_stack.cancel_button);
+        }
+
+        set_up_package ();
     }
 
     private void set_up_package () {

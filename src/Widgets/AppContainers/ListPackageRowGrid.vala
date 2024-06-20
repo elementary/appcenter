@@ -21,7 +21,9 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     private Gtk.Label package_summary;
 
     public ListPackageRowGrid (AppCenterCore.Package? package) {
-        Object (package: package);
+        if (package != null) {
+            bind (package);
+        }
     }
 
     construct {
@@ -67,6 +69,6 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         package_name.label = package.get_name ();
         package_summary.label = package.get_summary ();
 
-        update_package (package);
+        this.package = package;
     }
 }
