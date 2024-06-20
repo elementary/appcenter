@@ -766,33 +766,29 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public uint cached_search_prio = 0;
-    public uint matches_search (string search_term) {
-        cached_search_prio = component.search_matches (search_term);
-        return cached_search_prio;
-        //  if (search_term == "") {
-        //      return true;
-        //  }
+    public uint cached_search_score = 0;
+    public uint matches_search (string[] queries) {
+        // TODO: We don't use AppStream.Component.search_matches_all because it has some broken vapi
+        // (or at least I think so: the c code takes gchar** but vapi says string)
 
-        //  var _search_term = search_term.down ();
+        if (queries.length == 0) {
+            cached_search_score = 0;
+            return 0;
+        }
 
-        //  if (_search_term in get_name ().down ()) {
-        //      return true;
-        //  }
+        uint score = 0;
+        foreach (var query in queries) {
+            var query_score = component.search_matches (query);
 
-        //  if (_search_term in get_summary ().down ()) {
-        //      return true;
-        //  }
+            if (query_score == 0) {
+                score = 0;
+                break;
+            }
 
-        //  if (_search_term in get_description ().down ()) {
-        //      return true;
-        //  }
-
-        //  if (_search_term in component.get_keywords_table ()) {
-        //      return true;
-        //  }
-
-        //  return false;
+            score += query_score;
+        }
+        cached_search_score = score / queries.length;
+        return cached_search_score;
     }
 
     private string convert_version (string version) {

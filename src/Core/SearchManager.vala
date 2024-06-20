@@ -1,12 +1,14 @@
-public class AppCenterCore.SearchManager : Object {
-    private ListStore packages;
 
+public class AppCenterCore.SearchManager : Object {
     public ListModel results { get; construct; }
 
-    public string query { get; private set; }
-    public AppStream.Category? category { get; private set; }
+    private ListStore packages;
+    private AppStream.Pool pool;
 
-    public SearchManager (Package[] packages) {
+    private string[] query;
+    private AppStream.Category? category;
+
+    public SearchManager (Package[] packages, AppStream.Pool pool) {
         var unique_packages = new Gee.HashMap<string, Package> ();
         foreach (var package in packages) {
             var package_component_id = package.normalized_component_id;
@@ -20,6 +22,7 @@ public class AppCenterCore.SearchManager : Object {
         }
 
         this.packages.splice (0, 0, unique_packages.values.to_array ());
+        this.pool = pool;
     }
 
     construct {
@@ -40,15 +43,15 @@ public class AppCenterCore.SearchManager : Object {
         var sort_model = new Gtk.SortListModel (filter_model, new Gtk.CustomSorter ((obj1, obj2) => {
             var package1 = (Package) obj1;
             var package2 = (Package) obj2;
-            return (int) (package2.cached_search_prio - package1.cached_search_prio);
+            return (int) (package2.cached_search_score - package1.cached_search_score);
         }));
 
         results = sort_model;
     }
 
     public void search (string query, AppStream.Category? category) {
-        this.query = query;
-        this.category = category; // TODO
+        this.query = pool.build_search_tokens (query);
+        this.category = category;
         packages.items_changed (0, packages.n_items, packages.n_items);
     }
 }
