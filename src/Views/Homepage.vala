@@ -332,9 +332,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
-                    warning ("CHECK INSTALLED");
                     if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
-                        warning ("CHECKED INSTALLED");
                         installed = true;
                         break;
                     }
