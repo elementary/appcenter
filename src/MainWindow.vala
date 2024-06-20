@@ -209,7 +209,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             });
         }
 
-        navigation_view.push (installed_view);
+        if (installed_view.parent != null) {
+            navigation_view.pop_to_page (installed_view);
+        } else {
+            navigation_view.push (installed_view);
+        }
     }
 
     public void search (string term = "", bool mimetype = false) {
