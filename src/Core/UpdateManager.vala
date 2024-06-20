@@ -25,9 +25,10 @@ public class AppCenterCore.UpdateManager : Object {
     public signal void installed_apps_changed ();
     public signal void cache_update_failed (Error error);
 
+    public ListStore updates_liststore { public get; private set; }
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
-    public uint updates_number { get; private set; default = 0U; }
+    public uint updates_number { get; set; default = 0U; }
     public uint64 updates_size { get; private set; default = 0ULL; }
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
@@ -38,6 +39,9 @@ public class AppCenterCore.UpdateManager : Object {
     private bool refresh_in_progress = false;
 
     construct {
+        updates_liststore = new ListStore (typeof (AppCenterCore.Package));
+        updates_liststore.bind_property ("n-items", this, "updates-number");
+
         var runtime_icon = new AppStream.Icon ();
         runtime_icon.set_name ("application-vnd.flatpak");
         runtime_icon.set_kind (AppStream.IconKind.STOCK);
@@ -56,8 +60,7 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
-        var apps_with_updates = new Gee.TreeSet<Package> ();
-        updates_number = 0;
+        updates_liststore.remove_all ();
         unpaid_apps_number = 0;
         updates_size = 0ULL;
 
@@ -79,13 +82,12 @@ public class AppCenterCore.UpdateManager : Object {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", flatpak_update);
-                apps_with_updates.add (appcenter_package);
+                updates_liststore.insert_sorted (appcenter_package, compare_package_func);
 
                 if (appcenter_package.should_pay) {
                     unpaid_apps_number++;
                 }
 
-                updates_number++;
                 updates_size += appcenter_package.change_information.size;
 
                 appcenter_package.change_information.updatable_packages.add (flatpak_update);
@@ -131,23 +133,23 @@ public class AppCenterCore.UpdateManager : Object {
             }
         }
 
-        if (runtime_count == 0) {
-            debug ("No runtime updates found");
-            var latest_version = _("No runtimes with updates");
-            runtime_updates.latest_version = latest_version;
-            runtime_updates.description = GLib.Markup.printf_escaped ("%s\n", latest_version);
-        } else {
+        if (runtime_count > 0) {
             debug ("%u runtime updates found", runtime_count);
-            var latest_version = ngettext ("%u runtimes with updates", "%u runtimes with updates", runtime_count).printf (runtime_count);
+            var latest_version = ngettext (
+                "%u runtimes with updates",
+                "%u runtimes with updates",
+                runtime_count
+            ).printf (runtime_count);
             runtime_updates.latest_version = latest_version;
             runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
+
+            var runtime_updates_size = yield runtime_updates.get_download_size_including_deps ();
+            if (runtime_updates_size > 0) {
+                updates_liststore.insert_sorted (runtime_updates, compare_package_func);
+            }
         }
 
         debug ("%u app updates found", updates_number);
-
-        if (runtime_count > 0) {
-            updates_number += 1;
-        }
 
         if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
             var application = Application.get_default ();
@@ -280,6 +282,51 @@ public class AppCenterCore.UpdateManager : Object {
             }
 
             get_updates.begin ();
+        }
+    }
+
+    private int compare_package_func (Object object1, Object object2) {
+        var package1 = (AppCenterCore.Package) object1;
+        var package2 = (AppCenterCore.Package) object2;
+
+        bool a_is_runtime = false;
+        bool a_is_updating = false;
+        string a_package_name = "";
+        if (package1 != null) {
+            a_is_runtime = package1.is_runtime_updates;
+            a_is_updating = package1.is_updating;
+            a_package_name = package1.get_name ();
+        }
+
+        bool b_is_runtime = false;
+        bool b_is_updating = false;
+        string b_package_name = "";
+        if (package2 != null) {
+            b_is_runtime = package2.is_runtime_updates;
+            b_is_updating = package2.is_updating;
+            b_package_name = package2.get_name ();
+        }
+
+        // The currently updating package is always top of the list
+        if (a_is_updating || b_is_updating) {
+            return a_is_updating ? -1 : 1;
+        }
+
+        // Ensures runtime updates are sorted to the top amongst up-to-date packages but below OS updates
+        if (a_is_runtime || b_is_runtime) {
+            return a_is_runtime ? -1 : 1;
+        }
+
+        return a_package_name.collate (b_package_name); /* Else sort in name order */
+    }
+
+    public async void add_app (AppCenterCore.Package package) {
+        var installed_apps = yield AppCenterCore.FlatpakBackend.get_default ().get_installed_applications ();
+        foreach (var app in installed_apps) {
+            if (app == package) {
+                updates_liststore.insert_sorted (package, compare_package_func);
+                break;
+            }
         }
     }
 

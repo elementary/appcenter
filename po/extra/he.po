@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 21:00+0000\n"
+"POT-Creation-Date: 2024-06-19 15:35+0000\n"
 "PO-Revision-Date: 2024-05-16 05:45+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -54,8 +54,8 @@ msgstr "תשלום כראות עיניך לתמיכה במפתחים"
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:93
-#: data/appcenter.metainfo.xml.in:113 data/appcenter.metainfo.xml.in:141
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:97
+#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:145
 msgid "New features:"
 msgstr "יכולות חדשות:"
 
@@ -63,9 +63,9 @@ msgstr "יכולות חדשות:"
 msgid "Manage autostart in System Settings → Applications"
 msgstr "ניהול עלייה אוטומטית דרך הגדרות ← יישוימם"
 
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:132
-#: data/appcenter.metainfo.xml.in:146
+#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:101
+#: data/appcenter.metainfo.xml.in:121 data/appcenter.metainfo.xml.in:136
+#: data/appcenter.metainfo.xml.in:150
 msgid "Other Improvements:"
 msgstr "שיפורים נוספים:"
 
@@ -84,21 +84,21 @@ msgstr ""
 "יישומי עיטור שנוצרו עבור elementary OS במקום הוספת עיטורים על יישומים "
 "ממקורות זרים"
 
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:100
-#: data/appcenter.metainfo.xml.in:122 data/appcenter.metainfo.xml.in:134
-#: data/appcenter.metainfo.xml.in:148
+#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:104
+#: data/appcenter.metainfo.xml.in:126 data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:152
 msgid "Updated translations"
 msgstr "תרגומים עודכנו"
 
-#: data/appcenter.metainfo.xml.in:95
+#: data/appcenter.metainfo.xml.in:99
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr "להזהיר כאשר יישומונים משתמשים בהפעלה אוטומטית או התראות מיושנות"
 
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:103
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr "תוקן הבהוב בתצוגות מידע על היישומון בעת אחזור גודל התקנה"
 
-#: data/appcenter.metainfo.xml.in:115
+#: data/appcenter.metainfo.xml.in:119
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -106,24 +106,24 @@ msgstr ""
 "להזהיר כאשר ליישומים יש גישה לתיקיית הבית או לתיקיות המערכת, מיקום, הגדרות "
 "או שיש להם ארגז חול לא מאובטח."
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:123
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "הריווח והשוליים הודקו בתצוגות פרטי יישומים"
 
-#: data/appcenter.metainfo.xml.in:120
+#: data/appcenter.metainfo.xml.in:124
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "הצגת כרזות מילוי מקום בעמוד הבית בזמן הטעינה"
 
-#: data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:125
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "לא להציג יישומים שאינם של מרכז היישומים תחת כותרת נפרדת בתצוגות קטגוריות"
 
-#: data/appcenter.metainfo.xml.in:143
+#: data/appcenter.metainfo.xml.in:147
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "מוצעת אפשרות תיקון אם עדכון Flatpak נכשל"
 
-#: data/appcenter.metainfo.xml.in:144
+#: data/appcenter.metainfo.xml.in:148
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

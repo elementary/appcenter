@@ -60,7 +60,28 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         stack.add_child (spinner);
         stack.add_child (scrolled);
 
-        child = stack;
+        var title_label = new Gtk.Label (category.name);
+        title_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
+
+        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
+            action_name = "win.search",
+            /// TRANSLATORS: the action of searching
+            tooltip_text = C_("action", "Search")
+        };
+        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+        var headerbar = new Gtk.HeaderBar () {
+            title_widget = title_label
+        };
+        headerbar.pack_start (new BackButton ());
+        headerbar.pack_end (search_button);
+
+        var toolbar_view = new Adw.ToolbarView () {
+            content = stack
+        };
+        toolbar_view.add_top_bar (headerbar);
+
+        child = toolbar_view;
         title = category.name;
 
         populate ();

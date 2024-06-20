@@ -288,12 +288,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         return job;
     }
 
-    public async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
-        var prepared_apps = new Gee.HashSet<PackageDetails> ();
-
-        return prepared_apps;
-    }
-
     private void get_installed_packages_internal (Job job) {
         unowned var args = (GetInstalledPackagesArgs)job.args;
         unowned var cancellable = args.cancellable;
@@ -942,20 +936,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         var job = yield launch_job (Job.Type.IS_PACKAGE_INSTALLED, job_args);
 
         return job.result.get_boolean ();
-    }
-
-    public async PackageDetails get_package_details (Package package) throws GLib.Error {
-        var details = new PackageDetails ();
-        details.name = package.component.get_name ();
-        details.description = package.component.get_description ();
-        details.summary = package.component.get_summary ();
-
-        var newest_version = package.get_newest_release ();
-        if (newest_version != null) {
-            details.version = newest_version.get_version ();
-        }
-
-        return details;
     }
 
     private void refresh_cache_internal (Job job) {

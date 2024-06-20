@@ -187,7 +187,7 @@ public class AppCenter.ActionStack : Gtk.Box {
             }
         } else {
             if (yield package.install ()) {
-                MainWindow.installed_view.add_app.begin (package);
+                AppCenterCore.UpdateManager.get_default ().add_app.begin (package);
             }
         }
     }
