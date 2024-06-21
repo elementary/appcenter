@@ -29,6 +29,9 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
     private AppCenterCore.SearchEngine search_engine;
     private Gtk.SearchEntry search_entry;
+    private Gtk.NoSelection selection_model;
+    private Gtk.ListView list_view;
+    private Gtk.ScrolledWindow scrolled;
     private Gtk.Stack stack;
     private Granite.Placeholder alert_view;
 
@@ -64,7 +67,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         search_engine = AppCenterCore.FlatpakBackend.get_default ().get_search_engine ();
 
-        var selection_model = new Gtk.NoSelection (search_engine.results);
+        selection_model = new Gtk.NoSelection (search_engine.results);
 
         var factory = new Gtk.SignalListItemFactory ();
         factory.setup.connect ((obj) => {
@@ -76,13 +79,13 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             ((Widgets.ListPackageRowGrid) list_item.child).bind ((AppCenterCore.Package) list_item.item);
         });
 
-        var list_view = new Gtk.ListView (selection_model, factory) {
+        list_view = new Gtk.ListView (selection_model, factory) {
             single_click_activate = true,
             hexpand = true,
             vexpand = true
         };
 
-        var scrolled = new Gtk.ScrolledWindow () {
+        scrolled = new Gtk.ScrolledWindow () {
             child = list_view,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
@@ -106,15 +109,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             search_entry.grab_focus ();
         });
 
-        selection_model.items_changed.connect (() => {
-            list_view.scroll_to (0, NONE, null);
-
-            if (selection_model.n_items > 0) {
-                stack.visible_child = scrolled;
-            } else {
-                stack.visible_child = alert_view;
-            }
-        });
+        selection_model.items_changed.connect (on_items_changed);
 
         list_view.activate.connect ((index) => {
             show_app ((AppCenterCore.Package) search_engine.results.get_item (index));
@@ -134,6 +129,16 @@ public class AppCenter.SearchView : Adw.NavigationPage {
                     break;
             }
         });
+    }
+
+    private void on_items_changed () {
+        list_view.scroll_to (0, NONE, null);
+
+        if (selection_model.n_items > 0) {
+            stack.visible_child = scrolled;
+        } else {
+            stack.visible_child = alert_view;
+        }
     }
 
     private void search () {
