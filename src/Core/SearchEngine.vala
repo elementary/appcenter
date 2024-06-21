@@ -63,9 +63,10 @@ public class AppCenterCore.SearchEngine : Object {
 
     /**
      * This should be called if the engine is no longer needed.
-     * We need this because thanks to the delegates we get a reference cycle,
+     * We need this because thanks to how vala sets delegates we get a reference cycle,
      * where the filter and sorter keep a reference on us and we on them.
      * Setting results to null will free them and they will in turn free us.
+     * https://gitlab.gnome.org/GNOME/vala/-/issues/957
      */
     public void cleanup () {
         results = null;
