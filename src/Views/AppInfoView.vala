@@ -750,15 +750,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             vexpand = true
         };
 
-        var toast = new Granite.Toast (_("Link copied to clipboard"));
-
-        var overlay = new Gtk.Overlay () {
-            child = scrolled
-        };
-        overlay.add_overlay (toast);
-
         var toolbar_view = new Adw.ToolbarView () {
-            content = overlay,
+            content = scrolled,
             top_bar_style = RAISED
         };
         toolbar_view.add_top_bar (headerbar);
@@ -766,36 +759,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         child = toolbar_view;
         title = package.get_name ();
         tag = package.hash;
-
-        if (package.is_shareable) {
-            var body = _("Check out %s on AppCenter:").printf (package.get_name ());
-            var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
-            var share_popover = new SharePopover (body, uri);
-
-            var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic") {
-                valign = Gtk.Align.CENTER
-            };
-
-            var share_label = new Gtk.Label (_("Share"));
-
-            var share_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-            share_box.append (share_icon);
-            share_box.append (share_label);
-
-            var share_button = new Gtk.MenuButton () {
-                child = share_box,
-                has_frame = false,
-                direction = Gtk.ArrowType.UP,
-                popover = share_popover
-            };
-            share_button.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-
-            share_popover.link_copied.connect (() => {
-                //  toast.send_notification ();
-            });
-
-            links_flowbox.append (share_button);
-        }
 
         package.notify["state"].connect (on_package_state_changed);
         on_package_state_changed ();

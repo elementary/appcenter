@@ -11,13 +11,8 @@
     <file alias="48x48/categories/appcenter-finance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">finance-symbolic.svg</file>
 
     <file alias="16x16/categories/currency-dollar-symbolic.svg" compressed="true" preprocess="xml-stripblanks">currency-dollar-symbolic.svg</file>
-    <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">online-account-facebook.svg</file>
     <file alias="16x16/apps/internet-mail-symbolic.svg"compressed="true" preprocess="xml-stripblanks">internet-mail-symbolic.svg</file>
     <file alias="16x16/apps/web-browser-symbolic.svg" compressed="true" preprocess="xml-stripblanks">web-browser-symbolic.svg</file>
-    <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">online-account-reddit.svg</file>
-    <file alias="online-account-tumblr.svg" compressed="true" preprocess="xml-stripblanks">online-account-tumblr.svg</file>
-    <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>
-    <file alias="online-account-telegram.svg" compressed="true" preprocess="xml-stripblanks">online-account-telegram.svg</file>
     <file alias="16x16/mimetypes/text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
 
     <file alias="scalable/categories/flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>

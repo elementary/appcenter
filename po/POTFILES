@@ -32,7 +32,6 @@ src/Widgets/HumbleButton.vala
 src/Widgets/PackageRow.vala
 src/Widgets/ProgressButton.vala
 src/Widgets/ReleaseRow.vala
-src/Widgets/SharePopover.vala
 src/Widgets/SizeLabel.vala
 src/Widgets/AppContainers/AbstractPackageRowGrid.vala
 src/Widgets/AppContainers/InstalledPackageRowGrid.vala
