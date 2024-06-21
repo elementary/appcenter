@@ -136,7 +136,7 @@ public class AppCenterCore.UpdateManager : Object {
         if (runtime_count > 0) {
             debug ("%u runtime updates found", runtime_count);
             var latest_version = ngettext (
-                "%u runtimes with updates",
+                "%u runtime with updates",
                 "%u runtimes with updates",
                 runtime_count
             ).printf (runtime_count);
