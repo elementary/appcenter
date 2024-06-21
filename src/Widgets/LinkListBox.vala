@@ -127,17 +127,20 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             ));
         }
 
-        var box = new Gtk.Box (HORIZONTAL, 0) {
-            homogeneous = true
+        var flowbox = new Gtk.FlowBox () {
+            column_spacing = 24,
+            max_children_per_line = 2,
+            row_spacing = 24,
+            selection_mode = NONE
         };
-        box.set_parent (this);
+        flowbox.set_parent (this);
 
         if (contribute_listbox.get_first_child != null) {
-            box.append (contribute_listbox);
+            flowbox.append (contribute_listbox);
         }
 
         if (contact_listbox.get_first_child != null) {
-            box.append (contact_listbox);
+            flowbox.append (contact_listbox);
         }
 
         contact_listbox.row_activated.connect ((row) => {

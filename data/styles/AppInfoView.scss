@@ -140,10 +140,6 @@ appinfoview {
     }
 
     linklistbox {
-        box {
-            border-spacing: 2rem;
-        }
-
         row.link box {
             padding: 0 rem(6px);
             border-spacing: rem(12px);
