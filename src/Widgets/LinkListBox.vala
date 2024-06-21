@@ -20,6 +20,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
 
     construct {
         var contact_listbox = new Gtk.ListBox () {
+            accessible_role = GENERIC,
             hexpand = true,
             show_separators = true,
             selection_mode = NONE,
@@ -69,6 +70,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         }
 
         var contribute_listbox = new Gtk.ListBox () {
+            accessible_role = GENERIC,
             hexpand = true,
             show_separators = true,
             selection_mode = NONE,
@@ -141,6 +143,13 @@ public class AppCenter.LinkListBox : Gtk.Widget {
 
         if (contact_listbox.get_first_child != null) {
             flowbox.append (contact_listbox);
+        }
+
+        // Don't let invisible container get focus
+        var flowbox_child = flowbox.get_first_child ();
+        while (flowbox_child != null) {
+            flowbox_child.focusable = false;
+            flowbox_child = flowbox_child.get_next_sibling ();
         }
 
         contact_listbox.row_activated.connect ((row) => {
