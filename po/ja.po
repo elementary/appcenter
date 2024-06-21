@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 19:40+0000\n"
+"POT-Creation-Date: 2024-06-21 14:31+0000\n"
 "PO-Revision-Date: 2024-06-19 15:35+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "アプリをインストールしました"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:329 src/MainWindow.vala:238
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s”をインストールしました"
@@ -53,32 +53,32 @@ msgstr "“%s”をインストールしました"
 msgid "Failed to launch “%s“"
 msgstr "“%s”を起動できませんでした"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:86
 msgid "Network Not Available."
 msgstr "ネットワークが利用できません。"
 
-#: src/MainWindow.vala:89
+#: src/MainWindow.vala:87
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "アプリを検索したりインストールしたりするには、インターネットに接続してくださ"
 "い。"
 
-#: src/MainWindow.vala:99
+#: src/MainWindow.vala:97
 msgid "Network Settings…"
 msgstr "ネットワークの設定…"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:105
 msgid "Running in Demo Mode"
 msgstr "デモモードで実行しています"
 
-#: src/MainWindow.vala:108
+#: src/MainWindow.vala:106
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 "アプリを検索したりインストールしたりするには、%s をインストールしてください。"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:241 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "開く"
 
@@ -90,10 +90,10 @@ msgstr "待機しています"
 msgid "Finished"
 msgstr "完了しました"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1461
-#: src/Core/FlatpakBackend.vala:1485 src/Core/FlatpakBackend.vala:1593
-#: src/Core/FlatpakBackend.vala:1617 src/Core/FlatpakBackend.vala:1775
-#: src/Core/FlatpakBackend.vala:1793
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
+#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
+#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
+#: src/Core/FlatpakBackend.vala:1766
 msgid "Cancelling"
 msgstr "キャンセルしています"
 
@@ -110,43 +110,43 @@ msgstr "%s (全ユーザーへのインストール)"
 msgid "package operations are being performed"
 msgstr "パッケージ操作が進行中です"
 
-#: src/Core/FlatpakBackend.vala:1452
+#: src/Core/FlatpakBackend.vala:1425
 msgid "Installing"
 msgstr "インストールしています"
 
-#: src/Core/FlatpakBackend.vala:1584
+#: src/Core/FlatpakBackend.vala:1557
 msgid "Uninstalling"
 msgstr "アンインストールしています"
 
-#: src/Core/FlatpakBackend.vala:1766
+#: src/Core/FlatpakBackend.vala:1739
 msgid "Updating"
 msgstr "アップデートしています"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "アプリの情報を取得しています…"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Getting download size…"
 msgstr "ダウンロードサイズを取得しています…"
 
-#: src/Core/Job.vala:57
+#: src/Core/Job.vala:55
 msgid "Checking for updates…"
 msgstr "アップデートを確認しています…"
 
-#: src/Core/Job.vala:59
+#: src/Core/Job.vala:57
 msgid "Installing…"
 msgstr "インストールしています…"
 
-#: src/Core/Job.vala:61
+#: src/Core/Job.vala:59
 msgid "Installing updates…"
 msgstr "アップデートをインストールしています…"
 
-#: src/Core/Job.vala:63
+#: src/Core/Job.vala:61
 msgid "Uninstalling…"
 msgstr "アンインストールしています…"
 
-#: src/Core/Job.vala:65
+#: src/Core/Job.vala:63
 msgid "Repairing…"
 msgstr "修復しています…"
 
@@ -280,8 +280,10 @@ msgid "Version: %s"
 msgstr "バージョン: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, c-format
-msgid "%u runtimes with updates"
+#, fuzzy, c-format
+#| msgid "%u runtimes with updates"
+#| msgid_plural "%u runtimes with updates"
+msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "アップデートのあるランタイムが %u 項目あります"
 
@@ -428,7 +430,7 @@ msgstr "アプリをアンインストールしますか?"
 msgid "Uninstall “%s”?"
 msgstr "“%s”をアンインストールしますか?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:184
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:201
 msgid "Uninstall"
 msgstr "アンインストール"
 
@@ -483,203 +485,203 @@ msgid "Refresh Updates"
 msgstr "アップデートを再読み込み"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:77 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 msgctxt "action"
 msgid "Search"
 msgstr "検索"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:270
 msgid "Illicit Substances"
 msgstr "危険な薬物"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:271
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "アルコールや薬物、たばこが表示されたり、テキストに含まれたりします"
 
-#: src/Views/AppInfoView.vala:259
+#: src/Views/AppInfoView.vala:276
 msgid "Sex & Nudity"
 msgstr "性的描写やヌード画像"
 
-#: src/Views/AppInfoView.vala:260
+#: src/Views/AppInfoView.vala:277
 msgid "Adult nudity or sexual themes"
 msgstr "ヌードや性を題材にしたアダルトなコンテンツが含まれます"
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:282
 msgid "Offensive Language"
 msgstr "攻撃的な言葉"
 
-#: src/Views/AppInfoView.vala:266
+#: src/Views/AppInfoView.vala:283
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "失礼・差別的な言葉や、アダルトなジョークが含まれます"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:288
 msgid "Gambling"
 msgstr "ギャンブル"
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:289
 msgid "Realistic or participatory gambling"
 msgstr "現実味があるか、参加型のギャンブルです"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:313
 msgid "Made for elementary OS"
 msgstr "Made for elementary OS"
 
-#: src/Views/AppInfoView.vala:297
+#: src/Views/AppInfoView.vala:314
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "セキュリティ・プライバシー・システム統合が elementary によって審査済み"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:337
 msgid "May Not Be Translated"
 msgstr "未翻訳の可能性"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:338
 msgid "This app does not provide language information"
 msgstr "このアプリは言語情報を提供していません"
 
-#: src/Views/AppInfoView.vala:328
+#: src/Views/AppInfoView.vala:345
 msgid "Not Translated"
 msgstr "未翻訳"
 
-#: src/Views/AppInfoView.vala:329
+#: src/Views/AppInfoView.vala:346
 msgid "This app is not available in your language"
 msgstr "このアプリはお使いの言語で表示されません"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:353
 msgid "Not Fully Translated"
 msgstr "翻訳が不完全"
 
-#: src/Views/AppInfoView.vala:337
+#: src/Views/AppInfoView.vala:354
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "お使いの言語への翻訳率は %i%% です"
 
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:378
 msgid "Conflict"
 msgstr "戦闘"
 
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:379
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "危険な状況や攻撃的な戦闘に関する描写があります"
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:392
 msgid "Violence"
 msgstr "暴力"
 
-#: src/Views/AppInfoView.vala:380
+#: src/Views/AppInfoView.vala:397
 msgid "Fantasy Violence"
 msgstr "物語内での暴力"
 
-#: src/Views/AppInfoView.vala:385
+#: src/Views/AppInfoView.vala:402
 msgid "Graphic violence, bloodshed, or death"
 msgstr "暴力や血、死体が描画されます"
 
-#: src/Views/AppInfoView.vala:429
+#: src/Views/AppInfoView.vala:446
 msgid "Multiplayer"
 msgstr "マルチプレイ"
 
-#: src/Views/AppInfoView.vala:430
+#: src/Views/AppInfoView.vala:447
 msgid "Online play with other people"
 msgstr "他人とオンラインでプレイするゲームです"
 
-#: src/Views/AppInfoView.vala:446
+#: src/Views/AppInfoView.vala:463
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 "他人と行う、非承認性のオーディオ・ビデオ・テキストメッセージングアプリです"
 
-#: src/Views/AppInfoView.vala:448
+#: src/Views/AppInfoView.vala:465
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 "他人と行う、承認性のオーディオ・ビデオ・テキストメッセージングアプリです"
 
-#: src/Views/AppInfoView.vala:452
+#: src/Views/AppInfoView.vala:469
 msgid "Online Interactions"
 msgstr "インターネット通信"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:479
 msgid "Location Sharing"
 msgstr "位置情報の共有"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:480
 msgid "Other people can see your real-world location"
 msgstr "現実世界でのあなたの現在地を他人が確認できます"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:492
 msgid "Collects anonymous usage data"
 msgstr "匿名の使用状況データの収集"
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:495
 msgid "Collects usage data that could be used to identify you"
 msgstr "ユーザーの特定に使用される可能性があるユーザーデータが収集されます"
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:500
 msgid "Info Sharing"
 msgstr "情報の共有"
 
-#: src/Views/AppInfoView.vala:580
+#: src/Views/AppInfoView.vala:597
 msgid "Screenshot Not Available"
 msgstr "スクリーンショット表示不可"
 
-#: src/Views/AppInfoView.vala:608
+#: src/Views/AppInfoView.vala:625
 msgid "What's New:"
 msgstr "更新情報:"
 
-#: src/Views/AppInfoView.vala:635
+#: src/Views/AppInfoView.vala:652
 msgid "Extensions:"
 msgstr "拡張機能:"
 
-#: src/Views/AppInfoView.vala:666
+#: src/Views/AppInfoView.vala:683
 msgid "Homepage"
 msgstr "ホームページ"
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:689
 msgid "Translate"
 msgstr "翻訳作業に参加"
 
-#: src/Views/AppInfoView.vala:678
+#: src/Views/AppInfoView.vala:695
 msgid "Send Feedback"
 msgstr "フィードバックを送信"
 
-#: src/Views/AppInfoView.vala:684
+#: src/Views/AppInfoView.vala:701
 msgid "Help"
 msgstr "ヘルプ"
 
-#: src/Views/AppInfoView.vala:732
+#: src/Views/AppInfoView.vala:749
 msgid "Link copied to clipboard"
 msgstr "リンクをクリップボードにコピーしました"
 
-#: src/Views/AppInfoView.vala:750
+#: src/Views/AppInfoView.vala:767
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "AppCenter で %s を確認:"
 
-#: src/Views/AppInfoView.vala:758
+#: src/Views/AppInfoView.vala:775
 msgid "Share"
 msgstr "共有"
 
-#: src/Views/AppInfoView.vala:845
+#: src/Views/AppInfoView.vala:866
 msgid "End of Life"
 msgstr "サポート終了"
 
-#: src/Views/AppInfoView.vala:846
+#: src/Views/AppInfoView.vala:867
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "想定通りに動作しないか、セキュリティアップデートを受けられない可能性がありま"
 "す"
 
-#: src/Views/AppInfoView.vala:852
+#: src/Views/AppInfoView.vala:873
 msgid "Outdated"
 msgstr "旧バージョン"
 
-#: src/Views/AppInfoView.vala:853
+#: src/Views/AppInfoView.vala:874
 msgid "May not work as expected or support the latest features"
 msgstr "想定通りに動作しないか、最新機能に対応していない可能性があります"
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:882
 msgid "Unstable"
 msgstr "不安定版"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:883
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -688,28 +690,28 @@ msgstr ""
 "%s の不安定版向けに開発されているので、重大な不具合が発生する可能性がありま"
 "す。本番環境での使用は推奨しません。"
 
-#: src/Views/AppInfoView.vala:875
+#: src/Views/AppInfoView.vala:896
 msgid "Insecure Sandbox"
 msgstr "安全でないサンドボックス"
 
-#: src/Views/AppInfoView.vala:876
+#: src/Views/AppInfoView.vala:897
 msgid "Can ignore or modify its own system permissions"
 msgstr "アプリに与えられたシステムパーミッションを無視または変更できます"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:906
 msgid "System Folder Access"
 msgstr "システムフォルダーへのアクセス"
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:907
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "全ユーザーのホームフォルダーを含めたアクセスが可能です (システム内部は除く)"
 
-#: src/Views/AppInfoView.vala:893
+#: src/Views/AppInfoView.vala:914
 msgid "Home Folder Access"
 msgstr "ホームフォルダーへのアクセス"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:915
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -717,74 +719,74 @@ msgstr ""
 "ドキュメント、ダウンロード、ミュージック、ピクチャー、ビデオフォルダー、およ"
 "びすべての隠しフォルダーを含めたアクセスが可能です"
 
-#: src/Views/AppInfoView.vala:903
+#: src/Views/AppInfoView.vala:924
 msgid "Legacy Autostart"
 msgstr "旧来の自動起動システム"
 
-#: src/Views/AppInfoView.vala:904
+#: src/Views/AppInfoView.vala:925
 msgid "Can automatically start up and run in the background without asking"
 msgstr "許可なく自動起動とバックグラウンド実行が可能です"
 
-#: src/Views/AppInfoView.vala:913
+#: src/Views/AppInfoView.vala:934
 msgid "Location Access"
 msgstr "位置情報へのアクセス"
 
-#: src/Views/AppInfoView.vala:914
+#: src/Views/AppInfoView.vala:935
 msgid "Can see your precise location at any time without asking"
 msgstr "許可なくいつでもユーザーの正確な現在地の検出が可能です"
 
-#: src/Views/AppInfoView.vala:923
+#: src/Views/AppInfoView.vala:944
 msgid "Legacy Notifications"
 msgstr "旧来の通知システム"
 
-#: src/Views/AppInfoView.vala:924
+#: src/Views/AppInfoView.vala:945
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "通知バブルが設定不能か、通知センターに“そのほか”のカテゴリーとして表示されま"
 "す"
 
-#: src/Views/AppInfoView.vala:933
+#: src/Views/AppInfoView.vala:954
 msgid "System Settings Access"
 msgstr "システム設定へのアクセス"
 
-#: src/Views/AppInfoView.vala:934
+#: src/Views/AppInfoView.vala:955
 msgid "Can read and modify system settings"
 msgstr "システム設定を読み書きできます"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1149
+#: src/Views/AppInfoView.vala:1170
 msgid "Public Domain"
 msgstr "パブリックドメイン"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1152
+#: src/Views/AppInfoView.vala:1173
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ja.wikipedia.org/wiki/パブリックドメイン"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1157
+#: src/Views/AppInfoView.vala:1178
 msgid "Free Software"
 msgstr "自由ソフトウェア"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1160
+#: src/Views/AppInfoView.vala:1181
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ja.html"
 
-#: src/Views/AppInfoView.vala:1164
+#: src/Views/AppInfoView.vala:1185
 msgid "Proprietary"
 msgstr "プロプライエタリー"
 
-#: src/Views/AppInfoView.vala:1167
+#: src/Views/AppInfoView.vala:1188
 msgid "Unknown License"
 msgstr "不明なライセンス"
 
-#: src/Views/AppInfoView.vala:1248
+#: src/Views/AppInfoView.vala:1269
 msgid "Fund"
 msgstr "資金提供"
 
-#: src/Views/AppInfoView.vala:1254
+#: src/Views/AppInfoView.vala:1275
 msgid "Fund the development of this app"
 msgstr "このアプリの開発に資金を提供します"
 
@@ -828,13 +830,13 @@ msgctxt "view"
 msgid "Installed"
 msgstr "インストール済み"
 
-#: src/Views/AppListUpdateView.vala:265
+#: src/Views/AppListUpdateView.vala:269
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u 件のアップデートが利用可能です"
 
-#: src/Views/AppListUpdateView.vala:272
+#: src/Views/AppListUpdateView.vala:276
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "最新の状態です。最終確認: %s"
@@ -951,15 +953,15 @@ msgstr ""
 "りして、新しいアプリを見つけましょう。AppCenter は、新機能や修正のためシステ"
 "ムを最新かつ最高のバージョンへアップデートするときにも使われます。"
 
-#: src/Views/Homepage.vala:526
+#: src/Views/Homepage.vala:520
 msgid "Fun & Games"
 msgstr "エンタメとゲーム"
 
-#: src/Views/Homepage.vala:551
+#: src/Views/Homepage.vala:545
 msgid "Fun &"
 msgstr "エンタメと"
 
-#: src/Views/Homepage.vala:557
+#: src/Views/Homepage.vala:551
 msgid "Games"
 msgstr "ゲーム"
 
