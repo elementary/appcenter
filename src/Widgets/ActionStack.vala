@@ -4,8 +4,8 @@
  */
 
 public class AppCenter.ActionStack : Gtk.Box {
-    private AppCenterCore.Package _package;
-    public AppCenterCore.Package package {
+    private AppCenterCore.Package? _package;
+    public AppCenterCore.Package? package {
         get {
             return _package;
         }
@@ -170,12 +170,12 @@ public class AppCenter.ActionStack : Gtk.Box {
         }
     }
 
-    private void action_cancelled () {
+    private void action_cancelled () requires (package != null) {
         update_action ();
         package.action_cancellable.cancel ();
     }
 
-    private void launch_package_app () {
+    private void launch_package_app () requires (package != null) {
         try {
             package.launch ();
         } catch (Error e) {
@@ -183,7 +183,7 @@ public class AppCenter.ActionStack : Gtk.Box {
         }
     }
 
-    private async void action_clicked () {
+    private async void action_clicked () requires (package != null) {
         if (package.installed && !package.update_available) {
             action_button_revealer.reveal_child = false;
         } else if (package.update_available) {
