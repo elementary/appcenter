@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 19:40+0000\n"
+"POT-Creation-Date: 2024-06-21 14:40+0000\n"
 "PO-Revision-Date: 2024-05-31 08:13+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
@@ -55,7 +55,7 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "De app is met succes geïnstalleerd"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:329 src/MainWindow.vala:238
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” is geïnstalleerd"
@@ -65,30 +65,30 @@ msgstr "“%s” is geïnstalleerd"
 msgid "Failed to launch “%s“"
 msgstr "Het starten van “%s” is mislukt"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:86
 msgid "Network Not Available."
 msgstr "Geen netwerkverbinding."
 
-#: src/MainWindow.vala:89
+#: src/MainWindow.vala:87
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "Maak verbinding met het internet om apps te ontdekken en te installeren."
 
-#: src/MainWindow.vala:99
+#: src/MainWindow.vala:97
 msgid "Network Settings…"
 msgstr "Netwerkinstellingen…"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:105
 msgid "Running in Demo Mode"
 msgstr "Draait in demo-modus"
 
-#: src/MainWindow.vala:108
+#: src/MainWindow.vala:106
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Installeer %s om apps te bekijken en te installeren."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:241 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Open"
 
@@ -100,10 +100,10 @@ msgstr "Wachten"
 msgid "Finished"
 msgstr "Klaar"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1461
-#: src/Core/FlatpakBackend.vala:1485 src/Core/FlatpakBackend.vala:1593
-#: src/Core/FlatpakBackend.vala:1617 src/Core/FlatpakBackend.vala:1775
-#: src/Core/FlatpakBackend.vala:1793
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
+#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
+#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
+#: src/Core/FlatpakBackend.vala:1766
 msgid "Cancelling"
 msgstr "Annuleren"
 
@@ -120,43 +120,43 @@ msgstr "%s (systeem-breed)"
 msgid "package operations are being performed"
 msgstr "Pakketbewerkingen worden momenteel uitgevoerd"
 
-#: src/Core/FlatpakBackend.vala:1452
+#: src/Core/FlatpakBackend.vala:1425
 msgid "Installing"
 msgstr "Installeren"
 
-#: src/Core/FlatpakBackend.vala:1584
+#: src/Core/FlatpakBackend.vala:1557
 msgid "Uninstalling"
 msgstr "Deïnstalleren"
 
-#: src/Core/FlatpakBackend.vala:1766
+#: src/Core/FlatpakBackend.vala:1739
 msgid "Updating"
 msgstr "Updaten"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "App-informatie wordt opgehaald…"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Getting download size…"
 msgstr "Downloadgrootte wordt opgehaald…"
 
-#: src/Core/Job.vala:57
+#: src/Core/Job.vala:55
 msgid "Checking for updates…"
 msgstr "Controleren op updates…"
 
-#: src/Core/Job.vala:59
+#: src/Core/Job.vala:57
 msgid "Installing…"
 msgstr "Installeren…"
 
-#: src/Core/Job.vala:61
+#: src/Core/Job.vala:59
 msgid "Installing updates…"
 msgstr "Updates installeren…"
 
-#: src/Core/Job.vala:63
+#: src/Core/Job.vala:61
 msgid "Uninstalling…"
 msgstr "Verwijderen…"
 
-#: src/Core/Job.vala:65
+#: src/Core/Job.vala:63
 msgid "Repairing…"
 msgstr "Repareren…"
 
@@ -306,8 +306,10 @@ msgid "Version: %s"
 msgstr "Versie: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, c-format
-msgid "%u runtimes with updates"
+#, fuzzy, c-format
+#| msgid "%u runtimes with updates"
+#| msgid_plural "%u runtimes with updates"
+msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u runtime met updates"
 msgstr[1] "%u runtimes met updates"
@@ -456,7 +458,7 @@ msgstr "App verwijderen?"
 msgid "Uninstall “%s”?"
 msgstr "“%s” verwijderen?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:184
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:201
 msgid "Uninstall"
 msgstr "Verwijderen"
 
@@ -512,7 +514,7 @@ msgid "Refresh Updates"
 msgstr "Controleer op updates"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:77 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -521,201 +523,188 @@ msgctxt "action"
 msgid "Search"
 msgstr "Zoeken"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:270
 msgid "Illicit Substances"
 msgstr "Illegale middelen"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:271
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Bevat verwijzingen naar alcohol, verdovende middelen of tabak"
 
-#: src/Views/AppInfoView.vala:259
+#: src/Views/AppInfoView.vala:276
 msgid "Sex & Nudity"
 msgstr "Seks & naaktheid"
 
-#: src/Views/AppInfoView.vala:260
+#: src/Views/AppInfoView.vala:277
 msgid "Adult nudity or sexual themes"
 msgstr "Naaktheid of seksuele thema's"
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:282
 msgid "Offensive Language"
 msgstr "Aanstootgevend taalgebruik"
 
-#: src/Views/AppInfoView.vala:266
+#: src/Views/AppInfoView.vala:283
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 "Aanstootgevend taalgebruik, discriminerend taalgebruik of humor voor "
 "volwassenen"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:288
 msgid "Gambling"
 msgstr "Gokken"
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:289
 msgid "Realistic or participatory gambling"
 msgstr "Realistisch of participatief gokken"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:313
 msgid "Made for elementary OS"
 msgstr "Gemaakt voor elementary OS"
 
-#: src/Views/AppInfoView.vala:297
+#: src/Views/AppInfoView.vala:314
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 "Gecontroleerd door elementary op veiligheid, privacy en systeemintegratie"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:337
 msgid "May Not Be Translated"
 msgstr "Is mogelijk niet vertaald"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:338
 msgid "This app does not provide language information"
 msgstr "Deze app geeft geen taalinformatie vrij"
 
-#: src/Views/AppInfoView.vala:328
+#: src/Views/AppInfoView.vala:345
 msgid "Not Translated"
 msgstr "Niet vertaald"
 
-#: src/Views/AppInfoView.vala:329
+#: src/Views/AppInfoView.vala:346
 msgid "This app is not available in your language"
 msgstr "Deze app is niet beschikbaar in uw taal"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:353
 msgid "Not Fully Translated"
 msgstr "Niet volledig vertaald"
 
-#: src/Views/AppInfoView.vala:337
+#: src/Views/AppInfoView.vala:354
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Deze app is voor %i%% vertaald naar uw taal"
 
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:378
 msgid "Conflict"
 msgstr "Conflict"
 
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:379
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Afbeelding van onveilige situaties of gewelddadige conflicten"
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:392
 msgid "Violence"
 msgstr "Geweld"
 
-#: src/Views/AppInfoView.vala:380
+#: src/Views/AppInfoView.vala:397
 msgid "Fantasy Violence"
 msgstr "Fantasiegeweld"
 
-#: src/Views/AppInfoView.vala:385
+#: src/Views/AppInfoView.vala:402
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Grafisch geweld, bloedvergieten of dood"
 
-#: src/Views/AppInfoView.vala:429
+#: src/Views/AppInfoView.vala:446
 msgid "Multiplayer"
 msgstr "Multiplayer"
 
-#: src/Views/AppInfoView.vala:430
+#: src/Views/AppInfoView.vala:447
 msgid "Online play with other people"
 msgstr "Online samen spelen met andere mensen"
 
-#: src/Views/AppInfoView.vala:446
+#: src/Views/AppInfoView.vala:463
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Ongemodereerde Audio, Video of Tekst communicatie met andere mensen"
 
-#: src/Views/AppInfoView.vala:448
+#: src/Views/AppInfoView.vala:465
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Gemodereerde Audio, Video of Tekst communicatie met andere mensen"
 
-#: src/Views/AppInfoView.vala:452
+#: src/Views/AppInfoView.vala:469
 msgid "Online Interactions"
 msgstr "Online interactie"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:479
 msgid "Location Sharing"
 msgstr "Locatie delen"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:480
 msgid "Other people can see your real-world location"
 msgstr "Andere mensen kunnen uw werkelijke locatie zien"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:492
 msgid "Collects anonymous usage data"
 msgstr "Verzameld anonieme gebruiksgegevens"
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:495
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 "Verzameld gebruiksgegevens die mogelijk kunnen worden gebruikt om u te "
 "identificeren"
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:500
 msgid "Info Sharing"
 msgstr "Informatie delen"
 
-#: src/Views/AppInfoView.vala:580
+#: src/Views/AppInfoView.vala:597
 msgid "Screenshot Not Available"
 msgstr "Geen schermafbeelding beschikbaar"
 
-#: src/Views/AppInfoView.vala:608
+#: src/Views/AppInfoView.vala:625
 msgid "What's New:"
 msgstr "Wat er nieuw is:"
 
-#: src/Views/AppInfoView.vala:635
+#: src/Views/AppInfoView.vala:652
 msgid "Extensions:"
 msgstr "Uitbreidingen:"
 
-#: src/Views/AppInfoView.vala:666
+#: src/Views/AppInfoView.vala:683
 msgid "Homepage"
 msgstr "Startpagina"
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:689
 msgid "Translate"
 msgstr "Vertalen"
 
-#: src/Views/AppInfoView.vala:678
+#: src/Views/AppInfoView.vala:695
 msgid "Send Feedback"
 msgstr "Feedback geven"
 
-#: src/Views/AppInfoView.vala:684
+#: src/Views/AppInfoView.vala:701
 msgid "Help"
 msgstr "Hulp"
 
-#: src/Views/AppInfoView.vala:732
-msgid "Link copied to clipboard"
-msgstr "Link gekopieerd naar het klembord"
-
-#: src/Views/AppInfoView.vala:750
-#, c-format
-msgid "Check out %s on AppCenter:"
-msgstr "Ontdek %s in het AppCenter:"
-
-#: src/Views/AppInfoView.vala:758
-msgid "Share"
-msgstr "Deel"
-
-#: src/Views/AppInfoView.vala:845
+#: src/Views/AppInfoView.vala:829
 msgid "End of Life"
 msgstr "Levenscyclus beëindigt"
 
-#: src/Views/AppInfoView.vala:846
+#: src/Views/AppInfoView.vala:830
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "Kan mogelijk onverwacht gedrag vertonen of geen beveiligingsupdates ontvangen"
 
-#: src/Views/AppInfoView.vala:852
+#: src/Views/AppInfoView.vala:836
 msgid "Outdated"
 msgstr "Verouderd"
 
-#: src/Views/AppInfoView.vala:853
+#: src/Views/AppInfoView.vala:837
 msgid "May not work as expected or support the latest features"
 msgstr ""
 "Kan mogelijk onverwacht gedrag vertonen of niet beschikken over de nieuwste "
 "functionaliteit"
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:845
 msgid "Unstable"
 msgstr "Onstabiel"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:846
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -724,29 +713,29 @@ msgstr ""
 "Gemaakt voor een onstabiele versie van %s; kan mogelijk grote fouten "
 "bevatten. Het gebruik ervan wordt afgeraden op een productiesysteem."
 
-#: src/Views/AppInfoView.vala:875
+#: src/Views/AppInfoView.vala:859
 msgid "Insecure Sandbox"
 msgstr "Onveilige sandbox"
 
-#: src/Views/AppInfoView.vala:876
+#: src/Views/AppInfoView.vala:860
 msgid "Can ignore or modify its own system permissions"
 msgstr "Kan zijn eigen systeemrechten negeren of aanpassen"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:869
 msgid "System Folder Access"
 msgstr "Toegang tot de systeemmap"
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:870
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "Inclusief de Persoonlijke mappen van alle gebruikers, met uitzondering "
 "interne systeemonderdelen"
 
-#: src/Views/AppInfoView.vala:893
+#: src/Views/AppInfoView.vala:877
 msgid "Home Folder Access"
 msgstr "Toegang tot Persoonlijke map"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:878
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -754,77 +743,77 @@ msgstr ""
 "Inclusief alle documenten, downloads, muziek, foto's, video's, en alle "
 "verborgen mappen"
 
-#: src/Views/AppInfoView.vala:903
+#: src/Views/AppInfoView.vala:887
 msgid "Legacy Autostart"
 msgstr "Verouderde autostart"
 
-#: src/Views/AppInfoView.vala:904
+#: src/Views/AppInfoView.vala:888
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
 "Kan automatisch starten en op de achtergrond draaien zonder toestemming te "
 "vragen"
 
-#: src/Views/AppInfoView.vala:913
+#: src/Views/AppInfoView.vala:897
 msgid "Location Access"
 msgstr "Locatietoegang"
 
-#: src/Views/AppInfoView.vala:914
+#: src/Views/AppInfoView.vala:898
 msgid "Can see your precise location at any time without asking"
 msgstr ""
 "Kan altijd uw exacte locatie achterhalen zonder u om toestemming te vragen"
 
-#: src/Views/AppInfoView.vala:923
+#: src/Views/AppInfoView.vala:907
 msgid "Legacy Notifications"
 msgstr "Verouderde notificaties"
 
-#: src/Views/AppInfoView.vala:924
+#: src/Views/AppInfoView.vala:908
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Bubbels zijn mogelijk niet configureerbaar of verschijnen in het "
 "meldingscentrum als \"Andere\""
 
-#: src/Views/AppInfoView.vala:933
+#: src/Views/AppInfoView.vala:917
 msgid "System Settings Access"
 msgstr "Toegang tot systeeminstellingen"
 
-#: src/Views/AppInfoView.vala:934
+#: src/Views/AppInfoView.vala:918
 msgid "Can read and modify system settings"
 msgstr "Kan de systeeminstellingen lezen en aanpassen"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1149
+#: src/Views/AppInfoView.vala:1133
 msgid "Public Domain"
 msgstr "Publiek domein"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1152
+#: src/Views/AppInfoView.vala:1136
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://nl.wikipedia.org/wiki/Publiek_domein"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1157
+#: src/Views/AppInfoView.vala:1141
 msgid "Free Software"
 msgstr "Vrije software"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1160
+#: src/Views/AppInfoView.vala:1144
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1164
+#: src/Views/AppInfoView.vala:1148
 msgid "Proprietary"
 msgstr "Propriëtair"
 
-#: src/Views/AppInfoView.vala:1167
+#: src/Views/AppInfoView.vala:1151
 msgid "Unknown License"
 msgstr "Onbekende licentie"
 
-#: src/Views/AppInfoView.vala:1248
+#: src/Views/AppInfoView.vala:1232
 msgid "Fund"
 msgstr "Financier"
 
-#: src/Views/AppInfoView.vala:1254
+#: src/Views/AppInfoView.vala:1238
 msgid "Fund the development of this app"
 msgstr "Financier de ontwikkeling van deze app"
 
@@ -869,14 +858,14 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: src/Views/AppListUpdateView.vala:265
+#: src/Views/AppListUpdateView.vala:269
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u update beschikbaar"
 msgstr[1] "%u updates beschikbaar"
 
-#: src/Views/AppListUpdateView.vala:272
+#: src/Views/AppListUpdateView.vala:276
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Alles is up-to-date. Als laatste gecontroleerd op %s."
@@ -993,15 +982,15 @@ msgstr ""
 "apps. AppCenter wordt ook gebruikt voor het updaten van je systeem naar de "
 "nieuwste en beste versie voor nieuwe functies en verbeteringen."
 
-#: src/Views/Homepage.vala:526
+#: src/Views/Homepage.vala:520
 msgid "Fun & Games"
 msgstr "Plezier & Spelletjes"
 
-#: src/Views/Homepage.vala:551
+#: src/Views/Homepage.vala:545
 msgid "Fun &"
 msgstr "Plezier &"
 
-#: src/Views/Homepage.vala:557
+#: src/Views/Homepage.vala:551
 msgid "Games"
 msgstr "Spellen"
 
@@ -1088,30 +1077,6 @@ msgstr "Onbekende versie"
 msgid "No description available"
 msgstr "Geen beschrijving beschikbaar"
 
-#: src/Widgets/SharePopover.vala:35
-msgid "Facebook"
-msgstr "Facebook"
-
-#: src/Widgets/SharePopover.vala:39
-msgid "Twitter"
-msgstr "Twitter"
-
-#: src/Widgets/SharePopover.vala:43
-msgid "Reddit"
-msgstr "Reddit"
-
-#: src/Widgets/SharePopover.vala:47
-msgid "Tumblr"
-msgstr "Tumblr"
-
-#: src/Widgets/SharePopover.vala:51
-msgid "Telegram"
-msgstr "Telegram"
-
-#: src/Widgets/SharePopover.vala:55
-msgid "Copy link"
-msgstr "Kopieer link"
-
 #: src/Widgets/SizeLabel.vala:32
 msgid "Actual Download Size Likely to Be Smaller"
 msgstr ""
@@ -1138,6 +1103,34 @@ msgstr "Wat is er nieuw in %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
 msgstr "Sluiten"
+
+#~ msgid "Link copied to clipboard"
+#~ msgstr "Link gekopieerd naar het klembord"
+
+#, c-format
+#~ msgid "Check out %s on AppCenter:"
+#~ msgstr "Ontdek %s in het AppCenter:"
+
+#~ msgid "Share"
+#~ msgstr "Deel"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Reddit"
+#~ msgstr "Reddit"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "Telegram"
+#~ msgstr "Telegram"
+
+#~ msgid "Copy link"
+#~ msgstr "Kopieer link"
 
 #~ msgid "No runtimes with updates"
 #~ msgstr "Geen runtimes met updates"
