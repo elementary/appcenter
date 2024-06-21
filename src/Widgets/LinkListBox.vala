@@ -96,7 +96,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         var sponsor_url = component.get_url (DONATION);
 #if PAYMENTS
         var payments_key = component.get_custom_value ("x-appcenter-stripe");
-        if (payments_key  != null) {
+        if (payments_key != null) {
             sponsor_url = payments_key;
         }
 #endif
@@ -284,4 +284,3 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         }
     }
 }
-
