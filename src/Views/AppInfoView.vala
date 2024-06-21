@@ -66,6 +66,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         screenshot_cache = new AppCenterCore.ScreenshotCache ();
     }
 
+    ~AppInfoView () {
+        warning ("DESTROYED");
+    }
+
     construct {
         AppCenterCore.FlatpakBackend.get_default ().cache_flush_needed.connect (() => {
             to_recycle = true;
@@ -579,13 +583,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             screenshot_overlay.add_controller (screenshot_motion_controller);
 
             screenshot_motion_controller.enter.connect (() => {
-                screenshot_arrow_revealer_n.reveal_child = true;
-                screenshot_arrow_revealer_p.reveal_child = true;
+                //  screenshot_arrow_revealer_n.reveal_child = true;
+                //  screenshot_arrow_revealer_p.reveal_child = true;
             });
 
             screenshot_motion_controller.leave.connect (() => {
-                screenshot_arrow_revealer_n.reveal_child = false;
-                screenshot_arrow_revealer_p.reveal_child = false;
+                //  screenshot_arrow_revealer_n.reveal_child = false;
+                //  screenshot_arrow_revealer_p.reveal_child = false;
             });
 
             var app_screenshot_spinner = new Gtk.Spinner () {
@@ -787,7 +791,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             share_button.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             share_popover.link_copied.connect (() => {
-                toast.send_notification ();
+                //  toast.send_notification ();
             });
 
             links_flowbox.append (share_button);
@@ -797,7 +801,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         on_package_state_changed ();
 
         scrolled.vadjustment.value_changed.connect (() => {
-           title_revealer.reveal_child = scrolled.vadjustment.value > header.get_height ();
+        //     title_revealer.reveal_child = scrolled.vadjustment.value > header.get_height ();
         });
 
         if (oars_flowbox.get_first_child () != null) {
