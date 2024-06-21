@@ -19,31 +19,14 @@ public class AppCenter.LinkListBox : Gtk.Widget {
     }
 
     construct {
-//         var project_license = package.component.project_license;
-//         if (project_license != null) {
-//             string? license_copy = null;
-//             string? license_url = null;
-
-//             parse_license (project_license, out license_copy, out license_url);
-
-//             var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
-
-//             links_flowbox.append (license_button);
-//         }
-
         var contact_listbox = new Gtk.ListBox () {
+            hexpand = true,
             show_separators = true,
-            selection_mode = NONE
+            selection_mode = NONE,
+            valign = START
         };
         contact_listbox .add_css_class ("boxed-list");
         contact_listbox .add_css_class (Granite.STYLE_CLASS_RICH_LIST);
-
-        var contribute_listbox = new Gtk.ListBox () {
-            show_separators = true,
-            selection_mode = NONE
-        };
-        contribute_listbox.add_css_class ("boxed-list");
-        contribute_listbox.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
 
         var homepage_url = component.get_url (HOMEPAGE);
         if (homepage_url != null) {
@@ -85,6 +68,29 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             ));
         }
 
+        var contribute_listbox = new Gtk.ListBox () {
+            hexpand = true,
+            show_separators = true,
+            selection_mode = NONE,
+            valign = START
+        };
+        contribute_listbox.add_css_class ("boxed-list");
+        contribute_listbox.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
+
+        var project_license = component.project_license;
+        if (project_license != null) {
+            string? license_label = null;
+            string? license_url = null;
+            parse_license (project_license, out license_label, out license_url);
+
+            contribute_listbox.append (new LinkRow (
+                license_url,
+                _(license_label),
+                "text-x-copying-symbolic",
+                "slate"
+            ));
+        }
+
         var sponsor_url = component.get_url (DONATION);
 #if PAYMENTS
         var payments_key = component.get_custom_value ("x-appcenter-stripe");
@@ -121,15 +127,17 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             ));
         }
 
-        var box = new Gtk.Box (VERTICAL, 0);
+        var box = new Gtk.Box (HORIZONTAL, 0) {
+            homogeneous = true
+        };
         box.set_parent (this);
-
-        if (contact_listbox.get_first_child != null) {
-            box.append (contact_listbox);
-        }
 
         if (contribute_listbox.get_first_child != null) {
             box.append (contribute_listbox);
+        }
+
+        if (contact_listbox.get_first_child != null) {
+            box.append (contact_listbox);
         }
 
         contact_listbox.row_activated.connect ((row) => {
@@ -143,6 +151,49 @@ public class AppCenter.LinkListBox : Gtk.Widget {
 
     ~LinkListBox () {
         get_first_child ().unparent ();
+    }
+
+    private void parse_license (string project_license, out string license_copy, out string license_url) {
+        license_copy = null;
+        license_url = null;
+
+        // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
+        if (project_license.has_prefix ("LicenseRef")) {
+            // i.e. `LicenseRef-proprietary=https://example.com`
+            string[] split_license = project_license.split_set ("=", 2);
+            if (split_license[1] != null) {
+                license_url = split_license[1];
+            }
+
+            string license_type = split_license[0].split_set ("-", 2)[1].down ();
+            switch (license_type) {
+                case "public-domain":
+                    // TRANSLATORS: See the Wikipedia page
+                    license_copy = _("Public Domain");
+                    if (license_url == null) {
+                        // TRANSLATORS: Replace the link with the version for your language
+                        license_url = _("https://en.wikipedia.org/wiki/Public_domain");
+                    }
+                    break;
+                case "free":
+                    // TRANSLATORS: Freedom, not price. See the GNU page.
+                    license_copy = _("Free Software");
+                    if (license_url == null) {
+                        // TRANSLATORS: Replace the link with the version for your language
+                        license_url = _("https://www.gnu.org/philosophy/free-sw");
+                    }
+                    break;
+                case "proprietary":
+                    license_copy = _("Proprietary");
+                    break;
+                default:
+                    license_copy = _("Unknown License");
+                    break;
+            }
+        } else {
+            license_copy = AppStream.get_license_name (project_license);
+            license_url = AppStream.get_license_url (project_license);
+        }
     }
 
     private class LinkRow : Gtk.ListBoxRow {
@@ -222,45 +273,3 @@ public class AppCenter.LinkListBox : Gtk.Widget {
     }
 }
 
-    // private void parse_license (string project_license, out string license_copy, out string license_url) {
-    //     license_copy = null;
-    //     license_url = null;
-
-    //     // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
-    //     if (project_license.has_prefix ("LicenseRef")) {
-    //         // i.e. `LicenseRef-proprietary=https://example.com`
-    //         string[] split_license = project_license.split_set ("=", 2);
-    //         if (split_license[1] != null) {
-    //             license_url = split_license[1];
-    //         }
-
-    //         string license_type = split_license[0].split_set ("-", 2)[1].down ();
-    //         switch (license_type) {
-    //             case "public-domain":
-    //                 // TRANSLATORS: See the Wikipedia page
-    //                 license_copy = _("Public Domain");
-    //                 if (license_url == null) {
-    //                     // TRANSLATORS: Replace the link with the version for your language
-    //                     license_url = _("https://en.wikipedia.org/wiki/Public_domain");
-    //                 }
-    //                 break;
-    //             case "free":
-    //                 // TRANSLATORS: Freedom, not price. See the GNU page.
-    //                 license_copy = _("Free Software");
-    //                 if (license_url == null) {
-    //                     // TRANSLATORS: Replace the link with the version for your language
-    //                     license_url = _("https://www.gnu.org/philosophy/free-sw");
-    //                 }
-    //                 break;
-    //             case "proprietary":
-    //                 license_copy = _("Proprietary");
-    //                 break;
-    //             default:
-    //                 license_copy = _("Unknown License");
-    //                 break;
-    //         }
-    //     } else {
-    //         license_copy = AppStream.get_license_name (project_license);
-    //         license_url = AppStream.get_license_url (project_license);
-    //     }
-    // }
