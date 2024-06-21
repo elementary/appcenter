@@ -227,7 +227,7 @@ public class AppCenter.App : Gtk.Application {
             ((MainWindow) active_window).go_to_installed ();
         }
 
-        active_window.present_with_time (Gdk.CURRENT_TIME);
+        active_window.present ();
     }
 
     public async void request_background () {

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 19:40+0000\n"
+"POT-Creation-Date: 2024-06-21 14:40+0000\n"
 "PO-Revision-Date: 2023-11-01 19:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Sovellus on asennettu"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:329 src/MainWindow.vala:238
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” on asennettu"
@@ -56,29 +56,29 @@ msgstr "“%s” on asennettu"
 msgid "Failed to launch “%s“"
 msgstr "Sovelluksen “%s“ käynnistäminen epäonnistui"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:86
 msgid "Network Not Available."
 msgstr "Verkkoyhteys ei ole käytettävissä."
 
-#: src/MainWindow.vala:89
+#: src/MainWindow.vala:87
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Yhdistä internetiin selataksesi ja asentaaksesi sovelluksia."
 
-#: src/MainWindow.vala:99
+#: src/MainWindow.vala:97
 msgid "Network Settings…"
 msgstr "Verkon asetukset…"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:105
 msgid "Running in Demo Mode"
 msgstr "Käynnissä demotilassa"
 
-#: src/MainWindow.vala:108
+#: src/MainWindow.vala:106
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Asenna %s selataksesi ja asentaaksesi sovelluksia."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:241 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Avaa"
 
@@ -90,10 +90,10 @@ msgstr "Odottaa"
 msgid "Finished"
 msgstr "Valmis"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1461
-#: src/Core/FlatpakBackend.vala:1485 src/Core/FlatpakBackend.vala:1593
-#: src/Core/FlatpakBackend.vala:1617 src/Core/FlatpakBackend.vala:1775
-#: src/Core/FlatpakBackend.vala:1793
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
+#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
+#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
+#: src/Core/FlatpakBackend.vala:1766
 msgid "Cancelling"
 msgstr "Perutaan"
 
@@ -110,43 +110,43 @@ msgstr "%s (järjestelmänlaajuinen)"
 msgid "package operations are being performed"
 msgstr "pakettitoimenpiteitä suoritetaan"
 
-#: src/Core/FlatpakBackend.vala:1452
+#: src/Core/FlatpakBackend.vala:1425
 msgid "Installing"
 msgstr "Asennetaan"
 
-#: src/Core/FlatpakBackend.vala:1584
+#: src/Core/FlatpakBackend.vala:1557
 msgid "Uninstalling"
 msgstr "Poistetaan"
 
-#: src/Core/FlatpakBackend.vala:1766
+#: src/Core/FlatpakBackend.vala:1739
 msgid "Updating"
 msgstr "Päivitetään"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "Noudetaan sovellukseen tietoja…"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Getting download size…"
 msgstr "Noudetaan latauksen kokoa…"
 
-#: src/Core/Job.vala:57
+#: src/Core/Job.vala:55
 msgid "Checking for updates…"
 msgstr "Etsitään päivityksiä…"
 
-#: src/Core/Job.vala:59
+#: src/Core/Job.vala:57
 msgid "Installing…"
 msgstr "Asennetaan…"
 
-#: src/Core/Job.vala:61
+#: src/Core/Job.vala:59
 msgid "Installing updates…"
 msgstr "Asennetaan päivityksiä…"
 
-#: src/Core/Job.vala:63
+#: src/Core/Job.vala:61
 msgid "Uninstalling…"
 msgstr "Poistetaan…"
 
-#: src/Core/Job.vala:65
+#: src/Core/Job.vala:63
 msgid "Repairing…"
 msgstr "Korjataan…"
 
@@ -276,8 +276,10 @@ msgid "Version: %s"
 msgstr "Versio: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, c-format
-msgid "%u runtimes with updates"
+#, fuzzy, c-format
+#| msgid "%u runtimes with updates"
+#| msgid_plural "%u runtimes with updates"
+msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u runtime-paketin päivitys"
 msgstr[1] "%u runtime-pakettien päivitystä"
@@ -429,7 +431,7 @@ msgstr "Poistetaanko sovellus?"
 msgid "Uninstall “%s”?"
 msgstr "Poistetaanko “%s”?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:184
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:201
 msgid "Uninstall"
 msgstr "Poista asennus"
 
@@ -486,7 +488,7 @@ msgid "Refresh Updates"
 msgstr "Tarkista päivitykset"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:77 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -495,44 +497,44 @@ msgctxt "action"
 msgid "Search"
 msgstr "Haku"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:270
 msgid "Illicit Substances"
 msgstr "Laittomia päihdeaineita"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:271
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Viittauksia alkoholiin, huumausaineisiin tai tupakkatuotteisiin"
 
-#: src/Views/AppInfoView.vala:259
+#: src/Views/AppInfoView.vala:276
 msgid "Sex & Nudity"
 msgstr "Seksi ja alastomuus"
 
-#: src/Views/AppInfoView.vala:260
+#: src/Views/AppInfoView.vala:277
 msgid "Adult nudity or sexual themes"
 msgstr "Aikuisten alastomuutta tai seksuaalisia teemoja"
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:282
 msgid "Offensive Language"
 msgstr "Loukkaavaa kielenkäyttöä"
 
-#: src/Views/AppInfoView.vala:266
+#: src/Views/AppInfoView.vala:283
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 "Kiroilua, syrjivää kielenkäyttöä tai täysi-ikäisille suunnattua huumoria"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:288
 msgid "Gambling"
 msgstr "Uhkapelaaminen"
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:289
 msgid "Realistic or participatory gambling"
 msgstr "Todellista tai osallistavaa uhkapelaamista"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:313
 msgid "Made for elementary OS"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:297
+#: src/Views/AppInfoView.vala:314
 #, fuzzy
 #| msgid ""
 #| "Not reviewed by elementary for security, privacy, or system integration"
@@ -541,155 +543,142 @@ msgstr ""
 "Ei katselmoitu elementaryn toimesta tietoturvan, yksityisyyden tai "
 "järjestelmäintegraation osalta"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:337
 msgid "May Not Be Translated"
 msgstr "Ei välttämättä käännetty"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:338
 msgid "This app does not provide language information"
 msgstr "Tämä sovellus ei tarjoa tietoa kielistä"
 
-#: src/Views/AppInfoView.vala:328
+#: src/Views/AppInfoView.vala:345
 msgid "Not Translated"
 msgstr "Ei käännetty"
 
-#: src/Views/AppInfoView.vala:329
+#: src/Views/AppInfoView.vala:346
 msgid "This app is not available in your language"
 msgstr "Tämä sovellus ei ole saatavilla suomeksi"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:353
 msgid "Not Fully Translated"
 msgstr "Ei täysin käännetty"
 
-#: src/Views/AppInfoView.vala:337
+#: src/Views/AppInfoView.vala:354
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Tämä sovellus on %i%% käännetty suomeksi"
 
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:378
 msgid "Conflict"
 msgstr "Ristiriita"
 
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:379
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:392
 msgid "Violence"
 msgstr "Väkivalta"
 
-#: src/Views/AppInfoView.vala:380
+#: src/Views/AppInfoView.vala:397
 #, fuzzy
 #| msgid "Violence"
 msgid "Fantasy Violence"
 msgstr "Väkivalta"
 
-#: src/Views/AppInfoView.vala:385
+#: src/Views/AppInfoView.vala:402
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:429
+#: src/Views/AppInfoView.vala:446
 msgid "Multiplayer"
 msgstr "Moninpeli"
 
-#: src/Views/AppInfoView.vala:430
+#: src/Views/AppInfoView.vala:447
 msgid "Online play with other people"
 msgstr "Verkkopeli muiden ihmisten kanssa"
 
-#: src/Views/AppInfoView.vala:446
+#: src/Views/AppInfoView.vala:463
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:448
+#: src/Views/AppInfoView.vala:465
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:452
+#: src/Views/AppInfoView.vala:469
 msgid "Online Interactions"
 msgstr "Verkossa tapahtuvaa vuorovaikutusta"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:479
 msgid "Location Sharing"
 msgstr "Sijainnin jakaminen"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:480
 msgid "Other people can see your real-world location"
 msgstr "Muut ihmiset näkevät sijaintisi"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:492
 msgid "Collects anonymous usage data"
 msgstr "Kerää anonyymiä käyttötietoa"
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:495
 msgid "Collects usage data that could be used to identify you"
 msgstr "Kerää käyttötietoa, joka on mahdollista yhdistää sinuun"
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:500
 msgid "Info Sharing"
 msgstr "Tietojen jakaminen"
 
-#: src/Views/AppInfoView.vala:580
+#: src/Views/AppInfoView.vala:597
 msgid "Screenshot Not Available"
 msgstr "Kuvakaappausta ei ole saatavilla"
 
-#: src/Views/AppInfoView.vala:608
+#: src/Views/AppInfoView.vala:625
 msgid "What's New:"
 msgstr "Uutuudet:"
 
-#: src/Views/AppInfoView.vala:635
+#: src/Views/AppInfoView.vala:652
 msgid "Extensions:"
 msgstr "Laajennukset:"
 
-#: src/Views/AppInfoView.vala:666
+#: src/Views/AppInfoView.vala:683
 msgid "Homepage"
 msgstr "Sivusto"
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:689
 msgid "Translate"
 msgstr "Käännä"
 
-#: src/Views/AppInfoView.vala:678
+#: src/Views/AppInfoView.vala:695
 msgid "Send Feedback"
 msgstr "Lähetä palautetta"
 
-#: src/Views/AppInfoView.vala:684
+#: src/Views/AppInfoView.vala:701
 msgid "Help"
 msgstr "Ohje"
 
-#: src/Views/AppInfoView.vala:732
-msgid "Link copied to clipboard"
-msgstr "Linkki kopioitu leikepöydälle"
-
-#: src/Views/AppInfoView.vala:750
-#, c-format
-msgid "Check out %s on AppCenter:"
-msgstr "Tutustu sovellukseen %s AppCenterissä:"
-
-#: src/Views/AppInfoView.vala:758
-msgid "Share"
-msgstr "Jaa"
-
-#: src/Views/AppInfoView.vala:845
+#: src/Views/AppInfoView.vala:829
 msgid "End of Life"
 msgstr "Elinkaaren loppu"
 
-#: src/Views/AppInfoView.vala:846
+#: src/Views/AppInfoView.vala:830
 msgid "May not work as expected or receive security updates"
 msgstr "Ei välttämättä toimi odotetusti tai saa tietoturvapäivityksiä"
 
-#: src/Views/AppInfoView.vala:852
+#: src/Views/AppInfoView.vala:836
 msgid "Outdated"
 msgstr "Vanhentunut"
 
-#: src/Views/AppInfoView.vala:853
+#: src/Views/AppInfoView.vala:837
 msgid "May not work as expected or support the latest features"
 msgstr "Ei välttämättä toimi odotetusti tai tue uusimpia ominaisuuksia"
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:845
 msgid "Unstable"
 msgstr "Epävakaa"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:846
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -698,27 +687,27 @@ msgstr ""
 "Rakennettu %s:n epävakaalle versiolle; saattaa sisältää suuria ongelmia. Ei "
 "suositeltu tuotantoympäristöön."
 
-#: src/Views/AppInfoView.vala:875
+#: src/Views/AppInfoView.vala:859
 msgid "Insecure Sandbox"
 msgstr "Turvaton eristys"
 
-#: src/Views/AppInfoView.vala:876
+#: src/Views/AppInfoView.vala:860
 msgid "Can ignore or modify its own system permissions"
 msgstr "Voi jättää huomiotta tai muokata omia oikeuksia"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:869
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:886
+#: src/Views/AppInfoView.vala:870
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:893
+#: src/Views/AppInfoView.vala:877
 msgid "Home Folder Access"
 msgstr "Pääsy kotikansioon"
 
-#: src/Views/AppInfoView.vala:894
+#: src/Views/AppInfoView.vala:878
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -726,72 +715,72 @@ msgstr ""
 "Sisältäen kaikki asiakirjat, lataukset, musiikin, kuvat, videot ja "
 "piilotetut kansiot"
 
-#: src/Views/AppInfoView.vala:903
+#: src/Views/AppInfoView.vala:887
 msgid "Legacy Autostart"
 msgstr "Vanhentunut automaattikäynnistys"
 
-#: src/Views/AppInfoView.vala:904
+#: src/Views/AppInfoView.vala:888
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Voi käynnistyä automaattisesti ja toimia taustalla lupaa kysymättä"
 
-#: src/Views/AppInfoView.vala:913
+#: src/Views/AppInfoView.vala:897
 msgid "Location Access"
 msgstr "Pääsy sijaintiin"
 
-#: src/Views/AppInfoView.vala:914
+#: src/Views/AppInfoView.vala:898
 msgid "Can see your precise location at any time without asking"
 msgstr "Voi nähdä tarkan sijaintisi milloin tahansa kysymättä"
 
-#: src/Views/AppInfoView.vala:923
+#: src/Views/AppInfoView.vala:907
 msgid "Legacy Notifications"
 msgstr "Vanhentuneet ilmoitukset"
 
-#: src/Views/AppInfoView.vala:924
+#: src/Views/AppInfoView.vala:908
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:933
+#: src/Views/AppInfoView.vala:917
 msgid "System Settings Access"
 msgstr "Pääsy järjestelmäasetuksiin"
 
-#: src/Views/AppInfoView.vala:934
+#: src/Views/AppInfoView.vala:918
 msgid "Can read and modify system settings"
 msgstr "Voi lukea ja muokata järjestelmän asetuksia"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1149
+#: src/Views/AppInfoView.vala:1133
 msgid "Public Domain"
 msgstr "Public Domain"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1152
+#: src/Views/AppInfoView.vala:1136
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://fi.wikipedia.org/wiki/Public_domain"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1157
+#: src/Views/AppInfoView.vala:1141
 msgid "Free Software"
 msgstr "Vapaa ohjelmisto"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1160
+#: src/Views/AppInfoView.vala:1144
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:1164
+#: src/Views/AppInfoView.vala:1148
 msgid "Proprietary"
 msgstr "Suljettu"
 
-#: src/Views/AppInfoView.vala:1167
+#: src/Views/AppInfoView.vala:1151
 msgid "Unknown License"
 msgstr "Tuntematon lisenssi"
 
-#: src/Views/AppInfoView.vala:1248
+#: src/Views/AppInfoView.vala:1232
 msgid "Fund"
 msgstr "Rahoita"
 
-#: src/Views/AppInfoView.vala:1254
+#: src/Views/AppInfoView.vala:1238
 msgid "Fund the development of this app"
 msgstr "Rahoita tämän sovelluksen kehitystä"
 
@@ -841,14 +830,14 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Asennettu"
 
-#: src/Views/AppListUpdateView.vala:265
+#: src/Views/AppListUpdateView.vala:269
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u päivitys saatavilla"
 msgstr[1] "%u päivitystä saatavilla"
 
-#: src/Views/AppListUpdateView.vala:272
+#: src/Views/AppListUpdateView.vala:276
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Kaikki on ajan tasalla. Viimeksi tarkistettu %s."
@@ -960,15 +949,15 @@ msgid ""
 "new features and fixes."
 msgstr ""
 
-#: src/Views/Homepage.vala:526
+#: src/Views/Homepage.vala:520
 msgid "Fun & Games"
 msgstr "Pelit ja hauskanpito"
 
-#: src/Views/Homepage.vala:551
+#: src/Views/Homepage.vala:545
 msgid "Fun &"
 msgstr "Hauskanpito &"
 
-#: src/Views/Homepage.vala:557
+#: src/Views/Homepage.vala:551
 msgid "Games"
 msgstr "Pelit"
 
@@ -1055,30 +1044,6 @@ msgstr "Tuntematon versio"
 msgid "No description available"
 msgstr "Ei kuvausta saatavilla"
 
-#: src/Widgets/SharePopover.vala:35
-msgid "Facebook"
-msgstr "Facebook"
-
-#: src/Widgets/SharePopover.vala:39
-msgid "Twitter"
-msgstr "Twitter"
-
-#: src/Widgets/SharePopover.vala:43
-msgid "Reddit"
-msgstr "Reddit"
-
-#: src/Widgets/SharePopover.vala:47
-msgid "Tumblr"
-msgstr "Tumblr"
-
-#: src/Widgets/SharePopover.vala:51
-msgid "Telegram"
-msgstr "Telegram"
-
-#: src/Widgets/SharePopover.vala:55
-msgid "Copy link"
-msgstr "Kopioi linkki"
-
 #: src/Widgets/SizeLabel.vala:32
 msgid "Actual Download Size Likely to Be Smaller"
 msgstr "Varsinainen latauskoko on todennäköisesti pienempi"
@@ -1104,6 +1069,34 @@ msgstr "Mitä uutta %s sisältää"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
 msgstr "Sulje"
+
+#~ msgid "Link copied to clipboard"
+#~ msgstr "Linkki kopioitu leikepöydälle"
+
+#, c-format
+#~ msgid "Check out %s on AppCenter:"
+#~ msgstr "Tutustu sovellukseen %s AppCenterissä:"
+
+#~ msgid "Share"
+#~ msgstr "Jaa"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Reddit"
+#~ msgstr "Reddit"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "Telegram"
+#~ msgstr "Telegram"
+
+#~ msgid "Copy link"
+#~ msgstr "Kopioi linkki"
 
 #~ msgid "No runtimes with updates"
 #~ msgstr "Ei runtime-pakettien päivityksiä"
