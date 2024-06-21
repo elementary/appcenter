@@ -415,7 +415,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         }
     }
 
-    private void on_response (Gtk.Dialog source, int response_id) {
+    private void on_response (int response_id) {
         switch (response_id) {
             case Gtk.ResponseType.APPLY:
                 if (layouts.visible_child_name == "card") {

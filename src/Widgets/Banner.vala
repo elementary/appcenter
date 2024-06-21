@@ -125,7 +125,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             }
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
-            provider.load_from_data (colored_css.data);
+            provider.load_from_string (colored_css);
             get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
