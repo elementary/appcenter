@@ -245,9 +245,12 @@ public class AppCenterCore.FlatpakBackend : Object {
     }
 
     private void set_actions_enabled (bool working) {
-        var app = Application.get_default ();
-        ((SimpleAction) app.lookup_action ("refresh")).set_enabled (!working && !Utils.is_running_in_guest_session ());
-        ((SimpleAction) app.lookup_action ("repair")).set_enabled (!working);
+        // Make sure we run on the main thread
+        Idle.add_once (() => {
+            var app = Application.get_default ();
+            ((SimpleAction) app.lookup_action ("refresh")).set_enabled (!working && !Utils.is_running_in_guest_session ());
+            ((SimpleAction) app.lookup_action ("repair")).set_enabled (!working);
+        });
     }
 
     private async void trigger_update_check () {
