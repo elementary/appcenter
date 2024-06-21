@@ -6,7 +6,7 @@
  */
 
 public class AppCenterCore.SearchEngine : Object {
-    public ListModel results { get; construct; }
+    public ListModel results { get; private set; }
 
     private ListStore packages;
     private AppStream.Pool pool;
@@ -59,5 +59,15 @@ public class AppCenterCore.SearchEngine : Object {
         this.query = pool.build_search_tokens (query);
         this.category = category;
         packages.items_changed (0, packages.n_items, packages.n_items);
+    }
+
+    /**
+     * This should be called if the engine is no longer needed.
+     * We need this because thanks to the delegates we get a reference cycle,
+     * where the filter and sorter keep a reference on us and we on them.
+     * Setting results to null will free them and they will in turn free us.
+     */
+    public void cleanup () {
+        results = null;
     }
 }

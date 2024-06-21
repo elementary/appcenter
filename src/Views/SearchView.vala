@@ -131,6 +131,10 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         });
     }
 
+    ~SearchView () {
+        search_engine.cleanup ();
+    }
+
     private void on_items_changed () {
         list_view.scroll_to (0, NONE, null);
 
