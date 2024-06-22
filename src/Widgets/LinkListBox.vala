@@ -26,8 +26,8 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             selection_mode = NONE,
             valign = START
         };
-        contact_listbox .add_css_class ("boxed-list");
-        contact_listbox .add_css_class (Granite.STYLE_CLASS_RICH_LIST);
+        contact_listbox.add_css_class ("boxed-list");
+        contact_listbox.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
 
         var homepage_url = component.get_url (HOMEPAGE);
         if (homepage_url != null) {
