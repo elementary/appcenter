@@ -137,11 +137,11 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         };
         flowbox.set_parent (this);
 
-        if (contribute_listbox.get_first_child != null) {
+        if (contribute_listbox.get_first_child () != null) {
             flowbox.append (contribute_listbox);
         }
 
-        if (contact_listbox.get_first_child != null) {
+        if (contact_listbox.get_first_child () != null) {
             flowbox.append (contact_listbox);
         }
 
