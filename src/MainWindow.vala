@@ -17,6 +17,7 @@
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Granite.Toast toast;
     private Adw.NavigationView navigation_view;
+    private Granite.OverlayBar overlaybar;
 
     private AppCenterCore.Package? last_installed_package;
 
@@ -62,8 +63,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     message_dialog.transient_for = this;
 
                     message_dialog.present ();
-                    message_dialog.response.connect ((response_id) => {
-                        message_dialog.destroy ();
+                    message_dialog.response.connect ((dialog, response_id) => {
+                        dialog.destroy ();
                     });
                 }
             }
@@ -79,7 +80,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         };
         overlay.add_overlay (toast);
 
-        var overlaybar = new Granite.OverlayBar (overlay);
+        overlaybar = new Granite.OverlayBar (overlay);
         overlaybar.bind_property ("active", overlaybar, "visible");
 
         var network_info_bar_label = new Gtk.Label ("<b>%s</b> %s".printf (
@@ -141,9 +142,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
         backend.bind_property ("working", overlaybar, "active", SYNC_CREATE);
 
-        backend.notify ["job-type"].connect (() => {
-            overlaybar.label = backend.job_type.to_string ();
-        });
+        backend.notify["job-type"].connect (update_overlaybar_label);
 
         overlaybar.label = backend.job_type.to_string ();
     }
@@ -153,23 +152,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             installed_view.clear ();
         }
 
-        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-        if (backend.working) {
-            hide ();
+        // We not to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
+        ((AppCenter.App) application).request_background.begin (() => Idle.add_once (() => {
+            unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
+            if (backend.working) {
+                AppCenterCore.UpdateManager.get_default ().cancel_updates (false); //Timeouts keep running
+            }
+            destroy ();
+        }));
 
-            backend.notify["working"].connect (() => {
-                if (!visible && !backend.working) {
-                    destroy ();
-                }
-            });
-
-            AppCenterCore.UpdateManager.get_default ().cancel_updates (false); //Timeouts keep running
-            return true;
-        }
-
-        ((AppCenter.App) application).request_background.begin (() => destroy ());
-
-        return false;
+        return true;
     }
 
     public void show_package (AppCenterCore.Package package) {
@@ -244,6 +236,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         toast.send_notification ();
+    }
+
+    private void update_overlaybar_label () {
+        overlaybar.label = AppCenterCore.FlatpakBackend.get_default ().job_type.to_string ();
     }
 
     private void show_category (AppStream.Category category) {
