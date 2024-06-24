@@ -44,6 +44,7 @@ public class AppCenter.ActionStack : Gtk.Box {
 
         open_button_revealer = new Gtk.Revealer () {
             child = open_button,
+            overflow = VISIBLE,
             transition_type = SLIDE_LEFT
         };
 
