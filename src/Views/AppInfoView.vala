@@ -95,11 +95,32 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         };
         search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
+        var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            tooltip_text = _("Uninstall"),
+            valign = CENTER
+        };
+        uninstall_button.add_css_class ("raised");
+
+        uninstall_button_revealer = new Gtk.Revealer () {
+            child = uninstall_button,
+            transition_type = SLIDE_LEFT,
+            overflow = VISIBLE
+        };
+
+        action_stack = new ActionStack (package) {
+            hexpand = false
+        };
+
+        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+
         var headerbar = new Gtk.HeaderBar () {
             title_widget = title_revealer
         };
         headerbar.pack_start (new BackButton ());
         headerbar.pack_end (search_button);
+        headerbar.pack_end (action_stack);
+        headerbar.pack_end (uninstall_button_revealer);
 
         accent_provider = new Gtk.CssProvider ();
         try {
@@ -197,45 +218,22 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             transition_type = SLIDE_DOWN
         };
 
-        var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
-            tooltip_text = _("Uninstall"),
-            margin_end = 12
-        };
-        uninstall_button.add_css_class ("raised");
-        uninstall_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        uninstall_button_revealer = new Gtk.Revealer () {
-            child = uninstall_button,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT,
-            overflow = VISIBLE
-        };
-
-        action_stack = new ActionStack (package);
-
-        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.CENTER,
-            hexpand = true
-        };
-        button_box.append (uninstall_button_revealer);
-        button_box.append (action_stack);
-
         var header_grid = new Gtk.Grid () {
             column_spacing = 12,
             valign = Gtk.Align.CENTER
         };
         header_grid.attach (app_title, 0, 0);
-        header_grid.attach (app_subtitle, 0, 1);
+        header_grid.attach (app_subtitle, 0, 1, 2);
         header_grid.attach (origin_combo_revealer, 0, 2, 2);
-        header_grid.attach (button_box, 1, 0);
 
         if (!package.is_local) {
             size_label = new Widgets.SizeLabel () {
-                halign = Gtk.Align.END
+                halign = Gtk.Align.END,
+                hexpand = true
             };
             size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            header_grid.attach (size_label, 1, 1);
+            header_grid.attach (size_label, 1, 0);
         }
 
         var header_box = new Gtk.Box (HORIZONTAL, 6);
@@ -244,6 +242,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var header_clamp = new Adw.Clamp () {
             child = header_box,
+            hexpand = true,
             maximum_size = MAX_WIDTH
         };
 
@@ -254,15 +253,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         header.add_css_class ("banner");
         header.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        action_stack.cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var package_component = package.component;
 

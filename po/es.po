@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-21 14:40+0000\n"
-"PO-Revision-Date: 2024-06-17 19:16+0000\n"
+"PO-Revision-Date: 2024-06-24 02:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -192,8 +192,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Se produjo un error al procesar la tarjeta. Inténtelo de nuevo más tarde. "
-"Sentimos cualquier inconveniente causado."
+"Se ha producido un error al procesar la tarjeta. Inténtelo de nuevo más "
+"tarde. Sentimos cualquier inconveniente causado."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
@@ -315,9 +315,7 @@ msgid "Version: %s"
 msgstr "Versión: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u runtimes with updates"
-#| msgid_plural "%u runtimes with updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u entorno de ejecución con actualizaciones"

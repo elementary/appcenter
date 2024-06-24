@@ -90,6 +90,7 @@
         <issue url="https://github.com/elementary/appcenter/issues/2035">Only show update info icon when there is info available</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2088">Don't check for updates in the guest session</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2134">AppCenter says an app is "Not Translated" that provides translation info</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2166">Segfault on wayland</issue>
       </issues>
     </release>
 
