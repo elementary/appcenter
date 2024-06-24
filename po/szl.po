@@ -1,12 +1,13 @@
 # gkkulik <g.kulik@o2.pl>, 2020.
 # Grzegorz Kulik <g.kulik@o2.pl>, 2020.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-21 14:40+0000\n"
-"PO-Revision-Date: 2023-02-17 15:25+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2024-06-24 02:16+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/szl/>\n"
 "Language: szl\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.5.5\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:28 src/MainWindow.vala:44 src/Views/Homepage.vala:278
@@ -782,7 +783,7 @@ msgstr "Dōmyna publiczno"
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:1136
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://pl.m.wikipedia.org/wiki/Dōmyna_publiczno"
+msgstr "https://en.wikipedia.org/wiki/Public_domain"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:1141

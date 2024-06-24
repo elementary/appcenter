@@ -1,12 +1,13 @@
 # Jung-Kyu Park <bagjunggyu@gmail.com>, 2018, 2019, 2022.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-21 14:40+0000\n"
-"PO-Revision-Date: 2023-02-14 12:03+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2024-06-24 02:16+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
 "Language: ko\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -772,7 +773,7 @@ msgstr "자유 소프트웨어"
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:1144
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr "http://www.gnu.org/philosophy/free-sw.ko.html"
+msgstr "https://www.gnu.org/philosophy/free-sw.ko.html"
 
 #: src/Views/AppInfoView.vala:1148
 msgid "Proprietary"
