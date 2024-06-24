@@ -18,7 +18,7 @@ You'll need the following dependencies:
 * libjson-glib-dev
 * libpolkit-gobject-1-dev
 * libportal-dev
-* libportal-gtk3-dev
+* libportal-gtk4-dev
 * libsoup-3.0-dev
 * libxml2-dev
 * libxml2-utils
