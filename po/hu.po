@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-19 15:35+0000\n"
+"PO-Revision-Date: 2024-06-26 16:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hu/>\n"
@@ -294,9 +294,7 @@ msgid "Version: %s"
 msgstr "Verzió: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u runtimes with updates"
-#| msgid_plural "%u runtimes with updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u frissíthető futtatókörnyezet"
@@ -742,12 +740,8 @@ msgid "Checking for Updates"
 msgstr "Frissítések keresése"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-"Az operációs rendszer és a telepített alkalmazások frissítéseinek listájának "
-"letöltése"
+msgstr "A telepített alkalmazások frissítéseinek listájának letöltése"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -985,13 +979,11 @@ msgstr "%d$"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Weboldal"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Segítség"
+msgstr "Segítségszerzés"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -999,21 +991,19 @@ msgstr "Visszajelzés küldése"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "A fejlesztő felkeresése"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Támogatás"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Javasoljon fordításokat"
+msgstr "Közreműködés a fordításban"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Forráskód"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1045,7 +1035,7 @@ msgstr "Ismeretlen licenc"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Fizetés a Stripe-on keresztül"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
