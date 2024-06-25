@@ -44,7 +44,7 @@ namespace AppCenter.Views {
             installed_liststore = new ListStore (typeof (AppCenterCore.Package));
 
             var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
-                description = _("Downloading a list of available updates to the OS and installed apps"),
+                description = _("Downloading a list of available updates to the installed apps"),
                 icon = new ThemedIcon ("sync-synchronizing")
             };
 
