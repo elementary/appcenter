@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 14:53+0000\n"
-"PO-Revision-Date: 2024-06-24 02:16+0000\n"
+"PO-Revision-Date: 2024-06-25 15:17+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -1012,13 +1012,11 @@ msgstr "%d USD"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Sitio web"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Ayuda"
+msgstr "Obtener ayuda"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -1026,21 +1024,19 @@ msgstr "Enviar comentarios"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Contactar al desarrollador"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Patrocinar"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Sugerir traducciones"
+msgstr "Contribuir traducciones"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Obtener el código fuente"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1072,7 +1068,7 @@ msgstr "Licencia desconocida"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Pagos proporcionados por Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
