@@ -103,6 +103,13 @@ appinfoview {
         margin: rem(6px) rem(12px) rem(12px) rem(12px);
         padding: rem(12px);
     }
+
+    linklistbox {
+        row.link grid {
+            padding: 0 rem(6px);
+            border-spacing: rem(12px) 0;
+        }
+    }
 }
 
 @keyframes loading {
