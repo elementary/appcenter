@@ -105,9 +105,9 @@ appinfoview {
     }
 
     linklistbox {
-        row.link box {
+        row.link grid {
             padding: 0 rem(6px);
-            border-spacing: rem(12px);
+            border-spacing: rem(12px) 0;
         }
     }
 }

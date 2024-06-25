@@ -145,7 +145,12 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             flowbox.append (contact_listbox);
         }
 
-        // Don't let invisible container get focus
+        // Workaround for bug where listboxes won't expand if there's only one of them
+        if (flowbox.get_first_child ().get_next_sibling () == null) {
+            flowbox.max_children_per_line = 1;
+        }
+
+        // Don't let container get focus, only actionable wigets get focus
         var flowbox_child = flowbox.get_first_child ();
         while (flowbox_child != null) {
             flowbox_child.focusable = false;
@@ -223,33 +228,53 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             );
         }
 
-        class construct {
-            set_accessible_role (LINK);
-        }
-
         construct {
             var image = new Gtk.Image.from_icon_name (icon_name);
             image.add_css_class (Granite.STYLE_CLASS_ACCENT);
             image.add_css_class (color);
 
-            var left_label = new Gtk.Label (label_string) {
+            var title_label = new Gtk.Label (label_string) {
                 hexpand = true,
                 xalign = 0
             };
 
+            var description_label = new Gtk.Label (uri_or_key) {
+                wrap = true,
+                xalign = 0
+            };
+            description_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+            description_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
             var link_image = new Gtk.Image.from_icon_name ("adw-external-link-symbolic");
 
-            var box = new Gtk.Box (HORIZONTAL, 0);
-            box.append (image);
-            box.append (left_label);
-            box.append (link_image);
+            var grid = new Gtk.Grid () {
+                valign = CENTER
+            };
+            grid.attach (image, 0, 0, 1, 2);
+            grid.attach (title_label, 1, 0);
+            grid.attach (description_label, 1, 1);
+            grid.attach (link_image, 2, 0, 1, 2);
 
-            child = box;
+            accessible_role = LINK;
+            child = grid;
             add_css_class ("link");
+
+            if (is_stripe_key (uri_or_key)) {
+                description_label.label = _("Payment provided by Stripe");
+                link_image.icon_name = "payment-card-symbolic";
+                accessible_role = BUTTON;
+                update_property (Gtk.AccessibleProperty.HAS_POPUP, true, -1);
+            }
+
+            update_property (
+                Gtk.AccessibleProperty.LABEL, title_label.label,
+                Gtk.AccessibleProperty.DESCRIPTION, description_label.label,
+                -1
+            );
         }
 
         public void launch (AppStream.Component component) {
-            if (uri_or_key.has_prefix ("http") || uri_or_key.has_prefix ("mailto")) {
+            if (!is_stripe_key (uri_or_key)) {
                 var uri_launcher = new Gtk.UriLauncher (uri_or_key);
                 uri_launcher.launch.begin (
                     ((Gtk.Application) GLib.Application.get_default ()).active_window,
@@ -258,29 +283,20 @@ public class AppCenter.LinkListBox : Gtk.Widget {
                 return;
             }
 
-            var component_id = component.id;
-            if (component_id.has_suffix (".desktop")) {
-                // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
-                component_id = component_id.substring (0, component_id.length - 8);
-            }
-
             var stripe_dialog = new Widgets.StripeDialog (
                 1,
                 component.get_name (),
-                component_id,
+                component.id,
                 uri_or_key
             ) {
                 modal = true,
                 transient_for = ((Gtk.Application) Application.get_default ()).active_window
             };
-
-            stripe_dialog.download_requested.connect (() => {
-                if (stripe_dialog.amount != 0) {
-                    App.add_paid_app (component.get_id ());
-                }
-            });
-
             stripe_dialog.present ();
+        }
+
+        private bool is_stripe_key (string uri_or_key) {
+            return uri_or_key.has_prefix ("pk_live");
         }
     }
 }
