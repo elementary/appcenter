@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-22 15:16+0000\n"
+"PO-Revision-Date: 2024-06-26 16:16+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -751,11 +751,8 @@ msgid "Checking for Updates"
 msgstr "Проверка обновлений"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-"Загрузка списка доступных обновлений для операционной системы и приложений"
+msgstr "Загрузка списка доступных обновлений для приложений"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -995,13 +992,11 @@ msgstr "%d USD"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Веб-сайт"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Помощь"
+msgstr "Получить помощь"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -1009,21 +1004,19 @@ msgstr "Отправить отзыв"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Связаться с разработчиком"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Поддержать"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Предложить перевод"
+msgstr "Помочь с переводом"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Получить исходный код"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1057,7 +1050,7 @@ msgstr "Неизвестная лицензия"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Оплата осуществляется через Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
