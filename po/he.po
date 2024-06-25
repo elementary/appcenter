@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-22 15:16+0000\n"
+"PO-Revision-Date: 2024-06-26 16:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -699,10 +699,8 @@ msgid "Checking for Updates"
 msgstr "בחיפוש אחר עדכונים"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
-msgstr "מתקבלת רשימת העדכונים הזמינים למערכת ההפעלה וליישומים המותקנים"
+msgstr "מתקבלת רשימת העדכונים הזמינים ליישומים המותקנים"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -937,13 +935,11 @@ msgstr "$%d USD"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "אתר"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "עזרה"
+msgstr "קבלת עזרה"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -951,21 +947,19 @@ msgstr "שליחת משוב"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "יצירת קשר עם המפתח"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "מימון"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "הצעת תרגומים"
+msgstr "תרומת תרגומים"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "משיכת קוד המקור"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -997,7 +991,7 @@ msgstr "רישיון לא ידוע"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "התשלום סופק על ידי Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
