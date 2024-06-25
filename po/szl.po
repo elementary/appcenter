@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 14:53+0000\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-06-24 02:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/"
@@ -764,7 +764,9 @@ msgid "Checking for Updates"
 msgstr "Wybadowanie aktualizacyji"
 
 #: src/Views/AppListUpdateView.vala:47
-msgid "Downloading a list of available updates to the OS and installed apps"
+#, fuzzy
+#| msgid "Downloading a list of available updates to the OS and installed apps"
+msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
 "Ściōnganie listy wszyjskich dostympnych aktualizacyji systymu ôperacyjnego i "
 "zainstalowanych aplikcayji"

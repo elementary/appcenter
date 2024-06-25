@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 14:53+0000\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2015-11-04 14:21+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -683,7 +683,7 @@ msgid "Checking for Updates"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:47
-msgid "Downloading a list of available updates to the OS and installed apps"
+msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:73

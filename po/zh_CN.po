@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 14:53+0000\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2023-10-24 15:10+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -708,7 +708,9 @@ msgid "Checking for Updates"
 msgstr "正在查找更新"
 
 #: src/Views/AppListUpdateView.vala:47
-msgid "Downloading a list of available updates to the OS and installed apps"
+#, fuzzy
+#| msgid "Downloading a list of available updates to the OS and installed apps"
+msgid "Downloading a list of available updates to the installed apps"
 msgstr "正在获取可用系统更新及已安装应用程序列表"
 
 #: src/Views/AppListUpdateView.vala:73

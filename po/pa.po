@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 14:53+0000\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/"
@@ -747,7 +747,9 @@ msgid "Checking for Updates"
 msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #: src/Views/AppListUpdateView.vala:47
-msgid "Downloading a list of available updates to the OS and installed apps"
+#, fuzzy
+#| msgid "Downloading a list of available updates to the OS and installed apps"
+msgid "Downloading a list of available updates to the installed apps"
 msgstr "ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਅਤੇ ਸਥਾਪਤ ਐਪਾਂ ਲਈ ਉਪਲਬਧ ਅਪਡੇਟਾਂ ਦੀ ਸੂਚੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Views/AppListUpdateView.vala:73
