@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-25 15:17+0000\n"
+"PO-Revision-Date: 2024-06-26 16:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -197,7 +197,7 @@ msgstr ""
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr "Revise la información de su pago e intente otra vez."
+msgstr "Revise la información de su pago e intente de nuevo."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
@@ -473,9 +473,7 @@ msgstr "Desinstalar"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Esto pudo haber sido causado por aplicaciones externas o compiladas de forma "
-"manual."
+msgstr "Esto puede deberse a aplicaciones externas o compiladas manualmente."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
@@ -504,8 +502,8 @@ msgid ""
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
 msgstr ""
-"Esto puede deberse a una instalación externa o compilación manual de una "
-"aplicación, una fuente de aplicaciones de terceros, o un error en el gestor "
+"Esto puede deberse a instalaciones externas o aplicaciones compiladas "
+"manualmente, una fuente de aplicaciones de terceros, o un error en el gestor "
 "de paquetes. Refrescar las actualizaciones podría solucionar el problema."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
@@ -771,12 +769,10 @@ msgid "Checking for Updates"
 msgstr "Comprobando actualizaciones"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
-"Descargando una lista de actualizaciones disponibles para el sistema y las "
-"aplicaciones instaladas"
+"Descargando una lista de actualizaciones disponibles para las aplicaciones "
+"instaladas"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
