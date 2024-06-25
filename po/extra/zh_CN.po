@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 14:40+0000\n"
+"POT-Creation-Date: 2024-06-25 14:53+0000\n"
 "PO-Revision-Date: 2023-08-29 16:08+0000\n"
 "Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -54,8 +54,8 @@ msgstr "给开发加个鸡腿"
 msgid "elementary, Inc."
 msgstr "elementary LLC."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:145
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
 msgid "New features:"
 msgstr "新特性："
 
@@ -63,9 +63,9 @@ msgstr "新特性："
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:101
-#: data/appcenter.metainfo.xml.in:121 data/appcenter.metainfo.xml.in:136
-#: data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:152
 msgid "Other Improvements:"
 msgstr "其他更改："
 
@@ -82,21 +82,21 @@ msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:104
-#: data/appcenter.metainfo.xml.in:126 data/appcenter.metainfo.xml.in:138
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
+#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:154
 msgid "Updated translations"
 msgstr "更新翻译"
 
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:101
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:105
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:121
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -104,23 +104,23 @@ msgstr ""
 "当应用有访问主文件夹或系统文件夹、定位、设置的权限或具有不安全的沙盒时发出警"
 "告。"
 
-#: data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:125
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "缩小应用程序信息视图中的间距和边距"
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:126
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "加载主页时显示占位符横幅"
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr "不将非 AppCenter 应用程序在类别视图的单独标题下列出"
 
-#: data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "如果 Flatpak 更新失败，提供修复选项"
 
-#: data/appcenter.metainfo.xml.in:148
+#: data/appcenter.metainfo.xml.in:150
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
