@@ -650,62 +650,15 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             load_extensions.begin ();
         }
 
-        var links_flowbox = new Gtk.FlowBox () {
-            column_spacing = 12,
-            row_spacing = 6,
-            hexpand = true
-        };
-
-        var project_license = package.component.project_license;
-        if (project_license != null) {
-            string? license_copy = null;
-            string? license_url = null;
-
-            parse_license (project_license, out license_copy, out license_url);
-
-            var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
-
-            links_flowbox.append (license_button);
-        }
-
-        var homepage_url = package_component.get_url (AppStream.UrlKind.HOMEPAGE);
-        if (homepage_url != null) {
-            var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
-            links_flowbox.append (website_button);
-        }
-
-        var translate_url = package_component.get_url (AppStream.UrlKind.TRANSLATE);
-        if (translate_url != null) {
-            var translate_button = new UrlButton (_("Translate"), translate_url, "preferences-desktop-locale-symbolic");
-            links_flowbox.append (translate_button);
-        }
-
-        var bugtracker_url = package_component.get_url (AppStream.UrlKind.BUGTRACKER);
-        if (bugtracker_url != null) {
-            var bugtracker_button = new UrlButton (_("Send Feedback"), bugtracker_url, "bug-symbolic");
-            links_flowbox.append (bugtracker_button);
-        }
-
-        var help_url = package_component.get_url (AppStream.UrlKind.HELP);
-        if (help_url != null) {
-            var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
-            links_flowbox.append (help_button);
-        }
-
-#if PAYMENTS
-        if (package.get_payments_key () != null) {
-            var fund_button = new FundButton (package);
-            links_flowbox.append (fund_button);
-        }
-#endif
-
         var body_clamp = new Adw.Clamp () {
             child = content_box,
             maximum_size = MAX_WIDTH
         };
 
+        var link_listbox = new LinkListBox (package_component);
+
         var links_clamp = new Adw.Clamp () {
-            child = links_flowbox,
+            child = link_listbox,
             maximum_size = MAX_WIDTH
         };
         links_clamp.add_css_class ("content-box");
@@ -1104,49 +1057,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         });
     }
 
-    private void parse_license (string project_license, out string license_copy, out string license_url) {
-        license_copy = null;
-        license_url = null;
-
-        // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
-        if (project_license.has_prefix ("LicenseRef")) {
-            // i.e. `LicenseRef-proprietary=https://example.com`
-            string[] split_license = project_license.split_set ("=", 2);
-            if (split_license[1] != null) {
-                license_url = split_license[1];
-            }
-
-            string license_type = split_license[0].split_set ("-", 2)[1].down ();
-            switch (license_type) {
-                case "public-domain":
-                    // TRANSLATORS: See the Wikipedia page
-                    license_copy = _("Public Domain");
-                    if (license_url == null) {
-                        // TRANSLATORS: Replace the link with the version for your language
-                        license_url = _("https://en.wikipedia.org/wiki/Public_domain");
-                    }
-                    break;
-                case "free":
-                    // TRANSLATORS: Freedom, not price. See the GNU page.
-                    license_copy = _("Free Software");
-                    if (license_url == null) {
-                        // TRANSLATORS: Replace the link with the version for your language
-                        license_url = _("https://www.gnu.org/philosophy/free-sw");
-                    }
-                    break;
-                case "proprietary":
-                    license_copy = _("Proprietary");
-                    break;
-                default:
-                    license_copy = _("Unknown License");
-                    break;
-            }
-        } else {
-            license_copy = AppStream.get_license_name (project_license);
-            license_url = AppStream.get_license_url (project_license);
-        }
-    }
-
     private async void uninstall_clicked () {
         package.uninstall.begin ((obj, res) => {
             try {
@@ -1173,80 +1083,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var title = (Gtk.Label) list_item.child;
         title.label = package.origin_description;
-    }
-
-    class UrlButton : Gtk.Box {
-        public UrlButton (string label, string? uri, string icon_name) {
-            add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            tooltip_text = uri;
-
-            var icon = new Gtk.Image.from_icon_name (icon_name) {
-                valign = Gtk.Align.CENTER
-            };
-
-            var title = new Gtk.Label (label);
-
-            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-            box.append (icon);
-            box.append (title);
-
-            if (uri != null) {
-                var button = new Gtk.Button () {
-                    child = box
-                };
-                button.add_css_class (Granite.STYLE_CLASS_FLAT);
-
-                append (button);
-
-                button.clicked.connect (() => {
-                    new Gtk.UriLauncher (uri).launch.begin (
-                        (Gtk.Window) get_root (),
-                        null
-                    );
-                });
-            } else {
-                append (box);
-            }
-        }
-    }
-
-    class FundButton : Gtk.Button {
-        public FundButton (AppCenterCore.Package package) {
-            add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            add_css_class (Granite.STYLE_CLASS_FLAT);
-
-            var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic") {
-                valign = Gtk.Align.CENTER
-            };
-
-            var title = new Gtk.Label (_("Fund"));
-
-            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-            box.append (icon);
-            box.append (title);
-
-            tooltip_text = _("Fund the development of this app");
-
-            child = box;
-
-            clicked.connect (() => {
-                var stripe = new Widgets.StripeDialog (
-                    1,
-                    package.get_name (),
-                    package.normalized_component_id,
-                    package.get_payments_key ()
-                );
-                stripe.transient_for = ((Gtk.Application) Application.get_default ()).active_window;
-
-                stripe.download_requested.connect (() => {
-                    if (stripe.amount != 0) {
-                        App.add_paid_app (package.component.get_id ());
-                    }
-                });
-
-                stripe.show ();
-            });
-        }
     }
 
     private class ArrowButton : Gtk.Button {

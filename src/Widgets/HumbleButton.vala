@@ -95,7 +95,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
         var stripe_dialog = new Widgets.StripeDialog (
             amount,
             package.get_name (),
-            package.normalized_component_id,
+            package.component.id,
             package.get_payments_key ()
         ) {
             transient_for = ((Gtk.Application) Application.get_default ()).active_window
@@ -103,10 +103,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
 
         stripe_dialog.download_requested.connect (() => {
             download_requested ();
-
-            if (stripe_dialog.amount != 0) {
-                App.add_paid_app (package.component.get_id ());
-            }
         });
 
         stripe_dialog.show ();
