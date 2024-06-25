@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 14:40+0000\n"
+"POT-Creation-Date: 2024-06-25 14:53+0000\n"
 "PO-Revision-Date: 2023-05-27 17:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -57,8 +57,8 @@ msgstr "Bayar apa yang Anda bisa untuk mendukung pengembang"
 msgid "elementary, Inc."
 msgstr "elementary, PT."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:145
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
 msgid "New features:"
 msgstr "Fitur baru:"
 
@@ -66,9 +66,9 @@ msgstr "Fitur baru:"
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:101
-#: data/appcenter.metainfo.xml.in:121 data/appcenter.metainfo.xml.in:136
-#: data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:152
 msgid "Other Improvements:"
 msgstr "Peningkatan Lainnya:"
 
@@ -85,47 +85,47 @@ msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:104
-#: data/appcenter.metainfo.xml.in:126 data/appcenter.metainfo.xml.in:138
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
+#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:154
 msgid "Updated translations"
 msgstr "Terjemahan diperbarui"
 
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:101
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:105
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:121
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:125
 #, fuzzy
 #| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Nama aplikasi yang panjang pada tampilan info App akan dielipskan"
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:126
 #, fuzzy
 #| msgid "Navigate banners on the home page with multitouch gestures"
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Navigasikan spanduk di beranda dengan gerakan multisentuh"
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Tawarkan opsi Perbaikan jika pembaruan Flatpak gagal"
 
-#: data/appcenter.metainfo.xml.in:148
+#: data/appcenter.metainfo.xml.in:150
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
