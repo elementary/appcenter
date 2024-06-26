@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-25 10:16+0000\n"
+"PO-Revision-Date: 2024-06-27 18:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -748,12 +748,10 @@ msgid "Checking for Updates"
 msgstr "Es comprova si hi ha actualitzacions."
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
-"Es baixa una llista d'actualitzacions disponibles per al sistema operatiu i "
-"les aplicacions instal·lades."
+"Es baixa una llista d'actualitzacions disponibles per a les aplicacions "
+"instal·lades."
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -995,13 +993,11 @@ msgstr "%d USD"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Lloc web"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Ajuda"
+msgstr "Obtingueu ajuda"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -1009,21 +1005,19 @@ msgstr "Envieu retroacció"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Contacta amb el desenvolupador"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Patrocinador"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Suggeriu traduccions"
+msgstr "Contribuïu a les traduccions"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Obtingueu-ne el codi font"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1055,7 +1049,7 @@ msgstr "Llicència desconeguda"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Pagament proporcionat per Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
