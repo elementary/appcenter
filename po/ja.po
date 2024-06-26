@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-24 02:16+0000\n"
+"PO-Revision-Date: 2024-06-26 16:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -728,11 +728,8 @@ msgid "Checking for Updates"
 msgstr "アップデートを確認しています"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-"OS とインストール済みアプリの、利用可能なアップデートの一覧をダウンロードして"
+msgstr "インストール済みアプリに対して利用可能なアップデートの一覧をダウンロードして"
 "います"
 
 #: src/Views/AppListUpdateView.vala:73
@@ -969,13 +966,11 @@ msgstr "%dドル"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Web サイト"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "ヘルプ"
+msgstr "サポートを受ける"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -983,21 +978,19 @@ msgstr "フィードバックを送信"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "開発者に問い合わせ"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "資金提供"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "翻訳を提案"
+msgstr "翻訳で貢献"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "ソースコードを取得"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1029,7 +1022,7 @@ msgstr "不明なライセンス"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Stripe による支払い"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
