@@ -151,22 +151,10 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates.update_state ();
 
         if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
-            debug ("Update Flatpaks");
-            for (int i = 0; i < updates_liststore.n_items; i++) {
-                var package = (Package) updates_liststore.get_item (i);
-                if (!package.should_pay) {
-                    debug ("Update: %s", package.get_name ());
-                    try {
-                        yield package.update (false);
-
-                        updates_liststore.remove (i);
-                        i--;
-
-                        updates_size -= package.change_information.size;
-                    } catch (Error e) {
-                        warning ("Updating %s failed: %s", package.get_name (), e.message);
-                    }
-                }
+            try {
+                yield update_all (cancellable);
+            } catch (Error e) {
+                warning ("Automatic updates failed: %s", e.message);
             }
         } else {
             var application = Application.get_default ();
@@ -199,6 +187,34 @@ public class AppCenterCore.UpdateManager : Object {
         installed_apps_changed ();
 
         return updates_number;
+    }
+
+    public async void update_all (Cancellable? cancellable = null) throws Error {
+        for (int i = 0; i < updates_liststore.n_items; i++) {
+            if (cancellable != null && cancellable.is_cancelled ()) {
+                return;
+            }
+
+            var package = (Package) updates_liststore.get_item (i);
+            if (!package.should_pay) {
+                debug ("Update: %s", package.get_name ());
+                try {
+                    yield package.update (false);
+                } catch (Error e) {
+                    // If one package update was cancelled, drop out of the loop of updating the rest
+                    if (e is GLib.IOError.CANCELLED) {
+                        break;
+                    }
+
+                    throw (e);
+                }
+
+                updates_liststore.remove (i);
+                i--;
+
+                updates_size -= package.change_information.size;
+            }
+        }
     }
 
     public void cancel_updates (bool cancel_timeout) {
