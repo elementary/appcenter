@@ -185,7 +185,7 @@ public class AppCenterCore.UpdateManager : Object {
         return updates_number;
     }
 
-    public async void update_all (Cancellable? cancellable = null) throws Error {
+    public async void update_all (Cancellable? cancellable) throws Error {
         for (int i = 0; i < updates_liststore.n_items; i++) {
             if (cancellable != null && cancellable.is_cancelled ()) {
                 return;
