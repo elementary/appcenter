@@ -151,11 +151,7 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates.update_state ();
 
         if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
-            try {
-                yield update_all (cancellable);
-            } catch (Error e) {
-                warning ("Automatic updates failed: %s", e.message);
-            }
+            yield update_all (cancellable);
         } else {
             var application = Application.get_default ();
             if (updates_number > 0) {
@@ -206,6 +202,7 @@ public class AppCenterCore.UpdateManager : Object {
                         break;
                     }
 
+                    warning ("Updating %s failed: %s", package.get_name (), e.message);
                     throw (e);
                 }
 
