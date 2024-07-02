@@ -148,7 +148,27 @@ public class AppCenterCore.UpdateManager : Object {
 
         debug ("%u app updates found", updates_number);
 
-        if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
+        runtime_updates.update_state ();
+
+        if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
+            debug ("Update Flatpaks");
+            for (int i = 0; i < updates_liststore.n_items; i++) {
+                var package = (Package) updates_liststore.get_item (i);
+                if (!package.should_pay) {
+                    debug ("Update: %s", package.get_name ());
+                    try {
+                        yield package.update (false);
+
+                        updates_liststore.remove (i);
+                        i--;
+
+                        updates_size -= package.change_information.size;
+                    } catch (Error e) {
+                        warning ("Updating %s failed: %s", package.get_name (), e.message);
+                    }
+                }
+            }
+        } else {
             var application = Application.get_default ();
             if (updates_number > 0) {
                 var title = ngettext ("Update Available", "Updates Available", updates_number);
@@ -175,8 +195,6 @@ public class AppCenterCore.UpdateManager : Object {
                 warning ("Error setting updates badge: %s", e.message);
             }
         }
-
-        runtime_updates.update_state ();
 
         installed_apps_changed ();
 
@@ -262,23 +280,7 @@ public class AppCenterCore.UpdateManager : Object {
             return GLib.Source.REMOVE;
         });
 
-        if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
-            yield get_updates ();
-            debug ("Update Flatpaks");
-            for (int i = 0; i < updates_liststore.n_items; i++) {
-                var package = (Package) updates_liststore.get_item (i);
-                if (!package.should_pay) {
-                    debug ("Update: %s", package.get_name ());
-                    try {
-                        yield package.update (false);
-                    } catch (Error e) {
-                        warning ("Updating %s failed: %s", package.get_name (), e.message);
-                    }
-                }
-            }
-
-            get_updates.begin ();
-        }
+        get_updates ();
     }
 
     private int compare_package_func (Object object1, Object object2) {
