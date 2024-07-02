@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-03-20 05:57+0000\n"
+"PO-Revision-Date: 2024-07-01 13:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -305,9 +305,7 @@ msgid "Version: %s"
 msgstr "Версія: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u runtimes with updates"
-#| msgid_plural "%u runtimes with updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u середовище виконання з оновленнями"
@@ -516,9 +514,6 @@ msgstr "Поновити оновлення"
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
 msgstr "Знайти"
@@ -761,11 +756,8 @@ msgid "Checking for Updates"
 msgstr "Перевірка наявності оновлень"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-"Завантаження переліку доступних оновлень для ОС і встановлених застосунків"
+msgstr "Завантаження переліку доступних оновлень для встановлених застосунків"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -1004,13 +996,11 @@ msgstr "%d$"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Вебсайт"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Допомога"
+msgstr "Отримати допомогу"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -1018,21 +1008,19 @@ msgstr "Надіслати відгук"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Зв'язатися з розробником"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Спонсорувати"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Запропонувати переклад"
+msgstr "Допомогти з перекладом"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Отримати початковий код"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1066,7 +1054,7 @@ msgstr "Невідома ліцензія"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Платіж забезпечено Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
