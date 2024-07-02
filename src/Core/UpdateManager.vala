@@ -252,7 +252,6 @@ public class AppCenterCore.UpdateManager : Object {
         }
 
         debug ("New refresh task");
-
         refresh_in_progress = true;
         try {
             success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
