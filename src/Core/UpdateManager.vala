@@ -219,38 +219,39 @@ public class AppCenterCore.UpdateManager : Object {
             }
         }
 
-        var nm = NetworkMonitor.get_default ();
-
         /* One cache update a day, keeps the doctor away! */
         var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
         bool last_cache_update_is_old = seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES;
-        if (force || last_cache_update_is_old) {
-            if (nm.get_network_available ()) {
-                debug ("New refresh task");
 
-                refresh_in_progress = true;
-                try {
-                    success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
-
-                    if (success) {
-                        last_cache_update = new DateTime.now_utc ();
-                        AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
-                    }
-
-                    seconds_since_last_refresh = 0;
-                } catch (Error e) {
-                    if (!(e is GLib.IOError.CANCELLED)) {
-                        critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                        cache_update_failed (e);
-                    }
-                } finally {
-                    refresh_in_progress = false;
-                }
-            }
-        } else {
+        if (!force && !last_cache_update_is_old) {
             debug ("Too soon to refresh and not forced");
+            return;
         }
 
+        var nm = NetworkMonitor.get_default ();
+        if (!nm.get_network_available ()) {
+            return;
+        }
+
+        debug ("New refresh task");
+        refresh_in_progress = true;
+        try {
+            success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
+
+            if (success) {
+                last_cache_update = new DateTime.now_utc ();
+                AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
+            }
+
+            seconds_since_last_refresh = 0;
+        } catch (Error e) {
+            if (!(e is GLib.IOError.CANCELLED)) {
+                critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                cache_update_failed (e);
+            }
+        } finally {
+            refresh_in_progress = false;
+        }
 
         var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
         debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
@@ -261,19 +262,17 @@ public class AppCenterCore.UpdateManager : Object {
             return GLib.Source.REMOVE;
         });
 
-        if (nm.get_network_available ()) {
-            if ((force || last_cache_update_is_old) && AppCenter.App.settings.get_boolean ("automatic-updates")) {
-                yield get_updates ();
-                debug ("Update Flatpaks");
-                var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
-                foreach (var app in installed_apps) {
-                    if (app.update_available && !app.should_pay) {
-                        debug ("Update: %s", app.get_name ());
-                        try {
-                            yield app.update (false);
-                        } catch (Error e) {
-                            warning ("Updating %s failed: %s", app.get_name (), e.message);
-                        }
+        if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
+            yield get_updates ();
+            debug ("Update Flatpaks");
+            for (int i = 0; i < updates_liststore.n_items; i++) {
+                var package = (Package) updates_liststore.get_item (i);
+                if (!package.should_pay) {
+                    debug ("Update: %s", package.get_name ());
+                    try {
+                        yield package.update (false);
+                    } catch (Error e) {
+                        warning ("Updating %s failed: %s", package.get_name (), e.message);
                     }
                 }
             }
