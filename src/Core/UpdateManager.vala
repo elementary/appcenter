@@ -293,7 +293,7 @@ public class AppCenterCore.UpdateManager : Object {
             return GLib.Source.REMOVE;
         });
 
-        get_updates ();
+        get_updates (cancellable);
     }
 
     private int compare_package_func (Object object1, Object object2) {
