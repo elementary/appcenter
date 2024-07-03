@@ -318,51 +318,40 @@ namespace AppCenter.Views {
         }
 
         private void on_update_all () {
-            perform_all_updates.begin ();
-        }
-
-        private async void perform_all_updates () {
             if (updating_all_apps) {
                 return;
             }
 
-            update_all_button.sensitive = false;
-            updating_all_apps = true;
+            set_actions_enabled (false);
+
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            update_manager.update_all.begin (null, (obj, res) => {
+                try {
+                    update_manager.update_all.end (res);
+                } catch (Error e) {
+                    var fail_dialog = new UpgradeFailDialog (null, e.message) {
+                        modal = true,
+                        transient_for = (Gtk.Window) get_root ()
+                    };
+                    fail_dialog.present ();
+                }
+
+                set_actions_enabled (true);
+            });
+        }
+
+        private void set_actions_enabled (bool enabled) {
+            updating_all_apps = !enabled;
+            update_all_button.sensitive = enabled;
 
             var row = list_box.get_first_child ();
             while (row != null) {
                 if (row is Gtk.ListBoxRow) {
-                    ((Widgets.InstalledPackageRowGrid) row.get_child ()).action_sensitive = false;
+                    ((Widgets.InstalledPackageRowGrid) row.get_child ()).action_sensitive = enabled;
                 }
 
                 row = row.get_next_sibling ();
             }
-
-            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            for (int i = 0; i < update_manager.updates_liststore.get_n_items (); i++) {
-                var package = (AppCenterCore.Package) update_manager.updates_liststore.get_item (i);
-                if (package.update_available && !package.should_pay) {
-                    try {
-                        yield package.update (false);
-                    } catch (Error e) {
-                        // If one package update was cancelled, drop out of the loop of updating the rest
-                        if (e is GLib.IOError.CANCELLED) {
-                            break;
-                        } else {
-                            var fail_dialog = new UpgradeFailDialog (package, e.message) {
-                                modal = true,
-                                transient_for = (Gtk.Window) get_root ()
-                            };
-                            fail_dialog.present ();
-                            break;
-                        }
-                    }
-                }
-            }
-
-            yield AppCenterCore.UpdateManager.get_default ().get_updates ();
-
-            updating_all_apps = false;
         }
 
         private int compare_installed_func (Object object1, Object object2) {
