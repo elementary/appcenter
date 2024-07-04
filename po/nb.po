@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-16 03:16+0000\n"
+"PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -300,8 +300,8 @@ msgstr[1] "Oppdateringer tilgjengelige"
 #| msgid_plural "%u updates are available."
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u oppdatering tilgjengelig"
-msgstr[1] "%u oppdateringer tilgjengelig."
+msgstr[0] "%u programoppgradering tilgjengelig"
+msgstr[1] "%u programoppdateringer tilgjengelig."
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -530,13 +530,8 @@ msgid "Made for elementary OS"
 msgstr "Laget for elementary OS"
 
 #: src/Views/AppInfoView.vala:304
-#, fuzzy
-#| msgid ""
-#| "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
-msgstr ""
-"Ikke vurdert av elementary mht. sikkerhet, personvern, eller "
-"systemintegrasjon."
+msgstr "Vurdert av elementary mht. sikkerhet, personvern, og systemintegrasjon."
 
 #: src/Views/AppInfoView.vala:327
 msgid "May Not Be Translated"
