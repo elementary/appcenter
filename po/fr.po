@@ -6,7 +6,7 @@
 # Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 # Franck STAUFFER <franck.stauffer@e.email>, 2019.
 # Kristien <kristien@mailo.com>, 2019.
-# Corentin Noël <tintou@noel.tf>, 2021, 2023.
+# Corentin Noël <tintou@noel.tf>, 2021, 2023, 2024.
 # Léo Bidot <toonbunny@gmail.com>, 2021.
 # Bouteiller Thélio <th3liomailg00g1e@gmail.com>, 2024.
 msgid ""
@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-25 10:16+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"PO-Revision-Date: 2024-07-05 09:16+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -262,8 +262,8 @@ msgstr "Le montant est incorrect. Veuillez réessayer avec un montant valide."
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"Le cryptogramme visuel de la carte est incorrect. Veuillez réessayer avec le "
-"bon cryptogramme visuel."
+"Le code PIN de la carte est incorrect. Veuillez réessayer avec le bon code "
+"PIN."
 
 #: src/Core/Stripe.vala:131
 msgid ""
@@ -325,8 +325,8 @@ msgstr[1] "Mises à jour disponibles"
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u mise à jour d'application disponible."
-msgstr[1] "%u mises à jour d'applications disponibles."
+msgstr[0] "%u mise à jour d'application disponible"
+msgstr[1] "%u mises à jour d'applications disponibles"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -763,12 +763,10 @@ msgid "Checking for Updates"
 msgstr "Recherche de mises à jour"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
-"Téléchargement d'une liste des mises à jour disponibles pour le système et "
-"les applications installées"
+"Téléchargement d'une liste des mises à jour disponibles pour les "
+"applications installées"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -1009,13 +1007,11 @@ msgstr "%d $"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Site web"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Aide"
+msgstr "Obtenir de l'aide"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -1023,21 +1019,19 @@ msgstr "Faire un retour"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Contacter le développeur"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Donner"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Suggérer des traductions"
+msgstr "Contribuer à la traduction"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Obtenir le code source"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1071,7 +1065,7 @@ msgstr "licence inconnue"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Paiement via Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
