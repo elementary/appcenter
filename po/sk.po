@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-07-09 19:16+0000\n"
+"PO-Revision-Date: 2024-07-10 20:16+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/sk/>\n"
@@ -124,42 +124,32 @@ msgid "Updating"
 msgstr "Aktualizovanie"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Získavajú sa informácie"
+msgstr "Získavanie informácií o aplikácii…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
-msgstr ""
+msgstr "Zisťovanie veľkosti sťahovania…"
 
 #: src/Core/Job.vala:55
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Kontrolujú sa aktualizácie"
+msgstr "Hľadajú sa aktualizácie…"
 
 #: src/Core/Job.vala:57
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Inštaluje sa"
+msgstr "Inštaluje sa…"
 
 #: src/Core/Job.vala:59
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Inštalujú sa aktualizácie"
+msgstr "Inštalujú sa aktualizácie…"
 
 #: src/Core/Job.vala:61
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Odinštalovanie"
+msgstr "Odinštalováva sa…"
 
 #: src/Core/Job.vala:63
 msgid "Repairing…"
-msgstr ""
+msgstr "Opravuje sa…"
 
 #: src/Core/Package.vala:309
 #, c-format
@@ -281,14 +271,12 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Poskytnutá karta je testovacia. Prosím, použite bežnú kartu."
 
 #: src/Core/UpdateManager.vala:51
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Runtime Updates"
-msgstr "Kontrolujú sa aktualizácie"
+msgstr "Aktualizácie Runtime"
 
 #: src/Core/UpdateManager.vala:52
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Aktualizácie pre runtime aplikácií"
 
 #: src/Core/UpdateManager.vala:120
 #, c-format
@@ -296,14 +284,12 @@ msgid "Version: %s"
 msgstr "Verzia: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u súčasť vyžaduje aktualizáciu"
-msgstr[1] "%u súčasti vyžadujú aktualizáciu"
-msgstr[2] "%u súčastí vyžaduje aktualizáciu"
+msgstr[0] "%u runtime vyžaduje aktualizáciu"
+msgstr[1] "%u runtime vyžadujú aktualizáciu"
+msgstr[2] "%u runtime vyžaduje aktualizáciu"
 
 #: src/Core/UpdateManager.vala:144
 #, c-format
@@ -318,14 +304,12 @@ msgstr[1] "Dostupné aktualizácie"
 msgstr[2] "Dostupných aktualizácií"
 
 #: src/Core/UpdateManager.vala:156
-#, fuzzy, c-format
-#| msgid "%u update is available."
-#| msgid_plural "%u updates are available."
+#, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u aktualizácií je dostupných"
-msgstr[1] "%u aktualizácia je dostupná"
-msgstr[2] "%u aktualizácie sú dostupné"
+msgstr[0] "%u aktualizácia aplikácie je dostupná"
+msgstr[1] "%u aktualizácie aplikácií sú dostupné"
+msgstr[2] "%u aktualizácií aplikácií je dostupných"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -346,13 +330,11 @@ msgstr "„%s“ sa nepodarilo nainštalovať"
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
-msgstr ""
+msgstr "Opraviť"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "Nepodarilo sa získať aktualizácie"
+msgstr "Oprava sa nepodarila"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
@@ -485,17 +467,14 @@ msgid "Try Again"
 msgstr "Skúsiť znova"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-#, fuzzy
-#| msgid ""
-#| "This may have been caused by external, manually added software "
-#| "repositories or a corrupted sources file."
 msgid ""
 "This may have been caused by sideloaded or manually compiled software, a "
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
 msgstr ""
-"Toto mohlo byť spôsobené externými, ručne pridanými repozitármi softvéru "
-"alebo poškodeným zdrojovým súborom."
+"Toto mohlo byť spôsobené ručne nainštalovaným či skompilovaným softvérom, "
+"softvérovým repozitárom tretej strany alebo chybou správcu balíčkov. Ručné "
+"opätovné načítanie aktualizácií môže vyriešiť túto chybu."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -507,20 +486,15 @@ msgid "Failed to update “%s”"
 msgstr "Nepodarilo sa aktualizovať „%s“"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Refresh Updates"
-msgstr "Kontrolujú sa aktualizácie"
+msgstr "Obnoviť aktualizácie"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
-msgstr "Vyhľadávanie"
+msgstr "Hľadať"
 
 #: src/Views/AppInfoView.vala:260
 msgid "Illicit Substances"
@@ -557,47 +531,38 @@ msgstr "Realistické alebo participatívne hazardné hry"
 
 #: src/Views/AppInfoView.vala:303
 msgid "Made for elementary OS"
-msgstr ""
+msgstr "Vytvorené pre elementary OS"
 
 #: src/Views/AppInfoView.vala:304
-#, fuzzy
-#| msgid ""
-#| "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
-"Nie je preverené spoločnosťou elementary ohľadom zabezpečenia, rešpektovania "
-"súkromia či začlenenia do systému"
+"Preverené spoločnosťou elementary ohľadom zabezpečenia, rešpektovania "
+"súkromia a začlenenia do systému"
 
 #: src/Views/AppInfoView.vala:327
-#, fuzzy
-#| msgid "Translate"
 msgid "May Not Be Translated"
-msgstr "Preložiť"
+msgstr "Nemusí byť preložené"
 
 #: src/Views/AppInfoView.vala:328
 msgid "This app does not provide language information"
-msgstr ""
+msgstr "Táto aplikácia neposkytuje informácie o jazyku"
 
 #: src/Views/AppInfoView.vala:335
-#, fuzzy
-#| msgid "Translate"
 msgid "Not Translated"
-msgstr "Preložiť"
+msgstr "Nepreložené"
 
 #: src/Views/AppInfoView.vala:336
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Táto aplikácia nie je dostupná vo vašom jazyku"
 
 #: src/Views/AppInfoView.vala:343
-#, fuzzy
-#| msgid "Translate"
 msgid "Not Fully Translated"
-msgstr "Preložiť"
+msgstr "Nie celkom preložené"
 
 #: src/Views/AppInfoView.vala:344
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr ""
+msgstr "Táto aplikácia je z %i%% preložená do vášho jazyka"
 
 #: src/Views/AppInfoView.vala:368
 msgid "Conflict"
@@ -675,28 +640,20 @@ msgstr "Rozšírenia:"
 
 #: src/Views/AppInfoView.vala:772
 msgid "End of Life"
-msgstr ""
+msgstr "Ukončená podpora"
 
 #: src/Views/AppInfoView.vala:773
-#, fuzzy
-#| msgid ""
-#| "Built with older technologies that may not work as expected or receive "
-#| "security updates"
 msgid "May not work as expected or receive security updates"
 msgstr ""
-"Postavené na starších technológiách, ktoré nemusia správne fungovať alebo "
-"dostávať bezpečnostné aktualizácie"
+"Nemusí fungovať podľa očakávania alebo dostávať bezpečnostné aktualizácie"
 
 #: src/Views/AppInfoView.vala:779
 msgid "Outdated"
 msgstr "Zastarané"
 
 #: src/Views/AppInfoView.vala:780
-#, fuzzy
-#| msgid ""
-#| "Built for an older version of %s; might not support the latest features"
 msgid "May not work as expected or support the latest features"
-msgstr "Vytvorené pre staršiu verziu %s; nemusí podporovať najnovšie funkcie"
+msgstr "Nemusí fungovať podľa očakávania alebo podporovať najnovšie funkcie"
 
 #: src/Views/AppInfoView.vala:788
 msgid "Unstable"
@@ -713,74 +670,75 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:802
 msgid "Insecure Sandbox"
-msgstr ""
+msgstr "Nezabezpečené behové prostredie"
 
 #: src/Views/AppInfoView.vala:803
 msgid "Can ignore or modify its own system permissions"
-msgstr ""
+msgstr "Môže ignorovať alebo upravovať svoje systémové oprávnenia"
 
 #: src/Views/AppInfoView.vala:812
 msgid "System Folder Access"
-msgstr ""
+msgstr "Prístup k systémových priečinkom"
 
 #: src/Views/AppInfoView.vala:813
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
+"Vrátane priečinku Domov všetkých používateľov okrem vnútorných častí systému"
 
 #: src/Views/AppInfoView.vala:820
 msgid "Home Folder Access"
-msgstr ""
+msgstr "Prístup k priečinku Domov"
 
 #: src/Views/AppInfoView.vala:821
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
 msgstr ""
+"Vrátane všetkých dokumentov, stiahnutých súborov, hudby, obrázkov, videí a "
+"skrytých priečinkov"
 
 #: src/Views/AppInfoView.vala:830
 msgid "Legacy Autostart"
-msgstr ""
+msgstr "Zastarané automatické spustenie"
 
 #: src/Views/AppInfoView.vala:831
 msgid "Can automatically start up and run in the background without asking"
-msgstr ""
+msgstr "Môže sa bez opýtania automaticky spustiť a bežať na pozadí"
 
 #: src/Views/AppInfoView.vala:840
 msgid "Location Access"
-msgstr ""
+msgstr "Prístup k polohe"
 
 #: src/Views/AppInfoView.vala:841
 msgid "Can see your precise location at any time without asking"
-msgstr ""
+msgstr "Môže bez opýtania kedykoľvek zistiť vašu presnú polohu"
 
 #: src/Views/AppInfoView.vala:850
 msgid "Legacy Notifications"
-msgstr ""
+msgstr "Zastarané oznámenia"
 
 #: src/Views/AppInfoView.vala:851
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
+"Bubliny nemusia byť nastaviteľné alebo sa môžu v centre oznámení zobrazovať "
+"ako „Ostatné“"
 
 #: src/Views/AppInfoView.vala:860
 msgid "System Settings Access"
-msgstr ""
+msgstr "Prístup k nastaveniam systému"
 
 #: src/Views/AppInfoView.vala:861
 msgid "Can read and modify system settings"
-msgstr ""
+msgstr "Môže čítať a upravovať nastavenia systému"
 
 #: src/Views/AppListUpdateView.vala:46
 msgid "Checking for Updates"
 msgstr "Kontrolujú sa aktualizácie"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-"Sťahovanie zoznamu aktualizácií, ktoré sú dostupné pre operačný systém a "
-"nainštalované aplikácie"
+msgstr "Sťahovanie zoznamu aktualizácií dostupných pre nainštalované aplikácie"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -788,23 +746,21 @@ msgstr "Aktualizovať všetko"
 
 #: src/Views/AppListUpdateView.vala:96
 msgid "Up to Date"
-msgstr "Aktuálne"
+msgstr "Aktualizované"
 
 #: src/Views/AppListUpdateView.vala:124
-#, fuzzy
-#| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Automaticky aktualizovať preverené platené a neplatené aplikácie"
+msgstr "Automaticky aktualizovať aplikácie zadarmo a zakúpené aplikácie"
 
 #: src/Views/AppListUpdateView.vala:125
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
+"Aplikácie, ktorých používanie si skúšate zadarmo, sa nebudú automaticky "
+"aktualizovať"
 
 #: src/Views/AppListUpdateView.vala:129
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Check for Updates"
-msgstr "Kontrolujú sa aktualizácie"
+msgstr "Vyhľadať aktualizácie"
 
 #: src/Views/AppListUpdateView.vala:151
 msgid "Settings"
@@ -827,7 +783,7 @@ msgstr[2] "%u dostupných aktualizácií"
 #: src/Views/AppListUpdateView.vala:276
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
+msgstr "Všetko je aktuálne. Posledná kontrola %s."
 
 #: src/Views/AuthorView.vala:31
 #, c-format
@@ -915,11 +871,9 @@ msgid "Privacy & Security"
 msgstr "Súkromie a zabezpečenie"
 
 #: src/Views/Homepage.vala:246
-#, fuzzy
-#| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Nepodarilo sa nainštalovať aplikáciu"
+msgstr "Aktualizácie a nainštalované aplikácie"
 
 #: src/Views/Homepage.vala:265
 msgid "Home"
@@ -927,7 +881,7 @@ msgstr "Domov"
 
 #: src/Views/Homepage.vala:279
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Prehľadávajte a spravujte aplikácie"
 
 #: src/Views/Homepage.vala:280
 msgid ""
@@ -937,16 +891,20 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
+"Open-source obchod s aplikáciami od elementary s dobrovoľnými platbami. "
+"Vyskúšané a preverené aplikácie, aby bol zaručený natívny, bezpečný a "
+"súkromie rešpektujúci zážitok. Prezerajte kategórie alebo vyhľadávajte a "
+"objavujte nové aplikácie. AppCentrum je tiež používané na aktualizovanie "
+"vášho systému na najnovšiu a najlepšiu verziu pre budúce nové funkcie a "
+"opravy."
 
 #: src/Views/Homepage.vala:520
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Hry"
+msgstr "Zábava a hry"
 
 #: src/Views/Homepage.vala:545
 msgid "Fun &"
-msgstr ""
+msgstr "Zábava a"
 
 #: src/Views/Homepage.vala:551
 msgid "Games"
@@ -962,7 +920,7 @@ msgstr "Neboli nájdené žiadne aplikácie"
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:138
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "Hľadaný výraz musí byť aspoň 3 znaky dlhý."
 
 #: src/Views/SearchView.vala:49 src/Views/SearchView.vala:156
 msgid "Search Apps"
@@ -1021,13 +979,11 @@ msgstr "$%d"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Webstránka"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Pomocník"
+msgstr "Získať pomoc"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -1035,21 +991,19 @@ msgstr "Odoslať spätnú väzbu"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Kontaktovať vývojára"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Podporiť"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Navrhnúť preklady"
+msgstr "Prispieť prekladmi"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Získať zdrojový kód"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1081,17 +1035,15 @@ msgstr "Neznáma licencia"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Nákup poskytovaný cez Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Opravené chyby"
 
 #: src/Widgets/ReleaseRow.vala:106
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Neznámy stav"
+msgstr "Neznámy dátum"
 
 #: src/Widgets/ReleaseRow.vala:113
 msgid "Unknown version"
@@ -1117,12 +1069,12 @@ msgstr "Až do %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
-msgstr ""
+msgstr "Poznámky k vydaniu"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
 #, c-format
 msgid "What's new in %s"
-msgstr ""
+msgstr "Čo je nové v %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
