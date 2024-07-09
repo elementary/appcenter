@@ -1,14 +1,14 @@
 # tylnesh <kohutek.michal@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
-# JohnDumpling <john_dumpling@protonmail.com>, 2021, 2022.
+# JohnDumpling <john_dumpling@protonmail.com>, 2021, 2022, 2024.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2023-02-17 15:25+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2024-07-09 19:16+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/sk/>\n"
 "Language: sk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -39,6 +39,9 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
+"AppCentrum sa automaticky spustí, keď sa zapne toto zariadenie a bude bežať, "
+"keď sa zatvorí jeho okno, aby mohlo automaticky kontrolovať a inštalovať "
+"aktualizácie."
 
 #: src/Application.vala:328
 msgid "The app has been installed"
@@ -68,12 +71,12 @@ msgstr "Nastavenia siete…"
 
 #: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Spustené v Demo režime"
 
 #: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "Nainštalujte %s, aby ste mohli prehliadať a inštalovať aplikácie."
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
