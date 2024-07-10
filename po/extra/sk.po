@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2021-08-20 19:49+0000\n"
+"PO-Revision-Date: 2024-07-10 20:16+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/extra/"
 "sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -42,50 +42,49 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Objavte nové aplikácie"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Zostaňte aktualizovaní"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Zaplaťte, koľko môžete na podporu vývojárov"
 
 #: data/appcenter.metainfo.xml.in:62
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
 #: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
 msgid "New features:"
-msgstr ""
+msgstr "Nové funkcie:"
 
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Spravujte automatické spustenie v Nastaveniach systému → Aplikácie"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
 #: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
 #: data/appcenter.metainfo.xml.in:152
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Other Improvements:"
-msgstr "Vylepšenia:"
+msgstr "Ďalšie vylepšenia:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Automatické aktualizácie aplikácií ako predvolené"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "Aktualizácie OS sa presunuli do Nastavení systému"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Pridávať odznaky na aplikácie vyrobené pre elementary OS namiesto pridávania "
+"odznakov na aplikácie z iných zdrojov"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
 #: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
@@ -96,57 +95,64 @@ msgstr "Aktualizované preklady"
 #: data/appcenter.metainfo.xml.in:101
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Upozorniť, keď aplikácie používajú zastarané automatické spustenie a "
+"oznámenia"
 
 #: data/appcenter.metainfo.xml.in:105
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Oprava preblikávania na zobrazení Informácií o aplikáciách pri zisťovaní "
+"veľkosti inštalácie"
 
 #: data/appcenter.metainfo.xml.in:121
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Upozorniť, keď majú aplikácie prístup k priečinku Domov alebo systémovým "
+"priečinkom, polohe, nastaveniam alebo majú nezabezpečený sandbox."
 
 #: data/appcenter.metainfo.xml.in:125
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
+msgstr "Zúženie rozloženia a okrajov v zobrazeniach Informácií o aplikáciách"
 
 #: data/appcenter.metainfo.xml.in:126
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Zobraziť náhradný baner na domovskej obrazovke pri načítavaní"
 
 #: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Nezaraďovať ne-AppCentrové aplikácie pod samostatný nadpis v zobrazeniach "
+"kategórií"
 
 #: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Poskytnúť možnosť Opraviť, keď zlyhá aktualizácia Flatpak aplikácií"
 
 #: data/appcenter.metainfo.xml.in:150
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Zobraziť správu v zobrazení aktualizácií, keď je všetko aktuálne, spolu s "
+"časom poslednej kontroly"
 
 #: data/io.elementary.appcenter.desktop.in.in:9
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"inštalovať;odinštalovať;odstrániť;katalóg;obchod;aplikácie;aktualizácie,"
-"softvér;"
+msgstr "inštalovať;odinštalovať;odstrániť;katalóg;obchod;aplikácie;softvér;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Kontrola aktualizácií"
+msgstr "Vyhľadať aktualizácie"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
-msgstr ""
+msgstr "Opravte zdroje softvéru"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
-msgstr ""
+msgstr "Overenie je vyžadované na opravu zdrojov softvéru"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"
