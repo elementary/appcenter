@@ -119,7 +119,7 @@ public class AppCenter.App : Gtk.Application {
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
             if (active_window != null) {
-                active_window.destroy ();
+                active_window.close ();
             }
         });
 
