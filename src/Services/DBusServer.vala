@@ -33,8 +33,7 @@ public class DBusServer : Object {
      * @param compontent_id  the component ID to install
      */
     public void install (string component_id) throws Error {
-        var client = AppCenterCore.Client.get_default ();
-        var package = client.get_package_for_component_id (component_id);
+        var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (component_id);
         if (package == null) {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
@@ -48,8 +47,7 @@ public class DBusServer : Object {
      * @param compontent_id  the component ID to uninstall
      */
     public void uninstall (string component_id) throws Error {
-        var client = AppCenterCore.Client.get_default ();
-        var package = client.get_package_for_component_id (component_id);
+        var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (component_id);
 
         if (package == null) {
             var error = new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
@@ -66,13 +64,7 @@ public class DBusServer : Object {
                     try {
                         package.uninstall.end (res);
                     } catch (Error e) {
-#if PACKAGEKIT_BACKEND
-                        // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-                        // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
-                        if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
-                            new UninstallFailDialog (package, (owned) e.message).present ();
-                        }
-#endif
+                        critical (e.message);
                     }
                 });
             }
@@ -87,8 +79,7 @@ public class DBusServer : Object {
      * @param compontent_id  the component ID to update
      */
     public void update (string component_id) throws Error {
-        var client = AppCenterCore.Client.get_default ();
-        var package = client.get_package_for_component_id (component_id);
+        var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (component_id);
         if (package == null) {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
@@ -103,8 +94,7 @@ public class DBusServer : Object {
      * @return the component ID, if not found returns empty string
      */
     public string get_component_from_desktop_id (string desktop_id) throws Error {
-        var client = AppCenterCore.Client.get_default ();
-        var package = client.get_package_for_desktop_id (desktop_id);
+        var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_desktop_id (desktop_id);
         if (package != null) {
             return package.component.get_id ();
         }
@@ -119,8 +109,7 @@ public class DBusServer : Object {
      * @return a list of component ID's that match the query
      */
     public string[] search_components (string query) throws Error {
-        var client = AppCenterCore.Client.get_default ();
-        var packages = client.search_applications (query, null);
+        var packages = AppCenterCore.FlatpakBackend.get_default ().search_applications (query, null);
         string[] components = {};
         foreach (var package in packages) {
             components += package.component.get_id ();

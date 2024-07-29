@@ -4,6 +4,27 @@
  */
 
 homepage {
+    headerbar {
+        min-height: rem(32px);
+        padding-bottom: rem(3px);
+        padding-top: rem(3px);
+    }
+
+    .badge {
+        font-size: 0.75em;
+        margin: rem(3px);
+        min-height: rem(14px);
+        min-width: rem(14px);
+
+        &:dir(ltr) {
+            margin-right: 0;
+        }
+
+        &:dir(rtl) {
+            margin-left: 0;
+        }
+    }
+
     .banner {
         border: 1px solid #{'shade(@banner_bg_color, 0.8)'};
         box-shadow:
@@ -12,7 +33,7 @@ homepage {
             inset 0 -1px 0 0 #{'alpha(shade(@banner_bg_color, 1.7), 0.15)'},
             0 3px 2px -1px #{'alpha(shade(@banner_bg_color, 0.5), 0.2)'},
             0 3px 5px #{'alpha(shade(@banner_bg_color, 0.5), 0.15)'};
-        margin: rem(24px);
+        margin: rem(6px) rem(24px);
         padding: rem(64px) rem(24px);
 
         &:hover {

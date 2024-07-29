@@ -4,11 +4,8 @@ appcenter_files = files(
     'MainWindow.vala',
     'SuspendControl.vala',
     'Utils.vala',
-    'Core/BackendAggregator.vala',
-    'Core/BackendInterface.vala',
     'Core/CardUtils.vala',
     'Core/ChangeInformation.vala',
-    'Core/Client.vala',
     'Core/FlatpakBackend.vala',
     'Core/HttpClient.vala',
     'Core/Job.vala',
@@ -34,13 +31,14 @@ appcenter_files = files(
     'Views/Homepage.vala',
     'Views/SearchView.vala',
     'Widgets/ActionStack.vala',
+    'Widgets/BackButton.vala',
     'Widgets/Banner.vala',
     'Widgets/CardNumberEntry.vala',
     'Widgets/HumbleButton.vala',
+    'Widgets/LinkListBox.vala',
     'Widgets/PackageRow.vala',
     'Widgets/ProgressButton.vala',
     'Widgets/ReleaseRow.vala',
-    'Widgets/SharePopover.vala',
     'Widgets/SizeLabel.vala',
     'Widgets/AppContainers/AbstractPackageRowGrid.vala',
     'Widgets/AppContainers/InstalledPackageRowGrid.vala',
@@ -64,37 +62,6 @@ endif
 
 if get_option('hide_upstream_distro_apps')
     args += '--define=HIDE_UPSTREAM_DISTRO_APPS'
-endif
-
-if appstream.version().version_compare('>=0.15')
-    args += '--define=HAS_APPSTREAM_0_15'
-endif
-
-if appstream.version().version_compare('>=0.16')
-    args += '--define=HAS_APPSTREAM_0_16'
-endif
-
-if appstream.version().version_compare('>=1.0')
-    args += '--define=HAS_APPSTREAM_1_0'
-endif
-
-if get_option('packagekit_backend')
-    appcenter_files += files(
-        'Core/PackageKitBackend.vala',
-        'Core/Task.vala',
-    )
-
-    args += '--define=PACKAGEKIT_BACKEND'
-endif
-
-if get_option('ubuntu_drivers_backend')
-    if not get_option('packagekit_backend')
-        error('Option ubuntu_drivers requires option packagekit_backend')
-    endif
-
-    appcenter_files += files('Core/UbuntuDriversBackend.vala')
-
-    args += '--define=UBUNTU_DRIVERS_BACKEND'
 endif
 
 executable(

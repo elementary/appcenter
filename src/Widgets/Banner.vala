@@ -44,11 +44,14 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     }
 
     public Banner.from_package (AppCenterCore.Package package) {
+        // Can't get widget scale factor before it's realized
+        var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+
         Object (
             name: package.get_name (),
             summary: package.get_summary (),
             description: package.get_description (),
-            icon: package.get_icon (128, get_scale_factor ()),
+            icon: package.get_icon (128, scale_factor),
             brand_color: package.get_color_primary ()
         );
     }
@@ -122,7 +125,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             }
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
-            provider.load_from_data (colored_css.data);
+            provider.load_from_string (colored_css);
             get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);

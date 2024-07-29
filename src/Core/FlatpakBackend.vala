@@ -20,10 +20,9 @@
 public class AppCenterCore.FlatpakPackage : Package {
     public weak Flatpak.Installation installation { public get; construct; }
 
-    public FlatpakPackage (Flatpak.Installation installation, Backend backend, AppStream.Component component) {
+    public FlatpakPackage (Flatpak.Installation installation, AppStream.Component component) {
         Object (
             installation: installation,
-            backend: backend,
             component: component
         );
     }
@@ -49,7 +48,10 @@ public class AppCenterCore.FlatpakPackage : Package {
     }
 }
 
-public class AppCenterCore.FlatpakBackend : Backend, Object {
+public class AppCenterCore.FlatpakBackend : Object {
+    public signal void operation_finished (Package package, Package.State operation, Error? error);
+    public signal void cache_flush_needed ();
+
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
     private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
     private const string FLATPAK_METADATA_KEY_RUNTIME = "runtime";
@@ -83,11 +85,31 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private uint total_operations;
     private int current_operation;
 
+    private uint remove_inhibit_timeout = 0;
+    private uint inhibit_token = 0;
+
     private bool worker_func () {
         while (thread_should_run) {
             var job = jobs.pop ();
             job_type = job.operation;
             working = true;
+            set_actions_enabled (working);
+
+            if (remove_inhibit_timeout != 0) {
+                Source.remove (remove_inhibit_timeout);
+                remove_inhibit_timeout = 0;
+            }
+
+            unowned var app = (Gtk.Application) GLib.Application.get_default ();
+
+            if (inhibit_token == 0) {
+                inhibit_token = app.inhibit (
+                    app.get_active_window (),
+                    Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+                    _("package operations are being performed")
+                );
+            }
+
             switch (job.operation) {
                 case Job.Type.REFRESH_CACHE:
                     refresh_cache_internal (job);
@@ -110,9 +132,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
-                case Job.Type.IS_PACKAGE_INSTALLED:
-                    is_package_installed_internal (job);
-                    break;
                 case Job.Type.REPAIR:
                     repair_internal (job);
                     break;
@@ -120,7 +139,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     assert_not_reached ();
             }
 
+            // Wait for 5 seconds of inactivity before uninhibiting as we may be
+            // rapidly switching between working states on different backends etc...
+            if (remove_inhibit_timeout == 0) {
+                remove_inhibit_timeout = Timeout.add_seconds (5, () => {
+                    if (inhibit_token != 0) {
+                        app.uninhibit (inhibit_token);
+                        inhibit_token = 0;
+                    }
+
+                    remove_inhibit_timeout = 0;
+
+                    return false;
+                });
+            }
+
             working = false;
+            set_actions_enabled (working);
         }
 
         return true;
@@ -129,24 +164,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_16
         user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
-#elif HAS_APPSTREAM_0_15
-        user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
-#else
-        user_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
-        user_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
-#endif
 
         system_appstream_pool = new AppStream.Pool ();
-#if HAS_APPSTREAM_0_16
         system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
-#elif HAS_APPSTREAM_0_15
-        system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_COLLECTION);
-#else
-        system_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
-        system_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
-#endif
+
         package_list = new Gee.HashMap<string, Package> (null, null);
 
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
@@ -222,6 +244,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         reload_appstream_pool ();
     }
 
+    private void set_actions_enabled (bool working) {
+        // Make sure we run on the main thread
+        Idle.add_once (() => {
+            var app = Application.get_default ();
+            ((SimpleAction) app.lookup_action ("refresh")).set_enabled (!working && !Utils.is_running_in_guest_session ());
+            ((SimpleAction) app.lookup_action ("repair")).set_enabled (!working);
+        });
+    }
+
     private async void trigger_update_check () {
         try {
             yield refresh_cache (null);
@@ -229,7 +260,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             warning ("Unable to refresh cache after external change: %s", e.message);
         }
 
-        yield Client.get_default ().refresh_updates ();
+        yield UpdateManager.get_default ().get_updates ();
     }
 
     static construct {
@@ -263,12 +294,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         jobs.push (job);
         yield;
         return job;
-    }
-
-    public async Gee.Collection<PackageDetails> get_prepared_applications (Cancellable? cancellable = null) {
-        var prepared_apps = new Gee.HashSet<PackageDetails> ();
-
-        return prepared_apps;
     }
 
     private void get_installed_packages_internal (Job job) {
@@ -400,47 +425,44 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
-#if HAS_APPSTREAM_1_0
         AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components ().as_array (), category_array, false);
         AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components ().as_array (), category_array, false);
-#else
-        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (), category_array, false);
-        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
-#endif
         components = category.get_components ();
 
-        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        var apps = new Gee.HashMap<string, Package> ();
         components.foreach ((comp) => {
             var packages = get_packages_for_component_id (comp.get_id ());
-            apps.add_all (packages);
+
+            foreach (var package in packages) {
+                var package_component_id = package.normalized_component_id;
+                if (apps.has_key (package_component_id)) {
+                    if (package.origin_score > apps[package_component_id].origin_score) {
+                        apps[package_component_id] = package;
+                    }
+                } else {
+                    apps[package_component_id] = package;
+                }
+            }
         });
 
-        return apps;
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        var results = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = user_appstream_pool.search (query);
         if (category == null) {
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
-                apps.add_all (packages);
+                results.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
-                        apps.add (package);
+                        results.add (package);
                     }
                 }
             });
@@ -448,31 +470,35 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         comps = system_appstream_pool.search (query);
         if (category == null) {
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
-                apps.add_all (packages);
+                results.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
-#if HAS_APPSTREAM_1_0
             comps.as_array ().foreach ((comp) => {
-#else
-            comps.foreach ((comp) => {
-#endif
                 var packages = get_packages_for_component_id (comp.get_id ());
                 foreach (var package in packages) {
                     if (package in cat_packages) {
-                        apps.add (package);
+                        results.add (package);
                     }
                 }
             });
         }
 
-        return apps;
+        var apps = new Gee.HashMap<string, Package> ();
+        foreach (var result in results) {
+            var result_component_id = result.normalized_component_id;
+            if (apps.has_key (result_component_id)) {
+                if (result.origin_score > apps[result_component_id].origin_score) {
+                    apps[result_component_id] = result;
+                }
+            } else {
+                apps[result_component_id] = result;
+            }
+        }
+
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications_mime (string query) {
@@ -531,11 +557,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 continue;
             }
 
-#if HAS_APPSTREAM_1_0
             if (package.component.get_developer ().get_name () == author) {
-#else
-            if (package.component.developer_name == author) {
-#endif
                 package_ids.add (package.component.id);
 
                 AppCenterCore.Package? user_package = null;
@@ -866,25 +888,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
     }
 
-    private void is_package_installed_internal (Job job) {
-        var args = (IsPackageInstalledArgs)job.args;
-        unowned var package = args.package;
-
+    public bool is_package_installed (Package package) throws GLib.Error {
         unowned var fp_package = package as FlatpakPackage;
         if (fp_package == null || fp_package.installation == null) {
             critical ("Could not check installed state of package due to no flatpak installation");
-            job.result = Value (typeof (bool));
-            job.result = false;
-            job.results_ready ();
-            return;
+            return false;
         }
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            job.result = Value (typeof (bool));
-            job.result = false;
-            job.results_ready ();
-            return;
+            return false;
         }
 
         bool system = fp_package.installation == system_installation;
@@ -893,49 +906,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         try {
             var installed_refs = fp_package.installation.list_installed_refs ();
-            for (int j = 0; j < installed_refs.length; j++) {
-                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
-
+            foreach (unowned var installed_ref in installed_refs) {
                 var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
                 if (key == bundle_id) {
-                    job.result = Value (typeof (bool));
-                    job.result = true;
-                    job.results_ready ();
-                    return;
+                    return true;
                 }
             }
         } catch (Error e) {
-            job.error = e;
-            job.results_ready ();
-            return;
+            warning ("Failed to check if package is installed: %s", e.message);
         }
 
-        job.result = Value (typeof (bool));
-        job.result = false;
-        job.results_ready ();
-    }
-
-    public async bool is_package_installed (Package package) throws GLib.Error {
-        var job_args = new IsPackageInstalledArgs ();
-        job_args.package = package;
-
-        var job = yield launch_job (Job.Type.IS_PACKAGE_INSTALLED, job_args);
-
-        return job.result.get_boolean ();
-    }
-
-    public async PackageDetails get_package_details (Package package) throws GLib.Error {
-        var details = new PackageDetails ();
-        details.name = package.component.get_name ();
-        details.description = package.component.get_description ();
-        details.summary = package.component.get_summary ();
-
-        var newest_version = package.get_newest_release ();
-        if (newest_version != null) {
-            details.version = newest_version.get_version ();
-        }
-
-        return details;
+        return false;
     }
 
     private void refresh_cache_internal (Job job) {
@@ -970,7 +951,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         reload_appstream_pool ();
-        BackendAggregator.get_default ().cache_flush_needed ();
+        cache_flush_needed ();
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
@@ -1102,16 +1083,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void reload_appstream_pool () {
         var new_package_list = new Gee.HashMap<string, Package> ();
 
-#if HAS_APPSTREAM_0_16
         user_appstream_pool.reset_extra_data_locations ();
         user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.CATALOG);
-#elif HAS_APPSTREAM_0_15
-        user_appstream_pool.reset_extra_data_locations ();
-        user_appstream_pool.add_extra_data_location (user_metadata_path, AppStream.FormatStyle.COLLECTION);
-#else
-        user_appstream_pool.clear_metadata_locations ();
-        user_appstream_pool.add_metadata_location (user_metadata_path);
-#endif
 
         try {
             debug ("Loading flatpak user pool");
@@ -1119,11 +1092,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
-#if HAS_APPSTREAM_1_0
             user_appstream_pool.get_components ().as_array ().foreach ((comp) => {
-#else
-            user_appstream_pool.get_components ().foreach ((comp) => {
-#endif
                 if (!validate (comp)) {
                     return;
                 }
@@ -1135,7 +1104,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (user_installation, this, comp);
+                        package = new FlatpakPackage (user_installation, comp);
                     }
 
                     new_package_list[key] = package;
@@ -1143,16 +1112,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         }
 
-#if HAS_APPSTREAM_0_16
         system_appstream_pool.reset_extra_data_locations ();
         system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.CATALOG);
-#elif HAS_APPSTREAM_0_15
-        system_appstream_pool.reset_extra_data_locations ();
-        system_appstream_pool.add_extra_data_location (system_metadata_path, AppStream.FormatStyle.COLLECTION);
-#else
-        system_appstream_pool.clear_metadata_locations ();
-        system_appstream_pool.add_metadata_location (system_metadata_path);
-#endif
 
         try {
             debug ("Loading flatpak system pool");
@@ -1160,11 +1121,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
-#if HAS_APPSTREAM_1_0
             system_appstream_pool.get_components ().as_array ().foreach ((comp) => {
-#else
-            system_appstream_pool.get_components ().foreach ((comp) => {
-#endif
                 if (!validate (comp)) {
                     return;
                 }
@@ -1176,7 +1133,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (system_installation, this, comp);
+                        package = new FlatpakPackage (system_installation, comp);
                     }
 
                     new_package_list[key] = package;
@@ -1185,6 +1142,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         package_list = new_package_list;
+    }
+
+    private bool validate (AppStream.Component component) {
+        if (component.get_kind () == CONSOLE_APP) {
+            return false;
+        }
+
+        if (component.get_kind () == RUNTIME) {
+            return false;
+        }
+
+        return true;
     }
 
     private string generate_package_list_key (bool system, string origin, string bundle_id) {
@@ -1664,7 +1633,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         string[] user_updates = {};
         string[] system_updates = {};
 
-        foreach (var updatable in package.change_information.updatable_packages[this]) {
+        foreach (var updatable in package.change_information.updatable_packages) {
             bool system = false;
             string bundle_id = "";
 

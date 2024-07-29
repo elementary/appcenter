@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2023-07-07 12:07+0000\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
@@ -12,25 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:3
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
 msgstr "AppSenter"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:4
+#: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Bla gjennom og administrer apper"
+msgstr "Utforsk og håndter programmer"
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,9 +33,11 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"En appbutikk for uavhengige friprogutviklere. Utforsk etter kategori eller "
-"søk og oppdag nye apper. AppSenter brukes også for oppdatering av systemet "
-"ditt til siste og beste versjon for nye funksjoner og feilrettinger."
+"Fri betal-hva-du-vil -butikk fra elementary. Vurdert og gjennomsett av "
+"elementary for å tilby noe systemspesifikt som også er "
+"personvernsrespekterende og sikkert. Utforsk kategorier, eller søk og oppdag "
+"nye programmer. Programsenter brukes også for å oppdatere systemet ditt til "
+"nyeste versjon av funksjoner og feilfikser."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -54,41 +51,57 @@ msgstr "Hold deg oppdatert"
 msgid "Pay what you can to support developers"
 msgstr "Betal det du kan for å støtte utviklere"
 
-#: data/appcenter.metainfo.xml.in:61
+#: data/appcenter.metainfo.xml.in:62
 #, fuzzy
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:116 data/appcenter.metainfo.xml.in:133
-#, fuzzy
-#| msgid "New features"
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
 msgid "New features:"
-msgstr "Nye funksjoner"
+msgstr "Nye funksjoner:"
 
-#: data/appcenter.metainfo.xml.in:70
-msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr ""
+#: data/appcenter.metainfo.xml.in:72
+msgid "Manage autostart in System Settings → Applications"
+msgstr "Håndter autostart i Systeminnstillinger → Programmer"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:92
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:121
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:152
 #, fuzzy
 msgid "Other Improvements:"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
-#: data/appcenter.metainfo.xml.in:74
-msgid "Fix flickering on AppInfo views when getting install size"
+#: data/appcenter.metainfo.xml.in:76
+#, fuzzy
+msgid "Automatic app updates by default"
+msgstr "Automatiske programoppgraderinger som forvalg"
+
+#: data/appcenter.metainfo.xml.in:77
+msgid "OS Updates have moved to System Settings"
+msgstr "OS-oppgraderinger har blitt flyttet til Systeminnstillinger"
+
+#: data/appcenter.metainfo.xml.in:78
+msgid ""
+"Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:109 data/appcenter.metainfo.xml.in:123
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
+#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:154
 #, fuzzy
 msgid "Updated translations"
 msgstr "Nye oversettelser"
 
-#: data/appcenter.metainfo.xml.in:90
+#: data/appcenter.metainfo.xml.in:101
+msgid "Warn when apps use legacy Autostart, Notifications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:105
+msgid "Fix flickering on AppInfo views when getting install size"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:121
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -96,25 +109,25 @@ msgstr ""
 "Advar når programmer har tilgang til hjemme- eller systemmapper, posisjon, "
 "innstillinger, eller har usikker sandkasse."
 
-#: data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:125
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Tettere marg og luft i programinnfovisninger"
 
-#: data/appcenter.metainfo.xml.in:95
+#: data/appcenter.metainfo.xml.in:126
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Visning av plassholderfalt på hjemmesiden ved innlasting"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Ikke list programmer som ikke er fra AppSenter under egen overskrift i "
 "kategorivisninger"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "«Reparer»-alternativ hvis Flatpak-oppgraderinger mislykkes"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:150
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -122,36 +135,33 @@ msgstr ""
 "Melding i oppgraderingsvisning når alt er av nyeste dato, inkludert når det "
 "sist ble sjekket"
 
-#: data/appcenter.metainfo.xml.in:135
-msgid "Show when an app isn't available in your language"
-msgstr "Vis når et program ikke er tilgjengelig på valgt språk"
-
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:9
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 "installer;avinstaller;fjern;mappe;butikk;apper;oppdateringer;programvare;"
 
-#: data/io.elementary.appcenter.desktop.in.in:18
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "Se etter oppgraderinger"
 
 #: data/io.elementary.appcenter.policy.in:10
-#, fuzzy
-msgid "Update software"
-msgstr "Oppgrader programvare"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Identitetsbekreftelse kreves for å oppgradere programvare"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Reparer programvarekilder"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "Identitetsbekreftelse kreves for å reparere programvarekilder"
+
+#, fuzzy
+#~ msgid "Update software"
+#~ msgstr "Oppgrader programvare"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Identitetsbekreftelse kreves for å oppgradere programvare"
+
+#~ msgid "Show when an app isn't available in your language"
+#~ msgstr "Vis når et program ikke er tilgjengelig på valgt språk"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

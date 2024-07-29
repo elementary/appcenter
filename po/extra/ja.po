@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2024-03-20 05:57+0000\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"PO-Revision-Date: 2024-05-16 12:32+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -12,16 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:3
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:4
+#: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
 msgstr "アプリを検索したり管理したりします"
 
@@ -51,36 +51,55 @@ msgstr "常に最新の状態に"
 msgid "Pay what you can to support developers"
 msgstr "支払えるだけ支払う方式 (pay-what-you-can) で開発者を支援しましょう"
 
-#: data/appcenter.metainfo.xml.in:61
+#: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:116 data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/appcenter.metainfo.xml.in:70
-msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr "旧来の自動起動・通知システムを使用するアプリに警告を表示する機能を追加"
+#: data/appcenter.metainfo.xml.in:72
+msgid "Manage autostart in System Settings → Applications"
+msgstr "自動起動を“システム設定”→アプリケーションで管理できるように修正"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:92
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:121
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:152
 msgid "Other Improvements:"
 msgstr "そのほかの改善点:"
 
-#: data/appcenter.metainfo.xml.in:74
-msgid "Fix flickering on AppInfo views when getting install size"
-msgstr "インストールサイズ取得時のアプリ情報画面のちらつきを修正"
+#: data/appcenter.metainfo.xml.in:76
+msgid "Automatic app updates by default"
+msgstr "アプリの自動アップデートをデフォルトで有効化"
 
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:109 data/appcenter.metainfo.xml.in:123
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:77
+msgid "OS Updates have moved to System Settings"
+msgstr "OS アップデート機能を“システム設定”に移動"
+
+#: data/appcenter.metainfo.xml.in:78
+msgid ""
+"Badge apps made for elementary OS instead of badging apps from other remotes"
+msgstr ""
+"ほかのリポジトリにあるアプリに対してではなく、elementary OS 向けに開発された"
+"アプリに対してバッジを表示するように修正"
+
+#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
+#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:154
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/appcenter.metainfo.xml.in:90
+#: data/appcenter.metainfo.xml.in:101
+msgid "Warn when apps use legacy Autostart, Notifications"
+msgstr "旧来の自動起動・通知システムを使用するアプリに警告を表示する機能を追加"
+
+#: data/appcenter.metainfo.xml.in:105
+msgid "Fix flickering on AppInfo views when getting install size"
+msgstr "インストールサイズ取得時のアプリ情報画面のちらつきを修正"
+
+#: data/appcenter.metainfo.xml.in:121
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -88,27 +107,27 @@ msgstr ""
 "アプリが“ホーム”フォルダーやシステムフォルダー、位置情報、システム設定にアク"
 "セス可能な場合や、サンドボックスが安全でない場合、警告を表示する機能を追加。"
 
-#: data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:125
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "アプリ情報画面のスペースと余白を小さくするように修正"
 
-#: data/appcenter.metainfo.xml.in:95
+#: data/appcenter.metainfo.xml.in:126
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 "“ホーム”ページの読み込み中は、プレースホルダーのバナーを表示するように修正"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "カテゴリービュー: キュレーションの有無に応じてアプリを分けて表示する機能を廃"
 "止"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 "Flatpak のアップデートが失敗した場合に修復オプションを表示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:150
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -116,35 +135,32 @@ msgstr ""
 "システムが最新の場合、最新だというメッセージとアップデートの最終確認日時を表"
 "示する機能を追加"
 
-#: data/appcenter.metainfo.xml.in:135
-msgid "Show when an app isn't available in your language"
-msgstr "アプリがお使いの言語で表示されないことを表示する機能を追加"
-
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 "install;uninstall;remove;catalogue;store;apps;software;インストール;アンイン"
 "ストール;削除;カタログ;ストア;アプリ;ソフトウェア;"
 
-#: data/io.elementary.appcenter.desktop.in.in:18
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "アップデートを確認"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "ソフトウェアをアップデートします"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "ソフトウェアをアップデートするには認証が必要です"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "ソフトウェアソースを修復"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr "ソフトウェアソースを修復するには認証が必要です"
+
+#~ msgid "Update software"
+#~ msgstr "ソフトウェアをアップデートします"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "ソフトウェアをアップデートするには認証が必要です"
+
+#~ msgid "Show when an app isn't available in your language"
+#~ msgstr "アプリがお使いの言語で表示されないことを表示する機能を追加"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

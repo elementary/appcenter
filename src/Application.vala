@@ -90,8 +90,7 @@ public class AppCenter.App : Gtk.Application {
             link = link.substring (0, link.last_index_of_char ('/'));
         }
 
-        var client = AppCenterCore.Client.get_default ();
-        var package = client.get_package_for_component_id (link);
+        var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (link);
         if (package != null) {
             main_window.show_package (package);
         } else {
@@ -120,7 +119,7 @@ public class AppCenter.App : Gtk.Application {
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
             if (active_window != null) {
-                active_window.destroy ();
+                active_window.close ();
             }
         });
 
@@ -131,23 +130,25 @@ public class AppCenter.App : Gtk.Application {
             activate ();
         });
 
-        var client = AppCenterCore.Client.get_default ();
-        client.operation_finished.connect (on_operation_finished);
-        client.cache_update_failed.connect (on_cache_update_failed);
+        var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        flatpak_backend.operation_finished.connect (on_operation_finished);
+
+        var update_manager = AppCenterCore.UpdateManager.get_default ();
+        update_manager.cache_update_failed.connect (on_cache_update_failed);
 
         refresh_action = new SimpleAction ("refresh", null);
         refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
-            client.update_cache.begin (true);
+            update_manager.update_cache.begin (true);
         });
 
         repair_action = new SimpleAction ("repair", null);
         repair_action.activate.connect (() => {
-            client.repair.begin (null, (obj, res) => {
+            flatpak_backend.repair.begin (null, (obj, res) => {
                 bool success = false;
                 string message = "";
                 try {
-                    success = client.repair.end (res);
+                    success = flatpak_backend.repair.end (res);
                 } catch (Error e) {
                     success = false;
                     message = e.message;
@@ -180,13 +181,7 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
-#if PACKAGEKIT_BACKEND
-        if (fake_update_packages != null) {
-            AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
-        }
-#endif
-
-        var client = AppCenterCore.Client.get_default ();
+        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         if (first_activation) {
             first_activation = false;
@@ -201,26 +196,14 @@ public class AppCenter.App : Gtk.Application {
             });
 
             // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
-            client.update_cache.begin (false);
+            update_manager.update_cache.begin (false);
             silent = false;
             return;
         }
 
-#if PACKAGEKIT_BACKEND
-        if (local_path != null) {
-            var file = File.new_for_commandline_arg (local_path);
-
-            try {
-                local_package = AppCenterCore.PackageKitBackend.get_default ().add_local_component_file (file);
-            } catch (Error e) {
-                warning ("Failed to load local AppStream XML file: %s", e.message);
-            }
-        }
-#endif
-
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
-            client.update_cache.begin (true, AppCenterCore.Client.CacheUpdateType.FLATPAK);
+            update_manager.update_cache.begin (true);
 
             var main_window = new MainWindow (this);
             add_window (main_window);
@@ -244,7 +227,7 @@ public class AppCenter.App : Gtk.Application {
             ((MainWindow) active_window).go_to_installed ();
         }
 
-        active_window.present_with_time (Gdk.CURRENT_TIME);
+        active_window.present ();
     }
 
     public async void request_background () {
@@ -312,7 +295,7 @@ public class AppCenter.App : Gtk.Application {
 
     private uint cache_update_timeout_id = 0;
     private void schedule_cache_update (bool cancel = false) {
-        var client = AppCenterCore.Client.get_default ();
+        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         if (cache_update_timeout_id > 0) {
             Source.remove (cache_update_timeout_id);
@@ -320,11 +303,11 @@ public class AppCenter.App : Gtk.Application {
         }
 
         if (cancel) {
-            client.cancel_updates (true); // Also stops timeouts.
+            update_manager.cancel_updates (true); // Also stops timeouts.
             return;
         } else {
             cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
-                client.update_cache.begin ();
+                update_manager.update_cache.begin ();
                 cache_update_timeout_id = 0;
                 return false;
             });
@@ -355,13 +338,6 @@ public class AppCenter.App : Gtk.Application {
                         break;
                     }
 
-#if PACKAGEKIT_BACKEND
-                    // Check if permission was denied or the operation was cancelled
-                    if (error.matches (Pk.ClientError.quark (), 303)) {
-                        break;
-                    }
-#endif
-
                     var dialog = new InstallFailDialog (package, (owned) error.message);
                     dialog.present ();
                 }
@@ -372,13 +348,13 @@ public class AppCenter.App : Gtk.Application {
         }
     }
 
-    private void on_cache_update_failed (Error error, AppCenterCore.Client.CacheUpdateType cache_update_type) {
+    private void on_cache_update_failed (Error error) {
         if (active_window == null) {
             return;
         }
 
         if (update_fail_dialog == null) {
-            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message), cache_update_type) {
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message)) {
                 transient_for = active_window
             };
 

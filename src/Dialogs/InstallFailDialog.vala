@@ -41,10 +41,8 @@ public class InstallFailDialog : Granite.MessageDialog {
             image_icon = package.get_icon (48, get_scale_factor ());
         }
 
-        if (package.is_flatpak) {
-            var repair_button = add_button (_("Repair"), REPAIR_RESPONSE_ID);
-            repair_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        }
+        var repair_button = add_button (_("Repair"), REPAIR_RESPONSE_ID);
+        repair_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         response.connect ((response) => {
             if (response == REPAIR_RESPONSE_ID) {

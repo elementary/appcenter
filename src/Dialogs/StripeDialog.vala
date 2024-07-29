@@ -415,7 +415,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         }
     }
 
-    private void on_response (Gtk.Dialog source, int response_id) {
+    private void on_response (int response_id) {
         switch (response_id) {
             case Gtk.ResponseType.APPLY:
                 if (layouts.visible_child_name == "card") {
@@ -466,10 +466,16 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             return;
         }
 
+        var normalized_id = app_id;
+        if (normalized_id.has_suffix (".desktop")) {
+            // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
+            normalized_id = normalized_id.substring (0, normalized_id.length - 8);
+        }
+
         AppCenterCore.Houston.PaymentRequest houston_request;
         try {
             houston_request = new AppCenterCore.Houston.PaymentRequestBuilder ()
-                .app_id (app_id)
+                .app_id (normalized_id)
                 .stripe_key (stripe_key)
                 .email (email_entry.text)
                 // dollars to cents
@@ -478,6 +484,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
                 .build ();
 
             yield houston_request.send (http_client);
+
+            App.add_paid_app (app_id);
         } catch (Error e) {
             show_error_view (_(AppCenterCore.Stripe.DEFAULT_ERROR_MESSAGE));
             return;

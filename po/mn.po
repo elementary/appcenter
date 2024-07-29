@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 05:57+0000\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/appcenter/mn/>\n"
+"Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/mn/>\n"
 "Language: mn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,362 +20,191 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/MainWindow.vala:80 src/Core/Package.vala:362
-#: src/Views/Homepage.vala:230
+#: src/Application.vala:28 src/MainWindow.vala:45 src/Views/Homepage.vala:278
 msgid "AppCenter"
 msgstr "Аппын Төв"
 
-#: src/Application.vala:88
+#: src/Application.vala:78
 #, fuzzy, c-format
 msgid "Could not parse the media type %s"
 msgstr "%s миметипийг задлаж чадсангүй"
 
-#: src/Application.vala:108
+#: src/Application.vala:97
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Онцгойлон '%s' холбоос олдсонгүй, хайлтын үр дүнд"
 
-#: src/Application.vala:272
-msgid "AppCenter will automatically start when this device turns on and run when its window is closed so that it can automatically check and install updates."
+#: src/Application.vala:245
+msgid ""
+"AppCenter will automatically start when this device turns on and run when "
+"its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:355
+#: src/Application.vala:328
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s амжилттай суулгагдлаа"
 
-#: src/Application.vala:356 src/MainWindow.vala:420
+#: src/Application.vala:329 src/MainWindow.vala:230
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s амжилттай суулгагдлаа"
 
-#: src/MainWindow.vala:92
+#: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:131
-#, fuzzy
-msgctxt "view"
-msgid "Updates & installed apps"
-msgstr "Суулгацыг устгах"
-
-#: src/MainWindow.vala:145 src/MainWindow.vala:373 src/MainWindow.vala:493
-msgid "Search Apps"
-msgstr "Апп Хайх"
-
-#: src/MainWindow.vala:154
-msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
-
-#: src/MainWindow.vala:155
-msgid "Apps being tried for free will not update automatically"
-msgstr ""
-
-#: src/MainWindow.vala:159
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Check for Updates"
-msgstr "Шинэчлэлтүүдийг хайж байна…"
-
-#: src/MainWindow.vala:181
-#, fuzzy
-#| msgid "Starting"
-msgid "Settings"
-msgstr "Эхлэж байна"
-
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:87
 #, fuzzy
 msgid "Network Not Available."
 msgstr "Сүлжээ байхгүй байна"
 
-#: src/MainWindow.vala:213
+#: src/MainWindow.vala:88
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Интернэтэд холбогдоод аппуудын шинэчлэлийг суулгаарай."
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:98
 msgid "Network Settings…"
 msgstr "Сүлжээний тохиргоо…"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:377 src/MainWindow.vala:381
-#, c-format
-msgid "Search %s"
-msgstr "Хайх %s"
-
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:423 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
 msgid "Open"
 msgstr "Нээх"
 
-#: src/MainWindow.vala:522
-#, fuzzy
-#| msgid "Getting information"
-msgid "Getting app information…"
-msgstr "Мэдээлэл авч байна"
-
-#: src/MainWindow.vala:525
-msgid "Getting download size…"
-msgstr ""
-
-#: src/MainWindow.vala:531
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for updates…"
-msgstr "Шинэчлэлтүүдийг хайж байна…"
-
-#: src/MainWindow.vala:534
-#, fuzzy
-#| msgid "Installing"
-msgid "Installing…"
-msgstr "Суулгаж байна"
-
-#: src/MainWindow.vala:537
-#, fuzzy
-#| msgid "Installing updates"
-msgid "Installing updates…"
-msgstr "Шинэчлэлүүдийг суулгаж байна"
-
-#: src/MainWindow.vala:540
-#, fuzzy
-#| msgid "Uninstall"
-msgid "Uninstalling…"
-msgstr "Суулгацыг устгах"
-
-#: src/MainWindow.vala:543
-msgid "Repairing…"
-msgstr ""
-
-#: src/Utils.vala:63 src/Core/ChangeInformation.vala:90
-msgid "Starting"
-msgstr "Эхлэж байна"
-
-#: src/Utils.vala:65 src/Core/BackendAggregator.vala:314
-#: src/Core/ChangeInformation.vala:47 src/Core/ChangeInformation.vala:62
+#: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
 msgstr "Хүлээж байна"
 
-#: src/Utils.vala:67
-msgid "Running"
-msgstr "Ажиллаж байна"
-
-#: src/Utils.vala:69
-msgid "Querying"
-msgstr "Хайж байна"
-
-#: src/Utils.vala:71
-msgid "Getting information"
-msgstr "Мэдээлэл авч байна"
-
-#: src/Utils.vala:73
-msgid "Removing packages"
-msgstr "Багцуудыг арилгаж байна"
-
-#: src/Utils.vala:75
-msgid "Downloading"
-msgstr "Татаж авч байна"
-
-#: src/Utils.vala:77 src/Core/FlatpakBackend.vala:1456
-msgid "Installing"
-msgstr "Суулгаж байна"
-
-#: src/Utils.vala:79
-msgid "Refreshing software list"
-msgstr "Програм хангамжын жагсаалтыг дахин ачаалаж байна"
-
-#: src/Utils.vala:81
-msgid "Installing updates"
-msgstr "Шинэчлэлүүдийг суулгаж байна"
-
-#: src/Utils.vala:83
-msgid "Cleaning up packages"
-msgstr "Пакэйжүүдийг цэвэрлэж байна"
-
-#: src/Utils.vala:85
-msgid "Obsoleting packages"
-msgstr "Багцуудад залруулга хийж байна"
-
-#: src/Utils.vala:87
-msgid "Resolving dependencies"
-msgstr "Хамааралуудыг шийдвэрлэж байна"
-
-#: src/Utils.vala:89
-msgid "Checking signatures"
-msgstr "Гарын үсгийг шалгаж байна"
-
-#: src/Utils.vala:91
-msgid "Testing changes"
-msgstr "Өөрчлөлтүүдийг шалгаж байна"
-
-#: src/Utils.vala:93
-msgid "Committing changes"
-msgstr "Өөрчлөлтүүдийг нэмэж байна"
-
-#: src/Utils.vala:95
-msgid "Requesting data"
-msgstr "Өгөгдөл хүсэж байна"
-
-#: src/Utils.vala:97 src/Core/ChangeInformation.vala:69
+#: src/Core/ChangeInformation.vala:70
 msgid "Finished"
 msgstr "Бэлэн боллоо"
 
-#: src/Utils.vala:99 src/Core/ChangeInformation.vala:77
-#: src/Core/FlatpakBackend.vala:1465 src/Core/FlatpakBackend.vala:1489
-#: src/Core/FlatpakBackend.vala:1597 src/Core/FlatpakBackend.vala:1621
-#: src/Core/FlatpakBackend.vala:1779 src/Core/FlatpakBackend.vala:1797
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
+#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
+#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
+#: src/Core/FlatpakBackend.vala:1766
 msgid "Cancelling"
 msgstr "Цуцлаж байна"
 
-#: src/Utils.vala:101
-msgid "Downloading repository information"
-msgstr "Репозиторын мэдээллийг татаж авч байна"
+#: src/Core/ChangeInformation.vala:91
+msgid "Starting"
+msgstr "Эхлэж байна"
 
-#: src/Utils.vala:103
-msgid "Downloading list of packages"
-msgstr "Багцуудын листийг татаж байна"
-
-#: src/Utils.vala:105
-msgid "Downloading file lists"
-msgstr "Файлын листүүдийг татаж байна"
-
-#: src/Utils.vala:107
-msgid "Downloading lists of changes"
-msgstr "Өөрчлөлтүүдийг жагсаалтыг татаж байна"
-
-#: src/Utils.vala:109
-msgid "Downloading groups"
-msgstr "Бүлгүүдийг татаж байна"
-
-#: src/Utils.vala:111
-msgid "Downloading update information"
-msgstr "Шинэчлэлийг мэдээллийг татаж авч байна"
-
-#: src/Utils.vala:113
-msgid "Repackaging files"
-msgstr "Дахин багцлагдсан файлууд"
-
-#: src/Utils.vala:115
-msgid "Loading cache"
-msgstr "Кэшийг ачааллаж байна"
-
-#: src/Utils.vala:117
-msgid "Scanning applications"
-msgstr "Аппликэйшнүүдийг шүүж байна"
-
-#: src/Utils.vala:119
-msgid "Generating package lists"
-msgstr "Багцын жагсаалтыг үүсгэж байна"
-
-#: src/Utils.vala:121
-msgid "Waiting for package manager lock"
-msgstr "Багцын удирдлагын түгжээг хүлээж байна"
-
-#: src/Utils.vala:123
-msgid "Waiting for authentication"
-msgstr "Баталгаажуулалтыг хүлээж байна"
-
-#: src/Utils.vala:125
-msgid "Updating running applications"
-msgstr "Ажиллаж байгаа програмуудыг шинчилж байна"
-
-#: src/Utils.vala:127
-msgid "Checking applications in use"
-msgstr "Аппликэйшний хэрэглээж шалгаж байна"
-
-#: src/Utils.vala:129
-msgid "Checking libraries in use"
-msgstr "Сангуудын хэрэглээг шалгаж байна"
-
-#: src/Utils.vala:131
-msgid "Copying files"
-msgstr "Файлуудыг хуулж байна"
-
-#: src/Utils.vala:133
-msgid "Unknown state"
-msgstr "Тодорхойгүй төлөв"
-
-#: src/Core/BackendAggregator.vala:50
-msgid "package operations are being performed"
-msgstr ""
-
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1588
+#: src/Core/FlatpakBackend.vala:109
+msgid "package operations are being performed"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1425
+msgid "Installing"
+msgstr "Суулгаж байна"
+
+#: src/Core/FlatpakBackend.vala:1557
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Суулгацыг устгах"
 
-#: src/Core/FlatpakBackend.vala:1770
+#: src/Core/FlatpakBackend.vala:1739
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Шиэнчлэх"
 
-#: src/Core/Package.vala:329
+#: src/Core/Job.vala:48
+#, fuzzy
+#| msgid "Getting information"
+msgid "Getting app information…"
+msgstr "Мэдээлэл авч байна"
+
+#: src/Core/Job.vala:50
+msgid "Getting download size…"
+msgstr ""
+
+#: src/Core/Job.vala:55
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for updates…"
+msgstr "Шинэчлэлтүүдийг хайж байна…"
+
+#: src/Core/Job.vala:57
+#, fuzzy
+#| msgid "Installing"
+msgid "Installing…"
+msgstr "Суулгаж байна"
+
+#: src/Core/Job.vala:59
+#, fuzzy
+#| msgid "Installing updates"
+msgid "Installing updates…"
+msgstr "Шинэчлэлүүдийг суулгаж байна"
+
+#: src/Core/Job.vala:61
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling…"
+msgstr "Суулгацыг устгах"
+
+#: src/Core/Job.vala:63
+msgid "Repairing…"
+msgstr ""
+
+#: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
 msgstr "%s хөгжүүлэгчтэй"
 
-#: src/Core/Package.vala:364
-#, fuzzy
-msgid "elementary Updates"
-msgstr "Саяхан шинэчлэгдсэн"
-
-#: src/Core/Package.vala:366
-msgid "Ubuntu (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:372
-msgid "Ubuntu Drivers"
-msgstr ""
-
-#: src/Core/Package.vala:376
-msgid "Unknown Origin (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:550
+#: src/Core/Package.vala:493
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:314
-#, c-format
-msgid "%s (local)"
-msgstr ""
-
 #: src/Core/Stripe.vala:27
-msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
 msgstr ""
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr "Тө өөрийн төлбөр болон түүнтэй холбоотой мэдээллээ шалгаад дахин оролдоорой."
+msgstr ""
+"Тө өөрийн төлбөр болон түүнтэй холбоотой мэдээллээ шалгаад дахин оролдоорой."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
-msgid "The card number is incorrect. Please try again using the correct card number."
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
 msgstr "Картын дугаар буруу байна. Картын дугаараа шалгаад дахин оролдноорой."
 
 #: src/Core/Stripe.vala:66
-msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "Дуусах хугацаа буруу байна. Картын дуусах хугацаагаа шалгаад дахин оролдоорой."
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"Дуусах хугацаа буруу байна. Картын дуусах хугацаагаа шалгаад дахин "
+"оролдоорой."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
-msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
 msgstr "Картын дуусах он буруу байна. Дахин шалгаад оролдож үзнэ үү."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
@@ -383,31 +213,46 @@ msgstr "CVC дугаар буруу байна. CVC дугаараа шалга�
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
-msgstr "Картын хүчинтэй хугацаа дууссан байна. Өөр карт ашиглан дахин оролдож үзнэ үү."
+msgstr ""
+"Картын хүчинтэй хугацаа дууссан байна. Өөр карт ашиглан дахин оролдож үзнэ "
+"үү."
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Яг энэ агшинд маш олон төлбөрийн хүсэлт ирсэн тул, дараа дахин оролдно уу."
+msgstr ""
+"Яг энэ агшинд маш олон төлбөрийн хүсэлт ирсэн тул, дараа дахин оролдно уу."
 
 #: src/Core/Stripe.vala:106
-msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Энэ карт энэ төрөлийн гүйлгээг дэмжихгүй байна. Өөр карт ашиглан дахин оролдож үзээрэй."
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+"Энэ карт энэ төрөлийн гүйлгээг дэмжихгүй байна. Өөр карт ашиглан дахин "
+"оролдож үзээрэй."
 
 #: src/Core/Stripe.vala:108
-msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Одоогоор энэ картыг дэмжихгүй байна. Өөр картаар дахин оролдож үзээрэй."
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+"Одоогоор энэ картыг дэмжихгүй байна. Өөр картаар дахин оролдож үзээрэй."
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
 msgstr "Гүйлгээ аль хэдийнэ хийгдсэн байна."
 
 #: src/Core/Stripe.vala:114
-msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "Зип/Шуудангийн код буруу байна. Зөв Зип/Шуудангийн код ашиглан дахин оролдож үзнэ үү."
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"postal code."
+msgstr ""
+"Зип/Шуудангийн код буруу байна. Зөв Зип/Шуудангийн код ашиглан дахин оролдож "
+"үзнэ үү."
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "Таны дансны үлдэгдэл хүрэлцэхгүй байна. Өөр төлбөрийн хэлбэр ашиглана уу."
+msgstr ""
+"Таны дансны үлдэгдэл хүрэлцэхгүй байна. Өөр төлбөрийн хэлбэр ашиглана уу."
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
@@ -418,12 +263,17 @@ msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "ПИН код буруу байна. Зөв ПИН ашиглаж дахин оролдож үзнэ үү."
 
 #: src/Core/Stripe.vala:131
-msgid "There has been too many PIN attempts. Please try again with a different card."
+msgid ""
+"There has been too many PIN attempts. Please try again with a different card."
 msgstr "ПИН олон удаа оруулсан байна. Өөр карт ашиглан дахин оролдож үзнэ үү."
 
 #: src/Core/Stripe.vala:151
-msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Гүлгээг амжилттай дуусгаж чадсангүй.  Өөрийн банктай холбогдож мэдээлэл авна уу."
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+"Гүлгээг амжилттай дуусгаж чадсангүй.  Өөрийн банктай холбогдож мэдээлэл авна "
+"уу."
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
@@ -433,46 +283,40 @@ msgstr "картын дансны үлдэгдэл эсвэл хязгаар  х
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Оруулсан карт түр карт байна. Хүчин төгөлдөр карт ашиглана уу."
 
-#: src/Core/UpdateManager.vala:33
+#: src/Core/UpdateManager.vala:51
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Runtime Updates"
 msgstr "Шинэчлэлтүүдийг хайж байна…"
 
-#: src/Core/UpdateManager.vala:34
+#: src/Core/UpdateManager.vala:52
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:100
+#: src/Core/UpdateManager.vala:120
 #, c-format
 msgid "Version: %s"
 msgstr "Хувилбар: %s"
 
-#: src/Core/UpdateManager.vala:118
-#, fuzzy
-#| msgid "No components with updates"
-msgid "No runtimes with updates"
-msgstr "Шинэчлэлд бүрэлдхүүн хэсэг алга"
-
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:139
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
-msgid "%u runtimes with updates"
+msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u бүрэлдхүүн хэсэг шинэчлэлд байна"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:144
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:137
+#: src/Core/UpdateManager.vala:154
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Шинэчлэл илэрлээ"
 
-#: src/Core/UpdateManager.vala:139
+#: src/Core/UpdateManager.vala:156
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -482,8 +326,12 @@ msgstr[0] "%u Шинэчлэл илэрсэн"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 #, fuzzy
-msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг нэмсэн эсвэл эх файлыг гэмтсэн."
+msgid ""
+"This may be a temporary issue or could have been caused by external or "
+"manually compiled software."
+msgstr ""
+"Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг "
+"нэмсэн эсвэл эх файлыг гэмтсэн."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
@@ -495,7 +343,7 @@ msgstr "Суулгацыг устгах"
 msgid "Failed to install “%s”"
 msgstr ""
 
-#: src/Dialogs/InstallFailDialog.vala:45 src/Dialogs/UpgradeFailDialog.vala:47
+#: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
 msgstr ""
 
@@ -505,9 +353,13 @@ msgstr ""
 msgid "Failed to Repair"
 msgstr "Шинэчлэлүүдийг авч чадсангүй"
 
-#: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:27
-msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг нэмсэн эсвэл эх файлыг гэмтсэн."
+#: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг "
+"нэмсэн эсвэл эх файлыг гэмтсэн."
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -523,9 +375,15 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:82
 #, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Энэ бол нэг удаагийн төлбөр. Таны мэйл хаяг зөвхөн төлбөрийн баримт илгээхэд ашиглагдана."
+#| msgid ""
+#| "This is a one time payment. Your email address is only used to send you a "
+#| "receipt."
+msgid ""
+"This is a one time payment suggested by the developer. You can also choose "
+"your own price."
+msgstr ""
+"Энэ бол нэг удаагийн төлбөр. Таны мэйл хаяг зөвхөн төлбөрийн баримт илгээхэд "
+"ашиглагдана."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -537,9 +395,15 @@ msgstr "Мэйл"
 
 #: src/Dialogs/StripeDialog.vala:148
 #, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Таны мэйл хаягыг зөвхөн төлбөрийн баримт илгээхэд ашиглана. Та ямар нэгэн мэйлийн жагсаалтанд бүртгэгдэхгүй."
+#| msgid ""
+#| "Your email address is only used to send a receipt. You will not be "
+#| "subscribed to any mailing list."
+msgid ""
+"Only used to send you a receipt. You will not be subscribed to any mailing "
+"list."
+msgstr ""
+"Таны мэйл хаягыг зөвхөн төлбөрийн баримт илгээхэд ашиглана. Та ямар нэгэн "
+"мэйлийн жагсаалтанд бүртгэгдэхгүй."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -599,14 +463,16 @@ msgstr "Суулгацыг устгах"
 msgid "Uninstall “%s”?"
 msgstr ""
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:165
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:99
 msgid "Uninstall"
 msgstr "Суулгацыг устгах"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг нэмсэн эсвэл эх файлыг гэмтсэн."
+msgstr ""
+"Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг "
+"нэмсэн эсвэл эх файлыг гэмтсэн."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
@@ -617,23 +483,30 @@ msgstr ""
 msgid "Failed to uninstall “%s”"
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:26
+#: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr "Шинэчлэлүүдийг авч чадсангүй"
 
-#: src/Dialogs/UpdateFailDialog.vala:36
+#: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
 msgstr "Үл ойшоох"
 
-#: src/Dialogs/UpdateFailDialog.vala:37
+#: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
 msgstr "Дахин оролдох"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 #, fuzzy
-#| msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgid "This may have been caused by sideloaded or manually compiled software, a third-party software source, or a package manager error. Manually refreshing updates may resolve the issue."
-msgstr "Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг нэмсэн эсвэл эх файлыг гэмтсэн."
+#| msgid ""
+#| "This may have been caused by external, manually added software "
+#| "repositories or a corrupted sources file."
+msgid ""
+"This may have been caused by sideloaded or manually compiled software, a "
+"third-party software source, or a package manager error. Manually refreshing "
+"updates may resolve the issue."
+msgstr ""
+"Энэ магадгүй гадаад шалтгаан байж болох юм, гар аргаар програмын репозиторыг "
+"нэмсэн эсвэл эх файлыг гэмтсэн."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
@@ -651,290 +524,240 @@ msgstr ""
 msgid "Refresh Updates"
 msgstr "Шинэчлэлтүүдийг хайж байна…"
 
-#: src/Views/AppInfoView.vala:234
+#. / TRANSLATORS: the action of searching
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
+#, fuzzy
+#| msgctxt "view"
+#| msgid "Search"
+msgctxt "action"
+msgid "Search"
+msgstr "Хайх"
+
+#: src/Views/AppInfoView.vala:260
 msgid "Illicit Substances"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:261
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:240
+#: src/Views/AppInfoView.vala:266
 msgid "Sex & Nudity"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:241
+#: src/Views/AppInfoView.vala:267
 msgid "Adult nudity or sexual themes"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:246
+#: src/Views/AppInfoView.vala:272
 msgid "Offensive Language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:247
+#: src/Views/AppInfoView.vala:273
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:252
+#: src/Views/AppInfoView.vala:278
 msgid "Gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:279
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:277
+#: src/Views/AppInfoView.vala:303
 msgid "Made for elementary OS"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:278
+#: src/Views/AppInfoView.vala:304
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:327
 msgid "May Not Be Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:328
 msgid "This app does not provide language information"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:315
+#: src/Views/AppInfoView.vala:335
 msgid "Not Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:336
 msgid "This app is not available in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:323
+#: src/Views/AppInfoView.vala:343
 msgid "Not Fully Translated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:324
+#: src/Views/AppInfoView.vala:344
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:368
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:349
+#: src/Views/AppInfoView.vala:369
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:382
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:387
 msgid "Fantasy Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:372
+#: src/Views/AppInfoView.vala:392
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:416
+#: src/Views/AppInfoView.vala:436
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:417
+#: src/Views/AppInfoView.vala:437
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:433
+#: src/Views/AppInfoView.vala:453
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:435
+#: src/Views/AppInfoView.vala:455
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:439
+#: src/Views/AppInfoView.vala:459
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:449
+#: src/Views/AppInfoView.vala:469
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:450
+#: src/Views/AppInfoView.vala:470
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:482
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:465
+#: src/Views/AppInfoView.vala:485
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:470
+#: src/Views/AppInfoView.vala:490
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:571
+#: src/Views/AppInfoView.vala:587
 msgid "Screenshot Not Available"
 msgstr "Дэлгэцийн зураг байхгүй"
 
-#: src/Views/AppInfoView.vala:599
+#: src/Views/AppInfoView.vala:615
 msgid "What's New:"
 msgstr "Шинэ зүйл:"
 
-#: src/Views/AppInfoView.vala:626
+#: src/Views/AppInfoView.vala:642
 msgid "Extensions:"
 msgstr "Өргтгөлүүд:"
 
-#: src/Views/AppInfoView.vala:657
-msgid "Homepage"
-msgstr "Нүүр хуудас"
-
-#: src/Views/AppInfoView.vala:663
-msgid "Translate"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:669
-msgid "Send Feedback"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:675
-msgid "Help"
-msgstr "Тусламж"
-
-#: src/Views/AppInfoView.vala:723
-msgid "Link copied to clipboard"
-msgstr "Холбоосыг түр санах ойд хуулах"
-
-#: src/Views/AppInfoView.vala:735
-#, c-format
-msgid "Check out %s on AppCenter:"
-msgstr "%s Аппын Төвөөс шалгах:"
-
-#: src/Views/AppInfoView.vala:743
-msgid "Share"
-msgstr "Хуваалцах"
-
-#: src/Views/AppInfoView.vala:830
+#: src/Views/AppInfoView.vala:772
 msgid "End of Life"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:831
+#: src/Views/AppInfoView.vala:773
 msgid "May not work as expected or receive security updates"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:837
+#: src/Views/AppInfoView.vala:779
 msgid "Outdated"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:780
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:846
+#: src/Views/AppInfoView.vala:788
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Unstable"
 msgstr "Суулгацыг устгах"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:789
 #, c-format
-msgid "Built for an unstable version of %s; may contain major issues. Not recommended for use on a production system."
+msgid ""
+"Built for an unstable version of %s; may contain major issues. Not "
+"recommended for use on a production system."
 msgstr ""
 
-#: src/Views/AppInfoView.vala:860
+#: src/Views/AppInfoView.vala:802
 msgid "Insecure Sandbox"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:803
 msgid "Can ignore or modify its own system permissions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:870
+#: src/Views/AppInfoView.vala:812
 msgid "System Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:813
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:878
+#: src/Views/AppInfoView.vala:820
 msgid "Home Folder Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:879
-msgid "Including all documents, downloads, music, pictures, videos, and any hidden folders"
+#: src/Views/AppInfoView.vala:821
+msgid ""
+"Including all documents, downloads, music, pictures, videos, and any hidden "
+"folders"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:888
+#: src/Views/AppInfoView.vala:830
 msgid "Legacy Autostart"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:831
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:898
+#: src/Views/AppInfoView.vala:840
 msgid "Location Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:841
 msgid "Can see your precise location at any time without asking"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:908
+#: src/Views/AppInfoView.vala:850
 msgid "Legacy Notifications"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:909
-msgid "Bubbles may not be configurable or appear in notification center as “Other”"
+#: src/Views/AppInfoView.vala:851
+msgid ""
+"Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:918
+#: src/Views/AppInfoView.vala:860
 msgid "System Settings Access"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:861
 msgid "Can read and modify system settings"
 msgstr ""
-
-#. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:1144
-msgid "Public Domain"
-msgstr ""
-
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1147
-msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
-
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:1152
-msgid "Free Software"
-msgstr ""
-
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:1155
-msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:1159
-msgid "Proprietary"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:1162
-msgid "Unknown License"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:1272
-msgid "Fund"
-msgstr "Сан"
-
-#: src/Views/AppInfoView.vala:1278
-msgid "Fund the development of this app"
-msgstr "Энэ апп-г хөгжүүлэх сан"
 
 #: src/Views/AppListUpdateView.vala:46
 #, fuzzy
@@ -943,36 +766,52 @@ msgid "Checking for Updates"
 msgstr "Шинэчлэлтүүдийг хайж байна…"
 
 #: src/Views/AppListUpdateView.vala:47
-msgid "Downloading a list of available updates to the OS and installed apps"
+msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:76
+#: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
 msgstr "Бүгдийг шинэчлэх"
 
-#: src/Views/AppListUpdateView.vala:99
+#: src/Views/AppListUpdateView.vala:96
 msgid "Up to Date"
 msgstr "Огноо хүртэл"
 
+#: src/Views/AppListUpdateView.vala:124
+msgid "Automatically Update Free & Purchased Apps"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:125
+msgid "Apps being tried for free will not update automatically"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:129
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Check for Updates"
+msgstr "Шинэчлэлтүүдийг хайж байна…"
+
+#: src/Views/AppListUpdateView.vala:151
+#, fuzzy
+#| msgid "Starting"
+msgid "Settings"
+msgstr "Эхлэж байна"
+
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:141
+#: src/Views/AppListUpdateView.vala:179
 msgctxt "view"
 msgid "Installed"
 msgstr "Суулгагдсан"
 
-#: src/Views/AppListUpdateView.vala:207
+#: src/Views/AppListUpdateView.vala:269
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u Шинэчлэл илэрсэн"
 
-#: src/Views/AppListUpdateView.vala:216
+#: src/Views/AppListUpdateView.vala:276
 #, c-format
 msgid "Everything is up to date. Last checked %s."
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:334
-msgid "Drivers"
 msgstr ""
 
 #: src/Views/AuthorView.vala:31
@@ -980,7 +819,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "%s хийсэн бусад аппууд"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:58
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "Саяхан шинэчлэгдсэн"
 
@@ -996,134 +835,155 @@ msgstr "Апп Хайх"
 msgid "Free Apps"
 msgstr "Үнэгүй"
 
-#: src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "Ангилалууд"
 
-#: src/Views/Homepage.vala:107
+#: src/Views/Homepage.vala:111
 msgid "Accessories"
 msgstr "Дагалдах хэрэгсэл"
 
-#: src/Views/Homepage.vala:108
+#: src/Views/Homepage.vala:112
 msgid "Audio"
 msgstr "Аудио"
 
-#: src/Views/Homepage.vala:109
+#: src/Views/Homepage.vala:113
 msgid "Communication"
 msgstr "Харилцаа холбоо"
 
-#: src/Views/Homepage.vala:118
+#: src/Views/Homepage.vala:122
 msgid "Development"
 msgstr "Програм хөгжүүлэлт"
 
-#: src/Views/Homepage.vala:128
+#: src/Views/Homepage.vala:132
 msgid "Education"
 msgstr "Боловсрол"
 
-#: src/Views/Homepage.vala:129
+#: src/Views/Homepage.vala:133
 msgid "Finance"
 msgstr "Санхүү"
 
-#: src/Views/Homepage.vala:134
+#: src/Views/Homepage.vala:138
 msgid "Graphics"
 msgstr "График"
 
-#: src/Views/Homepage.vala:143
+#: src/Views/Homepage.vala:147
 msgid "Internet"
 msgstr "Интернэт"
 
-#: src/Views/Homepage.vala:147
+#: src/Views/Homepage.vala:151
 msgid "Math, Science, & Engineering"
 msgstr "Математик, Шинжлэх ухаан болон Инженерчлэл"
 
-#: src/Views/Homepage.vala:166
+#: src/Views/Homepage.vala:170
 msgid "Media Production"
 msgstr "Хэвлэл мэдээлэл"
 
-#: src/Views/Homepage.vala:173
+#: src/Views/Homepage.vala:177
 msgid "Office"
 msgstr "Оффис"
 
-#: src/Views/Homepage.vala:180
+#: src/Views/Homepage.vala:184
 msgid "System"
 msgstr "Систем"
 
-#: src/Views/Homepage.vala:184
+#: src/Views/Homepage.vala:188
 msgid "Universal Access"
 msgstr "Нийтийн хандалт"
 
-#: src/Views/Homepage.vala:185
+#: src/Views/Homepage.vala:189
 msgid "Video"
 msgstr "Видео"
 
-#: src/Views/Homepage.vala:190
+#: src/Views/Homepage.vala:194
 msgid "Writing & Language"
 msgstr "Бичих, Хэл"
 
-#: src/Views/Homepage.vala:200
+#: src/Views/Homepage.vala:204
 #, fuzzy
 #| msgid "Privacy Policy"
 msgid "Privacy & Security"
 msgstr "Нууцлалын бодлого"
 
-#: src/Views/Homepage.vala:217
+#: src/Views/Homepage.vala:246
+#, fuzzy
+msgctxt "view"
+msgid "Updates & installed apps"
+msgstr "Суулгацыг устгах"
+
+#: src/Views/Homepage.vala:265
 msgid "Home"
 msgstr "Эхлэл"
 
-#: src/Views/Homepage.vala:231
+#: src/Views/Homepage.vala:279
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:232
-msgid "The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."
+#: src/Views/Homepage.vala:280
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
 msgstr ""
 
-#: src/Views/Homepage.vala:460
+#: src/Views/Homepage.vala:520
 #, fuzzy
 #| msgid "Games"
 msgid "Fun & Games"
 msgstr "Тоглоом"
 
-#: src/Views/Homepage.vala:485
+#: src/Views/Homepage.vala:545
 msgid "Fun &"
 msgstr ""
 
-#: src/Views/Homepage.vala:491
+#: src/Views/Homepage.vala:551
 msgid "Games"
 msgstr "Тоглоом"
 
-#: src/Views/SearchView.vala:30 src/Views/SearchView.vala:63
+#: src/Views/SearchView.vala:39 src/Views/SearchView.vala:120
 msgid "Flathub"
 msgstr ""
 
-#: src/Views/SearchView.vala:31
+#: src/Views/SearchView.vala:40
 msgid "No Apps Found"
 msgstr ""
 
-#: src/Views/SearchView.vala:32 src/Views/SearchView.vala:64
-#, c-format
-msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+#: src/Views/SearchView.vala:41 src/Views/SearchView.vala:138
+msgid "The search term must be at least 3 characters long."
 msgstr ""
 
+#: src/Views/SearchView.vala:49 src/Views/SearchView.vala:156
+msgid "Search Apps"
+msgstr "Апп Хайх"
+
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:53
+#: src/Views/SearchView.vala:87
 msgctxt "view"
 msgid "Search"
 msgstr "Хайх"
 
-#: src/Views/SearchView.vala:61
-msgid "The search term must be at least 3 characters long."
+#: src/Views/SearchView.vala:121
+#, c-format
+msgid ""
+"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 
-#: src/Widgets/ActionStack.vala:118 src/Widgets/HumbleButton.vala:80
+#: src/Views/SearchView.vala:151
+#, c-format
+msgid "Search %s"
+msgstr "Хайх %s"
+
+#: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
 msgid "Free"
 msgstr "Үнэгүй"
 
-#: src/Widgets/ActionStack.vala:120 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
 msgid "Install"
 msgstr "Суулгах"
 
-#: src/Widgets/ActionStack.vala:137
+#: src/Widgets/ActionStack.vala:138
 msgid "Update"
 msgstr "Шиэнчлэх"
 
@@ -1136,16 +996,80 @@ msgid "Requires payments, which are not enabled"
 msgstr "Төлбөрийг идэвхижүүлээгүй байна"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:118
+#: src/Widgets/HumbleButton.vala:114
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:121
+#: src/Widgets/HumbleButton.vala:117
 #, c-format
 msgid "$%d"
 msgstr "$%d"
+
+#: src/Widgets/LinkListBox.vala:36
+msgid "Website"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:46
+#, fuzzy
+#| msgid "Help"
+msgid "Get Help"
+msgstr "Тусламж"
+
+#: src/Widgets/LinkListBox.vala:56
+msgid "Send Feedback"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:66
+msgid "Contact The Developer"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:106
+msgid "Sponsor"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:116
+#, fuzzy
+#| msgid "Suggest Translations"
+msgid "Contribute Translations"
+msgstr "Орчуулга санал болгох"
+
+#: src/Widgets/LinkListBox.vala:126
+msgid "Get The Source Code"
+msgstr ""
+
+#. TRANSLATORS: See the Wikipedia page
+#: src/Widgets/LinkListBox.vala:189
+msgid "Public Domain"
+msgstr ""
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:192
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr ""
+
+#. TRANSLATORS: Freedom, not price. See the GNU page.
+#: src/Widgets/LinkListBox.vala:197
+msgid "Free Software"
+msgstr ""
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:200
+msgid "https://www.gnu.org/philosophy/free-sw"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:204
+msgid "Proprietary"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:207
+msgid "Unknown License"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:263
+msgid "Payment provided by Stripe"
+msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
@@ -1161,33 +1085,9 @@ msgstr "Тодорхойгүй төлөв"
 msgid "Unknown version"
 msgstr "Хувилбар тодорхойгүй"
 
-#: src/Widgets/ReleaseRow.vala:134
+#: src/Widgets/ReleaseRow.vala:129
 msgid "No description available"
 msgstr "Танилцуулга оруулаагүй"
-
-#: src/Widgets/SharePopover.vala:35
-msgid "Facebook"
-msgstr "Фэйсбүүк"
-
-#: src/Widgets/SharePopover.vala:39
-msgid "Twitter"
-msgstr "Жиргэх"
-
-#: src/Widgets/SharePopover.vala:43
-msgid "Reddit"
-msgstr "Reddit"
-
-#: src/Widgets/SharePopover.vala:47
-msgid "Tumblr"
-msgstr "Tumblr"
-
-#: src/Widgets/SharePopover.vala:51
-msgid "Telegram"
-msgstr "Telegram"
-
-#: src/Widgets/SharePopover.vala:55
-msgid "Copy link"
-msgstr "Холбоосыг хуулах"
 
 #: src/Widgets/SizeLabel.vala:32
 msgid "Actual Download Size Likely to Be Smaller"
@@ -1206,14 +1106,153 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:134
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
 #, c-format
 msgid "What's new in %s"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:156
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
 msgstr ""
+
+#~ msgid "Homepage"
+#~ msgstr "Нүүр хуудас"
+
+#~ msgid "Fund"
+#~ msgstr "Сан"
+
+#~ msgid "Fund the development of this app"
+#~ msgstr "Энэ апп-г хөгжүүлэх сан"
+
+#~ msgid "Link copied to clipboard"
+#~ msgstr "Холбоосыг түр санах ойд хуулах"
+
+#, c-format
+#~ msgid "Check out %s on AppCenter:"
+#~ msgstr "%s Аппын Төвөөс шалгах:"
+
+#~ msgid "Share"
+#~ msgstr "Хуваалцах"
+
+#~ msgid "Facebook"
+#~ msgstr "Фэйсбүүк"
+
+#~ msgid "Twitter"
+#~ msgstr "Жиргэх"
+
+#~ msgid "Reddit"
+#~ msgstr "Reddit"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "Telegram"
+#~ msgstr "Telegram"
+
+#~ msgid "Copy link"
+#~ msgstr "Холбоосыг хуулах"
+
+#, fuzzy
+#~| msgid "No components with updates"
+#~ msgid "No runtimes with updates"
+#~ msgstr "Шинэчлэлд бүрэлдхүүн хэсэг алга"
+
+#~ msgid "Running"
+#~ msgstr "Ажиллаж байна"
+
+#~ msgid "Querying"
+#~ msgstr "Хайж байна"
+
+#~ msgid "Getting information"
+#~ msgstr "Мэдээлэл авч байна"
+
+#~ msgid "Removing packages"
+#~ msgstr "Багцуудыг арилгаж байна"
+
+#~ msgid "Downloading"
+#~ msgstr "Татаж авч байна"
+
+#~ msgid "Refreshing software list"
+#~ msgstr "Програм хангамжын жагсаалтыг дахин ачаалаж байна"
+
+#~ msgid "Installing updates"
+#~ msgstr "Шинэчлэлүүдийг суулгаж байна"
+
+#~ msgid "Cleaning up packages"
+#~ msgstr "Пакэйжүүдийг цэвэрлэж байна"
+
+#~ msgid "Obsoleting packages"
+#~ msgstr "Багцуудад залруулга хийж байна"
+
+#~ msgid "Resolving dependencies"
+#~ msgstr "Хамааралуудыг шийдвэрлэж байна"
+
+#~ msgid "Checking signatures"
+#~ msgstr "Гарын үсгийг шалгаж байна"
+
+#~ msgid "Testing changes"
+#~ msgstr "Өөрчлөлтүүдийг шалгаж байна"
+
+#~ msgid "Committing changes"
+#~ msgstr "Өөрчлөлтүүдийг нэмэж байна"
+
+#~ msgid "Requesting data"
+#~ msgstr "Өгөгдөл хүсэж байна"
+
+#~ msgid "Downloading repository information"
+#~ msgstr "Репозиторын мэдээллийг татаж авч байна"
+
+#~ msgid "Downloading list of packages"
+#~ msgstr "Багцуудын листийг татаж байна"
+
+#~ msgid "Downloading file lists"
+#~ msgstr "Файлын листүүдийг татаж байна"
+
+#~ msgid "Downloading lists of changes"
+#~ msgstr "Өөрчлөлтүүдийг жагсаалтыг татаж байна"
+
+#~ msgid "Downloading groups"
+#~ msgstr "Бүлгүүдийг татаж байна"
+
+#~ msgid "Downloading update information"
+#~ msgstr "Шинэчлэлийг мэдээллийг татаж авч байна"
+
+#~ msgid "Repackaging files"
+#~ msgstr "Дахин багцлагдсан файлууд"
+
+#~ msgid "Loading cache"
+#~ msgstr "Кэшийг ачааллаж байна"
+
+#~ msgid "Scanning applications"
+#~ msgstr "Аппликэйшнүүдийг шүүж байна"
+
+#~ msgid "Generating package lists"
+#~ msgstr "Багцын жагсаалтыг үүсгэж байна"
+
+#~ msgid "Waiting for package manager lock"
+#~ msgstr "Багцын удирдлагын түгжээг хүлээж байна"
+
+#~ msgid "Waiting for authentication"
+#~ msgstr "Баталгаажуулалтыг хүлээж байна"
+
+#~ msgid "Updating running applications"
+#~ msgstr "Ажиллаж байгаа програмуудыг шинчилж байна"
+
+#~ msgid "Checking applications in use"
+#~ msgstr "Аппликэйшний хэрэглээж шалгаж байна"
+
+#~ msgid "Checking libraries in use"
+#~ msgstr "Сангуудын хэрэглээг шалгаж байна"
+
+#~ msgid "Copying files"
+#~ msgstr "Файлуудыг хуулж байна"
+
+#~ msgid "Unknown state"
+#~ msgstr "Тодорхойгүй төлөв"
+
+#, fuzzy
+#~ msgid "elementary Updates"
+#~ msgstr "Саяхан шинэчлэгдсэн"
 
 #, fuzzy
 #~| msgid "Non-Curated Apps"
@@ -1223,7 +1262,8 @@ msgstr ""
 #, fuzzy
 #~| msgid "A restart is required to complete the installation of updates"
 #~ msgid "A restart is required to finish installing updates"
-#~ msgstr "Шинэчлэлүүдийг бүрэн суулгахын тулд системийг дахин эхлүүлэх шаардлагатай"
+#~ msgstr ""
+#~ "Шинэчлэлүүдийг бүрэн суулгахын тулд системийг дахин эхлүүлэх шаардлагатай"
 
 #~ msgid "Restart Now"
 #~ msgstr "Дахин эхлүүлэх"
@@ -1317,9 +1357,6 @@ msgstr ""
 #~ msgid "No apps could be found. Try changing search terms."
 #~ msgstr "Ямар ч аппууд олдсонгүй. Хайлтаа өөрчлөөд дахин оролдоорой."
 
-#~ msgid "Suggest Translations"
-#~ msgstr "Орчуулга санал болгох"
-
 #~ msgid "Report a Problem"
 #~ msgstr "Асуудалыг мэдэгдэх"
 
@@ -1327,7 +1364,9 @@ msgstr ""
 #~ msgstr "Та системийн унтрааж асаахдаа итгэлтэй байна уу?"
 
 #~ msgid "This will close all open applications and restart this device."
-#~ msgstr "Төхөөрөмжийг унтрааж асаах үед одоо ажиллаж байгаа бүх програмуудаас гарах болно."
+#~ msgstr ""
+#~ "Төхөөрөмжийг унтрааж асаах үед одоо ажиллаж байгаа бүх програмуудаас "
+#~ "гарах болно."
 
 #~ msgid "Restart"
 #~ msgstr "Дахин эхлүүлэх"

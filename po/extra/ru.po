@@ -2,27 +2,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 05:57+0000\n"
-"PO-Revision-Date: 2023-09-17 04:08+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"PO-Revision-Date: 2024-05-17 14:13+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:3
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:4
+#: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
 msgstr "Просмотр и управление приложениями"
 
@@ -54,39 +54,58 @@ msgstr "Оставайтесь обновлёнными"
 msgid "Pay what you can to support developers"
 msgstr "Платите сколько сможете, чтобы поддержать разработчиков"
 
-#: data/appcenter.metainfo.xml.in:61
+#: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:68 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:116 data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
 msgid "New features:"
 msgstr "Новые возможности:"
 
-#: data/appcenter.metainfo.xml.in:70
+#: data/appcenter.metainfo.xml.in:72
+msgid "Manage autostart in System Settings → Applications"
+msgstr "Управляйте автозапуском в Параметрах системы → Приложения"
+
+#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:152
+msgid "Other Improvements:"
+msgstr "Другие улучшения:"
+
+#: data/appcenter.metainfo.xml.in:76
+msgid "Automatic app updates by default"
+msgstr "Автоматические обновления приложений по умолчанию"
+
+#: data/appcenter.metainfo.xml.in:77
+msgid "OS Updates have moved to System Settings"
+msgstr "Обновления ОС перемещены в настройки системы"
+
+#: data/appcenter.metainfo.xml.in:78
+msgid ""
+"Badge apps made for elementary OS instead of badging apps from other remotes"
+msgstr ""
+"Приложения, созданные для elementary OS, теперь выделяются специальным "
+"значком, вместо предупреждения об установке из других источниках"
+
+#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
+#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:154
+msgid "Updated translations"
+msgstr "Обновлены переводы"
+
+#: data/appcenter.metainfo.xml.in:101
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Предупреждать, когда приложения используют устаревшие методы автозапуска, "
 "уведомлений"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:92
-#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:121
-#: data/appcenter.metainfo.xml.in:137
-msgid "Other Improvements:"
-msgstr "Другие улучшения:"
-
-#: data/appcenter.metainfo.xml.in:74
+#: data/appcenter.metainfo.xml.in:105
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 "Исправлено мерцание в представлениях AppInfo при получении размера установки"
 
-#: data/appcenter.metainfo.xml.in:75 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:109 data/appcenter.metainfo.xml.in:123
-#: data/appcenter.metainfo.xml.in:139
-msgid "Updated translations"
-msgstr "Обновлены переводы"
-
-#: data/appcenter.metainfo.xml.in:90
+#: data/appcenter.metainfo.xml.in:121
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -94,23 +113,23 @@ msgstr ""
 "Предупреждение о доступе к домашним или системным папкам, месторасположению, "
 "настройкам или о небезопасной песочнице."
 
-#: data/appcenter.metainfo.xml.in:94
+#: data/appcenter.metainfo.xml.in:125
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Уменьшены отсупы в страницах информации о приложении"
 
-#: data/appcenter.metainfo.xml.in:95
+#: data/appcenter.metainfo.xml.in:126
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Отображение баннера-заполнителя на главной странице при загрузке"
 
-#: data/appcenter.metainfo.xml.in:96
+#: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr "Не отделять приложения не из AppCenter в отдельной категории"
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Предлагать опцию «Починить» при ошибке обновления Flatpak"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:150
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -118,36 +137,33 @@ msgstr ""
 "Показ сообщения в представлении обновлений, когда всё обновлено и когда была "
 "последняя проверка обновлений"
 
-#: data/appcenter.metainfo.xml.in:135
-msgid "Show when an app isn't available in your language"
-msgstr "Отображать иконку, если приложение не доступно на вашем языке"
-
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 "install;uninstall;remove;catalogue;store;apps;software;установить;удалить;"
 "каталог;магазин;приложения;обновления;программы;"
 
-#: data/io.elementary.appcenter.desktop.in.in:18
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 
 #: data/io.elementary.appcenter.policy.in:10
-msgid "Update software"
-msgstr "Обновить программное обеспечение"
-
-#: data/io.elementary.appcenter.policy.in:11
-msgid "Authentication is required to update software"
-msgstr "Для обновления программного обеспечения требуется аутентификация"
-
-#: data/io.elementary.appcenter.policy.in:22
 msgid "Repair software sources"
 msgstr "Починка источников програмного обеспечения"
 
-#: data/io.elementary.appcenter.policy.in:23
+#: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr ""
 "Для починки источников программного обеспечения требуется аутентификация"
+
+#~ msgid "Update software"
+#~ msgstr "Обновить программное обеспечение"
+
+#~ msgid "Authentication is required to update software"
+#~ msgstr "Для обновления программного обеспечения требуется аутентификация"
+
+#~ msgid "Show when an app isn't available in your language"
+#~ msgstr "Отображать иконку, если приложение не доступно на вашем языке"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

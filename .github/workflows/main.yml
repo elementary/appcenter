@@ -23,7 +23,7 @@ jobs:
     - name: Install Dependencies
       run: |
         apt update
-        apt install -y gettext libadwaita-1-dev libappstream-dev libflatpak-dev libgee-0.8-dev libgranite-7-dev libgtk-4-dev libjson-glib-dev libpackagekit-glib2-dev libportal-dev libportal-gtk4-dev libsoup-3.0-dev libxml2-dev libxml2-utils libpolkit-gobject-1-dev meson sassc valac
+        apt install -y gettext libadwaita-1-dev libappstream-dev libflatpak-dev libgee-0.8-dev libgranite-7-dev libgtk-4-dev libjson-glib-dev libportal-dev libportal-gtk4-dev libsoup-3.0-dev libxml2-dev libxml2-utils libpolkit-gobject-1-dev meson sassc valac
     - name: Build and Test
       env:
         DESTDIR: out
@@ -39,13 +39,6 @@ jobs:
         meson configure -Dintegration_tests=true -Dcurated=false -Dpayments=false build
         ninja -C build install
         ninja -C build test
-
-    - name: Build (Flatpak-only)
-      env:
-        DESTDIR: out
-      run: |
-        meson configure -Dintegration_tests=true -Dpackagekit_backend=false -Dubuntu_drivers_backend=false build
-        ninja -C build install
 
   lint:
 

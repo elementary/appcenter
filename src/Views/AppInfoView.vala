@@ -52,6 +52,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     public bool to_recycle { public get; private set; default = false; }
 
+    private static AppCenterCore.ScreenshotCache? screenshot_cache;
+
     public AppInfoView (AppCenterCore.Package package) {
         Object (package: package);
     }
@@ -60,10 +62,65 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         set_css_name ("appinfoview");
     }
 
+    static construct {
+        screenshot_cache = new AppCenterCore.ScreenshotCache ();
+    }
+
     construct {
-        AppCenterCore.BackendAggregator.get_default ().cache_flush_needed.connect (() => {
+        AppCenterCore.FlatpakBackend.get_default ().cache_flush_needed.connect (() => {
             to_recycle = true;
         });
+
+        var title_image = new Gtk.Image.from_gicon (package.get_icon (32, scale_factor)) {
+            icon_size = LARGE
+        };
+        var title_label = new Gtk.Label (package.get_name ()) {
+            ellipsize = END
+        };
+
+        var title_widget = new Gtk.Box (HORIZONTAL, 0);
+        title_widget.append (title_image);
+        title_widget.append (title_label);
+        title_widget.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
+
+        var title_revealer = new Gtk.Revealer () {
+            child = title_widget,
+            transition_type = CROSSFADE
+        };
+
+        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
+            action_name = "win.search",
+            /// TRANSLATORS: the action of searching
+            tooltip_text = C_("action", "Search")
+        };
+        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+        var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            tooltip_text = _("Uninstall"),
+            valign = CENTER
+        };
+        uninstall_button.add_css_class ("raised");
+
+        uninstall_button_revealer = new Gtk.Revealer () {
+            child = uninstall_button,
+            transition_type = SLIDE_LEFT,
+            overflow = VISIBLE
+        };
+
+        action_stack = new ActionStack (package) {
+            hexpand = false
+        };
+
+        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+
+        var headerbar = new Gtk.HeaderBar () {
+            title_widget = title_revealer
+        };
+        headerbar.pack_start (new BackButton ());
+        headerbar.pack_end (search_button);
+        headerbar.pack_end (action_stack);
+        headerbar.pack_end (uninstall_button_revealer);
 
         accent_provider = new Gtk.CssProvider ();
         try {
@@ -161,45 +218,22 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             transition_type = SLIDE_DOWN
         };
 
-        var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
-            tooltip_text = _("Uninstall"),
-            margin_end = 12
-        };
-        uninstall_button.add_css_class ("raised");
-        uninstall_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        uninstall_button_revealer = new Gtk.Revealer () {
-            child = uninstall_button,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT,
-            overflow = VISIBLE
-        };
-
-        action_stack = new ActionStack (package);
-
-        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.CENTER,
-            hexpand = true
-        };
-        button_box.append (uninstall_button_revealer);
-        button_box.append (action_stack);
-
         var header_grid = new Gtk.Grid () {
             column_spacing = 12,
             valign = Gtk.Align.CENTER
         };
         header_grid.attach (app_title, 0, 0);
-        header_grid.attach (app_subtitle, 0, 1);
+        header_grid.attach (app_subtitle, 0, 1, 2);
         header_grid.attach (origin_combo_revealer, 0, 2, 2);
-        header_grid.attach (button_box, 1, 0);
 
         if (!package.is_local) {
             size_label = new Widgets.SizeLabel () {
-                halign = Gtk.Align.END
+                halign = Gtk.Align.END,
+                hexpand = true
             };
             size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            header_grid.attach (size_label, 1, 1);
+            header_grid.attach (size_label, 1, 0);
         }
 
         var header_box = new Gtk.Box (HORIZONTAL, 6);
@@ -208,6 +242,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var header_clamp = new Adw.Clamp () {
             child = header_box,
+            hexpand = true,
             maximum_size = MAX_WIDTH
         };
 
@@ -218,15 +253,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         header.add_css_class ("banner");
         header.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.action_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.open_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        action_stack.cancel_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.cancel_button.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var package_component = package.component;
 
@@ -282,19 +308,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 oars_flowbox.append (made_for_elementary);
             }
 #endif
-
-#if HAS_APPSTREAM_1_0
             const string DEFAULT_LOCALE = "en-US";
             const string LOCALE_DELIMITER = "-";
             var active_locale = DEFAULT_LOCALE;
             if (package_component.get_context () != null) {
                 active_locale = package_component.get_context ().get_locale () ?? DEFAULT_LOCALE;
             }
-#else
-            const string DEFAULT_LOCALE = "en_US";
-            const string LOCALE_DELIMITER = "_";
-            var active_locale = package_component.get_active_locale ();
-#endif
+
             if (active_locale != DEFAULT_LOCALE) {
                 var percent_translated = package_component.get_language (
                     // Expects language without locale
@@ -476,11 +496,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             }
         }
 
-#if HAS_APPSTREAM_1_0
         screenshots = package_component.get_screenshots_all ();
-#else
-        screenshots = package_component.get_screenshots ();
-#endif
 
         if (screenshots.length > 0) {
             screenshot_carousel = new Adw.Carousel () {
@@ -634,62 +650,15 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             load_extensions.begin ();
         }
 
-        var links_flowbox = new Gtk.FlowBox () {
-            column_spacing = 12,
-            row_spacing = 6,
-            hexpand = true
-        };
-
-        var project_license = package.component.project_license;
-        if (project_license != null) {
-            string? license_copy = null;
-            string? license_url = null;
-
-            parse_license (project_license, out license_copy, out license_url);
-
-            var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
-
-            links_flowbox.append (license_button);
-        }
-
-        var homepage_url = package_component.get_url (AppStream.UrlKind.HOMEPAGE);
-        if (homepage_url != null) {
-            var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
-            links_flowbox.append (website_button);
-        }
-
-        var translate_url = package_component.get_url (AppStream.UrlKind.TRANSLATE);
-        if (translate_url != null) {
-            var translate_button = new UrlButton (_("Translate"), translate_url, "preferences-desktop-locale-symbolic");
-            links_flowbox.append (translate_button);
-        }
-
-        var bugtracker_url = package_component.get_url (AppStream.UrlKind.BUGTRACKER);
-        if (bugtracker_url != null) {
-            var bugtracker_button = new UrlButton (_("Send Feedback"), bugtracker_url, "bug-symbolic");
-            links_flowbox.append (bugtracker_button);
-        }
-
-        var help_url = package_component.get_url (AppStream.UrlKind.HELP);
-        if (help_url != null) {
-            var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
-            links_flowbox.append (help_button);
-        }
-
-#if PAYMENTS
-        if (package.get_payments_key () != null) {
-            var fund_button = new FundButton (package);
-            links_flowbox.append (fund_button);
-        }
-#endif
-
         var body_clamp = new Adw.Clamp () {
             child = content_box,
             maximum_size = MAX_WIDTH
         };
 
+        var link_listbox = new LinkListBox (package_component);
+
         var links_clamp = new Adw.Clamp () {
-            child = links_flowbox,
+            child = link_listbox,
             maximum_size = MAX_WIDTH
         };
         links_clamp.add_css_class ("content-box");
@@ -720,49 +689,22 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             vexpand = true
         };
 
-        var toast = new Granite.Toast (_("Link copied to clipboard"));
-
-        var overlay = new Gtk.Overlay () {
-            child = scrolled
+        var toolbar_view = new Adw.ToolbarView () {
+            content = scrolled,
+            top_bar_style = RAISED
         };
-        overlay.add_overlay (toast);
+        toolbar_view.add_top_bar (headerbar);
 
-        child = overlay;
+        child = toolbar_view;
         title = package.get_name ();
         tag = package.hash;
 
-        if (package.is_shareable) {
-            var body = _("Check out %s on AppCenter:").printf (package.get_name ());
-            var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
-            var share_popover = new SharePopover (body, uri);
-
-            var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic") {
-                valign = Gtk.Align.CENTER
-            };
-
-            var share_label = new Gtk.Label (_("Share"));
-
-            var share_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-            share_box.append (share_icon);
-            share_box.append (share_label);
-
-            var share_button = new Gtk.MenuButton () {
-                child = share_box,
-                has_frame = false,
-                direction = Gtk.ArrowType.UP,
-                popover = share_popover
-            };
-            share_button.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-
-            share_popover.link_copied.connect (() => {
-                toast.send_notification ();
-            });
-
-            links_flowbox.append (share_button);
-        }
-
         package.notify["state"].connect (on_package_state_changed);
         on_package_state_changed ();
+
+        scrolled.vadjustment.value_changed.connect (() => {
+           title_revealer.reveal_child = scrolled.vadjustment.value > header.get_height ();
+        });
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
@@ -803,7 +745,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     private async void load_extensions () {
         package.component.get_addons ().@foreach ((extension) => {
-            var extension_package = package.backend.get_package_for_component_id (extension.id);
+            var extension_package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (extension.id);
             if (extension_package == null) {
                 return;
             }
@@ -936,8 +878,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     private void load_more_content () {
-        var cache = AppCenterCore.Client.get_default ().screenshot_cache;
-
         uint count = 0;
         foreach (var origin_package in package.origin_packages) {
             origin_liststore.append (origin_package);
@@ -963,11 +903,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             get_app_download_size.begin ();
 
             Idle.add (() => {
-#if HAS_APPSTREAM_1_0
                 var releases = package.component.get_releases_plain ().get_entries ();
-#else
-                var releases = package.component.get_releases ();
-#endif
 
                 foreach (unowned var release in releases) {
                     if (release.get_version () == null) {
@@ -986,11 +922,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
                         release_carousel.append (release_row);
 
-#if HAS_APPSTREAM_1_0
                         if (package.installed && AppStream.vercmp_simple (release.get_version (), package.get_version ()) <= 0) {
-#else
-                        if (package.installed && AppStream.utils_compare_versions (release.get_version (), package.get_version ()) <= 0) {
-#endif
                             break;
                         }
                     }
@@ -1051,8 +983,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 string? file = null;
                 int index = i;
 
-                cache.fetch.begin (url, (obj, res) => {
-                    results[index] = cache.fetch.end (res, out file);
+                screenshot_cache.fetch.begin (url, (obj, res) => {
+                    results[index] = screenshot_cache.fetch.end (res, out file);
                     screenshot_files[index] = file;
                     completed++;
                 });
@@ -1125,84 +1057,12 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         });
     }
 
-    private void parse_license (string project_license, out string license_copy, out string license_url) {
-        license_copy = null;
-        license_url = null;
-
-        // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
-        if (project_license.has_prefix ("LicenseRef")) {
-            // i.e. `LicenseRef-proprietary=https://example.com`
-            string[] split_license = project_license.split_set ("=", 2);
-            if (split_license[1] != null) {
-                license_url = split_license[1];
-            }
-
-            string license_type = split_license[0].split_set ("-", 2)[1].down ();
-            switch (license_type) {
-                case "public-domain":
-                    // TRANSLATORS: See the Wikipedia page
-                    license_copy = _("Public Domain");
-                    if (license_url == null) {
-                        // TRANSLATORS: Replace the link with the version for your language
-                        license_url = _("https://en.wikipedia.org/wiki/Public_domain");
-                    }
-                    break;
-                case "free":
-                    // TRANSLATORS: Freedom, not price. See the GNU page.
-                    license_copy = _("Free Software");
-                    if (license_url == null) {
-                        // TRANSLATORS: Replace the link with the version for your language
-                        license_url = _("https://www.gnu.org/philosophy/free-sw");
-                    }
-                    break;
-                case "proprietary":
-                    license_copy = _("Proprietary");
-                    break;
-                default:
-                    license_copy = _("Unknown License");
-                    break;
-            }
-        } else {
-            license_copy = project_license;
-            license_url = "https://choosealicense.com/licenses/";
-
-            switch (project_license) {
-                case "Apache-2.0":
-                    license_url = license_url + "apache-2.0";
-                    break;
-                case "GPL-2":
-                case "GPL-2.0":
-                case "GPL-2.0+":
-                    license_url = license_url + "gpl-2.0";
-                    break;
-                case "GPL-3":
-                case "GPL-3.0":
-                case "GPL-3.0+":
-                    license_url = license_url + "gpl-3.0";
-                    break;
-                case "LGPL-2.1":
-                case "LGPL-2.1+":
-                    license_url = license_url + "lgpl-2.1";
-                    break;
-                case "MIT":
-                    license_url = license_url + "mit";
-                    break;
-            }
-        }
-    }
-
     private async void uninstall_clicked () {
         package.uninstall.begin ((obj, res) => {
             try {
                 package.uninstall.end (res);
             } catch (Error e) {
-#if PACKAGEKIT_BACKEND
-                // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-                // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
-                if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
-                    new UninstallFailDialog (package, (owned) e.message).present ();
-                }
-#endif
+                critical (e.message);
             }
         });
     }
@@ -1223,80 +1083,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var title = (Gtk.Label) list_item.child;
         title.label = package.origin_description;
-    }
-
-    class UrlButton : Gtk.Box {
-        public UrlButton (string label, string? uri, string icon_name) {
-            add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            tooltip_text = uri;
-
-            var icon = new Gtk.Image.from_icon_name (icon_name) {
-                valign = Gtk.Align.CENTER
-            };
-
-            var title = new Gtk.Label (label);
-
-            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-            box.append (icon);
-            box.append (title);
-
-            if (uri != null) {
-                var button = new Gtk.Button () {
-                    child = box
-                };
-                button.add_css_class (Granite.STYLE_CLASS_FLAT);
-
-                append (button);
-
-                button.clicked.connect (() => {
-                    new Gtk.UriLauncher (uri).launch.begin (
-                        (Gtk.Window) get_root (),
-                        null
-                    );
-                });
-            } else {
-                append (box);
-            }
-        }
-    }
-
-    class FundButton : Gtk.Button {
-        public FundButton (AppCenterCore.Package package) {
-            add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            add_css_class (Granite.STYLE_CLASS_FLAT);
-
-            var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic") {
-                valign = Gtk.Align.CENTER
-            };
-
-            var title = new Gtk.Label (_("Fund"));
-
-            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-            box.append (icon);
-            box.append (title);
-
-            tooltip_text = _("Fund the development of this app");
-
-            child = box;
-
-            clicked.connect (() => {
-                var stripe = new Widgets.StripeDialog (
-                    1,
-                    package.get_name (),
-                    package.normalized_component_id,
-                    package.get_payments_key ()
-                );
-                stripe.transient_for = ((Gtk.Application) Application.get_default ()).active_window;
-
-                stripe.download_requested.connect (() => {
-                    if (stripe.amount != 0) {
-                        App.add_paid_app (package.component.get_id ());
-                    }
-                });
-
-                stripe.show ();
-            });
-        }
     }
 
     private class ArrowButton : Gtk.Button {
