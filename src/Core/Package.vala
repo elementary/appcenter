@@ -297,6 +297,23 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? _author_id = null;
+    public string? author_id {
+        get {
+            if (_author_id != null) {
+                return _author_id;
+            }
+
+            _author = component.get_developer ().get_id ();
+
+            if (_author_id == null) {
+                return _author;
+            }
+
+            return _author_id;
+        }
+    }
+
     private string? _author_title = null;
     public string author_title {
         get {

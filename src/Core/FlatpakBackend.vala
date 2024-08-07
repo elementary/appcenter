@@ -579,6 +579,48 @@ public class AppCenterCore.FlatpakBackend : Object {
         return packages;
     }
 
+    public Gee.Collection<Package> get_packages_by_author_id (string author_id, int max) {
+        var packages = new Gee.ArrayList<AppCenterCore.Package> ();
+        var package_ids = new Gee.ArrayList<string> ();
+
+        foreach (var package in package_list.values) {
+            if (packages.size > max) {
+                break;
+            }
+
+            if (package.component.id in package_ids) {
+                continue;
+            }
+
+            if (package.component.get_developer ().get_id () != null) {
+                warning (package.component.id);
+                warning (package.component.get_developer ().get_id ());
+                warning (author_id);
+                warning ("------------------------------------");
+            }
+
+            if (package.component.get_developer ().get_id () == author_id) {
+                package_ids.add (package.component.id);
+
+                AppCenterCore.Package? user_package = null;
+                foreach (var origin_package in package.origin_packages) {
+                    if (((FlatpakPackage) origin_package).installation == user_installation) {
+                        user_package = origin_package;
+                        break;
+                    }
+                }
+
+                if (user_package != null) {
+                    packages.add (user_package);
+                } else {
+                    packages.add (package);
+                }
+            }
+        }
+
+        return packages;
+    }
+
     public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
