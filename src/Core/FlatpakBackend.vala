@@ -592,13 +592,6 @@ public class AppCenterCore.FlatpakBackend : Object {
                 continue;
             }
 
-            if (package.component.get_developer ().get_id () != null) {
-                warning (package.component.id);
-                warning (package.component.get_developer ().get_id ());
-                warning (author_id);
-                warning ("------------------------------------");
-            }
-
             if (package.component.get_developer ().get_id () == author_id) {
                 package_ids.add (package.component.id);
 
