@@ -304,9 +304,9 @@ public class AppCenterCore.Package : Object {
                 return _author_id;
             }
 
-            author_id = component.get_developer ().get_id ();
+            _author_id = component.get_developer ().get_id ();
 
-            return author_id;
+            return _author_id;
         }
     }
 
