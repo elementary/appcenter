@@ -23,11 +23,11 @@ private class AppCenter.AuthorView : Gtk.Box {
             return;
         }
 
-        var author_packages = AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author_id (package.author_id, AUTHOR_OTHER_APPS_MAX);
+        Gee.Collection<AppCenterCore.Package> author_packages;
 
-        if (author_packages.size <= 1) {
-            author_packages = AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
-        }
+        author_packages = package.author_id == null
+            ? AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX)
+            : AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author_id (package.author_id, AUTHOR_OTHER_APPS_MAX);
 
         if (author_packages.size <= 1) {
             return;
