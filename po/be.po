@@ -1,12 +1,13 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Alaksiej Kaśpiarovič <aleksyzakupy@gmail.com>, 2023.
+# lenify <lenify@tutanota.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2023-02-17 15:25+0000\n"
-"Last-Translator: Alaksiej Kaśpiarovič <aleksyzakupy@gmail.com>\n"
+"PO-Revision-Date: 2024-08-11 16:16+0000\n"
+"Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/be/>\n"
 "Language: be\n"
@@ -15,13 +16,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:28 src/MainWindow.vala:45 src/Views/Homepage.vala:278
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: src/Application.vala:78
 #, c-format
