@@ -23,9 +23,7 @@ private class AppCenter.AuthorView : Gtk.Box {
             return;
         }
 
-        Gee.Collection<AppCenterCore.Package> author_packages;
-
-        author_packages = package.author_id == null
+        var author_packages = package.author_id == null
             ? AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX)
             : AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author_id (package.author_id, AUTHOR_OTHER_APPS_MAX);
 
