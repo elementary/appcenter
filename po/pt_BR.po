@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-15 23:56+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -145,10 +145,8 @@ msgid "Getting download size…"
 msgstr "Obtendo o tamanho do download…"
 
 #: src/Core/Job.vala:55
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Checking for updates…"
-msgstr "Verificando atualizações"
+msgstr "Verificando atualizações…"
 
 #: src/Core/Job.vala:57
 msgid "Installing…"
@@ -159,10 +157,8 @@ msgid "Installing updates…"
 msgstr "Instalando atualizações…"
 
 #: src/Core/Job.vala:61
-#, fuzzy
-#| msgid "Uninstalling"
 msgid "Uninstalling…"
-msgstr "Desinstalando"
+msgstr "Desinstalando. . ."
 
 #: src/Core/Job.vala:63
 msgid "Repairing…"
