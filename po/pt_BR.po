@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-05-05 12:13+0000\n"
-"Last-Translator: Breno Prata <brenoprata@hotmail.com>\n"
+"PO-Revision-Date: 2024-08-15 23:56+0000\n"
+"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -137,10 +137,8 @@ msgid "Updating"
 msgstr "Atualizando"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "Obtendo informações"
+msgstr "Obtendo informações do aplicativo…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
@@ -153,16 +151,12 @@ msgid "Checking for updates…"
 msgstr "Verificando atualizações"
 
 #: src/Core/Job.vala:57
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Instalando"
+msgstr "Instalando…"
 
 #: src/Core/Job.vala:59
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Instalando atualizações"
+msgstr "Instalando atualizações…"
 
 #: src/Core/Job.vala:61
 #, fuzzy
