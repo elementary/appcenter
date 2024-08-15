@@ -22,7 +22,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 13:30+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: matheustorresc <matheustorrescarvalho@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -298,10 +298,8 @@ msgstr ""
 "prosseguir."
 
 #: src/Core/UpdateManager.vala:51
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Runtime Updates"
-msgstr "Verificando atualizações"
+msgstr "Atualizações de Runtimes"
 
 #: src/Core/UpdateManager.vala:52
 msgid "Updates to app runtimes"
