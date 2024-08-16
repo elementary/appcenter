@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-16 14:02+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"PO-Revision-Date: 2024-08-16 14:06+0000\n"
+"Last-Translator: afraneo galan <afraneo@me.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -64,6 +64,7 @@ msgstr "Novas funcionalidades:"
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
+"Gerencie a inicialização automática em Configurações do Sistema → Aplicativos"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
 #: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
@@ -75,11 +76,13 @@ msgstr "Melhorias:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Atualizações automáticas de aplicativos por padrão"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
 msgstr ""
+"As atualizações do sistema operacional foram movidas para as configurações "
+"do sistema"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
