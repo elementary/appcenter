@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-05-05 12:13+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"PO-Revision-Date: 2024-08-16 14:02+0000\n"
+"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -23,7 +23,7 @@ msgstr "Central de Aplicativos"
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Navegue e gerencie aplicativos"
+msgstr "Explore e gerencie aplicativos"
 
 #: data/appcenter.metainfo.xml.in:14
 msgid ""
@@ -33,11 +33,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"A loja de aplicativos de código aberto, pague-o-quanto-quiser. Revisada e "
-"curada pelo elementary para garantir uma experiência nativa, segura e que "
-"respeita a privacidade. Navegue pelas categorias ou busque e descubra novos "
-"aplicativos. A Central de Aplicativos também é utilizada para atualizar seu "
-"sistema para a última versão para receber novos recursos e correções."
+"A loja de aplicativos de código aberto e pague-quanto-quiser do elementary. "
+"Analisado e selecionado pelo elementary para garantir uma experiência "
+"nativa, segura e que respeite a privacidade. Navegue por categorias ou "
+"pesquise e descubra novos aplicativos. A Central de Aplicativos também é "
+"utilizada para atualizar seu sistema para a versão mais recente para novos "
+"recursos e correções."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -137,7 +138,7 @@ msgstr "instalar;desinstalar;remover;catalogar;loja;aplicativos;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Verificar por Atualizações"
+msgstr "Buscar por Atualizações"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
