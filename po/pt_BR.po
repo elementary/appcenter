@@ -23,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 13:38+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -633,7 +633,7 @@ msgstr "interações on-line"
 
 #: src/Views/AppInfoView.vala:469
 msgid "Location Sharing"
-msgstr ""
+msgstr "compartilhamento de localização"
 
 #: src/Views/AppInfoView.vala:470
 msgid "Other people can see your real-world location"
