@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-16 14:03+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"PO-Revision-Date: 2024-08-16 14:06+0000\n"
+"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -1073,10 +1073,8 @@ msgid "Fixed Issues"
 msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:106
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Status desconhecido"
+msgstr "Data desconhecida"
 
 #: src/Widgets/ReleaseRow.vala:113
 msgid "Unknown version"
