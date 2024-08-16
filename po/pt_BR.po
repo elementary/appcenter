@@ -19,13 +19,14 @@
 # Max2020 <alcizmaxpereira@gmail.com>, 2024.
 # felipe ferreira cabo <felipeferreirah@gmail.com>, 2024.
 # Deleted User <noreply+3345@weblate.org>, 2024.
+# Max <pereiraalcizmax@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 14:06+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: Max <pereiraalcizmax@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -1070,7 +1071,7 @@ msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Problemas corrigidos"
 
 #: src/Widgets/ReleaseRow.vala:106
 msgid "Unknown date"
@@ -1100,7 +1101,7 @@ msgstr "Até %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
-msgstr ""
+msgstr "Notas de lançamento"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
 #, c-format
