@@ -15,13 +15,14 @@
 # Breno Prata <brenoprata@hotmail.com>, 2024.
 # Pedro Luiz <pedroluiz51@gmail.com>, 2024.
 # Jose Jacsan <jjacsan@gmail.com>, 2024.
+# José Rafael <jrafaeldesantana@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-15 23:56+0000\n"
-"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
+"PO-Revision-Date: 2024-08-16 13:30+0000\n"
+"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -312,9 +313,7 @@ msgid "Version: %s"
 msgstr "Versão: %s"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u componente com atualizações"
@@ -332,13 +331,11 @@ msgstr[0] "Atualização disponível"
 msgstr[1] "Atualizações disponíveis"
 
 #: src/Core/UpdateManager.vala:156
-#, fuzzy, c-format
-#| msgid "%u update is available."
-#| msgid_plural "%u updates are available."
+#, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u atualização está disponível."
-msgstr[1] "%u atualizações estão disponíveis."
+msgstr[0] "%u atualização está disponível"
+msgstr[1] "%u atualizações estão disponíveis"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -362,10 +359,8 @@ msgid "Repair"
 msgstr "Reparar"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "Falha ao Buscar Atualizações"
+msgstr "Falha ao reparar"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
@@ -388,16 +383,12 @@ msgid "Pay $%d for %s"
 msgstr "Pagar $%d por %s"
 
 #: src/Dialogs/StripeDialog.vala:82
-#, fuzzy
-#| msgid ""
-#| "This is a one time payment. Your email address is only used to send you a "
-#| "receipt."
 msgid ""
 "This is a one time payment suggested by the developer. You can also choose "
 "your own price."
 msgstr ""
-"Este é um pagamento único. Seu endereço de email é usado apenas para lhe "
-"enviarmos um recibo."
+"Este é um pagamento único sugerido pelo desenvolvedor. Você também pode "
+"escolher seu próprio preço."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -530,20 +521,15 @@ msgid "Failed to update “%s”"
 msgstr "Falha ao atualizar “%s”"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
-#, fuzzy
-#| msgid "Checking for Updates"
 msgid "Refresh Updates"
-msgstr "Verificando atualizações"
+msgstr "Buscar atualizações"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
-msgstr "Pesquisa"
+msgstr "Pesquisar"
 
 #: src/Views/AppInfoView.vala:260
 msgid "Illicit Substances"
@@ -575,27 +561,21 @@ msgstr "Jogo de azar"
 
 #: src/Views/AppInfoView.vala:279
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "Apostas realistas ou de participação"
 
 #: src/Views/AppInfoView.vala:303
 msgid "Made for elementary OS"
-msgstr ""
+msgstr "Feito para o elementary OS"
 
 #: src/Views/AppInfoView.vala:304
-#, fuzzy
-#| msgid ""
-#| "“%s” is not curated by elementary and has not been reviewed for security, "
-#| "privacy, or system integration."
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
-"\"%s\" não é curado pelo elementary e não foi revisado para segurança, "
-"privacidade ou integração de sistemas."
+"Verificado pelo elementary para segurança, privacidade e integração do "
+"sistema"
 
 #: src/Views/AppInfoView.vala:327
-#, fuzzy
-#| msgid "Translate"
 msgid "May Not Be Translated"
-msgstr "Traduzir"
+msgstr "Pode não estar traduzido"
 
 #: src/Views/AppInfoView.vala:328
 msgid "This app does not provide language information"
