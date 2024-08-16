@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 13:48+0000\n"
-"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
+"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -638,7 +638,7 @@ msgstr "Compartilhamento de Localização"
 
 #: src/Views/AppInfoView.vala:470
 msgid "Other people can see your real-world location"
-msgstr ""
+msgstr "Outras pessoas podem ver sua localização no mundo real"
 
 #: src/Views/AppInfoView.vala:482
 msgid "Collects anonymous usage data"
@@ -646,7 +646,7 @@ msgstr "Coleta dados de uso anônimos"
 
 #: src/Views/AppInfoView.vala:485
 msgid "Collects usage data that could be used to identify you"
-msgstr ""
+msgstr "Coleta dados de uso que podem ser usados para te identificar"
 
 #: src/Views/AppInfoView.vala:490
 msgid "Info Sharing"
@@ -692,6 +692,8 @@ msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
 "recommended for use on a production system."
 msgstr ""
+"Construído para uma versão instável de %s; pode conter problemas sérios. Não "
+"recomendado para uso em um sistema de produção."
 
 #: src/Views/AppInfoView.vala:802
 msgid "Insecure Sandbox"
