@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-16 13:48+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"PO-Revision-Date: 2024-08-16 14:02+0000\n"
+"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -750,8 +750,8 @@ msgstr "Notificações Legadas"
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
-"As bolhas podem não ser configuráveis ou aparecer no centro de notificação "
-"como \"Outro\""
+"A notificação em bolhas podem não ser configuráveis ou aparecer no centro de "
+"notificação como \"Outro\""
 
 #: src/Views/AppInfoView.vala:860
 msgid "System Settings Access"
@@ -766,12 +766,9 @@ msgid "Checking for Updates"
 msgstr "Verificando atualizações"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
-"Download de uma lista de atualizações disponíveis para o SO e aplicativos "
-"instalados"
+"Baixando lista de atualizações disponíveis para os aplicativos instalados"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -797,10 +794,8 @@ msgid "Check for Updates"
 msgstr "Verificando atualizações"
 
 #: src/Views/AppListUpdateView.vala:151
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Iniciando"
+msgstr "Configurações"
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:179
@@ -906,10 +901,8 @@ msgid "Writing & Language"
 msgstr "Escrita & Linguagem"
 
 #: src/Views/Homepage.vala:204
-#, fuzzy
-#| msgid "Privacy Policy"
 msgid "Privacy & Security"
-msgstr "Política de Privacidade"
+msgstr "Privacidade e Segurança"
 
 #: src/Views/Homepage.vala:246
 #, fuzzy
@@ -924,7 +917,7 @@ msgstr "Início"
 
 #: src/Views/Homepage.vala:279
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Explore e gerencie aplicativos"
 
 #: src/Views/Homepage.vala:280
 msgid ""
@@ -934,16 +927,20 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
+"A loja de aplicativos de código aberto e pague-quanto-quiser do elementary. "
+"Analisado e selecionado pelo elementary para garantir uma experiência "
+"nativa, segura e que respeite a privacidade. Navegue por categorias ou "
+"pesquise e descubra novos aplicativos. A Central de Aplicativos também é "
+"utilizada para atualizar seu sistema para a versão mais recente para novos "
+"recursos e correções."
 
 #: src/Views/Homepage.vala:520
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Jogos"
+msgstr "Diversão e Jogos"
 
 #: src/Views/Homepage.vala:545
 msgid "Fun &"
-msgstr ""
+msgstr "Diversão &"
 
 #: src/Views/Homepage.vala:551
 msgid "Games"
