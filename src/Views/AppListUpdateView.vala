@@ -165,8 +165,8 @@ namespace AppCenter.Views {
             var stack = new Gtk.Stack () {
                 transition_type = UNDER_UP
             };
-            stack.add (main_box);
             stack.add (loading_view);
+            stack.add (main_box);
 
             add (stack);
 
