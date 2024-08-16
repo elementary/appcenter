@@ -20,13 +20,14 @@
 # felipe ferreira cabo <felipeferreirah@gmail.com>, 2024.
 # Deleted User <noreply+3345@weblate.org>, 2024.
 # Max <pereiraalcizmax@gmail.com>, 2024.
+# Fábio Klevinskas Lopes <fabioklopes@live.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 14:21+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"Last-Translator: Fábio Klevinskas Lopes <fabioklopes@live.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -57,8 +58,8 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
-"O AppCenter iniciará automaticamente quando este dispositivo for ligado e "
-"continuará em execução mesmo quando sua janela estiver fechada, para que "
+"A Central de Aplicativos será iniciada automaticamente quando esse "
+"dispositivo for ligado e executado e quando sua janela for fechada, para que "
 "possa verificar e instalar atualizações automaticamente."
 
 #: src/Application.vala:328
