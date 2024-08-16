@@ -160,6 +160,7 @@ namespace AppCenter.Views {
             main_box.add (header_revealer);
             main_box.add (scrolled);
             main_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+            main_box.show_all ();
 
             var stack = new Gtk.Stack () {
                 transition_type = UNDER_UP
