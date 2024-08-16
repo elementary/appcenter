@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-16 14:06+0000\n"
+"PO-Revision-Date: 2024-08-16 14:12+0000\n"
 "Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -79,13 +79,15 @@ msgstr "Atualizações automáticas de aplicativos por padrão"
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
 msgstr ""
-"As atualizações do sistema operacional foram movidas para as configurações "
-"do sistema"
+"As atualizações do sistema operacional foram movidas para as Configurações "
+"do Sistema"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Identifica aplicações feitas para o elementary OS ao invés de identificar "
+"aplicações de outras fontes"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
 #: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
@@ -96,10 +98,14 @@ msgstr "Traduções atualizadas"
 #: data/appcenter.metainfo.xml.in:101
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Avisar quando os aplicativos usam inicialização automática e notificações "
+"legadas"
 
 #: data/appcenter.metainfo.xml.in:105
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Correção do \"flick\" da Central de Aplicativos quando buscado o tamanho da "
+"instalação"
 
 #: data/appcenter.metainfo.xml.in:121
 msgid ""
@@ -108,11 +114,9 @@ msgid ""
 msgstr ""
 
 #: data/appcenter.metainfo.xml.in:125
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
-"Retirar nomes longos de aplicativos nas visualizações de informações do "
+"Diminuir espaçamento e as margens nas visualizações de informações do "
 "aplicativo"
 
 #: data/appcenter.metainfo.xml.in:126
