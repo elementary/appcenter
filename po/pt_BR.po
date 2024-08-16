@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-16 13:30+0000\n"
-"Last-Translator: matheustorresc <matheustorrescarvalho@gmail.com>\n"
+"PO-Revision-Date: 2024-08-16 13:31+0000\n"
+"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -579,13 +579,11 @@ msgstr "Não Traduzido"
 
 #: src/Views/AppInfoView.vala:336
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Este aplicativo não está disponível no seu idioma"
 
 #: src/Views/AppInfoView.vala:343
-#, fuzzy
-#| msgid "Translate"
 msgid "Not Fully Translated"
-msgstr "Traduzir"
+msgstr "Não Totalmente Traduzido"
 
 #: src/Views/AppInfoView.vala:344
 #, c-format
