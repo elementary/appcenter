@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 14:03+0000\n"
-"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
+"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -966,8 +966,8 @@ msgstr "Pesquisa"
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
-"Tente mudar os termos de pesquisa. Você também pode fazer sideload de "
-"aplicativos Flatpak, p.ex. a partir de %s"
+"Tente mudar os termos de pesquisa. Você também pode buscar por aplicativos "
+"Flatpak, por exemplo, a partir do %s"
 
 #: src/Views/SearchView.vala:151
 #, c-format
@@ -1011,10 +1011,8 @@ msgid "Website"
 msgstr "Website"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Ajuda"
+msgstr "Obter ajuda"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
