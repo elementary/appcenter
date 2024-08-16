@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 14:21+0000\n"
-"Last-Translator: afraneo galan <afraneo@me.com>\n"
+"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -23,7 +23,7 @@ msgstr "Central de Aplicativos"
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Explore e gerencie aplicativos"
+msgstr "Navegue e gerencie aplicativos"
 
 #: data/appcenter.metainfo.xml.in:14
 msgid ""
@@ -128,8 +128,8 @@ msgstr "Mostrar um banner placeholder na página inicial ao carregar"
 #: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
-"Não liste aplicativos que não sejam do AppCenter em um cabeçalho separado "
-"nas visualizações de categoria"
+"Não liste aplicativos que não sejam da Central de Aplicativos em um "
+"cabeçalho separado nas visualizações de categoria"
 
 #: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
@@ -150,17 +150,15 @@ msgstr "instalar;desinstalar;remover;catalogar;loja;aplicativos;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Buscar por Atualizações"
+msgstr "Buscar por atualizações"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
 msgstr "Reparar fontes de software"
 
 #: data/io.elementary.appcenter.policy.in:11
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "É necessária autenticação para atualizar o software"
+msgstr "É necessária autenticação para reparar o software"
 
 #~ msgid "Update software"
 #~ msgstr "Atualizar o software"
