@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 13:48+0000\n"
-"Last-Translator: felipe ferreira cabo <felipeferreirah@gmail.com>\n"
+"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -634,7 +634,7 @@ msgstr "Interações Online"
 
 #: src/Views/AppInfoView.vala:469
 msgid "Location Sharing"
-msgstr "compartilhamento de localização"
+msgstr "Compartilhamento de Localização"
 
 #: src/Views/AppInfoView.vala:470
 msgid "Other people can see your real-world location"
@@ -666,25 +666,25 @@ msgstr "Extensões:"
 
 #: src/Views/AppInfoView.vala:772
 msgid "End of Life"
-msgstr ""
+msgstr "Sem suporte"
 
 #: src/Views/AppInfoView.vala:773
 msgid "May not work as expected or receive security updates"
 msgstr ""
+"Pode não funcionar como esperado ou não receber atualizações de segurança"
 
 #: src/Views/AppInfoView.vala:779
 msgid "Outdated"
-msgstr ""
+msgstr "Desatualizado"
 
 #: src/Views/AppInfoView.vala:780
 msgid "May not work as expected or support the latest features"
 msgstr ""
+"Pode não funcionar como o esperado ou suportar os recursos mais recentes"
 
 #: src/Views/AppInfoView.vala:788
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Unstable"
-msgstr "Desinstalar"
+msgstr "Instável"
 
 #: src/Views/AppInfoView.vala:789
 #, c-format
@@ -708,10 +708,12 @@ msgstr "Acessos à Pasta do Sistema"
 #: src/Views/AppInfoView.vala:813
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
+"Incluindo todas as pastas pessoais, mas não incluindo as pastas internas do "
+"sistema"
 
 #: src/Views/AppInfoView.vala:820
 msgid "Home Folder Access"
-msgstr ""
+msgstr "Acesso a pasta pessoal"
 
 #: src/Views/AppInfoView.vala:821
 msgid ""
@@ -723,7 +725,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:830
 msgid "Legacy Autostart"
-msgstr ""
+msgstr "Inicialização Legada"
 
 #: src/Views/AppInfoView.vala:831
 msgid "Can automatically start up and run in the background without asking"
@@ -739,7 +741,7 @@ msgstr "Acesso a sua localização a qualquer momento sem perguntar"
 
 #: src/Views/AppInfoView.vala:850
 msgid "Legacy Notifications"
-msgstr ""
+msgstr "Notificações Legadas"
 
 #: src/Views/AppInfoView.vala:851
 msgid ""
