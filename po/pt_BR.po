@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 14:02+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -946,15 +946,15 @@ msgstr "Jogos"
 
 #: src/Views/SearchView.vala:39 src/Views/SearchView.vala:120
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/SearchView.vala:40
 msgid "No Apps Found"
-msgstr ""
+msgstr "Nenhum aplicativo encontrado"
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:138
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "O termo de pesquisa deve ter pelo menos 3 caracteres."
 
 #: src/Views/SearchView.vala:49 src/Views/SearchView.vala:156
 msgid "Search Apps"
@@ -971,6 +971,8 @@ msgstr "Pesquisa"
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"Tente mudar os termos de pesquisa. Você também pode fazer sideload de "
+"aplicativos Flatpak, p.ex. a partir de %s"
 
 #: src/Views/SearchView.vala:151
 #, c-format
