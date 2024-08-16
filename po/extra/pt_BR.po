@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-16 14:12+0000\n"
+"PO-Revision-Date: 2024-08-16 14:21+0000\n"
 "Last-Translator: afraneo galan <afraneo@me.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -104,7 +104,7 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:105
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
-"Correção do \"flick\" da Central de Aplicativos quando buscado o tamanho da "
+"Corrigida oscilação nas visualizações do AppInfo ao obter o tamanho da "
 "instalação"
 
 #: data/appcenter.metainfo.xml.in:121
@@ -133,13 +133,16 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Ofereça uma opção de reparo se as atualizações do Flatpak falharem"
 
 #: data/appcenter.metainfo.xml.in:150
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Mostrar uma mensagem na visualização de atualizações quando estiver "
+"atualizado, incluindo quando as atualizações foram verificadas pela última "
+"vez"
 
 #: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -151,7 +154,7 @@ msgstr "Buscar por Atualizações"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
-msgstr ""
+msgstr "Reparar fontes de software"
 
 #: data/io.elementary.appcenter.policy.in:11
 #, fuzzy
