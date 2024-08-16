@@ -16,13 +16,14 @@
 # Pedro Luiz <pedroluiz51@gmail.com>, 2024.
 # Jose Jacsan <jjacsan@gmail.com>, 2024.
 # José Rafael <jrafaeldesantana@gmail.com>, 2024.
+# Max2020 <alcizmaxpereira@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 13:32+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -592,7 +593,7 @@ msgstr "Esse aplicativo está %i%% traduzido em seu idioma"
 
 #: src/Views/AppInfoView.vala:368
 msgid "Conflict"
-msgstr ""
+msgstr "conflito"
 
 #: src/Views/AppInfoView.vala:369
 msgid "Depictions of unsafe situations or aggressive conflict"
