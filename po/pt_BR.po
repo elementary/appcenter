@@ -27,7 +27,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-08-16 14:21+0000\n"
-"Last-Translator: Ewerton Souza <ewvertton@gmail.com>\n"
+"Last-Translator: matheustorresc <matheustorrescarvalho@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -308,7 +308,7 @@ msgstr "Atualizações de Runtimes"
 
 #: src/Core/UpdateManager.vala:52
 msgid "Updates to app runtimes"
-msgstr "Atualizações para o tempo de execução dos aplicativos"
+msgstr "Atualizações para os runtimes dos aplicativos"
 
 #: src/Core/UpdateManager.vala:120
 #, c-format
