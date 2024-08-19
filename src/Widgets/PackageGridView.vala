@@ -35,6 +35,7 @@ public class AppCenter.Widgets.PackageGridView : Gtk.Widget {
         grid_view = new Gtk.GridView (selection_model, factory) {
             single_click_activate = true
         };
+        grid_view.remove_css_class (Granite.STYLE_CLASS_VIEW);
         grid_view.set_parent (this);
 
         grid_view.activate.connect ((pos) => {
