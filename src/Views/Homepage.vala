@@ -377,7 +377,9 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             }
 
             if (!installed) {
-                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                var package_row = new AppCenter.Widgets.ListPackageRowGrid ();
+                package_row.bind_package (package);
+
                 recently_updated_carousel.append (package_row);
             }
         }

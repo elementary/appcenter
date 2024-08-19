@@ -42,7 +42,9 @@ private class AppCenter.AuthorView : Gtk.Box {
                 continue;
             }
 
-            var other_app = new AppCenter.Widgets.ListPackageRowGrid (author_package);
+            var other_app = new AppCenter.Widgets.ListPackageRowGrid ();
+            other_app.bind_package (author_package);
+
             flowbox.append (other_app);
         }
 

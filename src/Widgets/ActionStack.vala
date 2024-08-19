@@ -4,7 +4,8 @@
  */
 
 public class AppCenter.ActionStack : Gtk.Box {
-    public AppCenterCore.Package package { get; construct set; }
+    public AppCenterCore.Package? package { get; private set; }
+
     public bool show_open { get; set; default = true; }
     public bool updates_view = false;
 
@@ -23,12 +24,8 @@ public class AppCenter.ActionStack : Gtk.Box {
     private Gtk.Revealer action_button_revealer;
     private Gtk.Revealer open_button_revealer;
 
-    public ActionStack (AppCenterCore.Package package) {
-        Object (package: package);
-    }
-
     construct {
-        action_button = new Widgets.HumbleButton (package);
+        action_button = new Widgets.HumbleButton ();
 
         action_button_revealer = new Gtk.Revealer () {
             child = action_button,
@@ -54,7 +51,7 @@ public class AppCenter.ActionStack : Gtk.Box {
         button_box.append (action_button_revealer);
         button_box.append (open_button_revealer);
 
-        cancel_button = new ProgressButton (package);
+        cancel_button = new ProgressButton ();
         cancel_button.clicked.connect (() => action_cancelled ());
 
         var action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
@@ -73,14 +70,25 @@ public class AppCenter.ActionStack : Gtk.Box {
 
         append (stack);
 
-        package.notify["state"].connect (on_package_state_changed);
-        update_action ();
-
         destroy.connect (() => {
             if (state_source > 0) {
                 GLib.Source.remove (state_source);
             }
         });
+    }
+
+    public void bind_package (AppCenterCore.Package package) {
+        if (this.package != null) {
+            this.package.notify["state"].disconnect (on_package_state_changed);
+        }
+
+        this.package = package;
+
+        action_button.bind_package (package);
+        cancel_button.bind_package (package);
+
+        package.notify["state"].connect (on_package_state_changed);
+        update_action ();
     }
 
     private void on_package_state_changed () {
@@ -95,8 +103,8 @@ public class AppCenter.ActionStack : Gtk.Box {
         });
     }
 
-    private void update_action () {
-        if (package == null || package.component == null || !package.is_native || package.is_runtime_updates) {
+    private void update_action () requires (package != null) {
+        if (package.component == null || !package.is_native || package.is_runtime_updates) {
             action_button.can_purchase = false;
         } else {
             var can_purchase = package.get_payments_key () != null;
@@ -158,12 +166,12 @@ public class AppCenter.ActionStack : Gtk.Box {
         }
     }
 
-    private void action_cancelled () {
+    private void action_cancelled () requires (package != null) {
         update_action ();
         package.action_cancellable.cancel ();
     }
 
-    private void launch_package_app () {
+    private void launch_package_app () requires (package != null) {
         try {
             package.launch ();
         } catch (Error e) {
@@ -171,7 +179,7 @@ public class AppCenter.ActionStack : Gtk.Box {
         }
     }
 
-    private async void action_clicked () {
+    private async void action_clicked () requires (package != null) {
         if (package.installed && !package.update_available) {
             action_button_revealer.reveal_child = false;
         } else if (package.update_available) {

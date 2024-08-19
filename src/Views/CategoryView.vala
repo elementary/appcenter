@@ -245,7 +245,8 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         }
 
         public void add_package (AppCenterCore.Package package) {
-            var package_row = new Widgets.ListPackageRowGrid (package);
+            var package_row = new Widgets.ListPackageRowGrid ();
+            package_row.bind_package (package);
 
             size_group.add_widget (package_row);
             flowbox.append (package_row);

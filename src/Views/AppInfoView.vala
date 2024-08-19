@@ -107,9 +107,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             overflow = VISIBLE
         };
 
-        action_stack = new ActionStack (package) {
+        action_stack = new ActionStack () {
             hexpand = false
         };
+        action_stack.bind_package (package);
 
         action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);

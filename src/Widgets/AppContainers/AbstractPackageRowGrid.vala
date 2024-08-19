@@ -19,7 +19,7 @@
  */
 
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
-    public AppCenterCore.Package package { get; construct set; }
+    public AppCenterCore.Package package { get; private set; }
 
     public bool action_sensitive {
         set {
@@ -31,16 +31,15 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
     protected Gtk.Label package_name;
     protected Gtk.Overlay app_icon_overlay;
 
-    protected AbstractPackageRowGrid (AppCenterCore.Package package) {
-        Object (package: package);
-    }
+    private Gtk.Image app_icon;
+    private Gtk.Image badge_image;
 
     construct {
-        var app_icon = new Gtk.Image () {
+        app_icon = new Gtk.Image () {
             pixel_size = 48
         };
 
-        var badge_image = new Gtk.Image () {
+        badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,
             valign = Gtk.Align.END,
             pixel_size = 24
@@ -49,10 +48,24 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
         app_icon_overlay = new Gtk.Overlay () {
             child = app_icon
         };
+        app_icon_overlay.add_overlay (badge_image);
 
-        action_stack = new ActionStack (package) {
+        action_stack = new ActionStack () {
             show_open = false
         };
+
+        margin_top = 6;
+        margin_start = 12;
+        margin_bottom = 6;
+        margin_end = 12;
+    }
+
+    public virtual void bind_package (AppCenterCore.Package package) {
+        this.package = package;
+
+        package_name.label = package.get_name ();
+
+        action_stack.bind_package (package);
 
         var scale_factor = get_scale_factor ();
 
@@ -60,20 +73,16 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
         if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
             app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
             badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
-
-            app_icon_overlay.add_overlay (badge_image);
+            badge_image.visible = true;
         } else {
             app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
 
             if (package.is_runtime_updates) {
                 badge_image.icon_name = "system-software-update";
-                app_icon_overlay.add_overlay (badge_image);
+                badge_image.visible = true;
+            } else {
+                badge_image.visible = false;
             }
         }
-
-        margin_top = 6;
-        margin_start = 12;
-        margin_bottom = 6;
-        margin_end = 12;
     }
 }

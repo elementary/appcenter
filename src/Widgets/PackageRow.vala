@@ -23,7 +23,9 @@ namespace AppCenter.Widgets {
         AbstractPackageRowGrid grid;
 
         public PackageRow.list (AppCenterCore.Package package) {
-            grid = new ListPackageRowGrid (package);
+            grid = new ListPackageRowGrid ();
+            grid.bind_package (package);
+
             child = grid;
         }
 

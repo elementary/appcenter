@@ -24,15 +24,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Label app_version;
     private Gtk.Revealer release_button_revealer;
 
-    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
-        Object (package: package);
-
+    public InstalledPackageRowGrid (Gtk.SizeGroup? action_size_group) {
         if (action_size_group != null) {
             action_size_group.add_widget (action_stack.action_button);
             action_size_group.add_widget (action_stack.cancel_button);
         }
-
-        set_up_package ();
     }
 
     construct {
@@ -41,7 +37,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         action_stack.updates_view = true;
         action_stack.margin_start = 12;
 
-        var package_name = new Gtk.Label (package.get_name ()) {
+        package_name = new Gtk.Label (null) {
             wrap = true,
             max_width_chars = 25,
             valign = END,
@@ -84,6 +80,10 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         append (grid);
 
         release_button.clicked.connect (() => {
+            if (package == null) {
+                return;
+            }
+
             var releases_dialog = new ReleaseDialog (package) {
                 transient_for = ((Gtk.Application) Application.get_default ()).active_window
             };
@@ -91,23 +91,21 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         });
     }
 
-    private void set_up_package () {
-        if (package.get_version () != null) {
-            if (package.has_multiple_origins) {
-                app_version.label = "%s — %s".printf (package.get_version (), package.origin_description);
-            } else {
-                app_version.label = package.get_version ();
-            }
+    public override void bind_package (AppCenterCore.Package package) {
+        if (this.package != null) {
+            this.package.notify["state"].disconnect (update_state);
         }
 
-        package.notify["state"].connect (() => {
-            update_state ();
-        });
-        update_state (true);
+        base.bind_package (package);
+
+        package_name.label = package.get_name ();
+
+        package.notify["state"].connect (update_state);
+        update_state ();
     }
 
-    private void update_state (bool first_update = false) {
-        if (!first_update && package.get_version != null) {
+    private void update_state () {
+        if (package.get_version != null) {
             if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
             } else {

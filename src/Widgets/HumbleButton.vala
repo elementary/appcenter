@@ -20,7 +20,7 @@
 public class AppCenter.Widgets.HumbleButton : Gtk.Button {
     public signal void download_requested ();
 
-    public AppCenterCore.Package package { get; construct; }
+    public AppCenterCore.Package? package { get; private set; }
 
     private int _amount = 1;
     public int amount {
@@ -69,10 +69,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
         }
     }
 
-    public HumbleButton (AppCenterCore.Package package) {
-        Object (package: package);
-    }
-
     construct {
         hexpand = true;
 
@@ -83,12 +79,20 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
 #endif
 
         clicked.connect (() => {
+            if (package == null) {
+                return;
+            }
+
             if (amount != 0) {
                 show_stripe_dialog ();
             } else {
                 download_requested ();
             }
         });
+    }
+
+    public void bind_package (AppCenterCore.Package package) {
+        this.package = package;
     }
 
     private void show_stripe_dialog () {

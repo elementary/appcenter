@@ -309,12 +309,16 @@ namespace AppCenter.Views {
 
         private Gtk.Widget create_row_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
-            return new Widgets.InstalledPackageRowGrid (package, action_button_group);
+            var package_row = new Widgets.InstalledPackageRowGrid (action_button_group);
+            package_row.bind_package (package);
+            return package_row;
         }
 
         private Gtk.Widget create_installed_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
-            return new Widgets.InstalledPackageRowGrid (package, action_button_group);
+            var package_row = new Widgets.InstalledPackageRowGrid (action_button_group);
+            package_row.bind_package (package);
+            return package_row;
         }
 
         private void on_update_all () {
