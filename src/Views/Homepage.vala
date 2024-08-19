@@ -25,11 +25,12 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private const int MAX_PACKAGES_IN_BANNER = 5;
     private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
+    private ListStore recently_updated_packages;
+
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow scrolled_window;
 
     private Adw.Carousel banner_carousel;
-    private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
 
@@ -63,13 +64,9 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             margin_start = 12
         };
 
-        recently_updated_carousel = new Gtk.FlowBox () {
-            activate_on_single_click = true,
-            column_spacing = 12,
-            row_spacing = 12,
-            homogeneous = true,
-            max_children_per_line = 5
-        };
+        recently_updated_packages = new ListStore (typeof (AppCenterCore.Package));
+
+        var recently_updated_carousel = new Widgets.PackageGridView (recently_updated_packages);
 
         var recently_updated_grid = new Gtk.Grid () {
             margin_end = 12,
@@ -298,11 +295,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             show_category (card.category);
         });
 
-        recently_updated_carousel.child_activated.connect ((child) => {
-            var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
-
-            show_package (package_row_grid.package);
-        });
+        recently_updated_carousel.package_activated.connect ((pkg) => show_package (pkg));
 
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         update_manager.notify["updates-number"].connect (() => {
@@ -356,7 +349,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         banner_carousel.scroll_to (banner_carousel.get_nth_page (1), true);
 
         foreach (var package in packages_by_release_date) {
-            if (recently_updated_carousel.get_child_at_index (MAX_PACKAGES_IN_CAROUSEL - 1) != null) {
+            if (recently_updated_packages.n_items >= MAX_PACKAGES_IN_CAROUSEL) {
                 break;
             }
 
@@ -377,14 +370,11 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             }
 
             if (!installed) {
-                var package_row = new AppCenter.Widgets.ListPackageRowGrid ();
-                package_row.bind_package (package);
-
-                recently_updated_carousel.append (package_row);
+                recently_updated_packages.append (package);
             }
         }
 
-        recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
+        recently_updated_revealer.reveal_child = recently_updated_packages.n_items > 0;
     }
 
     private void banner_timeout_start () {
