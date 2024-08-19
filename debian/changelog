@@ -1,3 +1,9 @@
+appcenter (7.4.1) jammy; urgency=medium
+
+  * New upstream release
+
+ -- Danielle Foré <danielle@elementary.io>  Mon, 19 Aug 2024 11:58:55 -0700
+
 appcenter (7.4.0) jammy; urgency=medium
 
   * New upstream release
