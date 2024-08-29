@@ -20,6 +20,11 @@
 public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     public const int MAX_WIDTH = 800;
 
+    private const string BANNER_STYLE_CSS = """
+        @define-color banner_bg_color %s;
+        @define-color banner_fg_color %s;
+    """;
+
     public signal void show_other_package (AppCenterCore.Package package);
 
     public AppCenterCore.Package package { get; construct set; }
@@ -124,8 +129,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         accent_provider = new Gtk.CssProvider ();
         try {
-            string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
-            string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+            string bg_color = "mix(@accent_color, @bg_color, 0.8)";
+            string text_color = "mix(@accent_color, @text_color, 0.85)";
 
             var accent_css = "";
             if (package != null) {
