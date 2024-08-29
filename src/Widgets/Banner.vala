@@ -114,7 +114,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             providers = new Gee.HashMap<string, Gtk.CssProvider> ();
         }
 
-        var color_class = color.replace ("#", "");
+        var color_class = color.replace ("#", "color-");
         widget.add_css_class (color_class);
 
         if (!providers.has_key (color)) {
