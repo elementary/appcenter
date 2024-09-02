@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-02 13:42+0000\n"
-"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
+"PO-Revision-Date: 2024-09-02 13:43+0000\n"
+"Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -347,7 +347,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
-msgstr ""
+msgstr "หรือ"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
@@ -357,7 +357,7 @@ msgstr "อีเมล"
 msgid ""
 "Only used to send you a receipt. You will not be subscribed to any mailing "
 "list."
-msgstr ""
+msgstr "ใช้เพื่อส่งใบเสร็จให้คุณเท่านั้น  คุณจะไม่สมัครรับรายชื่ออีเมลใดๆ"
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
