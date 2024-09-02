@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-09-02 13:42+0000\n"
-"Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
+"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -62,7 +62,7 @@ msgstr "เครือข่ายไม่พร้อมใช้งาน"
 
 #: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
-msgstr "เชื่อมต่ออินเทอร์เน็ตเพื่อเรียกดูและติดตั้งแอพ"
+msgstr "เชื่อมต่ออินเทอร์เน็ตเพื่อเรียกดูและติดตั้งแอป"
 
 #: src/MainWindow.vala:98
 msgid "Network Settings…"
@@ -108,7 +108,7 @@ msgstr "%s (ทั้งระบบ)"
 
 #: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
-msgstr ""
+msgstr "กำลังดำเนินการเกี่ยวกับแพ็คเกจ"
 
 #: src/Core/FlatpakBackend.vala:1425
 msgid "Installing"
@@ -119,48 +119,36 @@ msgid "Uninstalling"
 msgstr "กำลังถอนการติดตั้ง"
 
 #: src/Core/FlatpakBackend.vala:1739
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "การอัปเดต"
+msgstr "กำลังอัปเดต"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "กำลังรับข้อมูล"
+msgstr "กำลังรับข้อมูลแอป…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
-msgstr ""
+msgstr "กำลังอ่านขนาดการดาวน์โหลด…"
 
 #: src/Core/Job.vala:55
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for updates…"
-msgstr "กำลังค้นหาอัปเดต…"
+msgstr "กำลังตรวจหาอัปเดต…"
 
 #: src/Core/Job.vala:57
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "กำลังติดตั้ง"
+msgstr "กำลังติดตั้ง…"
 
 #: src/Core/Job.vala:59
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "กำลังติตดั้งการอัปเดต"
+msgstr "กำลังติตดั้งอัปเดต…"
 
 #: src/Core/Job.vala:61
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling…"
-msgstr "ถอนการติดตั้ง"
+msgstr "กำลังถอนการติดตั้ง…"
 
 #: src/Core/Job.vala:63
 msgid "Repairing…"
-msgstr ""
+msgstr "กำลังซ่อมแซม…"
 
 #: src/Core/Package.vala:309
 #, c-format
@@ -324,13 +312,11 @@ msgstr "ไม่สามารถติดตั้ง “%s”"
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
-msgstr ""
+msgstr "ซ่อมแซม"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "ไม่สามารถตรวจหาอัพเดตได้"
+msgstr "ซ่อมแซมไม่สำเร็จ"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
