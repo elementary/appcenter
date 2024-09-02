@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-09-02 20:05+0000\n"
-"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
+"Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -456,9 +456,8 @@ msgstr ""
 "การรีเฟรชการอัปเดตด้วยตนเองอาจช่วยแก้ปัญหาได้"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "ถอนการติดตั้ง"
+msgstr "อัปเดตแอปไม่สำเร็จ"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
@@ -466,10 +465,8 @@ msgid "Failed to update “%s”"
 msgstr "ไม่สามารถอัปเดต “%s”"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Refresh Updates"
-msgstr "กำลังค้นหาอัปเดต…"
+msgstr "รีเฟรชการอัปเดต"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
@@ -742,10 +739,8 @@ msgid "Check for Updates"
 msgstr "ตรวจหาอัปเดต"
 
 #: src/Views/AppListUpdateView.vala:151
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "กำลังเริ่ม"
+msgstr "ตั้งค่า"
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:179
