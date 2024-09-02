@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-02 13:44+0000\n"
-"Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
+"PO-Revision-Date: 2024-09-02 20:05+0000\n"
+"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -431,11 +431,11 @@ msgstr "ถอนการติดตั้งแอปไม่สำเร็
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr "ไม่สามารถถอนการติดตั้ง “%s”"
+msgstr "ถอนการติดตั้ง “%s” ไม่สำเร็จ"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "ไม่สามารถตรวจหาอัพเดตได้"
+msgstr "ตรวจหาอัปเดตไม่สำเร็จ"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -452,7 +452,7 @@ msgid ""
 "updates may resolve the issue."
 msgstr ""
 "นี่อาจเกิดจากซอฟต์แวร์ไซด์โหลดหรือคอมไพล์ด้วยตนเอง แหล่งซอฟต์แวร์ของบุคคลที่"
-"สาม หรือข้อผิดพลาดของตัวจัดการแพ็คเกจ  "
+"สาม หรือข้อผิดพลาดของตัวจัดการแพ็คเกจ "
 "การรีเฟรชการอัปเดตด้วยตนเองอาจช่วยแก้ปัญหาได้"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
@@ -617,7 +617,7 @@ msgstr "ภาพตัวอย่างยังไม่สามารถใ
 
 #: src/Views/AppInfoView.vala:615
 msgid "What's New:"
-msgstr ""
+msgstr "มีอะไรใหม่:"
 
 #: src/Views/AppInfoView.vala:642
 msgid "Extensions:"
@@ -738,10 +738,8 @@ msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:129
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Check for Updates"
-msgstr "กำลังค้นหาอัปเดต…"
+msgstr "ตรวจหาอัปเดต"
 
 #: src/Views/AppListUpdateView.vala:151
 #, fuzzy
@@ -751,10 +749,9 @@ msgstr "กำลังเริ่ม"
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:179
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "ติดตั้ง"
+msgstr "ติดตั้งอยู่"
 
 #: src/Views/AppListUpdateView.vala:269
 #, c-format
@@ -770,11 +767,11 @@ msgstr ""
 #: src/Views/AuthorView.vala:31
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "แอปอื่นๆ จาก %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
-msgstr ""
+msgstr "อัปเดตล่าสุด"
 
 #: src/Views/CategoryView.vala:37
 #, fuzzy
@@ -860,10 +857,9 @@ msgid "Privacy & Security"
 msgstr ""
 
 #: src/Views/Homepage.vala:246
-#, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "ถอนการติดตั้ง"
+msgstr "อัปเดตและแอปที่ติดตั้งอยู่"
 
 #: src/Views/Homepage.vala:265
 msgid "Home"
@@ -931,36 +927,35 @@ msgstr "ค้นหา %s"
 
 #: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
 msgid "Free"
-msgstr ""
+msgstr "ฟรี"
 
 #: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
-#, fuzzy
 msgid "Install"
 msgstr "ติดตั้ง"
 
 #: src/Widgets/ActionStack.vala:138
 msgid "Update"
-msgstr "การอัปเดต"
+msgstr "อัปเดต"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
-msgstr ""
+msgstr "หมายเลขบัตร"
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "จำเป็นต้องมีการชำระเงิน ซึ่งยังไม่ได้เปิดใช้"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:114
 #, c-format
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:117
 #, c-format
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
@@ -1066,7 +1061,7 @@ msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
-msgstr ""
+msgstr "ปิด"
 
 #~ msgid "Running"
 #~ msgstr "กำลังทำงาน"
