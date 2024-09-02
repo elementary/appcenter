@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-02 13:43+0000\n"
+"PO-Revision-Date: 2024-09-02 13:44+0000\n"
 "Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
@@ -357,7 +357,7 @@ msgstr "อีเมล"
 msgid ""
 "Only used to send you a receipt. You will not be subscribed to any mailing "
 "list."
-msgstr "ใช้เพื่อส่งใบเสร็จให้คุณเท่านั้น  คุณจะไม่สมัครรับรายชื่ออีเมลใดๆ"
+msgstr "ใช้เพื่อส่งใบเสร็จให้คุณเท่านั้น คุณจะไม่สมัครรับรายชื่ออีเมลใดๆ"
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -385,7 +385,7 @@ msgstr "ชำระเงิน $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr ""
+msgstr "ลองใช้ฟรี"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
@@ -408,9 +408,8 @@ msgid "Uninstalling this app may also delete its data."
 msgstr "การถอนการติดตั้งแอปนี้อาจลบข้อมูลด้วย"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "ถอนการติดตั้ง"
+msgstr "ถอนการติดตั้งแอปหรือไม่?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
