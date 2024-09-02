@@ -2,7 +2,7 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
-# Khuanchai <zodiacjb@gmail.com>, 2023.
+# Khuanchai <zodiacjb@gmail.com>, 2023, 2024.
 # Aefgh Threenine <aefgh39622@gmail.com>, 2024.
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-09-02 13:38+0000\n"
-"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
+"Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -57,13 +57,12 @@ msgid "Failed to launch “%s“"
 msgstr "เริ่มต้นล้มเหลว “%s“"
 
 #: src/MainWindow.vala:87
-#, fuzzy
 msgid "Network Not Available."
-msgstr "ภาพตัวอย่างยังไม่สามารถใช้งานได้"
+msgstr "เครือข่ายไม่พร้อมใช้งาน"
 
 #: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "เชื่อมต่ออินเทอร์เน็ตเพื่อเรียกดูและติดตั้งแอพ"
 
 #: src/MainWindow.vala:98
 msgid "Network Settings…"
@@ -423,7 +422,7 @@ msgstr "ลองใหม่"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "การถอนการติดตั้งแอปนี้อาจลบข้อมูลด้วย"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 #, fuzzy
