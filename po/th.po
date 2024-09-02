@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-09-02 13:44+0000\n"
-"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
+"Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -421,18 +421,17 @@ msgid "Uninstall"
 msgstr "ถอนการติดตั้ง"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
+msgstr "อาจเกิดจากซอฟต์แวร์ภายนอกหรือซอฟต์แวร์ที่คอมไพล์ด้วยตนเอง"
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "ถอนการติดตั้งแอปไม่สำเร็จ"
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "ไม่สามารถถอนการติดตั้ง “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -447,12 +446,14 @@ msgid "Try Again"
 msgstr "ลองอีกครั้ง"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-#, fuzzy
 msgid ""
 "This may have been caused by sideloaded or manually compiled software, a "
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
-msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
+msgstr ""
+"นี่อาจเกิดจากซอฟต์แวร์ไซด์โหลดหรือคอมไพล์ด้วยตนเอง แหล่งซอฟต์แวร์ของบุคคลที่"
+"สาม หรือข้อผิดพลาดของตัวจัดการแพ็คเกจ  "
+"การรีเฟรชการอัปเดตด้วยตนเองอาจช่วยแก้ปัญหาได้"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 #, fuzzy
