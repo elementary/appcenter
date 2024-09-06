@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-02 05:42+0000\n"
+"PO-Revision-Date: 2024-09-07 13:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
@@ -79,7 +79,8 @@ msgstr "作業系統更新已移至系統設定"
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
-msgstr ""
+msgstr "在為 elementary OS "
+"量身定做的應用程式上加上標記，而非標記來自其他遠端來源的應用程式"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
 #: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
