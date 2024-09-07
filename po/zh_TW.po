@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-02 05:42+0000\n"
+"PO-Revision-Date: 2024-09-07 17:04+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/zh_Hant/>\n"
@@ -35,7 +35,7 @@ msgstr "無法剖析媒體類型 %s"
 #: src/Application.vala:97
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "找不到「%s」，而在尋找中"
+msgstr "找不到指定的連結「%s」，改為進行搜尋"
 
 #: src/Application.vala:245
 msgid ""
@@ -51,12 +51,12 @@ msgstr "應用程式已安裝"
 #: src/Application.vala:329 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
-msgstr "“%s”已安裝"
+msgstr "「%s」已安裝"
 
 #: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr "無法開啟 “%s”"
+msgstr "無法開啟「%s」"
 
 #: src/MainWindow.vala:87
 msgid "Network Not Available."
