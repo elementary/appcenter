@@ -676,6 +676,10 @@ public class AppCenterCore.Package : Object {
                 case AppStream.IconKind.UNKNOWN:
                     warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
                     break;
+
+                case AppStream.IconKind.REMOTE:
+                    warning ("'%s' is a remote AppStream icon", _icon.get_name ());
+                    break;
             }
         }
 
