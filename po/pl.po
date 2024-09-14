@@ -1,4 +1,4 @@
-# Piotr Strebski <strebski@gmail.com>, 2018, 2019.
+# Piotr Strebski <strebski@gmail.com>, 2018, 2019, 2024.
 # Kajetan Rosiak <roskaj@gmail.com>, 2018.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Deleted User <noreply+917@weblate.org>, 2019.
@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-07-04 07:16+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"PO-Revision-Date: 2024-09-13 00:01+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -320,9 +320,9 @@ msgstr[2] "Dostępnych aktualizacji"
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "Dostępna jest %u aktualizacja aplikacji"
-msgstr[1] "Dostępne są %u aktualizacje aplikacji"
-msgstr[2] "Dostępnych jest %u aktualizacji aplikacji"
+msgstr[0] "Dostępna jest aktualizacja %u aplikacji"
+msgstr[1] "Dostępne są aktualizacje %u aplikacji"
+msgstr[2] "Dostępne są aktualizacje %u aplikacji"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""

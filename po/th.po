@@ -2,13 +2,14 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
-# Khuanchai <zodiacjb@gmail.com>, 2023.
+# Khuanchai <zodiacjb@gmail.com>, 2023, 2024.
+# Aefgh Threenine <aefgh39622@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2023-02-14 12:03+0000\n"
+"PO-Revision-Date: 2024-09-02 20:05+0000\n"
 "Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -28,7 +29,7 @@ msgstr "ศูนย์รวมแอพ"
 #: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "ไม่สามารถแยกวิเคราะห์ชนิดสื่อ %s ได้"
 
 #: src/Application.vala:97
 #, c-format
@@ -42,16 +43,13 @@ msgid ""
 msgstr ""
 
 #: src/Application.vala:328
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
+msgstr "แอปถูกติดตั้งแล้ว"
 
 #: src/Application.vala:329 src/MainWindow.vala:230
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
+msgstr "“%s” ถูกติดตั้งแล้ว"
 
 #: src/MainWindow.vala:57
 #, c-format
@@ -59,13 +57,12 @@ msgid "Failed to launch “%s“"
 msgstr "เริ่มต้นล้มเหลว “%s“"
 
 #: src/MainWindow.vala:87
-#, fuzzy
 msgid "Network Not Available."
-msgstr "ภาพตัวอย่างยังไม่สามารถใช้งานได้"
+msgstr "เครือข่ายไม่พร้อมใช้งาน"
 
 #: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "เชื่อมต่ออินเทอร์เน็ตเพื่อเรียกดูและติดตั้งแอป"
 
 #: src/MainWindow.vala:98
 msgid "Network Settings…"
@@ -73,17 +70,17 @@ msgstr "ตั้งค่าเครือข่าย…"
 
 #: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "ทำงานในโหมดสาธิต"
 
 #: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "ติดตั้ง %s เพื่อเรียกดูและติดตั้งแอป"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
 msgid "Open"
-msgstr ""
+msgstr "เปิด"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -107,177 +104,165 @@ msgstr "กำลังเริ่ม"
 #: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (ทั้งระบบ)"
 
 #: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
-msgstr ""
+msgstr "กำลังดำเนินการเกี่ยวกับแพ็คเกจ"
 
 #: src/Core/FlatpakBackend.vala:1425
 msgid "Installing"
 msgstr "กำลังติดตั้ง"
 
 #: src/Core/FlatpakBackend.vala:1557
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "ถอนการติดตั้ง"
+msgstr "กำลังถอนการติดตั้ง"
 
 #: src/Core/FlatpakBackend.vala:1739
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "การอัปเดต"
+msgstr "กำลังอัปเดต"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "กำลังรับข้อมูล"
+msgstr "กำลังรับข้อมูลแอป…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
-msgstr ""
+msgstr "กำลังอ่านขนาดการดาวน์โหลด…"
 
 #: src/Core/Job.vala:55
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for updates…"
-msgstr "กำลังค้นหาอัปเดต…"
+msgstr "กำลังตรวจหาอัปเดต…"
 
 #: src/Core/Job.vala:57
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "กำลังติดตั้ง"
+msgstr "กำลังติดตั้ง…"
 
 #: src/Core/Job.vala:59
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "กำลังติตดั้งการอัปเดต"
+msgstr "กำลังติตดั้งอัปเดต…"
 
 #: src/Core/Job.vala:61
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling…"
-msgstr "ถอนการติดตั้ง"
+msgstr "กำลังถอนการติดตั้ง…"
 
 #: src/Core/Job.vala:63
 msgid "Repairing…"
-msgstr ""
+msgstr "กำลังซ่อมแซม…"
 
 #: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "นักพัฒนา %s"
 
 #: src/Core/Package.vala:493
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "สถานะแอปพลิเคชันไม่ได้ตั้งค่าเป็น ติดตั้งใน AppCenter สำหรับแพ็คเกจ: %s"
 
 #: src/Core/Stripe.vala:27
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"เกิดข้อผิดพลาดขณะประมวลผลบัตร โปรดลองอีกครั้งภายหลัง "
+"เราขออภัยในความไม่สะดวกที่เกิดขึ้น"
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "โปรดตรวจสอบข้อมูลการชำระเงินของคุณแล้วลองใหม่อีกครั้ง"
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "หมายเลขบัตรไม่ถูกต้อง โปรดลองใหม่อีกครั้งโดยใช้หมายเลขบัตรที่ถูกต้อง"
 
 #: src/Core/Stripe.vala:66
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "เดือนหมดอายุไม่ถูกต้อง โปรดลองใหม่อีกครั้งโดยใช้เดือนหมดอายุที่ถูกต้อง"
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "ปีหมดอายุไม่ถูกต้อง โปรดลองใหม่อีกครั้งโดยใช้ปีหมดอายุที่ถูกต้อง"
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "หมายเลข CVC ไม่ถูกต้อง โปรดลองใหม่อีกครั้งโดยใช้หมายเลข CVC ที่ถูกต้อง"
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "บัตรหมดอายุแล้ว โปรดลองใหม่อีกครั้งด้วยบัตรอื่น"
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "มีการร้องขอชำระเงินมากเกินไปในขณะนี้ โปรดลองใหม่ภายหลัง"
 
 #: src/Core/Stripe.vala:106
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
-msgstr ""
+msgstr "บัตรนี้ไม่รองรับการทำธุรกรรมประเภทนี้ โปรดลองใหม่อีกครั้งด้วยบัตรอื่น"
 
 #: src/Core/Stripe.vala:108
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "บัตรนี้ไม่รองรับสกุลเงินนี้ โปรดลองใหม่อีกครั้งด้วยบัตรอื่น"
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "การทำธุรกรรมถูกประมวลผลไปแล้ว"
 
 #: src/Core/Stripe.vala:114
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "รหัสไปรษณีย์ไม่ถูกต้อง โปรดลองใหม่อีกครั้งโดยใช้รหัสไปรษณีย์ที่ถูกต้อง"
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "คุณมียอดเงินไม่เพียงพอ โปรดใช้วิธีการชำระเงินอื่น"
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "จำนวนเงินไม่ถูกต้อง โปรดลองใหม่อีกครั้งโดยใช้จำนวนเงินที่ถูกต้อง"
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "หมายเลข PIN ไม่ถูกต้อง โปรดลองใหม่อีกครั้งโดยใช้ PIN ที่ถูกต้อง"
 
 #: src/Core/Stripe.vala:131
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "คุณได้พยายามใส่ PIN หลายครั้งจนเกินไป โปรดลองใหม่อีกครั้งด้วยบัตรอื่น"
 
 #: src/Core/Stripe.vala:151
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"ไม่สามารถทำธุรกรรมให้เสร็จสมบูรณ์ได้ "
+"โปรดติดต่อธนาคารของคุณสำหรับข้อมูลเพิ่มเติม"
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "ถึงขีดจำกัดยอดคงเหลือหรือวงเงินสูงสุดของบัตรแล้ว"
 
 #: src/Core/Stripe.vala:157
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "บัตรที่ระบุมาเป็นบัตรทดสอบ โปรดใช้บัตรจริงในการชำระเงิน"
 
 #: src/Core/UpdateManager.vala:51
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Runtime Updates"
-msgstr "กำลังค้นหาอัปเดต…"
+msgstr "อัปเดตรันไทม์"
 
 #: src/Core/UpdateManager.vala:52
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "อัปเดตรันไทม์ของแอป"
 
 #: src/Core/UpdateManager.vala:120
 #, c-format
@@ -294,7 +279,7 @@ msgstr[0] "กำลังค้นหาอัปเดต…"
 #: src/Core/UpdateManager.vala:144
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:154
 msgid "Update Available"
@@ -310,16 +295,15 @@ msgid_plural "%u app updates are available"
 msgstr[0] "การอัปเดต %u รายการพร้อมใช้งานแล้ว"
 
 #: src/Dialogs/InstallFailDialog.vala:27
-#, fuzzy
 msgid ""
 "This may be a temporary issue or could have been caused by external or "
 "manually compiled software."
-msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
+msgstr ""
+"นี่อาจเป็นปัญหาชั่วคราวหรืออาจเกิดจากซอฟต์แวร์ภายนอกหรือที่คอมไพล์ด้วยตนเอง"
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "ถอนการติดตั้ง"
+msgstr "ติดตั้งแอปไม่สำเร็จ"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
@@ -328,24 +312,22 @@ msgstr "ไม่สามารถติดตั้ง “%s”"
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
-msgstr ""
+msgstr "ซ่อมแซม"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to Repair"
-msgstr "ไม่สามารถตรวจหาอัพเดตได้"
+msgstr "ซ่อมแซมไม่สำเร็จ"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
-#, fuzzy
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
+msgstr ""
+"นี่อาจเกิดจากที่เก็บซอฟต์แวร์ภายนอกที่เพิ่มด้วยตนเองหรือไฟล์ต้นฉบับเสียหาย"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
-msgstr ""
+msgstr "การชำระเงิน"
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
@@ -353,40 +335,42 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:248
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "ชำระเงิน $%d สำหรับ %s"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment suggested by the developer. You can also choose "
 "your own price."
 msgstr ""
+"นี่เป็นการชำระเงินแบบครั้งเดียวที่ผู้พัฒนาแนะนำ "
+"คุณยังสามารถเลือกราคาของคุณเองได้อีกด้วย"
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
-msgstr ""
+msgstr "หรือ"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
-msgstr ""
+msgstr "อีเมล"
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid ""
 "Only used to send you a receipt. You will not be subscribed to any mailing "
 "list."
-msgstr ""
+msgstr "ใช้เพื่อส่งใบเสร็จให้คุณเท่านั้น คุณจะไม่สมัครรับรายชื่ออีเมลใดๆ"
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
-msgstr ""
+msgstr "นโยบายความเป็นส่วนตัว"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:177
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / YY"
 
 #: src/Dialogs/StripeDialog.vala:186
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
 #: src/Widgets/ProgressButton.vala:25
@@ -397,36 +381,35 @@ msgstr "ยกเลิก"
 #: src/Dialogs/StripeDialog.vala:403
 #, c-format
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "ชำระเงิน $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr ""
+msgstr "ลองใช้ฟรี"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
-msgstr ""
+msgstr "กำลังประมวลผล"
 
 #: src/Dialogs/StripeDialog.vala:349
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "มีปัญหาขณะประมวลผลการชำระเงินของคุณ"
 
 #: src/Dialogs/StripeDialog.vala:395
 msgid "Pay Later"
-msgstr ""
+msgstr "ชำระภายหลัง"
 
 #: src/Dialogs/StripeDialog.vala:396
 msgid "Retry"
-msgstr ""
+msgstr "ลองใหม่"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "การถอนการติดตั้งแอปนี้อาจลบข้อมูลด้วย"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "ถอนการติดตั้ง"
+msgstr "ถอนการติดตั้งแอปหรือไม่?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
@@ -438,22 +421,21 @@ msgid "Uninstall"
 msgstr "ถอนการติดตั้ง"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
+msgstr "อาจเกิดจากซอฟต์แวร์ภายนอกหรือซอฟต์แวร์ที่คอมไพล์ด้วยตนเอง"
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "ถอนการติดตั้งแอปไม่สำเร็จ"
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "ถอนการติดตั้ง “%s” ไม่สำเร็จ"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "ไม่สามารถตรวจหาอัพเดตได้"
+msgstr "ตรวจหาอัปเดตไม่สำเร็จ"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -464,17 +446,18 @@ msgid "Try Again"
 msgstr "ลองอีกครั้ง"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-#, fuzzy
 msgid ""
 "This may have been caused by sideloaded or manually compiled software, a "
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
-msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
+msgstr ""
+"นี่อาจเกิดจากซอฟต์แวร์ไซด์โหลดหรือคอมไพล์ด้วยตนเอง แหล่งซอฟต์แวร์ของบุคคลที่"
+"สาม หรือข้อผิดพลาดของตัวจัดการแพ็คเกจ "
+"การรีเฟรชการอัปเดตด้วยตนเองอาจช่วยแก้ปัญหาได้"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "ถอนการติดตั้ง"
+msgstr "อัปเดตแอปไม่สำเร็จ"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
@@ -482,10 +465,8 @@ msgid "Failed to update “%s”"
 msgstr "ไม่สามารถอัปเดต “%s”"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Refresh Updates"
-msgstr "กำลังค้นหาอัปเดต…"
+msgstr "รีเฟรชการอัปเดต"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
@@ -633,7 +614,7 @@ msgstr "ภาพตัวอย่างยังไม่สามารถใ
 
 #: src/Views/AppInfoView.vala:615
 msgid "What's New:"
-msgstr ""
+msgstr "มีอะไรใหม่:"
 
 #: src/Views/AppInfoView.vala:642
 msgid "Extensions:"
@@ -754,23 +735,18 @@ msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:129
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Check for Updates"
-msgstr "กำลังค้นหาอัปเดต…"
+msgstr "ตรวจหาอัปเดต"
 
 #: src/Views/AppListUpdateView.vala:151
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "กำลังเริ่ม"
+msgstr "ตั้งค่า"
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:179
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "ติดตั้ง"
+msgstr "ติดตั้งอยู่"
 
 #: src/Views/AppListUpdateView.vala:269
 #, c-format
@@ -786,11 +762,11 @@ msgstr ""
 #: src/Views/AuthorView.vala:31
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "แอปอื่นๆ จาก %s"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
-msgstr ""
+msgstr "อัปเดตล่าสุด"
 
 #: src/Views/CategoryView.vala:37
 #, fuzzy
@@ -876,10 +852,9 @@ msgid "Privacy & Security"
 msgstr ""
 
 #: src/Views/Homepage.vala:246
-#, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "ถอนการติดตั้ง"
+msgstr "อัปเดตและแอปที่ติดตั้งอยู่"
 
 #: src/Views/Homepage.vala:265
 msgid "Home"
@@ -947,36 +922,35 @@ msgstr "ค้นหา %s"
 
 #: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
 msgid "Free"
-msgstr ""
+msgstr "ฟรี"
 
 #: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
-#, fuzzy
 msgid "Install"
 msgstr "ติดตั้ง"
 
 #: src/Widgets/ActionStack.vala:138
 msgid "Update"
-msgstr "การอัปเดต"
+msgstr "อัปเดต"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
-msgstr ""
+msgstr "หมายเลขบัตร"
 
 #: src/Widgets/HumbleButton.vala:66
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "จำเป็นต้องมีการชำระเงิน ซึ่งยังไม่ได้เปิดใช้"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:114
 #, c-format
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:117
 #, c-format
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
@@ -1082,7 +1056,7 @@ msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
-msgstr ""
+msgstr "ปิด"
 
 #~ msgid "Running"
 #~ msgstr "กำลังทำงาน"

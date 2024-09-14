@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-08-04 00:16+0000\n"
+"PO-Revision-Date: 2024-09-01 08:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -177,27 +177,24 @@ msgstr "支払い情報を見直して、もう一度お試しください。"
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"カード番号が違います。正しいカード番号を使用して、もう一度お試しください。"
+msgstr "カード番号が間違っています。正しいカード番号を使用して、もう一度お試しくださ"
+"い。"
 
 #: src/Core/Stripe.vala:66
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
-"有効期限の月が不適切です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr "有効期限の月が無効です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
-"有効期限の年が不適切です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr "有効期限の年が無効です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"CVC 番号が違います。正しい CVC 番号を使用して、もう一度お試しください。"
+msgstr "CVC 番号が間違っています。正しい CVC 番号を使用して、もう一度お試しください。"
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
@@ -231,7 +228,7 @@ msgstr "支払いはすでに行われました。"
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr "郵便番号が違います。正しい郵便番号を使用して、もう一度お試しください。"
+msgstr "郵便番号が間違っています。正しい郵便番号を使用して、もう一度お試しください。"
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -239,11 +236,11 @@ msgstr "残高が十分ではありません。代替の決済方法を使用し
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "金額が違います。妥当な金額を使用して、もう一度お試しください。"
+msgstr "金額が間違っています。妥当な金額を使用して、もう一度お試しください。"
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "PIN 番号が違います。正しい PIN を使用して、もう一度お試しください。"
+msgstr "PIN 番号が間違っています。正しい PIN を使用して、もう一度お試しください。"
 
 #: src/Core/Stripe.vala:131
 msgid ""
