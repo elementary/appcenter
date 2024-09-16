@@ -151,7 +151,10 @@ public class AppCenterCore.UpdateManager : Object {
         runtime_updates.update_state ();
 
         if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
-            yield update_all (cancellable);
+            try {
+                yield update_all (cancellable);
+            } catch (Error e) {} // update_all () already logs error message
+            //TODO Should we send a notification that automatic-updates had an error?
         } else {
             var application = Application.get_default ();
             if (updates_number > 0) {
@@ -293,7 +296,7 @@ public class AppCenterCore.UpdateManager : Object {
             return GLib.Source.REMOVE;
         });
 
-        get_updates (cancellable);
+        get_updates.begin (cancellable);
     }
 
     private int compare_package_func (Object object1, Object object2) {
