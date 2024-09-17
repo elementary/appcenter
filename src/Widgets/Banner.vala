@@ -23,7 +23,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public Icon icon { get; construct; }
     public string brand_color { get; construct; }
     public string description { get; construct; }
-    public string name { get; construct; }
+    public string app_name { get; construct; }
     public string summary { get; construct; }
 
     public Banner (string name, string summary, string description, Icon icon, string brand_color) {
@@ -31,7 +31,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             brand_color: brand_color,
             description: description,
             icon: icon,
-            name: name,
+            app_name: name,
             summary: summary
         );
     }
@@ -50,7 +50,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     }
 
     construct {
-        var name_label = new Gtk.Label (name) {
+        var name_label = new Gtk.Label (app_name) {
             max_width_chars = 50,
             use_markup = true,
             wrap = true,
