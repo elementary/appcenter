@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-19 21:00+0000\n"
-"Last-Translator: Devrim Tunçer <devrimtuncer.ce@gmail.com>\n"
+"PO-Revision-Date: 2024-09-19 21:13+0000\n"
+"Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -750,12 +750,8 @@ msgid "Checking for Updates"
 msgstr "Güncellemeler Denetleniyor"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-"İşletim sistemi ve yüklü uygulamalar için mevcut güncellemelerin bir listesi "
-"indiriliyor"
+msgstr "Yüklü uygulamalar için mevcut güncellemelerin bir listesi indiriliyor"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -766,18 +762,12 @@ msgid "Up to Date"
 msgstr "Güncel"
 
 #: src/Views/AppListUpdateView.vala:124
-#, fuzzy
-#| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
-"Ücretsiz ve doğrulanmış olan ücretli uygulamaları otomatik olarak güncelleyin"
+msgstr "Ücretsiz ve satın alınmış uygulamaları otomatik olarak güncelle"
 
 #: src/Views/AppListUpdateView.vala:125
-#, fuzzy
-#| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
-msgstr ""
-"Sistem güncellemeleri ve ücretsiz uygulamalar otomatik olarak güncellenmez"
+msgstr "Ücretsiz denenen uygulamalar otomatik olarak güncellenmeyecek"
 
 #: src/Views/AppListUpdateView.vala:129
 msgid "Check for Updates"
@@ -901,7 +891,7 @@ msgstr "Ana Sayfa"
 
 #: src/Views/Homepage.vala:279
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Uygulamalara göz at ve yönet"
 
 #: src/Views/Homepage.vala:280
 msgid ""
@@ -911,6 +901,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
+"Elementary'den açık kaynaklı, istediğiniz-kadar-ödeyin uygulama mağazası. "
+"Özel, gizliliğe saygılı ve güvenli bir deneyim sağlamak için elementary "
+"tarafından incelendi ve düzenlendi. Kategorilere göre göz atın veya yeni "
+"uygulamaları arayın ve keşfedin. AppCenter ayrıca sisteminizi yeni "
+"özellikler ve düzeltmeler için en son ve en iyi sürüme güncellemek için "
+"kullanılır."
 
 #: src/Views/Homepage.vala:520
 msgid "Fun & Games"
