@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-09-20 07:26+0000\n"
-"Last-Translator: Bozkurt <bozkurtabozkurt4@gmail.com>\n"
+"Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -63,7 +63,7 @@ msgstr "Yeni özellikler:"
 
 #: data/appcenter.metainfo.xml.in:72
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Sistem Ayarları → Uygulamalar'da otomatik başlatmayı yönetin"
 
 #: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
 #: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
@@ -73,16 +73,18 @@ msgstr "Diğer İyileştirmeler:"
 
 #: data/appcenter.metainfo.xml.in:76
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Varsayılan olarak otomatik uygulama güncellemeleri"
 
 #: data/appcenter.metainfo.xml.in:77
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "İşletim Sistemi Güncellemeleri Sistem Ayarlarına taşındı"
 
 #: data/appcenter.metainfo.xml.in:78
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Diğer kaynaklardan uygulamaları rozetlemek yerine elementary OS için "
+"yapılmış uygulamarı rozetle"
 
 #: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
 #: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
@@ -93,35 +95,38 @@ msgstr "Çeviriler güncellendi"
 #: data/appcenter.metainfo.xml.in:101
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Uygulamalar eski Otomatik Başlatma'yı veya eski Bildirimler'i kullandığında "
+"uyar"
 
 #: data/appcenter.metainfo.xml.in:105
 msgid "Fix flickering on AppInfo views when getting install size"
-msgstr ""
+msgstr "Yükleme boyutunu alırken AppInfo görünümlerindeki titremeyi düzeltin"
 
 #: data/appcenter.metainfo.xml.in:121
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Uygulamalar Ev veya sistem klasörlerine, konuma, ayarlara eriştiğinde veya "
+"güvenli olmayan bir sandbox'a sahip olduğunda uyarı ver."
 
 #: data/appcenter.metainfo.xml.in:125
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
-"Uygulama Bilgisi görünümlerinde uzun uygulama adlarını ellipsis ile kısalt"
+msgstr "Uygulama Bilgisi görünümlerinde boşluk ve kenarlıkları azalt"
 
 #: data/appcenter.metainfo.xml.in:126
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Yükleme sırasında ana sayfada bir yer tutucu afiş göster"
 
 #: data/appcenter.metainfo.xml.in:127
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Kategori görünümlerinde AppCenter dışı uygulamaları ayrı bir başlık altında "
+"listeleme"
 
 #: data/appcenter.metainfo.xml.in:149
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Flatpak güncellemeleri başarısız olursa bir Onarım seçeneği sun"
 
 #: data/appcenter.metainfo.xml.in:150
 msgid ""
