@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-19 21:13+0000\n"
-"Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
+"PO-Revision-Date: 2024-09-20 07:26+0000\n"
+"Last-Translator: Bozkurt <bozkurtabozkurt4@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -42,15 +42,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Yeni uygulamalar keşfet"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Güncel kal"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Geliştiricileri desteklemek için ödeyebildiğiniz kadar ödeyin"
 
 #: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
