@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the io.elementary.appcenter package.
 # Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>, 2024.
 # Dinçer Tekin <dincertekin@protonmail.com>, 2024.
+# Sinan Decron <sinanveyasinan@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-09-20 09:43+0000\n"
-"Last-Translator: Dinçer Tekin <dincertekin@protonmail.com>\n"
+"Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr_TR/>\n"
 "Language: tr_TR\n"
@@ -167,123 +168,136 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Kart işlenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin. Yaşanan "
+"herhangi bir rahatsızlıktan dolayı özür dileriz."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Lütfen ödeme bilgilerinizi gözden geçirip tekrar deneyin."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Kart numarası yanlış. Lütfen doğru kart numarasını kullanarak tekrar deneyin."
 
 #: src/Core/Stripe.vala:66
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Son kullanma ayı geçersiz. Lütfen doğru son kullanma tarihini kullanarak "
+"tekrar deneyin."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Son kullanma yılı geçersiz. Lütfen doğru son kullanma tarihini kullanarak "
+"tekrar deneyin."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC numarası yanlış. Lütfen doğru CVC'yi kullanarak tekrar deneyin."
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kartın süresi doldu. Lütfen farklı bir kartla tekrar deneyin."
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Şu anda çok fazla ödeme talebi var, lütfen daha sonra tekrar deneyin."
 
 #: src/Core/Stripe.vala:106
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Bu kart bu tür işlemleri desteklemiyor. Lütfen farklı bir kartla tekrar "
+"deneyin."
 
 #: src/Core/Stripe.vala:108
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Bu kart para birimini desteklemiyor. Lütfen farklı bir kartla tekrar deneyin."
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "İşlem zaten gerçekleşti."
 
 #: src/Core/Stripe.vala:114
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "Posta kodu yanlış. Lütfen doğru posta kodunu kullanarak tekrar deneyin."
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Yeterli bakiyeniz yok. Lütfen alternatif bir ödeme yöntemi kullanın."
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Tutar yanlış. Lütfen geçerli bir tutar kullanarak tekrar deneyin."
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "PIN numarası yanlış. Lütfen doğru PIN'i kullanarak tekrar deneyin."
 
 #: src/Core/Stripe.vala:131
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "Çok fazla PIN denemesi oldu. Lütfen farklı bir kartla tekrar deneyin."
 
 #: src/Core/Stripe.vala:151
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"İşlem tamamlanamadı. Daha fazla bilgi için lütfen bankanızla iletişime geçin."
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Karttaki bakiye veya kredi limiti doldu."
 
 #: src/Core/Stripe.vala:157
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Verilen kart bir test kartıdır. Lütfen devam etmek için gerçek bir kart "
+"kullanın."
 
 #: src/Core/UpdateManager.vala:51
 msgid "Runtime Updates"
-msgstr ""
+msgstr "Çalışma Zamanı Güncellemeleri"
 
 #: src/Core/UpdateManager.vala:52
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Uygulama çalışma zamanlarına yönelik güncellemeler"
 
 #: src/Core/UpdateManager.vala:120
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Sürüm: %s"
 
 #: src/Core/UpdateManager.vala:139
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u çalışma zamanı güncellemesi"
+msgstr[1] "%u çalışma zamanı güncellemesi"
 
 #: src/Core/UpdateManager.vala:144
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:154
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Güncelleme Var"
+msgstr[1] "Güncellemeler Var"
 
 #: src/Core/UpdateManager.vala:156
 #, c-format
