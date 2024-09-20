@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-20 07:26+0000\n"
+"PO-Revision-Date: 2024-09-20 09:43+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -133,6 +133,8 @@ msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Güncel olduğunda, güncellemelerin en son ne zaman kontrol edildiği de dahil "
+"olmak üzere güncellemeler görünümünde bir mesaj göster"
 
 #: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -149,10 +151,8 @@ msgid "Repair software sources"
 msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:11
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Yazılımı güncellemek için kimlik doğrulama gerekiyor"
+msgstr "Yazılımkaynaklarını onarmak için kimlik doğrulaması gerekiyor"
 
 #~ msgid "Update software"
 #~ msgstr "Yazılımı güncelle"
