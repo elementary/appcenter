@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the io.elementary.appcenter package.
 # Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>, 2024.
+# Dinçer Tekin <dincertekin@protonmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-03-07 01:13+0000\n"
-"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
+"PO-Revision-Date: 2024-09-20 09:43+0000\n"
+"Last-Translator: Dinçer Tekin <dincertekin@protonmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr_TR/>\n"
 "Language: tr_TR\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:28 src/MainWindow.vala:45 src/Views/Homepage.vala:278
@@ -70,7 +71,7 @@ msgstr "Ağ Ayarları…"
 
 #: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Deneme Modunda yürütülüyor"
 
 #: src/MainWindow.vala:107
 #, c-format
@@ -84,43 +85,43 @@ msgstr "Aç"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
-msgstr ""
+msgstr "Bekliyor"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Finished"
-msgstr ""
+msgstr "Bitti"
 
 #: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
 #: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
 #: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
 #: src/Core/FlatpakBackend.vala:1766
 msgid "Cancelling"
-msgstr ""
+msgstr "İptal ediliyor"
 
 #: src/Core/ChangeInformation.vala:91
 msgid "Starting"
-msgstr ""
+msgstr "Başlatılıyor"
 
 #: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (sistem-geneli)"
 
 #: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
-msgstr ""
+msgstr "paket işlemleri yürütülüyor"
 
 #: src/Core/FlatpakBackend.vala:1425
 msgid "Installing"
-msgstr ""
+msgstr "Kuruluyor"
 
 #: src/Core/FlatpakBackend.vala:1557
 msgid "Uninstalling"
-msgstr ""
+msgstr "Kaldırılıyor"
 
 #: src/Core/FlatpakBackend.vala:1739
 msgid "Updating"
-msgstr ""
+msgstr "Güncelleniyor"
 
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
@@ -128,37 +129,38 @@ msgstr "Uygulama bilgileri alınıyor…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
-msgstr ""
+msgstr "İndirme büyüklüğü bilgisi alınıyor…"
 
 #: src/Core/Job.vala:55
 msgid "Checking for updates…"
-msgstr ""
+msgstr "Güncellemeler denetleniyor…"
 
 #: src/Core/Job.vala:57
 msgid "Installing…"
-msgstr ""
+msgstr "Kuruluyor…"
 
 #: src/Core/Job.vala:59
 msgid "Installing updates…"
-msgstr ""
+msgstr "Güncellemeler kuruluyor…"
 
 #: src/Core/Job.vala:61
 msgid "Uninstalling…"
-msgstr ""
+msgstr "Kaldırılıyor…"
 
 #: src/Core/Job.vala:63
 msgid "Repairing…"
-msgstr ""
+msgstr "Onarılıyor…"
 
 #: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s Geliştiriciler"
 
 #: src/Core/Package.vala:493
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"%s paketinin uygulama durumu AppCenter içerisinde kurulu olarak ayarlanmamış"
 
 #: src/Core/Stripe.vala:27
 msgid ""
