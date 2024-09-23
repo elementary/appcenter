@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
 "PO-Revision-Date: 2024-09-24 11:24+0000\n"
-"Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
+"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr_TR/>\n"
 "Language: tr_TR\n"
@@ -743,7 +743,7 @@ msgstr "Güncel"
 
 #: src/Views/AppListUpdateView.vala:124
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Ücretsiz ve Satın Alınan Uygulamaları Otomatik Olarak Güncelle"
+msgstr "Ücretsiz ve Ücretli Uygulamaları Otomatik Olarak Güncelle"
 
 #: src/Views/AppListUpdateView.vala:125
 msgid "Apps being tried for free will not update automatically"
