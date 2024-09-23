@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-09-20 07:26+0000\n"
+"PO-Revision-Date: 2024-09-24 11:24+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -364,7 +364,7 @@ msgstr "Ödeme"
 #: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:248
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "%2$s için %1$d$ öde"
+msgstr "%s için $%d öde"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
