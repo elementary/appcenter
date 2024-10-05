@@ -3,6 +3,9 @@
  * SPDX-FileCopyrightText: 2017-2024 elementary, Inc. (https://elementary.io)
  */
 
+@define-color banner_bg_color #{'mix(@accent_color, @bg_color, 0.8)'};
+@define-color banner_fg_color #{'mix(@accent_color, @text_color, 0.85)'};
+
 .banner {
     background-color: #{'@banner_bg_color'};
     background-image:
