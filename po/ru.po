@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2024-06-26 16:16+0000\n"
+"PO-Revision-Date: 2024-10-22 06:39+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -640,7 +640,7 @@ msgstr "Отправка информации"
 
 #: src/Views/AppInfoView.vala:587
 msgid "Screenshot Not Available"
-msgstr "Снимок экрана недоступен"
+msgstr "Снимок недоступен"
 
 #: src/Views/AppInfoView.vala:615
 msgid "What's New:"
