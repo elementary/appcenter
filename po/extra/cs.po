@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"POT-Creation-Date: 2024-11-19 23:21+0000\n"
 "PO-Revision-Date: 2023-07-05 11:10+0000\n"
 "Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
@@ -56,57 +56,57 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
-#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
-msgid "New features:"
-msgstr "Nové funkce:"
-
-#: data/appcenter.metainfo.xml.in:72
-msgid "Manage autostart in System Settings → Applications"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
-#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:135
+#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:164
 #, fuzzy
 #| msgid "Improvements:"
 msgid "Other Improvements:"
 msgstr "Vylepšení:"
 
-#: data/appcenter.metainfo.xml.in:76
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:118 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
+msgid "Updated translations"
+msgstr "Aktualizovány překlady"
+
+#: data/appcenter.metainfo.xml.in:82 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:159
+msgid "New features:"
+msgstr "Nové funkce:"
+
+#: data/appcenter.metainfo.xml.in:84
+msgid "Manage autostart in System Settings → Applications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:88
 msgid "Automatic app updates by default"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:77
+#: data/appcenter.metainfo.xml.in:89
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:78
+#: data/appcenter.metainfo.xml.in:90
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
-#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
-#: data/appcenter.metainfo.xml.in:154
-msgid "Updated translations"
-msgstr "Aktualizovány překlady"
-
-#: data/appcenter.metainfo.xml.in:101
+#: data/appcenter.metainfo.xml.in:113
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:105
+#: data/appcenter.metainfo.xml.in:117
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:133
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:137
 #, fuzzy
 #| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
@@ -114,21 +114,21 @@ msgstr ""
 "Dlouhé názvy aplikací jsou nyní v pohledech informací o aplikaci zkracovány "
 "za použití výpustky"
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:138
 #, fuzzy
 #| msgid "Navigate banners on the home page with multitouch gestures"
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Pohyb po pruzích na úvodní stránce pomocí vícedotykových gest"
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:139
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:149
+#: data/appcenter.metainfo.xml.in:161
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:162
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

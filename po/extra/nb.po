@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"POT-Creation-Date: 2024-11-19 23:21+0000\n"
 "PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -56,52 +56,52 @@ msgstr "Betal det du kan for å støtte utviklere"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
-#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
-msgid "New features:"
-msgstr "Nye funksjoner:"
-
-#: data/appcenter.metainfo.xml.in:72
-msgid "Manage autostart in System Settings → Applications"
-msgstr "Håndter autostart i Systeminnstillinger → Programmer"
-
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
-#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:135
+#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:164
 #, fuzzy
 msgid "Other Improvements:"
 msgstr "Forskjellige feilrettinger og ytelsesforbedringer"
 
-#: data/appcenter.metainfo.xml.in:76
-#, fuzzy
-msgid "Automatic app updates by default"
-msgstr "Automatiske programoppgraderinger som forvalg"
-
-#: data/appcenter.metainfo.xml.in:77
-msgid "OS Updates have moved to System Settings"
-msgstr "OS-oppgraderinger har blitt flyttet til Systeminnstillinger"
-
-#: data/appcenter.metainfo.xml.in:78
-msgid ""
-"Badge apps made for elementary OS instead of badging apps from other remotes"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
-#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
-#: data/appcenter.metainfo.xml.in:154
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:118 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
 #, fuzzy
 msgid "Updated translations"
 msgstr "Nye oversettelser"
 
-#: data/appcenter.metainfo.xml.in:101
+#: data/appcenter.metainfo.xml.in:82 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:159
+msgid "New features:"
+msgstr "Nye funksjoner:"
+
+#: data/appcenter.metainfo.xml.in:84
+msgid "Manage autostart in System Settings → Applications"
+msgstr "Håndter autostart i Systeminnstillinger → Programmer"
+
+#: data/appcenter.metainfo.xml.in:88
+#, fuzzy
+msgid "Automatic app updates by default"
+msgstr "Automatiske programoppgraderinger som forvalg"
+
+#: data/appcenter.metainfo.xml.in:89
+msgid "OS Updates have moved to System Settings"
+msgstr "OS-oppgraderinger har blitt flyttet til Systeminnstillinger"
+
+#: data/appcenter.metainfo.xml.in:90
+msgid ""
+"Badge apps made for elementary OS instead of badging apps from other remotes"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:113
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:105
+#: data/appcenter.metainfo.xml.in:117
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:133
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -109,25 +109,25 @@ msgstr ""
 "Advar når programmer har tilgang til hjemme- eller systemmapper, posisjon, "
 "innstillinger, eller har usikker sandkasse."
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:137
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Tettere marg og luft i programinnfovisninger"
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:138
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Visning av plassholderfalt på hjemmesiden ved innlasting"
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:139
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Ikke list programmer som ikke er fra AppSenter under egen overskrift i "
 "kategorivisninger"
 
-#: data/appcenter.metainfo.xml.in:149
+#: data/appcenter.metainfo.xml.in:161
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "«Reparer»-alternativ hvis Flatpak-oppgraderinger mislykkes"
 
-#: data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:162
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
