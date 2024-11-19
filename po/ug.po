@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"POT-Creation-Date: 2024-11-19 23:21+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Uyghur <https://l10n.elementary.io/projects/appcenter/"
@@ -89,10 +89,10 @@ msgstr "ساقلاۋاتىدۇ"
 msgid "Finished"
 msgstr "تاماملاندى"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
-#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
-#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
-#: src/Core/FlatpakBackend.vala:1766
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1469
+#: src/Core/FlatpakBackend.vala:1493 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1625 src/Core/FlatpakBackend.vala:1783
+#: src/Core/FlatpakBackend.vala:1801
 msgid "Cancelling"
 msgstr "ئەمەلدىن قالدۇرۇۋاتىدۇ"
 
@@ -109,17 +109,17 @@ msgstr ""
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1425
+#: src/Core/FlatpakBackend.vala:1460
 msgid "Installing"
 msgstr "ئورنىتىۋاتىدۇ"
 
-#: src/Core/FlatpakBackend.vala:1557
+#: src/Core/FlatpakBackend.vala:1592
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ئۆچۈرۈش"
 
-#: src/Core/FlatpakBackend.vala:1739
+#: src/Core/FlatpakBackend.vala:1774
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -163,12 +163,12 @@ msgstr "ئۆچۈرۈش"
 msgid "Repairing…"
 msgstr ""
 
-#: src/Core/Package.vala:309
+#: src/Core/Package.vala:322
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:493
+#: src/Core/Package.vala:506
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -292,12 +292,12 @@ msgstr[0] "يىڭىلانمىلارنى ئىزدەۋاتىدۇ...."
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:161
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "يىڭىلىغىلى بولىدىغانلىرى"
 
-#: src/Core/UpdateManager.vala:156
+#: src/Core/UpdateManager.vala:163
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -776,7 +776,7 @@ msgstr[0] "%u يىڭىلانمىنى ئىشلەتكىلى بولىدۇ"
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AuthorView.vala:31
+#: src/Views/AuthorView.vala:34
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""

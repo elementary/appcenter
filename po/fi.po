@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"POT-Creation-Date: 2024-11-19 23:21+0000\n"
 "PO-Revision-Date: 2023-11-01 19:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
@@ -90,10 +90,10 @@ msgstr "Odottaa"
 msgid "Finished"
 msgstr "Valmis"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
-#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
-#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
-#: src/Core/FlatpakBackend.vala:1766
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1469
+#: src/Core/FlatpakBackend.vala:1493 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1625 src/Core/FlatpakBackend.vala:1783
+#: src/Core/FlatpakBackend.vala:1801
 msgid "Cancelling"
 msgstr "Perutaan"
 
@@ -110,15 +110,15 @@ msgstr "%s (järjestelmänlaajuinen)"
 msgid "package operations are being performed"
 msgstr "pakettitoimenpiteitä suoritetaan"
 
-#: src/Core/FlatpakBackend.vala:1425
+#: src/Core/FlatpakBackend.vala:1460
 msgid "Installing"
 msgstr "Asennetaan"
 
-#: src/Core/FlatpakBackend.vala:1557
+#: src/Core/FlatpakBackend.vala:1592
 msgid "Uninstalling"
 msgstr "Poistetaan"
 
-#: src/Core/FlatpakBackend.vala:1739
+#: src/Core/FlatpakBackend.vala:1774
 msgid "Updating"
 msgstr "Päivitetään"
 
@@ -150,12 +150,12 @@ msgstr "Poistetaan…"
 msgid "Repairing…"
 msgstr "Korjataan…"
 
-#: src/Core/Package.vala:309
+#: src/Core/Package.vala:322
 #, c-format
 msgid "%s Developers"
 msgstr "%s-kehittäjät"
 
-#: src/Core/Package.vala:493
+#: src/Core/Package.vala:506
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -289,13 +289,13 @@ msgstr[1] "%u runtime-pakettien päivitystä"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:161
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Päivitys saatavilla"
 msgstr[1] "Päivityksiä saatavilla"
 
-#: src/Core/UpdateManager.vala:156
+#: src/Core/UpdateManager.vala:163
 #, fuzzy, c-format
 #| msgid "%u update is available."
 #| msgid_plural "%u updates are available."
@@ -792,7 +792,7 @@ msgstr[1] "%u päivitystä saatavilla"
 msgid "Everything is up to date. Last checked %s."
 msgstr "Kaikki on ajan tasalla. Viimeksi tarkistettu %s."
 
-#: src/Views/AuthorView.vala:31
+#: src/Views/AuthorView.vala:34
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Muita tekijän %s sovelluksia"
