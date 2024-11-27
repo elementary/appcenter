@@ -2,7 +2,7 @@
 # YISH <mokeyish@163.com>, 2018, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2018, 2023.
 # WANG, Wei <ww460160885@gmail.com>, 2019.
-# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021, 2023.
+# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021, 2023, 2024.
 # Zang Jiucheng <zangjiucheng@gmail.com>, 2021.
 # Yuchen Deng <loaden@gmail.com>, 2021, 2022.
 # Yuchen Deng <inbz@qq.com>, 2021.
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2023-10-24 15:10+0000\n"
+"PO-Revision-Date: 2024-11-27 06:10+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -272,9 +272,7 @@ msgid "Version: %s"
 msgstr "版本： %s"
 
 #: src/Core/UpdateManager.vala:139
-#, fuzzy, c-format
-#| msgid "%u runtimes with updates"
-#| msgid_plural "%u runtimes with updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "有 %u 个运行环境需要更新"
@@ -290,12 +288,10 @@ msgid_plural "Updates Available"
 msgstr[0] "有可用更新"
 
 #: src/Core/UpdateManager.vala:163
-#, fuzzy, c-format
-#| msgid "%u update is available."
-#| msgid_plural "%u updates are available."
+#, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u 个更新可用。"
+msgstr[0] "%u 个应用更新可用"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -470,9 +466,6 @@ msgstr "检查更新"
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
 msgstr "搜索"
