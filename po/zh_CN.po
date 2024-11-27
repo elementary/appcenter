@@ -8,13 +8,14 @@
 # Yuchen Deng <inbz@qq.com>, 2021.
 # Guochengjie <i@guoch.xyz>, 2021.
 # Vincent Yu <coolplayyhj@gmail.com>, 2022, 2023.
+# batcast <batcast@qq.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
 "PO-Revision-Date: 2024-11-27 06:10+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"Last-Translator: batcast <batcast@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -504,7 +505,7 @@ msgstr "现实或参与性赌博"
 
 #: src/Views/AppInfoView.vala:303
 msgid "Made for elementary OS"
-msgstr ""
+msgstr "用于elementary OS"
 
 #: src/Views/AppInfoView.vala:304
 #, fuzzy
