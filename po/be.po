@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2024-08-11 16:16+0000\n"
+"PO-Revision-Date: 2024-11-28 06:16+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/be/>\n"
@@ -27,7 +27,7 @@ msgstr "AppCenter"
 #: src/Application.vala:78
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Не ўдалося распазнаць тып дадзеных %s"
+msgstr "Не атрымалася прааналізаваць тып даных %s"
 
 #: src/Application.vala:97
 #, c-format
@@ -39,15 +39,18 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
+"AppCenter аўтаматычна запусціцца, калі гэтая прылада будзе ўключана і "
+"выконвацца, калі акно закрытае, каб аўтаматычна правяраць наяўнасць і "
+"ўсталёўваць абнаўленні."
 
 #: src/Application.vala:328
 msgid "The app has been installed"
-msgstr "Дадатак паспяхова ўсталяваны"
+msgstr "Праграма паспяхова ўсталяваная"
 
 #: src/Application.vala:329 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
-msgstr ""
+msgstr "“%s” была ўсталяваная"
 
 #: src/MainWindow.vala:57
 #, c-format
@@ -56,44 +59,44 @@ msgstr "Не атрымалася запусціць «%s»"
 
 #: src/MainWindow.vala:87
 msgid "Network Not Available."
-msgstr ""
+msgstr "Сетка недаступная."
 
 #: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "Падключыцеся да інтэрнэту, каб шукаць і ўсталёўваць праграмы."
 
 #: src/MainWindow.vala:98
 msgid "Network Settings…"
-msgstr ""
+msgstr "Налады сеткі…"
 
 #: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Выконваецца ў дэманстрацыйным рэжыме"
 
 #: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "Усталюйце %s, каб шукаць і ўсталёўваць праграмы."
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
 msgid "Open"
-msgstr ""
+msgstr "Адкрыць"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
-msgstr ""
+msgstr "Чакае"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Finished"
-msgstr ""
+msgstr "Завершана"
 
 #: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1469
 #: src/Core/FlatpakBackend.vala:1493 src/Core/FlatpakBackend.vala:1601
 #: src/Core/FlatpakBackend.vala:1625 src/Core/FlatpakBackend.vala:1783
 #: src/Core/FlatpakBackend.vala:1801
 msgid "Cancelling"
-msgstr ""
+msgstr "Скасаванне"
 
 #: src/Core/ChangeInformation.vala:91
 msgid "Starting"
@@ -102,68 +105,56 @@ msgstr "Пачатак"
 #: src/Core/FlatpakBackend.vala:43
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (уся сістэма)"
 
 #: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
-msgstr ""
+msgstr "аперацый на пакетах праводзіцца"
 
 #: src/Core/FlatpakBackend.vala:1460
 msgid "Installing"
 msgstr "Усталяванне"
 
 #: src/Core/FlatpakBackend.vala:1592
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Дэінсталяваць"
+msgstr "Выдаленне"
 
 #: src/Core/FlatpakBackend.vala:1774
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Абнавіць"
+msgstr "Абнаўленне"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "палучэнне інфармацыі"
+msgstr "Атрыманне інфармацыі аб праграме…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
-msgstr ""
+msgstr "Атрыманне памеру спампоўкі…"
 
 #: src/Core/Job.vala:55
 msgid "Checking for updates…"
-msgstr ""
+msgstr "Праверка абнаўленняў…"
 
 #: src/Core/Job.vala:57
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Усталяванне"
+msgstr "Усталяванне…"
 
 #: src/Core/Job.vala:59
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing updates…"
-msgstr "Усталяванне"
+msgstr "Усталяванне абнаўленняў…"
 
 #: src/Core/Job.vala:61
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling…"
-msgstr "Дэінсталяваць"
+msgstr "Выдаленне…"
 
 #: src/Core/Job.vala:63
 msgid "Repairing…"
-msgstr ""
+msgstr "Рамантаванне…"
 
 #: src/Core/Package.vala:322
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "Распрацоўшчыкі %s"
 
 #: src/Core/Package.vala:506
 #, c-format
