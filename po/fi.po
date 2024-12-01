@@ -1,12 +1,12 @@
 # Veli-Pekka Samuli Finnilä <vpf@tuta.io>, 2018, 2019.
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020, 2021, 2022, 2023.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 # Kimmo Vänttinen <kvanttinen72@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2023-11-01 19:10+0000\n"
+"PO-Revision-Date: 2024-12-02 13:16+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -296,13 +296,11 @@ msgstr[0] "Päivitys saatavilla"
 msgstr[1] "Päivityksiä saatavilla"
 
 #: src/Core/UpdateManager.vala:163
-#, fuzzy, c-format
-#| msgid "%u update is available."
-#| msgid_plural "%u updates are available."
+#, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] "%u päivitys on saatavilla."
-msgstr[1] "%u päivitystä on saatavilla."
+msgstr[0] "%u sovelluspäivitys on saatavilla"
+msgstr[1] "%u sovelluspäivitystä on saatavilla"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
@@ -490,12 +488,9 @@ msgstr "Tarkista päivitykset"
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
-msgstr "Haku"
+msgstr "Etsi"
 
 #: src/Views/AppInfoView.vala:260
 msgid "Illicit Substances"
@@ -532,15 +527,12 @@ msgstr "Todellista tai osallistavaa uhkapelaamista"
 
 #: src/Views/AppInfoView.vala:303
 msgid "Made for elementary OS"
-msgstr ""
+msgstr "Tehty elementary OS:lle"
 
 #: src/Views/AppInfoView.vala:304
-#, fuzzy
-#| msgid ""
-#| "Not reviewed by elementary for security, privacy, or system integration"
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
-"Ei katselmoitu elementaryn toimesta tietoturvan, yksityisyyden tai "
+"Katselmoitu elementaryn toimesta tietoturvan, yksityisyyden tai "
 "järjestelmäintegraation osalta"
 
 #: src/Views/AppInfoView.vala:327
@@ -737,12 +729,10 @@ msgid "Checking for Updates"
 msgstr "Etsitään päivityksiä"
 
 #: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
-"Ladataan luetteloa käyttöjärjestelmälle ja asennetuille sovelluksille "
-"saatavilla olevista päivityksistä"
+"Ladataan luetteloa asennetuille sovelluksille saatavilla olevista "
+"päivityksistä"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "Update All"
@@ -753,18 +743,12 @@ msgid "Up to Date"
 msgstr "Ajan tasalla"
 
 #: src/Views/AppListUpdateView.vala:124
-#, fuzzy
-#| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Päivitä automaattisesti ilmaiset ja maksulliset kuratoidut sovellukset"
+msgstr "Päivitä automaattisesti ilmaiset ja ostetut sovellukset"
 
 #: src/Views/AppListUpdateView.vala:125
-#, fuzzy
-#| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
-msgstr ""
-"Järjestelmäpäivitykset ja maksamattomat sovellukset eivät päivity "
-"automaattisesti"
+msgstr "Ilmaiseksi kokeiltavia sovelluksia ei päivitetä automaattisesti"
 
 #: src/Views/AppListUpdateView.vala:129
 msgid "Check for Updates"
@@ -888,7 +872,7 @@ msgstr "Etusivu"
 
 #: src/Views/Homepage.vala:279
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Selaa ja hallitse sovelluksia"
 
 #: src/Views/Homepage.vala:280
 msgid ""
@@ -898,6 +882,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
+"Avoimeen lähdekoodiin ja maksamisen vapaaehtoisuuteen pohjautuva "
+"sovelluskauppa elementarylta. Katselmoitu ja kuratoitu elementaryn toimesta, "
+"jotta natiivi, yksityisyyttä kunnioittava ja turvallinen kokemus on "
+"mahdollinen. Selaa luokkia tai etsi ja löydä uusia sovelluksia. AppCenteriä "
+"käytetään myös järjestelmän päivittämiseen uusimpaan versioon uusien "
+"ominaisuuksien ja korjausten saamiseksi."
 
 #: src/Views/Homepage.vala:520
 msgid "Fun & Games"
@@ -980,13 +970,11 @@ msgstr "$%d"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Verkkosivusto"
 
 #: src/Widgets/LinkListBox.vala:46
-#, fuzzy
-#| msgid "Help"
 msgid "Get Help"
-msgstr "Ohje"
+msgstr "Tuki"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -994,21 +982,19 @@ msgstr "Lähetä palautetta"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Ota yhteys kehittäjään"
 
 #: src/Widgets/LinkListBox.vala:106
 msgid "Sponsor"
-msgstr ""
+msgstr "Sponsoroi"
 
 #: src/Widgets/LinkListBox.vala:116
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Ehdota käännöksiä"
+msgstr "Osallistu käännöksiin"
 
 #: src/Widgets/LinkListBox.vala:126
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Hanki lähdekoodi"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:189
@@ -1040,7 +1026,7 @@ msgstr "Tuntematon lisenssi"
 
 #: src/Widgets/LinkListBox.vala:263
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Maksun toteuttaa Stripe"
 
 #: src/Widgets/ReleaseRow.vala:71
 msgid "Fixed Issues"
