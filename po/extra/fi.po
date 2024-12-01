@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2021-10-08 09:40+0000\n"
+"PO-Revision-Date: 2024-12-02 13:16+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/extra/"
 "fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -26,11 +26,6 @@ msgid "Browse and manage apps"
 msgstr "Selaa ja hallitse sovelluksia"
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,34 +33,34 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Sovelluskauppa avoimen lähdekoodin ja indie-kehittäjille. Selaa luokittain "
-"tai etsi hakuehdoin ja löydä uusia sovelluksia. Sovelluskauppaa käytetään "
-"myös järjestelmän päivityksiin."
+"Avoimeen lähdekoodiin ja maksamisen vapaaehtoisuuteen pohjautuva "
+"sovelluskauppa elementarylta. Katselmoitu ja kuratoitu elementaryn toimesta, "
+"jotta natiivi, yksityisyyttä kunnioittava ja turvallinen kokemus on "
+"mahdollinen. Selaa luokkia tai etsi ja löydä uusia sovelluksia. AppCenteriä "
+"käytetään myös järjestelmän päivittämiseen uusimpaan versioon uusien "
+"ominaisuuksien ja korjausten saamiseksi."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Löydä uusia sovelluksia"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Pysy ajan tasalla"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Maksa mitä voit tukeaksesi kehittäjiä"
 
 #: data/appcenter.metainfo.xml.in:62
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
 #: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:135
 #: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:164
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Other Improvements:"
-msgstr "Parannukset:"
+msgstr "Muut parannukset:"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
 #: data/appcenter.metainfo.xml.in:118 data/appcenter.metainfo.xml.in:140
