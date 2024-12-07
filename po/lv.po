@@ -1,12 +1,13 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Jānis Greiškāns <greiskans.janis9@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2024-12-08 11:16+0000\n"
+"Last-Translator: Jānis Greiškāns <greiskans.janis9@gmail.com>\n"
 "Language-Team: Latvian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/lv/>\n"
 "Language: lv\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -54,7 +55,7 @@ msgstr ""
 
 #: src/MainWindow.vala:87
 msgid "Network Not Available."
-msgstr ""
+msgstr "Tīkls Nav Pieejams."
 
 #: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
@@ -62,7 +63,7 @@ msgstr ""
 
 #: src/MainWindow.vala:98
 msgid "Network Settings…"
-msgstr ""
+msgstr "Tīkla Iestatījumi…"
 
 #: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
@@ -76,26 +77,26 @@ msgstr ""
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
 msgid "Open"
-msgstr ""
+msgstr "Atvērt"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
-msgstr ""
+msgstr "Gaida"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Finished"
-msgstr ""
+msgstr "Pabeigts"
 
 #: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1469
 #: src/Core/FlatpakBackend.vala:1493 src/Core/FlatpakBackend.vala:1601
 #: src/Core/FlatpakBackend.vala:1625 src/Core/FlatpakBackend.vala:1783
 #: src/Core/FlatpakBackend.vala:1801
 msgid "Cancelling"
-msgstr ""
+msgstr "Atceļ"
 
 #: src/Core/ChangeInformation.vala:91
 msgid "Starting"
-msgstr ""
+msgstr "Sāk"
 
 #: src/Core/FlatpakBackend.vala:43
 #, c-format
@@ -104,62 +105,52 @@ msgstr ""
 
 #: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
-msgstr ""
+msgstr "pakotnes darbības tiek rīkotas"
 
 #: src/Core/FlatpakBackend.vala:1460
 msgid "Installing"
 msgstr "Instalē"
 
 #: src/Core/FlatpakBackend.vala:1592
-#, fuzzy
-#| msgid "Installing"
 msgid "Uninstalling"
-msgstr "Instalē"
+msgstr "Atinstalē"
 
 #: src/Core/FlatpakBackend.vala:1774
-#, fuzzy
-#| msgid "Updates"
 msgid "Updating"
-msgstr "Jauninājumi"
+msgstr "Atjaunina"
 
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
-msgstr ""
+msgstr "Iegūst lietotnes informāciju…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
-msgstr ""
+msgstr "Iegūst lejupielādes izmēru…"
 
 #: src/Core/Job.vala:55
 msgid "Checking for updates…"
-msgstr ""
+msgstr "Pārbauda atjauninājumus…"
 
 #: src/Core/Job.vala:57
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Instalē"
+msgstr "Instalē…"
 
 #: src/Core/Job.vala:59
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing updates…"
-msgstr "Instalē"
+msgstr "Instalē atjauninājumus…"
 
 #: src/Core/Job.vala:61
-#, fuzzy
-#| msgid "Installing"
 msgid "Uninstalling…"
-msgstr "Instalē"
+msgstr "Atinstalē…"
 
 #: src/Core/Job.vala:63
 msgid "Repairing…"
-msgstr ""
+msgstr "Labo…"
 
 #: src/Core/Package.vala:322
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s Izstrādātāji"
 
 #: src/Core/Package.vala:506
 #, c-format
@@ -174,12 +165,13 @@ msgstr ""
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Lūdzu pārbaudiet maksājuma info un mēģiniet vēlreiz."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Kartes numurs ir nepareizs. Lūdzu mēģiniet vēlreiz ar pareizo kartes numuru."
 
 #: src/Core/Stripe.vala:66
 msgid ""
@@ -199,7 +191,7 @@ msgstr ""
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kartei ir beidzies termiņš. Lūdzu mēģiniet vēlreiz ar citu karti."
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
@@ -237,7 +229,7 @@ msgstr ""
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "PIN kods ir nepareizs. Lūdzu mēģiniet vēlreiz ar pareizo PIN kodu."
 
 #: src/Core/Stripe.vala:131
 msgid ""
@@ -269,7 +261,7 @@ msgstr ""
 #: src/Core/UpdateManager.vala:120
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Versija: %s"
 
 #: src/Core/UpdateManager.vala:139
 #, c-format
@@ -282,13 +274,14 @@ msgstr[2] ""
 #: src/Core/UpdateManager.vala:144
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:161
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Pieejams Atjauninājums"
+msgstr[1] "Pieejami Atjauninājumi"
+msgstr[2] "Pieejamu Atjauninājumu"
 
 #: src/Core/UpdateManager.vala:163
 #, c-format
@@ -316,12 +309,11 @@ msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
-msgstr ""
+msgstr "Labot"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
 msgid "Failed to Repair"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr "Labošana nepaveicās"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
@@ -353,7 +345,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
-msgstr ""
+msgstr "E-pasts"
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid ""
@@ -363,7 +355,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Privātuma Politika"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:177
@@ -372,12 +364,12 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:186
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
 #: src/Widgets/ProgressButton.vala:25
 msgid "Cancel"
-msgstr ""
+msgstr "Atcelt"
 
 #: src/Dialogs/StripeDialog.vala:232 src/Dialogs/StripeDialog.vala:246
 #: src/Dialogs/StripeDialog.vala:403
@@ -387,7 +379,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr ""
+msgstr "Izmēģināt Bezmaksas"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
@@ -410,32 +402,30 @@ msgid "Uninstalling this app may also delete its data."
 msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr "Atinstalēt lietotni?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr ""
+msgstr "Atinstalēt \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:99
 msgid "Uninstall"
-msgstr ""
+msgstr "Atinstalēt"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:36
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr "Lietotnes atinstalēšana neizdevās"
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "\"%s\" atinstalēšana neizdevās"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -443,11 +433,11 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorēt"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "Mēģināt Vēlreiz"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid ""
@@ -457,18 +447,17 @@ msgid ""
 msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "Atrast un uzstādīt aplikācijas"
+msgstr "Lietotnes atjaunināšana neizdevās"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
-msgstr ""
+msgstr "\"%s\" atjaunināšana neizdevās"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
-msgstr ""
+msgstr "Atsvaidzināt Atjauninājumus"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
@@ -504,7 +493,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:278
 msgid "Gambling"
-msgstr ""
+msgstr "Azartspēles"
 
 #: src/Views/AppInfoView.vala:279
 msgid "Realistic or participatory gambling"
@@ -520,25 +509,19 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:327
 msgid "May Not Be Translated"
-msgstr ""
+msgstr "Iespējams Netulkots"
 
 #: src/Views/AppInfoView.vala:328
 msgid "This app does not provide language information"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:335
-#, fuzzy
-#| msgid "translator-credits"
 msgid "Not Translated"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Matiss Treinis https://launchpad.net/~mrtreinis\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  marhis https://launchpad.net/~marhis"
+msgstr "Netulkots"
 
 #: src/Views/AppInfoView.vala:336
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Šī lietotne nav pieejama jūsu valodā"
 
 #: src/Views/AppInfoView.vala:343
 msgid "Not Fully Translated"
@@ -551,15 +534,15 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:368
 msgid "Conflict"
-msgstr ""
+msgstr "Konflikts"
 
 #: src/Views/AppInfoView.vala:369
 msgid "Depictions of unsafe situations or aggressive conflict"
-msgstr ""
+msgstr "Attēloti nedroši apstākļi vai agresīvs konflikts"
 
 #: src/Views/AppInfoView.vala:382
 msgid "Violence"
-msgstr ""
+msgstr "Vardarbība"
 
 #: src/Views/AppInfoView.vala:387
 msgid "Fantasy Violence"
@@ -611,11 +594,11 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:587
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "Ekrānuzņēmums Nav Pieejams"
 
 #: src/Views/AppInfoView.vala:615
 msgid "What's New:"
-msgstr ""
+msgstr "Kas Jauns:"
 
 #: src/Views/AppInfoView.vala:642
 msgid "Extensions:"
@@ -631,16 +614,15 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:779
 msgid "Outdated"
-msgstr ""
+msgstr "Novecojis"
 
 #: src/Views/AppInfoView.vala:780
 msgid "May not work as expected or support the latest features"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:788
-#, fuzzy
 msgid "Unstable"
-msgstr "Instalēt"
+msgstr "Nestabils"
 
 #: src/Views/AppInfoView.vala:789
 #, c-format
