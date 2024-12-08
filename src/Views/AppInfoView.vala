@@ -945,14 +945,15 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             var prefer_dark_theme = Gtk.Settings.get_default ().gtk_application_prefer_dark_theme;
             screenshots.foreach ((screenshot) => {
                 var environment_id = screenshot.get_environment ();
-                if (prefer_dark_theme && environment_id != null) {                    
+                if (environment_id != null) {                    
                     var environment_split = environment_id.split (":", 2);
-                    if (environment_split.length != 2) {
+                    if (prefer_dark_theme && environment_split.length != 2) {
                         return;
                     }
 
                     var color_scheme = AppStream.ColorSchemeKind.from_string (environment_split[1]);
-                    if (color_scheme != AppStream.ColorSchemeKind.DARK) {
+                    if ((prefer_dark_theme && color_scheme != AppStream.ColorSchemeKind.DARK) ||
+                        (!prefer_dark_theme && color_scheme == AppStream.ColorSchemeKind.DARK)) {
                         return;
                     }
                 }
