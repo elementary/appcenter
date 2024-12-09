@@ -945,7 +945,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             var prefer_dark_theme = Gtk.Settings.get_default ().gtk_application_prefer_dark_theme;
             screenshots.foreach ((screenshot) => {
                 var environment_id = screenshot.get_environment ();
-                if (environment_id != null) {                    
+                if (environment_id != null) {
                     var environment_split = environment_id.split (":", 2);
                     if (prefer_dark_theme && environment_split.length != 2) {
                         return;
@@ -957,7 +957,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                         return;
                     }
                 }
-                
+
                 AppStream.Image? best_image = null;
                 screenshot.get_images ().foreach ((image) => {
                     // Image is better than no image
