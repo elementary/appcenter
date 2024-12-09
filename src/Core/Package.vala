@@ -755,13 +755,13 @@ public class AppCenterCore.Package : Object {
             var branding = component.get_branding ();
             if (branding != null) {
                 var gtk_settings = Gtk.Settings.get_default ();
-                if (gtk_settings.gtk_application_prefer_dark_theme){
+                if (gtk_settings.gtk_application_prefer_dark_theme) {
                     color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.DARK);
                 } else {
                     color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.LIGHT);
                 }
 
-                if (color_primary == null){
+                if (color_primary == null) {
                     color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.UNKNOWN);
                 }
             }
