@@ -45,6 +45,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
             selectable = true,
             use_markup = true,
+            max_width_chars = 55,
             wrap = true,
             xalign = 0
         };
@@ -69,7 +70,8 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
 
         if (issues.length > 0) {
             var issue_header = new Gtk.Label (_("Fixed Issues")) {
-                halign = Gtk.Align.START
+                halign = Gtk.Align.START,
+                margin_top = 9
             };
             issue_header.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
@@ -78,10 +80,11 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
 
         foreach (unowned AppStream.Issue issue in issues) {
             var issue_image = new Gtk.Image.from_icon_name ("bug-symbolic") {
-                valign = Gtk.Align.START
+                valign = Gtk.Align.BASELINE_CENTER
             };
 
             var issue_label = new Gtk.Label (issue.get_id ()) {
+                max_width_chars = 35,
                 wrap = true,
                 xalign = 0
             };
@@ -90,9 +93,9 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             issue_linkbutton.get_child ().destroy ();
             issue_linkbutton.child = issue_label;
 
-            var issue_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
-            issue_box.append (issue_image);
-            issue_box.append (issue_linkbutton);
+            var issue_box = new Gtk.Grid ();
+            issue_box.attach (issue_image, 0, 0);
+            issue_box.attach (issue_linkbutton, 1, 0);
 
             append (issue_box);
         }
