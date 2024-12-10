@@ -74,6 +74,8 @@
       </description>
       <issues>
         <issue url="https://github.com/elementary/appcenter/issues/2102">Use new "developer ID" metainfo</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2140">Theme specific branding colors</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2204">Release notes can overflow</issue>
       </issues>
     </release>
     
