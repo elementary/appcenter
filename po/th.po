@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"POT-Creation-Date: 2024-11-19 23:21+0000\n"
 "PO-Revision-Date: 2024-09-02 20:05+0000\n"
 "Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
@@ -90,10 +90,10 @@ msgstr "กำลังรอ"
 msgid "Finished"
 msgstr "สำเร็จแล้ว"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
-#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
-#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
-#: src/Core/FlatpakBackend.vala:1766
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1469
+#: src/Core/FlatpakBackend.vala:1493 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1625 src/Core/FlatpakBackend.vala:1783
+#: src/Core/FlatpakBackend.vala:1801
 msgid "Cancelling"
 msgstr "กำลังยกเลิก"
 
@@ -110,15 +110,15 @@ msgstr "%s (ทั้งระบบ)"
 msgid "package operations are being performed"
 msgstr "กำลังดำเนินการเกี่ยวกับแพ็คเกจ"
 
-#: src/Core/FlatpakBackend.vala:1425
+#: src/Core/FlatpakBackend.vala:1460
 msgid "Installing"
 msgstr "กำลังติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1557
+#: src/Core/FlatpakBackend.vala:1592
 msgid "Uninstalling"
 msgstr "กำลังถอนการติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1739
+#: src/Core/FlatpakBackend.vala:1774
 msgid "Updating"
 msgstr "กำลังอัปเดต"
 
@@ -150,12 +150,12 @@ msgstr "กำลังถอนการติดตั้ง…"
 msgid "Repairing…"
 msgstr "กำลังซ่อมแซม…"
 
-#: src/Core/Package.vala:309
+#: src/Core/Package.vala:322
 #, c-format
 msgid "%s Developers"
 msgstr "นักพัฒนา %s"
 
-#: src/Core/Package.vala:493
+#: src/Core/Package.vala:506
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "สถานะแอปพลิเคชันไม่ได้ตั้งค่าเป็น ติดตั้งใน AppCenter สำหรับแพ็คเกจ: %s"
@@ -165,8 +165,7 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"เกิดข้อผิดพลาดขณะประมวลผลบัตร โปรดลองอีกครั้งภายหลัง "
-"เราขออภัยในความไม่สะดวกที่เกิดขึ้น"
+"เกิดข้อผิดพลาดขณะประมวลผลบัตร โปรดลองอีกครั้งภายหลัง เราขออภัยในความไม่สะดวกที่เกิดขึ้น"
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
@@ -244,9 +243,7 @@ msgstr "คุณได้พยายามใส่ PIN หลายครั�
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
-msgstr ""
-"ไม่สามารถทำธุรกรรมให้เสร็จสมบูรณ์ได้ "
-"โปรดติดต่อธนาคารของคุณสำหรับข้อมูลเพิ่มเติม"
+msgstr "ไม่สามารถทำธุรกรรมให้เสร็จสมบูรณ์ได้ โปรดติดต่อธนาคารของคุณสำหรับข้อมูลเพิ่มเติม"
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
@@ -281,12 +278,12 @@ msgstr[0] "กำลังค้นหาอัปเดต…"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:161
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "อัปเดตที่พร้อมใช้งานแล้ว"
 
-#: src/Core/UpdateManager.vala:156
+#: src/Core/UpdateManager.vala:163
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -298,8 +295,7 @@ msgstr[0] "การอัปเดต %u รายการพร้อมใ�
 msgid ""
 "This may be a temporary issue or could have been caused by external or "
 "manually compiled software."
-msgstr ""
-"นี่อาจเป็นปัญหาชั่วคราวหรืออาจเกิดจากซอฟต์แวร์ภายนอกหรือที่คอมไพล์ด้วยตนเอง"
+msgstr "นี่อาจเป็นปัญหาชั่วคราวหรืออาจเกิดจากซอฟต์แวร์ภายนอกหรือที่คอมไพล์ด้วยตนเอง"
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -322,8 +318,7 @@ msgstr "ซ่อมแซมไม่สำเร็จ"
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr ""
-"นี่อาจเกิดจากที่เก็บซอฟต์แวร์ภายนอกที่เพิ่มด้วยตนเองหรือไฟล์ต้นฉบับเสียหาย"
+msgstr "นี่อาจเกิดจากที่เก็บซอฟต์แวร์ภายนอกที่เพิ่มด้วยตนเองหรือไฟล์ต้นฉบับเสียหาย"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -341,9 +336,7 @@ msgstr "ชำระเงิน $%d สำหรับ %s"
 msgid ""
 "This is a one time payment suggested by the developer. You can also choose "
 "your own price."
-msgstr ""
-"นี่เป็นการชำระเงินแบบครั้งเดียวที่ผู้พัฒนาแนะนำ "
-"คุณยังสามารถเลือกราคาของคุณเองได้อีกด้วย"
+msgstr "นี่เป็นการชำระเงินแบบครั้งเดียวที่ผู้พัฒนาแนะนำ คุณยังสามารถเลือกราคาของคุณเองได้อีกด้วย"
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
@@ -451,9 +444,8 @@ msgid ""
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
 msgstr ""
-"นี่อาจเกิดจากซอฟต์แวร์ไซด์โหลดหรือคอมไพล์ด้วยตนเอง แหล่งซอฟต์แวร์ของบุคคลที่"
-"สาม หรือข้อผิดพลาดของตัวจัดการแพ็คเกจ "
-"การรีเฟรชการอัปเดตด้วยตนเองอาจช่วยแก้ปัญหาได้"
+"นี่อาจเกิดจากซอฟต์แวร์ไซด์โหลดหรือคอมไพล์ด้วยตนเอง แหล่งซอฟต์แวร์ของบุคคลที่สาม "
+"หรือข้อผิดพลาดของตัวจัดการแพ็คเกจ การรีเฟรชการอัปเดตด้วยตนเองอาจช่วยแก้ปัญหาได้"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -759,7 +751,7 @@ msgstr[0] "การอัปเดต %u รายการพร้อมใ�
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AuthorView.vala:31
+#: src/Views/AuthorView.vala:34
 #, c-format
 msgid "Other Apps by %s"
 msgstr "แอปอื่นๆ จาก %s"

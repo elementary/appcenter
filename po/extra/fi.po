@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 15:17+0000\n"
-"PO-Revision-Date: 2021-10-08 09:40+0000\n"
+"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"PO-Revision-Date: 2024-12-02 13:16+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/extra/"
 "fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -26,11 +26,6 @@ msgid "Browse and manage apps"
 msgstr "Selaa ja hallitse sovelluksia"
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,94 +33,94 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Sovelluskauppa avoimen lähdekoodin ja indie-kehittäjille. Selaa luokittain "
-"tai etsi hakuehdoin ja löydä uusia sovelluksia. Sovelluskauppaa käytetään "
-"myös järjestelmän päivityksiin."
+"Avoimeen lähdekoodiin ja maksamisen vapaaehtoisuuteen pohjautuva "
+"sovelluskauppa elementarylta. Katselmoitu ja kuratoitu elementaryn toimesta, "
+"jotta natiivi, yksityisyyttä kunnioittava ja turvallinen kokemus on "
+"mahdollinen. Selaa luokkia tai etsi ja löydä uusia sovelluksia. AppCenteriä "
+"käytetään myös järjestelmän päivittämiseen uusimpaan versioon uusien "
+"ominaisuuksien ja korjausten saamiseksi."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Löydä uusia sovelluksia"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Pysy ajan tasalla"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Maksa mitä voit tukeaksesi kehittäjiä"
 
 #: data/appcenter.metainfo.xml.in:62
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:99
-#: data/appcenter.metainfo.xml.in:119 data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:135
+#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:164
+msgid "Other Improvements:"
+msgstr "Muut parannukset:"
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:118 data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
+msgid "Updated translations"
+msgstr "Päivitetyt kielikäännökset"
+
+#: data/appcenter.metainfo.xml.in:82 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:159
 msgid "New features:"
 msgstr "Uudet ominaisuudet:"
 
-#: data/appcenter.metainfo.xml.in:72
+#: data/appcenter.metainfo.xml.in:84
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:103
-#: data/appcenter.metainfo.xml.in:123 data/appcenter.metainfo.xml.in:138
-#: data/appcenter.metainfo.xml.in:152
-#, fuzzy
-#| msgid "Improvements:"
-msgid "Other Improvements:"
-msgstr "Parannukset:"
-
-#: data/appcenter.metainfo.xml.in:76
+#: data/appcenter.metainfo.xml.in:88
 msgid "Automatic app updates by default"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:77
+#: data/appcenter.metainfo.xml.in:89
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:78
+#: data/appcenter.metainfo.xml.in:90
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:106
-#: data/appcenter.metainfo.xml.in:128 data/appcenter.metainfo.xml.in:140
-#: data/appcenter.metainfo.xml.in:154
-msgid "Updated translations"
-msgstr "Päivitetyt kielikäännökset"
-
-#: data/appcenter.metainfo.xml.in:101
+#: data/appcenter.metainfo.xml.in:113
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:105
+#: data/appcenter.metainfo.xml.in:117
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:133
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:137
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:126
+#: data/appcenter.metainfo.xml.in:138
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:127
+#: data/appcenter.metainfo.xml.in:139
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:149
+#: data/appcenter.metainfo.xml.in:161
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:162
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

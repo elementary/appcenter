@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 15:17+0000\n"
+"POT-Creation-Date: 2024-11-19 23:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,10 +87,10 @@ msgstr ""
 msgid "Finished"
 msgstr ""
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1434
-#: src/Core/FlatpakBackend.vala:1458 src/Core/FlatpakBackend.vala:1566
-#: src/Core/FlatpakBackend.vala:1590 src/Core/FlatpakBackend.vala:1748
-#: src/Core/FlatpakBackend.vala:1766
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1469
+#: src/Core/FlatpakBackend.vala:1493 src/Core/FlatpakBackend.vala:1601
+#: src/Core/FlatpakBackend.vala:1625 src/Core/FlatpakBackend.vala:1783
+#: src/Core/FlatpakBackend.vala:1801
 msgid "Cancelling"
 msgstr ""
 
@@ -107,15 +107,15 @@ msgstr ""
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1425
+#: src/Core/FlatpakBackend.vala:1460
 msgid "Installing"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1557
+#: src/Core/FlatpakBackend.vala:1592
 msgid "Uninstalling"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1739
+#: src/Core/FlatpakBackend.vala:1774
 msgid "Updating"
 msgstr ""
 
@@ -147,12 +147,12 @@ msgstr ""
 msgid "Repairing…"
 msgstr ""
 
-#: src/Core/Package.vala:309
+#: src/Core/Package.vala:322
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:493
+#: src/Core/Package.vala:506
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -274,13 +274,13 @@ msgstr[1] ""
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:154
+#: src/Core/UpdateManager.vala:161
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:156
+#: src/Core/UpdateManager.vala:163
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -734,7 +734,7 @@ msgstr[1] ""
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
 
-#: src/Views/AuthorView.vala:31
+#: src/Views/AuthorView.vala:34
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
