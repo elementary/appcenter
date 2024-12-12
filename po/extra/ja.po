@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2024-05-16 12:32+0000\n"
+"PO-Revision-Date: 2024-12-12 05:36+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -59,7 +59,7 @@ msgstr "elementary, Inc."
 #: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:135
 #: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:164
 msgid "Other Improvements:"
-msgstr "そのほかの改善点:"
+msgstr "そのほかの改善:"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
 #: data/appcenter.metainfo.xml.in:118 data/appcenter.metainfo.xml.in:140
