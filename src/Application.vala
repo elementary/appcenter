@@ -201,6 +201,16 @@ public class AppCenter.App : Gtk.Application {
             return;
         }
 
+        if (local_path != null) {
+            var file = File.new_for_commandline_arg (local_path);
+
+            try {
+                local_package = AppCenterCore.FlatpakBackend.get_default ().add_local_component_file (file);
+            } catch (Error e) {
+                warning ("Failed to load local AppStream XML file: %s", e.message);
+            }
+        }
+
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
             update_manager.update_cache.begin (true);
