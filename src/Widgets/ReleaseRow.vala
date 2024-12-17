@@ -33,12 +33,6 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         spacing = 6;
         margin_bottom = 6;
 
-        create_header ();
-        create_description ();
-        create_issues ();
-    }
-
-    private void create_header () {
         var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic");
         var header_label = new Gtk.Label (format_version (release.get_version ())) {
             use_markup = true
@@ -59,11 +53,8 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         header_grid.attach (header_icon, 0, 0);
         header_grid.attach (header_label, 1, 0);
         header_grid.attach (date_label, 2, 0);
-
         append (header_grid);
-    }
 
-    private void create_description () {
         var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
             selectable = true,
             use_markup = true,
@@ -79,11 +70,8 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             margin_bottom = 6
         };
         description_grid.attach (description_label, 0, 0);
-
         append (description_grid);
-    }
 
-    private void create_issues () {
         var issues = release.get_issues ();
         if (issues.length > 0) {
             var issue_header = new Gtk.Label (_("Fixed Issues")) {
