@@ -69,7 +69,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             use_markup = true,
             max_width_chars = 55,
             wrap = true,
-            xalign = 0,
+            xalign = 0
         };
         description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
