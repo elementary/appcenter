@@ -219,7 +219,8 @@ namespace AppCenter.Views {
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
                     updated_revealer.reveal_child = false;
-
+                    list_box.vexpand = false;
+                    
                     switch (flatpak_backend.job_type) {
                         case GET_PREPARED_PACKAGES:
                         case GET_UPDATES:
