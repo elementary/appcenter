@@ -135,6 +135,9 @@ namespace AppCenter.Views {
                 child = refresh_accellabel
             };
             refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
+            refresh_menuitem.clicked.connect (() => {
+                refresh_menuitem.set_sensitive (false);
+            });
 
             var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             menu_popover_box.append (automatic_updates_button);
@@ -218,6 +221,7 @@ namespace AppCenter.Views {
 
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
+                    refresh_menuitem.set_sensitive (false);
                     updated_revealer.reveal_child = false;
                     list_box.vexpand = false;
                     
@@ -233,6 +237,7 @@ namespace AppCenter.Views {
                             break;
                     }
                 } else {
+                    refresh_menuitem.set_sensitive (true);
                     list_box.set_placeholder (null);
                 }
             });
