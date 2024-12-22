@@ -132,15 +132,19 @@ namespace AppCenter.Views {
             );
 
             var refresh_menuitem = new Gtk.Button () {
-                action_name = "app.refresh",
-                child = refresh_accellabel
+                child = refresh_accellabel,
+                sensitive = false
             };
             refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
             refresh_menuitem.clicked.connect (() => {
-                refresh_menuitem.set_sensitive (false);
+                activate_action ("app.refresh", null);
+            });
+
+            AppCenter.App.refresh_action.activate.connect (() => {
                 update_manager.updates_liststore.remove_all ();
                 installed_liststore.remove_all ();
-                
+
+                refresh_menuitem.sensitive = false;
                 header_revealer.reveal_child = false;
                 updated_revealer.reveal_child = false;
                 installed_header.visible = false;
@@ -226,14 +230,15 @@ namespace AppCenter.Views {
 
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
-                    refresh_menuitem.set_sensitive (false);
+                    refresh_menuitem.sensitive = false;
                     header_revealer.reveal_child = false;
                     updated_revealer.reveal_child = false;
                 } else {
-                    refresh_menuitem.set_sensitive (true);
+                    refresh_menuitem.sensitive = true;
                     on_updates_changed ();
                 }
             });
+
 
             automatic_updates_button.notify["active"].connect (() => {
                 if (automatic_updates_button.active) {
