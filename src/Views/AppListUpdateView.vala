@@ -141,7 +141,6 @@ namespace AppCenter.Views {
             });
 
             AppCenter.App.refresh_action.activate.connect (() => {
-                update_manager.updates_liststore.remove_all ();
                 installed_liststore.remove_all ();
 
                 refresh_menuitem.sensitive = false;
@@ -378,11 +377,9 @@ namespace AppCenter.Views {
         }
 
         public void clear () {
-            var update_manager = AppCenterCore.UpdateManager.get_default ();
             // Free widgets with all their connected signals https://github.com/elementary/appcenter/pull/846
             list_box.remove_all ();
             installed_flowbox.remove_all ();
-            update_manager.updates_liststore.remove_all ();
         }
     }
 }
