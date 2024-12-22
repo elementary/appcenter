@@ -33,6 +33,7 @@ namespace AppCenter.Views {
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
         private ListStore installed_liststore;
+        private Granite.HeaderLabel installed_header;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
@@ -93,7 +94,7 @@ namespace AppCenter.Views {
             list_box.bind_model (update_manager.updates_liststore, create_row_from_package);
             list_box.set_placeholder (loading_view);
 
-            var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
+            installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
                 margin_end = 12,
                 margin_bottom = 12,
@@ -137,6 +138,13 @@ namespace AppCenter.Views {
             refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
             refresh_menuitem.clicked.connect (() => {
                 refresh_menuitem.set_sensitive (false);
+                update_manager.updates_liststore.remove_all ();
+                installed_liststore.remove_all ();
+                
+                header_revealer.reveal_child = false;
+                updated_revealer.reveal_child = false;
+                installed_header.visible = false;
+                list_box.vexpand = true;
             });
 
             var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -181,14 +189,11 @@ namespace AppCenter.Views {
             /// TRANSLATORS: the name of the Installed Apps view
             title = C_("view", "Installed");
 
-            on_installed_changed.begin ((obj, res) => {
-                on_installed_changed.end (res);
-                installed_header.visible = true;
-            });
-
-            update_manager.updates_liststore.items_changed.connect (() => {
+            update_manager.updates_liststore.items_changed.connect ((position, removed, added) => {
                 Idle.add (() => {
-                    on_updates_changed ();
+                    if (added > 0) {
+                        on_updates_changed ();
+                    }
                     return GLib.Source.REMOVE;
                 });
             });
@@ -222,9 +227,9 @@ namespace AppCenter.Views {
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
                     refresh_menuitem.set_sensitive (false);
+                    header_revealer.reveal_child = false;
                     updated_revealer.reveal_child = false;
-                    list_box.vexpand = false;
-                    
+
                     switch (flatpak_backend.job_type) {
                         case GET_PREPARED_PACKAGES:
                         case GET_UPDATES:
@@ -239,6 +244,7 @@ namespace AppCenter.Views {
                 } else {
                     refresh_menuitem.set_sensitive (true);
                     list_box.set_placeholder (null);
+                    on_updates_changed ();
                 }
             });
 
@@ -301,6 +307,8 @@ namespace AppCenter.Views {
 
                 unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
                 var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
+                installed_header.visible = !installed_apps.is_empty;
+                list_box.vexpand = installed_apps.is_empty;
 
                 foreach (var package in installed_apps) {
                     if (package.state != UPDATE_AVAILABLE && package.kind != ADDON && package.kind != FONT) {
@@ -378,9 +386,11 @@ namespace AppCenter.Views {
         }
 
         public void clear () {
+            var update_manager = AppCenterCore.UpdateManager.get_default ();
             // Free widgets with all their connected signals https://github.com/elementary/appcenter/pull/846
             list_box.remove_all ();
             installed_flowbox.remove_all ();
+            update_manager.updates_liststore.remove_all ();
         }
     }
 }
