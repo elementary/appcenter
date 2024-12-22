@@ -145,6 +145,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         backend.notify["job-type"].connect (update_overlaybar_label);
 
         overlaybar.label = backend.job_type.to_string ();
+
+        if (installed_view == null) {
+            installed_view = new Views.AppListUpdateView ();
+
+            installed_view.show_app.connect ((package) => {
+                show_package (package);
+            });
+        }
     }
 
     public override bool close_request () {
@@ -192,14 +200,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        if (installed_view == null) {
-            installed_view = new Views.AppListUpdateView ();
-
-            installed_view.show_app.connect ((package) => {
-                show_package (package);
-            });
-        }
-
         if (installed_view.parent != null) {
             navigation_view.pop_to_page (installed_view);
         } else {
