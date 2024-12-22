@@ -302,13 +302,14 @@ namespace AppCenter.Views {
                 unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
                 var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
                 installed_header.visible = !installed_apps.is_empty;
-                list_box.vexpand = installed_apps.is_empty;
 
                 foreach (var package in installed_apps) {
                     if (package.state != UPDATE_AVAILABLE && package.kind != ADDON && package.kind != FONT) {
                         installed_liststore.insert_sorted (package, compare_installed_func);
                     }
                 }
+
+                list_box.vexpand = installed_liststore.n_items <= 0;
             }
 
             refresh_cancellable = null;
