@@ -229,21 +229,8 @@ namespace AppCenter.Views {
                     refresh_menuitem.set_sensitive (false);
                     header_revealer.reveal_child = false;
                     updated_revealer.reveal_child = false;
-
-                    switch (flatpak_backend.job_type) {
-                        case GET_PREPARED_PACKAGES:
-                        case GET_UPDATES:
-                        case REFRESH_CACHE:
-                        case UPDATE_PACKAGE:
-                            list_box.set_placeholder (loading_view);
-                            break;
-                        default:
-                            list_box.set_placeholder (null);
-                            break;
-                    }
                 } else {
                     refresh_menuitem.set_sensitive (true);
-                    list_box.set_placeholder (null);
                     on_updates_changed ();
                 }
             });
