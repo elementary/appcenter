@@ -142,6 +142,7 @@ namespace AppCenter.Views {
 
             AppCenter.App.refresh_action.activate.connect (() => {
                 installed_liststore.remove_all ();
+                list_box.set_placeholder (loading_view);
 
                 refresh_menuitem.sensitive = false;
                 header_revealer.reveal_child = false;
@@ -232,7 +233,9 @@ namespace AppCenter.Views {
                     refresh_menuitem.sensitive = false;
                     header_revealer.reveal_child = false;
                     updated_revealer.reveal_child = false;
+                    list_box.set_placeholder (loading_view);
                 } else {
+                    list_box.set_placeholder (null);
                     refresh_menuitem.sensitive = true;
                     on_updates_changed ();
                 }
