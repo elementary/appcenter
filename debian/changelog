@@ -1,3 +1,845 @@
+io.elementary.appcenter (8.0.1) noble; urgency=medium
+
+  * Release 8.0.1 (#2229)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 12 Dec 2024 23:13:48 +0000
+
+io.elementary.appcenter (8.0.0) noble; urgency=medium
+
+  * Release 8.0.0
+
+ -- Danielle Foré <danielle@elementary.io>  Wed, 31 Jul 2024 11:02:48 -0700
+
+io.elementary.appcenter (7.4.0) jammy; urgency=medium
+
+  * New upstream release
+
+ -- Danielle Foré <danielle@elementary.io>  Mon, 18 Sep 2023 10:25:08 -0700
+
+io.elementary.appcenter (7.3.0) jammy; urgency=medium
+
+  * New upstream release
+
+ -- Danielle Foré <danielle@elementary.io>  Tue, 27 Jun 2023 12:52:28 -0700
+
+io.elementary.appcenter (7.2.1) jammy; urgency=medium
+
+  * New upstream release
+
+ -- Danielle Foré <danielle@elementary.io>  Wed, 24 Feb 2023 15:51:52 -0800
+
+io.elementary.appcenter (7.2.0) jammy; urgency=medium
+
+  * New upstream release
+
+ -- Danielle Foré <danielle@elementary.io>  Wed, 08 Feb 2023 15:51:52 -0800
+
+io.elementary.appcenter (7.1.0) jammy; urgency=medium
+
+  * Release 7.1.0
+
+ -- Danielle Foré <danielle@elementary.io>  Sat, 28 Jan 2023 18:03:26 -0800
+
+io.elementary.appcenter (7.0.0) jammy; urgency=medium
+
+  * Release 7.0.0
+
+ -- Danielle Fore <danielle@elementary.io>  Tue, 24 Jan 2023 09:19:14 -0800
+
+io.elementary.appcenter (4.0.0) bionic; urgency=medium
+
+  * Release 4.0.0 (#1939)
+  * Update translation files
+  * Update translation template
+  * UpgradeFailDialog: offer refresh option (#1942)
+  * AppData: add 4.0.0 release notes (#1938)
+  * Fix CI (#1937)
+  * fix: Segfault from error message being freed in dialogs (#1936)
+  * gettext: use ubuntu 22.04
+  * gettext: Use next branch by default
+  * Revert "gettext: Set the next version as action runner"
+  * gettext: Set the next version as action runner
+  * Update pot files
+  * UpdateManager: count updates size, flatpak, unpaid (#1924)
+  * ReleaseRow: support issues tag (#1931)
+  * Remove redundant null check
+  * AppInfoView: get newest releases in this class
+  * ReleaseRow: cleanup and design update
+  * AppListUpdateView: make update all header sticky (#1921)
+  * MainWindow: don't rely selected_package (#1918)
+  * Show current job type in overlaybar (#1919)
+  * Remove AbstractAppList (#1916)
+  * AppListUpdateView: Fix typo in package row compare (#1917)
+  * AbstractAppList: Remove redundant package_changing (#1915)
+  * Move get_packages from AbstractAppList to AppListUpdateView (#1912)
+  * Package: assign icons for more componentkinds (#1914)
+  * AbstractAppList: Remove add_package (#1913)
+  * AbstractAppList: Remove sort func (#1911)
+  * Move remove_package from AbstractAppList to AppListUpdateView
+    (#1910)
+  * Homepage categories (#1907)
+  * AbstractAppList: Remove list.add connect (#1909)
+  * CategoryView: change append to add_package (#1908)
+  * Application: use active_window (#1903)
+  * Arrow.css: fix blurry border (#1902)
+  * MainWindow: message_dialog.present
+  * InstalledPackageRowGrid: ReleasesDialog subclass Granite.Dialog
+  * Application: installfaildialog present
+  * DBusServer: connect to uninstall_confirm response
+  * StripeDialog: code style and boxes (#1905)
+  * AppInfoView: absorb ReleaseListBox (#1899)
+  * SharePopover: code style and DRY (#1900)
+  * Homepage: absorb CategoryFlowBox (#1898)
+  * CategoryView: don't subclass Gtk.FlowBox (#1895)
+  * Package: Remove should_nag_update (#1891)
+  * Package: use AppCenter origin in should_pay (#1892)
+  * Replace Gtk.Grid with Gtk.Box (#1886)
+  * Move Deck to MainWindow (#1882)
+  * meson: require appstream >= 0.15.2 (#1893)
+  * Package: expose ComponentKind as property (#1887)
+  * Move NetworkInfoBar to MainWindow (#1888)
+  * AppInfoView: use a flowbox for links (#1884)
+  * CategoryView: highlight recently updated apps (#1856)
+  * Use explicit properties (#1889)
+  * MainWindow: remove window position code (#1885)
+  * Package: get branding from appstream (#1883)
+  * AppListUpdateView: Don't re-use cancellable (#1863)
+  * Banner, AppInfoView: Use a single accent color, auto text color
+    (#1880)
+  * Use a single Hdy.Deck for navigation (#1874)
+  * MainWindow: Use icons for view mode switcher and center search
+    (#1873)
+  * AppInfoView: Add background and caption to screenshots (#1878)
+  * Remove dead NonCuratedWarningDialog.css (#1879)
+  * UpgradeFailDialog: avoid crash from null GLib.Error (#1877)
+  * AppInfoView: create accent provider per-view (#1872)
+  * Homepage: remove dead currently_viewed_category (#1876)
+  * InstalledPackageRowGrid: release notes in a dialog (#1875)
+  * AppInfoView: Make screenshot carousel full page width (#1572)
+  * Disallow scrolling with mouse wheel on screenshot carousel (#1868)
+  * AppInfoView: Wrap package_name instead of ellipsize (#1867)
+  * AppListUpdateView: move list population from InstalledView to here
+    (#1860)
+  * Provide default case for switches (#1858)
+  * CategoryFlowBox: create Fun & Games (#1763)
+  * AppListView → SearchView (#1859)
+  * AbstractView: Replace Stack with Deck (#1769)
+  * Release 3.10.0 (#1846)
+  * AppInfoView: move uninstall button here (#1855)
+  * PackageKitBackend: don't load Ubuntu components with AppStream 0.15
+    (#1852)
+  * AbstractAppContainer: Remove progress_grid (#1854)
+  * CategoryView: load packages async (#1851)
+  * HumbleButton: move show_stripe_dialog here (#1847)
+  * Core: set AppStream.FormatStyle to COLLECTION (#1845)
+  * Homepage: remove unuseed page_loaded (#1843)
+  * AbstractAppContainer: Remove curated warning dialog (#1841)
+  * Core: fix appstream deprecations (#1835)
+  * AppListView: Don't sort native apps first in search (#1840)
+  * MainWindow: misc menu fixes (#1842)
+  * Add a manual refresh button to update all caches (#1791)
+  * Pull apt updates less frequently (#1790)
+  * Homepage: more accurate navigation (#1837)
+  * AppInfoView: new icon and copy for old runtimes (#1838)
+  * Homepage: Only scroll carousel when banner is visible (#1836)
+  * UpdateManager: notify for unpaid apps
+  * Client: auto update non-native apps
+  * MainWindow: Reliably update on view change (#1831)
+  * AppInfoView: Set banner provider for context, not screen (#1692)
+  * Client: Trigger auto-updates when opening the app (#1811)
+  * Show try for free label  (#1820)
+  * AppInfoView: Warn about OS runtime mismatch (#1807)
+  * Automatically install curated Flatpak updates (#1793)
+  * Make back button behaviour more consistant (#1752)
+  * Expose screenshot captions (#1801)
+  * Fix AppStream.PoolFlags being renamed (#1794)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 27 Oct 2022 04:16:59 +0000
+
+io.elementary.appcenter (3.10.0) bionic; urgency=medium
+
+  * Release 3.10.0 (#1846)
+  * AppInfoView: move uninstall button here (#1855)
+  * PackageKitBackend: don't load Ubuntu components with AppStream 0.15
+    (#1852)
+  * AbstractAppContainer: Remove progress_grid (#1854)
+  * CategoryView: load packages async (#1851)
+  * HumbleButton: move show_stripe_dialog here (#1847)
+  * Update translation files
+  * Update translation template
+  * Core: set AppStream.FormatStyle to COLLECTION (#1845)
+  * Homepage: remove unuseed page_loaded (#1843)
+  * AbstractAppContainer: Remove curated warning dialog (#1841)
+  * Core: fix appstream deprecations (#1835)
+  * AppListView: Don't sort native apps first in search (#1840)
+  * MainWindow: misc menu fixes (#1842)
+  * Add a manual refresh button to update all caches (#1791)
+  * Pull apt updates less frequently (#1790)
+  * Homepage: more accurate navigation (#1837)
+  * AppInfoView: new icon and copy for old runtimes (#1838)
+  * Homepage: Only scroll carousel when banner is visible (#1836)
+  * UpdateManager: notify for unpaid apps
+  * Client: auto update non-native apps
+  * MainWindow: Reliably update on view change (#1831)
+  * AppInfoView: Set banner provider for context, not screen (#1692)
+  * Client: Trigger auto-updates when opening the app (#1811)
+  * Show try for free label  (#1820)
+  * AppInfoView: Warn about OS runtime mismatch (#1807)
+  * Automatically install curated Flatpak updates (#1793)
+  * Make back button behaviour more consistant (#1752)
+  * Expose screenshot captions (#1801)
+  * Fix AppStream.PoolFlags being renamed (#1794)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 26 May 2022 05:55:52 +0000
+
+io.elementary.appcenter (3.9.1) bionic; urgency=medium
+
+  * Release 3.9.1 (#1785)
+  * Update translation files
+  * Update translation template
+  * Avoid multiple circular references (#1778)
+  * Core: Pass the ChangeInformation object around instead of its
+    callback (#1783)
+  * SearchView: Link to Flathub search where possible (#1780)
+
+ -- elementary Builds Team <builds@elementary.io>  Sat, 11 Dec 2021 05:21:43 +0000
+
+io.elementary.appcenter (3.9.0) bionic; urgency=medium
+
+  * Release 3.9.0 (#1772)
+  * Core: Reduce the memory footprint and avoid unnecessary reference
+    increase (#1768)
+  * Update screenshots
+  * PackageRow: remove methods specific to updates view (#1755)
+  * Homepage: get currently_viewed_category accurately (#1770)
+  * PackagekitBackend: Make nullable state of cancellables consistent
+    (#1767)
+  * Package: centralize description string handling (#1701)
+  * AbstractAppList: Remove unnecessary abstractions (#1756)
+  * Update translation files
+  * Update translation template
+  * CategoryFlowBox: Add Privacy & Security (#1765)
+  * CategoryFlowBox: Add Amusement to Games (#1764)
+  * Create CategoryView (#1747)
+  * InstalledPackageRowGrid: Use modern code style (#1754)
+  * MainWindow: code style (#1757)
+  * Allow narrower window sizes (#1753)
+  * AppInfoView: Change app description to Gtk.Label (#1723)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 23 Nov 2021 21:24:05 +0000
+
+io.elementary.appcenter (3.8.2) bionic; urgency=medium
+
+  * Release 3.8.2 (#1734)
+  * FlatpakBackend: Improve XML parsing efficiency (#1733)
+  * Update translation files
+  * Update translation template
+  * FlatpakBackend: Sort stable apps in XML first (#1731)
+  * FlatpakBackend: Handle transaction done correctly (#1730)
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 29 Oct 2021 17:37:08 +0000
+
+io.elementary.appcenter (3.8.1) bionic; urgency=medium
+
+  * Release 3.8.1 (#1724)
+  * AbstractView: Safely cast to AppInfoView (#1725)
+  * Update translation files
+  * Update translation template
+  * AbstractAppContainer: Use ProgressButton (#1708)
+  * AppInfoView: Only show 'multiplayer' badge on games (#1713)
+  * Homepage: Disallow plugins in banner and carousel (#1711)
+  * AbstractAppContainer: check build flag for noncurated dialog (#1712)
+  * GResource: Fix substance icon (#1710)
+  * AppData: Start adding 3.8.1 data (#1706)
+  * Don't store 0 price paid app (#1705)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 26 Oct 2021 17:03:39 +0000
+
+io.elementary.appcenter (3.8.0) bionic; urgency=medium
+
+  * Release 3.8.0 (#1697)
+  * AppInfoView: disable non-curated badge on OS updates (#1696)
+  * AppInfoView: load_more_content on realize (#1693)
+  * Homepage: don't horizontally scroll (#1694)
+  * Workflows: Test for Fedora and Pop configurations (#1679)
+  * AppInfoView: Prevent focusing OARS ContentTypes (#1689)
+  * meson: require libhandy-1 >= 1.1.90 (#1690)
+  * Remove `homepage` flag in favor of `curated` (#1686)
+  * AppInfoView: only show non-curated badge when CURATED option is true
+    (#1687)
+  * Update translation files
+  * Update translation template
+  * AppInfoView: Distinguish between fantasy violence (#1685)
+  * Change OARS icons namespace (#1684)
+  * AppInfoView: Show an icon for uncurated apps (#1683)
+  * CategoryFlowBox: fix margins (#1681)
+  * Homepage: Fix building with homepage=false (#1677)
+  * Remove content warning dialog (#1674)
+  * AppInfoView: Remove oars_header (#1675)
+  * AppInfoView: Indicate multiplayer (#1673)
+  * AppInfoView: more specific info for oars chat (#1672)
+  * AppInfoView: Indicate conflict vs violence (#1670)
+  * AppInfoView: provide more specific OARS data
+  * AppInfoView: fix content warning wrap (#1668)
+  * GResource OARS icons (#1667)
+  * AppInfoView: Add content warnings (#1664)
+  * Homepage: Use Hdy.Carousel for banner (#1662)
+  * FlatpakBackend: implement get_packages_by_author (#1661)
+  * StripeDialog: rewrite entry validation (#1655)
+  * StripeDialog: move pay-what-you-can flow here (#1629)
+  * Homepage: replace carousel with PackageRowGrid (#1648)
+  * AbstractAppContainer: Remove icon construction (#1636)
+  * Banner: tweak copy (#1647)
+  * Banner: use accent for default colors (#1646)
+  * Update POTFILES
+  * Homepage: Add recently-updated apps to banner (#1645)
+  * AppInfoView: replace Carousel with Flowbox of ListPackageRowGrids
+    (#1637)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 21 Sep 2021 21:49:50 +0000
+
+io.elementary.appcenter (3.7.1) bionic; urgency=medium
+
+  * Release 3.7.1 (#1639)
+  * FlatpakBackend: drop caches on refresh (#1638)
+  * Homepage: clean up code style (#1634)
+  * Update translation files
+  * Update translation template
+  * Appinfoview otherappsbar (#1633)
+  * AppInfoView: clean up code style (#1632)
+  * MainWindow: use system badge styles (#1630)
+  * Banner: rewrite BannerWidget with modern code style (#1618)
+  * AbstractView: fix transition_type for show_other_package (#1631)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 30 Aug 2021 18:38:41 +0000
+
+io.elementary.appcenter (3.7.0) bionic; urgency=medium
+
+  * Release 3.7.0 (#1626)
+  * Update translation files
+  * Update translation template
+  * Appdata: add release data for 3.7.0 (#1625)
+  * UbuntuDrivers: Error handling for kernel headers install (#1621)
+  * AppListView: Mention Flathub in search copy (#1616)
+  * FlatpakBackend: add default deps sources to transactions (#1620)
+  * Banner: on_any_color_change → reload_css (#1617)
+  * Banner: reduce method scope (#1619)
+  * Drivers: Ensure headers are installed for dkms drivers (#1615)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 26 Aug 2021 02:20:22 +0000
+
+io.elementary.appcenter (3.6.3) bionic; urgency=medium
+
+  * Release 3.6.3 (#1599)
+  * Sort user installation first on homepage (#1600)
+  * l10n: Correctly setup the locales (#1586)
+  * AppListRow → AppRowInterface (#1576)
+  * AbstractAppContainer: Reduce variable scope (#1592)
+  * AbstractAppContainer: Remove is_os_updates property (#1591)
+  * Package: unescape name (#1594)
+  * Update translation files
+  * Update translation template
+  * Application: Fix open button in toasts (#1597)
+  * AbstractAppContainer: move properties to PackageRow (#1575)
+  * AbstractAppContainer: remove package_name (#1573)
+  * AbstractAppContainer: Remove package_author (#1574)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 16 Aug 2021 18:21:42 +0000
+
+io.elementary.appcenter (3.6.2) bionic; urgency=medium
+
+  * Release 3.6.2 (#1582)
+  * UbuntuDrivers: Also install related kernel modules (#1581)
+  * AbstractPackageRowGrid: Rmove changed signal to
+    InstalledPackageRowGrid (#1577)
+  * AppInfoView: Don't try to update size info in case of local packages
+    (#1579)
+  * Update translation files
+  * Update translation template
+  * MainWindow: Don't show Open for extension (#1569)
+  * Package: Fix gettext syntax (#1570)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 09 Aug 2021 18:09:33 +0000
+
+io.elementary.appcenter (3.6.1) bionic; urgency=medium
+
+  * Release 3.6.1 (#1566)
+  * Update translation files
+  * LINGUAS: Add Panjabi and sort (#1567)
+  * Update translation template
+  * Homepage: Use flatpak for recently updated packages (#1563)
+  * Fixup package origins for focal (#1565)
+  * StripeDialog: Move privacy policy to secondary text (#1562)
+  * Gresource symbolic mail icon (#1561)
+  * Remap AppStream 'metadata' tag to 'custom' (#1558)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 03 Aug 2021 00:32:24 +0000
+
+io.elementary.appcenter (3.6.0) bionic; urgency=medium
+
+  * Release 3.6.0 (#1552)
+  * Update translation files
+  * Update translation template
+  * AppData: Update release notes (#1551)
+  * AppInfoView: Fix truncated footer links (#1542)
+  * Set contextual icons in notifications (#1384)
+  * AppListUpdateView: Inform instead of throwing restart dialog (#1502)
+  * ScreenshotCache: don't bail if modified time is null (#1539)
+  * Package: Update APPCENTER_PACKAGE_ORIGIN (#1525)
+  * Hide apps from the Ubuntu repos (#1492)
+  * Throw a dialog on failure (#1496)
+  * Allow build with appstream 0.14.x (#1493)
+  * Use `client.resolve_sync` in `get_package_internal` (#1491)
+  * Fix using back button to return to category (#1490)
+  * AppListUpdateView: Remove "update all" complexity (#1366)
+  * Update banner buttons for greenfield (#1483)
+  * Include RDNN'd icon (#1383)
+  * README: Remove Bountysource badge
+  * Gtk.Dialog → Granite.Dialog (#1481)
+  * AbstractView: Use Gtk.Stack instead of Hdy.Deck (#1485)
+  * Perform flatpak uninstalls with a transaction (#1460)
+  * LINGUAS: sort, remove en_US
+  * Arrow: use insensitive_bg_color (#1464)
+  * Throw toast when app is installed (#1456)
+  * POTFILES: View → AbstractView
+  * AbstractView: Use Deck instead of Stack (#1436)
+  * Application: Consistent copy with Sideload (#1458)
+  * Application: "successfully" is redundant (#1457)
+  * BackendAggregator: Use Gtk.App inhibit (#1409)
+  * Remove 'Back to Home' button on clearing the search entry (#1449)
+  * Isolate banner CSS (#1447)
+  * SharePopover: Get appinfo for mailto (#1443)
+  * README.md: List libhandy dependency as libhandy-1-dev (#1441)
+  * Allow returning to home from search (#1424)
+  * Replace deprecated code (#1418)
+  * AppData: Fix a typo "beeen" to "been" (#1437)
+  * Use Granite rounded card styles (#1435)
+  * MainWindow: Use Hdy.Window and Hdy.Headerbar (#1434)
+  * AppInfoView: Use libhandy for screenshots (#1426)
+  * Prefer dark (#1289)
+  * Backers: Anonymous → Kyle Steere
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 16 Jul 2021 19:01:34 +0000
+
+io.elementary.appcenter (3.5.1) bionic; urgency=medium
+
+  * Release 3.5.1 (#1429)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Update io.elementary.appcenter.appdata.xml.in
+  * Correctly display names of flatpak runtimes in OS updates (#1428)
+  * BackendAggregator: Re-use component ID (#1427)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 08 Oct 2020 17:28:12 +0000
+
+io.elementary.appcenter (3.5.0) bionic; urgency=medium
+
+  * Release 3.5.0 (#1401)
+  * Optimise search rank algorithm (#1421)
+  * Fix badge color in dark style (#1408)
+  * AppInfoView: Fix layout for overly wide origin combobox (#1417)
+  * FlatpackBackend: avoid string copy for bundle_id (#1415)
+  * FlatpakBackend: Fix stuck updates issue (#1414)
+  * Styles: Add fallbacks for downstreams (#1411)
+  * build: bump appstream requirement (#1402)
+  * Update translation files
+  * Update translation template
+  * Support systemwide flatpaks (#1308)
+  * Sort package origins (#1319)
+  * AbstractPackageRowGrid: Move grid and info_grid to subclass (#1320)
+
+ -- elementary Builds Team <builds@elementary.io>  Wed, 07 Oct 2020 03:59:19 +0000
+
+io.elementary.appcenter (3.4.2) bionic; urgency=medium
+
+  * Release 3.4.2 (#1388)
+  * Backers: anon → Donald Morris
+  * humblebutton: Fix download_requested signal chaining (#1386)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * MainWindow: Restore window size and position last (#1382)
+  * clicking updates badge go to installed page (#1381)
+  * Update translation files
+  * Update translation template
+  * Fix a typo: improvments --> improvements (#1377)
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 07 Aug 2020 17:41:44 +0000
+
+io.elementary.appcenter (3.4.1) bionic; urgency=medium
+
+  * Release 3.4.1 (#1376)
+  * Un-anonymize Matt Miller (#1374)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Exclude Flatpak runtimes from package pool (#1359)
+  * Move to hiddenapps terminology (#1367)
+  * AppListUpdateView: Reduce update all button scope and simplify logic
+    (#1364)
+  * Bannner: Fix warnings with casts, GObject style (#1363)
+  * NetworkInfoBar: Remove unused settings (#1362)
+  * AbstractAppContainer: remove threading and locking (#1346)
+  * Update translation files
+  * Update translation template
+  * Remove abstraction from update header rows (#1361)
+  * Simplify substring calculations for component (#1358)
+  * Don't replace .desktop in component ID (#1357)
+  * ScreenshotCache: support older GLib (#1356)
+  * Rewrite ScreenshotCache (#1350)
+  * Update translation files
+  * Update translation template
+  * Remove broken spinner in update view header (#1348)
+  * Installed state optimisations (#1349)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 30 Jun 2020 23:56:59 +0000
+
+io.elementary.appcenter (3.4.0) bionic; urgency=medium
+
+  * Release 3.4.0 (#1343)
+  * AbstractPackageRowGrid: Set default properties in construct block
+    (#1326)
+  * Document the libpolkit-gobject-1-dev build dependency (#1340)
+  * Client: Use RDNN for notification ID (#1334)
+  * Move single-use reboot method out of utils (#1329)
+  * AppListRow: Remove unused has_package (#1328)
+  * InstalledPackageRowGrid: Use revealer for release stack (#1324)
+  * Sort search view using search term (#1301)
+  * Handle new ubuntu-drivers output for DKMS packages (#1307)
+  * AppInfoView: remove package_summary (#1315)
+  * Update translation files
+  * Update translation template
+  * AbstractAppList: move placeholders to subclasses (#1318)
+  * AbstractAppContainer: Subclass bin (#1316)
+  * AbstractPackageRowGrid: Reduce args where possible (#1313)
+  * AbstractAppList: inline namespace (#1317)
+  * MainWindow: Use a revealer to show/hide the updates badge (#1314)
+  * AppInfoView: Don't set h3 (#1312)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Various update badge fixes (#1298)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Add polkit action to allow updates without admin prompt (#1305)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Cache Houston API results to GSettings (#1296)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 28 May 2020 18:11:20 +0000
+
+io.elementary.appcenter (3.3.0) bionic; urgency=medium
+
+  * Release 3.3.0 (#1293)
+  * Refresh state after marking package installed (#1291)
+  * Properly clear pending updates if they're done externally (#1276)
+  * Throw Flatpak errors (#1287)
+  * Update translation files
+  * Update translation template
+  * Improve installation failure dialog (#1286)
+  * Better handle Houston errors (#1288)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Update io.elementary.appcenter.appdata.xml.in
+  * Hide fonts unless they need an update (#1285)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AppInfoView: fix issues with long app titles (#1280)
+  * Backers: anon → Paul Rabin
+  * Backers: Volodimir Biloshicky → Volodymyr Biloshytskyi
+  * Backers: anon → Brian J Schreiner
+  * Backers: crisconru → Cristóbal Contreras Rubio
+  * Backers: anon → Mehrad Mahmoudian
+  * Backers: anon → Daniel Lindenfelser
+  * Backers: wtleung → Raymond WT Leung
+  * Backers: anon → Gaurav Satadeve
+  * Backers: binternagel → Eike Binternagel
+  * Backers: John Ferguson → John Urquhart Ferguson
+  * Backers: TNG Entertainment → TNG
+  * Backers: lhanssen → Lieven Hanssen
+  * Backers: anon → Emma Blink
+  * Backers: anon → Marius Meisenzahl
+  * Backers: anon → Grant Ford
+  * Backers: anon → Cato Gaustad
+  * BACKERS.md: anon → - Jan Lajka
+  * Update translation files
+  * Update translation template
+  * AppData: Organize 3.2.5 release notes (#1277)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Show loading placeholder unless no results returned (#1260)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Update OS Updates subheading after updates (#1264)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AbstractAppContainer: switch overlay plugin icons (#1273)
+  * Don't throw cancelled errors to the user (#1274)
+  * Startup and loading optimisations (#1262)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Only show plugins in installed view if they require updates (#1265)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Prevent the daemon refreshing on every startup (#1272)
+  * PackageKitBackend: only refresh PK cache on changes (#1271)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Better keyboard navigation for search (#1270)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * PackageKitBackend: Tell PackageKit about any system proxy config
+    (#1257)
+  * AppInfoView: parse_description reduce try/catch scope (#1269)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AppData: Correct unreleased date to today
+  * AppInfoView: load description async (#1267)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AppInfoView: allow opening plugins (#1266)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Only ask for non-curated approval on installations, not updates
+    (#1254)
+  * AppInfoView: use Hdy.Column (#1217)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Wed, 29 Apr 2020 21:47:52 +0000
+
+io.elementary.appcenter (3.2.4) bionic; urgency=medium
+
+  * Release 3.2.4 (#1256)
+  * Inhibit suspend during all package operations (#1255)
+  * Add debugging to update counting (#1252)
+  * Update translation files
+  * Update translation template
+  * Split progress callbacks when an update has multiple backends
+    (#1246)
+  * Update translation files
+  * Update translation template
+  * po: Add missing files to POTFILES (#1248)
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Wed, 08 Apr 2020 23:33:22 +0000
+
+io.elementary.appcenter (3.2.3) bionic; urgency=medium
+
+  * Release 3.2.3 (#1243)
+  * arrow.css: Don't hardcode arrow color (#1240)
+  * Backers.md: anon → Carolos Foscolos
+  * Backers.md: anon → Gerphil Niebur
+  * Backers.md: Ascii Wolf → Daniel Rusek
+  * BACKERS.md: anon → Rocco – BigDaddyLinux
+  * BACKERS.md: pesasa → Petri Salmela
+  * BACKERS.md: darrel → Darrel Davis
+  * BACKERS.md: Add Berger Rudolf
+  * BACKERS.md: Adam Balla → chzbacon
+  * BACKERS.md: Callum → TailRed
+  * BACKERS.md: add Sepehr Lajevardi
+  * Add backers (#1228)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 02 Apr 2020 00:21:20 +0000
+
+io.elementary.appcenter (3.2.2) bionic; urgency=medium
+
+  * Release 3.2.2 (#1225)
+  * Update translation files
+  * Update translation template
+  * Include dependencies in flatpak download size calculations (#1139)
+  * Update translation files
+  * Update translation template
+  * FlatpakBackend: Update installed applications on external change
+    (#1219)
+  * Update translation files
+  * Update translation template
+  * Ensure categories are cleared of cached components before querying
+    (#1218)
+  * Update translation files
+  * Update translation template
+  * Fix sorting of native apps in list views (#1213)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Choose a more appropriate screenshot size to download (#1215)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Mark compulsory for desktop apps as non-launchable (#1214)
+  * Banner: Strip whitespace from description (#1206)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Delete .travis.yml
+  * Add recent changes to appdata (#1209)
+  * Monitor FlatpakInstallation for Changes (#1202)
+  * Clear AppInfoView caches when appstream pools are reloaded (#1203)
+  * Run build and install in GitHub CI (#1208)
+  * Workaround PackageKit issue to fix restart notification (#1130)
+  * AppInfoView: Make an ArrowButton class (#1191)
+  * AppInfoView: Remove version from header (#1188)
+  * Replace confusing 'version' terms with 'origin' terms (#1184)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Lookup PackageKit packages for the installed view in parallel
+    (#1117)
+  * Unescape markup for package names (#1118)
+  * AbstractAppContainer: Add a badge to OS updates (#1147)
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 28 Feb 2020 20:51:21 +0000
+
+io.elementary.appcenter (3.2.1) bionic; urgency=medium
+
+  * Release 3.2.1 (#1150)
+  * Update translation template
+  * Lookup extensions in backend instead of constructing new (#1133)
+  * Fix extension badge size (#1144)
+  * Update translation template
+  * AppData: Update release info
+  * Remove dbus service file (#1126)
+  * Bump meson version to 3.2.1 (#1131)
+  * Update translation template
+  * Only call update on backends which have updates available (#1129)
+  * Add Gettext Updates to Actions
+  * Use new orign name from appstream data (#1125)
+  * Fix lint error and delegate warnings (#1124)
+  * Update flatpak.vapi (#1122)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 02 Dec 2019 17:55:37 +0000
+
+io.elementary.appcenter (3.2.0) bionic; urgency=medium
+
+  * Release 3.2.0 (#1110)
+  * Travis: downgrade node.js to 10
+  * Search homepage packages in parallel with newer packagekit (#991)
+  * AbstractAppContainer: Also check for os_updates in install_approved
+    (#1109)
+  * Update translation files
+  * Appdata: Add release info for 3.2.0 (#1108)
+  * Add Release to Actions (#1106)
+  * Non-curated warning (#1105)
+  * Granite.Services.Settings → GLib.Settings (#1101)
+  * CategoryFlowBox: use correct icon for office category (#1096)
+  * Update translation files
+  * Add Uninstall failed dialog (#1083)
+  * flatpak: Track overall transaction progress (#1093)
+  * flatpak: Work with user-specific flatpaks by default (#1092)
+  * Fix #1086 by ignoring non-fatal errors (#1091)
+  * build: use define_variable for pkgconfig paths (#1089)
+  * Lint with GitHub CI (#1080)
+  * Core: fix spacing vala-lint errors (#1085)
+  * Fix all vala-lint errors (#1081)
+  * Fix get_component_from_desktop_id dbus method (#1078)
+  * Delete CODE_OF_CONDUCT.md
+  * Delete FUNDING.yml
+  * Desktop: Add icon to updates and remove keyword (#1071)
+  * Use Granite to set badges instead of Unity (#1028)
+  * Update translation files
+  * Replace network stack child with info bar (#1065)
+  * Abstractappcontainer no stack hacks (#1041)
+  * Fix Twitter Share URL (#1056)
+  * Animate screenshot background while loading (#1051)
+  * Add prev/next arrows for screenshots (#1032)
+  * AppInfoView: Fix layout for OS updates (#1043)
+  * Update translation files
+  * Add info icon and tooltip for download size (#1037)
+  * AbstractAppContainer: Fix missing uninstall button margin (#1040)
+  * Fix misaligned Update All button. (#1036)
+  * Add Silesian and update translation template
+  * Better flatpak transaction error handling (#1018)
+  * Cache list of Ubuntu driver packages (#1007)
+  * Fix release info wrapping (#1024)
+  * Move banner button text size to prevent leakage (#1021)
+  * Spelling: mimetype → media type (#1019)
+  * AppInfoView: strip extra spaces and line breaks (#1013)
+  * Sort OS updates more sanely (#1017)
+  * Update translation template
+  * UpdateHeaderRow: Remove duplicate public method (#1010)
+  * De-duplicate packages from multiple sources (#992)
+  * Creating FUNDING.yml
+  * Add Flatpak support (#971)
+  * Do not show uninstall for compulsory components (#1000)
+  * Remove Google+ share target (#1002)
+  * AppData: Make compulsory for Pantheon (#999)
+  * Reuse package objects on reload (#995)
+  * Refactor progress callbacks to be backend agnostic (#980)
+  * Add a backend aggregator to simplify OS updates from multiple
+    backends (#989)
+  * Remove unused po files and update LINGUAS (#994)
+  * Update translation files
+  * Proprietary License support (#698)
+  * Use io.elementary.appcenter as dbus name (#984)
+  * Fix build with vala 0.44+ (#976)
+  * Add cancellable to get_installed_applications (#976)
+  * AbstractAppContainer: Use source.remove (#981)
+  * Check if appcontainer is destroyed before updating (#977)
+  * Check for updates when -Dhomepage=false (#979)
+  * Fix compiliation when homepage banners disabled (#978)
+  * More package operation cancellation crash fixes (#973)
+  * Fix crashing issues when cancelling package operations (#972)
+  * Constructors of abstract classes should not be public
+  * Rename PackageKitJob and PackageKitClient (#969)
+  * Define an interface for backends (#966)
+  * Move drivers logic to separate class (#965)
+  * UpdateFailDialog: show error message from Granite (#962)
+  * Client refactoring (#957)
+  * AppInfoView: Fix alignment of labels in header (#960)
+  * Package refactoring (#955)
+  * Move PackageKit operations to AsyncQueue/ThreadPool (#945)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 31 Oct 2019 16:07:53 +0000
+
+io.elementary.appcenter (3.1.1) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <codygarver@gmail.com>  Thu, 14 Feb 2019 18:52:29 -0600
+
+io.elementary.appcenter (3.1.0) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Wed, 02 Jan 2019 01:14:19 -0600
+
+io.elementary.appcenter (3.0.1) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Thu, 25 Oct 2018 06:44:28 -0500
+
+io.elementary.appcenter (3.0) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Tue, 16 Oct 2018 05:32:49 -0500
+
 io.elementary.appcenter (0.2.9) xenial; urgency=medium
 
   * New upstream release.
