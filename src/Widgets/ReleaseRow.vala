@@ -29,8 +29,11 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
     }
 
     construct {
-        var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic");
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 6;
+        margin_bottom = 6;
 
+        var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic");
         var header_label = new Gtk.Label (format_version (release.get_version ())) {
             use_markup = true
         };
@@ -42,6 +45,16 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         };
         date_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
+        var header_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            row_spacing = 6,
+            margin_bottom = 6
+        };
+        header_grid.attach (header_icon, 0, 0);
+        header_grid.attach (header_label, 1, 0);
+        header_grid.attach (date_label, 2, 0);
+        append (header_grid);
+
         var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
             selectable = true,
             use_markup = true,
@@ -51,23 +64,15 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         };
         description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var grid = new Gtk.Grid () {
+        var description_grid = new Gtk.Grid () {
             column_spacing = 6,
             row_spacing = 6,
             margin_bottom = 6
         };
-        grid.attach (header_icon, 0, 0);
-        grid.attach (header_label, 1, 0);
-        grid.attach (date_label, 2, 0);
-        grid.attach (description_label, 0, 1, 3);
-
-        orientation = Gtk.Orientation.VERTICAL;
-        spacing = 6;
-
-        append (grid);
+        description_grid.attach (description_label, 0, 0);
+        append (description_grid);
 
         var issues = release.get_issues ();
-
         if (issues.length > 0) {
             var issue_header = new Gtk.Label (_("Fixed Issues")) {
                 halign = Gtk.Align.START,
