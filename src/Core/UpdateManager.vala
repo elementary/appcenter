@@ -227,6 +227,7 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public async void update_cache (bool force = false) {
+        updates_liststore.remove_all ();
         cancellable.reset ();
 
         if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
