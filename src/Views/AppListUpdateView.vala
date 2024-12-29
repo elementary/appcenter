@@ -33,6 +33,7 @@ namespace AppCenter.Views {
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
         private ListStore installed_liststore;
+        private Granite.HeaderLabel installed_header;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
         private Cancellable? refresh_cancellable = null;
@@ -93,7 +94,7 @@ namespace AppCenter.Views {
             list_box.bind_model (update_manager.updates_liststore, create_row_from_package);
             list_box.set_placeholder (loading_view);
 
-            var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
+            installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
                 margin_end = 12,
                 margin_bottom = 12,
@@ -131,10 +132,24 @@ namespace AppCenter.Views {
             );
 
             var refresh_menuitem = new Gtk.Button () {
-                action_name = "app.refresh",
-                child = refresh_accellabel
+                child = refresh_accellabel,
+                sensitive = false
             };
             refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
+            refresh_menuitem.clicked.connect (() => {
+                activate_action ("app.refresh", null);
+            });
+
+            AppCenter.App.refresh_action.activate.connect (() => {
+                installed_liststore.remove_all ();
+                list_box.set_placeholder (loading_view);
+
+                refresh_menuitem.sensitive = false;
+                header_revealer.reveal_child = false;
+                updated_revealer.reveal_child = false;
+                installed_header.visible = false;
+                list_box.vexpand = true;
+            });
 
             var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             menu_popover_box.append (automatic_updates_button);
@@ -178,14 +193,11 @@ namespace AppCenter.Views {
             /// TRANSLATORS: the name of the Installed Apps view
             title = C_("view", "Installed");
 
-            on_installed_changed.begin ((obj, res) => {
-                on_installed_changed.end (res);
-                installed_header.visible = true;
-            });
-
-            update_manager.updates_liststore.items_changed.connect (() => {
+            update_manager.updates_liststore.items_changed.connect ((position, removed, added) => {
                 Idle.add (() => {
-                    on_updates_changed ();
+                    if (added > 0) {
+                        on_updates_changed ();
+                    }
                     return GLib.Source.REMOVE;
                 });
             });
@@ -218,23 +230,17 @@ namespace AppCenter.Views {
 
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
+                    refresh_menuitem.sensitive = false;
+                    header_revealer.reveal_child = false;
                     updated_revealer.reveal_child = false;
-
-                    switch (flatpak_backend.job_type) {
-                        case GET_PREPARED_PACKAGES:
-                        case GET_UPDATES:
-                        case REFRESH_CACHE:
-                        case UPDATE_PACKAGE:
-                            list_box.set_placeholder (loading_view);
-                            break;
-                        default:
-                            list_box.set_placeholder (null);
-                            break;
-                    }
+                    list_box.set_placeholder (loading_view);
                 } else {
                     list_box.set_placeholder (null);
+                    refresh_menuitem.sensitive = true;
+                    on_updates_changed ();
                 }
             });
+
 
             automatic_updates_button.notify["active"].connect (() => {
                 if (automatic_updates_button.active) {
@@ -295,12 +301,15 @@ namespace AppCenter.Views {
 
                 unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
                 var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
+                installed_header.visible = !installed_apps.is_empty;
 
                 foreach (var package in installed_apps) {
                     if (package.state != UPDATE_AVAILABLE && package.kind != ADDON && package.kind != FONT) {
                         installed_liststore.insert_sorted (package, compare_installed_func);
                     }
                 }
+
+                list_box.vexpand = installed_liststore.n_items <= 0;
             }
 
             refresh_cancellable = null;

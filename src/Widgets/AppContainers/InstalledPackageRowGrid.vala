@@ -122,7 +122,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                     release_button_revealer.reveal_child = true;
                 }
             } else {
-                release_button_revealer.reveal_child = true;
+                if (newest.get_description () != null) {
+                    release_button_revealer.reveal_child = true;
+                }
             }
         }
 
