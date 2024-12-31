@@ -33,6 +33,8 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public string app_name { get; construct; }
     public string summary { get; construct; }
 
+    public Gtk.Box main_box { get; construct; }
+
     public Banner (string name, string summary, string description, Icon icon, string brand_color) {
         Object (
             brand_color: brand_color,
@@ -48,7 +50,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
 
         Object (
-            name: package.get_name (),
+            app_name: package.get_name (),
             summary: package.get_summary (),
             description: package.get_description (),
             icon: package.get_icon (128, scale_factor),
@@ -59,17 +61,13 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
 
     construct {
         var name_label = new Gtk.Label (app_name) {
-            max_width_chars = 50,
             use_markup = true,
-            wrap = true,
             xalign = 0
         };
         name_label.add_css_class ("name");
 
         var summary_label = new Gtk.Label (summary) {
-            max_width_chars = 50,
             use_markup = true,
-            wrap = true,
             xalign = 0
         };
         summary_label.add_css_class ("summary");
@@ -82,7 +80,6 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var description_label = new Gtk.Label (description) {
             ellipsize = Pango.EllipsizeMode.END,
             lines = 2,
-            max_width_chars = 50,
             use_markup = true,
             wrap = true,
             xalign = 0
@@ -98,18 +95,21 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         inner_box.append (summary_label);
         inner_box.append (description_label);
 
-        var outer_box = new Gtk.Box (HORIZONTAL, 0) {
+        var outer_box = new Gtk.Box (HORIZONTAL, 24) {
             halign = CENTER
         };
         outer_box.append (icon_image);
         outer_box.append (inner_box);
+
+        main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.append (outer_box);
 
         add_css_class ("banner");
         add_css_class (Granite.STYLE_CLASS_CARD);
         add_css_class (Granite.STYLE_CLASS_ROUNDED);
 
         hexpand = true;
-        child = outer_box;
+        child = main_box;
 
         var provider = new Gtk.CssProvider ();
         try {

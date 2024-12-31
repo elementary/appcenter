@@ -51,6 +51,7 @@ public class AppCenterCore.FlatpakPackage : Package {
 public class AppCenterCore.FlatpakBackend : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_flush_needed ();
+    public signal void on_metadata_preprocessed ();
 
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
     private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
@@ -963,8 +964,50 @@ public class AppCenterCore.FlatpakBackend : Object {
             return;
         }
 
-        GLib.GenericArray<weak Flatpak.Remote> remotes = null;
+        preprocess_remotes_metadata (cancellable);
+        reload_appstream_pool ();
+        cache_flush_needed ();
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (true);
+        job.results_ready ();
+    }
 
+    public bool is_cache_refresh_needed () {
+        try {
+            if (user_installation != null && system_installation != null) {
+                var remotes = user_installation.list_remotes ();
+                remotes.extend_and_steal (system_installation.list_remotes ());
+                for (int i = 0; i < remotes.length; i++) {
+                    unowned Flatpak.Remote remote = remotes[i];
+                    if (remote_cache_refresh_needed (remote)) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Error e) {
+            critical ("Error getting user flatpak remotes: %s", e.message);
+        }
+
+        return false;
+    }
+
+    private bool remote_cache_refresh_needed (Flatpak.Remote remote) {
+        var timestamp_file = remote.get_appstream_timestamp (null);
+        if (!timestamp_file.query_exists ()) {
+            return true;
+        } else {
+            var age = Utils.get_file_age (timestamp_file);
+            debug ("Appstream age: %u", age);
+            if (age > MAX_APPSTREAM_AGE) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void preprocess_remotes_metadata (GLib.Cancellable? cancellable) {
+        GLib.GenericArray<weak Flatpak.Remote> remotes = null;
         if (user_installation != null) {
             try {
                 user_installation.drop_caches ();
@@ -985,12 +1028,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
         }
 
-        reload_appstream_pool ();
-        cache_flush_needed ();
-
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (true);
-        job.results_ready ();
+        on_metadata_preprocessed ();
     }
 
     private void preprocess_metadata (bool system, GLib.GenericArray<weak Flatpak.Remote> remotes, Cancellable? cancellable) {
@@ -1024,8 +1062,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         for (int i = 0; i < remotes.length; i++) {
             unowned Flatpak.Remote remote = remotes[i];
 
-            bool cache_refresh_needed = false;
-
             unowned string origin_name = remote.get_name ();
             debug ("Found remote: %s", origin_name);
 
@@ -1034,17 +1070,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                 continue;
             }
 
-            var timestamp_file = remote.get_appstream_timestamp (null);
-            if (!timestamp_file.query_exists ()) {
-                cache_refresh_needed = true;
-            } else {
-                var age = Utils.get_file_age (timestamp_file);
-                debug ("Appstream age: %u", age);
-                if (age > MAX_APPSTREAM_AGE) {
-                    cache_refresh_needed = true;
-                }
-            }
-
+            bool cache_refresh_needed = remote_cache_refresh_needed (remote);
             if (cache_refresh_needed) {
                 debug ("Updating remote");
                 bool success = false;

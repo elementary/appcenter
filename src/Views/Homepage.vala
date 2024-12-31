@@ -33,6 +33,9 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
 
+    private Gtk.Revealer featured_apps_msg_revealer;
+    private Gtk.EventControllerMotion banner_motion_controller;
+
     private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
@@ -48,7 +51,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         hexpand = true;
         vexpand = true;
 
-        var banner_motion_controller = new Gtk.EventControllerMotion ();
+        banner_motion_controller = new Gtk.EventControllerMotion ();
 
         banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
@@ -79,7 +82,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         recently_updated_grid.attach (recently_updated_carousel, 0, 1);
 
         recently_updated_revealer = new Gtk.Revealer () {
-            child = recently_updated_grid
+            child = recently_updated_grid,
+            reveal_child = false
         };
 
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
@@ -282,16 +286,33 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 "#7239b3"
             );
             banner_carousel.append (appcenter_banner);
-
-            banner_carousel.page_changed.connect (page_changed_handler);
+            var spinner = new Gtk.Spinner () {
+                height_request = 24,
+                width_request = 24
+            };
+            spinner.start ();
+            var latest_featured_apps = new Gtk.Label (_("Getting Latest Apps"));
+            latest_featured_apps.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+            var featured_apps_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8) {
+                halign = Gtk.Align.CENTER,
+            };
+            featured_apps_box.append (spinner);
+            featured_apps_box.append (latest_featured_apps);
+            featured_apps_msg_revealer = new Gtk.Revealer () {
+                child = featured_apps_box,
+                reveal_child = true,
+            };
+            appcenter_banner.main_box.append (featured_apps_msg_revealer);
         }
 
-        load_banners_and_carousels.begin ((obj, res) => {
-            load_banners_and_carousels.end (res);
-            banner_timeout_start ();
-            banner_motion_controller.enter.connect (banner_timeout_stop);
-            banner_motion_controller.leave.connect (banner_timeout_start);
-        });
+        var backend = AppCenterCore.FlatpakBackend.get_default ();
+        if (backend.is_cache_refresh_needed ()) {
+            backend.on_metadata_preprocessed.connect (() => {
+                load_banners_and_carousels (backend);
+            });
+        } else {
+            load_banners_and_carousels (backend);
+        }
 
         category_flow.child_activated.connect ((child) => {
             var card = (AbstractCategoryCard) child;
@@ -314,14 +335,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         });
     }
 
-    private void page_changed_handler () {
-        banner_carousel.remove (appcenter_banner);
-        banner_carousel.page_changed.disconnect (page_changed_handler);
-    }
+    private void load_banners_and_carousels (AppCenterCore.FlatpakBackend backend) {
+        featured_apps_msg_revealer.reveal_child = false;
 
-    private async void load_banners_and_carousels () {
-        unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
-        var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
+        var packages_by_release_date = backend.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
         foreach (var package in packages_by_release_date) {
@@ -382,7 +399,13 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             }
         }
 
+        banner_carousel.remove (appcenter_banner);
+        banner_carousel.scroll_to (banner_carousel.get_nth_page (0), false);
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
+        
+        banner_timeout_start ();
+        banner_motion_controller.enter.connect (banner_timeout_stop);
+        banner_motion_controller.leave.connect (banner_timeout_start);
     }
 
     private void banner_timeout_start () {
