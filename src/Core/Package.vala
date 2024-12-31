@@ -744,11 +744,9 @@ public class AppCenterCore.Package : Object {
 
         try {
             if (file != null) {
-                // We don't use FileIcon here because it crashes for some reason!
-                return new BytesIcon (file.load_bytes ());
+                return new FileIcon (file);
             }
         } catch (Error e) {
-            critical ("Could not load icon file: %s", e.message);
             warning ("Could not load icon file: %s", e.message);
         }
 
