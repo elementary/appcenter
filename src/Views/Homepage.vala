@@ -285,14 +285,14 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 new ThemedIcon ("io.elementary.appcenter"),
                 "#7239b3"
             );
-            banner_carousel.append (appcenter_banner);
             var spinner = new Gtk.Spinner () {
-                height_request = 24,
-                width_request = 24
+                height_request = 28,
+                width_request = 28,
             };
             spinner.start ();
             var latest_featured_apps = new Gtk.Label (_("Getting Latest Apps"));
             latest_featured_apps.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+            latest_featured_apps.add_css_class ("latest_apps_message");
             var featured_apps_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8) {
                 halign = Gtk.Align.CENTER,
             };
@@ -301,8 +301,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             featured_apps_msg_revealer = new Gtk.Revealer () {
                 child = featured_apps_box,
                 reveal_child = true,
+                vexpand = false,
             };
             appcenter_banner.main_box.append (featured_apps_msg_revealer);
+            banner_carousel.append (appcenter_banner);
         }
 
         var backend = AppCenterCore.FlatpakBackend.get_default ();
