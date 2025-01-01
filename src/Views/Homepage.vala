@@ -33,10 +33,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
 
-    private Gtk.Revealer featured_apps_msg_revealer;
     private Gtk.EventControllerMotion banner_motion_controller;
 
-    private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
 
@@ -254,7 +252,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         var headerbar = new Gtk.HeaderBar () {
             show_title_buttons = true
         };
-        headerbar.pack_start (return_button);
         if (!Utils.is_running_in_guest_session ()) {
             headerbar.pack_end (updates_overlay);
         }
@@ -313,7 +310,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
     private void load_banners_and_carousels () {
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-        featured_apps_msg_revealer.reveal_child = false;
 
         var packages_by_release_date = backend.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
@@ -346,8 +342,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 if (package.has_generic_icon) {
                     backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                         if (remote_title == package.origin_description) {
-                            var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
-                            banner.update_icon (package.get_icon (128, scale_factor));
+                            banner.update_icon (package.get_icon (128, get_app_scale_factor ()));
                         }
                     });
                 }
@@ -384,8 +379,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 if (package.has_generic_icon) {
                     backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                         if (remote_title == package.origin_description) {
-                            var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
-                            package_row.update_icon (package.get_icon (128, scale_factor));
+                            package_row.update_icon (package.get_icon (128, get_app_scale_factor ()));
                         }
                     });
                 }
@@ -443,6 +437,18 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             return GLib.Source.REMOVE;
         });
+    }
+
+    private int get_app_scale_factor () {
+        var scale_factor = 1;
+        var app = ((Gtk.Application) Application.get_default ());
+        if (app != null) {
+            if (app.active_window != null) {
+                scale_factor = app.active_window.get_scale_factor ();
+            }
+        }
+
+        return scale_factor;
     }
 
     private abstract class AbstractCategoryCard : Gtk.FlowBoxChild {
