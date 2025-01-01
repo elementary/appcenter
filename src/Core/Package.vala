@@ -734,7 +734,7 @@ public class AppCenterCore.Package : Object {
 
                 var content_type = msg.response_headers.get_content_type (null);
                 if (msg.status_code == 200 && content_type != null && content_type.contains ("image")) {
-                    file = File.new_for_uri (remote_icon.get_url ());
+                    file = File.new_for_uri (url);
                 } else {
                     warning ("Could not load remote_icon %s: Status error, bad url, or not an image", url);
                 }
@@ -744,8 +744,13 @@ public class AppCenterCore.Package : Object {
             }
         }
 
-        if (file != null && file.query_exists ()) {
-            return new FileIcon (file);
+        try {
+            if (file != null && file.query_exists ()) {
+                // Using FileIcon for some remote icons causes a crash, BytesIcon works though!
+                return new BytesIcon (file.load_bytes ());
+            }
+        } catch (Error e) {
+            warning ("Failed to load icon %s: %s", get_name (), e.message);
         }
 
         uses_generic_icon = true;
