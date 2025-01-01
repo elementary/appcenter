@@ -63,7 +63,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             valign = Gtk.Align.CENTER,
             width_request = 40,
             height_request = 40,
-            visible = package.uses_generic_icon
+            visible = package.uses_generic_icon && package.icon_available
         };
         spinner.start ();
         spinner.add_css_class ("spinner-small");

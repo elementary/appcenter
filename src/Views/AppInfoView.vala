@@ -190,7 +190,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             valign = Gtk.Align.CENTER,
             width_request = 104,
             height_request = 104,
-            visible = package.uses_generic_icon
+            visible = package.uses_generic_icon && package.icon_available
         };
         spinner.start ();
         spinner.add_css_class ("spinner");
