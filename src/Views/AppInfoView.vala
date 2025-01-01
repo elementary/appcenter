@@ -190,13 +190,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             valign = Gtk.Align.CENTER,
             width_request = 104,
             height_request = 104,
-            visible = package.has_generic_icon
+            visible = package.uses_generic_icon
         };
         spinner.start ();
         spinner.add_css_class ("spinner");
         app_icon_overlay.add_overlay (spinner);
 
-        if (package.has_generic_icon) {
+        if (package.uses_generic_icon) {
             backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                 if (package.origin_description == remote_title) {
                     spinner.visible = false;

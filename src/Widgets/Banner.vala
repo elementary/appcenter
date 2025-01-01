@@ -32,7 +32,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public string description { get; construct; }
     public string app_name { get; construct; }
     public string summary { get; construct; }
-    public bool has_generic_icon { get; construct set; }
+    public bool uses_generic_icon { get; construct set; }
 
     private Gtk.Spinner spinner;
     private Gtk.Image icon_image;
@@ -44,7 +44,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             description: description,
             icon: icon,
             brand_color: brand_color,
-            has_generic_icon: false
+            uses_generic_icon: false
         );
     }
 
@@ -66,7 +66,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             description: package.get_description (),
             icon: pkg_icon,
             brand_color: package.get_color_primary (),
-            has_generic_icon: package.has_generic_icon
+            uses_generic_icon: package.uses_generic_icon
         );
     }
 
@@ -104,7 +104,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             valign = Gtk.Align.CENTER,
             width_request = 80,
             height_request = 104,
-            visible = has_generic_icon
+            visible = uses_generic_icon
         };
         spinner.start ();
         spinner.add_css_class ("spinner");
@@ -158,7 +158,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     }
 
     public void update_icon (Icon icon) {
-        has_generic_icon = false;
+        uses_generic_icon = false;
         spinner.visible = false;
         icon_image.clear ();
         icon_image.set_from_gicon (icon);
