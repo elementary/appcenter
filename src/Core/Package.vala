@@ -736,7 +736,7 @@ public class AppCenterCore.Package : Object {
                 if (msg.status_code == 200 && content_type != null && content_type.contains ("image")) {
                     file = File.new_for_uri (remote_icon.get_url ());
                 } else {
-                    warning ("Could not load remote_icon %s: Bad status, url or not an image", url);
+                    warning ("Could not load remote_icon %s: Status error, bad url, or not an image", url);
                 }
                 session.abort ();
             } catch (Error e) {
