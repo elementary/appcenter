@@ -32,29 +32,34 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public string description { get; construct; }
     public string app_name { get; construct; }
     public string summary { get; construct; }
+    public bool has_generic_icon { get; construct set; }
 
-    public Gtk.Box main_box { get; construct; }
+    private Gtk.Spinner spinner;
+    private Gtk.Image icon_image;
 
     public Banner (string name, string summary, string description, Icon icon, string brand_color) {
         Object (
-            brand_color: brand_color,
+            app_name: name,
+            summary: summary,
             description: description,
             icon: icon,
-            app_name: name,
-            summary: summary
+            brand_color: brand_color,
+            has_generic_icon: false
         );
     }
 
     public Banner.from_package (AppCenterCore.Package package) {
         // Can't get widget scale factor before it's realized
         var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+        var pkg_icon = package.get_icon (128, scale_factor);
 
         Object (
             app_name: package.get_name (),
             summary: package.get_summary (),
             description: package.get_description (),
-            icon: package.get_icon (128, scale_factor),
-            brand_color: package.get_color_primary ()
+            icon: pkg_icon,
+            brand_color: package.get_color_primary (),
+            has_generic_icon: package.has_generic_icon
         );
     }
 
@@ -86,7 +91,23 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         };
         description_label.add_css_class ("description");
 
-        var icon_image = new Gtk.Image.from_gicon (icon);
+        spinner = new Gtk.Spinner () {
+            margin_top = 6,
+            halign = Gtk.Align.FILL,
+            valign = Gtk.Align.CENTER,
+            width_request = 80,
+            height_request = 104,
+            visible = has_generic_icon
+        };
+        spinner.start ();
+        spinner.add_css_class ("spinner");
+
+        icon_image = new Gtk.Image.from_gicon (icon);
+        icon_image.add_css_class ("icon_image");
+        var image_overlay = new Gtk.Overlay () {
+            child = icon_image,
+        };
+        image_overlay.add_overlay (spinner);
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {
             valign = CENTER
@@ -98,18 +119,15 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var outer_box = new Gtk.Box (HORIZONTAL, 24) {
             halign = CENTER
         };
-        outer_box.append (icon_image);
+        outer_box.append (image_overlay);
         outer_box.append (inner_box);
-
-        main_box = new Gtk.Box (VERTICAL, 0);
-        main_box.append (outer_box);
 
         add_css_class ("banner");
         add_css_class (Granite.STYLE_CLASS_CARD);
         add_css_class (Granite.STYLE_CLASS_ROUNDED);
 
         hexpand = true;
-        child = main_box;
+        child = outer_box;
 
         var provider = new Gtk.CssProvider ();
         try {
@@ -130,5 +148,12 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
         }
+    }
+
+    public void update_icon (Icon icon) {
+        has_generic_icon = false;
+        spinner.visible = false;
+        icon_image.clear ();
+        icon_image.set_from_gicon (icon);
     }
 }

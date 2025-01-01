@@ -107,6 +107,7 @@ public class AppCenterCore.Package : Object {
     public ChangeInformation change_information { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
+    public bool has_generic_icon { public get; private set; }
 
     public double progress {
         get {
@@ -661,6 +662,7 @@ public class AppCenterCore.Package : Object {
         AppStream.Icon? local_icon = null;
         AppStream.Icon? remote_icon = null;
 
+        has_generic_icon = false;
         unowned var all_icons = component.get_icons ();
         foreach (var icon in all_icons) {
             switch (icon.get_kind ()) {
@@ -742,14 +744,11 @@ public class AppCenterCore.Package : Object {
             }
         }
 
-        try {
-            if (file != null) {
-                return new FileIcon (file);
-            }
-        } catch (Error e) {
-            warning ("Could not load icon file: %s", e.message);
+        if (file != null && file.query_exists ()) {
+            return new FileIcon (file);
         }
 
+        has_generic_icon = true;
         switch (component.get_kind ()) {
             case AppStream.ComponentKind.ADDON:
                 return new ThemedIcon ("extension");

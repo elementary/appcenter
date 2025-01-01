@@ -67,7 +67,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     construct {
-        AppCenterCore.FlatpakBackend.get_default ().cache_flush_needed.connect (() => {
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
+        backend.cache_flush_needed.connect (() => {
             to_recycle = true;
         });
 
@@ -181,6 +182,28 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 badge_image.icon_name = "system-software-update";
                 app_icon_overlay.add_overlay (badge_image);
             }
+        }
+
+        var spinner = new Gtk.Spinner () {
+            margin_top = 6,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER,
+            width_request = 104,
+            height_request = 104,
+            visible = package.has_generic_icon
+        };
+        spinner.start ();
+        spinner.add_css_class ("spinner");
+        app_icon_overlay.add_overlay (spinner);
+
+        if (package.has_generic_icon) {
+            backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
+                if (package.origin_description == remote_title) {
+                    spinner.visible = false;
+                    app_icon.clear ();
+                    app_icon.set_from_gicon (package.get_icon (128, scale_factor));
+                }
+            });
         }
 
         var app_title = new Gtk.Label (package.get_name ()) {

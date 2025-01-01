@@ -285,36 +285,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 new ThemedIcon ("io.elementary.appcenter"),
                 "#7239b3"
             );
-            var spinner = new Gtk.Spinner () {
-                height_request = 28,
-                width_request = 28,
-            };
-            spinner.start ();
-            var latest_featured_apps = new Gtk.Label (_("Getting Latest Apps"));
-            latest_featured_apps.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-            latest_featured_apps.add_css_class ("latest_apps_message");
-            var featured_apps_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8) {
-                halign = Gtk.Align.CENTER,
-            };
-            featured_apps_box.append (spinner);
-            featured_apps_box.append (latest_featured_apps);
-            featured_apps_msg_revealer = new Gtk.Revealer () {
-                child = featured_apps_box,
-                reveal_child = true,
-                vexpand = false,
-            };
-            appcenter_banner.main_box.append (featured_apps_msg_revealer);
             banner_carousel.append (appcenter_banner);
         }
 
-        var backend = AppCenterCore.FlatpakBackend.get_default ();
-        if (backend.is_cache_refresh_needed ()) {
-            backend.on_metadata_preprocessed.connect (() => {
-                load_banners_and_carousels (backend);
-            });
-        } else {
-            load_banners_and_carousels (backend);
-        }
+        load_banners_and_carousels ();
 
         category_flow.child_activated.connect ((child) => {
             var card = (AbstractCategoryCard) child;
@@ -337,7 +311,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         });
     }
 
-    private void load_banners_and_carousels (AppCenterCore.FlatpakBackend backend) {
+    private void load_banners_and_carousels () {
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
         featured_apps_msg_revealer.reveal_child = false;
 
         var packages_by_release_date = backend.get_featured_packages_by_release_date ();
@@ -351,7 +326,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
-                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
+                    if (backend.is_package_installed (origin_package)) {
                         installed = true;
                         break;
                     }
@@ -367,6 +342,15 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 banner.clicked.connect (() => {
                     show_package (package);
                 });
+
+                if (package.has_generic_icon) {
+                    backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
+                        if (remote_title == package.origin_description) {
+                            var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+                            banner.update_icon (package.get_icon (128, scale_factor));
+                        }
+                    });
+                }
 
                 banner_carousel.append (banner);
             }
@@ -386,7 +370,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
-                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
+                    if (backend.is_package_installed (origin_package)) {
                         installed = true;
                         break;
                     }
@@ -397,6 +381,14 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                if (package.has_generic_icon) {
+                    backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
+                        if (remote_title == package.origin_description) {
+                            var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+                            package_row.update_icon (package.get_icon (128, scale_factor));
+                        }
+                    });
+                }
                 recently_updated_carousel.append (package_row);
             }
         }
@@ -404,7 +396,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         banner_carousel.remove (appcenter_banner);
         banner_carousel.scroll_to (banner_carousel.get_nth_page (0), false);
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
-        
+
         banner_timeout_start ();
         banner_motion_controller.enter.connect (banner_timeout_stop);
         banner_motion_controller.leave.connect (banner_timeout_start);
