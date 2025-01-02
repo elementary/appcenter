@@ -683,7 +683,7 @@ public class AppCenterCore.Package : Object {
                     bool has_better_dpi = icon_width == cached_current_size
                         && cached_current_scale < icon_scale
                         && scale_factor <= icon_scale;
-                    
+
                     if (is_bigger || has_better_dpi) {
                         cached_icon = icon;
                         cached_current_size = icon_width;
