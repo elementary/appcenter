@@ -34,8 +34,8 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public string summary { get; construct; }
     public bool uses_generic_icon { get; construct set; }
 
-    private Gtk.Spinner spinner;
-    private Gtk.Image icon_image;
+    private Gtk.Stack image_stack;
+    private Gtk.Image updated_icon_image;
 
     public Banner (string name, string summary, string description, Icon icon, string brand_color) {
         Object (
@@ -98,23 +98,16 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         };
         description_label.add_css_class ("description");
 
-        spinner = new Gtk.Spinner () {
-            margin_top = 6,
-            halign = Gtk.Align.FILL,
-            valign = Gtk.Align.CENTER,
-            width_request = 80,
-            height_request = 104,
-            visible = uses_generic_icon
+        var icon_image = new Gtk.Image.from_gicon (icon);
+        if (uses_generic_icon) {
+            icon_image.add_css_class ("icon-dim");
+        }
+        updated_icon_image = new Gtk.Image.from_gicon (icon);
+        image_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE,
         };
-        spinner.start ();
-        spinner.add_css_class ("spinner");
-
-        icon_image = new Gtk.Image.from_gicon (icon);
-        icon_image.add_css_class ("icon_image");
-        var image_overlay = new Gtk.Overlay () {
-            child = icon_image,
-        };
-        image_overlay.add_overlay (spinner);
+        image_stack.add_named (icon_image, "base_icon");
+        image_stack.add_named (updated_icon_image, "updated_icon");
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {
             valign = CENTER
@@ -126,7 +119,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var outer_box = new Gtk.Box (HORIZONTAL, 24) {
             halign = CENTER
         };
-        outer_box.append (image_overlay);
+        outer_box.append (image_stack);
         outer_box.append (inner_box);
 
         add_css_class ("banner");
@@ -159,8 +152,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
 
     public void update_icon (Icon icon) {
         uses_generic_icon = false;
-        spinner.visible = false;
-        icon_image.clear ();
-        icon_image.set_from_gicon (icon);
+        updated_icon_image.set_from_gicon (icon);
+        image_stack.visible_child_name = "updated_icon";
     }
 }

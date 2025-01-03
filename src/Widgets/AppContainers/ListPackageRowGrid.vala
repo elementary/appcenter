@@ -19,7 +19,6 @@
 
 public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     private Gtk.Label package_summary;
-    private Gtk.Spinner spinner;
 
     public ListPackageRowGrid (AppCenterCore.Package package) {
         Object (package: package);
@@ -57,32 +56,11 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             row_spacing = 3
         };
 
-        spinner = new Gtk.Spinner () {
-            margin_top = 1,
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER,
-            width_request = 40,
-            height_request = 40,
-            visible = package.uses_generic_icon && package.icon_available
-        };
-        spinner.start ();
-        spinner.add_css_class ("spinner-small");
-        app_icon_overlay.add_overlay (spinner);
-
         grid.attach (app_icon_overlay, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);
 
         append (grid);
-    }
-
-    public void update_icon (Icon icon) {
-        spinner.visible = false;
-        Gtk.Image icon_image = app_icon_overlay.child as Gtk.Image;
-        if (icon_image != null) {
-            icon_image.clear ();
-            icon_image.set_from_gicon (icon);
-        }
     }
 }

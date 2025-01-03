@@ -155,6 +155,9 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         var app_icon = new Gtk.Image () {
             pixel_size = 128
         };
+        var app_icon_updated = new Gtk.Image () {
+            pixel_size = 128
+        };
 
         var badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,
@@ -162,8 +165,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             pixel_size = 64
         };
 
+        var app_icon_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        app_icon_stack.add_named (app_icon, "base_icon");
+        app_icon_stack.add_named (app_icon_updated, "updated_icon");
+
         var app_icon_overlay = new Gtk.Overlay () {
-            child = app_icon,
+            child = app_icon_stack,
             valign = Gtk.Align.START
         };
 
@@ -184,24 +193,12 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             }
         }
 
-        var spinner = new Gtk.Spinner () {
-            margin_top = 6,
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER,
-            width_request = 104,
-            height_request = 104,
-            visible = package.uses_generic_icon && package.icon_available
-        };
-        spinner.start ();
-        spinner.add_css_class ("spinner");
-        app_icon_overlay.add_overlay (spinner);
-
-        if (package.uses_generic_icon) {
+        if (package.uses_generic_icon && package.icon_available) {
+            app_icon.add_css_class ("icon-dim");
             backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                 if (package.origin_description == remote_title) {
-                    spinner.visible = false;
-                    app_icon.clear ();
-                    app_icon.set_from_gicon (package.get_icon (128, scale_factor));
+                    app_icon_updated.set_from_gicon (package.get_icon (128, scale_factor));
+                    app_icon_stack.visible_child_name = "updated_icon";
                 }
             });
         }

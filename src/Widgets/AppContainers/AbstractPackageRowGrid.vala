@@ -30,15 +30,27 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
     protected ActionStack action_stack;
     protected Gtk.Label package_name;
     protected Gtk.Overlay app_icon_overlay;
+    protected Gtk.Stack image_stack;
+    protected Gtk.Image updated_icon_image;
 
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (package: package);
     }
 
     construct {
-        var app_icon = new Gtk.Image () {
+        var icon_image = new Gtk.Image () {
             pixel_size = 48
         };
+
+        updated_icon_image = new Gtk.Image () {
+            pixel_size = 48
+        };
+
+        image_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        image_stack.add_named (icon_image, "base_icon");
+        image_stack.add_named (updated_icon_image, "updated_icon");
 
         var badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,
@@ -47,7 +59,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
         };
 
         app_icon_overlay = new Gtk.Overlay () {
-            child = app_icon
+            child = image_stack
         };
 
         action_stack = new ActionStack (package) {
@@ -58,12 +70,14 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
 
         var plugin_host_package = package.get_plugin_host_package ();
         if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
-            app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
+            icon_image.gicon = plugin_host_package.get_icon (icon_image.pixel_size, scale_factor);
+            updated_icon_image.gicon = plugin_host_package.get_icon (updated_icon_image.pixel_size, scale_factor);
             badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
 
             app_icon_overlay.add_overlay (badge_image);
         } else {
-            app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
+            icon_image.gicon = package.get_icon (icon_image.pixel_size, scale_factor);
+            updated_icon_image.gicon = package.get_icon (updated_icon_image.pixel_size, scale_factor);
 
             if (package.is_runtime_updates) {
                 badge_image.icon_name = "system-software-update";
@@ -71,9 +85,19 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
             }
         }
 
+        if (package.uses_generic_icon && package.icon_available) {
+            icon_image.add_css_class ("icon-dim");
+        }
+
         margin_top = 6;
         margin_start = 12;
         margin_bottom = 6;
         margin_end = 12;
+    }
+
+    public void update_icon (Icon icon) {
+        updated_icon_image.clear ();
+        updated_icon_image.set_from_gicon (icon);
+        image_stack.visible_child_name = "updated_icon";
     }
 }

@@ -339,7 +339,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                     show_package (package);
                 });
 
-                if (package.uses_generic_icon) {
+                if (package.uses_generic_icon && package.icon_available) {
                     backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                         if (remote_title == package.origin_description) {
                             banner.update_icon (package.get_icon (128, get_app_scale_factor ()));
@@ -376,7 +376,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
-                if (package.uses_generic_icon) {
+                if (package.uses_generic_icon && package.icon_available) {
                     backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                         if (remote_title == package.origin_description) {
                             package_row.update_icon (package.get_icon (128, get_app_scale_factor ()));
