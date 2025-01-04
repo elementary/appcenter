@@ -49,8 +49,8 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
         image_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
-        image_stack.add_named (icon_image, "base_icon");
-        image_stack.add_named (updated_icon_image, "updated_icon");
+        image_stack.add_child (icon_image);
+        image_stack.add_child (updated_icon_image);
 
         var badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,
@@ -98,6 +98,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
     public void update_icon (Icon icon) {
         updated_icon_image.clear ();
         updated_icon_image.set_from_gicon (icon);
-        image_stack.visible_child_name = "updated_icon";
+        image_stack.visible_child = updated_icon_image;
     }
 }

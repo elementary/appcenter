@@ -168,8 +168,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         var app_icon_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
-        app_icon_stack.add_named (app_icon, "base_icon");
-        app_icon_stack.add_named (app_icon_updated, "updated_icon");
+        app_icon_stack.add_child (app_icon);
+        app_icon_stack.add_child (app_icon_updated);
 
         var app_icon_overlay = new Gtk.Overlay () {
             child = app_icon_stack,
@@ -198,7 +198,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                 if (package.origin_description == remote_title) {
                     app_icon_updated.set_from_gicon (package.get_icon (128, scale_factor));
-                    app_icon_stack.visible_child_name = "updated_icon";
+                    app_icon_stack.visible_child = app_icon_updated;
                 }
             });
         }

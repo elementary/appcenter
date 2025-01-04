@@ -106,8 +106,8 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         image_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE,
         };
-        image_stack.add_named (icon_image, "base_icon");
-        image_stack.add_named (updated_icon_image, "updated_icon");
+        image_stack.add_child (icon_image);
+        image_stack.add_child (updated_icon_image);
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {
             valign = CENTER
@@ -153,6 +153,6 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public void update_icon (Icon icon) {
         uses_generic_icon = false;
         updated_icon_image.set_from_gicon (icon);
-        image_stack.visible_child_name = "updated_icon";
+        image_stack.visible_child = updated_icon_image;
     }
 }
