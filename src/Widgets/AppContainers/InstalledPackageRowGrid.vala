@@ -144,8 +144,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
             var releases_title = new Gtk.Label (title) {
                 selectable = true,
-                width_chars = 20,
-                wrap = true
+                halign = Gtk.Align.CENTER
             };
             releases_title.add_css_class ("primary");
 
@@ -156,10 +155,16 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                 margin_start = 12,
                 vexpand = true
             };
-            releases_dialog_box.append (releases_title);
             releases_dialog_box.append (release_row);
 
-            get_content_area ().append (releases_dialog_box);
+            var release_scrolled_window = new Gtk.ScrolledWindow () {
+                child = releases_dialog_box,
+                width_request = 400,
+                height_request = 320,
+                valign = Gtk.Align.FILL
+            };
+            get_content_area ().append (releases_title);
+            get_content_area ().append (release_scrolled_window);
 
             add_button (_("Close"), Gtk.ResponseType.CLOSE);
 
