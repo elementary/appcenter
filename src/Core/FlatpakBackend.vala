@@ -241,6 +241,29 @@ public class AppCenterCore.FlatpakBackend : Object {
             "system"
         );
 
+        GLib.GenericArray<weak Flatpak.Remote> remotes = null;
+        var user_file = File.new_for_path (user_metadata_path);
+        if (user_installation != null && !user_file.query_exists ()) {
+            try {
+                user_installation.drop_caches ();
+                remotes = user_installation.list_remotes ();
+                preprocess_metadata (false, remotes, null);
+            } catch (Error e) {
+                critical ("Error getting user flatpak remotes: %s", e.message);
+            }
+        }
+
+        var system_file = File.new_for_path (system_metadata_path);
+        if (system_installation != null && !system_file.query_exists ()) {
+            try {
+                system_installation.drop_caches ();
+                remotes = system_installation.list_remotes ();
+                preprocess_metadata (true, remotes, null);
+            } catch (Error e) {
+                warning ("Error getting system flatpak remotes: %s", e.message);
+            }
+        }
+
         reload_appstream_pool ();
     }
 
