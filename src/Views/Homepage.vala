@@ -33,7 +33,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
 
-    private Gtk.Button return_button;
+    private Gtk.EventControllerMotion banner_motion_controller;
+
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
 
@@ -48,7 +49,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         hexpand = true;
         vexpand = true;
 
-        var banner_motion_controller = new Gtk.EventControllerMotion ();
+        banner_motion_controller = new Gtk.EventControllerMotion ();
 
         banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true
@@ -79,7 +80,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         recently_updated_grid.attach (recently_updated_carousel, 0, 1);
 
         recently_updated_revealer = new Gtk.Revealer () {
-            child = recently_updated_grid
+            child = recently_updated_grid,
+            reveal_child = false
         };
 
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
@@ -250,7 +252,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         var headerbar = new Gtk.HeaderBar () {
             show_title_buttons = true
         };
-        headerbar.pack_start (return_button);
         if (!Utils.is_running_in_guest_session ()) {
             headerbar.pack_end (updates_overlay);
         }
@@ -282,16 +283,9 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 "#7239b3"
             );
             banner_carousel.append (appcenter_banner);
-
-            banner_carousel.page_changed.connect (page_changed_handler);
         }
 
-        load_banners_and_carousels.begin ((obj, res) => {
-            load_banners_and_carousels.end (res);
-            banner_timeout_start ();
-            banner_motion_controller.enter.connect (banner_timeout_stop);
-            banner_motion_controller.leave.connect (banner_timeout_start);
-        });
+        load_banners_and_carousels ();
 
         category_flow.child_activated.connect ((child) => {
             var card = (AbstractCategoryCard) child;
@@ -314,14 +308,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         });
     }
 
-    private void page_changed_handler () {
-        banner_carousel.remove (appcenter_banner);
-        banner_carousel.page_changed.disconnect (page_changed_handler);
-    }
+    private void load_banners_and_carousels () {
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
 
-    private async void load_banners_and_carousels () {
-        unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
-        var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
+        var packages_by_release_date = backend.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
         foreach (var package in packages_by_release_date) {
@@ -332,7 +322,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
-                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
+                    if (backend.is_package_installed (origin_package)) {
                         installed = true;
                         break;
                     }
@@ -348,6 +338,14 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 banner.clicked.connect (() => {
                     show_package (package);
                 });
+
+                if (package.uses_generic_icon && package.icon_available) {
+                    backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
+                        if (remote_title == package.origin_description) {
+                            banner.update_icon (package.get_icon (128, get_app_scale_factor ()));
+                        }
+                    });
+                }
 
                 banner_carousel.append (banner);
             }
@@ -367,7 +365,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
                 try {
-                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
+                    if (backend.is_package_installed (origin_package)) {
                         installed = true;
                         break;
                     }
@@ -378,11 +376,24 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             if (!installed) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                if (package.uses_generic_icon && package.icon_available) {
+                    backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
+                        if (remote_title == package.origin_description) {
+                            package_row.update_icon (package.get_icon (128, get_app_scale_factor ()));
+                        }
+                    });
+                }
                 recently_updated_carousel.append (package_row);
             }
         }
 
+        banner_carousel.remove (appcenter_banner);
+        banner_carousel.scroll_to (banner_carousel.get_nth_page (0), false);
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_first_child () != null;
+
+        banner_timeout_start ();
+        banner_motion_controller.enter.connect (banner_timeout_stop);
+        banner_motion_controller.leave.connect (banner_timeout_start);
     }
 
     private void banner_timeout_start () {
@@ -426,6 +437,18 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             return GLib.Source.REMOVE;
         });
+    }
+
+    private int get_app_scale_factor () {
+        var scale_factor = 1;
+        var app = ((Gtk.Application) Application.get_default ());
+        if (app != null) {
+            if (app.active_window != null) {
+                scale_factor = app.active_window.get_scale_factor ();
+            }
+        }
+
+        return scale_factor;
     }
 
     private abstract class AbstractCategoryCard : Gtk.FlowBoxChild {

@@ -32,44 +32,54 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public string description { get; construct; }
     public string app_name { get; construct; }
     public string summary { get; construct; }
+    public bool uses_generic_icon { get; construct set; }
+
+    private Gtk.Stack image_stack;
+    private Gtk.Image updated_icon_image;
 
     public Banner (string name, string summary, string description, Icon icon, string brand_color) {
         Object (
-            brand_color: brand_color,
+            app_name: name,
+            summary: summary,
             description: description,
             icon: icon,
-            app_name: name,
-            summary: summary
+            brand_color: brand_color,
+            uses_generic_icon: false
         );
     }
 
     public Banner.from_package (AppCenterCore.Package package) {
         // Can't get widget scale factor before it's realized
-        var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+        var scale_factor = 1;
+        var app = ((Gtk.Application) Application.get_default ());
+        if (app != null) {
+            if (app.active_window != null) {
+                scale_factor = app.active_window.get_scale_factor ();
+            }
+        }
+
+        var pkg_icon = package.get_icon (128, scale_factor);
 
         Object (
-            name: package.get_name (),
+            app_name: package.get_name (),
             summary: package.get_summary (),
             description: package.get_description (),
-            icon: package.get_icon (128, scale_factor),
-            brand_color: package.get_color_primary ()
+            icon: pkg_icon,
+            brand_color: package.get_color_primary (),
+            uses_generic_icon: package.uses_generic_icon && package.icon_available
         );
     }
 
 
     construct {
         var name_label = new Gtk.Label (app_name) {
-            max_width_chars = 50,
             use_markup = true,
-            wrap = true,
             xalign = 0
         };
         name_label.add_css_class ("name");
 
         var summary_label = new Gtk.Label (summary) {
-            max_width_chars = 50,
             use_markup = true,
-            wrap = true,
             xalign = 0
         };
         summary_label.add_css_class ("summary");
@@ -82,7 +92,6 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var description_label = new Gtk.Label (description) {
             ellipsize = Pango.EllipsizeMode.END,
             lines = 2,
-            max_width_chars = 50,
             use_markup = true,
             wrap = true,
             xalign = 0
@@ -90,6 +99,15 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         description_label.add_css_class ("description");
 
         var icon_image = new Gtk.Image.from_gicon (icon);
+        if (uses_generic_icon) {
+            icon_image.add_css_class ("icon-dim");
+        }
+        updated_icon_image = new Gtk.Image.from_gicon (icon);
+        image_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE,
+        };
+        image_stack.add_child (icon_image);
+        image_stack.add_child (updated_icon_image);
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {
             valign = CENTER
@@ -98,10 +116,10 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         inner_box.append (summary_label);
         inner_box.append (description_label);
 
-        var outer_box = new Gtk.Box (HORIZONTAL, 0) {
+        var outer_box = new Gtk.Box (HORIZONTAL, 24) {
             halign = CENTER
         };
-        outer_box.append (icon_image);
+        outer_box.append (image_stack);
         outer_box.append (inner_box);
 
         add_css_class ("banner");
@@ -130,5 +148,11 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
         }
+    }
+
+    public void update_icon (Icon icon) {
+        uses_generic_icon = false;
+        updated_icon_image.set_from_gicon (icon);
+        image_stack.visible_child = updated_icon_image;
     }
 }
