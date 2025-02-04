@@ -1,12 +1,12 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Alaksiej Kaśpiarovič <aleksyzakupy@gmail.com>, 2023.
-# lenify <lenify@tutanota.com>, 2024.
+# lenify <lenify@tutanota.com>, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2024-11-28 06:16+0000\n"
+"PO-Revision-Date: 2025-01-13 11:16+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/be/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -159,17 +159,19 @@ msgstr "Распрацоўшчыкі %s"
 #: src/Core/Package.vala:506
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Стан праграмы ў AppCenter не з'яўляецца \"усталяваны\" для пакета: %s"
 
 #: src/Core/Stripe.vala:27
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"У час апрацоўкі карткі паўстала памылка. Калі ласка, паспрабуйце яшчэ раз "
+"пазней. Выбачайце за аніякія няёмкасці."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Калі ласка, праверце плацежную інфармацыю і паспрабуйце ізноў."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
