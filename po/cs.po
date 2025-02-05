@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-12-05 13:16+0000\n"
 "Last-Translator: Marek Hladík <mhladik@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
@@ -43,7 +43,7 @@ msgstr "Nedaří se rozpoznat typ média %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Uvedený odkaz „%s“ nebyl nalezen, náhradně tedy bude hledáno"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -51,11 +51,11 @@ msgstr ""
 "AppCenter se automaticky spustí po zapnutí tohoto zařízení a spustí se po "
 "zavření jeho okna, aby mohl automaticky kontrolovat a instalovat aktualizace."
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "Aplikace byla nainstalována"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ bylo nainstalováno"
@@ -131,6 +131,11 @@ msgstr "Odebírání"
 msgid "Updating"
 msgstr "Aktualizování"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (lokální)"
+
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "Získávání informací o aplikaci…"
@@ -164,7 +169,7 @@ msgstr "Opravování…"
 msgid "%s Developers"
 msgstr "Vývojáři %s"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -504,7 +509,7 @@ msgid "Refresh Updates"
 msgstr "Obnova aktualizací"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -748,11 +753,11 @@ msgstr "Přístup k nastavením systému"
 msgid "Can read and modify system settings"
 msgstr "Může číst a upravit nastavení systému"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Hledají se aktualizace"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 #, fuzzy
 #| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
@@ -760,41 +765,41 @@ msgstr ""
 "Stahování seznamu aktualizací, které jsou k dispozici pro operační systém a "
 "nainstalované aplikace"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Aktualizovat vše"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "Aktuální"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 #, fuzzy
 #| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Automaticky aktualizovat volné a placené dohlížené aplikace"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr "Systém a neplacené aplikace se nebudou aktualizovat automaticky"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
 msgstr "Vyhledat aktualizace"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 msgid "Settings"
 msgstr "Nastavení"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainstalované"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -802,7 +807,7 @@ msgstr[0] "%u dostupná aktualizace"
 msgstr[1] "%u dostupné aktualizace"
 msgstr[2] "%u dostupných aktualizací"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Vše je aktuální. Poslední kontrola %s."
@@ -1057,19 +1062,19 @@ msgstr "Neznámá licence"
 msgid "Payment provided by Stripe"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr "Opravené chyby"
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 msgid "Unknown date"
 msgstr "Neznámý datum"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "Neznámá verze"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "Není k dispozici žádný popis"
 
@@ -1091,12 +1096,12 @@ msgstr "Až po %s"
 msgid "Release notes"
 msgstr "Poznámky k vydání"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr "Co je nového v %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "Zavřít"
 
@@ -1247,10 +1252,6 @@ msgstr "Zavřít"
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "Ovladače z Ubuntu"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (lokální)"
 
 #~ msgid "Drivers"
 #~ msgstr "Ovladače"
