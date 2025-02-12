@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -32,7 +32,7 @@ msgstr "Kunne ikke tolke MIME-type %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Fant ikke oppgitt lenke «%s», søker istedenfor"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 #, fuzzy
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
@@ -42,11 +42,11 @@ msgstr ""
 "dens lukkes, slik at den automatisk kan lete etter og installere nye "
 "oppgraderinger."
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "Programmet har blitt installert"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ble installert"
@@ -122,6 +122,11 @@ msgstr "Avinstaller"
 msgid "Updating"
 msgstr "Oppdaterer"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (lokal)"
+
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "Henter programinfo …"
@@ -155,7 +160,7 @@ msgstr "Reparerer …"
 msgid "%s Developers"
 msgstr "%s-utviklerne"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, fuzzy, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
@@ -484,7 +489,7 @@ msgid "Refresh Updates"
 msgstr "Gjenoppfrisk oppgraderinger"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -734,13 +739,13 @@ msgstr "Systeminnstillingstilgang"
 msgid "Can read and modify system settings"
 msgstr "Kan lese og endre systeminnstillinger"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Ser etter oppgraderinger …"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 #, fuzzy
 #| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
@@ -748,48 +753,48 @@ msgstr ""
 "Laster ned en liste over tilgjengelige oppdateringer til OS-et og "
 "installerte programmer"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Oppdater alt"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "Oppdatert"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 #, fuzzy
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Oppgrader vurderte programmer om de er gratis eller betalte"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Systemoppgraderinger og ubetalte programmer vil ikke oppgraderes automatisk"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
 msgstr "Se etter oppgraderinger"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 msgid "Settings"
 msgstr "Innstillinger"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u oppdatering tilgjengelig"
 msgstr[1] "%u oppdateringer tilgjengelig"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Alt er av nyeste dato. Sist sjekket %s."
@@ -1054,19 +1059,19 @@ msgstr "Ukjent lisens"
 msgid "Payment provided by Stripe"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr "Fiksede problemer"
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 msgid "Unknown date"
 msgstr "Ukjent dato"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "Ukjent versjon"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "Ingen beskrivelse tilgjengelig"
 
@@ -1089,12 +1094,12 @@ msgstr "Opptil %s"
 msgid "Release notes"
 msgstr "Utgivelsesnotater"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr "Nyheter i %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "Lukk"
 
@@ -1245,10 +1250,6 @@ msgstr "Lukk"
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "Drivere fra Ubuntu"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (lokal)"
 
 #~ msgid "Drivers"
 #~ msgstr "Drivere"

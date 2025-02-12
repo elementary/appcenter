@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-10-22 06:39+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
@@ -40,7 +40,7 @@ msgstr "Не удалось распознать тип данных %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Cсылка «%s» не найдена, вместо этого выполняется поиск"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -49,11 +49,11 @@ msgstr ""
 "работать после закрытия окна для автоматической проверки и установки "
 "обновлений."
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "Приложение установлено"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» установлено"
@@ -130,6 +130,11 @@ msgstr "Удаление"
 msgid "Updating"
 msgstr "Обновление"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (локальный)"
+
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "Получение информации о приложении…"
@@ -163,7 +168,7 @@ msgstr "Починка…"
 msgid "%s Developers"
 msgstr "Разработчики %s"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -500,7 +505,7 @@ msgid "Refresh Updates"
 msgstr "Проверить обновления"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 msgctxt "action"
 msgid "Search"
@@ -746,45 +751,45 @@ msgstr "Доступ к системным настройкам"
 msgid "Can read and modify system settings"
 msgstr "Может читать и изменять системные настройки"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Проверка обновлений"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 msgid "Downloading a list of available updates to the installed apps"
 msgstr "Загрузка списка доступных обновлений для приложений"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "Обновления не требуются"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Автоматически обновлять бесплатные и приобретённые приложения"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 msgid "Apps being tried for free will not update automatically"
 msgstr "Приложения, испытываемые бесплатно, не будут обновляться автоматически"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 msgid "Settings"
 msgstr "Параметры"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -792,7 +797,7 @@ msgstr[0] "Доступно %u обновление"
 msgstr[1] "Доступно %u обновления"
 msgstr[2] "Доступно %u обновлений"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Всё обновлено. Последняя проверка: %s."
@@ -1052,19 +1057,19 @@ msgstr "Неизвестная лицензия"
 msgid "Payment provided by Stripe"
 msgstr "Оплата осуществляется через Stripe"
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr "Исправленные проблемы"
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 msgid "Unknown date"
 msgstr "Неизвестная дата"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "Неизвестная версия"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "Нет описания"
 
@@ -1085,12 +1090,12 @@ msgstr "До %s"
 msgid "Release notes"
 msgstr "Примечания к выпуску"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr "Что нового в %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "Закрыть"
 
@@ -1241,10 +1246,6 @@ msgstr "Закрыть"
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "Драйверы Ubuntu"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (локальный)"
 
 #~ msgid "Drivers"
 #~ msgstr "Драйверы"
