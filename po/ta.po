@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -32,18 +32,18 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 #, fuzzy
 msgid "The app has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
@@ -125,6 +125,11 @@ msgstr "நீக்குதல்"
 msgid "Updating"
 msgstr "புதுப்பிக்கவும்"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr ""
+
 #: src/Core/Job.vala:48
 #, fuzzy
 #| msgid "Getting information"
@@ -168,7 +173,7 @@ msgstr ""
 msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -497,7 +502,7 @@ msgid "Refresh Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -733,59 +738,59 @@ msgstr ""
 msgid "Can read and modify system settings"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "அனைத்தையும் புதுப்பிக்கவும்"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "இது வரை புதுப்பிக்கப்பட்டுள்ளது"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "தொடங்குகிறது"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u மேம்படுத்தல் கிடைக்கின்றன"
 msgstr[1] "%u மேம்படுத்தல்கள் கிடைக்கின்றன"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -1053,22 +1058,22 @@ msgstr "தெரியாத நிலை"
 msgid "Payment provided by Stripe"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 #, fuzzy
 #| msgid "Unknown state"
 msgid "Unknown date"
 msgstr "தெரியாத நிலை"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 #, fuzzy
 msgid "Unknown version"
 msgstr "தெரியாத நிலை"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr ""
 
@@ -1089,12 +1094,12 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "மூடு"
 

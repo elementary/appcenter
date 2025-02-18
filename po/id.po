@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2023-06-03 20:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -40,17 +40,17 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "Tautan yang ditentukan '%s' tidak dapat ditemukan, cari sebagai gantinya"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "Aplikasi sudah terpasang"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" sudah terpasang"
@@ -126,6 +126,11 @@ msgstr "Mencopot pemasangan"
 msgid "Updating"
 msgstr "Memperbarui"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (lokal)"
+
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "Mendapatkan informasi aplikasi…"
@@ -159,7 +164,7 @@ msgstr "Memperbaiki…"
 msgid "%s Developers"
 msgstr "%s Pengembang"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -503,7 +508,7 @@ msgid "Refresh Updates"
 msgstr "Segarkan Pembaruan"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -749,32 +754,32 @@ msgstr "Akses Pengaturan Sistem"
 msgid "Can read and modify system settings"
 msgstr "Dapat membaca dan mengubah pengaturan sistem"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Memeriksa Pembaruan"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 #, fuzzy
 #| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
 "Mengunduh daftar pembaruan yang tersedia untuk OS dan aplikasi yang dipasang"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Perbarui Semua"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "Terbaru"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 #, fuzzy
 #| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Perbarui aplikasi gratis dan berbayar yang dikurasi secara otomatis"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
@@ -782,27 +787,27 @@ msgstr ""
 "Pembaruan sistem dan aplikasi tidak berbayar tidak akan diperbarui secara "
 "otomatis"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
 msgstr "Periksa Pembaruan"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 msgid "Settings"
 msgstr "Pengaturan"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "Terpasang"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u Pembaruan Tersedia"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Semuanya terbaru. Terakhir diperiksa %s."
@@ -1057,19 +1062,19 @@ msgstr "Lisensi Tidak Dikenal"
 msgid "Payment provided by Stripe"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr "Memperbaiki Masalah"
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 msgid "Unknown date"
 msgstr "Tanggal tidak diketahui"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "Versi tidak diketahui"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "Deskripsi tidak tersedia"
 
@@ -1092,12 +1097,12 @@ msgstr "Mencapai %s"
 msgid "Release notes"
 msgstr "Catatan rilis"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr "Apa yang Baru di %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "Tutup"
 
@@ -1248,10 +1253,6 @@ msgstr "Tutup"
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "Driver Ubuntu"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (lokal)"
 
 #~ msgid "Drivers"
 #~ msgstr "Driver"
