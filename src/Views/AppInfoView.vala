@@ -980,6 +980,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
                     foreach (unowned var release in releases) {
                         var release_row = new Widgets.ReleaseRow (release);
+                        release_row.add_css_class (Granite.STYLE_CLASS_CARD);
                         release_row.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
                         release_carousel.append (release_row);

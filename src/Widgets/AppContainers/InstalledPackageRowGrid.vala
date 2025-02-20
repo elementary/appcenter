@@ -143,17 +143,21 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             modal = true;
 
             var releases_title = new Gtk.Label (title) {
+                margin_end = 12,
+                margin_start = 12,
                 selectable = true,
                 width_chars = 20,
                 wrap = true
             };
             releases_title.add_css_class ("primary");
 
-            var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ());
+            var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ()) {
+                vexpand = true
+            };
+            release_row.add_css_class (Granite.STYLE_CLASS_FRAME);
+            release_row.add_css_class (Granite.STYLE_CLASS_VIEW);
 
             var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
-                margin_end = 12,
-                margin_start = 12,
                 vexpand = true
             };
             releases_dialog_box.append (releases_title);
