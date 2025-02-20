@@ -33,7 +33,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private Gtk.Revealer recently_updated_revealer;
     private Widgets.Banner appcenter_banner;
 
-    private Gtk.Button return_button;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
 
@@ -250,7 +249,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         var headerbar = new Gtk.HeaderBar () {
             show_title_buttons = true
         };
-        headerbar.pack_start (return_button);
+
         if (!Utils.is_running_in_guest_session ()) {
             headerbar.pack_end (updates_overlay);
         }
