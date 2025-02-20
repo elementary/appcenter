@@ -241,6 +241,29 @@ public class AppCenterCore.FlatpakBackend : Object {
             "system"
         );
 
+        GLib.GenericArray<weak Flatpak.Remote> remotes = null;
+        var user_file = File.new_for_path (user_metadata_path);
+        if (user_installation != null && !user_file.query_exists ()) {
+            try {
+                user_installation.drop_caches ();
+                remotes = user_installation.list_remotes ();
+                preprocess_metadata (false, remotes, null);
+            } catch (Error e) {
+                critical ("Error getting user flatpak remotes: %s", e.message);
+            }
+        }
+
+        var system_file = File.new_for_path (system_metadata_path);
+        if (system_installation != null && !system_file.query_exists ()) {
+            try {
+                system_installation.drop_caches ();
+                remotes = system_installation.list_remotes ();
+                preprocess_metadata (true, remotes, null);
+            } catch (Error e) {
+                warning ("Error getting system flatpak remotes: %s", e.message);
+            }
+        }
+
         reload_appstream_pool ();
     }
 
@@ -1946,6 +1969,41 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         return job.result.get_boolean ();
+    }
+
+    public Package? add_local_component_file (File file) throws Error {
+        var metadata = new AppStream.Metadata ();
+        try {
+            metadata.parse_file (file, AppStream.FormatKind.XML);
+        } catch (Error e) {
+            throw e;
+        }
+
+        var component = metadata.get_component ();
+        if (component == null) {
+            return null;
+        }
+
+        string name = _("%s (local)").printf (component.get_name ());
+        string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
+
+        component.set_name (name, null);
+        component.set_id (id);
+        component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
+
+        var component_box = new AppStream.ComponentBox.simple ();
+        try {
+            component_box.add (component);
+        } catch (Error e) {
+            throw e;
+        }
+
+        user_appstream_pool.add_components (component_box);
+
+        var package = new AppCenterCore.FlatpakPackage (user_installation, component);
+        package_list[id] = package;
+
+        return package;
     }
 
     private static GLib.Once<FlatpakBackend> instance;
