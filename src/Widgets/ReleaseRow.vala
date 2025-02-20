@@ -37,7 +37,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         header_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var date_label = new Gtk.Label (format_date (release.get_timestamp ())) {
-            halign = Gtk.Align.START,
+            halign = END,
             hexpand = true
         };
         date_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
@@ -49,32 +49,21 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             wrap = true,
             xalign = 0
         };
-        description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var grid = new Gtk.Grid () {
-            column_spacing = 6,
-            row_spacing = 6,
-            margin_bottom = 6
-        };
-        grid.attach (header_icon, 0, 0);
-        grid.attach (header_label, 1, 0);
-        grid.attach (date_label, 2, 0);
-        grid.attach (description_label, 0, 1, 3);
+        var header_box = new Gtk.Box (HORIZONTAL, 0);
+        header_box.add_css_class ("header");
+        header_box.append (header_icon);
+        header_box.append (header_label);
+        header_box.append (date_label);
 
-        orientation = Gtk.Orientation.VERTICAL;
-        spacing = 6;
-
-        append (grid);
+        orientation = VERTICAL;
+        append (header_box);
+        append (description_label);
 
         var issues = release.get_issues ();
 
         if (issues.length > 0) {
-            var issue_header = new Gtk.Label (_("Fixed Issues")) {
-                halign = Gtk.Align.START,
-                margin_top = 9
-            };
-            issue_header.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-
+            var issue_header = new Granite.HeaderLabel (_("Fixed Issues"));
             append (issue_header);
         }
 
@@ -90,12 +79,11 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             };
 
             var issue_linkbutton = new Gtk.LinkButton (issue.get_url ());
-            issue_linkbutton.get_child ().destroy ();
             issue_linkbutton.child = issue_label;
 
-            var issue_box = new Gtk.Grid ();
-            issue_box.attach (issue_image, 0, 0);
-            issue_box.attach (issue_linkbutton, 1, 0);
+            var issue_box = new Gtk.Box (HORIZONTAL, 0);
+            issue_box.append (issue_image);
+            issue_box.append (issue_linkbutton);
 
             append (issue_box);
         }
