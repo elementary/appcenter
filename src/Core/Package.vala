@@ -690,35 +690,7 @@ public class AppCenterCore.Package : Object {
         }
 
         if (icon == null) {
-            switch (component.get_kind ()) {
-                case AppStream.ComponentKind.ADDON:
-                    icon = new ThemedIcon ("extension");
-                    break;
-                case AppStream.ComponentKind.FONT:
-                    icon = new ThemedIcon ("font-x-generic");
-                    break;
-                case AppStream.ComponentKind.ICON_THEME:
-                    icon = new ThemedIcon ("preferences-desktop-theme");
-                    break;
-                case AppStream.ComponentKind.CODEC:
-                case AppStream.ComponentKind.CONSOLE_APP:
-                case AppStream.ComponentKind.DESKTOP_APP:
-                case AppStream.ComponentKind.DRIVER:
-                case AppStream.ComponentKind.FIRMWARE:
-                case AppStream.ComponentKind.GENERIC:
-
-                case AppStream.ComponentKind.INPUT_METHOD: //ComponentKind.INPUTMETHOD is deprecated has same value so cannot be included
-                case AppStream.ComponentKind.LOCALIZATION:
-                case AppStream.ComponentKind.OPERATING_SYSTEM:
-                case AppStream.ComponentKind.REPOSITORY:
-                case AppStream.ComponentKind.RUNTIME:
-                case AppStream.ComponentKind.SERVICE:
-                case AppStream.ComponentKind.UNKNOWN:
-                case AppStream.ComponentKind.WEB_APP:
-                    debug ("component kind not handled %s", component.get_kind ().to_string ());
-                    icon = new ThemedIcon ("application-default-icon");
-                    break;
-            }
+            icon = new ThemedIcon ("application-default-icon");
         }
 
         return icon;
