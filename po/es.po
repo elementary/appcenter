@@ -19,7 +19,7 @@
 # Walter Walls <windowsfan589@gmail.com>, 2024.
 # gitlares <daniellares@gmail.com>, 2024.
 # Augusto Lopez <augusto.bet4@gmail.com>, 2024.
-# Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>, 2024.
+# Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>, 2024, 2025.
 # Ezequiel Veliz <ezequiel_veliz@hotmail.com>, 2024.
 # Lucas Dondo <lucasdondo203@gmail.com>, 2024.
 # Jesus Lanau Fantova <jesuslanaufantova@gmail.com>, 2024.
@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 23:21+0000\n"
-"PO-Revision-Date: 2024-06-26 16:16+0000\n"
+"PO-Revision-Date: 2025-01-16 17:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -1106,7 +1106,7 @@ msgstr "Notas de la versión"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
 #, c-format
 msgid "What's new in %s"
-msgstr "Novedades de la versión %s"
+msgstr "Novedades de %s"
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
 msgid "Close"
