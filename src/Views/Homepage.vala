@@ -342,7 +342,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 if (package.uses_generic_icon && package.icon_available) {
                     backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                         if (remote_title == package.origin_description) {
-                            banner.update_icon (package.get_icon (128, get_app_scale_factor ()));
+                            banner.update_icon (package.get_icon (128, this.scale_factor));
                         }
                     });
                 }
@@ -379,7 +379,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 if (package.uses_generic_icon && package.icon_available) {
                     backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
                         if (remote_title == package.origin_description) {
-                            package_row.update_icon (package.get_icon (128, get_app_scale_factor ()));
+                            package_row.update_icon (package.get_icon (128, this.scale_factor));
                         }
                     });
                 }
@@ -437,18 +437,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             return GLib.Source.REMOVE;
         });
-    }
-
-    private int get_app_scale_factor () {
-        var scale_factor = 1;
-        var app = ((Gtk.Application) Application.get_default ());
-        if (app != null) {
-            if (app.active_window != null) {
-                scale_factor = app.active_window.get_scale_factor ();
-            }
-        }
-
-        return scale_factor;
     }
 
     private abstract class AbstractCategoryCard : Gtk.FlowBoxChild {
