@@ -39,47 +39,44 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
 
     public Banner (string name, string summary, string description, Icon icon, string brand_color) {
         Object (
-            app_name: name,
-            summary: summary,
-            description: description,
-            icon: icon,
-            brand_color: brand_color,
-            uses_generic_icon: false
+                app_name: name,
+                summary: summary,
+                description: description,
+                icon: icon,
+                brand_color: brand_color,
+                uses_generic_icon: false
         );
     }
 
     public Banner.from_package (AppCenterCore.Package package) {
         // Can't get widget scale factor before it's realized
-        var scale_factor = 1;
-        var app = ((Gtk.Application) Application.get_default ());
-        if (app != null) {
-            if (app.active_window != null) {
-                scale_factor = app.active_window.get_scale_factor ();
-            }
-        }
-
-        var pkg_icon = package.get_icon (128, scale_factor);
+        var scale = (Gtk.Widget) this != null ? this.scale_factor : 1;
+        var pkg_icon = package.get_icon (128, scale);
 
         Object (
-            app_name: package.get_name (),
-            summary: package.get_summary (),
-            description: package.get_description (),
-            icon: pkg_icon,
-            brand_color: package.get_color_primary (),
-            uses_generic_icon: package.uses_generic_icon && package.icon_available
+                app_name: package.get_name (),
+                summary: package.get_summary (),
+                description: package.get_description (),
+                icon: pkg_icon,
+                brand_color: package.get_color_primary (),
+                uses_generic_icon: package.uses_generic_icon && package.icon_available
         );
     }
 
 
     construct {
         var name_label = new Gtk.Label (app_name) {
+            max_width_chars = 50,
             use_markup = true,
+            wrap = true,
             xalign = 0
         };
         name_label.add_css_class ("name");
 
         var summary_label = new Gtk.Label (summary) {
+            max_width_chars = 50,
             use_markup = true,
+            wrap = true,
             xalign = 0
         };
         summary_label.add_css_class ("summary");
@@ -92,6 +89,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var description_label = new Gtk.Label (description) {
             ellipsize = Pango.EllipsizeMode.END,
             lines = 2,
+            max_width_chars = 50,
             use_markup = true,
             wrap = true,
             xalign = 0
@@ -116,7 +114,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         inner_box.append (summary_label);
         inner_box.append (description_label);
 
-        var outer_box = new Gtk.Box (HORIZONTAL, 24) {
+        var outer_box = new Gtk.Box (HORIZONTAL, 0) {
             halign = CENTER
         };
         outer_box.append (image_stack);

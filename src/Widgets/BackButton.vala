@@ -24,9 +24,7 @@ public class AppCenter.BackButton : Gtk.Button {
             var current_page = (Adw.NavigationPage) get_ancestor (typeof (Adw.NavigationPage));
             var navigation_view = (Adw.NavigationView) get_ancestor (typeof (Adw.NavigationView));
             var previous_page = navigation_view.get_previous_page (current_page);
-            if (previous_page != null) {
-                label_widget.label = previous_page.title;
-            }
+            label_widget.label = previous_page.title;
         });
     }
 }
