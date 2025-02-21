@@ -51,6 +51,7 @@ public class AppCenterCore.FlatpakPackage : Package {
 public class AppCenterCore.FlatpakBackend : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_flush_needed ();
+    public signal void on_metadata_remote_preprocessed (string remote_title);
 
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
     private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
@@ -1135,6 +1136,8 @@ public class AppCenterCore.FlatpakBackend : Object {
             } else {
                 continue;
             }
+
+            on_metadata_remote_preprocessed (remote.get_title ());
         }
     }
 
