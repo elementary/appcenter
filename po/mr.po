@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
@@ -33,17 +33,17 @@ msgstr "मीडिया टाईप %s पार्स होऊ शकल�
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "अ‍ॅप स्थापित केले गेले आहे"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" इन्स्टॉल झाले"
@@ -119,6 +119,11 @@ msgstr "विस्थापित करीत आहे"
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (स्थानिक)"
+
 #: src/Core/Job.vala:48
 #, fuzzy
 #| msgid "Getting information"
@@ -162,7 +167,7 @@ msgstr ""
 msgid "%s Developers"
 msgstr "%s डेव्हलपर"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
@@ -498,7 +503,7 @@ msgid "Refresh Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -743,58 +748,58 @@ msgstr ""
 msgid "Can read and modify system settings"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 #, fuzzy
 #| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr "ओएस व स्थापित अ‍ॅप्ससाठी उपलब्ध अद्यतनांची सूची डाउनलोड करत आहे"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "सर्व अपडेट करा"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "अद्ययावत"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Check for Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "सुरु होत आहे"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "प्रस्थापित"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u अपडेट उपलब्ध"
 msgstr[1] "%u अपडेट्स उपलब्ध"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -1059,21 +1064,21 @@ msgstr "अज्ञात परवाना"
 msgid "Payment provided by Stripe"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 #, fuzzy
 #| msgid "Unknown state"
 msgid "Unknown date"
 msgstr "अज्ञात परिस्थिती"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "अज्ञात आवृत्ती"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "कोणतेही वर्णन उपलब्ध नाही"
 
@@ -1094,12 +1099,12 @@ msgstr "%s पर्यंत"
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr ""
 
@@ -1249,10 +1254,6 @@ msgstr ""
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "उबंटू ड्राइव्हर्स"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (स्थानिक)"
 
 #~ msgid "Drivers"
 #~ msgstr "ड्राइव्हर्स"

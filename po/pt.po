@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-02-13 06:59+0000\n"
 "Last-Translator: Francisco Silva <fidde_2003@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
@@ -41,7 +41,7 @@ msgstr ""
 "Não foi possível encontrar a ligação especificada '%s'. A pesquisar, em "
 "alternativa"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -50,11 +50,11 @@ msgstr ""
 "dispositivo e permanecer em execução em segundo plano para procurar e "
 "instalar atualizações."
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "A aplicação foi instalada"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" foi instalada"
@@ -130,6 +130,11 @@ msgstr "A desinstalar"
 msgid "Updating"
 msgstr "A atualizar"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (local)"
+
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "A obter informações da aplicação…"
@@ -163,7 +168,7 @@ msgstr "A reparar…"
 msgid "%s Developers"
 msgstr "%s Programadores"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -520,7 +525,7 @@ msgid "Refresh Updates"
 msgstr "Procurar por atualizações"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 #, fuzzy
 #| msgctxt "view"
@@ -765,11 +770,11 @@ msgstr ""
 msgid "Can read and modify system settings"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "A procurar por atualizações"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 #, fuzzy
 #| msgid "Downloading a list of available updates to the OS and installed apps"
 msgid "Downloading a list of available updates to the installed apps"
@@ -777,46 +782,46 @@ msgstr ""
 "Transferir uma lista de atualizações disponíveis para o sistema operativo e "
 "aplicações instaladas"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Atualizar tudo"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "Atualizado"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Atualizar automaticamente as aplicações gratuitas e compradas"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "As aplicações que estão a ser experimentadas gratuitamente não são "
 "atualizadas automaticamente"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
 msgstr "Procurar por atualizações"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 msgid "Settings"
 msgstr "Definições"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalado"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u Atualização disponível"
 msgstr[1] "%u Atualizações disponíveis"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -1075,21 +1080,21 @@ msgstr "Licença Desconhecida"
 msgid "Payment provided by Stripe"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr ""
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 #, fuzzy
 #| msgid "Unknown state"
 msgid "Unknown date"
 msgstr "Estado desconhecido"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "Versão desconhecida"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "Nenhuma descrição disponível"
 
@@ -1111,12 +1116,12 @@ msgstr "Até %s"
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "Fechar"
 
@@ -1269,10 +1274,6 @@ msgstr "Fechar"
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "Drivers Ubuntu"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (local)"
 
 #~ msgid "Drivers"
 #~ msgstr "Controladores"

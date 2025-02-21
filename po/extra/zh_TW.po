@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-09-07 13:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -53,74 +53,74 @@ msgstr "依您的能力付費以支持開發者"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:135
-#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:164
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
 msgid "Other Improvements:"
 msgstr "其他改善："
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
-#: data/appcenter.metainfo.xml.in:118 data/appcenter.metainfo.xml.in:140
-#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:93
+#: data/appcenter.metainfo.xml.in:120 data/appcenter.metainfo.xml.in:142
+#: data/appcenter.metainfo.xml.in:154 data/appcenter.metainfo.xml.in:168
 msgid "Updated translations"
 msgstr "更新翻譯"
 
-#: data/appcenter.metainfo.xml.in:82 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:159
+#: data/appcenter.metainfo.xml.in:84 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:133 data/appcenter.metainfo.xml.in:161
 msgid "New features:"
 msgstr "新功能："
 
-#: data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:86
 msgid "Manage autostart in System Settings → Applications"
 msgstr "在系統設定 → 應用程式中管理自動啟動"
 
-#: data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:90
 msgid "Automatic app updates by default"
 msgstr "預設自動更新應用程式"
 
-#: data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:91
 msgid "OS Updates have moved to System Settings"
 msgstr "作業系統更新已移至系統設定"
 
-#: data/appcenter.metainfo.xml.in:90
+#: data/appcenter.metainfo.xml.in:92
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "在為 elementary OS 量身定做的應用程式上加上標記，而非標記來自其他遠端來源的應"
 "用程式"
 
-#: data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:115
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr "應用程式使用舊式自動啟動或舊式通知時警告"
 
-#: data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:119
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr "修正應用程式資訊檢視在取得下載大小時發生閃爍"
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:135
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 "應用程式能夠存取家目錄、系統資料夾、地理位置、設定，或是沙盒不安全時警告。"
 
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:139
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "縮小應用程式資訊檢視中的空間與留白"
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:140
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "載入時在首頁顯示佔位橫幅"
 
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:141
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr "不要在分類檢視中把非《應用程式中心》的應用程式列在分開來的標頭下方"
 
-#: data/appcenter.metainfo.xml.in:161
+#: data/appcenter.metainfo.xml.in:163
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Flatpak 更新失敗時提供修復的選項"
 
-#: data/appcenter.metainfo.xml.in:162
+#: data/appcenter.metainfo.xml.in:164
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
