@@ -501,7 +501,69 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             }
         }
 
-        screenshots = package_component.get_screenshots_all ();
+        bool has_matching_environment = false;
+        bool has_matching_style = false;
+        var desktop_environment = Environment.get_variable ("XDG_SESSION_DESKTOP");
+        var prefer_dark_style = Gtk.Settings.get_default ().gtk_application_prefer_dark_theme;
+        var desktop_style = prefer_dark_style
+            ? AppStream.ColorSchemeKind.DARK.to_string ()
+            : AppStream.ColorSchemeKind.LIGHT.to_string ();
+
+            package_component.sort_screenshots (desktop_environment,
+                desktop_style.to_string (),
+                false);
+
+                var all_screenshots = package_component.get_screenshots_all ();
+
+                // This first pass is to gather if we have matching style and matching
+                // desktop environments, this is useful if we need to fall back to any
+                // screnshot if none of the conditions are fullfiled
+                all_screenshots.foreach ((screenshot) => {
+                    var environment_id = screenshot.get_environment ();
+                    if (environment_id != null) {
+                        var environment_split = environment_id.split (":", 2);
+                        var screenshot_environment = environment_split[0];
+                        var screenshot_style = environment_split[1]
+                        ?? AppStream.ColorSchemeKind.LIGHT.to_string ();
+
+                        if (screenshot_environment == desktop_environment) {
+                            has_matching_environment = true;
+                        }
+
+                        if (screenshot_style == desktop_style) {
+                            has_matching_style = true;
+                        }
+                    }
+                });
+
+        screenshots = new GenericArray<AppStream.Screenshot> ();
+
+        all_screenshots.foreach ((screenshot) => {
+            var environment_id = screenshot.get_environment ();
+            if (environment_id == null) {
+                screenshots.add (screenshot);
+                return;
+            }
+
+            var environment_split = environment_id.split (":", 2);
+            var screenshot_environment = environment_split[0];
+            var screenshot_style = environment_split[1]
+                ?? AppStream.ColorSchemeKind.LIGHT.to_string ();
+
+            var same_environment = screenshot_environment == desktop_environment;
+            var same_style = screenshot_style == desktop_style;
+
+            if (same_environment && same_style) {
+                screenshots.add (screenshot);
+            } else if (same_environment && !same_style && !has_matching_style) {
+                screenshots.add (screenshot);
+            } else if (!same_environment && same_style && !has_matching_environment) {
+                screenshots.add (screenshot);
+            } else if (!has_matching_environment && !has_matching_style) {
+                screenshots.add (screenshot);
+                return;
+            }
+        });
 
         if (screenshots.length > 0) {
             screenshot_carousel = new Adw.Carousel () {
@@ -923,6 +985,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
                     foreach (unowned var release in releases) {
                         var release_row = new Widgets.ReleaseRow (release);
+                        release_row.add_css_class (Granite.STYLE_CLASS_CARD);
                         release_row.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
                         release_carousel.append (release_row);
@@ -947,22 +1010,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             var scale = get_scale_factor ();
             var min_screenshot_width = MAX_WIDTH * scale;
 
-            var prefer_dark_theme = Gtk.Settings.get_default ().gtk_application_prefer_dark_theme;
             screenshots.foreach ((screenshot) => {
-                var environment_id = screenshot.get_environment ();
-                if (environment_id != null) {
-                    var environment_split = environment_id.split (":", 2);
-                    if (prefer_dark_theme && environment_split.length != 2) {
-                        return;
-                    }
-
-                    var color_scheme = AppStream.ColorSchemeKind.from_string (environment_split[1]);
-                    if ((prefer_dark_theme && color_scheme != AppStream.ColorSchemeKind.DARK) ||
-                        (!prefer_dark_theme && color_scheme == AppStream.ColorSchemeKind.DARK)) {
-                        return;
-                    }
-                }
-
                 AppStream.Image? best_image = null;
                 screenshot.get_images ().foreach ((image) => {
                     // Image is better than no image

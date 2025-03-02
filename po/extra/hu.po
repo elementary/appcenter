@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-05-21 23:13+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
@@ -55,54 +55,54 @@ msgstr "Fizessen a fejlesztőknek amennyit tud, hogy támogassa őket"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:115 data/appcenter.metainfo.xml.in:135
-#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:164
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
 msgid "Other Improvements:"
 msgstr "Egyéb fejlesztések:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
-#: data/appcenter.metainfo.xml.in:118 data/appcenter.metainfo.xml.in:140
-#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:93
+#: data/appcenter.metainfo.xml.in:120 data/appcenter.metainfo.xml.in:142
+#: data/appcenter.metainfo.xml.in:154 data/appcenter.metainfo.xml.in:168
 msgid "Updated translations"
 msgstr "Frissített fordítások"
 
-#: data/appcenter.metainfo.xml.in:82 data/appcenter.metainfo.xml.in:111
-#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:159
+#: data/appcenter.metainfo.xml.in:84 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:133 data/appcenter.metainfo.xml.in:161
 msgid "New features:"
 msgstr "Új funkciók:"
 
-#: data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:86
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 "Automatikus indítás kezelése a Rendszerbeállítások → Alkalmazások menüpontban"
 
-#: data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:90
 msgid "Automatic app updates by default"
 msgstr "Automatikus alkalmazásfrissítések alapértelmezetten"
 
-#: data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:91
 msgid "OS Updates have moved to System Settings"
 msgstr "A rendszerfrissítések átköltöztek a Rendszerbeállításokba"
 
-#: data/appcenter.metainfo.xml.in:90
+#: data/appcenter.metainfo.xml.in:92
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Az elementary OS-hez készített alkalmazások jelvényezése ahelyett, hogy a "
 "más kiszolgálókból származó alkalmazások lennének jelvényezve"
 
-#: data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:115
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Figyelmeztetés, ha az alkalmazások elavult automatikus indulást vagy "
 "értesítéseket használnak"
 
-#: data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:119
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr "Az alkalmazásinformáció oldalakon való villódzás javítva"
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:135
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -111,25 +111,25 @@ msgstr ""
 "tartózkodási helyhez, beállításokhoz, illetve ha nem biztonságos sandboxot "
 "használnak."
 
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:139
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Margók és helyközök átszabása az alkalmazásinformációs oldalakon"
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:140
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Egy helykitöltő használata a főoldalon betöltés közben"
 
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:141
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Ne legyenek az Appközponton kívüli alkalmazások különválasztva a "
 "kategórianézetekben"
 
-#: data/appcenter.metainfo.xml.in:161
+#: data/appcenter.metainfo.xml.in:163
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Javítás opció felajánlása, ha a Flatpak-frissítések nem sikeresek"
 
-#: data/appcenter.metainfo.xml.in:162
+#: data/appcenter.metainfo.xml.in:164
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

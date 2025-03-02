@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-09-04 14:43+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
@@ -42,7 +42,7 @@ msgstr ""
 "Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als "
 "zoekterm gebruiken"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -51,11 +51,11 @@ msgstr ""
 "wanneer het venster gesloten is zodat het automatisch op updates kan "
 "controleren en ze kan installeren."
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "De app is met succes geïnstalleerd"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” is geïnstalleerd"
@@ -132,6 +132,11 @@ msgstr "Deïnstalleren"
 msgid "Updating"
 msgstr "Updaten"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (lokaal)"
+
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "App-informatie wordt opgehaald…"
@@ -165,7 +170,7 @@ msgstr "Repareren…"
 msgid "%s Developers"
 msgstr "Ontwikkelaars van %s"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Het volgende pakket is niet geïnstalleerd in AppCenter: %s"
@@ -512,7 +517,7 @@ msgid "Refresh Updates"
 msgstr "Controleer op updates"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 msgctxt "action"
 msgid "Search"
@@ -760,53 +765,53 @@ msgstr "Toegang tot systeeminstellingen"
 msgid "Can read and modify system settings"
 msgstr "Kan de systeeminstellingen lezen en aanpassen"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Updates zoeken"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 msgid "Downloading a list of available updates to the installed apps"
 msgstr "Een lijst met updates voor de geïnstalleerde apps downloaden"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Alles bijwerken"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "Actueel"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Update gratis en betaalde apps automatisch"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Systeemupdates en onbetaalde apps zullen niet automatisch worden bijgewerkt"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
 msgstr "Controleer op updates"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 msgid "Settings"
 msgstr "Instellingen"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u update beschikbaar"
 msgstr[1] "%u updates beschikbaar"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Alles is up-to-date. Als laatste gecontroleerd op %s."
@@ -1062,19 +1067,19 @@ msgstr "Onbekende licentie"
 msgid "Payment provided by Stripe"
 msgstr "Betalingen aangeboden door Stripe"
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr "Opgeloste problemen"
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 msgid "Unknown date"
 msgstr "Onbekende datum"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "Onbekende versie"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "Geen beschrijving beschikbaar"
 
@@ -1096,12 +1101,12 @@ msgstr "Tot %s"
 msgid "Release notes"
 msgstr "Opmerkingen bij uitgave"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr "Wat is er nieuw in %s"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "Sluiten"
 
@@ -1252,10 +1257,6 @@ msgstr "Sluiten"
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "Ubuntu Stuurprogramma's"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (lokaal)"
 
 #~ msgid "Drivers"
 #~ msgstr "Stuurprogramma's"

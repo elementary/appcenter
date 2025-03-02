@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 23:21+0000\n"
+"POT-Creation-Date: 2025-02-05 20:24+0000\n"
 "PO-Revision-Date: 2024-06-26 16:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
@@ -34,7 +34,7 @@ msgstr "Nem sikerült elemezni a(z) %s médiatípust"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "A(z) '%s' hivatkozás nem található, keresés helyette"
 
-#: src/Application.vala:245
+#: src/Application.vala:256
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -43,11 +43,11 @@ msgstr ""
 "tovább fog futni akkor is, ha ablaka bezárásra kerül, hogy továbbra is "
 "tudjon automatikusan frissítéseket keresni és telepíteni."
 
-#: src/Application.vala:328
+#: src/Application.vala:339
 msgid "The app has been installed"
 msgstr "Az alkalmazás telepítésre került"
 
-#: src/Application.vala:329 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:230
 #, c-format
 msgid "“%s” has been installed"
 msgstr "A(z) \"%s\" telepítésre került"
@@ -124,6 +124,11 @@ msgstr "Eltávolítás"
 msgid "Updating"
 msgstr "Frissítés"
 
+#: src/Core/FlatpakBackend.vala:1964
+#, c-format
+msgid "%s (local)"
+msgstr "%s (helyi)"
+
 #: src/Core/Job.vala:48
 msgid "Getting app information…"
 msgstr "Alkalmazásinformációk lekérése…"
@@ -157,7 +162,7 @@ msgstr "Javítás…"
 msgid "%s Developers"
 msgstr "%s fejlesztői"
 
-#: src/Core/Package.vala:506
+#: src/Core/Package.vala:512
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Az Appközpontban nincs telepítettre állítva: %s"
@@ -497,7 +502,7 @@ msgid "Refresh Updates"
 msgstr "Frissítések keresése"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:158
+#: src/Views/AppInfoView.vala:94 src/Views/AppListUpdateView.vala:173
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:223
 msgctxt "action"
 msgid "Search"
@@ -735,53 +740,53 @@ msgstr "Hozzáférés a rendszerbeállításokhoz"
 msgid "Can read and modify system settings"
 msgstr "Olvashatja és módosíthatja a rendszerbeállításokat"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
 msgstr "Frissítések keresése"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:48
 msgid "Downloading a list of available updates to the installed apps"
 msgstr "A telepített alkalmazások frissítéseinek listájának letöltése"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:74
 msgid "Update All"
 msgstr "Összes frissítése"
 
-#: src/Views/AppListUpdateView.vala:96
+#: src/Views/AppListUpdateView.vala:97
 msgid "Up to Date"
 msgstr "Naprakész"
 
-#: src/Views/AppListUpdateView.vala:124
+#: src/Views/AppListUpdateView.vala:125
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Az ingyenes és a megvásárolt alkalmazások automatikus frissítése"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:126
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Az ingyenesen kipróbált alkalmazások nem fognak automatikusan frissülni"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
 msgstr "Frissítések keresése"
 
-#: src/Views/AppListUpdateView.vala:151
+#: src/Views/AppListUpdateView.vala:166
 msgid "Settings"
 msgstr "Beállítások"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:179
+#: src/Views/AppListUpdateView.vala:194
 msgctxt "view"
 msgid "Installed"
 msgstr "Telepítve"
 
-#: src/Views/AppListUpdateView.vala:269
+#: src/Views/AppListUpdateView.vala:275
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u frissítés érhető el"
 msgstr[1] "%u frissítés érhető el"
 
-#: src/Views/AppListUpdateView.vala:276
+#: src/Views/AppListUpdateView.vala:282
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Minden naprakész. Legutóbb ellenőrizve %s."
@@ -1037,19 +1042,19 @@ msgstr "Ismeretlen licenc"
 msgid "Payment provided by Stripe"
 msgstr "Fizetés a Stripe-on keresztül"
 
-#: src/Widgets/ReleaseRow.vala:71
+#: src/Widgets/ReleaseRow.vala:72
 msgid "Fixed Issues"
 msgstr "Javított hibák"
 
-#: src/Widgets/ReleaseRow.vala:106
+#: src/Widgets/ReleaseRow.vala:109
 msgid "Unknown date"
 msgstr "Ismeretlen dátum"
 
-#: src/Widgets/ReleaseRow.vala:113
+#: src/Widgets/ReleaseRow.vala:116
 msgid "Unknown version"
 msgstr "Ismeretlen verzió"
 
-#: src/Widgets/ReleaseRow.vala:129
+#: src/Widgets/ReleaseRow.vala:132
 msgid "No description available"
 msgstr "Nem érhető el leírás"
 
@@ -1071,12 +1076,12 @@ msgstr "Legfeljebb %s"
 msgid "Release notes"
 msgstr "Kiadási megjegyzések"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:140
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
 #, c-format
 msgid "What's new in %s"
 msgstr "%s újdonságai"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:162
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:164
 msgid "Close"
 msgstr "Bezárás"
 
@@ -1227,10 +1232,6 @@ msgstr "Bezárás"
 
 #~ msgid "Ubuntu Drivers"
 #~ msgstr "Ubuntu driverek"
-
-#, c-format
-#~ msgid "%s (local)"
-#~ msgstr "%s (helyi)"
 
 #~ msgid "Drivers"
 #~ msgstr "Driverek"

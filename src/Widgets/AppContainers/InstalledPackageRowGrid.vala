@@ -122,7 +122,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                     release_button_revealer.reveal_child = true;
                 }
             } else {
-                release_button_revealer.reveal_child = true;
+                if (newest.get_description () != null) {
+                    release_button_revealer.reveal_child = true;
+                }
             }
         }
 
@@ -141,21 +143,33 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             modal = true;
 
             var releases_title = new Gtk.Label (title) {
+                margin_end = 12,
+                margin_start = 12,
                 selectable = true,
                 width_chars = 20,
                 wrap = true
             };
             releases_title.add_css_class ("primary");
 
-            var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ());
+            var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ()) {
+                vexpand = true
+            };
+
+            var release_scrolled_window = new Gtk.ScrolledWindow () {
+                child = release_row,
+                propagate_natural_height = true,
+                propagate_natural_width = true,
+                max_content_width = 400,
+                max_content_height = 500,
+            };
+            release_scrolled_window.add_css_class (Granite.STYLE_CLASS_FRAME);
+            release_scrolled_window.add_css_class (Granite.STYLE_CLASS_VIEW);
 
             var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
-                margin_end = 12,
-                margin_start = 12,
                 vexpand = true
             };
             releases_dialog_box.append (releases_title);
-            releases_dialog_box.append (release_row);
+            releases_dialog_box.append (release_scrolled_window);
 
             get_content_area ().append (releases_dialog_box);
 
