@@ -65,6 +65,24 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.0.2" date="2025-02-19">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/529">AppCenter sometimes opens to the Updates view</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2033">What's new window height issue</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2210">Filter screenshots by environment </issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2230">--load-local does not show local metadata file</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2233">More visual bugs in the release notes widgets</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2246">Appcenter does not recover gracefully from an empty cache</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2215">Appcenter still reserves space for system updates</issue>
+      </issues>
+    </release>
+
     <release version="8.0.1" date="2024-12-12">
       <description>
         <p>Other Improvements:</p>

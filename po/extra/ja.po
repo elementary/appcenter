@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-05 20:24+0000\n"
-"PO-Revision-Date: 2024-12-12 05:36+0000\n"
+"PO-Revision-Date: 2025-03-01 15:37+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -59,7 +59,7 @@ msgstr "elementary, Inc."
 #: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:137
 #: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
 msgid "Other Improvements:"
-msgstr "そのほかの改善:"
+msgstr "その他の改善:"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:93
 #: data/appcenter.metainfo.xml.in:120 data/appcenter.metainfo.xml.in:142
@@ -87,9 +87,8 @@ msgstr "OS アップデート機能を“システム設定”に移動"
 #: data/appcenter.metainfo.xml.in:92
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
-msgstr ""
-"ほかのリポジトリにあるアプリに対してではなく、elementary OS 向けに開発された"
-"アプリに対してバッジを表示するように修正"
+msgstr "他のリポジトリにあるアプリに対してではなく、elementary OS "
+"向けに開発されたアプリに対してバッジを表示するように修正"
 
 #: data/appcenter.metainfo.xml.in:115
 msgid "Warn when apps use legacy Autostart, Notifications"
