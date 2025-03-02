@@ -1,10 +1,10 @@
-# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-05 20:24+0000\n"
-"PO-Revision-Date: 2024-12-10 11:51+0000\n"
+"PO-Revision-Date: 2025-03-01 15:37+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -719,9 +719,7 @@ msgstr "旧来の通知システム"
 #: src/Views/AppInfoView.vala:851
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
-msgstr ""
-"通知バブルが設定不能か、通知センターに“そのほか”のカテゴリーとして表示されま"
-"す"
+msgstr "通知バブルが設定不能か、通知センターに“その他”のカテゴリーとして表示されます"
 
 #: src/Views/AppInfoView.vala:860
 msgid "System Settings Access"
@@ -785,7 +783,7 @@ msgstr "最新の状態です。最終確認: %s"
 #: src/Views/AuthorView.vala:34
 #, c-format
 msgid "Other Apps by %s"
-msgstr "%s によるほかのアプリ"
+msgstr "%s による他のアプリ"
 
 #: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
