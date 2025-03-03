@@ -107,6 +107,8 @@ public class AppCenterCore.Package : Object {
     public ChangeInformation change_information { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
+    public bool uses_generic_icon { public get; private set; }
+    public bool icon_available { public get; private set; }
 
     public double progress {
         get {
@@ -649,79 +651,102 @@ public class AppCenterCore.Package : Object {
     }
 
     public GLib.Icon get_icon (uint size, uint scale_factor) {
-        GLib.Icon? icon = null;
-        uint current_size = 0;
-        uint current_scale = 0;
         uint pixel_size = size * scale_factor;
 
-        unowned var icons = component.get_icons ();
-        foreach (unowned var _icon in icons) {
-            switch (_icon.get_kind ()) {
-                case AppStream.IconKind.STOCK:
-                    unowned string icon_name = _icon.get_name ();
-                    if (Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).has_icon (icon_name)) {
-                        return new ThemedIcon (icon_name);
-                    }
+        uint cached_current_size = 0;
+        uint cached_current_scale = 0;
 
+        AppStream.Icon? stock_icon = null;
+        AppStream.Icon? cached_icon = null;
+        AppStream.Icon? local_icon = null;
+
+        uses_generic_icon = false;
+        icon_available = true;
+        unowned var all_icons = component.get_icons ();
+        foreach (var icon in all_icons) {
+            switch (icon.get_kind ()) {
+                case AppStream.IconKind.STOCK:
+                    if (Gtk.IconTheme.get_for_display (Gdk.Display.get_default ())
+                            .has_icon (icon.get_name ())) {
+                        stock_icon = icon;
+                    }
+                    break;
+                case AppStream.IconKind.LOCAL:
+                    local_icon = icon;
                     break;
                 case AppStream.IconKind.CACHED:
-                case AppStream.IconKind.LOCAL:
-                    var icon_scale = _icon.get_scale ();
-                    var icon_width = _icon.get_width () * icon_scale;
-                    bool is_bigger = (icon_width > current_size && current_size < pixel_size);
-                    bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
+                    var icon_scale = icon.get_scale ();
+                    var icon_width = icon.get_width () * icon_scale;
+
+                    bool is_bigger = icon_width > cached_current_size
+                        && cached_current_size < pixel_size;
+                    bool has_better_dpi = icon_width == cached_current_size
+                        && cached_current_scale < icon_scale
+                        && scale_factor <= icon_scale;
+
                     if (is_bigger || has_better_dpi) {
-                        var file = File.new_for_path (_icon.get_filename ());
-                        icon = new FileIcon (file);
-                        current_size = icon_width;
-                        current_scale = icon_scale;
+                        cached_icon = icon;
+                        cached_current_size = icon_width;
+                        cached_current_scale = icon_scale;
                     }
-
                     break;
-
-                case AppStream.IconKind.UNKNOWN:
-                    warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
-                    break;
-
                 case AppStream.IconKind.REMOTE:
-                    warning ("'%s' is a remote AppStream icon", _icon.get_name ());
+                    debug ("'%s' is an unknown kind of AppStream icon", icon.get_name ());
+                    // We are not loading remote icons for now due to blocking events downloading the file
+                    // TODO: Dynamically load remote icons without blocking get_icon method
+                    break;
+                case AppStream.IconKind.UNKNOWN:
+                    debug ("'%s' is an unknown kind of AppStream icon", icon.get_name ());
                     break;
             }
         }
 
-        if (icon == null) {
-            switch (component.get_kind ()) {
-                case AppStream.ComponentKind.ADDON:
-                    icon = new ThemedIcon ("extension");
-                    break;
-                case AppStream.ComponentKind.FONT:
-                    icon = new ThemedIcon ("font-x-generic");
-                    break;
-                case AppStream.ComponentKind.ICON_THEME:
-                    icon = new ThemedIcon ("preferences-desktop-theme");
-                    break;
-                case AppStream.ComponentKind.CODEC:
-                case AppStream.ComponentKind.CONSOLE_APP:
-                case AppStream.ComponentKind.DESKTOP_APP:
-                case AppStream.ComponentKind.DRIVER:
-                case AppStream.ComponentKind.FIRMWARE:
-                case AppStream.ComponentKind.GENERIC:
-
-                case AppStream.ComponentKind.INPUT_METHOD: //ComponentKind.INPUTMETHOD is deprecated has same value so cannot be included
-                case AppStream.ComponentKind.LOCALIZATION:
-                case AppStream.ComponentKind.OPERATING_SYSTEM:
-                case AppStream.ComponentKind.REPOSITORY:
-                case AppStream.ComponentKind.RUNTIME:
-                case AppStream.ComponentKind.SERVICE:
-                case AppStream.ComponentKind.UNKNOWN:
-                case AppStream.ComponentKind.WEB_APP:
-                    debug ("component kind not handled %s", component.get_kind ().to_string ());
-                    icon = new ThemedIcon ("application-default-icon");
-                    break;
-            }
+        // Respecting the recommended order by the AppStream API
+        // https://www.freedesktop.org/software/appstream/docs/chap-CatalogData.html#tag-ct-icon
+        // STOCK -> CACHED -> LOCAL -> REMOTE
+        GLib.File? file = null;
+        if (stock_icon != null) {
+            return new ThemedIcon (stock_icon.get_name ());
+        } else if (cached_icon != null) {
+            file = File.new_for_path (cached_icon.get_filename ());
+        } else if (local_icon != null) {
+            file = File.new_for_path (local_icon.get_filename ());
+        } else {
+            // Either a remote or unkonw icon type
+            icon_available = false;
         }
 
-        return icon;
+        if (file != null && file.query_exists ()) {
+            return new FileIcon (file);
+        }
+
+        uses_generic_icon = true;
+        switch (component.get_kind ()) {
+            case AppStream.ComponentKind.ADDON:
+                return new ThemedIcon ("extension");
+            case AppStream.ComponentKind.FONT:
+                return new ThemedIcon ("font-x-generic");
+            case AppStream.ComponentKind.ICON_THEME:
+                return new ThemedIcon ("preferences-desktop-theme");
+            case AppStream.ComponentKind.CODEC:
+            case AppStream.ComponentKind.CONSOLE_APP:
+            case AppStream.ComponentKind.DESKTOP_APP:
+            case AppStream.ComponentKind.DRIVER:
+            case AppStream.ComponentKind.FIRMWARE:
+            case AppStream.ComponentKind.GENERIC:
+
+            case AppStream.ComponentKind.INPUT_METHOD: //ComponentKind.INPUTMETHOD is deprecated has same value so cannot be included
+            case AppStream.ComponentKind.LOCALIZATION:
+            case AppStream.ComponentKind.OPERATING_SYSTEM:
+            case AppStream.ComponentKind.REPOSITORY:
+            case AppStream.ComponentKind.RUNTIME:
+            case AppStream.ComponentKind.SERVICE:
+            case AppStream.ComponentKind.UNKNOWN:
+            case AppStream.ComponentKind.WEB_APP:
+            default:
+                debug ("Component kind not handled %s", component.get_kind ().to_string ());
+                return new ThemedIcon ("application-default-icon");
+        }
     }
 
     public Package? get_plugin_host_package () {

@@ -72,7 +72,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     construct {
-        AppCenterCore.FlatpakBackend.get_default ().cache_flush_needed.connect (() => {
+        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
+        backend.cache_flush_needed.connect (() => {
             to_recycle = true;
         });
 
@@ -159,6 +160,9 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         var app_icon = new Gtk.Image () {
             pixel_size = 128
         };
+        var app_icon_updated = new Gtk.Image () {
+            pixel_size = 128
+        };
 
         var badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,
@@ -166,8 +170,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             pixel_size = 64
         };
 
+        var app_icon_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        app_icon_stack.add_child (app_icon);
+        app_icon_stack.add_child (app_icon_updated);
+
         var app_icon_overlay = new Gtk.Overlay () {
-            child = app_icon,
+            child = app_icon_stack,
             valign = Gtk.Align.START
         };
 
@@ -186,6 +196,16 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 badge_image.icon_name = "system-software-update";
                 app_icon_overlay.add_overlay (badge_image);
             }
+        }
+
+        if (package.uses_generic_icon && package.icon_available) {
+            app_icon.add_css_class ("icon-dim");
+            backend.on_metadata_remote_preprocessed.connect ((remote_title) => {
+                if (package.origin_description == remote_title) {
+                    app_icon_updated.set_from_gicon (package.get_icon (128, scale_factor));
+                    app_icon_stack.visible_child = app_icon_updated;
+                }
+            });
         }
 
         var app_title = new Gtk.Label (package.get_name ()) {

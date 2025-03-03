@@ -25,27 +25,34 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public string description { get; construct; }
     public string app_name { get; construct; }
     public string summary { get; construct; }
+    public bool uses_generic_icon { get; construct set; }
+
+    private Gtk.Stack image_stack;
+    private Gtk.Image updated_icon_image;
 
     public Banner (string name, string summary, string description, Icon icon, string brand_color) {
         Object (
-            brand_color: brand_color,
-            description: description,
-            icon: icon,
-            app_name: name,
-            summary: summary
+                app_name: name,
+                summary: summary,
+                description: description,
+                icon: icon,
+                brand_color: brand_color,
+                uses_generic_icon: false
         );
     }
 
     public Banner.from_package (AppCenterCore.Package package) {
         // Can't get widget scale factor before it's realized
-        var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+        var scale = (Gtk.Widget) this != null ? this.scale_factor : 1;
+        var pkg_icon = package.get_icon (128, scale);
 
         Object (
-            name: package.get_name (),
-            summary: package.get_summary (),
-            description: package.get_description (),
-            icon: package.get_icon (128, scale_factor),
-            brand_color: package.get_color_primary ()
+                app_name: package.get_name (),
+                summary: package.get_summary (),
+                description: package.get_description (),
+                icon: pkg_icon,
+                brand_color: package.get_color_primary (),
+                uses_generic_icon: package.uses_generic_icon && package.icon_available
         );
     }
 
@@ -82,6 +89,15 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         description_label.add_css_class ("description");
 
         var icon_image = new Gtk.Image.from_gicon (icon);
+        if (uses_generic_icon) {
+            icon_image.add_css_class ("icon-dim");
+        }
+        updated_icon_image = new Gtk.Image.from_gicon (icon);
+        image_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE,
+        };
+        image_stack.add_child (icon_image);
+        image_stack.add_child (updated_icon_image);
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {
             valign = CENTER
@@ -93,7 +109,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var outer_box = new Gtk.Box (HORIZONTAL, 0) {
             halign = CENTER
         };
-        outer_box.append (icon_image);
+        outer_box.append (image_stack);
         outer_box.append (inner_box);
 
         add_css_class ("banner");
@@ -163,5 +179,11 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
         }
+    }
+
+    public void update_icon (Icon icon) {
+        uses_generic_icon = false;
+        updated_icon_image.set_from_gicon (icon);
+        image_stack.visible_child = updated_icon_image;
     }
 }
