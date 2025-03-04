@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-05 20:24+0000\n"
+"POT-Creation-Date: 2025-03-04 22:23+0000\n"
 "PO-Revision-Date: 2024-05-26 23:13+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -56,58 +56,60 @@ msgstr "Pague lo que pueda para ayudar a los desarrolladores"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:88
-#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:137
-#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:136
+#: data/appcenter.metainfo.xml.in:156 data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:185
 msgid "Other Improvements:"
 msgstr "Otras mejoras:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:93
-#: data/appcenter.metainfo.xml.in:120 data/appcenter.metainfo.xml.in:142
-#: data/appcenter.metainfo.xml.in:154 data/appcenter.metainfo.xml.in:168
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:112 data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:161 data/appcenter.metainfo.xml.in:173
+#: data/appcenter.metainfo.xml.in:187
 msgid "Updated translations"
 msgstr "Traducciones actualizadas"
 
-#: data/appcenter.metainfo.xml.in:84 data/appcenter.metainfo.xml.in:113
-#: data/appcenter.metainfo.xml.in:133 data/appcenter.metainfo.xml.in:161
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:180
 msgid "New features:"
 msgstr "Nuevas características:"
 
-#: data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:105
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 "Se puede administrar el inicio automático en Configuración del Sistema → "
 "Aplicaciones"
 
-#: data/appcenter.metainfo.xml.in:90
+#: data/appcenter.metainfo.xml.in:109
 msgid "Automatic app updates by default"
 msgstr "Actualización automática de aplicaciones de manera predeterminada"
 
-#: data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:110
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 "Las actualizaciones del sistema se han movido a Configuración del Sistema"
 
-#: data/appcenter.metainfo.xml.in:92
+#: data/appcenter.metainfo.xml.in:111
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Las aplicaciones que se les otorgue insignia estarán hechas para elementary "
 "OS en vez de otros sistemas"
 
-#: data/appcenter.metainfo.xml.in:115
+#: data/appcenter.metainfo.xml.in:134
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Ahora se advierte cuando las aplicaciones utilizan el Inicio automático "
 "heredado y las Notificaciones heredadas"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:138
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 "Arreglado el parpadeo de la vista de «Información de aplicación» cuando se "
 "obtiene el tamaño de la instalación"
 
-#: data/appcenter.metainfo.xml.in:135
+#: data/appcenter.metainfo.xml.in:154
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -116,29 +118,29 @@ msgstr ""
 "personal o a las carpetas del sistema, acceso a la ubicación, acceso a la "
 "configuración del sistema o tienen un espacio aislado inseguro."
 
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:158
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
 "Ajustes de espaciado y márgenes de la vista de «Información de aplicación»"
 
-#: data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:159
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 "Se muestra una imagen temporal en el sitio web principal cuando se está "
 "cargando"
 
-#: data/appcenter.metainfo.xml.in:141
+#: data/appcenter.metainfo.xml.in:160
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Ya no se listan aplicaciones que no pertenezcan al Centro de aplicaciones "
 "bajo un encabezado diferente en la vista de categorías"
 
-#: data/appcenter.metainfo.xml.in:163
+#: data/appcenter.metainfo.xml.in:182
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 "Se ofrece una opción de reparación si fallan las actualizaciones de Flatpak"
 
-#: data/appcenter.metainfo.xml.in:164
+#: data/appcenter.metainfo.xml.in:183
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
