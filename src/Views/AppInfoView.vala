@@ -37,7 +37,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     private Gtk.CssProvider accent_provider;
     private Gtk.DropDown origin_dropdown;
     private Gtk.Label app_subtitle;
-    private Gtk.ListBox extension_box;
     private Gtk.Overlay screenshot_overlay;
     private Gtk.Revealer origin_combo_revealer;
     private Adw.Carousel release_carousel;
@@ -694,29 +693,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         content_box.append (whats_new_label);
         content_box.add_css_class ("content-box");
 
-        if (package_component.get_addons ().length > 0) {
-            extension_box = new Gtk.ListBox () {
-                selection_mode = Gtk.SelectionMode.SINGLE
-            };
-
-            extension_box.row_activated.connect ((row) => {
-                var extension_row = row as Widgets.PackageRow;
-                if (extension_row != null) {
-                    show_other_package (extension_row.get_package ());
-                }
-            });
-
-            var extension_label = new Gtk.Label (_("Extensions:")) {
-                halign = Gtk.Align.START,
-                margin_top = 12
-            };
-            extension_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
-
-            content_box.append (extension_label);
-            content_box.append (extension_box);
-            load_extensions.begin ();
-        }
-
         var body_clamp = new Adw.Clamp () {
             child = content_box,
             maximum_size = MAX_WIDTH
@@ -808,20 +784,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             default:
                 break;
         }
-    }
-
-    private async void load_extensions () {
-        package.component.get_addons ().@foreach ((extension) => {
-            var extension_package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (extension.id);
-            if (extension_package == null) {
-                return;
-            }
-
-            var row = new Widgets.PackageRow.list (extension_package);
-            if (extension_box != null) {
-                extension_box.append (row);
-            }
-        });
     }
 
     private async void get_app_download_size () {
