@@ -76,7 +76,9 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             vexpand = true
         };
 
-        stack = new Gtk.Stack ();
+        stack = new Gtk.Stack () {
+            vhomogeneous = false
+        };
         stack.add_child (alert_view);
         stack.add_child (list_view);
 
