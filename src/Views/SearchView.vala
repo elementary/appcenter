@@ -111,7 +111,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         });
 
         list_view.activate.connect ((index) => {
-            show_app ((AppCenterCore.Package) list_store.get_item (index));
+            show_app ((AppCenterCore.Package) selection_model.get_item (index));
         });
 
         selection_model.items_changed.connect (on_items_changed);
