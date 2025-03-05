@@ -28,7 +28,10 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     public bool mimetype { get; set; default = false; }
 
     private GLib.ListStore list_store;
+    private Gtk.ListView list_view;
+    private Gtk.NoSelection selection_model;
     private Gtk.SearchEntry search_entry;
+    private Gtk.Stack stack;
     private Granite.Placeholder alert_view;
 
     public SearchView (string search_term) {
@@ -63,16 +66,22 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
 
-        var list_box = new Gtk.ListBox () {
-            activate_on_single_click = true,
+        selection_model = new Gtk.NoSelection (list_store);
+
+        var factory = new Gtk.SignalListItemFactory ();
+
+        list_view = new Gtk.ListView (selection_model, factory) {
+            single_click_activate = true,
             hexpand = true,
             vexpand = true
         };
-        list_box.bind_model (list_store, create_row_from_package);
-        list_box.set_placeholder (alert_view);
+
+        stack = new Gtk.Stack ();
+        stack.add_child (alert_view);
+        stack.add_child (list_view);
 
         var scrolled = new Gtk.ScrolledWindow () {
-            child = list_box,
+            child = stack,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
@@ -91,11 +100,21 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             search_entry.grab_focus ();
         });
 
-        list_box.row_activated.connect ((row) => {
-            if (row is Widgets.PackageRow) {
-                show_app (((Widgets.PackageRow) row).get_package ());
-            }
+        factory.setup.connect ((obj) => {
+            var list_item = (Gtk.ListItem) obj;
+            list_item.child = new SearchListItem ();
         });
+
+        factory.bind.connect ((obj) => {
+            var list_item = (Gtk.ListItem) obj;
+            ((SearchListItem) list_item.child).package = (AppCenterCore.Package) list_item.item;
+        });
+
+        list_view.activate.connect ((index) => {
+            show_app ((AppCenterCore.Package) selection_model.get_item (index));
+        });
+
+        selection_model.items_changed.connect (on_items_changed);
 
         search_entry.search_changed.connect (search);
 
@@ -143,6 +162,16 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         }
     }
 
+    private void on_items_changed () {
+        list_view.scroll_to (0, NONE, null);
+
+        if (selection_model.n_items > 0) {
+            stack.visible_child = list_view;
+        } else {
+            stack.visible_child = alert_view;
+        }
+    }
+
     private AppStream.Category? update_category () {
         var navigation_view = (Adw.NavigationView) get_ancestor (typeof (Adw.NavigationView));
         var previous_page = navigation_view.get_previous_page (navigation_view.visible_page);
@@ -168,11 +197,6 @@ public class AppCenter.SearchView : Adw.NavigationPage {
                 list_store.insert_sorted (package, sort_fn);
             }
         }
-    }
-
-    private Gtk.Widget create_row_from_package (Object object) {
-        unowned var package = (AppCenterCore.Package) object;
-        return new Widgets.PackageRow.list (package);
     }
 
     private int search_priority (string name) {
