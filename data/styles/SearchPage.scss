@@ -1,8 +1,19 @@
-navigation-view-page.search stack.large row {
-    border-radius: 0.25em;
-}
+navigation-view-page.search {
+    stack.large row {
+        border-radius: 0.25em;
+    }
 
-search-list-item {
-    border-spacing: 1em 0;
-    margin: 0.5em 1em;
+    listview {
+        border-spacing: 0.5em;
+    }
+
+    search-list-item {
+        border-spacing: 1em 0;
+        margin: 0.5em 1em;
+
+        box.category {
+            border-spacing: 0.5em;
+            margin-top: 0.5em;
+        }
+    }
 }
