@@ -129,6 +129,16 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             ));
         }
 
+        var contribute_url = component.get_url (CONTRIBUTE);
+        if (contribute_url != null) {
+            contribute_listbox.append (new LinkRow (
+                contribute_url,
+                _("Get Involved"),
+                "link-contribute-symbolic",
+                "green"
+            ));
+        }
+
         var flowbox = new Gtk.FlowBox () {
             column_spacing = 24,
             max_children_per_line = 2,

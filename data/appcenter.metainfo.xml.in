@@ -74,7 +74,9 @@
       </description>
       <issues>
         <issue url="https://github.com/elementary/appcenter/issues/529">AppCenter sometimes opens to the Updates view</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1828">Support vcs-browser and contribute URL types</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2033">What's new window height issue</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2100">AppCenter slow down my system when searching</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2210">Filter screenshots by environment </issue>
         <issue url="https://github.com/elementary/appcenter/issues/2230">--load-local does not show local metadata file</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2233">More visual bugs in the release notes widgets</issue>

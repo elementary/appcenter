@@ -471,6 +471,10 @@ public class AppCenterCore.FlatpakBackend : Object {
         return apps.values;
     }
 
+    public SearchEngine get_search_engine () {
+        return new SearchEngine (package_list.values.to_array (), user_appstream_pool);
+    }
+
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         var results = new Gee.TreeSet<AppCenterCore.Package> ();
         var comps = user_appstream_pool.search (query);
@@ -522,10 +526,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         return apps.values;
-    }
-
-    public Gee.Collection<Package> search_applications_mime (string query) {
-        return new Gee.ArrayList<Package> ();
     }
 
     public Package? get_package_for_component_id (string id) {

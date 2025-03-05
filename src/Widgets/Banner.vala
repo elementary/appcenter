@@ -17,13 +17,6 @@
  * Authored by: Nathan Dyer <mail@nathandyer.me>
  */
 
-const string BANNER_STYLE_CSS = """
-    @define-color banner_bg_color %s;
-    @define-color banner_fg_color %s;
-""";
-
-const string DEFAULT_BANNER_COLOR_PRIMARY = "mix(@accent_color, @bg_color, 0.8)";
-const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "mix(@accent_color, @text_color, 0.85)";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 public class AppCenter.Widgets.Banner : Gtk.Button {
@@ -48,14 +41,13 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
 
         Object (
-            name: package.get_name (),
+            app_name: package.get_name (),
             summary: package.get_summary (),
             description: package.get_description (),
             icon: package.get_icon (128, scale_factor),
             brand_color: package.get_color_primary ()
         );
     }
-
 
     construct {
         var name_label = new Gtk.Label (app_name) {
@@ -111,24 +103,65 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         hexpand = true;
         child = outer_box;
 
-        var provider = new Gtk.CssProvider ();
-        try {
-            string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
-            string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+        if (brand_color != null) {
+            set_accent_color (brand_color, this);
+        }
+    }
 
-            if (brand_color != null) {
-                var bg_rgba = Gdk.RGBA ();
-                bg_rgba.parse (brand_color);
+    private static Gee.HashMap<string, Gtk.CssProvider>? providers;
+    public static void set_accent_color (string color, Gtk.Widget widget) {
+        if (providers == null) {
+            providers = new Gee.HashMap<string, Gtk.CssProvider> ();
+        }
 
-                bg_color = brand_color;
-                text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
-            }
+        var color_class = color.replace ("#", "color-");
+        widget.add_css_class (color_class);
 
-            var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
-            provider.load_from_string (colored_css);
-            get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (GLib.Error e) {
-            critical ("Unable to set accent color: %s", e.message);
+        if (!providers.has_key (color)) {
+            var bg_rgba = Gdk.RGBA ();
+            bg_rgba.parse (color);
+
+            var text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
+
+            string style = @"
+                .banner.$color_class {
+                    background-color: $color;
+                    background-image:
+                        linear-gradient(
+                            to bottom right,
+                            shade($color, 1.05),
+                            shade($color, 0.95)
+                        );
+                    color: $text_color;
+
+                    border: 1px solid shade($color, 0.8);
+                    box-shadow:
+                        inset 0 0 0 1px alpha(shade($color, 1.7), 0.05),
+                        inset 0 1px 0 0 alpha(shade($color, 1.7), 0.45),
+                        inset 0 -1px 0 0 alpha(shade($color, 1.7), 0.15),
+                        0 3px 2px -1px alpha(shade($color, 0.5), 0.2),
+                        0 3px 5px alpha(shade($color, 0.5), 0.15);
+                }
+
+                .banner.$color_class:hover {
+                    box-shadow:
+                        inset 0 0 0 1px alpha(shade($color, 1.7), 0.05),
+                        inset 0 1px 0 0 alpha(shade($color, 1.7), 0.45),
+                        inset 0 -1px 0 0 alpha(shade($color, 1.7), 0.15),
+                        0 10px 8px -11px alpha(shade($color, 0.6), 0.8),
+                        0 8px 12px alpha(shade($color, 0.8), 0.6);
+                }
+            ";
+
+            var style_provider = new Gtk.CssProvider ();
+            style_provider.load_from_string (style);
+
+            providers[color] = style_provider;
+            Gtk.StyleContext.add_provider_for_display (
+                Gdk.Display.get_default (),
+                providers[color],
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
         }
     }
 }
