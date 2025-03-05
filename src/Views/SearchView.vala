@@ -136,16 +136,6 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         search_engine.cleanup ();
     }
 
-    private void on_items_changed () {
-        list_view.scroll_to (0, NONE, null);
-
-        if (selection_model.n_items > 0) {
-            stack.visible_child = list_view;
-        } else {
-            stack.visible_child = alert_view;
-        }
-    }
-
     private void search () {
         if (search_entry.text.length >= VALID_QUERY_LENGTH) {
             var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (search_entry.text, _("Flathub"));
@@ -164,6 +154,16 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         if (mimetype) {
             mimetype = false;
+        }
+    }
+
+    private void on_items_changed () {
+        list_view.scroll_to (0, NONE, null);
+
+        if (selection_model.n_items > 0) {
+            stack.visible_child = list_view;
+        } else {
+            stack.visible_child = alert_view;
         }
     }
 

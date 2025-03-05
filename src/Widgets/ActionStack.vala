@@ -5,7 +5,6 @@
 
 public class AppCenter.ActionStack : Gtk.Box {
     public AppCenterCore.Package package { get; construct set; }
-
     public bool show_open { get; set; default = true; }
     public bool updates_view = false;
 
