@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/elementary/appcenter/icons">
-    <file alias="48x48/categories/appcenter-accessibility-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-accessibility-symbolic.svg</file>
-    <file alias="48x48/categories/appcenter-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-audio-symbolic.svg</file>
-    <file alias="48x48/categories/appcenter-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-games-symbolic.svg</file>
-    <file alias="48x48/categories/appcenter-multimedia-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-multimedia-symbolic.svg</file>
-    <file alias="48x48/categories/appcenter-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-office-symbolic.svg</file>
-    <file alias="48x48/categories/appcenter-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic-rtl.svg</file>
-    <file alias="48x48/categories/appcenter-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
-    <file alias="48x48/categories/appcenter-finance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">finance-symbolic.svg</file>
+    <file alias="48x48/categories/appcenter-accessibility-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/accessibility.svg</file>
+    <file alias="48x48/categories/appcenter-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/audio.svg</file>
+    <file alias="48x48/categories/appcenter-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/games.svg</file>
+    <file alias="48x48/categories/appcenter-multimedia-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/multimedia.svg</file>
+    <file alias="48x48/categories/appcenter-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/office.svg</file>
+    <file alias="48x48/categories/appcenter-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">categories/48/video-rtl.svg</file>
+    <file alias="48x48/categories/appcenter-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/video.svg</file>
+    <file alias="48x48/categories/appcenter-finance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/finance.svg</file>
 
     <file alias="16x16/categories/currency-dollar-symbolic.svg" compressed="true" preprocess="xml-stripblanks">currency-dollar-symbolic.svg</file>
     <file alias="16x16/categories/link-contribute-symbolic.svg" compressed="true" preprocess="xml-stripblanks">link-contribute.svg</file>
