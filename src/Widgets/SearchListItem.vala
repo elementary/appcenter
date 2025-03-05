@@ -10,7 +10,10 @@ public class AppCenter.SearchListItem : Gtk.Grid {
             name_label.label = value.get_name ();
             summary_label.label = value.get_summary ();
 
-            remove (action_stack);
+            if (action_stack != null) {
+                remove (action_stack);
+            }
+
             action_stack = new ActionStack (value);
             attach (action_stack, 2, 0, 1, 2);
         }
