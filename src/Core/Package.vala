@@ -297,6 +297,19 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? _author_id = null;
+    public string? author_id {
+        get {
+            if (_author_id != null) {
+                return _author_id;
+            }
+
+            _author_id = component.get_developer ().get_id ();
+
+            return _author_id;
+        }
+    }
+
     private string? _author_title = null;
     public string author_title {
         get {
@@ -377,7 +390,10 @@ public class AppCenterCore.Package : Object {
 
     public string? description = null;
     private string? summary = null;
-    private string? color_primary = null;
+    private string? color_primary_light = null;
+    private string? color_primary_dark = null;
+    private string? color_primary_unknown = null;
+    private string? color_primary_fallback = null;
     private string? color_primary_text = null;
     private string? payments_key = null;
     private string? suggested_amount = null;
@@ -405,7 +421,10 @@ public class AppCenterCore.Package : Object {
         name = null;
         description = null;
         summary = null;
-        color_primary = null;
+        color_primary_light = null;
+        color_primary_dark = null;
+        color_primary_unknown = null;
+        color_primary_fallback = null;
         color_primary_text = null;
         payments_key = null;
         suggested_amount = null;
@@ -688,6 +707,10 @@ public class AppCenterCore.Package : Object {
                 case AppStream.IconKind.UNKNOWN:
                     warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
                     break;
+
+                case AppStream.IconKind.REMOTE:
+                    warning ("'%s' is a remote AppStream icon", _icon.get_name ());
+                    break;
             }
         }
 
@@ -757,19 +780,44 @@ public class AppCenterCore.Package : Object {
     }
 
     public string? get_color_primary () {
-        if (color_primary != null) {
-            return color_primary;
+        cache_primary_colors ();
+
+        string? color_primary = null;
+        var gtk_settings = Gtk.Settings.get_default ();
+        if (color_primary_light != null && !gtk_settings.gtk_application_prefer_dark_theme) {
+            color_primary = color_primary_light;
+        } else if (color_primary_dark != null && gtk_settings.gtk_application_prefer_dark_theme) {
+            color_primary = color_primary_dark;
+        } else if (color_primary_unknown != null) {
+            color_primary = color_primary_unknown;
         } else {
-            var branding = component.get_branding ();
-            if (branding != null) {
-                color_primary = branding.get_color (AppStream.ColorKind.PRIMARY, AppStream.ColorSchemeKind.UNKNOWN);
+            color_primary = color_primary_fallback;
+        }
+
+        return color_primary;
+    }
+
+    private void cache_primary_colors () {
+        var branding = component.get_branding ();
+        if (branding != null) {
+            if (color_primary_dark == null) {
+                color_primary_dark = branding.get_color (AppStream.ColorKind.PRIMARY,
+                    AppStream.ColorSchemeKind.DARK);
             }
 
-            if (color_primary == null) {
-                color_primary = component.get_custom_value ("x-appcenter-color-primary");
+            if (color_primary_light == null) {
+                color_primary_light = branding.get_color (AppStream.ColorKind.PRIMARY,
+                    AppStream.ColorSchemeKind.LIGHT);
             }
 
-            return color_primary;
+            if (color_primary_unknown == null) {
+                color_primary_unknown = branding.get_color (AppStream.ColorKind.PRIMARY,
+                    AppStream.ColorSchemeKind.UNKNOWN);
+            }
+        }
+
+        if (color_primary_fallback == null) {
+            color_primary_fallback = component.get_custom_value ("x-appcenter-color-primary");
         }
     }
 

@@ -29,6 +29,7 @@ src/Widgets/ActionStack.vala
 src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/HumbleButton.vala
+src/Widgets/LinkListBox.vala
 src/Widgets/PackageRow.vala
 src/Widgets/ProgressButton.vala
 src/Widgets/ReleaseRow.vala

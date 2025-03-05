@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 14:40+0000\n"
+"POT-Creation-Date: 2025-03-04 22:23+0000\n"
 "PO-Revision-Date: 2022-07-31 11:43+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -50,71 +50,73 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:145
-msgid "New features:"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:72
-msgid "Manage autostart in System Settings → Applications"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:101
-#: data/appcenter.metainfo.xml.in:121 data/appcenter.metainfo.xml.in:136
-#: data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:136
+#: data/appcenter.metainfo.xml.in:156 data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:185
 msgid "Other Improvements:"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:76
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:112 data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:161 data/appcenter.metainfo.xml.in:173
+#: data/appcenter.metainfo.xml.in:187
+msgid "Updated translations"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:180
+msgid "New features:"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:105
+msgid "Manage autostart in System Settings → Applications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:109
 msgid "Automatic app updates by default"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:77
+#: data/appcenter.metainfo.xml.in:110
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:78
+#: data/appcenter.metainfo.xml.in:111
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:104
-#: data/appcenter.metainfo.xml.in:126 data/appcenter.metainfo.xml.in:138
-#: data/appcenter.metainfo.xml.in:152
-msgid "Updated translations"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:134
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:138
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:154
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:158
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:159
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:160
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:182
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:148
+#: data/appcenter.metainfo.xml.in:183
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

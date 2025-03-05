@@ -4,26 +4,7 @@
  */
 
 public class AppCenter.ActionStack : Gtk.Box {
-    private AppCenterCore.Package? _package;
-    public AppCenterCore.Package? package {
-        get {
-            return _package;
-        }
-        set {
-            if (package != null) {
-                package.notify["state"].disconnect (on_package_state_changed);
-            }
-
-            _package = value;
-
-            package.notify["state"].connect (on_package_state_changed);
-
-            action_button.package = package;
-            cancel_button.package = package;
-
-            update_action ();
-        }
-    }
+    public AppCenterCore.Package package { get; construct set; }
 
     public bool show_open { get; set; default = true; }
     public bool updates_view = false;
@@ -43,8 +24,12 @@ public class AppCenter.ActionStack : Gtk.Box {
     private Gtk.Revealer action_button_revealer;
     private Gtk.Revealer open_button_revealer;
 
+    public ActionStack (AppCenterCore.Package package) {
+        Object (package: package);
+    }
+
     construct {
-        action_button = new Widgets.HumbleButton ();
+        action_button = new Widgets.HumbleButton (package);
 
         action_button_revealer = new Gtk.Revealer () {
             child = action_button,
@@ -60,6 +45,7 @@ public class AppCenter.ActionStack : Gtk.Box {
 
         open_button_revealer = new Gtk.Revealer () {
             child = open_button,
+            overflow = VISIBLE,
             transition_type = SLIDE_LEFT
         };
 
@@ -69,7 +55,7 @@ public class AppCenter.ActionStack : Gtk.Box {
         button_box.append (action_button_revealer);
         button_box.append (open_button_revealer);
 
-        cancel_button = new ProgressButton ();
+        cancel_button = new ProgressButton (package);
         cancel_button.clicked.connect (() => action_cancelled ());
 
         var action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
@@ -87,6 +73,9 @@ public class AppCenter.ActionStack : Gtk.Box {
         stack.add_named (cancel_button, "progress");
 
         append (stack);
+
+        package.notify["state"].connect (on_package_state_changed);
+        update_action ();
 
         destroy.connect (() => {
             if (state_source > 0) {
@@ -170,12 +159,12 @@ public class AppCenter.ActionStack : Gtk.Box {
         }
     }
 
-    private void action_cancelled () requires (package != null) {
+    private void action_cancelled () {
         update_action ();
         package.action_cancellable.cancel ();
     }
 
-    private void launch_package_app () requires (package != null) {
+    private void launch_package_app () {
         try {
             package.launch ();
         } catch (Error e) {
@@ -183,7 +172,7 @@ public class AppCenter.ActionStack : Gtk.Box {
         }
     }
 
-    private async void action_clicked () requires (package != null) {
+    private async void action_clicked () {
         if (package.installed && !package.update_available) {
             action_button_revealer.reveal_child = false;
         } else if (package.update_available) {

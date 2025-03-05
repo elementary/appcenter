@@ -37,7 +37,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         header_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var date_label = new Gtk.Label (format_date (release.get_timestamp ())) {
-            halign = Gtk.Align.START,
+            halign = END,
             hexpand = true
         };
         date_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
@@ -45,52 +45,43 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
             selectable = true,
             use_markup = true,
+            max_width_chars = 55,
             wrap = true,
             xalign = 0
         };
-        description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var grid = new Gtk.Grid () {
-            column_spacing = 6,
-            row_spacing = 6,
-            margin_bottom = 6
-        };
-        grid.attach (header_icon, 0, 0);
-        grid.attach (header_label, 1, 0);
-        grid.attach (date_label, 2, 0);
-        grid.attach (description_label, 0, 1, 3);
+        var header_box = new Gtk.Box (HORIZONTAL, 0);
+        header_box.add_css_class ("header");
+        header_box.append (header_icon);
+        header_box.append (header_label);
+        header_box.append (date_label);
 
-        orientation = Gtk.Orientation.VERTICAL;
-        spacing = 6;
-
-        append (grid);
+        orientation = VERTICAL;
+        append (header_box);
+        append (description_label);
 
         var issues = release.get_issues ();
 
         if (issues.length > 0) {
-            var issue_header = new Gtk.Label (_("Fixed Issues")) {
-                halign = Gtk.Align.START
-            };
-            issue_header.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-
+            var issue_header = new Granite.HeaderLabel (_("Fixed Issues"));
             append (issue_header);
         }
 
         foreach (unowned AppStream.Issue issue in issues) {
             var issue_image = new Gtk.Image.from_icon_name ("bug-symbolic") {
-                valign = Gtk.Align.START
+                valign = Gtk.Align.BASELINE_CENTER
             };
 
             var issue_label = new Gtk.Label (issue.get_id ()) {
+                max_width_chars = 35,
                 wrap = true,
                 xalign = 0
             };
 
             var issue_linkbutton = new Gtk.LinkButton (issue.get_url ());
-            issue_linkbutton.get_child ().destroy ();
             issue_linkbutton.child = issue_label;
 
-            var issue_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
+            var issue_box = new Gtk.Box (HORIZONTAL, 0);
             issue_box.append (issue_image);
             issue_box.append (issue_linkbutton);
 

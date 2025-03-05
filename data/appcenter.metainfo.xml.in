@@ -17,15 +17,15 @@
   <screenshots>
     <screenshot type="default">
         <caption>Discover new apps</caption>
-      <image>https://raw.githubusercontent.com/elementary/appcenter/7.4.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/appcenter/8.0.1/data/screenshot.png</image>
     </screenshot>
     <screenshot>
       <caption>Stay up to date</caption>
-      <image>https://raw.githubusercontent.com/elementary/appcenter/7.4.0/data/screenshot-updates.png</image>
+      <image>https://raw.githubusercontent.com/elementary/appcenter/8.0.1/data/screenshot-updates.png</image>
     </screenshot>
     <screenshot>
       <caption>Pay what you can to support developers</caption>
-      <image>https://raw.githubusercontent.com/elementary/appcenter/7.4.0/data/screenshot-payment.png</image>
+      <image>https://raw.githubusercontent.com/elementary/appcenter/8.0.1/data/screenshot-payment.png</image>
     </screenshot>
   </screenshots>
 
@@ -65,7 +65,40 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
-    <release version="8.0.0" date="2024-05-15">
+    <release version="8.0.2" date="2025-02-19">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/529">AppCenter sometimes opens to the Updates view</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1828">Support vcs-browser and contribute URL types</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2033">What's new window height issue</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2210">Filter screenshots by environment </issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2230">--load-local does not show local metadata file</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2233">More visual bugs in the release notes widgets</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2246">Appcenter does not recover gracefully from an empty cache</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2215">Appcenter still reserves space for system updates</issue>
+      </issues>
+    </release>
+
+    <release version="8.0.1" date="2024-12-12">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/2102">Use new "developer ID" metainfo</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2140">Theme specific branding colors</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2204">Release notes can overflow</issue>
+      </issues>
+    </release>
+    
+    <release version="8.0.0" date="2024-07-31">
       <description>
         <p>New features:</p>
         <ul>
@@ -84,11 +117,13 @@
         <issue url="https://github.com/elementary/appcenter/issues/470">Screenshots are being stretched</issue>
         <issue url="https://github.com/elementary/appcenter/issues/554">Can't search from an external source while open on an app from search</issue>
         <issue url="https://github.com/elementary/appcenter/issues/736">Fonts of some categories don't support some diacritics</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1134">Show donation URL button if payments not enabled</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1590">When an app installs, the cancel button is not properly highlighted at the right edge</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1940">Weird previous/next buttons behaviour in screenshots carousel</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2035">Only show update info icon when there is info available</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2088">Don't check for updates in the guest session</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2134">AppCenter says an app is "Not Translated" that provides translation info</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2166">Segfault on wayland</issue>
       </issues>
     </release>
 

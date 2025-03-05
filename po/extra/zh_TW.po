@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 14:40+0000\n"
-"PO-Revision-Date: 2022-09-18 06:17+0000\n"
-"Last-Translator: Vincent Yu <coolplayyhj@gmail.com>\n"
+"POT-Creation-Date: 2025-03-04 22:23+0000\n"
+"PO-Revision-Date: 2024-09-07 13:16+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -33,104 +33,106 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"開源的、非強制付款的elementary軟體商店。經elementary審核並發布以確保原生、保"
-"護隱私且安全的體驗。可以瀏覽各分類來搜尋和探索新軟體。AppCenter 也能用來將系"
-"統更新成含有新功能和新修正的最嶄新、最強大的版本。"
+"來自 elementary 的開源、按所望付費的應用程式商店。由 elementary 審核並發佈，"
+"以確保原生、保護隱私且安全的體驗。可以瀏覽各分類或搜尋來探索新軟體。《應用程"
+"式中心》也用來將您的系統更新到包含新功能和錯誤修正的最新版本。"
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "發現新應用程式"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "保持最新"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "依您的能力付費以支持開發者"
 
 #: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:97
-#: data/appcenter.metainfo.xml.in:117 data/appcenter.metainfo.xml.in:145
-msgid "New features:"
-msgstr "新特性:"
-
-#: data/appcenter.metainfo.xml.in:72
-msgid "Manage autostart in System Settings → Applications"
-msgstr ""
-
-#: data/appcenter.metainfo.xml.in:74 data/appcenter.metainfo.xml.in:101
-#: data/appcenter.metainfo.xml.in:121 data/appcenter.metainfo.xml.in:136
-#: data/appcenter.metainfo.xml.in:150
-#, fuzzy
-#| msgid "Improvements:"
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:89
+#: data/appcenter.metainfo.xml.in:107 data/appcenter.metainfo.xml.in:136
+#: data/appcenter.metainfo.xml.in:156 data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:185
 msgid "Other Improvements:"
-msgstr "改善:"
+msgstr "其他改善："
 
-#: data/appcenter.metainfo.xml.in:76
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:91
+#: data/appcenter.metainfo.xml.in:112 data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:161 data/appcenter.metainfo.xml.in:173
+#: data/appcenter.metainfo.xml.in:187
+msgid "Updated translations"
+msgstr "更新翻譯"
+
+#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:180
+msgid "New features:"
+msgstr "新功能："
+
+#: data/appcenter.metainfo.xml.in:105
+msgid "Manage autostart in System Settings → Applications"
+msgstr "在系統設定 → 應用程式中管理自動啟動"
+
+#: data/appcenter.metainfo.xml.in:109
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "預設自動更新應用程式"
 
-#: data/appcenter.metainfo.xml.in:77
+#: data/appcenter.metainfo.xml.in:110
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "作業系統更新已移至系統設定"
 
-#: data/appcenter.metainfo.xml.in:78
+#: data/appcenter.metainfo.xml.in:111
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"在為 elementary OS 量身定做的應用程式上加上標記，而非標記來自其他遠端來源的應"
+"用程式"
 
-#: data/appcenter.metainfo.xml.in:79 data/appcenter.metainfo.xml.in:104
-#: data/appcenter.metainfo.xml.in:126 data/appcenter.metainfo.xml.in:138
-#: data/appcenter.metainfo.xml.in:152
-msgid "Updated translations"
-msgstr "新增翻譯"
-
-#: data/appcenter.metainfo.xml.in:99
+#: data/appcenter.metainfo.xml.in:134
 msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr ""
+msgstr "應用程式使用舊式自動啟動或舊式通知時警告"
 
-#: data/appcenter.metainfo.xml.in:103
+#: data/appcenter.metainfo.xml.in:138
 msgid "Fix flickering on AppInfo views when getting install size"
-msgstr ""
+msgstr "修正應用程式資訊檢視在取得下載大小時發生閃爍"
 
-#: data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:154
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"應用程式能夠存取家目錄、系統資料夾、地理位置、設定，或是沙盒不安全時警告。"
 
-#: data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:158
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
+msgstr "縮小應用程式資訊檢視中的空間與留白"
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:159
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "載入時在首頁顯示佔位橫幅"
 
-#: data/appcenter.metainfo.xml.in:125
+#: data/appcenter.metainfo.xml.in:160
 msgid "Don't list non-AppCenter apps under a separate header in category views"
-msgstr ""
+msgstr "不要在分類檢視中把非《應用程式中心》的應用程式列在分開來的標頭下方"
 
-#: data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:182
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Flatpak 更新失敗時提供修復的選項"
 
-#: data/appcenter.metainfo.xml.in:148
+#: data/appcenter.metainfo.xml.in:183
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
-msgstr ""
+msgstr "已是最新時在更新檢視中顯示訊息告知此資訊，並包含上次檢查更新的時間"
 
 #: data/io.elementary.appcenter.desktop.in.in:9
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;安裝;解除安裝;"
-"反安裝;移除;型錄;目錄;商店;程式;軟體;更新;升級;"
+"install;uninstall;remove;catalogue;store;apps;software;安裝;解除安裝;移除;型"
+"錄;目錄;商店;程式;軟體;應用程式;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
@@ -138,11 +140,11 @@ msgstr "檢查更新"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
-msgstr ""
+msgstr "修復軟體來源"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
-msgstr ""
+msgstr "需要驗證才能修復軟體來源"
 
 #, fuzzy
 #~| msgid "Improvements:"

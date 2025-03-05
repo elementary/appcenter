@@ -148,7 +148,14 @@ public class AppCenterCore.UpdateManager : Object {
 
         debug ("%u app updates found", updates_number);
 
-        if (!AppCenter.App.settings.get_boolean ("automatic-updates")) {
+        runtime_updates.update_state ();
+
+        if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
+            try {
+                yield update_all (cancellable);
+            } catch (Error e) {} // update_all () already logs error message
+            //TODO Should we send a notification that automatic-updates had an error?
+        } else {
             var application = Application.get_default ();
             if (updates_number > 0) {
                 var title = ngettext ("Update Available", "Updates Available", updates_number);
@@ -176,11 +183,38 @@ public class AppCenterCore.UpdateManager : Object {
             }
         }
 
-        runtime_updates.update_state ();
-
         installed_apps_changed ();
 
         return updates_number;
+    }
+
+    public async void update_all (Cancellable? cancellable) throws Error {
+        for (int i = 0; i < updates_liststore.n_items; i++) {
+            if (cancellable != null && cancellable.is_cancelled ()) {
+                return;
+            }
+
+            var package = (Package) updates_liststore.get_item (i);
+            if (!package.should_pay) {
+                debug ("Update: %s", package.get_name ());
+                try {
+                    yield package.update (false);
+                } catch (Error e) {
+                    // If one package update was cancelled, drop out of the loop of updating the rest
+                    if (e is GLib.IOError.CANCELLED) {
+                        break;
+                    }
+
+                    warning ("Updating %s failed: %s", package.get_name (), e.message);
+                    throw (e);
+                }
+
+                updates_liststore.remove (i);
+                i--;
+
+                updates_size -= package.change_information.size;
+            }
+        }
     }
 
     public void cancel_updates (bool cancel_timeout) {
@@ -193,6 +227,7 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public async void update_cache (bool force = false) {
+        updates_liststore.remove_all ();
         cancellable.reset ();
 
         if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
@@ -219,38 +254,39 @@ public class AppCenterCore.UpdateManager : Object {
             }
         }
 
-        var nm = NetworkMonitor.get_default ();
-
         /* One cache update a day, keeps the doctor away! */
         var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
         bool last_cache_update_is_old = seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES;
-        if (force || last_cache_update_is_old) {
-            if (nm.get_network_available ()) {
-                debug ("New refresh task");
 
-                refresh_in_progress = true;
-                try {
-                    success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
-
-                    if (success) {
-                        last_cache_update = new DateTime.now_utc ();
-                        AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
-                    }
-
-                    seconds_since_last_refresh = 0;
-                } catch (Error e) {
-                    if (!(e is GLib.IOError.CANCELLED)) {
-                        critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                        cache_update_failed (e);
-                    }
-                } finally {
-                    refresh_in_progress = false;
-                }
-            }
-        } else {
+        if (!force && !last_cache_update_is_old) {
             debug ("Too soon to refresh and not forced");
+            return;
         }
 
+        var nm = NetworkMonitor.get_default ();
+        if (!nm.get_network_available ()) {
+            return;
+        }
+
+        debug ("New refresh task");
+        refresh_in_progress = true;
+        try {
+            success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
+
+            if (success) {
+                last_cache_update = new DateTime.now_utc ();
+                AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
+            }
+
+            seconds_since_last_refresh = 0;
+        } catch (Error e) {
+            if (!(e is GLib.IOError.CANCELLED)) {
+                critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                cache_update_failed (e);
+            }
+        } finally {
+            refresh_in_progress = false;
+        }
 
         var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
         debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
@@ -261,25 +297,7 @@ public class AppCenterCore.UpdateManager : Object {
             return GLib.Source.REMOVE;
         });
 
-        if (nm.get_network_available ()) {
-            if ((force || last_cache_update_is_old) && AppCenter.App.settings.get_boolean ("automatic-updates")) {
-                yield get_updates ();
-                debug ("Update Flatpaks");
-                var installed_apps = yield FlatpakBackend.get_default ().get_installed_applications (cancellable);
-                foreach (var app in installed_apps) {
-                    if (app.update_available && !app.should_pay) {
-                        debug ("Update: %s", app.get_name ());
-                        try {
-                            yield app.update (false);
-                        } catch (Error e) {
-                            warning ("Updating %s failed: %s", app.get_name (), e.message);
-                        }
-                    }
-                }
-            }
-
-            get_updates.begin ();
-        }
+        get_updates.begin (cancellable);
     }
 
     private int compare_package_func (Object object1, Object object2) {

@@ -20,7 +20,7 @@
 public class AppCenter.Widgets.HumbleButton : Gtk.Button {
     public signal void download_requested ();
 
-    public AppCenterCore.Package? package { get; set; }
+    public AppCenterCore.Package package { get; construct; }
 
     private int _amount = 1;
     public int amount {
@@ -69,6 +69,10 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
         }
     }
 
+    public HumbleButton (AppCenterCore.Package package) {
+        Object (package: package);
+    }
+
     construct {
         hexpand = true;
 
@@ -79,11 +83,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
 #endif
 
         clicked.connect (() => {
-            if (package == null) {
-                warning ("Humble button with no associated package clicked.");
-                return;
-            }
-
             if (amount != 0) {
                 show_stripe_dialog ();
             } else {
@@ -96,7 +95,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
         var stripe_dialog = new Widgets.StripeDialog (
             amount,
             package.get_name (),
-            package.normalized_component_id,
+            package.component.id,
             package.get_payments_key ()
         ) {
             transient_for = ((Gtk.Application) Application.get_default ()).active_window
@@ -104,10 +103,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
 
         stripe_dialog.download_requested.connect (() => {
             download_requested ();
-
-            if (stripe_dialog.amount != 0) {
-                App.add_paid_app (package.component.get_id ());
-            }
         });
 
         stripe_dialog.show ();

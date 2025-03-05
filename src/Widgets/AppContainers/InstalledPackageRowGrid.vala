@@ -25,8 +25,17 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Revealer release_button_revealer;
 
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
-        this.package = package;
+        Object (package: package);
 
+        if (action_size_group != null) {
+            action_size_group.add_widget (action_stack.action_button);
+            action_size_group.add_widget (action_stack.cancel_button);
+        }
+
+        set_up_package ();
+    }
+
+    construct {
         app_icon_overlay.margin_end = 12;
 
         action_stack.updates_view = true;
@@ -80,13 +89,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             };
             releases_dialog.present ();
         });
-
-        if (action_size_group != null) {
-            action_size_group.add_widget (action_stack.action_button);
-            action_size_group.add_widget (action_stack.cancel_button);
-        }
-
-        set_up_package ();
     }
 
     private void set_up_package () {
@@ -120,7 +122,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                     release_button_revealer.reveal_child = true;
                 }
             } else {
-                release_button_revealer.reveal_child = true;
+                if (newest.get_description () != null) {
+                    release_button_revealer.reveal_child = true;
+                }
             }
         }
 
@@ -139,21 +143,33 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             modal = true;
 
             var releases_title = new Gtk.Label (title) {
+                margin_end = 12,
+                margin_start = 12,
                 selectable = true,
                 width_chars = 20,
                 wrap = true
             };
             releases_title.add_css_class ("primary");
 
-            var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ());
+            var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ()) {
+                vexpand = true
+            };
+
+            var release_scrolled_window = new Gtk.ScrolledWindow () {
+                child = release_row,
+                propagate_natural_height = true,
+                propagate_natural_width = true,
+                max_content_width = 400,
+                max_content_height = 500,
+            };
+            release_scrolled_window.add_css_class (Granite.STYLE_CLASS_FRAME);
+            release_scrolled_window.add_css_class (Granite.STYLE_CLASS_VIEW);
 
             var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
-                margin_end = 12,
-                margin_start = 12,
                 vexpand = true
             };
             releases_dialog_box.append (releases_title);
-            releases_dialog_box.append (release_row);
+            releases_dialog_box.append (release_scrolled_window);
 
             get_content_area ().append (releases_dialog_box);
 
