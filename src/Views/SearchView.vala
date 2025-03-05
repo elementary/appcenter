@@ -27,7 +27,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     public string search_term { get; construct; }
     public bool mimetype { get; set; default = false; }
 
-    private GLib.ListStore list_store;
+    private AppCenterCore.SearchEngine search_engine;
     private Gtk.ListView list_view;
     private Gtk.NoSelection selection_model;
     private Gtk.SearchEntry search_entry;
@@ -64,9 +64,9 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         };
         headerbar.pack_start (new BackButton ());
 
-        list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
+        search_engine = AppCenterCore.FlatpakBackend.get_default ().get_search_engine ();
 
-        selection_model = new Gtk.NoSelection (list_store);
+        selection_model = new Gtk.NoSelection (search_engine.results);
 
         var factory = new Gtk.SignalListItemFactory ();
 
@@ -132,29 +132,24 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         });
     }
 
-    private void search () {
-        list_store.remove_all ();
+    ~SearchView () {
+        search_engine.cleanup ();
+    }
 
+    private void search () {
         if (search_entry.text.length >= VALID_QUERY_LENGTH) {
             var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (search_entry.text, _("Flathub"));
             alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
 
-            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-
-            Gee.Collection<AppCenterCore.Package> found_apps;
-
             if (mimetype) {
-                found_apps = flatpak_backend.search_applications_mime (search_entry.text);
-                add_packages (found_apps);
+                // This didn't do anything so TODO
             } else {
-                var category = update_category ();
-
-                found_apps = flatpak_backend.search_applications (search_entry.text, category);
-                add_packages (found_apps);
+                search_engine.search (search_entry.text, update_category ());
             }
 
         } else {
             alert_view.description = _("The search term must be at least 3 characters long.");
+            stack.visible_child = alert_view;
         }
 
         if (mimetype) {
@@ -184,52 +179,5 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         search_entry.placeholder_text = _("Search Apps");
         return null;
-    }
-
-    public void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
-        foreach (var package in packages) {
-            // Don't show plugins or fonts in search and category views
-            if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
-                GLib.CompareDataFunc<AppCenterCore.Package> sort_fn = (a, b) => {
-                    return compare_packages (a, b);
-                };
-
-                list_store.insert_sorted (package, sort_fn);
-            }
-        }
-    }
-
-    private int search_priority (string name) {
-        if (name != null && search_entry.text != "") {
-            var name_lower = name.down ();
-            var term_lower = search_entry.text.down ();
-
-            var term_position = name_lower.index_of (term_lower);
-
-            // App name starts with our search term, highest priority
-            if (term_position == 0) {
-                return 2;
-            // App name contains our search term, high priority
-            } else if (term_position != -1) {
-                return 1;
-            }
-        }
-
-        // Otherwise, normal appstream search ranking order
-        return 0;
-    }
-
-    private int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-        if ((p1.kind == AppStream.ComponentKind.ADDON) != (p2.kind == AppStream.ComponentKind.ADDON)) {
-            return p1.kind == AppStream.ComponentKind.ADDON ? 1 : -1;
-        }
-
-        int sp1 = search_priority (p1.get_name ());
-        int sp2 = search_priority (p2.get_name ());
-        if (sp1 != sp2) {
-            return sp2 - sp1;
-        }
-
-        return p1.get_name ().collate (p2.get_name ());
     }
 }
