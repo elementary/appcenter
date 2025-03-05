@@ -56,7 +56,9 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         search_entry.set_key_capture_widget (this);
 
         var search_clamp = new Adw.Clamp () {
-            child = search_entry
+            child = search_entry,
+            maximum_size = 800,
+            tightening_threshold = 800
         };
 
         var headerbar = new Gtk.HeaderBar () {
@@ -80,9 +82,15 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         stack.add_child (alert_view);
         stack.add_child (list_view);
 
-        var scrolled = new Gtk.ScrolledWindow () {
+        var clamp = new Adw.Clamp () {
             child = stack,
-            hscrollbar_policy = Gtk.PolicyType.NEVER
+            maximum_size = 800,
+            tightening_threshold = 800
+        };
+
+        var scrolled = new Gtk.ScrolledWindow () {
+            child = clamp,
+            hscrollbar_policy = NEVER
         };
 
         var toolbarview = new Adw.ToolbarView () {
@@ -91,6 +99,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         toolbarview.add_top_bar (headerbar);
 
         add_css_class (Granite.STYLE_CLASS_VIEW);
+        add_css_class ("search");
         child = toolbarview;
         /// TRANSLATORS: the name of the Search view
         title = C_("view", "Search");
