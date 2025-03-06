@@ -20,8 +20,7 @@ public class AppCenter.CategoryManager : Object {
         append ("accessories", _("Accessories"), "applications-accessories", {"Utility"});
         append ("audio", _("Audio"), "appcenter-audio", {"Audio", "Music"});
 
-        // FIXME: This is an app icon, not a category icon
-        append ("communication", _("Communication"), "internet-chat", {
+        append ("communication", _("Communication"), "", {
             "Chat",
             "ContactManagement",
             "Email",
@@ -31,7 +30,7 @@ public class AppCenter.CategoryManager : Object {
             "VideoConference"
         });
 
-        append ("development", _("Development"), "applications-development", {
+        append ("development", _("Development"), "", {
             "Database",
             "Debugger",
             "Development",
@@ -42,7 +41,6 @@ public class AppCenter.CategoryManager : Object {
             "WebDevelopment"
         });
 
-        // FIXME: Icon missing
         append ("education", _("Education"), "", {"Education"});
 
         append ("finance", _("Finance"), "appcenter-finance", {
@@ -50,7 +48,7 @@ public class AppCenter.CategoryManager : Object {
             "Finance"
         });
 
-        append ("games", _("Fun & Games"), "applications-games", {
+        append ("games", _("Fun & Games"), "appcenter-games-symbolic", {
             "ActionGame",
             "AdventureGame",
             "Amusement",
@@ -68,7 +66,7 @@ public class AppCenter.CategoryManager : Object {
             "StrategyGame"
         });
 
-        append ("graphics", _("Graphics"), "applications-graphics", {
+        append ("graphics", _("Graphics"), "", {
             "2DGraphics",
             "3DGraphics",
             "Graphics",
@@ -83,7 +81,7 @@ public class AppCenter.CategoryManager : Object {
             "P2P"
         });
 
-        append ("science", _("Math, Science, & Engineering"), "applications-science", {
+        append ("science", _("Math, Science, & Engineering"), "", {
             "ArtificialIntelligence",
             "Astronomy",
             "Biology",
@@ -103,7 +101,7 @@ public class AppCenter.CategoryManager : Object {
             "Science"
         });
 
-        append ("media-production", _("Media Production"), "applications-multimedia", {
+        append ("media-production", _("Media Production"), "appcenter-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
@@ -111,7 +109,7 @@ public class AppCenter.CategoryManager : Object {
             "Sequencer"
         });
 
-        append ("office", _("Office"), "applications-office", {
+        append ("office", _("Office"), "appcenter-office-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
@@ -124,9 +122,9 @@ public class AppCenter.CategoryManager : Object {
             "System"
         });
 
-        append ("accessibility", _("Universal Access"), "preferences-desktop-accessibility", {"Accessibility"});
+        append ("accessibility", _("Universal Access"), "appcenter-accessibility-symbolic", {"Accessibility"});
 
-        append ("video", _("Video"), "appcenter-video", {
+        append ("video", _("Video"), "appcenter-video-symbolic", {
             "Tuner",
             "TV",
             "Video"
@@ -143,7 +141,6 @@ public class AppCenter.CategoryManager : Object {
             "WordProcessor"
         });
 
-        // FIXME: MISSING ICON
         append ("privacy-security", _("Privacy & Security"), "preferences-system-privacy", {
             "Security"
         });

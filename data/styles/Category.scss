@@ -13,19 +13,12 @@
         inset 0 -1px 0 0 rgba(white, 0.15),
         0 3px 2px -1px rgba(black, 0.15),
         0 3px 5px rgba(black, 0.1);
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 600;
     margin: rem(12px);
-    padding: rem(6px);
-    -gtk-icon-size: 32px;
-    -gtk-icon-style: symbolic;
-
-    &.communication,
-    &.media-production,
-    &.writing-language,
-    &.internet {
-        -gtk-icon-style: regular;
-    }
+    padding: rem(12px);
+    min-height: 3em;
+    -gtk-icon-size: 48px;
 
     &.accessibility {
         background-image:
@@ -266,19 +259,23 @@
             0 0 0 1px rgba(black, 0.15),
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
-
-        image {
-            color: #{'@SLATE_500'};
-            -gtk-icon-shadow:
-                0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
-                0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
-        }
+        font-weight: 900;
+        letter-spacing: -1px;
+        -gtk-icon-shadow:
+            0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
+            0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
 
         label {
             color: #{'@BLUEBERRY_500'};
+            font-size: 1.5em;
             text-shadow:
                 0 1px 2px #{'alpha(@BLUEBERRY_900, 0.2)'},
                 0 2px 6px #{'alpha(@BLUEBERRY_900, 0.1)'};
+        }
+
+        image {
+            color: #{'@SLATE_500'};
+            -gtk-icon-size: rem(64px);
         }
     }
 
@@ -486,6 +483,7 @@
             0 3px 5px rgba(black, 0.1);
         color: #{'@BANANA_300'};
         text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
+        -gtk-icon-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
     }
 
     &.office {

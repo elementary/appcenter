@@ -106,107 +106,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         });
 
         foreach (unowned var category in CategoryManager.get_default ().categories) {
-            category_flow.append (new CategoryCard (category.name, category.icon, {}, category.id));
+            category_flow.append (new CategoryCard (category));
         }
-
-        // var games_card = new GamesCard ();
-
-        // category_flow.append (new CategoryCard (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        // category_flow.append (new CategoryCard (_("Audio"), "appcenter-audio-symbolic", {"Audio", "Music"}, "audio"));
-        // category_flow.append (new CategoryCard (_("Communication"), "", {
-        //     "Chat",
-        //     "ContactManagement",
-        //     "Email",
-        //     "InstantMessaging",
-        //     "IRCClient",
-        //     "Telephony",
-        //     "VideoConference"
-        // }, "communication"));
-        // category_flow.append (new CategoryCard (_("Development"), "", {
-        //     "Database",
-        //     "Debugger",
-        //     "Development",
-        //     "GUIDesigner",
-        //     "IDE",
-        //     "RevisionControl",
-        //     "TerminalEmulator",
-        //     "WebDevelopment"
-        // }, "development"));
-        // category_flow.append (new CategoryCard (_("Education"), "", {"Education"}, "education"));
-        // category_flow.append (new CategoryCard (_("Finance"), "appcenter-finance-symbolic", {
-        //     "Economy",
-        //     "Finance"
-        // }, "finance"));
-        // category_flow.append (games_card);
-        // category_flow.append (new CategoryCard (_("Graphics"), "", {
-        //     "2DGraphics",
-        //     "3DGraphics",
-        //     "Graphics",
-        //     "ImageProcessing",
-        //     "Photography",
-        //     "RasterGraphics",
-        //     "VectorGraphics"
-        // }, "graphics"));
-        // category_flow.append (new CategoryCard (_("Internet"), "applications-internet", {
-        //     "Network",
-        //     "P2P"
-        // }, "internet"));
-        // category_flow.append (new CategoryCard (_("Math, Science, & Engineering"), "", {
-        //     "ArtificialIntelligence",
-        //     "Astronomy",
-        //     "Biology",
-        //     "Calculator",
-        //     "Chemistry",
-        //     "ComputerScience",
-        //     "DataVisualization",
-        //     "Electricity",
-        //     "Electronics",
-        //     "Engineering",
-        //     "Geology",
-        //     "Geoscience",
-        //     "Math",
-        //     "NumericalAnalysis",
-        //     "Physics",
-        //     "Robotics",
-        //     "Science"
-        // }, "science"));
-        // category_flow.append (new CategoryCard (_("Media Production"), "appcenter-multimedia-symbolic", {
-        //     "AudioVideoEditing",
-        //     "Midi",
-        //     "Mixer",
-        //     "Recorder",
-        //     "Sequencer"
-        // }, "media-production"));
-        // category_flow.append (new CategoryCard (_("Office"), "appcenter-office-symbolic", {
-        //     "Office",
-        //     "Presentation",
-        //     "Publishing",
-        //     "Spreadsheet",
-        //     "WordProcessor"
-        // }, "office"));
-        // category_flow.append (new CategoryCard (_("System"), "applications-system-symbolic", {
-        //     "Monitor",
-        //     "System"
-        // }, "system"));
-        // category_flow.append (new CategoryCard (_("Universal Access"), "appcenter-accessibility-symbolic", {"Accessibility"}, "accessibility"));
-        // category_flow.append (new CategoryCard (_("Video"), "appcenter-video-symbolic", {
-        //     "Tuner",
-        //     "TV",
-        //     "Video"
-        // }, "video"));
-        // category_flow.append (new CategoryCard (_("Writing & Language"), "preferences-desktop-locale", {
-        //     "Dictionary",
-        //     "Languages",
-        //     "Literature",
-        //     "OCR",
-        //     "TextEditor",
-        //     "TextTools",
-        //     "Translation",
-        //     "WordProcessor"
-        // }, "writing-language"));
-        // category_flow.append (new CategoryCard (_("Privacy & Security"), "preferences-system-privacy", {
-        //     "Security",
-        // }, "privacy-security"));
 
         var box = new Gtk.Box (VERTICAL, 0);
         box.append (banner_carousel);
@@ -434,38 +335,37 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private class CategoryCard : Gtk.FlowBoxChild {
         public AppStream.Category category { get; construct; }
 
-        public CategoryCard (string name, string icon, string[] groups, string style) {
-            var category = new AppStream.Category () {
-                id = style
-            };
-            category.set_name (name);
-            category.set_icon (icon);
-
-            foreach (var group in groups) {
-                category.add_desktop_group (group);
-            }
-
+        public CategoryCard (AppStream.Category category) {
             Object (category: category);
         }
 
         construct {
-            var display_image = new Gtk.Image.from_icon_name (category.icon) {
-                halign = END,
-                valign = CENTER,
-            };
+
 
             var name_label = new Gtk.Label (category.name) {
-                halign = START,
                 wrap = true,
-                max_width_chars = 15,
-                xalign = 0
+                max_width_chars = 15
             };
 
             var box = new Gtk.Box (HORIZONTAL, 6) {
                 halign = CENTER,
                 valign = CENTER
             };
-            box.append (display_image);
+
+            if (category.icon != "") {
+                var display_image = new Gtk.Image.from_icon_name (category.icon) {
+                    halign = END,
+                    valign = CENTER,
+                };
+
+                box.append (display_image);
+
+                name_label.xalign = 0;
+                name_label.halign = START;
+            } else {
+                name_label.justify = CENTER;
+            }
+
             box.append (name_label);
 
             var expanded_grid = new Gtk.Grid () {
@@ -482,6 +382,16 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             content_area.add_css_class (category.id);
 
             child = content_area;
+
+            if (category.id == "accessibility") {
+                name_label.label = category.name.up ();
+            } else {
+                name_label.label = category.name;
+            }
+
+            if (category.id == "science") {
+                name_label.justify = CENTER;
+            }
 
             AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
                 Idle.add (() => {
