@@ -1,3 +1,9 @@
+appcenter (8.1.0) noble; urgency=medium
+
+  * Release 8.1.0 (#2258)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 06 Mar 2025 18:33:07 +0000
+
 appcenter (8.0.1) noble; urgency=medium
 
   * Release 8.0.1 (#2229)
