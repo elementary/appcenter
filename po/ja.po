@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-05 01:09+0000\n"
-"PO-Revision-Date: 2025-03-01 15:37+0000\n"
+"PO-Revision-Date: 2025-03-06 13:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -998,7 +998,7 @@ msgstr "ソースコードを取得"
 
 #: src/Widgets/LinkListBox.vala:136
 msgid "Get Involved"
-msgstr ""
+msgstr "開発に参加"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:199
