@@ -13,11 +13,19 @@
         inset 0 -1px 0 0 rgba(white, 0.15),
         0 3px 2px -1px rgba(black, 0.15),
         0 3px 5px rgba(black, 0.1);
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 600;
     margin: rem(12px);
-    padding: rem(12px);
-    min-height: 3em;
+    padding: rem(6px);
+    -gtk-icon-size: 32px;
+    -gtk-icon-style: symbolic;
+
+    &.communication,
+    &.media-production,
+    &.writing-language,
+    &.internet {
+        -gtk-icon-style: regular;
+    }
 
     &.accessibility {
         background-image:
@@ -258,29 +266,19 @@
             0 0 0 1px rgba(black, 0.15),
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
-        font-weight: 900;
-        letter-spacing: -1px;
-        -gtk-icon-shadow:
-            0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
-            0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
 
-        label.pink {
-            font-size: 1em;
-            text-shadow:
-                0 1px 2px #{'alpha(@BUBBLEGUM_900, 0.2)'},
-                0 2px 6px #{'alpha(@BUBBLEGUM_900, 0.1)'};
-            margin-bottom: -12px;
+        image {
+            color: #{'@SLATE_500'};
+            -gtk-icon-shadow:
+                0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
+                0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
         }
 
-        label.blue {
-            font-size: 1.5em;
+        label {
+            color: #{'@BLUEBERRY_500'};
             text-shadow:
                 0 1px 2px #{'alpha(@BLUEBERRY_900, 0.2)'},
                 0 2px 6px #{'alpha(@BLUEBERRY_900, 0.1)'};
-        }
-
-        image {
-            -gtk-icon-size: rem(64px);
         }
     }
 
@@ -488,7 +486,6 @@
             0 3px 5px rgba(black, 0.1);
         color: #{'@BANANA_300'};
         text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
-        -gtk-icon-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.75)'};
     }
 
     &.office {

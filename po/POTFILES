@@ -3,6 +3,7 @@ src/AsyncMutex.vala
 src/MainWindow.vala
 src/SuspendControl.vala
 src/Utils.vala
+src/Core/CategoryManager.vala
 src/Core/ChangeInformation.vala
 src/Core/FlatpakBackend.vala
 src/Core/Job.vala
