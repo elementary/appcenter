@@ -27,13 +27,14 @@
 # Jesus <jesuscopc@gmail.com>, 2024.
 # trubiso <crishipohola@gmail.com>, 2024.
 # Enrique Ochoa <eochoa11@ucol.mx>, 2024.
+# Italo Felipe Capasso Ballesteros <italo@gp-mail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-05 01:09+0000\n"
-"PO-Revision-Date: 2025-01-16 17:55+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"PO-Revision-Date: 2025-03-06 13:16+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -1039,7 +1040,7 @@ msgstr "Obtener el código fuente"
 
 #: src/Widgets/LinkListBox.vala:136
 msgid "Get Involved"
-msgstr ""
+msgstr "Participa"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:199
