@@ -28,10 +28,29 @@ public class AppCenter.ActionStack : Gtk.Box {
     }
 
     construct {
-        action_button = new Widgets.HumbleButton (package);
+        action_button = new Widgets.HumbleButton (package) {
+            halign = END
+        };
+
+        var in_app_label = new Gtk.Label (_("In-app purchases")) {
+            visible = false
+        };
+        in_app_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        in_app_label.add_css_class ("tiny-label");
+
+        foreach (unowned var rating in package.component.get_content_ratings ()) {
+            if (rating.get_value ("money-purchasing") == INTENSE) {
+                in_app_label.visible = true;
+                break;
+            }
+        }
+
+        var action_box = new Gtk.Box (VERTICAL, 0);
+        action_box.append (action_button);
+        action_box.append (in_app_label);
 
         action_button_revealer = new Gtk.Revealer () {
-            child = action_button,
+            child = action_box,
             overflow = Gtk.Overflow.VISIBLE,
             transition_type = SLIDE_LEFT
         };
@@ -40,7 +59,9 @@ public class AppCenter.ActionStack : Gtk.Box {
             action_clicked.begin ();
         });
 
-        open_button = new Gtk.Button.with_label (_("Open"));
+        open_button = new Gtk.Button.with_label (_("Open")) {
+            valign = CENTER
+        };
 
         open_button_revealer = new Gtk.Revealer () {
             child = open_button,
@@ -54,7 +75,9 @@ public class AppCenter.ActionStack : Gtk.Box {
         button_box.append (action_button_revealer);
         button_box.append (open_button_revealer);
 
-        cancel_button = new ProgressButton (package);
+        cancel_button = new ProgressButton (package) {
+            valign = CENTER
+        };
         cancel_button.clicked.connect (() => action_cancelled ());
 
         var action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
