@@ -340,8 +340,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         }
 
         construct {
-
-
             var name_label = new Gtk.Label (category.name) {
                 wrap = true,
                 max_width_chars = 15
