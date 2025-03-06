@@ -1,20 +1,25 @@
 navigation-view-page.search {
-    stack.large row {
-        border-radius: 0.25em;
+    stack.large child {
+        border-radius: 1em;
+        padding-bottom: 0.5em;
     }
 
-    listview {
+    gridview {
         border-spacing: 2em;
     }
 
     search-list-item {
         border-spacing: 1em 0;
         margin: 0.5em 1em;
+
+        image {
+            margin: 0 -4px;
+        }
     }
 
     picture {
         background: #{'@selected_bg_color'};
         border-radius: 0.5em;
-        margin-top: 1em;
+        margin-top: calc(1em - 3px);
     }
 }

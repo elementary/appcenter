@@ -28,7 +28,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     public bool mimetype { get; set; default = false; }
 
     private AppCenterCore.SearchEngine search_engine;
-    private Gtk.ListView list_view;
+    private Gtk.GridView list_view;
     private Gtk.NoSelection selection_model;
     private Gtk.SearchEntry search_entry;
     private Gtk.Stack stack;
@@ -72,10 +72,11 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         var factory = new Gtk.SignalListItemFactory ();
 
-        list_view = new Gtk.ListView (selection_model, factory) {
+        list_view = new Gtk.GridView (selection_model, factory) {
             single_click_activate = true,
             hexpand = true,
-            vexpand = true
+            vexpand = true,
+            max_columns = 2
         };
 
         stack = new Gtk.Stack () {

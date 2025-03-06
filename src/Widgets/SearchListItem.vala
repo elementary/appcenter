@@ -16,7 +16,9 @@ public class AppCenter.SearchListItem : Gtk.Grid {
                 remove (action_stack);
             }
 
-            action_stack = new ActionStack (value);
+            action_stack = new ActionStack (value) {
+                halign = END
+            };
             attach (action_stack, 2, 0, 1, 2);
 
             load_screenshot (value);
@@ -52,6 +54,9 @@ public class AppCenter.SearchListItem : Gtk.Grid {
         name_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         summary_label = new Gtk.Label (null) {
+            ellipsize = END,
+            hexpand = true,
+            lines = 2,
             valign = START,
             wrap = true,
             xalign = 0
@@ -61,7 +66,6 @@ public class AppCenter.SearchListItem : Gtk.Grid {
 
         screenshot_picture = new Gtk.Picture () {
             content_fit = SCALE_DOWN,
-            halign = START,
             height_request = SCREENSHOT_HEIGHT,
             vexpand = true,
             visible = false
