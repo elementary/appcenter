@@ -109,16 +109,15 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 box.remove (box.get_first_child ());
             };
 
-            recently_updated_flowbox.clear ();
-            free_flowbox.clear ();
-            paid_flowbox.clear ();
+            var paid_model = new GLib.ListStore (typeof (AppCenterCore.Package));
+            var free_model = new GLib.ListStore (typeof (AppCenterCore.Package));
 
             var packages = get_packages.end (res);
             foreach (var package in packages) {
                 if (package.is_native && package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                    paid_flowbox.add_package (package);
+                    paid_model.insert_sorted (package, package_compare_func);
                 } else {
-                    free_flowbox.add_package (package);
+                    free_model.insert_sorted (package, package_compare_func);
                 }
             }
 
@@ -138,6 +137,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 return b.get_newest_release ().vercmp (a.get_newest_release ());
             });
 
+            var recent_model = new GLib.ListStore (typeof (AppCenterCore.Package));
             var datetime = new GLib.DateTime.now_local ().add_months (-6);
             var recent_count = 0;
             foreach (var recent_package in recent_packages_list) {
@@ -156,21 +156,24 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 }
 
                 if (!recent_package.installed) {
-                    recently_updated_flowbox.add_package (recent_package);
+                    recent_model.append (recent_package);
                     recent_count++;
                 }
             }
 
-            if (recently_updated_flowbox.has_children) {
+            if (recent_model.n_items > 0) {
+                recently_updated_flowbox.bind_model (recent_model);
                 box.append (recently_updated_flowbox);
             }
 
-            if (paid_flowbox.has_children) {
+            if (paid_model.n_items > 0) {
+                paid_flowbox.bind_model (paid_model);
                 box.append (paid_flowbox);
             }
 
-            if (free_flowbox.has_children) {
+            if (free_model.n_items > 0) {
                 box.append (free_flowbox);
+                free_flowbox.bind_model (free_model);
             }
 
             stack.visible_child = scrolled;
@@ -195,16 +198,24 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         return packages;
     }
 
+    private int package_compare_func (Object object1, Object object2) {
+        var package1 = (AppCenterCore.Package) object1;
+        var package2 = (AppCenterCore.Package) object2;
+
+#if CURATED
+        if (package1.is_native && !package2.is_native) {
+            return -1;
+        } else if (!package1.is_native && package2.is_native) {
+            return 1;
+        }
+#endif
+        return package1.get_name ().collate (package2.get_name ());
+    }
+
     private class SubcategoryFlowbox : Gtk.Box {
         public signal void show_package (AppCenterCore.Package package);
 
         public string? label { get; construct; }
-
-        public bool has_children {
-            get {
-                return flowbox.get_first_child () != null;
-            }
-        }
 
         private static Gtk.SizeGroup size_group;
         private Gtk.FlowBox flowbox;
@@ -225,7 +236,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 row_spacing = 12,
                 valign = Gtk.Align.START
             };
-            flowbox.set_sort_func ((Gtk.FlowBoxSortFunc) package_row_compare);
 
             orientation = Gtk.Orientation.VERTICAL;
 
@@ -244,31 +254,15 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             });
         }
 
-        public void add_package (AppCenterCore.Package package) {
+        public void bind_model (GLib.ListModel model) {
+            flowbox.bind_model (model, create_widget_func);
+        }
+
+        private Gtk.Widget create_widget_func (Object object) {
+            unowned var package = (AppCenterCore.Package) object;
             var package_row = new Widgets.ListPackageRowGrid (package);
-
             size_group.add_widget (package_row);
-            flowbox.append (package_row);
-        }
-
-        public void clear () {
-            while (flowbox.get_first_child () != null) {
-                flowbox.remove (flowbox.get_first_child ());
-            }
-        }
-
-        [CCode (instance_pos = -1)]
-        protected virtual int package_row_compare (Gtk.FlowBoxChild child1, Gtk.FlowBoxChild child2) {
-            var row1 = (Widgets.ListPackageRowGrid) child1.get_child ();
-            var row2 = (Widgets.ListPackageRowGrid) child2.get_child ();
-#if CURATED
-            if (row1.package.is_native && !row2.package.is_native) {
-                return -1;
-            } else if (!row1.package.is_native && row2.package.is_native) {
-                return 1;
-            }
-#endif
-            return row1.package.get_name ().collate (row2.package.get_name ());
+            return package_row;
         }
     }
 }
