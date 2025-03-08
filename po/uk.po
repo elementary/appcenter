@@ -3,7 +3,7 @@
 # Andrii Alforov <andrevpost@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # pandreyko <andrii.pavloshchuk@gmail.com>, 2019.
-# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022, 2023, 2024.
+# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022, 2023, 2024, 2025.
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 # DartDeaDia <dartdeadia@protonmail.com>, 2021.
 # Ryo Nakano <ryonakaknock3@gmail.com>, 2022.
@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-05 01:09+0000\n"
-"PO-Revision-Date: 2024-07-01 13:16+0000\n"
+"PO-Revision-Date: 2025-03-09 23:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.10.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -1025,7 +1025,7 @@ msgstr "Отримати початковий код"
 
 #: src/Widgets/LinkListBox.vala:136
 msgid "Get Involved"
-msgstr ""
+msgstr "Долучитися"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:199
