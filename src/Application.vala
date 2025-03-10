@@ -192,11 +192,9 @@ public class AppCenter.App : Gtk.Application {
             request_background.begin ();
 
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
-                schedule_cache_update (!available);
+                schedule_cache_update (!available, false);
             });
 
-            // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
-            update_manager.update_cache.begin (false);
             silent = false;
             return;
         }
@@ -213,7 +211,7 @@ public class AppCenter.App : Gtk.Application {
 
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
-            update_manager.update_cache.begin (true);
+            schedule_cache_update (false, true);
 
             var main_window = new MainWindow (this);
             add_window (main_window);
@@ -305,7 +303,7 @@ public class AppCenter.App : Gtk.Application {
     }
 
     private uint cache_update_timeout_id = 0;
-    private void schedule_cache_update (bool cancel = false) {
+    private void schedule_cache_update (bool cancel = false, bool force = false) {
         unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         if (cache_update_timeout_id > 0) {
@@ -318,7 +316,7 @@ public class AppCenter.App : Gtk.Application {
             return;
         } else {
             cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
-                update_manager.update_cache.begin ();
+                update_manager.update_cache.begin (force);
                 cache_update_timeout_id = 0;
                 return false;
             });
