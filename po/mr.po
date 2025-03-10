@@ -1,4 +1,4 @@
-# Prachi Joshi <josprachi@yahoo.com>, 2018, 2019, 2020, 2021.
+# Prachi Joshi <josprachi@yahoo.com>, 2018, 2019, 2020, 2021, 2025.
 # उदयराज बाळ <udayrajb@gmail.com>, 2018.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 msgid ""
@@ -6,16 +6,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-05 01:09+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2025-03-09 23:55+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Language-Team: Marathi <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.10.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -38,6 +38,8 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
+"जेव्हा हे डिव्हाइस चालू होईल तेव्हा AppCenter स्वयंचलितपणे सुरू होईल आणि जेव्हा त्याची विंडो "
+"बंद असेल तेव्हा चालेल जेणेकरून ते स्वयंचलितपणे अद्यतने तपासू आणि स्थापित करू शकेल."
 
 #: src/Application.vala:339
 msgid "The app has been installed"
@@ -67,12 +69,12 @@ msgstr "नेटवर्क सेटिंग्ज…"
 
 #: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "डेमो मोडमध्ये चालत आहे"
 
 #: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "ॲप्स ब्राउझ आणि स्थापित करण्यासाठी %s स्थापित करा."
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
@@ -125,14 +127,12 @@ msgid "%s (local)"
 msgstr "%s (स्थानिक)"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Getting information"
 msgid "Getting app information…"
-msgstr "माहिती आणत आहे"
+msgstr "ॲप माहिती मिळवत आहे…"
 
 #: src/Core/Job.vala:50
 msgid "Getting download size…"
-msgstr ""
+msgstr "डाउनलोड आकार मिळवत आहे…"
 
 #: src/Core/Job.vala:55
 #, fuzzy
