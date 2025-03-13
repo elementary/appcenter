@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-12 19:15+0000\n"
-"PO-Revision-Date: 2025-03-06 13:16+0000\n"
+"PO-Revision-Date: 2025-03-14 06:54+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.10.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -938,7 +938,7 @@ msgstr "%s を検索"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
-msgstr ""
+msgstr "アプリ内課金"
 
 #: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
