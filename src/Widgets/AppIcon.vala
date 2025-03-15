@@ -53,7 +53,7 @@ public class AppCenter.AppIcon : Adw.Bin {
         child = overlay;
 
         bind_property ("icon", image, "gicon");
-        bind_property ("badge_icon", badge_image, "gicon");
+        bind_property ("badge-icon", badge_image, "gicon");
     }
 
     private AppCenterCore.Package? get_plugin_host_package (AppStream.Component component) {
