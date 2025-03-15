@@ -155,9 +155,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             critical ("Unable to set accent color: %s", e.message);
         }
 
-        var app_icon = new Gtk.Image () {
-            pixel_size = 128
-        };
+        var app_icon = new AppIcon (128);
 
         var badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,

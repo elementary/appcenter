@@ -36,9 +36,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : Gtk.Box {
     }
 
     construct {
-        var app_icon = new Gtk.Image () {
-            pixel_size = 48
-        };
+        var app_icon = new AppIcon (48);
 
         var badge_image = new Gtk.Image () {
             halign = Gtk.Align.END,
