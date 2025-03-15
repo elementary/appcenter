@@ -82,7 +82,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         description_label.add_css_class ("description");
 
         var app_icon = new AppIcon (128) {
-            gicon = icon
+            icon = icon
         };
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {

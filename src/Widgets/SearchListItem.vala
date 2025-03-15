@@ -6,7 +6,7 @@
 public class AppCenter.SearchListItem : Gtk.Grid {
     public AppCenterCore.Package package {
         set {
-            app_icon.gicon = value.get_icon (app_icon.pixel_size, scale_factor);
+            app_icon.package = value;
             name_label.label = value.get_name ();
             summary_label.label = value.get_summary ();
 
