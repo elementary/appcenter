@@ -355,6 +355,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             }
         }
 
+        ODRSProvider.fetch_reviews_for_app.begin (package_component.id);
+
         var ratings = package_component.get_content_ratings ();
         for (int i = 0; i < ratings.length; i++) {
             var rating = ratings[i];
