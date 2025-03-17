@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-12 19:15+0000\n"
-"PO-Revision-Date: 2025-03-17 16:09+0000\n"
+"PO-Revision-Date: 2025-03-18 00:34+0000\n"
 "Last-Translator: exbu <meharmsen@me.com>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -118,7 +118,7 @@ msgstr "%s (systeem-breed)"
 
 #: src/Core/FlatpakBackend.vala:109
 msgid "package operations are being performed"
-msgstr "Pakketbewerkingen worden momenteel uitgevoerd"
+msgstr "pakketbewerkingen worden momenteel uitgevoerd"
 
 #: src/Core/FlatpakBackend.vala:1483
 msgid "Installing"
@@ -181,19 +181,17 @@ msgid ""
 "apologize for any inconvenience caused."
 msgstr ""
 "Er is een fout opgetreden bij het verwerken van de kaart. Probeer het later "
-"opnieuw. Onze excuses voor het ongemak."
+"opnieuw. Excuses voor het ongemak."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr ""
-"Gelieve uw betaalgegevens te controleren en daarna het opnieuw te proberen."
+msgstr "Controleer je betaalgegevens en probeer het opnieuw."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"Het kaartnummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
-"kaartnummer."
+"Het kaartnummer is onjuist. Probeer het opnieuw met het juiste kaartnummer."
 
 #: src/Core/Stripe.vala:66
 msgid ""
@@ -1057,7 +1055,7 @@ msgstr "Vrije software"
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:210
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr "https://www.gnu.org/philosophy/free-sw"
+msgstr "https://www.gnu.org/philosophy/free-sw.nl"
 
 #: src/Widgets/LinkListBox.vala:214
 msgid "Proprietary"
