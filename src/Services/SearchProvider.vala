@@ -41,7 +41,7 @@ public class SearchProvider : Object {
     public HashTable<string, Variant>[] get_result_metas (string[] results) throws GLib.Error {
         var result = new GenericArray<HashTable<string, Variant>> ();
 
-        var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
         foreach (var str in results) {
             var package = flatpak_backend.get_package_for_component_id (str);
             if (package != null) {

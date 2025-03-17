@@ -130,7 +130,7 @@ public class AppCenter.App : Gtk.Application {
             activate ();
         });
 
-        var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
         flatpak_backend.operation_finished.connect (on_operation_finished);
 
         var update_manager = AppCenterCore.UpdateManager.get_default ();
