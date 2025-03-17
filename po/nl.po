@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-12 19:15+0000\n"
 "PO-Revision-Date: 2025-03-18 00:34+0000\n"
-"Last-Translator: exbu <meharmsen@me.com>\n"
+"Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
@@ -72,7 +72,7 @@ msgstr "Netwerk niet beschikbaar."
 
 #: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Maak verbinding met internet om apps te bekijken en te installeren."
+msgstr "Maak verbinding met het internet om apps te bekijken en te installeren."
 
 #: src/MainWindow.vala:98
 msgid "Network Settings…"
