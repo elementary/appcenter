@@ -1035,6 +1035,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                         height_request = 500,
                         path = screenshot_files[i]
                     };
+                    screenshot.set_branding (package);
 
                     Idle.add (() => {
                         screenshot_carousel.append (screenshot);

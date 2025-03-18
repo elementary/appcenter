@@ -37,17 +37,26 @@ public class AppCenter.Screenshot : Granite.Bin {
         box.append (picture);
 
         child = box;
+        add_css_class (Granite.STYLE_CLASS_CARD);
 
         bind_property ("caption", label, "label");
     }
 
-    public void set_accent_color (string color) {
+    public void set_branding (AppCenterCore.Package package) {
+        set_accent_color (package.get_color_primary ());
+
+        Granite.Settings.get_default ().notify["prefers-color-scheme"].connect (() => {
+            set_accent_color (package.get_color_primary ());
+        });
+    }
+
+    private void set_accent_color (string color) {
         if (providers == null) {
             providers = new Gee.HashMap<string, Gtk.CssProvider> ();
         }
 
         var color_class = color.replace ("#", "color-");
-        add_css_class (color_class);
+        css_classes = {Granite.STYLE_CLASS_CARD, color_class};
 
         if (!providers.has_key (color)) {
             var bg_rgba = Gdk.RGBA ();
@@ -58,7 +67,7 @@ public class AppCenter.Screenshot : Granite.Bin {
             string style = @"
                 screenshot.$color_class {
                     background-color: $color;
-                    color: $text_color;
+                    color: mix($color, $text_color, 0.9);
                 }
             ";
 
