@@ -1,0 +1,14 @@
+navigation-view-page.categories {
+    header {
+        margin: 0 1rem;
+    }
+
+    gridview {
+        background: inherit;
+        border-spacing: 1em 2em;
+
+        package-list-item {
+            min-width: 25em;
+        }
+    }
+}
