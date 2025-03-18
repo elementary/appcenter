@@ -155,37 +155,9 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             critical ("Unable to set accent color: %s", e.message);
         }
 
-        var app_icon = new Gtk.Image () {
-            pixel_size = 128
+        var app_icon = new AppIcon (128) {
+            package = package
         };
-
-        var badge_image = new Gtk.Image () {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.END,
-            pixel_size = 64
-        };
-
-        var app_icon_overlay = new Gtk.Overlay () {
-            child = app_icon,
-            valign = Gtk.Align.START
-        };
-
-        var scale_factor = get_scale_factor ();
-
-        var plugin_host_package = package.get_plugin_host_package ();
-        if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
-            app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
-            badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
-
-            app_icon_overlay.add_overlay (badge_image);
-        } else {
-            app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
-
-            if (package.is_runtime_updates) {
-                badge_image.icon_name = "system-software-update";
-                app_icon_overlay.add_overlay (badge_image);
-            }
-        }
 
         var app_title = new Gtk.Label (package.get_name ()) {
             selectable = true,
@@ -241,7 +213,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         }
 
         var header_box = new Gtk.Box (HORIZONTAL, 6);
-        header_box.append (app_icon_overlay);
+        header_box.append (app_icon);
         header_box.append (header_grid);
 
         var header_clamp = new Adw.Clamp () {

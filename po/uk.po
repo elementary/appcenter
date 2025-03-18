@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-12 19:15+0000\n"
-"PO-Revision-Date: 2025-03-09 23:55+0000\n"
+"PO-Revision-Date: 2025-03-18 01:49+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -965,7 +965,7 @@ msgstr "Пошук %s"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
-msgstr ""
+msgstr "Покупки в застосунку"
 
 #: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
