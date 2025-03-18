@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-05 01:09+0000\n"
+"POT-Creation-Date: 2025-03-12 19:15+0000\n"
 "PO-Revision-Date: 2024-06-24 02:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/"
@@ -75,7 +75,7 @@ msgid "Install %s to browse and install apps."
 msgstr ""
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "열기"
 
@@ -914,7 +914,7 @@ msgstr "재미있는 &"
 msgid "Games"
 msgstr "게임"
 
-#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:141
+#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -922,40 +922,44 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "앱을 찾을 수 없음"
 
-#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:151
+#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:162
 msgid "The search term must be at least 3 characters long."
 msgstr ""
 
-#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:180
+#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:191
 msgid "Search Apps"
 msgstr "앱 검색"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:96
+#: src/Views/SearchView.vala:107
 msgctxt "view"
 msgid "Search"
 msgstr "검색"
 
-#: src/Views/SearchView.vala:142
+#: src/Views/SearchView.vala:153
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "검색어를 변경해 보세요. %s에서 Flatpak 앱을 사이드로드할 수도 있습니다"
 
-#: src/Views/SearchView.vala:175
+#: src/Views/SearchView.vala:186
 #, c-format
 msgid "Search %s"
 msgstr "%s 찾기"
 
-#: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
+#: src/Widgets/ActionStack.vala:35
+msgid "In-app purchases"
+msgstr ""
+
+#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
 msgstr "무료"
 
-#: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
 msgid "Install"
 msgstr "설치"
 
-#: src/Widgets/ActionStack.vala:138
+#: src/Widgets/ActionStack.vala:161
 msgid "Update"
 msgstr "업데이트"
 

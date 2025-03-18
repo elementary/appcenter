@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-05 01:09+0000\n"
+"POT-Creation-Date: 2025-03-12 19:15+0000\n"
 "PO-Revision-Date: 2024-11-28 06:16+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -85,7 +85,7 @@ msgid "Install %s to browse and install apps."
 msgstr "安装 %s 以浏览及安装应用。"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "打开"
 
@@ -866,7 +866,7 @@ msgstr "娱乐 &"
 msgid "Games"
 msgstr "游戏"
 
-#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:141
+#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -874,40 +874,44 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "未发现应用"
 
-#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:151
+#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:162
 msgid "The search term must be at least 3 characters long."
 msgstr "搜索字段最低长度为 3 个字符。"
 
-#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:180
+#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:191
 msgid "Search Apps"
 msgstr "搜索应用"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:96
+#: src/Views/SearchView.vala:107
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"
 
-#: src/Views/SearchView.vala:142
+#: src/Views/SearchView.vala:153
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr "尝试更改搜索词。 您还可以加载 Flatpak 应用程序，例如来自 %s"
 
-#: src/Views/SearchView.vala:175
+#: src/Views/SearchView.vala:186
 #, c-format
 msgid "Search %s"
 msgstr "搜索 %s"
 
-#: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
+#: src/Widgets/ActionStack.vala:35
+msgid "In-app purchases"
+msgstr ""
+
+#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
 msgstr "安装"
 
-#: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
 msgid "Install"
 msgstr "安装"
 
-#: src/Widgets/ActionStack.vala:138
+#: src/Widgets/ActionStack.vala:161
 msgid "Update"
 msgstr "更新"
 
