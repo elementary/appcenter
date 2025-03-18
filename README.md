@@ -13,7 +13,7 @@ You'll need the following dependencies:
 * libappstream-dev (>= 1.0.0)
 * libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
-* libgranite-7-dev (>=7.1.0)
+* libgranite-7-dev (>=7.6.0)
 * libgtk-4-dev (>=4.10)
 * libjson-glib-dev
 * libpolkit-gobject-1-dev
