@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-05 01:09+0000\n"
+"POT-Creation-Date: 2025-03-12 19:15+0000\n"
 "PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -78,7 +78,7 @@ msgid "Install %s to browse and install apps."
 msgstr "Installer %s for å utforske eller installere programmer."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Åpne"
 
@@ -924,7 +924,7 @@ msgstr "Gøy og"
 msgid "Games"
 msgstr "Spill"
 
-#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:141
+#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -932,42 +932,46 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Fant ingen programmer"
 
-#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:151
+#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:162
 #, fuzzy
 msgid "The search term must be at least 3 characters long."
 msgstr "Søket må inneholde minst tre tegn."
 
-#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:180
+#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:191
 msgid "Search Apps"
 msgstr "Programsøk"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:96
+#: src/Views/SearchView.vala:107
 msgctxt "view"
 msgid "Search"
 msgstr "Søk"
 
-#: src/Views/SearchView.vala:142
+#: src/Views/SearchView.vala:153
 #, fuzzy, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 "Prøv å endre søket. Du kan også sideinnlaste Flatpak-programmer fra f.eks. %s"
 
-#: src/Views/SearchView.vala:175
+#: src/Views/SearchView.vala:186
 #, c-format
 msgid "Search %s"
 msgstr "Søk %s"
 
-#: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
+#: src/Widgets/ActionStack.vala:35
+msgid "In-app purchases"
+msgstr ""
+
+#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
 msgstr "Gratis"
 
-#: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
 msgid "Install"
 msgstr "Installer"
 
-#: src/Widgets/ActionStack.vala:138
+#: src/Widgets/ActionStack.vala:161
 msgid "Update"
 msgstr "Oppdater"
 
