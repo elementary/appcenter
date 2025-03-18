@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2025 elementary, Inc. (https://elementary.io)
  */
 
-public class AppCenter.SearchListItem : Gtk.Grid {
+public class AppCenter.PackageListItem : Gtk.Grid {
     public AppCenterCore.Package package {
         set {
             app_icon.package = value;
@@ -25,13 +25,15 @@ public class AppCenter.SearchListItem : Gtk.Grid {
     private Gtk.Label summary_label;
 
     class construct {
-        set_css_name ("search-list-item");
+        set_css_name ("package-list-item");
     }
 
     construct {
         app_icon = new AppIcon (48);
 
         name_label = new Gtk.Label (null) {
+            ellipsize = END,
+            lines = 2,
             valign = END,
             wrap = true,
             xalign = 0
@@ -39,6 +41,8 @@ public class AppCenter.SearchListItem : Gtk.Grid {
         name_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         summary_label = new Gtk.Label (null) {
+            ellipsize = END,
+            lines = 2,
             valign = START,
             wrap = true,
             xalign = 0
