@@ -10,6 +10,7 @@ appcenter_files = files(
     'Core/HttpClient.vala',
     'Core/Job.vala',
     'Core/Houston.vala',
+    'Core/ODRSProvider.vala',
     'Core/Package.vala',
     'Core/ScreenshotCache.vala',
     'Core/SearchEngine.vala',
