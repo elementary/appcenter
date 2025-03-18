@@ -1029,7 +1029,17 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             for (int i = 0; i < captioned_urls.length (); i++) {
                 if (results[i] == true) {
                     string caption = captioned_urls.nth_data (i).caption;
-                    load_screenshot (caption, screenshot_files[i]);
+
+                    var screenshot = new AppCenter.Screenshot () {
+                        caption = caption,
+                        height_request = 500,
+                        path = screenshot_files[i]
+                    };
+
+                    Idle.add (() => {
+                        screenshot_carousel.append (screenshot);
+                        return GLib.Source.REMOVE;
+                    });
                 }
             }
 
@@ -1051,39 +1061,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             });
 
             return null;
-        });
-    }
-
-    // We need to first download the screenshot locally so that it doesn't freeze the interface.
-    private void load_screenshot (string? caption, string path) {
-        var image = new Gtk.Picture.for_filename (path) {
-            content_fit = SCALE_DOWN,
-            height_request = 500,
-            vexpand = true
-        };
-
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
-            halign = Gtk.Align.CENTER
-        };
-        box.add_css_class ("screenshot");
-        box.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        if (caption != null) {
-            var label = new Gtk.Label (caption) {
-                max_width_chars = 50,
-                wrap = true
-            };
-
-            label.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-            box.append (label);
-        }
-
-        box.append (image);
-
-        Idle.add (() => {
-            screenshot_carousel.append (box);
-            return GLib.Source.REMOVE;
         });
     }
 
