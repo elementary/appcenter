@@ -29,6 +29,7 @@ libsoup = dependency ('libsoup-3.0')
 json = dependency ('json-glib-1.0')
 flatpak = dependency ('flatpak')
 xml = dependency ('libxml-2.0')
+math_dep = meson.get_compiler('c').find_library('m')
 polkit = dependency ('polkit-gobject-1')
 portal = dependency('libportal')
 portal_gtk4 = dependency('libportal-gtk4')
@@ -51,6 +52,7 @@ dependencies = core_deps + [
     appstream,
     flatpak,
     xml,
+    math_dep,
     polkit,
     portal,
     portal_gtk4,
