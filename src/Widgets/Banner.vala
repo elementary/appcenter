@@ -88,16 +88,9 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         };
         description_label.add_css_class ("description");
 
-        var icon_image = new Gtk.Image.from_gicon (icon);
-        if (uses_generic_icon) {
-            icon_image.add_css_class ("icon-dim");
-        }
-        updated_icon_image = new Gtk.Image.from_gicon (icon);
-        image_stack = new Gtk.Stack () {
-            transition_type = Gtk.StackTransitionType.CROSSFADE,
+        var app_icon = new AppIcon (128) {
+            icon = icon
         };
-        image_stack.add_child (icon_image);
-        image_stack.add_child (updated_icon_image);
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {
             valign = CENTER
@@ -109,7 +102,8 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var outer_box = new Gtk.Box (HORIZONTAL, 0) {
             halign = CENTER
         };
-        outer_box.append (image_stack);
+
+        outer_box.append (app_icon);
         outer_box.append (inner_box);
 
         add_css_class ("banner");

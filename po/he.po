@@ -1,19 +1,19 @@
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-05 01:09+0000\n"
-"PO-Revision-Date: 2024-06-26 16:16+0000\n"
+"POT-Creation-Date: 2025-03-12 19:15+0000\n"
+"PO-Revision-Date: 2025-03-14 06:54+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Hebrew <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.10.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -75,7 +75,7 @@ msgid "Install %s to browse and install apps."
 msgstr "יש להתקין את %s כדי לעיין ולהתקין יישומים."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "פתיחה"
 
@@ -868,7 +868,7 @@ msgstr "כיף ו"
 msgid "Games"
 msgstr "משחקים"
 
-#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:141
+#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -876,41 +876,45 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "לא נמצאו יישומים"
 
-#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:151
+#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:162
 msgid "The search term must be at least 3 characters long."
 msgstr "ביטוי החיפוש חייב להיות לפחות באורך 3 תווים."
 
-#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:180
+#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:191
 msgid "Search Apps"
 msgstr "חיפוש יישומים"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:96
+#: src/Views/SearchView.vala:107
 msgctxt "view"
 msgid "Search"
 msgstr "חיפוש"
 
-#: src/Views/SearchView.vala:142
+#: src/Views/SearchView.vala:153
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 "נא לנסות לשנות את תנאי החיפוש. ניתן גם לטעון יישומי Flatpak מהצד למשל דרך %s"
 
-#: src/Views/SearchView.vala:175
+#: src/Views/SearchView.vala:186
 #, c-format
 msgid "Search %s"
 msgstr "חיפוש %s"
 
-#: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
+#: src/Widgets/ActionStack.vala:35
+msgid "In-app purchases"
+msgstr "רכישות מתוך היישום"
+
+#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
 msgstr "חינם"
 
-#: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
 msgid "Install"
 msgstr "התקנה"
 
-#: src/Widgets/ActionStack.vala:138
+#: src/Widgets/ActionStack.vala:161
 msgid "Update"
 msgstr "עדכון"
 
@@ -964,7 +968,7 @@ msgstr "משיכת קוד המקור"
 
 #: src/Widgets/LinkListBox.vala:136
 msgid "Get Involved"
-msgstr ""
+msgstr "השתתפות"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:199

@@ -774,23 +774,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public Package? get_plugin_host_package () {
-        var extends = component.get_extends ();
-
-        if (extends == null || extends.length < 1) {
-            return null;
-        }
-
-        for (int i = 0; i < extends.length; i++) {
-            var package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (extends[i]);
-            if (package != null) {
-                return package;
-            }
-        }
-
-        return null;
-    }
-
     public string? get_version () {
         if (latest_version != null) {
             return latest_version;
