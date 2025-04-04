@@ -40,6 +40,7 @@ appcenter_files = files(
     'Widgets/LinkListBox.vala',
     'Widgets/ProgressButton.vala',
     'Widgets/ReleaseRow.vala',
+    'Widgets' / 'Screenshot.vala',
     'Widgets/SizeLabel.vala',
     'Widgets' / 'SearchListItem.vala',
     'Widgets/AppContainers/AbstractPackageRowGrid.vala',
