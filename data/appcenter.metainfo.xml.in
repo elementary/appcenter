@@ -73,6 +73,7 @@
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/2209">AppCenter does not load images/icons on first load</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2273">Show info about in-app payments</issue>
       </issues>
     </release>
