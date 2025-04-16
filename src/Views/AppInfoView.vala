@@ -143,14 +143,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                     text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
 
                     accent_css = "@define-color accent_color %s;".printf (primary_color);
-                    accent_provider.load_from_data (accent_css.data);
+                    accent_provider.load_from_string (accent_css);
                 }
             }
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
             colored_css += accent_css;
 
-            accent_provider.load_from_data (colored_css.data);
+            accent_provider.load_from_string (colored_css);
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
         }
