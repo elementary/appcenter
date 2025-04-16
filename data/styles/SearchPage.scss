@@ -17,9 +17,7 @@ navigation-view-page.search {
         }
     }
 
-    picture {
-        background: #{'@selected_bg_color'};
-        border-radius: 0.5em;
+    screenshot {
         margin-top: calc(1em - 3px);
     }
 }

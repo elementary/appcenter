@@ -31,7 +31,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
     private AppCenter.AppIcon app_icon;
     private Gtk.Label name_label;
     private Gtk.Label summary_label;
-    private Gtk.Picture screenshot_picture;
+    private AppCenter.Screenshot screenshot_picture;
 
     static construct {
         screenshot_cache = new AppCenterCore.ScreenshotCache ();
@@ -62,13 +62,9 @@ public class AppCenter.SearchListItem : Gtk.Grid {
         summary_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
         summary_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        screenshot_picture = new Gtk.Picture () {
-            content_fit = SCALE_DOWN,
-            height_request = SCREENSHOT_HEIGHT,
-            vexpand = true,
-            visible = false
+        screenshot_picture = new AppCenter.Screenshot () {
+            height_request = 180,
         };
-        screenshot_picture.add_css_class (Granite.STYLE_CLASS_CARD);
 
         attach (app_icon, 0, 0, 1, 2);
         attach (name_label, 1, 0);
@@ -79,12 +75,14 @@ public class AppCenter.SearchListItem : Gtk.Grid {
     private void load_screenshot (AppCenterCore.Package package) {
         screenshot_picture.visible = false;
 
+        screenshot_picture.set_branding (package);
+
         string? screenshot_url = null;
 
         var screenshots = package.get_screenshots ();
         foreach (unowned var screenshot in screenshots) {
             screenshot_url = screenshot.get_image (-1, SCREENSHOT_HEIGHT, scale_factor).get_url ();
-            screenshot_picture.alternative_text = screenshot.get_caption ();
+            screenshot_picture.tooltip_text = screenshot.get_caption ();
 
             if (screenshot.get_kind () == DEFAULT && screenshot_url != null) {
                 break;
@@ -103,12 +101,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
                 return;
             }
 
-            screenshot_picture.file = File.new_for_path (screenshot_path);
-
-            if (!screenshot_picture.file.query_exists ()) {
-                return;
-            }
-
+            screenshot_picture.path = screenshot_path;
             screenshot_picture.visible = true;
         });
     }

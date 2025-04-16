@@ -33,13 +33,17 @@ public class AppCenter.Screenshot : Granite.Bin {
         var box = new Gtk.Box (VERTICAL, 0) {
             halign = CENTER
         };
-        box.append (label);
         box.append (picture);
 
         child = box;
         add_css_class (Granite.STYLE_CLASS_CARD);
 
         bind_property ("caption", label, "label");
+        notify["caption"].connect (() => {
+            if (caption != "" && label.parent == null) {
+                box.prepend (label);
+            }
+        });
     }
 
     public void set_branding (AppCenterCore.Package package) {
