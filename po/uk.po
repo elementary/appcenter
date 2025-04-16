@@ -3,7 +3,7 @@
 # Andrii Alforov <andrevpost@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # pandreyko <andrii.pavloshchuk@gmail.com>, 2019.
-# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022, 2023, 2024.
+# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022, 2023, 2024, 2025.
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 # DartDeaDia <dartdeadia@protonmail.com>, 2021.
 # Ryo Nakano <ryonakaknock3@gmail.com>, 2022.
@@ -11,10 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-05 01:09+0000\n"
-"PO-Revision-Date: 2024-07-01 13:16+0000\n"
+"POT-Creation-Date: 2025-03-12 19:15+0000\n"
+"PO-Revision-Date: 2025-03-18 01:49+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.10.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -86,7 +86,7 @@ msgid "Install %s to browse and install apps."
 msgstr "Установіть %s для перегляду і встановлення застосунків."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:43
+#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Відкрити"
 
@@ -928,7 +928,7 @@ msgstr "Розваги та"
 msgid "Games"
 msgstr "Ігри"
 
-#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:141
+#: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -936,21 +936,21 @@ msgstr "Flathub"
 msgid "No Apps Found"
 msgstr "Застосунків не знайдено"
 
-#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:151
+#: src/Views/SearchView.vala:44 src/Views/SearchView.vala:162
 msgid "The search term must be at least 3 characters long."
 msgstr "Пошукова фраза повинна містити щонайменше 3 символи."
 
-#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:180
+#: src/Views/SearchView.vala:52 src/Views/SearchView.vala:191
 msgid "Search Apps"
 msgstr "Шукати застосунки"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:96
+#: src/Views/SearchView.vala:107
 msgctxt "view"
 msgid "Search"
 msgstr "Знайти"
 
-#: src/Views/SearchView.vala:142
+#: src/Views/SearchView.vala:153
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
@@ -958,20 +958,24 @@ msgstr ""
 "Спробуйте змінити пошукові терміни. Ви також можете завантажити застосунки "
 "Flatpak, наприклад з %s"
 
-#: src/Views/SearchView.vala:175
+#: src/Views/SearchView.vala:186
 #, c-format
 msgid "Search %s"
 msgstr "Пошук %s"
 
-#: src/Widgets/ActionStack.vala:119 src/Widgets/HumbleButton.vala:80
+#: src/Widgets/ActionStack.vala:35
+msgid "In-app purchases"
+msgstr "Покупки в застосунку"
+
+#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
 msgstr "Безплатно"
 
-#: src/Widgets/ActionStack.vala:121 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
 msgid "Install"
 msgstr "Встановити"
 
-#: src/Widgets/ActionStack.vala:138
+#: src/Widgets/ActionStack.vala:161
 msgid "Update"
 msgstr "Оновити"
 
@@ -1025,7 +1029,7 @@ msgstr "Отримати початковий код"
 
 #: src/Widgets/LinkListBox.vala:136
 msgid "Get Involved"
-msgstr ""
+msgstr "Долучитися"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:199

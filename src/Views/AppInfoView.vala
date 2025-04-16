@@ -155,37 +155,9 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             critical ("Unable to set accent color: %s", e.message);
         }
 
-        var app_icon = new Gtk.Image () {
-            pixel_size = 128
+        var app_icon = new AppIcon (128) {
+            package = package
         };
-
-        var badge_image = new Gtk.Image () {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.END,
-            pixel_size = 64
-        };
-
-        var app_icon_overlay = new Gtk.Overlay () {
-            child = app_icon,
-            valign = Gtk.Align.START
-        };
-
-        var scale_factor = get_scale_factor ();
-
-        var plugin_host_package = package.get_plugin_host_package ();
-        if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
-            app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
-            badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
-
-            app_icon_overlay.add_overlay (badge_image);
-        } else {
-            app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
-
-            if (package.is_runtime_updates) {
-                badge_image.icon_name = "system-software-update";
-                app_icon_overlay.add_overlay (badge_image);
-            }
-        }
 
         var app_title = new Gtk.Label (package.get_name ()) {
             selectable = true,
@@ -241,7 +213,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         }
 
         var header_box = new Gtk.Box (HORIZONTAL, 6);
-        header_box.append (app_icon_overlay);
+        header_box.append (app_icon);
         header_box.append (header_grid);
 
         var header_clamp = new Adw.Clamp () {
@@ -967,7 +939,18 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             for (int i = 0; i < captioned_urls.length (); i++) {
                 if (results[i] == true) {
                     string caption = captioned_urls.nth_data (i).caption;
-                    load_screenshot (caption, screenshot_files[i]);
+
+                    var screenshot = new AppCenter.Screenshot () {
+                        caption = caption,
+                        height_request = 500,
+                        path = screenshot_files[i]
+                    };
+                    screenshot.set_branding (package);
+
+                    Idle.add (() => {
+                        screenshot_carousel.append (screenshot);
+                        return GLib.Source.REMOVE;
+                    });
                 }
             }
 
@@ -989,39 +972,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             });
 
             return null;
-        });
-    }
-
-    // We need to first download the screenshot locally so that it doesn't freeze the interface.
-    private void load_screenshot (string? caption, string path) {
-        var image = new Gtk.Picture.for_filename (path) {
-            content_fit = SCALE_DOWN,
-            height_request = 500,
-            vexpand = true
-        };
-
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
-            halign = Gtk.Align.CENTER
-        };
-        box.add_css_class ("screenshot");
-        box.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        if (caption != null) {
-            var label = new Gtk.Label (caption) {
-                max_width_chars = 50,
-                wrap = true
-            };
-
-            label.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-            box.append (label);
-        }
-
-        box.append (image);
-
-        Idle.add (() => {
-            screenshot_carousel.append (box);
-            return GLib.Source.REMOVE;
         });
     }
 
