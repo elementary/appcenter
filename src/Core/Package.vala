@@ -898,7 +898,6 @@ public class AppCenterCore.Package : Object {
         return null;
     }
 
-
     public GenericArray<AppStream.Screenshot> get_screenshots () {
         bool has_matching_environment = false;
         bool has_matching_style = false;
