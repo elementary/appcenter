@@ -18,6 +18,7 @@
     margin: rem(12px);
     padding: rem(12px);
     min-height: 3em;
+    -gtk-icon-size: 48px;
 
     &.accessibility {
         background-image:
@@ -264,15 +265,8 @@
             0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
             0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
 
-        label.pink {
-            font-size: 1em;
-            text-shadow:
-                0 1px 2px #{'alpha(@BUBBLEGUM_900, 0.2)'},
-                0 2px 6px #{'alpha(@BUBBLEGUM_900, 0.1)'};
-            margin-bottom: -12px;
-        }
-
-        label.blue {
+        label {
+            color: #{'@BLUEBERRY_500'};
             font-size: 1.5em;
             text-shadow:
                 0 1px 2px #{'alpha(@BLUEBERRY_900, 0.2)'},
@@ -280,6 +274,7 @@
         }
 
         image {
+            color: #{'@SLATE_500'};
             -gtk-icon-size: rem(64px);
         }
     }
