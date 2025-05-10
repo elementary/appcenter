@@ -12,7 +12,6 @@ Build-Depends: appstream (>= 1.0.0),
                libgranite-7-dev (>= 7.4.0),
                libgtk-4-dev,
                libjson-glib-dev,
-               libpackagekit-glib2-dev,
                libportal-dev,
                libportal-gtk4-dev,
                libsoup-3.0-dev,
@@ -32,14 +31,9 @@ Priority: extra
 Conflicts: appcenter-daemon
 Replaces: appcenter-daemon
 Depends: appstream (>= 0.12),
-         apt-config-icons,
-         apt-config-icons-hidpi,
-         apt-config-icons-large,
-         apt-config-icons-large-hidpi,
-         packagekit,
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: appstream-data-pantheon, flatpak
+Recommends: flatpak
 Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
