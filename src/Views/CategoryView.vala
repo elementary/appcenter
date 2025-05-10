@@ -83,6 +83,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         child = toolbar_view;
         title = category.name;
+        add_css_class ("categories");
 
         populate ();
 
@@ -217,11 +218,12 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         public string? label { get; construct; }
 
+        private Gtk.NoSelection selection_model;
         private static Gtk.SizeGroup size_group;
-        private Gtk.FlowBox flowbox;
+        private Gtk.GridView gridview;
 
         static construct {
-            size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+            size_group = new Gtk.SizeGroup (HORIZONTAL);
         }
 
         public SubcategoryFlowbox (string? label = null) {
@@ -229,40 +231,45 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         }
 
         construct {
-            flowbox = new Gtk.FlowBox () {
-                column_spacing = 24,
-                homogeneous = true,
-                max_children_per_line = 4,
-                row_spacing = 12,
-                valign = Gtk.Align.START
+            selection_model = new Gtk.NoSelection (null);
+
+            var factory = new Gtk.SignalListItemFactory ();
+
+            gridview = new Gtk.GridView (selection_model, factory) {
+                // max_columns = 4,
+                single_click_activate = true,
+                valign = START
             };
 
             orientation = Gtk.Orientation.VERTICAL;
 
             if (label != null) {
-                var header = new Granite.HeaderLabel (label) {
-                    margin_start = 12
-                };
+                var header = new Granite.HeaderLabel (label);
                 header.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
                 append (header);
             }
-            append (flowbox);
+            append (gridview);
 
-            flowbox.child_activated.connect ((child) => {
-                var row = (Widgets.ListPackageRowGrid) child.get_child ();
-                show_package (row.package);
+            gridview.activate.connect ((pos) => {
+                show_package ((AppCenterCore.Package) selection_model.model.get_item (pos));
+            });
+
+            factory.setup.connect ((obj) => {
+                var package_list_item = new PackageListItem ();
+                size_group.add_widget (package_list_item);
+
+                var list_item = (Gtk.ListItem) obj;
+                list_item.child = package_list_item;
+            });
+
+            factory.bind.connect ((obj) => {
+                var list_item = (Gtk.ListItem) obj;
+                ((PackageListItem) list_item.child).package = (AppCenterCore.Package) list_item.item;
             });
         }
 
         public void bind_model (GLib.ListModel model) {
-            flowbox.bind_model (model, create_widget_func);
-        }
-
-        private Gtk.Widget create_widget_func (Object object) {
-            unowned var package = (AppCenterCore.Package) object;
-            var package_row = new Widgets.ListPackageRowGrid (package);
-            size_group.add_widget (package_row);
-            return package_row;
+            selection_model.model = model;
         }
     }
 }
