@@ -163,7 +163,11 @@ namespace AppCenter.Views {
             var menu_button = new Gtk.MenuButton () {
                 icon_name = "open-menu",
                 popover = menu_popover,
-                tooltip_text = _("Settings")
+                primary = true,
+                tooltip_markup = ("%s\n" + Granite.TOOLTIP_SECONDARY_TEXT_MARKUP).printf (
+                    _("Settings"),
+                    "F10"
+                )
             };
             menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
