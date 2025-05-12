@@ -26,10 +26,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
-        var go_back = new SimpleAction ("go-back", null);
-        go_back.activate.connect (() => navigation_view.pop ());
-        add_action (go_back);
-
         var focus_search = new SimpleAction ("search", null);
         focus_search.activate.connect (() => search ());
         add_action (focus_search);
