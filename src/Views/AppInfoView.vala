@@ -512,9 +512,11 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                     break;
 
                 default:
-                    // unhandled
-                    debug (relation.get_value_control_kind ().to_string ());
-                    debug (relation.get_kind ().to_string ());
+                    debug (
+                        "Unhandled control kind %s %s",
+                        relation.get_kind ().to_string (),
+                        relation.get_value_control_kind ().to_string ()
+                    );
                     continue;
             }
 
