@@ -497,18 +497,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             switch (relation.get_value_control_kind ()) {
                 // An input method for users to control software
                 case GAMEPAD:
-                    switch (relation.get_kind ()) {
-                        case REQUIRES:
-                            title = _("Requires a Controller");
-                        case RECOMMENDS:
-                            title = _("Recommends a Controller");
-                        case SUPPORTS:
-                        default:
-                            title = _("Play With a Controller");
-                    }
-
-                    description = _("Such as a PlayStation, Xbox, or 8BitDo controller.");
-                    icon_name = "input-gaming-symbolic";
+                    get_gamepad_info_for_kind (relation.get_kind (), out icon_name, out title, out description);
                     break;
 
                 default:
@@ -1123,6 +1112,23 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var title = (Gtk.Label) list_item.child;
         title.label = package.origin_description;
+    }
+
+    private void get_gamepad_info_for_kind (AppStream.RelationKind kind, out string icon_name, out string title, out string description) {
+        switch (kind) {
+            case REQUIRES:
+                title = _("Requires a Controller");
+                break;
+            case RECOMMENDS:
+                title = _("Recommends a Controller");
+                break;
+            default:
+                title = _("Play With a Controller");
+                break;
+        }
+
+        description = _("Such as a PlayStation, Xbox, or 8BitDo controller.");
+        icon_name = "input-gaming-symbolic";
     }
 
     private class ArrowButton : Gtk.Button {
