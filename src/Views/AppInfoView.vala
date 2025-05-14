@@ -272,6 +272,22 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             maximum_size = MAX_WIDTH
         };
 
+        var supports_flowbox = new Gtk.FlowBox () {
+            column_spacing = 24,
+            row_spacing = 24,
+            selection_mode = NONE
+        };
+        supports_flowbox.add_css_class ("content-warning-box");
+
+        var supports_flowbox_revealer = new Gtk.Revealer () {
+            child = supports_flowbox
+        };
+
+        var supports_clamp = new Adw.Clamp () {
+            child = supports_flowbox_revealer,
+            maximum_size = MAX_WIDTH
+        };
+
         if (!package.is_runtime_updates) {
 #if CURATED
             if (package.is_native) {
@@ -470,6 +486,34 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
                 oars_flowbox.append (social_info);
             }
+        }
+
+        var supports = package_component.get_supports ();
+        for (int i = 0; i < supports.length; i++) {
+            var relation = supports[i];
+
+            string title, description, icon_name;
+
+            switch (relation.get_value_control_kind ()) {
+                // An input method for users to control software
+                case GAMEPAD:
+                    get_gamepad_info_for_kind (relation.get_kind (), out icon_name, out title, out description);
+                    break;
+
+                default:
+                    debug (
+                        "Unhandled control kind %s %s",
+                        relation.get_kind ().to_string (),
+                        relation.get_value_control_kind ().to_string ()
+                    );
+                    continue;
+            }
+
+            supports_flowbox.append (new ContentType (
+                title,
+                description,
+                icon_name
+            ));
         }
 
         bool has_matching_environment = false;
@@ -692,6 +736,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             box.append (screenshot_stack);
         }
 
+        box.append (supports_clamp);
         box.append (body_clamp);
         box.append (release_carousel);
         box.append (links_clamp);
@@ -723,6 +768,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
+        }
+
+        if (supports_flowbox.get_first_child () != null) {
+            supports_flowbox_revealer.reveal_child = true;
         }
 
         origin_dropdown.notify["selected-item"].connect (() => {
@@ -1063,6 +1112,23 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var title = (Gtk.Label) list_item.child;
         title.label = package.origin_description;
+    }
+
+    private void get_gamepad_info_for_kind (AppStream.RelationKind kind, out string icon_name, out string title, out string description) {
+        switch (kind) {
+            case REQUIRES:
+                title = _("Requires a Controller");
+                break;
+            case RECOMMENDS:
+                title = _("Recommends a Controller");
+                break;
+            default:
+                title = _("Play With a Controller");
+                break;
+        }
+
+        description = _("Such as a PlayStation, Xbox, or 8BitDo controller.");
+        icon_name = "input-gaming-symbolic";
     }
 
     private class ArrowButton : Gtk.Button {
