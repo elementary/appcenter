@@ -258,7 +258,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         oars_flowbox = new Gtk.FlowBox () {
             column_spacing = 24,
-            row_spacing = 24,
+            row_spacing = 12,
             selection_mode = Gtk.SelectionMode.NONE
         };
         oars_flowbox.add_css_class ("content-warning-box");
@@ -1092,12 +1092,9 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     class ContentType : Gtk.FlowBoxChild {
         public ContentType (string title, string description, string icon_name) {
-            can_focus = false;
-
             var icon = new Gtk.Image.from_icon_name (icon_name) {
-                halign = Gtk.Align.START,
-                margin_bottom = 6,
-                pixel_size = 32
+                valign = START,
+                icon_size = LARGE
             };
 
             var label = new Gtk.Label (title) {
@@ -1105,6 +1102,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             };
 
             var description_label = new Gtk.Label (description) {
+                hexpand = true,
                 max_width_chars = 25,
                 wrap = true,
                 xalign = 0
@@ -1112,10 +1110,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             description_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
             description_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
+            var label_box = new Gtk.Box (VERTICAL, 3);
+            label_box.append (label);
+            label_box.append (description_label);
+
+            var box = new Gtk.Box (HORIZONTAL, 12);
             box.append (icon);
-            box.append (label);
-            box.append (description_label);
+            box.append (label_box);
 
             child = box;
         }
