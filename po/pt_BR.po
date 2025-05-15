@@ -22,13 +22,14 @@
 # Max <pereiraalcizmax@gmail.com>, 2024.
 # Fábio Klevinskas Lopes <fabioklopes@live.com>, 2024.
 # Leonardo Lemos <leonardolemos@live.com>, 2025.
+# Renato Trevisan <rjltrevisan@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-14 21:57+0000\n"
 "PO-Revision-Date: 2025-05-16 12:55+0000\n"
-"Last-Translator: Leonardo Lemos <leonardolemos@live.com>\n"
+"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -996,7 +997,7 @@ msgstr "Procurar %s"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
-msgstr ""
+msgstr "Compras dentro do aplicativo"
 
 #: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
