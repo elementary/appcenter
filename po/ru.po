@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-14 21:57+0000\n"
-"PO-Revision-Date: 2025-03-15 16:55+0000\n"
+"PO-Revision-Date: 2025-05-19 23:41+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -749,19 +749,19 @@ msgstr "Может читать и изменять системные наст�
 
 #: src/Views/AppInfoView.vala:1120
 msgid "Requires a Controller"
-msgstr ""
+msgstr "Требуется контроллер"
 
 #: src/Views/AppInfoView.vala:1123
 msgid "Recommends a Controller"
-msgstr ""
+msgstr "Рекомендуется контроллер"
 
 #: src/Views/AppInfoView.vala:1126
 msgid "Play With a Controller"
-msgstr ""
+msgstr "Играйте на контроллере"
 
 #: src/Views/AppInfoView.vala:1130
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
-msgstr ""
+msgstr "Например, на контроллере PlayStation, Xbox или 8BitDo."
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
