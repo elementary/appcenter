@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 19:15+0000\n"
-"PO-Revision-Date: 2025-03-18 01:49+0000\n"
+"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"PO-Revision-Date: 2025-05-19 23:41+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:45 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
 msgid "AppCenter"
 msgstr "Центр застосунків"
 
@@ -53,40 +53,40 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Застосунок було встановлено"
 
-#: src/Application.vala:340 src/MainWindow.vala:230
+#: src/Application.vala:340 src/MainWindow.vala:226
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» було встановлено"
 
-#: src/MainWindow.vala:57
+#: src/MainWindow.vala:53
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Не вдалося запустити «%s»"
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:83
 msgid "Network Not Available."
 msgstr "Мережа не доступна."
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:84
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "Необхідне з'єднання з Інтернетом для перегляду чи встановлення застосунків."
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:94
 msgid "Network Settings…"
 msgstr "Налаштування мережі…"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:102
 msgid "Running in Demo Mode"
 msgstr "Робота в демонстраційному режимі"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:103
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Установіть %s для перегляду і встановлення застосунків."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Відкрити"
 
@@ -98,10 +98,10 @@ msgstr "Очікування"
 msgid "Finished"
 msgstr "Завершено"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1492
-#: src/Core/FlatpakBackend.vala:1516 src/Core/FlatpakBackend.vala:1624
-#: src/Core/FlatpakBackend.vala:1648 src/Core/FlatpakBackend.vala:1806
-#: src/Core/FlatpakBackend.vala:1824
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1495
+#: src/Core/FlatpakBackend.vala:1519 src/Core/FlatpakBackend.vala:1627
+#: src/Core/FlatpakBackend.vala:1651 src/Core/FlatpakBackend.vala:1809
+#: src/Core/FlatpakBackend.vala:1827
 msgid "Cancelling"
 msgstr "Скасування"
 
@@ -114,23 +114,23 @@ msgstr "Запускається"
 msgid "%s (system-wide)"
 msgstr "%s (загальносистемний)"
 
-#: src/Core/FlatpakBackend.vala:109
+#: src/Core/FlatpakBackend.vala:110
 msgid "package operations are being performed"
 msgstr "виконуються операції з пакунками"
 
-#: src/Core/FlatpakBackend.vala:1483
+#: src/Core/FlatpakBackend.vala:1486
 msgid "Installing"
 msgstr "Встановлення"
 
-#: src/Core/FlatpakBackend.vala:1615
+#: src/Core/FlatpakBackend.vala:1618
 msgid "Uninstalling"
 msgstr "Видалення"
 
-#: src/Core/FlatpakBackend.vala:1797
+#: src/Core/FlatpakBackend.vala:1800
 msgid "Updating"
 msgstr "Оновлення"
 
-#: src/Core/FlatpakBackend.vala:1987
+#: src/Core/FlatpakBackend.vala:1990
 #, c-format
 msgid "%s (local)"
 msgstr "%s (локальний)"
@@ -517,168 +517,168 @@ msgid "Refresh Updates"
 msgstr "Поновити оновлення"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:173
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
 msgctxt "action"
 msgid "Search"
 msgstr "Знайти"
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:236
 msgid "Illicit Substances"
 msgstr "Заборонені речовини"
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:237
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Наявність або посилання на алкоголь, наркотики або тютюн"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:242
 msgid "Sex & Nudity"
 msgstr "Секс і оголеність"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:243
 msgid "Adult nudity or sexual themes"
 msgstr "Оголення дорослих або сексуальні теми"
 
-#: src/Views/AppInfoView.vala:276
+#: src/Views/AppInfoView.vala:248
 msgid "Offensive Language"
 msgstr "Образливі вислови"
 
-#: src/Views/AppInfoView.vala:277
+#: src/Views/AppInfoView.vala:249
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Лихослів'я, дискримінаційна мова або дорослий гумор"
 
-#: src/Views/AppInfoView.vala:282
+#: src/Views/AppInfoView.vala:254
 msgid "Gambling"
 msgstr "Азартні ігри"
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:255
 msgid "Realistic or participatory gambling"
 msgstr "Реалістична гра або участь в азартних іграх"
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:295
 msgid "Made for elementary OS"
 msgstr "Зроблено для elementary OS"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:296
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 "Перевірено elementary щодо безпечності, приватності та сумісності з системою"
 
-#: src/Views/AppInfoView.vala:331
+#: src/Views/AppInfoView.vala:319
 msgid "May Not Be Translated"
 msgstr "Може бути не перекладено"
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:320
 msgid "This app does not provide language information"
 msgstr "Цей застосунок не надає даних про мову"
 
-#: src/Views/AppInfoView.vala:339
+#: src/Views/AppInfoView.vala:327
 msgid "Not Translated"
 msgstr "Не перекладено"
 
-#: src/Views/AppInfoView.vala:340
+#: src/Views/AppInfoView.vala:328
 msgid "This app is not available in your language"
 msgstr "Цей застосунок недоступний вашою мовою"
 
-#: src/Views/AppInfoView.vala:347
+#: src/Views/AppInfoView.vala:335
 msgid "Not Fully Translated"
 msgstr "Неповністю перекладено"
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:336
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Цей застосунок перекладений вашою мовою на %i%%"
 
-#: src/Views/AppInfoView.vala:372
+#: src/Views/AppInfoView.vala:360
 msgid "Conflict"
 msgstr "Конфлікти"
 
-#: src/Views/AppInfoView.vala:373
+#: src/Views/AppInfoView.vala:361
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Зображення небезпечних ситуацій або агресивних суперечок"
 
-#: src/Views/AppInfoView.vala:386
+#: src/Views/AppInfoView.vala:374
 msgid "Violence"
 msgstr "Жорстокість"
 
-#: src/Views/AppInfoView.vala:391
+#: src/Views/AppInfoView.vala:379
 msgid "Fantasy Violence"
 msgstr "Фантазії про насильство"
 
-#: src/Views/AppInfoView.vala:396
+#: src/Views/AppInfoView.vala:384
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Висвітлення насильства, кровопролиття або смерті"
 
-#: src/Views/AppInfoView.vala:440
+#: src/Views/AppInfoView.vala:428
 msgid "Multiplayer"
 msgstr "Багатокористувацька гра"
 
-#: src/Views/AppInfoView.vala:441
+#: src/Views/AppInfoView.vala:429
 msgid "Online play with other people"
 msgstr "Онлайн гра з іншими людьми"
 
-#: src/Views/AppInfoView.vala:457
+#: src/Views/AppInfoView.vala:445
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Немодеровані аудіо, відео або текстові повідомлення з іншими людьми"
 
-#: src/Views/AppInfoView.vala:459
+#: src/Views/AppInfoView.vala:447
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Модеровані аудіо, відео або текстові повідомлення з іншими людьми"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:451
 msgid "Online Interactions"
 msgstr "Онлайн-взаємодії"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:461
 msgid "Location Sharing"
 msgstr "Надсилання даних про розташування"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:462
 msgid "Other people can see your real-world location"
 msgstr "Інші люди можуть бачити ваше місце перебування"
 
-#: src/Views/AppInfoView.vala:486
+#: src/Views/AppInfoView.vala:474
 msgid "Collects anonymous usage data"
 msgstr "Збирання знеособлених даних про користування"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:477
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 "Збирає дані про користування, які можна використати для ідентифікації вас"
 
-#: src/Views/AppInfoView.vala:494
+#: src/Views/AppInfoView.vala:482
 msgid "Info Sharing"
 msgstr "Надсилання інформації"
 
-#: src/Views/AppInfoView.vala:653
+#: src/Views/AppInfoView.vala:669
 msgid "Screenshot Not Available"
 msgstr "Знімок екрана недоступний"
 
-#: src/Views/AppInfoView.vala:681
+#: src/Views/AppInfoView.vala:697
 msgid "What's New:"
 msgstr "Що нового:"
 
-#: src/Views/AppInfoView.vala:801
+#: src/Views/AppInfoView.vala:822
 msgid "End of Life"
 msgstr "Підтримку завершено"
 
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:823
 msgid "May not work as expected or receive security updates"
 msgstr "Може не працювати належним чином або не отримувати оновлень безпеки"
 
-#: src/Views/AppInfoView.vala:808
+#: src/Views/AppInfoView.vala:829
 msgid "Outdated"
 msgstr "Застарілий"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:830
 msgid "May not work as expected or support the latest features"
 msgstr "Може неналежно працювати або не підтримувати найновіші функції"
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:838
 msgid "Unstable"
 msgstr "Нестабільний"
 
-#: src/Views/AppInfoView.vala:818
+#: src/Views/AppInfoView.vala:839
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -687,29 +687,29 @@ msgstr ""
 "Створено для нестабільної версії %s; може містити серйозні вади. Не "
 "рекомендовано користуватися на робочій системі."
 
-#: src/Views/AppInfoView.vala:831
+#: src/Views/AppInfoView.vala:852
 msgid "Insecure Sandbox"
 msgstr "Небезпечна пісочниця"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:853
 msgid "Can ignore or modify its own system permissions"
 msgstr "Може ігнорувати або змінювати власні системні дозволи"
 
-#: src/Views/AppInfoView.vala:841
+#: src/Views/AppInfoView.vala:862
 msgid "System Folder Access"
 msgstr "Доступ до системної теки"
 
-#: src/Views/AppInfoView.vala:842
+#: src/Views/AppInfoView.vala:863
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "Включно з теками Домівки всіх користувачів, але без урахування внутрішніх "
 "системних тек"
 
-#: src/Views/AppInfoView.vala:849
+#: src/Views/AppInfoView.vala:870
 msgid "Home Folder Access"
 msgstr "Доступ до теки Домівка"
 
-#: src/Views/AppInfoView.vala:850
+#: src/Views/AppInfoView.vala:871
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -717,40 +717,56 @@ msgstr ""
 "Включно з усіма документами, завантаженнями, музикою, зображеннями, відео та "
 "будь-якими схованими теками"
 
-#: src/Views/AppInfoView.vala:859
+#: src/Views/AppInfoView.vala:880
 msgid "Legacy Autostart"
 msgstr "Застарілий автозапуск"
 
-#: src/Views/AppInfoView.vala:860
+#: src/Views/AppInfoView.vala:881
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Може автоматично запускатися і працювати у фоновому режимі без запиту"
 
-#: src/Views/AppInfoView.vala:869
+#: src/Views/AppInfoView.vala:890
 msgid "Location Access"
 msgstr "Доступ до розташування"
 
-#: src/Views/AppInfoView.vala:870
+#: src/Views/AppInfoView.vala:891
 msgid "Can see your precise location at any time without asking"
 msgstr "Можливість бачити своє точне місце перебування будь-коли без запиту"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:900
 msgid "Legacy Notifications"
 msgstr "Застарілі сповіщення"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:901
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Бульбашки можуть не налаштовуватися або показуватися в центрі сповіщень як "
 "«Інше»"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:910
 msgid "System Settings Access"
 msgstr "Доступ до системних налаштувань"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:911
 msgid "Can read and modify system settings"
 msgstr "Може читати та змінювати системні налаштування"
+
+#: src/Views/AppInfoView.vala:1120
+msgid "Requires a Controller"
+msgstr "Потребує контролера"
+
+#: src/Views/AppInfoView.vala:1123
+msgid "Recommends a Controller"
+msgstr "Контролер рекомендований"
+
+#: src/Views/AppInfoView.vala:1126
+msgid "Play With a Controller"
+msgstr "Грати з контролером"
+
+#: src/Views/AppInfoView.vala:1130
+msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
+msgstr "Наприклад, контролер PlayStation, Xbox або 8BitDo."
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
@@ -780,17 +796,17 @@ msgstr "Застосунки, випробувані безплатно не о�
 msgid "Check for Updates"
 msgstr "Перевірити наявність оновлень"
 
-#: src/Views/AppListUpdateView.vala:166
+#: src/Views/AppListUpdateView.vala:168
 msgid "Settings"
 msgstr "Налаштування"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:194
+#: src/Views/AppListUpdateView.vala:198
 msgctxt "view"
 msgid "Installed"
 msgstr "Установлені"
 
-#: src/Views/AppListUpdateView.vala:275
+#: src/Views/AppListUpdateView.vala:279
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -798,7 +814,7 @@ msgstr[0] "Доступне %u оновлення"
 msgstr[1] "Доступні %u оновлення"
 msgstr[2] "Доступні %u оновлень"
 
-#: src/Views/AppListUpdateView.vala:282
+#: src/Views/AppListUpdateView.vala:286
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Усе оновлено до найновішої версії. Востаннє перевірено %s."

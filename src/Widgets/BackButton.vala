@@ -15,7 +15,7 @@ public class AppCenter.BackButton : Gtk.Button {
         box.append (back_icon);
         box.append (label_widget);
 
-        action_name = "win.go-back";
+        action_name = "navigation.pop";
         child = box;
         tooltip_markup = Granite.markup_accel_tooltip ({"<alt>Left"});
         valign = CENTER;

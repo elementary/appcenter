@@ -50,7 +50,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         var banner_motion_controller = new Gtk.EventControllerMotion ();
 
         banner_carousel = new Adw.Carousel () {
-            allow_long_swipes = true
+            allow_long_swipes = true,
+            overflow = VISIBLE
         };
         banner_carousel.add_controller (banner_motion_controller);
 

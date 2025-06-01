@@ -1,34 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-14 21:57+0000\n"
-"PO-Revision-Date: 2016-10-31 21:48+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: data/appcenter.metainfo.xml.in:11
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
-msgstr "Tarkvarakeskus"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Rakenduste sirvimine ja haldamine"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -36,9 +34,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Tarkvarakeskus indie ja avatud allikaga tarkvarale. Sirvi kategooriate kaupa "
-"või kasuta otsingut uute rakenduste leidmiseks. Tarkvarakeskust kasutatakse "
-"ka süsteemi uuendamiseks veaparanduste ja uute funktsioonide lisamise jaoks."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -129,11 +124,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:9
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;paigalda;"
-"paigaldamine;eemalda;kataloog;pood;rakendus;uuenda;tarkvara;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
@@ -146,10 +138,3 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr ""
-
-#~ msgid "About AppCenter"
-#~ msgstr "Rakendusest..."
-
-#, fuzzy
-#~ msgid "App Center"
-#~ msgstr "Tarkvarakeskus"

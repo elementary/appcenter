@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '8.1.0',
+    version: '8.2.0',
     meson_version: '>=0.57.0'
 )
 
@@ -22,7 +22,7 @@ gobject = dependency ('gobject-2.0')
 gio = dependency ('gio-2.0')
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk4', version: '>=4.10')
-granite = dependency ('granite-7', version: '>=7.3.0')
+granite = dependency ('granite-7', version: '>=7.6.0')
 adwaita = dependency('libadwaita-1', version: '>=1.4')
 appstream = dependency ('appstream', version: '>=1.0')
 libsoup = dependency ('libsoup-3.0')
