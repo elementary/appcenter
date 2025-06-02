@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2025-05-17 23:42+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -81,6 +81,74 @@ msgstr ""
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "開く"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "アクセサリー"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "オーディオ"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "コミュニケーション"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "開発"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "教育"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "ファイナンス"
+
+#: src/Core/CategoryManager.vala:51
+msgid "Fun & Games"
+msgstr "エンタメとゲーム"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "グラフィックス"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "インターネット"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "数学・科学・工学"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "メディア製作"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "オフィス"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "システム"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "ユニバーサルアクセス"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "動画"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "文書作成と言語"
+
+#: src/Core/CategoryManager.vala:144
+msgid "Privacy & Security"
+msgstr "プライバシーとセキュリティ"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -492,7 +560,7 @@ msgstr "アップデートを再読み込み"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 msgctxt "action"
 msgid "Search"
 msgstr "検索"
@@ -798,7 +866,7 @@ msgstr "最新の状態です。最終確認: %s"
 msgid "Other Apps by %s"
 msgstr "%s による他のアプリ"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "最近アップデートされたアプリ"
 
@@ -810,88 +878,24 @@ msgstr "有料アプリ"
 msgid "Free Apps"
 msgstr "無料アプリ"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "カテゴリー"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "アクセサリー"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "オーディオ"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "コミュニケーション"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "開発"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "教育"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "ファイナンス"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "グラフィックス"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "インターネット"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "数学・科学・工学"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "メディア製作"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "オフィス"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "システム"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "ユニバーサルアクセス"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "動画"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "文書作成と言語"
-
-#: src/Views/Homepage.vala:203
-msgid "Privacy & Security"
-msgstr "プライバシーとセキュリティ"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "アップデートとインストール済みアプリ"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "ホーム"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr "アプリを検索したり管理したりします"
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -904,18 +908,6 @@ msgstr ""
 "elementary が審査・キュレーションしています。カテゴリー別で閲覧したり検索した"
 "りして、新しいアプリを見つけましょう。AppCenter は、新機能や修正のためシステ"
 "ムを最新かつ最高のバージョンへアップデートするときにも使われます。"
-
-#: src/Views/Homepage.vala:519
-msgid "Fun & Games"
-msgstr "エンタメとゲーム"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr "エンタメと"
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "ゲーム"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1093,6 +1085,12 @@ msgstr "%s の更新情報"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "閉じる"
+
+#~ msgid "Fun &"
+#~ msgstr "エンタメと"
+
+#~ msgid "Games"
+#~ msgstr "ゲーム"
 
 #~ msgid "Extensions:"
 #~ msgstr "拡張機能:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "ਐਪ-ਸੈਂਟਰ"
 
@@ -80,6 +80,78 @@ msgstr ""
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "ਸੰਗੀ"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "ਆਡੀਓ"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "ਗੱਲਬਾਤ"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "ਸਾਫ਼ਟਵੇਅਰ ਉੱਨਤੀ"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "ਸਿੱਖਿਆ"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "ਵਿੱਤੀ"
+
+#: src/Core/CategoryManager.vala:51
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "ਗੇਮਾਂ"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "ਗ੍ਰਾਫ਼ਿਕਸ"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "ਇੰਟਰਨੈੱਟ"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "ਹਿਸਾਬ, ਸਾਇੰਸ, ਅਤੇ ਇੰਜੀਨੀਅਰਿੰਗ"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "ਮੀਡੀਆ ਪ੍ਰੋਡਕਸ਼ਨ"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "ਦਫ਼ਤਰੀ"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "ਸਿਸਟਮ"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "ਸਰਬ-ਸਾਂਝਾ"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "ਵਿਡੀਓ"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "ਲੇਖਣ ਅਤੇ ਭਾਸ਼ਾ"
+
+#: src/Core/CategoryManager.vala:144
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "ਪਰਦੇਦਾਰੀ ਨੀਤੀ"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -502,7 +574,7 @@ msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -820,7 +892,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "%s ਦੁਆਰਾ ਬਣਾਈਆਂ ਹੋਰ ਐਪਾਂ"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "ਹਾਲ ਹੀ ਵਿੱਚ ਅਪਡੇਟ ਕੀਤੀਆਂ ਹੋਈਆਂ"
 
@@ -836,92 +908,26 @@ msgstr "ਐਪਾਂ ਖੋਜੋ"
 msgid "Free Apps"
 msgstr "ਮੁਫ਼ਤ"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "ਵਰਗ"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "ਸੰਗੀ"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "ਆਡੀਓ"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "ਗੱਲਬਾਤ"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "ਸਾਫ਼ਟਵੇਅਰ ਉੱਨਤੀ"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "ਸਿੱਖਿਆ"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "ਵਿੱਤੀ"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "ਗ੍ਰਾਫ਼ਿਕਸ"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "ਇੰਟਰਨੈੱਟ"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "ਹਿਸਾਬ, ਸਾਇੰਸ, ਅਤੇ ਇੰਜੀਨੀਅਰਿੰਗ"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "ਮੀਡੀਆ ਪ੍ਰੋਡਕਸ਼ਨ"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "ਦਫ਼ਤਰੀ"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "ਸਿਸਟਮ"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "ਸਰਬ-ਸਾਂਝਾ"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "ਵਿਡੀਓ"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "ਲੇਖਣ ਅਤੇ ਭਾਸ਼ਾ"
-
-#: src/Views/Homepage.vala:203
-#, fuzzy
-#| msgid "Privacy Policy"
-msgid "Privacy & Security"
-msgstr "ਪਰਦੇਦਾਰੀ ਨੀਤੀ"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "ਐਪ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "ਮੁੱਖ ਪੰਨਾ"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -929,20 +935,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-
-#: src/Views/Homepage.vala:519
-#, fuzzy
-#| msgid "Games"
-msgid "Fun & Games"
-msgstr "ਗੇਮਾਂ"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr ""
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "ਗੇਮਾਂ"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1122,6 +1114,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr ""
+
+#~ msgid "Games"
+#~ msgstr "ਗੇਮਾਂ"
 
 #~ msgid "Extensions:"
 #~ msgstr "ਵਾਧਕ:"

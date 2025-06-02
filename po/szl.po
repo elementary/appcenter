@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2024-06-24 02:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Weblate 5.5.5\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "AppCyntrum"
 
@@ -82,6 +82,78 @@ msgstr ""
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Ôtwōrz"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "Akcesoria"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "Źwiynk"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "Kōmunikacyjo"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "Rozrost ôprogramowanio"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "Edukacyjo"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "Finance"
+
+#: src/Core/CategoryManager.vala:51
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "Gry"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "Grafika"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "Internet"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "Matymatyka, nauka i inżynieryjo"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "Produkcyjo mediōw"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "Biōro"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "Systym"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "Uniwersalny dostymp"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "Wideo"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "Pisanie i jynzyk"
+
+#: src/Core/CategoryManager.vala:144
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Polityka prywatności"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -525,7 +597,7 @@ msgstr "Wybadowanie aktualizacyji"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -840,7 +912,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "Inksze programy autorstwa %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "Ôstatnio zaktualizowane"
 
@@ -856,92 +928,26 @@ msgstr "Wyszukej program"
 msgid "Free Apps"
 msgstr "Wolny"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "Kategoryje"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "Akcesoria"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "Źwiynk"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "Kōmunikacyjo"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "Rozrost ôprogramowanio"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "Edukacyjo"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "Finance"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "Grafika"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "Internet"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "Matymatyka, nauka i inżynieryjo"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "Produkcyjo mediōw"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "Biōro"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "Systym"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "Uniwersalny dostymp"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "Wideo"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "Pisanie i jynzyk"
-
-#: src/Views/Homepage.vala:203
-#, fuzzy
-#| msgid "Privacy Policy"
-msgid "Privacy & Security"
-msgstr "Polityka prywatności"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Niy szło zainstalować programu"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "Katalog dōmowy"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -949,20 +955,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-
-#: src/Views/Homepage.vala:519
-#, fuzzy
-#| msgid "Games"
-msgid "Fun & Games"
-msgstr "Gry"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr ""
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "Gry"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1144,6 +1136,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr ""
+
+#~ msgid "Games"
+#~ msgstr "Gry"
 
 #~ msgid "Extensions:"
 #~ msgstr "Rozszyrzynia:"

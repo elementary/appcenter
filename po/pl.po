@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2025-03-30 11:55+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementaryos.org/projects/appcenter/"
@@ -27,7 +27,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -89,6 +89,74 @@ msgstr "Zainstaluj %s aby przeglądać i instalować programy."
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Otwórz"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "Akcesoria"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "Dźwięk"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "Komunikacja"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "Rozwój oprogramowania"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "Edukacja"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "Finanse"
+
+#: src/Core/CategoryManager.vala:51
+msgid "Fun & Games"
+msgstr "Rozrywka i Gry"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "Grafika"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "Internet"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "Matematyka, nauka i inżynieria"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "Produkcja mediów"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "Biuro"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "System"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "Dostęp uniwersalny"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "Wideo"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "Pisanie i język"
+
+#: src/Core/CategoryManager.vala:144
+msgid "Privacy & Security"
+msgstr "Prywatność i bezpieczeństwo"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -512,7 +580,7 @@ msgstr "Odśwież aktualizacje"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 msgctxt "action"
 msgid "Search"
 msgstr "Szukaj"
@@ -822,7 +890,7 @@ msgstr "Wszystko jest aktualne. Ostatnio sprawdzano %s."
 msgid "Other Apps by %s"
 msgstr "Inne programy autorstwa %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "Ostatnio zaktualizowane"
 
@@ -834,88 +902,24 @@ msgstr "Płatne aplikacje"
 msgid "Free Apps"
 msgstr "Darmowe aplikacje"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "Akcesoria"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "Dźwięk"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "Komunikacja"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "Rozwój oprogramowania"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "Edukacja"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "Finanse"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "Grafika"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "Internet"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "Matematyka, nauka i inżynieria"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "Produkcja mediów"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "Biuro"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "System"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "Dostęp uniwersalny"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "Wideo"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "Pisanie i język"
-
-#: src/Views/Homepage.vala:203
-msgid "Privacy & Security"
-msgstr "Prywatność i bezpieczeństwo"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Aktualizacje i zainstalowane aplikacje"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "Strona główna"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr "Przeglądaj i zarządzaj aplikacjami"
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -929,18 +933,6 @@ msgstr ""
 "kategorii lub wyszukuj i odkrywaj nowe programy. AppCenter jest także "
 "używane do aktualizowania systemu do najnowszej wersji, celem uzyskiwania "
 "nowych wspaniałych funkcji i niezbędnych poprawek."
-
-#: src/Views/Homepage.vala:519
-msgid "Fun & Games"
-msgstr "Rozrywka i Gry"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr "Rozrywka i"
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "Gry"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1118,6 +1110,12 @@ msgstr "Co nowego w %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Zamknij"
+
+#~ msgid "Fun &"
+#~ msgstr "Rozrywka i"
+
+#~ msgid "Games"
+#~ msgstr "Gry"
 
 #~ msgid "Extensions:"
 #~ msgstr "Rozszerzenia:"

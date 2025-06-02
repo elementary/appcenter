@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2024-11-28 06:16+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -27,7 +27,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "应用中心"
 
@@ -88,6 +88,74 @@ msgstr "安装 %s 以浏览及安装应用。"
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "打开"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "附件"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "音频"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "社交"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "开发"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "教育"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "金融"
+
+#: src/Core/CategoryManager.vala:51
+msgid "Fun & Games"
+msgstr "娱乐和游戏"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "图像"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "网络"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "数学、科学 & 工程"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "多媒体制作"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "办公"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "系统"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "通用辅助"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "视频"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "写作 & 语言"
+
+#: src/Core/CategoryManager.vala:144
+msgid "Privacy & Security"
+msgstr "隐私 & 安全"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -471,7 +539,7 @@ msgstr "检查更新"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 msgctxt "action"
 msgid "Search"
 msgstr "搜索"
@@ -765,7 +833,7 @@ msgstr "全部更新完毕。上次检查 %s。"
 msgid "Other Apps by %s"
 msgstr "来自 %s 的其他应用"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "最近更新"
 
@@ -777,88 +845,24 @@ msgstr "付费应用"
 msgid "Free Apps"
 msgstr "免费应用"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "分类"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "附件"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "音频"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "社交"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "开发"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "教育"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "金融"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "图像"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "网络"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "数学、科学 & 工程"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "多媒体制作"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "办公"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "系统"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "通用辅助"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "视频"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "写作 & 语言"
-
-#: src/Views/Homepage.vala:203
-msgid "Privacy & Security"
-msgstr "隐私 & 安全"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "更新 & 已安装应用"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "主页"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr "浏览和管理应用程序"
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -869,18 +873,6 @@ msgstr ""
 "来自 elementary 的开源、按需付费的应用商店。经 elementary 审核并上架，以确保"
 "原生、隐私且安全的体验。按类浏览或通过搜索来发现新应用。 应用中心"
 "（AppCenter）也用来更新您的系统更新到最新、最好的版本，以获取新功能和修复。"
-
-#: src/Views/Homepage.vala:519
-msgid "Fun & Games"
-msgstr "娱乐和游戏"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr "娱乐 &"
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "游戏"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1056,6 +1048,12 @@ msgstr "%s 的新特性"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "关闭"
+
+#~ msgid "Fun &"
+#~ msgstr "娱乐 &"
+
+#~ msgid "Games"
+#~ msgstr "游戏"
 
 #~ msgid "Extensions:"
 #~ msgstr "扩展："

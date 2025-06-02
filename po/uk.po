@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2025-05-19 23:41+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "Центр застосунків"
 
@@ -89,6 +89,74 @@ msgstr "Установіть %s для перегляду і встановле�
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Відкрити"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "Приладдя"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "Аудіо"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "Спілкування"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "Розробка"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "Освіта"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "Фінанси"
+
+#: src/Core/CategoryManager.vala:51
+msgid "Fun & Games"
+msgstr "Розваги та ігри"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "Графіка"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "Інтернет"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "Математика, Наука та Інженерія"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "Медіавиробництво"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "Офіс"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "Система"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "Універсальний доступ"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "Відео"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "Мова і написання"
+
+#: src/Core/CategoryManager.vala:144
+msgid "Privacy & Security"
+msgstr "Приватність і безпека"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -518,7 +586,7 @@ msgstr "Поновити оновлення"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 msgctxt "action"
 msgid "Search"
 msgstr "Знайти"
@@ -824,7 +892,7 @@ msgstr "Усе оновлено до найновішої версії. Вост
 msgid "Other Apps by %s"
 msgstr "Інші застосунки від %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "Нещодавно оновлені"
 
@@ -836,88 +904,24 @@ msgstr "Оплачувані застосунки"
 msgid "Free Apps"
 msgstr "Безплатні застосунки"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "Категорії"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "Приладдя"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "Аудіо"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "Спілкування"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "Розробка"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "Освіта"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "Фінанси"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "Графіка"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "Інтернет"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "Математика, Наука та Інженерія"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "Медіавиробництво"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "Офіс"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "Система"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "Універсальний доступ"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "Відео"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "Мова і написання"
-
-#: src/Views/Homepage.vala:203
-msgid "Privacy & Security"
-msgstr "Приватність і безпека"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Оновлення й установлені застосунки"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "Головна"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr "Керуйте та переглядайте застосунки"
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -931,18 +935,6 @@ msgstr ""
 "застосунки за категоріями або відкривайте для себе нові. Центр застосунків "
 "також використовується для оновлення системи до найновішої версії, щоб ви "
 "отримували нові можливості та виправлення."
-
-#: src/Views/Homepage.vala:519
-msgid "Fun & Games"
-msgstr "Розваги та ігри"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr "Розваги та"
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "Ігри"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1122,6 +1114,12 @@ msgstr "Що нового в %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Закрити"
+
+#~ msgid "Fun &"
+#~ msgstr "Розваги та"
+
+#~ msgid "Games"
+#~ msgstr "Ігри"
 
 #~ msgid "Extensions:"
 #~ msgstr "Розширення:"

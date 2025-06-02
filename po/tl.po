@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Tagalog <https://l10n.elementary.io/projects/appcenter/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -79,6 +79,79 @@ msgstr ""
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
+msgstr ""
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "Mga Accessory"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "Tunog"
+
+#: src/Core/CategoryManager.vala:23
+#, fuzzy
+msgid "Communication"
+msgstr "Edukasyon"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr ""
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "Edukasyon"
+
+#: src/Core/CategoryManager.vala:46
+#, fuzzy
+msgid "Finance"
+msgstr "Ikansela"
+
+#: src/Core/CategoryManager.vala:51
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "Mga Laro"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "Mga grapiko"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "Ang Internet"
+
+#: src/Core/CategoryManager.vala:84
+#, fuzzy
+msgid "Math, Science, & Engineering"
+msgstr "Agham & Pag-iinhinyero"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr ""
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "Opisina"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "Pang-system"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr ""
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "Mga Video"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr ""
+
+#: src/Core/CategoryManager.vala:144
+msgid "Privacy & Security"
 msgstr ""
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
@@ -488,7 +561,7 @@ msgstr "Naghahanap ng mga update…"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -798,7 +871,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr ""
 
@@ -814,92 +887,25 @@ msgstr "Maghanap ng mga App"
 msgid "Free Apps"
 msgstr "Maghanap ng mga App"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "Mga Kategorya"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "Mga Accessory"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "Tunog"
-
-#: src/Views/Homepage.vala:112
-#, fuzzy
-msgid "Communication"
-msgstr "Edukasyon"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr ""
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "Edukasyon"
-
-#: src/Views/Homepage.vala:132
-#, fuzzy
-msgid "Finance"
-msgstr "Ikansela"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "Mga grapiko"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "Ang Internet"
-
-#: src/Views/Homepage.vala:150
-#, fuzzy
-msgid "Math, Science, & Engineering"
-msgstr "Agham & Pag-iinhinyero"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr ""
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "Opisina"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "Pang-system"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr ""
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "Mga Video"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr ""
-
-#: src/Views/Homepage.vala:203
-msgid "Privacy & Security"
-msgstr ""
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "I-uninstall"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr ""
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -907,20 +913,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-
-#: src/Views/Homepage.vala:519
-#, fuzzy
-#| msgid "Games"
-msgid "Fun & Games"
-msgstr "Mga Laro"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr ""
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "Mga Laro"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1101,6 +1093,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr ""
+
+#~ msgid "Games"
+#~ msgstr "Mga Laro"
 
 #~ msgid "Extensions:"
 #~ msgstr "Mga Extension:"

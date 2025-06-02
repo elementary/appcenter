@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "Aplikaĵa Centro"
 
@@ -85,6 +85,78 @@ msgstr ""
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Malfermi"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "Akcesoraĵoj"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "Aŭdado"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "Komunikado"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "Programado"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "Edukado"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "Financado"
+
+#: src/Core/CategoryManager.vala:51
+#, fuzzy
+#| msgid "Games"
+msgid "Fun & Games"
+msgstr "Ludado"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "Desegnado"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "Interretado"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "Matematiko, Scienco kaj Inĝenierado"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "Aŭdovidaĵa Produktado"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "Oficejado"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "Sistemo"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "Faciluziloj"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "Videado"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "Skribado & Lingvoj"
+
+#: src/Core/CategoryManager.vala:144
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy & Security"
+msgstr "Privateca Politiko"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -537,7 +609,7 @@ msgstr "Serĉanta ĝisdatigojn…"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -848,7 +920,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "Aliaj Aplikaĵoj je %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "Freŝe Ĝisdatigita"
 
@@ -864,92 +936,26 @@ msgstr "Serĉi Aplikaĵojn"
 msgid "Free Apps"
 msgstr "Senpaga"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "Akcesoraĵoj"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "Aŭdado"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "Komunikado"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "Programado"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "Edukado"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "Financado"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "Desegnado"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "Interretado"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "Matematiko, Scienco kaj Inĝenierado"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "Aŭdovidaĵa Produktado"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "Oficejado"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "Sistemo"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "Faciluziloj"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "Videado"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "Skribado & Lingvoj"
-
-#: src/Views/Homepage.vala:203
-#, fuzzy
-#| msgid "Privacy Policy"
-msgid "Privacy & Security"
-msgstr "Privateca Politiko"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 #, fuzzy
 #| msgid "Failed to uninstall app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Fiaskis la aplikaĵa malinstalo"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "Ĉefpaĝo"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -957,20 +963,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-
-#: src/Views/Homepage.vala:519
-#, fuzzy
-#| msgid "Games"
-msgid "Fun & Games"
-msgstr "Ludado"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr ""
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "Ludado"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1152,6 +1144,9 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Fermi"
+
+#~ msgid "Games"
+#~ msgstr "Ludado"
 
 #~ msgid "Extensions:"
 #~ msgstr "Kromaĵoj:"

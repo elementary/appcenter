@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:277
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
 msgstr "ناوەندی نەرمەواڵەکان"
 
@@ -77,6 +77,74 @@ msgstr ""
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "کردنەوە"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "ئێکسسواراتەکان"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "ده‌نگ"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "پەیوەندی"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "گەشەپێدان"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "پەروەردە"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "دارایی"
+
+#: src/Core/CategoryManager.vala:51
+msgid "Fun & Games"
+msgstr "خۆشی & یارییه‌كان"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "گرافیکەکان"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "ئینته‌رنێت"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "بیرکاری، زانست & ئەندازیاری"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "میدیا پڕۆدەکشن"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "نووسینگە"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "سیسته‌م"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "خزمەتگوزارییە گشتییەکان"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "ڤیدیۆ"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "نووسین & زمان"
+
+#: src/Core/CategoryManager.vala:144
+msgid "Privacy & Security"
+msgstr "تایبه‌تێتی & ئاسایش"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -513,7 +581,7 @@ msgstr "پشکنین بۆ نوێبوونەوەکان"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -833,7 +901,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "ئەپەکانی تر لەلایەن %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
 msgid "Recently Updated"
 msgstr "نوێبوووەکانی ئەم دوایییە"
 
@@ -845,90 +913,26 @@ msgstr "نەرمەکاڵا بەپارەکان"
 msgid "Free Apps"
 msgstr "ئەپە خۆڕاییەکان"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:85
 msgid "Categories"
 msgstr "هاوپۆله‌كان"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "ئێکسسواراتەکان"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "ده‌نگ"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "پەیوەندی"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "گەشەپێدان"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "پەروەردە"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "دارایی"
-
-#: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "گرافیکەکان"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "ئینته‌رنێت"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "بیرکاری، زانست & ئەندازیاری"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "میدیا پڕۆدەکشن"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "نووسینگە"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "سیسته‌م"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "خزمەتگوزارییە گشتییەکان"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "ڤیدیۆ"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "نووسین & زمان"
-
-#: src/Views/Homepage.vala:203
-msgid "Privacy & Security"
-msgstr "تایبه‌تێتی & ئاسایش"
-
-#: src/Views/Homepage.vala:245
+#: src/Views/Homepage.vala:151
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "نەتوانرا نەرمەکاڵا دابمەزرێت"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:170
 msgid "Home"
 msgstr "پەڕەی سەرەکی"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:184
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:185
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -936,18 +940,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-
-#: src/Views/Homepage.vala:519
-msgid "Fun & Games"
-msgstr "خۆشی & یارییه‌كان"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr "خۆشی &"
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "یارییه‌كان"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -1131,6 +1123,12 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr ""
+
+#~ msgid "Fun &"
+#~ msgstr "خۆشی &"
+
+#~ msgid "Games"
+#~ msgstr "یارییه‌كان"
 
 #~ msgid "Extensions:"
 #~ msgstr "زیادکراوەکان:"
