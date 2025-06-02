@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2024-05-26 23:13+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
@@ -142,8 +142,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"встановити;вилучити;видалити;каталог;магазин;застосунки;оновлення;програми;"
+msgstr "встановити;вилучити;видалити;каталог;магазин;застосунки;оновлення;програми;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"

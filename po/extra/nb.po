@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -140,8 +140,7 @@ msgstr ""
 #: data/io.elementary.appcenter.desktop.in.in:9
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"installer;avinstaller;fjern;mappe;butikk;apper;oppdateringer;programvare;"
+msgstr "installer;avinstaller;fjern;mappe;butikk;apper;oppdateringer;programvare;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"

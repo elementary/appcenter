@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2024-09-20 09:43+0000\n"
 "Last-Translator: Bozkurt <bozkurtabozkurt4@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -140,9 +140,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"yükle;kaldır;sil;katalog;mağaza;uygulamalar;yazılım;install;uninstall;remove;"
-"catalogue;store;apps;software;"
+msgstr "yükle;kaldır;sil;katalog;mağaza;uygulamalar;yazılım;install;uninstall;remove;catalogue;store;apps;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"

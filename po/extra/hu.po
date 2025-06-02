@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 21:57+0000\n"
+"POT-Creation-Date: 2025-06-02 05:00+0000\n"
 "PO-Revision-Date: 2024-05-21 23:13+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
@@ -141,9 +141,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;telepítés;"
-"eltávolítás;törlés;katalógus;bolt;alkalmazások;frissítések;szoftver;"
+msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;telepítés;eltávolítás;törlés;katalógus;bolt;alkalmazások;frissítések;szoftver;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
