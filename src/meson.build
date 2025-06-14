@@ -43,7 +43,7 @@ appcenter_files = files(
     'Widgets/ReleaseRow.vala',
     'Widgets' / 'Screenshot.vala',
     'Widgets/SizeLabel.vala',
-    'Widgets' / 'SearchListItem.vala',
+    'Widgets' / 'PackageListItem.vala',
     'Widgets/AppContainers/AbstractPackageRowGrid.vala',
     'Widgets/AppContainers/InstalledPackageRowGrid.vala',
     'Widgets/AppContainers/ListPackageRowGrid.vala'
