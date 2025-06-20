@@ -3,6 +3,7 @@ src/AsyncMutex.vala
 src/MainWindow.vala
 src/SuspendControl.vala
 src/Utils.vala
+src/Core/CategoryManager.vala
 src/Core/ChangeInformation.vala
 src/Core/FlatpakBackend.vala
 src/Core/Job.vala
@@ -30,7 +31,6 @@ src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/HumbleButton.vala
 src/Widgets/LinkListBox.vala
-src/Widgets/PackageRow.vala
 src/Widgets/ProgressButton.vala
 src/Widgets/ReleaseRow.vala
 src/Widgets/SizeLabel.vala

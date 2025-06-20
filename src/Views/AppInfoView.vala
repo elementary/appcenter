@@ -20,6 +20,11 @@
 public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     public const int MAX_WIDTH = 800;
 
+    private const string BANNER_STYLE_CSS = """
+        @define-color banner_bg_color %s;
+        @define-color banner_fg_color %s;
+    """;
+
     public signal void show_other_package (AppCenterCore.Package package);
 
     public AppCenterCore.Package package { get; construct set; }
@@ -32,7 +37,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     private Gtk.CssProvider accent_provider;
     private Gtk.DropDown origin_dropdown;
     private Gtk.Label app_subtitle;
-    private Gtk.ListBox extension_box;
     private Gtk.Overlay screenshot_overlay;
     private Gtk.Revealer origin_combo_revealer;
     private Adw.Carousel release_carousel;
@@ -124,8 +128,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         accent_provider = new Gtk.CssProvider ();
         try {
-            string bg_color = DEFAULT_BANNER_COLOR_PRIMARY;
-            string text_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+            string bg_color = "mix(@accent_color, @bg_color, 0.8)";
+            string text_color = "mix(@accent_color, @text_color, 0.85)";
 
             var accent_css = "";
             if (package != null) {
@@ -139,49 +143,21 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                     text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
 
                     accent_css = "@define-color accent_color %s;".printf (primary_color);
-                    accent_provider.load_from_data (accent_css.data);
+                    accent_provider.load_from_string (accent_css);
                 }
             }
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
             colored_css += accent_css;
 
-            accent_provider.load_from_data (colored_css.data);
+            accent_provider.load_from_string (colored_css);
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
         }
 
-        var app_icon = new Gtk.Image () {
-            pixel_size = 128
+        var app_icon = new AppIcon (128) {
+            package = package
         };
-
-        var badge_image = new Gtk.Image () {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.END,
-            pixel_size = 64
-        };
-
-        var app_icon_overlay = new Gtk.Overlay () {
-            child = app_icon,
-            valign = Gtk.Align.START
-        };
-
-        var scale_factor = get_scale_factor ();
-
-        var plugin_host_package = package.get_plugin_host_package ();
-        if (package.kind == AppStream.ComponentKind.ADDON && plugin_host_package != null) {
-            app_icon.gicon = plugin_host_package.get_icon (app_icon.pixel_size, scale_factor);
-            badge_image.gicon = package.get_icon (badge_image.pixel_size / 2, scale_factor);
-
-            app_icon_overlay.add_overlay (badge_image);
-        } else {
-            app_icon.gicon = package.get_icon (app_icon.pixel_size, scale_factor);
-
-            if (package.is_runtime_updates) {
-                badge_image.icon_name = "system-software-update";
-                app_icon_overlay.add_overlay (badge_image);
-            }
-        }
 
         var app_title = new Gtk.Label (package.get_name ()) {
             selectable = true,
@@ -237,7 +213,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         }
 
         var header_box = new Gtk.Box (HORIZONTAL, 6);
-        header_box.append (app_icon_overlay);
+        header_box.append (app_icon);
         header_box.append (header_grid);
 
         var header_clamp = new Adw.Clamp () {
@@ -282,7 +258,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         oars_flowbox = new Gtk.FlowBox () {
             column_spacing = 24,
-            row_spacing = 24,
+            row_spacing = 12,
             selection_mode = Gtk.SelectionMode.NONE
         };
         oars_flowbox.add_css_class ("content-warning-box");
@@ -293,6 +269,22 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var content_warning_clamp = new Adw.Clamp () {
             child = oars_flowbox_revealer,
+            maximum_size = MAX_WIDTH
+        };
+
+        var supports_flowbox = new Gtk.FlowBox () {
+            column_spacing = 24,
+            row_spacing = 24,
+            selection_mode = NONE
+        };
+        supports_flowbox.add_css_class ("content-warning-box");
+
+        var supports_flowbox_revealer = new Gtk.Revealer () {
+            child = supports_flowbox
+        };
+
+        var supports_clamp = new Adw.Clamp () {
+            child = supports_flowbox_revealer,
             maximum_size = MAX_WIDTH
         };
 
@@ -496,6 +488,34 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             }
         }
 
+        var supports = package_component.get_supports ();
+        for (int i = 0; i < supports.length; i++) {
+            var relation = supports[i];
+
+            string title, description, icon_name;
+
+            switch (relation.get_value_control_kind ()) {
+                // An input method for users to control software
+                case GAMEPAD:
+                    get_gamepad_info_for_kind (relation.get_kind (), out icon_name, out title, out description);
+                    break;
+
+                default:
+                    debug (
+                        "Unhandled control kind %s %s",
+                        relation.get_kind ().to_string (),
+                        relation.get_value_control_kind ().to_string ()
+                    );
+                    continue;
+            }
+
+            supports_flowbox.append (new ContentType (
+                title,
+                description,
+                icon_name
+            ));
+        }
+
         bool has_matching_environment = false;
         bool has_matching_style = false;
         var desktop_environment = Environment.get_variable ("XDG_SESSION_DESKTOP");
@@ -689,29 +709,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         content_box.append (whats_new_label);
         content_box.add_css_class ("content-box");
 
-        if (package_component.get_addons ().length > 0) {
-            extension_box = new Gtk.ListBox () {
-                selection_mode = Gtk.SelectionMode.SINGLE
-            };
-
-            extension_box.row_activated.connect ((row) => {
-                var extension_row = row as Widgets.PackageRow;
-                if (extension_row != null) {
-                    show_other_package (extension_row.get_package ());
-                }
-            });
-
-            var extension_label = new Gtk.Label (_("Extensions:")) {
-                halign = Gtk.Align.START,
-                margin_top = 12
-            };
-            extension_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
-
-            content_box.append (extension_label);
-            content_box.append (extension_box);
-            load_extensions.begin ();
-        }
-
         var body_clamp = new Adw.Clamp () {
             child = content_box,
             maximum_size = MAX_WIDTH
@@ -739,6 +736,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             box.append (screenshot_stack);
         }
 
+        box.append (supports_clamp);
         box.append (body_clamp);
         box.append (release_carousel);
         box.append (links_clamp);
@@ -772,6 +770,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             oars_flowbox_revealer.reveal_child = true;
         }
 
+        if (supports_flowbox.get_first_child () != null) {
+            supports_flowbox_revealer.reveal_child = true;
+        }
+
         origin_dropdown.notify["selected-item"].connect (() => {
             var selected_origin_package = (AppCenterCore.Package) origin_dropdown.selected_item;
             if (selected_origin_package != null && selected_origin_package != package) {
@@ -803,20 +805,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             default:
                 break;
         }
-    }
-
-    private async void load_extensions () {
-        package.component.get_addons ().@foreach ((extension) => {
-            var extension_package = AppCenterCore.FlatpakBackend.get_default ().get_package_for_component_id (extension.id);
-            if (extension_package == null) {
-                return;
-            }
-
-            var row = new Widgets.PackageRow.list (extension_package);
-            if (extension_box != null) {
-                extension_box.append (row);
-            }
-        });
     }
 
     private async void get_app_download_size () {
@@ -1062,7 +1050,18 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             for (int i = 0; i < captioned_urls.length (); i++) {
                 if (results[i] == true) {
                     string caption = captioned_urls.nth_data (i).caption;
-                    load_screenshot (caption, screenshot_files[i]);
+
+                    var screenshot = new AppCenter.Screenshot () {
+                        caption = caption,
+                        height_request = 500,
+                        path = screenshot_files[i]
+                    };
+                    screenshot.set_branding (package);
+
+                    Idle.add (() => {
+                        screenshot_carousel.append (screenshot);
+                        return GLib.Source.REMOVE;
+                    });
                 }
             }
 
@@ -1084,39 +1083,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             });
 
             return null;
-        });
-    }
-
-    // We need to first download the screenshot locally so that it doesn't freeze the interface.
-    private void load_screenshot (string? caption, string path) {
-        var image = new Gtk.Picture.for_filename (path) {
-            content_fit = SCALE_DOWN,
-            height_request = 500,
-            vexpand = true
-        };
-
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0) {
-            halign = Gtk.Align.CENTER
-        };
-        box.add_css_class ("screenshot");
-        box.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        if (caption != null) {
-            var label = new Gtk.Label (caption) {
-                max_width_chars = 50,
-                wrap = true
-            };
-
-            label.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-            box.append (label);
-        }
-
-        box.append (image);
-
-        Idle.add (() => {
-            screenshot_carousel.append (box);
-            return GLib.Source.REMOVE;
         });
     }
 
@@ -1148,6 +1114,23 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         title.label = package.origin_description;
     }
 
+    private void get_gamepad_info_for_kind (AppStream.RelationKind kind, out string icon_name, out string title, out string description) {
+        switch (kind) {
+            case REQUIRES:
+                title = _("Requires a Controller");
+                break;
+            case RECOMMENDS:
+                title = _("Recommends a Controller");
+                break;
+            default:
+                title = _("Play With a Controller");
+                break;
+        }
+
+        description = _("Such as a PlayStation, Xbox, or 8BitDo controller.");
+        icon_name = "input-gaming-symbolic";
+    }
+
     private class ArrowButton : Gtk.Button {
         public ArrowButton (string icon_name) {
             Object (icon_name: icon_name);
@@ -1175,12 +1158,9 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     class ContentType : Gtk.FlowBoxChild {
         public ContentType (string title, string description, string icon_name) {
-            can_focus = false;
-
             var icon = new Gtk.Image.from_icon_name (icon_name) {
-                halign = Gtk.Align.START,
-                margin_bottom = 6,
-                pixel_size = 32
+                valign = START,
+                icon_size = LARGE
             };
 
             var label = new Gtk.Label (title) {
@@ -1188,6 +1168,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             };
 
             var description_label = new Gtk.Label (description) {
+                hexpand = true,
                 max_width_chars = 25,
                 wrap = true,
                 xalign = 0
@@ -1195,10 +1176,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             description_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
             description_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
+            var label_box = new Gtk.Box (VERTICAL, 3);
+            label_box.append (label);
+            label_box.append (description_label);
+
+            var box = new Gtk.Box (HORIZONTAL, 12);
             box.append (icon);
-            box.append (label);
-            box.append (description_label);
+            box.append (label_box);
 
             child = box;
         }

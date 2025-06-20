@@ -1,21 +1,13 @@
 name: Gettext Updates
-
 on:
   push:
     branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/elementary/docker:development-target
+  gettext_template:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Install git
-      run: |
-        apt-get update
-        apt-get install git -y
-
     - name: Clone repository
       uses: actions/checkout@v4
       with:
