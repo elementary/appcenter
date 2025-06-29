@@ -33,7 +33,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-02 05:00+0000\n"
-"PO-Revision-Date: 2025-05-17 23:42+0000\n"
+"PO-Revision-Date: 2025-06-30 01:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/es/>\n"
@@ -524,7 +524,7 @@ msgstr "Pagar luego"
 
 #: src/Dialogs/StripeDialog.vala:396
 msgid "Retry"
-msgstr "Intentar de nuevo"
+msgstr "Reintentar"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
