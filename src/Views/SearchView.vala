@@ -113,12 +113,12 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         factory.setup.connect ((obj) => {
             var list_item = (Gtk.ListItem) obj;
-            list_item.child = new SearchListItem ();
+            list_item.child = new PackageListItem ();
         });
 
         factory.bind.connect ((obj) => {
             var list_item = (Gtk.ListItem) obj;
-            ((SearchListItem) list_item.child).package = (AppCenterCore.Package) list_item.item;
+            ((PackageListItem) list_item.child).package = (AppCenterCore.Package) list_item.item;
         });
 
         list_view.activate.connect ((index) => {
