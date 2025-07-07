@@ -131,7 +131,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var updates_button = new Gtk.Button.from_icon_name ("software-update-available") {
-            action_name = "app.show-updates"
+            action_name = "app.show-updates",
+            tooltip_text = C_("view", "Updates & installed apps")
         };
         updates_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
@@ -147,8 +148,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         };
 
         var updates_overlay = new Gtk.Overlay () {
-            child = updates_button,
-            tooltip_text = C_("view", "Updates & installed apps")
+            child = updates_button
         };
         updates_overlay.add_overlay (updates_badge_revealer);
 
