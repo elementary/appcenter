@@ -12,29 +12,29 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Mustafa Yalin Aydin <myaydin@mun.ca>, 2023.
 # Bozkurt <bozkurtabozkurt4@gmail.com>, 2024.
-# Sinan Decron <sinanveyasinan@gmail.com>, 2024.
+# Sinan Decron <sinanveyasinan@gmail.com>, 2024, 2025.
 # Devrim Tunçer <devrimtuncer.ce@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-02 05:00+0000\n"
-"PO-Revision-Date: 2024-09-24 11:24+0000\n"
+"PO-Revision-Date: 2025-07-14 20:55+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Turkish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
 msgid "AppCenter"
-msgstr "Uygulama Merkezi"
+msgstr "AppCenter"
 
 #: src/Application.vala:78
 #, c-format
@@ -812,19 +812,19 @@ msgstr "Sistem ayarlarını okuyabilir ve değiştirebilir"
 
 #: src/Views/AppInfoView.vala:1120
 msgid "Requires a Controller"
-msgstr ""
+msgstr "Oyun Kolu Gerektirir"
 
 #: src/Views/AppInfoView.vala:1123
 msgid "Recommends a Controller"
-msgstr ""
+msgstr "Oyun Kolu Tavsiye edilir"
 
 #: src/Views/AppInfoView.vala:1126
 msgid "Play With a Controller"
-msgstr ""
+msgstr "Oyun Kolu İle Oyna"
 
 #: src/Views/AppInfoView.vala:1130
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
-msgstr ""
+msgstr "Örneğin bir PlayStation, Xbox veya 8BitDo oyun kolu."
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "Checking for Updates"
@@ -962,7 +962,7 @@ msgstr "%s içinde ara"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
-msgstr ""
+msgstr "Uygulama İçi Satın Alımlar"
 
 #: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
@@ -1026,7 +1026,7 @@ msgstr "Kaynak Kodunu Al"
 
 #: src/Widgets/LinkListBox.vala:136
 msgid "Get Involved"
-msgstr ""
+msgstr "Dahil Olun"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Widgets/LinkListBox.vala:199
