@@ -450,6 +450,14 @@ public class AppCenterCore.Package : Object {
         // Only trigger a notify if the state has changed, quite a lot of things listen to this
         if (state != new_state) {
             state = new_state;
+
+            unowned var packages = FlatpakBackend.get_default ().packages;
+            for (uint i = 0; i < packages.get_n_items (); i++) {
+                if (packages.get_item (i) == this) {
+                    packages.items_changed (i, 1, 1);
+                    break;
+                }
+            }
         }
     }
 

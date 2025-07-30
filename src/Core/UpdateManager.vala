@@ -25,11 +25,7 @@ public class AppCenterCore.UpdateManager : Object {
     public signal void installed_apps_changed ();
     public signal void cache_update_failed (Error error);
 
-    public ListStore updates_liststore { public get; private set; }
-    public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
-    public uint updates_number { get; set; default = 0U; }
-    public uint64 updates_size { get; private set; default = 0ULL; }
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
@@ -39,116 +35,15 @@ public class AppCenterCore.UpdateManager : Object {
     private bool refresh_in_progress = false;
 
     construct {
-        updates_liststore = new ListStore (typeof (AppCenterCore.Package));
-        updates_liststore.bind_property ("n-items", this, "updates-number");
-
-        var runtime_icon = new AppStream.Icon ();
-        runtime_icon.set_name ("application-vnd.flatpak");
-        runtime_icon.set_kind (AppStream.IconKind.STOCK);
-
-        var runtime_updates_component = new AppStream.Component ();
-        runtime_updates_component.id = AppCenterCore.Package.RUNTIME_UPDATES_ID;
-        runtime_updates_component.name = _("Runtime Updates");
-        runtime_updates_component.summary = _("Updates to app runtimes");
-        runtime_updates_component.add_icon (runtime_icon);
-
-        runtime_updates = new AppCenterCore.Package (runtime_updates_component);
-
         cancellable = new GLib.Cancellable ();
 
         last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
     }
 
-    public async uint get_updates (Cancellable? cancellable = null) {
-        updates_liststore.remove_all ();
-        unpaid_apps_number = 0;
-        updates_size = 0ULL;
-
-        // Clear any packages previously marked as updatable
-        var installed_packages = yield FlatpakBackend.get_default ().get_installed_applications ();
-        foreach (var installed_package in installed_packages) {
-            installed_package.change_information.clear_update_info ();
-            installed_package.update_state ();
-        }
-
-        uint runtime_count = 0;
-        string runtime_desc = "";
-
+    public async void get_updates (Cancellable? cancellable = null) {
         unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
-        var flatpak_updates = yield fp_client.get_updates ();
-        debug ("Flatpak backend reports %d updates", flatpak_updates.size);
 
-        foreach (var flatpak_update in flatpak_updates) {
-            var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
-            if (appcenter_package != null) {
-                debug ("Added %s to app updates", flatpak_update);
-                updates_liststore.insert_sorted (appcenter_package, compare_package_func);
-
-                if (appcenter_package.should_pay) {
-                    unpaid_apps_number++;
-                }
-
-                updates_size += appcenter_package.change_information.size;
-
-                appcenter_package.change_information.updatable_packages.add (flatpak_update);
-                appcenter_package.update_state ();
-                try {
-                    appcenter_package.change_information.size = yield fp_client.get_download_size (appcenter_package, null, true);
-                } catch (Error e) {
-                    warning ("Unable to get flatpak download size: %s", e.message);
-                }
-            } else {
-                debug ("Added %s to runtime updates", flatpak_update);
-                string bundle_id;
-                if (!FlatpakBackend.get_package_list_key_parts (flatpak_update, null, null, out bundle_id)) {
-                    continue;
-                }
-
-                Flatpak.Ref @ref;
-                try {
-                    @ref = Flatpak.Ref.parse (bundle_id);
-                } catch (Error e) {
-                    warning ("Error parsing flatpak bundle ID: %s", e.message);
-                    continue;
-                }
-
-                runtime_count++;
-
-                runtime_desc += Markup.printf_escaped (
-                    " • %s\n\t%s\n",
-                    @ref.get_name (),
-                    _("Version: %s").printf (@ref.get_branch ())
-                );
-
-                uint64 dl_size = 0;
-                try {
-                    dl_size = yield fp_client.get_download_size_by_id (flatpak_update, null, true);
-                } catch (Error e) {
-                    warning ("Unable to get flatpak download size: %s", e.message);
-                }
-
-                updates_size += dl_size;
-                runtime_updates.change_information.size += dl_size;
-                runtime_updates.change_information.updatable_packages.add (flatpak_update);
-            }
-        }
-
-        if (runtime_count > 0) {
-            debug ("%u runtime updates found", runtime_count);
-            var latest_version = ngettext (
-                "%u runtime with updates",
-                "%u runtimes with updates",
-                runtime_count
-            ).printf (runtime_count);
-            runtime_updates.latest_version = latest_version;
-            runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
-
-            updates_liststore.insert_sorted (runtime_updates, compare_package_func);
-        }
-
-        debug ("%u app updates found", updates_number);
-
-        runtime_updates.update_state ();
+        yield fp_client.get_updates ();
 
         if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
             try {
@@ -157,6 +52,7 @@ public class AppCenterCore.UpdateManager : Object {
             //TODO Should we send a notification that automatic-updates had an error?
         } else {
             var application = Application.get_default ();
+            var updates_number = fp_client.updatable_packages.get_n_items ();
             if (updates_number > 0) {
                 var title = ngettext ("Update Available", "Updates Available", updates_number);
                 var body = ngettext (
@@ -184,17 +80,16 @@ public class AppCenterCore.UpdateManager : Object {
         }
 
         installed_apps_changed ();
-
-        return updates_number;
     }
 
     public async void update_all (Cancellable? cancellable) throws Error {
-        for (int i = 0; i < updates_liststore.n_items; i++) {
+        var updates = FlatpakBackend.get_default ().updatable_packages;
+        for (int i = 0; i < updates.get_n_items (); i++) {
             if (cancellable != null && cancellable.is_cancelled ()) {
                 return;
             }
 
-            var package = (Package) updates_liststore.get_item (i);
+            var package = (Package) updates.get_item (i);
             if (!package.should_pay) {
                 debug ("Update: %s", package.get_name ());
                 try {
@@ -209,10 +104,7 @@ public class AppCenterCore.UpdateManager : Object {
                     throw (e);
                 }
 
-                updates_liststore.remove (i);
                 i--;
-
-                updates_size -= package.change_information.size;
             }
         }
     }
@@ -227,7 +119,6 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public async void update_cache (bool force = false) {
-        updates_liststore.remove_all ();
         cancellable.reset ();
 
         if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
@@ -333,16 +224,6 @@ public class AppCenterCore.UpdateManager : Object {
         }
 
         return a_package_name.collate (b_package_name); /* Else sort in name order */
-    }
-
-    public async void add_app (AppCenterCore.Package package) {
-        var installed_apps = yield AppCenterCore.FlatpakBackend.get_default ().get_installed_applications ();
-        foreach (var app in installed_apps) {
-            if (app == package) {
-                updates_liststore.insert_sorted (package, compare_package_func);
-                break;
-            }
-        }
     }
 
     private static GLib.Once<UpdateManager> instance;

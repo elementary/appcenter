@@ -74,6 +74,37 @@ public class AppCenterCore.FlatpakBackend : Object {
     public Job.Type job_type { get; protected set; }
     public bool working { public get; protected set; }
 
+    private ListStore _packages;
+    /**
+     * A ListModel containing the package with the highest origin score for each component.
+     */
+    public ListModel packages { get { return _packages; } }
+
+    private Gtk.FilterListModel _updated_packages;
+    public ListModel updated_packages { get { return _updated_packages; } }
+
+    public bool has_updated_packages { get { return _updated_packages.n_items > 0; } }
+
+    private GLib.ListStore additional_updates;
+
+    private Gtk.FlattenListModel _updatable_packages;
+    public ListModel updatable_packages { get { return _updatable_packages; } }
+
+    public bool has_updatable_packages { get { return _updatable_packages.n_items > 0; } }
+    public uint n_updatable_packages { get { return _updatable_packages.n_items; } }
+    public uint64 updates_size {
+        get {
+            uint64 size = 0;
+            for (uint i = 0; i < updatable_packages.get_n_items (); i++) {
+                var package = (Package) updatable_packages.get_item (i);
+                size += package.change_information.size;
+            }
+            return size;
+        }
+    }
+
+    private Package runtime_updates;
+
     private string user_metadata_path;
     private string system_metadata_path;
 
@@ -163,6 +194,54 @@ public class AppCenterCore.FlatpakBackend : Object {
     }
 
     construct {
+        var runtime_icon = new AppStream.Icon ();
+        runtime_icon.set_name ("application-vnd.flatpak");
+        runtime_icon.set_kind (AppStream.IconKind.STOCK);
+
+        var runtime_updates_component = new AppStream.Component ();
+        runtime_updates_component.id = AppCenterCore.Package.RUNTIME_UPDATES_ID;
+        runtime_updates_component.name = _("Runtime Updates");
+        runtime_updates_component.summary = _("Updates to app runtimes");
+        runtime_updates_component.add_icon (runtime_icon);
+
+        runtime_updates = new AppCenterCore.Package (runtime_updates_component);
+
+        _packages = new ListStore (typeof (FlatpakPackage));
+
+        var installed_expression = new Gtk.PropertyExpression (typeof (Package), null, "installed");
+        var installed_filter = new Gtk.BoolFilter (installed_expression);
+        var installed_packages = new Gtk.FilterListModel (_packages, installed_filter) {
+            incremental = true
+        };
+
+        var update_available_expression = new Gtk.PropertyExpression (typeof (Package), null, "update-available");
+
+        var updated_filter = new Gtk.BoolFilter (update_available_expression) {
+            invert = true
+        };
+        _updated_packages = new Gtk.FilterListModel (installed_packages, updated_filter) {
+            incremental = true
+        };
+        _updated_packages.items_changed.connect (() => notify_property ("has-updated-packages"));
+
+        var updatable_filter = new Gtk.BoolFilter (update_available_expression);
+        var updatable_packages = new Gtk.FilterListModel (installed_packages, updatable_filter) {
+            incremental = true
+        };
+
+        additional_updates = new GLib.ListStore (typeof (Package));
+
+        var updates_models = new GLib.ListStore(typeof (ListModel));
+        updates_models.append (additional_updates);
+        updates_models.append (updatable_packages);
+
+        _updatable_packages = new Gtk.FlattenListModel (updates_models);
+        _updatable_packages.items_changed.connect (() => {
+            notify_property ("has-updatable-packages");
+            notify_property ("n-updatable-packages");
+            notify_property ("updates-size");
+        });
+
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
         user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
@@ -266,6 +345,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         reload_appstream_pool ();
+        get_installed_applications.begin (null);
     }
 
     private void set_actions_enabled (bool working) {
@@ -284,7 +364,8 @@ public class AppCenterCore.FlatpakBackend : Object {
             warning ("Unable to refresh cache after external change: %s", e.message);
         }
 
-        yield UpdateManager.get_default ().get_updates ();
+        yield get_installed_applications (null);
+        yield get_updates (null);
     }
 
     static construct {
@@ -1009,7 +1090,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
         }
 
-        reload_appstream_pool ();
+        reload_appstream_pool (); //TODO: Jesus christ this is run in the worker thread but accesses lots of data without any locks whatsoever!!!!
         cache_flush_needed ();
 
         job.result = Value (typeof (bool));
@@ -1203,6 +1284,8 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         package_list = new_package_list;
+
+        this._packages.splice (0, this._packages.n_items, package_list.values.to_array ());
     }
 
     private bool validate (AppStream.Component component) {
@@ -1903,13 +1986,78 @@ public class AppCenterCore.FlatpakBackend : Object {
         return;
     }
 
-    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+    private void fill_runtime_updates () {
+        if (!runtime_updates.update_available) {
+            return;
+        }
+
+        string runtime_desc = "";
+
+        foreach (var update in runtime_updates.change_information.updatable_packages) {
+            string bundle_id;
+            if (!get_package_list_key_parts (update, null, null, out bundle_id)) {
+                continue;
+            }
+
+            Flatpak.Ref flatpak_ref;
+            try {
+                flatpak_ref = Flatpak.Ref.parse (bundle_id);
+            } catch (Error e) {
+                warning ("Error parsing flatpak bundle ID: %s", e.message);
+                continue;
+            }
+
+            runtime_desc += Markup.printf_escaped (
+                " • %s\n\t%s\n",
+                flatpak_ref.get_name (),
+                _("Version: %s").printf (flatpak_ref.get_branch ())
+            );
+        }
+
+        var latest_version = ngettext (
+            "%u runtime with updates",
+            "%u runtimes with updates",
+            runtime_updates.change_information.updatable_packages.size
+        ).printf (runtime_updates.change_information.updatable_packages.size);
+        runtime_updates.latest_version = latest_version;
+        runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
+
+        additional_updates.append (runtime_updates);
+    }
+
+    public async void get_updates (Cancellable? cancellable = null) {
         var job_args = new GetUpdatesArgs ();
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
 
-        return (Gee.ArrayList<string>)job.result.get_object ();
+        // Clear any packages previously marked as updatable
+        for (int i = (int) n_updatable_packages - 1; i >= 0; i--) {
+            var package = (Package) updatable_packages.get_item (i);
+            package.change_information.clear_update_info ();
+            package.update_state ();
+        }
+
+        uint runtime_updates_pos;
+        if (additional_updates.find (runtime_updates, out runtime_updates_pos)) {
+            additional_updates.remove (runtime_updates_pos);
+        }
+
+        foreach (var update in (Gee.ArrayList<string>)job.result.get_object ()) {
+            var package = package_list[update] ?? runtime_updates;
+
+            package.change_information.updatable_packages.add (update);
+
+            try {
+                package.change_information.size += yield get_download_size (package, cancellable, true);
+            } catch (Error e) {
+                warning ("Error getting download size for package %s: %s", update, e.message);
+            }
+
+            package.update_state ();
+        }
+
+        fill_runtime_updates ();
     }
 
     public Package? lookup_package_by_id (string id) {

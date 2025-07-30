@@ -32,17 +32,13 @@ namespace AppCenter.Views {
         private Gtk.Revealer updated_revealer;
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
-        private ListStore installed_liststore;
         private Granite.HeaderLabel installed_header;
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
-        private Cancellable? refresh_cancellable = null;
-        private AsyncMutex refresh_mutex = new AsyncMutex ();
 
         construct {
             var update_manager = AppCenterCore.UpdateManager.get_default ();
-
-            installed_liststore = new ListStore (typeof (AppCenterCore.Package));
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
             var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
                 description = _("Downloading a list of available updates to the installed apps"),
@@ -53,6 +49,20 @@ namespace AppCenter.Views {
                 hexpand = true,
                 valign = CENTER
             };
+            flatpak_backend.bind_property (
+                "n-updatable-packages", header_label, "label", SYNC_CREATE,
+                (binding, from_value, ref to_value) => {
+                    var n_updatable_packages = from_value.get_uint ();
+
+                    to_value.set_string (ngettext (
+                        "%u Update Available",
+                        "%u Updates Available",
+                        n_updatable_packages
+                    ).printf (n_updatable_packages));
+
+                    return true;
+                }
+            );
 
             size_label = new Widgets.SizeLabel () {
                 halign = Gtk.Align.END,
@@ -70,6 +80,9 @@ namespace AppCenter.Views {
                 child = updated_box
             };
             updated_revealer.add_css_class ("header");
+            flatpak_backend.bind_property (
+                "has-updatable-packages", header_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
+            );
 
             update_all_button = new Gtk.Button.with_label (_("Update All")) {
                 valign = Gtk.Align.CENTER
@@ -85,14 +98,18 @@ namespace AppCenter.Views {
                 child = header
             };
             header_revealer.add_css_class ("header");
+            flatpak_backend.bind_property (
+                "has-updatable-packages", header_revealer, "reveal-child", SYNC_CREATE
+            );
 
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
                 hexpand = true,
                 vexpand = true
             };
-            list_box.bind_model (update_manager.updates_liststore, create_row_from_package);
+            list_box.bind_model (flatpak_backend.updatable_packages, create_row_from_package);
             list_box.set_placeholder (loading_view);
+            flatpak_backend.bind_property ("has-updated-packages", list_box, "vexpand", SYNC_CREATE | INVERT_BOOLEAN);
 
             installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
@@ -101,13 +118,14 @@ namespace AppCenter.Views {
                 margin_start = 12,
                 visible = false
             };
+            flatpak_backend.bind_property ("has-updated-packages", installed_header, "visible", SYNC_CREATE);
 
             installed_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 max_children_per_line = 5,
                 row_spacing = 12
             };
-            installed_flowbox.bind_model (installed_liststore, create_installed_from_package);
+            installed_flowbox.bind_model (flatpak_backend.updated_packages, create_installed_from_package);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.append (list_box);
@@ -141,14 +159,8 @@ namespace AppCenter.Views {
             });
 
             AppCenter.App.refresh_action.activate.connect (() => {
-                installed_liststore.remove_all ();
                 list_box.set_placeholder (loading_view);
-
                 refresh_menuitem.sensitive = false;
-                header_revealer.reveal_child = false;
-                updated_revealer.reveal_child = false;
-                installed_header.visible = false;
-                list_box.vexpand = true;
             });
 
             var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -197,22 +209,6 @@ namespace AppCenter.Views {
             /// TRANSLATORS: the name of the Installed Apps view
             title = C_("view", "Installed");
 
-            update_manager.updates_liststore.items_changed.connect ((position, removed, added) => {
-                Idle.add (() => {
-                    if (added > 0) {
-                        on_updates_changed ();
-                    }
-                    return GLib.Source.REMOVE;
-                });
-            });
-
-            update_manager.installed_apps_changed.connect (() => {
-                Idle.add (() => {
-                    on_installed_changed.begin ();
-                    return GLib.Source.REMOVE;
-                });
-            });
-
             list_box.row_activated.connect ((row) => {
                 if (row.get_child () is Widgets.InstalledPackageRowGrid) {
                     show_app (((Widgets.InstalledPackageRowGrid) row.get_child ()).package);
@@ -227,7 +223,6 @@ namespace AppCenter.Views {
 
             update_all_button.clicked.connect (on_update_all);
 
-            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
             if (!flatpak_backend.working) {
                 on_updates_changed ();
             }
@@ -235,11 +230,7 @@ namespace AppCenter.Views {
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
                     refresh_menuitem.sensitive = false;
-                    header_revealer.reveal_child = false;
-                    updated_revealer.reveal_child = false;
-                    list_box.set_placeholder (loading_view);
                 } else {
-                    list_box.set_placeholder (null);
                     refresh_menuitem.sensitive = true;
                     on_updates_changed ();
                 }
@@ -264,24 +255,16 @@ namespace AppCenter.Views {
 
         private void on_updates_changed () {
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
-            header_revealer.reveal_child = update_manager.updates_number > 0;
-            updated_revealer.reveal_child = update_manager.updates_number == 0;
-
-            if (update_manager.updates_number > 0) {
-                if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
+            if (flatpak_backend.n_updatable_packages > 0) {
+                if (flatpak_backend.n_updatable_packages == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
                     update_all_button.sensitive = true;
                 }
 
-                header_label.label = ngettext (
-                    "%u Update Available",
-                    "%u Updates Available",
-                    update_manager.updates_number
-                ).printf (update_manager.updates_number);
-
-                size_label.update (update_manager.updates_size);
+                size_label.update (flatpak_backend.updates_size);
             } else {
                 updated_label.label = _("Everything is up to date. Last checked %s.").printf (
                     Granite.DateTime.get_relative_datetime (
@@ -289,35 +272,6 @@ namespace AppCenter.Views {
                     )
                 );
             }
-        }
-
-        private async void on_installed_changed () {
-            if (refresh_cancellable != null) {
-                refresh_cancellable.cancel (); // Cancel any ongoing `get_installed_applications ()`
-            }
-
-            yield refresh_mutex.lock (); // Wait for any previous operation to end
-            // We know refresh_cancellable is now null as it was set so before mutex was unlocked.
-            refresh_cancellable = new Cancellable ();
-
-            if (!refresh_cancellable.is_cancelled ()) {
-                installed_liststore.remove_all ();
-
-                unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-                var installed_apps = yield flatpak_backend.get_installed_applications (refresh_cancellable);
-                installed_header.visible = !installed_apps.is_empty;
-
-                foreach (var package in installed_apps) {
-                    if (package.state != UPDATE_AVAILABLE && package.kind != ADDON && package.kind != FONT) {
-                        installed_liststore.insert_sorted (package, compare_installed_func);
-                    }
-                }
-
-                list_box.vexpand = installed_liststore.n_items <= 0;
-            }
-
-            refresh_cancellable = null;
-            refresh_mutex.unlock ();
         }
 
         private Gtk.Widget create_row_from_package (Object object) {
@@ -365,23 +319,6 @@ namespace AppCenter.Views {
 
                 row = row.get_next_sibling ();
             }
-        }
-
-        private int compare_installed_func (Object object1, Object object2) {
-            var package1 = (AppCenterCore.Package) object1;
-            var package2 = (AppCenterCore.Package) object2;
-
-            string a_package_name = "";
-            if (package1 != null) {
-                a_package_name = package1.get_name ();
-            }
-
-            string b_package_name = "";
-            if (package2 != null) {
-                b_package_name = package2.get_name ();
-            }
-
-            return a_package_name.collate (b_package_name);
         }
 
         public void clear () {
