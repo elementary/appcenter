@@ -223,16 +223,14 @@ namespace AppCenter.Views {
 
             update_all_button.clicked.connect (on_update_all);
 
-            if (!flatpak_backend.working) {
-                on_updates_changed ();
-            }
+            flatpak_backend.updatable_packages.items_changed.connect (on_updates_changed);
+            on_updates_changed ();
 
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
                     refresh_menuitem.sensitive = false;
                 } else {
                     refresh_menuitem.sensitive = true;
-                    on_updates_changed ();
                 }
             });
 
@@ -254,11 +252,13 @@ namespace AppCenter.Views {
         }
 
         private void on_updates_changed () {
-            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
             unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
             if (flatpak_backend.n_updatable_packages > 0) {
-                if (flatpak_backend.n_updatable_packages == update_manager.unpaid_apps_number || updating_all_apps) {
+                if (
+                    flatpak_backend.n_updatable_packages == flatpak_backend.n_unpaid_updatable_packages
+                    || updating_all_apps
+                ) {
                     update_all_button.sensitive = false;
                 } else {
                     update_all_button.sensitive = true;

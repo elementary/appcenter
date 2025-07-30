@@ -18,14 +18,7 @@
  */
 
 public class AppCenterCore.UpdateManager : Object {
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void installed_apps_changed ();
     public signal void cache_update_failed (Error error);
-
-    public int unpaid_apps_number { get; private set; default = 0; }
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
@@ -52,7 +45,7 @@ public class AppCenterCore.UpdateManager : Object {
             //TODO Should we send a notification that automatic-updates had an error?
         } else {
             var application = Application.get_default ();
-            var updates_number = fp_client.updatable_packages.get_n_items ();
+            var updates_number = fp_client.n_updatable_packages;
             if (updates_number > 0) {
                 var title = ngettext ("Update Available", "Updates Available", updates_number);
                 var body = ngettext (
@@ -78,8 +71,6 @@ public class AppCenterCore.UpdateManager : Object {
                 warning ("Error setting updates badge: %s", e.message);
             }
         }
-
-        installed_apps_changed ();
     }
 
     public async void update_all (Cancellable? cancellable) throws Error {

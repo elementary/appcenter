@@ -98,7 +98,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             show_app (package);
         });
 
-        AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
+        AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
             populate ();
         });
     }

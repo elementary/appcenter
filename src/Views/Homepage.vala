@@ -384,7 +384,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 name_label.justify = CENTER;
             }
 
-            AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
+            AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
                 Idle.add (() => {
                     // Clear the cached categories when the AppStream pool is updated
                     if (visible) {

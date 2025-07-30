@@ -52,6 +52,7 @@ public class AppCenterCore.FlatpakBackend : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_flush_needed ();
     public signal void on_metadata_remote_preprocessed (string remote_title);
+    public signal void package_list_changed ();
 
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
     private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
@@ -75,9 +76,6 @@ public class AppCenterCore.FlatpakBackend : Object {
     public bool working { public get; protected set; }
 
     private ListStore _packages;
-    /**
-     * A ListModel containing the package with the highest origin score for each component.
-     */
     public ListModel packages { get { return _packages; } }
 
     private Gtk.FilterListModel _updated_packages;
@@ -85,6 +83,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
     public bool has_updated_packages { get { return _updated_packages.n_items > 0; } }
 
+    // Right now only for runtime updates
     private GLib.ListStore additional_updates;
 
     private Gtk.FlattenListModel _updatable_packages;
@@ -92,6 +91,18 @@ public class AppCenterCore.FlatpakBackend : Object {
 
     public bool has_updatable_packages { get { return _updatable_packages.n_items > 0; } }
     public uint n_updatable_packages { get { return _updatable_packages.n_items; } }
+    public uint n_unpaid_updatable_packages {
+        get {
+            uint n = 0;
+            for (uint i = 0; i < updatable_packages.get_n_items (); i++) {
+                var package = (Package) updatable_packages.get_item (i);
+                if (package.should_pay) {
+                    n++;
+                }
+            }
+            return n;
+        }
+    }
     public uint64 updates_size {
         get {
             uint64 size = 0;
@@ -207,6 +218,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         runtime_updates = new AppCenterCore.Package (runtime_updates_component);
 
         _packages = new ListStore (typeof (FlatpakPackage));
+        _packages.items_changed.connect (() => package_list_changed ());
 
         var installed_expression = new Gtk.PropertyExpression (typeof (Package), null, "installed");
         var installed_filter = new Gtk.BoolFilter (installed_expression);
@@ -239,6 +251,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         _updatable_packages.items_changed.connect (() => {
             notify_property ("has-updatable-packages");
             notify_property ("n-updatable-packages");
+            notify_property ("n-unpaid-updatable-packages");
             notify_property ("updates-size");
         });
 
