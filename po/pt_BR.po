@@ -23,13 +23,14 @@
 # Fábio Klevinskas Lopes <fabioklopes@live.com>, 2024.
 # Leonardo Lemos <leonardolemos@live.com>, 2025.
 # Renato Trevisan <rjltrevisan@gmail.com>, 2025.
+# Guilherme Faura <guilhermefaura@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-02 05:00+0000\n"
-"PO-Revision-Date: 2025-05-16 12:55+0000\n"
-"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
+"PO-Revision-Date: 2025-07-28 17:55+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -425,7 +426,7 @@ msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
-msgstr "Falha ao desinstalar o aplicativo"
+msgstr "Falha ao instalar o aplicativo"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
