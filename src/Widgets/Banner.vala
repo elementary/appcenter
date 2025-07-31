@@ -41,7 +41,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
 
         Object (
-            app_name: package.get_name (),
+            app_name: package.name,
             summary: package.get_summary (),
             description: package.get_description (),
             icon: package.get_icon (128, scale_factor),

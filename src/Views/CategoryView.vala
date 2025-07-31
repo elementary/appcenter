@@ -209,7 +209,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             return 1;
         }
 #endif
-        return package1.get_name ().collate (package2.get_name ());
+        return package1.name.collate (package2.name);
     }
 
     private class SubcategoryFlowbox : Gtk.Box {

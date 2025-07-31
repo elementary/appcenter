@@ -78,7 +78,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         var title_image = new Gtk.Image.from_gicon (package.get_icon (32, scale_factor)) {
             icon_size = LARGE
         };
-        var title_label = new Gtk.Label (package.get_name ()) {
+        var title_label = new Gtk.Label (package.name) {
             ellipsize = END
         };
 
@@ -159,7 +159,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             package = package
         };
 
-        var app_title = new Gtk.Label (package.get_name ()) {
+        var app_title = new Gtk.Label (package.name) {
             selectable = true,
             wrap = true,
             xalign = 0
@@ -756,7 +756,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         toolbar_view.add_top_bar (headerbar);
 
         child = toolbar_view;
-        title = package.get_name ();
+        title = package.name;
         tag = package.hash;
 
         package.notify["state"].connect (on_package_state_changed);
