@@ -76,7 +76,7 @@ namespace AppCenter.Views {
             };
             updated_revealer.add_css_class ("header");
             flatpak_backend.bind_property (
-                "has-updatable-packages", header_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
+                "has-updatable-packages", updated_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
             );
 
             update_all_button = new Gtk.Button.with_label (_("Update All")) {
