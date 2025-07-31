@@ -257,7 +257,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         additional_updates = new GLib.ListStore (typeof (Package));
 
-        var updates_models = new GLib.ListStore(typeof (ListModel));
+        var updates_models = new GLib.ListStore (typeof (ListModel));
         updates_models.append (additional_updates);
         updates_models.append (updatable_packages);
 
