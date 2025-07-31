@@ -219,6 +219,9 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         runtime_updates = new AppCenterCore.Package (runtime_updates_component);
 
+        additional_updates = new GLib.ListStore (typeof (Package));
+        additional_updates.append (runtime_updates);
+
         _packages = new ListStore (typeof (FlatpakPackage));
         _packages.items_changed.connect (() => package_list_changed ());
 
@@ -246,6 +249,12 @@ public class AppCenterCore.FlatpakBackend : Object {
         _updated_packages = new Gtk.FilterListModel (installed_packages, updated_every_filter);
         _updated_packages.items_changed.connect (() => notify_property ("has-updated-packages"));
 
+        var updates_models = new GLib.ListStore (typeof (ListModel));
+        updates_models.append (additional_updates);
+        updates_models.append (installed_packages);
+
+        var flatten_model = new Gtk.FlattenListModel (updates_models);
+
         var updatable_filter = new Gtk.BoolFilter (update_available_expression);
         var updating_filter = new Gtk.BoolFilter (updating_expression);
 
@@ -253,21 +262,13 @@ public class AppCenterCore.FlatpakBackend : Object {
         updatable_any_filter.append (updatable_filter);
         updatable_any_filter.append (updating_filter);
 
-        var updatable_packages = new Gtk.FilterListModel (installed_packages, updatable_any_filter);
-
-        additional_updates = new GLib.ListStore (typeof (Package));
-
-        var updates_models = new GLib.ListStore (typeof (ListModel));
-        updates_models.append (additional_updates);
-        updates_models.append (updatable_packages);
-
-        var flatten_model = new Gtk.FlattenListModel (updates_models);
+        var updatable_packages = new Gtk.FilterListModel (flatten_model, updatable_any_filter);
 
         var updating_sorter = new Gtk.NumericSorter (updating_expression) {
             sort_order = DESCENDING
         };
 
-        _updatable_packages = new Gtk.SortListModel (flatten_model, updating_sorter);
+        _updatable_packages = new Gtk.SortListModel (updatable_packages, updating_sorter);
         _updatable_packages.items_changed.connect (() => {
             notify_property ("has-updatable-packages");
             notify_property ("n-updatable-packages");
@@ -382,9 +383,16 @@ public class AppCenterCore.FlatpakBackend : Object {
     }
 
     public void notify_package_changed (Package package) {
+        GLib.ListStore store;
+        if (package.is_runtime_updates) {
+            store = additional_updates;
+        } else {
+            store = _packages;
+        }
+
         uint pos;
-        if (_packages.find (package, out pos)) {
-            _packages.items_changed (pos, 1, 1);
+        if (store.find (package, out pos)) {
+            store.items_changed (pos, 1, 1);
         } else {
             warning ("Package %s not found in the package list", package.name);
         }
@@ -2085,8 +2093,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         ).printf (runtime_updates.change_information.updatable_packages.size);
         runtime_updates.latest_version = latest_version;
         runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
-
-        additional_updates.append (runtime_updates);
     }
 
     public async void get_updates (Cancellable? cancellable = null) {
@@ -2099,8 +2105,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             package.change_information.clear_update_info ();
             package.update_state ();
         }
-
-        additional_updates.remove_all ();
 
         var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
 
