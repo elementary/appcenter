@@ -575,7 +575,6 @@ public class AppCenterCore.Package : Object {
                 var success = yield backend.remove_package (this, change_information, action_cancellable);
                 _installed = !success;
                 update_state ();
-                yield update_manager.get_updates ();
                 return success;
             default:
                 return false;
