@@ -29,7 +29,7 @@ public class AppCenterCore.UpdateManager : Object {
     public Package runtime_updates { public get; private set; }
     public int unpaid_apps_number { get; private set; default = 0; }
     public uint n_updatable_packages { get; set; default = 0U; }
-    public bool has_updates { get; private set; }
+    public bool has_updatable_packages { get; private set; }
     public uint64 updates_size { get; private set; default = 0ULL; }
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
@@ -64,6 +64,7 @@ public class AppCenterCore.UpdateManager : Object {
         updates_liststore.remove_all ();
         unpaid_apps_number = 0;
         updates_size = 0ULL;
+        has_updatable_packages = false;
 
         // Clear any packages previously marked as updatable
         var installed_packages = yield FlatpakBackend.get_default ().get_installed_applications ();
@@ -80,6 +81,8 @@ public class AppCenterCore.UpdateManager : Object {
         debug ("Flatpak backend reports %d updates", flatpak_updates.size);
 
         foreach (var flatpak_update in flatpak_updates) {
+            has_updatable_packages = true;
+
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", flatpak_update);
