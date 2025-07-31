@@ -265,11 +265,11 @@ namespace AppCenter.Views {
         private void on_updates_changed () {
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
-            header_revealer.reveal_child = update_manager.updates_number > 0;
-            updated_revealer.reveal_child = update_manager.updates_number == 0;
+            header_revealer.reveal_child = update_manager.n_updatable_packages > 0;
+            updated_revealer.reveal_child = update_manager.n_updatable_packages == 0;
 
-            if (update_manager.updates_number > 0) {
-                if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
+            if (update_manager.n_updatable_packages > 0) {
+                if (update_manager.n_updatable_packages == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
                     update_all_button.sensitive = true;
@@ -278,8 +278,8 @@ namespace AppCenter.Views {
                 header_label.label = ngettext (
                     "%u Update Available",
                     "%u Updates Available",
-                    update_manager.updates_number
-                ).printf (update_manager.updates_number);
+                    update_manager.n_updatable_packages
+                ).printf (update_manager.n_updatable_packages);
 
                 size_label.update (update_manager.updates_size);
             } else {
