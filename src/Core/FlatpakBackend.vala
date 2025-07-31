@@ -116,6 +116,13 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
     }
 
+    public bool up_to_date {
+        get {
+            return !has_updatable_packages && (!working || job_type != GET_UPDATES && job_type != REFRESH_CACHE
+                && job_type != GET_INSTALLED_PACKAGES && job_type != GET_PREPARED_PACKAGES);
+        }
+    }
+
     private Package runtime_updates;
 
     private string user_metadata_path;
@@ -207,6 +214,8 @@ public class AppCenterCore.FlatpakBackend : Object {
     }
 
     construct {
+        notify["working"].connect (() => Idle.add_once (() => notify_property ("up-to-date")));
+
         var runtime_icon = new AppStream.Icon ();
         runtime_icon.set_name ("application-vnd.flatpak");
         runtime_icon.set_kind (AppStream.IconKind.STOCK);
@@ -274,6 +283,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             notify_property ("n-updatable-packages");
             notify_property ("n-unpaid-updatable-packages");
             notify_property ("updates-size");
+            notify_property ("up-to-date");
         });
 
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
