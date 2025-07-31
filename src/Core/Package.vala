@@ -555,7 +555,6 @@ public class AppCenterCore.Package : Object {
 
     private async bool perform_package_operation () throws GLib.Error {
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         switch (state) {
             case State.UPDATING:
