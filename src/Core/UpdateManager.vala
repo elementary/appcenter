@@ -196,7 +196,7 @@ public class AppCenterCore.UpdateManager : Object {
 
             var package = (Package) updates_liststore.get_item (i);
             if (!package.should_pay) {
-                debug ("Update: %s", package.get_name ());
+                debug ("Update: %s", package.name);
                 try {
                     yield package.update (false);
                 } catch (Error e) {
@@ -205,7 +205,7 @@ public class AppCenterCore.UpdateManager : Object {
                         break;
                     }
 
-                    warning ("Updating %s failed: %s", package.get_name (), e.message);
+                    warning ("Updating %s failed: %s", package.name, e.message);
                     throw (e);
                 }
 
@@ -310,7 +310,7 @@ public class AppCenterCore.UpdateManager : Object {
         if (package1 != null) {
             a_is_runtime = package1.is_runtime_updates;
             a_is_updating = package1.is_updating;
-            a_package_name = package1.get_name ();
+            a_package_name = package1.name;
         }
 
         bool b_is_runtime = false;
@@ -319,7 +319,7 @@ public class AppCenterCore.UpdateManager : Object {
         if (package2 != null) {
             b_is_runtime = package2.is_runtime_updates;
             b_is_updating = package2.is_updating;
-            b_package_name = package2.get_name ();
+            b_package_name = package2.name;
         }
 
         // The currently updating package is always top of the list

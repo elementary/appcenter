@@ -25,7 +25,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     }
 
     construct {
-        var package_name = new Gtk.Label (package.get_name ()) {
+        var package_name = new Gtk.Label (package.name) {
             ellipsize = Pango.EllipsizeMode.END,
             lines = 2,
             max_width_chars = 1,
