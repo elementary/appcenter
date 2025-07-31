@@ -388,6 +388,20 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? _name = null;
+    public string name {
+        get {
+            if (_name != null) {
+                return _name;
+            }
+
+            _name = component.get_name ();
+            _name = Utils.unescape_markup (_name);
+
+            return _name;
+        }
+    }
+
     public string? description = null;
     private string? summary = null;
     private string? color_primary_light = null;
@@ -605,19 +619,6 @@ public class AppCenterCore.Package : Object {
         }
         cached_search_score = score / queries.length;
         return cached_search_score;
-    }
-
-    private string? _name = null;
-    public string name {
-        get {
-            if (_name != null) {
-                return _name;
-            }
-
-            _name = Utils.unescape_markup (component.get_name ());
-
-            return _name;
-        }
     }
 
     public void set_name (string? new_name) {
