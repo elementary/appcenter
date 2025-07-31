@@ -463,24 +463,13 @@ public class AppCenterCore.Package : Object {
 
     /**
      * Instructs the backend to update this package
-     *
-     * @refresh_updates_after: Whether to run the check for updates (and update the badges etc...) after
-     * this method succeeds. This is fine after updating a single package, but for efficiency, it's better to
-     * do this only once at the end of updating a batch of packages, so this should be set to false if updating
-     * multiple packages in a loop.
-     *
      */
-    public async bool update (bool refresh_updates_after = true) throws GLib.Error {
+    public async bool update () throws GLib.Error {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
 
-        var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
-        if (success && refresh_updates_after) {
-            yield UpdateManager.get_default ().get_updates ();
-        }
-
-        return success;
+        return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
     }
 
     public async bool install () {

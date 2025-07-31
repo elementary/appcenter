@@ -84,7 +84,7 @@ public class AppCenterCore.UpdateManager : Object {
             if (!package.should_pay) {
                 debug ("Update: %s", package.get_name ());
                 try {
-                    yield package.update (false);
+                    yield package.update ();
                 } catch (Error e) {
                     // If one package update was cancelled, drop out of the loop of updating the rest
                     if (e is GLib.IOError.CANCELLED) {
