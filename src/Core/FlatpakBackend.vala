@@ -222,24 +222,18 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         var installed_expression = new Gtk.PropertyExpression (typeof (Package), null, "installed");
         var installed_filter = new Gtk.BoolFilter (installed_expression);
-        var installed_packages = new Gtk.FilterListModel (_packages, installed_filter) {
-            incremental = true
-        };
+        var installed_packages = new Gtk.FilterListModel (_packages, installed_filter);
 
         var update_available_expression = new Gtk.PropertyExpression (typeof (Package), null, "update-available");
 
         var updated_filter = new Gtk.BoolFilter (update_available_expression) {
             invert = true
         };
-        _updated_packages = new Gtk.FilterListModel (installed_packages, updated_filter) {
-            incremental = true
-        };
+        _updated_packages = new Gtk.FilterListModel (installed_packages, updated_filter);
         _updated_packages.items_changed.connect (() => notify_property ("has-updated-packages"));
 
         var updatable_filter = new Gtk.BoolFilter (update_available_expression);
-        var updatable_packages = new Gtk.FilterListModel (installed_packages, updatable_filter) {
-            incremental = true
-        };
+        var updatable_packages = new Gtk.FilterListModel (installed_packages, updatable_filter);
 
         additional_updates = new GLib.ListStore (typeof (Package));
 
@@ -1296,9 +1290,31 @@ public class AppCenterCore.FlatpakBackend : Object {
             });
         }
 
+        var removed = new Gee.HashSet<Package> ();
+        removed.add_all (package_list.values);
+        removed.remove_all (new_package_list.values);
+
+        var added = new Gee.HashSet<Package> ();
+        added.add_all (new_package_list.values);
+        added.remove_all (package_list.values);
+
         package_list = new_package_list;
 
-        this._packages.splice (0, this._packages.n_items, package_list.values.to_array ());
+        // Wrap in Idle since we can be in the worker thread and changing the package liststore
+        // will trigger signals that update the UI
+        Idle.add (() => update_package_store (removed, added));
+    }
+
+    private bool update_package_store (Gee.Collection<Package> removed, Gee.Collection<Package> added) {
+        foreach (var package in removed) {
+            uint pos;
+            if (_packages.find (package, out pos)) {
+                _packages.remove (pos);
+            }
+        }
+
+        _packages.splice (_packages.n_items, 0, added.to_array ());
+        return Source.REMOVE;
     }
 
     private bool validate (AppStream.Component component) {
@@ -2042,8 +2058,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         var job_args = new GetUpdatesArgs ();
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
-
         // Clear any packages previously marked as updatable
         for (int i = (int) n_updatable_packages - 1; i >= 0; i--) {
             var package = (Package) updatable_packages.get_item (i);
@@ -2051,10 +2065,9 @@ public class AppCenterCore.FlatpakBackend : Object {
             package.update_state ();
         }
 
-        uint runtime_updates_pos;
-        if (additional_updates.find (runtime_updates, out runtime_updates_pos)) {
-            additional_updates.remove (runtime_updates_pos);
-        }
+        additional_updates.remove_all ();
+
+        var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
 
         foreach (var update in (Gee.ArrayList<string>)job.result.get_object ()) {
             var package = package_list[update] ?? runtime_updates;

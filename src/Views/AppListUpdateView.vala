@@ -40,11 +40,6 @@ namespace AppCenter.Views {
             var update_manager = AppCenterCore.UpdateManager.get_default ();
             unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
-            var loading_view = new Granite.Placeholder (_("Checking for Updates")) {
-                description = _("Downloading a list of available updates to the installed apps"),
-                icon = new ThemedIcon ("sync-synchronizing")
-            };
-
             header_label = new Granite.HeaderLabel ("") {
                 hexpand = true,
                 valign = CENTER
@@ -105,18 +100,14 @@ namespace AppCenter.Views {
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
                 hexpand = true,
-                vexpand = true
             };
             list_box.bind_model (flatpak_backend.updatable_packages, create_row_from_package);
-            list_box.set_placeholder (loading_view);
-            flatpak_backend.bind_property ("has-updated-packages", list_box, "vexpand", SYNC_CREATE | INVERT_BOOLEAN);
 
             installed_header = new Granite.HeaderLabel (_("Up to Date")) {
                 margin_top = 12,
                 margin_end = 12,
                 margin_bottom = 12,
-                margin_start = 12,
-                visible = false
+                margin_start = 12
             };
             flatpak_backend.bind_property ("has-updated-packages", installed_header, "visible", SYNC_CREATE);
 
@@ -159,7 +150,6 @@ namespace AppCenter.Views {
             });
 
             AppCenter.App.refresh_action.activate.connect (() => {
-                list_box.set_placeholder (loading_view);
                 refresh_menuitem.sensitive = false;
             });
 
