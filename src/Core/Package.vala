@@ -319,7 +319,7 @@ public class AppCenterCore.Package : Object {
 
             _author_title = author;
             if (_author_title == null) {
-                _author_title = _("%s Developers").printf (get_name ());
+                _author_title = _("%s Developers").printf (name);
             }
 
             return _author_title;
@@ -418,7 +418,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public void replace_component (AppStream.Component component) {
-        name = null;
+        _name = null;
         description = null;
         summary = null;
         color_primary_light = null;
@@ -450,14 +450,7 @@ public class AppCenterCore.Package : Object {
         // Only trigger a notify if the state has changed, quite a lot of things listen to this
         if (state != new_state) {
             state = new_state;
-
-            unowned var packages = FlatpakBackend.get_default ().packages;
-            for (uint i = 0; i < packages.get_n_items (); i++) {
-                if (packages.get_item (i) == this) {
-                    packages.items_changed (i, 1, 1);
-                    break;
-                }
-            }
+            FlatpakBackend.get_default ().notify_package_changed (this);
         }
     }
 
@@ -506,12 +499,12 @@ public class AppCenterCore.Package : Object {
             }
         }
 
-        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (get_name ()));
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (name));
     }
 
     public void launch () throws Error {
         if (app_info == null) {
-            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for package: %s".printf (get_name ()));
+            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for package: %s".printf (name));
         }
 
         try {
@@ -527,7 +520,7 @@ public class AppCenterCore.Package : Object {
         try {
             success = yield perform_package_operation ();
         } catch (GLib.Error e) {
-            warning ("Operation failed for package %s - %s", get_name (), e.message);
+            warning ("Operation failed for package %s - %s", name, e.message);
             throw e;
         } finally {
             clean_up_package_operation (success, after_success, after_fail);
@@ -542,6 +535,8 @@ public class AppCenterCore.Package : Object {
         action_cancellable.reset ();
         change_information.start ();
         state = initial_state;
+
+        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     private async bool perform_package_operation () throws GLib.Error {
@@ -583,6 +578,8 @@ public class AppCenterCore.Package : Object {
             state = fail_state;
             change_information.cancel ();
         }
+
+        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     public uint cached_search_score = 0;
@@ -610,20 +607,21 @@ public class AppCenterCore.Package : Object {
         return cached_search_score;
     }
 
-    private string? name = null;
-    public string? get_name () {
-        if (name != null) {
-            return name;
+    private string? _name = null;
+    public string name {
+        get {
+            if (_name != null) {
+                return _name;
+            }
+
+            _name = Utils.unescape_markup (component.get_name ());
+
+            return _name;
         }
-
-        name = component.get_name ();
-        name = Utils.unescape_markup (name);
-
-        return name;
     }
 
     public void set_name (string? new_name) {
-        name = Utils.unescape_markup (new_name);
+        _name = Utils.unescape_markup (new_name);
     }
 
     public string? get_description () {

@@ -76,7 +76,9 @@ public class AppCenterCore.FlatpakBackend : Object {
     public bool working { public get; protected set; }
 
     private ListStore _packages;
-    public ListModel packages { get { return _packages; } }
+
+    private Gtk.SortListModel _sorted_packages;
+    public ListModel packages { get { return _sorted_packages; } }
 
     private Gtk.FilterListModel _updated_packages;
     public ListModel updated_packages { get { return _updated_packages; } }
@@ -86,7 +88,7 @@ public class AppCenterCore.FlatpakBackend : Object {
     // Right now only for runtime updates
     private GLib.ListStore additional_updates;
 
-    private Gtk.FlattenListModel _updatable_packages;
+    private Gtk.SortListModel _updatable_packages;
     public ListModel updatable_packages { get { return _updatable_packages; } }
 
     public bool has_updatable_packages { get { return _updatable_packages.n_items > 0; } }
@@ -220,20 +222,38 @@ public class AppCenterCore.FlatpakBackend : Object {
         _packages = new ListStore (typeof (FlatpakPackage));
         _packages.items_changed.connect (() => package_list_changed ());
 
+        var sorter = new Gtk.StringSorter (new Gtk.PropertyExpression (typeof (Package), null, "name"));
+        _sorted_packages = new Gtk.SortListModel (_packages, sorter);
+
         var installed_expression = new Gtk.PropertyExpression (typeof (Package), null, "installed");
         var installed_filter = new Gtk.BoolFilter (installed_expression);
-        var installed_packages = new Gtk.FilterListModel (_packages, installed_filter);
+        var installed_packages = new Gtk.FilterListModel (_sorted_packages, installed_filter);
 
         var update_available_expression = new Gtk.PropertyExpression (typeof (Package), null, "update-available");
+        var updating_expression = new Gtk.PropertyExpression (typeof (Package), null, "is-updating");
 
         var updated_filter = new Gtk.BoolFilter (update_available_expression) {
             invert = true
         };
-        _updated_packages = new Gtk.FilterListModel (installed_packages, updated_filter);
+        var not_updating_filter = new Gtk.BoolFilter (updating_expression) {
+            invert = true
+        };
+
+        var updated_every_filter = new Gtk.EveryFilter ();
+        updated_every_filter.append (updated_filter);
+        updated_every_filter.append (not_updating_filter);
+
+        _updated_packages = new Gtk.FilterListModel (installed_packages, updated_every_filter);
         _updated_packages.items_changed.connect (() => notify_property ("has-updated-packages"));
 
         var updatable_filter = new Gtk.BoolFilter (update_available_expression);
-        var updatable_packages = new Gtk.FilterListModel (installed_packages, updatable_filter);
+        var updating_filter = new Gtk.BoolFilter (updating_expression);
+
+        var updatable_any_filter = new Gtk.AnyFilter ();
+        updatable_any_filter.append (updatable_filter);
+        updatable_any_filter.append (updating_filter);
+
+        var updatable_packages = new Gtk.FilterListModel (installed_packages, updatable_any_filter);
 
         additional_updates = new GLib.ListStore (typeof (Package));
 
@@ -241,7 +261,13 @@ public class AppCenterCore.FlatpakBackend : Object {
         updates_models.append (additional_updates);
         updates_models.append (updatable_packages);
 
-        _updatable_packages = new Gtk.FlattenListModel (updates_models);
+        var flatten_model = new Gtk.FlattenListModel (updates_models);
+
+        var updating_sorter = new Gtk.NumericSorter (updating_expression) {
+            sort_order = DESCENDING
+        };
+
+        _updatable_packages = new Gtk.SortListModel (flatten_model, updating_sorter);
         _updatable_packages.items_changed.connect (() => {
             notify_property ("has-updatable-packages");
             notify_property ("n-updatable-packages");
@@ -353,6 +379,15 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         reload_appstream_pool ();
         get_installed_applications.begin (null);
+    }
+
+    public void notify_package_changed (Package package) {
+        uint pos;
+        if (_packages.find (package, out pos)) {
+            _packages.items_changed (pos, 1, 1);
+        } else {
+            warning ("Package %s not found in the package list", package.name);
+        }
     }
 
     private void set_actions_enabled (bool working) {
@@ -1097,7 +1132,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
         }
 
-        reload_appstream_pool (); //TODO: Jesus christ this is run in the worker thread but accesses lots of data without any locks whatsoever!!!!
+        reload_appstream_pool ();
         cache_flush_needed ();
 
         job.result = Value (typeof (bool));
@@ -1334,7 +1369,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         return "%s/%s/%s".printf (installation, origin, bundle_id);
     }
 
-    public static bool get_package_list_key_parts (string key, out bool? system, out string? origin, out string? bundle_id) {
+    private static bool get_package_list_key_parts (string key, out bool? system, out string? origin, out string? bundle_id) {
         system = null;
         origin = null;
         bundle_id = null;
@@ -2084,10 +2119,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         fill_runtime_updates ();
-    }
-
-    public Package? lookup_package_by_id (string id) {
-        return package_list[id];
     }
 
     private void repair_internal (Job job) {

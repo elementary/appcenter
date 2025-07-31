@@ -47,10 +47,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 try {
                     last_installed_package.launch ();
                 } catch (Error e) {
-                    warning ("Failed to launch %s: %s".printf (last_installed_package.get_name (), e.message));
+                    warning ("Failed to launch %s: %s".printf (last_installed_package.name, e.message));
 
                     var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
-                        _("Failed to launch “%s“").printf (last_installed_package.get_name ()),
+                        _("Failed to launch “%s“").printf (last_installed_package.name),
                         e.message,
                         "system-software-install",
                         Gtk.ButtonsType.CLOSE
@@ -223,7 +223,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return;
         }
 
-        toast.title = _("“%s” has been installed").printf (package.get_name ());
+        toast.title = _("“%s” has been installed").printf (package.name);
         // Show Open only when a desktop app is installed
         if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
             toast.set_default_action (_("Open"));

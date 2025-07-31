@@ -82,7 +82,7 @@ public class AppCenterCore.UpdateManager : Object {
 
             var package = (Package) updates.get_item (i);
             if (!package.should_pay) {
-                debug ("Update: %s", package.get_name ());
+                debug ("Update: %s", package.name);
                 try {
                     yield package.update ();
                 } catch (Error e) {
@@ -91,7 +91,7 @@ public class AppCenterCore.UpdateManager : Object {
                         break;
                     }
 
-                    warning ("Updating %s failed: %s", package.get_name (), e.message);
+                    warning ("Updating %s failed: %s", package.name, e.message);
                     throw (e);
                 }
 
@@ -180,41 +180,6 @@ public class AppCenterCore.UpdateManager : Object {
         });
 
         get_updates.begin (cancellable);
-    }
-
-    private int compare_package_func (Object object1, Object object2) {
-        var package1 = (AppCenterCore.Package) object1;
-        var package2 = (AppCenterCore.Package) object2;
-
-        bool a_is_runtime = false;
-        bool a_is_updating = false;
-        string a_package_name = "";
-        if (package1 != null) {
-            a_is_runtime = package1.is_runtime_updates;
-            a_is_updating = package1.is_updating;
-            a_package_name = package1.get_name ();
-        }
-
-        bool b_is_runtime = false;
-        bool b_is_updating = false;
-        string b_package_name = "";
-        if (package2 != null) {
-            b_is_runtime = package2.is_runtime_updates;
-            b_is_updating = package2.is_updating;
-            b_package_name = package2.get_name ();
-        }
-
-        // The currently updating package is always top of the list
-        if (a_is_updating || b_is_updating) {
-            return a_is_updating ? -1 : 1;
-        }
-
-        // Ensures runtime updates are sorted to the top amongst up-to-date packages but below OS updates
-        if (a_is_runtime || b_is_runtime) {
-            return a_is_runtime ? -1 : 1;
-        }
-
-        return a_package_name.collate (b_package_name); /* Else sort in name order */
     }
 
     private static GLib.Once<UpdateManager> instance;
