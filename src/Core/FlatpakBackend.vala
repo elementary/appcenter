@@ -1137,7 +1137,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                 continue;
             }
 
-            on_metadata_remote_preprocessed (remote.get_title ());
+            Idle.add_once (() => on_metadata_remote_preprocessed (remote.get_title ()));
         }
     }
 
