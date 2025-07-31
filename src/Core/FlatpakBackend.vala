@@ -1138,7 +1138,10 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
 
             // Make sure we emit the signal on the main thread since UI is connected to this
-            Idle.add_once (() => on_metadata_remote_preprocessed (remote.get_title ()));
+            Idle.add (() => {
+                on_metadata_remote_preprocessed (remote.get_title ());
+                return Source.REMOVE;
+            });
         }
     }
 
