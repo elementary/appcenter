@@ -41,7 +41,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         action_stack.updates_view = true;
         action_stack.margin_start = 12;
 
-        var package_name = new Gtk.Label (package.get_name ()) {
+        var package_name = new Gtk.Label (package.name) {
             wrap = true,
             max_width_chars = 25,
             valign = END,
@@ -139,7 +139,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         }
 
         construct {
-            title = _("What's new in %s").printf (package.get_name ());
+            title = _("What's new in %s").printf (package.name);
             modal = true;
 
             var releases_title = new Gtk.Label (title) {

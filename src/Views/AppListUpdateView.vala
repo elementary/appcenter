@@ -373,12 +373,12 @@ namespace AppCenter.Views {
 
             string a_package_name = "";
             if (package1 != null) {
-                a_package_name = package1.get_name ();
+                a_package_name = package1.name;
             }
 
             string b_package_name = "";
             if (package2 != null) {
-                b_package_name = package2.get_name ();
+                b_package_name = package2.name;
             }
 
             return a_package_name.collate (b_package_name);

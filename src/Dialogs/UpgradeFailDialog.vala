@@ -37,7 +37,7 @@ public class UpgradeFailDialog : Granite.MessageDialog {
             primary_text = _("Failed to update app");
             image_icon = new ThemedIcon (FALLBACK_ICON);
         } else {
-            primary_text = _("Failed to update “%s”").printf (package.get_name ());
+            primary_text = _("Failed to update “%s”").printf (package.name);
             image_icon = package.get_icon (48, get_scale_factor ());
         }
 

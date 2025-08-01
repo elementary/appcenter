@@ -319,7 +319,7 @@ public class AppCenterCore.Package : Object {
 
             _author_title = author;
             if (_author_title == null) {
-                _author_title = _("%s Developers").printf (get_name ());
+                _author_title = _("%s Developers").printf (name);
             }
 
             return _author_title;
@@ -388,6 +388,20 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? _name = null;
+    public string name {
+        get {
+            if (_name != null) {
+                return _name;
+            }
+
+            _name = component.get_name ();
+            _name = Utils.unescape_markup (_name);
+
+            return _name;
+        }
+    }
+
     public string? description = null;
     private string? summary = null;
     private string? color_primary_light = null;
@@ -418,7 +432,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public void replace_component (AppStream.Component component) {
-        name = null;
+        _name = null;
         description = null;
         summary = null;
         color_primary_light = null;
@@ -509,12 +523,12 @@ public class AppCenterCore.Package : Object {
             }
         }
 
-        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (get_name ()));
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (name));
     }
 
     public void launch () throws Error {
         if (app_info == null) {
-            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for package: %s".printf (get_name ()));
+            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for package: %s".printf (name));
         }
 
         try {
@@ -530,7 +544,7 @@ public class AppCenterCore.Package : Object {
         try {
             success = yield perform_package_operation ();
         } catch (GLib.Error e) {
-            warning ("Operation failed for package %s - %s", get_name (), e.message);
+            warning ("Operation failed for package %s - %s", name, e.message);
             throw e;
         } finally {
             clean_up_package_operation (success, after_success, after_fail);
@@ -613,20 +627,8 @@ public class AppCenterCore.Package : Object {
         return cached_search_score;
     }
 
-    private string? name = null;
-    public string? get_name () {
-        if (name != null) {
-            return name;
-        }
-
-        name = component.get_name ();
-        name = Utils.unescape_markup (name);
-
-        return name;
-    }
-
     public void set_name (string? new_name) {
-        name = Utils.unescape_markup (new_name);
+        _name = Utils.unescape_markup (new_name);
     }
 
     public string? get_description () {

@@ -337,7 +337,7 @@ public class AppCenter.App : Gtk.Application {
                         }
 
                         var notification = new Notification (_("The app has been installed"));
-                        notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
+                        notification.set_body (_("“%s” has been installed").printf (package.name));
                         notification.set_icon (new ThemedIcon ("process-completed"));
                         notification.set_default_action ("app.open-application");
 
