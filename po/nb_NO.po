@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-01 15:26+0000\n"
+"POT-Creation-Date: 2025-08-01 20:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:192
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr ""
 
@@ -153,10 +153,10 @@ msgstr ""
 msgid "Finished"
 msgstr ""
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1499
-#: src/Core/FlatpakBackend.vala:1523 src/Core/FlatpakBackend.vala:1631
-#: src/Core/FlatpakBackend.vala:1655 src/Core/FlatpakBackend.vala:1813
-#: src/Core/FlatpakBackend.vala:1831
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
+#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
+#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
+#: src/Core/FlatpakBackend.vala:2003
 msgid "Cancelling"
 msgstr ""
 
@@ -169,23 +169,48 @@ msgstr ""
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:110
+#: src/Core/FlatpakBackend.vala:162
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1490
+#: src/Core/FlatpakBackend.vala:232
+msgid "Runtime Updates"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:233
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1662
 msgid "Installing"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1622
+#: src/Core/FlatpakBackend.vala:1794
 msgid "Uninstalling"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1804
+#: src/Core/FlatpakBackend.vala:1976
 msgid "Updating"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1994
+#: src/Core/FlatpakBackend.vala:2106
+#, c-format
+msgid "Version: %s"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:2111
+#, c-format
+msgid "%u runtime with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Core/FlatpakBackend.vala:2116
+#, c-format
+msgid "%s:"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:2220
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -223,7 +248,7 @@ msgstr ""
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:526
+#: src/Core/Package.vala:516
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -320,38 +345,13 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: src/Core/UpdateManager.vala:52
-msgid "Runtime Updates"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:53
-msgid "Updates to app runtimes"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:124
-#, c-format
-msgid "Version: %s"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:143
-#, c-format
-msgid "%u runtime with updates"
-msgid_plural "%u runtimes with updates"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/Core/UpdateManager.vala:148
-#, c-format
-msgid "%s:"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:165
+#: src/Core/UpdateManager.vala:50
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:167
+#: src/Core/UpdateManager.vala:52
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -526,8 +526,8 @@ msgid "Refresh Updates"
 msgstr ""
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:193
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:179
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr ""
@@ -767,52 +767,44 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:47
-msgid "Checking for Updates"
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:48
-msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:62
+#: src/Views/AppListUpdateView.vala:53
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/AppListUpdateView.vala:88
+#: src/Views/AppListUpdateView.vala:82
 msgid "Update All"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:114
+#: src/Views/AppListUpdateView.vala:106
 msgid "Up to Date"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:142
+#: src/Views/AppListUpdateView.vala:134
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:143
+#: src/Views/AppListUpdateView.vala:135
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:147
+#: src/Views/AppListUpdateView.vala:139
 msgid "Check for Updates"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:184
+#: src/Views/AppListUpdateView.vala:170
 msgid "Settings"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:214
+#: src/Views/AppListUpdateView.vala:200
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:294
+#: src/Views/AppListUpdateView.vala:259
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -822,7 +814,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr ""
 
@@ -834,24 +826,24 @@ msgstr ""
 msgid "Free Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:85
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr ""
 
-#: src/Views/Homepage.vala:135
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr ""
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:194
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:194
+#: src/Views/Homepage.vala:195
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "

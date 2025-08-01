@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-01 15:26+0000\n"
+"POT-Creation-Date: 2025-08-01 20:21+0000\n"
 "PO-Revision-Date: 2025-03-08 13:59+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementaryos.org/projects/appcenter/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:192
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
 
@@ -166,10 +166,10 @@ msgstr "Ɛretwɛn"
 msgid "Finished"
 msgstr "Awie"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1499
-#: src/Core/FlatpakBackend.vala:1523 src/Core/FlatpakBackend.vala:1631
-#: src/Core/FlatpakBackend.vala:1655 src/Core/FlatpakBackend.vala:1813
-#: src/Core/FlatpakBackend.vala:1831
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
+#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
+#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
+#: src/Core/FlatpakBackend.vala:2003
 msgid "Cancelling"
 msgstr "Ɛregyae"
 
@@ -182,27 +182,54 @@ msgstr "Ɛrehyɛ ase"
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:110
+#: src/Core/FlatpakBackend.vala:162
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1490
+#: src/Core/FlatpakBackend.vala:232
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Runtime Updates"
+msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
+
+#: src/Core/FlatpakBackend.vala:233
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1662
 msgid "Installing"
 msgstr "Ɛde regu so"
 
-#: src/Core/FlatpakBackend.vala:1622
+#: src/Core/FlatpakBackend.vala:1794
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Yi fi so"
 
-#: src/Core/FlatpakBackend.vala:1804
+#: src/Core/FlatpakBackend.vala:1976
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Twe nea aba"
 
-#: src/Core/FlatpakBackend.vala:1994
+#: src/Core/FlatpakBackend.vala:2106
+#, c-format
+msgid "Version: %s"
+msgstr "Version: %s"
+
+#: src/Core/FlatpakBackend.vala:2111
+#, c-format
+msgid "%u runtime with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Core/FlatpakBackend.vala:2116
+#, c-format
+msgid "%s:"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:2220
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -250,7 +277,7 @@ msgstr ""
 msgid "%s Developers"
 msgstr "%s Dwumadieyɛfoɔ"
 
-#: src/Core/Package.vala:526
+#: src/Core/Package.vala:516
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -359,40 +386,13 @@ msgstr "Sika dodow a wobɛtumi ayi afi wo kaad no so no asõ."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Kaad no yɛ nea wɔde sɔ hwɛ kɛkɛ. Yɛsrɛ wo fa nea edi mu yɛ."
 
-#: src/Core/UpdateManager.vala:52
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Runtime Updates"
-msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
-
-#: src/Core/UpdateManager.vala:53
-msgid "Updates to app runtimes"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:124
-#, c-format
-msgid "Version: %s"
-msgstr "Version: %s"
-
-#: src/Core/UpdateManager.vala:143
-#, c-format
-msgid "%u runtime with updates"
-msgid_plural "%u runtimes with updates"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/Core/UpdateManager.vala:148
-#, c-format
-msgid "%s:"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:165
+#: src/Core/UpdateManager.vala:50
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Foforɔ Aba"
 msgstr[1] "Nneɛma Foforɔ Aba"
 
-#: src/Core/UpdateManager.vala:167
+#: src/Core/UpdateManager.vala:52
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -578,8 +578,8 @@ msgid "Refresh Updates"
 msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:193
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:179
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -826,59 +826,49 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for Updates"
-msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
-
-#: src/Views/AppListUpdateView.vala:48
-msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:62
+#: src/Views/AppListUpdateView.vala:53
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "Foforɔ %u Na Aba"
 msgstr[1] "Afoforɔ %u Na Aba"
 
-#: src/Views/AppListUpdateView.vala:88
+#: src/Views/AppListUpdateView.vala:82
 msgid "Update All"
 msgstr "Twɛ Foforɔ No Nyinaa"
 
-#: src/Views/AppListUpdateView.vala:114
+#: src/Views/AppListUpdateView.vala:106
 msgid "Up to Date"
 msgstr "Nea Ɛyɛ Foforɔ a Ɛtwa Toɔ"
 
-#: src/Views/AppListUpdateView.vala:142
+#: src/Views/AppListUpdateView.vala:134
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:143
+#: src/Views/AppListUpdateView.vala:135
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:147
+#: src/Views/AppListUpdateView.vala:139
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
-#: src/Views/AppListUpdateView.vala:184
+#: src/Views/AppListUpdateView.vala:170
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Ɛrehyɛ ase"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:214
+#: src/Views/AppListUpdateView.vala:200
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Twe gu so"
 
-#: src/Views/AppListUpdateView.vala:294
+#: src/Views/AppListUpdateView.vala:259
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -888,7 +878,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Nea Wode Guu So Nkyɛe"
 
@@ -904,25 +894,25 @@ msgstr "Hwehwɛ Dwumadi Bi"
 msgid "Free Apps"
 msgstr "Kwa"
 
-#: src/Views/Homepage.vala:85
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Akuo Ahoroɔ"
 
-#: src/Views/Homepage.vala:135
+#: src/Views/Homepage.vala:137
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Yi fi so"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Ahyɛase"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:194
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:194
+#: src/Views/Homepage.vala:195
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -1114,6 +1104,11 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Yi fi hɔ"
+
+#, fuzzy
+#~| msgid "Searching for updates…"
+#~ msgid "Checking for Updates"
+#~ msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
 #~ msgid "Games"
 #~ msgstr "Agodie"
