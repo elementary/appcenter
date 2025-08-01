@@ -216,6 +216,12 @@ public class AppCenterCore.FlatpakBackend : Object {
     construct {
         notify["working"].connect (() => Idle.add_once (() => notify_property ("up-to-date")));
 
+        // Our listmodel structure including the updates:
+        //                                     addtional updates => flatten the two models => filter updatable packages => sort updating packages to the top
+        //                                                         /\
+        //                                                         ||
+        // all packages => sort by name => filter installed packages => filter updated packages
+
         var runtime_icon = new AppStream.Icon ();
         runtime_icon.set_name ("application-vnd.flatpak");
         runtime_icon.set_kind (AppStream.IconKind.STOCK);
