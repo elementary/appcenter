@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 05:00+0000\n"
+"POT-Creation-Date: 2025-08-01 15:26+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:192
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
@@ -164,10 +164,10 @@ msgstr "காத்திருக்கிறது"
 msgid "Finished"
 msgstr "முடிந்தது"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1495
-#: src/Core/FlatpakBackend.vala:1519 src/Core/FlatpakBackend.vala:1627
-#: src/Core/FlatpakBackend.vala:1651 src/Core/FlatpakBackend.vala:1809
-#: src/Core/FlatpakBackend.vala:1827
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1499
+#: src/Core/FlatpakBackend.vala:1523 src/Core/FlatpakBackend.vala:1631
+#: src/Core/FlatpakBackend.vala:1655 src/Core/FlatpakBackend.vala:1813
+#: src/Core/FlatpakBackend.vala:1831
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
@@ -184,23 +184,23 @@ msgstr ""
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1486
+#: src/Core/FlatpakBackend.vala:1490
 msgid "Installing"
 msgstr "நிறுவுகிறது"
 
-#: src/Core/FlatpakBackend.vala:1618
+#: src/Core/FlatpakBackend.vala:1622
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "நீக்குதல்"
 
-#: src/Core/FlatpakBackend.vala:1800
+#: src/Core/FlatpakBackend.vala:1804
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "புதுப்பிக்கவும்"
 
-#: src/Core/FlatpakBackend.vala:1990
+#: src/Core/FlatpakBackend.vala:1994
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -248,7 +248,7 @@ msgstr ""
 msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
-#: src/Core/Package.vala:512
+#: src/Core/Package.vala:526
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -356,22 +356,22 @@ msgstr "அட்டையின் இருப்பு அல்லது க
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "கொடுக்கப்பட்ட அட்டை ஒரு சோதனை அட்டை. தொடர உண்மையான கார்டைப் பயன்படுத்தவும்."
 
-#: src/Core/UpdateManager.vala:51
+#: src/Core/UpdateManager.vala:52
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Runtime Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/Core/UpdateManager.vala:52
+#: src/Core/UpdateManager.vala:53
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:120
+#: src/Core/UpdateManager.vala:124
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:139
+#: src/Core/UpdateManager.vala:143
 #, fuzzy, c-format
 #| msgid "Searching for updates…"
 msgid "%u runtime with updates"
@@ -379,18 +379,18 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 msgstr[1] "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/Core/UpdateManager.vala:144
+#: src/Core/UpdateManager.vala:148
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:161
+#: src/Core/UpdateManager.vala:165
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "புதுப்பிப்பு உள்ளது"
 msgstr[1] "புதுப்பிப்புகள் உள்ளன"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:167
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -577,7 +577,7 @@ msgid "Refresh Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:193
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 #, fuzzy
 #| msgctxt "view"
@@ -835,49 +835,49 @@ msgstr "புதுப்பிப்புகளுக்குத் தே�
 msgid "Downloading a list of available updates to the installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:74
-msgid "Update All"
-msgstr "அனைத்தையும் புதுப்பிக்கவும்"
-
-#: src/Views/AppListUpdateView.vala:97
-msgid "Up to Date"
-msgstr "இது வரை புதுப்பிக்கப்பட்டுள்ளது"
-
-#: src/Views/AppListUpdateView.vala:125
-msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:126
-msgid "Apps being tried for free will not update automatically"
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:130
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Check for Updates"
-msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
-
-#: src/Views/AppListUpdateView.vala:168
-#, fuzzy
-#| msgid "Starting"
-msgid "Settings"
-msgstr "தொடங்குகிறது"
-
-#. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:198
-#, fuzzy
-msgctxt "view"
-msgid "Installed"
-msgstr "நிறுவுக"
-
-#: src/Views/AppListUpdateView.vala:279
+#: src/Views/AppListUpdateView.vala:62
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u மேம்படுத்தல் கிடைக்கின்றன"
 msgstr[1] "%u மேம்படுத்தல்கள் கிடைக்கின்றன"
 
-#: src/Views/AppListUpdateView.vala:286
+#: src/Views/AppListUpdateView.vala:88
+msgid "Update All"
+msgstr "அனைத்தையும் புதுப்பிக்கவும்"
+
+#: src/Views/AppListUpdateView.vala:114
+msgid "Up to Date"
+msgstr "இது வரை புதுப்பிக்கப்பட்டுள்ளது"
+
+#: src/Views/AppListUpdateView.vala:142
+msgid "Automatically Update Free & Purchased Apps"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:143
+msgid "Apps being tried for free will not update automatically"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:147
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Check for Updates"
+msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
+
+#: src/Views/AppListUpdateView.vala:184
+#, fuzzy
+#| msgid "Starting"
+msgid "Settings"
+msgstr "தொடங்குகிறது"
+
+#. / TRANSLATORS: the name of the Installed Apps view
+#: src/Views/AppListUpdateView.vala:214
+#, fuzzy
+msgctxt "view"
+msgid "Installed"
+msgstr "நிறுவுக"
+
+#: src/Views/AppListUpdateView.vala:294
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -907,21 +907,21 @@ msgstr "இலவசம்"
 msgid "Categories"
 msgstr "பிரிவுகள்"
 
-#: src/Views/Homepage.vala:151
+#: src/Views/Homepage.vala:135
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
-#: src/Views/Homepage.vala:170
+#: src/Views/Homepage.vala:179
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
 
-#: src/Views/Homepage.vala:184
+#: src/Views/Homepage.vala:193
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:185
+#: src/Views/Homepage.vala:194
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "

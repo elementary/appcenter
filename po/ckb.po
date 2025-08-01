@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 05:00+0000\n"
+"POT-Creation-Date: 2025-08-01 15:26+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:183
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:192
 msgid "AppCenter"
 msgstr "ناوەندی نەرمەواڵەکان"
 
@@ -154,10 +154,10 @@ msgstr "چاوەڕێکردن"
 msgid "Finished"
 msgstr "تەواوبوو"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1495
-#: src/Core/FlatpakBackend.vala:1519 src/Core/FlatpakBackend.vala:1627
-#: src/Core/FlatpakBackend.vala:1651 src/Core/FlatpakBackend.vala:1809
-#: src/Core/FlatpakBackend.vala:1827
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1499
+#: src/Core/FlatpakBackend.vala:1523 src/Core/FlatpakBackend.vala:1631
+#: src/Core/FlatpakBackend.vala:1655 src/Core/FlatpakBackend.vala:1813
+#: src/Core/FlatpakBackend.vala:1831
 msgid "Cancelling"
 msgstr "هەڵوەشاندنەوە"
 
@@ -174,19 +174,19 @@ msgstr "%s (سیستەم-واید)"
 msgid "package operations are being performed"
 msgstr "گورزەکردارەکان ئەنجام دەدرێن"
 
-#: src/Core/FlatpakBackend.vala:1486
+#: src/Core/FlatpakBackend.vala:1490
 msgid "Installing"
 msgstr "دامەزراندن"
 
-#: src/Core/FlatpakBackend.vala:1618
+#: src/Core/FlatpakBackend.vala:1622
 msgid "Uninstalling"
 msgstr "هەڵوەشاندنەوەی دامەزراندن"
 
-#: src/Core/FlatpakBackend.vala:1800
+#: src/Core/FlatpakBackend.vala:1804
 msgid "Updating"
 msgstr "نوێکردنەوە"
 
-#: src/Core/FlatpakBackend.vala:1990
+#: src/Core/FlatpakBackend.vala:1994
 #, c-format
 msgid "%s (local)"
 msgstr "(ناوخۆی) %s"
@@ -234,7 +234,7 @@ msgstr ""
 msgid "%s Developers"
 msgstr "گەشەپێدەرە %sکان"
 
-#: src/Core/Package.vala:512
+#: src/Core/Package.vala:526
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "دۆخی نەرمەکاڵا لە ئەپسەنتەر وەکو دامەزراو دیارینەکراوە بۆ گورزەی: %s"
@@ -350,22 +350,22 @@ msgstr ""
 "ئەم کاردەی کە پێتدراوە، کاردی تاقیکردنەوەیە. تکایە کاردێکی راستەقینە "
 "بەکاربهێنە بۆ ئەنجامدانی پڕۆسەکە."
 
-#: src/Core/UpdateManager.vala:51
+#: src/Core/UpdateManager.vala:52
 #, fuzzy
 #| msgid "Check for Updates"
 msgid "Runtime Updates"
 msgstr "پشکنین بۆ نوێبوونەوەکان"
 
-#: src/Core/UpdateManager.vala:52
+#: src/Core/UpdateManager.vala:53
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:120
+#: src/Core/UpdateManager.vala:124
 #, c-format
 msgid "Version: %s"
 msgstr "وەشان: %s"
 
-#: src/Core/UpdateManager.vala:139
+#: src/Core/UpdateManager.vala:143
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -374,18 +374,18 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "%u پێکهێنەر لەگەڵ نوێکردنەوە"
 msgstr[1] "%u پێکهێنەر لەگەڵ نوێکردنەوەکان"
 
-#: src/Core/UpdateManager.vala:144
+#: src/Core/UpdateManager.vala:148
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:161
+#: src/Core/UpdateManager.vala:165
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "نوێبوونەوە بەردەستە"
 msgstr[1] "نوێبوونەوەکان بەردەستن"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:167
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -580,7 +580,7 @@ msgid "Refresh Updates"
 msgstr "پشکنین بۆ نوێبوونەوەکان"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:177
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:193
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
 #, fuzzy
 #| msgctxt "view"
@@ -849,49 +849,49 @@ msgstr "پشکنین بۆ نوێبوونەوەکان"
 msgid "Downloading a list of available updates to the installed apps"
 msgstr "داگرتنی لیستی نوێبوونەوە بەردەستەکان بۆ سیستەم و ئەپە دامەزراوەکان"
 
-#: src/Views/AppListUpdateView.vala:74
-msgid "Update All"
-msgstr "نوێکردنەوەی هەموو"
-
-#: src/Views/AppListUpdateView.vala:97
-msgid "Up to Date"
-msgstr "نوێ"
-
-#: src/Views/AppListUpdateView.vala:125
-#, fuzzy
-#| msgid "Automatically update free and paid-for curated apps"
-msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
-"نوێبوونەوەی خۆکار بۆ نەرمەکاڵا ڕێکخراوەکان (نەرمەکاڵای خۆڕایی و بەپارە)"
-
-#: src/Views/AppListUpdateView.vala:126
-#, fuzzy
-#| msgid "System updates and unpaid apps will not update automatically"
-msgid "Apps being tried for free will not update automatically"
-msgstr "نوێبوونەوەی سیستەم و بەرنامە پارەنەدراوەکان خۆکارانە نوێ نابنەوە"
-
-#: src/Views/AppListUpdateView.vala:130
-msgid "Check for Updates"
-msgstr "پشکنین بۆ نوێبوونەوەکان"
-
-#: src/Views/AppListUpdateView.vala:168
-msgid "Settings"
-msgstr "ڕێکخستن"
-
-#. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:198
-msgctxt "view"
-msgid "Installed"
-msgstr "دامەزراو"
-
-#: src/Views/AppListUpdateView.vala:279
+#: src/Views/AppListUpdateView.vala:62
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u نوێکاری بەردەستە"
 msgstr[1] "%u نوێکارییەکان بەردەستن"
 
-#: src/Views/AppListUpdateView.vala:286
+#: src/Views/AppListUpdateView.vala:88
+msgid "Update All"
+msgstr "نوێکردنەوەی هەموو"
+
+#: src/Views/AppListUpdateView.vala:114
+msgid "Up to Date"
+msgstr "نوێ"
+
+#: src/Views/AppListUpdateView.vala:142
+#, fuzzy
+#| msgid "Automatically update free and paid-for curated apps"
+msgid "Automatically Update Free & Purchased Apps"
+msgstr ""
+"نوێبوونەوەی خۆکار بۆ نەرمەکاڵا ڕێکخراوەکان (نەرمەکاڵای خۆڕایی و بەپارە)"
+
+#: src/Views/AppListUpdateView.vala:143
+#, fuzzy
+#| msgid "System updates and unpaid apps will not update automatically"
+msgid "Apps being tried for free will not update automatically"
+msgstr "نوێبوونەوەی سیستەم و بەرنامە پارەنەدراوەکان خۆکارانە نوێ نابنەوە"
+
+#: src/Views/AppListUpdateView.vala:147
+msgid "Check for Updates"
+msgstr "پشکنین بۆ نوێبوونەوەکان"
+
+#: src/Views/AppListUpdateView.vala:184
+msgid "Settings"
+msgstr "ڕێکخستن"
+
+#. / TRANSLATORS: the name of the Installed Apps view
+#: src/Views/AppListUpdateView.vala:214
+msgctxt "view"
+msgid "Installed"
+msgstr "دامەزراو"
+
+#: src/Views/AppListUpdateView.vala:294
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -917,22 +917,22 @@ msgstr "ئەپە خۆڕاییەکان"
 msgid "Categories"
 msgstr "هاوپۆله‌كان"
 
-#: src/Views/Homepage.vala:151
+#: src/Views/Homepage.vala:135
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "نەتوانرا نەرمەکاڵا دابمەزرێت"
 
-#: src/Views/Homepage.vala:170
+#: src/Views/Homepage.vala:179
 msgid "Home"
 msgstr "پەڕەی سەرەکی"
 
-#: src/Views/Homepage.vala:184
+#: src/Views/Homepage.vala:193
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:185
+#: src/Views/Homepage.vala:194
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
