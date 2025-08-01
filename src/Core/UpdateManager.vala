@@ -96,28 +96,24 @@ public class AppCenterCore.UpdateManager : Object {
     public async void update_all (Cancellable? cancellable) throws Error {
         updating_all = true;
         try {
-            yield run_update_all (cancellable);
+            var updates = FlatpakBackend.get_default ().updatable_packages;
+            for (int i = (int) updates.get_n_items () - 1; i >= 0; i--) {
+                if (cancellable != null && cancellable.is_cancelled ()) {
+                    break;
+                }
+
+                var package = (Package) updates.get_item (i);
+                if (!package.should_pay) {
+                    debug ("Update: %s", package.name);
+                    yield package.update ();
+                }
+            }
         } catch (IOError.CANCELLED e) {
-            // Cancelled don't throw an error
+            // Cancelled so just ignore and don't throw an error
         } catch (Error e) {
             throw (e);
         } finally {
             updating_all = false;
-        }
-    }
-
-    private async void run_update_all (Cancellable? cancellable) throws Error {
-        var updates = FlatpakBackend.get_default ().updatable_packages;
-        for (int i = (int) updates.get_n_items () - 1; i >= 0; i--) {
-            if (cancellable != null && cancellable.is_cancelled ()) {
-                return;
-            }
-
-            var package = (Package) updates.get_item (i);
-            if (!package.should_pay) {
-                debug ("Update: %s", package.name);
-                yield package.update ();
-            }
         }
     }
 
