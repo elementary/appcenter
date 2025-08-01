@@ -96,17 +96,22 @@ public class AppCenterCore.UpdateManager : Object {
     public async void update_all (Cancellable? cancellable) throws Error {
         updating_all = true;
         try {
-            yield update_all_internal (cancellable);
+            yield run_update_all (cancellable);
         } catch (Error e) {
+            // If one package update was cancelled, drop out of the loop of updating the rest
+            if (e is GLib.IOError.CANCELLED) {
+                return;
+            }
+
             throw (e);
         } finally {
             updating_all = false;
         }
     }
 
-    private async void update_all_internal (Cancellable? cancellable) throws Error {
+    private async void run_update_all (Cancellable? cancellable) throws Error {
         var updates = FlatpakBackend.get_default ().updatable_packages;
-        for (int i = 0; i < updates.get_n_items (); i++) {
+        for (int i = (int) updates.get_n_items () - 1; i >= 0; i--) {
             if (cancellable != null && cancellable.is_cancelled ()) {
                 return;
             }
@@ -114,19 +119,7 @@ public class AppCenterCore.UpdateManager : Object {
             var package = (Package) updates.get_item (i);
             if (!package.should_pay) {
                 debug ("Update: %s", package.name);
-                try {
-                    yield package.update ();
-                } catch (Error e) {
-                    // If one package update was cancelled, drop out of the loop of updating the rest
-                    if (e is GLib.IOError.CANCELLED) {
-                        break;
-                    }
-
-                    warning ("Updating %s failed: %s", package.name, e.message);
-                    throw (e);
-                }
-
-                i--;
+                yield package.update ();
             }
         }
     }
