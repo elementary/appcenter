@@ -47,6 +47,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         hexpand = true;
         vexpand = true;
 
+        unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
+
         var banner_motion_controller = new Gtk.EventControllerMotion ();
 
         banner_carousel = new Adw.Carousel () {
@@ -138,8 +140,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         updates_badge = new Gtk.Label ("!");
         updates_badge.add_css_class (Granite.STYLE_CLASS_BADGE);
-        var update_manager = AppCenterCore.UpdateManager.get_default ();
-        update_manager.bind_property (
+        fp_client.bind_property (
             "n-updatable-packages", updates_badge, "label", SYNC_CREATE,
             (binding, from_value, ref to_value) => {
                 to_value.set_string (from_value.get_uint ().to_string ());
@@ -154,7 +155,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        update_manager.bind_property ("has-updatable-packages", updates_badge_revealer, "reveal-child", SYNC_CREATE);
+        fp_client.bind_property ("has-updatable-packages", updates_badge_revealer, "reveal-child", SYNC_CREATE);
 
         var updates_overlay = new Gtk.Overlay () {
             child = updates_button
@@ -383,7 +384,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 name_label.justify = CENTER;
             }
 
-            AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
+            AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
                 Idle.add (() => {
                     // Clear the cached categories when the AppStream pool is updated
                     if (visible) {

@@ -210,9 +210,7 @@ public class AppCenter.ActionStack : Gtk.Box {
                 }
             }
         } else {
-            if (yield package.install ()) {
-                AppCenterCore.UpdateManager.get_default ().add_app.begin (package);
-            }
+            yield package.install ();
         }
     }
 }

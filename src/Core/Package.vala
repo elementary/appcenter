@@ -464,29 +464,19 @@ public class AppCenterCore.Package : Object {
         // Only trigger a notify if the state has changed, quite a lot of things listen to this
         if (state != new_state) {
             state = new_state;
+            FlatpakBackend.get_default ().notify_package_changed (this);
         }
     }
 
     /**
      * Instructs the backend to update this package
-     *
-     * @refresh_updates_after: Whether to run the check for updates (and update the badges etc...) after
-     * this method succeeds. This is fine after updating a single package, but for efficiency, it's better to
-     * do this only once at the end of updating a batch of packages, so this should be set to false if updating
-     * multiple packages in a loop.
-     *
      */
-    public async bool update (bool refresh_updates_after = true) throws GLib.Error {
+    public async bool update () throws GLib.Error {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
 
-        var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
-        if (success && refresh_updates_after) {
-            yield UpdateManager.get_default ().get_updates ();
-        }
-
-        return success;
+        return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
     }
 
     public async bool install () {
@@ -559,11 +549,12 @@ public class AppCenterCore.Package : Object {
         action_cancellable.reset ();
         change_information.start ();
         state = initial_state;
+
+        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     private async bool perform_package_operation () throws GLib.Error {
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         switch (state) {
             case State.UPDATING:
@@ -583,7 +574,6 @@ public class AppCenterCore.Package : Object {
                 var success = yield backend.remove_package (this, change_information, action_cancellable);
                 _installed = !success;
                 update_state ();
-                yield update_manager.get_updates ();
                 return success;
             default:
                 return false;
@@ -600,6 +590,8 @@ public class AppCenterCore.Package : Object {
             state = fail_state;
             change_information.cancel ();
         }
+
+        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     public uint cached_search_score = 0;
