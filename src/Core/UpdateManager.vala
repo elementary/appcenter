@@ -45,14 +45,14 @@ public class AppCenterCore.UpdateManager : Object {
             //TODO Should we send a notification that automatic-updates had an error?
         } else {
             var application = Application.get_default ();
-            var updates_number = fp_client.n_updatable_packages;
-            if (updates_number > 0) {
-                var title = ngettext ("Update Available", "Updates Available", updates_number);
+            var n_updatable_packages = fp_client.n_updatable_packages;
+            if (n_updatable_packages > 0) {
+                var title = ngettext ("Update Available", "Updates Available", n_updatable_packages);
                 var body = ngettext (
                     "%u app update is available",
                     "%u app updates are available",
-                    updates_number
-                ).printf (updates_number);
+                    n_updatable_packages
+                ).printf (n_updatable_packages);
 
                 var notification = new Notification (title);
                 notification.set_body (body);
@@ -65,8 +65,8 @@ public class AppCenterCore.UpdateManager : Object {
             }
 
             try {
-                yield Granite.Services.Application.set_badge (updates_number);
-                yield Granite.Services.Application.set_badge_visible (updates_number != 0);
+                yield Granite.Services.Application.set_badge (n_updatable_packages);
+                yield Granite.Services.Application.set_badge_visible (n_updatable_packages != 0);
             } catch (Error e) {
                 warning ("Error setting updates badge: %s", e.message);
             }
