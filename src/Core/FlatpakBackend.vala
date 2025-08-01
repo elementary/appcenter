@@ -119,7 +119,8 @@ public class AppCenterCore.FlatpakBackend : Object {
     public bool up_to_date {
         get {
             return !has_updatable_packages && (!working || job_type != GET_UPDATES && job_type != REFRESH_CACHE
-                && job_type != GET_INSTALLED_PACKAGES && job_type != GET_PREPARED_PACKAGES);
+                && job_type != GET_INSTALLED_PACKAGES && job_type != GET_PREPARED_PACKAGES
+                && job_type != GET_DOWNLOAD_SIZE);
         }
     }
 
