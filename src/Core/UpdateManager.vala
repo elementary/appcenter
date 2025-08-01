@@ -80,9 +80,9 @@ public class AppCenterCore.UpdateManager : Object {
         var flatpak_updates = yield fp_client.get_updates ();
         debug ("Flatpak backend reports %d updates", flatpak_updates.size);
 
-        foreach (var flatpak_update in flatpak_updates) {
-            has_updatable_packages = true;
+        has_updatable_packages = !flatpak_updates.is_empty;
 
+        foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
                 debug ("Added %s to app updates", flatpak_update);
