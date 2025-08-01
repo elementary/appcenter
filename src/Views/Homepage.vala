@@ -138,6 +138,14 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         updates_badge = new Gtk.Label ("!");
         updates_badge.add_css_class (Granite.STYLE_CLASS_BADGE);
+        var update_manager = AppCenterCore.UpdateManager.get_default ();
+        update_manager.bind_property (
+            "n-updatable-packages", updates_badge, "label", SYNC_CREATE,
+            (binding, from_value, ref to_value) => {
+                to_value.set_string (from_value.get_uint ().to_string ());
+                return true;
+            }
+        );
 
         updates_badge_revealer = new Gtk.Revealer () {
             can_target = false,
@@ -146,6 +154,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
+        update_manager.bind_property ("has-updatable-packages", updates_badge_revealer, "reveal-child", SYNC_CREATE);
 
         var updates_overlay = new Gtk.Overlay () {
             child = updates_button
@@ -207,11 +216,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
 
             show_package (package_row_grid.package);
-        });
-
-        var update_manager = AppCenterCore.UpdateManager.get_default ();
-        update_manager.notify["updates-number"].connect (() => {
-            show_update_badge (update_manager.updates_number);
         });
 
         destroy.connect (() => {
@@ -318,19 +322,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             Source.remove (banner_timeout_id);
             banner_timeout_id = 0;
         }
-    }
-
-    private void show_update_badge (uint updates_number) {
-        Idle.add (() => {
-            if (updates_number == 0U) {
-                updates_badge_revealer.reveal_child = false;
-            } else {
-                updates_badge.label = updates_number.to_string ();
-                updates_badge_revealer.reveal_child = true;
-            }
-
-            return GLib.Source.REMOVE;
-        });
     }
 
     private class CategoryCard : Gtk.FlowBoxChild {

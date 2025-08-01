@@ -53,6 +53,20 @@ namespace AppCenter.Views {
                 hexpand = true,
                 valign = CENTER
             };
+            update_manager.bind_property (
+                "n-updatable-packages", header_label, "label", SYNC_CREATE,
+                (binding, from_value, ref to_value) => {
+                    var n_updatable_packages = from_value.get_uint ();
+
+                    to_value.set_string (ngettext (
+                        "%u Update Available",
+                        "%u Updates Available",
+                        n_updatable_packages
+                    ).printf (n_updatable_packages));
+
+                    return true;
+                }
+            );
 
             size_label = new Widgets.SizeLabel () {
                 halign = Gtk.Align.END,
@@ -85,6 +99,9 @@ namespace AppCenter.Views {
                 child = header
             };
             header_revealer.add_css_class ("header");
+            update_manager.bind_property (
+                "has-updatable-packages", header_revealer, "reveal-child", SYNC_CREATE
+            );
 
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
@@ -145,7 +162,6 @@ namespace AppCenter.Views {
                 list_box.set_placeholder (loading_view);
 
                 refresh_menuitem.sensitive = false;
-                header_revealer.reveal_child = false;
                 updated_revealer.reveal_child = false;
                 installed_header.visible = false;
                 list_box.vexpand = true;
@@ -235,7 +251,6 @@ namespace AppCenter.Views {
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
                     refresh_menuitem.sensitive = false;
-                    header_revealer.reveal_child = false;
                     updated_revealer.reveal_child = false;
                     list_box.set_placeholder (loading_view);
                 } else {
@@ -265,21 +280,14 @@ namespace AppCenter.Views {
         private void on_updates_changed () {
             unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
-            header_revealer.reveal_child = update_manager.updates_number > 0;
-            updated_revealer.reveal_child = update_manager.updates_number == 0;
+            updated_revealer.reveal_child = update_manager.n_updatable_packages == 0;
 
-            if (update_manager.updates_number > 0) {
-                if (update_manager.updates_number == update_manager.unpaid_apps_number || updating_all_apps) {
+            if (update_manager.n_updatable_packages > 0) {
+                if (update_manager.n_updatable_packages == update_manager.unpaid_apps_number || updating_all_apps) {
                     update_all_button.sensitive = false;
                 } else {
                     update_all_button.sensitive = true;
                 }
-
-                header_label.label = ngettext (
-                    "%u Update Available",
-                    "%u Updates Available",
-                    update_manager.updates_number
-                ).printf (update_manager.updates_number);
 
                 size_label.update (update_manager.updates_size);
             } else {
