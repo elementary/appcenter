@@ -97,12 +97,9 @@ public class AppCenterCore.UpdateManager : Object {
         updating_all = true;
         try {
             yield run_update_all (cancellable);
+        } catch (IOError.CANCELLED e) {
+            // Cancelled don't throw an error
         } catch (Error e) {
-            // If one package update was cancelled, drop out of the loop of updating the rest
-            if (e is GLib.IOError.CANCELLED) {
-                return;
-            }
-
             throw (e);
         } finally {
             updating_all = false;
