@@ -78,10 +78,10 @@ namespace AppCenter.Views {
             );
 
             var update_all_button = new Gtk.Button.with_label (_("Update All")) {
-                valign = Gtk.Align.CENTER
+                valign = Gtk.Align.CENTER,
+                action_name = "app.update-all"
             };
             update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-            update_manager.bind_property ("can-update-all", update_all_button, "sensitive", SYNC_CREATE);
 
             var header = new Gtk.Box (HORIZONTAL, 16);
             header.append (header_label);
@@ -210,8 +210,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            update_all_button.clicked.connect (on_update_all);
-
             flatpak_backend.updatable_packages.items_changed.connect (on_updates_changed);
             on_updates_changed ();
 
@@ -267,26 +265,6 @@ namespace AppCenter.Views {
         private Gtk.Widget create_installed_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
             return new Widgets.InstalledPackageRowGrid (package, action_button_group);
-        }
-
-        private void on_update_all () {
-            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-
-            if (update_manager.updating_all) {
-                return;
-            }
-
-            update_manager.update_all.begin (null, (obj, res) => {
-                try {
-                    update_manager.update_all.end (res);
-                } catch (Error e) {
-                    var fail_dialog = new UpgradeFailDialog (null, e.message) {
-                        modal = true,
-                        transient_for = (Gtk.Window) get_root ()
-                    };
-                    fail_dialog.present ();
-                }
-            });
         }
 
         public void clear () {

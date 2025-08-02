@@ -167,6 +167,7 @@ public class AppCenter.App : Gtk.Application {
         add_action (show_updates_action);
         add_action (refresh_action);
         add_action (repair_action);
+        add_action (update_manager.update_all_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
         set_accels_for_action ("app.refresh", {"<Control>r"});
 
