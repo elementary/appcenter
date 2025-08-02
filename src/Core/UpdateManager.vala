@@ -24,9 +24,7 @@ public class AppCenterCore.UpdateManager : Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
-    public SimpleAction update_all_action { get; construct; }
-
-    private bool can_update_all {
+    public bool can_update_all {
         get {
             unowned var fp_client = FlatpakBackend.get_default ();
             return !updating_all && fp_client.n_updatable_packages - fp_client.n_unpaid_updatable_packages > 0;
@@ -38,7 +36,7 @@ public class AppCenterCore.UpdateManager : Object {
         get { return _updating_all; }
         private set {
             _updating_all = value;
-            update_all_action.set_enabled (can_update_all);
+            notify_property ("can-update-all");
         }
     }
 
@@ -52,12 +50,9 @@ public class AppCenterCore.UpdateManager : Object {
 
         last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
 
-        update_all_action = new SimpleAction (UPDATE_ALL_ACTION, null);
-        update_all_action.activate.connect (() => update_all.begin ());
-
         unowned var fp_client = FlatpakBackend.get_default ();
-        fp_client.notify["n-updatable-packages"].connect (() => update_all_action.set_enabled (can_update_all));
-        fp_client.notify["n-unpaid-updatable-packages"].connect (() => update_all_action.set_enabled (can_update_all));
+        fp_client.notify["n-updatable-packages"].connect (() => notify_property ("can-update-all"));
+        fp_client.notify["n-unpaid-updatable-packages"].connect (() => notify_property ("can-update-all"));
     }
 
     public async void get_updates (Cancellable? cancellable = null) {
@@ -97,7 +92,7 @@ public class AppCenterCore.UpdateManager : Object {
         }
     }
 
-    private async void update_all () {
+    public async void update_all () {
         if (!can_update_all) {
             return;
         }

@@ -163,11 +163,18 @@ public class AppCenter.App : Gtk.Application {
             });
         });
 
+        var update_all_action = new SimpleAction ("update-all", null);
+        update_all_action.set_enabled (update_manager.can_update_all);
+        update_manager.notify["can-update-all"].connect (() => update_all_action.set_enabled (update_manager.can_update_all));
+        update_all_action.activate.connect (() => {
+            AppCenterCore.UpdateManager.get_default ().update_all.begin ();
+        });
+
         add_action (quit_action);
         add_action (show_updates_action);
         add_action (refresh_action);
         add_action (repair_action);
-        add_action (update_manager.update_all_action);
+        add_action (update_all_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
         set_accels_for_action ("app.refresh", {"<Control>r"});
 
