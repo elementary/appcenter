@@ -36,6 +36,8 @@ namespace AppCenter.Views {
         private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
 
+        private uint updated_label_timeout_id = 0;
+
         construct {
             var update_manager = AppCenterCore.UpdateManager.get_default ();
             unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
@@ -239,6 +241,11 @@ namespace AppCenter.Views {
                 "active",
                 SettingsBindFlags.DEFAULT
             );
+
+            map.connect (start_updated_label_timeout);
+            unmap.connect (stop_updated_label_timeout);
+
+            App.settings.changed["last-refresh-time"].connect (set_updated_label);
         }
 
         private void on_updates_changed () {
@@ -255,12 +262,31 @@ namespace AppCenter.Views {
                 }
 
                 size_label.update (flatpak_backend.updates_size);
-            } else {
-                updated_label.label = _("Everything is up to date. Last checked %s.").printf (
-                    Granite.DateTime.get_relative_datetime (
-                        new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
-                    )
-                );
+            }
+        }
+
+        private void set_updated_label () {
+            updated_label.label = _("Everything is up to date. Last checked %s.").printf (
+                Granite.DateTime.get_relative_datetime (
+                    new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
+                )
+            );
+        }
+
+        private void start_updated_label_timeout () {
+            if (updated_label_timeout_id == 0) {
+                updated_label_timeout_id = Timeout.add_seconds (60,  () => {
+                    set_updated_label ();
+                    return Source.CONTINUE;
+                });
+            }
+            set_updated_label ();
+        }
+
+        private void stop_updated_label_timeout () {
+            if (updated_label_timeout_id != 0) {
+                Source.remove (updated_label_timeout_id);
+                updated_label_timeout_id = 0;
             }
         }
 
