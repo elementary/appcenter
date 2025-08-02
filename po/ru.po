@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-01 15:26+0000\n"
+"POT-Creation-Date: 2025-08-01 20:21+0000\n"
 "PO-Revision-Date: 2025-05-19 23:41+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:192
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -166,10 +166,10 @@ msgstr "Ожидание"
 msgid "Finished"
 msgstr "Завершено"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1499
-#: src/Core/FlatpakBackend.vala:1523 src/Core/FlatpakBackend.vala:1631
-#: src/Core/FlatpakBackend.vala:1655 src/Core/FlatpakBackend.vala:1813
-#: src/Core/FlatpakBackend.vala:1831
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
+#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
+#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
+#: src/Core/FlatpakBackend.vala:2003
 msgid "Cancelling"
 msgstr "Отмена"
 
@@ -182,23 +182,49 @@ msgstr "Запуск"
 msgid "%s (system-wide)"
 msgstr "%s (общесистемное)"
 
-#: src/Core/FlatpakBackend.vala:110
+#: src/Core/FlatpakBackend.vala:162
 msgid "package operations are being performed"
 msgstr "выполняются операции с пакетами"
 
-#: src/Core/FlatpakBackend.vala:1490
+#: src/Core/FlatpakBackend.vala:232
+msgid "Runtime Updates"
+msgstr "Обновления среды выполнения"
+
+#: src/Core/FlatpakBackend.vala:233
+msgid "Updates to app runtimes"
+msgstr "Обновления среды выполнения приложений"
+
+#: src/Core/FlatpakBackend.vala:1662
 msgid "Installing"
 msgstr "Установка"
 
-#: src/Core/FlatpakBackend.vala:1622
+#: src/Core/FlatpakBackend.vala:1794
 msgid "Uninstalling"
 msgstr "Удаление"
 
-#: src/Core/FlatpakBackend.vala:1804
+#: src/Core/FlatpakBackend.vala:1976
 msgid "Updating"
 msgstr "Обновление"
 
-#: src/Core/FlatpakBackend.vala:1994
+#: src/Core/FlatpakBackend.vala:2106
+#, c-format
+msgid "Version: %s"
+msgstr "Версия: %s"
+
+#: src/Core/FlatpakBackend.vala:2111
+#, c-format
+msgid "%u runtime with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u среда выполнения с обновлениями"
+msgstr[1] "%u среды выполнения с обновлениями"
+msgstr[2] "%u сред выполнения с обновлениями"
+
+#: src/Core/FlatpakBackend.vala:2116
+#, c-format
+msgid "%s:"
+msgstr "%s:"
+
+#: src/Core/FlatpakBackend.vala:2220
 #, c-format
 msgid "%s (local)"
 msgstr "%s (локальный)"
@@ -236,7 +262,7 @@ msgstr "Починка…"
 msgid "%s Developers"
 msgstr "Разработчики %s"
 
-#: src/Core/Package.vala:526
+#: src/Core/Package.vala:516
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -352,40 +378,14 @@ msgstr ""
 "Данная карта является тестовой. Используйте настоящую карту, чтобы "
 "продолжить."
 
-#: src/Core/UpdateManager.vala:52
-msgid "Runtime Updates"
-msgstr "Обновления среды выполнения"
-
-#: src/Core/UpdateManager.vala:53
-msgid "Updates to app runtimes"
-msgstr "Обновления среды выполнения приложений"
-
-#: src/Core/UpdateManager.vala:124
-#, c-format
-msgid "Version: %s"
-msgstr "Версия: %s"
-
-#: src/Core/UpdateManager.vala:143
-#, c-format
-msgid "%u runtime with updates"
-msgid_plural "%u runtimes with updates"
-msgstr[0] "%u среда выполнения с обновлениями"
-msgstr[1] "%u среды выполнения с обновлениями"
-msgstr[2] "%u сред выполнения с обновлениями"
-
-#: src/Core/UpdateManager.vala:148
-#, c-format
-msgid "%s:"
-msgstr "%s:"
-
-#: src/Core/UpdateManager.vala:165
+#: src/Core/UpdateManager.vala:50
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Доступно обновление"
 msgstr[1] "Доступны обновления"
 msgstr[2] "Доступны обновления"
 
-#: src/Core/UpdateManager.vala:167
+#: src/Core/UpdateManager.vala:52
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -573,8 +573,8 @@ msgid "Refresh Updates"
 msgstr "Проверить обновления"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:193
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:179
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Искать"
@@ -831,15 +831,7 @@ msgstr "Играйте на контроллере"
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Например, на контроллере PlayStation, Xbox или 8BitDo."
 
-#: src/Views/AppListUpdateView.vala:47
-msgid "Checking for Updates"
-msgstr "Проверка обновлений"
-
-#: src/Views/AppListUpdateView.vala:48
-msgid "Downloading a list of available updates to the installed apps"
-msgstr "Загрузка списка доступных обновлений для приложений"
-
-#: src/Views/AppListUpdateView.vala:62
+#: src/Views/AppListUpdateView.vala:53
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -847,37 +839,37 @@ msgstr[0] "Доступно %u обновление"
 msgstr[1] "Доступно %u обновления"
 msgstr[2] "Доступно %u обновлений"
 
-#: src/Views/AppListUpdateView.vala:88
+#: src/Views/AppListUpdateView.vala:82
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListUpdateView.vala:114
+#: src/Views/AppListUpdateView.vala:106
 msgid "Up to Date"
 msgstr "Обновления не требуются"
 
-#: src/Views/AppListUpdateView.vala:142
+#: src/Views/AppListUpdateView.vala:134
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Автоматически обновлять бесплатные и приобретённые приложения"
 
-#: src/Views/AppListUpdateView.vala:143
+#: src/Views/AppListUpdateView.vala:135
 msgid "Apps being tried for free will not update automatically"
 msgstr "Приложения, испытываемые бесплатно, не будут обновляться автоматически"
 
-#: src/Views/AppListUpdateView.vala:147
+#: src/Views/AppListUpdateView.vala:139
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 
-#: src/Views/AppListUpdateView.vala:184
+#: src/Views/AppListUpdateView.vala:170
 msgid "Settings"
 msgstr "Параметры"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:214
+#: src/Views/AppListUpdateView.vala:200
 msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
-#: src/Views/AppListUpdateView.vala:294
+#: src/Views/AppListUpdateView.vala:259
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Всё обновлено. Последняя проверка: %s."
@@ -887,7 +879,7 @@ msgstr "Всё обновлено. Последняя проверка: %s."
 msgid "Other Apps by %s"
 msgstr "Другие приложения от %s"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Недавно обновлённые"
 
@@ -899,24 +891,24 @@ msgstr "Платные приложения"
 msgid "Free Apps"
 msgstr "Бесплатные приложения"
 
-#: src/Views/Homepage.vala:85
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Категории"
 
-#: src/Views/Homepage.vala:135
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Обновления и установленные приложения"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Главная"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:194
 msgid "Browse and manage apps"
 msgstr "Просмотр и управление приложениями"
 
-#: src/Views/Homepage.vala:194
+#: src/Views/Homepage.vala:195
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -1110,6 +1102,12 @@ msgstr "Что нового в %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Закрыть"
+
+#~ msgid "Checking for Updates"
+#~ msgstr "Проверка обновлений"
+
+#~ msgid "Downloading a list of available updates to the installed apps"
+#~ msgstr "Загрузка списка доступных обновлений для приложений"
 
 #~ msgid "Fun &"
 #~ msgstr "Игры и"

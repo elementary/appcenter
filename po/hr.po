@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-01 15:26+0000\n"
+"POT-Creation-Date: 2025-08-01 20:21+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/appcenter/"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:192
+#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "Centar aplikacija"
 
@@ -168,10 +168,10 @@ msgstr "Čekanje"
 msgid "Finished"
 msgstr "Završeno"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1499
-#: src/Core/FlatpakBackend.vala:1523 src/Core/FlatpakBackend.vala:1631
-#: src/Core/FlatpakBackend.vala:1655 src/Core/FlatpakBackend.vala:1813
-#: src/Core/FlatpakBackend.vala:1831
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
+#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
+#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
+#: src/Core/FlatpakBackend.vala:2003
 msgid "Cancelling"
 msgstr "Prekidanje"
 
@@ -184,27 +184,56 @@ msgstr "Pokretanje"
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:110
+#: src/Core/FlatpakBackend.vala:162
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1490
+#: src/Core/FlatpakBackend.vala:232
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Runtime Updates"
+msgstr "Pretraživanje nadopuna…"
+
+#: src/Core/FlatpakBackend.vala:233
+msgid "Updates to app runtimes"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1662
 msgid "Installing"
 msgstr "Instaliranje"
 
-#: src/Core/FlatpakBackend.vala:1622
+#: src/Core/FlatpakBackend.vala:1794
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Deinstaliraj"
 
-#: src/Core/FlatpakBackend.vala:1804
+#: src/Core/FlatpakBackend.vala:1976
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Nadopuna"
 
-#: src/Core/FlatpakBackend.vala:1994
+#: src/Core/FlatpakBackend.vala:2106
+#, c-format
+msgid "Version: %s"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:2111
+#, fuzzy, c-format
+#| msgid "No components with updates"
+msgid "%u runtime with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "Komponentama sustava nije potrebna nadopuna"
+msgstr[1] "Komponentama sustava nije potrebna nadopuna"
+msgstr[2] "Komponentama sustava nije potrebna nadopuna"
+
+#: src/Core/FlatpakBackend.vala:2116
+#, c-format
+msgid "%s:"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:2220
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -252,7 +281,7 @@ msgstr ""
 msgid "%s Developers"
 msgstr "%s razvijatelji"
 
-#: src/Core/Package.vala:526
+#: src/Core/Package.vala:516
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -356,43 +385,14 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: src/Core/UpdateManager.vala:52
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Runtime Updates"
-msgstr "Pretraživanje nadopuna…"
-
-#: src/Core/UpdateManager.vala:53
-msgid "Updates to app runtimes"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:124
-#, c-format
-msgid "Version: %s"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:143
-#, fuzzy, c-format
-#| msgid "No components with updates"
-msgid "%u runtime with updates"
-msgid_plural "%u runtimes with updates"
-msgstr[0] "Komponentama sustava nije potrebna nadopuna"
-msgstr[1] "Komponentama sustava nije potrebna nadopuna"
-msgstr[2] "Komponentama sustava nije potrebna nadopuna"
-
-#: src/Core/UpdateManager.vala:148
-#, c-format
-msgid "%s:"
-msgstr ""
-
-#: src/Core/UpdateManager.vala:165
+#: src/Core/UpdateManager.vala:50
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Nadopuna je dostupna"
 msgstr[1] "Nadopune su dostupne"
 msgstr[2] "Nadopune su dostupne"
 
-#: src/Core/UpdateManager.vala:167
+#: src/Core/UpdateManager.vala:52
 #, fuzzy, c-format
 #| msgid "%u update is available."
 #| msgid_plural "%u updates are available."
@@ -578,8 +578,8 @@ msgid "Refresh Updates"
 msgstr "Pretraživanje nadopuna…"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:193
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:128
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:179
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -831,17 +831,7 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:47
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for Updates"
-msgstr "Pretraživanje nadopuna…"
-
-#: src/Views/AppListUpdateView.vala:48
-msgid "Downloading a list of available updates to the installed apps"
-msgstr ""
-
-#: src/Views/AppListUpdateView.vala:62
+#: src/Views/AppListUpdateView.vala:53
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -849,42 +839,42 @@ msgstr[0] "%u nadopuna dostupna"
 msgstr[1] "%u nadopune dostupne"
 msgstr[2] "%u nadopuna dostupno"
 
-#: src/Views/AppListUpdateView.vala:88
+#: src/Views/AppListUpdateView.vala:82
 msgid "Update All"
 msgstr "Nadopuni sve"
 
-#: src/Views/AppListUpdateView.vala:114
+#: src/Views/AppListUpdateView.vala:106
 msgid "Up to Date"
 msgstr "Sustav je nadopunjen"
 
-#: src/Views/AppListUpdateView.vala:142
+#: src/Views/AppListUpdateView.vala:134
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:143
+#: src/Views/AppListUpdateView.vala:135
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:147
+#: src/Views/AppListUpdateView.vala:139
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Pretraživanje nadopuna…"
 
-#: src/Views/AppListUpdateView.vala:184
+#: src/Views/AppListUpdateView.vala:170
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Pokretanje"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:214
+#: src/Views/AppListUpdateView.vala:200
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Instaliraj"
 
-#: src/Views/AppListUpdateView.vala:294
+#: src/Views/AppListUpdateView.vala:259
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -894,7 +884,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:62
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr ""
 
@@ -910,25 +900,25 @@ msgstr "Pretraži aplikacije"
 msgid "Free Apps"
 msgstr "Besplatno"
 
-#: src/Views/Homepage.vala:85
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Kategorije"
 
-#: src/Views/Homepage.vala:135
+#: src/Views/Homepage.vala:137
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Potraži i instaliraj aplikacije"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Naslovnica"
 
-#: src/Views/Homepage.vala:193
+#: src/Views/Homepage.vala:194
 msgid "Browse and manage apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:194
+#: src/Views/Homepage.vala:195
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -1121,6 +1111,11 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Zatvori"
+
+#, fuzzy
+#~| msgid "Searching for updates…"
+#~ msgid "Checking for Updates"
+#~ msgstr "Pretraživanje nadopuna…"
 
 #~ msgid "Games"
 #~ msgstr "Igre"
