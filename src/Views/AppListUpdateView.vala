@@ -33,7 +33,6 @@ namespace AppCenter.Views {
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
         private Granite.HeaderLabel installed_header;
-        private Widgets.SizeLabel size_label;
         private bool updating_all_apps = false;
 
         construct {
@@ -59,10 +58,11 @@ namespace AppCenter.Views {
                 }
             );
 
-            size_label = new Widgets.SizeLabel () {
+            var size_label = new Widgets.SizeLabel () {
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER
             };
+            flatpak_backend.bind_property ("updates-size", size_label, "size", SYNC_CREATE);
 
             updated_label = new Gtk.Label ("");
             updated_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
@@ -253,8 +253,6 @@ namespace AppCenter.Views {
                 } else {
                     update_all_button.sensitive = true;
                 }
-
-                size_label.update (flatpak_backend.updates_size);
             } else {
                 updated_label.label = _("Everything is up to date. Last checked %s.").printf (
                     Granite.DateTime.get_relative_datetime (
