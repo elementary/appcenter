@@ -275,7 +275,7 @@ namespace AppCenter.Views {
 
         private void start_updated_label_timeout () {
             if (updated_label_timeout_id == 0) {
-                updated_label_timeout_id = Timeout.add_seconds (60,  () => {
+                updated_label_timeout_id = Timeout.add_seconds (60, () => {
                     set_updated_label ();
                     return Source.CONTINUE;
                 });
