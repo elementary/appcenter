@@ -18,8 +18,6 @@
  */
 
 public class AppCenterCore.UpdateManager : Object {
-    public const string UPDATE_ALL_ACTION = "update-all";
-
     public signal void cache_update_failed (Error error);
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
