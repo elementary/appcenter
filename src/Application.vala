@@ -211,6 +211,9 @@ public class AppCenter.App : Gtk.Application {
         }
 
         if (active_window == null) {
+            // TODO: Think about this, maybe only refresh cache?
+            AppCenterCore.UpdateManager.get_default ().refresh.begin ();
+
             var main_window = new MainWindow (this);
             add_window (main_window);
 
