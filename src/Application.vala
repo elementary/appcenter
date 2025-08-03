@@ -139,7 +139,7 @@ public class AppCenter.App : Gtk.Application {
         refresh_action = new SimpleAction ("refresh", null);
         refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
-            update_manager.update_cache.begin (true);
+            update_manager.refresh.begin ();
         });
 
         repair_action = new SimpleAction ("repair", null);
@@ -189,8 +189,6 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-
         if (first_activation) {
             first_activation = false;
             hold ();
@@ -198,13 +196,6 @@ public class AppCenter.App : Gtk.Application {
 
         if (silent) {
             request_background.begin ();
-
-            NetworkMonitor.get_default ().network_changed.connect ((available) => {
-                schedule_cache_update (!available);
-            });
-
-            // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
-            update_manager.update_cache.begin (false);
             silent = false;
             return;
         }
@@ -220,9 +211,6 @@ public class AppCenter.App : Gtk.Application {
         }
 
         if (active_window == null) {
-            // Force a Flatpak cache refresh when the window is created, so we get new apps
-            update_manager.update_cache.begin (true);
-
             var main_window = new MainWindow (this);
             add_window (main_window);
 
@@ -310,27 +298,6 @@ public class AppCenter.App : Gtk.Application {
         }
 
         base.dbus_unregister (connection, object_path);
-    }
-
-    private uint cache_update_timeout_id = 0;
-    private void schedule_cache_update (bool cancel = false) {
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-
-        if (cache_update_timeout_id > 0) {
-            Source.remove (cache_update_timeout_id);
-            cache_update_timeout_id = 0;
-        }
-
-        if (cancel) {
-            update_manager.cancel_updates (true); // Also stops timeouts.
-            return;
-        } else {
-            cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
-                update_manager.update_cache.begin ();
-                cache_update_timeout_id = 0;
-                return false;
-            });
-        }
     }
 
     private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {

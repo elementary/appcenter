@@ -224,9 +224,8 @@ namespace AppCenter.Views {
 
             automatic_updates_button.notify["active"].connect (() => {
                 if (automatic_updates_button.active) {
-                    update_manager.update_cache.begin (true);
-                } else {
-                    update_manager.cancel_updates (true);
+                    // TODO: Follow up: think about this? Only update all and handle in manager?
+                    update_manager.refresh.begin ();
                 }
             });
 
