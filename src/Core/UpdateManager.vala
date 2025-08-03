@@ -82,7 +82,7 @@ public class AppCenterCore.UpdateManager : Object {
      * This always forces a cache refresh and an update check, optionally starting the updates
      * if automatic updates are enabled. Since that is a very expensive operation
      * that also has effects on the browsing experience (blocking install jobs, etc.),
-     * calls to this - from the outside - should be carefully considered.
+     * calls to this should be carefully considered.
      */
     public async void refresh () {
         if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
