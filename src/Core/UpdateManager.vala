@@ -22,6 +22,22 @@ public class AppCenterCore.UpdateManager : Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
+    public bool can_update_all {
+        get {
+            unowned var fp_client = FlatpakBackend.get_default ();
+            return !updating_all && fp_client.n_updatable_packages - fp_client.n_unpaid_updatable_packages > 0;
+        }
+    }
+
+    private bool _updating_all = false;
+    public bool updating_all {
+        get { return _updating_all; }
+        private set {
+            _updating_all = value;
+            notify_property ("can-update-all");
+        }
+    }
+
     private GLib.Cancellable cancellable;
     private GLib.DateTime last_cache_update = null;
     private uint update_cache_timeout_id = 0;
@@ -31,6 +47,10 @@ public class AppCenterCore.UpdateManager : Object {
         cancellable = new GLib.Cancellable ();
 
         last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
+
+        unowned var fp_client = FlatpakBackend.get_default ();
+        fp_client.notify["n-updatable-packages"].connect (() => notify_property ("can-update-all"));
+        fp_client.notify["n-unpaid-updatable-packages"].connect (() => notify_property ("can-update-all"));
     }
 
     public async void get_updates (Cancellable? cancellable = null) {
@@ -39,10 +59,7 @@ public class AppCenterCore.UpdateManager : Object {
         yield fp_client.get_updates ();
 
         if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
-            try {
-                yield update_all (cancellable);
-            } catch (Error e) {} // update_all () already logs error message
-            //TODO Should we send a notification that automatic-updates had an error?
+            yield update_all ();
         } else {
             var application = Application.get_default ();
             var n_updatable_packages = fp_client.n_updatable_packages;
@@ -73,30 +90,31 @@ public class AppCenterCore.UpdateManager : Object {
         }
     }
 
-    public async void update_all (Cancellable? cancellable) throws Error {
-        var updates = FlatpakBackend.get_default ().updatable_packages;
-        for (int i = 0; i < updates.get_n_items (); i++) {
-            if (cancellable != null && cancellable.is_cancelled ()) {
-                return;
-            }
+    public async void update_all () {
+        if (!can_update_all) {
+            return;
+        }
 
-            var package = (Package) updates.get_item (i);
-            if (!package.should_pay) {
-                debug ("Update: %s", package.name);
-                try {
+        updating_all = true;
+        try {
+            var updates = FlatpakBackend.get_default ().updatable_packages;
+            for (int i = (int) updates.get_n_items () - 1; i >= 0; i--) {
+                var package = (Package) updates.get_item (i);
+                if (!package.should_pay) {
+                    debug ("Update: %s", package.name);
                     yield package.update ();
-                } catch (Error e) {
-                    // If one package update was cancelled, drop out of the loop of updating the rest
-                    if (e is GLib.IOError.CANCELLED) {
-                        break;
-                    }
-
-                    warning ("Updating %s failed: %s", package.name, e.message);
-                    throw (e);
                 }
-
-                i--;
             }
+        } catch (IOError.CANCELLED e) {
+            // Cancelled so just ignore and don't throw an error
+        } catch (Error e) {
+            var fail_dialog = new UpgradeFailDialog (null, e.message) {
+                modal = true,
+                transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
+            };
+            fail_dialog.present ();
+        } finally {
+            updating_all = false;
         }
     }
 

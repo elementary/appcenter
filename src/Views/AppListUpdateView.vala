@@ -25,7 +25,6 @@ namespace AppCenter.Views {
         public signal void show_app (AppCenterCore.Package package);
 
         private Granite.HeaderLabel header_label;
-        private Gtk.Button update_all_button;
         private Gtk.FlowBox installed_flowbox;
         private Gtk.ListBox list_box;
         private Gtk.Revealer header_revealer;
@@ -33,7 +32,6 @@ namespace AppCenter.Views {
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
         private Granite.HeaderLabel installed_header;
-        private bool updating_all_apps = false;
 
         construct {
             var update_manager = AppCenterCore.UpdateManager.get_default ();
@@ -79,8 +77,9 @@ namespace AppCenter.Views {
                 "up-to-date", updated_revealer, "reveal-child", SYNC_CREATE
             );
 
-            update_all_button = new Gtk.Button.with_label (_("Update All")) {
-                valign = Gtk.Align.CENTER
+            var update_all_button = new Gtk.Button.with_label (_("Update All")) {
+                valign = Gtk.Align.CENTER,
+                action_name = "app.update-all"
             };
             update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
@@ -211,8 +210,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            update_all_button.clicked.connect (on_update_all);
-
             flatpak_backend.updatable_packages.items_changed.connect (on_updates_changed);
             on_updates_changed ();
 
@@ -244,16 +241,7 @@ namespace AppCenter.Views {
         private void on_updates_changed () {
             unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
-            if (flatpak_backend.n_updatable_packages > 0) {
-                if (
-                    flatpak_backend.n_updatable_packages == flatpak_backend.n_unpaid_updatable_packages
-                    || updating_all_apps
-                ) {
-                    update_all_button.sensitive = false;
-                } else {
-                    update_all_button.sensitive = true;
-                }
-            } else {
+            if (flatpak_backend.n_updatable_packages == 0) {
                 updated_label.label = _("Everything is up to date. Last checked %s.").printf (
                     Granite.DateTime.get_relative_datetime (
                         new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
@@ -264,49 +252,17 @@ namespace AppCenter.Views {
 
         private Gtk.Widget create_row_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
-            return new Widgets.InstalledPackageRowGrid (package, action_button_group);
+            var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
+
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            update_manager.bind_property ("updating-all", row, "action-sensitive", SYNC_CREATE | INVERT_BOOLEAN);
+
+            return row;
         }
 
         private Gtk.Widget create_installed_from_package (Object object) {
             unowned var package = (AppCenterCore.Package) object;
             return new Widgets.InstalledPackageRowGrid (package, action_button_group);
-        }
-
-        private void on_update_all () {
-            if (updating_all_apps) {
-                return;
-            }
-
-            set_actions_enabled (false);
-
-            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-            update_manager.update_all.begin (null, (obj, res) => {
-                try {
-                    update_manager.update_all.end (res);
-                } catch (Error e) {
-                    var fail_dialog = new UpgradeFailDialog (null, e.message) {
-                        modal = true,
-                        transient_for = (Gtk.Window) get_root ()
-                    };
-                    fail_dialog.present ();
-                }
-
-                set_actions_enabled (true);
-            });
-        }
-
-        private void set_actions_enabled (bool enabled) {
-            updating_all_apps = !enabled;
-            update_all_button.sensitive = enabled;
-
-            var row = list_box.get_first_child ();
-            while (row != null) {
-                if (row is Gtk.ListBoxRow) {
-                    ((Widgets.InstalledPackageRowGrid) row.get_child ()).action_sensitive = enabled;
-                }
-
-                row = row.get_next_sibling ();
-            }
         }
 
         public void clear () {
