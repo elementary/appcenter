@@ -79,9 +79,10 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     /**
-     * This always forces a refresh. Since that is a very expensive operation
-     * that also has effects on the browsing experience (blocking install jobs, etc.)
-     * this should - from the outside - only be called because of explicit user action.
+     * This always forces a cache refresh and an update check, optionally starting the updates
+     * if automatic updates are enabled. Since that is a very expensive operation
+     * that also has effects on the browsing experience (blocking install jobs, etc.),
+     * calls to this - from the outside - should be carefully considered.
      */
     public async void refresh () {
         if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
@@ -101,11 +102,9 @@ public class AppCenterCore.UpdateManager : Object {
 
         unowned var fp_client = FlatpakBackend.get_default ();
 
-        bool success = false;
+        var success = false;
         try {
             success = yield fp_client.refresh_cache (null);
-        } catch (IOError.CANCELLED e) {
-            // Cancelled so just ignore and don't throw an error
         } catch (Error e) {
             critical ("Refresh cache failed: %s", e.message);
             cache_update_failed (e);
