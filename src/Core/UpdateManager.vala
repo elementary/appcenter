@@ -42,6 +42,7 @@ public class AppCenterCore.UpdateManager : Object {
 
     private GLib.DateTime last_refresh_time;
     private bool refresh_required = false;
+    private uint refresh_timeout_id = 0;
 
     construct {
         last_refresh_time = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
@@ -56,6 +57,11 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     private void start_refresh_timeout () {
+        if (refresh_timeout_id != 0) {
+            Source.remove (refresh_timeout_id);
+            refresh_timeout_id = 0;
+        }
+
         var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_refresh_time) / GLib.TimeSpan.SECOND;
 
         if (seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES) {
@@ -65,9 +71,9 @@ public class AppCenterCore.UpdateManager : Object {
 
         var seconds_to_next_refresh = SECONDS_BETWEEN_REFRESHES - (uint) seconds_since_last_refresh;
 
-        Timeout.add_seconds (seconds_to_next_refresh, () => {
+        refresh_timeout_id = Timeout.add_seconds_once (seconds_to_next_refresh, () => {
+            refresh_timeout_id = 0;
             refresh.begin ();
-            return GLib.Source.REMOVE;
         });
     }
 
