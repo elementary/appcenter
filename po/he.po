@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-01 20:21+0000\n"
+"POT-Creation-Date: 2025-08-03 11:06+0000\n"
 "PO-Revision-Date: 2025-03-14 06:54+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/appcenter/"
@@ -31,7 +31,7 @@ msgstr "לא ניתן לפענח את סוג המדיה %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "לא ניתן למצוא את הקישור שצוין ‚%s’, מתבצע חיפוש במקום"
 
-#: src/Application.vala:256
+#: src/Application.vala:264
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -39,11 +39,11 @@ msgstr ""
 "מרכז היישומים יופעל אוטומטית כאשר המכשיר הזה פועל ויישאר לרוץ כאשר החלון שלו "
 "סגור כדי שיוכל לבדוק ולהתקין עדכונים אוטומטית."
 
-#: src/Application.vala:339
+#: src/Application.vala:347
 msgid "The app has been installed"
 msgstr "היישום הותקן"
 
-#: src/Application.vala:340 src/MainWindow.vala:226
+#: src/Application.vala:348 src/MainWindow.vala:226
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s” הותקן"
@@ -350,13 +350,13 @@ msgstr "הגעת לתקרת המשיכה בכרטיס."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "הכרטיס שסיפקת הוא כרטיס בדיקה. נא להשתמש בכרטיס אמתי כדי להמשיך."
 
-#: src/Core/UpdateManager.vala:50
+#: src/Core/UpdateManager.vala:67
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "עדכון זמין"
 msgstr[1] "עדכונים זמינים"
 
-#: src/Core/UpdateManager.vala:52
+#: src/Core/UpdateManager.vala:69
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -535,7 +535,7 @@ msgid "Refresh Updates"
 msgstr "רענון עדכונים"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:179
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:178
 #: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
@@ -674,27 +674,27 @@ msgstr "אין צילום מסך"
 msgid "What's New:"
 msgstr "מה חדש:"
 
-#: src/Views/AppInfoView.vala:822
+#: src/Views/AppInfoView.vala:821
 msgid "End of Life"
 msgstr "סוף החיים"
 
-#: src/Views/AppInfoView.vala:823
+#: src/Views/AppInfoView.vala:822
 msgid "May not work as expected or receive security updates"
 msgstr "עלול לא לעבוד כצפוי או לקבל עדכוני אבטחה"
 
-#: src/Views/AppInfoView.vala:829
+#: src/Views/AppInfoView.vala:828
 msgid "Outdated"
 msgstr "מיושן"
 
-#: src/Views/AppInfoView.vala:830
+#: src/Views/AppInfoView.vala:829
 msgid "May not work as expected or support the latest features"
 msgstr "עלול לא לעבוד כראוי או לא לתמוך ביכולות העדכניות ביותר"
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:837
 msgid "Unstable"
 msgstr "רעוע"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:838
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -703,120 +703,120 @@ msgstr ""
 "נבנה לגירסה רעועה של %s, עשוי להכיל תקלות קריטיות. לא מומלץ לשימוש במערכת "
 "מבצעית."
 
-#: src/Views/AppInfoView.vala:852
+#: src/Views/AppInfoView.vala:851
 msgid "Insecure Sandbox"
 msgstr "ארגז חול לא מאובטח"
 
-#: src/Views/AppInfoView.vala:853
+#: src/Views/AppInfoView.vala:852
 msgid "Can ignore or modify its own system permissions"
 msgstr "יכול להתעלם או לשנות את הרשאות המערכת של עצמו"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:861
 msgid "System Folder Access"
 msgstr "גישה לתיקיית מערכת"
 
-#: src/Views/AppInfoView.vala:863
+#: src/Views/AppInfoView.vala:862
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "כולל את כל תיקיות הבית של כולם אך ללא תיקיות המערכת הפנימיות"
 
-#: src/Views/AppInfoView.vala:870
+#: src/Views/AppInfoView.vala:869
 msgid "Home Folder Access"
 msgstr "גישה לתיקיית הבית"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:870
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
 msgstr ""
 "לרבות כל המסמכים, הורדות, מוזיקה, תמונות, סרטונים ותיקיות נסתרות באשר הן"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:879
 msgid "Legacy Autostart"
 msgstr "התחלה אוטומטית מיושנת"
 
-#: src/Views/AppInfoView.vala:881
+#: src/Views/AppInfoView.vala:880
 msgid "Can automatically start up and run in the background without asking"
 msgstr "יוכל לעלות אוטומטית ולפעול ברקע מבלי לבקש"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:889
 msgid "Location Access"
 msgstr "גישה למיקום"
 
-#: src/Views/AppInfoView.vala:891
+#: src/Views/AppInfoView.vala:890
 msgid "Can see your precise location at any time without asking"
 msgstr "אפשרות לצפות במיקום המדויק בכל עת מבלי לבקש"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:899
 msgid "Legacy Notifications"
 msgstr "התראות מיושנות"
 
-#: src/Views/AppInfoView.vala:901
+#: src/Views/AppInfoView.vala:900
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr "הבועות לא תושפענה מהגדרות או תופענה במרכז ההתראות בתור „אחר”"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:909
 msgid "System Settings Access"
 msgstr "גישה להגדרות מערכת"
 
-#: src/Views/AppInfoView.vala:911
+#: src/Views/AppInfoView.vala:910
 msgid "Can read and modify system settings"
 msgstr "יכול לקרוא ולשנות הגדרות מערכת"
 
-#: src/Views/AppInfoView.vala:1120
+#: src/Views/AppInfoView.vala:1119
 msgid "Requires a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1123
+#: src/Views/AppInfoView.vala:1122
 msgid "Recommends a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1126
+#: src/Views/AppInfoView.vala:1125
 msgid "Play With a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1130
+#: src/Views/AppInfoView.vala:1129
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:53
+#: src/Views/AppListUpdateView.vala:50
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "עדכון זמין"
 msgstr[1] "%u עדכונים זמינים"
 
-#: src/Views/AppListUpdateView.vala:82
+#: src/Views/AppListUpdateView.vala:80
 msgid "Update All"
 msgstr "עדכון הכול"
 
-#: src/Views/AppListUpdateView.vala:106
+#: src/Views/AppListUpdateView.vala:105
 msgid "Up to Date"
 msgstr "עדכני"
 
-#: src/Views/AppListUpdateView.vala:134
+#: src/Views/AppListUpdateView.vala:133
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "לעדכן יישומים בחינם ובתשלום אוטומטית"
 
-#: src/Views/AppListUpdateView.vala:135
+#: src/Views/AppListUpdateView.vala:134
 msgid "Apps being tried for free will not update automatically"
 msgstr "יישומים שניסית בחינם לא יתעדכנו אוטומטית"
 
-#: src/Views/AppListUpdateView.vala:139
+#: src/Views/AppListUpdateView.vala:138
 msgid "Check for Updates"
 msgstr "חיפוש עדכונים"
 
-#: src/Views/AppListUpdateView.vala:170
+#: src/Views/AppListUpdateView.vala:169
 msgid "Settings"
 msgstr "הגדרות"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:199
 msgctxt "view"
 msgid "Installed"
 msgstr "מותקן"
 
-#: src/Views/AppListUpdateView.vala:259
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "הכול עדכני. בדיקה אחרונה: %s."
@@ -1018,18 +1018,18 @@ msgstr "גרסה לא ידועה"
 msgid "No description available"
 msgstr "אין תיאור זמין"
 
-#: src/Widgets/SizeLabel.vala:32
-msgid "Actual Download Size Likely to Be Smaller"
-msgstr "ייתכן שגודל הקובץ בפועל יהיה קטן יותר"
-
-#: src/Widgets/SizeLabel.vala:33
-msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "רק החלקים של היישומים והעדכונים שנדרשים יורדו."
-
-#: src/Widgets/SizeLabel.vala:59
+#: src/Widgets/SizeLabel.vala:23
 #, c-format
 msgid "Up to %s"
 msgstr "עד %s"
+
+#: src/Widgets/SizeLabel.vala:39
+msgid "Actual Download Size Likely to Be Smaller"
+msgstr "ייתכן שגודל הקובץ בפועל יהיה קטן יותר"
+
+#: src/Widgets/SizeLabel.vala:40
+msgid "Only the parts of apps and updates that are needed will be downloaded."
+msgstr "רק החלקים של היישומים והעדכונים שנדרשים יורדו."
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
