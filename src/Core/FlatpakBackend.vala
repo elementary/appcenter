@@ -515,12 +515,16 @@ public class AppCenterCore.FlatpakBackend : Object {
         job.results_ready ();
     }
 
-    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+    private async void get_installed_applications (Cancellable? cancellable = null) {
         var job_args = new GetInstalledPackagesArgs ();
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
-        return (Gee.Collection<Package>)job.result.get_object ();
+        var installed_applications = (Gee.Collection<Package>) job.result.get_object ();
+
+        foreach (var package in installed_applications) {
+            package.mark_installed ();
+        }
     }
 
     private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
@@ -536,8 +540,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
             var package = package_list[bundle_id];
             if (package != null) {
-                package.mark_installed ();
-                package.update_state ();
                 installed_apps.add (package);
             }
         }
