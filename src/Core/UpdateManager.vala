@@ -22,6 +22,8 @@ public class AppCenterCore.UpdateManager : Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
+    public bool refreshing { get; private set; default = false; }
+
     public bool can_update_all {
         get {
             unowned var fp_client = FlatpakBackend.get_default ();
@@ -38,22 +40,98 @@ public class AppCenterCore.UpdateManager : Object {
         }
     }
 
-    private GLib.Cancellable cancellable;
-    private GLib.DateTime last_cache_update = null;
-    private uint update_cache_timeout_id = 0;
-    private bool refresh_in_progress = false;
+    private GLib.DateTime last_refresh_time;
+    private bool refresh_required = false;
+    private uint refresh_timeout_id = 0;
 
     construct {
-        cancellable = new GLib.Cancellable ();
-
-        last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
+        last_refresh_time = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
 
         unowned var fp_client = FlatpakBackend.get_default ();
         fp_client.notify["n-updatable-packages"].connect (() => notify_property ("can-update-all"));
         fp_client.notify["n-unpaid-updatable-packages"].connect (() => notify_property ("can-update-all"));
+
+        start_refresh_timeout ();
+
+        NetworkMonitor.get_default ().network_changed.connect (on_network_changed);
     }
 
-    public async void get_updates (Cancellable? cancellable = null) {
+    private void start_refresh_timeout () {
+        if (refresh_timeout_id != 0) {
+            Source.remove (refresh_timeout_id);
+            refresh_timeout_id = 0;
+        }
+
+        var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_refresh_time) / GLib.TimeSpan.SECOND;
+
+        if (seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES) {
+            refresh.begin ();
+            return;
+        }
+
+        var seconds_to_next_refresh = SECONDS_BETWEEN_REFRESHES - (uint) seconds_since_last_refresh;
+
+        refresh_timeout_id = Timeout.add_seconds_once (seconds_to_next_refresh, () => {
+            refresh_timeout_id = 0;
+            refresh.begin ();
+        });
+    }
+
+    private void on_network_changed (bool network_available) {
+        if (network_available && refresh_required) {
+            refresh_required = false;
+            Timeout.add_seconds_once (60, () => refresh.begin ());
+        }
+    }
+
+    /**
+     * This always forces a cache refresh and an update check, optionally starting the updates
+     * if automatic updates are enabled. Since that is a very expensive operation
+     * that also has effects on the browsing experience (blocking install jobs, etc.),
+     * calls to this should be carefully considered.
+     */
+    public async void refresh () {
+        if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
+            return;
+        }
+
+        if (refreshing) {
+            return;
+        }
+
+        if (!NetworkMonitor.get_default ().network_available) {
+            refresh_required = true;
+            return;
+        }
+
+        refreshing = true;
+
+        unowned var fp_client = FlatpakBackend.get_default ();
+
+        var success = false;
+        try {
+            success = yield fp_client.refresh_cache (null);
+        } catch (Error e) {
+            critical ("Refresh cache failed: %s", e.message);
+            cache_update_failed (e);
+        }
+
+        yield get_updates ();
+
+        last_refresh_time = new DateTime.now_utc ();
+
+        // If the refresh failed don't save the time so that we try again
+        // immediately after app restart or system reboot
+        if (success) {
+            AppCenter.App.settings.set_int64 ("last-refresh-time", last_refresh_time.to_unix ());
+        }
+
+        start_refresh_timeout ();
+
+        refreshing = false;
+    }
+
+    private async void get_updates () {
         unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
 
         yield fp_client.get_updates ();
@@ -116,88 +194,6 @@ public class AppCenterCore.UpdateManager : Object {
         } finally {
             updating_all = false;
         }
-    }
-
-    public void cancel_updates (bool cancel_timeout) {
-        cancellable.cancel ();
-
-        if (update_cache_timeout_id > 0 && cancel_timeout) {
-            Source.remove (update_cache_timeout_id);
-            update_cache_timeout_id = 0;
-        }
-    }
-
-    public async void update_cache (bool force = false) {
-        cancellable.reset ();
-
-        if (Utils.is_running_in_demo_mode () || Utils.is_running_in_guest_session ()) {
-            return;
-        }
-
-        debug ("update cache called %s", force.to_string ());
-        bool success = false;
-
-        /* Make sure only one update cache can run at a time */
-        if (refresh_in_progress) {
-            debug ("Update cache already in progress - returning");
-            return;
-        }
-
-        if (update_cache_timeout_id > 0) {
-            if (force) {
-                debug ("Forced update_cache called when there is an on-going timeout - cancelling timeout");
-                Source.remove (update_cache_timeout_id);
-                update_cache_timeout_id = 0;
-            } else {
-                debug ("Refresh timeout running and not forced - returning");
-                return;
-            }
-        }
-
-        /* One cache update a day, keeps the doctor away! */
-        var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
-        bool last_cache_update_is_old = seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES;
-
-        if (!force && !last_cache_update_is_old) {
-            debug ("Too soon to refresh and not forced");
-            return;
-        }
-
-        var nm = NetworkMonitor.get_default ();
-        if (!nm.get_network_available ()) {
-            return;
-        }
-
-        debug ("New refresh task");
-        refresh_in_progress = true;
-        try {
-            success = yield FlatpakBackend.get_default ().refresh_cache (cancellable);
-
-            if (success) {
-                last_cache_update = new DateTime.now_utc ();
-                AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
-            }
-
-            seconds_since_last_refresh = 0;
-        } catch (Error e) {
-            if (!(e is GLib.IOError.CANCELLED)) {
-                critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                cache_update_failed (e);
-            }
-        } finally {
-            refresh_in_progress = false;
-        }
-
-        var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
-        debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
-        update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
-            update_cache_timeout_id = 0;
-            update_cache.begin (true);
-
-            return GLib.Source.REMOVE;
-        });
-
-        get_updates.begin (cancellable);
     }
 
     private static GLib.Once<UpdateManager> instance;

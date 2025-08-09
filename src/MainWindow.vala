@@ -156,14 +156,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             installed_view.clear ();
         }
 
-        // We not to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
-        ((AppCenter.App) application).request_background.begin (() => Idle.add_once (() => {
-            unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-            if (backend.working) {
-                AppCenterCore.UpdateManager.get_default ().cancel_updates (false); //Timeouts keep running
-            }
-            destroy ();
-        }));
+        // We have to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
+        ((AppCenter.App) application).request_background.begin (() =>
+            Idle.add_once (() => destroy ())
+        );
 
         return true;
     }

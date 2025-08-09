@@ -397,6 +397,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         reload_appstream_pool ();
         get_installed_applications.begin (null);
+        get_updates.begin (null);
     }
 
     public void notify_package_changed (Package package) {
