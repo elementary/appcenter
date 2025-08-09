@@ -17,8 +17,6 @@ public class AppCenter.App : Gtk.Application {
         { null }
     };
 
-    private const int SECONDS_AFTER_NETWORK_UP = 60;
-
     public static bool show_updates;
     public static bool silent;
     public static string? local_path;
@@ -211,6 +209,7 @@ public class AppCenter.App : Gtk.Application {
         }
 
         if (active_window == null) {
+            // Force a Flatpak cache refresh when the window is created, so we get new apps
             // TODO: Think about this, maybe only refresh cache?
             AppCenterCore.UpdateManager.get_default ().refresh.begin ();
 
