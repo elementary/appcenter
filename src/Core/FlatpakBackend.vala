@@ -789,6 +789,18 @@ public class AppCenterCore.FlatpakBackend : Object {
         return packages;
     }
 
+    public ListModel get_addons (Package package) {
+        // We resolve addons ourselves because having the pool do it for every app
+        // more than doubles the load time (from 6 to 13 seconds on my machine). It is
+        // also not needed since we only need addons for the info view and can do it just in time.
+        // Also get_extends is usually only a single item whereas get_addons
+        // can be quite a few so we get O(n) instead of O(n * m) for matching the components
+        // to their package.
+        return new Gtk.FilterListModel (_packages, new AddonFilter ((FlatpakPackage) package)) {
+            incremental = true,
+        };
+    }
+
     public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
