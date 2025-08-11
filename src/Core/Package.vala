@@ -102,6 +102,8 @@ public class AppCenterCore.Package : Object {
     public const string RUNTIME_UPDATES_ID = "xxx-runtime-updates";
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
+    public const uint EXACT_MATCH_SCORE = 100;
+    public const uint PARTIAL_MATCH_SCORE = 50;
 
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
@@ -615,12 +617,12 @@ public class AppCenterCore.Package : Object {
                 // Give extra score value if query is a substring
                 // or if it matches exactly the component name or id
                 if (query_down == name_down || id_down == query_down) {
-                    query_score = 100 * queries.length;
+                    query_score = EXACT_MATCH_SCORE * queries.length;
                 } else if (
                     name_down.contains (query.down ()) ||
                     id_down.contains (query.down ())
                 ) {
-                    query_score = 50  * queries.length;
+                    query_score = PARTIAL_MATCH_SCORE * queries.length;
                 }
             }
             score += query_score;
