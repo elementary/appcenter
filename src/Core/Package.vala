@@ -607,12 +607,22 @@ public class AppCenterCore.Package : Object {
         uint score = 0;
         foreach (var query in queries) {
             var query_score = component.search_matches (query);
-
             if (query_score == 0) {
-                score = 0;
-                break;
-            }
+                var id_down = component.name.down ();
+                var name_down = component.name.down ();
+                var query_down = query.down ();
 
+                // Give extra score value if query is a substring
+                // or if it matches exactly the component name or id
+                if (query_down == name_down || id_down == query_down) {
+                    query_score = 100 * queries.length;
+                } else if (
+                    name_down.contains (query.down ()) ||
+                    id_down.contains (query.down ())
+                ) {
+                    query_score = 50  * queries.length;
+                }
+            }
             score += query_score;
         }
         cached_search_score = score / queries.length;
@@ -699,11 +709,11 @@ public class AppCenterCore.Package : Object {
                     break;
 
                 case AppStream.IconKind.UNKNOWN:
-                    warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
+                    //warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
                     break;
 
                 case AppStream.IconKind.REMOTE:
-                    warning ("'%s' is a remote AppStream icon", _icon.get_name ());
+                    //warning ("'%s' is a remote AppStream icon", _icon.get_name ());
                     break;
             }
         }
