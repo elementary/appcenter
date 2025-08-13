@@ -818,8 +818,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         switch (package.runtime_status) {
             case RuntimeStatus.END_OF_LIFE:
                 runtime_warning = new ContentType (
-                    _("End of Life"),
-                    _("May not work as expected or receive security updates"),
+                    _("Outdated"),
+                    _("May not receive security updates"),
                     "flatpak-eol-symbolic"
                 );
                 break;
