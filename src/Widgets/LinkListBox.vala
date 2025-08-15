@@ -34,6 +34,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 homepage_url,
                 _("Website"),
+                null,
                 "web-browser-symbolic",
                 "slate"
             ));
@@ -44,6 +45,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 help_url,
                 _("Get Help"),
+                null,
                 "help-contents-symbolic",
                 "blue"
             ));
@@ -54,6 +56,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 bugtracker_url,
                 _("Send Feedback"),
+                null,
                 "bug-symbolic",
                 "green"
             ));
@@ -64,6 +67,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 contact_url,
                 _("Contact The Developer"),
+                null,
                 "mail-send-symbolic",
                 "yellow"
             ));
@@ -82,12 +86,14 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         var project_license = component.project_license;
         if (project_license != null) {
             string? license_label = null;
+            string? license_description = null;
             string? license_url = null;
-            parse_license (project_license, out license_label, out license_url);
+            parse_license (project_license, homepage_url, out license_label, out license_description, out license_url);
 
             contribute_listbox.append (new LinkRow (
                 license_url,
-                _(license_label),
+                license_label,
+                license_description,
                 "text-x-copying-symbolic",
                 "slate"
             ));
@@ -104,6 +110,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 sponsor_url,
                 _("Sponsor"),
+                null,
                 "face-heart-symbolic",
                 "pink"
             ));
@@ -114,6 +121,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 translate_url,
                 _("Contribute Translations"),
+                null,
                 "preferences-desktop-locale-symbolic",
                 "blue"
             ));
@@ -124,6 +132,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 vcs_url,
                 _("Get The Source Code"),
+                null,
                 "link-vcs-symbolic",
                 "purple"
             ));
@@ -134,6 +143,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 contribute_url,
                 _("Get Involved"),
+                null,
                 "link-contribute-symbolic",
                 "green"
             ));
@@ -180,59 +190,117 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         get_first_child ().unparent ();
     }
 
-    private void parse_license (string project_license, out string license_copy, out string license_url) {
+    private void parse_license (
+            string project_license,
+            string project_homepage,
+            out string license_copy,
+            out string license_description,
+            out string license_url
+    ) {
         license_copy = null;
         license_url = null;
-
-        // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
-        if (project_license.has_prefix ("LicenseRef")) {
-            // i.e. `LicenseRef-proprietary=https://example.com`
-            string[] split_license = project_license.split_set ("=", 2);
-            if (split_license[1] != null) {
-                license_url = split_license[1];
-            }
-
-            string license_type = split_license[0].split_set ("-", 2)[1].down ();
-            switch (license_type) {
-                case "public-domain":
-                    // TRANSLATORS: See the Wikipedia page
-                    license_copy = _("Public Domain");
-                    if (license_url == null) {
-                        // TRANSLATORS: Replace the link with the version for your language
-                        license_url = _("https://en.wikipedia.org/wiki/Public_domain");
-                    }
-                    break;
-                case "free":
-                    // TRANSLATORS: Freedom, not price. See the GNU page.
-                    license_copy = _("Free Software");
-                    if (license_url == null) {
-                        // TRANSLATORS: Replace the link with the version for your language
-                        license_url = _("https://www.gnu.org/philosophy/free-sw");
-                    }
-                    break;
-                case "proprietary":
-                    license_copy = _("Proprietary");
-                    break;
-                default:
-                    license_copy = _("Unknown License");
-                    break;
-            }
-        } else {
-            license_copy = AppStream.get_license_name (project_license);
-            license_url = AppStream.get_license_url (project_license);
+        license_description = null;
+        string? developer_name = component.get_developer ().get_name ();
+        if (developer_name == null) {
+            developer_name = component.get_pkgname ();
         }
+
+        if (project_license == null || project_license == "") {
+            license_copy = _("No License");
+            license_description = _("Contact \"%s\" for licensing information").printf (developer_name);
+            license_url = project_homepage;
+            return;
+        }
+
+        var spdx_license = AppStream.license_to_spdx_id (project_license);
+        var token_array = AppStream.spdx_license_tokenize (spdx_license);
+        var simple_license_tokens = simplify_license_tokens (token_array);
+
+        if (simple_license_tokens.length > 1) {
+            var joined_license_tokens = string.joinv (", ", simple_license_tokens);
+            license_copy = _("Mixed License");
+            license_description = joined_license_tokens;
+            license_url = project_homepage;
+            return;
+        }
+
+        // We can assume only one token exists from here onward
+        license_url = AppStream.get_license_url (project_license);
+
+        if (AppStream.license_is_free_license (project_license)) {
+            var sanitized_license = project_license;
+            if (AppStream.is_spdx_license_id (project_license)) {
+                sanitized_license = AppStream.get_license_name (project_license);
+            }
+            license_copy = _ ("Free Software");
+            license_description = AppStream.get_license_name (project_license);
+            if (license_url == null) {
+                // TRANSLATORS: Replace the link with the version for your language
+                license_url = _ ("https://www.gnu.org/philosophy/free-sw");
+            }
+            return;
+        }
+
+        if (project_license.down ().contains ("proprietary")) {
+            license_copy = _("Proprietary Software");
+            if (license_url == null) {
+                // TRANSLATORS: Replace the link with the version for your language
+                license_url = _ ("https://www.gnu.org/proprietary/proprietary.en.html");
+            }
+            return;
+        }
+
+        if (project_license.down ().contains ("public-domain")) {
+            license_copy = _("Public Domain");
+            if (license_url == null) {
+                // TRANSLATORS: Replace the link with the version for your language
+                license_url = _ ("https://en.wikipedia.org/wiki/Public_domain");
+            }
+            return;
+        }
+
+        license_copy = _("Custom License");
+        if (license_url == null) {
+            license_description = _("Contact \"%s\" for licensing information").printf (developer_name);
+            license_url = project_homepage;
+        }
+    }
+
+    private string[] simplify_license_tokens (string[] spdx_license_tokens) {
+        var final_token_list = new Gee.ArrayList<string> ();
+        for (int i = 0; i < spdx_license_tokens.length; i++) {
+            string sanitized_token;
+            try {
+                var regex = new GLib.Regex ("[@+\\(\\)\\^]");
+                sanitized_token = regex.replace_literal (spdx_license_tokens[i], -1, 0, "");
+            } catch (RegexError e) {
+                sanitized_token = spdx_license_tokens[i];
+            }
+
+            if (AppStream.get_license_name (sanitized_token) != null) {
+                final_token_list.add (sanitized_token);
+            } else if (sanitized_token.down ().contains ("public-domain")) {
+                final_token_list.add (_("Public Domain"));
+            } else if (sanitized_token.down ().contains ("propietary")) {
+                final_token_list.add (_("Proprietary"));
+            }
+        }
+
+        return final_token_list.to_array ();
     }
 
     private class LinkRow : Gtk.ListBoxRow {
         public string uri_or_key { get; construct; }
         public string icon_name { get; construct; }
         public string label_string { get; construct; }
+        public string? label_description { get; construct; }
         public string color { get; construct; }
 
-        public LinkRow (string uri_or_key, string label_string, string icon_name, string color) {
+        public LinkRow (string uri_or_key, string label_string, string? label_description, string icon_name, string color) {
             Object (
                 uri_or_key: uri_or_key,
                 label_string: label_string,
+                label_description: label_description,
                 icon_name: icon_name,
                 color: color
             );
@@ -248,7 +316,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
                 xalign = 0
             };
 
-            var description_label = new Gtk.Label (uri_or_key) {
+            var description_label = new Gtk.Label (label_description == null ? uri_or_key : label_description) {
                 wrap = true,
                 xalign = 0
             };
