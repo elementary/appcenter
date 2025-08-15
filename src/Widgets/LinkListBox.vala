@@ -297,9 +297,9 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             Object (
                 uri_or_key: uri_or_key,
                 label_string: label_string,
-                label_description: label_description,
                 icon_name: icon_name,
-                color: color
+                color: color,
+                label_description: label_description
             );
         }
 
