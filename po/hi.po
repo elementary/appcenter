@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-03 11:06+0000\n"
+"POT-Creation-Date: 2025-08-13 19:17+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
@@ -20,33 +20,33 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
+#: src/Application.vala:26 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "एपसेंटर"
 
-#: src/Application.vala:78
+#: src/Application.vala:76
 #, fuzzy, c-format
 msgid "Could not parse the media type %s"
 msgstr "%s मइम को पार्स नहीं किया जा सका"
 
-#: src/Application.vala:97
+#: src/Application.vala:95
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिए गए लिंक '%s' को खोजा नहीं जा सका,इसके बजाय खोजें"
 
-#: src/Application.vala:264
+#: src/Application.vala:254
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:347
+#: src/Application.vala:316
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s सफलतापूर्वक इनस्टॉल हो गया"
 
-#: src/Application.vala:348 src/MainWindow.vala:226
+#: src/Application.vala:317 src/MainWindow.vala:222
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -81,7 +81,7 @@ msgid "Install %s to browse and install apps."
 msgstr ""
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:225 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr ""
 
@@ -161,10 +161,10 @@ msgstr "इंतजार कर रहा"
 msgid "Finished"
 msgstr ""
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
-#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
-#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
-#: src/Core/FlatpakBackend.vala:2003
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1674
+#: src/Core/FlatpakBackend.vala:1698 src/Core/FlatpakBackend.vala:1806
+#: src/Core/FlatpakBackend.vala:1830 src/Core/FlatpakBackend.vala:1988
+#: src/Core/FlatpakBackend.vala:2006
 msgid "Cancelling"
 msgstr ""
 
@@ -191,26 +191,26 @@ msgstr "अपडेट प्राप्त करने में"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1662
+#: src/Core/FlatpakBackend.vala:1665
 msgid "Installing"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1794
+#: src/Core/FlatpakBackend.vala:1797
 msgid "Uninstalling"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1976
+#: src/Core/FlatpakBackend.vala:1979
 #, fuzzy
 #| msgid "Waiting"
 msgid "Updating"
 msgstr "इंतजार कर रहा"
 
-#: src/Core/FlatpakBackend.vala:2106
+#: src/Core/FlatpakBackend.vala:2109
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2111
+#: src/Core/FlatpakBackend.vala:2114
 #, fuzzy, c-format
 #| msgid "Failed to Fetch Updates"
 msgid "%u runtime with updates"
@@ -218,12 +218,12 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "अपडेट प्राप्त करने में"
 msgstr[1] "अपडेट प्राप्त करने में"
 
-#: src/Core/FlatpakBackend.vala:2116
+#: src/Core/FlatpakBackend.vala:2119
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2220
+#: src/Core/FlatpakBackend.vala:2223
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -361,13 +361,13 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: src/Core/UpdateManager.vala:67
+#: src/Core/UpdateManager.vala:145
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:69
+#: src/Core/UpdateManager.vala:147
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -687,16 +687,12 @@ msgstr ""
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:821
-msgid "End of Life"
+#: src/Views/AppInfoView.vala:821 src/Views/AppInfoView.vala:828
+msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:822
 msgid "May not work as expected or receive security updates"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:828
-msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:829
@@ -831,7 +827,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "स्थापित"
 
-#: src/Views/AppListUpdateView.vala:245
+#: src/Views/AppListUpdateView.vala:244
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
