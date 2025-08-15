@@ -260,8 +260,12 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         }
 
         license_copy = _("Custom License");
-        if (license_url == null) {
+        if (AppStream.is_spdx_license_id (project_license)) {
+            license_description = AppStream.get_license_name (project_license);
+        } else {
             license_description = _("Contact \"%s\" for licensing information").printf (developer_name);
+        }
+        if (license_url == null) {
             license_url = project_homepage;
         }
     }
