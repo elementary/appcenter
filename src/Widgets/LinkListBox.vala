@@ -199,7 +199,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
 
         if (project_license == null || project_license == "") {
             license_copy = _("No License");
-            license_description = _("Contact \"%s\" for licensing information").printf (developer_name);
+            license_description = _("Contact %s for licensing information").printf (developer_name);
             license_url = project_homepage;
             return;
         }
@@ -256,7 +256,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         if (AppStream.is_spdx_license_id (project_license)) {
             license_description = AppStream.get_license_name (project_license);
         } else {
-            license_description = _("Contact \"%s\" for licensing information").printf (developer_name);
+            license_description = _("Contact %s for licensing information").printf (developer_name);
         }
         if (license_url == null) {
             license_url = project_homepage;
