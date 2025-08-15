@@ -209,7 +209,8 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         var simple_license_tokens = simplify_license_tokens (token_array);
 
         if (simple_license_tokens.length > 1) {
-            var joined_license_tokens = string.joinv (", ", simple_license_tokens);
+            // TRANSLATORS: delimiter for a list of software licenses
+            var joined_license_tokens = string.joinv (_(", "), simple_license_tokens);
             license_copy = _("Mixed License");
             license_description = joined_license_tokens;
             license_url = project_homepage;
