@@ -232,11 +232,11 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             if (AppStream.is_spdx_license_id (project_license)) {
                 sanitized_license = AppStream.get_license_name (project_license);
             }
-            license_copy = _ ("Free Software");
+            license_copy = _("Free Software");
             license_description = AppStream.get_license_name (project_license);
             if (license_url == null) {
                 // TRANSLATORS: Replace the link with the version for your language
-                license_url = _ ("https://www.gnu.org/philosophy/free-sw");
+                license_url = _("https://www.gnu.org/philosophy/free-sw");
             }
             return;
         }
@@ -245,7 +245,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             license_copy = _("Proprietary Software");
             if (license_url == null) {
                 // TRANSLATORS: Replace the link with the version for your language
-                license_url = _ ("https://www.gnu.org/proprietary/proprietary.en.html");
+                license_url = _("https://www.gnu.org/proprietary/proprietary.en.html");
             }
             return;
         }
@@ -254,7 +254,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             license_copy = _("Public Domain");
             if (license_url == null) {
                 // TRANSLATORS: Replace the link with the version for your language
-                license_url = _ ("https://en.wikipedia.org/wiki/Public_domain");
+                license_url = _("https://en.wikipedia.org/wiki/Public_domain");
             }
             return;
         }
