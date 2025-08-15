@@ -34,7 +34,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 homepage_url,
                 _("Website"),
-                null,
                 "web-browser-symbolic",
                 "slate"
             ));
@@ -45,7 +44,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 help_url,
                 _("Get Help"),
-                null,
                 "help-contents-symbolic",
                 "blue"
             ));
@@ -56,7 +54,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 bugtracker_url,
                 _("Send Feedback"),
-                null,
                 "bug-symbolic",
                 "green"
             ));
@@ -67,7 +64,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contact_listbox.append (new LinkRow (
                 contact_url,
                 _("Contact The Developer"),
-                null,
                 "mail-send-symbolic",
                 "yellow"
             ));
@@ -93,9 +89,9 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 license_url,
                 license_label,
-                license_description,
                 "text-x-copying-symbolic",
-                "slate"
+                "slate",
+                license_description
             ));
         }
 
@@ -110,7 +106,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 sponsor_url,
                 _("Sponsor"),
-                null,
                 "face-heart-symbolic",
                 "pink"
             ));
@@ -121,7 +116,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 translate_url,
                 _("Contribute Translations"),
-                null,
                 "preferences-desktop-locale-symbolic",
                 "blue"
             ));
@@ -132,7 +126,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 vcs_url,
                 _("Get The Source Code"),
-                null,
                 "link-vcs-symbolic",
                 "purple"
             ));
@@ -143,7 +136,6 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             contribute_listbox.append (new LinkRow (
                 contribute_url,
                 _("Get Involved"),
-                null,
                 "link-contribute-symbolic",
                 "green"
             ));
@@ -300,7 +292,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         public string? label_description { get; construct; }
         public string color { get; construct; }
 
-        public LinkRow (string uri_or_key, string label_string, string? label_description, string icon_name, string color) {
+        public LinkRow (string uri_or_key, string label_string, string icon_name, string color, string? label_description = null) {
             Object (
                 uri_or_key: uri_or_key,
                 label_string: label_string,
