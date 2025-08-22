@@ -235,7 +235,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         }
 
         if (project_license.down ().contains ("proprietary")) {
-            license_copy = _("Proprietary Software");
+            license_copy = _("Proprietary");
             if (license_url == null) {
                 // TRANSLATORS: Replace the link with the version for your language
                 license_url = _("https://www.gnu.org/proprietary/proprietary.en.html");
