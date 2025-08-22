@@ -65,6 +65,19 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.3.0" date="2025-08-22">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/695">Handle multiple licenses</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2241">Warn about proprietary software</issue>
+      </issues>
+    </release>
+
     <release version="8.2.0" date="2025-05-01">
       <description>
         <p>Other Improvements:</p>

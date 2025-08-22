@@ -788,7 +788,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     private void on_package_state_changed () {
         if (!package.is_local) {
-            size_label.update ();
+            size_label.size = 0;
         }
 
         switch (package.state) {
@@ -812,14 +812,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             return;
         }
 
-        var size = yield package.get_download_size_including_deps ();
-        size_label.update (size);
+        size_label.size = yield package.get_download_size_including_deps ();
 
         ContentType? runtime_warning = null;
         switch (package.runtime_status) {
             case RuntimeStatus.END_OF_LIFE:
                 runtime_warning = new ContentType (
-                    _("End of Life"),
+                    _("Outdated"),
                     _("May not work as expected or receive security updates"),
                     "flatpak-eol-symbolic"
                 );
