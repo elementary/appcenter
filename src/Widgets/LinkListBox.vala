@@ -81,15 +81,16 @@ public class AppCenter.LinkListBox : Gtk.Widget {
 
         var project_license = component.project_license;
         if (project_license != null) {
+            string? license_icon = null;
             string? license_label = null;
             string? license_description = null;
             string? license_url = null;
-            parse_license (project_license, homepage_url, out license_label, out license_description, out license_url);
+            parse_license (project_license, homepage_url, out license_label, out license_description, out license_icon, out license_url);
 
             contribute_listbox.append (new LinkRow (
                 license_url,
                 license_label,
-                "text-x-copying-symbolic",
+                license_icon,
                 "slate",
                 license_description
             ));
@@ -187,11 +188,14 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             string project_homepage,
             out string license_copy,
             out string license_description,
+            out string license_icon,
             out string license_url
     ) {
         license_copy = null;
+        license_icon = "text-x-copying-symbolic";
         license_url = null;
         license_description = null;
+
         string? developer_name = component.get_developer ().get_name ();
         if (developer_name == null) {
             developer_name = component.get_pkgname ();
@@ -200,6 +204,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         if (project_license == null || project_license == "") {
             license_copy = _("No License");
             license_description = _("Contact %s for licensing information").printf (developer_name);
+            license_icon = "license-missing-symbolic";
             license_url = project_homepage;
             return;
         }
@@ -236,6 +241,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
 
         if (project_license.down ().contains ("proprietary")) {
             license_copy = _("Proprietary");
+            license_icon = "license-warning-symbolic";
             if (license_url == null) {
                 // TRANSLATORS: Replace the link with the version for your language
                 license_url = _("https://www.gnu.org/proprietary/proprietary.en.html");
