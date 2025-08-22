@@ -33,6 +33,8 @@ namespace AppCenter.Views {
         private Gtk.SizeGroup action_button_group;
         private Granite.HeaderLabel installed_header;
 
+        private uint updated_label_timeout_id = 0;
+
         construct {
             var update_manager = AppCenterCore.UpdateManager.get_default ();
             unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
@@ -210,9 +212,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            flatpak_backend.updatable_packages.items_changed.connect (on_updates_changed);
-            on_updates_changed ();
-
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
                     refresh_menuitem.sensitive = false;
@@ -235,17 +234,35 @@ namespace AppCenter.Views {
                 "active",
                 SettingsBindFlags.DEFAULT
             );
+
+            map.connect (start_updated_label_timeout);
+            unmap.connect (stop_updated_label_timeout);
+
+            App.settings.changed["last-refresh-time"].connect (set_updated_label);
         }
 
-        private void on_updates_changed () {
-            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        private void set_updated_label () {
+            updated_label.label = _("Everything is up to date. Last checked %s.").printf (
+                Granite.DateTime.get_relative_datetime (
+                    new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
+                )
+            );
+        }
 
-            if (flatpak_backend.n_updatable_packages == 0) {
-                updated_label.label = _("Everything is up to date. Last checked %s.").printf (
-                    Granite.DateTime.get_relative_datetime (
-                        new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
-                    )
-                );
+        private void start_updated_label_timeout () {
+            if (updated_label_timeout_id == 0) {
+                updated_label_timeout_id = Timeout.add_seconds (60, () => {
+                    set_updated_label ();
+                    return Source.CONTINUE;
+                });
+            }
+            set_updated_label ();
+        }
+
+        private void stop_updated_label_timeout () {
+            if (updated_label_timeout_id != 0) {
+                Source.remove (updated_label_timeout_id);
+                updated_label_timeout_id = 0;
             }
         }
 
