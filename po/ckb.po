@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 19:17+0000\n"
+"POT-Creation-Date: 2025-08-22 18:28+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -1016,53 +1016,81 @@ msgstr "ناردنی فیدباک"
 msgid "Contact The Developer"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:106
+#: src/Widgets/LinkListBox.vala:108
 msgid "Sponsor"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:116
+#: src/Widgets/LinkListBox.vala:118
 msgid "Contribute Translations"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:126
+#: src/Widgets/LinkListBox.vala:128
 msgid "Get The Source Code"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:136
+#: src/Widgets/LinkListBox.vala:138
 msgid "Get Involved"
 msgstr ""
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Widgets/LinkListBox.vala:199
+#: src/Widgets/LinkListBox.vala:201
+#, fuzzy
+#| msgid "Unknown License"
+msgid "No License"
+msgstr "مۆڵەتی نەناسراو"
+
+#: src/Widgets/LinkListBox.vala:202 src/Widgets/LinkListBox.vala:259
+#, fuzzy, c-format
+#| msgid "Getting information"
+msgid "Contact %s for licensing information"
+msgstr "وەرگرتنی زانیاریی"
+
+#. TRANSLATORS: delimiter for a list of software licenses
+#: src/Widgets/LinkListBox.vala:213
+msgid ", "
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:214
+msgid "Mixed License"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:228
+msgid "Free Software"
+msgstr "نەرمەکاڵای بەخۆڕایی"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:232
+msgid "https://www.gnu.org/philosophy/free-sw"
+msgstr "https://www.gnu.org/philosophy/free-sw"
+
+#: src/Widgets/LinkListBox.vala:238 src/Widgets/LinkListBox.vala:282
+msgid "Proprietary"
+msgstr "خاوەنداریەتی"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:241
+#, fuzzy
+#| msgid "https://www.gnu.org/philosophy/free-sw"
+msgid "https://www.gnu.org/proprietary/proprietary.en.html"
+msgstr "https://www.gnu.org/philosophy/free-sw"
+
+#: src/Widgets/LinkListBox.vala:247 src/Widgets/LinkListBox.vala:280
 msgid "Public Domain"
 msgstr "پاوانی گشتی (پەبلیک)"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:202
+#: src/Widgets/LinkListBox.vala:250
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 "https://ckb.wikipedia.org/wiki/"
 "%D9%BE%D8%A7%D9%88%D8%A7%D9%86%DB%8C_%DA%AF%D8%B4%D8%AA%DB%8C"
 
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Widgets/LinkListBox.vala:207
-msgid "Free Software"
-msgstr "نەرمەکاڵای بەخۆڕایی"
-
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:210
-msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr "https://www.gnu.org/philosophy/free-sw"
-
-#: src/Widgets/LinkListBox.vala:214
-msgid "Proprietary"
-msgstr "خاوەنداریەتی"
-
-#: src/Widgets/LinkListBox.vala:217
-msgid "Unknown License"
+#: src/Widgets/LinkListBox.vala:255
+#, fuzzy
+#| msgid "Unknown License"
+msgid "Custom License"
 msgstr "مۆڵەتی نەناسراو"
 
-#: src/Widgets/LinkListBox.vala:273
+#: src/Widgets/LinkListBox.vala:338
 msgid "Payment provided by Stripe"
 msgstr ""
 
@@ -1184,9 +1212,6 @@ msgstr ""
 
 #~ msgid "Querying"
 #~ msgstr "داواکردن"
-
-#~ msgid "Getting information"
-#~ msgstr "وەرگرتنی زانیاریی"
 
 #~ msgid "Removing packages"
 #~ msgstr "ڕەشکردنەوەی پاکێجەکان"

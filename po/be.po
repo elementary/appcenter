@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 19:17+0000\n"
+"POT-Creation-Date: 2025-08-22 18:28+0000\n"
 "PO-Revision-Date: 2025-06-04 11:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -996,53 +996,81 @@ msgstr "Напісаць водгук"
 msgid "Contact The Developer"
 msgstr "Звязацца з распрацоўшчыкам"
 
-#: src/Widgets/LinkListBox.vala:106
+#: src/Widgets/LinkListBox.vala:108
 msgid "Sponsor"
 msgstr "Падтрымаць"
 
-#: src/Widgets/LinkListBox.vala:116
+#: src/Widgets/LinkListBox.vala:118
 msgid "Contribute Translations"
 msgstr "Паўдзельнічаць у перакладзе"
 
-#: src/Widgets/LinkListBox.vala:126
+#: src/Widgets/LinkListBox.vala:128
 msgid "Get The Source Code"
 msgstr "Атрымаць зыходны код"
 
-#: src/Widgets/LinkListBox.vala:136
+#: src/Widgets/LinkListBox.vala:138
 msgid "Get Involved"
 msgstr "Дапамагчы з распрацоўкаю"
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Widgets/LinkListBox.vala:199
+#: src/Widgets/LinkListBox.vala:201
+#, fuzzy
+#| msgid "Unknown License"
+msgid "No License"
+msgstr "Невядомая ліцэнзія"
+
+#: src/Widgets/LinkListBox.vala:202 src/Widgets/LinkListBox.vala:259
+#, fuzzy, c-format
+#| msgid "Getting information"
+msgid "Contact %s for licensing information"
+msgstr "палучэнне інфармацыі"
+
+#. TRANSLATORS: delimiter for a list of software licenses
+#: src/Widgets/LinkListBox.vala:213
+msgid ", "
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:214
+msgid "Mixed License"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:228
+msgid "Free Software"
+msgstr "Свабоднае праграмнае забеспячэнне"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:232
+msgid "https://www.gnu.org/philosophy/free-sw"
+msgstr "https://www.gnu.org/philosophy/free-sw"
+
+#: src/Widgets/LinkListBox.vala:238 src/Widgets/LinkListBox.vala:282
+msgid "Proprietary"
+msgstr "Уласніцкае ПЗ"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:241
+#, fuzzy
+#| msgid "https://www.gnu.org/philosophy/free-sw"
+msgid "https://www.gnu.org/proprietary/proprietary.en.html"
+msgstr "https://www.gnu.org/philosophy/free-sw"
+
+#: src/Widgets/LinkListBox.vala:247 src/Widgets/LinkListBox.vala:280
 msgid "Public Domain"
 msgstr "Грамадскі набытак"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:202
+#: src/Widgets/LinkListBox.vala:250
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 "https://be.wikipedia.org/wiki/"
 "%D0%93%D1%80%D0%B0%D0%BC%D0%B0%D0%B4%D1%81%D0%BA%D1%96_%D0%BD%D0%B0%D0%B1%D1%8B%D1%82%D0%B0%D0%BA"
 
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Widgets/LinkListBox.vala:207
-msgid "Free Software"
-msgstr "Свабоднае праграмнае забеспячэнне"
-
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:210
-msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr "https://www.gnu.org/philosophy/free-sw"
-
-#: src/Widgets/LinkListBox.vala:214
-msgid "Proprietary"
-msgstr "Уласніцкае ПЗ"
-
-#: src/Widgets/LinkListBox.vala:217
-msgid "Unknown License"
+#: src/Widgets/LinkListBox.vala:255
+#, fuzzy
+#| msgid "Unknown License"
+msgid "Custom License"
 msgstr "Невядомая ліцэнзія"
 
-#: src/Widgets/LinkListBox.vala:273
+#: src/Widgets/LinkListBox.vala:338
 msgid "Payment provided by Stripe"
 msgstr "Аплата праз Stripe"
 
@@ -1104,9 +1132,6 @@ msgstr "Закрыць"
 
 #~ msgid "Running"
 #~ msgstr "Выконваецца"
-
-#~ msgid "Getting information"
-#~ msgstr "палучэнне інфармацыі"
 
 #~ msgid "Removing packages"
 #~ msgstr "Выдаленне прылад"
