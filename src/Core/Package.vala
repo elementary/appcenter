@@ -691,9 +691,11 @@ public class AppCenterCore.Package : Object {
                     bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
                     if (is_bigger || has_better_dpi) {
                         var file = File.new_for_path (_icon.get_filename ());
-                        icon = new FileIcon (file);
-                        current_size = icon_width;
-                        current_scale = icon_scale;
+                        if (file.query_exists ()) {
+                            icon = new FileIcon (file);
+                            current_size = icon_width;
+                            current_scale = icon_scale;
+                        }
                     }
 
                     break;
