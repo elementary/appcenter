@@ -8,12 +8,19 @@ public class AppCenter.AppIcon : Adw.Bin {
     public AppCenterCore.Package package { get; set; }
     public Icon badge_icon { get; set; }
     public Icon icon { get; set; }
+    public Gtk.Stack icon_stack { get; set; }
 
     public AppIcon (int pixel_size) {
         Object (pixel_size: pixel_size);
     }
 
     construct {
+        var image_default_icon = new Gtk.Image () {
+            pixel_size = pixel_size,
+            gicon = new ThemedIcon ("application-default-icon"),
+        };
+        image_default_icon.add_css_class ("icon-dim");
+
         var image = new Gtk.Image () {
             pixel_size = pixel_size
         };
@@ -24,8 +31,15 @@ public class AppCenter.AppIcon : Adw.Bin {
             pixel_size = pixel_size / 2
         };
 
+        icon_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        icon_stack.add_named (image_default_icon, "base-icon");
+        icon_stack.add_named (image, "updated-icon");
+        icon_stack.visible_child_name = package != null ? "base-icon": "updated-icon";
+
         var overlay = new Gtk.Overlay () {
-            child = image,
+            child = icon_stack,
             valign = START
         };
         overlay.add_overlay (badge_image);
@@ -54,6 +68,7 @@ public class AppCenter.AppIcon : Adw.Bin {
         }
 
         icon = package.get_icon (pixel_size, scale_factor);
+        icon_stack.visible_child_name = icon.to_string () == "application-default-icon" ? "base-icon" : "updated-icon";
 
         if (package.is_runtime_updates) {
             badge_icon = new ThemedIcon ("system-software-update");
