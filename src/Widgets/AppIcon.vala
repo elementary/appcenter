@@ -9,19 +9,21 @@ public class AppCenter.AppIcon : Adw.Bin {
     public Icon badge_icon { get; set; }
     public Icon icon { get; set; }
     public Gtk.Stack icon_stack { get; set; }
+    public Gtk.Image image_default_icon { get; set; }
+    public Gtk.Image image { get; set; }
 
     public AppIcon (int pixel_size) {
         Object (pixel_size: pixel_size);
     }
 
     construct {
-        var image_default_icon = new Gtk.Image () {
+        image_default_icon = new Gtk.Image () {
             pixel_size = pixel_size,
             gicon = new ThemedIcon ("application-default-icon"),
         };
         image_default_icon.add_css_class ("icon-dim");
 
-        var image = new Gtk.Image () {
+        image = new Gtk.Image () {
             pixel_size = pixel_size
         };
 
@@ -34,9 +36,9 @@ public class AppCenter.AppIcon : Adw.Bin {
         icon_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
-        icon_stack.add_named (image_default_icon, "base-icon");
-        icon_stack.add_named (image, "updated-icon");
-        icon_stack.visible_child_name = package != null ? "base-icon": "updated-icon";
+        icon_stack.add_child (image_default_icon);
+        icon_stack.add_child (image);
+        icon_stack.visible_child = package != null ? image_default_icon : image;
 
         var overlay = new Gtk.Overlay () {
             child = icon_stack,
@@ -68,7 +70,7 @@ public class AppCenter.AppIcon : Adw.Bin {
         }
 
         icon = package.get_icon (pixel_size, scale_factor);
-        icon_stack.visible_child_name = icon.to_string () == "application-default-icon" ? "base-icon" : "updated-icon";
+        icon_stack.visible_child = icon.to_string () == "application-default-icon" ? image_default_icon : image;
 
         if (package.is_runtime_updates) {
             badge_icon = new ThemedIcon ("system-software-update");
