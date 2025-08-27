@@ -193,7 +193,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 _("AppCenter"),
                 _("Browse and manage apps"),
                 _("The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."),
-                new ThemedIcon ("io.elementary.appcenter"),
+                new AppIcon (128) { icon = new ThemedIcon ("io.elementary.appcenter") },
                 "#7239b3"
             );
             banner_carousel.append (appcenter_banner);
