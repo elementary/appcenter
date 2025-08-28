@@ -934,7 +934,7 @@ public class AppCenterCore.Package : Object {
             var environment_id = screenshot.get_environment ();
             if (environment_id == null) {
                 screenshots.add (screenshot);
-                break;
+                continue;
             }
 
             var environment_split = environment_id.split (":", 2);
@@ -952,7 +952,7 @@ public class AppCenterCore.Package : Object {
                 screenshots.add (screenshot);
             } else if (!has_matching_environment && !has_matching_style) {
                 screenshots.add (screenshot);
-                break;
+                continue;
             }
         }
 
