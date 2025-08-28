@@ -7,13 +7,14 @@
 # Camellan <camellan@yandex.ru>, 2021.
 # lenemter <lenemter@gmail.com>, 2022, 2023, 2024.
 # кубик круглый <megarainbow29@gmail.com>, 2022, 2023, 2024, 2025.
+# Leo <lenemter@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-22 18:28+0000\n"
-"PO-Revision-Date: 2025-05-19 23:41+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2025-08-28 19:04+0000\n"
+"Last-Translator: Leo <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -1024,25 +1025,22 @@ msgid "Get Involved"
 msgstr "Помочь в разработке"
 
 #: src/Widgets/LinkListBox.vala:201
-#, fuzzy
-#| msgid "Unknown License"
 msgid "No License"
-msgstr "Неизвестная лицензия"
+msgstr "Нет лицензии"
 
 #: src/Widgets/LinkListBox.vala:202 src/Widgets/LinkListBox.vala:259
-#, fuzzy, c-format
-#| msgid "Getting information"
+#, c-format
 msgid "Contact %s for licensing information"
-msgstr "Получение информации"
+msgstr "Свяжитесь с %s для получения информации о лицензии"
 
 #. TRANSLATORS: delimiter for a list of software licenses
 #: src/Widgets/LinkListBox.vala:213
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: src/Widgets/LinkListBox.vala:214
 msgid "Mixed License"
-msgstr ""
+msgstr "Смешанная лицензия"
 
 #: src/Widgets/LinkListBox.vala:228
 msgid "Free Software"
@@ -1059,10 +1057,8 @@ msgstr "Проприетарная лицензия"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:241
-#, fuzzy
-#| msgid "https://www.gnu.org/philosophy/free-sw"
 msgid "https://www.gnu.org/proprietary/proprietary.en.html"
-msgstr "https://www.gnu.org/philosophy/free-sw.ru.html"
+msgstr "https://www.gnu.org/proprietary/proprietary.ru.html"
 
 #: src/Widgets/LinkListBox.vala:247 src/Widgets/LinkListBox.vala:280
 msgid "Public Domain"
@@ -1076,10 +1072,8 @@ msgstr ""
 "%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B4%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5"
 
 #: src/Widgets/LinkListBox.vala:255
-#, fuzzy
-#| msgid "Unknown License"
 msgid "Custom License"
-msgstr "Неизвестная лицензия"
+msgstr "Своя лицензия"
 
 #: src/Widgets/LinkListBox.vala:338
 msgid "Payment provided by Stripe"
