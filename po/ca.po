@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-03 11:06+0000\n"
+"POT-Creation-Date: 2025-08-22 18:28+0000\n"
 "PO-Revision-Date: 2025-05-16 12:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
@@ -19,22 +19,22 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
+#: src/Application.vala:26 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "Centre d'aplicacions"
 
-#: src/Application.vala:78
+#: src/Application.vala:76
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "No s'ha pogut analitzar el tipus de mitjà %s"
 
-#: src/Application.vala:97
+#: src/Application.vala:95
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "No s'ha pogut trobar l'enllaç especificat «%s». En lloc d'això, se cerca"
 
-#: src/Application.vala:264
+#: src/Application.vala:254
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -43,11 +43,11 @@ msgstr ""
 "s'engegui i s'executarà quan se'n tanqui la finestra perquè pugui comprovar "
 "i instal·lar actualitzacions automàticament."
 
-#: src/Application.vala:347
+#: src/Application.vala:316
 msgid "The app has been installed"
 msgstr "L'aplicació s'ha instal·lat"
 
-#: src/Application.vala:348 src/MainWindow.vala:226
+#: src/Application.vala:317 src/MainWindow.vala:222
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s s'ha instal·lat"
@@ -79,7 +79,7 @@ msgid "Install %s to browse and install apps."
 msgstr "Instal·leu %s per navegar i instal·lar aplicacions."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:225 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Obre"
 
@@ -159,10 +159,10 @@ msgstr "En espera"
 msgid "Finished"
 msgstr "S'ha acabat"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
-#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
-#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
-#: src/Core/FlatpakBackend.vala:2003
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1674
+#: src/Core/FlatpakBackend.vala:1698 src/Core/FlatpakBackend.vala:1806
+#: src/Core/FlatpakBackend.vala:1830 src/Core/FlatpakBackend.vala:1988
+#: src/Core/FlatpakBackend.vala:2006
 msgid "Cancelling"
 msgstr "Es cancel·la"
 
@@ -187,36 +187,36 @@ msgstr "Actualitzacions de l'entorn d'execució"
 msgid "Updates to app runtimes"
 msgstr "Actualitzacions dels entorns d'execució de les aplicacions"
 
-#: src/Core/FlatpakBackend.vala:1662
+#: src/Core/FlatpakBackend.vala:1665
 msgid "Installing"
 msgstr "S'instal·la"
 
-#: src/Core/FlatpakBackend.vala:1794
+#: src/Core/FlatpakBackend.vala:1797
 msgid "Uninstalling"
 msgstr "Es desinstal·la"
 
-#: src/Core/FlatpakBackend.vala:1976
+#: src/Core/FlatpakBackend.vala:1979
 msgid "Updating"
 msgstr "S'actualitza"
 
-#: src/Core/FlatpakBackend.vala:2106
+#: src/Core/FlatpakBackend.vala:2109
 #, c-format
 msgid "Version: %s"
 msgstr "Versió: %s"
 
-#: src/Core/FlatpakBackend.vala:2111
+#: src/Core/FlatpakBackend.vala:2114
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u entorn d'execució amb actualitzacions"
 msgstr[1] "%u entorns d'execució amb actualitzacions"
 
-#: src/Core/FlatpakBackend.vala:2116
+#: src/Core/FlatpakBackend.vala:2119
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2220
+#: src/Core/FlatpakBackend.vala:2223
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -378,13 +378,13 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Aquesta és una targeta de prova. Feu servir una targeta real per continuar."
 
-#: src/Core/UpdateManager.vala:67
+#: src/Core/UpdateManager.vala:145
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Hi ha una actualització disponible"
 msgstr[1] "Hi ha actualitzacions disponibles"
 
-#: src/Core/UpdateManager.vala:69
+#: src/Core/UpdateManager.vala:147
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -714,19 +714,15 @@ msgstr "Captura no disponible"
 msgid "What's New:"
 msgstr "Què hi ha de nou:"
 
-#: src/Views/AppInfoView.vala:821
-msgid "End of Life"
-msgstr "Fi de vida útil"
+#: src/Views/AppInfoView.vala:821 src/Views/AppInfoView.vala:828
+msgid "Outdated"
+msgstr "No actualitzat"
 
 #: src/Views/AppInfoView.vala:822
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "És possible que no funcioni com s'espera o que no rebi actualitzacions de "
 "seguretat."
-
-#: src/Views/AppInfoView.vala:828
-msgid "Outdated"
-msgstr "No actualitzat"
 
 #: src/Views/AppInfoView.vala:829
 msgid "May not work as expected or support the latest features"
@@ -869,7 +865,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Instal·lades"
 
-#: src/Views/AppListUpdateView.vala:245
+#: src/Views/AppListUpdateView.vala:244
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Tot està actualitzat. Darrera comprovació: %s."
@@ -1010,51 +1006,79 @@ msgstr "Envieu retroacció"
 msgid "Contact The Developer"
 msgstr "Contacta amb el desenvolupador"
 
-#: src/Widgets/LinkListBox.vala:106
+#: src/Widgets/LinkListBox.vala:108
 msgid "Sponsor"
 msgstr "Patrocinador"
 
-#: src/Widgets/LinkListBox.vala:116
+#: src/Widgets/LinkListBox.vala:118
 msgid "Contribute Translations"
 msgstr "Contribuïu a les traduccions"
 
-#: src/Widgets/LinkListBox.vala:126
+#: src/Widgets/LinkListBox.vala:128
 msgid "Get The Source Code"
 msgstr "Obtingueu-ne el codi font"
 
-#: src/Widgets/LinkListBox.vala:136
+#: src/Widgets/LinkListBox.vala:138
 msgid "Get Involved"
 msgstr "Col·laboreu-hi"
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Widgets/LinkListBox.vala:199
-msgid "Public Domain"
-msgstr "Domini públic"
+#: src/Widgets/LinkListBox.vala:201
+#, fuzzy
+#| msgid "Unknown License"
+msgid "No License"
+msgstr "Llicència desconeguda"
 
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:202
-msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://ca.wikipedia.org/wiki/Domini_p%C3%BAblic"
+#: src/Widgets/LinkListBox.vala:202 src/Widgets/LinkListBox.vala:259
+#, fuzzy, c-format
+#| msgid "Getting information"
+msgid "Contact %s for licensing information"
+msgstr "S'obté informació"
 
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Widgets/LinkListBox.vala:207
+#. TRANSLATORS: delimiter for a list of software licenses
+#: src/Widgets/LinkListBox.vala:213
+msgid ", "
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:214
+msgid "Mixed License"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:228
 msgid "Free Software"
 msgstr "Programari lliure"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:210
+#: src/Widgets/LinkListBox.vala:232
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ca.html"
 
-#: src/Widgets/LinkListBox.vala:214
+#: src/Widgets/LinkListBox.vala:238 src/Widgets/LinkListBox.vala:282
 msgid "Proprietary"
 msgstr "De propietat"
 
-#: src/Widgets/LinkListBox.vala:217
-msgid "Unknown License"
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:241
+#, fuzzy
+#| msgid "https://www.gnu.org/philosophy/free-sw"
+msgid "https://www.gnu.org/proprietary/proprietary.en.html"
+msgstr "https://www.gnu.org/philosophy/free-sw.ca.html"
+
+#: src/Widgets/LinkListBox.vala:247 src/Widgets/LinkListBox.vala:280
+msgid "Public Domain"
+msgstr "Domini públic"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:250
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr "https://ca.wikipedia.org/wiki/Domini_p%C3%BAblic"
+
+#: src/Widgets/LinkListBox.vala:255
+#, fuzzy
+#| msgid "Unknown License"
+msgid "Custom License"
 msgstr "Llicència desconeguda"
 
-#: src/Widgets/LinkListBox.vala:273
+#: src/Widgets/LinkListBox.vala:338
 msgid "Payment provided by Stripe"
 msgstr "Pagament proporcionat per Stripe"
 
@@ -1101,6 +1125,9 @@ msgstr "Què hi ha de nou a la versió %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Tanca"
+
+#~ msgid "End of Life"
+#~ msgstr "Fi de vida útil"
 
 #~ msgid "Checking for Updates"
 #~ msgstr "Es comprova si hi ha actualitzacions."
@@ -1170,9 +1197,6 @@ msgstr "Tanca"
 
 #~ msgid "Querying"
 #~ msgstr "Es consulta"
-
-#~ msgid "Getting information"
-#~ msgstr "S'obté informació"
 
 #~ msgid "Removing packages"
 #~ msgstr "Se suprimeixen paquets"

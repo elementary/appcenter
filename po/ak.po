@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-03 11:06+0000\n"
+"POT-Creation-Date: 2025-08-22 18:28+0000\n"
 "PO-Revision-Date: 2025-03-08 13:59+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementaryos.org/projects/appcenter/"
@@ -18,33 +18,33 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
+#: src/Application.vala:26 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
 
-#: src/Application.vala:78
+#: src/Application.vala:76
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:97
+#: src/Application.vala:95
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Antumi anhu '%s' enti wo ara hwehwɛ"
 
-#: src/Application.vala:264
+#: src/Application.vala:254
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:347
+#: src/Application.vala:316
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "Atwe %s agu so awie"
 
-#: src/Application.vala:348 src/MainWindow.vala:226
+#: src/Application.vala:317 src/MainWindow.vala:222
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -79,7 +79,7 @@ msgid "Install %s to browse and install apps."
 msgstr ""
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:225 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Bie"
 
@@ -166,10 +166,10 @@ msgstr "Ɛretwɛn"
 msgid "Finished"
 msgstr "Awie"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
-#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
-#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
-#: src/Core/FlatpakBackend.vala:2003
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1674
+#: src/Core/FlatpakBackend.vala:1698 src/Core/FlatpakBackend.vala:1806
+#: src/Core/FlatpakBackend.vala:1830 src/Core/FlatpakBackend.vala:1988
+#: src/Core/FlatpakBackend.vala:2006
 msgid "Cancelling"
 msgstr "Ɛregyae"
 
@@ -196,40 +196,40 @@ msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1662
+#: src/Core/FlatpakBackend.vala:1665
 msgid "Installing"
 msgstr "Ɛde regu so"
 
-#: src/Core/FlatpakBackend.vala:1794
+#: src/Core/FlatpakBackend.vala:1797
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Yi fi so"
 
-#: src/Core/FlatpakBackend.vala:1976
+#: src/Core/FlatpakBackend.vala:1979
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Twe nea aba"
 
-#: src/Core/FlatpakBackend.vala:2106
+#: src/Core/FlatpakBackend.vala:2109
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/FlatpakBackend.vala:2111
+#: src/Core/FlatpakBackend.vala:2114
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:2116
+#: src/Core/FlatpakBackend.vala:2119
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2220
+#: src/Core/FlatpakBackend.vala:2223
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -386,13 +386,13 @@ msgstr "Sika dodow a wobɛtumi ayi afi wo kaad no so no asõ."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Kaad no yɛ nea wɔde sɔ hwɛ kɛkɛ. Yɛsrɛ wo fa nea edi mu yɛ."
 
-#: src/Core/UpdateManager.vala:67
+#: src/Core/UpdateManager.vala:145
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Foforɔ Aba"
 msgstr[1] "Nneɛma Foforɔ Aba"
 
-#: src/Core/UpdateManager.vala:69
+#: src/Core/UpdateManager.vala:147
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -722,16 +722,12 @@ msgstr "Ɛho Mfonyin Nka Ho"
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:821
-msgid "End of Life"
+#: src/Views/AppInfoView.vala:821 src/Views/AppInfoView.vala:828
+msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:822
 msgid "May not work as expected or receive security updates"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:828
-msgid "Outdated"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:829
@@ -868,7 +864,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Twe gu so"
 
-#: src/Views/AppListUpdateView.vala:245
+#: src/Views/AppListUpdateView.vala:244
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -1009,54 +1005,77 @@ msgstr ""
 msgid "Contact The Developer"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:106
+#: src/Widgets/LinkListBox.vala:108
 msgid "Sponsor"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:116
+#: src/Widgets/LinkListBox.vala:118
 #, fuzzy
 #| msgid "Suggest Translations"
 msgid "Contribute Translations"
 msgstr "Fa wo nkyerɛase to dwa"
 
-#: src/Widgets/LinkListBox.vala:126
+#: src/Widgets/LinkListBox.vala:128
 msgid "Get The Source Code"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:136
+#: src/Widgets/LinkListBox.vala:138
 msgid "Get Involved"
 msgstr ""
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Widgets/LinkListBox.vala:199
-msgid "Public Domain"
+#: src/Widgets/LinkListBox.vala:201
+#, fuzzy
+msgid "No License"
+msgstr "Wɔnnim sɛnea ɛte"
+
+#: src/Widgets/LinkListBox.vala:202 src/Widgets/LinkListBox.vala:259
+#, fuzzy, c-format
+#| msgid "Getting information"
+msgid "Contact %s for licensing information"
+msgstr "Ɛrepɛ ho nsɛm"
+
+#. TRANSLATORS: delimiter for a list of software licenses
+#: src/Widgets/LinkListBox.vala:213
+msgid ", "
 msgstr ""
 
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:202
-msgid "https://en.wikipedia.org/wiki/Public_domain"
+#: src/Widgets/LinkListBox.vala:214
+msgid "Mixed License"
 msgstr ""
 
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Widgets/LinkListBox.vala:207
+#: src/Widgets/LinkListBox.vala:228
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:210
+#: src/Widgets/LinkListBox.vala:232
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:214
+#: src/Widgets/LinkListBox.vala:238 src/Widgets/LinkListBox.vala:282
 msgid "Proprietary"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:217
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:241
+msgid "https://www.gnu.org/proprietary/proprietary.en.html"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:247 src/Widgets/LinkListBox.vala:280
+msgid "Public Domain"
+msgstr ""
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:250
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:255
 #, fuzzy
-msgid "Unknown License"
+msgid "Custom License"
 msgstr "Wɔnnim sɛnea ɛte"
 
-#: src/Widgets/LinkListBox.vala:273
+#: src/Widgets/LinkListBox.vala:338
 msgid "Payment provided by Stripe"
 msgstr ""
 
@@ -1124,9 +1143,6 @@ msgstr "Yi fi hɔ"
 
 #~ msgid "Querying"
 #~ msgstr "Ɛrehwehwɛ"
-
-#~ msgid "Getting information"
-#~ msgstr "Ɛrepɛ ho nsɛm"
 
 #~ msgid "Removing packages"
 #~ msgstr "Ɛreyi dwumadie no"

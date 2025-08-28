@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-03 11:06+0000\n"
+"POT-Creation-Date: 2025-08-22 18:28+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -18,31 +18,31 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:41 src/Views/Homepage.vala:193
+#: src/Application.vala:26 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:78
+#: src/Application.vala:76
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Kunne ikkje tolke mediatypen %s"
 
-#: src/Application.vala:97
+#: src/Application.vala:95
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Lenka '%s vart ikkje funne. Prøv eit søk i staden"
 
-#: src/Application.vala:264
+#: src/Application.vala:254
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:347
+#: src/Application.vala:316
 msgid "The app has been installed"
 msgstr "Appen er installert"
 
-#: src/Application.vala:348 src/MainWindow.vala:226
+#: src/Application.vala:317 src/MainWindow.vala:222
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” har blitt innstallert"
@@ -74,7 +74,7 @@ msgid "Install %s to browse and install apps."
 msgstr "Innstaller %s for å sjå og innstallera appar."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:225 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Opne"
 
@@ -154,10 +154,10 @@ msgstr "Ventar"
 msgid "Finished"
 msgstr "Ferdig"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1671
-#: src/Core/FlatpakBackend.vala:1695 src/Core/FlatpakBackend.vala:1803
-#: src/Core/FlatpakBackend.vala:1827 src/Core/FlatpakBackend.vala:1985
-#: src/Core/FlatpakBackend.vala:2003
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1674
+#: src/Core/FlatpakBackend.vala:1698 src/Core/FlatpakBackend.vala:1806
+#: src/Core/FlatpakBackend.vala:1830 src/Core/FlatpakBackend.vala:1988
+#: src/Core/FlatpakBackend.vala:2006
 msgid "Cancelling"
 msgstr "Avbryt"
 
@@ -182,24 +182,24 @@ msgstr "Leitar etter oppdateringar til programspråket"
 msgid "Updates to app runtimes"
 msgstr "Oppdateringar for programspråket til appar"
 
-#: src/Core/FlatpakBackend.vala:1662
+#: src/Core/FlatpakBackend.vala:1665
 msgid "Installing"
 msgstr "Installerer"
 
-#: src/Core/FlatpakBackend.vala:1794
+#: src/Core/FlatpakBackend.vala:1797
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1976
+#: src/Core/FlatpakBackend.vala:1979
 msgid "Updating"
 msgstr "Oppdaterar"
 
-#: src/Core/FlatpakBackend.vala:2106
+#: src/Core/FlatpakBackend.vala:2109
 #, c-format
 msgid "Version: %s"
 msgstr "Versjon: %s"
 
-#: src/Core/FlatpakBackend.vala:2111
+#: src/Core/FlatpakBackend.vala:2114
 #, fuzzy, c-format
 #| msgid "%u runtimes with updates"
 #| msgid_plural "%u runtimes with updates"
@@ -208,12 +208,12 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "%u komponent med oppdateringar"
 msgstr[1] "%u komponentar med oppdateringar"
 
-#: src/Core/FlatpakBackend.vala:2116
+#: src/Core/FlatpakBackend.vala:2119
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2220
+#: src/Core/FlatpakBackend.vala:2223
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -360,13 +360,13 @@ msgstr ""
 "Det oppgjevne kortet er eit test-kort. Bruk eit ordentleg kort for å halde "
 "fram."
 
-#: src/Core/UpdateManager.vala:67
+#: src/Core/UpdateManager.vala:145
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Oppdatering tilgjengeleg"
 msgstr[1] "Oppdateringar tilgjengeleg"
 
-#: src/Core/UpdateManager.vala:69
+#: src/Core/UpdateManager.vala:147
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"
@@ -705,8 +705,8 @@ msgstr "Skjermbilete er ikkje tilgjengeleg"
 msgid "What's New:"
 msgstr "Nyhende:"
 
-#: src/Views/AppInfoView.vala:821
-msgid "End of Life"
+#: src/Views/AppInfoView.vala:821 src/Views/AppInfoView.vala:828
+msgid "Outdated"
 msgstr "Utdatert"
 
 #: src/Views/AppInfoView.vala:822
@@ -714,10 +714,6 @@ msgid "May not work as expected or receive security updates"
 msgstr ""
 "Kan henda at appen ikkje fungerar som forventa, eller mottar "
 "sikkerhetsoppdateringar"
-
-#: src/Views/AppInfoView.vala:828
-msgid "Outdated"
-msgstr "Utdatert"
 
 #: src/Views/AppInfoView.vala:829
 msgid "May not work as expected or support the latest features"
@@ -852,7 +848,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/Views/AppListUpdateView.vala:245
+#: src/Views/AppListUpdateView.vala:244
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Alt er oppdatert. Sjekka sist %s."
@@ -987,53 +983,81 @@ msgstr "Send tilbakemelding"
 msgid "Contact The Developer"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:106
+#: src/Widgets/LinkListBox.vala:108
 msgid "Sponsor"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:116
+#: src/Widgets/LinkListBox.vala:118
 #, fuzzy
 #| msgid "Suggest Translations"
 msgid "Contribute Translations"
 msgstr "Føreslå oversetjingar"
 
-#: src/Widgets/LinkListBox.vala:126
+#: src/Widgets/LinkListBox.vala:128
 msgid "Get The Source Code"
 msgstr ""
 
-#: src/Widgets/LinkListBox.vala:136
+#: src/Widgets/LinkListBox.vala:138
 msgid "Get Involved"
 msgstr ""
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Widgets/LinkListBox.vala:199
-msgid "Public Domain"
-msgstr "Offentleg eigedom"
+#: src/Widgets/LinkListBox.vala:201
+#, fuzzy
+#| msgid "Unknown License"
+msgid "No License"
+msgstr "Ukjend lisens"
 
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:202
-msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://en.wikipedia.org/wiki/Public_domain"
+#: src/Widgets/LinkListBox.vala:202 src/Widgets/LinkListBox.vala:259
+#, fuzzy, c-format
+#| msgid "Getting information"
+msgid "Contact %s for licensing information"
+msgstr "Hentar informasjon"
 
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Widgets/LinkListBox.vala:207
+#. TRANSLATORS: delimiter for a list of software licenses
+#: src/Widgets/LinkListBox.vala:213
+msgid ", "
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:214
+msgid "Mixed License"
+msgstr ""
+
+#: src/Widgets/LinkListBox.vala:228
 msgid "Free Software"
 msgstr "Fri programvare"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:210
+#: src/Widgets/LinkListBox.vala:232
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Widgets/LinkListBox.vala:214
+#: src/Widgets/LinkListBox.vala:238 src/Widgets/LinkListBox.vala:282
 msgid "Proprietary"
 msgstr "Proprietær"
 
-#: src/Widgets/LinkListBox.vala:217
-msgid "Unknown License"
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:241
+#, fuzzy
+#| msgid "https://www.gnu.org/philosophy/free-sw"
+msgid "https://www.gnu.org/proprietary/proprietary.en.html"
+msgstr "https://www.gnu.org/philosophy/free-sw"
+
+#: src/Widgets/LinkListBox.vala:247 src/Widgets/LinkListBox.vala:280
+msgid "Public Domain"
+msgstr "Offentleg eigedom"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:250
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr "https://en.wikipedia.org/wiki/Public_domain"
+
+#: src/Widgets/LinkListBox.vala:255
+#, fuzzy
+#| msgid "Unknown License"
+msgid "Custom License"
 msgstr "Ukjend lisens"
 
-#: src/Widgets/LinkListBox.vala:273
+#: src/Widgets/LinkListBox.vala:338
 msgid "Payment provided by Stripe"
 msgstr ""
 
@@ -1078,6 +1102,9 @@ msgstr "Kva er nytt i %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Lukk"
+
+#~ msgid "End of Life"
+#~ msgstr "Utdatert"
 
 #~ msgid "Checking for Updates"
 #~ msgstr "Leitar etter oppdateringar"
@@ -1150,9 +1177,6 @@ msgstr "Lukk"
 
 #~ msgid "Querying"
 #~ msgstr "Førespør informasjon"
-
-#~ msgid "Getting information"
-#~ msgstr "Hentar informasjon"
 
 #~ msgid "Removing packages"
 #~ msgstr "Fjernar pakkar"
