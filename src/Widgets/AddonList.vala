@@ -14,7 +14,7 @@ public class AppCenter.AddonList : Granite.Bin {
     }
 
     construct {
-        var header_label = new Granite.HeaderLabel (_("Add-ons:")) {
+        var header_label = new Granite.HeaderLabel (_("Add-Ons")) {
             margin_start = 12
         };
         var addon_list = AppCenterCore.FlatpakBackend.get_default ().get_addons (package);
