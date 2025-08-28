@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 18:28+0000\n"
+"POT-Creation-Date: 2025-08-28 19:04+0000\n"
 "PO-Revision-Date: 2025-07-14 20:55+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementaryos.org/projects/appcenter/"
@@ -56,57 +56,57 @@ msgstr "Geliştiricileri desteklemek için ödeyebildiğiniz kadar ödeyin"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:83
-#: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:134 data/appcenter.metainfo.xml.in:163
-#: data/appcenter.metainfo.xml.in:183 data/appcenter.metainfo.xml.in:198
-#: data/appcenter.metainfo.xml.in:212
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:97 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:135 data/appcenter.metainfo.xml.in:164
+#: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:199
+#: data/appcenter.metainfo.xml.in:213
 msgid "Other Improvements:"
 msgstr "Diğer İyileştirmeler:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:118
-#: data/appcenter.metainfo.xml.in:139 data/appcenter.metainfo.xml.in:166
-#: data/appcenter.metainfo.xml.in:188 data/appcenter.metainfo.xml.in:200
-#: data/appcenter.metainfo.xml.in:214
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:140 data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:189 data/appcenter.metainfo.xml.in:201
+#: data/appcenter.metainfo.xml.in:215
 msgid "Updated translations"
 msgstr "Çeviriler güncellendi"
 
-#: data/appcenter.metainfo.xml.in:130 data/appcenter.metainfo.xml.in:159
-#: data/appcenter.metainfo.xml.in:179 data/appcenter.metainfo.xml.in:207
+#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:160
+#: data/appcenter.metainfo.xml.in:180 data/appcenter.metainfo.xml.in:208
 msgid "New features:"
 msgstr "Yeni özellikler:"
 
-#: data/appcenter.metainfo.xml.in:132
+#: data/appcenter.metainfo.xml.in:133
 msgid "Manage autostart in System Settings → Applications"
 msgstr "Sistem Ayarları → Uygulamalar'da otomatik başlatmayı yönetin"
 
-#: data/appcenter.metainfo.xml.in:136
+#: data/appcenter.metainfo.xml.in:137
 msgid "Automatic app updates by default"
 msgstr "Varsayılan olarak otomatik uygulama güncellemeleri"
 
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:138
 msgid "OS Updates have moved to System Settings"
 msgstr "İşletim Sistemi Güncellemeleri Sistem Ayarlarına taşındı"
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:139
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Diğer kaynaklardan uygulamaları rozetlemek yerine elementary OS için "
 "yapılmış uygulamarı rozetle"
 
-#: data/appcenter.metainfo.xml.in:161
+#: data/appcenter.metainfo.xml.in:162
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Uygulamalar eski Otomatik Başlatma'yı veya eski Bildirimler'i kullandığında "
 "uyar"
 
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:166
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr "Yükleme boyutunu alırken AppInfo görünümlerindeki titremeyi düzeltin"
 
-#: data/appcenter.metainfo.xml.in:181
+#: data/appcenter.metainfo.xml.in:182
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -114,25 +114,25 @@ msgstr ""
 "Uygulamalar Ev veya sistem klasörlerine, konuma, ayarlara eriştiğinde veya "
 "güvenli olmayan bir sandbox'a sahip olduğunda uyarı ver."
 
-#: data/appcenter.metainfo.xml.in:185
+#: data/appcenter.metainfo.xml.in:186
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Uygulama Bilgisi görünümlerinde boşluk ve kenarlıkları azalt"
 
-#: data/appcenter.metainfo.xml.in:186
+#: data/appcenter.metainfo.xml.in:187
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Yükleme sırasında ana sayfada bir yer tutucu afiş göster"
 
-#: data/appcenter.metainfo.xml.in:187
+#: data/appcenter.metainfo.xml.in:188
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Kategori görünümlerinde AppCenter dışı uygulamaları ayrı bir başlık altında "
 "listeleme"
 
-#: data/appcenter.metainfo.xml.in:209
+#: data/appcenter.metainfo.xml.in:210
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Flatpak güncellemeleri başarısız olursa bir Onarım seçeneği sun"
 
-#: data/appcenter.metainfo.xml.in:210
+#: data/appcenter.metainfo.xml.in:211
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
