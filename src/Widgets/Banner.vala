@@ -20,31 +20,32 @@
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 public class AppCenter.Widgets.Banner : Gtk.Button {
-    public Icon icon { get; construct; }
+    public AppIcon app_icon { get; construct; }
     public string brand_color { get; construct; }
     public string description { get; construct; }
     public string app_name { get; construct; }
     public string summary { get; construct; }
 
-    public Banner (string name, string summary, string description, Icon icon, string brand_color) {
+    public Banner (string name, string summary, string description, AppIcon app_icon, string brand_color) {
         Object (
             brand_color: brand_color,
             description: description,
-            icon: icon,
+            app_icon: app_icon,
             app_name: name,
             summary: summary
         );
     }
 
     public Banner.from_package (AppCenterCore.Package package) {
-        // Can't get widget scale factor before it's realized
-        var scale_factor = ((Gtk.Application) Application.get_default ()).active_window.get_scale_factor ();
+        var app_icon = new AppIcon (128) {
+            package = package
+        };
 
         Object (
-            app_name: package.get_name (),
+            app_name: package.name,
             summary: package.get_summary (),
             description: package.get_description (),
-            icon: package.get_icon (128, scale_factor),
+            app_icon: app_icon,
             brand_color: package.get_color_primary ()
         );
     }
@@ -80,10 +81,6 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             xalign = 0
         };
         description_label.add_css_class ("description");
-
-        var app_icon = new AppIcon (128) {
-            icon = icon
-        };
 
         var inner_box = new Gtk.Box (VERTICAL, 0) {
             valign = CENTER

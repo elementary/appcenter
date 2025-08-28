@@ -319,7 +319,7 @@ public class AppCenterCore.Package : Object {
 
             _author_title = author;
             if (_author_title == null) {
-                _author_title = _("%s Developers").printf (get_name ());
+                _author_title = _("%s Developers").printf (name);
             }
 
             return _author_title;
@@ -388,6 +388,20 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? _name = null;
+    public string name {
+        get {
+            if (_name != null) {
+                return _name;
+            }
+
+            _name = component.get_name ();
+            _name = Utils.unescape_markup (_name);
+
+            return _name;
+        }
+    }
+
     public string? description = null;
     private string? summary = null;
     private string? color_primary_light = null;
@@ -418,7 +432,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public void replace_component (AppStream.Component component) {
-        name = null;
+        _name = null;
         description = null;
         summary = null;
         color_primary_light = null;
@@ -450,29 +464,19 @@ public class AppCenterCore.Package : Object {
         // Only trigger a notify if the state has changed, quite a lot of things listen to this
         if (state != new_state) {
             state = new_state;
+            FlatpakBackend.get_default ().notify_package_changed (this);
         }
     }
 
     /**
      * Instructs the backend to update this package
-     *
-     * @refresh_updates_after: Whether to run the check for updates (and update the badges etc...) after
-     * this method succeeds. This is fine after updating a single package, but for efficiency, it's better to
-     * do this only once at the end of updating a batch of packages, so this should be set to false if updating
-     * multiple packages in a loop.
-     *
      */
-    public async bool update (bool refresh_updates_after = true) throws GLib.Error {
+    public async bool update () throws GLib.Error {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
 
-        var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
-        if (success && refresh_updates_after) {
-            yield UpdateManager.get_default ().get_updates ();
-        }
-
-        return success;
+        return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
     }
 
     public async bool install () {
@@ -509,12 +513,12 @@ public class AppCenterCore.Package : Object {
             }
         }
 
-        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (get_name ()));
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (name));
     }
 
     public void launch () throws Error {
         if (app_info == null) {
-            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for package: %s".printf (get_name ()));
+            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for package: %s".printf (name));
         }
 
         try {
@@ -530,7 +534,7 @@ public class AppCenterCore.Package : Object {
         try {
             success = yield perform_package_operation ();
         } catch (GLib.Error e) {
-            warning ("Operation failed for package %s - %s", get_name (), e.message);
+            warning ("Operation failed for package %s - %s", name, e.message);
             throw e;
         } finally {
             clean_up_package_operation (success, after_success, after_fail);
@@ -545,11 +549,12 @@ public class AppCenterCore.Package : Object {
         action_cancellable.reset ();
         change_information.start ();
         state = initial_state;
+
+        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     private async bool perform_package_operation () throws GLib.Error {
         unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
 
         switch (state) {
             case State.UPDATING:
@@ -569,7 +574,6 @@ public class AppCenterCore.Package : Object {
                 var success = yield backend.remove_package (this, change_information, action_cancellable);
                 _installed = !success;
                 update_state ();
-                yield update_manager.get_updates ();
                 return success;
             default:
                 return false;
@@ -586,6 +590,8 @@ public class AppCenterCore.Package : Object {
             state = fail_state;
             change_information.cancel ();
         }
+
+        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     public uint cached_search_score = 0;
@@ -613,20 +619,8 @@ public class AppCenterCore.Package : Object {
         return cached_search_score;
     }
 
-    private string? name = null;
-    public string? get_name () {
-        if (name != null) {
-            return name;
-        }
-
-        name = component.get_name ();
-        name = Utils.unescape_markup (name);
-
-        return name;
-    }
-
     public void set_name (string? new_name) {
-        name = Utils.unescape_markup (new_name);
+        _name = Utils.unescape_markup (new_name);
     }
 
     public string? get_description () {
@@ -697,9 +691,11 @@ public class AppCenterCore.Package : Object {
                     bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
                     if (is_bigger || has_better_dpi) {
                         var file = File.new_for_path (_icon.get_filename ());
-                        icon = new FileIcon (file);
-                        current_size = icon_width;
-                        current_scale = icon_scale;
+                        if (file.query_exists ()) {
+                            icon = new FileIcon (file);
+                            current_size = icon_width;
+                            current_scale = icon_scale;
+                        }
                     }
 
                     break;

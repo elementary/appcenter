@@ -17,7 +17,14 @@
 */
 
 public class AppCenter.Widgets.SizeLabel : Gtk.Box {
-    public uint64 size { get; construct; }
+    public uint64 size {
+        set {
+            var human_size = GLib.format_size (value);
+            size_label.label = _("Up to %s").printf (human_size);
+
+            revealer.reveal_child = value > 0;
+        }
+     }
 
     private Gtk.Label size_label;
     private Gtk.Image icon;
@@ -49,15 +56,5 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Box {
         };
 
         append (revealer);
-
-        update (size);
-    }
-
-    public void update (uint64 size = 0) {
-        string human_size = GLib.format_size (size);
-
-        size_label.label = _("Up to %s").printf (human_size);
-
-        revealer.reveal_child = size > 0;
     }
 }

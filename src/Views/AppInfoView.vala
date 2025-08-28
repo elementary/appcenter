@@ -78,7 +78,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         var title_image = new Gtk.Image.from_gicon (package.get_icon (32, scale_factor)) {
             icon_size = LARGE
         };
-        var title_label = new Gtk.Label (package.get_name ()) {
+        var title_label = new Gtk.Label (package.name) {
             ellipsize = END
         };
 
@@ -143,14 +143,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                     text_color = Granite.contrasting_foreground_color (bg_rgba).to_string ();
 
                     accent_css = "@define-color accent_color %s;".printf (primary_color);
-                    accent_provider.load_from_data (accent_css.data);
+                    accent_provider.load_from_string (accent_css);
                 }
             }
 
             var colored_css = BANNER_STYLE_CSS.printf (bg_color, text_color);
             colored_css += accent_css;
 
-            accent_provider.load_from_data (colored_css.data);
+            accent_provider.load_from_string (colored_css);
         } catch (GLib.Error e) {
             critical ("Unable to set accent color: %s", e.message);
         }
@@ -159,7 +159,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             package = package
         };
 
-        var app_title = new Gtk.Label (package.get_name ()) {
+        var app_title = new Gtk.Label (package.name) {
             selectable = true,
             wrap = true,
             xalign = 0
@@ -258,7 +258,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         oars_flowbox = new Gtk.FlowBox () {
             column_spacing = 24,
-            row_spacing = 24,
+            row_spacing = 12,
             selection_mode = Gtk.SelectionMode.NONE
         };
         oars_flowbox.add_css_class ("content-warning-box");
@@ -269,6 +269,22 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         var content_warning_clamp = new Adw.Clamp () {
             child = oars_flowbox_revealer,
+            maximum_size = MAX_WIDTH
+        };
+
+        var supports_flowbox = new Gtk.FlowBox () {
+            column_spacing = 24,
+            row_spacing = 24,
+            selection_mode = NONE
+        };
+        supports_flowbox.add_css_class ("content-warning-box");
+
+        var supports_flowbox_revealer = new Gtk.Revealer () {
+            child = supports_flowbox
+        };
+
+        var supports_clamp = new Adw.Clamp () {
+            child = supports_flowbox_revealer,
             maximum_size = MAX_WIDTH
         };
 
@@ -472,6 +488,33 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             }
         }
 
+        var supports = package_component.get_supports ();
+        for (int i = 0; i < supports.length; i++) {
+            var relation = supports[i];
+
+            string title, description, icon_name;
+
+            switch (relation.get_value_control_kind ()) {
+                // An input method for users to control software
+                case GAMEPAD:
+                    get_gamepad_info_for_kind (relation.get_kind (), out icon_name, out title, out description);
+                    break;
+
+                default:
+                    debug (
+                        "Unhandled control kind %s %s",
+                        relation.get_kind ().to_string (),
+                        relation.get_value_control_kind ().to_string ()
+                    );
+                    continue;
+            }
+
+            supports_flowbox.append (new ContentType (
+                title,
+                description,
+                icon_name
+            ));
+        }
 
         screenshots = package.get_screenshots ();
         if (screenshots.length > 0) {
@@ -608,6 +651,15 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             maximum_size = MAX_WIDTH
         };
 
+        var addon_list = new AddonList (package);
+        addon_list.show_addon.connect ((package) => show_other_package (package));
+
+        var addon_clamp = new Adw.Clamp () {
+            child = addon_list,
+            maximum_size = MAX_WIDTH,
+            orientation = HORIZONTAL
+        };
+
         var link_listbox = new LinkListBox (package_component);
 
         var links_clamp = new Adw.Clamp () {
@@ -630,8 +682,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             box.append (screenshot_stack);
         }
 
+        box.append (supports_clamp);
         box.append (body_clamp);
         box.append (release_carousel);
+        box.append (addon_clamp);
         box.append (links_clamp);
         box.append (author_view);
 
@@ -649,7 +703,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         toolbar_view.add_top_bar (headerbar);
 
         child = toolbar_view;
-        title = package.get_name ();
+        title = package.name;
         tag = package.hash;
 
         package.notify["state"].connect (on_package_state_changed);
@@ -661,6 +715,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         if (oars_flowbox.get_first_child () != null) {
             oars_flowbox_revealer.reveal_child = true;
+        }
+
+        if (supports_flowbox.get_first_child () != null) {
+            supports_flowbox_revealer.reveal_child = true;
         }
 
         origin_dropdown.notify["selected-item"].connect (() => {
@@ -677,7 +735,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     private void on_package_state_changed () {
         if (!package.is_local) {
-            size_label.update ();
+            size_label.size = 0;
         }
 
         switch (package.state) {
@@ -701,14 +759,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             return;
         }
 
-        var size = yield package.get_download_size_including_deps ();
-        size_label.update (size);
+        size_label.size = yield package.get_download_size_including_deps ();
 
         ContentType? runtime_warning = null;
         switch (package.runtime_status) {
             case RuntimeStatus.END_OF_LIFE:
                 runtime_warning = new ContentType (
-                    _("End of Life"),
+                    _("Outdated"),
                     _("May not work as expected or receive security updates"),
                     "flatpak-eol-symbolic"
                 );
@@ -1003,6 +1060,23 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         title.label = package.origin_description;
     }
 
+    private void get_gamepad_info_for_kind (AppStream.RelationKind kind, out string icon_name, out string title, out string description) {
+        switch (kind) {
+            case REQUIRES:
+                title = _("Requires a Controller");
+                break;
+            case RECOMMENDS:
+                title = _("Recommends a Controller");
+                break;
+            default:
+                title = _("Play With a Controller");
+                break;
+        }
+
+        description = _("Such as a PlayStation, Xbox, or 8BitDo controller.");
+        icon_name = "input-gaming-symbolic";
+    }
+
     private class ArrowButton : Gtk.Button {
         public ArrowButton (string icon_name) {
             Object (icon_name: icon_name);
@@ -1030,12 +1104,9 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     class ContentType : Gtk.FlowBoxChild {
         public ContentType (string title, string description, string icon_name) {
-            can_focus = false;
-
             var icon = new Gtk.Image.from_icon_name (icon_name) {
-                halign = Gtk.Align.START,
-                margin_bottom = 6,
-                pixel_size = 32
+                valign = START,
+                icon_size = LARGE
             };
 
             var label = new Gtk.Label (title) {
@@ -1043,6 +1114,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             };
 
             var description_label = new Gtk.Label (description) {
+                hexpand = true,
                 max_width_chars = 25,
                 wrap = true,
                 xalign = 0
@@ -1050,10 +1122,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             description_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
             description_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
+            var label_box = new Gtk.Box (VERTICAL, 3);
+            label_box.append (label);
+            label_box.append (description_label);
+
+            var box = new Gtk.Box (HORIZONTAL, 12);
             box.append (icon);
-            box.append (label);
-            box.append (description_label);
+            box.append (label_box);
 
             child = box;
         }

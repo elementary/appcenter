@@ -9,7 +9,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
     public AppCenterCore.Package package {
         set {
             app_icon.package = value;
-            name_label.label = value.get_name ();
+            name_label.label = value.name;
             summary_label.label = value.get_summary ();
 
             if (action_stack != null) {

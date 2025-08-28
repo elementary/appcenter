@@ -26,10 +26,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
-        var go_back = new SimpleAction ("go-back", null);
-        go_back.activate.connect (() => navigation_view.pop ());
-        add_action (go_back);
-
         var focus_search = new SimpleAction ("search", null);
         focus_search.activate.connect (() => search ());
         add_action (focus_search);
@@ -51,10 +47,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 try {
                     last_installed_package.launch ();
                 } catch (Error e) {
-                    warning ("Failed to launch %s: %s".printf (last_installed_package.get_name (), e.message));
+                    warning ("Failed to launch %s: %s".printf (last_installed_package.name, e.message));
 
                     var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
-                        _("Failed to launch “%s“").printf (last_installed_package.get_name ()),
+                        _("Failed to launch “%s“").printf (last_installed_package.name),
                         e.message,
                         "system-software-install",
                         Gtk.ButtonsType.CLOSE
@@ -160,14 +156,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             installed_view.clear ();
         }
 
-        // We not to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
-        ((AppCenter.App) application).request_background.begin (() => Idle.add_once (() => {
-            unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-            if (backend.working) {
-                AppCenterCore.UpdateManager.get_default ().cancel_updates (false); //Timeouts keep running
-            }
-            destroy ();
-        }));
+        // We have to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
+        ((AppCenter.App) application).request_background.begin (() =>
+            Idle.add_once (() => destroy ())
+        );
 
         return true;
     }
@@ -227,7 +219,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return;
         }
 
-        toast.title = _("“%s” has been installed").printf (package.get_name ());
+        toast.title = _("“%s” has been installed").printf (package.name);
         // Show Open only when a desktop app is installed
         if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
             toast.set_default_action (_("Open"));
