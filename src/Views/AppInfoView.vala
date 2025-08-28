@@ -714,6 +714,15 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             maximum_size = MAX_WIDTH
         };
 
+        var addon_list = new AddonList (package);
+        addon_list.show_addon.connect ((package) => show_other_package (package));
+
+        var addon_clamp = new Adw.Clamp () {
+            child = addon_list,
+            maximum_size = MAX_WIDTH,
+            orientation = HORIZONTAL
+        };
+
         var link_listbox = new LinkListBox (package_component);
 
         var links_clamp = new Adw.Clamp () {
@@ -739,6 +748,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         box.append (supports_clamp);
         box.append (body_clamp);
         box.append (release_carousel);
+        box.append (addon_clamp);
         box.append (links_clamp);
         box.append (author_view);
 
