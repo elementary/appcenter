@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 19:15+0000\n"
+"POT-Creation-Date: 2025-08-22 18:28+0000\n"
 "PO-Revision-Date: 2021-08-01 16:45+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
@@ -59,75 +59,77 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:102 data/appcenter.metainfo.xml.in:120
-#: data/appcenter.metainfo.xml.in:149 data/appcenter.metainfo.xml.in:169
-#: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:198
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:83
+#: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:116
+#: data/appcenter.metainfo.xml.in:134 data/appcenter.metainfo.xml.in:163
+#: data/appcenter.metainfo.xml.in:183 data/appcenter.metainfo.xml.in:198
+#: data/appcenter.metainfo.xml.in:212
 #, fuzzy
 #| msgid "Performance improvements"
 msgid "Other Improvements:"
 msgstr "Rendimentaj plibonigoj"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:104 data/appcenter.metainfo.xml.in:125
-#: data/appcenter.metainfo.xml.in:152 data/appcenter.metainfo.xml.in:174
-#: data/appcenter.metainfo.xml.in:186 data/appcenter.metainfo.xml.in:200
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:139 data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:188 data/appcenter.metainfo.xml.in:200
+#: data/appcenter.metainfo.xml.in:214
 msgid "Updated translations"
 msgstr "Ĝisdatigaj tradukoj"
 
-#: data/appcenter.metainfo.xml.in:116 data/appcenter.metainfo.xml.in:145
-#: data/appcenter.metainfo.xml.in:165 data/appcenter.metainfo.xml.in:193
+#: data/appcenter.metainfo.xml.in:130 data/appcenter.metainfo.xml.in:159
+#: data/appcenter.metainfo.xml.in:179 data/appcenter.metainfo.xml.in:207
 msgid "New features:"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:132
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:122
+#: data/appcenter.metainfo.xml.in:136
 msgid "Automatic app updates by default"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:123
+#: data/appcenter.metainfo.xml.in:137
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:124
+#: data/appcenter.metainfo.xml.in:138
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:161
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:151
+#: data/appcenter.metainfo.xml.in:165
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:181
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:185
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:172
+#: data/appcenter.metainfo.xml.in:186
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:173
+#: data/appcenter.metainfo.xml.in:187
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:195
+#: data/appcenter.metainfo.xml.in:209
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:196
+#: data/appcenter.metainfo.xml.in:210
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -135,8 +137,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:9
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"instali;malinstali;forigi;katalogo;vendejo;aplikaĵoj;ĝisdatigoj;programoj;"
+msgstr "instali;malinstali;forigi;katalogo;vendejo;aplikaĵoj;ĝisdatigoj;programoj;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"

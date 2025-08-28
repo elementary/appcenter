@@ -48,7 +48,7 @@ public class SearchProvider : Object {
                 var meta = new HashTable<string, Variant> (str_hash, str_equal);
                 meta.insert ("id", str);
                 meta.insert ("icon", package.get_icon (32, 1).serialize ());
-                meta.insert ("name", package.get_name ());
+                meta.insert ("name", package.name);
                 meta.insert ("description", package.get_summary ());
 
                 result.add (meta);

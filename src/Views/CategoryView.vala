@@ -98,7 +98,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             show_app (package);
         });
 
-        AppCenterCore.UpdateManager.get_default ().installed_apps_changed.connect (() => {
+        AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
             populate ();
         });
     }
@@ -209,7 +209,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
             return 1;
         }
 #endif
-        return package1.get_name ().collate (package2.get_name ());
+        return package1.name.collate (package2.name);
     }
 
     private class SubcategoryFlowbox : Gtk.Box {

@@ -15,7 +15,23 @@
     <file alias="16x16/categories/link-vcs-symbolic.svg" compressed="true" preprocess="xml-stripblanks">link-vcs.svg</file>
     <file alias="16x16/apps/internet-mail-symbolic.svg"compressed="true" preprocess="xml-stripblanks">internet-mail-symbolic.svg</file>
     <file alias="16x16/apps/web-browser-symbolic.svg" compressed="true" preprocess="xml-stripblanks">web-browser-symbolic.svg</file>
-    <file alias="16x16/mimetypes/text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
+
+    <file alias="48x48/mimetypes/payment-card.svg"compressed="true" preprocess="xml-stripblanks">mimes/48/payment-card.svg</file>
+
+    <file alias="16x16/mimetypes/payment-card.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card.svg</file>
+    <file alias="16x16/mimetypes/payment-card-amex.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card-amex.svg</file>
+    <file alias="16x16/mimetypes/payment-card-diners-club.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card-diners-club.svg</file>
+    <file alias="16x16/mimetypes/payment-card-discover.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card-discover.svg</file>
+    <file alias="16x16/mimetypes/payment-card-jcb.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card-jcb.svg</file>
+    <file alias="16x16/mimetypes/payment-card-mastercard.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card-mastercard.svg</file>
+    <file alias="16x16/mimetypes/payment-card-unionpay.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card-unionpay.svg</file>
+    <file alias="16x16/mimetypes/payment-card-visa.svg"compressed="true" preprocess="xml-stripblanks">mimes/16/payment-card-visa.svg</file>
+
+    <file alias="scalable/mimetypes/payment-card-symbolic.svg" compressed="true" preprocess="xml-stripblanks">mimes/symbolic/payment-card-symbolic.svg</file>
+    <file alias="scalable/mimetypes/text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">mimes/symbolic/text-x-copying-symbolic.svg</file>
+
+    <file alias="scalable/status/license-missing-symbolic.svg" compressed="true" preprocess="xml-stripblanks">status/symbolic/license-missing.svg</file>
+    <file alias="scalable/status/license-warning-symbolic.svg" compressed="true" preprocess="xml-stripblanks">status/symbolic/license-warning.svg</file>
 
     <file alias="scalable/categories/flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>
     <file alias="scalable/categories/sandbox-autostart-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-autostart.svg</file>
