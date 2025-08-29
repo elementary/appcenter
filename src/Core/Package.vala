@@ -102,6 +102,8 @@ public class AppCenterCore.Package : Object {
     public const string RUNTIME_UPDATES_ID = "xxx-runtime-updates";
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
+    public const uint EXACT_MATCH_SCORE = 100;
+    public const uint PARTIAL_MATCH_SCORE = 50;
 
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
@@ -607,12 +609,22 @@ public class AppCenterCore.Package : Object {
         uint score = 0;
         foreach (var query in queries) {
             var query_score = component.search_matches (query);
-
             if (query_score == 0) {
-                score = 0;
-                break;
-            }
+                var id_down = component.name.down ();
+                var name_down = component.name.down ();
+                var query_down = query.down ();
 
+                // Give extra score value if query is a substring
+                // or if it matches exactly the component name or id
+                if (query_down == name_down || id_down == query_down) {
+                    query_score = EXACT_MATCH_SCORE * queries.length;
+                } else if (
+                    name_down.contains (query.down ()) ||
+                    id_down.contains (query.down ())
+                ) {
+                    query_score = PARTIAL_MATCH_SCORE * queries.length;
+                }
+            }
             score += query_score;
         }
         cached_search_score = score / queries.length;
@@ -701,11 +713,11 @@ public class AppCenterCore.Package : Object {
                     break;
 
                 case AppStream.IconKind.UNKNOWN:
-                    warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
+                    //warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
                     break;
 
                 case AppStream.IconKind.REMOTE:
-                    warning ("'%s' is a remote AppStream icon", _icon.get_name ());
+                    //warning ("'%s' is a remote AppStream icon", _icon.get_name ());
                     break;
             }
         }
