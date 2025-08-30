@@ -11,44 +11,68 @@ public class AppCenter.ReleasesDialog : Granite.Dialog {
     }
 
     construct {
-        title = _("What's new in %s").printf (package.name);
+        default_height = 500;
+        default_width = 400;
+        deletable = true;
         modal = true;
+        title = _("What's new in %s").printf (package.name);
 
         var releases_title = new Gtk.Label (title) {
-            margin_end = 12,
-            margin_start = 12,
-            selectable = true,
             width_chars = 20,
             wrap = true
         };
         releases_title.add_css_class ("primary");
 
-        var release_row = new AppCenter.Widgets.ReleaseRow (package.get_newest_release ()) {
-            vexpand = true
+        var headerbar = new Gtk.HeaderBar () {
+            title_widget = releases_title
         };
+
+        var releases_list = new Gtk.ListBox () {
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
+        releases_list.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
+        releases_list.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
 
         var release_scrolled_window = new Gtk.ScrolledWindow () {
-            child = release_row,
+            child = releases_list,
             propagate_natural_height = true,
             propagate_natural_width = true,
-            max_content_width = 400,
-            max_content_height = 500,
         };
-        release_scrolled_window.add_css_class (Granite.STYLE_CLASS_FRAME);
-        release_scrolled_window.add_css_class (Granite.STYLE_CLASS_VIEW);
 
-        var releases_dialog_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
-            vexpand = true
+        var toolbarview = new Adw.ToolbarView () {
+            content = release_scrolled_window
         };
-        releases_dialog_box.append (releases_title);
-        releases_dialog_box.append (release_scrolled_window);
+        toolbarview.add_top_bar (headerbar);
 
-        get_content_area ().append (releases_dialog_box);
+        child = toolbarview;
 
-        add_button (_("Close"), Gtk.ResponseType.CLOSE);
+        var releases = package.component.get_releases_plain ().get_entries ();
 
-        response.connect (() => {
-            close ();
-        });
+        foreach (unowned var release in releases) {
+            if (release.get_version () == null) {
+                releases.remove (release);
+            }
+        }
+
+        if (releases.length > 0) {
+            releases.sort_with_data ((a, b) => {
+                return b.vercmp (a);
+            });
+
+            foreach (unowned var release in releases) {
+                var release_row = new Widgets.ReleaseRow (release) {
+
+                };
+                release_row.add_css_class (Granite.STYLE_CLASS_CARD);
+
+                releases_list.append (release_row);
+
+                if (package.installed && AppStream.vercmp_simple (release.get_version (), package.get_version ()) <= 0) {
+                    break;
+                }
+            }
+        }
     }
 }
