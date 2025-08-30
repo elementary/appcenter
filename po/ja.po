@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-28 19:04+0000\n"
-"PO-Revision-Date: 2025-08-24 07:55+0000\n"
+"PO-Revision-Date: 2025-08-30 01:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: src/MainWindow.vala:94
 msgid "Network Settings…"
-msgstr "ネットワークの設定…"
+msgstr "ネットワーク設定…"
 
 #: src/MainWindow.vala:102
 msgid "Running in Demo Mode"
@@ -948,7 +948,7 @@ msgstr "アップデート"
 
 #: src/Widgets/AddonList.vala:16
 msgid "Add-Ons"
-msgstr ""
+msgstr "拡張機能"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
