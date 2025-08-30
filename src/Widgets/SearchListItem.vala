@@ -63,7 +63,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
         summary_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         screenshot_picture = new AppCenter.Screenshot () {
-            height_request = 180,
+            height_request = SCREENSHOT_HEIGHT
         };
 
         attach (app_icon, 0, 0, 1, 2);
