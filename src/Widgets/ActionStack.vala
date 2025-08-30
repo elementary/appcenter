@@ -190,7 +190,7 @@ public class AppCenter.ActionStack : Gtk.Box {
         try {
             package.launch ();
         } catch (Error e) {
-            warning ("Failed to launch %s: %s".printf (package.get_name (), e.message));
+            warning ("Failed to launch %s: %s".printf (package.name, e.message));
         }
     }
 
@@ -210,9 +210,7 @@ public class AppCenter.ActionStack : Gtk.Box {
                 }
             }
         } else {
-            if (yield package.install ()) {
-                AppCenterCore.UpdateManager.get_default ().add_app.begin (package);
-            }
+            yield package.install ();
         }
     }
 }

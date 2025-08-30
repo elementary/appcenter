@@ -39,14 +39,8 @@ appinfoview {
         margin: rem(12px) rem(12px) 0;
     }
 
-    .screenshot {
-        background: #{'@selected_bg_color'};
-        border-radius: rem(6px);
-        color: #{'@selected_fg_color'};
-        font-size: 1.5rem;
-        font-weight: bold;
+    screenshot {
         margin: rem(12px);
-        padding: rem(12px);
     }
 
     .content-box {

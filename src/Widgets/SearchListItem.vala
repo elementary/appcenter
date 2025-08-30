@@ -6,8 +6,8 @@
 public class AppCenter.SearchListItem : Gtk.Grid {
     public AppCenterCore.Package package {
         set {
-            icon_image.gicon = value.get_icon (icon_image.pixel_size, scale_factor);
-            name_label.label = value.get_name ();
+            app_icon.package = value;
+            name_label.label = value.name;
             summary_label.label = value.get_summary ();
 
             if (action_stack != null) {
@@ -20,7 +20,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
     }
 
     private AppCenter.ActionStack action_stack;
-    private Gtk.Image icon_image;
+    private AppCenter.AppIcon app_icon;
     private Gtk.Label name_label;
     private Gtk.Label summary_label;
 
@@ -29,9 +29,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
     }
 
     construct {
-        icon_image = new Gtk.Image () {
-            pixel_size = 48
-        };
+        app_icon = new AppIcon (48);
 
         name_label = new Gtk.Label (null) {
             valign = END,
@@ -48,7 +46,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
         summary_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
         summary_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        attach (icon_image, 0, 0, 1, 2);
+        attach (app_icon, 0, 0, 1, 2);
         attach (name_label, 1, 0);
         attach (summary_label, 1, 1);
     }

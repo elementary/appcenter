@@ -19,7 +19,7 @@ jobs:
       image: ghcr.io/elementary/docker:${{ matrix.version }}
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Install Dependencies
       run: |
         apt update
@@ -48,6 +48,6 @@ jobs:
       image: valalang/lint
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Lint
       run: io.elementary.vala-lint -d .

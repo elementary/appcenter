@@ -51,6 +51,8 @@ public class AppCenterCore.FlatpakPackage : Package {
 public class AppCenterCore.FlatpakBackend : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_flush_needed ();
+    public signal void on_metadata_remote_preprocessed (string remote_title);
+    public signal void package_list_changed ();
 
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
     private const string FLATPAK_METADATA_GROUP_APPLICATION = "Application";
@@ -72,6 +74,57 @@ public class AppCenterCore.FlatpakBackend : Object {
 
     public Job.Type job_type { get; protected set; }
     public bool working { public get; protected set; }
+
+    private ListStore _packages;
+
+    private Gtk.SortListModel _sorted_packages;
+    public ListModel packages { get { return _sorted_packages; } }
+
+    private Gtk.FilterListModel _updated_packages;
+    public ListModel updated_packages { get { return _updated_packages; } }
+
+    public bool has_updated_packages { get { return _updated_packages.n_items > 0; } }
+
+    // Right now only for runtime updates
+    private GLib.ListStore additional_updates;
+
+    private Gtk.SortListModel _updatable_packages;
+    public ListModel updatable_packages { get { return _updatable_packages; } }
+
+    public bool has_updatable_packages { get { return _updatable_packages.n_items > 0; } }
+    public uint n_updatable_packages { get { return _updatable_packages.n_items; } }
+    public uint n_unpaid_updatable_packages {
+        get {
+            uint n = 0;
+            for (uint i = 0; i < updatable_packages.get_n_items (); i++) {
+                var package = (Package) updatable_packages.get_item (i);
+                if (package.should_pay) {
+                    n++;
+                }
+            }
+            return n;
+        }
+    }
+    public uint64 updates_size {
+        get {
+            uint64 size = 0;
+            for (uint i = 0; i < updatable_packages.get_n_items (); i++) {
+                var package = (Package) updatable_packages.get_item (i);
+                size += package.change_information.size;
+            }
+            return size;
+        }
+    }
+
+    public bool up_to_date {
+        get {
+            return !has_updatable_packages && (!working || job_type != GET_UPDATES && job_type != REFRESH_CACHE
+                && job_type != GET_INSTALLED_PACKAGES && job_type != GET_PREPARED_PACKAGES
+                && job_type != GET_DOWNLOAD_SIZE);
+        }
+    }
+
+    private Package runtime_updates;
 
     private string user_metadata_path;
     private string system_metadata_path;
@@ -162,6 +215,84 @@ public class AppCenterCore.FlatpakBackend : Object {
     }
 
     construct {
+        notify["working"].connect (() => Idle.add_once (() => notify_property ("up-to-date")));
+
+        // Our listmodel structure including the updates:
+        //                                     addtional updates => flatten the two models => filter updatable packages => sort updating packages to the top
+        //                                                         /\
+        //                                                         ||
+        // all packages => sort by name => filter installed packages => filter updated packages
+
+        var runtime_icon = new AppStream.Icon ();
+        runtime_icon.set_name ("application-vnd.flatpak");
+        runtime_icon.set_kind (AppStream.IconKind.STOCK);
+
+        var runtime_updates_component = new AppStream.Component ();
+        runtime_updates_component.id = AppCenterCore.Package.RUNTIME_UPDATES_ID;
+        runtime_updates_component.name = _("Runtime Updates");
+        runtime_updates_component.summary = _("Updates to app runtimes");
+        runtime_updates_component.add_icon (runtime_icon);
+
+        runtime_updates = new AppCenterCore.Package (runtime_updates_component);
+
+        additional_updates = new GLib.ListStore (typeof (Package));
+        additional_updates.append (runtime_updates);
+
+        _packages = new ListStore (typeof (FlatpakPackage));
+        _packages.items_changed.connect (() => package_list_changed ());
+
+        var sorter = new Gtk.StringSorter (new Gtk.PropertyExpression (typeof (Package), null, "name"));
+        _sorted_packages = new Gtk.SortListModel (_packages, sorter);
+
+        var installed_expression = new Gtk.PropertyExpression (typeof (Package), null, "installed");
+        var installed_filter = new Gtk.BoolFilter (installed_expression);
+        var installed_packages = new Gtk.FilterListModel (_sorted_packages, installed_filter);
+
+        var update_available_expression = new Gtk.PropertyExpression (typeof (Package), null, "update-available");
+        var updating_expression = new Gtk.PropertyExpression (typeof (Package), null, "is-updating");
+
+        var updated_filter = new Gtk.BoolFilter (update_available_expression) {
+            invert = true
+        };
+        var not_updating_filter = new Gtk.BoolFilter (updating_expression) {
+            invert = true
+        };
+
+        var updated_every_filter = new Gtk.EveryFilter ();
+        updated_every_filter.append (updated_filter);
+        updated_every_filter.append (not_updating_filter);
+
+        _updated_packages = new Gtk.FilterListModel (installed_packages, updated_every_filter);
+        _updated_packages.items_changed.connect (() => notify_property ("has-updated-packages"));
+
+        var updates_models = new GLib.ListStore (typeof (ListModel));
+        updates_models.append (additional_updates);
+        updates_models.append (installed_packages);
+
+        var flatten_model = new Gtk.FlattenListModel (updates_models);
+
+        var updatable_filter = new Gtk.BoolFilter (update_available_expression);
+        var updating_filter = new Gtk.BoolFilter (updating_expression);
+
+        var updatable_any_filter = new Gtk.AnyFilter ();
+        updatable_any_filter.append (updatable_filter);
+        updatable_any_filter.append (updating_filter);
+
+        var updatable_packages = new Gtk.FilterListModel (flatten_model, updatable_any_filter);
+
+        var updating_sorter = new Gtk.NumericSorter (updating_expression) {
+            sort_order = DESCENDING
+        };
+
+        _updatable_packages = new Gtk.SortListModel (updatable_packages, updating_sorter);
+        _updatable_packages.items_changed.connect (() => {
+            notify_property ("has-updatable-packages");
+            notify_property ("n-updatable-packages");
+            notify_property ("n-unpaid-updatable-packages");
+            notify_property ("updates-size");
+            notify_property ("up-to-date");
+        });
+
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
         user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
@@ -265,6 +396,24 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         reload_appstream_pool ();
+        get_installed_applications.begin (null);
+        get_updates.begin (null);
+    }
+
+    public void notify_package_changed (Package package) {
+        GLib.ListStore store;
+        if (package.is_runtime_updates) {
+            store = additional_updates;
+        } else {
+            store = _packages;
+        }
+
+        uint pos;
+        if (store.find (package, out pos)) {
+            store.items_changed (pos, 1, 1);
+        } else {
+            warning ("Package %s not found in the package list", package.name);
+        }
     }
 
     private void set_actions_enabled (bool working) {
@@ -283,7 +432,8 @@ public class AppCenterCore.FlatpakBackend : Object {
             warning ("Unable to refresh cache after external change: %s", e.message);
         }
 
-        yield UpdateManager.get_default ().get_updates ();
+        yield get_installed_applications (null);
+        yield get_updates (null);
     }
 
     static construct {
@@ -365,12 +515,16 @@ public class AppCenterCore.FlatpakBackend : Object {
         job.results_ready ();
     }
 
-    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+    private async void get_installed_applications (Cancellable? cancellable = null) {
         var job_args = new GetInstalledPackagesArgs ();
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
-        return (Gee.Collection<Package>)job.result.get_object ();
+        var installed_applications = (Gee.Collection<Package>) job.result.get_object ();
+
+        foreach (var package in installed_applications) {
+            package.mark_installed ();
+        }
     }
 
     private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
@@ -386,8 +540,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
             var package = package_list[bundle_id];
             if (package != null) {
-                package.mark_installed ();
-                package.update_state ();
                 installed_apps.add (package);
             }
         }
@@ -635,6 +787,18 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         return packages;
+    }
+
+    public ListModel get_addons (Package package) {
+        // We resolve addons ourselves because having the pool do it for every app
+        // more than doubles the load time (from 6 to 13 seconds on my machine). It is
+        // also not needed since we only need addons for the info view and can do it just in time.
+        // Also get_extends is usually only a single item whereas get_addons
+        // can be quite a few so we get O(n) instead of O(n * m) for matching the components
+        // to their package.
+        return new Gtk.FilterListModel (_packages, new AddonFilter ((FlatpakPackage) package)) {
+            incremental = true,
+        };
     }
 
     public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
@@ -1135,6 +1299,12 @@ public class AppCenterCore.FlatpakBackend : Object {
             } else {
                 continue;
             }
+
+            // Make sure we emit the signal on the main thread since UI is connected to this
+            Idle.add (() => {
+                on_metadata_remote_preprocessed (remote.get_title ());
+                return Source.REMOVE;
+            });
         }
     }
 
@@ -1199,7 +1369,31 @@ public class AppCenterCore.FlatpakBackend : Object {
             });
         }
 
+        var removed = new Gee.HashSet<Package> ();
+        removed.add_all (package_list.values);
+        removed.remove_all (new_package_list.values);
+
+        var added = new Gee.HashSet<Package> ();
+        added.add_all (new_package_list.values);
+        added.remove_all (package_list.values);
+
         package_list = new_package_list;
+
+        // Wrap in Idle since we can be in the worker thread and changing the package liststore
+        // will trigger signals that update the UI
+        Idle.add (() => update_package_store (removed, added));
+    }
+
+    private bool update_package_store (Gee.Collection<Package> removed, Gee.Collection<Package> added) {
+        foreach (var package in removed) {
+            uint pos;
+            if (_packages.find (package, out pos)) {
+                _packages.remove (pos);
+            }
+        }
+
+        _packages.splice (_packages.n_items, 0, added.to_array ());
+        return Source.REMOVE;
     }
 
     private bool validate (AppStream.Component component) {
@@ -1219,7 +1413,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         return "%s/%s/%s".printf (installation, origin, bundle_id);
     }
 
-    public static bool get_package_list_key_parts (string key, out bool? system, out string? origin, out string? bundle_id) {
+    private static bool get_package_list_key_parts (string key, out bool? system, out string? origin, out string? bundle_id) {
         system = null;
         origin = null;
         bundle_id = null;
@@ -1900,17 +2094,71 @@ public class AppCenterCore.FlatpakBackend : Object {
         return;
     }
 
-    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+    private void fill_runtime_updates () {
+        if (!runtime_updates.update_available) {
+            return;
+        }
+
+        string runtime_desc = "";
+
+        foreach (var update in runtime_updates.change_information.updatable_packages) {
+            string bundle_id;
+            if (!get_package_list_key_parts (update, null, null, out bundle_id)) {
+                continue;
+            }
+
+            Flatpak.Ref flatpak_ref;
+            try {
+                flatpak_ref = Flatpak.Ref.parse (bundle_id);
+            } catch (Error e) {
+                warning ("Error parsing flatpak bundle ID: %s", e.message);
+                continue;
+            }
+
+            runtime_desc += Markup.printf_escaped (
+                " • %s\n\t%s\n",
+                flatpak_ref.get_name (),
+                _("Version: %s").printf (flatpak_ref.get_branch ())
+            );
+        }
+
+        var latest_version = ngettext (
+            "%u runtime with updates",
+            "%u runtimes with updates",
+            runtime_updates.change_information.updatable_packages.size
+        ).printf (runtime_updates.change_information.updatable_packages.size);
+        runtime_updates.latest_version = latest_version;
+        runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
+    }
+
+    public async void get_updates (Cancellable? cancellable = null) {
         var job_args = new GetUpdatesArgs ();
         job_args.cancellable = cancellable;
 
+        // Clear any packages previously marked as updatable
+        for (int i = (int) n_updatable_packages - 1; i >= 0; i--) {
+            var package = (Package) updatable_packages.get_item (i);
+            package.change_information.clear_update_info ();
+            package.update_state ();
+        }
+
         var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
 
-        return (Gee.ArrayList<string>)job.result.get_object ();
-    }
+        foreach (var update in (Gee.ArrayList<string>)job.result.get_object ()) {
+            var package = package_list[update] ?? runtime_updates;
 
-    public Package? lookup_package_by_id (string id) {
-        return package_list[id];
+            package.change_information.updatable_packages.add (update);
+
+            try {
+                package.change_information.size += yield get_download_size (package, cancellable, true);
+            } catch (Error e) {
+                warning ("Error getting download size for package %s: %s", update, e.message);
+            }
+
+            package.update_state ();
+        }
+
+        fill_runtime_updates ();
     }
 
     private void repair_internal (Job job) {

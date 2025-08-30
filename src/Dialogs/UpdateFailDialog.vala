@@ -37,7 +37,7 @@ public class UpdateFailDialog : Granite.MessageDialog {
 
         response.connect ((response_id) => {
             if (response_id == TRY_AGAIN_RESPONSE_ID) {
-                AppCenterCore.UpdateManager.get_default ().update_cache.begin (true);
+                AppCenterCore.UpdateManager.get_default ().refresh.begin ();
             }
             destroy ();
         });

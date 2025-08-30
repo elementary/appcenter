@@ -1,4 +1,4 @@
-# TomiOhl <ohlslager.tom@gmail.com>, 2021, 2022, 2023, 2024.
+# TomiOhl <ohlslager.tom@gmail.com>, 2021, 2022, 2023, 2024, 2025.
 # Sziráki Bálint <blntsziraki@gmail.com>, 2021.
 # Adam Szatyin <szatyinadam@gmail.com>, 2021.
 # György Viktor <wickdj@gmail.com>, 2024.
@@ -6,35 +6,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 19:15+0000\n"
-"PO-Revision-Date: 2024-06-26 16:16+0000\n"
+"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"PO-Revision-Date: 2025-05-24 11:42+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Hungarian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:28 src/MainWindow.vala:45 src/Views/Homepage.vala:277
+#: src/Application.vala:26 src/MainWindow.vala:41 src/Views/Homepage.vala:193
 msgid "AppCenter"
 msgstr "Appközpont"
 
-#: src/Application.vala:78
+#: src/Application.vala:76
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Nem sikerült elemezni a(z) %s médiatípust"
 
-#: src/Application.vala:97
+#: src/Application.vala:95
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "A(z) '%s' hivatkozás nem található, keresés helyette"
 
-#: src/Application.vala:256
+#: src/Application.vala:254
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -43,46 +43,114 @@ msgstr ""
 "tovább fog futni akkor is, ha ablaka bezárásra kerül, hogy továbbra is "
 "tudjon automatikusan frissítéseket keresni és telepíteni."
 
-#: src/Application.vala:339
+#: src/Application.vala:316
 msgid "The app has been installed"
 msgstr "Az alkalmazás telepítésre került"
 
-#: src/Application.vala:340 src/MainWindow.vala:230
+#: src/Application.vala:317 src/MainWindow.vala:222
 #, c-format
 msgid "“%s” has been installed"
 msgstr "A(z) \"%s\" telepítésre került"
 
-#: src/MainWindow.vala:57
+#: src/MainWindow.vala:53
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" indítása sikertelen"
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:83
 msgid "Network Not Available."
 msgstr "A hálózat nem érhető el."
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:84
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "Az alkalmazások böngészéséhez vagy telepítéséhez csatlakozzon az internetre."
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:94
 msgid "Network Settings…"
 msgstr "Hálózati beállítások…"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:102
 msgid "Running in Demo Mode"
 msgstr "Demó módban való futás"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:103
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Az alkalmazások böngészéséhez vagy telepítéséhez telepítse az %s-t."
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:233 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:225 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Megnyitás"
+
+#: src/Core/CategoryManager.vala:20
+msgid "Accessories"
+msgstr "Kellékek"
+
+#: src/Core/CategoryManager.vala:21
+msgid "Audio"
+msgstr "Hang"
+
+#: src/Core/CategoryManager.vala:23
+msgid "Communication"
+msgstr "Kommunikáció"
+
+#: src/Core/CategoryManager.vala:33
+msgid "Development"
+msgstr "Fejlesztés"
+
+#: src/Core/CategoryManager.vala:44
+msgid "Education"
+msgstr "Oktatás"
+
+#: src/Core/CategoryManager.vala:46
+msgid "Finance"
+msgstr "Pénzügy"
+
+#: src/Core/CategoryManager.vala:51
+msgid "Fun & Games"
+msgstr "Szórakozás és játékok"
+
+#: src/Core/CategoryManager.vala:69
+msgid "Graphics"
+msgstr "Grafika"
+
+#: src/Core/CategoryManager.vala:79
+msgid "Internet"
+msgstr "Internet"
+
+#: src/Core/CategoryManager.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "Matematika, tudomány és technika"
+
+#: src/Core/CategoryManager.vala:104
+msgid "Media Production"
+msgstr "Tartalomkészítés"
+
+#: src/Core/CategoryManager.vala:112
+msgid "Office"
+msgstr "Iroda"
+
+#: src/Core/CategoryManager.vala:120
+msgid "System"
+msgstr "Rendszer"
+
+#: src/Core/CategoryManager.vala:125
+msgid "Universal Access"
+msgstr "Kisegítő lehetőségek"
+
+#: src/Core/CategoryManager.vala:127
+msgid "Video"
+msgstr "Videó"
+
+#: src/Core/CategoryManager.vala:133
+msgid "Writing & Language"
+msgstr "Írás és nyelv"
+
+#: src/Core/CategoryManager.vala:144
+msgid "Privacy & Security"
+msgstr "Adatvédelem és biztonság"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -92,10 +160,10 @@ msgstr "Várakozás"
 msgid "Finished"
 msgstr "Befejeződött"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1492
-#: src/Core/FlatpakBackend.vala:1516 src/Core/FlatpakBackend.vala:1624
-#: src/Core/FlatpakBackend.vala:1648 src/Core/FlatpakBackend.vala:1806
-#: src/Core/FlatpakBackend.vala:1824
+#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1686
+#: src/Core/FlatpakBackend.vala:1710 src/Core/FlatpakBackend.vala:1818
+#: src/Core/FlatpakBackend.vala:1842 src/Core/FlatpakBackend.vala:2000
+#: src/Core/FlatpakBackend.vala:2018
 msgid "Cancelling"
 msgstr "Megszakítás"
 
@@ -108,23 +176,48 @@ msgstr "Indítás"
 msgid "%s (system-wide)"
 msgstr "%s (rendszerszintű)"
 
-#: src/Core/FlatpakBackend.vala:109
+#: src/Core/FlatpakBackend.vala:162
 msgid "package operations are being performed"
 msgstr "csomagműveletek vannak folyamatban"
 
-#: src/Core/FlatpakBackend.vala:1483
+#: src/Core/FlatpakBackend.vala:232
+msgid "Runtime Updates"
+msgstr "Futttatókörnyezetek frissítései"
+
+#: src/Core/FlatpakBackend.vala:233
+msgid "Updates to app runtimes"
+msgstr "Az alkalmazásfuttató környezetek frissítései"
+
+#: src/Core/FlatpakBackend.vala:1677
 msgid "Installing"
 msgstr "Telepítés"
 
-#: src/Core/FlatpakBackend.vala:1615
+#: src/Core/FlatpakBackend.vala:1809
 msgid "Uninstalling"
 msgstr "Eltávolítás"
 
-#: src/Core/FlatpakBackend.vala:1797
+#: src/Core/FlatpakBackend.vala:1991
 msgid "Updating"
 msgstr "Frissítés"
 
-#: src/Core/FlatpakBackend.vala:1987
+#: src/Core/FlatpakBackend.vala:2121
+#, c-format
+msgid "Version: %s"
+msgstr "Verzió: %s"
+
+#: src/Core/FlatpakBackend.vala:2126
+#, c-format
+msgid "%u runtime with updates"
+msgid_plural "%u runtimes with updates"
+msgstr[0] "%u frissíthető futtatókörnyezet"
+msgstr[1] "%u frissíthető futtatókörnyezet"
+
+#: src/Core/FlatpakBackend.vala:2131
+#, c-format
+msgid "%s:"
+msgstr "%s:"
+
+#: src/Core/FlatpakBackend.vala:2235
 #, c-format
 msgid "%s (local)"
 msgstr "%s (helyi)"
@@ -162,7 +255,7 @@ msgstr "Javítás…"
 msgid "%s Developers"
 msgstr "%s fejlesztői"
 
-#: src/Core/Package.vala:512
+#: src/Core/Package.vala:516
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Az Appközpontban nincs telepítettre állítva: %s"
@@ -285,38 +378,13 @@ msgstr ""
 "A megadott kártya tesztkártya. Kérjük, használjon valódi kártyát a "
 "folytatáshoz."
 
-#: src/Core/UpdateManager.vala:51
-msgid "Runtime Updates"
-msgstr "Futttatókörnyezetek frissítései"
-
-#: src/Core/UpdateManager.vala:52
-msgid "Updates to app runtimes"
-msgstr "Az alkalmazásfuttató környezetek frissítései"
-
-#: src/Core/UpdateManager.vala:120
-#, c-format
-msgid "Version: %s"
-msgstr "Verzió: %s"
-
-#: src/Core/UpdateManager.vala:139
-#, c-format
-msgid "%u runtime with updates"
-msgid_plural "%u runtimes with updates"
-msgstr[0] "%u frissíthető futtatókörnyezet"
-msgstr[1] "%u frissíthető futtatókörnyezet"
-
-#: src/Core/UpdateManager.vala:144
-#, c-format
-msgid "%s:"
-msgstr "%s:"
-
-#: src/Core/UpdateManager.vala:161
+#: src/Core/UpdateManager.vala:145
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Frissítés érhető el"
 msgstr[1] "Frissítések érhetők el"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:147
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -502,168 +570,164 @@ msgid "Refresh Updates"
 msgstr "Frissítések keresése"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:173
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:222
+#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:180
+#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Keresés"
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:236
 msgid "Illicit Substances"
 msgstr "Tiltott szerek"
 
-#: src/Views/AppInfoView.vala:265
+#: src/Views/AppInfoView.vala:237
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Alkohol, narkotikumok vagy dohánytermékek említése vagy jelenléte"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:242
 msgid "Sex & Nudity"
 msgstr "Szex és meztelenség"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:243
 msgid "Adult nudity or sexual themes"
 msgstr "Meztelen felnőttek vagy szexuális témák"
 
-#: src/Views/AppInfoView.vala:276
+#: src/Views/AppInfoView.vala:248
 msgid "Offensive Language"
 msgstr "Sértő nyelvhasználat"
 
-#: src/Views/AppInfoView.vala:277
+#: src/Views/AppInfoView.vala:249
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Káromkodás, kirekesztő fogalmazásmód vagy felnőtthumor"
 
-#: src/Views/AppInfoView.vala:282
+#: src/Views/AppInfoView.vala:254
 msgid "Gambling"
 msgstr "Szerencsejátékok"
 
-#: src/Views/AppInfoView.vala:283
+#: src/Views/AppInfoView.vala:255
 msgid "Realistic or participatory gambling"
 msgstr "Valósághű vagy részvételre alkalmat adó szerencsejátékozás"
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:295
 msgid "Made for elementary OS"
 msgstr "elementary OS-hez készítve"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:296
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 "Jóváhagyva az elementary által biztonsági, adatvédelmi és "
 "rendszerintegrációi szempontból"
 
-#: src/Views/AppInfoView.vala:331
+#: src/Views/AppInfoView.vala:319
 msgid "May Not Be Translated"
 msgstr "Lehetséges, hogy nincs lefordítva"
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:320
 msgid "This app does not provide language information"
 msgstr "Az alkalmazás nem közöl nyelvinformációkat"
 
-#: src/Views/AppInfoView.vala:339
+#: src/Views/AppInfoView.vala:327
 msgid "Not Translated"
 msgstr "Nincs lefordítva"
 
-#: src/Views/AppInfoView.vala:340
+#: src/Views/AppInfoView.vala:328
 msgid "This app is not available in your language"
 msgstr "Az alkalmazás nem érhető el az Ön nyelvén"
 
-#: src/Views/AppInfoView.vala:347
+#: src/Views/AppInfoView.vala:335
 msgid "Not Fully Translated"
 msgstr "Nincs teljesen lefordítva"
 
-#: src/Views/AppInfoView.vala:348
+#: src/Views/AppInfoView.vala:336
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Az alkalmazás %i%%-ban van lefordítva az Ön nyelvére"
 
-#: src/Views/AppInfoView.vala:372
+#: src/Views/AppInfoView.vala:360
 msgid "Conflict"
 msgstr "Konfliktus"
 
-#: src/Views/AppInfoView.vala:373
+#: src/Views/AppInfoView.vala:361
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Nem biztonságos helyzetek vagy agresszív konfliktusok ábrázolása"
 
-#: src/Views/AppInfoView.vala:386
+#: src/Views/AppInfoView.vala:374
 msgid "Violence"
 msgstr "Erőszak"
 
-#: src/Views/AppInfoView.vala:391
+#: src/Views/AppInfoView.vala:379
 msgid "Fantasy Violence"
 msgstr "Kitalált erőszak"
 
-#: src/Views/AppInfoView.vala:396
+#: src/Views/AppInfoView.vala:384
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Megjelenített erőszak, vérontás vagy halál"
 
-#: src/Views/AppInfoView.vala:440
+#: src/Views/AppInfoView.vala:428
 msgid "Multiplayer"
 msgstr "Többjátékos"
 
-#: src/Views/AppInfoView.vala:441
+#: src/Views/AppInfoView.vala:429
 msgid "Online play with other people"
 msgstr "Online játék más emberekkel"
 
-#: src/Views/AppInfoView.vala:457
+#: src/Views/AppInfoView.vala:445
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Nem moderált hang, videó vagy szöveges üzenetek más emberekkel"
 
-#: src/Views/AppInfoView.vala:459
+#: src/Views/AppInfoView.vala:447
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Moderált hang, videó vagy szöveges üzenetek más emberekkel"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:451
 msgid "Online Interactions"
 msgstr "Online kapcsolatok"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:461
 msgid "Location Sharing"
 msgstr "Helyzetmegosztás"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:462
 msgid "Other people can see your real-world location"
 msgstr "Más emberek láthatják a valós helyzetét"
 
-#: src/Views/AppInfoView.vala:486
+#: src/Views/AppInfoView.vala:474
 msgid "Collects anonymous usage data"
 msgstr "Névtelen használati adatokat gyűjt"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:477
 msgid "Collects usage data that could be used to identify you"
 msgstr "Identifikálásra alkalmas használati adatokat gyűjt"
 
-#: src/Views/AppInfoView.vala:494
+#: src/Views/AppInfoView.vala:482
 msgid "Info Sharing"
 msgstr "Információmegosztás"
 
-#: src/Views/AppInfoView.vala:653
+#: src/Views/AppInfoView.vala:669
 msgid "Screenshot Not Available"
 msgstr "Nem érthető el képernyőkép"
 
-#: src/Views/AppInfoView.vala:681
+#: src/Views/AppInfoView.vala:697
 msgid "What's New:"
 msgstr "Újdonságok:"
 
-#: src/Views/AppInfoView.vala:801
-msgid "End of Life"
-msgstr "Életciklus vége"
-
-#: src/Views/AppInfoView.vala:802
-msgid "May not work as expected or receive security updates"
-msgstr "Nem feltétlenül működik megfelelően vagy kap biztonsági frissítéseket"
-
-#: src/Views/AppInfoView.vala:808
+#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
 msgid "Outdated"
 msgstr "Elavult"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:832
+msgid "May not work as expected or receive security updates"
+msgstr "Nem feltétlenül működik megfelelően vagy kap biztonsági frissítéseket"
+
+#: src/Views/AppInfoView.vala:839
 msgid "May not work as expected or support the latest features"
 msgstr "Nem feltétlenül működik megfelelően vagy támogatja az újabb funkciókat"
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:847
 msgid "Unstable"
 msgstr "Nem stabil"
 
-#: src/Views/AppInfoView.vala:818
+#: src/Views/AppInfoView.vala:848
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -672,28 +736,28 @@ msgstr ""
 "Egy nem stabil %s-verzióhoz készítve; tartalmazhat alapvető problémákat. Nem "
 "ajánlott éles rendszeren használni."
 
-#: src/Views/AppInfoView.vala:831
+#: src/Views/AppInfoView.vala:861
 msgid "Insecure Sandbox"
 msgstr "Nem biztonságos sandbox"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:862
 msgid "Can ignore or modify its own system permissions"
 msgstr ""
 "Figyelmen kívül hagyhatja vagy módosíthatja a saját rendszerjogosultságait"
 
-#: src/Views/AppInfoView.vala:841
+#: src/Views/AppInfoView.vala:871
 msgid "System Folder Access"
 msgstr "Hozzáférés a rendszermappákhoz"
 
-#: src/Views/AppInfoView.vala:842
+#: src/Views/AppInfoView.vala:872
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "Beleértve mindenki Saját mappáját, de a rendszer belsőségeit nem"
 
-#: src/Views/AppInfoView.vala:849
+#: src/Views/AppInfoView.vala:879
 msgid "Home Folder Access"
 msgstr "Hozzáférés a saját mappához"
 
-#: src/Views/AppInfoView.vala:850
+#: src/Views/AppInfoView.vala:880
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -701,88 +765,96 @@ msgstr ""
 "Beleértve az összes dokumentumot, letöltést, zenét, képet, videót és "
 "bármelyik rejtett mappát"
 
-#: src/Views/AppInfoView.vala:859
+#: src/Views/AppInfoView.vala:889
 msgid "Legacy Autostart"
 msgstr "Elavult automatikus indulás"
 
-#: src/Views/AppInfoView.vala:860
+#: src/Views/AppInfoView.vala:890
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Automatikusan elindulhat és futhat a háttérben kérdés nélkül"
 
-#: src/Views/AppInfoView.vala:869
+#: src/Views/AppInfoView.vala:899
 msgid "Location Access"
 msgstr "Helyhozzáférés"
 
-#: src/Views/AppInfoView.vala:870
+#: src/Views/AppInfoView.vala:900
 msgid "Can see your precise location at any time without asking"
 msgstr "Láthatja a pontos tartózkodási helyét bármikor, kérdés nélkül"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:909
 msgid "Legacy Notifications"
 msgstr "Elavult értesítések"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:910
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Az értesítések nem biztos, hogy személyre szabhatók lesznek és az \"Egyéb\" "
 "kategóriában jelenhetnek meg"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:919
 msgid "System Settings Access"
 msgstr "Hozzáférés a rendszerbeállításokhoz"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:920
 msgid "Can read and modify system settings"
 msgstr "Olvashatja és módosíthatja a rendszerbeállításokat"
 
-#: src/Views/AppListUpdateView.vala:47
-msgid "Checking for Updates"
-msgstr "Frissítések keresése"
+#: src/Views/AppInfoView.vala:1129
+msgid "Requires a Controller"
+msgstr "Kontrollert igényel"
 
-#: src/Views/AppListUpdateView.vala:48
-msgid "Downloading a list of available updates to the installed apps"
-msgstr "A telepített alkalmazások frissítéseinek listájának letöltése"
+#: src/Views/AppInfoView.vala:1132
+msgid "Recommends a Controller"
+msgstr "Kontrollerrel ajánlott"
 
-#: src/Views/AppListUpdateView.vala:74
-msgid "Update All"
-msgstr "Összes frissítése"
+#: src/Views/AppInfoView.vala:1135
+msgid "Play With a Controller"
+msgstr "Játék kontrollerrel"
 
-#: src/Views/AppListUpdateView.vala:97
-msgid "Up to Date"
-msgstr "Naprakész"
+#: src/Views/AppInfoView.vala:1139
+msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
+msgstr "Mint például PlayStation-, Xbox-, vagy 8BitDo-kontrollerek."
 
-#: src/Views/AppListUpdateView.vala:125
-msgid "Automatically Update Free & Purchased Apps"
-msgstr "Az ingyenes és a megvásárolt alkalmazások automatikus frissítése"
-
-#: src/Views/AppListUpdateView.vala:126
-msgid "Apps being tried for free will not update automatically"
-msgstr ""
-"Az ingyenesen kipróbált alkalmazások nem fognak automatikusan frissülni"
-
-#: src/Views/AppListUpdateView.vala:130
-msgid "Check for Updates"
-msgstr "Frissítések keresése"
-
-#: src/Views/AppListUpdateView.vala:166
-msgid "Settings"
-msgstr "Beállítások"
-
-#. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:194
-msgctxt "view"
-msgid "Installed"
-msgstr "Telepítve"
-
-#: src/Views/AppListUpdateView.vala:275
+#: src/Views/AppListUpdateView.vala:52
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u frissítés érhető el"
 msgstr[1] "%u frissítés érhető el"
 
-#: src/Views/AppListUpdateView.vala:282
+#: src/Views/AppListUpdateView.vala:82
+msgid "Update All"
+msgstr "Összes frissítése"
+
+#: src/Views/AppListUpdateView.vala:107
+msgid "Up to Date"
+msgstr "Naprakész"
+
+#: src/Views/AppListUpdateView.vala:135
+msgid "Automatically Update Free & Purchased Apps"
+msgstr "Az ingyenes és a megvásárolt alkalmazások automatikus frissítése"
+
+#: src/Views/AppListUpdateView.vala:136
+msgid "Apps being tried for free will not update automatically"
+msgstr ""
+"Az ingyenesen kipróbált alkalmazások nem fognak automatikusan frissülni"
+
+#: src/Views/AppListUpdateView.vala:140
+msgid "Check for Updates"
+msgstr "Frissítések keresése"
+
+#: src/Views/AppListUpdateView.vala:171
+msgid "Settings"
+msgstr "Beállítások"
+
+#. / TRANSLATORS: the name of the Installed Apps view
+#: src/Views/AppListUpdateView.vala:201
+msgctxt "view"
+msgid "Installed"
+msgstr "Telepítve"
+
+#: src/Views/AppListUpdateView.vala:245
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Minden naprakész. Legutóbb ellenőrizve %s."
@@ -792,7 +864,7 @@ msgstr "Minden naprakész. Legutóbb ellenőrizve %s."
 msgid "Other Apps by %s"
 msgstr "%s további alkalmazásai"
 
-#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:61
+#: src/Views/CategoryView.vala:35 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Nemrég frissített"
 
@@ -804,88 +876,24 @@ msgstr "Fizetős alkalmazások"
 msgid "Free Apps"
 msgstr "Ingyenes alkalmazások"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Kategóriák"
 
-#: src/Views/Homepage.vala:110
-msgid "Accessories"
-msgstr "Kellékek"
-
-#: src/Views/Homepage.vala:111
-msgid "Audio"
-msgstr "Hang"
-
-#: src/Views/Homepage.vala:112
-msgid "Communication"
-msgstr "Kommunikáció"
-
-#: src/Views/Homepage.vala:121
-msgid "Development"
-msgstr "Fejlesztés"
-
-#: src/Views/Homepage.vala:131
-msgid "Education"
-msgstr "Oktatás"
-
-#: src/Views/Homepage.vala:132
-msgid "Finance"
-msgstr "Pénzügy"
-
 #: src/Views/Homepage.vala:137
-msgid "Graphics"
-msgstr "Grafika"
-
-#: src/Views/Homepage.vala:146
-msgid "Internet"
-msgstr "Internet"
-
-#: src/Views/Homepage.vala:150
-msgid "Math, Science, & Engineering"
-msgstr "Matematika, tudomány és technika"
-
-#: src/Views/Homepage.vala:169
-msgid "Media Production"
-msgstr "Tartalomkészítés"
-
-#: src/Views/Homepage.vala:176
-msgid "Office"
-msgstr "Iroda"
-
-#: src/Views/Homepage.vala:183
-msgid "System"
-msgstr "Rendszer"
-
-#: src/Views/Homepage.vala:187
-msgid "Universal Access"
-msgstr "Kisegítő lehetőségek"
-
-#: src/Views/Homepage.vala:188
-msgid "Video"
-msgstr "Videó"
-
-#: src/Views/Homepage.vala:193
-msgid "Writing & Language"
-msgstr "Írás és nyelv"
-
-#: src/Views/Homepage.vala:203
-msgid "Privacy & Security"
-msgstr "Adatvédelem és biztonság"
-
-#: src/Views/Homepage.vala:245
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Frissítések és telepített alkalmazások"
 
-#: src/Views/Homepage.vala:264
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Kezdőlap"
 
-#: src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:194
 msgid "Browse and manage apps"
 msgstr "Alkalmazások böngészése és kezelése"
 
-#: src/Views/Homepage.vala:279
+#: src/Views/Homepage.vala:195
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -898,18 +906,6 @@ msgstr ""
 "előtt tartó és biztonságos élményért. Böngésszen kategóriák szerint, vagy "
 "keressen és fedezzen fel új alkalmazásokat. Az Appközpont segítségével "
 "mindig a legújabb és legjobb verzióra frissítheti rendszerét."
-
-#: src/Views/Homepage.vala:519
-msgid "Fun & Games"
-msgstr "Szórakozás és játékok"
-
-#: src/Views/Homepage.vala:544
-msgid "Fun &"
-msgstr "Szórakozás és"
-
-#: src/Views/Homepage.vala:550
-msgid "Games"
-msgstr "Játékok"
 
 #: src/Views/SearchView.vala:42 src/Views/SearchView.vala:152
 msgid "Flathub"
@@ -948,7 +944,7 @@ msgstr "A(z) %s keresése"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
-msgstr ""
+msgstr "Alkalmazáson belüli vásárlások"
 
 #: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
 msgid "Free"
@@ -961,6 +957,10 @@ msgstr "Telepítés"
 #: src/Widgets/ActionStack.vala:161
 msgid "Update"
 msgstr "Frissítés"
+
+#: src/Widgets/AddonList.vala:16
+msgid "Add-Ons"
+msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
@@ -998,51 +998,79 @@ msgstr "Visszajelzés küldése"
 msgid "Contact The Developer"
 msgstr "A fejlesztő felkeresése"
 
-#: src/Widgets/LinkListBox.vala:106
+#: src/Widgets/LinkListBox.vala:109
 msgid "Sponsor"
 msgstr "Támogatás"
 
-#: src/Widgets/LinkListBox.vala:116
+#: src/Widgets/LinkListBox.vala:119
 msgid "Contribute Translations"
 msgstr "Közreműködés a fordításban"
 
-#: src/Widgets/LinkListBox.vala:126
+#: src/Widgets/LinkListBox.vala:129
 msgid "Get The Source Code"
 msgstr "Forráskód"
 
-#: src/Widgets/LinkListBox.vala:136
+#: src/Widgets/LinkListBox.vala:139
 msgid "Get Involved"
+msgstr "Vegyen részt"
+
+#: src/Widgets/LinkListBox.vala:205
+#, fuzzy
+#| msgid "Unknown License"
+msgid "No License"
+msgstr "Ismeretlen licenc"
+
+#: src/Widgets/LinkListBox.vala:206 src/Widgets/LinkListBox.vala:265
+#, fuzzy, c-format
+#| msgid "Getting information"
+msgid "Contact %s for licensing information"
+msgstr "Információszerzés"
+
+#. TRANSLATORS: delimiter for a list of software licenses
+#: src/Widgets/LinkListBox.vala:218
+msgid ", "
 msgstr ""
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Widgets/LinkListBox.vala:199
-msgid "Public Domain"
-msgstr "Közkincs"
+#: src/Widgets/LinkListBox.vala:219
+msgid "Mixed License"
+msgstr ""
 
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:202
-msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://hu.wikipedia.org/wiki/K%C3%B6zkincs"
-
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Widgets/LinkListBox.vala:207
+#: src/Widgets/LinkListBox.vala:233
 msgid "Free Software"
 msgstr "Szabad szoftver"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Widgets/LinkListBox.vala:210
+#: src/Widgets/LinkListBox.vala:237
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.hu.html"
 
-#: src/Widgets/LinkListBox.vala:214
+#: src/Widgets/LinkListBox.vala:243 src/Widgets/LinkListBox.vala:288
 msgid "Proprietary"
 msgstr "Tulajdonjoggal rendelkező"
 
-#: src/Widgets/LinkListBox.vala:217
-msgid "Unknown License"
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:247
+#, fuzzy
+#| msgid "https://www.gnu.org/philosophy/free-sw"
+msgid "https://www.gnu.org/proprietary/proprietary.en.html"
+msgstr "https://www.gnu.org/philosophy/free-sw.hu.html"
+
+#: src/Widgets/LinkListBox.vala:253 src/Widgets/LinkListBox.vala:286
+msgid "Public Domain"
+msgstr "Közkincs"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Widgets/LinkListBox.vala:256
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr "https://hu.wikipedia.org/wiki/K%C3%B6zkincs"
+
+#: src/Widgets/LinkListBox.vala:261
+#, fuzzy
+#| msgid "Unknown License"
+msgid "Custom License"
 msgstr "Ismeretlen licenc"
 
-#: src/Widgets/LinkListBox.vala:273
+#: src/Widgets/LinkListBox.vala:344
 msgid "Payment provided by Stripe"
 msgstr "Fizetés a Stripe-on keresztül"
 
@@ -1062,19 +1090,19 @@ msgstr "Ismeretlen verzió"
 msgid "No description available"
 msgstr "Nem érhető el leírás"
 
-#: src/Widgets/SizeLabel.vala:32
-msgid "Actual Download Size Likely to Be Smaller"
-msgstr "A valós letöltési méret valószínűleg kisebb"
-
-#: src/Widgets/SizeLabel.vala:33
-msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
-"Az alkalmazásnak csak a szükséges részei és frissítései kerülnek letöltésre."
-
-#: src/Widgets/SizeLabel.vala:59
+#: src/Widgets/SizeLabel.vala:23
 #, c-format
 msgid "Up to %s"
 msgstr "Legfeljebb %s"
+
+#: src/Widgets/SizeLabel.vala:39
+msgid "Actual Download Size Likely to Be Smaller"
+msgstr "A valós letöltési méret valószínűleg kisebb"
+
+#: src/Widgets/SizeLabel.vala:40
+msgid "Only the parts of apps and updates that are needed will be downloaded."
+msgstr ""
+"Az alkalmazásnak csak a szükséges részei és frissítései kerülnek letöltésre."
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
@@ -1088,6 +1116,21 @@ msgstr "%s újdonságai"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Bezárás"
+
+#~ msgid "End of Life"
+#~ msgstr "Életciklus vége"
+
+#~ msgid "Checking for Updates"
+#~ msgstr "Frissítések keresése"
+
+#~ msgid "Downloading a list of available updates to the installed apps"
+#~ msgstr "A telepített alkalmazások frissítéseinek listájának letöltése"
+
+#~ msgid "Fun &"
+#~ msgstr "Szórakozás és"
+
+#~ msgid "Games"
+#~ msgstr "Játékok"
 
 #~ msgid "Extensions:"
 #~ msgstr "Bővítmények:"
@@ -1143,9 +1186,6 @@ msgstr "Bezárás"
 
 #~ msgid "Querying"
 #~ msgstr "Lekérdezés"
-
-#~ msgid "Getting information"
-#~ msgstr "Információszerzés"
 
 #~ msgid "Removing packages"
 #~ msgstr "Csomagok eltávolítása"

@@ -3,6 +3,7 @@ src/AsyncMutex.vala
 src/MainWindow.vala
 src/SuspendControl.vala
 src/Utils.vala
+src/Core/CategoryManager.vala
 src/Core/ChangeInformation.vala
 src/Core/FlatpakBackend.vala
 src/Core/Job.vala
@@ -26,6 +27,7 @@ src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/SearchView.vala
 src/Widgets/ActionStack.vala
+src/Widgets/AddonList.vala
 src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/HumbleButton.vala

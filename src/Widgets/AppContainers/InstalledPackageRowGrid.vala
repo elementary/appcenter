@@ -36,12 +36,12 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     }
 
     construct {
-        app_icon_overlay.margin_end = 12;
+        app_icon.margin_end = 12;
 
         action_stack.updates_view = true;
         action_stack.margin_start = 12;
 
-        var package_name = new Gtk.Label (package.get_name ()) {
+        var package_name = new Gtk.Label (package.name) {
             wrap = true,
             max_width_chars = 25,
             valign = END,
@@ -75,7 +75,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         var grid = new Gtk.Grid () {
             row_spacing = 3
         };
-        grid.attach (app_icon_overlay, 0, 0, 1, 2);
+        grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (app_version, 1, 1);
         grid.attach (release_button_revealer, 2, 0, 1, 2);
@@ -139,7 +139,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         }
 
         construct {
-            title = _("What's new in %s").printf (package.get_name ());
+            title = _("What's new in %s").printf (package.name);
             modal = true;
 
             var releases_title = new Gtk.Label (title) {

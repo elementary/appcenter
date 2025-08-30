@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "AppCenter"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:12
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "Browse and manage apps"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:14
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:19
+msgid "Discover new apps"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:23
+msgid "Stay up to date"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:27
+msgid "Pay what you can to support developers"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:62
+msgid "elementary, Inc."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:97 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:135 data/appcenter.metainfo.xml.in:164
+#: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:199
+#: data/appcenter.metainfo.xml.in:213
+msgid "Other Improvements:"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:140 data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:189 data/appcenter.metainfo.xml.in:201
+#: data/appcenter.metainfo.xml.in:215
+msgid "Updated translations"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:160
+#: data/appcenter.metainfo.xml.in:180 data/appcenter.metainfo.xml.in:208
+msgid "New features:"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:133
+msgid "Manage autostart in System Settings → Applications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:137
+msgid "Automatic app updates by default"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:138
+msgid "OS Updates have moved to System Settings"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:139
+msgid ""
+"Badge apps made for elementary OS instead of badging apps from other remotes"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:162
+msgid "Warn when apps use legacy Autostart, Notifications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:166
+msgid "Fix flickering on AppInfo views when getting install size"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:182
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:186
+msgid "Tighten up spacing and margins in App Info views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:187
+msgid "Show a placeholder banner on the home page when loading"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:188
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:210
+msgid "Offer a Repair option if Flatpak updates fail"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:211
+msgid ""
+"Show a message in the updates view when up to date, including when updates "
+"were last checked"
+msgstr ""
+
+#: data/io.elementary.appcenter.desktop.in.in:9
+msgid "install;uninstall;remove;catalogue;store;apps;software;"
+msgstr ""
+
+#: data/io.elementary.appcenter.desktop.in.in:25
+msgid "Check for Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.policy.in:10
+msgid "Repair software sources"
+msgstr ""
+
+#: data/io.elementary.appcenter.policy.in:11
+msgid "Authentication is required to repair software sources"
+msgstr ""

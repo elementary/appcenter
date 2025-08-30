@@ -94,7 +94,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
     private void show_stripe_dialog () {
         var stripe_dialog = new Widgets.StripeDialog (
             amount,
-            package.get_name (),
+            package.name,
             package.component.id,
             package.get_payments_key ()
         ) {

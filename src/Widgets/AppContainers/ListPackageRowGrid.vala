@@ -25,7 +25,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     }
 
     construct {
-        var package_name = new Gtk.Label (package.get_name ()) {
+        var package_name = new Gtk.Label (package.name) {
             ellipsize = Pango.EllipsizeMode.END,
             lines = 2,
             max_width_chars = 1,
@@ -55,7 +55,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             column_spacing = 12,
             row_spacing = 3
         };
-        grid.attach (app_icon_overlay, 0, 0, 1, 2);
+        grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);

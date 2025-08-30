@@ -17,8 +17,6 @@ public class AppCenter.App : Gtk.Application {
         { null }
     };
 
-    private const int SECONDS_AFTER_NETWORK_UP = 60;
-
     public static bool show_updates;
     public static bool silent;
     public static string? local_path;
@@ -139,7 +137,7 @@ public class AppCenter.App : Gtk.Application {
         refresh_action = new SimpleAction ("refresh", null);
         refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
-            update_manager.update_cache.begin (true);
+            update_manager.refresh.begin ();
         });
 
         repair_action = new SimpleAction ("repair", null);
@@ -163,10 +161,18 @@ public class AppCenter.App : Gtk.Application {
             });
         });
 
+        var update_all_action = new SimpleAction ("update-all", null);
+        update_all_action.set_enabled (update_manager.can_update_all);
+        update_manager.notify["can-update-all"].connect (() => update_all_action.set_enabled (update_manager.can_update_all));
+        update_all_action.activate.connect (() => {
+            AppCenterCore.UpdateManager.get_default ().update_all.begin ();
+        });
+
         add_action (quit_action);
         add_action (show_updates_action);
         add_action (refresh_action);
         add_action (repair_action);
+        add_action (update_all_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
         set_accels_for_action ("app.refresh", {"<Control>r"});
 
@@ -181,8 +187,6 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-
         if (first_activation) {
             first_activation = false;
             hold ();
@@ -190,13 +194,6 @@ public class AppCenter.App : Gtk.Application {
 
         if (silent) {
             request_background.begin ();
-
-            NetworkMonitor.get_default ().network_changed.connect ((available) => {
-                schedule_cache_update (!available);
-            });
-
-            // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
-            update_manager.update_cache.begin (false);
             silent = false;
             return;
         }
@@ -213,7 +210,8 @@ public class AppCenter.App : Gtk.Application {
 
         if (active_window == null) {
             // Force a Flatpak cache refresh when the window is created, so we get new apps
-            update_manager.update_cache.begin (true);
+            // TODO: Think about this, maybe only refresh cache?
+            AppCenterCore.UpdateManager.get_default ().refresh.begin ();
 
             var main_window = new MainWindow (this);
             add_window (main_window);
@@ -304,27 +302,6 @@ public class AppCenter.App : Gtk.Application {
         base.dbus_unregister (connection, object_path);
     }
 
-    private uint cache_update_timeout_id = 0;
-    private void schedule_cache_update (bool cancel = false) {
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-
-        if (cache_update_timeout_id > 0) {
-            Source.remove (cache_update_timeout_id);
-            cache_update_timeout_id = 0;
-        }
-
-        if (cancel) {
-            update_manager.cancel_updates (true); // Also stops timeouts.
-            return;
-        } else {
-            cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
-                update_manager.update_cache.begin ();
-                cache_update_timeout_id = 0;
-                return false;
-            });
-        }
-    }
-
     private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
         switch (operation) {
             case AppCenterCore.Package.State.INSTALLING:
@@ -337,7 +314,7 @@ public class AppCenter.App : Gtk.Application {
                         }
 
                         var notification = new Notification (_("The app has been installed"));
-                        notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
+                        notification.set_body (_("“%s” has been installed").printf (package.name));
                         notification.set_icon (new ThemedIcon ("process-completed"));
                         notification.set_default_action ("app.open-application");
 
