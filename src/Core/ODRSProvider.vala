@@ -127,11 +127,11 @@ public class AppCenter.ODRSProvider : Object {
     *
     * Based on https://gitlab.gnome.org/GNOME/gnome-software/-/blob/main/lib/gs-utils.c#L248
     */
-    private static string? get_user_hash () throws Error {
+    private static string get_user_hash () throws Error {
         string contents;
         size_t length;
 
-        if (FileUtils.get_contents ("/etc/machine-id", out contents, out length)) {
+        if (!(FileUtils.get_contents ("/etc/machine-id", out contents, out length))) {
             return null;
         }
 
