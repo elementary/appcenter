@@ -101,7 +101,13 @@ public class AppCenter.ODRSProvider : Object {
         for (int i = 0; i < reviews.get_length (); i++) {
             var element = reviews.get_element (i);
 
-            sum_rating += element.get_object ().get_int_member ("rating");
+            var object = element.get_object ();
+            if (object == null || !object.has_member ("rating")) {
+                n_ratings = n_ratings - 1;
+                continue;
+            }
+
+            sum_rating += object.get_int_member ("rating");
         }
 
         avg = sum_rating / n_ratings;
