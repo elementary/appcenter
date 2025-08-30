@@ -6,7 +6,10 @@
 public class AppCenter.ODRSProvider : Object {
     private const string REVIEW_SERVER = "https://odrs.gnome.org/1.0/reviews/api";
 
-    public static async void fetch_reviews_for_app (string app_id) {
+    public static async void fetch_ratings_for_app (string app_id, out int64 avg, out uint n_ratings) {
+        avg = -1;
+        n_ratings = 0;
+
         string user_hash;
         try {
             user_hash = get_user_hash ();
@@ -58,60 +61,50 @@ public class AppCenter.ODRSProvider : Object {
             bytes = yield session.send_and_read_async (message, GLib.Priority.DEFAULT, null);
         } catch (Error e) {
             critical (e.message);
+            avg = -1;
             return;
         }
 
         var output = (string) bytes.get_data ();
         if (output == null) {
-            critical ("no output");
+            critical ("no ODRS output");
             return;
         }
-
-        critical (output);
 
         var parser = new Json.Parser ();
         try {
             parser.load_from_data (output);
         } catch (Error e) {
-            critical (e.message);
+            critical ("ODRS: %s", e.message);
             return;
         }
 
         var root = parser.get_root ();
         if (root == null) {
-            critical ("no root");
+            critical ("no ODRS root");
             return;
         }
 
         if (root.get_node_type () != ARRAY) {
-            critical ("no array");
+            critical ("no ODRS array");
             return;
         }
 
+        int64 sum_rating = 0;
         var reviews = root.get_array ();
+
+        n_ratings = reviews.get_length ();
+        if (n_ratings <= 0) {
+            return;
+        }
+
         for (int i = 0; i < reviews.get_length (); i++) {
             var element = reviews.get_element (i);
 
-            var rating = element.get_object ().get_int_member ("rating");
-            var score = element.get_object ().get_int_member ("score");
-
-            // from http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
-            var karma_up = element.get_object ().get_int_member ("karma_up");
-            var karma_down = element.get_object ().get_int_member ("karma_down");
-            double priority = 0;
-            if (karma_up > 0 || karma_down > 0) {
-                priority = (
-                    (karma_up + 1.9208) / (karma_up + karma_down) - 1.96 * Math.sqrt (
-                        (karma_up * karma_down) / (karma_up + karma_down) + 0.9604
-                    ) / (karma_up + karma_down)
-                ) / (1 + 3.8416 / (karma_up + karma_down));
-                priority *= 100;
-            }
-            critical (app_id);
-            critical (rating.to_string ());
-            critical (score.to_string ());
-            critical (priority.to_string ());
+            sum_rating += element.get_object ().get_int_member ("rating");
         }
+
+        avg = sum_rating / n_ratings;
     }
 
    /*
@@ -127,7 +120,7 @@ public class AppCenter.ODRSProvider : Object {
     *
     * Based on https://gitlab.gnome.org/GNOME/gnome-software/-/blob/main/lib/gs-utils.c#L248
     */
-    private static string get_user_hash () throws Error {
+    private static string? get_user_hash () throws Error {
         string contents;
         size_t length;
 

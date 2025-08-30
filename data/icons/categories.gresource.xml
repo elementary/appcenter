@@ -32,6 +32,7 @@
 
     <file alias="scalable/status/license-missing-symbolic.svg" compressed="true" preprocess="xml-stripblanks">status/symbolic/license-missing.svg</file>
     <file alias="scalable/status/license-warning-symbolic.svg" compressed="true" preprocess="xml-stripblanks">status/symbolic/license-warning.svg</file>
+    <file alias="scalable/status/appcenter-rating-symbolic.svg" compressed="true" preprocess="xml-stripblanks">status/symbolic/rating.svg</file>
 
     <file alias="scalable/categories/flatpak-eol-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/old-runtime.svg</file>
     <file alias="scalable/categories/sandbox-autostart-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/sandbox-autostart.svg</file>
