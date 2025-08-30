@@ -75,6 +75,7 @@
       <issues>
         <issue url="https://github.com/elementary/appcenter/issues/695">Handle multiple licenses</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2241">Warn about proprietary software</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2269">Add icon for Education category</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2303">Support addons</issue>
       </issues>
     </release>
