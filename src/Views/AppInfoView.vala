@@ -33,13 +33,11 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
     private ActionStack action_stack;
     private GLib.ListStore origin_liststore;
-    private Granite.HeaderLabel whats_new_label;
     private Gtk.CssProvider accent_provider;
     private Gtk.DropDown origin_dropdown;
     private Gtk.Label app_subtitle;
     private Gtk.Overlay screenshot_overlay;
     private Gtk.Revealer origin_combo_revealer;
-    private Adw.Carousel release_carousel;
     private Adw.Carousel screenshot_carousel;
     private Adw.Clamp screenshot_not_found_clamp;
     private Gtk.Stack screenshot_stack;
@@ -631,42 +629,47 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             xalign = 0
         };
 
-        whats_new_label = new Granite.HeaderLabel (_("What's New:")) {
-            visible = false
-        };
-
-        release_carousel = new Adw.Carousel () {
-            allow_mouse_drag = true,
-            allow_long_swipes = true,
-            allow_scroll_wheel = false
-        };
-
-        var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 24);
+        var content_box = new Gtk.Box (VERTICAL, 24);
         content_box.append (app_description);
-        content_box.append (whats_new_label);
         content_box.add_css_class ("content-box");
+
+        var newest_release = package.get_newest_release ();
+        if (newest_release != null) {
+            var whats_new_label = new Granite.HeaderLabel (_("What's New"));
+
+            var release_row = new Widgets.ReleaseRow (newest_release);
+
+            var releases_button = new Gtk.Button.with_label (_("Version History…")) {
+                margin_top = 6
+            };
+
+            var whats_new_box = new Gtk.Box (VERTICAL, 6);
+            whats_new_box.append (whats_new_label);
+            whats_new_box.append (release_row);
+            whats_new_box.append (releases_button);
+
+            content_box.append (whats_new_box);
+
+            releases_button.clicked.connect (() => {
+                var releases_dialog = new ReleasesDialog (package) {
+                    transient_for = ((Gtk.Application) Application.get_default ()).active_window
+                };
+                releases_dialog.present ();
+            });
+        }
+
+        var addon_list = new AddonList (package);
+        addon_list.show_addon.connect ((package) => show_other_package (package));
+
+        var link_listbox = new LinkListBox (package_component);
+
+        content_box.append (addon_list);
+        content_box.append (link_listbox);
 
         var body_clamp = new Adw.Clamp () {
             child = content_box,
             maximum_size = MAX_WIDTH
         };
-
-        var addon_list = new AddonList (package);
-        addon_list.show_addon.connect ((package) => show_other_package (package));
-
-        var addon_clamp = new Adw.Clamp () {
-            child = addon_list,
-            maximum_size = MAX_WIDTH,
-            orientation = HORIZONTAL
-        };
-
-        var link_listbox = new LinkListBox (package_component);
-
-        var links_clamp = new Adw.Clamp () {
-            child = link_listbox,
-            maximum_size = MAX_WIDTH
-        };
-        links_clamp.add_css_class ("content-box");
 
         var author_view = new AuthorView (package, MAX_WIDTH);
 
@@ -684,9 +687,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         box.append (supports_clamp);
         box.append (body_clamp);
-        box.append (release_carousel);
-        box.append (addon_clamp);
-        box.append (links_clamp);
         box.append (author_view);
 
         var scrolled = new Gtk.ScrolledWindow () {
@@ -893,40 +893,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 if (description != null) {
                     app_description.label = description;
                 }
-                return false;
-            });
-
-            get_app_download_size.begin ();
-
-            Idle.add (() => {
-                var releases = package.component.get_releases_plain ().get_entries ();
-
-                foreach (unowned var release in releases) {
-                    if (release.get_version () == null) {
-                        releases.remove (release);
-                    }
-                }
-
-                if (releases.length > 0) {
-                    releases.sort_with_data ((a, b) => {
-                        return b.vercmp (a);
-                    });
-
-                    foreach (unowned var release in releases) {
-                        var release_row = new Widgets.ReleaseRow (release);
-                        release_row.add_css_class (Granite.STYLE_CLASS_CARD);
-                        release_row.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-                        release_carousel.append (release_row);
-
-                        if (package.installed && AppStream.vercmp_simple (release.get_version (), package.get_version ()) <= 0) {
-                            break;
-                        }
-                    }
-
-                    whats_new_label.visible = true;
-                }
-
                 return false;
             });
 

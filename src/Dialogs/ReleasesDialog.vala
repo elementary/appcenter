@@ -62,10 +62,7 @@ public class AppCenter.ReleasesDialog : Granite.Dialog {
             });
 
             foreach (unowned var release in releases) {
-                var release_row = new Widgets.ReleaseRow (release) {
-
-                };
-                release_row.add_css_class (Granite.STYLE_CLASS_CARD);
+                var release_row = new Widgets.ReleaseRow (release);
 
                 releases_list.append (release_row);
 
