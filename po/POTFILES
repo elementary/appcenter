@@ -27,6 +27,7 @@ src/Views/CategoryView.vala
 src/Views/Homepage.vala
 src/Views/SearchView.vala
 src/Widgets/ActionStack.vala
+src/Widgets/AddonList.vala
 src/Widgets/Banner.vala
 src/Widgets/CardNumberEntry.vala
 src/Widgets/HumbleButton.vala

@@ -703,9 +703,11 @@ public class AppCenterCore.Package : Object {
                     bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
                     if (is_bigger || has_better_dpi) {
                         var file = File.new_for_path (_icon.get_filename ());
-                        icon = new FileIcon (file);
-                        current_size = icon_width;
-                        current_scale = icon_scale;
+                        if (file.query_exists ()) {
+                            icon = new FileIcon (file);
+                            current_size = icon_width;
+                            current_scale = icon_scale;
+                        }
                     }
 
                     break;
@@ -902,6 +904,67 @@ public class AppCenterCore.Package : Object {
         }
 
         return null;
+    }
+
+    public GenericArray<AppStream.Screenshot> get_screenshots () {
+        bool has_matching_environment = false;
+        bool has_matching_style = false;
+        var desktop_environment = Environment.get_variable ("XDG_SESSION_DESKTOP");
+        var prefer_dark_style = Gtk.Settings.get_default ().gtk_application_prefer_dark_theme;
+        var desktop_style = prefer_dark_style? AppStream.ColorSchemeKind.DARK.to_string () : AppStream.ColorSchemeKind.LIGHT.to_string ();
+
+        component.sort_screenshots (desktop_environment, desktop_style.to_string (), false);
+        var all_screenshots = component.get_screenshots_all ();
+
+        // This first pass is to gather if we have matching style and matching
+        // desktop environments, this is useful if we need to fall back to any
+        // screnshot if none of the conditions are fullfiled
+        foreach (unowned var screenshot in all_screenshots) {
+            var environment_id = screenshot.get_environment ();
+            if (environment_id != null) {
+                var environment_split = environment_id.split (":", 2);
+                var screenshot_environment = environment_split[0];
+                var screenshot_style = environment_split[1] ?? AppStream.ColorSchemeKind.LIGHT.to_string ();
+
+                if (screenshot_environment == desktop_environment) {
+                    has_matching_environment = true;
+                }
+
+                if (screenshot_style == desktop_style) {
+                    has_matching_style = true;
+                }
+            }
+        }
+
+        var screenshots = new GenericArray<AppStream.Screenshot> ();
+
+        foreach (unowned var screenshot in all_screenshots) {
+            var environment_id = screenshot.get_environment ();
+            if (environment_id == null) {
+                screenshots.add (screenshot);
+                continue;
+            }
+
+            var environment_split = environment_id.split (":", 2);
+            var screenshot_environment = environment_split[0];
+            var screenshot_style = environment_split[1] ?? AppStream.ColorSchemeKind.LIGHT.to_string ();
+
+            var same_environment = screenshot_environment == desktop_environment;
+            var same_style = screenshot_style == desktop_style;
+
+            if (same_environment && same_style) {
+                screenshots.add (screenshot);
+            } else if (same_environment && !same_style && !has_matching_style) {
+                screenshots.add (screenshot);
+            } else if (!same_environment && same_style && !has_matching_environment) {
+                screenshots.add (screenshot);
+            } else if (!has_matching_environment && !has_matching_style) {
+                screenshots.add (screenshot);
+                continue;
+            }
+        }
+
+        return screenshots;
     }
 
     public async uint64 get_download_size_including_deps () {

@@ -516,70 +516,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             ));
         }
 
-        bool has_matching_environment = false;
-        bool has_matching_style = false;
-        var desktop_environment = Environment.get_variable ("XDG_SESSION_DESKTOP");
-        var prefer_dark_style = Gtk.Settings.get_default ().gtk_application_prefer_dark_theme;
-        var desktop_style = prefer_dark_style
-            ? AppStream.ColorSchemeKind.DARK.to_string ()
-            : AppStream.ColorSchemeKind.LIGHT.to_string ();
-
-            package_component.sort_screenshots (desktop_environment,
-                desktop_style.to_string (),
-                false);
-
-                var all_screenshots = package_component.get_screenshots_all ();
-
-                // This first pass is to gather if we have matching style and matching
-                // desktop environments, this is useful if we need to fall back to any
-                // screnshot if none of the conditions are fullfiled
-                all_screenshots.foreach ((screenshot) => {
-                    var environment_id = screenshot.get_environment ();
-                    if (environment_id != null) {
-                        var environment_split = environment_id.split (":", 2);
-                        var screenshot_environment = environment_split[0];
-                        var screenshot_style = environment_split[1]
-                        ?? AppStream.ColorSchemeKind.LIGHT.to_string ();
-
-                        if (screenshot_environment == desktop_environment) {
-                            has_matching_environment = true;
-                        }
-
-                        if (screenshot_style == desktop_style) {
-                            has_matching_style = true;
-                        }
-                    }
-                });
-
-        screenshots = new GenericArray<AppStream.Screenshot> ();
-
-        all_screenshots.foreach ((screenshot) => {
-            var environment_id = screenshot.get_environment ();
-            if (environment_id == null) {
-                screenshots.add (screenshot);
-                return;
-            }
-
-            var environment_split = environment_id.split (":", 2);
-            var screenshot_environment = environment_split[0];
-            var screenshot_style = environment_split[1]
-                ?? AppStream.ColorSchemeKind.LIGHT.to_string ();
-
-            var same_environment = screenshot_environment == desktop_environment;
-            var same_style = screenshot_style == desktop_style;
-
-            if (same_environment && same_style) {
-                screenshots.add (screenshot);
-            } else if (same_environment && !same_style && !has_matching_style) {
-                screenshots.add (screenshot);
-            } else if (!same_environment && same_style && !has_matching_environment) {
-                screenshots.add (screenshot);
-            } else if (!has_matching_environment && !has_matching_style) {
-                screenshots.add (screenshot);
-                return;
-            }
-        });
-
+        screenshots = package.get_screenshots ();
         if (screenshots.length > 0) {
             screenshot_carousel = new Adw.Carousel () {
                 allow_mouse_drag = true,
@@ -714,6 +651,15 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             maximum_size = MAX_WIDTH
         };
 
+        var addon_list = new AddonList (package);
+        addon_list.show_addon.connect ((package) => show_other_package (package));
+
+        var addon_clamp = new Adw.Clamp () {
+            child = addon_list,
+            maximum_size = MAX_WIDTH,
+            orientation = HORIZONTAL
+        };
+
         var link_listbox = new LinkListBox (package_component);
 
         var links_clamp = new Adw.Clamp () {
@@ -739,6 +685,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         box.append (supports_clamp);
         box.append (body_clamp);
         box.append (release_carousel);
+        box.append (addon_clamp);
         box.append (links_clamp);
         box.append (author_view);
 
