@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:04+0000\n"
 "PO-Revision-Date: 2025-05-16 12:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
@@ -706,35 +706,35 @@ msgstr "Recopila dades d’ús que es podrien usar per identificar-vos."
 msgid "Info Sharing"
 msgstr "Compartició d'informació"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:606
 msgid "Screenshot Not Available"
 msgstr "Captura no disponible"
 
-#: src/Views/AppInfoView.vala:697
+#: src/Views/AppInfoView.vala:634
 msgid "What's New:"
 msgstr "Què hi ha de nou:"
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:768 src/Views/AppInfoView.vala:775
 msgid "Outdated"
 msgstr "No actualitzat"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:769
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "És possible que no funcioni com s'espera o que no rebi actualitzacions de "
 "seguretat."
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:776
 msgid "May not work as expected or support the latest features"
 msgstr ""
 "És possible que no funcioni com s'espera o que no admeti les últimes "
 "funcions."
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:784
 msgid "Unstable"
 msgstr "Inestable"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:785
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -743,29 +743,29 @@ msgstr ""
 "Creada per a una versió inestable de %s; pot contenir problemes importants. "
 "No es recomana usar-la en un sistema de producció."
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:798
 msgid "Insecure Sandbox"
 msgstr "Caixa no segura"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:799
 msgid "Can ignore or modify its own system permissions"
 msgstr "Pot ignorar o modificar els propis permisos del sistema."
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:808
 msgid "System Folder Access"
 msgstr "Accés a la carpeta del sistema"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:809
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "Inclou les carpetes personals de tothom, però no inclou els elements interns "
 "del sistema."
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:816
 msgid "Home Folder Access"
 msgstr "Accés a la carpeta personal"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:817
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -773,54 +773,54 @@ msgstr ""
 "Inclou tots els documents, baixades, música, imatges, vídeos i qualsevol "
 "carpeta amagada."
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:826
 msgid "Legacy Autostart"
 msgstr "Inici automàtic de llegat"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:827
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Es pot iniciar i executar automàticament en segon pla sense demanar-ho"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:836
 msgid "Location Access"
 msgstr "Accés a la ubicació"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:837
 msgid "Can see your precise location at any time without asking"
 msgstr "Es pot veure la ubicació precisa en qualsevol moment sense demanar-ho."
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:846
 msgid "Legacy Notifications"
 msgstr "Notificacions de llegat"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:847
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "És possible que les bombolles no es puguin configurar o que apareguin al "
 "centre de notificacions com a altres."
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:856
 msgid "System Settings Access"
 msgstr "Accés a la configuració del sistema"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:857
 msgid "Can read and modify system settings"
 msgstr "Es pot llegir i modificar la configuració del sistema."
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1066
 msgid "Requires a Controller"
 msgstr "Requereix un controlador"
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1069
 msgid "Recommends a Controller"
 msgstr "Recomana un controlador"
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1072
 msgid "Play With a Controller"
 msgstr "Jugueu amb un controlador"
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1076
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Com ara un controlador de PlayStation, Xbox o 8BitDo."
 
@@ -958,15 +958,11 @@ msgstr "Cerca %s"
 msgid "In-app purchases"
 msgstr "Compres dins l'aplicació"
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "Lliure"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Instal·la"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "Actualitza"
 
@@ -983,13 +979,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "Requereix pagaments, que no estan habilitats."
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "%d USD"
@@ -1129,6 +1125,9 @@ msgstr "Què hi ha de nou a la versió %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Tanca"
+
+#~ msgid "Free"
+#~ msgstr "Lliure"
 
 #~ msgid "End of Life"
 #~ msgstr "Fi de vida útil"

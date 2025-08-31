@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:04+0000\n"
 "PO-Revision-Date: 2025-03-14 06:54+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/appcenter/"
@@ -666,31 +666,31 @@ msgstr "אוסף נתוני שימוש שיכולים לסייע בזיהוי ש
 msgid "Info Sharing"
 msgstr "שיתוף מידע"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:606
 msgid "Screenshot Not Available"
 msgstr "אין צילום מסך"
 
-#: src/Views/AppInfoView.vala:697
+#: src/Views/AppInfoView.vala:634
 msgid "What's New:"
 msgstr "מה חדש:"
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:768 src/Views/AppInfoView.vala:775
 msgid "Outdated"
 msgstr "מיושן"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:769
 msgid "May not work as expected or receive security updates"
 msgstr "עלול לא לעבוד כצפוי או לקבל עדכוני אבטחה"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:776
 msgid "May not work as expected or support the latest features"
 msgstr "עלול לא לעבוד כראוי או לא לתמוך ביכולות העדכניות ביותר"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:784
 msgid "Unstable"
 msgstr "רעוע"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:785
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -699,79 +699,79 @@ msgstr ""
 "נבנה לגירסה רעועה של %s, עשוי להכיל תקלות קריטיות. לא מומלץ לשימוש במערכת "
 "מבצעית."
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:798
 msgid "Insecure Sandbox"
 msgstr "ארגז חול לא מאובטח"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:799
 msgid "Can ignore or modify its own system permissions"
 msgstr "יכול להתעלם או לשנות את הרשאות המערכת של עצמו"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:808
 msgid "System Folder Access"
 msgstr "גישה לתיקיית מערכת"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:809
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "כולל את כל תיקיות הבית של כולם אך ללא תיקיות המערכת הפנימיות"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:816
 msgid "Home Folder Access"
 msgstr "גישה לתיקיית הבית"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:817
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
 msgstr ""
 "לרבות כל המסמכים, הורדות, מוזיקה, תמונות, סרטונים ותיקיות נסתרות באשר הן"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:826
 msgid "Legacy Autostart"
 msgstr "התחלה אוטומטית מיושנת"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:827
 msgid "Can automatically start up and run in the background without asking"
 msgstr "יוכל לעלות אוטומטית ולפעול ברקע מבלי לבקש"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:836
 msgid "Location Access"
 msgstr "גישה למיקום"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:837
 msgid "Can see your precise location at any time without asking"
 msgstr "אפשרות לצפות במיקום המדויק בכל עת מבלי לבקש"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:846
 msgid "Legacy Notifications"
 msgstr "התראות מיושנות"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:847
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr "הבועות לא תושפענה מהגדרות או תופענה במרכז ההתראות בתור „אחר”"
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:856
 msgid "System Settings Access"
 msgstr "גישה להגדרות מערכת"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:857
 msgid "Can read and modify system settings"
 msgstr "יכול לקרוא ולשנות הגדרות מערכת"
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1066
 msgid "Requires a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1069
 msgid "Recommends a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1072
 msgid "Play With a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1076
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
@@ -902,15 +902,11 @@ msgstr "חיפוש %s"
 msgid "In-app purchases"
 msgstr "רכישות מתוך היישום"
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "חינם"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "התקנה"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "עדכון"
 
@@ -927,13 +923,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "דורש תשלומים, שאינם פעילים עדיין"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "$%d USD"
@@ -1071,6 +1067,9 @@ msgstr "מה חדש ב־%s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "סגירה"
+
+#~ msgid "Free"
+#~ msgstr "חינם"
 
 #~ msgid "End of Life"
 #~ msgstr "סוף החיים"
