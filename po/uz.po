@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2024-02-21 09:14+0000\n"
 "Last-Translator: Shukrullo Turgunov <shookrullo@gmail.com>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/appcenter/"
@@ -395,6 +395,11 @@ msgstr "Ilovani o'chirishda xatolik yuz berdi"
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
+msgstr ""
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
@@ -1070,15 +1075,6 @@ msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
 msgstr ""
 
 #~ msgid "Homepage"

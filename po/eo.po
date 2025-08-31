@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
@@ -445,6 +445,11 @@ msgid ""
 msgstr ""
 "Tio estis okazigita de fontaj dosieroj eksteraj el mane enigitaj program-"
 "deponejaj adresoj aŭ pro difekto."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1150,14 +1155,8 @@ msgstr "Nur tiuj aplikaĵoj kaj ĝisdatigoj necesaj estos elŝutitaj."
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Fermi"
+#~ msgid "Close"
+#~ msgstr "Fermi"
 
 #~ msgid "Free"
 #~ msgstr "Senpaga"

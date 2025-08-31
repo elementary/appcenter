@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: PomiNOTa199a5c29c914220 <ppminet@protonmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/"
@@ -441,6 +441,11 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr "Điều này có thể gây ra bởi các nguồn ngoài hoặc file nguồn bị lỗi"
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1137,14 +1142,8 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Đóng"
+#~ msgid "Close"
+#~ msgstr "Đóng"
 
 #~ msgid "Free"
 #~ msgstr "Miễn phí"

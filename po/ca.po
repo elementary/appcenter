@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-05-16 12:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
@@ -423,6 +423,11 @@ msgid ""
 msgstr ""
 "Això pot haver estat causat per repositoris externs afegits manualment o per "
 "un fitxer de fonts corromput."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Què hi ha de nou a la versió %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1117,14 +1122,8 @@ msgstr ""
 msgid "Release notes"
 msgstr "Notes de la versió"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Què hi ha de nou a la versió %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Tanca"
+#~ msgid "Close"
+#~ msgstr "Tanca"
 
 #~ msgid "Free"
 #~ msgstr "Lliure"

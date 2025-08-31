@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-08-30 01:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
@@ -409,6 +409,11 @@ msgid ""
 msgstr ""
 "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルに"
 "より発生した可能性があります。"
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "%s の更新情報"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1084,14 +1089,8 @@ msgstr "アプリとアップデートの、必要な部分のみをダウンロ
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "%s の更新情報"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "閉じる"
+#~ msgid "Close"
+#~ msgstr "閉じる"
 
 #~ msgid "Free"
 #~ msgstr "無料"

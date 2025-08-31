@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2024-09-24 11:24+0000\n"
 "Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
@@ -412,6 +412,11 @@ msgid ""
 msgstr ""
 "Bu durum dışarıdan elle eklenen yazılım depolarından veya bozulmuş bir "
 "kaynak dosyasından kaynaklanmış olabilir."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "%s'deki yenilikler"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1094,14 +1099,8 @@ msgstr ""
 msgid "Release notes"
 msgstr "Sürüm notları"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "%s'deki yenilikler"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Kapat"
+#~ msgid "Close"
+#~ msgstr "Kapat"
 
 #~ msgid "Free"
 #~ msgstr "Ücretsiz"

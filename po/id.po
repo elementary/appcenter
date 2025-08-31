@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2023-06-03 20:07+0000\n"
 "Last-Translator: Faisal Rachmadin "
 "<frachmadin@users.noreply.l10n.elementary.io>\n"
@@ -427,6 +427,11 @@ msgid ""
 msgstr ""
 "Ini mungkin disebabkan oleh repositori perangkat lunak eksternal atau "
 "perangkat lunak yang ditambahkan secara manual atau berkas sumber yang rusak."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Apa yang Baru di %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1122,14 +1127,8 @@ msgstr ""
 msgid "Release notes"
 msgstr "Catatan rilis"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Apa yang Baru di %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Tutup"
+#~ msgid "Close"
+#~ msgstr "Tutup"
 
 #~ msgid "Free"
 #~ msgstr "Gratis"

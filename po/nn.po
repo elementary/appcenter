@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -409,6 +409,11 @@ msgid ""
 msgstr ""
 "Dette kan ha blitt forårsaka av eksterne, manuelt tillagte "
 "programvarebrønnar, eller ei skada kjeldefil."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Kva er nytt i %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1094,14 +1099,8 @@ msgstr "Kun dei delane av appen og oppdateringa som trengs vil bli lasta ned."
 msgid "Release notes"
 msgstr "Versjonsmerknader"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Kva er nytt i %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Lukk"
+#~ msgid "Close"
+#~ msgstr "Lukk"
 
 #~ msgid "Free"
 #~ msgstr "Gratis"

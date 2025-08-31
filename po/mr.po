@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-03-09 23:55+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementaryos.org/projects/appcenter/"
@@ -418,6 +418,11 @@ msgid ""
 "or a corrupted sources file."
 msgstr ""
 "हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअर रेपॉजिटरिज किंवा दूषित स्रोत फायलीमुळे झाले असू शकते."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1123,15 +1128,6 @@ msgstr "केवळ अॅप्सचे आवश्यक भाग आण�
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
 msgstr ""
 
 #~ msgid "Free"

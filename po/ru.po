@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-08-30 01:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -426,6 +426,11 @@ msgid ""
 msgstr ""
 "Это может быть вызвано внешними (добавленными вручную) репозиториями или "
 "повреждённым файлом с источниками."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Что нового в %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1112,14 +1117,8 @@ msgstr "Будут загружены только необходимые час
 msgid "Release notes"
 msgstr "Примечания к выпуску"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Что нового в %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Закрыть"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
 
 #~ msgid "Free"
 #~ msgstr "Бесплатно"

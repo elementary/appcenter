@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2024-12-05 13:16+0000\n"
 "Last-Translator: Marek Hladík <mhladik@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
@@ -428,6 +428,11 @@ msgid ""
 msgstr ""
 "Toto mohlo být způsobeno externími, ručně přidanými repozitáři softwaru, "
 "nebo poškozeným souborem s jejich seznamem (sources)."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Co je nového v %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1120,14 +1125,8 @@ msgstr ""
 msgid "Release notes"
 msgstr "Poznámky k vydání"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Co je nového v %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Zavřít"
+#~ msgid "Close"
+#~ msgstr "Zavřít"
 
 #~ msgid "Free"
 #~ msgstr "Zdarma"

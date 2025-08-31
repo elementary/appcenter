@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-07-14 20:55+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementaryos.org/projects/appcenter/"
@@ -426,6 +426,11 @@ msgid ""
 msgstr ""
 "Bunun nedeni elle eklenen harici dosyalar, yazılım depoları veya bozuk bir "
 "kaynak dosyası olabilir."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "%s Uygulamasındaki Yenilikler"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1110,14 +1115,8 @@ msgstr ""
 msgid "Release notes"
 msgstr "Sürüm notları"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "%s Uygulamasındaki Yenilikler"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Kapat"
+#~ msgid "Close"
+#~ msgstr "Kapat"
 
 #~ msgid "Free"
 #~ msgstr "Ücretsiz"

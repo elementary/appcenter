@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -428,6 +428,11 @@ msgid ""
 msgstr ""
 "دەکرێت ئەمە بەهۆی زیادکردنی کۆگای نەرمەکاڵای دەرەکی یان ئەوانەی کە خۆت زیادت "
 "کردوون یان پەڕگەی سەرچاوە تێکچووەکانەوە ڕوویدابێت."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1127,15 +1132,6 @@ msgstr "تەنها بەش و نوێکارییە پێویستەکان دادەگ�
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
 msgid "Release notes"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
 msgstr ""
 
 #~ msgid "Free"

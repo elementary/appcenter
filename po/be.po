@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-06-04 11:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -420,6 +420,11 @@ msgid ""
 msgstr ""
 "Гэта можа быць вызвана вонкавымі, дададзенымі ўласнаручна рэпазіторыямі, або "
 "пашкоджаным файлам крыніц."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Што новага ў %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1107,14 +1112,8 @@ msgstr "Будуць спампаваны толькі часткі патрэб
 msgid "Release notes"
 msgstr "Заўвагі да выпуску"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Што новага ў %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Закрыць"
+#~ msgid "Close"
+#~ msgstr "Закрыць"
 
 #~ msgid "Free"
 #~ msgstr "Бясплатна"

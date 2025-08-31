@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-08-31 09:44+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -389,6 +389,11 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "რა არის ახალი %s-ში"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1048,14 +1053,8 @@ msgstr ""
 msgid "Release notes"
 msgstr "რელიზის შენიშვნები"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "რა არის ახალი %s-ში"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "დახურვა"
+#~ msgid "Close"
+#~ msgstr "დახურვა"
 
 #~ msgid "Free"
 #~ msgstr "თავისუფალი"

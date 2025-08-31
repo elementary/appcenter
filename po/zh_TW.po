@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-06-02 05:00+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
@@ -393,6 +393,11 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr "這可能是因為外部原因、手動添加的軟體庫、或毀損的軟體來源檔造成。"
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "%s 的新功能"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1053,14 +1058,8 @@ msgstr "僅部分程式或更新內容需要下載。"
 msgid "Release notes"
 msgstr "發行註記"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "%s 的新功能"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "關閉"
+#~ msgid "Close"
+#~ msgstr "關閉"
 
 #~ msgid "Free"
 #~ msgstr "免費"

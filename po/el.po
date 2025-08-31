@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: Zisis Avouris <zisisavouris@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/"
@@ -450,6 +450,11 @@ msgstr "Βρείτε και εγκαταστήστε εφαρμογές"
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
+msgstr ""
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
@@ -1146,14 +1151,8 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Κλείσιμο"
+#~ msgid "Close"
+#~ msgstr "Κλείσιμο"
 
 #~ msgid "Free"
 #~ msgstr "Δωρεάν"

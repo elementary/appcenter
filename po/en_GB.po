@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-05-16 12:55+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementaryos.org/"
@@ -409,6 +409,11 @@ msgid ""
 msgstr ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "What's new in %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1083,14 +1088,8 @@ msgstr "Only the parts of apps and updates that are needed will be downloaded."
 msgid "Release notes"
 msgstr "Release notes"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "What's new in %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Close"
+#~ msgid "Close"
+#~ msgstr "Close"
 
 #~ msgid "Free"
 #~ msgstr "Free"

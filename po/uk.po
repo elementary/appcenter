@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-05-19 23:41+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -437,6 +437,11 @@ msgid ""
 msgstr ""
 "Це може бути викликано зовнішніми, власноруч доданими сховищами програмного "
 "забезпечення або файлом з пошкодженими джерелами."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Що нового в %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1122,14 +1127,8 @@ msgstr "Буде завантажено лише необхідні частин
 msgid "Release notes"
 msgstr "Примітки до випуску"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Що нового в %s"
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Закрити"
+#~ msgid "Close"
+#~ msgstr "Закрити"
 
 #~ msgid "Free"
 #~ msgstr "Безплатно"

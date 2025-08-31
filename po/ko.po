@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2024-06-24 02:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/"
@@ -419,6 +419,11 @@ msgid ""
 msgstr ""
 "아마도 기본 시스템 이외의 외적인 요인이나, 수동으로 지정한 저장소 또는 망가"
 "진 소스 파일 때문으로 보입니다."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -1108,14 +1113,8 @@ msgstr "필요한 앱 및 업데이트의 일부만 다운로드됩니다."
 msgid "Release notes"
 msgstr ""
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr ""
-
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "닫기"
+#~ msgid "Close"
+#~ msgstr "닫기"
 
 #~ msgid "Free"
 #~ msgstr "무료"
