@@ -19,6 +19,7 @@ appcenter_files = files(
     'Core/Stripe.vala',
     'Core/UpdateManager.vala',
     'Dialogs/InstallFailDialog.vala',
+    'Dialogs' / 'ReleasesDialog.vala',
     'Dialogs/RepairFailDialog.vala',
     'Dialogs/StripeDialog.vala',
     'Dialogs/UninstallConfirmDialog.vala',
