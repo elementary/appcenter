@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:04+0000\n"
 "PO-Revision-Date: 2025-03-15 23:48+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementaryos.org/projects/appcenter/"
@@ -728,35 +728,35 @@ msgstr ""
 msgid "Info Sharing"
 msgstr "Teilen von Informationen"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:606
 msgid "Screenshot Not Available"
 msgstr "Bildschirmfoto nicht vorhanden"
 
-#: src/Views/AppInfoView.vala:697
+#: src/Views/AppInfoView.vala:634
 msgid "What's New:"
 msgstr "Das ist neu:"
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:768 src/Views/AppInfoView.vala:775
 msgid "Outdated"
 msgstr "Veraltet"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:769
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "Möglicherweise funktioniert die Anwendung nicht so, wie es zu erwarten wäre, "
 "oder sie erhält keine Sicherheitsaktualisierungen"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:776
 msgid "May not work as expected or support the latest features"
 msgstr ""
 "Möglicherweise funktioniert die Anwendung nicht so, wie es zu erwarten wäre, "
 "oder die neuesten Funktionen werden nicht angeboten"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:784
 msgid "Unstable"
 msgstr "Nicht stabil"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:785
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -765,29 +765,29 @@ msgstr ""
 "Erstellt für eine nicht stabile Version von %s; möglicherweise bestehen "
 "große Probleme. Von einem Einsatz in einem produktiven System wird abgeraten."
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:798
 msgid "Insecure Sandbox"
 msgstr "Unsichere Sandbox"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:799
 msgid "Can ignore or modify its own system permissions"
 msgstr "Kann ihre eigenen Systemberechtigungen ignorieren oder ändern"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:808
 msgid "System Folder Access"
 msgstr "Zugriff auf Systemordner"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:809
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "Einschließlich der Persönlichen Ordner aller Benutzer, aber nicht auf "
 "Systeminterna"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:816
 msgid "Home Folder Access"
 msgstr "Zugriff auf Persönlichen Ordner"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:817
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -795,55 +795,55 @@ msgstr ""
 "Samt aller Dokumente, heruntergeladener Dateien, Musik, Bilder, Videos und "
 "aller ausgeblendeten Ordnern"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:826
 msgid "Legacy Autostart"
 msgstr "Herkömmlicher automatischer Start"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:827
 msgid "Can automatically start up and run in the background without asking"
 msgstr ""
 "Kann ohne Nachfrage automatisch starten und im Hintergrund ausgeführt werden"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:836
 msgid "Location Access"
 msgstr "Zugriff auf Ortsdienste"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:837
 msgid "Can see your precise location at any time without asking"
 msgstr "Kann ohne Nachfrage jederzeit Ihren genauen Aufenthaltsort ermitteln"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:846
 msgid "Legacy Notifications"
 msgstr "Veraltete Benachrichtigungen"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:847
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Benachrichtigungen sind möglicherweise nicht konfigurierbar und erscheinen "
 "im Benachrichtungscenter als »Weitere«"
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:856
 msgid "System Settings Access"
 msgstr "Zugriff auf Systemeinstellungen"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:857
 msgid "Can read and modify system settings"
 msgstr "Kann Systemeinstellungen lesen und ändern"
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1066
 msgid "Requires a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1069
 msgid "Recommends a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1072
 msgid "Play With a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1076
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
@@ -977,15 +977,11 @@ msgstr "%s durchsuchen"
 msgid "In-app purchases"
 msgstr "Käufe innerhalb von Anwendungen"
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "Kostenlos"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Installieren"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "Aktualisieren"
 
@@ -1002,13 +998,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "Zahlungen erforderlich, die jedoch nicht aktiviert sind"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "%d USD"
@@ -1149,6 +1145,9 @@ msgstr "Das ist neu in %s"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "Schließen"
+
+#~ msgid "Free"
+#~ msgstr "Kostenlos"
 
 #~ msgid "End of Life"
 #~ msgstr "Auslaufprodukt"

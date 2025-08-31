@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:04+0000\n"
 "PO-Revision-Date: 2025-08-10 03:55+0000\n"
 "Last-Translator: JieXu <xujie0739@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
@@ -670,109 +670,109 @@ msgstr "收集可用于识别您身份的使用数据"
 msgid "Info Sharing"
 msgstr "资讯分享"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:606
 msgid "Screenshot Not Available"
 msgstr "截图不可用"
 
-#: src/Views/AppInfoView.vala:697
+#: src/Views/AppInfoView.vala:634
 msgid "What's New:"
 msgstr "新特性："
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:768 src/Views/AppInfoView.vala:775
 msgid "Outdated"
 msgstr "过期"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:769
 msgid "May not work as expected or receive security updates"
 msgstr "可能无法按预期运行或接收安全更新"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:776
 msgid "May not work as expected or support the latest features"
 msgstr "可能无法按预期运行或不支持最新功能"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:784
 msgid "Unstable"
 msgstr "不稳定"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:785
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
 "recommended for use on a production system."
 msgstr "为 %s 的不稳定版本而构建； 可能包含重大问题。 不建议在生产系统上使用。"
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:798
 msgid "Insecure Sandbox"
 msgstr "不安全的沙盒"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:799
 msgid "Can ignore or modify its own system permissions"
 msgstr "可忽略或自主修改自身系统权限"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:808
 msgid "System Folder Access"
 msgstr "系统文件夹访问"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:809
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "包括所有人的主文件夹，但不含系统文件"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:816
 msgid "Home Folder Access"
 msgstr "主文件夹访问"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:817
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
 msgstr "包括所有文档、下载、音乐、图片、视频及任何隐藏文件夹"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:826
 msgid "Legacy Autostart"
 msgstr "旧版自动启动"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:827
 msgid "Can automatically start up and run in the background without asking"
 msgstr "可在未经授权的情况下自动启动和在后台运行"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:836
 msgid "Location Access"
 msgstr "位置权限"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:837
 msgid "Can see your precise location at any time without asking"
 msgstr "可随时获取您的精确位置且无需询问"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:846
 msgid "Legacy Notifications"
 msgstr "旧版通知"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:847
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr "可能无法修改气泡通知或会以“其他”类别显示在通知中心"
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:856
 msgid "System Settings Access"
 msgstr "系统设置访问"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:857
 msgid "Can read and modify system settings"
 msgstr "可读取并修改系统设置"
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1066
 msgid "Requires a Controller"
 msgstr "需要游戏手柄"
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1069
 msgid "Recommends a Controller"
 msgstr "推荐使用游戏手柄"
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1072
 msgid "Play With a Controller"
 msgstr "可以使用游戏手柄"
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1076
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "如 PlayStation、Xbox、8BitDo 手柄等等。"
 
@@ -900,15 +900,11 @@ msgstr "搜索 %s"
 msgid "In-app purchases"
 msgstr "应用程序内购"
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "安装"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "安装"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "更新"
 
@@ -925,13 +921,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "需要付款，但付款方式还未启用"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00 美元"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "$%d 美元"
@@ -1069,6 +1065,9 @@ msgstr "%s 的新特性"
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
 msgid "Close"
 msgstr "关闭"
+
+#~ msgid "Free"
+#~ msgstr "安装"
 
 #~ msgid "End of Life"
 #~ msgstr "生命周期结束"
