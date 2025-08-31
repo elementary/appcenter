@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-08-30 01:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
@@ -410,6 +410,11 @@ msgstr ""
 "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルに"
 "より発生した可能性があります。"
 
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "%s の更新情報"
+
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
 msgstr "支払い"
@@ -692,33 +697,33 @@ msgstr "ユーザーの特定に使用される可能性があるユーザーデ
 msgid "Info Sharing"
 msgstr "情報の共有"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:606
 msgid "Screenshot Not Available"
 msgstr "スクリーンショット表示不可"
 
-#: src/Views/AppInfoView.vala:697
+#: src/Views/AppInfoView.vala:634
 msgid "What's New:"
 msgstr "更新情報:"
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:768 src/Views/AppInfoView.vala:775
 msgid "Outdated"
 msgstr "旧バージョン"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:769
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "想定通りに動作しないか、セキュリティアップデートを受けられない可能性がありま"
 "す"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:776
 msgid "May not work as expected or support the latest features"
 msgstr "想定通りに動作しないか、最新機能に対応していない可能性があります"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:784
 msgid "Unstable"
 msgstr "不安定版"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:785
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -727,28 +732,28 @@ msgstr ""
 "%s の不安定版向けに開発されているので、重大な不具合が発生する可能性がありま"
 "す。本番環境での使用は推奨しません。"
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:798
 msgid "Insecure Sandbox"
 msgstr "安全でないサンドボックス"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:799
 msgid "Can ignore or modify its own system permissions"
 msgstr "アプリに与えられたシステムパーミッションを無視または変更できます"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:808
 msgid "System Folder Access"
 msgstr "システムフォルダーへのアクセス"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:809
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "全ユーザーのホームフォルダーを含めたアクセスが可能です (システム内部は除く)"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:816
 msgid "Home Folder Access"
 msgstr "ホームフォルダーへのアクセス"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:817
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -756,53 +761,53 @@ msgstr ""
 "ドキュメント、ダウンロード、ミュージック、ピクチャー、ビデオフォルダー、およ"
 "びすべての隠しフォルダーを含めたアクセスが可能です"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:826
 msgid "Legacy Autostart"
 msgstr "旧来の自動起動システム"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:827
 msgid "Can automatically start up and run in the background without asking"
 msgstr "許可なく自動起動とバックグラウンド実行が可能です"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:836
 msgid "Location Access"
 msgstr "位置情報へのアクセス"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:837
 msgid "Can see your precise location at any time without asking"
 msgstr "許可なくいつでもユーザーの正確な現在地の検出が可能です"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:846
 msgid "Legacy Notifications"
 msgstr "旧来の通知システム"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:847
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "通知バブルが設定不能か、通知センターに“その他”のカテゴリーとして表示されます"
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:856
 msgid "System Settings Access"
 msgstr "システム設定へのアクセス"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:857
 msgid "Can read and modify system settings"
 msgstr "システム設定を読み書きできます"
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1066
 msgid "Requires a Controller"
 msgstr "コントローラー必須"
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1069
 msgid "Recommends a Controller"
 msgstr "コントローラー推奨"
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1072
 msgid "Play With a Controller"
 msgstr "コントローラー使用可能"
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1076
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "PlayStation、Xbox、8BitDo コントローラーなど。"
 
@@ -934,15 +939,11 @@ msgstr "%s を検索"
 msgid "In-app purchases"
 msgstr "アプリ内課金"
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "無料"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "インストール"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "アップデート"
 
@@ -959,13 +960,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "支払いが必要ですが、有効になっていません"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00ドル"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "%dドル"
@@ -1088,14 +1089,11 @@ msgstr "アプリとアップデートの、必要な部分のみをダウンロ
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "%s の更新情報"
+#~ msgid "Close"
+#~ msgstr "閉じる"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "閉じる"
+#~ msgid "Free"
+#~ msgstr "無料"
 
 #~ msgid "End of Life"
 #~ msgstr "サポート終了"

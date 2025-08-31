@@ -138,11 +138,8 @@ public class AppCenter.ActionStack : Gtk.Box {
 
         switch (package.state) {
             case AppCenterCore.Package.State.NOT_INSTALLED:
-#if PAYMENTS
-                action_button.free_string = _("Free");
-#else
                 action_button.free_string = _("Install");
-#endif
+
                 if (package.component.get_id () in App.settings.get_strv ("paid-apps")) {
                     action_button.amount = 0;
                 }

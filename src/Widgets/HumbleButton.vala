@@ -76,11 +76,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
     construct {
         hexpand = true;
 
-#if PAYMENTS
-        free_string = _("Free");
-#else
         free_string = _("Install");
-#endif
 
         clicked.connect (() => {
             if (amount != 0) {

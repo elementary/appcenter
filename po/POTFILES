@@ -13,6 +13,7 @@ src/Core/Stripe.vala
 src/Core/UpdateManager.vala
 src/Dialogs/InstallFailDialog.vala
 src/Dialogs/RepairFailDialog.vala
+src/Dialogs/ReleasesDialog.vala
 src/Dialogs/StripeDialog.vala
 src/Dialogs/UninstallConfirmDialog.vala
 src/Dialogs/UninstallFailDialog.vala
