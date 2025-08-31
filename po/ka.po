@@ -1,21 +1,21 @@
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
-# NorwayFun <temuri.doghonadze@gmail.com>, 2023.
+# NorwayFun <temuri.doghonadze@gmail.com>, 2023, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-28 19:04+0000\n"
-"PO-Revision-Date: 2023-03-12 12:25+0000\n"
+"PO-Revision-Date: 2025-08-31 09:44+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Georgian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -967,10 +967,9 @@ msgid "No License"
 msgstr "უცნობი ლიცენზია"
 
 #: src/Widgets/LinkListBox.vala:206 src/Widgets/LinkListBox.vala:265
-#, fuzzy, c-format
-#| msgid "Getting information"
+#, c-format
 msgid "Contact %s for licensing information"
-msgstr "ინფორმაციის მიღება"
+msgstr "ლიცენზიის შესახებ ინფორმაციის მისაღებად დაუკავშირდით %s-ს"
 
 #. TRANSLATORS: delimiter for a list of software licenses
 #: src/Widgets/LinkListBox.vala:218
