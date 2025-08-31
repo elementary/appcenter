@@ -10,6 +10,7 @@
     <file alias="48x48/categories/appcenter-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/video.svg</file>
     <file alias="48x48/categories/appcenter-finance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/48/finance.svg</file>
 
+    <file alias="16x16/categories/applications-education-symbolic.svg" compressed="true" preprocess="xml-stripblanks">categories/symbolic/education.svg</file>
     <file alias="16x16/categories/currency-dollar-symbolic.svg" compressed="true" preprocess="xml-stripblanks">currency-dollar-symbolic.svg</file>
     <file alias="16x16/categories/link-contribute-symbolic.svg" compressed="true" preprocess="xml-stripblanks">link-contribute.svg</file>
     <file alias="16x16/categories/link-vcs-symbolic.svg" compressed="true" preprocess="xml-stripblanks">link-vcs.svg</file>
