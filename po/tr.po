@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-08-31 20:11+0000\n"
 "PO-Revision-Date: 2025-07-14 20:55+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementaryos.org/projects/appcenter/"
@@ -427,6 +427,11 @@ msgstr ""
 "Bunun nedeni elle eklenen harici dosyalar, yazılım depoları veya bozuk bir "
 "kaynak dosyası olabilir."
 
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "%s Uygulamasındaki Yenilikler"
+
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
 msgstr "Ödeme"
@@ -708,33 +713,33 @@ msgstr "Sizi tanımlamak için kullanılabilecek kullanım verileri toplar"
 msgid "Info Sharing"
 msgstr "Bilgi Paylaşımı"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:606
 msgid "Screenshot Not Available"
 msgstr "Ekran Görüntüsü Yok"
 
-#: src/Views/AppInfoView.vala:697
+#: src/Views/AppInfoView.vala:634
 msgid "What's New:"
 msgstr "Yenilikler:"
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:768 src/Views/AppInfoView.vala:775
 msgid "Outdated"
 msgstr "Güncel değil"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:769
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "Beklendiği gibi çalışmayabilir veya güvenlik güncellemelerini almayabilir"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:776
 msgid "May not work as expected or support the latest features"
 msgstr ""
 "Beklendiği gibi çalışmayabilir veya en son özellikleri desteklemeyebilir"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:784
 msgid "Unstable"
 msgstr "Kararlı durumda değil"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:785
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -743,27 +748,27 @@ msgstr ""
 "%s işletim sisteminin kararsız bir sürümü için oluşturuldu; önemli sorunlar "
 "içerebilir. Bir üretim sisteminde kullanılması önerilmez."
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:798
 msgid "Insecure Sandbox"
 msgstr "Güvenli Olmayan Sandbox"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:799
 msgid "Can ignore or modify its own system permissions"
 msgstr "Kendi sistem izinlerini değiştirebilir veya yok sayabilir"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:808
 msgid "System Folder Access"
 msgstr "Sistem Klasörü Erişimi"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:809
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "Herkesin Ana klasörleri dahil, ancak sistem içindekiler dahil değil"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:816
 msgid "Home Folder Access"
 msgstr "Ev Klasörü Erişimi"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:817
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -771,54 +776,54 @@ msgstr ""
 "Tüm belgeler, indirilenler, müzikler, resimler, videolar ve tüm gizli "
 "klasörler dahil"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:826
 msgid "Legacy Autostart"
 msgstr "Eski Otomatik Başlatma"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:827
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Sormadan otomatik olarak başlayabilir ve arka planda çalışabilir"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:836
 msgid "Location Access"
 msgstr "Konum Erişimi"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:837
 msgid "Can see your precise location at any time without asking"
 msgstr "Sormadan tam konumunuzu istediği zaman görebilir"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:846
 msgid "Legacy Notifications"
 msgstr "Eski Bildirimler"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:847
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Baloncuklar ayarlanamayabilir veya bildirim merkezinde “Diğerleri” olarak "
 "görünebilir"
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:856
 msgid "System Settings Access"
 msgstr "Sistem Ayarları Erişimi"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:857
 msgid "Can read and modify system settings"
 msgstr "Sistem ayarlarını okuyabilir ve değiştirebilir"
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1066
 msgid "Requires a Controller"
 msgstr "Oyun Kolu Gerektirir"
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1069
 msgid "Recommends a Controller"
 msgstr "Oyun Kolu Tavsiye edilir"
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1072
 msgid "Play With a Controller"
 msgstr "Oyun Kolu İle Oyna"
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1076
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Örneğin bir PlayStation, Xbox veya 8BitDo oyun kolu."
 
@@ -952,15 +957,11 @@ msgstr "%s içinde ara"
 msgid "In-app purchases"
 msgstr "Uygulama İçi Satın Alımlar"
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "Ücretsiz"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Yükle"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "Güncelle"
 
@@ -977,13 +978,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "Ödeme gerektirir, etkinleştirilmemiş"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00$ (USD)"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "%d$"
@@ -1114,14 +1115,11 @@ msgstr ""
 msgid "Release notes"
 msgstr "Sürüm notları"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "%s Uygulamasındaki Yenilikler"
+#~ msgid "Close"
+#~ msgstr "Kapat"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Kapat"
+#~ msgid "Free"
+#~ msgstr "Ücretsiz"
 
 #~ msgid "End of Life"
 #~ msgstr "Destek Sonlandırıldı"
