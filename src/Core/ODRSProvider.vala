@@ -94,10 +94,6 @@ public class AppCenter.ODRSProvider : Object {
         var reviews = root.get_array ();
 
         n_ratings = reviews.get_length ();
-        if (n_ratings <= 0) {
-            return;
-        }
-
         for (int i = 0; i < reviews.get_length (); i++) {
             var element = reviews.get_element (i);
 
@@ -108,6 +104,10 @@ public class AppCenter.ODRSProvider : Object {
             }
 
             sum_rating += object.get_int_member ("rating");
+        }
+
+        if (n_ratings <= 0) {
+            return;
         }
 
         avg = sum_rating / n_ratings;
