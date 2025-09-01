@@ -104,6 +104,8 @@ public class AppCenterCore.UpdateManager : Object {
             return;
         }
 
+        unowned var app = Application.get_default ();
+        ((SimpleAction) app.lookup_action ("refresh")).set_enabled (false);
         refreshing = true;
 
         unowned var fp_client = FlatpakBackend.get_default ();
@@ -128,6 +130,7 @@ public class AppCenterCore.UpdateManager : Object {
 
         start_refresh_timeout ();
 
+        ((SimpleAction) app.lookup_action ("refresh")).set_enabled (true);
         refreshing = false;
     }
 
