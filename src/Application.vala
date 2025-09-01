@@ -36,7 +36,6 @@ public class AppCenter.App : Gtk.Application {
 
     public static GLib.Settings settings;
 
-    public static SimpleAction refresh_action;
     public static SimpleAction repair_action;
 
     private bool first_activation = true;
@@ -134,7 +133,7 @@ public class AppCenter.App : Gtk.Application {
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         update_manager.cache_update_failed.connect (on_cache_update_failed);
 
-        refresh_action = new SimpleAction ("refresh", null);
+        var refresh_action = new SimpleAction ("refresh", null);
         refresh_action.set_enabled (!Utils.is_running_in_guest_session ());
         refresh_action.activate.connect (() => {
             update_manager.refresh.begin ();
