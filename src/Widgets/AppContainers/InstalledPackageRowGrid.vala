@@ -26,6 +26,10 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
         set_up_package ();
     }
 
+    class construct {
+        set_css_name ("package-row-grid");
+    }
+
     construct {
         var app_icon = new AppIcon (48) {
             margin_end = 12,
@@ -68,9 +72,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
             transition_type = SLIDE_RIGHT
         };
 
-        var grid = new Gtk.Grid () {
-            row_spacing = 3
-        };
+        var grid = new Gtk.Grid ();
         grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (app_version, 1, 1);
@@ -78,10 +80,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
         grid.attach (action_stack, 3, 0, 1, 2);
 
         child = grid;
-        margin_top = 6;
-        margin_start = 12;
-        margin_bottom = 6;
-        margin_end = 12;
 
         release_button.clicked.connect (() => {
             var releases_dialog = new ReleasesDialog (package) {
