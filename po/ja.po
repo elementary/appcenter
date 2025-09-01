@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-01 20:30+0000\n"
-"PO-Revision-Date: 2025-09-01 15:15+0000\n"
+"PO-Revision-Date: 2025-09-02 00:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -598,14 +598,13 @@ msgstr "現実味があるか、参加型のギャンブルです"
 #: src/Views/AppInfoView.vala:294
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Views/AppInfoView.vala:296
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "待機しています"
+msgstr[0] "%u件の評価"
 
 #: src/Views/AppInfoView.vala:309
 msgid "Made for elementary OS"
