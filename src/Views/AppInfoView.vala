@@ -285,8 +285,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 int64 avg;
                 uint n_ratings;
 
-                bool ret = ODRSProvider.fetch_ratings_for_app.end (res, out avg, out n_ratings);
-                if (!ret) {
+                if (!ODRSProvider.fetch_ratings_for_app.end (res, out avg, out n_ratings)) {
                     return;
                 }
 
