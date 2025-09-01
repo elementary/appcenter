@@ -8,7 +8,13 @@
 public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
     public signal void changed ();
 
-    public AppCenterCore.Package package { get; construct set; }
+    public AppCenterCore.Package package { get; construct; }
+
+    public bool action_sensitive {
+        set {
+            action_stack.action_sensitive = value;
+        }
+    }
 
     private AppStream.Release? newest = null;
     private Gtk.Label app_version;
