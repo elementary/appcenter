@@ -92,13 +92,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             transition_type = CROSSFADE
         };
 
-        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
-            action_name = "win.search",
-            /// TRANSLATORS: the action of searching
-            tooltip_text = C_("action", "Search")
-        };
-        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-
         var uninstall_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             tooltip_text = _("Uninstall"),
             valign = CENTER
@@ -122,7 +115,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             title_widget = title_revealer
         };
         headerbar.pack_start (new BackButton ());
-        headerbar.pack_end (search_button);
         headerbar.pack_end (action_stack);
         headerbar.pack_end (uninstall_button_revealer);
 
