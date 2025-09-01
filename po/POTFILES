@@ -36,6 +36,5 @@ src/Widgets/LinkListBox.vala
 src/Widgets/ProgressButton.vala
 src/Widgets/ReleaseRow.vala
 src/Widgets/SizeLabel.vala
-src/Widgets/AppContainers/AbstractPackageRowGrid.vala
 src/Widgets/AppContainers/InstalledPackageRowGrid.vala
 src/Widgets/AppContainers/ListPackageRowGrid.vala
