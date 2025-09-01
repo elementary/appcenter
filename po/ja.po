@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-31 20:11+0000\n"
-"PO-Revision-Date: 2025-08-30 01:55+0000\n"
+"PO-Revision-Date: 2025-09-01 15:15+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -926,9 +926,8 @@ msgstr "検索"
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-"検索語句を変更してみてください。%s などから Flatpak アプリをサイドロードする"
-"こともできます"
+msgstr "他のキーワードを試してください。%s などから Flatpak "
+"アプリをサイドロードすることもできます"
 
 #: src/Views/SearchView.vala:186
 #, c-format
