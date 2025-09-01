@@ -24,11 +24,9 @@ namespace AppCenter.Views {
     public class AppListUpdateView : Adw.NavigationPage {
         public signal void show_app (AppCenterCore.Package package);
 
-        private Granite.HeaderLabel header_label;
+        private Gtk.Label header_label;
         private Gtk.FlowBox installed_flowbox;
         private Gtk.ListBox list_box;
-        private Gtk.Revealer header_revealer;
-        private Gtk.Revealer updated_revealer;
         private Gtk.Label updated_label;
         private Gtk.SizeGroup action_button_group;
         private Granite.HeaderLabel installed_header;
@@ -39,45 +37,20 @@ namespace AppCenter.Views {
             var update_manager = AppCenterCore.UpdateManager.get_default ();
             unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
-            header_label = new Granite.HeaderLabel ("") {
-                hexpand = true,
+            header_label = new Gtk.Label ("") {
+                halign = START,
                 valign = CENTER
             };
-            flatpak_backend.bind_property (
-                "n-updatable-packages", header_label, "label", SYNC_CREATE,
-                (binding, from_value, ref to_value) => {
-                    var n_updatable_packages = from_value.get_uint ();
-
-                    to_value.set_string (ngettext (
-                        "%u Update Available",
-                        "%u Updates Available",
-                        n_updatable_packages
-                    ).printf (n_updatable_packages));
-
-                    return true;
-                }
-            );
 
             var size_label = new Widgets.SizeLabel () {
-                halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER
             };
             flatpak_backend.bind_property ("updates-size", size_label, "size", SYNC_CREATE);
 
-            updated_label = new Gtk.Label ("");
-            updated_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-
-            var updated_box = new Gtk.Box (HORIZONTAL, 6);
-            updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
-            updated_box.append (updated_label);
-
-            updated_revealer = new Gtk.Revealer () {
-                child = updated_box
+            var updated_revealer = new Gtk.Revealer () {
+                child = new Gtk.Image.from_icon_name ("process-completed-symbolic"),
+                transition_type = CROSSFADE
             };
-            updated_revealer.add_css_class ("header");
-            flatpak_backend.bind_property (
-                "up-to-date", updated_revealer, "reveal-child", SYNC_CREATE
-            );
 
             var update_all_button = new Gtk.Button.with_label (_("Update All")) {
                 valign = Gtk.Align.CENTER,
@@ -85,18 +58,22 @@ namespace AppCenter.Views {
             };
             update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-            var header = new Gtk.Box (HORIZONTAL, 16);
-            header.append (header_label);
-            header.append (size_label);
-            header.append (update_all_button);
+            var update_action_box = new Gtk.Box (HORIZONTAL, 12);
+            update_action_box.append (size_label);
+            update_action_box.append (update_all_button);
 
-            header_revealer = new Gtk.Revealer () {
-                child = header
+            var update_action_revealer = new Gtk.Revealer () {
+                child = update_action_box,
+                halign = END,
+                hexpand = true,
+                transition_type = CROSSFADE
             };
-            header_revealer.add_css_class ("header");
-            flatpak_backend.bind_property (
-                "has-updatable-packages", header_revealer, "reveal-child", SYNC_CREATE
-            );
+
+            var header = new Gtk.Box (HORIZONTAL, 0);
+            header.add_css_class ("header");
+            header.append (header_label);
+            header.append (updated_revealer);
+            header.append (update_action_revealer);
 
             list_box = new Gtk.ListBox () {
                 activate_on_single_click = true,
@@ -110,7 +87,6 @@ namespace AppCenter.Views {
                 margin_bottom = 12,
                 margin_start = 12
             };
-            flatpak_backend.bind_property ("has-updated-packages", installed_header, "visible", SYNC_CREATE);
 
             installed_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
@@ -192,8 +168,7 @@ namespace AppCenter.Views {
                 content = scrolled
             };
             toolbarview.add_top_bar (headerbar);
-            toolbarview.add_top_bar (updated_revealer);
-            toolbarview.add_top_bar (header_revealer);
+            toolbarview.add_top_bar (header);
             toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
             child = toolbarview;
@@ -211,6 +186,18 @@ namespace AppCenter.Views {
                     show_app (((Widgets.InstalledPackageRowGrid) child.get_child ()).package);
                 }
             });
+
+            flatpak_backend.bind_property (
+                "up-to-date", updated_revealer, "reveal-child", SYNC_CREATE
+            );
+
+            flatpak_backend.bind_property (
+                "has-updatable-packages", update_action_revealer, "reveal-child", SYNC_CREATE
+            );
+
+            flatpak_backend.bind_property ("has-updated-packages", installed_header, "visible", SYNC_CREATE);
+
+            flatpak_backend.notify["n-updatable-packages"].connect (set_header_label);
 
             flatpak_backend.notify ["working"].connect (() => {
                 if (flatpak_backend.working) {
@@ -238,25 +225,35 @@ namespace AppCenter.Views {
             map.connect (start_updated_label_timeout);
             unmap.connect (stop_updated_label_timeout);
 
-            App.settings.changed["last-refresh-time"].connect (set_updated_label);
+            App.settings.changed["last-refresh-time"].connect (set_header_label);
         }
 
-        private void set_updated_label () {
-            updated_label.label = _("Everything is up to date. Last checked %s.").printf (
-                Granite.DateTime.get_relative_datetime (
-                    new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
-                )
-            );
+        private void set_header_label () {
+            unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+
+            if (flatpak_backend.has_updatable_packages) {
+                header_label.label = ngettext (
+                    "%u Update Available",
+                    "%u Updates Available",
+                    flatpak_backend.n_updatable_packages
+                ).printf (flatpak_backend.n_updatable_packages);
+            } else {
+                header_label.label = _("Everything is up to date. Last checked %s.").printf (
+                    Granite.DateTime.get_relative_datetime (
+                        new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
+                    )
+                );
+            }
         }
 
         private void start_updated_label_timeout () {
             if (updated_label_timeout_id == 0) {
                 updated_label_timeout_id = Timeout.add_seconds (60, () => {
-                    set_updated_label ();
+                    set_header_label ();
                     return Source.CONTINUE;
                 });
             }
-            set_updated_label ();
+            set_header_label ();
         }
 
         private void stop_updated_label_timeout () {
