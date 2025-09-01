@@ -12,6 +12,10 @@ public class AppCenter.Widgets.ListPackageRowGrid : Granite.Bin {
         Object (package: package);
     }
 
+    class construct {
+        set_css_name ("package-row-grid");
+    }
+
     construct {
         var app_icon = new AppIcon (48) {
             package = package
@@ -48,8 +52,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : Granite.Bin {
         }
 
         var grid = new Gtk.Grid () {
-            column_spacing = 12,
-            row_spacing = 3
+            column_spacing = 12
         };
         grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
@@ -57,9 +60,5 @@ public class AppCenter.Widgets.ListPackageRowGrid : Granite.Bin {
         grid.attach (action_stack, 2, 0, 1, 2);
 
         child = grid;
-        margin_top = 6;
-        margin_start = 12;
-        margin_bottom = 6;
-        margin_end = 12;
     }
 }
