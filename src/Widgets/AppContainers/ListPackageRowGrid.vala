@@ -1,32 +1,32 @@
-/*-
- * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-FileCopyrightText: 2014-2025 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
-    private Gtk.Label package_summary;
+public class AppCenter.Widgets.ListPackageRowGrid : Granite.Bin {
+    public AppCenterCore.Package package { get; construct; }
 
     public ListPackageRowGrid (AppCenterCore.Package package) {
         Object (package: package);
     }
 
+    class construct {
+        set_css_name ("package-row-grid");
+    }
+
     construct {
+        var app_icon = new AppIcon (48) {
+            package = package
+        };
+
+        var action_stack = new ActionStack (package) {
+            show_open = false
+        };
+
         var package_name = new Gtk.Label (package.name) {
-            ellipsize = Pango.EllipsizeMode.END,
+            ellipsize = END,
             lines = 2,
             max_width_chars = 1,
             valign = Gtk.Align.END,
@@ -35,8 +35,8 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         };
         package_name.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        package_summary = new Gtk.Label (package.get_summary ()) {
-            ellipsize = Pango.EllipsizeMode.END,
+        var package_summary = new Gtk.Label (package.get_summary ()) {
+            ellipsize = END,
             hexpand = true,
             lines = 2,
             max_width_chars = 1,
@@ -52,14 +52,13 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         }
 
         var grid = new Gtk.Grid () {
-            column_spacing = 12,
-            row_spacing = 3
+            column_spacing = 12
         };
         grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);
 
-        append (grid);
+        child = grid;
     }
 }
