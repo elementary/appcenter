@@ -289,6 +289,28 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         };
 
         if (!package.is_runtime_updates) {
+            ODRSProvider.fetch_ratings_for_app.begin (package_component.id, (obj, res) => {
+                int64 avg = -1;
+                uint n_ratings = 0;
+
+                ODRSProvider.fetch_ratings_for_app.end (res, out avg, out n_ratings);
+                if (n_ratings == 0 || avg == -1) {
+                    return;
+                }
+
+                var review = new ContentType (
+                    _("%i%%").printf ((int) avg),
+                    ngettext (
+                        "%u rating",
+                        "%u ratings",
+                        n_ratings
+                    ).printf (n_ratings),
+                    "appcenter-rating-symbolic"
+                );
+
+                oars_flowbox.prepend (review);
+            });
+
 #if CURATED
             if (package.is_native) {
                 var made_for_elementary = new ContentType (
