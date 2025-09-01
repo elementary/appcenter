@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 20:11+0000\n"
+"POT-Creation-Date: 2025-09-01 15:15+0000\n"
 "PO-Revision-Date: 2019-05-07 22:55+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/"
@@ -50,75 +50,75 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:85
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:118
-#: data/appcenter.metainfo.xml.in:136 data/appcenter.metainfo.xml.in:165
-#: data/appcenter.metainfo.xml.in:185 data/appcenter.metainfo.xml.in:200
-#: data/appcenter.metainfo.xml.in:214
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:137 data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:186 data/appcenter.metainfo.xml.in:201
+#: data/appcenter.metainfo.xml.in:215
 msgid "Other Improvements:"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
-#: data/appcenter.metainfo.xml.in:100 data/appcenter.metainfo.xml.in:120
-#: data/appcenter.metainfo.xml.in:141 data/appcenter.metainfo.xml.in:168
-#: data/appcenter.metainfo.xml.in:190 data/appcenter.metainfo.xml.in:202
-#: data/appcenter.metainfo.xml.in:216
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:142 data/appcenter.metainfo.xml.in:169
+#: data/appcenter.metainfo.xml.in:191 data/appcenter.metainfo.xml.in:203
+#: data/appcenter.metainfo.xml.in:217
 msgid "Updated translations"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:161
-#: data/appcenter.metainfo.xml.in:181 data/appcenter.metainfo.xml.in:209
+#: data/appcenter.metainfo.xml.in:133 data/appcenter.metainfo.xml.in:162
+#: data/appcenter.metainfo.xml.in:182 data/appcenter.metainfo.xml.in:210
 msgid "New features:"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:134
+#: data/appcenter.metainfo.xml.in:135
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:139
 msgid "Automatic app updates by default"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:140
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:140
+#: data/appcenter.metainfo.xml.in:141
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:163
+#: data/appcenter.metainfo.xml.in:164
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:167
+#: data/appcenter.metainfo.xml.in:168
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:183
+#: data/appcenter.metainfo.xml.in:184
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:187
+#: data/appcenter.metainfo.xml.in:188
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:188
+#: data/appcenter.metainfo.xml.in:189
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:189
+#: data/appcenter.metainfo.xml.in:190
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:211
+#: data/appcenter.metainfo.xml.in:212
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:212
+#: data/appcenter.metainfo.xml.in:213
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
