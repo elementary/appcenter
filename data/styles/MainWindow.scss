@@ -3,7 +3,8 @@
  * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
  */
 
-.header > box {
+box.header {
+    border-spacing: 1rem;
     padding: 1rem;
 }
 
