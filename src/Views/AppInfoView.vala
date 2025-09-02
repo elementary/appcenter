@@ -282,11 +282,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         if (!package.is_runtime_updates) {
             ODRSProvider.fetch_ratings_for_app.begin (package_component.id, (obj, res) => {
-                int64 avg = -1;
-                uint n_ratings = 0;
+                int64 avg;
+                uint n_ratings;
 
-                ODRSProvider.fetch_ratings_for_app.end (res, out avg, out n_ratings);
-                if (n_ratings == 0 || avg == -1) {
+                if (!ODRSProvider.fetch_ratings_for_app.end (res, out avg, out n_ratings)) {
                     return;
                 }
 
