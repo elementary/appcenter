@@ -74,18 +74,13 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         var factory = new Gtk.SignalListItemFactory ();
 
         grid_view = new Gtk.GridView (selection_model, factory) {
+            halign = CENTER,
             max_columns = 2,
             single_click_activate = true
         };
 
-        var clamp = new Adw.Clamp () {
-            child = grid_view,
-            maximum_size = 800,
-            tightening_threshold = 800
-        };
-
         scrolled = new Gtk.ScrolledWindow () {
-            child = clamp,
+            child = grid_view,
             hscrollbar_policy = NEVER
         };
 

@@ -33,6 +33,7 @@ public class AppCenter.SearchListItem : Gtk.Grid {
 
         name_label = new Gtk.Label (null) {
             ellipsize = END,
+            max_width_chars = 30,
             valign = END,
             xalign = 0
         };
@@ -42,6 +43,8 @@ public class AppCenter.SearchListItem : Gtk.Grid {
             ellipsize = END,
             hexpand = true,
             lines = 2,
+            width_chars = 20,
+            max_width_chars = 35,
             valign = START,
             wrap = true,
             xalign = 0
