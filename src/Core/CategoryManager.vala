@@ -18,9 +18,9 @@ public class AppCenter.CategoryManager : Object {
         categories = new GenericArray<AppStream.Category> ();
 
         append ("accessories", _("Accessories"), "applications-accessories", {"Utility"});
-        append ("audio", _("Audio"), "appcenter-audio", {"Audio", "Music"});
+        append ("audio", _("Audio"), "audio-x-generic", {"Audio", "Music"});
 
-        append ("communication", _("Communication"), "", {
+        append ("communication", _("Communication"), "internet-chat", {
             "Chat",
             "ContactManagement",
             "Email",
@@ -30,7 +30,7 @@ public class AppCenter.CategoryManager : Object {
             "VideoConference"
         });
 
-        append ("development", _("Development"), "", {
+        append ("development", _("Development"), "applications-development", {
             "Database",
             "Debugger",
             "Development",
@@ -41,14 +41,14 @@ public class AppCenter.CategoryManager : Object {
             "WebDevelopment"
         });
 
-        append ("education", _("Education"), "applications-education-symbolic", {"Education"});
+        append ("education", _("Education"), "applications-education", {"Education"});
 
         append ("finance", _("Finance"), "appcenter-finance", {
             "Economy",
             "Finance"
         });
 
-        append ("games", _("Fun & Games"), "appcenter-games-symbolic", {
+        append ("games", _("Fun & Games"), "applications-games", {
             "ActionGame",
             "AdventureGame",
             "Amusement",
@@ -66,7 +66,7 @@ public class AppCenter.CategoryManager : Object {
             "StrategyGame"
         });
 
-        append ("graphics", _("Graphics"), "", {
+        append ("graphics", _("Graphics"), "applications-graphics", {
             "2DGraphics",
             "3DGraphics",
             "Graphics",
@@ -101,7 +101,7 @@ public class AppCenter.CategoryManager : Object {
             "Science"
         });
 
-        append ("media-production", _("Media Production"), "appcenter-multimedia-symbolic", {
+        append ("media-production", _("Media Production"), "appcenter-multimedia", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
@@ -109,7 +109,7 @@ public class AppCenter.CategoryManager : Object {
             "Sequencer"
         });
 
-        append ("office", _("Office"), "appcenter-office-symbolic", {
+        append ("office", _("Office"), "appcenter-office", {
             "Office",
             "Presentation",
             "Publishing",
@@ -122,9 +122,9 @@ public class AppCenter.CategoryManager : Object {
             "System"
         });
 
-        append ("accessibility", _("Universal Access"), "appcenter-accessibility-symbolic", {"Accessibility"});
+        append ("accessibility", _("Universal Access"), "appcenter-accessibility", {"Accessibility"});
 
-        append ("video", _("Video"), "appcenter-video-symbolic", {
+        append ("video", _("Video"), "appcenter-video", {
             "Tuner",
             "TV",
             "Video"
