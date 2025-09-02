@@ -142,17 +142,11 @@ namespace AppCenter.Views {
             );
 
             var refresh_menuitem = new Gtk.Button () {
+                action_name = "app.refresh",
                 child = refresh_accellabel,
                 sensitive = false
             };
             refresh_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-            refresh_menuitem.clicked.connect (() => {
-                activate_action ("app.refresh", null);
-            });
-
-            AppCenter.App.refresh_action.activate.connect (() => {
-                refresh_menuitem.sensitive = false;
-            });
 
             var menu_popover_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             menu_popover_box.append (automatic_updates_button);
@@ -211,15 +205,6 @@ namespace AppCenter.Views {
                     show_app (((Widgets.InstalledPackageRowGrid) child.get_child ()).package);
                 }
             });
-
-            flatpak_backend.notify ["working"].connect (() => {
-                if (flatpak_backend.working) {
-                    refresh_menuitem.sensitive = false;
-                } else {
-                    refresh_menuitem.sensitive = true;
-                }
-            });
-
 
             automatic_updates_button.notify["active"].connect (() => {
                 if (automatic_updates_button.active) {

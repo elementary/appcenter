@@ -41,7 +41,7 @@ public class AppCenter.CategoryManager : Object {
             "WebDevelopment"
         });
 
-        append ("education", _("Education"), "", {"Education"});
+        append ("education", _("Education"), "applications-education-symbolic", {"Education"});
 
         append ("finance", _("Finance"), "appcenter-finance", {
             "Economy",

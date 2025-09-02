@@ -12,6 +12,7 @@ appcenter_files = files(
     'Core/HttpClient.vala',
     'Core/Job.vala',
     'Core/Houston.vala',
+    'Core/ODRSProvider.vala',
     'Core/Package.vala',
     'Core/ScreenshotCache.vala',
     'Core/SearchEngine.vala',
@@ -19,6 +20,7 @@ appcenter_files = files(
     'Core/Stripe.vala',
     'Core/UpdateManager.vala',
     'Dialogs/InstallFailDialog.vala',
+    'Dialogs' / 'ReleasesDialog.vala',
     'Dialogs/RepairFailDialog.vala',
     'Dialogs/StripeDialog.vala',
     'Dialogs/UninstallConfirmDialog.vala',
@@ -46,7 +48,6 @@ appcenter_files = files(
     'Widgets' / 'Screenshot.vala',
     'Widgets/SizeLabel.vala',
     'Widgets' / 'SearchListItem.vala',
-    'Widgets/AppContainers/AbstractPackageRowGrid.vala',
     'Widgets/AppContainers/InstalledPackageRowGrid.vala',
     'Widgets/AppContainers/ListPackageRowGrid.vala'
 )

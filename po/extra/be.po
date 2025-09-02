@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-09-02 00:08+0000\n"
 "PO-Revision-Date: 2025-06-04 11:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -57,56 +57,56 @@ msgstr "Плаціце колькі можаце, каб падтрымаць р
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:97 data/appcenter.metainfo.xml.in:117
-#: data/appcenter.metainfo.xml.in:135 data/appcenter.metainfo.xml.in:164
-#: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:199
-#: data/appcenter.metainfo.xml.in:213
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:137 data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:186 data/appcenter.metainfo.xml.in:201
+#: data/appcenter.metainfo.xml.in:215
 msgid "Other Improvements:"
 msgstr "Іншыя паляпшэнні:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:119
-#: data/appcenter.metainfo.xml.in:140 data/appcenter.metainfo.xml.in:167
-#: data/appcenter.metainfo.xml.in:189 data/appcenter.metainfo.xml.in:201
-#: data/appcenter.metainfo.xml.in:215
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:88
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:121
+#: data/appcenter.metainfo.xml.in:142 data/appcenter.metainfo.xml.in:169
+#: data/appcenter.metainfo.xml.in:191 data/appcenter.metainfo.xml.in:203
+#: data/appcenter.metainfo.xml.in:217
 msgid "Updated translations"
 msgstr "Абноўлены пераклады"
 
-#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:160
-#: data/appcenter.metainfo.xml.in:180 data/appcenter.metainfo.xml.in:208
+#: data/appcenter.metainfo.xml.in:133 data/appcenter.metainfo.xml.in:162
+#: data/appcenter.metainfo.xml.in:182 data/appcenter.metainfo.xml.in:210
 msgid "New features:"
 msgstr "Новыя магчымасці:"
 
-#: data/appcenter.metainfo.xml.in:133
+#: data/appcenter.metainfo.xml.in:135
 msgid "Manage autostart in System Settings → Applications"
 msgstr "Кіруйце аўтазапускам у Сістэмных наладах → Праграмы"
 
-#: data/appcenter.metainfo.xml.in:137
+#: data/appcenter.metainfo.xml.in:139
 msgid "Automatic app updates by default"
 msgstr "Прадвызначаныя аўтаабнаўленні праграм"
 
-#: data/appcenter.metainfo.xml.in:138
+#: data/appcenter.metainfo.xml.in:140
 msgid "OS Updates have moved to System Settings"
 msgstr "Абнаўленні АС былі перамешчаны ў налады сістэмы"
 
-#: data/appcenter.metainfo.xml.in:139
+#: data/appcenter.metainfo.xml.in:141
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Цяпер паказваюцца значкі ў праграм, створаных для elementary OS, замест "
 "праграм з іншых крыніц"
 
-#: data/appcenter.metainfo.xml.in:162
+#: data/appcenter.metainfo.xml.in:164
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Папераджаць, калі праграма выкарыстоўвае састарэлы аўтазапуск або апавяшчэнні"
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:168
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr "Выпраўлена мільганне ў AppInfo пры атрыманні памеру ўсталёўкі"
 
-#: data/appcenter.metainfo.xml.in:182
+#: data/appcenter.metainfo.xml.in:184
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -114,25 +114,25 @@ msgstr ""
 "Папераджаць, калі ў праграмы ёсць доступ да дамашняй ці сістэмнай папкі, "
 "лакацыі, налад або калі яна мае небяспечную пясочніцу."
 
-#: data/appcenter.metainfo.xml.in:186
+#: data/appcenter.metainfo.xml.in:188
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Умешаны інтэрвалы на старонках аб праграмах"
 
-#: data/appcenter.metainfo.xml.in:187
+#: data/appcenter.metainfo.xml.in:189
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Паказ запаўняльнага банера на дамашняй старонцы падчас загрузцы"
 
-#: data/appcenter.metainfo.xml.in:188
+#: data/appcenter.metainfo.xml.in:190
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr "Не паказваць праграмы не з AppCenter у асобнай секцыі ў катэгорыях"
 
-#: data/appcenter.metainfo.xml.in:210
+#: data/appcenter.metainfo.xml.in:212
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 "Прапанаванне выпраўлення, калі абнаўленне Flatpak-праграмы завяршылася з "
 "памылкаю"
 
-#: data/appcenter.metainfo.xml.in:211
+#: data/appcenter.metainfo.xml.in:213
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

@@ -59,6 +59,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         orientation = VERTICAL;
         append (header_box);
         append (description_label);
+        add_css_class (Granite.STYLE_CLASS_CARD);
 
         var issues = release.get_issues ();
 

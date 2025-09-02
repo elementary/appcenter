@@ -13,6 +13,7 @@ src/Core/Stripe.vala
 src/Core/UpdateManager.vala
 src/Dialogs/InstallFailDialog.vala
 src/Dialogs/RepairFailDialog.vala
+src/Dialogs/ReleasesDialog.vala
 src/Dialogs/StripeDialog.vala
 src/Dialogs/UninstallConfirmDialog.vala
 src/Dialogs/UninstallFailDialog.vala
@@ -35,6 +36,5 @@ src/Widgets/LinkListBox.vala
 src/Widgets/ProgressButton.vala
 src/Widgets/ReleaseRow.vala
 src/Widgets/SizeLabel.vala
-src/Widgets/AppContainers/AbstractPackageRowGrid.vala
 src/Widgets/AppContainers/InstalledPackageRowGrid.vala
 src/Widgets/AppContainers/ListPackageRowGrid.vala

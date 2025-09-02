@@ -109,6 +109,7 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 box.remove (box.get_first_child ());
             };
 
+            var package_list = new GLib.ListStore (typeof (AppCenterCore.Package));
             var paid_model = new GLib.ListStore (typeof (AppCenterCore.Package));
             var free_model = new GLib.ListStore (typeof (AppCenterCore.Package));
 
@@ -119,47 +120,38 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 } else {
                     free_model.insert_sorted (package, package_compare_func);
                 }
+
+                package_list.append (package);
             }
 
-            var recent_packages_list = new Gee.ArrayList<AppCenterCore.Package> ();
-            recent_packages_list.add_all (packages);
-            recent_packages_list.sort ((a, b) => {
-                if (a.get_newest_release () == null || b.get_newest_release () == null) {
-                    if (a.get_newest_release () != null) {
-                        return -1;
-                    } else if (b.get_newest_release () != null) {
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                }
-
-                return b.get_newest_release ().vercmp (a.get_newest_release ());
-            });
-
-            var recent_model = new GLib.ListStore (typeof (AppCenterCore.Package));
             var datetime = new GLib.DateTime.now_local ().add_months (-6);
-            var recent_count = 0;
-            foreach (var recent_package in recent_packages_list) {
-                if (recent_count == 4) {
-                    break;
-                }
+            var recent_filter_model = new Gtk.FilterListModel (package_list, new Gtk.CustomFilter ((obj) => {
+                var package = (AppCenterCore.Package) obj;
 
-                var newest_release = recent_package.get_newest_release ();
+                var newest_release = package.get_newest_release ();
                 if (newest_release == null) {
-                    continue;
+                    return false;
                 }
 
                 // Don't add packages over 6 months old
                 if (newest_release.get_timestamp () < datetime.to_unix ()) {
-                    continue;
+                    return false;
                 }
 
-                if (!recent_package.installed) {
-                    recent_model.append (recent_package);
-                    recent_count++;
-                }
-            }
+                return true;
+            }));
+
+            var recent_sort_model = new Gtk.SortListModel (recent_filter_model, new Gtk.CustomSorter ((obj1, obj2) => {
+                var package1 = (AppCenterCore.Package) obj1;
+                var package2 = (AppCenterCore.Package) obj2;
+
+                var package1_date_time = new DateTime.from_unix_utc ((int64) package1.get_newest_release ().get_timestamp ());
+                var package2_date_time = new DateTime.from_unix_utc ((int64) package2.get_newest_release ().get_timestamp ());
+
+                return package2_date_time.compare (package1_date_time);
+            }));
+
+            var recent_model = new Gtk.SliceListModel (recent_sort_model, 0, 4);
 
             if (recent_model.n_items > 0) {
                 recently_updated_flowbox.bind_model (recent_model);
