@@ -14,7 +14,7 @@
         inset 0 -1px 0 0 rgba(white, 0.15),
         0 3px 2px -1px rgba(black, 0.15),
         0 3px 5px rgba(black, 0.1);
-    font-weight: 500;
+    font-weight: 600;
     margin: rem(12px);
     padding: 1rem;
     -gtk-icon-style: symbolic;
@@ -53,11 +53,11 @@
         border-color: #{'alpha(@ORANGE_900, 0.7)'};
         color: #{'shade(@ORANGE_100, 1.25)'};
         -gtk-icon-shadow:
-            0 1px 1px #{'alpha(@ORANGE_900, 0.5)'},
-            0 2px 3px #{'alpha(@ORANGE_900, 0.5)'};
+            0 1px 1px #{'alpha(@ORANGE_900, 0.3)'},
+            0 2px 3px #{'alpha(@ORANGE_900, 0.3)'};
         text-shadow:
-            0 1px 1px #{'alpha(@ORANGE_900, 0.5)'},
-            0 2px 3px #{'alpha(@ORANGE_900, 0.5)'};
+            0 1px 1px #{'alpha(@ORANGE_900, 0.3)'},
+            0 2px 3px #{'alpha(@ORANGE_900, 0.3)'};
     }
 
     &.communication {
@@ -69,7 +69,7 @@
             );
         border-color: #{'alpha(@LIME_900, 0.7)'};
         color: white;
-        text-shadow: 0 1px 2px #{'alpha(@LIME_900, 0.9)'};
+        text-shadow: 0 1px 2px #{'alpha(@LIME_900, 0.3)'};
         -gtk-icon-shadow: 0 1px 2px #{'alpha(@LIME_900, 0.9)'};
     }
 
@@ -88,8 +88,8 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: white;
-        text-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.5)'};
-        -gtk-icon-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.5)'};
+        text-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.3)'};
+        -gtk-icon-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.3)'};
     }
 
     &.education {
@@ -133,7 +133,7 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: #{'@SILVER_100'};
-        text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.5)'};
+        text-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.3)'};
         -gtk-icon-shadow: 0 1px 2px #{'alpha(@SLATE_900, 0.5)'};
 
         label {
@@ -150,13 +150,11 @@
             0 0 0 1px rgba(black, 0.15),
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
+        color: #{'@SLATE_500'};
 
-        image {
-            color: #{'@SLATE_500'};
-            -gtk-icon-shadow:
-                0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
-                0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
-        }
+        -gtk-icon-shadow:
+            0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
+            0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
     }
 
     &.graphics {
@@ -339,33 +337,11 @@
     }
 
     &.office {
-        background-image:
-            linear-gradient(
-                to right,
-                #{'@BLUEBERRY_300'},
-                #{'@BLUEBERRY_500'} 20%,
-                #{'@LIME_300'} 20%,
-                #{'@LIME_500'} 40%,
-                #{'@ORANGE_500'} 40%,
-                #{'@ORANGE_700'} 60%,
-                #{'@BANANA_300'} 60%,
-                #{'@BANANA_500'} 80%,
-                #{'@GRAPE_500'} 80%,
-                #{'@GRAPE_700'}
-            ),
-            linear-gradient(
-                rgba(white, 0.05),
-                rgba(black, 0.05)
-            );
-        background-size:
-            100% 6px,
-            cover;
-        background-position: bottom;
         border: none;
         box-shadow:
-            inset 0 0 0 1px #{'alpha(shade(@bg_color, 1.67), 0.1)'},
-            inset 0 1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.9)'},
-            inset 0 -1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.3)'},
+            inset 0 0 0 1px #{'alpha(shade(@bg_color, 1.67), 0.05)'},
+            inset 0 1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.45)'},
+            inset 0 -1px 0 0 #{'alpha(shade(@bg_color, 1.67), 0.15)'},
             0 0 0 1px rgba(black, 0.15),
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
@@ -373,13 +349,7 @@
     }
 
     &.science {
-        background-image:
-            url("resource:///io/elementary/appcenter/backgrounds/science.svg"),
-            linear-gradient(
-                to bottom,
-                #374044,
-                #374044
-            );
+        background: #374044;
         border-color: #{'alpha(#1b2022, 0.8)'};
         box-shadow:
             inset 0 0 0 1px rgba(white, 0.02),
@@ -407,7 +377,7 @@
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
         color: #{'@SLATE_900'};
-        text-shadow: 0 1px rgba(white, 0.4);
+        text-shadow: 0 1px rgba(white, 0.3);
         -gtk-icon-shadow: 0 1px rgba(white, 0.4);
     }
 

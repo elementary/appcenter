@@ -50,6 +50,5 @@
   <gresource prefix="/io/elementary/appcenter/backgrounds">
     <file alias="education.svg" compressed="true" preprocess="xml-stripblanks">education.svg</file>
     <file alias="education@2x.svg" compressed="true" preprocess="xml-stripblanks">education@2x.svg</file>
-    <file alias="science.svg" compressed="true" preprocess="xml-stripblanks">science.svg</file>
   </gresource>
 </gresources>
