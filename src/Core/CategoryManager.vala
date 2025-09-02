@@ -43,7 +43,7 @@ public class AppCenter.CategoryManager : Object {
 
         append ("education", _("Education"), "applications-education", {"Education"});
 
-        append ("finance", _("Finance"), "appcenter-finance", {
+        append ("finance", _("Finance"), "applications-finance", {
             "Economy",
             "Finance"
         });
@@ -81,7 +81,7 @@ public class AppCenter.CategoryManager : Object {
             "P2P"
         });
 
-        append ("science", _("Math, Science, & Engineering"), "", {
+        append ("science", _("Math, Science, & Engineering"), "applications-science", {
             "ArtificialIntelligence",
             "Astronomy",
             "Biology",
@@ -101,7 +101,7 @@ public class AppCenter.CategoryManager : Object {
             "Science"
         });
 
-        append ("media-production", _("Media Production"), "appcenter-multimedia", {
+        append ("media-production", _("Media Production"), "applications-multimedia", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
@@ -109,7 +109,7 @@ public class AppCenter.CategoryManager : Object {
             "Sequencer"
         });
 
-        append ("office", _("Office"), "appcenter-office", {
+        append ("office", _("Office"), "applications-office", {
             "Office",
             "Presentation",
             "Publishing",
@@ -122,9 +122,9 @@ public class AppCenter.CategoryManager : Object {
             "System"
         });
 
-        append ("accessibility", _("Universal Access"), "appcenter-accessibility", {"Accessibility"});
+        append ("accessibility", _("Universal Access"), "preferences-desktop-accessibility", {"Accessibility"});
 
-        append ("video", _("Video"), "appcenter-video", {
+        append ("video", _("Video"), "media-playback-start", {
             "Tuner",
             "TV",
             "Video"

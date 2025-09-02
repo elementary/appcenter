@@ -63,7 +63,7 @@
     &.communication {
         background-image:
             linear-gradient(
-                175deg,
+                to bottom,
                 #{'@LIME_300'} 5%,
                 #{'@LIME_500'}
             );
@@ -76,45 +76,20 @@
     &.development {
         background-image:
             linear-gradient(
-                to right,
-                transparent calc(0.5em - 1px),
-                rgba(white, 0.05) calc(0.5em - 1px),
-                rgba(white, 0.05) 0.5em,
-                transparent 0.5em
-            ),
-            linear-gradient(
                 to bottom,
-                transparent calc(0.5em - 1px),
-                rgba(white, 0.05) calc(0.5em - 1px),
-                rgba(white, 0.05) 0.5em,
-                transparent 0.5em
-            ),
-            linear-gradient(
-                to right,
-                transparent calc(1em - 1px),
-                rgba(white, 0.125) calc(1em - 1px)
-            ),
-            linear-gradient(
-                to bottom,
-                transparent calc(1em - 1px),
-                rgba(white, 0.125) calc(1em - 1px)
-            ),
-            linear-gradient(
-                to bottom right,
-                #{'@GRAPE_500'},
-                #{'@GRAPE_700'}
+                #{'mix(@GRAPE_300, @GRAPE_500, 0.5)'} 5%,
+                #{'@GRAPE_500'}
             );
-        background-position: center center;
-        background-repeat: repeat;
-        background-size:
-            1em 1em,
-            1em 1em,
-            1em 1em,
-            1em 1em,
-            cover;
         border-color: #{'alpha(@GRAPE_900, 0.7)'};
+        box-shadow:
+            inset 0 0 0 1px rgba(white, 0.05),
+            inset 0 1px 0 0 rgba(white, 0.25),
+            inset 0 -1px 0 0 rgba(white, 0.1),
+            0 3px 2px -1px rgba(black, 0.15),
+            0 3px 5px rgba(black, 0.1);
         color: white;
         text-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.5)'};
+        -gtk-icon-shadow: 0 2px 0 #{'alpha(@GRAPE_900, 0.5)'};
     }
 
     &.education {
@@ -175,20 +150,12 @@
             0 0 0 1px rgba(black, 0.15),
             0 3px 2px -1px rgba(black, 0.15),
             0 3px 5px rgba(black, 0.1);
-        letter-spacing: -1px;
-        -gtk-icon-shadow:
-            0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
-            0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
-
-        label {
-            color: #{'@BLUEBERRY_500'};
-            text-shadow:
-                0 1px 2px #{'alpha(@BLUEBERRY_900, 0.2)'},
-                0 2px 6px #{'alpha(@BLUEBERRY_900, 0.1)'};
-        }
 
         image {
             color: #{'@SLATE_500'};
+            -gtk-icon-shadow:
+                0 1px 2px #{'alpha(@SLATE_900, 0.2)'},
+                0 2px 6px #{'alpha(@SLATE_900, 0.1)'};
         }
     }
 
