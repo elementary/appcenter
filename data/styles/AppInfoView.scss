@@ -91,10 +91,8 @@ appinfoview {
         }
     }
 
-    release {
-        background: #{'@selected_bg_color'};
-        border-radius: rem(6px);
-        margin: rem(6px) rem(12px) rem(12px) rem(12px);
+    release label.title-3 {
+        font-size: 1rem;
     }
 
     linklistbox {
