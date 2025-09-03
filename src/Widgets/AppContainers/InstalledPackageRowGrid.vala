@@ -1,28 +1,25 @@
-/*-
- * Copyright 2014-2021 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-FileCopyrightText: 2014-2025 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid {
+public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
     public signal void changed ();
+
+    public AppCenterCore.Package package { get; construct; }
+
+    public bool action_sensitive {
+        set {
+            action_stack.action_sensitive = value;
+        }
+    }
 
     private AppStream.Release? newest = null;
     private Gtk.Label app_version;
     private Gtk.Revealer release_button_revealer;
+    private ActionStack action_stack;
 
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
         Object (package: package);
@@ -35,11 +32,22 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         set_up_package ();
     }
 
-    construct {
-        app_icon.margin_end = 12;
+    class construct {
+        set_css_name ("package-row-grid");
+    }
 
-        action_stack.updates_view = true;
-        action_stack.margin_start = 12;
+    construct {
+        var app_icon = new AppIcon (48) {
+            margin_end = 12,
+            package = package
+        };
+
+        action_stack = new ActionStack (package) {
+            hexpand = false,
+            margin_start = 12,
+            show_open = false,
+            updates_view = true
+        };
 
         var package_name = new Gtk.Label (package.name) {
             wrap = true,
@@ -70,18 +78,14 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             transition_type = SLIDE_RIGHT
         };
 
-        action_stack.hexpand = false;
-
-        var grid = new Gtk.Grid () {
-            row_spacing = 3
-        };
+        var grid = new Gtk.Grid ();
         grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (app_version, 1, 1);
         grid.attach (release_button_revealer, 2, 0, 1, 2);
         grid.attach (action_stack, 3, 0, 1, 2);
 
-        append (grid);
+        child = grid;
 
         release_button.clicked.connect (() => {
             var releases_dialog = new ReleasesDialog (package) {
