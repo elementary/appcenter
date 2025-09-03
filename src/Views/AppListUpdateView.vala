@@ -112,12 +112,17 @@ namespace AppCenter.Views {
             };
             flatpak_backend.bind_property ("has-updated-packages", installed_header, "visible", SYNC_CREATE);
 
+            var installed_sort_model = new Gtk.SortListModel (
+                flatpak_backend.updated_packages,
+                AppCenterCore.Package.get_newest_release_sorter ()
+            );
+
             installed_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 max_children_per_line = 5,
                 row_spacing = 12
             };
-            installed_flowbox.bind_model (flatpak_backend.updated_packages, create_installed_from_package);
+            installed_flowbox.bind_model (installed_sort_model, create_installed_from_package);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.append (list_box);
