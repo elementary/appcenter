@@ -291,6 +291,13 @@ public class AppCenterCore.FlatpakBackend : Object {
             notify_property ("n-unpaid-updatable-packages");
             notify_property ("updates-size");
             notify_property ("up-to-date");
+
+            try {
+                Granite.Services.Application.set_badge.begin (n_updatable_packages);
+                Granite.Services.Application.set_badge_visible.begin (n_updatable_packages != 0);
+            } catch (Error e) {
+                warning ("Error setting updates badge: %s", e.message);
+            }
         });
 
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);

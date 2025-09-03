@@ -161,13 +161,6 @@ public class AppCenterCore.UpdateManager : Object {
             } else {
                 application.withdraw_notification ("io.elementary.appcenter.updates");
             }
-
-            try {
-                yield Granite.Services.Application.set_badge (n_updatable_packages);
-                yield Granite.Services.Application.set_badge_visible (n_updatable_packages != 0);
-            } catch (Error e) {
-                warning ("Error setting updates badge: %s", e.message);
-            }
         }
     }
 
