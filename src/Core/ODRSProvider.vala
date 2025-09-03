@@ -6,7 +6,7 @@
 public class AppCenter.ODRSProvider : Object {
     private const string REVIEW_SERVER = "https://odrs.gnome.org/1.0/reviews/api";
 
-    public static async void fetch_ratings_for_app (string app_id, out int64 avg, out uint n_ratings) {
+    public static async bool fetch_ratings_for_app (string app_id, out int64 avg, out uint n_ratings) {
         avg = -1;
         n_ratings = 0;
 
@@ -15,7 +15,7 @@ public class AppCenter.ODRSProvider : Object {
             user_hash = get_user_hash ();
         } catch (Error e) {
             critical (e.message);
-            return;
+            return false;
         }
 
         var distro = Environment.get_os_info ("NAME");
@@ -61,14 +61,13 @@ public class AppCenter.ODRSProvider : Object {
             bytes = yield session.send_and_read_async (message, GLib.Priority.DEFAULT, null);
         } catch (Error e) {
             critical (e.message);
-            avg = -1;
-            return;
+            return false;
         }
 
         var output = (string) bytes.get_data ();
         if (output == null) {
             critical ("no ODRS output");
-            return;
+            return false;
         }
 
         var parser = new Json.Parser ();
@@ -76,41 +75,43 @@ public class AppCenter.ODRSProvider : Object {
             parser.load_from_data (output);
         } catch (Error e) {
             critical ("ODRS: %s", e.message);
-            return;
+            return false;
         }
 
         var root = parser.get_root ();
         if (root == null) {
             critical ("no ODRS root");
-            return;
+            return false;
         }
 
         if (root.get_node_type () != ARRAY) {
             critical ("no ODRS array");
-            return;
+            return false;
         }
 
         int64 sum_rating = 0;
         var reviews = root.get_array ();
 
-        n_ratings = reviews.get_length ();
-        if (n_ratings <= 0) {
-            return;
-        }
-
+        uint num_ratings = reviews.get_length ();
         for (int i = 0; i < reviews.get_length (); i++) {
             var element = reviews.get_element (i);
 
             var object = element.get_object ();
             if (object == null || !object.has_member ("rating")) {
-                n_ratings = n_ratings - 1;
+                num_ratings = num_ratings - 1;
                 continue;
             }
 
             sum_rating += object.get_int_member ("rating");
         }
 
+        if (num_ratings <= 0) {
+            return false;
+        }
+
+        n_ratings = num_ratings;
         avg = sum_rating / n_ratings;
+        return true;
     }
 
    /*

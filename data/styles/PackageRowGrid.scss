@@ -1,0 +1,7 @@
+package-row-grid {
+    margin: rem(6px) rem(12px);
+
+    > grid {
+        border-spacing: 0 rem(3px);
+    }
+}
