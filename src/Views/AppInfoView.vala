@@ -150,6 +150,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         };
 
         var app_title = new Gtk.Label (package.name) {
+            can_focus = false,
             selectable = true,
             wrap = true,
             xalign = 0
@@ -157,6 +158,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         app_title.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
         app_subtitle = new Gtk.Label (null) {
+            can_focus = false,
             label = package.get_summary (),
             selectable = true,
             wrap = true,
