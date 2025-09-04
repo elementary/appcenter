@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-02 00:08+0000\n"
-"PO-Revision-Date: 2025-09-02 00:08+0000\n"
+"PO-Revision-Date: 2025-09-03 11:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -706,16 +706,12 @@ msgid "Screenshot Not Available"
 msgstr "スクリーンショット表示不可"
 
 #: src/Views/AppInfoView.vala:651
-#, fuzzy
-#| msgid "What's New:"
 msgid "What's New"
-msgstr "更新情報:"
+msgstr "更新情報"
 
 #: src/Views/AppInfoView.vala:655
-#, fuzzy
-#| msgid "Version: %s"
 msgid "Version History…"
-msgstr "バージョン: %s"
+msgstr "バージョン履歴…"
 
 #: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
