@@ -40,6 +40,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
                     "%u Updates Available",
                     n_updatable_packages
                 ).printf (n_updatable_packages));
+
                 return true;
             }
         );
