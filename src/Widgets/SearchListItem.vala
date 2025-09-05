@@ -45,8 +45,8 @@ public class AppCenter.SearchListItem : Gtk.Grid {
         app_icon = new AppIcon (48);
 
         name_label = new Gtk.Label (null) {
+            ellipsize = END,
             valign = END,
-            wrap = true,
             xalign = 0
         };
         name_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);

@@ -28,8 +28,9 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     public bool mimetype { get; set; default = false; }
 
     private AppCenterCore.SearchEngine search_engine;
-    private Gtk.ListView list_view;
+    private Gtk.GridView grid_view;
     private Gtk.NoSelection selection_model;
+    private Gtk.ScrolledWindow scrolled;
     private Gtk.SearchEntry search_entry;
     private Gtk.Stack stack;
     private Granite.Placeholder alert_view;
@@ -72,31 +73,31 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
         var factory = new Gtk.SignalListItemFactory ();
 
-        list_view = new Gtk.ListView (selection_model, factory) {
-            single_click_activate = true,
-            hexpand = true,
-            vexpand = true
+        grid_view = new Gtk.GridView (selection_model, factory) {
+            halign = CENTER,
+            max_columns = 2,
+            single_click_activate = true
+        };
+
+        var scrollable_clamp = new Adw.ClampScrollable () {
+            child = grid_view,
+            maximum_size = 800,
+            tightening_threshold = 800
+        };
+
+        scrolled = new Gtk.ScrolledWindow () {
+            child = scrollable_clamp,
+            hscrollbar_policy = NEVER
         };
 
         stack = new Gtk.Stack () {
             vhomogeneous = false
         };
         stack.add_child (alert_view);
-        stack.add_child (list_view);
-
-        var clamp = new Adw.Clamp () {
-            child = stack,
-            maximum_size = 800,
-            tightening_threshold = 800
-        };
-
-        var scrolled = new Gtk.ScrolledWindow () {
-            child = clamp,
-            hscrollbar_policy = NEVER
-        };
+        stack.add_child (scrolled);
 
         var toolbarview = new Adw.ToolbarView () {
-            content = scrolled
+            content = stack
         };
         toolbarview.add_top_bar (headerbar);
 
@@ -121,7 +122,7 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             ((SearchListItem) list_item.child).package = (AppCenterCore.Package) list_item.item;
         });
 
-        list_view.activate.connect ((index) => {
+        grid_view.activate.connect ((index) => {
             show_app ((AppCenterCore.Package) selection_model.get_item (index));
         });
 
@@ -169,10 +170,10 @@ public class AppCenter.SearchView : Adw.NavigationPage {
     }
 
     private void on_items_changed () {
-        list_view.scroll_to (0, NONE, null);
+        grid_view.scroll_to (0, NONE, null);
 
         if (selection_model.n_items > 0) {
-            stack.visible_child = list_view;
+            stack.visible_child = scrolled;
         } else {
             stack.visible_child = alert_view;
         }

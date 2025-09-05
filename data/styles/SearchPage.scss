@@ -1,7 +1,11 @@
 navigation-view-page.search {
-    stack.large row {
-        border-radius: 1em;
-        padding-bottom: 0.5em;
+    gridview {
+        border-spacing: 1em 2em;
+
+        child {
+            border-radius: 1em;
+            padding-bottom: 0.5em;
+        }
     }
 
     search-list-item {
