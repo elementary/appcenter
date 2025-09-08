@@ -17,6 +17,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
     }
 
     private Gtk.Label datetime_label;
+    private Gtk.Label package_name;
     private Gtk.Revealer release_button_revealer;
     private ActionStack action_stack;
 
@@ -48,9 +49,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
             updates_view = true
         };
 
-        var package_name = new Gtk.Label (package.name) {
+        package_name = new Gtk.Label (package.name) {
+            hexpand = true,
             wrap = true,
             max_width_chars = 25,
+            use_markup = true,
             valign = END,
             xalign = 0
         };
@@ -61,12 +64,12 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
         datetime_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         var release_button = new Gtk.Button.from_icon_name ("view-reader-symbolic") {
-            margin_start = 12,
             tooltip_text = _("Release notes"),
             halign = END
         };
 
         var release_box = new Gtk.Box (VERTICAL, 0) {
+            margin_start = 12,
             valign = CENTER
         };
         release_box.append (datetime_label);
@@ -74,8 +77,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
 
         release_button_revealer = new Gtk.Revealer () {
             child = release_box,
-            halign = END,
-            hexpand = true,
             transition_type = SLIDE_RIGHT
         };
 
@@ -120,6 +121,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
             datetime_label.label = Granite.DateTime.get_relative_datetime (
                 new DateTime.from_unix_utc ((int64) newest.get_timestamp ())
             );
+
+            package_name.label = "%s <span alpha=\"70%\">%s</span>".printf (package.name, package.get_version ());
         }
 
         changed ();
