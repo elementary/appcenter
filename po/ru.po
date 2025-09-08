@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-02 00:08+0000\n"
-"PO-Revision-Date: 2025-08-30 01:55+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2025-09-07 17:55+0000\n"
+"Last-Translator: Leo <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -614,16 +614,15 @@ msgstr "Реалистичная игра или участие в азартн�
 #: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Views/AppInfoView.vala:293
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "Ожидание"
-msgstr[1] "Ожидание"
-msgstr[2] "Ожидание"
+msgstr[0] "%u оценка"
+msgstr[1] "%u оценки"
+msgstr[2] "%u оценок"
 
 #: src/Views/AppInfoView.vala:306
 msgid "Made for elementary OS"
@@ -729,16 +728,12 @@ msgid "Screenshot Not Available"
 msgstr "Снимок недоступен"
 
 #: src/Views/AppInfoView.vala:651
-#, fuzzy
-#| msgid "What's New:"
 msgid "What's New"
-msgstr "Что нового:"
+msgstr "Что нового"
 
 #: src/Views/AppInfoView.vala:655
-#, fuzzy
-#| msgid "Version: %s"
 msgid "Version History…"
-msgstr "Версия: %s"
+msgstr "История версий…"
 
 #: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
