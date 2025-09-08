@@ -122,7 +122,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
                 new DateTime.from_unix_utc ((int64) newest.get_timestamp ())
             );
 
-            package_name.label = "%s <span alpha=\"70%\">%s</span>".printf (package.name, package.get_version ());
+            package_name.label = "%s <span alpha=\"70%\" size=\"small\">%s</span>".printf (package.name, package.get_version ());
         }
 
         changed ();
