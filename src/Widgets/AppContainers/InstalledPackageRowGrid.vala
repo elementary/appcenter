@@ -16,8 +16,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
         }
     }
 
-    private AppStream.Release? newest = null;
-    private Gtk.Label app_version;
+    private Gtk.Label datetime_label;
     private Gtk.Revealer release_button_revealer;
     private ActionStack action_stack;
 
@@ -57,22 +56,24 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
         };
         package_name.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        app_version = new Gtk.Label (null) {
-            ellipsize = END,
-            valign = START,
-            xalign = 0
-        };
-        app_version.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-        app_version.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        datetime_label = new Gtk.Label (null);
+        datetime_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        datetime_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         var release_button = new Gtk.Button.from_icon_name ("view-reader-symbolic") {
             margin_start = 12,
             tooltip_text = _("Release notes"),
-            valign = Gtk.Align.CENTER
+            halign = END
         };
 
+        var release_box = new Gtk.Box (VERTICAL, 0) {
+            valign = CENTER
+        };
+        release_box.append (datetime_label);
+        release_box.append (release_button);
+
         release_button_revealer = new Gtk.Revealer () {
-            child = release_button,
+            child = release_box,
             halign = END,
             hexpand = true,
             transition_type = SLIDE_RIGHT
@@ -81,9 +82,18 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
         var grid = new Gtk.Grid ();
         grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
-        grid.attach (app_version, 1, 1);
         grid.attach (release_button_revealer, 2, 0, 1, 2);
         grid.attach (action_stack, 3, 0, 1, 2);
+
+        if (package.has_multiple_origins) {
+            var origin_label = new Gtk.Label (package.origin_description) {
+                xalign = 0
+            };
+            origin_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+            origin_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+            grid.attach (origin_label, 1, 1);
+        }
 
         child = grid;
 
@@ -96,35 +106,19 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
     }
 
     private void set_up_package () {
-        if (package.get_version () != null) {
-            if (package.has_multiple_origins) {
-                app_version.label = "%s — %s".printf (package.get_version (), package.origin_description);
-            } else {
-                app_version.label = package.get_version ();
-            }
-        }
-
         package.notify["state"].connect (() => {
             update_state ();
         });
-        update_state (true);
+        update_state ();
     }
 
-    private void update_state (bool first_update = false) {
-        if (!first_update && package.get_version != null) {
-            if (package.has_multiple_origins) {
-                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
-            } else {
-                app_version.label = package.get_version ();
-            }
-        }
-
-        if (newest == null) {
-            newest = package.get_newest_release ();
-        }
-
+    private void update_state () {
+        var newest = package.get_newest_release ();
         if (newest != null && newest.get_version () != null) {
             release_button_revealer.reveal_child = true;
+            datetime_label.label = Granite.DateTime.get_relative_datetime (
+                new DateTime.from_unix_utc ((int64) newest.get_timestamp ())
+            );
         }
 
         changed ();
