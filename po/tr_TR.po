@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-09-02 00:08+0000\n"
 "PO-Revision-Date: 2024-09-24 11:24+0000\n"
 "Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
@@ -25,17 +25,17 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:76
+#: src/Application.vala:75
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "%s medya türü çözümlenemedi"
 
-#: src/Application.vala:95
+#: src/Application.vala:94
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapılıyor"
 
-#: src/Application.vala:254
+#: src/Application.vala:253
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -44,11 +44,11 @@ msgstr ""
 "penceresi kapatıldığında çalışacaktır, bu sayede güncellemeleri otomatik "
 "olarak kontrol edip yükleyebilecektir."
 
-#: src/Application.vala:316
+#: src/Application.vala:315
 msgid "The app has been installed"
 msgstr "Uygulama yüklendi"
 
-#: src/Application.vala:317 src/MainWindow.vala:222
+#: src/Application.vala:316 src/MainWindow.vala:222
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” yüklendi"
@@ -367,13 +367,13 @@ msgstr ""
 "Verilen kart bir test kartıdır. Lütfen devam etmek için gerçek bir kart "
 "kullanın."
 
-#: src/Core/UpdateManager.vala:145
+#: src/Core/UpdateManager.vala:148
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Güncelleme Var"
 msgstr[1] "Güncellemeler Var"
 
-#: src/Core/UpdateManager.vala:147
+#: src/Core/UpdateManager.vala:150
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -412,6 +412,11 @@ msgid ""
 msgstr ""
 "Bu durum dışarıdan elle eklenen yazılım depolarından veya bozulmuş bir "
 "kaynak dosyasından kaynaklanmış olabilir."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "%s'deki yenilikler"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -506,7 +511,7 @@ msgstr "Uygulamayı kaldırmak istiyor musunuz?"
 msgid "Uninstall “%s”?"
 msgstr "“%s” kaldırılsın mı?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:103
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:94
 msgid "Uninstall"
 msgstr "Kaldır"
 
@@ -559,167 +564,181 @@ msgstr "“%s” güncellenemedi"
 msgid "Refresh Updates"
 msgstr "Güncellemeleri Yenile"
 
-#. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:180
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
-msgctxt "action"
-msgid "Search"
-msgstr "Ara"
-
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:226
 msgid "Illicit Substances"
 msgstr "Yasadışı Maddeler"
 
-#: src/Views/AppInfoView.vala:237
+#: src/Views/AppInfoView.vala:227
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Alkol, uyuşturucu veya tütünün varlığı veya bunlara yapılan atıflar"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:232
 msgid "Sex & Nudity"
 msgstr "Seks ve Çıplaklık"
 
-#: src/Views/AppInfoView.vala:243
+#: src/Views/AppInfoView.vala:233
 msgid "Adult nudity or sexual themes"
 msgstr "Yetişkinlere yönelik çıplaklık veya cinsel temalar"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:238
 msgid "Offensive Language"
 msgstr "Küfürlü Dil"
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:239
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Küfür, ayrımcı dil veya yetişkinlere yönelik mizah"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:244
 msgid "Gambling"
 msgstr "Kumar"
 
-#: src/Views/AppInfoView.vala:255
+#: src/Views/AppInfoView.vala:245
 msgid "Realistic or participatory gambling"
 msgstr "Gerçekçi veya katılımcı kumar"
 
-#: src/Views/AppInfoView.vala:295
+#: src/Views/AppInfoView.vala:291
+#, c-format
+msgid "%i%%"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:293
+#, fuzzy, c-format
+#| msgid "Waiting"
+msgid "%u rating"
+msgid_plural "%u ratings"
+msgstr[0] "Bekliyor"
+msgstr[1] "Bekliyor"
+
+#: src/Views/AppInfoView.vala:306
 msgid "Made for elementary OS"
 msgstr "elementary OS için yapılmıştır"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:307
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
 "Güvenlik, gizlilik ve sistem entegrasyonu açısından elementary tarafından "
 "incelendi"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:330
 msgid "May Not Be Translated"
 msgstr "Tercüme Edilmemiş Olabilir"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:331
 msgid "This app does not provide language information"
 msgstr "Bu uygulama dil bilgisi sağlamıyor"
 
-#: src/Views/AppInfoView.vala:327
+#: src/Views/AppInfoView.vala:338
 msgid "Not Translated"
 msgstr "Çevirilmemiş"
 
-#: src/Views/AppInfoView.vala:328
+#: src/Views/AppInfoView.vala:339
 msgid "This app is not available in your language"
 msgstr "Bu uygulama dilinizde mevcut değil"
 
-#: src/Views/AppInfoView.vala:335
+#: src/Views/AppInfoView.vala:346
 msgid "Not Fully Translated"
 msgstr "Tam olarak çevrilmedi"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:347
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Bu uygulama dilinize %i%% çevrildi"
 
-#: src/Views/AppInfoView.vala:360
+#: src/Views/AppInfoView.vala:371
 msgid "Conflict"
 msgstr "Çatışma"
 
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:372
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Güvenli olmayan durumların veya saldırgan çatışmaların tasvirleri"
 
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:385
 msgid "Violence"
 msgstr "Şiddet"
 
-#: src/Views/AppInfoView.vala:379
+#: src/Views/AppInfoView.vala:390
 msgid "Fantasy Violence"
 msgstr "Fantezi Şiddeti"
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:395
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Grafik şiddet, kan dökülmesi veya ölüm"
 
-#: src/Views/AppInfoView.vala:428
+#: src/Views/AppInfoView.vala:439
 msgid "Multiplayer"
 msgstr "Çok oyunculu"
 
-#: src/Views/AppInfoView.vala:429
+#: src/Views/AppInfoView.vala:440
 msgid "Online play with other people"
 msgstr "Diğer insanlarla çevrimiçi oyun"
 
-#: src/Views/AppInfoView.vala:445
+#: src/Views/AppInfoView.vala:456
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Diğer kişilerle denetlenmeyen Ses, Görüntü veya Metin mesajlaşması"
 
-#: src/Views/AppInfoView.vala:447
+#: src/Views/AppInfoView.vala:458
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Diğer kişilerle Denetlenen Ses, Görüntü veya Metin mesajlaşması"
 
-#: src/Views/AppInfoView.vala:451
+#: src/Views/AppInfoView.vala:462
 msgid "Online Interactions"
 msgstr "Çevrimiçi Etkileşimler"
 
-#: src/Views/AppInfoView.vala:461
+#: src/Views/AppInfoView.vala:472
 msgid "Location Sharing"
 msgstr "Konum Paylaşımı"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:473
 msgid "Other people can see your real-world location"
 msgstr "Diğer kişiler gerçek dünyadaki konumunuzu görebilir"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:485
 msgid "Collects anonymous usage data"
 msgstr "Anonim kullanım verilerini toplar"
 
-#: src/Views/AppInfoView.vala:477
+#: src/Views/AppInfoView.vala:488
 msgid "Collects usage data that could be used to identify you"
 msgstr "Sizi tanımlamak için kullanılabilecek kullanım verilerini toplar"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:493
 msgid "Info Sharing"
 msgstr "Bilgi Paylaşımı"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:617
 msgid "Screenshot Not Available"
 msgstr "Ekran Görüntüsü Mevcut Değil"
 
-#: src/Views/AppInfoView.vala:697
-msgid "What's New:"
+#: src/Views/AppInfoView.vala:651
+#, fuzzy
+#| msgid "What's New:"
+msgid "What's New"
 msgstr "Yeni ne var:"
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:655
+#, fuzzy
+#| msgid "Version: %s"
+msgid "Version History…"
+msgstr "Sürüm: %s"
+
+#: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
 msgstr "Eskimiş"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:782
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "Beklendiği gibi çalışmayabilir veya güvenlik güncellemeleri alamayabilir"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:789
 msgid "May not work as expected or support the latest features"
 msgstr ""
 "Beklendiği gibi çalışmayabilir veya en son özellikleri desteklemeyebilir"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:797
 msgid "Unstable"
 msgstr "Kararsız"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:798
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -728,27 +747,27 @@ msgstr ""
 "%s'nin kararsız bir sürümü için oluşturuldu; önemli sorunlar içerebilir. Son "
 "kullanıcı sisteminde kullanılması önerilmez."
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:811
 msgid "Insecure Sandbox"
 msgstr "Güvenli Olmayan Sandbox"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:812
 msgid "Can ignore or modify its own system permissions"
 msgstr "Kendi sistem izinlerini yok sayabilir veya değiştirebilir"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:821
 msgid "System Folder Access"
 msgstr "Sistem Klasör Erişimi"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:822
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "Herkesin Ev klasörleri dahil, ancak sistem klasörleri hariç"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:829
 msgid "Home Folder Access"
 msgstr "Ev Klasörü Erişimi"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:830
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -756,54 +775,54 @@ msgstr ""
 "Tüm belgeler, indirmeler, müzikler, resimler, videolar ve gizli klasörler "
 "dahil"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:839
 msgid "Legacy Autostart"
 msgstr "Eski Otomatik Başlatma"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:840
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Sormadan otomatik olarak başlatılabilir ve arka planda çalışabilir"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:849
 msgid "Location Access"
 msgstr "Konum Erişimi"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:850
 msgid "Can see your precise location at any time without asking"
 msgstr "İstediği zaman sormadan tam konumunuzu görebilir"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:859
 msgid "Legacy Notifications"
 msgstr "Eski Bildirimler"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:860
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Baloncuklar yapılandırılamayabilir veya bildirim merkezinde \"Diğer\" olarak "
 "görünmeyebilir"
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:869
 msgid "System Settings Access"
 msgstr "Sistem Ayarlarına Erişim"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:870
 msgid "Can read and modify system settings"
 msgstr "Sistem ayarlarını okuyabilir ve değiştirebilir"
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1045
 msgid "Requires a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1048
 msgid "Recommends a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1051
 msgid "Play With a Controller"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1055
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
@@ -834,17 +853,24 @@ msgstr "Ücretsiz olarak denenen uygulamalar otomatik olarak güncellenmeyecek"
 msgid "Check for Updates"
 msgstr "Güncellemeleri Kontrol Et"
 
-#: src/Views/AppListUpdateView.vala:171
+#: src/Views/AppListUpdateView.vala:165
 msgid "Settings"
 msgstr "Ayarlar"
 
+#. / TRANSLATORS: the action of searching
+#: src/Views/AppListUpdateView.vala:174 src/Views/CategoryView.vala:69
+#: src/Views/Homepage.vala:130
+msgctxt "action"
+msgid "Search"
+msgstr "Ara"
+
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:195
 msgctxt "view"
 msgid "Installed"
 msgstr "Kurulanlar"
 
-#: src/Views/AppListUpdateView.vala:245
+#: src/Views/AppListUpdateView.vala:230
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Her şey güncel. Son kontrol %s."
@@ -936,15 +962,11 @@ msgstr "%s'i Ara"
 msgid "In-app purchases"
 msgstr ""
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "Ücretsiz"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Kur"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "Güncelle"
 
@@ -961,13 +983,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "Etkin olmayan ödemeler gerektirir"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "$%d"
@@ -1063,19 +1085,19 @@ msgstr "Bilinmeyen Lisans"
 msgid "Payment provided by Stripe"
 msgstr "Ödeme Stripe tarafından sağlanır"
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:67
 msgid "Fixed Issues"
 msgstr "Düzeltilen Sorunlar"
 
-#: src/Widgets/ReleaseRow.vala:97
+#: src/Widgets/ReleaseRow.vala:98
 msgid "Unknown date"
 msgstr "Bilinmeyen tarih"
 
-#: src/Widgets/ReleaseRow.vala:104
+#: src/Widgets/ReleaseRow.vala:105
 msgid "Unknown version"
 msgstr "Bilinmeyen sürüm"
 
-#: src/Widgets/ReleaseRow.vala:120
+#: src/Widgets/ReleaseRow.vala:121
 msgid "No description available"
 msgstr "Açıklama mevcut değil"
 
@@ -1094,18 +1116,15 @@ msgstr ""
 "Uygulamaların ve güncellemelerin sadece ihtiyaç duyulan kısımları "
 "indirilecek."
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:64
 msgid "Release notes"
 msgstr "Sürüm notları"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "%s'deki yenilikler"
+#~ msgid "Close"
+#~ msgstr "Kapat"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Kapat"
+#~ msgid "Free"
+#~ msgstr "Ücretsiz"
 
 #~ msgid "End of Life"
 #~ msgstr "Ömrü Doldu"

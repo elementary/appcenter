@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 19:04+0000\n"
+"POT-Creation-Date: 2025-09-02 00:08+0000\n"
 "PO-Revision-Date: 2025-06-04 11:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -24,17 +24,17 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:76
+#: src/Application.vala:75
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Не атрымалася прааналізаваць тып даных %s"
 
-#: src/Application.vala:95
+#: src/Application.vala:94
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Указаная спасылка «%s» не знойдзена, пошук замены"
 
-#: src/Application.vala:254
+#: src/Application.vala:253
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -43,11 +43,11 @@ msgstr ""
 "калі акно закрытае, каб аўтаматычна правяраць наяўнасць і ўсталёўваць "
 "абнаўленні."
 
-#: src/Application.vala:316
+#: src/Application.vala:315
 msgid "The app has been installed"
 msgstr "Праграма паспяхова ўсталяваная"
 
-#: src/Application.vala:317 src/MainWindow.vala:222
+#: src/Application.vala:316 src/MainWindow.vala:222
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” была ўсталяваная"
@@ -373,14 +373,14 @@ msgstr ""
 "Дадзеная карта з'яўляецца тэставай. Калі ласка, скарыстайцеся сапраўднай "
 "картай, каб працягнуць."
 
-#: src/Core/UpdateManager.vala:145
+#: src/Core/UpdateManager.vala:148
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Даступна абнаўленне"
 msgstr[1] "Даступны абнаўленні"
 msgstr[2] "Даступны абнаўленні"
 
-#: src/Core/UpdateManager.vala:147
+#: src/Core/UpdateManager.vala:150
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
@@ -420,6 +420,11 @@ msgid ""
 msgstr ""
 "Гэта можа быць вызвана вонкавымі, дададзенымі ўласнаручна рэпазіторыямі, або "
 "пашкоджаным файлам крыніц."
+
+#: src/Dialogs/ReleasesDialog.vala:18
+#, c-format
+msgid "What's new in %s"
+msgstr "Што новага ў %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -514,7 +519,7 @@ msgstr "Дэінсталяваць праграму?"
 msgid "Uninstall “%s”?"
 msgstr "Дэінсталяваць “%s”?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:103
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:94
 msgid "Uninstall"
 msgstr "Дэінсталяваць"
 
@@ -567,168 +572,183 @@ msgstr "Не ўдалося абнавіць “%s”"
 msgid "Refresh Updates"
 msgstr "Праверыць абнаўленні"
 
-#. / TRANSLATORS: the action of searching
-#: src/Views/AppInfoView.vala:98 src/Views/AppListUpdateView.vala:180
-#: src/Views/CategoryView.vala:69 src/Views/Homepage.vala:130
-msgctxt "action"
-msgid "Search"
-msgstr "Шукаць"
-
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:226
 msgid "Illicit Substances"
 msgstr "Забароненыя рэчыва"
 
-#: src/Views/AppInfoView.vala:237
+#: src/Views/AppInfoView.vala:227
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Наяўнасць або згадванне алкаголю, наркотыкаў ці табака"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:232
 msgid "Sex & Nudity"
 msgstr "Секс і галізна"
 
-#: src/Views/AppInfoView.vala:243
+#: src/Views/AppInfoView.vala:233
 msgid "Adult nudity or sexual themes"
 msgstr "Аголенасць дарослых і сексуальныя тэмы"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:238
 msgid "Offensive Language"
 msgstr "Абразлівыя выказванні"
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:239
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Непрыстойная брыдкая мова, лаянка або дарослы гумар"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:244
 msgid "Gambling"
 msgstr "Азартныя гульні"
 
-#: src/Views/AppInfoView.vala:255
+#: src/Views/AppInfoView.vala:245
 msgid "Realistic or participatory gambling"
 msgstr "Рэалістычная гульня або прысутнасць у азартных гульнях"
 
-#: src/Views/AppInfoView.vala:295
+#: src/Views/AppInfoView.vala:291
+#, c-format
+msgid "%i%%"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:293
+#, fuzzy, c-format
+#| msgid "Waiting"
+msgid "%u rating"
+msgid_plural "%u ratings"
+msgstr[0] "Чакае"
+msgstr[1] "Чакае"
+msgstr[2] "Чакае"
+
+#: src/Views/AppInfoView.vala:306
 msgid "Made for elementary OS"
 msgstr "Зроблена для elementary OS"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:307
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "Праверана elementary на бяспеку, прыватнасць і інтэграцыю з сістэмай"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:330
 msgid "May Not Be Translated"
 msgstr "Можа быць не перакладзена"
 
-#: src/Views/AppInfoView.vala:320
+#: src/Views/AppInfoView.vala:331
 msgid "This app does not provide language information"
 msgstr "Гэта праграма не дае інфармацыі аб яе мовах"
 
-#: src/Views/AppInfoView.vala:327
+#: src/Views/AppInfoView.vala:338
 msgid "Not Translated"
 msgstr "Не перакладзена"
 
-#: src/Views/AppInfoView.vala:328
+#: src/Views/AppInfoView.vala:339
 msgid "This app is not available in your language"
 msgstr "Гэта праграма недаступна на вашай мове"
 
-#: src/Views/AppInfoView.vala:335
+#: src/Views/AppInfoView.vala:346
 msgid "Not Fully Translated"
 msgstr "Перакладзена не поўнасцю"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:347
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "Гэта праграма перакладзена на вашу мову на %i%%"
 
-#: src/Views/AppInfoView.vala:360
+#: src/Views/AppInfoView.vala:371
 msgid "Conflict"
 msgstr "Канфлікты"
 
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:372
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Адлюстраванне небяспечных сітуацый або агрэсіўных канфліктаў"
 
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:385
 msgid "Violence"
 msgstr "Гвалт"
 
-#: src/Views/AppInfoView.vala:379
+#: src/Views/AppInfoView.vala:390
 msgid "Fantasy Violence"
 msgstr "Фантазійны гвалт"
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:395
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Адлюстраванне насілля, бойні або смерці"
 
-#: src/Views/AppInfoView.vala:428
+#: src/Views/AppInfoView.vala:439
 msgid "Multiplayer"
 msgstr "Шматкарыстальніцкая гульня"
 
-#: src/Views/AppInfoView.vala:429
+#: src/Views/AppInfoView.vala:440
 msgid "Online play with other people"
 msgstr "Гуляйце з іншымі людзьмі анлайн"
 
-#: src/Views/AppInfoView.vala:445
+#: src/Views/AppInfoView.vala:456
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 "Зносіны праз аўдыя, відэа і тэкставыя паведамленні, якія не мадэрыруюцца"
 
-#: src/Views/AppInfoView.vala:447
+#: src/Views/AppInfoView.vala:458
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Зносіны праз аўдыя, відэа і тэкставыя паведамленні, якія мадэрыруюцца"
 
-#: src/Views/AppInfoView.vala:451
+#: src/Views/AppInfoView.vala:462
 msgid "Online Interactions"
 msgstr "Анлайн узаемаадносіны"
 
-#: src/Views/AppInfoView.vala:461
+#: src/Views/AppInfoView.vala:472
 msgid "Location Sharing"
 msgstr "Перадача лакацыі"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:473
 msgid "Other people can see your real-world location"
 msgstr "Іншыя людзі могуць бачыць вашу лакацыю ў рэальным свеце"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:485
 msgid "Collects anonymous usage data"
 msgstr "Збірае ананімныя даныя аб выкарыстанні"
 
-#: src/Views/AppInfoView.vala:477
+#: src/Views/AppInfoView.vala:488
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 "Збірае даныя аб выкарыстанні, якія могуць быць выкарыстаныя для вашай "
 "ідэнтыфікацыі"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:493
 msgid "Info Sharing"
 msgstr "Адсыланне інфармацыі"
 
-#: src/Views/AppInfoView.vala:669
+#: src/Views/AppInfoView.vala:617
 msgid "Screenshot Not Available"
 msgstr "Здымак экрана недаступны"
 
-#: src/Views/AppInfoView.vala:697
-msgid "What's New:"
+#: src/Views/AppInfoView.vala:651
+#, fuzzy
+#| msgid "What's New:"
+msgid "What's New"
 msgstr "Што новага:"
 
-#: src/Views/AppInfoView.vala:831 src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:655
+#, fuzzy
+#| msgid "Version: %s"
+msgid "Version History…"
+msgstr "Версія: %s"
+
+#: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
 msgstr "Састарэлы"
 
-#: src/Views/AppInfoView.vala:832
+#: src/Views/AppInfoView.vala:782
 msgid "May not work as expected or receive security updates"
 msgstr ""
 "Можа працаваць не так, як вы чакаеце або не атрымліваць абнаўленні бяспекі"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:789
 msgid "May not work as expected or support the latest features"
 msgstr ""
 "Можа працаваць не так, як вы чакаеце або не падтрымліваць апошнія функцыі"
 
-#: src/Views/AppInfoView.vala:847
+#: src/Views/AppInfoView.vala:797
 msgid "Unstable"
 msgstr "Нестабільная"
 
-#: src/Views/AppInfoView.vala:848
+#: src/Views/AppInfoView.vala:798
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -737,28 +757,28 @@ msgstr ""
 "Створана для нестабільнай версіі %s; можа мець значныя праблемы. Не "
 "рэкамендуецца для выкарыстання на працоўнай сістэме."
 
-#: src/Views/AppInfoView.vala:861
+#: src/Views/AppInfoView.vala:811
 msgid "Insecure Sandbox"
 msgstr "Небяспечная пясочніца"
 
-#: src/Views/AppInfoView.vala:862
+#: src/Views/AppInfoView.vala:812
 msgid "Can ignore or modify its own system permissions"
 msgstr "Можа ігнараваць ці змяняць сістэмныя дазволы"
 
-#: src/Views/AppInfoView.vala:871
+#: src/Views/AppInfoView.vala:821
 msgid "System Folder Access"
 msgstr "Доступ да сістэмнай папкі"
 
-#: src/Views/AppInfoView.vala:872
+#: src/Views/AppInfoView.vala:822
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
 "Гэта ўключае дамашнія каталогі ўсіх карыстальнікаў, але не ўнутраныя папкі"
 
-#: src/Views/AppInfoView.vala:879
+#: src/Views/AppInfoView.vala:829
 msgid "Home Folder Access"
 msgstr "Доступ да дамашняй папкі"
 
-#: src/Views/AppInfoView.vala:880
+#: src/Views/AppInfoView.vala:830
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -766,54 +786,54 @@ msgstr ""
 "Гэта ўключае ўсе дакументы, спампоўкі, музыку, відарысы, відэа і ўсе "
 "схаваныя папкі"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:839
 msgid "Legacy Autostart"
 msgstr "Састарэлы аўтазапуск"
 
-#: src/Views/AppInfoView.vala:890
+#: src/Views/AppInfoView.vala:840
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Можа аўтаматычна запускацца і выконвацца ў фоне без запыту"
 
-#: src/Views/AppInfoView.vala:899
+#: src/Views/AppInfoView.vala:849
 msgid "Location Access"
 msgstr "Доступ да лакацыі"
 
-#: src/Views/AppInfoView.vala:900
+#: src/Views/AppInfoView.vala:850
 msgid "Can see your precise location at any time without asking"
 msgstr "Можа бачыць ваша дакладнае месцазнаходжанне ў любы час без запыту"
 
-#: src/Views/AppInfoView.vala:909
+#: src/Views/AppInfoView.vala:859
 msgid "Legacy Notifications"
 msgstr "Старыя апавяшчэнні"
 
-#: src/Views/AppInfoView.vala:910
+#: src/Views/AppInfoView.vala:860
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Бурбалкі могуць не наладжвацца або з'яўляцца ў цэнтры апавяшчэнняў як "
 "\"Іншыя\""
 
-#: src/Views/AppInfoView.vala:919
+#: src/Views/AppInfoView.vala:869
 msgid "System Settings Access"
 msgstr "Доступ да сістэмных налад"
 
-#: src/Views/AppInfoView.vala:920
+#: src/Views/AppInfoView.vala:870
 msgid "Can read and modify system settings"
 msgstr "Можа чытаць і змяняць сістэмныя налады"
 
-#: src/Views/AppInfoView.vala:1129
+#: src/Views/AppInfoView.vala:1045
 msgid "Requires a Controller"
 msgstr "Патрабуе кантролер"
 
-#: src/Views/AppInfoView.vala:1132
+#: src/Views/AppInfoView.vala:1048
 msgid "Recommends a Controller"
 msgstr "Рэкамендуецца кантролер"
 
-#: src/Views/AppInfoView.vala:1135
+#: src/Views/AppInfoView.vala:1051
 msgid "Play With a Controller"
 msgstr "Гуляйце з кантролерам"
 
-#: src/Views/AppInfoView.vala:1139
+#: src/Views/AppInfoView.vala:1055
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Накшталт кантролера PlayStation, Xbox або 8BitDo."
 
@@ -845,17 +865,24 @@ msgstr "Праграмы на пробным перыядзе не будуць 
 msgid "Check for Updates"
 msgstr "Праверыць на абнаўленні"
 
-#: src/Views/AppListUpdateView.vala:171
+#: src/Views/AppListUpdateView.vala:165
 msgid "Settings"
 msgstr "Налады"
 
+#. / TRANSLATORS: the action of searching
+#: src/Views/AppListUpdateView.vala:174 src/Views/CategoryView.vala:69
+#: src/Views/Homepage.vala:130
+msgctxt "action"
+msgid "Search"
+msgstr "Шукаць"
+
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:195
 msgctxt "view"
 msgid "Installed"
 msgstr "Усталяваныя"
 
-#: src/Views/AppListUpdateView.vala:245
+#: src/Views/AppListUpdateView.vala:230
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Ва ўсіх праграм найноўшыя версіі. Апошняя праверка была %s."
@@ -948,15 +975,11 @@ msgstr "Пошук %s"
 msgid "In-app purchases"
 msgstr "Пакупкі ў праграме"
 
-#: src/Widgets/ActionStack.vala:142 src/Widgets/HumbleButton.vala:80
-msgid "Free"
-msgstr "Бясплатна"
-
-#: src/Widgets/ActionStack.vala:144 src/Widgets/HumbleButton.vala:82
+#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Усталяваць"
 
-#: src/Widgets/ActionStack.vala:161
+#: src/Widgets/ActionStack.vala:158
 msgid "Update"
 msgstr "Абнавіць"
 
@@ -973,13 +996,13 @@ msgid "Requires payments, which are not enabled"
 msgstr "Патрэбны плацяжы, якія не ўключаны"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:114
+#: src/Widgets/HumbleButton.vala:110
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:117
+#: src/Widgets/HumbleButton.vala:113
 #, c-format
 msgid "$%d"
 msgstr "$%d"
@@ -1078,19 +1101,19 @@ msgstr "Невядомая ліцэнзія"
 msgid "Payment provided by Stripe"
 msgstr "Аплата праз Stripe"
 
-#: src/Widgets/ReleaseRow.vala:66
+#: src/Widgets/ReleaseRow.vala:67
 msgid "Fixed Issues"
 msgstr "Выпраўленыя праблемы"
 
-#: src/Widgets/ReleaseRow.vala:97
+#: src/Widgets/ReleaseRow.vala:98
 msgid "Unknown date"
 msgstr "Невядомая дата"
 
-#: src/Widgets/ReleaseRow.vala:104
+#: src/Widgets/ReleaseRow.vala:105
 msgid "Unknown version"
 msgstr "Невядомая версія"
 
-#: src/Widgets/ReleaseRow.vala:120
+#: src/Widgets/ReleaseRow.vala:121
 msgid "No description available"
 msgstr "Няма апісання"
 
@@ -1107,18 +1130,15 @@ msgstr "Памер спампоўкі, хутчэй за ўсё, будзе ме
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr "Будуць спампаваны толькі часткі патрэбных праграм і абнаўленняў."
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:62
+#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:64
 msgid "Release notes"
 msgstr "Заўвагі да выпуску"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:142
-#, c-format
-msgid "What's new in %s"
-msgstr "Што новага ў %s"
+#~ msgid "Close"
+#~ msgstr "Закрыць"
 
-#: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:176
-msgid "Close"
-msgstr "Закрыць"
+#~ msgid "Free"
+#~ msgstr "Бясплатна"
 
 #~ msgid "End of Life"
 #~ msgstr "Канец падтрымкі"

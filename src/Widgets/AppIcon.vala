@@ -21,7 +21,6 @@ public class AppCenter.AppIcon : Adw.Bin {
             pixel_size = pixel_size,
             gicon = new ThemedIcon ("application-default-icon"),
         };
-        image_default_icon.add_css_class ("icon-dim");
 
         image = new Gtk.Image () {
             pixel_size = pixel_size
