@@ -119,17 +119,12 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
             }
         }
 
-        if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
-            if (newest == null) {
-                newest = package.get_newest_release ();
-                if (newest != null && newest.get_description () != null) {
-                    release_button_revealer.reveal_child = true;
-                }
-            } else {
-                if (newest.get_description () != null) {
-                    release_button_revealer.reveal_child = true;
-                }
-            }
+        if (newest == null) {
+            newest = package.get_newest_release ();
+        }
+
+        if (newest != null && newest.get_version () != null) {
+            release_button_revealer.reveal_child = true;
         }
 
         changed ();
