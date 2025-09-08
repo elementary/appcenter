@@ -141,7 +141,10 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 return true;
             }));
 
-            var recent_sort_model = new Gtk.SortListModel (recent_filter_model, AppCenterCore.Package.get_newest_release_sorter ());
+            var recent_sort_model = new Gtk.SortListModel (
+                recent_filter_model,
+                new Gtk.CustomSorter ((CompareDataFunc<GLib.Object>) AppCenterCore.Package.compare_newest_release)
+            );
 
             var recent_model = new Gtk.SliceListModel (recent_sort_model, 0, 4);
 

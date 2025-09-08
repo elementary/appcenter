@@ -101,7 +101,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
 
         var installed_sort_model = new Gtk.SortListModel (
             flatpak_backend.updated_packages,
-            AppCenterCore.Package.get_newest_release_sorter ()
+            new Gtk.CustomSorter ((CompareDataFunc<GLib.Object>) AppCenterCore.Package.compare_newest_release)
         );
 
         installed_flowbox = new Gtk.FlowBox () {
