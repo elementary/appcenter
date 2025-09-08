@@ -87,6 +87,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
 
         if (package.has_multiple_origins) {
             var origin_label = new Gtk.Label (package.origin_description) {
+                valign = START,
                 xalign = 0
             };
             origin_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
