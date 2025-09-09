@@ -6,6 +6,7 @@ Name=AppCenter
 Comment=Browse and manage apps
 Categories=GNOME;GTK;System;PackageManager;
 Keywords=install;uninstall;remove;catalogue;store;apps;software;
+DBusActivatable=true
 
 Icon=@PROJECT_NAME@
 Exec=@EXEC_NAME@ %U
@@ -17,9 +18,9 @@ MimeType=x-scheme-handler/appstream;
 
 X-GNOME-UsesNotifications=true
 
-Actions=ShowUpdates;
+Actions=show-updates;
 
-[Desktop Action ShowUpdates]
+[Desktop Action show-updates]
 Exec=@EXEC_NAME@ --show-updates
 Name=Check for Updates
 Icon=system-software-update
