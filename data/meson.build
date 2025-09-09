@@ -25,7 +25,6 @@ install_data(
     rename: meson.project_name() + '.service',
 )
 
-
 # GNOME Shell Search Provider
 configure_file(
     input: meson.project_name() + '.search-provider.ini.in',
