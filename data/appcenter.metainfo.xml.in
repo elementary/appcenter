@@ -73,9 +73,11 @@
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/36">Sort installed tab by date installed</issue>
         <issue url="https://github.com/elementary/appcenter/issues/580">Don't try to update before I have an internet connection</issue>
         <issue url="https://github.com/elementary/appcenter/issues/695">Handle multiple licenses</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1155">Automatically check for updates after regaining an Internet connection</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1513">Text cursor should not appear for app names</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2202">Rename install button</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2241">Warn about proprietary software</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2269">Add icon for Education category</issue>
