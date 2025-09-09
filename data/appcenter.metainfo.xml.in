@@ -82,6 +82,7 @@
         <issue url="https://github.com/elementary/appcenter/issues/2241">Warn about proprietary software</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2269">Add icon for Education category</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2303">Support addons</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2349">"Check for Updates" does nothing if the app is already running</issue>
       </issues>
     </release>
 
