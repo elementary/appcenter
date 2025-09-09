@@ -141,15 +141,10 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 return true;
             }));
 
-            var recent_sort_model = new Gtk.SortListModel (recent_filter_model, new Gtk.CustomSorter ((obj1, obj2) => {
-                var package1 = (AppCenterCore.Package) obj1;
-                var package2 = (AppCenterCore.Package) obj2;
-
-                var package1_date_time = new DateTime.from_unix_utc ((int64) package1.get_newest_release ().get_timestamp ());
-                var package2_date_time = new DateTime.from_unix_utc ((int64) package2.get_newest_release ().get_timestamp ());
-
-                return package2_date_time.compare (package1_date_time);
-            }));
+            var recent_sort_model = new Gtk.SortListModel (
+                recent_filter_model,
+                new Gtk.CustomSorter ((CompareDataFunc<GLib.Object>) AppCenterCore.Package.compare_newest_release)
+            );
 
             var recent_model = new Gtk.SliceListModel (recent_sort_model, 0, 4);
 
