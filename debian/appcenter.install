@@ -1,5 +1,6 @@
 usr/bin/
 usr/share/applications/
+usr/share/dbus-1/services/
 usr/share/glib-2.0/
 usr/share/gnome-shell/search-providers/io.elementary.appcenter.search-provider.ini
 usr/share/icons/hicolor/
