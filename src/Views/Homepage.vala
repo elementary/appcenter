@@ -334,55 +334,25 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         construct {
             var name_label = new Gtk.Label (category.name) {
+                halign = START,
                 wrap = true,
-                max_width_chars = 15
+                xalign = 0
             };
 
-            var box = new Gtk.Box (HORIZONTAL, 6) {
-                halign = CENTER,
-                valign = CENTER
+            var display_image = new Gtk.Image.from_icon_name (category.icon) {
+                halign = END,
+                valign = CENTER,
             };
 
-            if (category.icon != "") {
-                var display_image = new Gtk.Image.from_icon_name (category.icon) {
-                    halign = END,
-                    valign = CENTER,
-                };
-
-                box.append (display_image);
-
-                name_label.xalign = 0;
-                name_label.halign = START;
-            } else {
-                name_label.justify = CENTER;
-            }
-
+            var box = new Gtk.Box (HORIZONTAL, 0);
+            box.append (display_image);
             box.append (name_label);
+            box.add_css_class (Granite.STYLE_CLASS_CARD);
+            box.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+            box.add_css_class ("category");
+            box.add_css_class (category.id);
 
-            var expanded_grid = new Gtk.Grid () {
-                hexpand = true,
-                vexpand = true
-            };
-
-            var content_area = new Gtk.Grid ();
-            content_area.attach (box, 0, 0);
-            content_area.attach (expanded_grid, 0, 0);
-            content_area.add_css_class (Granite.STYLE_CLASS_CARD);
-            content_area.add_css_class (Granite.STYLE_CLASS_ROUNDED);
-            content_area.add_css_class ("category");
-            content_area.add_css_class (category.id);
-
-            child = content_area;
-
-            if (category.id == "accessibility") {
-                name_label.label = category.name.up ();
-            } else {
-                name_label.label = category.name;
-            }
-
-            if (category.id == "science") {
-                name_label.justify = CENTER;
-            }
+            child = box;
 
             AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
                 Idle.add (() => {
