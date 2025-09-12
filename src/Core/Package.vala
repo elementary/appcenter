@@ -977,4 +977,27 @@ public class AppCenterCore.Package : Object {
 
         return size;
     }
+
+    public static int compare_newest_release (Object obj1, Object obj2) {
+        var package1 = (AppCenterCore.Package) obj1;
+        var package2 = (AppCenterCore.Package) obj2;
+
+        var package1_newest_release = package1.get_newest_release ();
+        var package2_newest_release = package2.get_newest_release ();
+
+        if (package1_newest_release == null || package2_newest_release == null) {
+            if (package1_newest_release != null) {
+                return -1;
+            } else if (package2_newest_release != null) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        var package1_date_time = new DateTime.from_unix_utc ((int64) package1_newest_release.get_timestamp ());
+        var package2_date_time = new DateTime.from_unix_utc ((int64) package2_newest_release.get_timestamp ());
+
+        return package2_date_time.compare (package1_date_time);
+    }
 }

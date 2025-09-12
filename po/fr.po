@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-02 00:08+0000\n"
-"PO-Revision-Date: 2025-08-26 12:55+0000\n"
+"PO-Revision-Date: 2025-09-10 08:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/fr/>\n"
@@ -621,15 +621,14 @@ msgstr "Jeu réaliste ou participatif"
 #: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Views/AppInfoView.vala:293
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "En attente"
-msgstr[1] "En attente"
+msgstr[0] "%u évaluation"
+msgstr[1] "%u évaluations"
 
 #: src/Views/AppInfoView.vala:306
 msgid "Made for elementary OS"
@@ -733,16 +732,12 @@ msgid "Screenshot Not Available"
 msgstr "Capture d’écran non disponible"
 
 #: src/Views/AppInfoView.vala:651
-#, fuzzy
-#| msgid "What's New:"
 msgid "What's New"
-msgstr "Nouveautés :"
+msgstr "Nouveautés"
 
 #: src/Views/AppInfoView.vala:655
-#, fuzzy
-#| msgid "Version: %s"
 msgid "Version History…"
-msgstr "Version : %s"
+msgstr "Historique des versions…"
 
 #: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
@@ -1008,7 +1003,7 @@ msgstr "Mettre à jour"
 
 #: src/Widgets/AddonList.vala:16
 msgid "Add-Ons"
-msgstr ""
+msgstr "Extensions"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
