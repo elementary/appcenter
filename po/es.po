@@ -28,13 +28,14 @@
 # trubiso <crishipohola@gmail.com>, 2024.
 # Enrique Ochoa <eochoa11@ucol.mx>, 2024.
 # Italo Felipe Capasso Ballesteros <italo@gp-mail.com>, 2025.
+# Vitto Agustin Mediotti <agustinmediotti@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-02 00:08+0000\n"
-"PO-Revision-Date: 2025-09-13 19:01+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
+"PO-Revision-Date: 2025-09-14 19:55+0000\n"
+"Last-Translator: Vitto Agustin Mediotti <agustinmediotti@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -1068,7 +1069,7 @@ msgstr "Sin licencia"
 #: src/Widgets/LinkListBox.vala:206 src/Widgets/LinkListBox.vala:265
 #, c-format
 msgid "Contact %s for licensing information"
-msgstr "Contacta a %s para obtener información de la licencia"
+msgstr "Ponte en contacto con %s para obtener información sobre la licencia"
 
 #. TRANSLATORS: delimiter for a list of software licenses
 #: src/Widgets/LinkListBox.vala:218
