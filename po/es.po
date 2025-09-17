@@ -28,13 +28,14 @@
 # trubiso <crishipohola@gmail.com>, 2024.
 # Enrique Ochoa <eochoa11@ucol.mx>, 2024.
 # Italo Felipe Capasso Ballesteros <italo@gp-mail.com>, 2025.
+# Vitto Agustin Mediotti <agustinmediotti@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-02 00:08+0000\n"
-"PO-Revision-Date: 2025-06-30 01:55+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
+"PO-Revision-Date: 2025-09-14 19:55+0000\n"
+"Last-Translator: Vitto Agustin Mediotti <agustinmediotti@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -633,15 +634,14 @@ msgstr "Apuestas realistas o de participación"
 #: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Views/AppInfoView.vala:293
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "Esperando"
-msgstr[1] "Esperando"
+msgstr[0] "%u calificación"
+msgstr[1] "%u calificaciones"
 
 #: src/Views/AppInfoView.vala:306
 msgid "Made for elementary OS"
@@ -743,16 +743,12 @@ msgid "Screenshot Not Available"
 msgstr "Captura de pantalla no disponible"
 
 #: src/Views/AppInfoView.vala:651
-#, fuzzy
-#| msgid "What's New:"
 msgid "What's New"
-msgstr "Novedades:"
+msgstr "Novedades"
 
 #: src/Views/AppInfoView.vala:655
-#, fuzzy
-#| msgid "Version: %s"
 msgid "Version History…"
-msgstr "Versión: %s"
+msgstr "Historial de versiones…"
 
 #: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
@@ -1012,7 +1008,7 @@ msgstr "Actualizar"
 
 #: src/Widgets/AddonList.vala:16
 msgid "Add-Ons"
-msgstr ""
+msgstr "Complementos"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
@@ -1067,25 +1063,22 @@ msgid "Get Involved"
 msgstr "Participa"
 
 #: src/Widgets/LinkListBox.vala:205
-#, fuzzy
-#| msgid "Unknown License"
 msgid "No License"
-msgstr "Licencia desconocida"
+msgstr "Sin licencia"
 
 #: src/Widgets/LinkListBox.vala:206 src/Widgets/LinkListBox.vala:265
-#, fuzzy, c-format
-#| msgid "Getting information"
+#, c-format
 msgid "Contact %s for licensing information"
-msgstr "Obteniendo información"
+msgstr "Ponte en contacto con %s para obtener información sobre la licencia"
 
 #. TRANSLATORS: delimiter for a list of software licenses
 #: src/Widgets/LinkListBox.vala:218
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: src/Widgets/LinkListBox.vala:219
 msgid "Mixed License"
-msgstr ""
+msgstr "Licencia mixta"
 
 #: src/Widgets/LinkListBox.vala:233
 msgid "Free Software"
@@ -1098,14 +1091,12 @@ msgstr "https://www.gnu.org/philosophy/free-sw.es.html"
 
 #: src/Widgets/LinkListBox.vala:243 src/Widgets/LinkListBox.vala:288
 msgid "Proprietary"
-msgstr "Propietario"
+msgstr "Privativo"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:247
-#, fuzzy
-#| msgid "https://www.gnu.org/philosophy/free-sw"
 msgid "https://www.gnu.org/proprietary/proprietary.en.html"
-msgstr "https://www.gnu.org/philosophy/free-sw.es.html"
+msgstr "https://www.gnu.org/proprietary/proprietary.es.html"
 
 #: src/Widgets/LinkListBox.vala:253 src/Widgets/LinkListBox.vala:286
 msgid "Public Domain"
@@ -1117,10 +1108,8 @@ msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://es.wikipedia.org/wiki/Dominio_p%C3%BAblico"
 
 #: src/Widgets/LinkListBox.vala:261
-#, fuzzy
-#| msgid "Unknown License"
 msgid "Custom License"
-msgstr "Licencia desconocida"
+msgstr "Licencia personalizada"
 
 #: src/Widgets/LinkListBox.vala:344
 msgid "Payment provided by Stripe"
