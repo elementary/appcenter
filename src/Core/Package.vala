@@ -616,7 +616,7 @@ public class AppCenterCore.Package : Object {
 
                 // Give extra score value if query is a substring
                 // or if it matches exactly the component name or id
-                if (query_down == name_down || id_down == query_down) {
+                if (query_down == name_down || query_down == id_down) {
                     query_score = EXACT_MATCH_SCORE * queries.length;
                 } else if (
                     name_down.contains (query.down ()) ||
