@@ -626,6 +626,7 @@ public class AppCenterCore.Package : Object {
                     query_score = PARTIAL_MATCH_SCORE * queries.length;
                 }
             }
+
             score += query_score;
         }
         cached_search_score = score / queries.length;
