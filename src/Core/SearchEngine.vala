@@ -57,6 +57,13 @@ public class AppCenterCore.SearchEngine : Object {
 
     public void search (string query, AppStream.Category? category) {
         this.query = pool.build_search_tokens (query);
+        // If there are multiple tokens, add an aditional joined query token
+        if (this.query.length > 1) {
+            var joined_query = query.replace (" ", "");
+            critical (joined_query);
+            this.query.resize (this.query.length + 1);
+            this.query[this.query.length - 1] = joined_query;
+        }
         this.category = category;
         packages.items_changed (0, packages.n_items, packages.n_items);
     }
