@@ -620,7 +620,7 @@ public class AppCenterCore.Package : Object {
                     query_score = EXACT_MATCH_SCORE * queries.length;
                 } else if (
                     name_down.contains (query_down) ||
-                    id_down.contains (query.down ())
+                    id_down.contains (query_down)
                 ) {
                     query_score = PARTIAL_MATCH_SCORE * queries.length;
                 }
