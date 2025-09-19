@@ -609,6 +609,7 @@ public class AppCenterCore.Package : Object {
         uint score = 0;
         foreach (var query in queries) {
             var query_score = component.search_matches (query);
+
             if (query_score == 0) {
                 var id_down = component.id.down ();
                 var name_down = component.name.down ();
