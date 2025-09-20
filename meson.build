@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '8.3.0',
+    version: '8.3.1',
     meson_version: '>=0.57.0'
 )
 
@@ -67,7 +67,7 @@ conf_data.set('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set('VERSION', meson.project_version())
 conf_data.set('RUNTIME_NAME', get_option('runtime_name'))
 conf_data.set('CONFIGDIR', config_dir)
-conf_data.set('EXEC_PATH', join_paths (get_option('prefix'), get_option('bindir'), meson.project_name()))
+conf_data.set('EXEC_PATH', join_paths(get_option('prefix'), get_option('bindir'), meson.project_name()))
 conf_data.set('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 
 subdir('data')
