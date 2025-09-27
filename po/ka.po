@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-02 00:08+0000\n"
-"PO-Revision-Date: 2025-08-31 09:44+0000\n"
+"PO-Revision-Date: 2025-09-28 06:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ka/>\n"
@@ -571,11 +571,10 @@ msgid "%i%%"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:293
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "მოლოდინი"
+msgstr[0] "%u რეიტინგი"
 
 #: src/Views/AppInfoView.vala:306
 msgid "Made for elementary OS"
@@ -675,16 +674,12 @@ msgid "Screenshot Not Available"
 msgstr "ეკრანის ანაბეჭდი ხელმიუწვდომელია"
 
 #: src/Views/AppInfoView.vala:651
-#, fuzzy
-#| msgid "What's New:"
 msgid "What's New"
-msgstr "სიახლეები:"
+msgstr "სიახლეები"
 
 #: src/Views/AppInfoView.vala:655
-#, fuzzy
-#| msgid "Version: %s"
 msgid "Version History…"
-msgstr "ვერსია: %s"
+msgstr "ვერსიის ისტორია…"
 
 #: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
