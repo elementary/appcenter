@@ -1,10 +1,23 @@
 navigation-view-page.search {
     gridview {
         border-spacing: 1em 2em;
-    }
-}
 
-search-list-item {
-    border-spacing: 1em 0;
-    margin: 0.5em 1em;
+        child {
+            border-radius: 1em;
+            padding-bottom: 0.5em;
+        }
+    }
+
+    search-list-item {
+        border-spacing: 1em 0;
+        margin: 0.5em 1em;
+
+        image {
+            margin: 0 -4px;
+        }
+    }
+
+    screenshot {
+        margin-top: calc(1em - 3px);
+    }
 }
