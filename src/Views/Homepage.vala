@@ -367,8 +367,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             var content_area = new Gtk.Grid ();
             content_area.attach (box, 0, 0);
             content_area.attach (expanded_grid, 0, 0);
-            content_area.add_css_class (Granite.STYLE_CLASS_CARD);
-            content_area.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+            content_area.add_css_class (Granite.CssClass.CARD);
             content_area.add_css_class ("category");
             content_area.add_css_class (category.id);
 

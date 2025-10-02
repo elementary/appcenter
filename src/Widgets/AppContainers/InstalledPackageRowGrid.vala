@@ -81,8 +81,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
                 valign = START,
                 xalign = 0
             };
-            origin_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            origin_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            origin_label.add_css_class (Granite.CssClass.DIM);
+            origin_label.add_css_class (Granite.CssClass.SMALL);
 
             grid.attach (origin_label, 1, 1);
         }

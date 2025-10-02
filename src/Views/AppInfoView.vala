@@ -106,8 +106,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             hexpand = false
         };
 
-        action_stack.action_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        action_stack.open_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        action_stack.action_button.add_css_class (Granite.CssClass.SUGGESTED);
+        action_stack.open_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         var headerbar = new Gtk.HeaderBar () {
             title_widget = title_revealer
@@ -166,7 +166,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             xalign = 0
         };
         app_subtitle.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-        app_subtitle.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        app_subtitle.add_css_class (Granite.CssClass.DIM);
 
         origin_liststore = new GLib.ListStore (typeof (AppCenterCore.Package));
 
@@ -199,7 +199,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 halign = Gtk.Align.END,
                 hexpand = true
             };
-            size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+            size_label.add_css_class (Granite.CssClass.DIM);
 
             header_grid.attach (size_label, 1, 0);
         }
@@ -619,7 +619,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             var screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
             screenshot_not_found.get_style_context ().add_provider (accent_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             screenshot_not_found.add_css_class ("screenshot");
-            screenshot_not_found.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+            screenshot_not_found.add_css_class (Granite.CssClass.DIM);
 
             screenshot_not_found_clamp = new Adw.Clamp () {
                 child = screenshot_not_found,
@@ -1069,7 +1069,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             valign = Gtk.Align.CENTER;
 
             add_css_class (Granite.STYLE_CLASS_FLAT);
-            add_css_class (Granite.STYLE_CLASS_CIRCULAR);
+            add_css_class (Granite.CssClass.CIRCULAR);
             add_css_class ("arrow");
         }
     }
@@ -1100,8 +1100,8 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 wrap = true,
                 xalign = 0
             };
-            description_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
-            description_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+            description_label.add_css_class (Granite.CssClass.SMALL);
+            description_label.add_css_class (Granite.CssClass.DIM);
 
             var label_box = new Gtk.Box (VERTICAL, 3);
             label_box.append (label);

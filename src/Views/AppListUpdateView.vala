@@ -52,7 +52,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         flatpak_backend.bind_property ("updates-size", size_label, "size", SYNC_CREATE);
 
         updated_label = new Gtk.Label ("");
-        updated_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        updated_label.add_css_class (Granite.CssClass.DIM);
 
         var updated_box = new Gtk.Box (HORIZONTAL, 6);
         updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
@@ -70,7 +70,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             valign = Gtk.Align.CENTER,
             action_name = "app.update-all"
         };
-        update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        update_all_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         var header = new Gtk.Box (HORIZONTAL, 16);
         header.append (header_label);
