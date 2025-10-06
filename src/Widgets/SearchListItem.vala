@@ -49,8 +49,8 @@ public class AppCenter.SearchListItem : Gtk.Grid {
             wrap = true,
             xalign = 0
         };
-        summary_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-        summary_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        summary_label.add_css_class (Granite.CssClass.DIM);
+        summary_label.add_css_class (Granite.CssClass.SMALL);
 
         attach (app_icon, 0, 0, 1, 2);
         attach (name_label, 1, 0);

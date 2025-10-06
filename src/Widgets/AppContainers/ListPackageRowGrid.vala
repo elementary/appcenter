@@ -45,7 +45,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : Granite.Bin {
             wrap = true,
             xalign = 0
         };
-        package_summary.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        package_summary.add_css_class (Granite.CssClass.DIM);
 
         if (package.is_local) {
             action_stack.visible = false;

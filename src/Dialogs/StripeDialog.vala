@@ -155,7 +155,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             wrap = true,
             xalign = 0
         };
-        email_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        email_label.add_css_class (Granite.CssClass.SMALL);
 
         var card_number_entry_controllerfocus = new Gtk.EventControllerFocus ();
 
@@ -230,7 +230,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
         pay_button = (Gtk.Button) add_button (_("Pay $%d.00").printf (amount), Gtk.ResponseType.APPLY);
-        pay_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        pay_button.add_css_class (Granite.CssClass.SUGGESTED);
         pay_button.sensitive = false;
 
         set_default_widget (pay_button);

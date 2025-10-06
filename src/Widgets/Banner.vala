@@ -96,8 +96,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         outer_box.append (inner_box);
 
         add_css_class ("banner");
-        add_css_class (Granite.STYLE_CLASS_CARD);
-        add_css_class (Granite.STYLE_CLASS_ROUNDED);
+        add_css_class (Granite.CssClass.CARD);
 
         hexpand = true;
         child = outer_box;
