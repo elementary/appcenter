@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-02 00:08+0000\n"
-"PO-Revision-Date: 2025-03-14 06:54+0000\n"
+"PO-Revision-Date: 2025-10-06 12:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -574,15 +574,14 @@ msgstr "הימור מציאותי או השתתפות בכזה"
 #: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Views/AppInfoView.vala:293
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "בהמתנה"
-msgstr[1] "בהמתנה"
+msgstr[0] "דירוג"
+msgstr[1] "%u דירוגים"
 
 #: src/Views/AppInfoView.vala:306
 msgid "Made for elementary OS"
@@ -682,16 +681,12 @@ msgid "Screenshot Not Available"
 msgstr "אין צילום מסך"
 
 #: src/Views/AppInfoView.vala:651
-#, fuzzy
-#| msgid "What's New:"
 msgid "What's New"
-msgstr "מה חדש:"
+msgstr "מה חדש"
 
 #: src/Views/AppInfoView.vala:655
-#, fuzzy
-#| msgid "Version: %s"
 msgid "Version History…"
-msgstr "גרסה: %s"
+msgstr "היסטוריית גרסאות…"
 
 #: src/Views/AppInfoView.vala:781 src/Views/AppInfoView.vala:788
 msgid "Outdated"
@@ -780,19 +775,19 @@ msgstr "יכול לקרוא ולשנות הגדרות מערכת"
 
 #: src/Views/AppInfoView.vala:1045
 msgid "Requires a Controller"
-msgstr ""
+msgstr "דורש בקר"
 
 #: src/Views/AppInfoView.vala:1048
 msgid "Recommends a Controller"
-msgstr ""
+msgstr "ממליץ על בקר"
 
 #: src/Views/AppInfoView.vala:1051
 msgid "Play With a Controller"
-msgstr ""
+msgstr "משחק עם בקר"
 
 #: src/Views/AppInfoView.vala:1055
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
-msgstr ""
+msgstr "כגון בקר PlayStation,‏ Xbox או 8BitDo."
 
 #: src/Views/AppListUpdateView.vala:52
 #, c-format
@@ -938,7 +933,7 @@ msgstr "עדכון"
 
 #: src/Widgets/AddonList.vala:16
 msgid "Add-Ons"
-msgstr ""
+msgstr "תוספים"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
@@ -993,25 +988,22 @@ msgid "Get Involved"
 msgstr "השתתפות"
 
 #: src/Widgets/LinkListBox.vala:205
-#, fuzzy
-#| msgid "Unknown License"
 msgid "No License"
-msgstr "רישיון לא ידוע"
+msgstr "אין רישיון"
 
 #: src/Widgets/LinkListBox.vala:206 src/Widgets/LinkListBox.vala:265
-#, fuzzy, c-format
-#| msgid "Getting information"
+#, c-format
 msgid "Contact %s for licensing information"
-msgstr "מתקבל מידע"
+msgstr "יש ליצור קשר עם %s בנוגע לפרטי רישוי"
 
 #. TRANSLATORS: delimiter for a list of software licenses
 #: src/Widgets/LinkListBox.vala:218
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: src/Widgets/LinkListBox.vala:219
 msgid "Mixed License"
-msgstr ""
+msgstr "רישיון מעורב"
 
 #: src/Widgets/LinkListBox.vala:233
 msgid "Free Software"
@@ -1028,10 +1020,8 @@ msgstr "קנייני"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:247
-#, fuzzy
-#| msgid "https://www.gnu.org/philosophy/free-sw"
 msgid "https://www.gnu.org/proprietary/proprietary.en.html"
-msgstr "https://www.gnu.org/philosophy/free-sw.he.html"
+msgstr "https://www.gnu.org/proprietary/proprietary.en.html"
 
 #: src/Widgets/LinkListBox.vala:253 src/Widgets/LinkListBox.vala:286
 msgid "Public Domain"
@@ -1043,10 +1033,8 @@ msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://he.wikipedia.org/wiki/רשות_הציבור"
 
 #: src/Widgets/LinkListBox.vala:261
-#, fuzzy
-#| msgid "Unknown License"
 msgid "Custom License"
-msgstr "רישיון לא ידוע"
+msgstr "רישיון מותאם אישית"
 
 #: src/Widgets/LinkListBox.vala:344
 msgid "Payment provided by Stripe"
