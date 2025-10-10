@@ -60,13 +60,6 @@ public class AppCenterCore.Package : Object {
         "language-discrimination"
     };
 
-    public signal void changing (bool is_changing);
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void info_changed (ChangeInformation.Status status);
-
     public enum State {
         NOT_INSTALLED,
         INSTALLED,
@@ -107,12 +100,14 @@ public class AppCenterCore.Package : Object {
 
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
-    public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
-    public double progress {
-        get {
-            return change_information.progress;
+    private UpdateInformation? _update_information;
+    public UpdateInformation? update_information {
+        get { return _update_information; }
+        set {
+            _update_information = value;
+            update_state ();
         }
     }
 
@@ -190,12 +185,6 @@ public class AppCenterCore.Package : Object {
     public bool is_updating {
         get {
             return state == State.UPDATING;
-        }
-    }
-
-    public bool changes_finished {
-        get {
-            return change_information.status == ChangeInformation.Status.FINISHED;
         }
     }
 
@@ -424,9 +413,6 @@ public class AppCenterCore.Package : Object {
 
     construct {
         change_information = new ChangeInformation ();
-        change_information.status_changed.connect (() => info_changed (change_information.status));
-
-        action_cancellable = new GLib.Cancellable ();
     }
 
     public Package (string uid, AppStream.Component component) {
@@ -454,7 +440,7 @@ public class AppCenterCore.Package : Object {
         State new_state;
 
         if (installed) {
-            if (change_information.has_changes ()) {
+            if (update_information != null) {
                 new_state = State.UPDATE_AVAILABLE;
             } else {
                 new_state = State.INSTALLED;
@@ -546,9 +532,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private void prepare_package_operation (State initial_state) {
-        changing (true);
-
-        action_cancellable.reset ();
         change_information.start ();
         state = initial_state;
 
@@ -560,20 +543,19 @@ public class AppCenterCore.Package : Object {
 
         switch (state) {
             case State.UPDATING:
-                var success = yield backend.update_package (this, change_information, action_cancellable);
+                var success = yield backend.update_package (this, change_information);
                 if (success) {
-                    change_information.clear_update_info ();
-                    update_state ();
+                    update_information = null;
                 }
 
                 return success;
             case State.INSTALLING:
-                var success = yield backend.install_package (this, change_information, action_cancellable);
+                var success = yield backend.install_package (this, change_information);
                 _installed = success;
                 update_state ();
                 return success;
             case State.REMOVING:
-                var success = yield backend.remove_package (this, change_information, action_cancellable);
+                var success = yield backend.remove_package (this, change_information);
                 _installed = !success;
                 update_state ();
                 return success;
@@ -583,14 +565,12 @@ public class AppCenterCore.Package : Object {
     }
 
     private void clean_up_package_operation (bool success, State success_state, State fail_state) {
-        changing (false);
+        change_information.complete ();
 
         if (success) {
-            change_information.complete ();
             state = success_state;
         } else {
             state = fail_state;
-            change_information.cancel ();
         }
 
         FlatpakBackend.get_default ().notify_package_changed (this);
@@ -663,10 +643,6 @@ public class AppCenterCore.Package : Object {
 
     public void set_summary (string? new_summary) {
         summary = new_summary;
-    }
-
-    public string get_progress_description () {
-        return change_information.status_description;
     }
 
     public GLib.Icon get_icon (uint size, uint scale_factor) {
