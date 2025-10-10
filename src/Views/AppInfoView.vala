@@ -25,8 +25,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         @define-color banner_fg_color %s;
     """;
 
-    public signal void show_other_package (AppCenterCore.Package package);
-
     public AppCenterCore.Package package { get; construct set; }
 
     GenericArray<AppStream.Screenshot> screenshots;
@@ -37,7 +35,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     private Gtk.DropDown origin_dropdown;
     private Gtk.Label app_subtitle;
     private Gtk.Overlay screenshot_overlay;
-    private Gtk.Revealer origin_combo_revealer;
     private Adw.Carousel screenshot_carousel;
     private Adw.Clamp screenshot_not_found_clamp;
     private Gtk.Stack screenshot_stack;
@@ -180,11 +177,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             factory = list_factory
         };
 
-        origin_combo_revealer = new Gtk.Revealer () {
-            child = origin_dropdown,
-            overflow = VISIBLE,
-            transition_type = SLIDE_DOWN
-        };
+        foreach (var origin_package in package.origin_packages) {
+            origin_liststore.append (origin_package);
+            if (origin_package == package) {
+                origin_dropdown.selected = origin_liststore.n_items - 1;
+            }
+        }
+
+        origin_dropdown.visible = origin_liststore.n_items > 1;
 
         var header_grid = new Gtk.Grid () {
             column_spacing = 12,
@@ -192,7 +192,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         };
         header_grid.attach (app_title, 0, 0);
         header_grid.attach (app_subtitle, 0, 1, 2);
-        header_grid.attach (origin_combo_revealer, 0, 2, 2);
+        header_grid.attach (origin_dropdown, 0, 2, 2);
 
         if (!package.is_local) {
             size_label = new Widgets.SizeLabel () {
@@ -730,7 +730,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         origin_dropdown.notify["selected-item"].connect (() => {
             var selected_origin_package = (AppCenterCore.Package) origin_dropdown.selected_item;
             if (selected_origin_package != null && selected_origin_package != package) {
-                show_other_package (selected_origin_package);
+                activate_action_variant (
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE,
+                    selected_origin_package.uid
+                );
             }
         });
 
@@ -880,19 +883,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     private void load_more_content () {
-        uint count = 0;
-        foreach (var origin_package in package.origin_packages) {
-            origin_liststore.append (origin_package);
-            if (origin_package == package) {
-                origin_dropdown.selected = count;
-            }
-
-            count++;
-            if (count > 1) {
-                origin_combo_revealer.reveal_child = true;
-            }
-        }
-
         new Thread<void*> ("content-loading", () => {
             var description = package.get_description ();
             Idle.add (() => {
