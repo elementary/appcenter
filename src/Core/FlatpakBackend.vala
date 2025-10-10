@@ -1683,7 +1683,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                 // Calculate the progress contribution of the previous operations not including the current, hence -1
                 double existing_progress = (double)(current_operation - 1) / (double)total_operations;
                 double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
-                change_info.callback (true, _("Installing"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
+                change_info.callback (existing_progress + this_op_progress, _("Installing"));
             });
         });
 
@@ -1692,7 +1692,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s (detail: %d)", e.message, detail);
             if (e is GLib.IOError.CANCELLED) {
-                change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             }
 
@@ -1716,7 +1715,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 success = false;
@@ -1814,7 +1812,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                 // Calculate the progress contribution of the previous operations not including the current, hence -1
                 double existing_progress = (double)(current_operation - 1) / (double)total_operations;
                 double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
-                change_info.callback (true, _("Uninstalling"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
+                change_info.callback (existing_progress + this_op_progress, _("Uninstalling"));
             });
         });
 
@@ -1823,7 +1821,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak removal failed: %s (detail: %d)", e.message, detail);
             if (e is GLib.IOError.CANCELLED) {
-                change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             }
 
@@ -1847,7 +1844,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 success = false;
@@ -1995,7 +1991,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                 // Calculate the progress contribution of the previous operations not including the current, hence -1
                 double existing_progress = (double)(current_operation - 1) / (double)total_operations;
                 double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
-                change_info.callback (true, _("Updating"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
+                change_info.callback (existing_progress + this_op_progress, _("Updating"));
             });
         });
 
@@ -2004,7 +2000,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s", e.message);
             if (e is GLib.IOError.CANCELLED) {
-                change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             }
 
@@ -2022,7 +2017,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 throw e;

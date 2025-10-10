@@ -70,17 +70,19 @@ public class AppCenterCore.ChangeInformation : Object {
         progress_changed ();
     }
 
-    public void callback (bool can_cancel, string status_description, double progress, Status status) {
-        if (this.can_cancel != can_cancel || this.status_description != status_description || this.status != status) {
-            this.can_cancel = can_cancel;
-            this.status_description = status_description;
-            this.status = status;
-            status_changed ();
+    public void callback (double progress, string status_description) {
+        Idle.add_once (() => idle_callback (progress, status_description));
+    }
+
+    private void idle_callback (double progress, string status_description) {
+        if (status != RUNNING) {
+            status = RUNNING;
         }
 
-        if (this.progress != progress) {
-            this.progress = progress;
-            progress_changed ();
-        }
+        this.progress = progress;
+        this.status_description = status_description;
+
+        status_changed ();
+        progress_changed ();
     }
 }
