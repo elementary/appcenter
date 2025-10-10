@@ -61,11 +61,6 @@ public class AppCenterCore.Package : Object {
     };
 
     public signal void changing (bool is_changing);
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void info_changed (ChangeInformation.Status status);
 
     public enum State {
         NOT_INSTALLED,
@@ -426,7 +421,6 @@ public class AppCenterCore.Package : Object {
 
     construct {
         change_information = new ChangeInformation ();
-        change_information.status_changed.connect (() => info_changed (change_information.status));
     }
 
     public Package (string uid, AppStream.Component component) {

@@ -27,18 +27,6 @@ public class AppCenterCore.ChangeInformation : Object {
         RUNNING
     }
 
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void status_changed ();
-
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void progress_changed ();
-
     public Cancellable cancellable { get; private set; }
     public bool can_cancel { get; private set; default = true; }
     public double progress { get; private set; default = 0.0f; }
@@ -50,15 +38,11 @@ public class AppCenterCore.ChangeInformation : Object {
         can_cancel = true;
         status = Status.WAITING;
         status_description = _("Waiting");
-        status_changed ();
-        progress_changed ();
     }
 
     public void cancel () {
         status = Status.CANCELLED;
         status_description = _("Cancelling");
-        status_changed ();
-        progress_changed ();
     }
 
     public void complete () {
@@ -66,8 +50,6 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0;
         status = Status.UNKNOWN;
         status_description = _("Unknown");
-        status_changed ();
-        progress_changed ();
     }
 
     public void callback (double progress, string status_description) {
@@ -81,8 +63,5 @@ public class AppCenterCore.ChangeInformation : Object {
 
         this.progress = progress;
         this.status_description = status_description;
-
-        status_changed ();
-        progress_changed ();
     }
 }
