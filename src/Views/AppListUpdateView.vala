@@ -9,8 +9,6 @@
 /** AppList for the Updates View. Sorts update_available first and shows headers.
  * Does not show Uninstall Button **/
 public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
-    public signal void show_app (AppCenterCore.Package package);
-
     private Granite.HeaderLabel header_label;
     private Gtk.FlowBox installed_flowbox;
     private Gtk.ListBox list_box;
@@ -185,18 +183,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         child = toolbarview;
         /// TRANSLATORS: the name of the Installed Apps view
         title = C_("view", "Installed");
-
-        list_box.row_activated.connect ((row) => {
-            if (row.get_child () is Widgets.InstalledPackageRowGrid) {
-                show_app (((Widgets.InstalledPackageRowGrid) row.get_child ()).package);
-            }
-        });
-
-        installed_flowbox.child_activated.connect ((child) => {
-            if (child.get_child () is Widgets.InstalledPackageRowGrid) {
-                show_app (((Widgets.InstalledPackageRowGrid) child.get_child ()).package);
-            }
-        });
 
         App.settings.bind (
             "automatic-updates",
