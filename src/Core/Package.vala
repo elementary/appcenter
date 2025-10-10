@@ -202,12 +202,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool changes_finished {
-        get {
-            return change_information.status == ChangeInformation.Status.FINISHED;
-        }
-    }
-
     public bool is_runtime_updates {
         get {
             return component.id == RUNTIME_UPDATES_ID;
@@ -593,12 +587,12 @@ public class AppCenterCore.Package : Object {
     private void clean_up_package_operation (bool success, State success_state, State fail_state) {
         changing (false);
 
+        change_information.complete ();
+
         if (success) {
-            change_information.complete ();
             state = success_state;
         } else {
             state = fail_state;
-            change_information.cancel ();
         }
 
         FlatpakBackend.get_default ().notify_package_changed (this);

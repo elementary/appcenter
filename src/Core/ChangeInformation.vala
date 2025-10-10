@@ -24,8 +24,7 @@ public class AppCenterCore.ChangeInformation : Object {
         UNKNOWN,
         CANCELLED,
         WAITING,
-        RUNNING,
-        FINISHED
+        RUNNING
     }
 
     /**
@@ -46,33 +45,27 @@ public class AppCenterCore.ChangeInformation : Object {
     public string status_description { get; private set; default = _("Waiting"); }
 
     public void start () {
-        progress = 0.0f;
+        can_cancel = true;
         status = Status.WAITING;
         status_description = _("Waiting");
         status_changed ();
         progress_changed ();
     }
 
-    public void complete () {
-        status = Status.FINISHED;
-        status_description = _("Finished");
-        status_changed ();
-        reset_progress ();
-    }
-
     public void cancel () {
-        progress = 0.0f;
         status = Status.CANCELLED;
         status_description = _("Cancelling");
-        reset_progress ();
         status_changed ();
         progress_changed ();
     }
 
-    public void reset_progress () {
+    public void complete () {
+        can_cancel = false;
+        progress = 0;
         status = Status.UNKNOWN;
-        status_description = _("Starting");
-        progress = 0.0f;
+        status_description = _("Unknown");
+        status_changed ();
+        progress_changed ();
     }
 
     public void callback (bool can_cancel, string status_description, double progress, Status status) {
