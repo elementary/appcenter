@@ -103,6 +103,8 @@ public class AppCenterCore.Package : Object {
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
+    public string uid { get; construct; }
+
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
@@ -427,8 +429,8 @@ public class AppCenterCore.Package : Object {
         action_cancellable = new GLib.Cancellable ();
     }
 
-    public Package (AppStream.Component component) {
-        Object (component: component);
+    public Package (string uid, AppStream.Component component) {
+        Object (uid: uid, component: component);
     }
 
     public void replace_component (AppStream.Component component) {
