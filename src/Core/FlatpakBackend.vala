@@ -111,7 +111,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             uint64 size = 0;
             for (uint i = 0; i < updatable_packages.get_n_items (); i++) {
                 var package = (Package) updatable_packages.get_item (i);
-                size += package.change_information.size;
+                size += package.update_information.size;
             }
             return size;
         }
@@ -1894,7 +1894,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         string[] user_updates = {};
         string[] system_updates = {};
 
-        foreach (var updatable in package.change_information.updatable_packages) {
+        foreach (var updatable in package.update_information.updatable_packages) {
             bool system = false;
             string bundle_id = "";
 
@@ -2103,14 +2103,14 @@ public class AppCenterCore.FlatpakBackend : Object {
         return;
     }
 
-    private void fill_runtime_updates () {
-        if (!runtime_updates.update_available) {
+    private void fill_runtime_updates (UpdateInformation info) {
+        if (info.updatable_packages.is_empty) {
             return;
         }
 
         string runtime_desc = "";
 
-        foreach (var update in runtime_updates.change_information.updatable_packages) {
+        foreach (var update in info.updatable_packages) {
             string bundle_id;
             if (!get_package_list_key_parts (update, null, null, out bundle_id)) {
                 continue;
@@ -2134,10 +2134,12 @@ public class AppCenterCore.FlatpakBackend : Object {
         var latest_version = ngettext (
             "%u runtime with updates",
             "%u runtimes with updates",
-            runtime_updates.change_information.updatable_packages.size
-        ).printf (runtime_updates.change_information.updatable_packages.size);
+            info.updatable_packages.size
+        ).printf (info.updatable_packages.size);
         runtime_updates.latest_version = latest_version;
         runtime_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), runtime_desc);
+
+        runtime_updates.update_information = info;
     }
 
     public async void get_updates (Cancellable? cancellable = null) {
@@ -2147,27 +2149,34 @@ public class AppCenterCore.FlatpakBackend : Object {
         // Clear any packages previously marked as updatable
         for (int i = (int) n_updatable_packages - 1; i >= 0; i--) {
             var package = (Package) updatable_packages.get_item (i);
-            package.change_information.clear_update_info ();
-            package.update_state ();
+            package.update_information = null;
         }
 
         var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
 
-        foreach (var update in (Gee.ArrayList<string>)job.result.get_object ()) {
-            var package = package_list[update] ?? runtime_updates;
+        var runtime_update_information = new UpdateInformation ();
 
-            package.change_information.updatable_packages.add (update);
+        foreach (var update in (Gee.ArrayList<string>)job.result.get_object ()) {
+            if (!package_list.has_key (update)) {
+                runtime_update_information.updatable_packages.add (update);
+                continue;
+            }
+
+            var package = package_list[update];
+            var update_info = new UpdateInformation ();
+
+            update_info.updatable_packages.add (update);
 
             try {
-                package.change_information.size += yield get_download_size (package, cancellable, true);
+                update_info.size = yield get_download_size (package, cancellable, true);
             } catch (Error e) {
                 warning ("Error getting download size for package %s: %s", update, e.message);
             }
 
-            package.update_state ();
+            package.update_information = update_info;
         }
 
-        fill_runtime_updates ();
+        fill_runtime_updates (runtime_update_information);
     }
 
     private void repair_internal (Job job) {

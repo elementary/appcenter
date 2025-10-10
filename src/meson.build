@@ -18,6 +18,7 @@ appcenter_files = files(
     'Core/SearchEngine.vala',
     'Core/SoupClient.vala',
     'Core/Stripe.vala',
+    'Core' / 'UpdateInformation.vala',
     'Core/UpdateManager.vala',
     'Dialogs/InstallFailDialog.vala',
     'Dialogs' / 'ReleasesDialog.vala',

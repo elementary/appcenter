@@ -110,6 +110,15 @@ public class AppCenterCore.Package : Object {
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
+    private UpdateInformation? _update_information;
+    public UpdateInformation? update_information {
+        get { return _update_information; }
+        set {
+            _update_information = value;
+            update_state ();
+        }
+    }
+
     public double progress {
         get {
             return change_information.progress;
@@ -454,7 +463,7 @@ public class AppCenterCore.Package : Object {
         State new_state;
 
         if (installed) {
-            if (change_information.has_changes ()) {
+            if (update_information != null) {
                 new_state = State.UPDATE_AVAILABLE;
             } else {
                 new_state = State.INSTALLED;
@@ -562,8 +571,7 @@ public class AppCenterCore.Package : Object {
             case State.UPDATING:
                 var success = yield backend.update_package (this, change_information, action_cancellable);
                 if (success) {
-                    change_information.clear_update_info ();
-                    update_state ();
+                    update_information = null;
                 }
 
                 return success;
