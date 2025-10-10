@@ -192,11 +192,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         }
 
-        var app_info_view = new Views.AppInfoView (package);
-        navigation_view.push (app_info_view);
+        navigation_view.push (new Views.AppInfoView (package));
         navigation_view.animate_transitions = true;
-
-        app_info_view.show_other_package.connect (show_package);
     }
 
     private void update_navigation () {
