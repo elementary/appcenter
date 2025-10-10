@@ -198,13 +198,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             }
         });
 
-        automatic_updates_button.notify["active"].connect (() => {
-            if (automatic_updates_button.active) {
-                // TODO: Follow up: think about this? Only update all and handle in manager?
-                update_manager.refresh.begin ();
-            }
-        });
-
         App.settings.bind (
             "automatic-updates",
             automatic_updates_button,

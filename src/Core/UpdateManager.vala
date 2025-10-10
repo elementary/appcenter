@@ -51,9 +51,17 @@ public class AppCenterCore.UpdateManager : Object {
         fp_client.notify["n-updatable-packages"].connect (() => notify_property ("can-update-all"));
         fp_client.notify["n-unpaid-updatable-packages"].connect (() => notify_property ("can-update-all"));
 
+        AppCenter.App.settings.changed["automatic-updates"].connect (on_automatic_updates_changed);
+
         start_refresh_timeout ();
 
         NetworkMonitor.get_default ().network_changed.connect (on_network_changed);
+    }
+
+    private void on_automatic_updates_changed () {
+        if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
+            update_all.begin ();
+        }
     }
 
     private void start_refresh_timeout () {
