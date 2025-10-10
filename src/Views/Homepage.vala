@@ -19,7 +19,6 @@
 */
 
 public class AppCenter.Homepage : Adw.NavigationPage {
-    public signal void show_package (AppCenterCore.Package package);
     public signal void show_category (AppStream.Category category);
 
     private const int MAX_PACKAGES_IN_BANNER = 5;
@@ -181,13 +180,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         var local_package = App.local_package;
         if (local_package != null) {
-            var banner = new Widgets.Banner.from_package (local_package);
-
-            banner_carousel.prepend (banner);
-
-            banner.clicked.connect (() => {
-                show_package (local_package);
-            });
+            banner_carousel.prepend (new Widgets.Banner.from_package (local_package));
         } else {
             appcenter_banner = new Widgets.Banner (
                 _("AppCenter"),
@@ -247,13 +240,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             if (!installed) {
                 packages_in_banner.add (package);
-
-                var banner = new Widgets.Banner.from_package (package);
-                banner.clicked.connect (() => {
-                    show_package (package);
-                });
-
-                banner_carousel.append (banner);
+                banner_carousel.append (new Widgets.Banner.from_package (package));
             }
         }
 

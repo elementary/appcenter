@@ -46,7 +46,9 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             summary: package.get_summary (),
             description: package.get_description (),
             app_icon: app_icon,
-            brand_color: package.get_color_primary ()
+            brand_color: package.get_color_primary (),
+            action_name: MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE,
+            action_target: new Variant.string (package.uid)
         );
     }
 

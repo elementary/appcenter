@@ -135,10 +135,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             show_category (category);
         });
 
-        homepage.show_package.connect ((package) => {
-            show_package (package);
-        });
-
         navigation_view.popped.connect (update_navigation);
         navigation_view.pushed.connect (update_navigation);
 
