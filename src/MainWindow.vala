@@ -151,10 +151,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (installed_view == null) {
             installed_view = new Views.AppListUpdateView ();
-
-            installed_view.show_app.connect ((package) => {
-                show_package (package);
-            });
         }
     }
 
