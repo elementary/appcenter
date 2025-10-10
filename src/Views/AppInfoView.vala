@@ -673,24 +673,15 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             });
         }
 
-        var addon_list = new AddonList (package);
-        addon_list.show_addon.connect ((package) => show_other_package (package));
-
         var link_listbox = new LinkListBox (package_component);
 
-        content_box.append (addon_list);
+        content_box.append (new AddonList (package));
         content_box.append (link_listbox);
 
         var body_clamp = new Adw.Clamp () {
             child = content_box,
             maximum_size = MAX_WIDTH
         };
-
-        var author_view = new AuthorView (package, MAX_WIDTH);
-
-        author_view.show_other_package.connect ((package) => {
-            show_other_package (package);
-        });
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
         box.append (header);
@@ -702,7 +693,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         box.append (supports_clamp);
         box.append (body_clamp);
-        box.append (author_view);
+        box.append (new AuthorView (package, MAX_WIDTH));
 
         var scrolled = new Gtk.ScrolledWindow () {
             child = box,

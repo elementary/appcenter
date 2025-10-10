@@ -213,12 +213,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             show_category (card.category);
         });
 
-        recently_updated_carousel.child_activated.connect ((child) => {
-            var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
-
-            show_package (package_row_grid.package);
-        });
-
         destroy.connect (() => {
             banner_timeout_stop ();
         });
