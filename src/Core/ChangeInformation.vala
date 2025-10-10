@@ -42,11 +42,11 @@ public class AppCenterCore.ChangeInformation : Object {
 
     public Gee.ArrayList<string> updatable_packages { get; private set; }
 
-    public bool can_cancel { public get; private set; default=true; }
-    public double progress { public get; private set; default=0.0f; }
-    public Status status { public get; private set; default=Status.UNKNOWN; }
-    public string status_description { public get; private set; default=_("Waiting"); }
-    public uint64 size;
+    public bool can_cancel { get; private set; default = true; }
+    public double progress { get; private set; default = 0.0f; }
+    public Status status { get; private set; default = Status.UNKNOWN; }
+    public string status_description { get; private set; default = _("Waiting"); }
+    public uint64 size { get; set; }
 
     construct {
         updatable_packages = new Gee.ArrayList<string> ();
@@ -82,9 +82,9 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void clear_update_info () {
-         updatable_packages.clear ();
-         size = 0;
-     }
+        updatable_packages.clear ();
+        size = 0;
+    }
 
     public void reset_progress () {
         status = Status.UNKNOWN;
