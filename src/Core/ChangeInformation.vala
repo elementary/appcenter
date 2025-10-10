@@ -39,12 +39,14 @@ public class AppCenterCore.ChangeInformation : Object {
      */
     public signal void progress_changed ();
 
+    public Cancellable cancellable { get; private set; }
     public bool can_cancel { get; private set; default = true; }
     public double progress { get; private set; default = 0.0f; }
     public Status status { get; private set; default = Status.UNKNOWN; }
     public string status_description { get; private set; default = _("Waiting"); }
 
     public void start () {
+        cancellable = new Cancellable ();
         can_cancel = true;
         status = Status.WAITING;
         status_description = _("Waiting");

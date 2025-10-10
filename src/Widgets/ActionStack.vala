@@ -180,7 +180,7 @@ public class AppCenter.ActionStack : Gtk.Box {
 
     private void action_cancelled () {
         update_action ();
-        package.action_cancellable.cancel ();
+        package.change_information.cancel ();
     }
 
     private void launch_package_app () {
