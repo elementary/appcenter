@@ -247,12 +247,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void show_category (AppStream.Category category) {
-        var category_view = new CategoryView (category);
-
-        navigation_view.push (category_view);
-
-        category_view.show_app.connect ((package) => {
-            show_package (package);
-        });
+        navigation_view.push (new CategoryView (category));
     }
 }

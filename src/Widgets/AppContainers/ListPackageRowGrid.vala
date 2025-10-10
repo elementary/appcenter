@@ -60,5 +60,15 @@ public class AppCenter.Widgets.ListPackageRowGrid : Granite.Bin {
         grid.attach (action_stack, 2, 0, 1, 2);
 
         child = grid;
+
+        var gesture_controller = new Gtk.GestureClick () {
+            button = Gdk.BUTTON_PRIMARY
+        };
+        gesture_controller.released.connect (on_clicked);
+        add_controller (gesture_controller);
+    }
+
+    private void on_clicked () {
+        activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
     }
 }
