@@ -60,8 +60,6 @@ public class AppCenterCore.Package : Object {
         "language-discrimination"
     };
 
-    public signal void changing (bool is_changing);
-
     public enum State {
         NOT_INSTALLED,
         INSTALLED,
@@ -110,12 +108,6 @@ public class AppCenterCore.Package : Object {
         set {
             _update_information = value;
             update_state ();
-        }
-    }
-
-    public double progress {
-        get {
-            return change_information.progress;
         }
     }
 
@@ -540,8 +532,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private void prepare_package_operation (State initial_state) {
-        changing (true);
-
         change_information.start ();
         state = initial_state;
 
@@ -575,8 +565,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private void clean_up_package_operation (bool success, State success_state, State fail_state) {
-        changing (false);
-
         change_information.complete ();
 
         if (success) {
@@ -655,10 +643,6 @@ public class AppCenterCore.Package : Object {
 
     public void set_summary (string? new_summary) {
         summary = new_summary;
-    }
-
-    public string get_progress_description () {
-        return change_information.status_description;
     }
 
     public GLib.Icon get_icon (uint size, uint scale_factor) {
