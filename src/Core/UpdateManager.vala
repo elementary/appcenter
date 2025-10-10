@@ -48,7 +48,7 @@ public class AppCenterCore.UpdateManager : Object {
         last_refresh_time = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
 
         unowned var fp_client = FlatpakBackend.get_default ();
-        fp_client.notify["n-updatable-packages"].connect (() => notify_property ("can-update-all"));
+        fp_client.notify["n-updatable-packages"].connect (on_n_updatable_packages_changed);
         fp_client.notify["n-unpaid-updatable-packages"].connect (() => notify_property ("can-update-all"));
 
         AppCenter.App.settings.changed["automatic-updates"].connect (on_automatic_updates_changed);
@@ -61,6 +61,22 @@ public class AppCenterCore.UpdateManager : Object {
     private void on_automatic_updates_changed () {
         if (AppCenter.App.settings.get_boolean ("automatic-updates")) {
             update_all.begin ();
+        }
+    }
+
+    private void on_n_updatable_packages_changed () {
+        notify_property ("can-update-all");
+        update_badge.begin ();
+    }
+
+    private async void update_badge () {
+        var n_updatable_packages = FlatpakBackend.get_default ().n_updatable_packages;
+
+        try {
+            yield Granite.Services.Application.set_badge (n_updatable_packages);
+            yield Granite.Services.Application.set_badge_visible (n_updatable_packages != 0);
+        } catch (Error e) {
+            warning ("Error setting updates badge: %s", e.message);
         }
     }
 
@@ -168,13 +184,6 @@ public class AppCenterCore.UpdateManager : Object {
                 application.send_notification ("io.elementary.appcenter.updates", notification);
             } else {
                 application.withdraw_notification ("io.elementary.appcenter.updates");
-            }
-
-            try {
-                yield Granite.Services.Application.set_badge (n_updatable_packages);
-                yield Granite.Services.Application.set_badge_visible (n_updatable_packages != 0);
-            } catch (Error e) {
-                warning ("Error setting updates badge: %s", e.message);
             }
         }
     }
