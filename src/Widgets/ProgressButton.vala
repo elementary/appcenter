@@ -29,5 +29,7 @@ public class AppCenter.ProgressButton : Gtk.Button {
 
         package.change_information.bind_property ("can-cancel", this, "sensitive", SYNC_CREATE);
         package.change_information.bind_property ("status-description", this, "tooltip-text", SYNC_CREATE);
+
+        clicked.connect (package.change_information.cancel);
     }
 }

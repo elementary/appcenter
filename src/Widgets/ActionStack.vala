@@ -78,7 +78,6 @@ public class AppCenter.ActionStack : Gtk.Box {
         cancel_button = new ProgressButton (package) {
             valign = CENTER
         };
-        cancel_button.clicked.connect (() => action_cancelled ());
 
         var action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
         action_button_group.add_widget (action_button);
@@ -176,11 +175,6 @@ public class AppCenter.ActionStack : Gtk.Box {
                 critical ("Unrecognised package state %s", package.state.to_string ());
                 break;
         }
-    }
-
-    private void action_cancelled () {
-        update_action ();
-        package.change_information.cancel ();
     }
 
     private void launch_package_app () {
