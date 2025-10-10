@@ -209,10 +209,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             mimetype = mimetype
         };
 
-        search_view.show_app.connect ((package) => {
-            show_package (package);
-        });
-
         navigation_view.push (search_view);
     }
 
