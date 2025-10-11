@@ -19,6 +19,7 @@
  */
 
 public class AppCenterCore.ChangeInformation : Object {
+    public const string CANCEL_ACTION_NAME = "cancel";
 
     public enum Status {
         UNKNOWN,
@@ -42,15 +43,26 @@ public class AppCenterCore.ChangeInformation : Object {
 
     public Gee.ArrayList<string> updatable_packages { get; private set; }
 
-    public bool can_cancel { public get; private set; default=true; }
+    public ActionGroup action_group { get; private set; }
+
+    public Cancellable cancellable { get; private set; }
     public double progress { public get; private set; default=0.0f; }
     public Status status { public get; private set; default=Status.UNKNOWN; }
     public string status_description { public get; private set; default=_("Waiting"); }
     public uint64 size;
 
+    private SimpleAction cancel_action;
+
     construct {
         updatable_packages = new Gee.ArrayList<string> ();
         size = 0;
+
+        cancel_action = new SimpleAction (CANCEL_ACTION_NAME, null);
+        cancel_action.activate.connect (cancel);
+
+        var simple_action_group = new SimpleActionGroup ();
+        simple_action_group.add_action (cancel_action);
+        action_group = simple_action_group;
     }
 
     public bool has_changes () {
@@ -58,6 +70,8 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void start () {
+        cancel_action.set_enabled (true);
+        cancellable = new Cancellable ();
         progress = 0.0f;
         status = Status.WAITING;
         status_description = _("Waiting");
@@ -66,19 +80,19 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void complete () {
+        cancel_action.set_enabled (false);
         status = Status.FINISHED;
         status_description = _("Finished");
         status_changed ();
         reset_progress ();
     }
 
-    public void cancel () {
-        progress = 0.0f;
+    private void cancel () {
+        cancellable.cancel ();
+        cancel_action.set_enabled (false);
         status = Status.CANCELLED;
         status_description = _("Cancelling");
-        reset_progress ();
         status_changed ();
-        progress_changed ();
     }
 
     public void clear_update_info () {
@@ -92,9 +106,8 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0.0f;
     }
 
-    public void callback (bool can_cancel, string status_description, double progress, Status status) {
-        if (this.can_cancel != can_cancel || this.status_description != status_description || this.status != status) {
-            this.can_cancel = can_cancel;
+    public void callback (string status_description, double progress, Status status) {
+        if (this.status_description != status_description || this.status != status) {
             this.status_description = status_description;
             this.status = status;
             status_changed ();
