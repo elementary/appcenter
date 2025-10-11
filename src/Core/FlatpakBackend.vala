@@ -1661,7 +1661,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, ChangeInformation change_info) throws GLib.Error {
+    public async void install_package (Package package, ChangeInformation change_info) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
         job_args.change_info = change_info;
@@ -1670,8 +1670,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         if (job.error != null) {
             throw job.error;
         }
-
-        return true;
     }
 
     private void remove_package_internal (Job job) {
@@ -1773,7 +1771,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         job.results_ready ();
     }
 
-    public async bool remove_package (Package package, ChangeInformation change_info) throws GLib.Error {
+    public async void remove_package (Package package, ChangeInformation change_info) throws GLib.Error {
         var job_args = new RemovePackageArgs ();
         job_args.package = package;
         job_args.change_info = change_info;
@@ -1782,8 +1780,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         if (job.error != null) {
             throw job.error;
         }
-
-        return true;
     }
 
     private void update_package_internal (Job job) {
@@ -1915,7 +1911,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         transaction.run (cancellable);
     }
 
-    public async bool update_package (Package package, ChangeInformation change_info) throws GLib.Error {
+    public async void update_package (Package package, ChangeInformation change_info) throws GLib.Error {
         var job_args = new UpdatePackageArgs ();
         job_args.package = package;
         job_args.change_info = change_info;
@@ -1924,8 +1920,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         if (job.error != null) {
             throw job.error;
         }
-
-        return true;
     }
 
     private void get_updates_internal (Job job) {
