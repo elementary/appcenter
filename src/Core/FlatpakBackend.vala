@@ -23,6 +23,7 @@ public class AppCenterCore.FlatpakPackage : Package {
     public FlatpakPackage (string uid, Flatpak.Installation installation, AppStream.Component component) {
         Object (
             uid: uid,
+            backend: FlatpakBackend.get_default (),
             installation: installation,
             component: component
         );
@@ -49,8 +50,7 @@ public class AppCenterCore.FlatpakPackage : Package {
     }
 }
 
-public class AppCenterCore.FlatpakBackend : Object {
-    public signal void operation_finished (Package package, Package.State operation, Error? error);
+public class AppCenterCore.FlatpakBackend : Object, Backend {
     public signal void cache_flush_needed ();
     public signal void on_metadata_remote_preprocessed (string remote_title);
     public signal void package_list_changed ();
@@ -234,7 +234,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         runtime_updates_component.summary = _("Updates to app runtimes");
         runtime_updates_component.add_icon (runtime_icon);
 
-        runtime_updates = new AppCenterCore.Package ("runtime-updates", runtime_updates_component);
+        runtime_updates = new AppCenterCore.Package ("runtime-updates", this, runtime_updates_component);
 
         additional_updates = new GLib.ListStore (typeof (Package));
         additional_updates.append (runtime_updates);

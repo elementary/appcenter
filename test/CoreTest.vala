@@ -3,5 +3,6 @@ void main (string[] args) {
     add_card_tests ();
     add_houston_tests ();
     add_stripe_tests ();
+    add_package_operations_tests ();
     Test.run ();
 }
