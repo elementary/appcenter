@@ -107,7 +107,6 @@ public class AppCenterCore.Package : Object {
 
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
-    public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
     public double progress {
@@ -425,8 +424,6 @@ public class AppCenterCore.Package : Object {
     construct {
         change_information = new ChangeInformation ();
         change_information.status_changed.connect (() => info_changed (change_information.status));
-
-        action_cancellable = new GLib.Cancellable ();
     }
 
     public Package (string uid, AppStream.Component component) {
@@ -548,7 +545,6 @@ public class AppCenterCore.Package : Object {
     private void prepare_package_operation (State initial_state) {
         changing (true);
 
-        action_cancellable.reset ();
         change_information.start ();
         state = initial_state;
 
@@ -560,7 +556,7 @@ public class AppCenterCore.Package : Object {
 
         switch (state) {
             case State.UPDATING:
-                var success = yield backend.update_package (this, change_information, action_cancellable);
+                var success = yield backend.update_package (this, change_information);
                 if (success) {
                     change_information.clear_update_info ();
                     update_state ();
@@ -568,12 +564,12 @@ public class AppCenterCore.Package : Object {
 
                 return success;
             case State.INSTALLING:
-                var success = yield backend.install_package (this, change_information, action_cancellable);
+                var success = yield backend.install_package (this, change_information);
                 _installed = success;
                 update_state ();
                 return success;
             case State.REMOVING:
-                var success = yield backend.remove_package (this, change_information, action_cancellable);
+                var success = yield backend.remove_package (this, change_information);
                 _installed = !success;
                 update_state ();
                 return success;
@@ -585,12 +581,12 @@ public class AppCenterCore.Package : Object {
     private void clean_up_package_operation (bool success, State success_state, State fail_state) {
         changing (false);
 
+        change_information.complete ();
+
         if (success) {
-            change_information.complete ();
             state = success_state;
         } else {
             state = fail_state;
-            change_information.cancel ();
         }
 
         FlatpakBackend.get_default ().notify_package_changed (this);

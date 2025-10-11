@@ -33,6 +33,10 @@ public class AppCenter.ProgressButton : Gtk.Button {
         box.append (progressbar);
 
         child = box;
+
+        clicked.connect (package.change_information.cancel);
+
+        package.change_information.bind_property ("can-cancel", this, "sensitive", SYNC_CREATE);
     }
 
     private void update_progress () {
@@ -45,7 +49,6 @@ public class AppCenter.ProgressButton : Gtk.Button {
     private void update_progress_status () {
         Idle.add (() => {
             tooltip_text = package.get_progress_description ();
-            sensitive = package.change_information.can_cancel && !package.changes_finished;
             /* Ensure progress bar shows complete to match status (lp:1606902) */
             if (package.changes_finished) {
                 progressbar.fraction = 1.0f;
