@@ -49,8 +49,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     private bool is_runtime_warning_shown = false;
     private bool permissions_shown = false;
 
-    public bool to_recycle { public get; private set; default = false; }
-
     private static AppCenterCore.ScreenshotCache? screenshot_cache;
 
     public AppInfoView (AppCenterCore.Package package) {
@@ -66,10 +64,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     }
 
     construct {
-        AppCenterCore.FlatpakBackend.get_default ().cache_flush_needed.connect (() => {
-            to_recycle = true;
-        });
-
         var title_image = new Gtk.Image.from_gicon (package.get_icon (32, scale_factor)) {
             icon_size = LARGE
         };

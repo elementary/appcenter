@@ -51,7 +51,6 @@ public class AppCenterCore.FlatpakPackage : Package {
 
 public class AppCenterCore.FlatpakBackend : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
-    public signal void cache_flush_needed ();
     public signal void on_metadata_remote_preprocessed (string remote_title);
     public signal void package_list_changed ();
 
@@ -1182,7 +1181,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         reload_appstream_pool ();
-        cache_flush_needed ();
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
