@@ -1683,8 +1683,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = new IOError.FAILED (_("Component has no flatpak bundle"));
             job.results_ready ();
             return;
         }
@@ -1694,15 +1693,14 @@ public class AppCenterCore.FlatpakBackend : Object {
             flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
         } catch (Error e) {
             critical ("Error parsing flatpak ref for removal: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
 
         if (fp_package == null || fp_package.installation == null) {
             critical ("Error getting flatpak installation for removal");
-            job.result = false;
+            job.error = new IOError.FAILED (_("Error getting flatpak installation for removal"));
             job.results_ready ();
             return;
         }
@@ -1713,8 +1711,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             transaction.add_default_dependency_sources ();
         } catch (Error e) {
             critical ("Error creating transaction for flatpak removal: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
@@ -1723,8 +1720,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             transaction.add_uninstall (bundle.get_id ());
         } catch (Error e) {
             critical ("Error setting up transaction for flatpak removal: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
             job.error = e;
             job.results_ready ();
             return;
@@ -1747,13 +1742,8 @@ public class AppCenterCore.FlatpakBackend : Object {
             });
         });
 
-        bool success = false;
-
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak removal failed: %s (detail: %d)", e.message, detail);
-            if (e is GLib.IOError.CANCELLED) {
-                success = true;
-            }
 
             // Only cancel the transaction if this is fatal
             var should_continue = detail == Flatpak.TransactionErrorDetails.NON_FATAL;
@@ -1772,21 +1762,14 @@ public class AppCenterCore.FlatpakBackend : Object {
         current_operation = 0;
 
         try {
-            success = transaction.run (cancellable);
+            transaction.run (cancellable);
         } catch (Error e) {
-            if (e is GLib.IOError.CANCELLED) {
-                success = true;
-            } else {
-                success = false;
-                // Don't overwrite any previous errors as the first is probably most important
-                if (job.error != null) {
-                    job.error = e;
-                }
+            // Don't overwrite any previous errors as the first is probably most important
+            if (job.error == null) {
+                job.error = e;
             }
         }
 
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (success);
         job.results_ready ();
     }
 
@@ -1800,7 +1783,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             throw job.error;
         }
 
-        return job.result.get_boolean ();
+        return true;
     }
 
     private void update_package_internal (Job job) {
