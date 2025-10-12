@@ -28,7 +28,6 @@ public class AppCenterCore.Job : Object {
 
     public enum Type {
         GET_DETAILS_FOR_PACKAGE_IDS,
-        GET_INSTALLED_PACKAGES,
         GET_DOWNLOAD_SIZE,
         REFRESH_CACHE,
         GET_UPDATES,
@@ -49,7 +48,6 @@ public class AppCenterCore.Job : Object {
                 case GET_DOWNLOAD_SIZE:
                     return _("Getting download size…");
                 case GET_PREPARED_PACKAGES:
-                case GET_INSTALLED_PACKAGES:
                 case GET_UPDATES:
                 case REFRESH_CACHE:
                     return _("Checking for updates…");
@@ -79,10 +77,6 @@ public class AppCenterCore.RepairArgs : JobArgs {
 }
 
 public class AppCenterCore.GetPreparedPackagesArgs : JobArgs {
-    public Cancellable? cancellable;
-}
-
-public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
     public Cancellable? cancellable;
 }
 
