@@ -80,6 +80,8 @@ public class AppCenterCore.FlatpakBackend : Object {
     private Gtk.SortListModel _sorted_packages;
     public ListModel packages { get { return _sorted_packages; } }
 
+    private ListModel installed_packages;
+
     private Gtk.FilterListModel _updated_packages;
     public ListModel updated_packages { get { return _updated_packages; } }
 
@@ -119,7 +121,7 @@ public class AppCenterCore.FlatpakBackend : Object {
     public bool up_to_date {
         get {
             return !has_updatable_packages && (!working || job_type != GET_UPDATES && job_type != REFRESH_CACHE
-                && job_type != GET_INSTALLED_PACKAGES && job_type != GET_DOWNLOAD_SIZE);
+                && job_type != GET_DOWNLOAD_SIZE);
         }
     }
 
@@ -180,9 +182,6 @@ public class AppCenterCore.FlatpakBackend : Object {
                     break;
                 case Job.Type.GET_UPDATES:
                     get_updates_internal (job);
-                    break;
-                case Job.Type.GET_INSTALLED_PACKAGES:
-                    get_installed_packages_internal (job);
                     break;
                 case Job.Type.REPAIR:
                     repair_internal (job);
@@ -245,7 +244,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         var installed_expression = new Gtk.PropertyExpression (typeof (Package), null, "installed");
         var installed_filter = new Gtk.BoolFilter (installed_expression);
-        var installed_packages = new Gtk.FilterListModel (_sorted_packages, installed_filter);
+        installed_packages = new Gtk.FilterListModel (_sorted_packages, installed_filter);
 
         var update_available_expression = new Gtk.PropertyExpression (typeof (Package), null, "update-available");
         var updating_expression = new Gtk.PropertyExpression (typeof (Package), null, "is-updating");
@@ -393,9 +392,11 @@ public class AppCenterCore.FlatpakBackend : Object {
                 warning ("Error getting system flatpak remotes: %s", e.message);
             }
         }
+    }
 
+    public void init () {
         reload_appstream_pool ();
-        get_installed_applications.begin (null);
+        reload_installed_packages ();
         get_updates.begin (null);
     }
 
@@ -439,7 +440,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             warning ("Unable to refresh cache after external change: %s", e.message);
         }
 
-        yield get_installed_applications (null);
+        reload_installed_packages ();
         yield get_updates (null);
     }
 
@@ -476,82 +477,38 @@ public class AppCenterCore.FlatpakBackend : Object {
         return job;
     }
 
-    private void get_installed_packages_internal (Job job) {
-        unowned var args = (GetInstalledPackagesArgs)job.args;
-        unowned var cancellable = args.cancellable;
-
-        var installed_apps = new Gee.HashSet<Package> ();
-
-        if (user_installation == null && system_installation == null) {
-            critical ("Couldn't get installed apps due to no flatpak installation");
-            job.result = Value (typeof (Object));
-            job.result.take_object ((owned) installed_apps);
-            job.results_ready ();
-            return;
+    private void reload_installed_packages () {
+        for (uint i = 0; i < installed_packages.get_n_items (); i++) {
+            var package = (Package) installed_packages.get_item (i);
+            package.clear_installed ();
         }
 
-        GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
         if (user_installation != null) {
-            try {
-                installed_refs = user_installation.list_installed_refs ();
-                installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
-            } catch (Error e) {
-                critical ("Unable to get installed flatpaks: %s", e.message);
-                job.result = Value (typeof (Object));
-                job.result.take_object ((owned) installed_apps);
-                job.results_ready ();
-                return;
-            }
+            reload_installed_packages_for_installation (user_installation);
         }
 
         if (system_installation != null) {
-            try {
-                installed_refs = system_installation.list_installed_refs ();
-                installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
-            } catch (Error e) {
-                critical ("Unable to get installed flatpaks: %s", e.message);
-                job.result = Value (typeof (Object));
-                job.result.take_object ((owned) installed_apps);
-                job.results_ready ();
-                return;
-            }
-        }
-
-        job.result = Value (typeof (Object));
-        job.result.take_object ((owned) installed_apps);
-        job.results_ready ();
-    }
-
-    private async void get_installed_applications (Cancellable? cancellable = null) {
-        var job_args = new GetInstalledPackagesArgs ();
-        job_args.cancellable = cancellable;
-
-        var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
-        var installed_applications = (Gee.Collection<Package>) job.result.get_object ();
-
-        foreach (var package in installed_applications) {
-            package.mark_installed ();
+            reload_installed_packages_for_installation (system_installation);
         }
     }
 
-    private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
-        var installed_apps = new Gee.HashSet<Package> ();
+    private void reload_installed_packages_for_installation (Flatpak.Installation installation) {
+        GenericArray<weak Flatpak.InstalledRef>? installed_refs = null;
 
-        for (int i = 0; i < installed_refs.length; i++) {
-            if (cancellable.is_cancelled ()) {
-                break;
-            }
-
-            unowned Flatpak.InstalledRef installed_ref = installed_refs[i];
-
-            var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
-            var package = package_list[bundle_id];
-            if (package != null) {
-                installed_apps.add (package);
-            }
+        try {
+            installed_refs = installation.list_installed_refs ();
+        } catch (Error e) {
+            warning ("Error refreshing installed packages for installation %s: %s", installation.get_id (), e.message);
+            return;
         }
 
-        return installed_apps;
+        foreach (var installed_ref in installed_refs) {
+            var uid = generate_package_list_key (
+                installation == system_installation, installed_ref.origin, installed_ref.format_ref ()
+            );
+
+            package_list[uid]?.mark_installed ();
+        }
     }
 
     public Gee.Collection<Package> get_featured_packages_by_release_date () {
@@ -1404,9 +1361,14 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         package_list = new_package_list;
 
-        // Wrap in Idle since we can be in the worker thread and changing the package liststore
-        // will trigger signals that update the UI
-        Idle.add (() => update_package_store (removed, added));
+        if (MainContext.get_thread_default () == null) {
+            // We are in the main thread so update immediately
+            update_package_store (removed, added);
+        } else {
+            // We are in the worker thread and changing the package liststore
+            // will trigger signals that update the UI so wrap in Idle to update on the main thread
+            Idle.add (() => update_package_store (removed, added));
+        }
     }
 
     private bool update_package_store (Gee.Collection<Package> removed, Gee.Collection<Package> added) {
