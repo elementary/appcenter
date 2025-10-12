@@ -1093,37 +1093,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
     }
 
-    public bool is_package_installed (Package package) throws GLib.Error {
-        unowned var fp_package = package as FlatpakPackage;
-        if (fp_package == null || fp_package.installation == null) {
-            critical ("Could not check installed state of package due to no flatpak installation");
-            return false;
-        }
-
-        unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
-        if (bundle == null) {
-            return false;
-        }
-
-        bool system = fp_package.installation == system_installation;
-
-        var key = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
-
-        try {
-            var installed_refs = fp_package.installation.list_installed_refs ();
-            foreach (unowned var installed_ref in installed_refs) {
-                var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
-                if (key == bundle_id) {
-                    return true;
-                }
-            }
-        } catch (Error e) {
-            warning ("Failed to check if package is installed: %s", e.message);
-        }
-
-        return false;
-    }
-
     private void refresh_cache_internal (Job job) {
         unowned var args = (RefreshCacheArgs)job.args;
         unowned var cancellable = args.cancellable;
