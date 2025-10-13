@@ -42,6 +42,7 @@ public class AppCenterCore.ChangeInformation : Object {
 
     public Gee.ArrayList<string> updatable_packages { get; private set; }
 
+    public Cancellable cancellable { get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public double progress { public get; private set; default=0.0f; }
     public Status status { public get; private set; default=Status.UNKNOWN; }
@@ -58,6 +59,8 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void start () {
+        can_cancel = true;
+        cancellable = new Cancellable ();
         progress = 0.0f;
         status = Status.WAITING;
         status_description = _("Waiting");
@@ -66,6 +69,7 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void complete () {
+        can_cancel = false;
         status = Status.FINISHED;
         status_description = _("Finished");
         status_changed ();
@@ -73,12 +77,11 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void cancel () {
-        progress = 0.0f;
+        cancellable.cancel ();
+        can_cancel = false;
         status = Status.CANCELLED;
         status_description = _("Cancelling");
-        reset_progress ();
         status_changed ();
-        progress_changed ();
     }
 
     public void clear_update_info () {
@@ -92,9 +95,8 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0.0f;
     }
 
-    public void callback (bool can_cancel, string status_description, double progress, Status status) {
-        if (this.can_cancel != can_cancel || this.status_description != status_description || this.status != status) {
-            this.can_cancel = can_cancel;
+    public void callback (string status_description, double progress, Status status) {
+        if (this.status_description != status_description || this.status != status) {
             this.status_description = status_description;
             this.status = status;
             status_changed ();
