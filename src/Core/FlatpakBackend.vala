@@ -1625,15 +1625,14 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = new IOError.FAILED (_("Component has no flatpak bundle"));
             job.results_ready ();
             return;
         }
 
         if (fp_package == null || fp_package.installation == null) {
             critical ("Error getting flatpak installation");
-            job.result = false;
+            job.error = new IOError.FAILED (_("Error getting flatpak installation"));
             job.results_ready ();
             return;
         }
@@ -1644,8 +1643,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             transaction.add_default_dependency_sources ();
         } catch (Error e) {
             critical ("Error creating transaction for flatpak install: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
@@ -1654,8 +1652,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             transaction.add_install (package.component.get_origin (), bundle.get_id (), null);
         } catch (Error e) {
             critical ("Error setting up transaction for flatpak install: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
             job.error = e;
             job.results_ready ();
             return;
@@ -1684,13 +1680,10 @@ public class AppCenterCore.FlatpakBackend : Object {
             });
         });
 
-        bool success = false;
-
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s (detail: %d)", e.message, detail);
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
-                success = true;
             }
 
             // Only cancel the transaction if this is fatal
@@ -1710,26 +1703,22 @@ public class AppCenterCore.FlatpakBackend : Object {
         current_operation = 0;
 
         try {
-            success = transaction.run (cancellable);
+            transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
-                success = true;
-            } else {
-                success = false;
-                // Don't overwrite any previous errors as the first is probably most important
-                if (job.error != null) {
-                    job.error = e;
-                }
+            }
+
+            // Don't overwrite any previous errors as the first is probably most important
+            if (job.error == null) {
+                job.error = e;
             }
         }
 
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (success);
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
+    public async void install_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
         job_args.change_info = change_info;
@@ -1739,8 +1728,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         if (job.error != null) {
             throw job.error;
         }
-
-        return job.result.get_boolean ();
     }
 
     private void remove_package_internal (Job job) {
@@ -1752,8 +1739,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = new IOError.FAILED (_("Component has no flatpak bundle"));
             job.results_ready ();
             return;
         }
@@ -1763,15 +1749,14 @@ public class AppCenterCore.FlatpakBackend : Object {
             flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
         } catch (Error e) {
             critical ("Error parsing flatpak ref for removal: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
 
         if (fp_package == null || fp_package.installation == null) {
             critical ("Error getting flatpak installation for removal");
-            job.result = false;
+            job.error = new IOError.FAILED (_("Error getting flatpak installation for removal"));
             job.results_ready ();
             return;
         }
@@ -1782,8 +1767,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             transaction.add_default_dependency_sources ();
         } catch (Error e) {
             critical ("Error creating transaction for flatpak removal: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
@@ -1792,8 +1776,6 @@ public class AppCenterCore.FlatpakBackend : Object {
             transaction.add_uninstall (bundle.get_id ());
         } catch (Error e) {
             critical ("Error setting up transaction for flatpak removal: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
             job.error = e;
             job.results_ready ();
             return;
@@ -1816,13 +1798,10 @@ public class AppCenterCore.FlatpakBackend : Object {
             });
         });
 
-        bool success = false;
-
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak removal failed: %s (detail: %d)", e.message, detail);
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
-                success = true;
             }
 
             // Only cancel the transaction if this is fatal
@@ -1842,26 +1821,22 @@ public class AppCenterCore.FlatpakBackend : Object {
         current_operation = 0;
 
         try {
-            success = transaction.run (cancellable);
+            transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
-                success = true;
-            } else {
-                success = false;
-                // Don't overwrite any previous errors as the first is probably most important
-                if (job.error != null) {
-                    job.error = e;
-                }
+            }
+
+            // Don't overwrite any previous errors as the first is probably most important
+            if (job.error == null) {
+                job.error = e;
             }
         }
 
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (success);
         job.results_ready ();
     }
 
-    public async bool remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
+    public async void remove_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new RemovePackageArgs ();
         job_args.package = package;
         job_args.change_info = change_info;
@@ -1871,8 +1846,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         if (job.error != null) {
             throw job.error;
         }
-
-        return job.result.get_boolean ();
     }
 
     private void update_package_internal (Job job) {
@@ -1883,7 +1856,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         if (user_installation == null && system_installation == null) {
             critical ("Error getting flatpak installation");
-            job.result = false;
+            job.error = new IOError.FAILED (_("Error getting flatpak installation"));
             job.results_ready ();
             return;
         }
@@ -1897,8 +1870,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
             var split_success = get_package_list_key_parts (updatable, out system, null, out bundle_id);
             if (!split_success) {
-                job.result = Value (typeof (bool));
-                job.result.set_boolean (false);
+                job.error = new IOError.FAILED (_("Failed to split package key"));
                 job.results_ready ();
                 return;
             }
@@ -1922,13 +1894,9 @@ public class AppCenterCore.FlatpakBackend : Object {
             transactions++;
         }
 
-        bool success = true;
-
         if (run_system) {
             try {
-                if (!run_updates_transaction (true, system_updates, change_info, cancellable)) {
-                    success = false;
-                }
+                run_updates_transaction (true, system_updates, change_info, cancellable);
             } catch (Error e) {
                 job.error = e;
                 job.results_ready ();
@@ -1938,9 +1906,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         if (run_user) {
             try {
-                if (!run_updates_transaction (false, user_updates, change_info, cancellable)) {
-                    success = false;
-                }
+                run_updates_transaction (false, user_updates, change_info, cancellable);
             } catch (Error e) {
                 job.error = e;
                 job.results_ready ();
@@ -1948,12 +1914,10 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
         }
 
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (success);
         job.results_ready ();
     }
 
-    private bool run_updates_transaction (bool system, string[] ids, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
+    private void run_updates_transaction (bool system, string[] ids, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         Flatpak.Transaction transaction;
         try {
             if (system) {
@@ -1964,7 +1928,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
         } catch (Error e) {
             critical ("Error creating transaction for flatpak updates: %s", e.message);
-            return false;
+            throw e;
         }
 
         try {
@@ -1998,13 +1962,10 @@ public class AppCenterCore.FlatpakBackend : Object {
             });
         });
 
-        bool success = false;
-
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s", e.message);
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
-                success = true;
             }
 
             return false;
@@ -2018,20 +1979,17 @@ public class AppCenterCore.FlatpakBackend : Object {
         current_operation = 0;
 
         try {
-            success = transaction.run (cancellable);
+            transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 change_info.callback (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
-                success = true;
-            } else {
-                throw e;
             }
-        }
 
-        return success;
+            throw e;
+        }
     }
 
-    public async bool update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
+    public async void update_package (Package package, ChangeInformation? change_info, Cancellable? cancellable) throws GLib.Error {
         var job_args = new UpdatePackageArgs ();
         job_args.package = package;
         job_args.change_info = change_info;
@@ -2041,8 +1999,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         if (job.error != null) {
             throw job.error;
         }
-
-        return job.result.get_boolean ();
     }
 
     private void get_updates_internal (Job job) {
