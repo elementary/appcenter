@@ -4,8 +4,6 @@
  */
 
 public class AppCenter.AddonList : Granite.Bin {
-    public signal void show_addon (AppCenterCore.Package package);
-
     public AppCenterCore.Package package { get; construct; }
 
     public AddonList (AppCenterCore.Package package) {
@@ -27,7 +25,6 @@ public class AppCenter.AddonList : Granite.Bin {
             single_click_activate = true,
             vexpand = true
         };
-        list_view.activate.connect (on_activate);
 
         var scrolled = new Gtk.ScrolledWindow () {
             child = list_view,
@@ -57,10 +54,5 @@ public class AppCenter.AddonList : Granite.Bin {
         var list_item = (Gtk.ListItem) obj;
         var addon = (AppCenterCore.Package) list_item.item;
         list_item.child = new AppCenter.Widgets.ListPackageRowGrid (addon);
-    }
-
-    private void on_activate (Gtk.GridView view, uint pos) {
-        var addon = (AppCenterCore.Package) view.model.get_item (pos);
-        show_addon (addon);
     }
 }

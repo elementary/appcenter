@@ -16,8 +16,6 @@
  */
 
 public class AppCenter.CategoryView : Adw.NavigationPage {
-    public signal void show_app (AppCenterCore.Package package);
-
     public AppStream.Category category { get; construct; }
 
     private Gtk.Stack stack;
@@ -85,18 +83,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
         title = category.name;
 
         populate ();
-
-        recently_updated_flowbox.show_package.connect ((package) => {
-            show_app (package);
-        });
-
-        paid_flowbox.show_package.connect ((package) => {
-            show_app (package);
-        });
-
-        free_flowbox.show_package.connect ((package) => {
-            show_app (package);
-        });
 
         AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
             populate ();
@@ -200,8 +186,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
     }
 
     private class SubcategoryFlowbox : Gtk.Box {
-        public signal void show_package (AppCenterCore.Package package);
-
         public string? label { get; construct; }
 
         private static Gtk.SizeGroup size_group;
@@ -234,11 +218,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 append (header);
             }
             append (flowbox);
-
-            flowbox.child_activated.connect ((child) => {
-                var row = (Widgets.ListPackageRowGrid) child.get_child ();
-                show_package (row.package);
-            });
         }
 
         public void bind_model (GLib.ListModel model) {

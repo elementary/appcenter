@@ -20,8 +20,9 @@
 public class AppCenterCore.FlatpakPackage : Package {
     public weak Flatpak.Installation installation { public get; construct; }
 
-    public FlatpakPackage (Flatpak.Installation installation, AppStream.Component component) {
+    public FlatpakPackage (string uid, Flatpak.Installation installation, AppStream.Component component) {
         Object (
+            uid: uid,
             installation: installation,
             component: component
         );
@@ -50,7 +51,6 @@ public class AppCenterCore.FlatpakPackage : Package {
 
 public class AppCenterCore.FlatpakBackend : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
-    public signal void cache_flush_needed ();
     public signal void on_metadata_remote_preprocessed (string remote_title);
     public signal void package_list_changed ();
 
@@ -119,8 +119,7 @@ public class AppCenterCore.FlatpakBackend : Object {
     public bool up_to_date {
         get {
             return !has_updatable_packages && (!working || job_type != GET_UPDATES && job_type != REFRESH_CACHE
-                && job_type != GET_INSTALLED_PACKAGES && job_type != GET_PREPARED_PACKAGES
-                && job_type != GET_DOWNLOAD_SIZE);
+                && job_type != GET_INSTALLED_PACKAGES && job_type != GET_DOWNLOAD_SIZE);
         }
     }
 
@@ -233,7 +232,7 @@ public class AppCenterCore.FlatpakBackend : Object {
         runtime_updates_component.summary = _("Updates to app runtimes");
         runtime_updates_component.add_icon (runtime_icon);
 
-        runtime_updates = new AppCenterCore.Package (runtime_updates_component);
+        runtime_updates = new AppCenterCore.Package ("runtime-updates", runtime_updates_component);
 
         additional_updates = new GLib.ListStore (typeof (Package));
         additional_updates.append (runtime_updates);
@@ -398,6 +397,14 @@ public class AppCenterCore.FlatpakBackend : Object {
         reload_appstream_pool ();
         get_installed_applications.begin (null);
         get_updates.begin (null);
+    }
+
+    public Package? get_package_by_uid (string uid) {
+        if (uid == runtime_updates.uid) {
+            return runtime_updates;
+        }
+
+        return package_list[uid];
     }
 
     public void notify_package_changed (Package package) {
@@ -1173,7 +1180,6 @@ public class AppCenterCore.FlatpakBackend : Object {
         }
 
         reload_appstream_pool ();
-        cache_flush_needed ();
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
@@ -1332,7 +1338,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (user_installation, comp);
+                        package = new FlatpakPackage (key, user_installation, comp);
                     }
 
                     new_package_list[key] = package;
@@ -1361,7 +1367,7 @@ public class AppCenterCore.FlatpakBackend : Object {
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new FlatpakPackage (system_installation, comp);
+                        package = new FlatpakPackage (key, system_installation, comp);
                     }
 
                     new_package_list[key] = package;
@@ -2248,7 +2254,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         user_appstream_pool.add_components (component_box);
 
-        var package = new AppCenterCore.FlatpakPackage (user_installation, component);
+        var package = new AppCenterCore.FlatpakPackage (id, user_installation, component);
         package_list[id] = package;
 
         return package;

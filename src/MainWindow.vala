@@ -15,6 +15,9 @@
 */
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
+    public const string ACTION_PREFIX = "win.";
+    public const string ACTION_SHOW_PACKAGE = "show-package";
+
     private Granite.Toast toast;
     private Adw.NavigationView navigation_view;
     private Granite.OverlayBar overlaybar;
@@ -117,6 +120,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         child = box;
         titlebar = new Gtk.Grid () { visible = false };
 
+        var show_package_action = new SimpleAction (ACTION_SHOW_PACKAGE, VariantType.STRING);
+        show_package_action.activate.connect (on_show_package);
+        add_action (show_package_action);
+
         var network_monitor = NetworkMonitor.get_default ();
         network_monitor.bind_property ("network-available", network_info_bar, "revealed", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
 
@@ -126,10 +133,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         homepage.show_category.connect ((category) => {
             show_category (category);
-        });
-
-        homepage.show_package.connect ((package) => {
-            show_package (package);
         });
 
         navigation_view.popped.connect (update_navigation);
@@ -144,10 +147,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (installed_view == null) {
             installed_view = new Views.AppListUpdateView ();
-
-            installed_view.show_app.connect ((package) => {
-                show_package (package);
-            });
         }
     }
 
@@ -162,6 +161,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         );
 
         return true;
+    }
+
+    private void on_show_package (SimpleAction action, Variant? param) {
+        var uid = param.get_string ();
+        var package = AppCenterCore.FlatpakBackend.get_default ().get_package_by_uid (uid);
+
+        if (package != null) {
+            show_package (package);
+        }
     }
 
     public void show_package (AppCenterCore.Package package) {
@@ -180,11 +188,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         }
 
-        var app_info_view = new Views.AppInfoView (package);
-        navigation_view.push (app_info_view);
+        navigation_view.push (new Views.AppInfoView (package));
         navigation_view.animate_transitions = true;
-
-        app_info_view.show_other_package.connect (show_package);
     }
 
     private void update_navigation () {
@@ -203,10 +208,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var search_view = new AppCenter.SearchView (term) {
             mimetype = mimetype
         };
-
-        search_view.show_app.connect ((package) => {
-            show_package (package);
-        });
 
         navigation_view.push (search_view);
     }
@@ -235,12 +236,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void show_category (AppStream.Category category) {
-        var category_view = new CategoryView (category);
-
-        navigation_view.push (category_view);
-
-        category_view.show_app.connect ((package) => {
-            show_package (package);
-        });
+        navigation_view.push (new CategoryView (category));
     }
 }

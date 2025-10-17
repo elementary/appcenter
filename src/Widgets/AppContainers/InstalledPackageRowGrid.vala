@@ -81,8 +81,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
                 valign = START,
                 xalign = 0
             };
-            origin_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            origin_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            origin_label.add_css_class (Granite.CssClass.DIM);
+            origin_label.add_css_class (Granite.CssClass.SMALL);
 
             grid.attach (origin_label, 1, 1);
         }
@@ -95,6 +95,16 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
             };
             releases_dialog.present ();
         });
+
+        var gesture_controller = new Gtk.GestureClick () {
+            button = Gdk.BUTTON_PRIMARY
+        };
+        gesture_controller.released.connect (on_clicked);
+        add_controller (gesture_controller);
+    }
+
+    private void on_clicked () {
+        activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
     }
 
     private void set_up_package () {

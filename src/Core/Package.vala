@@ -60,13 +60,6 @@ public class AppCenterCore.Package : Object {
         "language-discrimination"
     };
 
-    public signal void changing (bool is_changing);
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void info_changed (ChangeInformation.Status status);
-
     public enum State {
         NOT_INSTALLED,
         INSTALLED,
@@ -104,6 +97,8 @@ public class AppCenterCore.Package : Object {
     public const string DEFAULT_PRICE_DOLLARS = "1";
     public const uint EXACT_MATCH_SCORE = 100;
     public const uint PARTIAL_MATCH_SCORE = 50;
+
+    public string uid { get; construct; }
 
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
@@ -424,13 +419,12 @@ public class AppCenterCore.Package : Object {
 
     construct {
         change_information = new ChangeInformation ();
-        change_information.status_changed.connect (() => info_changed (change_information.status));
 
         action_cancellable = new GLib.Cancellable ();
     }
 
-    public Package (AppStream.Component component) {
-        Object (component: component);
+    public Package (string uid, AppStream.Component component) {
+        Object (uid: uid, component: component);
     }
 
     public void replace_component (AppStream.Component component) {
@@ -546,8 +540,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private void prepare_package_operation (State initial_state) {
-        changing (true);
-
         action_cancellable.reset ();
         change_information.start ();
         state = initial_state;
@@ -583,8 +575,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private void clean_up_package_operation (bool success, State success_state, State fail_state) {
-        changing (false);
-
         if (success) {
             change_information.complete ();
             state = success_state;
@@ -633,10 +623,6 @@ public class AppCenterCore.Package : Object {
         return cached_search_score;
     }
 
-    public void set_name (string? new_name) {
-        _name = Utils.unescape_markup (new_name);
-    }
-
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();
@@ -671,10 +657,6 @@ public class AppCenterCore.Package : Object {
         summary = component.get_summary ();
 
         return summary;
-    }
-
-    public void set_summary (string? new_summary) {
-        summary = new_summary;
     }
 
     public string get_progress_description () {

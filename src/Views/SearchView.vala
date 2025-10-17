@@ -20,8 +20,6 @@
 */
 
 public class AppCenter.SearchView : Adw.NavigationPage {
-    public signal void show_app (AppCenterCore.Package package);
-
     public const int VALID_QUERY_LENGTH = 3;
 
     public string search_term { get; construct; }
@@ -117,7 +115,10 @@ public class AppCenter.SearchView : Adw.NavigationPage {
         });
 
         grid_view.activate.connect ((index) => {
-            show_app ((AppCenterCore.Package) selection_model.get_item (index));
+            activate_action_variant (
+                MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE,
+                ((AppCenterCore.Package) selection_model.get_item (index)).uid
+            );
         });
 
         selection_model.items_changed.connect (on_items_changed);
