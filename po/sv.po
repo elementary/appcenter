@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-10-26 09:55+0000\n"
+"PO-Revision-Date: 2025-10-29 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -719,7 +719,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:787
 msgid "Unstable"
-msgstr "Ostabil"
+msgstr "Instabil"
 
 #: src/Views/AppInfoView.vala:788
 #, c-format
@@ -803,11 +803,11 @@ msgstr "Rekommenderar en handkontroller"
 
 #: src/Views/AppInfoView.vala:1028
 msgid "Play With a Controller"
-msgstr "Spela med en handkontroll"
+msgstr "Spela med en handkontroller"
 
 #: src/Views/AppInfoView.vala:1032
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
-msgstr "Till exempel en PlayStation-, Xbox- eller 8BitDo-handkontroll."
+msgstr "Till exempel en PlayStation-, Xbox- eller 8BitDo-handkontroller."
 
 #: src/Views/AppListUpdateView.vala:37
 #, c-format
@@ -1077,7 +1077,7 @@ msgstr "Okänd version"
 
 #: src/Widgets/ReleaseRow.vala:121
 msgid "No description available"
-msgstr "Ingen beskrivning tillgängling"
+msgstr "Ingen beskrivning tillgänglig"
 
 #: src/Widgets/SizeLabel.vala:23
 #, c-format
