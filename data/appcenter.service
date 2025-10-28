@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=io.elementary.appcenter
-Exec=io.elementary.appcenter --gapplication-service

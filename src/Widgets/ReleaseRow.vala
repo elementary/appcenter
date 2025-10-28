@@ -40,7 +40,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             halign = END,
             hexpand = true
         };
-        date_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        date_label.add_css_class (Granite.CssClass.DIM);
 
         var description_label = new Gtk.Label (format_release_description (release.get_description ())) {
             selectable = true,
@@ -59,7 +59,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
         orientation = VERTICAL;
         append (header_box);
         append (description_label);
-        add_css_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.CssClass.CARD);
 
         var issues = release.get_issues ();
 

@@ -9,8 +9,6 @@
 /** AppList for the Updates View. Sorts update_available first and shows headers.
  * Does not show Uninstall Button **/
 public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
-    public signal void show_app (AppCenterCore.Package package);
-
     private Granite.HeaderLabel header_label;
     private Gtk.FlowBox installed_flowbox;
     private Gtk.ListBox list_box;
@@ -52,7 +50,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         flatpak_backend.bind_property ("updates-size", size_label, "size", SYNC_CREATE);
 
         updated_label = new Gtk.Label ("");
-        updated_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        updated_label.add_css_class (Granite.CssClass.DIM);
 
         var updated_box = new Gtk.Box (HORIZONTAL, 6);
         updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
@@ -70,7 +68,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             valign = Gtk.Align.CENTER,
             action_name = "app.update-all"
         };
-        update_all_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        update_all_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         var header = new Gtk.Box (HORIZONTAL, 16);
         header.append (header_label);
@@ -185,25 +183,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         child = toolbarview;
         /// TRANSLATORS: the name of the Installed Apps view
         title = C_("view", "Installed");
-
-        list_box.row_activated.connect ((row) => {
-            if (row.get_child () is Widgets.InstalledPackageRowGrid) {
-                show_app (((Widgets.InstalledPackageRowGrid) row.get_child ()).package);
-            }
-        });
-
-        installed_flowbox.child_activated.connect ((child) => {
-            if (child.get_child () is Widgets.InstalledPackageRowGrid) {
-                show_app (((Widgets.InstalledPackageRowGrid) child.get_child ()).package);
-            }
-        });
-
-        automatic_updates_button.notify["active"].connect (() => {
-            if (automatic_updates_button.active) {
-                // TODO: Follow up: think about this? Only update all and handle in manager?
-                update_manager.refresh.begin ();
-            }
-        });
 
         App.settings.bind (
             "automatic-updates",

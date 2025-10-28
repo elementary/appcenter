@@ -36,7 +36,7 @@ public class AppCenter.Screenshot : Granite.Bin {
         box.append (picture);
 
         child = box;
-        add_css_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.CssClass.CARD);
 
         bind_property ("caption", label, "label");
         notify["caption"].connect (() => {
@@ -60,7 +60,7 @@ public class AppCenter.Screenshot : Granite.Bin {
         }
 
         var color_class = color.replace ("#", "color-");
-        css_classes = {Granite.STYLE_CLASS_CARD, color_class};
+        css_classes = {Granite.CssClass.CARD, color_class};
 
         if (!providers.has_key (color)) {
             var bg_rgba = Gdk.RGBA ();

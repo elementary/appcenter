@@ -35,7 +35,7 @@ public class AppCenter.ActionStack : Gtk.Box {
         var in_app_label = new Gtk.Label (_("In-app purchases")) {
             visible = false
         };
-        in_app_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        in_app_label.add_css_class (Granite.CssClass.DIM);
         in_app_label.add_css_class ("tiny-label");
 
         foreach (unowned var rating in package.component.get_content_ratings ()) {

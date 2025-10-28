@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '8.3.0',
+    version: '8.3.1',
     meson_version: '>=0.57.0'
 )
 
@@ -22,7 +22,7 @@ gobject = dependency ('gobject-2.0')
 gio = dependency ('gio-2.0')
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk4', version: '>=4.10')
-granite = dependency ('granite-7', version: '>=7.6.0')
+granite = dependency ('granite-7', version: '>=7.7.0')
 adwaita = dependency('libadwaita-1', version: '>=1.4')
 appstream = dependency ('appstream', version: '>=1.0')
 libsoup = dependency ('libsoup-3.0')
@@ -67,7 +67,7 @@ conf_data.set('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set('VERSION', meson.project_version())
 conf_data.set('RUNTIME_NAME', get_option('runtime_name'))
 conf_data.set('CONFIGDIR', config_dir)
-conf_data.set('EXEC_PATH', join_paths (get_option('prefix'), get_option('bindir'), meson.project_name()))
+conf_data.set('EXEC_PATH', join_paths(get_option('prefix'), get_option('bindir'), meson.project_name()))
 conf_data.set('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 
 subdir('data')
