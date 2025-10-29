@@ -60,8 +60,7 @@ public class AppCenterCore.SearchEngine : Object {
         // If there are multiple tokens, add an aditional joined query token
         if (this.query.length > 1) {
             var joined_query = query.replace (" ", "");
-            this.query.resize (this.query.length + 1);
-            this.query[this.query.length - 1] = joined_query;
+            this.query += joined_query;
         }
         this.category = category;
         packages.items_changed (0, packages.n_items, packages.n_items);
