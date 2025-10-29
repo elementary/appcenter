@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-10-23 17:55+0000\n"
+"PO-Revision-Date: 2025-10-26 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -865,7 +865,7 @@ msgstr "Övriga appar av %s"
 
 #: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
 msgid "Recently Updated"
-msgstr "Nyligen uppdaterad"
+msgstr "Nyligen uppdaterade"
 
 #: src/Views/CategoryView.vala:35
 msgid "Paid Apps"
