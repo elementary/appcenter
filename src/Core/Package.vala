@@ -605,8 +605,15 @@ public class AppCenterCore.Package : Object {
                 var name_down = component.name.down ();
                 var query_down = query.down ();
 
-                // Give extra score value if query is a substring
-                // or if it matches exactly the component name or id
+                /*
+                * Give extra score value if query is a substring, or if it
+                * matches exactly the component name or id.
+                * We multiply both by queries.length to negate the dilution made
+                * by cached_search_score when dividing by queries.length, thus
+                * making it a perfect EXACT_MATCH_SCORE or PARTIAL_MATCH_SCORE
+                * search value, since an exact or partial match should achieve
+                * the perfect score in any query token.
+                */
                 if (query_down == name_down || query_down == id_down) {
                     query_score = EXACT_MATCH_SCORE * queries.length;
                 } else if (
