@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-10-29 18:55+0000\n"
+"PO-Revision-Date: 2025-10-30 14:48+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -40,7 +40,7 @@ msgid ""
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 "AppCenter startar automatiskt när enheten slås på och körs när fönstret "
-"stängs, så att det automatiskt kan kontrollera och installera uppdateringar."
+"stängs, så att det automatiskt kan leta efter och installera uppdateringar."
 
 #: src/Application.vala:315
 msgid "The app has been installed"
@@ -120,7 +120,7 @@ msgstr "Internet"
 
 #: src/Core/CategoryManager.vala:84
 msgid "Math, Science, & Engineering"
-msgstr "Vetenskap och ingenjörskonst"
+msgstr "Matematik, vetenskap och ingenjörskonst"
 
 #: src/Core/CategoryManager.vala:104
 msgid "Media Production"
@@ -555,7 +555,7 @@ msgstr "Uppdatera uppdateringar"
 
 #: src/Views/AppInfoView.vala:222
 msgid "Illicit Substances"
-msgstr "Olagliga substanser"
+msgstr "Olämpliga substanser"
 
 #: src/Views/AppInfoView.vala:223
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
@@ -704,7 +704,7 @@ msgstr "Versionshistorik…"
 
 #: src/Views/AppInfoView.vala:771 src/Views/AppInfoView.vala:778
 msgid "Outdated"
-msgstr "Föråldrad"
+msgstr "Utdaterad"
 
 #: src/Views/AppInfoView.vala:772
 msgid "May not work as expected or receive security updates"
@@ -755,7 +755,7 @@ msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
 msgstr ""
-"Inklusive alla dokument, nedladdningar, musik, bilder, videor och alla dolda "
+"Inklusive alla dokument, hämtningar, musik, bilder, videor och alla dolda "
 "mappar"
 
 #: src/Views/AppInfoView.vala:829
@@ -782,7 +782,7 @@ msgstr "Föråldrade meddelanden"
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
-"Bubblor kanske inte är konfigurerbara eller visas i meddelandecentret som "
+"Bubblor kanske inte är konfigurerbara eller visas i aviseringscentret som "
 "\"Övrigt\""
 
 #: src/Views/AppInfoView.vala:859
@@ -873,7 +873,7 @@ msgstr "Betalda appar"
 
 #: src/Views/CategoryView.vala:37
 msgid "Free Apps"
-msgstr "Gratis appar"
+msgstr "Kostnadsfria appar"
 
 #: src/Views/Homepage.vala:86
 msgid "Categories"
@@ -940,7 +940,7 @@ msgstr ""
 #: src/Views/SearchView.vala:182
 #, c-format
 msgid "Search %s"
-msgstr "Sök efter %s"
+msgstr "Sök i %s"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
