@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-10-30 14:48+0000\n"
+"PO-Revision-Date: 2025-10-31 15:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -104,7 +104,7 @@ msgstr "Utbildning"
 
 #: src/Core/CategoryManager.vala:46
 msgid "Finance"
-msgstr "Finans"
+msgstr "Ekonomi"
 
 #: src/Core/CategoryManager.vala:51
 msgid "Fun & Games"
@@ -470,7 +470,7 @@ msgstr "Betala $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr "Prova gratis"
+msgstr "Prova kostnadsfritt"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
@@ -826,11 +826,11 @@ msgstr "Uppdaterad"
 
 #: src/Views/AppListUpdateView.vala:125
 msgid "Automatically Update Free & Purchased Apps"
-msgstr "Uppdatera gratis- och köpta appar automatiskt"
+msgstr "Uppdatera kostnadsfria och köpta appar automatiskt"
 
 #: src/Views/AppListUpdateView.vala:126
 msgid "Apps being tried for free will not update automatically"
-msgstr "Appar som provas gratis uppdateras inte automatiskt"
+msgstr "Appar som provas kostnadsfritt uppdateras inte automatiskt"
 
 #: src/Views/AppListUpdateView.vala:130
 msgid "Check for Updates"
