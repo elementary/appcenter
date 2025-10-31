@@ -184,6 +184,20 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         /// TRANSLATORS: the name of the Installed Apps view
         title = C_("view", "Installed");
 
+        list_box.row_activated.connect ((row) => {
+            if (row.get_child () is Widgets.InstalledPackageRowGrid) {
+                var package = ((Widgets.InstalledPackageRowGrid) row.get_child ()).package;
+                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+            }
+        });
+
+        installed_flowbox.child_activated.connect ((child) => {
+            if (child.get_child () is Widgets.InstalledPackageRowGrid) {
+                var package = ((Widgets.InstalledPackageRowGrid) child.get_child ()).package;
+                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+            }
+        });
+
         App.settings.bind (
             "automatic-updates",
             automatic_updates_button,
