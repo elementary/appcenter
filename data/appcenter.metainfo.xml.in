@@ -73,7 +73,7 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/appcenter/issues/1379">AppCenter still shows number of updates on the icon if updated through the termina</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1379">AppCenter still shows number of updates on the icon if updated through the terminal</issue>
       </issues>
     </release>
 
