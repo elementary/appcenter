@@ -65,6 +65,18 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.3.2" date="2025-10-31">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/1379">AppCenter still shows number of updates on the icon if updated through the termina</issue>
+      </issues>
+    </release>
+
     <release version="8.3.1" date="2025-09-20">
       <description>
         <p>Other Improvements:</p>
