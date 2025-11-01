@@ -61,6 +61,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         };
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
+            margin_top = 12,
             margin_start = 12
         };
 
@@ -83,19 +84,13 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             child = recently_updated_grid
         };
 
-        var categories_label = new Granite.HeaderLabel (_("Categories")) {
-            margin_start = 24,
-            margin_top = 24
-        };
-
         category_flow = new Gtk.FlowBox () {
             activate_on_single_click = true,
+            margin_top = 12,
             homogeneous = true,
             margin_start = 12,
             margin_end =12,
-            margin_bottom = 12,
-            max_children_per_line = 17,
-            valign = Gtk.Align.START
+            max_children_per_line = 17
         };
 
         category_flow.set_sort_func ((child1, child2) => {
@@ -115,9 +110,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         var box = new Gtk.Box (VERTICAL, 0);
         box.append (banner_carousel);
         box.append (banner_dots);
-        box.append (recently_updated_revealer);
-        box.append (categories_label);
         box.append (category_flow);
+        box.append (recently_updated_revealer);
 
         scrolled_window = new Gtk.ScrolledWindow () {
             child = box,
