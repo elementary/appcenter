@@ -85,6 +85,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         };
 
         category_flow = new Gtk.FlowBox () {
+            accessible_role = LIST,
             activate_on_single_click = true,
             margin_top = 12,
             homogeneous = true,
@@ -92,6 +93,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             margin_end =12,
             max_children_per_line = 17
         };
+        category_flow.update_property (
+            Gtk.AccessibleProperty.LABEL, _("Categories"),
+            -1
+        );
 
         category_flow.set_sort_func ((child1, child2) => {
             var item1 = (CategoryCard) child1;
