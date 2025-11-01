@@ -94,6 +94,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             margin_start = 12,
             margin_end =12,
             margin_bottom = 12,
+            max_children_per_line = 17,
             valign = Gtk.Align.START
         };
 
@@ -315,20 +316,20 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         construct {
             var name_label = new Gtk.Label (category.name) {
-                halign = START,
-                wrap = true,
-                xalign = 0
+                justify = CENTER,
+                max_width_chars = 10,
+                wrap = true
             };
+            name_label.add_css_class (Granite.CssClass.SMALL);
 
             var display_image = new Gtk.Image.from_icon_name (category.icon) {
-                halign = END,
-                valign = CENTER,
+                halign = CENTER
             };
+            display_image.add_css_class (Granite.CssClass.CIRCULAR);
 
-            var box = new Gtk.Box (HORIZONTAL, 0);
+            var box = new Granite.Box (VERTICAL, HALF);
             box.append (display_image);
             box.append (name_label);
-            box.add_css_class (Granite.CssClass.CARD);
             box.add_css_class ("category");
             box.add_css_class (category.id);
 
