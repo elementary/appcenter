@@ -32,19 +32,25 @@ public class AppCenter.SearchListItem : Gtk.Grid {
         app_icon = new AppIcon (48);
 
         name_label = new Gtk.Label (null) {
+            ellipsize = END,
+            max_width_chars = 30,
             valign = END,
-            wrap = true,
             xalign = 0
         };
         name_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         summary_label = new Gtk.Label (null) {
+            ellipsize = END,
+            hexpand = true,
+            lines = 2,
+            width_chars = 20,
+            max_width_chars = 35,
             valign = START,
             wrap = true,
             xalign = 0
         };
-        summary_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-        summary_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        summary_label.add_css_class (Granite.CssClass.DIM);
+        summary_label.add_css_class (Granite.CssClass.SMALL);
 
         attach (app_icon, 0, 0, 1, 2);
         attach (name_label, 1, 0);

@@ -16,8 +16,6 @@
  */
 
 public class AppCenter.CategoryView : Adw.NavigationPage {
-    public signal void show_app (AppCenterCore.Package package);
-
     public AppStream.Category category { get; construct; }
 
     private Gtk.Stack stack;
@@ -86,18 +84,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         populate ();
 
-        recently_updated_flowbox.show_package.connect ((package) => {
-            show_app (package);
-        });
-
-        paid_flowbox.show_package.connect ((package) => {
-            show_app (package);
-        });
-
-        free_flowbox.show_package.connect ((package) => {
-            show_app (package);
-        });
-
         AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
             populate ();
         });
@@ -141,15 +127,10 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 return true;
             }));
 
-            var recent_sort_model = new Gtk.SortListModel (recent_filter_model, new Gtk.CustomSorter ((obj1, obj2) => {
-                var package1 = (AppCenterCore.Package) obj1;
-                var package2 = (AppCenterCore.Package) obj2;
-
-                var package1_date_time = new DateTime.from_unix_utc ((int64) package1.get_newest_release ().get_timestamp ());
-                var package2_date_time = new DateTime.from_unix_utc ((int64) package2.get_newest_release ().get_timestamp ());
-
-                return package2_date_time.compare (package1_date_time);
-            }));
+            var recent_sort_model = new Gtk.SortListModel (
+                recent_filter_model,
+                new Gtk.CustomSorter ((CompareDataFunc<GLib.Object>) AppCenterCore.Package.compare_newest_release)
+            );
 
             var recent_model = new Gtk.SliceListModel (recent_sort_model, 0, 4);
 
@@ -205,8 +186,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
     }
 
     private class SubcategoryFlowbox : Gtk.Box {
-        public signal void show_package (AppCenterCore.Package package);
-
         public string? label { get; construct; }
 
         private static Gtk.SizeGroup size_group;
@@ -239,11 +218,6 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 append (header);
             }
             append (flowbox);
-
-            flowbox.child_activated.connect ((child) => {
-                var row = (Widgets.ListPackageRowGrid) child.get_child ();
-                show_package (row.package);
-            });
         }
 
         public void bind_model (GLib.ListModel model) {

@@ -19,6 +19,13 @@ install_data(
     rename: meson.project_name() + '-symbolic.svg'
 )
 
+configure_file(
+    input: 'appcenter.service.in',
+    output: meson.project_name() + '.service',
+    configuration: conf_data,
+    install_dir: get_option('datadir') / 'dbus-1' / 'services',
+)
+
 # GNOME Shell Search Provider
 configure_file(
     input: meson.project_name() + '.search-provider.ini.in',

@@ -42,7 +42,7 @@ public class InstallFailDialog : Granite.MessageDialog {
         }
 
         var repair_button = add_button (_("Repair"), REPAIR_RESPONSE_ID);
-        repair_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        repair_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         response.connect ((response) => {
             if (response == REPAIR_RESPONSE_ID) {

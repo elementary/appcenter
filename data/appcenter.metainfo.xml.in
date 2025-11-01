@@ -65,7 +65,7 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
-    <release version="8.3.0" date="2025-08-22">
+    <release version="8.3.2" date="2025-10-31">
       <description>
         <p>Other Improvements:</p>
         <ul>
@@ -73,11 +73,40 @@
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/1379">AppCenter still shows number of updates on the icon if updated through the terminal</issue>
+      </issues>
+    </release>
+
+    <release version="8.3.1" date="2025-09-20">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/2353">Impossible to launch from Applications menu or Dock</issue>
+      </issues>
+    </release>
+
+    <release version="8.3.0" date="2025-09-09">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/36">Sort installed tab by date installed</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/580">Don't try to update before I have an internet connection</issue>
         <issue url="https://github.com/elementary/appcenter/issues/695">Handle multiple licenses</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1155">Automatically check for updates after regaining an Internet connection</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1513">Text cursor should not appear for app names</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2202">Rename install button</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2241">Warn about proprietary software</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2269">Add icon for Education category</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2303">Support addons</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2349">"Check for Updates" does nothing if the app is already running</issue>
       </issues>
     </release>
 
@@ -146,6 +175,7 @@
         <issue url="https://github.com/elementary/appcenter/issues/366">Cover SPDX licenses</issue>
         <issue url="https://github.com/elementary/appcenter/issues/470">Screenshots are being stretched</issue>
         <issue url="https://github.com/elementary/appcenter/issues/554">Can't search from an external source while open on an app from search</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/725">Show Email button in footer</issue>
         <issue url="https://github.com/elementary/appcenter/issues/736">Fonts of some categories don't support some diacritics</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1134">Show donation URL button if payments not enabled</issue>
         <issue url="https://github.com/elementary/appcenter/issues/1590">When an app installs, the cancel button is not properly highlighted at the right edge</issue>

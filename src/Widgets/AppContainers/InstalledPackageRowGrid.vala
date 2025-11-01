@@ -16,8 +16,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
         }
     }
 
-    private AppStream.Release? newest = null;
-    private Gtk.Label app_version;
+    private Gtk.Label package_name;
     private Gtk.Revealer release_button_revealer;
     private ActionStack action_stack;
 
@@ -49,41 +48,44 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
             updates_view = true
         };
 
-        var package_name = new Gtk.Label (package.name) {
+        package_name = new Gtk.Label (package.name) {
+            hexpand = true,
             wrap = true,
             max_width_chars = 25,
+            use_markup = true,
             valign = END,
             xalign = 0
         };
         package_name.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        app_version = new Gtk.Label (null) {
-            ellipsize = END,
-            valign = START,
-            xalign = 0
-        };
-        app_version.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-        app_version.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
-
         var release_button = new Gtk.Button.from_icon_name ("view-reader-symbolic") {
             margin_start = 12,
             tooltip_text = _("Release notes"),
-            valign = Gtk.Align.CENTER
+            halign = END,
+            valign = CENTER
         };
 
         release_button_revealer = new Gtk.Revealer () {
             child = release_button,
-            halign = END,
-            hexpand = true,
             transition_type = SLIDE_RIGHT
         };
 
         var grid = new Gtk.Grid ();
         grid.attach (app_icon, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
-        grid.attach (app_version, 1, 1);
         grid.attach (release_button_revealer, 2, 0, 1, 2);
         grid.attach (action_stack, 3, 0, 1, 2);
+
+        if (package.has_multiple_origins) {
+            var origin_label = new Gtk.Label (package.origin_description) {
+                valign = START,
+                xalign = 0
+            };
+            origin_label.add_css_class (Granite.CssClass.DIM);
+            origin_label.add_css_class (Granite.CssClass.SMALL);
+
+            grid.attach (origin_label, 1, 1);
+        }
 
         child = grid;
 
@@ -93,43 +95,30 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : Granite.Bin {
             };
             releases_dialog.present ();
         });
+
+        var gesture_controller = new Gtk.GestureClick () {
+            button = Gdk.BUTTON_PRIMARY
+        };
+        gesture_controller.released.connect (on_clicked);
+        add_controller (gesture_controller);
+    }
+
+    private void on_clicked () {
+        activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
     }
 
     private void set_up_package () {
-        if (package.get_version () != null) {
-            if (package.has_multiple_origins) {
-                app_version.label = "%s — %s".printf (package.get_version (), package.origin_description);
-            } else {
-                app_version.label = package.get_version ();
-            }
-        }
-
         package.notify["state"].connect (() => {
             update_state ();
         });
-        update_state (true);
+        update_state ();
     }
 
-    private void update_state (bool first_update = false) {
-        if (!first_update && package.get_version != null) {
-            if (package.has_multiple_origins) {
-                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
-            } else {
-                app_version.label = package.get_version ();
-            }
-        }
-
-        if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
-            if (newest == null) {
-                newest = package.get_newest_release ();
-                if (newest != null && newest.get_description () != null) {
-                    release_button_revealer.reveal_child = true;
-                }
-            } else {
-                if (newest.get_description () != null) {
-                    release_button_revealer.reveal_child = true;
-                }
-            }
+    private void update_state () {
+        var newest = package.get_newest_release ();
+        if (newest != null && newest.get_version () != null) {
+            release_button_revealer.reveal_child = true;
+            package_name.label = "%s <span alpha=\"70%\" size=\"small\">%s</span>".printf (package.name, package.get_version ());
         }
 
         changed ();

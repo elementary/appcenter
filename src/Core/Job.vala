@@ -27,7 +27,6 @@ public class AppCenterCore.Job : Object {
     public signal void results_ready ();
 
     public enum Type {
-        GET_DETAILS_FOR_PACKAGE_IDS,
         GET_INSTALLED_PACKAGES,
         GET_DOWNLOAD_SIZE,
         REFRESH_CACHE,
@@ -35,20 +34,12 @@ public class AppCenterCore.Job : Object {
         INSTALL_PACKAGE,
         UPDATE_PACKAGE,
         REMOVE_PACKAGE,
-        GET_PACKAGE_DETAILS,
-        GET_PACKAGE_DEPENDENCIES,
-        GET_PREPARED_PACKAGES,
         REPAIR;
 
         public string to_string () {
             switch (this) {
-                case GET_DETAILS_FOR_PACKAGE_IDS:
-                case GET_PACKAGE_DEPENDENCIES:
-                case GET_PACKAGE_DETAILS:
-                    return _("Getting app information…");
                 case GET_DOWNLOAD_SIZE:
                     return _("Getting download size…");
-                case GET_PREPARED_PACKAGES:
                 case GET_INSTALLED_PACKAGES:
                 case GET_UPDATES:
                 case REFRESH_CACHE:
@@ -78,10 +69,6 @@ public class AppCenterCore.RepairArgs : JobArgs {
     public Cancellable? cancellable;
 }
 
-public class AppCenterCore.GetPreparedPackagesArgs : JobArgs {
-    public Cancellable? cancellable;
-}
-
 public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
     public Cancellable? cancellable;
 }
@@ -104,11 +91,6 @@ public class AppCenterCore.RemovePackageArgs : JobArgs {
     public Cancellable? cancellable;
 }
 
-public class AppCenterCore.GetDownloadSizeArgs : JobArgs {
-    public Package package;
-    public Cancellable? cancellable;
-}
-
 public class AppCenterCore.GetDownloadSizeByIdArgs : JobArgs {
     public string id;
     public bool is_update;
@@ -121,14 +103,5 @@ public class AppCenterCore.GetUpdatesArgs : JobArgs {
 }
 
 public class AppCenterCore.RefreshCacheArgs : JobArgs {
-    public Cancellable? cancellable;
-}
-
-public class AppCenterCore.GetPackageDetailsArgs : JobArgs {
-    public Package package;
-}
-
-public class AppCenterCore.GetPackageDependenciesArgs : JobArgs {
-    public Package package;
     public Cancellable? cancellable;
 }

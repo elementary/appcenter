@@ -311,7 +311,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
 
         construct {
             var image = new Gtk.Image.from_icon_name (icon_name);
-            image.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            image.add_css_class (Granite.CssClass.ACCENT);
             image.add_css_class (color);
 
             var title_label = new Gtk.Label (label_string) {
@@ -323,8 +323,8 @@ public class AppCenter.LinkListBox : Gtk.Widget {
                 wrap = true,
                 xalign = 0
             };
-            description_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            description_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            description_label.add_css_class (Granite.CssClass.DIM);
+            description_label.add_css_class (Granite.CssClass.SMALL);
 
             var link_image = new Gtk.Image.from_icon_name ("adw-external-link-symbolic");
 

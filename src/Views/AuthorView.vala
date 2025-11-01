@@ -4,8 +4,6 @@
  */
 
 private class AppCenter.AuthorView : Gtk.Box {
-    public signal void show_other_package (AppCenterCore.Package package);
-
     public AppCenterCore.Package package { get; construct; }
     public int max_width { get; construct; }
 
@@ -65,11 +63,5 @@ private class AppCenter.AuthorView : Gtk.Box {
         append (clamp);
         add_css_class ("bottom-toolbar");
         add_css_class (Granite.STYLE_CLASS_FLAT);
-
-        flowbox.child_activated.connect ((child) => {
-            var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
-
-            show_other_package (package_row_grid.package);
-        });
     }
 }
