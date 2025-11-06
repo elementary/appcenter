@@ -2,14 +2,14 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Zisis Avouris <zisisavouris@gmail.com>, 2023.
 # Orionas Kakomoiroglou <209243298+OrionasKakomoiroglou@users.noreply.github.com>, 2025.
+# Jim Spentzos <jimspentzos2000@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
 "PO-Revision-Date: 2025-11-07 22:55+0000\n"
-"Last-Translator: Orionas Kakomoiroglou "
-"<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/el/>\n"
 "Language: el\n"
@@ -232,28 +232,20 @@ msgid "Getting download size…"
 msgstr "Λήψη μεγέθους λήψης…"
 
 #: src/Core/Job.vala:46
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for updates…"
-msgstr "Γίνεται αναζήτηση για ενημερώσεις…"
+msgstr "Γίνεται έλεγχος για ενημερώσεις…"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Γίνεται εγκατάσταση"
+msgstr "Γίνεται εγκατάσταση…"
 
 #: src/Core/Job.vala:50
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "Εγκατάσταση ενημερώσεων"
+msgstr "Εγκατάσταση ενημερώσεων…"
 
 #: src/Core/Job.vala:52
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling…"
-msgstr "Απεγκατάσταση"
+msgstr "Γίνεται απεγκατάσταση…"
 
 #: src/Core/Job.vala:54
 msgid "Repairing…"
