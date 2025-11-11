@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-11-07 22:55+0000\n"
+"PO-Revision-Date: 2025-11-11 22:34+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/el/>\n"
@@ -99,7 +99,7 @@ msgstr "Επικοινωνία"
 
 #: src/Core/CategoryManager.vala:33
 msgid "Development"
-msgstr "Ανάπτυξη λογισμικού"
+msgstr "Προγραμματισμός"
 
 #: src/Core/CategoryManager.vala:44
 msgid "Education"
@@ -127,7 +127,7 @@ msgstr "Μαθηματικά, Επιστήμη και Μηχανική"
 
 #: src/Core/CategoryManager.vala:104
 msgid "Media Production"
-msgstr "Παραγωγή Μέσων"
+msgstr "Παραγωγή μέσων"
 
 #: src/Core/CategoryManager.vala:112
 msgid "Office"
@@ -147,11 +147,11 @@ msgstr "Βίντεο"
 
 #: src/Core/CategoryManager.vala:133
 msgid "Writing & Language"
-msgstr "Γραφή & Γλώσσα"
+msgstr "Συγγραφή και γλώσσα"
 
 #: src/Core/CategoryManager.vala:144
 msgid "Privacy & Security"
-msgstr "Ιδιωτικότητα & Ασφάλεια"
+msgstr "Απόρρητο και ασφάλεια"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -194,16 +194,12 @@ msgid "Installing"
 msgstr "Εγκατάσταση"
 
 #: src/Core/FlatpakBackend.vala:1815
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Απεγκατάσταση"
+msgstr "Γίνεται απεγκατάσταση"
 
 #: src/Core/FlatpakBackend.vala:1997
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Ενημέρωση"
+msgstr "Γίνεται ενημέρωση"
 
 #: src/Core/FlatpakBackend.vala:2127
 #, c-format
