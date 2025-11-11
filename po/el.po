@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-11-11 22:34+0000\n"
+"PO-Revision-Date: 2025-11-12 22:55+0000\n"
 "Last-Translator: Orionas Kakomoiroglou "
 "<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
@@ -152,7 +152,7 @@ msgstr "Συγγραφή και γλώσσα"
 
 #: src/Core/CategoryManager.vala:144
 msgid "Privacy & Security"
-msgstr "Απόρρητο και ασφάλεια"
+msgstr "Ιδιωτικότητα και ασφάλεια"
 
 #: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
 msgid "Waiting"
@@ -167,7 +167,7 @@ msgstr "Ολοκληρώθηκε"
 #: src/Core/FlatpakBackend.vala:1848 src/Core/FlatpakBackend.vala:2006
 #: src/Core/FlatpakBackend.vala:2024
 msgid "Cancelling"
-msgstr "Ακύρωση"
+msgstr "Γίνεται ακύρωση"
 
 #: src/Core/ChangeInformation.vala:91
 msgid "Starting"
@@ -192,7 +192,7 @@ msgstr "Ενημερώσεις για runtime εφαρμογών"
 
 #: src/Core/FlatpakBackend.vala:1683
 msgid "Installing"
-msgstr "Εγκατάσταση"
+msgstr "Γίνεται εγκατάσταση"
 
 #: src/Core/FlatpakBackend.vala:1815
 msgid "Uninstalling"
@@ -924,7 +924,7 @@ msgstr "Αρχική Σελίδα"
 
 #: src/Views/Homepage.vala:187
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Περιηγηθείτε και διαχειριστείτε εφαρμογές"
 
 #: src/Views/Homepage.vala:188
 msgid ""
@@ -934,6 +934,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
+"Το κέντρο λογισμικού ανοιχτού κώδικα όπου πληρώνετε με τους δικούς σας όρους "
+"από την elementary. Εποπτεύεται και επιμελείται από την elementary για να "
+"διασφαλισθεί μια εγγενή και ασφαλή εμπειρία με σεβασμό στην ιδιωτικότητα. "
+"Περιηγηθείτε ανά κατηγορία ή αναζητήστε και ανακαλύψτε νέες εφαρμογές. Το "
+"AppCenter επίσης χρησιμεύει στο να ενημερώνει το λογισμικό σας στην "
+"τελευταία έκδοση για νέες λειτουργίες και επιδιορθώσεις."
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
