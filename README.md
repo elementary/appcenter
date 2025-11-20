@@ -8,9 +8,11 @@ An open, pay-what-you-want app store for indie developers.
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
+* cmake
 * gettext
 * libadwaita-1-dev (>= 1.4)
 * libappstream-dev (>= 1.0.0)
+* libdbus-1-dev
 * libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
 * libgranite-7-dev (>=7.7.0)
