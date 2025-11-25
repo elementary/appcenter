@@ -29,8 +29,8 @@ Homepage: https://github.com/elementary/appcenter
 Package: io.elementary.appcenter
 Architecture: any
 Priority: extra
-Breaks: appcenter-daemon, appcenter
-Replaces: appcenter-daemon, appcenter
+Breaks: appcenter-daemon, appcenter (<< 9.0.0)
+Replaces: appcenter-daemon, appcenter (<< 9.0.0)
 Depends: appstream (>= 0.12),
          ${misc:Depends},
          ${shlibs:Depends}
@@ -42,8 +42,8 @@ Description: Fast application store
 Package: io.elementary.appcenter-casper
 Architecture: any
 Priority: extra
-Breaks: appcenter-casper
-Replaces: appcenter-casper
+Breaks: appcenter-casper (<< 9.0.0)
+Replaces: appcenter-casper (<< 9.0.0)
 Depends: casper
 Description: Disable AppCenter daemon in casper
  Disable AppCenter daemon when running in a live system with casper
