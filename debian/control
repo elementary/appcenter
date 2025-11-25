@@ -42,6 +42,24 @@ Description: Fast application store
 Package: io.elementary.appcenter-casper
 Architecture: any
 Priority: extra
+Breaks: appcenter-casper
+Replaces: appcenter-casper
 Depends: casper
 Description: Disable AppCenter daemon in casper
  Disable AppCenter daemon when running in a live system with casper
+
+Package: appcenter
+Architecture: any
+Depends: io.elementary.appcenter, ${misc:Depends}
+Section: oldlibs
+Priority: optional
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
+
+Package: appcenter-casper
+Architecture: any
+Depends: io.elementary.appcenter-casper, ${misc:Depends}
+Section: oldlibs
+Priority: optional
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
