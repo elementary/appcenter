@@ -1,4 +1,4 @@
-Source: appcenter
+Source: io.elementary.appcenter
 Section: utils
 Maintainer: elementary Builds Team <builds@elementary.io>
 Build-Depends: appstream (>= 1.0.0),
@@ -26,11 +26,11 @@ Build-Depends: appstream (>= 1.0.0),
 Standards-Version: 4.1.1
 Homepage: https://github.com/elementary/appcenter
 
-Package: appcenter
+Package: io.elementary.appcenter
 Architecture: any
 Priority: extra
-Conflicts: appcenter-daemon
-Replaces: appcenter-daemon
+Breaks: appcenter-daemon, appcenter (<< 9.0.0)
+Replaces: appcenter-daemon, appcenter (<< 9.0.0)
 Depends: appstream (>= 0.12),
          ${misc:Depends},
          ${shlibs:Depends}
@@ -39,9 +39,27 @@ Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
 
-Package: appcenter-casper
+Package: io.elementary.appcenter-casper
 Architecture: any
 Priority: extra
+Breaks: appcenter-casper (<< 9.0.0)
+Replaces: appcenter-casper (<< 9.0.0)
 Depends: casper
 Description: Disable AppCenter daemon in casper
  Disable AppCenter daemon when running in a live system with casper
+
+Package: appcenter
+Architecture: all
+Depends: io.elementary.appcenter, ${misc:Depends}
+Section: oldlibs
+Priority: optional
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
+
+Package: appcenter-casper
+Architecture: all
+Depends: io.elementary.appcenter-casper, ${misc:Depends}
+Section: oldlibs
+Priority: optional
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
