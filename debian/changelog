@@ -1,3 +1,27 @@
+io.elementary.appcenter (8.3.1) noble; urgency=medium
+
+  * Release 8.3.1
+
+ -- Danielle Foré <danielle@elementary.io>  Sat, 20 Sep 2025 12:30:26 -0700
+
+io.elementary.appcenter (8.3.0) noble; urgency=medium
+
+  * Release 8.3.0
+
+ -- Danielle Foré <danielle@elementary.io>  Thu, 11 Sep 2025 10:41:05 -0700
+
+io.elementary.appcenter (8.2.0) noble; urgency=medium
+
+  * Release 8.2.0 (#2289)
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 02 May 2025 15:53:06 +0000
+
+io.elementary.appcenter (8.1.0) noble; urgency=medium
+
+  * Release 8.1.0 (#2258)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 06 Mar 2025 18:33:07 +0000
+
 io.elementary.appcenter (8.0.1) noble; urgency=medium
 
   * Release 8.0.1 (#2229)
