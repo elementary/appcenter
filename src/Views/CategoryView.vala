@@ -218,6 +218,11 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
                 append (header);
             }
             append (flowbox);
+
+            flowbox.child_activated.connect ((child) => {
+                var package = ((Widgets.ListPackageRowGrid) child.get_child ()).package;
+                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+            });
         }
 
         public void bind_model (GLib.ListModel model) {
