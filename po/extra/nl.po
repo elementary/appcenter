@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2024-05-14 09:13+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
-">\n"
+"PO-Revision-Date: 2025-12-01 10:55+0000\n"
+"Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
+"Language-Team: Dutch <https://l10n.elementaryos.org/projects/appcenter/extra/"
+"nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -78,48 +78,52 @@ msgstr "Nieuwe functies:"
 
 #: data/appcenter.metainfo.xml.in:152
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Beheer automatisch starten in de Systeeminstellingen → Apps"
 
 #: data/appcenter.metainfo.xml.in:156
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Standaard automatische app updates"
 
 #: data/appcenter.metainfo.xml.in:157
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "Beheerssysteem updates zijn verplaatst naar Systeeminstellingen"
 
 #: data/appcenter.metainfo.xml.in:158
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Badge-apps gemaakt voor elementary OS, in plaats van voor andere applicaties"
 
 #: data/appcenter.metainfo.xml.in:182
 msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr ""
+msgstr "Waarschuw wanneer apps oude automatische start of meldingen gebruiken"
 
 #: data/appcenter.metainfo.xml.in:186
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Corrigeer van de flikkering in AppInfo-weergaven bij het ophalen van de "
+"installatiegrootte"
 
 #: data/appcenter.metainfo.xml.in:202
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Waarschuw wanneer apps toegang hebben tot de map Home of systeemfolders, "
+"locatie, instellingen of wanneer ze een onveilige sandbox hebben."
 
 #: data/appcenter.metainfo.xml.in:206
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
-msgstr "Lange namen van apps worden afgekort in de App Info weergave"
+msgstr "Verklein de asftanden en marges in de App Info weergave"
 
 #: data/appcenter.metainfo.xml.in:207
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Toon een plaatshouder banner op de startpagina tijdens het laden"
 
 #: data/appcenter.metainfo.xml.in:208
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Vermeld geen niet-AppCenter-apps onder een aparte kop in categorieweergaven"
 
 #: data/appcenter.metainfo.xml.in:230
 msgid "Offer a Repair option if Flatpak updates fail"
