@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-10-31 15:55+0000\n"
+"PO-Revision-Date: 2025-11-04 17:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -996,7 +996,7 @@ msgstr "Kontakta utvecklaren"
 
 #: src/Widgets/LinkListBox.vala:109
 msgid "Sponsor"
-msgstr "Sponsor"
+msgstr "Sponsra"
 
 #: src/Widgets/LinkListBox.vala:119
 msgid "Contribute Translations"
