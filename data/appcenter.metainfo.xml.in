@@ -85,7 +85,6 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/appcenter/issues/1379">AppCenter still shows number of updates on the icon if updated through the terminal</issue>
         <issue url="https://github.com/elementary/appcenter/issues/2353">Impossible to launch from Applications menu or Dock</issue>
       </issues>
     </release>
