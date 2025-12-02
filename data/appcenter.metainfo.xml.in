@@ -74,6 +74,7 @@
       </description>
       <issues>
         <issue url="https://github.com/elementary/appcenter/issues/1379">AppCenter still shows number of updates on the icon if updated through the terminal</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2371">Revert change from list/flowbox activate to click controller</issue>
       </issues>
     </release>
 
