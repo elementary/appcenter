@@ -89,6 +89,11 @@ public class AppCenterCore.UpdateManager : Object {
         var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_refresh_time) / GLib.TimeSpan.SECOND;
 
         if (seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES) {
+            if (NetworkMonitor.get_default ().get_network_metered ()) {
+                refresh_required = true;
+                return;
+            }
+
             refresh.begin ();
             return;
         }
@@ -97,12 +102,18 @@ public class AppCenterCore.UpdateManager : Object {
 
         refresh_timeout_id = Timeout.add_seconds_once (seconds_to_next_refresh, () => {
             refresh_timeout_id = 0;
+
+            if (NetworkMonitor.get_default ().get_network_metered ()) {
+                refresh_required = true;
+                return;
+            }
+
             refresh.begin ();
         });
     }
 
     private void on_network_changed (bool network_available) {
-        if (network_available && refresh_required) {
+        if (network_available && !NetworkMonitor.get_default ().get_network_metered () && refresh_required) {
             refresh_required = false;
             Timeout.add_seconds_once (60, () => refresh.begin ());
         }
