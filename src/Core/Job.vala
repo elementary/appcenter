@@ -75,20 +75,17 @@ public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
 
 public class AppCenterCore.InstallPackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation? change_info;
-    public Cancellable? cancellable;
+    public ChangeInformation change_info;
 }
 
 public class AppCenterCore.UpdatePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation? change_info;
-    public Cancellable? cancellable;
+    public ChangeInformation change_info;
 }
 
 public class AppCenterCore.RemovePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation? change_info;
-    public Cancellable? cancellable;
+    public ChangeInformation change_info;
 }
 
 public class AppCenterCore.GetDownloadSizeByIdArgs : JobArgs {
