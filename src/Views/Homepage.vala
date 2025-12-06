@@ -206,6 +206,11 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             show_category (card.category);
         });
 
+        recently_updated_carousel.child_activated.connect ((child) => {
+            var package = ((AppCenter.Widgets.ListPackageRowGrid) child.get_child ()).package;
+            activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+        });
+
         destroy.connect (() => {
             banner_timeout_stop ();
         });
