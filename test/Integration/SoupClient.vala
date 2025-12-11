@@ -11,7 +11,7 @@ void add_soup_client_tests () {
 
         var loop = new MainLoop ();
         AppCenterCore.HttpClient.Response? response = null;
-        client.post.begin ("https://httpbin.org/post", "foobar", null, (obj, res) => {
+        client.post.begin ("https://httpbin.dev/post", "foobar", null, (obj, res) => {
             try {
                 response = client.post.end (res);
             } catch (Error e) {
