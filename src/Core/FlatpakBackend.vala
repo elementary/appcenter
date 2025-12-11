@@ -558,15 +558,34 @@ public class AppCenterCore.FlatpakBackend : Object {
         var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
 
         foreach (var package in package_list.values) {
-            if (!package.is_explicit && package.kind != AppStream.ComponentKind.ADDON) {
 #if CURATED
-                if (package.is_native) {
-                    apps.add (package);
-                }
-#else
-                apps.add (package);
-#endif
+            if (!package.is_native) {
+                continue;
             }
+#endif
+            if (package.is_explicit) {
+                continue;
+            }
+
+            if (package.kind == ADDON) {
+                continue;
+            }
+
+            // Skip our own apps that we ship natively https://github.com/elementary/appcenter/issues/1715
+            if (
+                package.normalized_component_id == "io.elementary.calendar" ||
+                package.normalized_component_id == "io.elementary.mail" ||
+                package.normalized_component_id == "io.elementary.tasks"
+            ) {
+                continue;
+            }
+
+            unowned var bundle = package.component.get_bundle (FLATPAK);
+            if (bundle?.get_id ().has_suffix ("daily")) {
+                continue;
+            }
+
+            apps.add (package);
         }
 
         return apps;
