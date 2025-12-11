@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-11-07 22:55+0000\n"
+"PO-Revision-Date: 2025-11-12 22:55+0000\n"
 "Last-Translator: Orionas Kakomoiroglou "
 "<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/extra/"
@@ -24,14 +24,9 @@ msgstr "AppCenter"
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Περιήγηση και διαχείριση εφαρμογών"
+msgstr "Περιηγηθείτε και διαχειριστείτε εφαρμογές"
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -39,27 +34,28 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Ένα app store για ανεξάρτητους προγραμματιστές και προγραμματιστές ανοικτού "
-"κώδικα. Περιηγηθείτε ανά κατηγορίες ή αναζητήστε και ανακαλύψτε νέες "
-"εφαρμογές. Το Κέντρο εφαρμογών χρησιμοποιείται επίσης για την ενημέρωση του "
-"συστήματός σας στην τελευταία και καλύτερη έκδοση προσφέροντας νέες "
-"λειτουργίες και διορθώσεις."
+"Το κέντρο λογισμικού ανοιχτού κώδικα όπου πληρώνετε με τους δικούς σας όρους "
+"από την elementary. Εποπτεύεται και επιμελείται από την elementary για να "
+"διασφαλισθεί μια εγγενή και ασφαλή εμπειρία με σεβασμό στην ιδιωτικότητα. "
+"Περιηγηθείτε ανά κατηγορία ή αναζητήστε και ανακαλύψτε νέες εφαρμογές. Το "
+"AppCenter επίσης χρησιμεύει στο να ενημερώνει το λογισμικό σας στην "
+"τελευταία έκδοση για νέες λειτουργίες και επιδιορθώσεις."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Ανακαλύψτε νέες εφαρμογές"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Μείνετε ενημερωμένοι"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Πληρώστε με τους δικούς σας όρους για να στηρίξετε τους προγραμματιστές"
 
 #: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:82
 #: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:116
@@ -67,7 +63,7 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:204
 #: data/appcenter.metainfo.xml.in:219 data/appcenter.metainfo.xml.in:233
 msgid "Other Improvements:"
-msgstr ""
+msgstr "Άλλες βελτιώσεις:"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:84
 #: data/appcenter.metainfo.xml.in:105 data/appcenter.metainfo.xml.in:118
@@ -75,82 +71,97 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:187 data/appcenter.metainfo.xml.in:209
 #: data/appcenter.metainfo.xml.in:221 data/appcenter.metainfo.xml.in:235
 msgid "Updated translations"
-msgstr ""
+msgstr "Ενημερωμένες μεταφράσεις"
 
 #: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:180
 #: data/appcenter.metainfo.xml.in:200 data/appcenter.metainfo.xml.in:228
 msgid "New features:"
-msgstr ""
+msgstr "Νέες λειτουργίες:"
 
 #: data/appcenter.metainfo.xml.in:152
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Ρυθμίστε την αυτόματη εκκίνηση στις Ρυθμίσεις συστήματος → Εφαρμογές"
 
 #: data/appcenter.metainfo.xml.in:156
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Αυτόματες ενημερώσεις εφαρμογών από προεπιλογή"
 
 #: data/appcenter.metainfo.xml.in:157
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "Οι ενημερώσεις συστήματος μεταφέρθηκαν στις Ρυθμίσεις συστήματος"
 
 #: data/appcenter.metainfo.xml.in:158
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Οι εφαρμογές για το elementary OS πλέον επισημαίνονται έναντι των εφαρμογών "
+"από άλλα αποθετήρια"
 
 #: data/appcenter.metainfo.xml.in:182
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Προειδοποίηση όταν οι εφαρμογές χρησιμοποιούν παρωχημένη Αυτόματη εκκίνηση ή "
+"παρωχημένες Ειδοποιήσεις"
 
 #: data/appcenter.metainfo.xml.in:186
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Επιδιόρθωση τρεμοπαίγματος στην προβολή πληροφοριών εφαρμογής κατά την "
+"διάρκεια λήψης μεγέθους λήψης"
 
 #: data/appcenter.metainfo.xml.in:202
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Προειδοποίηση όταν οι εφαρμογές έχουν πρόσβαση στους προσωπικούς φακέλους ή "
+"τους φακέλους συστήματος, τοποθεσία, ρυθμίσεις ή μη ασφαλές sandbox."
 
 #: data/appcenter.metainfo.xml.in:206
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
+msgstr "Μείωση κενών στην προβολή πληροφοριών εφαρμογής"
 
 #: data/appcenter.metainfo.xml.in:207
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Εμφάνιση κενού πλαισίου στην αρχική σελίδα κατά τη φόρτωση"
 
 #: data/appcenter.metainfo.xml.in:208
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Οι εφαρμογές εκτός AppCenter δεν εμφανίζονται πλέον ξεχωριστά στην προβολή "
+"κατηγοριών"
 
 #: data/appcenter.metainfo.xml.in:230
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
+"Προσθήκη επιλογής επιδιόρθωσης σε περίπτωση που οι ενημερώσεις Flatpak "
+"αποτύχουν"
 
 #: data/appcenter.metainfo.xml.in:231
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Εμφάνιση μηνύματος στην προβολή ενημερώσεων που αναγράφει πότε έγινε ο "
+"τελευταίος έλεγχος για ενημερώσεις"
 
 #: data/io.elementary.appcenter.desktop.in.in:9
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "εγκατάσταση;απεγκατάσταση;αφαίρεση;κατάλογος;κατάστημα;εφαρμογές;ενημερώσεις;λογισμικό;"
+msgstr ""
+"εγκατάσταση;απεγκατάσταση;αφαίρεση;κατάλογος;κατάστημα;εφαρμογές;ενημερώσεις;λογισμικό;"
+""
 
 #: data/io.elementary.appcenter.desktop.in.in:26
 msgid "Check for Updates"
-msgstr ""
+msgstr "Έλεγχος για Ενημερώσεις"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
-msgstr ""
+msgstr "Επιδιόρθωση πηγών λογισμικού"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
-msgstr ""
+msgstr "Απαιτείται ταυτοποίηση για την επιδιόρθωση πηγών λογισμικού"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Σχετικά με το Κέντρο εφαρμογών"
