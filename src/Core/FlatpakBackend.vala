@@ -581,7 +581,7 @@ public class AppCenterCore.FlatpakBackend : Object {
             }
 
             unowned var bundle = package.component.get_bundle (FLATPAK);
-            if (bundle?.get_id ().has_suffix ("daily")) {
+            if (bundle?.get_id ()?.has_suffix ("daily")) {
                 continue;
             }
 
