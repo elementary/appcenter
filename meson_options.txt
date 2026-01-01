@@ -3,3 +3,4 @@ option('payments', type : 'boolean', value : true, description : 'Enable payment
 option('hide_upstream_distro_apps', type : 'boolean', value : true, description : 'Used for hiding Ubuntu repo apps on elementary OS')
 option('runtime_name', type : 'string', value : 'io.elementary.Platform', description : 'The name of the distributor runtime')
 option('integration_tests', type : 'boolean', value : false, description : 'Enable integration tests, require internet connection')
+option('integration_tests_server', type : 'string', value : 'https://httpbin.org/post', description : 'Server URL used for integration tests')
