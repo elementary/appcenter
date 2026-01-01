@@ -10,7 +10,7 @@ void add_soup_client_tests () {
 
         var loop = new MainLoop ();
         AppCenterCore.HttpClient.Response? response = null;
-        client.post.begin ("https://httpbin.org/post", "foobar", null, (obj, res) => {
+        client.post.begin (TestConfig.TEST_SERVER_URL, "foobar", null, (obj, res) => {
             try {
                 response = client.post.end (res);
             } catch (Error e) {
@@ -43,7 +43,7 @@ void add_soup_client_tests () {
         AppCenterCore.HttpClient.Response? response = null;
         var headers = new GLib.HashTable<string, string> (str_hash, str_equal);
         headers.insert ("X-Foo", "Bar");
-        client.post.begin ("https://httpbin.org/post", "foobar", headers, (obj, res) => {
+        client.post.begin (TestConfig.TEST_SERVER_URL, "foobar", headers, (obj, res) => {
             try {
                 response = client.post.end (res);
             } catch (Error e) {
