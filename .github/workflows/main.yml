@@ -18,8 +18,8 @@ jobs:
     container:
       image: ghcr.io/elementary/docker:${{ matrix.version }}
 
-    # Pull and run httpbin server locally instead of using the officially deployed one
-    # so that the build and test won't fail when it's down
+    # Run httpbin as a service container instead of using the officially deployed one
+    # so that the build and test won't fail when the official one is down
     services:
       # Label used to access our httpbin server in the build steps
       httpbin:
