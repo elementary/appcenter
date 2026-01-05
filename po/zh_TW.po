@@ -4,13 +4,13 @@
 # Aefgh Threenine <aefgh39622@gmail.com>, 2019.
 # Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>, 2020.
 # Vincent Yu <coolplayyhj@gmail.com>, 2022.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2024, 2025.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-11-30 07:55+0000\n"
+"PO-Revision-Date: 2026-01-06 12:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
 "l10n.elementaryos.org/projects/appcenter/appcenter/zh_TW/>\n"
@@ -1022,10 +1022,8 @@ msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://zh.wikipedia.org/wiki/公有领域"
 
 #: src/Widgets/LinkListBox.vala:261
-#, fuzzy
-#| msgid "Unknown License"
 msgid "Custom License"
-msgstr "不明的授權"
+msgstr "自訂授權"
 
 #: src/Widgets/LinkListBox.vala:344
 msgid "Payment provided by Stripe"
