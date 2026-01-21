@@ -63,6 +63,10 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         screenshot_cache = new AppCenterCore.ScreenshotCache ();
     }
 
+    ~AppInfoView () {
+        warning ("DESTROYED");
+    }
+
     construct {
         var title_image = new Gtk.Image.from_gicon (package.get_icon (32, scale_factor)) {
             icon_size = LARGE
@@ -595,13 +599,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             screenshot_overlay.add_controller (screenshot_motion_controller);
 
             screenshot_motion_controller.enter.connect (() => {
-                screenshot_arrow_revealer_n.reveal_child = true;
-                screenshot_arrow_revealer_p.reveal_child = true;
+                //  screenshot_arrow_revealer_n.reveal_child = true;
+                //  screenshot_arrow_revealer_p.reveal_child = true;
             });
 
             screenshot_motion_controller.leave.connect (() => {
-                screenshot_arrow_revealer_n.reveal_child = false;
-                screenshot_arrow_revealer_p.reveal_child = false;
+                //  screenshot_arrow_revealer_n.reveal_child = false;
+                //  screenshot_arrow_revealer_p.reveal_child = false;
             });
 
             var app_screenshot_spinner = new Gtk.Spinner () {
@@ -710,7 +714,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         on_package_state_changed ();
 
         scrolled.vadjustment.value_changed.connect (() => {
-           title_revealer.reveal_child = scrolled.vadjustment.value > header.get_height ();
+        //     title_revealer.reveal_child = scrolled.vadjustment.value > header.get_height ();
         });
 
         if (oars_flowbox.get_first_child () != null) {
