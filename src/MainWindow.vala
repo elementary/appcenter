@@ -22,6 +22,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Adw.NavigationView navigation_view;
     private Granite.OverlayBar overlaybar;
 
+    // Launchable package set when installed
     private AppCenterCore.Package? last_installed_package;
 
     private Views.AppListUpdateView? installed_view;
@@ -212,20 +213,34 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         navigation_view.push (search_view);
     }
 
-    public void send_installed_toast (AppCenterCore.Package package) {
-        last_installed_package = package;
-
+    public void send_toast (AppCenterCore.Package package, AppCenterCore.Package.State state) {
         // Only show a toast when we're not on the installed app's page
-        if (navigation_view.visible_page is Views.AppInfoView && ((Views.AppInfoView) navigation_view.visible_page).package == package) {
+        if (
+            navigation_view.visible_page is Views.AppInfoView &&
+            ((Views.AppInfoView) navigation_view.visible_page).package == package
+        ) {
             return;
         }
 
-        toast.title = _("“%s” has been installed").printf (package.name);
-        // Show Open only when a desktop app is installed
-        if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
-            toast.set_default_action (_("Open"));
-        } else {
-            toast.set_default_action (null);
+        switch (state) {
+            case INSTALLING:
+                toast.title = _("“%s” has been installed").printf (package.name);
+                // Show Open only when a desktop app is installed
+                if (package.component.get_kind () == DESKTOP_APP) {
+                    last_installed_package = package;
+                    toast.set_default_action (_("Open"));
+                } else {
+                    last_installed_package = null;
+                    toast.set_default_action (null);
+                }
+
+                break;
+            case REMOVING:
+                toast.title = _("“%s” has been uninstalled").printf (package.name);
+                toast.set_default_action (null);
+                break;
+            default:
+                break;
         }
 
         toast.send_notification ();

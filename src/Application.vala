@@ -301,7 +301,7 @@ public class AppCenter.App : Gtk.Application {
                     if (package.get_can_launch ()) {
                         // Check if window is focused
                         if (active_window != null && active_window.is_active) {
-                            ((MainWindow) active_window).send_installed_toast (package);
+                            ((MainWindow) active_window).send_toast (package, INSTALLING);
                             break;
                         }
 
@@ -321,6 +321,31 @@ public class AppCenter.App : Gtk.Application {
                     var dialog = new InstallFailDialog (package, (owned) error.message);
                     dialog.present ();
                 }
+
+                break;
+            case REMOVING:
+                if (error != null) {
+                    // Check if permission was denied or the operation was cancelled
+                    if (error.matches (IOError.quark (), 19)) {
+                        break;
+                    }
+
+                    var dialog = new UninstallFailDialog (package, (owned) error.message);
+                    dialog.present ();
+                    break;
+                }
+
+                // Check if window is focused
+                if (active_window != null && active_window.is_active) {
+                    ((MainWindow) active_window).send_toast (package, REMOVING);
+                    break;
+                }
+
+                var notification = new Notification (_("The app has been uninstalled"));
+                notification.set_body (_("“%s” has been uninstalled").printf (package.name));
+                notification.set_icon (new ThemedIcon ("process-completed"));
+
+                send_notification ("uninstalled", notification);
 
                 break;
             default:
