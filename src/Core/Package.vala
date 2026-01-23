@@ -484,15 +484,15 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool uninstall () throws Error {
-        if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
-            try {
-                return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
-            } catch (Error e) {
-                throw e;
-            }
+        if (state != INSTALLED && state != State.UPDATE_AVAILABLE) {
+            throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (name));
         }
 
-        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (name));
+        try {
+            return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
+        } catch (Error e) {
+            throw e;
+        }
     }
 
     public void launch () throws Error {
