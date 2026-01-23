@@ -475,17 +475,10 @@ public class AppCenterCore.Package : Object {
             return false;
         }
 
-        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-
         try {
             bool success = yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED);
-            if (success) {
-                flatpak_backend.operation_finished (this, State.INSTALLING, null);
-            }
-
             return success;
         } catch (Error e) {
-            flatpak_backend.operation_finished (this, State.INSTALLING, e);
             return false;
         }
     }
@@ -516,24 +509,33 @@ public class AppCenterCore.Package : Object {
 
     private async bool perform_operation (State performing, State after_success, State after_fail) throws GLib.Error {
         bool success = false;
-        prepare_package_operation (performing);
+
+        change_information.start ();
+        state = performing;
+
+        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        flatpak_backend.notify_package_changed (this);
+
         try {
             success = yield perform_package_operation ();
+            flatpak_backend.operation_finished (this, performing, null);
         } catch (GLib.Error e) {
             warning ("Operation failed for package %s - %s", name, e.message);
+            flatpak_backend.operation_finished (this, performing, e);
             throw e;
         } finally {
-            clean_up_package_operation (success, after_success, after_fail);
+            change_information.complete ();
+
+            if (success) {
+                state = after_success;
+            } else {
+                state = after_fail;
+            }
+
+            flatpak_backend.notify_package_changed (this);
         }
 
         return success;
-    }
-
-    private void prepare_package_operation (State initial_state) {
-        change_information.start ();
-        state = initial_state;
-
-        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     private async bool perform_package_operation () throws GLib.Error {
@@ -561,18 +563,6 @@ public class AppCenterCore.Package : Object {
             default:
                 return false;
         }
-    }
-
-    private void clean_up_package_operation (bool success, State success_state, State fail_state) {
-        change_information.complete ();
-
-        if (success) {
-            state = success_state;
-        } else {
-            state = fail_state;
-        }
-
-        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     public uint cached_search_score = 0;
