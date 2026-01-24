@@ -1575,6 +1575,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
+            warning ("Failed to install package: component %s has no flatpak bundle", package.component.get_name ());
             job.error = new IOError.FAILED (_("Component has no flatpak bundle"));
             job.results_ready ();
             return;
@@ -1681,6 +1682,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
         unowned var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
+            warning ("Failed to remove package: component %s has no flatpak bundle", package.component.get_name ());
             job.error = new IOError.FAILED (_("Component has no flatpak bundle"));
             job.results_ready ();
             return;
@@ -1804,6 +1806,7 @@ public class AppCenterCore.FlatpakBackend : Object {
 
             var split_success = get_package_list_key_parts (updatable, out system, null, out bundle_id);
             if (!split_success) {
+                warning ("Failed to update package: failed to split package key \"%s\"", updatable);
                 job.error = new IOError.FAILED (_("Failed to split package key"));
                 job.results_ready ();
                 return;
