@@ -295,52 +295,45 @@ public class AppCenter.App : Gtk.Application {
     }
 
     private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
-        switch (operation) {
-            case AppCenterCore.Package.State.INSTALLING:
-                if (error == null) {
-                    if (package.get_can_launch ()) {
-                        // Check if window is focused
-                        if (active_window != null && active_window.is_active) {
-                            ((MainWindow) active_window).send_toast (package, INSTALLING);
-                            break;
-                        }
+        if (error != null) {
+            // Check if permission was denied or the operation was cancelled
+            if (error.matches (IOError.quark (), 19)) {
+                return;
+            }
 
-                        var notification = new Notification (_("The app has been installed"));
-                        notification.set_body (_("“%s” has been installed").printf (package.name));
-                        notification.set_icon (new ThemedIcon ("process-completed"));
-                        notification.set_default_action ("app.open-application");
+            switch (state) {
+                case INSTALLING:
+                    var dialog = new InstallFailDialog (package, (owned) error.message).present ();
+                    break;
+                case REMOVING:
+                    var dialog = new UninstallFailDialog (package, (owned) error.message).present ();
+                    break;
+                default:
+                    break;
+            }
 
-                        send_notification ("installed", notification);
-                    }
-                } else {
-                    // Check if permission was denied or the operation was cancelled
-                    if (error.matches (IOError.quark (), 19)) {
-                        break;
-                    }
+            return;
+        }
 
-                    var dialog = new InstallFailDialog (package, (owned) error.message);
-                    dialog.present ();
+        // Check if window is focused
+        if (active_window != null && active_window.is_active) {
+            ((MainWindow) active_window).send_toast (package, state);
+            return;
+        }
+
+        switch (state) {
+            case INSTALLING:
+                var notification = new Notification (_("The app has been installed"));
+                notification.set_body (_("“%s” has been installed").printf (package.name));
+                notification.set_icon (new ThemedIcon ("process-completed"));
+
+                if (package.get_can_launch ()) {
+                    notification.set_default_action ("app.open-application");
                 }
 
+                send_notification ("installed", notification);
                 break;
             case REMOVING:
-                if (error != null) {
-                    // Check if permission was denied or the operation was cancelled
-                    if (error.matches (IOError.quark (), 19)) {
-                        break;
-                    }
-
-                    var dialog = new UninstallFailDialog (package, (owned) error.message);
-                    dialog.present ();
-                    break;
-                }
-
-                // Check if window is focused
-                if (active_window != null && active_window.is_active) {
-                    ((MainWindow) active_window).send_toast (package, REMOVING);
-                    break;
-                }
-
                 var notification = new Notification (_("The app has been uninstalled"));
                 notification.set_body (_("“%s” has been uninstalled").printf (package.name));
                 notification.set_icon (new ThemedIcon ("process-completed"));
