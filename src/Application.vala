@@ -296,8 +296,7 @@ public class AppCenter.App : Gtk.Application {
 
     private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State state, Error? error) {
         if (error != null) {
-            // Check if permission was denied or the operation was cancelled
-            if (error.matches (IOError.quark (), 19)) {
+            if (error.matches (IOError.quark (), GLib.IOError.CANCELLED)) {
                 return;
             }
 
