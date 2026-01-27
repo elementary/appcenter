@@ -295,11 +295,7 @@ public class AppCenter.App : Gtk.Application {
     }
 
     private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State state, Error? error) {
-        if (error != null) {
-            if (error.matches (IOError.quark (), GLib.IOError.CANCELLED)) {
-                return;
-            }
-
+        if (error != null && !error.matches (IOError.quark (), GLib.IOError.CANCELLED)) {
             switch (state) {
                 case INSTALLING:
                     var dialog = new InstallFailDialog (package, (owned) error.message);
