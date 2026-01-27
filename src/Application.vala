@@ -294,7 +294,7 @@ public class AppCenter.App : Gtk.Application {
         base.dbus_unregister (connection, object_path);
     }
 
-    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
+    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State state, Error? error) {
         if (error != null) {
             // Check if permission was denied or the operation was cancelled
             if (error.matches (IOError.quark (), 19)) {
@@ -303,10 +303,12 @@ public class AppCenter.App : Gtk.Application {
 
             switch (state) {
                 case INSTALLING:
-                    var dialog = new InstallFailDialog (package, (owned) error.message).present ();
+                    var dialog = new InstallFailDialog (package, (owned) error.message);
+                    dialog.present ();
                     break;
                 case REMOVING:
-                    var dialog = new UninstallFailDialog (package, (owned) error.message).present ();
+                    var dialog = new UninstallFailDialog (package, (owned) error.message);
+                    dialog.present ();
                     break;
                 default:
                     break;
