@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-29 16:32+0000\n"
 "PO-Revision-Date: 2025-10-06 12:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/appcenter/"
@@ -31,7 +31,7 @@ msgstr "לא ניתן לפענח את סוג המדיה %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "לא ניתן למצוא את הקישור שצוין ‚%s’, מתבצע חיפוש במקום"
 
-#: src/Application.vala:253
+#: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -39,11 +39,11 @@ msgstr ""
 "מרכז היישומים יופעל אוטומטית כאשר המכשיר הזה פועל ויישאר לרוץ כאשר החלון שלו "
 "סגור כדי שיוכל לבדוק ולהתקין עדכונים אוטומטית."
 
-#: src/Application.vala:315
+#: src/Application.vala:308
 msgid "The app has been installed"
 msgstr "היישום הותקן"
 
-#: src/Application.vala:316 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:223
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s” הותקן"
@@ -147,22 +147,19 @@ msgstr "כתיבה ושפה"
 msgid "Privacy & Security"
 msgstr "פרטיות ואבטחה"
 
-#: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
+#: src/Core/ChangeInformation.vala:51 src/Core/ChangeInformation.vala:77
 msgid "Waiting"
 msgstr "בהמתנה"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:85
 msgid "Finished"
 msgstr "הסתיים"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1692
-#: src/Core/FlatpakBackend.vala:1716 src/Core/FlatpakBackend.vala:1824
-#: src/Core/FlatpakBackend.vala:1848 src/Core/FlatpakBackend.vala:2006
-#: src/Core/FlatpakBackend.vala:2024
+#: src/Core/ChangeInformation.vala:94
 msgid "Cancelling"
 msgstr "מתבצע ביטול"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Core/ChangeInformation.vala:105
 msgid "Starting"
 msgstr "בהתחלה"
 
@@ -171,82 +168,100 @@ msgstr "בהתחלה"
 msgid "%s (system-wide)"
 msgstr "%s (כלל מערכתי)"
 
-#: src/Core/FlatpakBackend.vala:161
+#: src/Core/FlatpakBackend.vala:163
 msgid "package operations are being performed"
 msgstr "מתבצעות פעולות על החבילה"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:230
 msgid "Runtime Updates"
 msgstr "עדכוני זמן ריצה"
 
-#: src/Core/FlatpakBackend.vala:232
+#: src/Core/FlatpakBackend.vala:231
 msgid "Updates to app runtimes"
 msgstr "עדכונים לזמני ריצה של יישומים"
 
-#: src/Core/FlatpakBackend.vala:1683
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+msgid "Component has no flatpak bundle"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+msgid "Error getting flatpak installation"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
 msgstr "בהליך התקנה"
 
-#: src/Core/FlatpakBackend.vala:1815
+#: src/Core/FlatpakBackend.vala:1703
+msgid "Error getting flatpak installation for removal"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "מתבצעת הסרה"
 
-#: src/Core/FlatpakBackend.vala:1997
+#: src/Core/FlatpakBackend.vala:1810
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Failed to split package key"
+msgstr "קבלת העדכונים נכשלה"
+
+#: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
 msgstr "מתבצע עדכון"
 
-#: src/Core/FlatpakBackend.vala:2127
+#: src/Core/FlatpakBackend.vala:2007
 #, c-format
 msgid "Version: %s"
 msgstr "גרסה: %s"
 
-#: src/Core/FlatpakBackend.vala:2132
+#: src/Core/FlatpakBackend.vala:2012
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "זמן ריצה אחד עם עדכונים"
 msgstr[1] "%u זמני ריצה עם עדכונים"
 
-#: src/Core/FlatpakBackend.vala:2137
+#: src/Core/FlatpakBackend.vala:2017
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2241
+#: src/Core/FlatpakBackend.vala:2121
 #, c-format
 msgid "%s (local)"
 msgstr "%s (מקומי)"
 
-#: src/Core/Job.vala:42
+#: src/Core/Job.vala:41
 msgid "Getting download size…"
 msgstr "גודל ההורדה מתקבל…"
 
-#: src/Core/Job.vala:46
+#: src/Core/Job.vala:44
 msgid "Checking for updates…"
 msgstr "בחיפוש אחר עדכונים…"
 
-#: src/Core/Job.vala:48
+#: src/Core/Job.vala:46
 msgid "Installing…"
 msgstr "מתבצעת התקנה…"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Installing updates…"
 msgstr "עדכונים מותקנים…"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Uninstalling…"
 msgstr "מתבצעת הסרה…"
 
-#: src/Core/Job.vala:54
+#: src/Core/Job.vala:52
 msgid "Repairing…"
 msgstr "מתבצע תיקון…"
 
-#: src/Core/Package.vala:317
+#: src/Core/Package.vala:316
 #, c-format
 msgid "%s Developers"
 msgstr "המפתחים שמאחורי %s"
 
-#: src/Core/Package.vala:510
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "מצב היישום לא מוגדר כמותקן בחנות היישומים לחבילה: %s"
@@ -441,7 +456,7 @@ msgid "CVC"
 msgstr "קוד אבטחה (CVC)"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
-#: src/Widgets/ProgressButton.vala:25
+#: src/Widgets/ProgressButton.vala:28
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -829,7 +844,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "מותקן"
 
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "הכול עדכני. בדיקה אחרונה: %s."
@@ -919,11 +934,11 @@ msgstr "חיפוש %s"
 msgid "In-app purchases"
 msgstr "רכישות מתוך היישום"
 
-#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "התקנה"
 
-#: src/Widgets/ActionStack.vala:158
+#: src/Widgets/ActionStack.vala:157
 msgid "Update"
 msgstr "עדכון"
 

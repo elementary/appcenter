@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-29 16:32+0000\n"
 "PO-Revision-Date: 2025-09-12 11:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -34,7 +34,7 @@ msgstr "Nem sikerült elemezni a(z) %s médiatípust"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "A(z) '%s' hivatkozás nem található, keresés helyette"
 
-#: src/Application.vala:253
+#: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -43,11 +43,11 @@ msgstr ""
 "tovább fog futni akkor is, ha ablaka bezárásra kerül, hogy továbbra is "
 "tudjon automatikusan frissítéseket keresni és telepíteni."
 
-#: src/Application.vala:315
+#: src/Application.vala:308
 msgid "The app has been installed"
 msgstr "Az alkalmazás telepítésre került"
 
-#: src/Application.vala:316 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:223
 #, c-format
 msgid "“%s” has been installed"
 msgstr "A(z) \"%s\" telepítésre került"
@@ -152,22 +152,19 @@ msgstr "Írás és nyelv"
 msgid "Privacy & Security"
 msgstr "Adatvédelem és biztonság"
 
-#: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
+#: src/Core/ChangeInformation.vala:51 src/Core/ChangeInformation.vala:77
 msgid "Waiting"
 msgstr "Várakozás"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:85
 msgid "Finished"
 msgstr "Befejeződött"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1692
-#: src/Core/FlatpakBackend.vala:1716 src/Core/FlatpakBackend.vala:1824
-#: src/Core/FlatpakBackend.vala:1848 src/Core/FlatpakBackend.vala:2006
-#: src/Core/FlatpakBackend.vala:2024
+#: src/Core/ChangeInformation.vala:94
 msgid "Cancelling"
 msgstr "Megszakítás"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Core/ChangeInformation.vala:105
 msgid "Starting"
 msgstr "Indítás"
 
@@ -176,82 +173,100 @@ msgstr "Indítás"
 msgid "%s (system-wide)"
 msgstr "%s (rendszerszintű)"
 
-#: src/Core/FlatpakBackend.vala:161
+#: src/Core/FlatpakBackend.vala:163
 msgid "package operations are being performed"
 msgstr "csomagműveletek vannak folyamatban"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:230
 msgid "Runtime Updates"
 msgstr "Futttatókörnyezetek frissítései"
 
-#: src/Core/FlatpakBackend.vala:232
+#: src/Core/FlatpakBackend.vala:231
 msgid "Updates to app runtimes"
 msgstr "Az alkalmazásfuttató környezetek frissítései"
 
-#: src/Core/FlatpakBackend.vala:1683
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+msgid "Component has no flatpak bundle"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+msgid "Error getting flatpak installation"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
 msgstr "Telepítés"
 
-#: src/Core/FlatpakBackend.vala:1815
+#: src/Core/FlatpakBackend.vala:1703
+msgid "Error getting flatpak installation for removal"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "Eltávolítás"
 
-#: src/Core/FlatpakBackend.vala:1997
+#: src/Core/FlatpakBackend.vala:1810
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Failed to split package key"
+msgstr "Nem sikerült lekérni a frissítéseket"
+
+#: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
 msgstr "Frissítés"
 
-#: src/Core/FlatpakBackend.vala:2127
+#: src/Core/FlatpakBackend.vala:2007
 #, c-format
 msgid "Version: %s"
 msgstr "Verzió: %s"
 
-#: src/Core/FlatpakBackend.vala:2132
+#: src/Core/FlatpakBackend.vala:2012
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u frissíthető futtatókörnyezet"
 msgstr[1] "%u frissíthető futtatókörnyezet"
 
-#: src/Core/FlatpakBackend.vala:2137
+#: src/Core/FlatpakBackend.vala:2017
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2241
+#: src/Core/FlatpakBackend.vala:2121
 #, c-format
 msgid "%s (local)"
 msgstr "%s (helyi)"
 
-#: src/Core/Job.vala:42
+#: src/Core/Job.vala:41
 msgid "Getting download size…"
 msgstr "Letőltési méret lekérése…"
 
-#: src/Core/Job.vala:46
+#: src/Core/Job.vala:44
 msgid "Checking for updates…"
 msgstr "Frissítések keresése…"
 
-#: src/Core/Job.vala:48
+#: src/Core/Job.vala:46
 msgid "Installing…"
 msgstr "Telepítés…"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Installing updates…"
 msgstr "Frissítések telepítése…"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Uninstalling…"
 msgstr "Eltávolítás…"
 
-#: src/Core/Job.vala:54
+#: src/Core/Job.vala:52
 msgid "Repairing…"
 msgstr "Javítás…"
 
-#: src/Core/Package.vala:317
+#: src/Core/Package.vala:316
 #, c-format
 msgid "%s Developers"
 msgstr "%s fejlesztői"
 
-#: src/Core/Package.vala:510
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Az Appközpontban nincs telepítettre állítva: %s"
@@ -474,7 +489,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
-#: src/Widgets/ProgressButton.vala:25
+#: src/Widgets/ProgressButton.vala:28
 msgid "Cancel"
 msgstr "Mégse"
 
@@ -871,7 +886,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Telepítve"
 
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Minden naprakész. Legutóbb ellenőrizve %s."
@@ -963,11 +978,11 @@ msgstr "A(z) %s keresése"
 msgid "In-app purchases"
 msgstr "Alkalmazáson belüli vásárlások"
 
-#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Telepítés"
 
-#: src/Widgets/ActionStack.vala:158
+#: src/Widgets/ActionStack.vala:157
 msgid "Update"
 msgstr "Frissítés"
 
