@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-29 16:32+0000\n"
 "PO-Revision-Date: 2021-03-21 01:40+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -58,81 +58,83 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "एलिमेंटरी, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:136 data/appcenter.metainfo.xml.in:154
-#: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:204
-#: data/appcenter.metainfo.xml.in:219 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:83
+#: data/appcenter.metainfo.xml.in:95 data/appcenter.metainfo.xml.in:116
+#: data/appcenter.metainfo.xml.in:129 data/appcenter.metainfo.xml.in:149
+#: data/appcenter.metainfo.xml.in:167 data/appcenter.metainfo.xml.in:197
+#: data/appcenter.metainfo.xml.in:217 data/appcenter.metainfo.xml.in:232
+#: data/appcenter.metainfo.xml.in:246
 #, fuzzy
 #| msgid "Keyboard improvements"
 msgid "Other Improvements:"
 msgstr "कीबोर्ड सुधारणा"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:105 data/appcenter.metainfo.xml.in:118
-#: data/appcenter.metainfo.xml.in:138 data/appcenter.metainfo.xml.in:159
-#: data/appcenter.metainfo.xml.in:187 data/appcenter.metainfo.xml.in:209
-#: data/appcenter.metainfo.xml.in:221 data/appcenter.metainfo.xml.in:235
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
+#: data/appcenter.metainfo.xml.in:97 data/appcenter.metainfo.xml.in:118
+#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:151
+#: data/appcenter.metainfo.xml.in:172 data/appcenter.metainfo.xml.in:200
+#: data/appcenter.metainfo.xml.in:222 data/appcenter.metainfo.xml.in:234
+#: data/appcenter.metainfo.xml.in:248
 msgid "Updated translations"
 msgstr "अद्ययावत भाषांतर"
 
-#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:180
-#: data/appcenter.metainfo.xml.in:200 data/appcenter.metainfo.xml.in:228
+#: data/appcenter.metainfo.xml.in:163 data/appcenter.metainfo.xml.in:193
+#: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:241
 #, fuzzy
 #| msgid "New features"
 msgid "New features:"
 msgstr "नवीन वैशिष्टये"
 
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:165
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:156
+#: data/appcenter.metainfo.xml.in:169
 msgid "Automatic app updates by default"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:157
+#: data/appcenter.metainfo.xml.in:170
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:158
+#: data/appcenter.metainfo.xml.in:171
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:182
+#: data/appcenter.metainfo.xml.in:195
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:186
+#: data/appcenter.metainfo.xml.in:199
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:202
+#: data/appcenter.metainfo.xml.in:215
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:206
+#: data/appcenter.metainfo.xml.in:219
 #, fuzzy
 #| msgid "Ellipsize long app names in App Info views"
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "अ‍ॅप माहिती दृश्यांमधील अ‍ॅप्सची मोठी असलेली नावे लंबवर्तुळाकार करा"
 
-#: data/appcenter.metainfo.xml.in:207
+#: data/appcenter.metainfo.xml.in:220
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:208
+#: data/appcenter.metainfo.xml.in:221
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:230
+#: data/appcenter.metainfo.xml.in:243
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:231
+#: data/appcenter.metainfo.xml.in:244
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-29 16:32+0000\n"
 "PO-Revision-Date: 2024-09-02 20:05+0000\n"
 "Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
@@ -36,17 +36,17 @@ msgstr "ไม่สามารถแยกวิเคราะห์ชนิ
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "ค้นหาลิ้งค์เฉพาะ '%s' ไม่พบ กรุณาค้นหาด้วยตนเอง"
 
-#: src/Application.vala:253
+#: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:315
+#: src/Application.vala:308
 msgid "The app has been installed"
 msgstr "แอปถูกติดตั้งแล้ว"
 
-#: src/Application.vala:316 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:223
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” ถูกติดตั้งแล้ว"
@@ -155,22 +155,19 @@ msgstr ""
 msgid "Privacy & Security"
 msgstr ""
 
-#: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
+#: src/Core/ChangeInformation.vala:51 src/Core/ChangeInformation.vala:77
 msgid "Waiting"
 msgstr "กำลังรอ"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:85
 msgid "Finished"
 msgstr "สำเร็จแล้ว"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1692
-#: src/Core/FlatpakBackend.vala:1716 src/Core/FlatpakBackend.vala:1824
-#: src/Core/FlatpakBackend.vala:1848 src/Core/FlatpakBackend.vala:2006
-#: src/Core/FlatpakBackend.vala:2024
+#: src/Core/ChangeInformation.vala:94
 msgid "Cancelling"
 msgstr "กำลังยกเลิก"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Core/ChangeInformation.vala:105
 msgid "Starting"
 msgstr "กำลังเริ่ม"
 
@@ -179,82 +176,100 @@ msgstr "กำลังเริ่ม"
 msgid "%s (system-wide)"
 msgstr "%s (ทั้งระบบ)"
 
-#: src/Core/FlatpakBackend.vala:161
+#: src/Core/FlatpakBackend.vala:163
 msgid "package operations are being performed"
 msgstr "กำลังดำเนินการเกี่ยวกับแพ็คเกจ"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:230
 msgid "Runtime Updates"
 msgstr "อัปเดตรันไทม์"
 
-#: src/Core/FlatpakBackend.vala:232
+#: src/Core/FlatpakBackend.vala:231
 msgid "Updates to app runtimes"
 msgstr "อัปเดตรันไทม์ของแอป"
 
-#: src/Core/FlatpakBackend.vala:1683
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+msgid "Component has no flatpak bundle"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+msgid "Error getting flatpak installation"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
 msgstr "กำลังติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1815
+#: src/Core/FlatpakBackend.vala:1703
+msgid "Error getting flatpak installation for removal"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "กำลังถอนการติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1997
+#: src/Core/FlatpakBackend.vala:1810
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Failed to split package key"
+msgstr "ตรวจหาอัปเดตไม่สำเร็จ"
+
+#: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
 msgstr "กำลังอัปเดต"
 
-#: src/Core/FlatpakBackend.vala:2127
+#: src/Core/FlatpakBackend.vala:2007
 #, c-format
 msgid "Version: %s"
 msgstr "เวอร์ชั่น: %s"
 
-#: src/Core/FlatpakBackend.vala:2132
+#: src/Core/FlatpakBackend.vala:2012
 #, fuzzy, c-format
 #| msgid "Searching for updates…"
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "กำลังค้นหาอัปเดต…"
 
-#: src/Core/FlatpakBackend.vala:2137
+#: src/Core/FlatpakBackend.vala:2017
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2241
+#: src/Core/FlatpakBackend.vala:2121
 #, c-format
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/Job.vala:42
+#: src/Core/Job.vala:41
 msgid "Getting download size…"
 msgstr "กำลังอ่านขนาดการดาวน์โหลด…"
 
-#: src/Core/Job.vala:46
+#: src/Core/Job.vala:44
 msgid "Checking for updates…"
 msgstr "กำลังตรวจหาอัปเดต…"
 
-#: src/Core/Job.vala:48
+#: src/Core/Job.vala:46
 msgid "Installing…"
 msgstr "กำลังติดตั้ง…"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Installing updates…"
 msgstr "กำลังติตดั้งอัปเดต…"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Uninstalling…"
 msgstr "กำลังถอนการติดตั้ง…"
 
-#: src/Core/Job.vala:54
+#: src/Core/Job.vala:52
 msgid "Repairing…"
 msgstr "กำลังซ่อมแซม…"
 
-#: src/Core/Package.vala:317
+#: src/Core/Package.vala:316
 #, c-format
 msgid "%s Developers"
 msgstr "นักพัฒนา %s"
 
-#: src/Core/Package.vala:510
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "สถานะแอปพลิเคชันไม่ได้ตั้งค่าเป็น ติดตั้งใน AppCenter สำหรับแพ็คเกจ: %s"
@@ -445,7 +460,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
-#: src/Widgets/ProgressButton.vala:25
+#: src/Widgets/ProgressButton.vala:28
 msgid "Cancel"
 msgstr "ยกเลิก"
 
@@ -843,7 +858,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "ติดตั้งอยู่"
 
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -932,11 +947,11 @@ msgstr "ค้นหา %s"
 msgid "In-app purchases"
 msgstr ""
 
-#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "ติดตั้ง"
 
-#: src/Widgets/ActionStack.vala:158
+#: src/Widgets/ActionStack.vala:157
 msgid "Update"
 msgstr "อัปเดต"
 
