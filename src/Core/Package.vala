@@ -100,7 +100,6 @@ public class AppCenterCore.Package : Object {
 
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
-    public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
     public double progress {
@@ -417,8 +416,6 @@ public class AppCenterCore.Package : Object {
 
     construct {
         change_information = new ChangeInformation ();
-
-        action_cancellable = new GLib.Cancellable ();
     }
 
     public Package (string uid, AppStream.Component component) {
@@ -473,41 +470,20 @@ public class AppCenterCore.Package : Object {
         return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
     }
 
-    public async bool install () {
+    public async bool install () throws Error {
         if (state != State.NOT_INSTALLED) {
             return false;
         }
 
-        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-
-        try {
-            bool success = yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED);
-            if (success) {
-                flatpak_backend.operation_finished (this, State.INSTALLING, null);
-            }
-
-            return success;
-        } catch (Error e) {
-            flatpak_backend.operation_finished (this, State.INSTALLING, e);
-            return false;
-        }
+        return yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED);
     }
 
     public async bool uninstall () throws Error {
-        // We possibly don't know if this package is installed or not yet, so trigger that check first
-        _installed = AppCenterCore.FlatpakBackend.get_default ().is_package_installed (this);
-
-        update_state ();
-
-        if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
-            try {
-                return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
-            } catch (Error e) {
-                throw e;
-            }
+        if (state != INSTALLED && state != State.UPDATE_AVAILABLE) {
+            throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (name));
         }
 
-        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s").printf (name));
+        return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
     }
 
     public void launch () throws Error {
@@ -524,25 +500,33 @@ public class AppCenterCore.Package : Object {
 
     private async bool perform_operation (State performing, State after_success, State after_fail) throws GLib.Error {
         bool success = false;
-        prepare_package_operation (performing);
+
+        change_information.start ();
+        state = performing;
+
+        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        flatpak_backend.notify_package_changed (this);
+
         try {
             success = yield perform_package_operation ();
+            flatpak_backend.operation_finished (this, performing, null);
         } catch (GLib.Error e) {
             warning ("Operation failed for package %s - %s", name, e.message);
+            flatpak_backend.operation_finished (this, performing, e);
             throw e;
         } finally {
-            clean_up_package_operation (success, after_success, after_fail);
+            change_information.complete ();
+
+            if (success) {
+                state = after_success;
+            } else {
+                state = after_fail;
+            }
+
+            flatpak_backend.notify_package_changed (this);
         }
 
         return success;
-    }
-
-    private void prepare_package_operation (State initial_state) {
-        action_cancellable.reset ();
-        change_information.start ();
-        state = initial_state;
-
-        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     private async bool perform_package_operation () throws GLib.Error {
@@ -550,7 +534,7 @@ public class AppCenterCore.Package : Object {
 
         switch (state) {
             case State.UPDATING:
-                var success = yield backend.update_package (this, change_information, action_cancellable);
+                var success = yield backend.update_package (this, change_information);
                 if (success) {
                     change_information.clear_update_info ();
                     update_state ();
@@ -558,30 +542,18 @@ public class AppCenterCore.Package : Object {
 
                 return success;
             case State.INSTALLING:
-                var success = yield backend.install_package (this, change_information, action_cancellable);
+                var success = yield backend.install_package (this, change_information);
                 _installed = success;
                 update_state ();
                 return success;
             case State.REMOVING:
-                var success = yield backend.remove_package (this, change_information, action_cancellable);
+                var success = yield backend.remove_package (this, change_information);
                 _installed = !success;
                 update_state ();
                 return success;
             default:
                 return false;
         }
-    }
-
-    private void clean_up_package_operation (bool success, State success_state, State fail_state) {
-        if (success) {
-            change_information.complete ();
-            state = success_state;
-        } else {
-            state = fail_state;
-            change_information.cancel ();
-        }
-
-        FlatpakBackend.get_default ().notify_package_changed (this);
     }
 
     public uint cached_search_score = 0;

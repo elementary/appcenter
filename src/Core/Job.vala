@@ -27,7 +27,6 @@ public class AppCenterCore.Job : Object {
     public signal void results_ready ();
 
     public enum Type {
-        GET_INSTALLED_PACKAGES,
         GET_DOWNLOAD_SIZE,
         REFRESH_CACHE,
         GET_UPDATES,
@@ -40,7 +39,6 @@ public class AppCenterCore.Job : Object {
             switch (this) {
                 case GET_DOWNLOAD_SIZE:
                     return _("Getting download size…");
-                case GET_INSTALLED_PACKAGES:
                 case GET_UPDATES:
                 case REFRESH_CACHE:
                     return _("Checking for updates…");
@@ -69,26 +67,19 @@ public class AppCenterCore.RepairArgs : JobArgs {
     public Cancellable? cancellable;
 }
 
-public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
-    public Cancellable? cancellable;
-}
-
 public class AppCenterCore.InstallPackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation? change_info;
-    public Cancellable? cancellable;
+    public ChangeInformation change_info;
 }
 
 public class AppCenterCore.UpdatePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation? change_info;
-    public Cancellable? cancellable;
+    public ChangeInformation change_info;
 }
 
 public class AppCenterCore.RemovePackageArgs : JobArgs {
     public Package package;
-    public ChangeInformation? change_info;
-    public Cancellable? cancellable;
+    public ChangeInformation change_info;
 }
 
 public class AppCenterCore.GetDownloadSizeByIdArgs : JobArgs {
