@@ -1,13 +1,13 @@
 # Fredrik B <frbo9002@gmail.com>, 2018.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # AndreasTNT <andreas.westrell@gmail.com>, 2023.
-# Daniel Nylander <po@danielnylander.se>, 2025.
+# Daniel Nylander <po@danielnylander.se>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 14:56+0000\n"
-"PO-Revision-Date: 2025-11-04 17:55+0000\n"
+"PO-Revision-Date: 2026-01-31 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -52,16 +52,13 @@ msgid "“%s” has been installed"
 msgstr "\"%s\" har installerats"
 
 #: src/Application.vala:344
-#, fuzzy
-#| msgid "The app has been installed"
 msgid "The app has been uninstalled"
-msgstr "Appen har installerats"
+msgstr "Appen har avinstallerats"
 
 #: src/Application.vala:345 src/MainWindow.vala:239
-#, fuzzy, c-format
-#| msgid "“%s” has been installed"
+#, c-format
 msgid "“%s” has been uninstalled"
-msgstr "\"%s\" har installerats"
+msgstr "\"%s\" har avinstallerats"
 
 #: src/MainWindow.vala:57
 #, c-format
@@ -196,11 +193,11 @@ msgstr "Uppdateringar till appens körtider"
 
 #: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "Komponenten har ingen flatpak-bunt"
 
 #: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Fel vid hämtning av flatpak-installation"
 
 #: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
@@ -208,17 +205,15 @@ msgstr "Installerar"
 
 #: src/Core/FlatpakBackend.vala:1703
 msgid "Error getting flatpak installation for removal"
-msgstr ""
+msgstr "Fel vid hämtning av flatpak-installation för borttagning"
 
 #: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "Avinstallerar"
 
 #: src/Core/FlatpakBackend.vala:1810
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
-msgstr "Misslyckades med att hämta uppdateringar"
+msgstr "Misslyckades med att dela upp paketnyckeln"
 
 #: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
