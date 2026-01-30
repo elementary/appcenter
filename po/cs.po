@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-29 16:32+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2024-12-05 13:16+0000\n"
 "Last-Translator: Marek Hladík <mhladik@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:44 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
 msgid "AppCenter"
 msgstr "Centrum Aplikací"
 
@@ -55,39 +55,50 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Aplikace byla nainstalována"
 
-#: src/Application.vala:309 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:227
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ bylo nainstalováno"
 
-#: src/MainWindow.vala:56
+#: src/Application.vala:344
+#, fuzzy
+#| msgid "The app has been installed"
+msgid "The app has been uninstalled"
+msgstr "Aplikace byla nainstalována"
+
+#: src/Application.vala:345 src/MainWindow.vala:239
+#, fuzzy, c-format
+#| msgid "“%s” has been installed"
+msgid "“%s” has been uninstalled"
+msgstr "„%s“ bylo nainstalováno"
+
+#: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Nepodařilo se spustit „%s“"
 
-#: src/MainWindow.vala:86
+#: src/MainWindow.vala:87
 msgid "Network Not Available."
 msgstr "Síťové připojení není k dispozici."
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Pro procházení a instalaci aplikací se připojte k Internetu."
 
-#: src/MainWindow.vala:97
+#: src/MainWindow.vala:98
 msgid "Network Settings…"
 msgstr "Nastavení sítě…"
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
 msgstr "Spuštěno v Režimu pro ukázku"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Nainstalujte %s, abyste mohli procházet a instalovat aplikace."
 
-#. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:226 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Otevřít"
 

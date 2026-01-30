@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-29 16:32+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2024-09-02 20:05+0000\n"
 "Last-Translator: Khuanchai <zodiacjb@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:44 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
 msgid "AppCenter"
 msgstr "ศูนย์รวมแอพ"
 
@@ -46,39 +46,50 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "แอปถูกติดตั้งแล้ว"
 
-#: src/Application.vala:309 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:227
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” ถูกติดตั้งแล้ว"
 
-#: src/MainWindow.vala:56
+#: src/Application.vala:344
+#, fuzzy
+#| msgid "The app has been installed"
+msgid "The app has been uninstalled"
+msgstr "แอปถูกติดตั้งแล้ว"
+
+#: src/Application.vala:345 src/MainWindow.vala:239
+#, fuzzy, c-format
+#| msgid "“%s” has been installed"
+msgid "“%s” has been uninstalled"
+msgstr "“%s” ถูกติดตั้งแล้ว"
+
+#: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "เริ่มต้นล้มเหลว “%s“"
 
-#: src/MainWindow.vala:86
+#: src/MainWindow.vala:87
 msgid "Network Not Available."
 msgstr "เครือข่ายไม่พร้อมใช้งาน"
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
 msgstr "เชื่อมต่ออินเทอร์เน็ตเพื่อเรียกดูและติดตั้งแอป"
 
-#: src/MainWindow.vala:97
+#: src/MainWindow.vala:98
 msgid "Network Settings…"
 msgstr "ตั้งค่าเครือข่าย…"
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
 msgstr "ทำงานในโหมดสาธิต"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "ติดตั้ง %s เพื่อเรียกดูและติดตั้งแอป"
 
-#. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:226 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "เปิด"
 

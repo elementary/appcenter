@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-29 16:32+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2026-01-01 13:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/appcenter/"
@@ -47,7 +47,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:44 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
 msgid "AppCenter"
 msgstr "Centro de Aplicaciones"
 
@@ -74,39 +74,50 @@ msgstr ""
 msgid "The app has been installed"
 msgstr "Se instaló la aplicación"
 
-#: src/Application.vala:309 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:227
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Se instaló «%s»"
 
-#: src/MainWindow.vala:56
+#: src/Application.vala:344
+#, fuzzy
+#| msgid "The app has been installed"
+msgid "The app has been uninstalled"
+msgstr "Se instaló la aplicación"
+
+#: src/Application.vala:345 src/MainWindow.vala:239
+#, fuzzy, c-format
+#| msgid "“%s” has been installed"
+msgid "“%s” has been uninstalled"
+msgstr "Se instaló «%s»"
+
+#: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "No se pudo iniciar «%s»"
 
-#: src/MainWindow.vala:86
+#: src/MainWindow.vala:87
 msgid "Network Not Available."
 msgstr "Red no disponible."
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Conéctese a Internet para explorar e instalar aplicaciones."
 
-#: src/MainWindow.vala:97
+#: src/MainWindow.vala:98
 msgid "Network Settings…"
 msgstr "Configuración de red…"
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
 msgstr "Ejecutando en modo demostración"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Instale %s para explorar e instalar aplicaciones."
 
-#. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:226 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Abrir"
 
