@@ -3,7 +3,7 @@
 # Eliott Lavier <eliott.lavier@gmail.com>, 2018.
 # David Marcel BAUM <david.baum@tuta.io>, 2018.
 # Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
-# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
+# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 # Franck STAUFFER <franck.stauffer@e.email>, 2019.
 # Kristien <kristien@mailo.com>, 2019.
 # Corentin Noël <tintou@noel.tf>, 2021, 2023, 2024.
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-29 16:32+0000\n"
-"PO-Revision-Date: 2025-09-10 08:55+0000\n"
+"PO-Revision-Date: 2026-01-30 14:56+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/fr/>\n"
@@ -194,11 +194,11 @@ msgstr "Mises à jour de l'exécutable des applications"
 
 #: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "Le composant ne dispose pas de paquet Flatpak"
 
 #: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Erreur lors de l'installation de flatpak"
 
 #: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
@@ -206,17 +206,15 @@ msgstr "Installation"
 
 #: src/Core/FlatpakBackend.vala:1703
 msgid "Error getting flatpak installation for removal"
-msgstr ""
+msgstr "Erreur lors de l'installation de flatpak pour la suppression"
 
 #: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "Désinstallation"
 
 #: src/Core/FlatpakBackend.vala:1810
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
-msgstr "Erreur lors de la récupération des mises à jour"
+msgstr "Échec de la séparation de la clé du paquet"
 
 #: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
