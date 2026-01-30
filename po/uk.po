@@ -3,7 +3,7 @@
 # Andrii Alforov <andrevpost@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # pandreyko <andrii.pavloshchuk@gmail.com>, 2019.
-# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022, 2023, 2024, 2025.
+# Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 # DartDeaDia <dartdeadia@protonmail.com>, 2021.
 # Ryo Nakano <ryonakaknock3@gmail.com>, 2022.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 14:56+0000\n"
-"PO-Revision-Date: 2025-12-19 00:55+0000\n"
+"PO-Revision-Date: 2026-01-31 18:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -51,24 +51,21 @@ msgstr ""
 
 #: src/Application.vala:308
 msgid "The app has been installed"
-msgstr "Застосунок було встановлено"
+msgstr "Застосунок встановлено"
 
 #: src/Application.vala:309 src/MainWindow.vala:227
 #, c-format
 msgid "“%s” has been installed"
-msgstr "«%s» було встановлено"
+msgstr "«%s» встановлено"
 
 #: src/Application.vala:344
-#, fuzzy
-#| msgid "The app has been installed"
 msgid "The app has been uninstalled"
-msgstr "Застосунок було встановлено"
+msgstr "Застосунок видалено"
 
 #: src/Application.vala:345 src/MainWindow.vala:239
-#, fuzzy, c-format
-#| msgid "“%s” has been installed"
+#, c-format
 msgid "“%s” has been uninstalled"
-msgstr "«%s» було встановлено"
+msgstr "«%s» видалено"
 
 #: src/MainWindow.vala:57
 #, c-format
@@ -204,11 +201,11 @@ msgstr "Оновлення середовищ виконання застосу�
 
 #: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "Складник не включає пакунок flatpak"
 
 #: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Помилка під час встановлення flatpak"
 
 #: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
@@ -216,17 +213,15 @@ msgstr "Встановлення"
 
 #: src/Core/FlatpakBackend.vala:1703
 msgid "Error getting flatpak installation for removal"
-msgstr ""
+msgstr "Помилка під час вилучення встановлення flatpak"
 
 #: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "Видалення"
 
 #: src/Core/FlatpakBackend.vala:1810
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
-msgstr "Не вдалося отримати оновлення"
+msgstr "Не вдалося розділити ключ пакунка"
 
 #: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
