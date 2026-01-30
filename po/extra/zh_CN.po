@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-29 16:32+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2024-11-28 06:16+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -54,55 +54,55 @@ msgstr "给开发加个鸡腿"
 msgid "elementary, Inc."
 msgstr "elementary LLC."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:83
-#: data/appcenter.metainfo.xml.in:95 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:129 data/appcenter.metainfo.xml.in:149
-#: data/appcenter.metainfo.xml.in:167 data/appcenter.metainfo.xml.in:197
-#: data/appcenter.metainfo.xml.in:217 data/appcenter.metainfo.xml.in:232
-#: data/appcenter.metainfo.xml.in:246
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130 data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:168 data/appcenter.metainfo.xml.in:198
+#: data/appcenter.metainfo.xml.in:218 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:247
 msgid "Other Improvements:"
 msgstr "其他更改："
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
-#: data/appcenter.metainfo.xml.in:97 data/appcenter.metainfo.xml.in:118
-#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:151
-#: data/appcenter.metainfo.xml.in:172 data/appcenter.metainfo.xml.in:200
-#: data/appcenter.metainfo.xml.in:222 data/appcenter.metainfo.xml.in:234
-#: data/appcenter.metainfo.xml.in:248
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:173 data/appcenter.metainfo.xml.in:201
+#: data/appcenter.metainfo.xml.in:223 data/appcenter.metainfo.xml.in:235
+#: data/appcenter.metainfo.xml.in:249
 msgid "Updated translations"
 msgstr "更新翻译"
 
-#: data/appcenter.metainfo.xml.in:163 data/appcenter.metainfo.xml.in:193
-#: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:241
+#: data/appcenter.metainfo.xml.in:164 data/appcenter.metainfo.xml.in:194
+#: data/appcenter.metainfo.xml.in:214 data/appcenter.metainfo.xml.in:242
 msgid "New features:"
 msgstr "新特性："
 
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:166
 msgid "Manage autostart in System Settings → Applications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:169
+#: data/appcenter.metainfo.xml.in:170
 msgid "Automatic app updates by default"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:170
+#: data/appcenter.metainfo.xml.in:171
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:172
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:195
+#: data/appcenter.metainfo.xml.in:196
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:199
+#: data/appcenter.metainfo.xml.in:200
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 
-#: data/appcenter.metainfo.xml.in:215
+#: data/appcenter.metainfo.xml.in:216
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -110,23 +110,23 @@ msgstr ""
 "当应用有访问主文件夹或系统文件夹、定位、设置的权限或具有不安全的沙盒时发出警"
 "告。"
 
-#: data/appcenter.metainfo.xml.in:219
+#: data/appcenter.metainfo.xml.in:220
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "缩小应用程序信息视图中的间距和边距"
 
-#: data/appcenter.metainfo.xml.in:220
+#: data/appcenter.metainfo.xml.in:221
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "加载主页时显示占位符横幅"
 
-#: data/appcenter.metainfo.xml.in:221
+#: data/appcenter.metainfo.xml.in:222
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr "不将非 AppCenter 应用程序在类别视图的单独标题下列出"
 
-#: data/appcenter.metainfo.xml.in:243
+#: data/appcenter.metainfo.xml.in:244
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "如果 Flatpak 更新失败，提供修复选项"
 
-#: data/appcenter.metainfo.xml.in:244
+#: data/appcenter.metainfo.xml.in:245
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

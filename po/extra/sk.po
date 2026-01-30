@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-29 16:32+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2024-07-10 20:16+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -56,61 +56,61 @@ msgstr "Zaplaťte, koľko môžete na podporu vývojárov"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:83
-#: data/appcenter.metainfo.xml.in:95 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:129 data/appcenter.metainfo.xml.in:149
-#: data/appcenter.metainfo.xml.in:167 data/appcenter.metainfo.xml.in:197
-#: data/appcenter.metainfo.xml.in:217 data/appcenter.metainfo.xml.in:232
-#: data/appcenter.metainfo.xml.in:246
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130 data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:168 data/appcenter.metainfo.xml.in:198
+#: data/appcenter.metainfo.xml.in:218 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:247
 msgid "Other Improvements:"
 msgstr "Ďalšie vylepšenia:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:85
-#: data/appcenter.metainfo.xml.in:97 data/appcenter.metainfo.xml.in:118
-#: data/appcenter.metainfo.xml.in:131 data/appcenter.metainfo.xml.in:151
-#: data/appcenter.metainfo.xml.in:172 data/appcenter.metainfo.xml.in:200
-#: data/appcenter.metainfo.xml.in:222 data/appcenter.metainfo.xml.in:234
-#: data/appcenter.metainfo.xml.in:248
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:173 data/appcenter.metainfo.xml.in:201
+#: data/appcenter.metainfo.xml.in:223 data/appcenter.metainfo.xml.in:235
+#: data/appcenter.metainfo.xml.in:249
 msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
-#: data/appcenter.metainfo.xml.in:163 data/appcenter.metainfo.xml.in:193
-#: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:241
+#: data/appcenter.metainfo.xml.in:164 data/appcenter.metainfo.xml.in:194
+#: data/appcenter.metainfo.xml.in:214 data/appcenter.metainfo.xml.in:242
 msgid "New features:"
 msgstr "Nové funkcie:"
 
-#: data/appcenter.metainfo.xml.in:165
+#: data/appcenter.metainfo.xml.in:166
 msgid "Manage autostart in System Settings → Applications"
 msgstr "Spravujte automatické spustenie v Nastaveniach systému → Aplikácie"
 
-#: data/appcenter.metainfo.xml.in:169
+#: data/appcenter.metainfo.xml.in:170
 msgid "Automatic app updates by default"
 msgstr "Automatické aktualizácie aplikácií ako predvolené"
 
-#: data/appcenter.metainfo.xml.in:170
+#: data/appcenter.metainfo.xml.in:171
 msgid "OS Updates have moved to System Settings"
 msgstr "Aktualizácie OS sa presunuli do Nastavení systému"
 
-#: data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:172
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Pridávať odznaky na aplikácie vyrobené pre elementary OS namiesto pridávania "
 "odznakov na aplikácie z iných zdrojov"
 
-#: data/appcenter.metainfo.xml.in:195
+#: data/appcenter.metainfo.xml.in:196
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Upozorniť, keď aplikácie používajú zastarané automatické spustenie a "
 "oznámenia"
 
-#: data/appcenter.metainfo.xml.in:199
+#: data/appcenter.metainfo.xml.in:200
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 "Oprava preblikávania na zobrazení Informácií o aplikáciách pri zisťovaní "
 "veľkosti inštalácie"
 
-#: data/appcenter.metainfo.xml.in:215
+#: data/appcenter.metainfo.xml.in:216
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -118,25 +118,25 @@ msgstr ""
 "Upozorniť, keď majú aplikácie prístup k priečinku Domov alebo systémovým "
 "priečinkom, polohe, nastaveniam alebo majú nezabezpečený sandbox."
 
-#: data/appcenter.metainfo.xml.in:219
+#: data/appcenter.metainfo.xml.in:220
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Zúženie rozloženia a okrajov v zobrazeniach Informácií o aplikáciách"
 
-#: data/appcenter.metainfo.xml.in:220
+#: data/appcenter.metainfo.xml.in:221
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Zobraziť náhradný baner na domovskej obrazovke pri načítavaní"
 
-#: data/appcenter.metainfo.xml.in:221
+#: data/appcenter.metainfo.xml.in:222
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Nezaraďovať ne-AppCentrové aplikácie pod samostatný nadpis v zobrazeniach "
 "kategórií"
 
-#: data/appcenter.metainfo.xml.in:243
+#: data/appcenter.metainfo.xml.in:244
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Poskytnúť možnosť Opraviť, keď zlyhá aktualizácia Flatpak aplikácií"
 
-#: data/appcenter.metainfo.xml.in:244
+#: data/appcenter.metainfo.xml.in:245
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
