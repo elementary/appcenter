@@ -1,4 +1,4 @@
-# David M <rbndavid@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
+# David M <rbndavid@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 # Seifer23 <salvador.rodo@gmail.com>, 2019.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020, 2021.
 msgid ""
@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-29 16:32+0000\n"
-"PO-Revision-Date: 2025-09-03 11:55+0000\n"
+"PO-Revision-Date: 2026-01-30 14:56+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -186,11 +186,11 @@ msgstr "Actualitzacions dels entorns d'execució de les aplicacions"
 
 #: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "El component no té cap paquet de flatpak."
 
 #: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Hi ha hagut un error a la instal·lació de Flatpak."
 
 #: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
@@ -199,16 +199,16 @@ msgstr "S'instal·la"
 #: src/Core/FlatpakBackend.vala:1703
 msgid "Error getting flatpak installation for removal"
 msgstr ""
+"Hi ha hagut un error en obtenir la instal·lació de Flatpak per a la "
+"supressió."
 
 #: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "Es desinstal·la"
 
 #: src/Core/FlatpakBackend.vala:1810
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
-msgstr "Ha fallat recuperar les actualitzacions."
+msgstr "Ha fallat dividir la clau del paquet."
 
 #: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
