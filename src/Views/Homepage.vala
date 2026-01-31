@@ -61,6 +61,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         };
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
+            margin_top = 12,
             margin_start = 12
         };
 
@@ -83,19 +84,19 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             child = recently_updated_grid
         };
 
-        var categories_label = new Granite.HeaderLabel (_("Categories")) {
-            margin_start = 24,
-            margin_top = 24
-        };
-
         category_flow = new Gtk.FlowBox () {
+            accessible_role = LIST,
             activate_on_single_click = true,
+            margin_top = 12,
             homogeneous = true,
             margin_start = 12,
             margin_end =12,
-            margin_bottom = 12,
-            valign = Gtk.Align.START
+            max_children_per_line = 17
         };
+        category_flow.update_property (
+            Gtk.AccessibleProperty.LABEL, _("Categories"),
+            -1
+        );
 
         category_flow.set_sort_func ((child1, child2) => {
             var item1 = (CategoryCard) child1;
@@ -114,9 +115,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         var box = new Gtk.Box (VERTICAL, 0);
         box.append (banner_carousel);
         box.append (banner_dots);
-        box.append (recently_updated_revealer);
-        box.append (categories_label);
         box.append (category_flow);
+        box.append (recently_updated_revealer);
 
         scrolled_window = new Gtk.ScrolledWindow () {
             child = box,
@@ -312,54 +312,24 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         construct {
             var name_label = new Gtk.Label (category.name) {
-                wrap = true,
-                max_width_chars = 15
+                justify = CENTER,
+                max_width_chars = 10,
+                wrap = true
             };
+            name_label.add_css_class (Granite.CssClass.SMALL);
 
-            var box = new Gtk.Box (HORIZONTAL, 6) {
-                halign = CENTER,
-                valign = CENTER
+            var display_image = new Gtk.Image.from_icon_name (category.icon) {
+                halign = CENTER
             };
+            display_image.add_css_class (Granite.CssClass.CIRCULAR);
 
-            if (category.icon != "") {
-                var display_image = new Gtk.Image.from_icon_name (category.icon) {
-                    halign = END,
-                    valign = CENTER,
-                };
-
-                box.append (display_image);
-
-                name_label.xalign = 0;
-                name_label.halign = START;
-            } else {
-                name_label.justify = CENTER;
-            }
-
+            var box = new Granite.Box (VERTICAL, HALF);
+            box.append (display_image);
             box.append (name_label);
+            box.add_css_class ("category");
+            box.add_css_class (category.id);
 
-            var expanded_grid = new Gtk.Grid () {
-                hexpand = true,
-                vexpand = true
-            };
-
-            var content_area = new Gtk.Grid ();
-            content_area.attach (box, 0, 0);
-            content_area.attach (expanded_grid, 0, 0);
-            content_area.add_css_class (Granite.CssClass.CARD);
-            content_area.add_css_class ("category");
-            content_area.add_css_class (category.id);
-
-            child = content_area;
-
-            if (category.id == "accessibility") {
-                name_label.label = category.name.up ();
-            } else {
-                name_label.label = category.name;
-            }
-
-            if (category.id == "science") {
-                name_label.justify = CENTER;
-            }
+            child = box;
 
             AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
                 Idle.add (() => {
