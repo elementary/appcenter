@@ -1,10 +1,10 @@
-# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 14:56+0000\n"
-"PO-Revision-Date: 2025-09-03 11:55+0000\n"
+"PO-Revision-Date: 2026-01-31 18:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -49,16 +49,13 @@ msgid "“%s” has been installed"
 msgstr "“%s”をインストールしました"
 
 #: src/Application.vala:344
-#, fuzzy
-#| msgid "The app has been installed"
 msgid "The app has been uninstalled"
-msgstr "アプリをインストールしました"
+msgstr "アプリをアンインストールしました"
 
 #: src/Application.vala:345 src/MainWindow.vala:239
-#, fuzzy, c-format
-#| msgid "“%s” has been installed"
+#, c-format
 msgid "“%s” has been uninstalled"
-msgstr "“%s”をインストールしました"
+msgstr "“%s”をアンインストールしました"
 
 #: src/MainWindow.vala:57
 #, c-format
@@ -196,11 +193,11 @@ msgstr "アプリのランタイムに対するアップデート"
 
 #: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "コンポーネントには Flatpak バンドルがありません"
 
 #: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Flatpak インストール情報取得中にエラーが発生しました"
 
 #: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
@@ -208,17 +205,15 @@ msgstr "インストールしています"
 
 #: src/Core/FlatpakBackend.vala:1703
 msgid "Error getting flatpak installation for removal"
-msgstr ""
+msgstr "削除のための Flatpak インストール情報取得中にエラーが発生しました"
 
 #: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "アンインストールしています"
 
 #: src/Core/FlatpakBackend.vala:1810
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
-msgstr "アップデートを取得できませんでした"
+msgstr "パッケージのキーを分割できませんでした"
 
 #: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
