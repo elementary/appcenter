@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 14:56+0000\n"
-"PO-Revision-Date: 2026-01-30 14:56+0000\n"
+"PO-Revision-Date: 2026-02-02 14:41+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/fr/>\n"
@@ -60,16 +60,13 @@ msgid "“%s” has been installed"
 msgstr "L’application « %s » a été installée"
 
 #: src/Application.vala:344
-#, fuzzy
-#| msgid "The app has been installed"
 msgid "The app has been uninstalled"
-msgstr "L’application a été installée"
+msgstr "L’application a été désinstallée"
 
 #: src/Application.vala:345 src/MainWindow.vala:239
-#, fuzzy, c-format
-#| msgid "“%s” has been installed"
+#, c-format
 msgid "“%s” has been uninstalled"
-msgstr "L’application « %s » a été installée"
+msgstr "L’application « %s » a été désinstallée"
 
 #: src/MainWindow.vala:57
 #, c-format
