@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:44 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
 msgid "AppCenter"
 msgstr "AppSenter"
 
@@ -32,7 +32,7 @@ msgstr "Kunne ikke tolke MIME-type %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Fant ikke oppgitt lenke «%s», søker istedenfor"
 
-#: src/Application.vala:253
+#: src/Application.vala:246
 #, fuzzy
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
@@ -42,43 +42,54 @@ msgstr ""
 "dens lukkes, slik at den automatisk kan lete etter og installere nye "
 "oppgraderinger."
 
-#: src/Application.vala:315
+#: src/Application.vala:308
 msgid "The app has been installed"
 msgstr "Programmet har blitt installert"
 
-#: src/Application.vala:316 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:227
 #, c-format
 msgid "“%s” has been installed"
 msgstr "%s ble installert"
 
-#: src/MainWindow.vala:56
+#: src/Application.vala:344
+#, fuzzy
+#| msgid "The app has been installed"
+msgid "The app has been uninstalled"
+msgstr "Programmet har blitt installert"
+
+#: src/Application.vala:345 src/MainWindow.vala:239
+#, fuzzy, c-format
+#| msgid "“%s” has been installed"
+msgid "“%s” has been uninstalled"
+msgstr "%s ble installert"
+
+#: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Klarte ikke å kjøre «%s»"
 
-#: src/MainWindow.vala:86
+#: src/MainWindow.vala:87
 msgid "Network Not Available."
 msgstr "Nettverk ikke tilgjengelig."
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Du må koble til Internett for å bla gjennom eller installere apper."
 
-#: src/MainWindow.vala:97
+#: src/MainWindow.vala:98
 msgid "Network Settings…"
 msgstr "Nettverksinnstillinger…"
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
 msgstr "Kjører i demo-modus"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Installer %s for å utforske eller installere programmer."
 
-#. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:226 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Åpne"
 
@@ -152,22 +163,19 @@ msgstr "Skriving og språk"
 msgid "Privacy & Security"
 msgstr "Personvern og sikkerhet"
 
-#: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
+#: src/Core/ChangeInformation.vala:51 src/Core/ChangeInformation.vala:77
 msgid "Waiting"
 msgstr "Venter"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:85
 msgid "Finished"
 msgstr "Ferdig"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1692
-#: src/Core/FlatpakBackend.vala:1716 src/Core/FlatpakBackend.vala:1824
-#: src/Core/FlatpakBackend.vala:1848 src/Core/FlatpakBackend.vala:2006
-#: src/Core/FlatpakBackend.vala:2024
+#: src/Core/ChangeInformation.vala:94
 msgid "Cancelling"
 msgstr "Avbryter"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Core/ChangeInformation.vala:105
 msgid "Starting"
 msgstr "Starter"
 
@@ -176,36 +184,54 @@ msgstr "Starter"
 msgid "%s (system-wide)"
 msgstr "%s (på hele systemet)"
 
-#: src/Core/FlatpakBackend.vala:161
+#: src/Core/FlatpakBackend.vala:163
 msgid "package operations are being performed"
 msgstr "pakkeoperasjoner utføres"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:230
 msgid "Runtime Updates"
 msgstr "Kjørerutinesoppgraderinger"
 
-#: src/Core/FlatpakBackend.vala:232
+#: src/Core/FlatpakBackend.vala:231
 msgid "Updates to app runtimes"
 msgstr "Oppdateringer av kjøretidsrutiner"
 
-#: src/Core/FlatpakBackend.vala:1683
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+msgid "Component has no flatpak bundle"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+msgid "Error getting flatpak installation"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
 msgstr "Installerer"
 
-#: src/Core/FlatpakBackend.vala:1815
+#: src/Core/FlatpakBackend.vala:1703
+msgid "Error getting flatpak installation for removal"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1997
+#: src/Core/FlatpakBackend.vala:1810
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Failed to split package key"
+msgstr "Klarte ikke å hente oppgraderinger"
+
+#: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
 msgstr "Oppdaterer"
 
-#: src/Core/FlatpakBackend.vala:2127
+#: src/Core/FlatpakBackend.vala:2007
 #, c-format
 msgid "Version: %s"
 msgstr "Versjon: %s"
 
-#: src/Core/FlatpakBackend.vala:2132
+#: src/Core/FlatpakBackend.vala:2012
 #, fuzzy, c-format
 #| msgid "%u runtimes with updates"
 #| msgid_plural "%u runtimes with updates"
@@ -214,46 +240,46 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "%u kjørerutine med oppgraderinger"
 msgstr[1] "%u kjørerutiner med oppgraderinger"
 
-#: src/Core/FlatpakBackend.vala:2137
+#: src/Core/FlatpakBackend.vala:2017
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2241
+#: src/Core/FlatpakBackend.vala:2121
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
 
-#: src/Core/Job.vala:42
+#: src/Core/Job.vala:41
 msgid "Getting download size…"
 msgstr "Henter nedlastingsstørrelse …"
 
-#: src/Core/Job.vala:46
+#: src/Core/Job.vala:44
 msgid "Checking for updates…"
 msgstr "Ser etter oppgraderinger …"
 
-#: src/Core/Job.vala:48
+#: src/Core/Job.vala:46
 msgid "Installing…"
 msgstr "Installerer …"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Installing updates…"
 msgstr "Installerer oppgraderinger …"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Uninstalling…"
 msgstr "Avinstallerer …"
 
-#: src/Core/Job.vala:54
+#: src/Core/Job.vala:52
 msgid "Repairing…"
 msgstr "Reparerer …"
 
-#: src/Core/Package.vala:317
+#: src/Core/Package.vala:316
 #, c-format
 msgid "%s Developers"
 msgstr "%s-utviklerne"
 
-#: src/Core/Package.vala:510
+#: src/Core/Package.vala:483
 #, fuzzy, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
@@ -462,7 +488,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
-#: src/Widgets/ProgressButton.vala:25
+#: src/Widgets/ProgressButton.vala:28
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -879,7 +905,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Alt er av nyeste dato. Sist sjekket %s."
@@ -973,11 +999,11 @@ msgstr "Søk %s"
 msgid "In-app purchases"
 msgstr ""
 
-#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Installer"
 
-#: src/Widgets/ActionStack.vala:158
+#: src/Widgets/ActionStack.vala:157
 msgid "Update"
 msgstr "Oppdater"
 

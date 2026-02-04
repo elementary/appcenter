@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2025-11-12 22:55+0000\n"
 "Last-Translator: Orionas Kakomoiroglou "
 "<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:44 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -36,7 +36,7 @@ msgstr "Δεν ήταν δυνατή η ανάλυση του τύπου MIME %s
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Ο σύνδεσμος '%s' δεν βρέθηκε, αναζήτηση αντί αυτού"
 
-#: src/Application.vala:253
+#: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
@@ -45,44 +45,55 @@ msgstr ""
 "λειτουργεί και όταν είναι κλειστό το παράθυρο για να μπορεί να ελέγχει και "
 "να εγκαθιστά αυτόματα τις ενημερώσεις."
 
-#: src/Application.vala:315
+#: src/Application.vala:308
 msgid "The app has been installed"
 msgstr "Η εφαρμογή εγκαταστάθηκε"
 
-#: src/Application.vala:316 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:227
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Η εφαρμογή \"%s\" έχει εγκατασταθεί"
 
-#: src/MainWindow.vala:56
+#: src/Application.vala:344
+#, fuzzy
+#| msgid "The app has been installed"
+msgid "The app has been uninstalled"
+msgstr "Η εφαρμογή εγκαταστάθηκε"
+
+#: src/Application.vala:345 src/MainWindow.vala:239
+#, fuzzy, c-format
+#| msgid "“%s” has been installed"
+msgid "“%s” has been uninstalled"
+msgstr "Η εφαρμογή \"%s\" έχει εγκατασταθεί"
+
+#: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Σφάλμα εκκίνησης του “%s“"
 
-#: src/MainWindow.vala:86
+#: src/MainWindow.vala:87
 msgid "Network Not Available."
 msgstr "Το δίκτυο δεν είναι διαθέσιμο."
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:88
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 "Συνδεθείτε στο διαδίκτυο για να περιηγηθείτε και να εγκαταστήσετε εφαρμογές."
 
-#: src/MainWindow.vala:97
+#: src/MainWindow.vala:98
 msgid "Network Settings…"
 msgstr "Ρυθμίσεις δικτύου…"
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
 msgstr "Εκτέλεση σε δοκιμαστική λειτουργία"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Εγκαταστήστε το %s για να περιηγηθείτε και να εγκαταστήσετε εφαρμογές."
 
-#. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:226 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Άνοιγμα"
 
@@ -154,22 +165,19 @@ msgstr "Συγγραφή και γλώσσα"
 msgid "Privacy & Security"
 msgstr "Ιδιωτικότητα και ασφάλεια"
 
-#: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
+#: src/Core/ChangeInformation.vala:51 src/Core/ChangeInformation.vala:77
 msgid "Waiting"
 msgstr "Σε αναμονή"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:85
 msgid "Finished"
 msgstr "Ολοκληρώθηκε"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1692
-#: src/Core/FlatpakBackend.vala:1716 src/Core/FlatpakBackend.vala:1824
-#: src/Core/FlatpakBackend.vala:1848 src/Core/FlatpakBackend.vala:2006
-#: src/Core/FlatpakBackend.vala:2024
+#: src/Core/ChangeInformation.vala:94
 msgid "Cancelling"
 msgstr "Γίνεται ακύρωση"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Core/ChangeInformation.vala:105
 msgid "Starting"
 msgstr "Εκκίνηση"
 
@@ -178,82 +186,100 @@ msgstr "Εκκίνηση"
 msgid "%s (system-wide)"
 msgstr "%s (σε επίπεδο συστήματος)"
 
-#: src/Core/FlatpakBackend.vala:161
+#: src/Core/FlatpakBackend.vala:163
 msgid "package operations are being performed"
 msgstr "διαδικασίες πακέτων εκτελούνται"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:230
 msgid "Runtime Updates"
 msgstr "Ενημερώσεις Runtime"
 
-#: src/Core/FlatpakBackend.vala:232
+#: src/Core/FlatpakBackend.vala:231
 msgid "Updates to app runtimes"
 msgstr "Ενημερώσεις για runtime εφαρμογών"
 
-#: src/Core/FlatpakBackend.vala:1683
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+msgid "Component has no flatpak bundle"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+msgid "Error getting flatpak installation"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
 msgstr "Γίνεται εγκατάσταση"
 
-#: src/Core/FlatpakBackend.vala:1815
+#: src/Core/FlatpakBackend.vala:1703
+msgid "Error getting flatpak installation for removal"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1741
 msgid "Uninstalling"
 msgstr "Γίνεται απεγκατάσταση"
 
-#: src/Core/FlatpakBackend.vala:1997
+#: src/Core/FlatpakBackend.vala:1810
+#, fuzzy
+#| msgid "Failed to Fetch Updates"
+msgid "Failed to split package key"
+msgstr "Αποτυχία λήψης ενημερώσεων"
+
+#: src/Core/FlatpakBackend.vala:1898
 msgid "Updating"
 msgstr "Γίνεται ενημέρωση"
 
-#: src/Core/FlatpakBackend.vala:2127
+#: src/Core/FlatpakBackend.vala:2007
 #, c-format
 msgid "Version: %s"
 msgstr "Έκδοση: %s"
 
-#: src/Core/FlatpakBackend.vala:2132
+#: src/Core/FlatpakBackend.vala:2012
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u runtime με ενημερώσεις"
 msgstr[1] "%u runtimes με ενημερώσεις"
 
-#: src/Core/FlatpakBackend.vala:2137
+#: src/Core/FlatpakBackend.vala:2017
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2241
+#: src/Core/FlatpakBackend.vala:2121
 #, c-format
 msgid "%s (local)"
 msgstr "%s (τοπικά)"
 
-#: src/Core/Job.vala:42
+#: src/Core/Job.vala:41
 msgid "Getting download size…"
 msgstr "Λήψη μεγέθους λήψης…"
 
-#: src/Core/Job.vala:46
+#: src/Core/Job.vala:44
 msgid "Checking for updates…"
 msgstr "Γίνεται έλεγχος για ενημερώσεις…"
 
-#: src/Core/Job.vala:48
+#: src/Core/Job.vala:46
 msgid "Installing…"
 msgstr "Γίνεται εγκατάσταση…"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 msgid "Installing updates…"
 msgstr "Εγκατάσταση ενημερώσεων…"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 msgid "Uninstalling…"
 msgstr "Γίνεται απεγκατάσταση…"
 
-#: src/Core/Job.vala:54
+#: src/Core/Job.vala:52
 msgid "Repairing…"
 msgstr "Γίνεται επιδιόρθωση…"
 
-#: src/Core/Package.vala:317
+#: src/Core/Package.vala:316
 #, c-format
 msgid "%s Developers"
 msgstr "Οι προγραμματιστές του %s"
 
-#: src/Core/Package.vala:510
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Η κατάσταση εφαρμογής δεν έχει οριστεί ως εγκατεστημένη στο πακέτο: %s"
@@ -480,7 +506,7 @@ msgid "CVC"
 msgstr "Kωδικός CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
-#: src/Widgets/ProgressButton.vala:25
+#: src/Widgets/ProgressButton.vala:28
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -887,7 +913,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Εγκατεστημένες"
 
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Όλα έχουν ενημερωθεί. Τελευταίος έλεγχος %s."
@@ -980,11 +1006,11 @@ msgstr "Αναζήτηση %s"
 msgid "In-app purchases"
 msgstr "Αγορές εντός εφαρμογής"
 
-#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
 msgid "Install"
 msgstr "Εγκατάσταση"
 
-#: src/Widgets/ActionStack.vala:158
+#: src/Widgets/ActionStack.vala:157
 msgid "Update"
 msgstr "Ενημέρωση"
 
