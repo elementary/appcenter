@@ -1,37 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 14:56+0000\n"
-"PO-Revision-Date: 2017-04-17 12:20+0000\n"
-"Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
-"Language-Team: Croatian <https://l10n.elementary.io/projects/appcenter/extra/"
-"hr/>\n"
-"Language: hr\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
-"X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "AppCenter"
-msgstr "Centar aplikacija"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "Browse and manage apps"
-msgstr "Pregledavajte i upravljajte aplikacijama"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -39,10 +34,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Centar aplikacija za indie i razvijatelje otvorenog kôda. Pregledavajte po "
-"kategorijama ili pretražujte ili otkrivajte nove aplikacije. Centar "
-"aplikacija isto tako se koristi i za nadopunjavanje sustava na najnovije "
-"inačice aplikacija u svrhu popravaka i novih značajki."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -66,9 +57,8 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:168 data/appcenter.metainfo.xml.in:198
 #: data/appcenter.metainfo.xml.in:218 data/appcenter.metainfo.xml.in:233
 #: data/appcenter.metainfo.xml.in:247
-#, fuzzy
 msgid "Other Improvements:"
-msgstr "Razni popravci grešaka i poboljšanje performansi"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
 #: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:119
@@ -76,9 +66,8 @@ msgstr "Razni popravci grešaka i poboljšanje performansi"
 #: data/appcenter.metainfo.xml.in:173 data/appcenter.metainfo.xml.in:201
 #: data/appcenter.metainfo.xml.in:223 data/appcenter.metainfo.xml.in:235
 #: data/appcenter.metainfo.xml.in:249
-#, fuzzy
 msgid "Updated translations"
-msgstr "Novi prijevodi"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:164 data/appcenter.metainfo.xml.in:194
 #: data/appcenter.metainfo.xml.in:214 data/appcenter.metainfo.xml.in:242
@@ -139,9 +128,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:9
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "instaliraj;deninstaliraj;ukloni;katalog;trgovina;aplikacije;nadopune;softver;"
+msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:26
 msgid "Check for Updates"
@@ -154,84 +142,3 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr ""
-
-#, fuzzy
-#~ msgid "App Info Page Improvements:"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#, fuzzy
-#~ msgid "Updates View Improvements:"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#, fuzzy
-#~ msgid "Performance improvements"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#, fuzzy
-#~ msgid "Stability improvements"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#, fuzzy
-#~ msgid "Improvements:"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#, fuzzy
-#~ msgid "Improve search performance"
-#~ msgstr "Popravci grešaka i poboljšanje performansi."
-
-#, fuzzy
-#~ msgid "Extension improvements"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#, fuzzy
-#~ msgid "Keyboard improvements"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#~ msgid "New translations"
-#~ msgstr "Novi prijevodi"
-
-#, fuzzy
-#~ msgid "Bug fixes and improve performance."
-#~ msgstr "Popravci grešaka i poboljšanje performansi."
-
-#~ msgid "Various bug fixes and performance improvements"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#~ msgid "Fix crash caused by entries with missing packages"
-#~ msgstr "Popravljeno rušenje uzrokovano s nedostajućim paketima"
-
-#~ msgid "Add capability to search by category and apply minor bug fixes."
-#~ msgstr "Dodana mogućnost pretrage po kategorijama i manji popravci grešaka."
-
-#~ msgid "It is now possible to search apps inside a category"
-#~ msgstr "Sada je moguće pretraživanje aplikacija unutar kategorija"
-
-#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
-#~ msgstr ""
-#~ "Spriječeno je pojavljivanje više dijaloga ovjere pri vraćanju iz "
-#~ "suspenzije"
-
-#, fuzzy
-#~ msgid ""
-#~ "Search performance has been improved, the category name is now shown on "
-#~ "the headbar and minor bugs have been fixed."
-#~ msgstr ""
-#~ "Performanse pretrage su poboljšane, naziv kategorije je sada prikazan u "
-#~ "zaglavlju i manje greške su popravljene."
-
-#~ msgid "Fix Steam installation"
-#~ msgstr "Popravljena je Steam instalacija"
-
-#~ msgid "Make search asynchronous"
-#~ msgstr "Pretraživanje je asinkrono"
-
-#, fuzzy
-#~ msgid "Performance improvments"
-#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-#~ msgid "About AppCenter"
-#~ msgstr "O Centru aplikacija"
-
-#, fuzzy
-#~ msgid "App Center"
-#~ msgstr "Centar aplikacija"

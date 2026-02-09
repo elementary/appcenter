@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:44 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
@@ -32,52 +32,61 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:253
+#: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:315
+#: src/Application.vala:308
 #, fuzzy
 msgid "The app has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: src/Application.vala:316 src/MainWindow.vala:223
+#: src/Application.vala:309 src/MainWindow.vala:227
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
 
-#: src/MainWindow.vala:56
+#: src/Application.vala:344
+#, fuzzy
+msgid "The app has been uninstalled"
+msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
+
+#: src/Application.vala:345 src/MainWindow.vala:239
+#, fuzzy, c-format
+msgid "“%s” has been uninstalled"
+msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
+
+#: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:86
+#: src/MainWindow.vala:87
 #, fuzzy
 msgid "Network Not Available."
 msgstr "நெட்வொர்க் கிடைக்கவில்லை"
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:88
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "மென்பொருளை நிறுவ அல்லது புதுப்பிப்பதற்கு இணையத்துடன் இணைக்கவும்."
 
-#: src/MainWindow.vala:97
+#: src/MainWindow.vala:98
 msgid "Network Settings…"
 msgstr "நெட்வொர்க் அமைப்புகள் …"
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:106
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:107
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:226 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "திற"
 
@@ -156,22 +165,19 @@ msgstr ""
 msgid "Privacy & Security"
 msgstr "தனியுரிமை கொள்கை"
 
-#: src/Core/ChangeInformation.vala:48 src/Core/ChangeInformation.vala:63
+#: src/Core/ChangeInformation.vala:51 src/Core/ChangeInformation.vala:77
 msgid "Waiting"
 msgstr "காத்திருக்கிறது"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:85
 msgid "Finished"
 msgstr "முடிந்தது"
 
-#: src/Core/ChangeInformation.vala:78 src/Core/FlatpakBackend.vala:1692
-#: src/Core/FlatpakBackend.vala:1716 src/Core/FlatpakBackend.vala:1824
-#: src/Core/FlatpakBackend.vala:1848 src/Core/FlatpakBackend.vala:2006
-#: src/Core/FlatpakBackend.vala:2024
+#: src/Core/ChangeInformation.vala:94
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Core/ChangeInformation.vala:105
 msgid "Starting"
 msgstr "தொடங்குகிறது"
 
@@ -180,42 +186,58 @@ msgstr "தொடங்குகிறது"
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:161
+#: src/Core/FlatpakBackend.vala:163
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:230
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Runtime Updates"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/Core/FlatpakBackend.vala:232
+#: src/Core/FlatpakBackend.vala:231
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1683
+#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+msgid "Component has no flatpak bundle"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+msgid "Error getting flatpak installation"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1630
 msgid "Installing"
 msgstr "நிறுவுகிறது"
 
-#: src/Core/FlatpakBackend.vala:1815
+#: src/Core/FlatpakBackend.vala:1703
+msgid "Error getting flatpak installation for removal"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1741
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "நீக்குதல்"
 
-#: src/Core/FlatpakBackend.vala:1997
+#: src/Core/FlatpakBackend.vala:1810
+msgid "Failed to split package key"
+msgstr ""
+
+#: src/Core/FlatpakBackend.vala:1898
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "புதுப்பிக்கவும்"
 
-#: src/Core/FlatpakBackend.vala:2127
+#: src/Core/FlatpakBackend.vala:2007
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2132
+#: src/Core/FlatpakBackend.vala:2012
 #, fuzzy, c-format
 #| msgid "Searching for updates…"
 msgid "%u runtime with updates"
@@ -223,54 +245,54 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 msgstr[1] "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/Core/FlatpakBackend.vala:2137
+#: src/Core/FlatpakBackend.vala:2017
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2241
+#: src/Core/FlatpakBackend.vala:2121
 #, c-format
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/Job.vala:42
+#: src/Core/Job.vala:41
 msgid "Getting download size…"
 msgstr ""
 
-#: src/Core/Job.vala:46
+#: src/Core/Job.vala:44
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for updates…"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: src/Core/Job.vala:48
+#: src/Core/Job.vala:46
 #, fuzzy
 #| msgid "Installing"
 msgid "Installing…"
 msgstr "நிறுவுகிறது"
 
-#: src/Core/Job.vala:50
+#: src/Core/Job.vala:48
 #, fuzzy
 #| msgid "Installing updates"
 msgid "Installing updates…"
 msgstr "புதுப்பிப்புகளை நிறுவுகிறது"
 
-#: src/Core/Job.vala:52
+#: src/Core/Job.vala:50
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling…"
 msgstr "நீக்குதல்"
 
-#: src/Core/Job.vala:54
+#: src/Core/Job.vala:52
 msgid "Repairing…"
 msgstr ""
 
-#: src/Core/Package.vala:317
+#: src/Core/Package.vala:316
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
-#: src/Core/Package.vala:510
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -478,7 +500,7 @@ msgid "CVC"
 msgstr "சிவிசி"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
-#: src/Widgets/ProgressButton.vala:25
+#: src/Widgets/ProgressButton.vala:28
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
@@ -879,7 +901,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:215
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -969,12 +991,12 @@ msgstr "தேடுக %s"
 msgid "In-app purchases"
 msgstr ""
 
-#: src/Widgets/ActionStack.vala:141 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
 #, fuzzy
 msgid "Install"
 msgstr "நிறுவுக"
 
-#: src/Widgets/ActionStack.vala:158
+#: src/Widgets/ActionStack.vala:157
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
 

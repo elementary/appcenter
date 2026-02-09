@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
+"POT-Creation-Date: 2026-01-30 14:56+0000\n"
 "PO-Revision-Date: 2024-05-17 14:13+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -56,60 +56,62 @@ msgstr "Pagueu el que pugueu per donar suport als desenvolupadors."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:136 data/appcenter.metainfo.xml.in:154
-#: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:204
-#: data/appcenter.metainfo.xml.in:219 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
+#: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:117
+#: data/appcenter.metainfo.xml.in:130 data/appcenter.metainfo.xml.in:150
+#: data/appcenter.metainfo.xml.in:168 data/appcenter.metainfo.xml.in:198
+#: data/appcenter.metainfo.xml.in:218 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:247
 msgid "Other Improvements:"
 msgstr "Altres millores:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:105 data/appcenter.metainfo.xml.in:118
-#: data/appcenter.metainfo.xml.in:138 data/appcenter.metainfo.xml.in:159
-#: data/appcenter.metainfo.xml.in:187 data/appcenter.metainfo.xml.in:209
-#: data/appcenter.metainfo.xml.in:221 data/appcenter.metainfo.xml.in:235
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
+#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:119
+#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:173 data/appcenter.metainfo.xml.in:201
+#: data/appcenter.metainfo.xml.in:223 data/appcenter.metainfo.xml.in:235
+#: data/appcenter.metainfo.xml.in:249
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:180
-#: data/appcenter.metainfo.xml.in:200 data/appcenter.metainfo.xml.in:228
+#: data/appcenter.metainfo.xml.in:164 data/appcenter.metainfo.xml.in:194
+#: data/appcenter.metainfo.xml.in:214 data/appcenter.metainfo.xml.in:242
 msgid "New features:"
 msgstr "Funcions noves:"
 
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:166
 msgid "Manage autostart in System Settings → Applications"
 msgstr "Gestioneu l'inici automàtic a Configuració del sistema → Aplicacions"
 
-#: data/appcenter.metainfo.xml.in:156
+#: data/appcenter.metainfo.xml.in:170
 msgid "Automatic app updates by default"
 msgstr "Actualitzacions automàtiques d'aplicacions per defecte"
 
-#: data/appcenter.metainfo.xml.in:157
+#: data/appcenter.metainfo.xml.in:171
 msgid "OS Updates have moved to System Settings"
 msgstr ""
 "Les actualitzacions del sistema operatiu s'han mogut a la configuració del "
 "sistema."
 
-#: data/appcenter.metainfo.xml.in:158
+#: data/appcenter.metainfo.xml.in:172
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Insígnies d'aplicacions fetes per a l'elementary OS en lloc d'insígnies "
 "d'aplicacions d'altres llocs remots"
 
-#: data/appcenter.metainfo.xml.in:182
+#: data/appcenter.metainfo.xml.in:196
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Avisa quan les aplicacions usen l'inici automàtic de llegat, notificacions"
 
-#: data/appcenter.metainfo.xml.in:186
+#: data/appcenter.metainfo.xml.in:200
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 "Correcció del parpelleig a les visualitzacions d'AppInfo quan obté la mida "
 "de la instal·lació"
 
-#: data/appcenter.metainfo.xml.in:202
+#: data/appcenter.metainfo.xml.in:216
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -117,29 +119,29 @@ msgstr ""
 "Avisa quan les aplicacions tenen accés a les carpetes d'inici o del sistema, "
 "a la ubicació, a la configuració o tenen una zona de proves insegura."
 
-#: data/appcenter.metainfo.xml.in:206
+#: data/appcenter.metainfo.xml.in:220
 msgid "Tighten up spacing and margins in App Info views"
 msgstr ""
 "Reforç de l'espaiat i els marges a les vistes d'informació de l'aplicació"
 
-#: data/appcenter.metainfo.xml.in:207
+#: data/appcenter.metainfo.xml.in:221
 msgid "Show a placeholder banner on the home page when loading"
 msgstr ""
 "Mostra una pancarta de marcador de posició a la pàgina d'inici quan es "
 "carregui"
 
-#: data/appcenter.metainfo.xml.in:208
+#: data/appcenter.metainfo.xml.in:222
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "No enumera aplicacions que no siguin del Centre d'aplicacions sota una "
 "capçalera independent a les visualitzacions de categoria"
 
-#: data/appcenter.metainfo.xml.in:230
+#: data/appcenter.metainfo.xml.in:244
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr ""
 "Ofereix una opció de reparació si les actualitzacions de Flatpak fallen."
 
-#: data/appcenter.metainfo.xml.in:231
+#: data/appcenter.metainfo.xml.in:245
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"

@@ -119,6 +119,8 @@ public class AppCenter.App : Gtk.Application {
         });
 
         var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
+        flatpak_backend.init ();
+
         flatpak_backend.operation_finished.connect (on_operation_finished);
 
         var update_manager = AppCenterCore.UpdateManager.get_default ();
@@ -292,33 +294,48 @@ public class AppCenter.App : Gtk.Application {
         base.dbus_unregister (connection, object_path);
     }
 
-    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
-        switch (operation) {
-            case AppCenterCore.Package.State.INSTALLING:
-                if (error == null) {
-                    if (package.get_can_launch ()) {
-                        // Check if window is focused
-                        if (active_window != null && active_window.is_active) {
-                            ((MainWindow) active_window).send_installed_toast (package);
-                            break;
-                        }
-
-                        var notification = new Notification (_("The app has been installed"));
-                        notification.set_body (_("“%s” has been installed").printf (package.name));
-                        notification.set_icon (new ThemedIcon ("process-completed"));
-                        notification.set_default_action ("app.open-application");
-
-                        send_notification ("installed", notification);
-                    }
-                } else {
-                    // Check if permission was denied or the operation was cancelled
-                    if (error.matches (IOError.quark (), 19)) {
-                        break;
-                    }
-
+    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State state, Error? error) {
+        if (error != null && !error.matches (IOError.quark (), GLib.IOError.CANCELLED)) {
+            switch (state) {
+                case INSTALLING:
                     var dialog = new InstallFailDialog (package, (owned) error.message);
                     dialog.present ();
+                    break;
+                case REMOVING:
+                    var dialog = new UninstallFailDialog (package, (owned) error.message);
+                    dialog.present ();
+                    break;
+                default:
+                    break;
+            }
+
+            return;
+        }
+
+        // Check if window is focused
+        if (active_window != null && active_window.is_active) {
+            ((MainWindow) active_window).send_toast (package, state);
+            return;
+        }
+
+        switch (state) {
+            case INSTALLING:
+                var notification = new Notification (_("The app has been installed"));
+                notification.set_body (_("“%s” has been installed").printf (package.name));
+                notification.set_icon (new ThemedIcon ("process-completed"));
+
+                if (package.get_can_launch ()) {
+                    notification.set_default_action ("app.open-application");
                 }
+
+                send_notification ("installed", notification);
+                break;
+            case REMOVING:
+                var notification = new Notification (_("The app has been uninstalled"));
+                notification.set_body (_("“%s” has been uninstalled").printf (package.name));
+                notification.set_icon (new ThemedIcon ("process-completed"));
+
+                send_notification ("uninstalled", notification);
 
                 break;
             default:

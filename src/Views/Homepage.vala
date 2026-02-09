@@ -206,6 +206,11 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             show_category (card.category);
         });
 
+        recently_updated_carousel.child_activated.connect ((child) => {
+            var package = ((AppCenter.Widgets.ListPackageRowGrid) child.get_child ()).package;
+            activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+        });
+
         destroy.connect (() => {
             banner_timeout_stop ();
         });
@@ -228,13 +233,9 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
-                try {
-                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
-                        installed = true;
-                        break;
-                    }
-                } catch (Error e) {
-                    continue;
+                if (origin_package.installed) {
+                    installed = true;
+                    break;
                 }
             }
 
@@ -257,13 +258,9 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             var installed = false;
             foreach (var origin_package in package.origin_packages) {
-                try {
-                    if (AppCenterCore.FlatpakBackend.get_default ().is_package_installed (origin_package)) {
-                        installed = true;
-                        break;
-                    }
-                } catch (Error e) {
-                    continue;
+                if (origin_package.installed) {
+                    installed = true;
+                    break;
                 }
             }
 

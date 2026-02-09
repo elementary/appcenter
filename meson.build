@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '8.3.1',
+    version: '8.3.2',
     meson_version: '>=0.57.0'
 )
 
