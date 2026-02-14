@@ -29,18 +29,6 @@ public class AppCenterCore.ChangeInformation : Object {
         FINISHED
     }
 
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void status_changed ();
-
-    /**
-     * This signal is likely to be fired from a non-main thread. Ensure any UI
-     * logic driven from this runs on the GTK thread
-     */
-    public signal void progress_changed ();
-
     public Gee.ArrayList<string> updatable_packages { get; private set; }
 
     public ActionGroup action_group { get; private set; }
@@ -75,15 +63,12 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0.0f;
         status = Status.WAITING;
         status_description = _("Waiting");
-        status_changed ();
-        progress_changed ();
     }
 
     public void complete () {
         cancel_action.set_enabled (false);
         status = Status.FINISHED;
         status_description = _("Finished");
-        status_changed ();
         reset_progress ();
     }
 
@@ -92,7 +77,6 @@ public class AppCenterCore.ChangeInformation : Object {
         cancel_action.set_enabled (false);
         status = Status.CANCELLED;
         status_description = _("Cancelling");
-        status_changed ();
     }
 
     public void clear_update_info () {
@@ -106,16 +90,21 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0.0f;
     }
 
+    /**
+     * This method is thread safe. It will queue any updates on the main thread.
+     */
     public void callback (string status_description, double progress, Status status) {
-        if (this.status_description != status_description || this.status != status) {
-            this.status_description = status_description;
-            this.status = status;
-            status_changed ();
-        }
+        Idle.add (() => {
+            if (this.status_description != status_description || this.status != status) {
+                this.status_description = status_description;
+                this.status = status;
+            }
 
-        if (this.progress != progress) {
-            this.progress = progress;
-            progress_changed ();
-        }
+            if (this.progress != progress) {
+                this.progress = progress;
+            }
+
+            return Source.REMOVE;
+        });
     }
 }
