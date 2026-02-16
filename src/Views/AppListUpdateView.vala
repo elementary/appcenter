@@ -16,7 +16,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
     private Gtk.Revealer updated_revealer;
     private Gtk.Label updated_label;
     private Gtk.SizeGroup action_button_group;
-    private Granite.HeaderLabel installed_header;
 
     private uint updated_label_timeout_id = 0;
 
@@ -83,19 +82,26 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             "has-updatable-packages", header_revealer, "reveal-child", SYNC_CREATE
         );
 
+        var updatable_header = new Granite.HeaderLabel (_("Available Updates")) {
+            margin_end = 12,
+            margin_start = 12
+        };
+
         list_box = new Gtk.ListBox () {
             activate_on_single_click = true,
             hexpand = true,
         };
         list_box.bind_model (flatpak_backend.updatable_packages, create_row_from_package);
 
-        installed_header = new Granite.HeaderLabel (_("Up to Date")) {
-            margin_top = 12,
+        var updatable_section = new Granite.Box (VERTICAL, HALF);
+        updatable_section.append (updatable_header);
+        updatable_section.append (list_box);
+        flatpak_backend.bind_property ("has-updatable-packages", updatable_section, "visible", SYNC_CREATE);
+
+        var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
             margin_end = 12,
-            margin_bottom = 12,
             margin_start = 12
         };
-        flatpak_backend.bind_property ("has-updated-packages", installed_header, "visible", SYNC_CREATE);
 
         var installed_sort_model = new Gtk.SortListModel (
             flatpak_backend.updated_packages,
@@ -109,13 +115,22 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         };
         installed_flowbox.bind_model (installed_sort_model, create_installed_from_package);
 
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        box.append (list_box);
-        box.append (installed_header);
-        box.append (installed_flowbox);
+        var installed_section = new Granite.Box (VERTICAL, HALF);
+        installed_section.append (installed_header);
+        installed_section.append (installed_flowbox);
+        flatpak_backend.bind_property ("has-updated-packages", installed_section, "visible", SYNC_CREATE);
+
+        var box = new Granite.Box (VERTICAL, SINGLE);
+        box.append (updatable_section);
+        box.append (installed_section);
+
+        var clamp = new Adw.Clamp () {
+            child = box,
+            maximum_size = AppInfoView.MAX_WIDTH,
+        };
 
         var scrolled = new Gtk.ScrolledWindow () {
-            child = box,
+            child = clamp,
             hscrollbar_policy = Gtk.PolicyType.NEVER
         };
 
