@@ -5,6 +5,7 @@ appcenter_files = files(
     'SuspendControl.vala',
     'Utils.vala',
     'Core' / 'AddonFilter.vala',
+    'Core' / 'Backend.vala',
     'Core/CardUtils.vala',
     'Core' / 'CategoryManager.vala',
     'Core/ChangeInformation.vala',
