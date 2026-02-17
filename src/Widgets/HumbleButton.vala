@@ -40,18 +40,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
 
     public string free_string;
 
-    public bool _allow_free = true;
-    public bool allow_free {
-        get {
-            return _allow_free;
-        }
-        set {
-            if (value != _allow_free) {
-                _allow_free = value;
-            }
-        }
-    }
-
     public bool can_purchase {
         set {
             if (!value) {
