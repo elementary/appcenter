@@ -20,6 +20,22 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
+        var downloads_header = new Granite.HeaderLabel (_("Downloads")) {
+            margin_end = 12,
+            margin_start = 12
+        };
+
+        var downloads_list = new Gtk.ListBox () {
+            activate_on_single_click = true,
+            hexpand = true,
+        };
+        downloads_list.bind_model (flatpak_backend.working_packages, create_row_from_package);
+
+        var downloads_section = new Granite.Box (VERTICAL, HALF);
+        downloads_section.append (downloads_header);
+        downloads_section.append (downloads_list);
+        flatpak_backend.bind_property ("has-working-packages", downloads_section, "visible", SYNC_CREATE);
+
         var updatable_header_label = new Granite.HeaderLabel (_("Available Updates")) {
             hexpand = true,
             valign = CENTER
@@ -93,6 +109,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         flatpak_backend.bind_property ("has-updated-packages", installed_section, "visible", SYNC_CREATE);
 
         var box = new Granite.Box (VERTICAL, SINGLE);
+        box.append (downloads_section);
         box.append (updatable_section);
         box.append (installed_section);
 

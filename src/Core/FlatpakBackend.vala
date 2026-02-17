@@ -90,9 +90,12 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     // Right now only for runtime updates
     private GLib.ListStore additional_updates;
 
-    private Gtk.SortListModel _updatable_packages;
+    private Gtk.FilterListModel _updatable_packages;
     public ListModel updatable_packages { get { return _updatable_packages; } }
 
+    public ListModel working_packages { get; private set; }
+
+    public bool has_working_packages { get { return working_packages.get_n_items () > 0; } }
     public bool has_updatable_packages { get { return _updatable_packages.n_items > 0; } }
     public uint n_updatable_packages { get { return _updatable_packages.n_items; } }
     public uint n_unpaid_updatable_packages {
@@ -273,19 +276,8 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         var flatten_model = new Gtk.FlattenListModel (updates_models);
 
         var updatable_filter = new Gtk.BoolFilter (update_available_expression);
-        var updating_filter = new Gtk.BoolFilter (updating_expression);
 
-        var updatable_any_filter = new Gtk.AnyFilter ();
-        updatable_any_filter.append (updatable_filter);
-        updatable_any_filter.append (updating_filter);
-
-        var updatable_packages = new Gtk.FilterListModel (flatten_model, updatable_any_filter);
-
-        var updating_sorter = new Gtk.NumericSorter (updating_expression) {
-            sort_order = DESCENDING
-        };
-
-        _updatable_packages = new Gtk.SortListModel (updatable_packages, updating_sorter);
+        _updatable_packages = new Gtk.FilterListModel (flatten_model, updatable_filter);
         _updatable_packages.items_changed.connect (() => {
             notify_property ("has-updatable-packages");
             notify_property ("n-updatable-packages");
@@ -293,6 +285,12 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
             notify_property ("updates-size");
             notify_property ("up-to-date");
         });
+
+        var working_expression = new Gtk.PropertyExpression (typeof (Package), null, "working");
+        var working_filter = new Gtk.BoolFilter (working_expression);
+
+        working_packages = new Gtk.FilterListModel (_sorted_packages, working_filter);
+        working_packages.items_changed.connect (() => notify_property ("has-working-packages"));
 
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
