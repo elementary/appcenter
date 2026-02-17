@@ -20,17 +20,13 @@ public class AppCenter.ActionStack : Gtk.Box {
 
     private uint state_source = 0U;
     private Gtk.Stack stack;
-    private Gtk.Revealer action_button_revealer;
-    private Gtk.Revealer open_button_revealer;
 
     public ActionStack (AppCenterCore.Package package) {
         Object (package: package);
     }
 
     construct {
-        action_button = new Widgets.HumbleButton (package) {
-            halign = END
-        };
+        action_button = new Widgets.HumbleButton (package);
 
         var in_app_label = new Gtk.Label (_("In-app purchases")) {
             visible = false
@@ -49,12 +45,6 @@ public class AppCenter.ActionStack : Gtk.Box {
         action_box.append (action_button);
         action_box.append (in_app_label);
 
-        action_button_revealer = new Gtk.Revealer () {
-            child = action_box,
-            overflow = Gtk.Overflow.VISIBLE,
-            transition_type = SLIDE_LEFT
-        };
-
         action_button.download_requested.connect (() => {
             action_clicked.begin ();
         });
@@ -62,36 +52,22 @@ public class AppCenter.ActionStack : Gtk.Box {
         open_button = new Gtk.Button.with_label (_("Open")) {
             valign = CENTER
         };
-
-        open_button_revealer = new Gtk.Revealer () {
-            child = open_button,
-            overflow = VISIBLE,
-            transition_type = SLIDE_LEFT
-        };
-
         open_button.clicked.connect (launch_package_app);
-
-        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        button_box.append (action_button_revealer);
-        button_box.append (open_button_revealer);
 
         cancel_button = new ProgressButton (package) {
             valign = CENTER
         };
 
-        var action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
-        action_button_group.add_widget (action_button);
-        action_button_group.add_widget (cancel_button);
-        action_button_group.add_widget (open_button);
-
         stack = new Gtk.Stack () {
-            hhomogeneous = false,
+            hhomogeneous = true,
             halign = END,
             valign = CENTER,
             transition_type = CROSSFADE
         };
-        stack.add_named (button_box, "buttons");
+        stack.add_named (action_box, "action");
         stack.add_named (cancel_button, "progress");
+        stack.add_named (open_button, "open");
+        stack.add_named (new Granite.Bin (), "blank");
 
         append (stack);
 
@@ -131,10 +107,6 @@ public class AppCenter.ActionStack : Gtk.Box {
 
         action_button.allow_free = true;
 
-        if (stack.get_child_by_name ("buttons") != null) {
-            stack.visible_child_name = "buttons";
-        }
-
         switch (package.state) {
             case AppCenterCore.Package.State.NOT_INSTALLED:
                 action_button.free_string = _("Install");
@@ -143,15 +115,22 @@ public class AppCenter.ActionStack : Gtk.Box {
                     action_button.amount = 0;
                 }
 
-                action_button_revealer.reveal_child = !package.is_runtime_updates;
-                open_button_revealer.reveal_child = false;
-
+                stack.visible_child_name = "action";
                 break;
             case AppCenterCore.Package.State.INSTALLED:
-                action_button_revealer.reveal_child = package.should_pay && updates_view;
-                open_button_revealer.reveal_child = show_open && package.get_can_launch ();
-
                 action_button.allow_free = false;
+
+                if (package.should_pay && updates_view) {
+                    stack.visible_child_name = "action";
+                    break;
+                }
+
+                if (show_open && package.get_can_launch ()) {
+                    stack.visible_child_name = "open";
+                    break;
+                }
+
+                stack.visible_child_name = "blank";
                 break;
             case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                 action_button.free_string = _("Update");
@@ -160,15 +139,12 @@ public class AppCenter.ActionStack : Gtk.Box {
                     action_button.amount = 0;
                 }
 
-                action_button_revealer.reveal_child = true;
-                open_button_revealer.reveal_child = false;
-
+                stack.visible_child_name = "action";
                 break;
             case AppCenterCore.Package.State.INSTALLING:
             case AppCenterCore.Package.State.UPDATING:
             case AppCenterCore.Package.State.REMOVING:
-
-                stack.set_visible_child_name ("progress");
+                stack.visible_child_name = "progress";
                 break;
 
             default:
@@ -186,9 +162,7 @@ public class AppCenter.ActionStack : Gtk.Box {
     }
 
     private async void action_clicked () {
-        if (package.installed && !package.update_available) {
-            action_button_revealer.reveal_child = false;
-        } else if (package.update_available) {
+        if (package.update_available) {
             try {
                 yield package.update ();
             } catch (Error e) {
