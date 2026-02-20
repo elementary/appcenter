@@ -1,10 +1,9 @@
 appcenter_files = files(
     'Application.vala',
-    'AsyncMutex.vala',
     'MainWindow.vala',
-    'SuspendControl.vala',
     'Utils.vala',
     'Core' / 'AddonFilter.vala',
+    'Core' / 'Backend.vala',
     'Core/CardUtils.vala',
     'Core' / 'CategoryManager.vala',
     'Core/ChangeInformation.vala',

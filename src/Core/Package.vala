@@ -96,6 +96,7 @@ public class AppCenterCore.Package : Object {
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
+    public unowned Backend backend { get; construct; }
     public string uid { get; construct; }
 
     public AppStream.Component component { get; protected set; }
@@ -412,8 +413,8 @@ public class AppCenterCore.Package : Object {
         change_information = new ChangeInformation ();
     }
 
-    public Package (string uid, AppStream.Component component) {
-        Object (uid: uid, component: component);
+    public Package (Backend backend, string uid, AppStream.Component component) {
+        Object (backend: backend, uid: uid, component: component);
     }
 
     public void replace_component (AppStream.Component component) {
@@ -449,7 +450,7 @@ public class AppCenterCore.Package : Object {
         // Only trigger a notify if the state has changed, quite a lot of things listen to this
         if (state != new_state) {
             state = new_state;
-            FlatpakBackend.get_default ().notify_package_changed (this);
+            backend.notify_package_changed (this);
         }
     }
 
@@ -496,15 +497,14 @@ public class AppCenterCore.Package : Object {
         change_information.start ();
         state = performing;
 
-        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-        flatpak_backend.notify_package_changed (this);
+        backend.notify_package_changed (this);
 
         try {
             yield perform_package_operation ();
-            flatpak_backend.operation_finished (this, performing, null);
+            backend.operation_finished (this, performing, null);
         } catch (GLib.Error e) {
             warning ("Operation failed for package %s - %s", name, e.message);
-            flatpak_backend.operation_finished (this, performing, e);
+            backend.operation_finished (this, performing, e);
             throw e;
         } finally {
             change_information.complete ();
@@ -513,8 +513,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private async void perform_package_operation () throws GLib.Error {
-        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-
         switch (state) {
             case State.UPDATING:
                 yield backend.update_package (this, change_information);

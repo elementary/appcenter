@@ -129,8 +129,6 @@ public class AppCenter.ActionStack : Gtk.Box {
             }
         }
 
-        action_button.allow_free = true;
-
         if (stack.get_child_by_name ("buttons") != null) {
             stack.visible_child_name = "buttons";
         }
@@ -150,8 +148,6 @@ public class AppCenter.ActionStack : Gtk.Box {
             case AppCenterCore.Package.State.INSTALLED:
                 action_button_revealer.reveal_child = package.should_pay && updates_view;
                 open_button_revealer.reveal_child = show_open && package.get_can_launch ();
-
-                action_button.allow_free = false;
                 break;
             case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                 action_button.free_string = _("Update");
