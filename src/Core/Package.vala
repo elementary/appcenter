@@ -95,6 +95,8 @@ public class AppCenterCore.Package : Object {
     public const string RUNTIME_UPDATES_ID = "xxx-runtime-updates";
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
+    public const uint EXACT_MATCH_SCORE = 100;
+    public const uint PARTIAL_MATCH_SCORE = 50;
 
     public unowned Backend backend { get; construct; }
     public string uid { get; construct; }
@@ -555,8 +557,27 @@ public class AppCenterCore.Package : Object {
             var query_score = component.search_matches (query);
 
             if (query_score == 0) {
-                score = 0;
-                break;
+                var id_down = component.id.down ();
+                var name_down = component.name.down ();
+                var query_down = query.down ();
+
+                /*
+                * Give extra score value if query is a substring, or if it
+                * matches exactly the component name or id.
+                * We multiply both by queries.length to negate the dilution made
+                * by cached_search_score when dividing by queries.length, thus
+                * making it a perfect EXACT_MATCH_SCORE or PARTIAL_MATCH_SCORE
+                * search value, since an exact or partial match should achieve
+                * the perfect score in any query token.
+                */
+                if (query_down == name_down || query_down == id_down) {
+                    query_score = EXACT_MATCH_SCORE * queries.length;
+                } else if (
+                    name_down.contains (query_down) ||
+                    id_down.contains (query_down)
+                ) {
+                    query_score = PARTIAL_MATCH_SCORE * queries.length;
+                }
             }
 
             score += query_score;
