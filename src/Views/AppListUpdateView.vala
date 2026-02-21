@@ -9,10 +9,8 @@
 /** AppList for the Updates View. Sorts update_available first and shows headers.
  * Does not show Uninstall Button **/
 public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
-    private Granite.HeaderLabel header_label;
     private Gtk.FlowBox installed_flowbox;
     private Gtk.ListBox list_box;
-    private Gtk.Revealer header_revealer;
     private Gtk.Revealer updated_revealer;
     private Gtk.Label updated_label;
     private Gtk.SizeGroup action_button_group;
@@ -22,31 +20,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
     construct {
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-
-        header_label = new Granite.HeaderLabel ("") {
-            hexpand = true,
-            valign = CENTER
-        };
-        flatpak_backend.bind_property (
-            "n-updatable-packages", header_label, "label", SYNC_CREATE,
-            (binding, from_value, ref to_value) => {
-                var n_updatable_packages = from_value.get_uint ();
-
-                to_value.set_string (ngettext (
-                    "%u Update Available",
-                    "%u Updates Available",
-                    n_updatable_packages
-                ).printf (n_updatable_packages));
-
-                return true;
-            }
-        );
-
-        var size_label = new Widgets.SizeLabel () {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.CENTER
-        };
-        flatpak_backend.bind_property ("updates-size", size_label, "size", SYNC_CREATE);
 
         updated_label = new Gtk.Label ("");
         updated_label.add_css_class (Granite.CssClass.DIM);
@@ -63,29 +36,44 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             "up-to-date", updated_revealer, "reveal-child", SYNC_CREATE
         );
 
+        var updatable_header_label = new Granite.HeaderLabel (_("Available Updates")) {
+            hexpand = true,
+            valign = CENTER
+        };
+        flatpak_backend.bind_property (
+            "n-updatable-packages", updatable_header_label, "label", SYNC_CREATE,
+            (binding, from_value, ref to_value) => {
+                var n_updatable_packages = from_value.get_uint ();
+
+                to_value.set_string (ngettext (
+                    "%u Available Update",
+                    "%u Available Updates",
+                    n_updatable_packages
+                ).printf (n_updatable_packages));
+
+                return true;
+            }
+        );
+
+        var size_label = new Widgets.SizeLabel () {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.CENTER
+        };
+        flatpak_backend.bind_property ("updates-size", size_label, "size", SYNC_CREATE);
+
         var update_all_button = new Gtk.Button.with_label (_("Update All")) {
             valign = Gtk.Align.CENTER,
             action_name = "app.update-all"
         };
         update_all_button.add_css_class (Granite.CssClass.SUGGESTED);
 
-        var header = new Gtk.Box (HORIZONTAL, 16);
-        header.append (header_label);
-        header.append (size_label);
-        header.append (update_all_button);
-
-        header_revealer = new Gtk.Revealer () {
-            child = header
-        };
-        header_revealer.add_css_class ("header");
-        flatpak_backend.bind_property (
-            "has-updatable-packages", header_revealer, "reveal-child", SYNC_CREATE
-        );
-
-        var updatable_header = new Granite.HeaderLabel (_("Available Updates")) {
+        var updatable_header = new Gtk.Box (HORIZONTAL, 16) {
             margin_end = 12,
             margin_start = 12
         };
+        updatable_header.append (updatable_header_label);
+        updatable_header.append (size_label);
+        updatable_header.append (update_all_button);
 
         list_box = new Gtk.ListBox () {
             activate_on_single_click = true,
@@ -192,7 +180,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         };
         toolbarview.add_top_bar (headerbar);
         toolbarview.add_top_bar (updated_revealer);
-        toolbarview.add_top_bar (header_revealer);
         toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
         child = toolbarview;
