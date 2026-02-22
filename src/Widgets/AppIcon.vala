@@ -52,8 +52,8 @@ public class AppCenter.AppIcon : Adw.Bin {
 
         notify["package"].connect (fetch_icon);
 
-        AppCenterCore.FlatpakBackend.get_default ().on_metadata_remote_preprocessed.connect ((remote_title) => {
-            if (package != null && package.origin_description == remote_title) {
+        AppCenterCore.FlatpakBackend.get_default ().on_metadata_remote_preprocessed.connect ((remote_name) => {
+            if (package != null && package.component.get_origin () == remote_name) {
                 fetch_icon ();
             }
         });
