@@ -51,7 +51,7 @@ public class AppCenterCore.FlatpakPackage : Package {
 }
 
 public class AppCenterCore.FlatpakBackend : Object, Backend {
-    public signal void on_metadata_remote_preprocessed (string remote_title);
+    public signal void on_metadata_remote_preprocessed (string remote_name);
     public signal void package_list_changed ();
 
     // Based on https://github.com/flatpak/flatpak/blob/417e3949c0ecc314e69311e3ee8248320d3e3d52/common/flatpak-run-private.h
@@ -1253,7 +1253,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
             // Make sure we emit the signal on the main thread since UI is connected to this
             Idle.add (() => {
-                on_metadata_remote_preprocessed (remote.get_title ());
+                on_metadata_remote_preprocessed (remote.get_name ());
                 return Source.REMOVE;
             });
         }
