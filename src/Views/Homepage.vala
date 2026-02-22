@@ -30,7 +30,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
     private Adw.Carousel banner_carousel;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
-    private Widgets.Banner appcenter_banner;
 
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
@@ -49,6 +48,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
 
         var banner_motion_controller = new Gtk.EventControllerMotion ();
+        banner_motion_controller.enter.connect (banner_timeout_stop);
+        banner_motion_controller.leave.connect (banner_timeout_start);
 
         banner_carousel = new Adw.Carousel () {
             allow_long_swipes = true,
@@ -181,25 +182,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         var local_package = App.local_package;
         if (local_package != null) {
             banner_carousel.prepend (new Widgets.Banner.from_package (local_package));
-        } else {
-            appcenter_banner = new Widgets.Banner (
-                _("AppCenter"),
-                _("Browse and manage apps"),
-                _("The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes."),
-                new AppIcon (128) { icon = new ThemedIcon ("io.elementary.appcenter") },
-                "#7239b3"
-            );
-            banner_carousel.append (appcenter_banner);
-
-            banner_carousel.page_changed.connect (page_changed_handler);
         }
 
-        load_banners_and_carousels.begin ((obj, res) => {
-            load_banners_and_carousels.end (res);
-            banner_timeout_start ();
-            banner_motion_controller.enter.connect (banner_timeout_stop);
-            banner_motion_controller.leave.connect (banner_timeout_start);
-        });
+        load_banners_and_carousels ();
+        banner_timeout_start ();
 
         category_flow.child_activated.connect ((child) => {
             var card = (CategoryCard) child;
@@ -216,12 +202,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         });
     }
 
-    private void page_changed_handler () {
-        banner_carousel.remove (appcenter_banner);
-        banner_carousel.page_changed.disconnect (page_changed_handler);
-    }
-
-    private async void load_banners_and_carousels () {
+    private void load_banners_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
@@ -244,8 +225,6 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 banner_carousel.append (new Widgets.Banner.from_package (package));
             }
         }
-
-        banner_carousel.scroll_to (banner_carousel.get_nth_page (1), true);
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_child_at_index (MAX_PACKAGES_IN_CAROUSEL - 1) != null) {
