@@ -84,91 +84,69 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
         populate ();
 
-        AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
-            populate ();
-        });
+        //  AppCenterCore.FlatpakBackend.get_default ().package_list_changed.connect (() => {
+        //      populate ();
+        //  });
     }
 
     private void populate () {
-        get_packages.begin ((obj, res) => {
-            while (box.get_first_child () != null) {
-                box.remove (box.get_first_child ());
-            };
+        while (box.get_first_child () != null) {
+            box.remove (box.get_first_child ());
+        };
 
-            var package_list = new GLib.ListStore (typeof (AppCenterCore.Package));
-            var paid_model = new GLib.ListStore (typeof (AppCenterCore.Package));
-            var free_model = new GLib.ListStore (typeof (AppCenterCore.Package));
+        var package_list = AppCenterCore.FlatpakBackend.get_default ().get_applications_for_category (category);
 
-            var packages = get_packages.end (res);
-            foreach (var package in packages) {
-                if (package.is_native && package.get_payments_key () != null && package.get_suggested_amount () != "0") {
-                    paid_model.insert_sorted (package, package_compare_func);
-                } else {
-                    free_model.insert_sorted (package, package_compare_func);
-                }
+        var paid_filter = new Gtk.CustomFilter (paid_filter_func);
+        var paid_model = new Gtk.FilterListModel (package_list, paid_filter);
 
-                package_list.append (package);
+        var free_filter = new Gtk.CustomFilter ((obj) => !paid_filter_func (obj));
+        var free_model = new Gtk.FilterListModel (package_list, free_filter);
+
+        var datetime = new GLib.DateTime.now_local ().add_months (-6);
+        var recent_filter_model = new Gtk.FilterListModel (package_list, new Gtk.CustomFilter ((obj) => {
+            var package = (AppCenterCore.Package) obj;
+
+            var newest_release = package.get_newest_release ();
+            if (newest_release == null) {
+                return false;
             }
 
-            var datetime = new GLib.DateTime.now_local ().add_months (-6);
-            var recent_filter_model = new Gtk.FilterListModel (package_list, new Gtk.CustomFilter ((obj) => {
-                var package = (AppCenterCore.Package) obj;
-
-                var newest_release = package.get_newest_release ();
-                if (newest_release == null) {
-                    return false;
-                }
-
-                // Don't add packages over 6 months old
-                if (newest_release.get_timestamp () < datetime.to_unix ()) {
-                    return false;
-                }
-
-                return true;
-            }));
-
-            var recent_sort_model = new Gtk.SortListModel (
-                recent_filter_model,
-                new Gtk.CustomSorter ((CompareDataFunc<GLib.Object>) AppCenterCore.Package.compare_newest_release)
-            );
-
-            var recent_model = new Gtk.SliceListModel (recent_sort_model, 0, 4);
-
-            if (recent_model.n_items > 0) {
-                recently_updated_flowbox.bind_model (recent_model);
-                box.append (recently_updated_flowbox);
+            // Don't add packages over 6 months old
+            if (newest_release.get_timestamp () < datetime.to_unix ()) {
+                return false;
             }
 
-            if (paid_model.n_items > 0) {
-                paid_flowbox.bind_model (paid_model);
-                box.append (paid_flowbox);
-            }
+            return true;
+        }));
 
-            if (free_model.n_items > 0) {
-                box.append (free_flowbox);
-                free_flowbox.bind_model (free_model);
-            }
+        var recent_sort_model = new Gtk.SortListModel (
+            recent_filter_model,
+            new Gtk.CustomSorter ((CompareDataFunc<GLib.Object>) AppCenterCore.Package.compare_newest_release)
+        );
 
-            stack.visible_child = scrolled;
-        });
+        var recent_model = new Gtk.SliceListModel (recent_sort_model, 0, 4);
+
+        if (recent_model.n_items > 0) {
+            recently_updated_flowbox.bind_model (recent_model);
+            box.append (recently_updated_flowbox);
+        }
+
+        if (paid_model.n_items > 0) {
+            paid_flowbox.bind_model (paid_model);
+            box.append (paid_flowbox);
+        }
+
+        if (free_model.n_items > 0) {
+            box.append (free_flowbox);
+            free_flowbox.bind_model (free_model);
+        }
+
+        stack.visible_child = scrolled;
     }
 
-    private async Gee.Collection<AppCenterCore.Package> get_packages () {
-        SourceFunc callback = get_packages.callback;
-
-        var packages = new Gee.TreeSet <AppCenterCore.Package> ();
-        new Thread<void> ("get_packages", () => {
-            foreach (var package in AppCenterCore.FlatpakBackend.get_default ().get_applications_for_category (category)) {
-                if (package.kind != AppStream.ComponentKind.ADDON && package.kind != AppStream.ComponentKind.FONT) {
-                    packages.add (package);
-                }
-            }
-
-            Idle.add ((owned) callback);
-        });
-
-        yield;
-        return packages;
+    private static bool paid_filter_func (Object obj) {
+        var package = (AppCenterCore.Package) obj;
+        return package.is_native && package.get_payments_key () != null && package.get_suggested_amount () != "0";
     }
 
     private int package_compare_func (Object object1, Object object2) {

@@ -578,36 +578,15 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         return b_datetime.compare (a_datetime);
     }
 
-    public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
-        // Clear out any cached components that could be from other backends
-        if (components.length != 0) {
-            components.remove_range (0, components.length);
-        }
-
-        var category_array = new GLib.GenericArray<AppStream.Category> ();
-        category_array.add (category);
-        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components ().as_array (), category_array, false);
-        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components ().as_array (), category_array, false);
-        components = category.get_components ();
-
-        var apps = new Gee.HashMap<string, Package> ();
-        components.foreach ((comp) => {
-            var packages = get_packages_for_component_id (comp.get_id ());
-
-            foreach (var package in packages) {
-                var package_component_id = package.normalized_component_id;
-                if (apps.has_key (package_component_id)) {
-                    if (package.origin_score > apps[package_component_id].origin_score) {
-                        apps[package_component_id] = package;
-                    }
-                } else {
-                    apps[package_component_id] = package;
-                }
-            }
+    public ListModel get_applications_for_category (AppStream.Category category) {
+        var category_filter = new Gtk.CustomFilter ((obj) => {
+            var package = (Package) obj;
+            return package.component.is_member_of_category (category);
         });
 
-        return apps.values;
+        return new Gtk.FilterListModel (_sorted_packages, category_filter) {
+            incremental = true
+        };
     }
 
     public SearchEngine get_search_engine () {
@@ -623,15 +602,15 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 results.add_all (packages);
             });
         } else {
-            var cat_packages = get_applications_for_category (category);
-            comps.as_array ().foreach ((comp) => {
-                var packages = get_packages_for_component_id (comp.get_id ());
-                foreach (var package in packages) {
-                    if (package in cat_packages) {
-                        results.add (package);
-                    }
-                }
-            });
+            //  var cat_packages = get_applications_for_category (category);
+            //  comps.as_array ().foreach ((comp) => {
+            //      var packages = get_packages_for_component_id (comp.get_id ());
+            //      foreach (var package in packages) {
+            //          if (package in cat_packages) {
+            //              results.add (package);
+            //          }
+            //      }
+            //  });
         }
 
         comps = system_appstream_pool.search (query);
@@ -641,15 +620,15 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 results.add_all (packages);
             });
         } else {
-            var cat_packages = get_applications_for_category (category);
-            comps.as_array ().foreach ((comp) => {
-                var packages = get_packages_for_component_id (comp.get_id ());
-                foreach (var package in packages) {
-                    if (package in cat_packages) {
-                        results.add (package);
-                    }
-                }
-            });
+            //  var cat_packages = get_applications_for_category (category);
+            //  comps.as_array ().foreach ((comp) => {
+            //      var packages = get_packages_for_component_id (comp.get_id ());
+            //      foreach (var package in packages) {
+            //          if (package in cat_packages) {
+            //              results.add (package);
+            //          }
+            //      }
+            //  });
         }
 
         var apps = new Gee.HashMap<string, Package> ();
