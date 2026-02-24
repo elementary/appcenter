@@ -19,7 +19,6 @@ Build-Depends: appstream (>= 1.0.0),
                libxml2-dev,
                libxml2-utils,
                libpolkit-gobject-1-dev,
-               policykit-1,
                sassc,
                meson,
                valac (>= 0.26)
