@@ -240,7 +240,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 toast.set_default_action (null);
                 break;
             default:
-                break;
+                return;
         }
 
         toast.send_notification ();
