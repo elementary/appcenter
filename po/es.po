@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 16:12+0000\n"
 "PO-Revision-Date: 2026-02-09 21:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/appcenter/"
@@ -70,20 +70,20 @@ msgstr ""
 "encienda y seguirá ejecutándose cuando se cierre la ventana para que se "
 "puedan comprobar e instalar actualizaciones automáticamente."
 
-#: src/Application.vala:308
+#: src/Application.vala:323
 msgid "The app has been installed"
 msgstr "Se instaló la aplicación"
 
-#: src/Application.vala:309 src/MainWindow.vala:227
+#: src/Application.vala:324 src/MainWindow.vala:225
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Se instaló «%s»"
 
-#: src/Application.vala:344
+#: src/Application.vala:334
 msgid "The app has been uninstalled"
 msgstr "Se desinstaló la aplicación"
 
-#: src/Application.vala:345 src/MainWindow.vala:239
+#: src/Application.vala:335 src/MainWindow.vala:237
 #, c-format
 msgid "“%s” has been uninstalled"
 msgstr "Se desinstaló «%s»"
@@ -93,28 +93,28 @@ msgstr "Se desinstaló «%s»"
 msgid "Failed to launch “%s“"
 msgstr "No se pudo iniciar «%s»"
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:89
 msgid "Network Not Available."
 msgstr "Red no disponible."
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Conéctese a Internet para explorar e instalar aplicaciones."
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:100
 msgid "Network Settings…"
 msgstr "Configuración de red…"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:108
 msgid "Running in Demo Mode"
 msgstr "Ejecutando en modo demostración"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Instale %s para explorar e instalar aplicaciones."
 
-#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Abrir"
 
@@ -202,69 +202,69 @@ msgstr "Cancelando"
 msgid "Starting"
 msgstr "Iniciando"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:45
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (en todo el sistema)"
 
-#: src/Core/FlatpakBackend.vala:163
+#: src/Core/FlatpakBackend.vala:166
 msgid "package operations are being performed"
 msgstr "efectuando operaciones de paquetes"
 
-#: src/Core/FlatpakBackend.vala:230
+#: src/Core/FlatpakBackend.vala:233
 msgid "Runtime Updates"
 msgstr "Actualizaciones de entornos de ejecución"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:234
 msgid "Updates to app runtimes"
 msgstr "Actualizaciones de entornos de ejecución para aplicaciones"
 
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+#: src/Core/FlatpakBackend.vala:1582 src/Core/FlatpakBackend.vala:1689
 msgid "Component has no flatpak bundle"
 msgstr "El componente no tiene un paquete de Flatpak"
 
-#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+#: src/Core/FlatpakBackend.vala:1589 src/Core/FlatpakBackend.vala:1798
 msgid "Error getting flatpak installation"
 msgstr "Error al obtener el instalador Flatpak"
 
-#: src/Core/FlatpakBackend.vala:1630
+#: src/Core/FlatpakBackend.vala:1633
 msgid "Installing"
 msgstr "Instalando"
 
-#: src/Core/FlatpakBackend.vala:1703
+#: src/Core/FlatpakBackend.vala:1706
 msgid "Error getting flatpak installation for removal"
 msgstr "Error al obtener el instalador de Flatpak para su eliminación"
 
-#: src/Core/FlatpakBackend.vala:1741
+#: src/Core/FlatpakBackend.vala:1744
 msgid "Uninstalling"
 msgstr "Desinstalando"
 
-#: src/Core/FlatpakBackend.vala:1810
+#: src/Core/FlatpakBackend.vala:1813
 msgid "Failed to split package key"
 msgstr "No se pudo dividir la clave del paquete"
 
-#: src/Core/FlatpakBackend.vala:1898
+#: src/Core/FlatpakBackend.vala:1901
 msgid "Updating"
 msgstr "Actualizando"
 
-#: src/Core/FlatpakBackend.vala:2007
+#: src/Core/FlatpakBackend.vala:2010
 #, c-format
 msgid "Version: %s"
 msgstr "Versión: %s"
 
-#: src/Core/FlatpakBackend.vala:2012
+#: src/Core/FlatpakBackend.vala:2015
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u entorno de ejecución con actualizaciones"
 msgstr[1] "%u entornos de ejecución con actualizaciones"
 
-#: src/Core/FlatpakBackend.vala:2017
+#: src/Core/FlatpakBackend.vala:2020
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2121
+#: src/Core/FlatpakBackend.vala:2124
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -293,12 +293,12 @@ msgstr "Desinstalando…"
 msgid "Repairing…"
 msgstr "Reparando…"
 
-#: src/Core/Package.vala:316
+#: src/Core/Package.vala:317
 #, c-format
 msgid "%s Developers"
 msgstr "Desarrolladores de %s"
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:484
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -878,51 +878,58 @@ msgstr "Se puede jugar con un mando de juego"
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Como un mando de 8Bitdo, PlayStation o Xbox."
 
-#: src/Views/AppListUpdateView.vala:37
-#, c-format
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u actualización disponible"
-msgstr[1] "%u actualizaciones disponibles"
+#: src/Views/AppListUpdateView.vala:39
+#, fuzzy
+#| msgid "Show available updates"
+msgid "Available Updates"
+msgstr "Mostrar actualizaciones disponibles"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:49
+#, fuzzy, c-format
+#| msgid "Show available updates"
+msgid "%u Available Update"
+msgid_plural "%u Available Updates"
+msgstr[0] "Mostrar actualizaciones disponibles"
+msgstr[1] "Mostrar actualizaciones disponibles"
+
+#: src/Views/AppListUpdateView.vala:64
 msgid "Update All"
 msgstr "Actualizar todo"
 
-#: src/Views/AppListUpdateView.vala:92
+#: src/Views/AppListUpdateView.vala:89
 msgid "Up to Date"
 msgstr "Actualizado"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:128
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Actualizar automáticamente aplicaciones gratuitas y pagadas"
 
-#: src/Views/AppListUpdateView.vala:126
+#: src/Views/AppListUpdateView.vala:129
 msgid "Apps being tried for free will not update automatically"
 msgstr "Las aplicaciones en modo de prueba no se actualizarán automáticamente"
 
-#: src/Views/AppListUpdateView.vala:130
+#: src/Views/AppListUpdateView.vala:133
 msgid "Check for Updates"
 msgstr "Comprobar si hay actualizaciones"
 
-#: src/Views/AppListUpdateView.vala:155
+#: src/Views/AppListUpdateView.vala:158
 msgid "Settings"
 msgstr "Ajustes"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:164 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:129
 msgctxt "action"
 msgid "Search"
 msgstr "Búsqueda"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:185
+#: src/Views/AppListUpdateView.vala:187
 msgctxt "view"
 msgid "Installed"
 msgstr "Instaladas"
 
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:217
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Todo se encuentra al día. Última revisión %s."
@@ -1015,11 +1022,11 @@ msgstr "Buscar %s"
 msgid "In-app purchases"
 msgstr "Compras en la aplicación"
 
-#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:138 src/Widgets/HumbleButton.vala:67
 msgid "Install"
 msgstr "Instalar"
 
-#: src/Widgets/ActionStack.vala:157
+#: src/Widgets/ActionStack.vala:153
 msgid "Update"
 msgstr "Actualizar"
 
@@ -1031,18 +1038,18 @@ msgstr "Complementos"
 msgid "Card Number"
 msgstr "Número de tarjeta"
 
-#: src/Widgets/HumbleButton.vala:66
+#: src/Widgets/HumbleButton.vala:54
 msgid "Requires payments, which are not enabled"
 msgstr "Requiere pagos, los cuales no están activados"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:110
+#: src/Widgets/HumbleButton.vala:98
 #, c-format
 msgid "$%d.00"
 msgstr "%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:113
+#: src/Widgets/HumbleButton.vala:101
 #, c-format
 msgid "$%d"
 msgstr "%d USD"
@@ -1166,6 +1173,12 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Notas de la versión"
+
+#, c-format
+#~ msgid "%u Update Available"
+#~ msgid_plural "%u Updates Available"
+#~ msgstr[0] "%u actualización disponible"
+#~ msgstr[1] "%u actualizaciones disponibles"
 
 #~ msgid "Getting app information…"
 #~ msgstr "Obteniendo información de la aplicación…"
@@ -1592,9 +1605,6 @@ msgstr "Notas de la versión"
 
 #~ msgid "Updates View"
 #~ msgstr "Vista de actualizaciones"
-
-#~ msgid "Show available updates"
-#~ msgstr "Mostrar actualizaciones disponibles"
 
 #~ msgid "Use debug quiet mode"
 #~ msgstr "Usar modo de depuración silenciosa"

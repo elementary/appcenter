@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 16:12+0000\n"
 "PO-Revision-Date: 2025-03-08 13:59+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementaryos.org/projects/appcenter/"
@@ -38,25 +38,25 @@ msgid ""
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:308
+#: src/Application.vala:323
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "Atwe %s agu so awie"
 
-#: src/Application.vala:309 src/MainWindow.vala:227
+#: src/Application.vala:324 src/MainWindow.vala:225
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "Atwe %s agu so awie"
 
-#: src/Application.vala:344
+#: src/Application.vala:334
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been uninstalled"
 msgstr "Atwe %s agu so awie"
 
-#: src/Application.vala:345 src/MainWindow.vala:239
+#: src/Application.vala:335 src/MainWindow.vala:237
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been uninstalled"
@@ -67,30 +67,30 @@ msgstr "Atwe %s agu so awie"
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:89
 #, fuzzy
 msgid "Network Not Available."
 msgstr "Nɛtwɛk Nni Hɔ"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:90
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Kɔnɛkte ma intanɛt ansa woatumi atwe dwumadie bi."
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:100
 msgid "Network Settings…"
 msgstr "Nɛtwɛk Ho Nhyehyɛe…"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:108
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Bie"
 
@@ -185,75 +185,75 @@ msgstr "Ɛregyae"
 msgid "Starting"
 msgstr "Ɛrehyɛ ase"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:45
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:163
+#: src/Core/FlatpakBackend.vala:166
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:230
+#: src/Core/FlatpakBackend.vala:233
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Runtime Updates"
 msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:234
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+#: src/Core/FlatpakBackend.vala:1582 src/Core/FlatpakBackend.vala:1689
 msgid "Component has no flatpak bundle"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+#: src/Core/FlatpakBackend.vala:1589 src/Core/FlatpakBackend.vala:1798
 msgid "Error getting flatpak installation"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1630
+#: src/Core/FlatpakBackend.vala:1633
 msgid "Installing"
 msgstr "Ɛde regu so"
 
-#: src/Core/FlatpakBackend.vala:1703
+#: src/Core/FlatpakBackend.vala:1706
 msgid "Error getting flatpak installation for removal"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1741
+#: src/Core/FlatpakBackend.vala:1744
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Yi fi so"
 
-#: src/Core/FlatpakBackend.vala:1810
+#: src/Core/FlatpakBackend.vala:1813
 msgid "Failed to split package key"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1898
+#: src/Core/FlatpakBackend.vala:1901
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Twe nea aba"
 
-#: src/Core/FlatpakBackend.vala:2007
+#: src/Core/FlatpakBackend.vala:2010
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/FlatpakBackend.vala:2012
+#: src/Core/FlatpakBackend.vala:2015
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:2017
+#: src/Core/FlatpakBackend.vala:2020
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2121
+#: src/Core/FlatpakBackend.vala:2124
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -290,12 +290,12 @@ msgstr "Yi fi so"
 msgid "Repairing…"
 msgstr ""
 
-#: src/Core/Package.vala:316
+#: src/Core/Package.vala:317
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s Dwumadieyɛfoɔ"
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:484
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -854,43 +854,51 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:37
-#, c-format
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
+#: src/Views/AppListUpdateView.vala:39
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Available Updates"
+msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
+
+#: src/Views/AppListUpdateView.vala:49
+#, fuzzy, c-format
+#| msgid "%u Update Available"
+#| msgid_plural "%u Updates Available"
+msgid "%u Available Update"
+msgid_plural "%u Available Updates"
 msgstr[0] "Foforɔ %u Na Aba"
 msgstr[1] "Afoforɔ %u Na Aba"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:64
 msgid "Update All"
 msgstr "Twɛ Foforɔ No Nyinaa"
 
-#: src/Views/AppListUpdateView.vala:92
+#: src/Views/AppListUpdateView.vala:89
 msgid "Up to Date"
 msgstr "Nea Ɛyɛ Foforɔ a Ɛtwa Toɔ"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:128
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:126
+#: src/Views/AppListUpdateView.vala:129
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:130
+#: src/Views/AppListUpdateView.vala:133
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
-#: src/Views/AppListUpdateView.vala:155
+#: src/Views/AppListUpdateView.vala:158
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "Ɛrehyɛ ase"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:164 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:129
 #, fuzzy
 #| msgctxt "view"
@@ -900,13 +908,13 @@ msgid "Search"
 msgstr "Hwehwɛ"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:185
+#: src/Views/AppListUpdateView.vala:187
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Twe gu so"
 
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:217
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr ""
@@ -996,12 +1004,12 @@ msgstr "Hwehwɛ %s"
 msgid "In-app purchases"
 msgstr ""
 
-#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:138 src/Widgets/HumbleButton.vala:67
 #, fuzzy
 msgid "Install"
 msgstr "Twe gu so"
 
-#: src/Widgets/ActionStack.vala:157
+#: src/Widgets/ActionStack.vala:153
 msgid "Update"
 msgstr "Twe nea aba"
 
@@ -1013,18 +1021,18 @@ msgstr ""
 msgid "Card Number"
 msgstr "Kaad No Nɔma"
 
-#: src/Widgets/HumbleButton.vala:66
+#: src/Widgets/HumbleButton.vala:54
 msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:110
+#: src/Widgets/HumbleButton.vala:98
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:113
+#: src/Widgets/HumbleButton.vala:101
 #, c-format
 msgid "$%d"
 msgstr "$%d"
