@@ -77,6 +77,13 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     public bool working { public get; protected set; }
 
     private ListStore components;
+
+    /**
+     * A ListModel containing the package with the highest origin score
+     * for each component.
+     */
+    public ListModel unique_packages { get; private set; }
+
     private ListModel _packages;
 
     private Gtk.SortListModel _sorted_packages;
@@ -232,6 +239,8 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
         components = new ListStore (typeof (Component));
 
+        unique_packages = new Gtk.MapListModel (components, component_to_unique_package_map_func);
+
         _packages = new Gtk.FlattenListModel (components);
         _packages.items_changed.connect (() => package_list_changed ());
 
@@ -379,6 +388,11 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 warning ("Error getting system flatpak remotes: %s", e.message);
             }
         }
+    }
+
+    private static Object component_to_unique_package_map_func (owned Object obj) {
+        var component = (Component) obj;
+        return component.get_best_package ();
     }
 
     public void init () {

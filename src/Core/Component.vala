@@ -35,6 +35,14 @@ public class AppCenterCore.Component : Object, ListModel {
         items_changed ((uint) index, 1, 0);
     }
 
+    public Package get_best_package () {
+        return packages.max (origin_score_compare);
+    }
+
+    private static int origin_score_compare (Package a, Package b) {
+        return a.origin_score - b.origin_score;
+    }
+
     public Type get_item_type () {
         return typeof (Package);
     }
