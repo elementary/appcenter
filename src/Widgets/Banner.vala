@@ -43,21 +43,10 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     }
 
     construct {
-        var name_label = new Gtk.Label (app_name) {
-            max_width_chars = 50,
-            use_markup = true,
-            wrap = true,
-            xalign = 0
+        var header = new Granite.HeaderLabel (app_name) {
+            secondary_text = summary,
+            size = H1
         };
-        name_label.add_css_class ("name");
-
-        var summary_label = new Gtk.Label (summary) {
-            max_width_chars = 50,
-            use_markup = true,
-            wrap = true,
-            xalign = 0
-        };
-        summary_label.add_css_class ("summary");
 
         if (description != null && description != "") {
             // We only want the first line/paragraph
@@ -74,14 +63,13 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         };
         description_label.add_css_class ("description");
 
-        var inner_box = new Gtk.Box (VERTICAL, 0) {
+        var inner_box = new Granite.Box (VERTICAL, SINGLE) {
             valign = CENTER
         };
-        inner_box.append (name_label);
-        inner_box.append (summary_label);
+        inner_box.append (header);
         inner_box.append (description_label);
 
-        var outer_box = new Gtk.Box (HORIZONTAL, 0) {
+        var outer_box = new Granite.Box (HORIZONTAL, DOUBLE) {
             halign = CENTER
         };
         outer_box.append (app_icon);
