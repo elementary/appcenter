@@ -6,34 +6,19 @@
  */
 
 public class AppCenterCore.SearchEngine : Object {
-    public ListModel results { get; private set; }
+    public ListModel packages { get; construct; }
+    public AppStream.Pool pool { get; construct; }
 
-    private ListStore packages;
-    private AppStream.Pool pool;
+    public ListModel results { get; private set; }
 
     private string[] query;
     private AppStream.Category? category;
 
-    public SearchEngine (Package[] packages, AppStream.Pool pool) {
-        var unique_packages = new Gee.HashMap<string, Package> ();
-        foreach (var package in packages) {
-            var package_component_id = package.normalized_component_id;
-            if (unique_packages.has_key (package_component_id)) {
-                if (package.origin_score > unique_packages[package_component_id].origin_score) {
-                    unique_packages[package_component_id] = package;
-                }
-            } else {
-                unique_packages[package_component_id] = package;
-            }
-        }
-
-        this.packages.splice (0, 0, unique_packages.values.to_array ());
-        this.pool = pool;
+    public SearchEngine (ListModel unique_packages, AppStream.Pool pool) {
+        Object (packages: unique_packages, pool: pool);
     }
 
     construct {
-        packages = new ListStore (typeof (Package));
-
         var filter_model = new Gtk.FilterListModel (packages, new Gtk.CustomFilter ((obj) => {
             var package = (Package) obj;
 
@@ -58,7 +43,7 @@ public class AppCenterCore.SearchEngine : Object {
     public void search (string query, AppStream.Category? category) {
         this.query = pool.build_search_tokens (query);
         this.category = category;
-        packages.items_changed (0, packages.n_items, packages.n_items);
+        packages.items_changed (0, packages.get_n_items (), packages.get_n_items ());
     }
 
     /**

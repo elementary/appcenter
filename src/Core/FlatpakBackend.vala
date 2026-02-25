@@ -611,7 +611,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     }
 
     public SearchEngine get_search_engine () {
-        return new SearchEngine (package_list.values.to_array (), user_appstream_pool);
+        return new SearchEngine (unique_packages, user_appstream_pool);
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
