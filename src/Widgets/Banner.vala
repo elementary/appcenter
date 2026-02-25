@@ -31,21 +31,10 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
             package = package
         };
 
-        var name_label = new Gtk.Label (package.name) {
-            max_width_chars = 50,
-            use_markup = true,
-            wrap = true,
-            xalign = 0
+        var header = new Granite.HeaderLabel (package.name) {
+            secondary_text = package.get_summary (),
+            size = H1
         };
-        name_label.add_css_class ("name");
-
-        var summary_label = new Gtk.Label (package.get_summary ()) {
-            max_width_chars = 50,
-            use_markup = true,
-            wrap = true,
-            xalign = 0
-        };
-        summary_label.add_css_class ("summary");
 
         var description = package.get_description ();
         if (description != null && description != "") {
@@ -63,14 +52,13 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         };
         description_label.add_css_class ("description");
 
-        var inner_box = new Gtk.Box (VERTICAL, 0) {
+        var inner_box = new Granite.Box (VERTICAL, SINGLE) {
             valign = CENTER
         };
-        inner_box.append (name_label);
-        inner_box.append (summary_label);
+        inner_box.append (header);
         inner_box.append (description_label);
 
-        var outer_box = new Gtk.Box (HORIZONTAL, 0) {
+        var outer_box = new Granite.Box (HORIZONTAL, DOUBLE) {
             halign = CENTER
         };
         outer_box.append (app_icon);
