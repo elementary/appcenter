@@ -1333,7 +1333,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
         package_list = new_package_list;
 
-        if (MainContext.get_thread_default () == null) {
+        if (Thread.self<bool> () != worker_thread) {
             // We are in the main thread so update immediately
             update_package_store (removed, added);
         } else {
