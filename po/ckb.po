@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-02-25 16:50+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -871,13 +871,13 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:39
+#: src/Views/AppListUpdateView.vala:23
 #, fuzzy
 #| msgid "Show available updates"
 msgid "Available Updates"
 msgstr "نیشاندانی بەڕۆژکراوەکانی ئامادە"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:33
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -885,37 +885,37 @@ msgid_plural "%u Available Updates"
 msgstr[0] "نیشاندانی بەڕۆژکراوەکانی ئامادە"
 msgstr[1] "نیشاندانی بەڕۆژکراوەکانی ئامادە"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "نوێکردنەوەی هەموو"
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "نوێ"
 
-#: src/Views/AppListUpdateView.vala:128
+#: src/Views/AppListUpdateView.vala:112
 #, fuzzy
 #| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 "نوێبوونەوەی خۆکار بۆ نەرمەکاڵا ڕێکخراوەکان (نەرمەکاڵای خۆڕایی و بەپارە)"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:113
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr "نوێبوونەوەی سیستەم و بەرنامە پارەنەدراوەکان خۆکارانە نوێ نابنەوە"
 
-#: src/Views/AppListUpdateView.vala:133
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "پشکنین بۆ نوێبوونەوەکان"
 
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "ڕێکخستن"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:129
 #, fuzzy
 #| msgctxt "view"
@@ -925,14 +925,14 @@ msgid "Search"
 msgstr "گه‌ڕان"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "دامەزراو"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
+msgid "Last checked %s"
 msgstr ""
 
 #: src/Views/AuthorView.vala:32
