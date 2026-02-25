@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-02-25 16:50+0000\n"
 "PO-Revision-Date: 2024-12-05 13:16+0000\n"
 "Last-Translator: Marek Hladík <mhladik@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
@@ -868,13 +868,13 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:39
+#: src/Views/AppListUpdateView.vala:23
 #, fuzzy
 #| msgid "Show available updates"
 msgid "Available Updates"
 msgstr "Zobrazit dostupné aktualizace"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:33
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -883,36 +883,36 @@ msgstr[0] "Zobrazit dostupné aktualizace"
 msgstr[1] "Zobrazit dostupné aktualizace"
 msgstr[2] "Zobrazit dostupné aktualizace"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "Aktualizovat vše"
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "Aktuální"
 
-#: src/Views/AppListUpdateView.vala:128
+#: src/Views/AppListUpdateView.vala:112
 #, fuzzy
 #| msgid "Automatically update free and paid-for curated apps"
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Automaticky aktualizovat volné a placené dohlížené aplikace"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:113
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr "Systém a neplacené aplikace se nebudou aktualizovat automaticky"
 
-#: src/Views/AppListUpdateView.vala:133
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "Vyhledat aktualizace"
 
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "Nastavení"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:129
 #, fuzzy
 #| msgctxt "view"
@@ -922,15 +922,15 @@ msgid "Search"
 msgstr "Vyhledávání"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainstalované"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
-msgstr "Vše je aktuální. Poslední kontrola %s."
+msgid "Last checked %s"
+msgstr ""
 
 #: src/Views/AuthorView.vala:32
 #, c-format
@@ -1175,6 +1175,10 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Poznámky k vydání"
+
+#, c-format
+#~ msgid "Everything is up to date. Last checked %s."
+#~ msgstr "Vše je aktuální. Poslední kontrola %s."
 
 #, c-format
 #~ msgid "%u Update Available"

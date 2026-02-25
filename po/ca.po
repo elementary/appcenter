@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-02-25 16:50+0000\n"
 "PO-Revision-Date: 2026-02-02 14:41+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
@@ -857,13 +857,13 @@ msgstr "Jugueu amb un controlador"
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Com ara un controlador de PlayStation, Xbox o 8BitDo."
 
-#: src/Views/AppListUpdateView.vala:39
+#: src/Views/AppListUpdateView.vala:23
 #, fuzzy
 #| msgid "Show available updates"
 msgid "Available Updates"
 msgstr "Mostra les actualitzacions disponibles"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:33
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -871,51 +871,51 @@ msgid_plural "%u Available Updates"
 msgstr[0] "Mostra les actualitzacions disponibles"
 msgstr[1] "Mostra les actualitzacions disponibles"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "Actualitza-ho tot"
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "Al dia"
 
-#: src/Views/AppListUpdateView.vala:128
+#: src/Views/AppListUpdateView.vala:112
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 "Actualitza automàticament les aplicacions seleccionades gratuïtes i de "
 "pagament."
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:113
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Les aplicacions de pagament en fase de prova no s'actualitzaran "
 "automàticament."
 
-#: src/Views/AppListUpdateView.vala:133
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "Comprova si hi ha actualitzacions"
 
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "Paràmetres"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:129
 msgctxt "action"
 msgid "Search"
 msgstr "Cerca"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "Instal·lades"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
-msgstr "Tot està actualitzat. Darrera comprovació: %s."
+msgid "Last checked %s"
+msgstr ""
 
 #: src/Views/AuthorView.vala:32
 #, c-format
@@ -1157,6 +1157,10 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Notes de la versió"
+
+#, c-format
+#~ msgid "Everything is up to date. Last checked %s."
+#~ msgstr "Tot està actualitzat. Darrera comprovació: %s."
 
 #, c-format
 #~ msgid "%u Update Available"

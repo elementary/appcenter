@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-02-25 16:50+0000\n"
 "PO-Revision-Date: 2024-07-05 09:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -854,13 +854,13 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:39
+#: src/Views/AppListUpdateView.vala:23
 #, fuzzy
 #| msgid "Show available updates"
 msgid "Available Updates"
 msgstr "Vis tilgjengelige oppdateringer"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:33
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -868,36 +868,36 @@ msgid_plural "%u Available Updates"
 msgstr[0] "Vis tilgjengelige oppdateringer"
 msgstr[1] "Vis tilgjengelige oppdateringer"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "Oppdater alt"
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "Oppdatert"
 
-#: src/Views/AppListUpdateView.vala:128
+#: src/Views/AppListUpdateView.vala:112
 #, fuzzy
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Oppgrader vurderte programmer om de er gratis eller betalte"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:113
 #, fuzzy
 #| msgid "System updates and unpaid apps will not update automatically"
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Systemoppgraderinger og ubetalte programmer vil ikke oppgraderes automatisk"
 
-#: src/Views/AppListUpdateView.vala:133
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "Se etter oppgraderinger"
 
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "Innstillinger"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:129
 #, fuzzy
 #| msgctxt "view"
@@ -907,15 +907,15 @@ msgid "Search"
 msgstr "Søk"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
-msgstr "Alt er av nyeste dato. Sist sjekket %s."
+msgid "Last checked %s"
+msgstr ""
 
 #: src/Views/AuthorView.vala:32
 #, c-format
@@ -1168,6 +1168,10 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Utgivelsesnotater"
+
+#, c-format
+#~ msgid "Everything is up to date. Last checked %s."
+#~ msgstr "Alt er av nyeste dato. Sist sjekket %s."
 
 #, c-format
 #~ msgid "%u Update Available"
