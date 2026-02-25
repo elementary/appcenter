@@ -667,14 +667,17 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     }
 
     public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        var normalized_component_id = Utils.normalize_component_id (id);
+        var component = component_list[normalized_component_id];
         var packages = new Gee.ArrayList<Package> ();
-        var suffixed_id = id + ".desktop";
-        foreach (var package in package_list.values) {
-            if (package.component.id == id) {
-                packages.add (package);
-            } else if (package.component.id == suffixed_id) {
-                packages.add (package);
-            }
+
+        if (component == null) {
+            return packages;
+        }
+
+        for (uint i = 0; i < component.get_n_items (); i++) {
+            var package = (Package) component.get_item (i);
+            packages.add (package);
         }
 
         return packages;
