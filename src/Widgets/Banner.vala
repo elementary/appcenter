@@ -20,34 +20,23 @@
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 public class AppCenter.Widgets.Banner : Gtk.Button {
-    public AppIcon app_icon { get; construct; }
-    public string brand_color { get; construct; }
-    public string description { get; construct; }
-    public string app_name { get; construct; }
-    public string summary { get; construct; }
+    public AppCenterCore.Package package { get; construct; }
 
-    public Banner.from_package (AppCenterCore.Package package) {
+    public Banner (AppCenterCore.Package package) {
+        Object (package: package);
+    }
+
+    construct {
         var app_icon = new AppIcon (128) {
             package = package
         };
 
-        Object (
-            app_name: package.name,
-            summary: package.get_summary (),
-            description: package.get_description (),
-            app_icon: app_icon,
-            brand_color: package.get_color_primary (),
-            action_name: MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE,
-            action_target: new Variant.string (package.uid)
-        );
-    }
-
-    construct {
-        var header = new Granite.HeaderLabel (app_name) {
-            secondary_text = summary,
+        var header = new Granite.HeaderLabel (package.name) {
+            secondary_text = package.get_summary (),
             size = H1
         };
 
+        var description = package.get_description ();
         if (description != null && description != "") {
             // We only want the first line/paragraph
             description = description.split ("\n")[0];
@@ -81,9 +70,13 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         hexpand = true;
         child = outer_box;
 
+        var brand_color = package.get_color_primary ();
         if (brand_color != null) {
             set_accent_color (brand_color, this);
         }
+
+        action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE;
+        action_target = new Variant.string (package.uid);
     }
 
     private static Gee.HashMap<string, Gtk.CssProvider>? providers;

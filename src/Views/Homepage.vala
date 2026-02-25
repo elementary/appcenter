@@ -181,7 +181,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         var local_package = App.local_package;
         if (local_package != null) {
-            banner_carousel.prepend (new Widgets.Banner.from_package (local_package));
+            banner_carousel.prepend (new Widgets.Banner (local_package));
         }
 
         load_banners_and_carousels ();
@@ -222,7 +222,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
             if (!installed) {
                 packages_in_banner.add (package);
-                banner_carousel.append (new Widgets.Banner.from_package (package));
+                banner_carousel.append (new Widgets.Banner (package));
             }
         }
 
