@@ -83,4 +83,13 @@ namespace Utils {
     public static bool is_running_in_guest_session () {
         return Environment.get_user_name ().has_prefix ("guest-");
     }
+
+    public static string normalize_component_id (string component_id) {
+        if (component_id.has_suffix (".desktop")) {
+            // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
+            return component_id.substring (0, component_id.length - 8);
+        }
+
+        return component_id;
+    }
 }
