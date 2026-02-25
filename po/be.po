@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 16:12+0000\n"
 "PO-Revision-Date: 2025-11-18 14:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -43,22 +43,22 @@ msgstr ""
 "калі акно закрытае, каб аўтаматычна правяраць наяўнасць і ўсталёўваць "
 "абнаўленні."
 
-#: src/Application.vala:308
+#: src/Application.vala:323
 msgid "The app has been installed"
 msgstr "Праграма паспяхова ўсталяваная"
 
-#: src/Application.vala:309 src/MainWindow.vala:227
+#: src/Application.vala:324 src/MainWindow.vala:225
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” была ўсталяваная"
 
-#: src/Application.vala:344
+#: src/Application.vala:334
 #, fuzzy
 #| msgid "The app has been installed"
 msgid "The app has been uninstalled"
 msgstr "Праграма паспяхова ўсталяваная"
 
-#: src/Application.vala:345 src/MainWindow.vala:239
+#: src/Application.vala:335 src/MainWindow.vala:237
 #, fuzzy, c-format
 #| msgid "“%s” has been installed"
 msgid "“%s” has been uninstalled"
@@ -69,28 +69,28 @@ msgstr "“%s” была ўсталяваная"
 msgid "Failed to launch “%s“"
 msgstr "Не атрымалася запусціць «%s»"
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:89
 msgid "Network Not Available."
 msgstr "Сетка недаступная."
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Падключыцеся да інтэрнэту, каб шукаць і ўсталёўваць праграмы."
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:100
 msgid "Network Settings…"
 msgstr "Налады сеткі…"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:108
 msgid "Running in Demo Mode"
 msgstr "Выконваецца ў дэманстрацыйным рэжыме"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "Усталюйце %s, каб шукаць і ўсталёўваць праграмы."
 
-#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "Адкрыць"
 
@@ -178,59 +178,59 @@ msgstr "Скасаванне"
 msgid "Starting"
 msgstr "Пачатак"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:45
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (уся сістэма)"
 
-#: src/Core/FlatpakBackend.vala:163
+#: src/Core/FlatpakBackend.vala:166
 msgid "package operations are being performed"
 msgstr "аперацый на пакетах праводзіцца"
 
-#: src/Core/FlatpakBackend.vala:230
+#: src/Core/FlatpakBackend.vala:233
 msgid "Runtime Updates"
 msgstr "Абнаўленні асяроддзя выканання"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:234
 msgid "Updates to app runtimes"
 msgstr "Абнаўленні для асяроддзя выканання праграм"
 
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+#: src/Core/FlatpakBackend.vala:1582 src/Core/FlatpakBackend.vala:1689
 msgid "Component has no flatpak bundle"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+#: src/Core/FlatpakBackend.vala:1589 src/Core/FlatpakBackend.vala:1798
 msgid "Error getting flatpak installation"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1630
+#: src/Core/FlatpakBackend.vala:1633
 msgid "Installing"
 msgstr "Усталяванне"
 
-#: src/Core/FlatpakBackend.vala:1703
+#: src/Core/FlatpakBackend.vala:1706
 msgid "Error getting flatpak installation for removal"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1741
+#: src/Core/FlatpakBackend.vala:1744
 msgid "Uninstalling"
 msgstr "Выдаленне"
 
-#: src/Core/FlatpakBackend.vala:1810
+#: src/Core/FlatpakBackend.vala:1813
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
 msgstr "Не ўдалося атрымаць абнаўленні"
 
-#: src/Core/FlatpakBackend.vala:1898
+#: src/Core/FlatpakBackend.vala:1901
 msgid "Updating"
 msgstr "Абнаўленне"
 
-#: src/Core/FlatpakBackend.vala:2007
+#: src/Core/FlatpakBackend.vala:2010
 #, c-format
 msgid "Version: %s"
 msgstr "Версія: %s"
 
-#: src/Core/FlatpakBackend.vala:2012
+#: src/Core/FlatpakBackend.vala:2015
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
@@ -238,12 +238,12 @@ msgstr[0] "%u асяроддзе выканання з абнаўленнем"
 msgstr[1] "%u асяроддзя выканання з абнаўленнямі"
 msgstr[2] "%u асяроддзяў выканання з абнаўленнямі"
 
-#: src/Core/FlatpakBackend.vala:2017
+#: src/Core/FlatpakBackend.vala:2020
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2121
+#: src/Core/FlatpakBackend.vala:2124
 #, c-format
 msgid "%s (local)"
 msgstr "%s (лакальна)"
@@ -272,12 +272,12 @@ msgstr "Выдаленне…"
 msgid "Repairing…"
 msgstr "Рамантаванне…"
 
-#: src/Core/Package.vala:316
+#: src/Core/Package.vala:317
 #, c-format
 msgid "%s Developers"
 msgstr "Распрацоўшчыкі %s"
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:484
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Стан праграмы ў AppCenter не з'яўляецца \"усталяваны\" для пакета: %s"
@@ -854,52 +854,59 @@ msgstr "Гуляйце з кантролерам"
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Накшталт кантролера PlayStation, Xbox або 8BitDo."
 
-#: src/Views/AppListUpdateView.vala:37
-#, c-format
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "Даступна %u абнаўленне"
-msgstr[1] "Даступна %u абнаўленні"
-msgstr[2] "Даступна %u абнаўленняў"
+#: src/Views/AppListUpdateView.vala:39
+#, fuzzy
+#| msgid "Show available updates"
+msgid "Available Updates"
+msgstr "Паказаць даступныя абнаўленні"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:49
+#, fuzzy, c-format
+#| msgid "Show available updates"
+msgid "%u Available Update"
+msgid_plural "%u Available Updates"
+msgstr[0] "Паказаць даступныя абнаўленні"
+msgstr[1] "Паказаць даступныя абнаўленні"
+msgstr[2] "Паказаць даступныя абнаўленні"
+
+#: src/Views/AppListUpdateView.vala:64
 msgid "Update All"
 msgstr "Абнавіць усё"
 
-#: src/Views/AppListUpdateView.vala:92
+#: src/Views/AppListUpdateView.vala:89
 msgid "Up to Date"
 msgstr "Усё абноўлена"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:128
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Аўтаматычна абнаўляць бясплатныя і набытыя праграмы"
 
-#: src/Views/AppListUpdateView.vala:126
+#: src/Views/AppListUpdateView.vala:129
 msgid "Apps being tried for free will not update automatically"
 msgstr "Праграмы на пробным перыядзе не будуць абнаўляцца аўтаматычна"
 
-#: src/Views/AppListUpdateView.vala:130
+#: src/Views/AppListUpdateView.vala:133
 msgid "Check for Updates"
 msgstr "Праверыць на абнаўленні"
 
-#: src/Views/AppListUpdateView.vala:155
+#: src/Views/AppListUpdateView.vala:158
 msgid "Settings"
 msgstr "Налады"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:164 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:129
 msgctxt "action"
 msgid "Search"
 msgstr "Шукаць"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:185
+#: src/Views/AppListUpdateView.vala:187
 msgctxt "view"
 msgid "Installed"
 msgstr "Усталяваныя"
 
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:217
 #, c-format
 msgid "Everything is up to date. Last checked %s."
 msgstr "Ва ўсіх праграм найноўшыя версіі. Апошняя праверка была %s."
@@ -992,11 +999,11 @@ msgstr "Пошук %s"
 msgid "In-app purchases"
 msgstr "Пакупкі ў праграме"
 
-#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:138 src/Widgets/HumbleButton.vala:67
 msgid "Install"
 msgstr "Усталяваць"
 
-#: src/Widgets/ActionStack.vala:157
+#: src/Widgets/ActionStack.vala:153
 msgid "Update"
 msgstr "Абнавіць"
 
@@ -1008,18 +1015,18 @@ msgstr "Дадаткі"
 msgid "Card Number"
 msgstr "Нумар карты"
 
-#: src/Widgets/HumbleButton.vala:66
+#: src/Widgets/HumbleButton.vala:54
 msgid "Requires payments, which are not enabled"
 msgstr "Патрэбны плацяжы, якія не ўключаны"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:110
+#: src/Widgets/HumbleButton.vala:98
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:113
+#: src/Widgets/HumbleButton.vala:101
 #, c-format
 msgid "$%d"
 msgstr "$%d"
@@ -1144,6 +1151,13 @@ msgstr "Будуць спампаваны толькі часткі патрэб
 msgid "Release notes"
 msgstr "Заўвагі да выпуску"
 
+#, c-format
+#~ msgid "%u Update Available"
+#~ msgid_plural "%u Updates Available"
+#~ msgstr[0] "Даступна %u абнаўленне"
+#~ msgstr[1] "Даступна %u абнаўленні"
+#~ msgstr[2] "Даступна %u абнаўленняў"
+
 #~ msgid "Getting app information…"
 #~ msgstr "Атрыманне інфармацыі аб праграме…"
 
@@ -1183,9 +1197,6 @@ msgstr "Заўвагі да выпуску"
 
 #~ msgid "App Center"
 #~ msgstr "Цэнтр прылад"
-
-#~ msgid "Show available updates"
-#~ msgstr "Паказаць даступныя абнаўленні"
 
 #~ msgid "Quit"
 #~ msgstr "Выйсці"
