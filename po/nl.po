@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2026-02-11 12:55+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/appcenter/"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -872,13 +872,13 @@ msgstr "Speel met een controller"
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Zoals een PlayStation, Xbox, of 8BitDo controller."
 
-#: src/Views/AppListUpdateView.vala:39
+#: src/Views/AppListUpdateView.vala:23
 #, fuzzy
 #| msgid "Show available updates"
 msgid "Available Updates"
 msgstr "Beschikbare updates weergeven"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:33
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -886,55 +886,55 @@ msgid_plural "%u Available Updates"
 msgstr[0] "Beschikbare updates weergeven"
 msgstr[1] "Beschikbare updates weergeven"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "Alles bijwerken"
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "Actueel"
 
-#: src/Views/AppListUpdateView.vala:128
+#: src/Views/AppListUpdateView.vala:112
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Update gratis en betaalde apps automatisch"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:113
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Systeemupdates en onbetaalde apps zullen niet automatisch worden bijgewerkt"
 
-#: src/Views/AppListUpdateView.vala:133
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "Controleer op updates"
 
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "Instellingen"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
+#: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Zoeken"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
-msgstr "Alles is up-to-date. Als laatste gecontroleerd op %s."
+msgid "Last checked %s"
+msgstr ""
 
 #: src/Views/AuthorView.vala:32
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Andere applicaties van %s"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Onlangs bijgewerkt"
 
@@ -946,36 +946,18 @@ msgstr "Betaalde apps"
 msgid "Free Apps"
 msgstr "Gratis apps"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Categorieën"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Updates & geïnstalleerde apps"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Startpagina"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr "Apps bekijken en beheren"
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
-"De open source, betaal-wat-je-wilt app store van elementary. Beoordeeld en "
-"samengesteld door elementary om een native, privacy respecterende en veilige "
-"ervaring te garanderen. Blader door categorieën of zoek en ontdek nieuwe "
-"apps. AppCenter wordt ook gebruikt voor het updaten van je systeem naar de "
-"nieuwste en beste versie voor nieuwe functies en verbeteringen."
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
@@ -1166,6 +1148,26 @@ msgstr "Alleen de benodigde gegevens van de apps en updates worden gedownload."
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Opmerkingen bij uitgave"
+
+#~ msgid "Browse and manage apps"
+#~ msgstr "Apps bekijken en beheren"
+
+#~ msgid ""
+#~ "The open source, pay-what-you-want app store from elementary. Reviewed "
+#~ "and curated by elementary to ensure a native, privacy-respecting, and "
+#~ "secure experience. Browse by categories or search and discover new apps. "
+#~ "AppCenter is also used for updating your system to the latest and "
+#~ "greatest version for new features and fixes."
+#~ msgstr ""
+#~ "De open source, betaal-wat-je-wilt app store van elementary. Beoordeeld "
+#~ "en samengesteld door elementary om een native, privacy respecterende en "
+#~ "veilige ervaring te garanderen. Blader door categorieën of zoek en ontdek "
+#~ "nieuwe apps. AppCenter wordt ook gebruikt voor het updaten van je systeem "
+#~ "naar de nieuwste en beste versie voor nieuwe functies en verbeteringen."
+
+#, c-format
+#~ msgid "Everything is up to date. Last checked %s."
+#~ msgstr "Alles is up-to-date. Als laatste gecontroleerd op %s."
 
 #, c-format
 #~ msgid "%u Update Available"

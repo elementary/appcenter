@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2025-09-12 11:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "Appközpont"
 
@@ -852,13 +852,13 @@ msgstr "Játék kontrollerrel"
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Mint például PlayStation-, Xbox-, vagy 8BitDo-kontrollerek."
 
-#: src/Views/AppListUpdateView.vala:39
+#: src/Views/AppListUpdateView.vala:23
 #, fuzzy
 #| msgid "Show available updates"
 msgid "Available Updates"
 msgstr "Elérhető frissítések megjelenítése"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:33
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -866,55 +866,55 @@ msgid_plural "%u Available Updates"
 msgstr[0] "Elérhető frissítések megjelenítése"
 msgstr[1] "Elérhető frissítések megjelenítése"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "Összes frissítése"
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "Naprakész"
 
-#: src/Views/AppListUpdateView.vala:128
+#: src/Views/AppListUpdateView.vala:112
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Az ingyenes és a megvásárolt alkalmazások automatikus frissítése"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:113
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Az ingyenesen kipróbált alkalmazások nem fognak automatikusan frissülni"
 
-#: src/Views/AppListUpdateView.vala:133
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "Frissítések keresése"
 
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "Beállítások"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
+#: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Keresés"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "Telepítve"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
-msgstr "Minden naprakész. Legutóbb ellenőrizve %s."
+msgid "Last checked %s"
+msgstr ""
 
 #: src/Views/AuthorView.vala:32
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s további alkalmazásai"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Nemrég frissített"
 
@@ -926,36 +926,18 @@ msgstr "Fizetős alkalmazások"
 msgid "Free Apps"
 msgstr "Ingyenes alkalmazások"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Kategóriák"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Frissítések és telepített alkalmazások"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Kezdőlap"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr "Alkalmazások böngészése és kezelése"
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
-"Az elementary nyílt forráskódú, fizessen-amennyit-akar alkalmazásüzlete. "
-"Ellenőrizve és jóváhagyva az elementary által egy natív, adatvédelmet szem "
-"előtt tartó és biztonságos élményért. Böngésszen kategóriák szerint, vagy "
-"keressen és fedezzen fel új alkalmazásokat. Az Appközpont segítségével "
-"mindig a legújabb és legjobb verzióra frissítheti rendszerét."
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
@@ -1146,6 +1128,26 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Kiadási megjegyzések"
+
+#~ msgid "Browse and manage apps"
+#~ msgstr "Alkalmazások böngészése és kezelése"
+
+#~ msgid ""
+#~ "The open source, pay-what-you-want app store from elementary. Reviewed "
+#~ "and curated by elementary to ensure a native, privacy-respecting, and "
+#~ "secure experience. Browse by categories or search and discover new apps. "
+#~ "AppCenter is also used for updating your system to the latest and "
+#~ "greatest version for new features and fixes."
+#~ msgstr ""
+#~ "Az elementary nyílt forráskódú, fizessen-amennyit-akar alkalmazásüzlete. "
+#~ "Ellenőrizve és jóváhagyva az elementary által egy natív, adatvédelmet "
+#~ "szem előtt tartó és biztonságos élményért. Böngésszen kategóriák szerint, "
+#~ "vagy keressen és fedezzen fel új alkalmazásokat. Az Appközpont "
+#~ "segítségével mindig a legújabb és legjobb verzióra frissítheti rendszerét."
+
+#, c-format
+#~ msgid "Everything is up to date. Last checked %s."
+#~ msgstr "Minden naprakész. Legutóbb ellenőrizve %s."
 
 #, c-format
 #~ msgid "%u Update Available"

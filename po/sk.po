@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2024-07-10 20:16+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "AppCentrum"
 
@@ -855,13 +855,13 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:39
+#: src/Views/AppListUpdateView.vala:23
 #, fuzzy
 #| msgid "Show available updates"
 msgid "Available Updates"
 msgstr "Zobraziť dostupné aktualizácie"
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:33
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -870,56 +870,56 @@ msgstr[0] "Zobraziť dostupné aktualizácie"
 msgstr[1] "Zobraziť dostupné aktualizácie"
 msgstr[2] "Zobraziť dostupné aktualizácie"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "Aktualizovať všetko"
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "Aktualizované"
 
-#: src/Views/AppListUpdateView.vala:128
+#: src/Views/AppListUpdateView.vala:112
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Automaticky aktualizovať aplikácie zadarmo a zakúpené aplikácie"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:113
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Aplikácie, ktorých používanie si skúšate zadarmo, sa nebudú automaticky "
 "aktualizovať"
 
-#: src/Views/AppListUpdateView.vala:133
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "Vyhľadať aktualizácie"
 
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "Nastavenia"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:167 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
+#: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Hľadať"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainštalované"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
-msgstr "Všetko je aktuálne. Posledná kontrola %s."
+msgid "Last checked %s"
+msgstr ""
 
 #: src/Views/AuthorView.vala:32
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Iné aplikácie od %s"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Nedávno aktualizované"
 
@@ -931,37 +931,18 @@ msgstr "Platené aplikácie"
 msgid "Free Apps"
 msgstr "Aplikácie zadarmo"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Kategórie"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Aktualizácie a nainštalované aplikácie"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Domov"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr "Prehľadávajte a spravujte aplikácie"
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
-"Open-source obchod s aplikáciami od elementary s dobrovoľnými platbami. "
-"Vyskúšané a preverené aplikácie, aby bol zaručený natívny, bezpečný a "
-"súkromie rešpektujúci zážitok. Prezerajte kategórie alebo vyhľadávajte a "
-"objavujte nové aplikácie. AppCentrum je tiež používané na aktualizovanie "
-"vášho systému na najnovšiu a najlepšiu verziu pre budúce nové funkcie a "
-"opravy."
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
@@ -1159,6 +1140,27 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Poznámky k vydaniu"
+
+#~ msgid "Browse and manage apps"
+#~ msgstr "Prehľadávajte a spravujte aplikácie"
+
+#~ msgid ""
+#~ "The open source, pay-what-you-want app store from elementary. Reviewed "
+#~ "and curated by elementary to ensure a native, privacy-respecting, and "
+#~ "secure experience. Browse by categories or search and discover new apps. "
+#~ "AppCenter is also used for updating your system to the latest and "
+#~ "greatest version for new features and fixes."
+#~ msgstr ""
+#~ "Open-source obchod s aplikáciami od elementary s dobrovoľnými platbami. "
+#~ "Vyskúšané a preverené aplikácie, aby bol zaručený natívny, bezpečný a "
+#~ "súkromie rešpektujúci zážitok. Prezerajte kategórie alebo vyhľadávajte a "
+#~ "objavujte nové aplikácie. AppCentrum je tiež používané na aktualizovanie "
+#~ "vášho systému na najnovšiu a najlepšiu verziu pre budúce nové funkcie a "
+#~ "opravy."
+
+#, c-format
+#~ msgid "Everything is up to date. Last checked %s."
+#~ msgstr "Všetko je aktuálne. Posledná kontrola %s."
 
 #, c-format
 #~ msgid "%u Update Available"
