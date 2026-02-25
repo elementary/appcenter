@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:50+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2026-01-31 18:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "Центр застосунків"
 
@@ -905,7 +905,7 @@ msgstr "Налаштування"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Знайти"
@@ -926,7 +926,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "Інші застосунки від %s"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Нещодавно оновлені"
 
@@ -938,37 +938,18 @@ msgstr "Оплачувані застосунки"
 msgid "Free Apps"
 msgstr "Безплатні застосунки"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Категорії"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Оновлення й установлені застосунки"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Головна"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr "Керуйте та переглядайте застосунки"
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
-"Крамниця застосунків від elementary з відкритим кодом, у якій плати як "
-"хочеш. Переглянута та курована elementary, щоб забезпечити узгоджену, з "
-"повагою до приватності та безпечну роботу застосунків. Переглядайте "
-"застосунки за категоріями або відкривайте для себе нові. Центр застосунків "
-"також використовується для оновлення системи до найновішої версії, щоб ви "
-"отримували нові можливості та виправлення."
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
@@ -1160,6 +1141,23 @@ msgstr "Буде завантажено лише необхідні частин
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Примітки до випуску"
+
+#~ msgid "Browse and manage apps"
+#~ msgstr "Керуйте та переглядайте застосунки"
+
+#~ msgid ""
+#~ "The open source, pay-what-you-want app store from elementary. Reviewed "
+#~ "and curated by elementary to ensure a native, privacy-respecting, and "
+#~ "secure experience. Browse by categories or search and discover new apps. "
+#~ "AppCenter is also used for updating your system to the latest and "
+#~ "greatest version for new features and fixes."
+#~ msgstr ""
+#~ "Крамниця застосунків від elementary з відкритим кодом, у якій плати як "
+#~ "хочеш. Переглянута та курована elementary, щоб забезпечити узгоджену, з "
+#~ "повагою до приватності та безпечну роботу застосунків. Переглядайте "
+#~ "застосунки за категоріями або відкривайте для себе нові. Центр "
+#~ "застосунків також використовується для оновлення системи до найновішої "
+#~ "версії, щоб ви отримували нові можливості та виправлення."
 
 #, c-format
 #~ msgid "Everything is up to date. Last checked %s."

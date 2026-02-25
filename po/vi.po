@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:50+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2023-02-14 12:03+0000\n"
 "Last-Translator: PomiNOTa199a5c29c914220 <ppminet@protonmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "Trung tâm Ứng dụng"
 
@@ -924,7 +924,7 @@ msgstr "Đang bắt đầu"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/Homepage.vala:130
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -948,7 +948,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "Các ứng dụng khác %s"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Đã cập nhật gần đây"
 
@@ -964,33 +964,20 @@ msgstr "Tìm kiếm ứng dụng"
 msgid "Free Apps"
 msgstr "Miễn phí"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Danh mục"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Gỡ cài đặt"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr ""
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"

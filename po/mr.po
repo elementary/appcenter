@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:50+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2025-03-09 23:55+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementaryos.org/projects/appcenter/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "अनुप्रयोग भांडार(अॅप सेंटर)"
 
@@ -910,7 +910,7 @@ msgstr "सुरु होत आहे"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/Homepage.vala:130
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -934,7 +934,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "अलीकडे अपडेट केलेले"
 
@@ -950,33 +950,20 @@ msgstr "अनुप्रयोग शोधा"
 msgid "Free Apps"
 msgstr "विनामुल्य"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 #, fuzzy
 #| msgid "Failed to install app"
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "अ‍ॅप स्थापित करण्यात अयशस्वी"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr ""
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"

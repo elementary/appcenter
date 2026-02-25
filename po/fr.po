@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 16:50+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2026-02-02 14:41+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/appcenter/"
@@ -27,7 +27,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "Centre d’Applications"
 
@@ -912,7 +912,7 @@ msgstr "Paramètres"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Rechercher"
@@ -933,7 +933,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr "Autres applications par %s"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Mises à jour récentes"
 
@@ -945,38 +945,18 @@ msgstr "Applications payantes"
 msgid "Free Apps"
 msgstr "Applications gratuites"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Catégories"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "Mises à jour et applications installées"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "Accueil"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr "Parcourez et gérez les applications"
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
-"Le magasin d'applications open source et où vous payez ce que vous voulez "
-"d'elementary. Les applications sont examinées et sélectionnées par "
-"elementary pour garantir une expérience native, respectueuse de la vie "
-"privée et sécurisée. Parcourez les catégories ou recherchez et découvrez de "
-"nouvelles applications. Le centre d'applications est aussi utile pour la "
-"mise à jour de votre système vers la version la plus récente et la plus "
-"performante afin d'obtenir de nouvelles fonctionnalités et des correctifs."
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
@@ -1170,6 +1150,25 @@ msgstr ""
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "Notes de version"
+
+#~ msgid "Browse and manage apps"
+#~ msgstr "Parcourez et gérez les applications"
+
+#~ msgid ""
+#~ "The open source, pay-what-you-want app store from elementary. Reviewed "
+#~ "and curated by elementary to ensure a native, privacy-respecting, and "
+#~ "secure experience. Browse by categories or search and discover new apps. "
+#~ "AppCenter is also used for updating your system to the latest and "
+#~ "greatest version for new features and fixes."
+#~ msgstr ""
+#~ "Le magasin d'applications open source et où vous payez ce que vous voulez "
+#~ "d'elementary. Les applications sont examinées et sélectionnées par "
+#~ "elementary pour garantir une expérience native, respectueuse de la vie "
+#~ "privée et sécurisée. Parcourez les catégories ou recherchez et découvrez "
+#~ "de nouvelles applications. Le centre d'applications est aussi utile pour "
+#~ "la mise à jour de votre système vers la version la plus récente et la "
+#~ "plus performante afin d'obtenir de nouvelles fonctionnalités et des "
+#~ "correctifs."
 
 #, c-format
 #~ msgid "Everything is up to date. Last checked %s."
