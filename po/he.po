@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2025-10-06 12:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/appcenter/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "מרכז היישומים"
 
@@ -39,22 +39,22 @@ msgstr ""
 "מרכז היישומים יופעל אוטומטית כאשר המכשיר הזה פועל ויישאר לרוץ כאשר החלון שלו "
 "סגור כדי שיוכל לבדוק ולהתקין עדכונים אוטומטית."
 
-#: src/Application.vala:308
+#: src/Application.vala:323
 msgid "The app has been installed"
 msgstr "היישום הותקן"
 
-#: src/Application.vala:309 src/MainWindow.vala:227
+#: src/Application.vala:324 src/MainWindow.vala:225
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s” הותקן"
 
-#: src/Application.vala:344
+#: src/Application.vala:334
 #, fuzzy
 #| msgid "The app has been installed"
 msgid "The app has been uninstalled"
 msgstr "היישום הותקן"
 
-#: src/Application.vala:345 src/MainWindow.vala:239
+#: src/Application.vala:335 src/MainWindow.vala:237
 #, fuzzy, c-format
 #| msgid "“%s” has been installed"
 msgid "“%s” has been uninstalled"
@@ -65,28 +65,28 @@ msgstr "„%s” הותקן"
 msgid "Failed to launch “%s“"
 msgstr "ההפעלה של „%s” נכשלה"
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:89
 msgid "Network Not Available."
 msgstr "הרשת אינה זמינה."
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
 msgstr "יש להתחבר לאינטרנט כדי לעיין או להתקין יישומים."
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:100
 msgid "Network Settings…"
 msgstr "הגדרות רשת…"
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:108
 msgid "Running in Demo Mode"
 msgstr "פועל במצב הדגמה"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr "יש להתקין את %s כדי לעיין ולהתקין יישומים."
 
-#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr "פתיחה"
 
@@ -174,71 +174,71 @@ msgstr "מתבצע ביטול"
 msgid "Starting"
 msgstr "בהתחלה"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:45
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (כלל מערכתי)"
 
-#: src/Core/FlatpakBackend.vala:163
+#: src/Core/FlatpakBackend.vala:166
 msgid "package operations are being performed"
 msgstr "מתבצעות פעולות על החבילה"
 
-#: src/Core/FlatpakBackend.vala:230
+#: src/Core/FlatpakBackend.vala:233
 msgid "Runtime Updates"
 msgstr "עדכוני זמן ריצה"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:234
 msgid "Updates to app runtimes"
 msgstr "עדכונים לזמני ריצה של יישומים"
 
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+#: src/Core/FlatpakBackend.vala:1582 src/Core/FlatpakBackend.vala:1689
 msgid "Component has no flatpak bundle"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+#: src/Core/FlatpakBackend.vala:1589 src/Core/FlatpakBackend.vala:1798
 msgid "Error getting flatpak installation"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1630
+#: src/Core/FlatpakBackend.vala:1633
 msgid "Installing"
 msgstr "בהליך התקנה"
 
-#: src/Core/FlatpakBackend.vala:1703
+#: src/Core/FlatpakBackend.vala:1706
 msgid "Error getting flatpak installation for removal"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1741
+#: src/Core/FlatpakBackend.vala:1744
 msgid "Uninstalling"
 msgstr "מתבצעת הסרה"
 
-#: src/Core/FlatpakBackend.vala:1810
+#: src/Core/FlatpakBackend.vala:1813
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
 msgstr "קבלת העדכונים נכשלה"
 
-#: src/Core/FlatpakBackend.vala:1898
+#: src/Core/FlatpakBackend.vala:1901
 msgid "Updating"
 msgstr "מתבצע עדכון"
 
-#: src/Core/FlatpakBackend.vala:2007
+#: src/Core/FlatpakBackend.vala:2010
 #, c-format
 msgid "Version: %s"
 msgstr "גרסה: %s"
 
-#: src/Core/FlatpakBackend.vala:2012
+#: src/Core/FlatpakBackend.vala:2015
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "זמן ריצה אחד עם עדכונים"
 msgstr[1] "%u זמני ריצה עם עדכונים"
 
-#: src/Core/FlatpakBackend.vala:2017
+#: src/Core/FlatpakBackend.vala:2020
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2121
+#: src/Core/FlatpakBackend.vala:2124
 #, c-format
 msgid "%s (local)"
 msgstr "%s (מקומי)"
@@ -267,12 +267,12 @@ msgstr "מתבצעת הסרה…"
 msgid "Repairing…"
 msgstr "מתבצע תיקון…"
 
-#: src/Core/Package.vala:316
+#: src/Core/Package.vala:317
 #, c-format
 msgid "%s Developers"
 msgstr "המפתחים שמאחורי %s"
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:484
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "מצב היישום לא מוגדר כמותקן בחנות היישומים לחבילה: %s"
@@ -811,61 +811,68 @@ msgstr "משחק עם בקר"
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "כגון בקר PlayStation,‏ Xbox או 8BitDo."
 
-#: src/Views/AppListUpdateView.vala:37
-#, c-format
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "עדכון זמין"
-msgstr[1] "%u עדכונים זמינים"
+#: src/Views/AppListUpdateView.vala:23
+#, fuzzy
+#| msgid "Show available updates"
+msgid "Available Updates"
+msgstr "הצגת עדכונים זמינים"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:33
+#, fuzzy, c-format
+#| msgid "Show available updates"
+msgid "%u Available Update"
+msgid_plural "%u Available Updates"
+msgstr[0] "הצגת עדכונים זמינים"
+msgstr[1] "הצגת עדכונים זמינים"
+
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "עדכון הכול"
 
-#: src/Views/AppListUpdateView.vala:92
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "עדכני"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:112
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "לעדכן יישומים בחינם ובתשלום אוטומטית"
 
-#: src/Views/AppListUpdateView.vala:126
+#: src/Views/AppListUpdateView.vala:113
 msgid "Apps being tried for free will not update automatically"
 msgstr "יישומים שניסית בחינם לא יתעדכנו אוטומטית"
 
-#: src/Views/AppListUpdateView.vala:130
+#: src/Views/AppListUpdateView.vala:117
 msgid "Check for Updates"
 msgstr "חיפוש עדכונים"
 
-#: src/Views/AppListUpdateView.vala:155
+#: src/Views/AppListUpdateView.vala:142
 msgid "Settings"
 msgstr "הגדרות"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:164 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
+#: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "חיפוש"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:185
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "מותקן"
 
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
-msgstr "הכול עדכני. בדיקה אחרונה: %s."
+msgid "Last checked %s"
+msgstr ""
 
 #: src/Views/AuthorView.vala:32
 #, c-format
 msgid "Other Apps by %s"
 msgstr "יישום אחרים מאת %s"
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "עודכנו לאחרונה"
 
@@ -877,35 +884,18 @@ msgstr "יישומים בתשלום"
 msgid "Free Apps"
 msgstr "יישומים בחינם"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "קטגוריות"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "עדכונים ויישומים מותקנים"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
 msgstr "בית"
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr "עיון וניהול יישומים"
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
-msgstr ""
-"חנות היישומים בקוד פתוח ל־elementary שמאפשרת גם לשלם כראות עיניך. המאגר נסקר "
-"ונאסף על ידי elementary כדי להבטיח חוויה אחידה, מכבדת פרטיות ומאובטחת. ניתן "
-"לעיין לפי קטגוריות או לחפש ולגלות יישומים חדש. מרכז היישומים משמש גם לעדכון "
-"מערכת הפעלה שלך לגרסה העדכנית והטובה ביותר לקבלת יכולות ותיקונים חדשים."
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
@@ -945,11 +935,11 @@ msgstr "חיפוש %s"
 msgid "In-app purchases"
 msgstr "רכישות מתוך היישום"
 
-#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:138 src/Widgets/HumbleButton.vala:67
 msgid "Install"
 msgstr "התקנה"
 
-#: src/Widgets/ActionStack.vala:157
+#: src/Widgets/ActionStack.vala:153
 msgid "Update"
 msgstr "עדכון"
 
@@ -961,18 +951,18 @@ msgstr "תוספים"
 msgid "Card Number"
 msgstr "מספר הכרטיס"
 
-#: src/Widgets/HumbleButton.vala:66
+#: src/Widgets/HumbleButton.vala:54
 msgid "Requires payments, which are not enabled"
 msgstr "דורש תשלומים, שאינם פעילים עדיין"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:110
+#: src/Widgets/HumbleButton.vala:98
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:113
+#: src/Widgets/HumbleButton.vala:101
 #, c-format
 msgid "$%d"
 msgstr "$%d USD"
@@ -1094,6 +1084,32 @@ msgstr "רק החלקים של היישומים והעדכונים שנדרשי�
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
 msgstr "הערות הוצאה לאור"
+
+#~ msgid "Browse and manage apps"
+#~ msgstr "עיון וניהול יישומים"
+
+#~ msgid ""
+#~ "The open source, pay-what-you-want app store from elementary. Reviewed "
+#~ "and curated by elementary to ensure a native, privacy-respecting, and "
+#~ "secure experience. Browse by categories or search and discover new apps. "
+#~ "AppCenter is also used for updating your system to the latest and "
+#~ "greatest version for new features and fixes."
+#~ msgstr ""
+#~ "חנות היישומים בקוד פתוח ל־elementary שמאפשרת גם לשלם כראות עיניך. המאגר "
+#~ "נסקר ונאסף על ידי elementary כדי להבטיח חוויה אחידה, מכבדת פרטיות "
+#~ "ומאובטחת. ניתן לעיין לפי קטגוריות או לחפש ולגלות יישומים חדש. מרכז "
+#~ "היישומים משמש גם לעדכון מערכת הפעלה שלך לגרסה העדכנית והטובה ביותר לקבלת "
+#~ "יכולות ותיקונים חדשים."
+
+#, c-format
+#~ msgid "Everything is up to date. Last checked %s."
+#~ msgstr "הכול עדכני. בדיקה אחרונה: %s."
+
+#, c-format
+#~ msgid "%u Update Available"
+#~ msgid_plural "%u Updates Available"
+#~ msgstr[0] "עדכון זמין"
+#~ msgstr[1] "%u עדכונים זמינים"
 
 #~ msgid "Getting app information…"
 #~ msgstr "פרטי היישום מתקבלים…"
@@ -1473,9 +1489,6 @@ msgstr "הערות הוצאה לאור"
 
 #~ msgid "Error page"
 #~ msgstr "עמוד שגוי"
-
-#~ msgid "Show available updates"
-#~ msgstr "הצגת עדכונים זמינים"
 
 #~ msgid "Updates View"
 #~ msgstr "תצוגת עידכונים"

@@ -182,12 +182,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool changes_finished {
-        get {
-            return change_information.status == ChangeInformation.Status.FINISHED;
-        }
-    }
-
     public bool is_runtime_updates {
         get {
             return component.id == RUNTIME_UPDATES_ID;
@@ -595,10 +589,6 @@ public class AppCenterCore.Package : Object {
         summary = component.get_summary ();
 
         return summary;
-    }
-
-    public string get_progress_description () {
-        return change_information.status_description;
     }
 
     public GLib.Icon get_icon (uint size, uint scale_factor) {

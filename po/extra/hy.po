@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2015-12-16 07:08+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,12 +14,12 @@ msgstr ""
 "X-Generator: Launchpad (build 18331)\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:6
+#: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
 msgstr ""
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
 msgstr ""
 
@@ -124,11 +124,11 @@ msgid ""
 "were last checked"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:9
+#: data/io.elementary.appcenter.desktop.in.in:8
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:26
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr ""
 

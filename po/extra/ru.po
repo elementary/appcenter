@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2024-12-13 16:53+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -17,12 +17,12 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:6
+#: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
 msgstr "Просмотр и управление приложениями"
 
@@ -143,11 +143,11 @@ msgstr ""
 "Показ сообщения в представлении обновлений, когда всё обновлено и когда была "
 "последняя проверка обновлений"
 
-#: data/io.elementary.appcenter.desktop.in.in:9
+#: data/io.elementary.appcenter.desktop.in.in:8
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "install;uninstall;remove;catalogue;store;apps;software;установить;удалить;каталог;магазин;приложения;обновления;программы;"
 
-#: data/io.elementary.appcenter.desktop.in.in:26
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 

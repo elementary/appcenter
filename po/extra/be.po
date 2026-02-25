@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2025-06-04 11:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -17,12 +17,12 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:6
+#: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
 msgstr "Праглядвайце і кіруйце праграмамі"
 
@@ -142,11 +142,11 @@ msgstr ""
 "Паказ паведамлення аб тым, што ўсе праграмы абноўлены, уключаючы дату "
 "апошняй праверкі на абнаўленні"
 
-#: data/io.elementary.appcenter.desktop.in.in:9
+#: data/io.elementary.appcenter.desktop.in.in:8
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "усталяваць;дэінсталяваць;выдаліць;каталог;крама;праграмы;ПЗ;"
 
-#: data/io.elementary.appcenter.desktop.in.in:26
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "Праверыць на абнаўленні"
 

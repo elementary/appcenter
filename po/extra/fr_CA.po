@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2021-08-01 16:45+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: French (Canada) <https://l10n.elementary.io/projects/"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:6
+#: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
 msgstr "Centre d'applications"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
 msgstr "Parcourir et gérer les applications"
 
@@ -138,12 +138,12 @@ msgid ""
 "were last checked"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:9
+#: data/io.elementary.appcenter.desktop.in.in:8
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "installer;désinstaller;supprimer;catalogue;magasin;boutique;applications;mises;jour;logiciel;programme;"
 
-#: data/io.elementary.appcenter.desktop.in.in:26
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "Rechercher des mises à jour"
 

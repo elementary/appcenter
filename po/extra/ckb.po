@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2022-07-31 11:43+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:6
+#: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
 msgstr "ناوەندی نەرمەواڵەکان"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
 msgstr "گەڕان و بەڕێوەبردنی نەرمەواڵەکان"
 
@@ -126,12 +126,12 @@ msgid ""
 "were last checked"
 msgstr ""
 
-#: data/io.elementary.appcenter.desktop.in.in:9
+#: data/io.elementary.appcenter.desktop.in.in:8
 #, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ";دامەزراندن;دامەزرێنسڕینەوە;سڕینەوە;ڕێبەر;کۆگا;نەرمەواڵەکان;بەڕۆژکردنەکان;نەرمەکاڵاکان;"
 
-#: data/io.elementary.appcenter.desktop.in.in:26
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "پشکنین بۆ نوێبوونەوەکان"
 

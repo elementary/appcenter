@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
+"POT-Creation-Date: 2026-02-25 17:02+0000\n"
 "PO-Revision-Date: 2023-02-14 14:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Urdu <https://l10n.elementary.io/projects/appcenter/appcenter/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:26 src/MainWindow.vala:45 src/Views/Homepage.vala:186
+#: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
 msgstr "مرکزِ اپلی کیشن"
 
@@ -37,25 +37,25 @@ msgid ""
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
 
-#: src/Application.vala:308
+#: src/Application.vala:323
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
 
-#: src/Application.vala:309 src/MainWindow.vala:227
+#: src/Application.vala:324 src/MainWindow.vala:225
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
 
-#: src/Application.vala:344
+#: src/Application.vala:334
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been uninstalled"
 msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
 
-#: src/Application.vala:345 src/MainWindow.vala:239
+#: src/Application.vala:335 src/MainWindow.vala:237
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been uninstalled"
@@ -66,29 +66,29 @@ msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:89
 #, fuzzy
 msgid "Network Not Available."
 msgstr "سکرین شاٹ دستیاب نہیں"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:100
 msgid "Network Settings…"
 msgstr ""
 
-#: src/MainWindow.vala:106
+#: src/MainWindow.vala:108
 msgid "Running in Demo Mode"
 msgstr ""
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
 msgstr ""
 
-#: src/MainWindow.vala:231 src/Widgets/ActionStack.vala:62
+#: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
 msgstr ""
 
@@ -181,63 +181,63 @@ msgstr "منسوخ کیا جا رھا ھے"
 msgid "Starting"
 msgstr "شروع ھو رھا ھے"
 
-#: src/Core/FlatpakBackend.vala:44
+#: src/Core/FlatpakBackend.vala:45
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:163
+#: src/Core/FlatpakBackend.vala:166
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:230
+#: src/Core/FlatpakBackend.vala:233
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Runtime Updates"
 msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
 
-#: src/Core/FlatpakBackend.vala:231
+#: src/Core/FlatpakBackend.vala:234
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1579 src/Core/FlatpakBackend.vala:1686
+#: src/Core/FlatpakBackend.vala:1582 src/Core/FlatpakBackend.vala:1689
 msgid "Component has no flatpak bundle"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1586 src/Core/FlatpakBackend.vala:1795
+#: src/Core/FlatpakBackend.vala:1589 src/Core/FlatpakBackend.vala:1798
 msgid "Error getting flatpak installation"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1630
+#: src/Core/FlatpakBackend.vala:1633
 msgid "Installing"
 msgstr "انسٹال کیا جارہا ہے"
 
-#: src/Core/FlatpakBackend.vala:1703
+#: src/Core/FlatpakBackend.vala:1706
 msgid "Error getting flatpak installation for removal"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1741
+#: src/Core/FlatpakBackend.vala:1744
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "غیر تنصیب"
 
-#: src/Core/FlatpakBackend.vala:1810
+#: src/Core/FlatpakBackend.vala:1813
 msgid "Failed to split package key"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1898
+#: src/Core/FlatpakBackend.vala:1901
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "تجدید-"
 
-#: src/Core/FlatpakBackend.vala:2007
+#: src/Core/FlatpakBackend.vala:2010
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2012
+#: src/Core/FlatpakBackend.vala:2015
 #, fuzzy, c-format
 #| msgid "Searching for updates…"
 msgid "%u runtime with updates"
@@ -245,12 +245,12 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "تاذہ شمارے تلاش کئے جارہے ہیں"
 msgstr[1] "تاذہ شمارے تلاش کئے جارہے ہیں"
 
-#: src/Core/FlatpakBackend.vala:2017
+#: src/Core/FlatpakBackend.vala:2020
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:2121
+#: src/Core/FlatpakBackend.vala:2124
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -287,12 +287,12 @@ msgstr "غیر تنصیب"
 msgid "Repairing…"
 msgstr ""
 
-#: src/Core/Package.vala:316
+#: src/Core/Package.vala:317
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:484
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -838,44 +838,52 @@ msgstr ""
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:37
-#, c-format
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
+#: src/Views/AppListUpdateView.vala:23
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Available Updates"
+msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
+
+#: src/Views/AppListUpdateView.vala:33
+#, fuzzy, c-format
+#| msgid "%u Update Available"
+#| msgid_plural "%u Updates Available"
+msgid "%u Available Update"
+msgid_plural "%u Available Updates"
 msgstr[0] "%u اپ ڈیٹس دستیاب"
 msgstr[1] "%u اپ ڈیٹس دستیاب"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
 msgstr "سب کو تاذہ کریں"
 
-#: src/Views/AppListUpdateView.vala:92
+#: src/Views/AppListUpdateView.vala:73
 msgid "Up to Date"
 msgstr "بلکل جدید ہے"
 
-#: src/Views/AppListUpdateView.vala:125
+#: src/Views/AppListUpdateView.vala:112
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:126
+#: src/Views/AppListUpdateView.vala:113
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:130
+#: src/Views/AppListUpdateView.vala:117
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Check for Updates"
 msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
 
-#: src/Views/AppListUpdateView.vala:155
+#: src/Views/AppListUpdateView.vala:142
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "شروع ھو رھا ھے"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:164 src/Views/CategoryView.vala:67
-#: src/Views/Homepage.vala:129
+#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
+#: src/Views/Homepage.vala:130
 #, fuzzy
 #| msgctxt "view"
 #| msgid "Search"
@@ -884,14 +892,14 @@ msgid "Search"
 msgstr "تلاش کریں"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:185
+#: src/Views/AppListUpdateView.vala:170
 msgctxt "view"
 msgid "Installed"
 msgstr "نصب شُدہ"
 
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:200
 #, c-format
-msgid "Everything is up to date. Last checked %s."
+msgid "Last checked %s"
 msgstr ""
 
 #: src/Views/AuthorView.vala:32
@@ -899,7 +907,7 @@ msgstr ""
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:63
+#: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr ""
 
@@ -915,31 +923,18 @@ msgstr "اطلاقیےتلاش کریں"
 msgid "Free Apps"
 msgstr "اطلاقیےتلاش کریں"
 
-#: src/Views/Homepage.vala:86
+#: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "اقسام"
 
-#: src/Views/Homepage.vala:136
+#: src/Views/Homepage.vala:137
 #, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
 msgstr "غیر تنصیب"
 
-#: src/Views/Homepage.vala:179
+#: src/Views/Homepage.vala:180
 msgid "Home"
-msgstr ""
-
-#: src/Views/Homepage.vala:187
-msgid "Browse and manage apps"
-msgstr ""
-
-#: src/Views/Homepage.vala:188
-msgid ""
-"The open source, pay-what-you-want app store from elementary. Reviewed and "
-"curated by elementary to ensure a native, privacy-respecting, and secure "
-"experience. Browse by categories or search and discover new apps. AppCenter "
-"is also used for updating your system to the latest and greatest version for "
-"new features and fixes."
 msgstr ""
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
@@ -979,11 +974,11 @@ msgstr "تلاش کریں %s"
 msgid "In-app purchases"
 msgstr ""
 
-#: src/Widgets/ActionStack.vala:140 src/Widgets/HumbleButton.vala:79
+#: src/Widgets/ActionStack.vala:138 src/Widgets/HumbleButton.vala:67
 msgid "Install"
 msgstr "نصب کریں"
 
-#: src/Widgets/ActionStack.vala:157
+#: src/Widgets/ActionStack.vala:153
 msgid "Update"
 msgstr "تجدید-"
 
@@ -995,18 +990,18 @@ msgstr ""
 msgid "Card Number"
 msgstr ""
 
-#: src/Widgets/HumbleButton.vala:66
+#: src/Widgets/HumbleButton.vala:54
 msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:110
+#: src/Widgets/HumbleButton.vala:98
 #, c-format
 msgid "$%d.00"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:113
+#: src/Widgets/HumbleButton.vala:101
 #, c-format
 msgid "$%d"
 msgstr ""
