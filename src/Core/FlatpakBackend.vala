@@ -64,6 +64,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     private AsyncQueue<Job> jobs = new AsyncQueue<Job> ();
     private Thread<bool> worker_thread;
 
+    private Gee.HashMap<string, Component> component_list;
     private Gee.HashMap<string, Package> package_list;
     private AppStream.Pool user_appstream_pool;
     private AppStream.Pool system_appstream_pool;
@@ -75,7 +76,8 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     public Job.Type job_type { get; protected set; }
     public bool working { public get; protected set; }
 
-    private ListStore _packages;
+    private ListStore components;
+    private ListModel _packages;
 
     private Gtk.SortListModel _sorted_packages;
     public ListModel packages { get { return _sorted_packages; } }
@@ -228,7 +230,9 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         additional_updates = new GLib.ListStore (typeof (Package));
         additional_updates.append (runtime_updates);
 
-        _packages = new ListStore (typeof (FlatpakPackage));
+        components = new ListStore (typeof (Component));
+
+        _packages = new Gtk.FlattenListModel (components);
         _packages.items_changed.connect (() => package_list_changed ());
 
         var sorter = new Gtk.StringSorter (new Gtk.PropertyExpression (typeof (Package), null, "name"));
@@ -280,6 +284,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         system_appstream_pool = new AppStream.Pool ();
         system_appstream_pool.set_flags (NONE);
 
+        component_list = new Gee.HashMap<string, Component> (null, null);
         package_list = new Gee.HashMap<string, Package> (null, null);
 
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
@@ -391,19 +396,22 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     }
 
     public void notify_package_changed (Package package) {
-        GLib.ListStore store;
+        ListModel model;
         if (package.is_runtime_updates) {
-            store = additional_updates;
+            model = additional_updates;
         } else {
-            store = _packages;
+            model = _packages;
         }
 
-        uint pos;
-        if (store.find (package, out pos)) {
-            store.items_changed (pos, 1, 1);
-        } else {
-            warning ("Package %s not found in the package list", package.name);
+        for (uint i = 0; i < model.get_n_items (); i++) {
+            var obj = model.get_item (i);
+            if (obj == package) {
+                model.items_changed (i, 1, 1);
+                return;
+            }
         }
+
+        warning ("Package %s not found in the package list", package.name);
     }
 
     private void set_actions_enabled (bool working) {
@@ -1314,23 +1322,52 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
         if (Thread.self<bool> () != worker_thread) {
             // We are in the main thread so update immediately
-            update_package_store (removed, added);
+            update_component_store (removed, added);
         } else {
             // We are in the worker thread and changing the package liststore
             // will trigger signals that update the UI so wrap in Idle to update on the main thread
-            Idle.add (() => update_package_store (removed, added));
+            Idle.add (() => update_component_store (removed, added));
         }
     }
 
-    private bool update_package_store (Gee.Collection<Package> removed, Gee.Collection<Package> added) {
-        foreach (var package in removed) {
-            uint pos;
-            if (_packages.find (package, out pos)) {
-                _packages.remove (pos);
+    private bool update_component_store (Gee.Collection<Package> removed, Gee.Collection<Package> added) {
+        var new_components = new Gee.HashSet<Component> ();
+
+        /* Add added packages to their components, creating new components if necessary */
+        foreach (var added_package in added) {
+            var comp_id = added_package.normalized_component_id;
+            var comp = component_list[comp_id];
+
+            if (comp == null) {
+                comp = new Component (comp_id);
+                new_components.add (comp);
+            }
+
+            component_list[comp_id] = comp;
+
+            /* No op if package is already in the component */
+            comp.add_package (added_package);
+        }
+
+        /* Remove removed packages from their components */
+        foreach (var removed_package in removed) {
+            var comp_id = removed_package.normalized_component_id;
+            component_list[comp_id].remove_package (removed_package);
+        }
+
+        /* Cleanup empty components */
+        if (!removed.is_empty) {
+            for (int i = (int) components.get_n_items () - 1; i >= 0; i--) {
+                var component = (Component) components.get_item (i);
+                if (component.get_n_items () == 0) {
+                    components.remove (i);
+                    component_list.unset (component.component_id);
+                }
             }
         }
 
-        _packages.splice (_packages.n_items, 0, added.to_array ());
+        /* Add new components */
+        components.splice (components.n_items, 0, new_components.to_array ());
         return Source.REMOVE;
     }
 
