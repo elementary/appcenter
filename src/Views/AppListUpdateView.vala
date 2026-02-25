@@ -11,8 +11,7 @@
 public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
     private Gtk.FlowBox installed_flowbox;
     private Gtk.ListBox list_box;
-    private Gtk.Revealer updated_revealer;
-    private Gtk.Label updated_label;
+    private Granite.HeaderLabel installed_header;
     private Gtk.SizeGroup action_button_group;
 
     private uint updated_label_timeout_id = 0;
@@ -20,21 +19,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
     construct {
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-
-        updated_label = new Gtk.Label ("");
-        updated_label.add_css_class (Granite.CssClass.DIM);
-
-        var updated_box = new Gtk.Box (HORIZONTAL, 6);
-        updated_box.append (new Gtk.Image.from_icon_name ("process-completed-symbolic"));
-        updated_box.append (updated_label);
-
-        updated_revealer = new Gtk.Revealer () {
-            child = updated_box
-        };
-        updated_revealer.add_css_class ("header");
-        flatpak_backend.bind_property (
-            "up-to-date", updated_revealer, "reveal-child", SYNC_CREATE
-        );
 
         var updatable_header_label = new Granite.HeaderLabel (_("Available Updates")) {
             hexpand = true,
@@ -86,7 +70,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         updatable_section.append (list_box);
         flatpak_backend.bind_property ("has-updatable-packages", updatable_section, "visible", SYNC_CREATE);
 
-        var installed_header = new Granite.HeaderLabel (_("Up to Date")) {
+        installed_header = new Granite.HeaderLabel (_("Up to Date")) {
             margin_end = 12,
             margin_start = 12
         };
@@ -179,7 +163,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             content = scrolled
         };
         toolbarview.add_top_bar (headerbar);
-        toolbarview.add_top_bar (updated_revealer);
         toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
         child = toolbarview;
@@ -214,7 +197,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
     }
 
     private void set_updated_label () {
-        updated_label.label = _("Everything is up to date. Last checked %s.").printf (
+        installed_header.secondary_text = _("Last checked %s").printf (
             Granite.DateTime.get_relative_datetime (
                 new DateTime.from_unix_local (AppCenter.App.settings.get_int64 ("last-refresh-time"))
             )
