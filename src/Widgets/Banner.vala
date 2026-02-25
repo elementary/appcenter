@@ -26,16 +26,6 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
     public string app_name { get; construct; }
     public string summary { get; construct; }
 
-    public Banner (string name, string summary, string description, AppIcon app_icon, string brand_color) {
-        Object (
-            brand_color: brand_color,
-            description: description,
-            app_icon: app_icon,
-            app_name: name,
-            summary: summary
-        );
-    }
-
     public Banner.from_package (AppCenterCore.Package package) {
         var app_icon = new AppIcon (128) {
             package = package
