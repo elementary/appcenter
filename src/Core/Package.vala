@@ -103,6 +103,8 @@ public class AppCenterCore.Package : Object {
     public ChangeInformation change_information { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
+    public bool working { get { return state == INSTALLING || state == UPDATING || state == REMOVING; } }
+
     public double progress {
         get {
             return change_information.progress;
@@ -446,6 +448,7 @@ public class AppCenterCore.Package : Object {
         // Only trigger a notify if the state has changed, quite a lot of things listen to this
         if (state != new_state) {
             state = new_state;
+            notify_property ("working");
             backend.notify_package_changed (this);
         }
     }
