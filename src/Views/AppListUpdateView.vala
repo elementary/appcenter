@@ -20,22 +20,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
-        var in_progress_header = new Granite.HeaderLabel (_("In Progress")) {
-            margin_end = 12,
-            margin_start = 12
-        };
-
-        var in_progress_list = new Gtk.ListBox () {
-            activate_on_single_click = true,
-            hexpand = true,
-        };
-        in_progress_list.bind_model (flatpak_backend.working_packages, create_row_from_package);
-
-        var in_progress_section = new Granite.Box (VERTICAL, HALF);
-        in_progress_section.append (in_progress_header);
-        in_progress_section.append (in_progress_list);
-        flatpak_backend.bind_property ("has-working-packages", in_progress_section, "visible", SYNC_CREATE);
-
         var updatable_header_label = new Granite.HeaderLabel (_("Available Updates")) {
             hexpand = true,
             valign = CENTER
@@ -86,6 +70,22 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         updatable_section.append (list_box);
         flatpak_backend.bind_property ("has-updatable-packages", updatable_section, "visible", SYNC_CREATE);
 
+        var in_progress_header = new Granite.HeaderLabel (_("In Progress")) {
+            margin_end = 12,
+            margin_start = 12
+        };
+
+        var in_progress_list = new Gtk.ListBox () {
+            activate_on_single_click = true,
+            hexpand = true,
+        };
+        in_progress_list.bind_model (flatpak_backend.working_packages, create_row_from_package);
+
+        var in_progress_section = new Granite.Box (VERTICAL, HALF);
+        in_progress_section.append (in_progress_header);
+        in_progress_section.append (in_progress_list);
+        flatpak_backend.bind_property ("has-working-packages", in_progress_section, "visible", SYNC_CREATE);
+
         installed_header = new Granite.HeaderLabel (_("Up to Date")) {
             margin_end = 12,
             margin_start = 12
@@ -109,8 +109,8 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         flatpak_backend.bind_property ("has-updated-packages", installed_section, "visible", SYNC_CREATE);
 
         var box = new Granite.Box (VERTICAL, DOUBLE);
-        box.append (in_progress_section);
         box.append (updatable_section);
+        box.append (in_progress_section);
         box.append (installed_section);
 
         var clamp = new Adw.Clamp () {
