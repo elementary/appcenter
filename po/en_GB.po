@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 17:02+0000\n"
+"POT-Creation-Date: 2026-02-26 19:55+0000\n"
 "PO-Revision-Date: 2025-05-16 12:55+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementaryos.org/"
@@ -161,19 +161,19 @@ msgstr "Writing & Language"
 msgid "Privacy & Security"
 msgstr "Privacy & Security"
 
-#: src/Core/ChangeInformation.vala:51 src/Core/ChangeInformation.vala:77
+#: src/Core/ChangeInformation.vala:39 src/Core/ChangeInformation.vala:65
 msgid "Waiting"
 msgstr "Waiting"
 
-#: src/Core/ChangeInformation.vala:85
+#: src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Finished"
 
-#: src/Core/ChangeInformation.vala:94
+#: src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
 msgstr "Cancelling"
 
-#: src/Core/ChangeInformation.vala:105
+#: src/Core/ChangeInformation.vala:89
 msgid "Starting"
 msgstr "Starting"
 
@@ -182,66 +182,66 @@ msgstr "Starting"
 msgid "%s (system-wide)"
 msgstr "%s (system-wide)"
 
-#: src/Core/FlatpakBackend.vala:166
+#: src/Core/FlatpakBackend.vala:169
 msgid "package operations are being performed"
 msgstr "package operations are being performed"
 
-#: src/Core/FlatpakBackend.vala:233
+#: src/Core/FlatpakBackend.vala:236
 msgid "Runtime Updates"
 msgstr "Runtime Updates"
 
-#: src/Core/FlatpakBackend.vala:234
+#: src/Core/FlatpakBackend.vala:237
 msgid "Updates to app runtimes"
 msgstr "Updates to app runtimes"
 
-#: src/Core/FlatpakBackend.vala:1582 src/Core/FlatpakBackend.vala:1689
+#: src/Core/FlatpakBackend.vala:1580 src/Core/FlatpakBackend.vala:1687
 msgid "Component has no flatpak bundle"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1589 src/Core/FlatpakBackend.vala:1798
+#: src/Core/FlatpakBackend.vala:1587 src/Core/FlatpakBackend.vala:1796
 msgid "Error getting flatpak installation"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1633
+#: src/Core/FlatpakBackend.vala:1631
 msgid "Installing"
 msgstr "Installing"
 
-#: src/Core/FlatpakBackend.vala:1706
+#: src/Core/FlatpakBackend.vala:1704
 msgid "Error getting flatpak installation for removal"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1744
+#: src/Core/FlatpakBackend.vala:1742
 msgid "Uninstalling"
 msgstr "Uninstalling"
 
-#: src/Core/FlatpakBackend.vala:1813
+#: src/Core/FlatpakBackend.vala:1811
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
 msgstr "Failed to Fetch Updates"
 
-#: src/Core/FlatpakBackend.vala:1901
+#: src/Core/FlatpakBackend.vala:1899
 msgid "Updating"
 msgstr "Updating"
 
-#: src/Core/FlatpakBackend.vala:2010
+#: src/Core/FlatpakBackend.vala:2008
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/FlatpakBackend.vala:2015
+#: src/Core/FlatpakBackend.vala:2013
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
 msgstr[0] "%u runtime with updates"
 msgstr[1] "%u runtimes with updates"
 
-#: src/Core/FlatpakBackend.vala:2020
+#: src/Core/FlatpakBackend.vala:2018
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2124
+#: src/Core/FlatpakBackend.vala:2122
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -270,12 +270,12 @@ msgstr "Uninstalling…"
 msgid "Repairing…"
 msgstr "Repairing…"
 
-#: src/Core/Package.vala:317
+#: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
 msgstr "%s Developers"
 
-#: src/Core/Package.vala:484
+#: src/Core/Package.vala:477
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Application state not set as installed in AppCenter for package: %s"
@@ -487,7 +487,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
-#: src/Widgets/ProgressButton.vala:28
+#: src/Widgets/ProgressButton.vala:24
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -530,7 +530,7 @@ msgstr "Uninstall app?"
 msgid "Uninstall “%s”?"
 msgstr "Uninstall “%s”?"
 
-#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:85
+#: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:84
 msgid "Uninstall"
 msgstr "Uninstall"
 
@@ -582,44 +582,44 @@ msgstr "Failed to update “%s”"
 msgid "Refresh Updates"
 msgstr "Refresh Updates"
 
-#: src/Views/AppInfoView.vala:222
+#: src/Views/AppInfoView.vala:206
 msgid "Illicit Substances"
 msgstr "Illicit Substances"
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:207
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
 msgstr "Presence of or references to alcohol, narcotics, or tobacco"
 
-#: src/Views/AppInfoView.vala:228
+#: src/Views/AppInfoView.vala:212
 msgid "Sex & Nudity"
 msgstr "Sex & Nudity"
 
-#: src/Views/AppInfoView.vala:229
+#: src/Views/AppInfoView.vala:213
 msgid "Adult nudity or sexual themes"
 msgstr "Adult nudity or sexual themes"
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:218
 msgid "Offensive Language"
 msgstr "Offensive Language"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:219
 msgid "Profanity, discriminatory language, or adult humor"
 msgstr "Profanity, discriminatory language, or adult humour"
 
-#: src/Views/AppInfoView.vala:240
+#: src/Views/AppInfoView.vala:224
 msgid "Gambling"
 msgstr "Gambling"
 
-#: src/Views/AppInfoView.vala:241
+#: src/Views/AppInfoView.vala:225
 msgid "Realistic or participatory gambling"
 msgstr "Realistic or participatory gambling"
 
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:271
 #, c-format
 msgid "%i%%"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:289
+#: src/Views/AppInfoView.vala:273
 #, fuzzy, c-format
 #| msgid "Waiting"
 msgid "%u rating"
@@ -627,132 +627,132 @@ msgid_plural "%u ratings"
 msgstr[0] "Waiting"
 msgstr[1] "Waiting"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:286
 msgid "Made for elementary OS"
 msgstr "Made for elementary OS"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:287
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr "Reviewed by elementary for security, privacy, and system integration"
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:310
 msgid "May Not Be Translated"
 msgstr "May Not Be Translated"
 
-#: src/Views/AppInfoView.vala:327
+#: src/Views/AppInfoView.vala:311
 msgid "This app does not provide language information"
 msgstr "This app does not provide language information"
 
-#: src/Views/AppInfoView.vala:334
+#: src/Views/AppInfoView.vala:318
 msgid "Not Translated"
 msgstr "Not Translated"
 
-#: src/Views/AppInfoView.vala:335
+#: src/Views/AppInfoView.vala:319
 msgid "This app is not available in your language"
 msgstr "This app is not available in your language"
 
-#: src/Views/AppInfoView.vala:342
+#: src/Views/AppInfoView.vala:326
 msgid "Not Fully Translated"
 msgstr "Not Fully Translated"
 
-#: src/Views/AppInfoView.vala:343
+#: src/Views/AppInfoView.vala:327
 #, c-format
 msgid "This app is %i%% translated in your language"
 msgstr "This app is %i%% translated in your language"
 
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:351
 msgid "Conflict"
 msgstr "Conflict"
 
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:352
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr "Depictions of unsafe situations or aggressive conflict"
 
-#: src/Views/AppInfoView.vala:381
+#: src/Views/AppInfoView.vala:365
 msgid "Violence"
 msgstr "Violence"
 
-#: src/Views/AppInfoView.vala:386
+#: src/Views/AppInfoView.vala:370
 msgid "Fantasy Violence"
 msgstr "Fantasy Violence"
 
-#: src/Views/AppInfoView.vala:391
+#: src/Views/AppInfoView.vala:375
 msgid "Graphic violence, bloodshed, or death"
 msgstr "Graphic violence, bloodshed, or death"
 
-#: src/Views/AppInfoView.vala:435
+#: src/Views/AppInfoView.vala:419
 msgid "Multiplayer"
 msgstr "Multiplayer"
 
-#: src/Views/AppInfoView.vala:436
+#: src/Views/AppInfoView.vala:420
 msgid "Online play with other people"
 msgstr "Online play with other people"
 
-#: src/Views/AppInfoView.vala:452
+#: src/Views/AppInfoView.vala:436
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr "Unmoderated Audio, Video, or Text messaging with other people"
 
-#: src/Views/AppInfoView.vala:454
+#: src/Views/AppInfoView.vala:438
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr "Moderated Audio, Video, or Text messaging with other people"
 
-#: src/Views/AppInfoView.vala:458
+#: src/Views/AppInfoView.vala:442
 msgid "Online Interactions"
 msgstr "Online Interactions"
 
-#: src/Views/AppInfoView.vala:468
+#: src/Views/AppInfoView.vala:452
 msgid "Location Sharing"
 msgstr "Location Sharing"
 
-#: src/Views/AppInfoView.vala:469
+#: src/Views/AppInfoView.vala:453
 msgid "Other people can see your real-world location"
 msgstr "Other people can see your real-world location"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:465
 msgid "Collects anonymous usage data"
 msgstr "Collects anonymous usage data"
 
-#: src/Views/AppInfoView.vala:484
+#: src/Views/AppInfoView.vala:468
 msgid "Collects usage data that could be used to identify you"
 msgstr "Collects usage data that could be used to identify you"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:473
 msgid "Info Sharing"
 msgstr "Info Sharing"
 
-#: src/Views/AppInfoView.vala:613
+#: src/Views/AppInfoView.vala:597
 msgid "Screenshot Not Available"
 msgstr "Screenshot Not Available"
 
-#: src/Views/AppInfoView.vala:647
+#: src/Views/AppInfoView.vala:631
 #, fuzzy
 #| msgid "What's New:"
 msgid "What's New"
 msgstr "What's New:"
 
-#: src/Views/AppInfoView.vala:651
+#: src/Views/AppInfoView.vala:635
 #, fuzzy
 #| msgid "Version: %s"
 msgid "Version History…"
 msgstr "Version: %s"
 
-#: src/Views/AppInfoView.vala:771 src/Views/AppInfoView.vala:778
+#: src/Views/AppInfoView.vala:755 src/Views/AppInfoView.vala:762
 msgid "Outdated"
 msgstr "Outdated"
 
-#: src/Views/AppInfoView.vala:772
+#: src/Views/AppInfoView.vala:756
 msgid "May not work as expected or receive security updates"
 msgstr "May not work as expected or receive security updates"
 
-#: src/Views/AppInfoView.vala:779
+#: src/Views/AppInfoView.vala:763
 msgid "May not work as expected or support the latest features"
 msgstr "May not work as expected or support the latest features"
 
-#: src/Views/AppInfoView.vala:787
+#: src/Views/AppInfoView.vala:771
 msgid "Unstable"
 msgstr "Unstable"
 
-#: src/Views/AppInfoView.vala:788
+#: src/Views/AppInfoView.vala:772
 #, c-format
 msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
@@ -761,27 +761,27 @@ msgstr ""
 "Built for an unstable version of %s; may contain major issues. Not "
 "recommended for use on a production system."
 
-#: src/Views/AppInfoView.vala:801
+#: src/Views/AppInfoView.vala:785
 msgid "Insecure Sandbox"
 msgstr "Insecure Sandbox"
 
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:786
 msgid "Can ignore or modify its own system permissions"
 msgstr "Can ignore or modify its own system permissions"
 
-#: src/Views/AppInfoView.vala:811
+#: src/Views/AppInfoView.vala:795
 msgid "System Folder Access"
 msgstr "System Folder Access"
 
-#: src/Views/AppInfoView.vala:812
+#: src/Views/AppInfoView.vala:796
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr "Including everyone's Home folders, but not including system internals"
 
-#: src/Views/AppInfoView.vala:819
+#: src/Views/AppInfoView.vala:803
 msgid "Home Folder Access"
 msgstr "Home Folder Access"
 
-#: src/Views/AppInfoView.vala:820
+#: src/Views/AppInfoView.vala:804
 msgid ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
@@ -789,53 +789,53 @@ msgstr ""
 "Including all documents, downloads, music, pictures, videos, and any hidden "
 "folders"
 
-#: src/Views/AppInfoView.vala:829
+#: src/Views/AppInfoView.vala:813
 msgid "Legacy Autostart"
 msgstr "Legacy Autostart"
 
-#: src/Views/AppInfoView.vala:830
+#: src/Views/AppInfoView.vala:814
 msgid "Can automatically start up and run in the background without asking"
 msgstr "Can automatically start up and run in the background without asking"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:823
 msgid "Location Access"
 msgstr "Location Access"
 
-#: src/Views/AppInfoView.vala:840
+#: src/Views/AppInfoView.vala:824
 msgid "Can see your precise location at any time without asking"
 msgstr "Can see your precise location at any time without asking"
 
-#: src/Views/AppInfoView.vala:849
+#: src/Views/AppInfoView.vala:833
 msgid "Legacy Notifications"
 msgstr "Legacy Notifications"
 
-#: src/Views/AppInfoView.vala:850
+#: src/Views/AppInfoView.vala:834
 msgid ""
 "Bubbles may not be configurable or appear in notification center as “Other”"
 msgstr ""
 "Bubbles may not be configurable or appear in notification centre as “Other”"
 
-#: src/Views/AppInfoView.vala:859
+#: src/Views/AppInfoView.vala:843
 msgid "System Settings Access"
 msgstr "System Settings Access"
 
-#: src/Views/AppInfoView.vala:860
+#: src/Views/AppInfoView.vala:844
 msgid "Can read and modify system settings"
 msgstr "Can read and modify system settings"
 
-#: src/Views/AppInfoView.vala:1022
+#: src/Views/AppInfoView.vala:1006
 msgid "Requires a Controller"
 msgstr "Requires a Controller"
 
-#: src/Views/AppInfoView.vala:1025
+#: src/Views/AppInfoView.vala:1009
 msgid "Recommends a Controller"
 msgstr "Recommends a Controller"
 
-#: src/Views/AppInfoView.vala:1028
+#: src/Views/AppInfoView.vala:1012
 msgid "Play With a Controller"
 msgstr "Play With a Controller"
 
-#: src/Views/AppInfoView.vala:1032
+#: src/Views/AppInfoView.vala:1016
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Such as a PlayStation, Xbox, or 8BitDo controller."
 
@@ -858,39 +858,43 @@ msgid "Update All"
 msgstr "Update All"
 
 #: src/Views/AppListUpdateView.vala:73
+msgid "In Progress"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:89
 msgid "Up to Date"
 msgstr "Up to Date"
 
-#: src/Views/AppListUpdateView.vala:112
+#: src/Views/AppListUpdateView.vala:129
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Automatically Update Free & Purchased Apps"
 
-#: src/Views/AppListUpdateView.vala:113
+#: src/Views/AppListUpdateView.vala:130
 msgid "Apps being tried for free will not update automatically"
 msgstr "Apps being tried for free will not update automatically"
 
-#: src/Views/AppListUpdateView.vala:117
+#: src/Views/AppListUpdateView.vala:134
 msgid "Check for Updates"
 msgstr "Check for Updates"
 
-#: src/Views/AppListUpdateView.vala:142
+#: src/Views/AppListUpdateView.vala:159
 msgid "Settings"
 msgstr "Settings"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:151 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:168 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Search"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:170
+#: src/Views/AppListUpdateView.vala:187
 msgctxt "view"
 msgid "Installed"
 msgstr "Installed"
 
-#: src/Views/AppListUpdateView.vala:200
+#: src/Views/AppListUpdateView.vala:217
 #, c-format
 msgid "Last checked %s"
 msgstr ""
@@ -1087,19 +1091,19 @@ msgstr "Unknown Licence"
 msgid "Payment provided by Stripe"
 msgstr "Payment provided by Stripe"
 
-#: src/Widgets/ReleaseRow.vala:67
+#: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
 msgstr "Fixed Issues"
 
-#: src/Widgets/ReleaseRow.vala:98
+#: src/Widgets/ReleaseRow.vala:97
 msgid "Unknown date"
 msgstr "Unknown date"
 
-#: src/Widgets/ReleaseRow.vala:105
+#: src/Widgets/ReleaseRow.vala:104
 msgid "Unknown version"
 msgstr "Unknown version"
 
-#: src/Widgets/ReleaseRow.vala:121
+#: src/Widgets/ReleaseRow.vala:120
 msgid "No description available"
 msgstr "No description available"
 
