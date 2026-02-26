@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:02+0000\n"
-"PO-Revision-Date: 2026-01-31 18:55+0000\n"
+"PO-Revision-Date: 2026-02-26 19:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -831,18 +831,15 @@ msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Till exempel en PlayStation-, Xbox- eller 8BitDo-handkontroller."
 
 #: src/Views/AppListUpdateView.vala:23
-#, fuzzy
-#| msgid "Show available updates"
 msgid "Available Updates"
-msgstr "Visa tillgängliga uppdateringar"
+msgstr "Tillgängliga uppdateringar"
 
 #: src/Views/AppListUpdateView.vala:33
-#, fuzzy, c-format
-#| msgid "Show available updates"
+#, c-format
 msgid "%u Available Update"
 msgid_plural "%u Available Updates"
-msgstr[0] "Visa tillgängliga uppdateringar"
-msgstr[1] "Visa tillgängliga uppdateringar"
+msgstr[0] "%u tillgänglig uppdatering"
+msgstr[1] "%u tillgängliga uppdateringar"
 
 #: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
@@ -884,7 +881,7 @@ msgstr "Installerade"
 #: src/Views/AppListUpdateView.vala:200
 #, c-format
 msgid "Last checked %s"
-msgstr ""
+msgstr "Senast kontrollerad %s"
 
 #: src/Views/AuthorView.vala:32
 #, c-format
