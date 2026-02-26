@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:02+0000\n"
-"PO-Revision-Date: 2026-02-02 14:41+0000\n"
+"PO-Revision-Date: 2026-02-26 19:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -858,18 +858,15 @@ msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Com ara un controlador de PlayStation, Xbox o 8BitDo."
 
 #: src/Views/AppListUpdateView.vala:23
-#, fuzzy
-#| msgid "Show available updates"
 msgid "Available Updates"
-msgstr "Mostra les actualitzacions disponibles"
+msgstr "Actualitzacions disponibles"
 
 #: src/Views/AppListUpdateView.vala:33
-#, fuzzy, c-format
-#| msgid "Show available updates"
+#, c-format
 msgid "%u Available Update"
 msgid_plural "%u Available Updates"
-msgstr[0] "Mostra les actualitzacions disponibles"
-msgstr[1] "Mostra les actualitzacions disponibles"
+msgstr[0] "%u actualització disponible"
+msgstr[1] "%u actualitzacions disponibles"
 
 #: src/Views/AppListUpdateView.vala:48
 msgid "Update All"
@@ -915,7 +912,7 @@ msgstr "Instal·lades"
 #: src/Views/AppListUpdateView.vala:200
 #, c-format
 msgid "Last checked %s"
-msgstr ""
+msgstr "Darrera comprovació: %s"
 
 #: src/Views/AuthorView.vala:32
 #, c-format
