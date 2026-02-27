@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-26 19:55+0000\n"
+"POT-Creation-Date: 2026-02-27 16:34+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
@@ -829,45 +829,50 @@ msgstr ""
 msgid "Available Updates"
 msgstr "अपडेट प्राप्त करने में"
 
-#: src/Views/AppListUpdateView.vala:33
+#: src/Views/AppListUpdateView.vala:32
 #, c-format
 msgid "%u Available Update"
 msgid_plural "%u Available Updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:43 src/Widgets/SizeLabel.vala:23
+#, c-format
+msgid "Up to %s"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:51
 msgid "Update All"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:75
 msgid "In Progress"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:131
 msgid "Automatically Update Free & Purchased Apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:130
+#: src/Views/AppListUpdateView.vala:132
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:134
+#: src/Views/AppListUpdateView.vala:136
 msgid "Check for Updates"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:159
+#: src/Views/AppListUpdateView.vala:161
 #, fuzzy
 #| msgid "Starting"
 msgid "Settings"
 msgstr "शुरु"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:168 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:170 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:130
 #, fuzzy
 #| msgid "Search Apps"
@@ -876,12 +881,12 @@ msgid "Search"
 msgstr "ऐप्स खोजें"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:189
 msgctxt "view"
 msgid "Installed"
 msgstr "स्थापित"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:219
 #, c-format
 msgid "Last checked %s"
 msgstr ""
@@ -1088,11 +1093,6 @@ msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:120
 msgid "No description available"
-msgstr ""
-
-#: src/Widgets/SizeLabel.vala:23
-#, c-format
-msgid "Up to %s"
 msgstr ""
 
 #: src/Widgets/SizeLabel.vala:39

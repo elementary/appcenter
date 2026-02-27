@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-26 19:55+0000\n"
+"POT-Creation-Date: 2026-02-27 16:34+0000\n"
 "PO-Revision-Date: 2025-09-12 11:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementaryos.org/projects/appcenter/"
@@ -858,7 +858,7 @@ msgstr "Mint például PlayStation-, Xbox-, vagy 8BitDo-kontrollerek."
 msgid "Available Updates"
 msgstr "Elérhető frissítések megjelenítése"
 
-#: src/Views/AppListUpdateView.vala:33
+#: src/Views/AppListUpdateView.vala:32
 #, fuzzy, c-format
 #| msgid "Show available updates"
 msgid "%u Available Update"
@@ -866,49 +866,54 @@ msgid_plural "%u Available Updates"
 msgstr[0] "Elérhető frissítések megjelenítése"
 msgstr[1] "Elérhető frissítések megjelenítése"
 
-#: src/Views/AppListUpdateView.vala:48
+#: src/Views/AppListUpdateView.vala:43 src/Widgets/SizeLabel.vala:23
+#, c-format
+msgid "Up to %s"
+msgstr "Legfeljebb %s"
+
+#: src/Views/AppListUpdateView.vala:51
 msgid "Update All"
 msgstr "Összes frissítése"
 
-#: src/Views/AppListUpdateView.vala:73
+#: src/Views/AppListUpdateView.vala:75
 msgid "In Progress"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:89
+#: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
 msgstr "Naprakész"
 
-#: src/Views/AppListUpdateView.vala:129
+#: src/Views/AppListUpdateView.vala:131
 msgid "Automatically Update Free & Purchased Apps"
 msgstr "Az ingyenes és a megvásárolt alkalmazások automatikus frissítése"
 
-#: src/Views/AppListUpdateView.vala:130
+#: src/Views/AppListUpdateView.vala:132
 msgid "Apps being tried for free will not update automatically"
 msgstr ""
 "Az ingyenesen kipróbált alkalmazások nem fognak automatikusan frissülni"
 
-#: src/Views/AppListUpdateView.vala:134
+#: src/Views/AppListUpdateView.vala:136
 msgid "Check for Updates"
 msgstr "Frissítések keresése"
 
-#: src/Views/AppListUpdateView.vala:159
+#: src/Views/AppListUpdateView.vala:161
 msgid "Settings"
 msgstr "Beállítások"
 
 #. / TRANSLATORS: the action of searching
-#: src/Views/AppListUpdateView.vala:168 src/Views/CategoryView.vala:67
+#: src/Views/AppListUpdateView.vala:170 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
 msgstr "Keresés"
 
 #. / TRANSLATORS: the name of the Installed Apps view
-#: src/Views/AppListUpdateView.vala:187
+#: src/Views/AppListUpdateView.vala:189
 msgctxt "view"
 msgid "Installed"
 msgstr "Telepítve"
 
-#: src/Views/AppListUpdateView.vala:217
+#: src/Views/AppListUpdateView.vala:219
 #, c-format
 msgid "Last checked %s"
 msgstr ""
@@ -1114,11 +1119,6 @@ msgstr "Ismeretlen verzió"
 #: src/Widgets/ReleaseRow.vala:120
 msgid "No description available"
 msgstr "Nem érhető el leírás"
-
-#: src/Widgets/SizeLabel.vala:23
-#, c-format
-msgid "Up to %s"
-msgstr "Legfeljebb %s"
 
 #: src/Widgets/SizeLabel.vala:39
 msgid "Actual Download Size Likely to Be Smaller"
