@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-26 19:55+0000\n"
-"PO-Revision-Date: 2026-02-26 19:55+0000\n"
+"PO-Revision-Date: 2026-02-27 16:34+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -874,7 +874,7 @@ msgstr "Actualitza-ho tot"
 
 #: src/Views/AppListUpdateView.vala:73
 msgid "In Progress"
-msgstr ""
+msgstr "En curs"
 
 #: src/Views/AppListUpdateView.vala:89
 msgid "Up to Date"
