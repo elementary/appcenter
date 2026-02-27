@@ -38,7 +38,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             }
         );
         flatpak_backend.bind_property (
-            "updates-size", updatable_header_label, "secondary_text", SYNC_CREATE,
+            "updates-size", updatable_header_label, "secondary-text", SYNC_CREATE,
             (binding, from_value, ref to_value) => {
                 to_value.set_string (_("Up to %s").printf (
                     GLib.format_size (from_value.get_uint64 ())
