@@ -21,8 +21,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
         var updatable_header_label = new Granite.HeaderLabel (_("Available Updates")) {
-            hexpand = true,
-            valign = CENTER
+            hexpand = true
         };
         flatpak_backend.bind_property (
             "n-updatable-packages", updatable_header_label, "label", SYNC_CREATE,
@@ -38,12 +37,16 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
                 return true;
             }
         );
+        flatpak_backend.bind_property (
+            "updates-size", updatable_header_label, "secondary-text", SYNC_CREATE,
+            (binding, from_value, ref to_value) => {
+                to_value.set_string (_("Up to %s").printf (
+                    GLib.format_size (from_value.get_uint64 ())
+                ));
 
-        var size_label = new Widgets.SizeLabel () {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.CENTER
-        };
-        flatpak_backend.bind_property ("updates-size", size_label, "size", SYNC_CREATE);
+                return true;
+            }
+        );
 
         var update_all_button = new Gtk.Button.with_label (_("Update All")) {
             valign = Gtk.Align.CENTER,
@@ -51,12 +54,11 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         };
         update_all_button.add_css_class (Granite.CssClass.SUGGESTED);
 
-        var updatable_header = new Gtk.Box (HORIZONTAL, 16) {
+        var updatable_header = new Granite.Box (HORIZONTAL) {
             margin_end = 12,
             margin_start = 12
         };
         updatable_header.append (updatable_header_label);
-        updatable_header.append (size_label);
         updatable_header.append (update_all_button);
 
         list_box = new Gtk.ListBox () {
