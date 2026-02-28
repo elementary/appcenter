@@ -140,8 +140,8 @@ public class AppCenter.Homepage : Adw.NavigationPage {
 
         updates_badge = new Gtk.Label ("!");
         updates_badge.add_css_class (Granite.STYLE_CLASS_BADGE);
-        fp_client.bind_property (
-            "n-updatable-packages", updates_badge, "label", SYNC_CREATE,
+        fp_client.updatable_packages.bind_property (
+            "n-items", updates_badge, "label", SYNC_CREATE,
             (binding, from_value, ref to_value) => {
                 to_value.set_string (from_value.get_uint ().to_string ());
                 return true;
@@ -155,7 +155,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
             valign = Gtk.Align.START,
             transition_type = Gtk.RevealerTransitionType.CROSSFADE
         };
-        fp_client.bind_property ("has-updatable-packages", updates_badge_revealer, "reveal-child", SYNC_CREATE);
+        fp_client.updatable_packages.bind_property ("n-items", updates_badge_revealer, "reveal-child", SYNC_CREATE);
 
         var updates_overlay = new Gtk.Overlay () {
             child = updates_button

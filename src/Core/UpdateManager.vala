@@ -27,7 +27,8 @@ public class AppCenterCore.UpdateManager : Object {
     public bool can_update_all {
         get {
             unowned var fp_client = FlatpakBackend.get_default ();
-            return !updating_all && fp_client.n_updatable_packages - fp_client.n_unpaid_updatable_packages > 0;
+            return !updating_all &&
+                fp_client.updatable_packages.get_n_items () - fp_client.n_unpaid_updatable_packages > 0;
         }
     }
 
@@ -48,7 +49,7 @@ public class AppCenterCore.UpdateManager : Object {
         last_refresh_time = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
 
         unowned var fp_client = FlatpakBackend.get_default ();
-        fp_client.notify["n-updatable-packages"].connect (on_n_updatable_packages_changed);
+        fp_client.updatable_packages.items_changed.connect (on_updatable_packages_changed);
         fp_client.notify["n-unpaid-updatable-packages"].connect (() => notify_property ("can-update-all"));
 
         AppCenter.App.settings.changed["automatic-updates"].connect (on_automatic_updates_changed);
@@ -64,13 +65,13 @@ public class AppCenterCore.UpdateManager : Object {
         }
     }
 
-    private void on_n_updatable_packages_changed () {
+    private void on_updatable_packages_changed () {
         notify_property ("can-update-all");
         update_badge.begin ();
     }
 
     private async void update_badge () {
-        var n_updatable_packages = FlatpakBackend.get_default ().n_updatable_packages;
+        var n_updatable_packages = FlatpakBackend.get_default ().updatable_packages.get_n_items ();
 
         try {
             yield Granite.Services.Application.set_badge (n_updatable_packages);
@@ -167,7 +168,7 @@ public class AppCenterCore.UpdateManager : Object {
             yield update_all ();
         } else {
             var application = Application.get_default ();
-            var n_updatable_packages = fp_client.n_updatable_packages;
+            var n_updatable_packages = fp_client.updatable_packages.get_n_items ();
             if (n_updatable_packages > 0) {
                 var title = ngettext ("Update Available", "Updates Available", n_updatable_packages);
                 var body = ngettext (
