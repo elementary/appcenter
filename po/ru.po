@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-27 16:34+0000\n"
-"PO-Revision-Date: 2026-02-08 07:55+0000\n"
+"PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -861,19 +861,16 @@ msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Например, на контроллере PlayStation, Xbox или 8BitDo."
 
 #: src/Views/AppListUpdateView.vala:23
-#, fuzzy
-#| msgid "Show available updates"
 msgid "Available Updates"
-msgstr "Показать доступные обновления"
+msgstr "Доступные обновления"
 
 #: src/Views/AppListUpdateView.vala:32
-#, fuzzy, c-format
-#| msgid "Show available updates"
+#, c-format
 msgid "%u Available Update"
 msgid_plural "%u Available Updates"
-msgstr[0] "Показать доступные обновления"
-msgstr[1] "Показать доступные обновления"
-msgstr[2] "Показать доступные обновления"
+msgstr[0] "Доступно %u обновление"
+msgstr[1] "Доступно %u обновления"
+msgstr[2] "Доступно %u обновлений"
 
 #: src/Views/AppListUpdateView.vala:43 src/Widgets/SizeLabel.vala:23
 #, c-format
@@ -886,7 +883,7 @@ msgstr "Обновить всё"
 
 #: src/Views/AppListUpdateView.vala:75
 msgid "In Progress"
-msgstr ""
+msgstr "В процессе"
 
 #: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
@@ -924,7 +921,7 @@ msgstr "Установленные"
 #: src/Views/AppListUpdateView.vala:219
 #, c-format
 msgid "Last checked %s"
-msgstr ""
+msgstr "Последняя проверка: %s"
 
 #: src/Views/AuthorView.vala:32
 #, c-format
