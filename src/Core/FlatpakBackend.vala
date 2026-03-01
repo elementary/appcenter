@@ -85,8 +85,6 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     private Gtk.FilterListModel _updated_packages;
     public ListModel updated_packages { get { return _updated_packages; } }
 
-    public bool has_updated_packages { get { return _updated_packages.n_items > 0; } }
-
     // Right now only for runtime updates
     private GLib.ListStore additional_updates;
 
@@ -95,9 +93,6 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
     public ListModel working_packages { get; private set; }
 
-    public bool has_working_packages { get { return working_packages.get_n_items () > 0; } }
-    public bool has_updatable_packages { get { return _updatable_packages.n_items > 0; } }
-    public uint n_updatable_packages { get { return _updatable_packages.n_items; } }
     public uint n_unpaid_updatable_packages {
         get {
             uint n = 0;
@@ -118,13 +113,6 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 size += package.change_information.size;
             }
             return size;
-        }
-    }
-
-    public bool up_to_date {
-        get {
-            return !has_updatable_packages && (!working || job_type != GET_UPDATES && job_type != REFRESH_CACHE
-                && job_type != GET_DOWNLOAD_SIZE);
         }
     }
 
@@ -219,8 +207,6 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
     }
 
     construct {
-        notify["working"].connect (() => Idle.add_once (() => notify_property ("up-to-date")));
-
         // Our listmodel structure including the updates:
         //                                     addtional updates => flatten the two models => filter updatable packages => sort updating packages to the top
         //                                                         /\
@@ -267,7 +253,6 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         updated_every_filter.append (not_updating_filter);
 
         _updated_packages = new Gtk.FilterListModel (installed_packages, updated_every_filter);
-        _updated_packages.items_changed.connect (() => notify_property ("has-updated-packages"));
 
         var updates_models = new GLib.ListStore (typeof (ListModel));
         updates_models.append (additional_updates);
@@ -279,18 +264,14 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
         _updatable_packages = new Gtk.FilterListModel (flatten_model, updatable_filter);
         _updatable_packages.items_changed.connect (() => {
-            notify_property ("has-updatable-packages");
-            notify_property ("n-updatable-packages");
             notify_property ("n-unpaid-updatable-packages");
             notify_property ("updates-size");
-            notify_property ("up-to-date");
         });
 
         var working_expression = new Gtk.PropertyExpression (typeof (Package), null, "working");
         var working_filter = new Gtk.BoolFilter (working_expression);
 
         working_packages = new Gtk.FilterListModel (_sorted_packages, working_filter);
-        working_packages.items_changed.connect (() => notify_property ("has-working-packages"));
 
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
@@ -2023,7 +2004,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         job_args.cancellable = cancellable;
 
         // Clear any packages previously marked as updatable
-        for (int i = (int) n_updatable_packages - 1; i >= 0; i--) {
+        for (int i = (int) updatable_packages.get_n_items () - 1; i >= 0; i--) {
             var package = (Package) updatable_packages.get_item (i);
             package.change_information.clear_update_info ();
             package.update_state ();

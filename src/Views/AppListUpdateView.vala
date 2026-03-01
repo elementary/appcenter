@@ -23,8 +23,8 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         var updatable_header_label = new Granite.HeaderLabel (_("Available Updates")) {
             hexpand = true
         };
-        flatpak_backend.bind_property (
-            "n-updatable-packages", updatable_header_label, "label", SYNC_CREATE,
+        flatpak_backend.updatable_packages.bind_property (
+            "n-items", updatable_header_label, "label", SYNC_CREATE,
             (binding, from_value, ref to_value) => {
                 var n_updatable_packages = from_value.get_uint ();
 
@@ -70,7 +70,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         var updatable_section = new Granite.Box (VERTICAL, HALF);
         updatable_section.append (updatable_header);
         updatable_section.append (list_box);
-        flatpak_backend.bind_property ("has-updatable-packages", updatable_section, "visible", SYNC_CREATE);
+        flatpak_backend.updatable_packages.bind_property ("n-items", updatable_section, "visible", SYNC_CREATE);
 
         var in_progress_header = new Granite.HeaderLabel (_("In Progress")) {
             margin_end = 12,
@@ -86,7 +86,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         var in_progress_section = new Granite.Box (VERTICAL, HALF);
         in_progress_section.append (in_progress_header);
         in_progress_section.append (in_progress_list);
-        flatpak_backend.bind_property ("has-working-packages", in_progress_section, "visible", SYNC_CREATE);
+        flatpak_backend.working_packages.bind_property ("n-items", in_progress_section, "visible", SYNC_CREATE);
 
         installed_header = new Granite.HeaderLabel (_("Up to Date")) {
             margin_end = 12,
@@ -108,7 +108,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         var installed_section = new Granite.Box (VERTICAL, HALF);
         installed_section.append (installed_header);
         installed_section.append (installed_flowbox);
-        flatpak_backend.bind_property ("has-updated-packages", installed_section, "visible", SYNC_CREATE);
+        flatpak_backend.updated_packages.bind_property ("n-items", installed_section, "visible", SYNC_CREATE);
 
         var box = new Granite.Box (VERTICAL, DOUBLE);
         box.append (updatable_section);
