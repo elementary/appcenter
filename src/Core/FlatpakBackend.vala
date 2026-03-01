@@ -294,10 +294,10 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         user_appstream_pool = new AppStream.Pool ();
-        user_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
+        user_appstream_pool.set_flags (NONE);
 
         system_appstream_pool = new AppStream.Pool ();
-        system_appstream_pool.set_flags (AppStream.PoolFlags.LOAD_OS_CATALOG);
+        system_appstream_pool.set_flags (NONE);
 
         package_list = new Gee.HashMap<string, Package> (null, null);
 
