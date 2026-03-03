@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-27 16:34+0000\n"
-"PO-Revision-Date: 2026-02-26 19:55+0000\n"
+"PO-Revision-Date: 2026-03-04 11:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -852,7 +852,7 @@ msgstr "Uppdatera alla"
 
 #: src/Views/AppListUpdateView.vala:75
 msgid "In Progress"
-msgstr ""
+msgstr "Pågående"
 
 #: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
