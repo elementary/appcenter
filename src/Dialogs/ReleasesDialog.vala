@@ -30,7 +30,8 @@ public class AppCenter.ReleasesDialog : Granite.Dialog {
         var releases_list = new Gtk.ListBox () {
             margin_end = 6,
             margin_bottom = 6,
-            margin_start = 6
+            margin_start = 6,
+            selection_mode = NONE
         };
         releases_list.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
         releases_list.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
