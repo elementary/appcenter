@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-27 16:34+0000\n"
+"POT-Creation-Date: 2026-03-17 16:54+0000\n"
 "PO-Revision-Date: 2024-06-24 02:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/"
@@ -191,56 +191,56 @@ msgstr "Zaganjanje"
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:169
+#: src/Core/FlatpakBackend.vala:159
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:236
+#: src/Core/FlatpakBackend.vala:224
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Runtime Updates"
 msgstr "Iskanje posodobitev"
 
-#: src/Core/FlatpakBackend.vala:237
+#: src/Core/FlatpakBackend.vala:225
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1580 src/Core/FlatpakBackend.vala:1687
+#: src/Core/FlatpakBackend.vala:1601 src/Core/FlatpakBackend.vala:1708
 msgid "Component has no flatpak bundle"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1587 src/Core/FlatpakBackend.vala:1796
+#: src/Core/FlatpakBackend.vala:1608 src/Core/FlatpakBackend.vala:1817
 msgid "Error getting flatpak installation"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1631
+#: src/Core/FlatpakBackend.vala:1652
 msgid "Installing"
 msgstr "Nameščanje"
 
-#: src/Core/FlatpakBackend.vala:1704
+#: src/Core/FlatpakBackend.vala:1725
 msgid "Error getting flatpak installation for removal"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1742
+#: src/Core/FlatpakBackend.vala:1763
 msgid "Uninstalling"
 msgstr "Odstranjevanje"
 
-#: src/Core/FlatpakBackend.vala:1811
+#: src/Core/FlatpakBackend.vala:1832
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
 msgstr "Posodobitev ni bilo mogoče prenesti"
 
-#: src/Core/FlatpakBackend.vala:1899
+#: src/Core/FlatpakBackend.vala:1920
 msgid "Updating"
 msgstr "Posodabljanje"
 
-#: src/Core/FlatpakBackend.vala:2008
+#: src/Core/FlatpakBackend.vala:2029
 #, c-format
 msgid "Version: %s"
 msgstr "Verzija: %s"
 
-#: src/Core/FlatpakBackend.vala:2013
+#: src/Core/FlatpakBackend.vala:2034
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -251,12 +251,12 @@ msgstr[1] "Najdeni %u posodobitvi"
 msgstr[2] "Najdene %u posodobitve"
 msgstr[3] "Najdenih %u posodobitev"
 
-#: src/Core/FlatpakBackend.vala:2018
+#: src/Core/FlatpakBackend.vala:2039
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2122
+#: src/Core/FlatpakBackend.vala:2143
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalno)"
@@ -413,7 +413,7 @@ msgstr "Limit na kartici je bil presežen."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "To je testna kartica. Uporabite pravo kartico za plačilo."
 
-#: src/Core/UpdateManager.vala:172
+#: src/Core/UpdateManager.vala:173
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Posodobitev je na voljo"
@@ -421,7 +421,7 @@ msgstr[1] "Posodobitvi sta na voljo"
 msgstr[2] "Posodobitve so na voljo"
 msgstr[3] "Posodobitve so na voljo"
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:175
 #, fuzzy, c-format
 #| msgid "%u Update Available"
 #| msgid_plural "%u Updates Available"

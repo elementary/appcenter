@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-27 16:34+0000\n"
+"POT-Creation-Date: 2026-03-17 16:54+0000\n"
 "PO-Revision-Date: 2023-02-16 09:45+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/"
@@ -188,56 +188,56 @@ msgstr "Starter"
 msgid "%s (system-wide)"
 msgstr "%s (hele systemet)"
 
-#: src/Core/FlatpakBackend.vala:169
+#: src/Core/FlatpakBackend.vala:159
 msgid "package operations are being performed"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:236
+#: src/Core/FlatpakBackend.vala:224
 #, fuzzy
 #| msgid "Checking for Updates"
 msgid "Runtime Updates"
 msgstr "Søger efter opdateringer"
 
-#: src/Core/FlatpakBackend.vala:237
+#: src/Core/FlatpakBackend.vala:225
 msgid "Updates to app runtimes"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1580 src/Core/FlatpakBackend.vala:1687
+#: src/Core/FlatpakBackend.vala:1601 src/Core/FlatpakBackend.vala:1708
 msgid "Component has no flatpak bundle"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1587 src/Core/FlatpakBackend.vala:1796
+#: src/Core/FlatpakBackend.vala:1608 src/Core/FlatpakBackend.vala:1817
 msgid "Error getting flatpak installation"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1631
+#: src/Core/FlatpakBackend.vala:1652
 msgid "Installing"
 msgstr "Installerer"
 
-#: src/Core/FlatpakBackend.vala:1704
+#: src/Core/FlatpakBackend.vala:1725
 msgid "Error getting flatpak installation for removal"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1742
+#: src/Core/FlatpakBackend.vala:1763
 msgid "Uninstalling"
 msgstr "Afinstallerer"
 
-#: src/Core/FlatpakBackend.vala:1811
+#: src/Core/FlatpakBackend.vala:1832
 #, fuzzy
 #| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
 msgstr "Kunne Ikke Hente Opdateringer"
 
-#: src/Core/FlatpakBackend.vala:1899
+#: src/Core/FlatpakBackend.vala:1920
 msgid "Updating"
 msgstr "Opdaterer"
 
-#: src/Core/FlatpakBackend.vala:2008
+#: src/Core/FlatpakBackend.vala:2029
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/FlatpakBackend.vala:2013
+#: src/Core/FlatpakBackend.vala:2034
 #, fuzzy, c-format
 #| msgid "%u component with updates"
 #| msgid_plural "%u components with updates"
@@ -246,12 +246,12 @@ msgid_plural "%u runtimes with updates"
 msgstr[0] "%u komponent med updateringer"
 msgstr[1] "%u komponenter med updateringer"
 
-#: src/Core/FlatpakBackend.vala:2018
+#: src/Core/FlatpakBackend.vala:2039
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/FlatpakBackend.vala:2122
+#: src/Core/FlatpakBackend.vala:2143
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalt)"
@@ -407,13 +407,13 @@ msgstr ""
 "Det givne kort er et testkort. Brug venligst et gyldigt kort for at "
 "fortsætte."
 
-#: src/Core/UpdateManager.vala:172
+#: src/Core/UpdateManager.vala:173
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Opdatering tilgængelig"
 msgstr[1] "Opdateringer tilgængelige"
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:175
 #, fuzzy, c-format
 #| msgid "%u update is available."
 #| msgid_plural "%u updates are available."
