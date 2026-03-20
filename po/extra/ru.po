@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-27 16:34+0000\n"
+"POT-Creation-Date: 2026-03-17 16:54+0000\n"
 "PO-Revision-Date: 2024-12-13 16:53+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -58,60 +58,64 @@ msgstr "Платите сколько сможете, чтобы поддерж�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:117
-#: data/appcenter.metainfo.xml.in:130 data/appcenter.metainfo.xml.in:150
-#: data/appcenter.metainfo.xml.in:168 data/appcenter.metainfo.xml.in:198
-#: data/appcenter.metainfo.xml.in:218 data/appcenter.metainfo.xml.in:233
-#: data/appcenter.metainfo.xml.in:247
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:85
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:145
+#: data/appcenter.metainfo.xml.in:165 data/appcenter.metainfo.xml.in:183
+#: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:248 data/appcenter.metainfo.xml.in:262
 msgid "Other Improvements:"
 msgstr "Прочие улучшения:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:119
-#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:152
-#: data/appcenter.metainfo.xml.in:173 data/appcenter.metainfo.xml.in:201
-#: data/appcenter.metainfo.xml.in:223 data/appcenter.metainfo.xml.in:235
-#: data/appcenter.metainfo.xml.in:249
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:134 data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:167 data/appcenter.metainfo.xml.in:188
+#: data/appcenter.metainfo.xml.in:216 data/appcenter.metainfo.xml.in:238
+#: data/appcenter.metainfo.xml.in:250 data/appcenter.metainfo.xml.in:264
 msgid "Updated translations"
 msgstr "Обновлены переводы"
 
-#: data/appcenter.metainfo.xml.in:164 data/appcenter.metainfo.xml.in:194
-#: data/appcenter.metainfo.xml.in:214 data/appcenter.metainfo.xml.in:242
+#: data/appcenter.metainfo.xml.in:73
+msgid "Performance improvements"
+msgstr "Улучшения производительности"
+
+#: data/appcenter.metainfo.xml.in:179 data/appcenter.metainfo.xml.in:209
+#: data/appcenter.metainfo.xml.in:229 data/appcenter.metainfo.xml.in:257
 msgid "New features:"
 msgstr "Новые возможности:"
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:181
 msgid "Manage autostart in System Settings → Applications"
 msgstr "Управляйте автозапуском в Параметрах системы → Приложения"
 
-#: data/appcenter.metainfo.xml.in:170
+#: data/appcenter.metainfo.xml.in:185
 msgid "Automatic app updates by default"
 msgstr "Автоматические обновления приложений по умолчанию"
 
-#: data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:186
 msgid "OS Updates have moved to System Settings"
 msgstr "Обновления ОС перемещены в настройки системы"
 
-#: data/appcenter.metainfo.xml.in:172
+#: data/appcenter.metainfo.xml.in:187
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Приложения, созданные для elementary OS, теперь выделяются специальным "
 "значком, вместо предупреждения об установке из других источниках"
 
-#: data/appcenter.metainfo.xml.in:196
+#: data/appcenter.metainfo.xml.in:211
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
 "Предупреждать, когда приложения используют устаревшие методы автозапуска, "
 "уведомлений"
 
-#: data/appcenter.metainfo.xml.in:200
+#: data/appcenter.metainfo.xml.in:215
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
 "Исправлено мерцание в представлениях AppInfo при получении размера установки"
 
-#: data/appcenter.metainfo.xml.in:216
+#: data/appcenter.metainfo.xml.in:231
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -119,23 +123,23 @@ msgstr ""
 "Предупреждение о доступе к домашним или системным папкам, месторасположению, "
 "настройкам или о небезопасной песочнице."
 
-#: data/appcenter.metainfo.xml.in:220
+#: data/appcenter.metainfo.xml.in:235
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Уменьшены отсупы в страницах информации о приложении"
 
-#: data/appcenter.metainfo.xml.in:221
+#: data/appcenter.metainfo.xml.in:236
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Отображение баннера-заполнителя на главной странице при загрузке"
 
-#: data/appcenter.metainfo.xml.in:222
+#: data/appcenter.metainfo.xml.in:237
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr "Не отделять приложения не из AppCenter в отдельной категории"
 
-#: data/appcenter.metainfo.xml.in:244
+#: data/appcenter.metainfo.xml.in:259
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Предлагать опцию «Починить» при ошибке обновления Flatpak"
 
-#: data/appcenter.metainfo.xml.in:245
+#: data/appcenter.metainfo.xml.in:260
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -229,9 +233,6 @@ msgstr ""
 
 #~ msgid "Redesigned \"Fun &amp; Games\" category card"
 #~ msgstr "Переработана карточка категории «Развлечения и Игры»"
-
-#~ msgid "Performance improvements"
-#~ msgstr "Улучшения производительности"
 
 #~ msgid "Stability improvements"
 #~ msgstr "Улучшения стабильности"
