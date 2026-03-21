@@ -1,21 +1,21 @@
 # Veli-Pekka Samuli Finnilä <vpf@tuta.io>, 2018, 2019.
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026.
 # Kimmo Vänttinen <kvanttinen72@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2024-12-02 13:16+0000\n"
+"PO-Revision-Date: 2026-03-22 14:55+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"Language-Team: Finnish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -52,16 +52,13 @@ msgid "“%s” has been installed"
 msgstr "“%s” on asennettu"
 
 #: src/Application.vala:334
-#, fuzzy
-#| msgid "The app has been installed"
 msgid "The app has been uninstalled"
-msgstr "Sovellus on asennettu"
+msgstr "Sovelluksen asennus on poistettu"
 
 #: src/Application.vala:335 src/MainWindow.vala:237
-#, fuzzy, c-format
-#| msgid "“%s” has been installed"
+#, c-format
 msgid "“%s” has been uninstalled"
-msgstr "“%s” on asennettu"
+msgstr "“%s” on poistettu"
 
 #: src/MainWindow.vala:57
 #, c-format
@@ -733,16 +730,12 @@ msgid "Screenshot Not Available"
 msgstr "Kuvakaappausta ei ole saatavilla"
 
 #: src/Views/AppInfoView.vala:631
-#, fuzzy
-#| msgid "What's New:"
 msgid "What's New"
-msgstr "Uutuudet:"
+msgstr "Uutuudet"
 
 #: src/Views/AppInfoView.vala:635
-#, fuzzy
-#| msgid "Version: %s"
 msgid "Version History…"
-msgstr "Versio: %s"
+msgstr "Versiohistoria…"
 
 #: src/Views/AppInfoView.vala:755 src/Views/AppInfoView.vala:762
 msgid "Outdated"
@@ -832,33 +825,30 @@ msgstr "Voi lukea ja muokata järjestelmän asetuksia"
 
 #: src/Views/AppInfoView.vala:1006
 msgid "Requires a Controller"
-msgstr ""
+msgstr "Vaatii ohjaimen"
 
 #: src/Views/AppInfoView.vala:1009
 msgid "Recommends a Controller"
-msgstr ""
+msgstr "Suosittelee ohjainta"
 
 #: src/Views/AppInfoView.vala:1012
 msgid "Play With a Controller"
-msgstr ""
+msgstr "Pelaa ohjaimella"
 
 #: src/Views/AppInfoView.vala:1016
 msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:23
-#, fuzzy
-#| msgid "Show available updates"
 msgid "Available Updates"
-msgstr "Näytä saatavilla olevat päivitykset"
+msgstr "Saatavilla olevat päivitykset"
 
 #: src/Views/AppListUpdateView.vala:32
-#, fuzzy, c-format
-#| msgid "Show available updates"
+#, c-format
 msgid "%u Available Update"
 msgid_plural "%u Available Updates"
-msgstr[0] "Näytä saatavilla olevat päivitykset"
-msgstr[1] "Näytä saatavilla olevat päivitykset"
+msgstr[0] "%u päivitys saatavilla"
+msgstr[1] "%u päivitystä saatavilla"
 
 #: src/Views/AppListUpdateView.vala:43 src/Widgets/SizeLabel.vala:23
 #, c-format
@@ -871,7 +861,7 @@ msgstr "Päivitä kaikki"
 
 #: src/Views/AppListUpdateView.vala:75
 msgid "In Progress"
-msgstr ""
+msgstr "Meneillään"
 
 #: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
@@ -909,7 +899,7 @@ msgstr "Asennettu"
 #: src/Views/AppListUpdateView.vala:219
 #, c-format
 msgid "Last checked %s"
-msgstr ""
+msgstr "Viimeksi tarkistettu %s"
 
 #: src/Views/AuthorView.vala:32
 #, c-format
@@ -978,7 +968,7 @@ msgstr "Etsi %s"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
-msgstr ""
+msgstr "Sovelluksen sisäisiä ostoksia"
 
 #: src/Widgets/ActionStack.vala:138 src/Widgets/HumbleButton.vala:67
 msgid "Install"
@@ -990,7 +980,7 @@ msgstr "Päivitä"
 
 #: src/Widgets/AddonList.vala:14
 msgid "Add-Ons"
-msgstr ""
+msgstr "Lisäosat"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
@@ -1042,13 +1032,11 @@ msgstr "Hanki lähdekoodi"
 
 #: src/Widgets/LinkListBox.vala:139
 msgid "Get Involved"
-msgstr ""
+msgstr "Tule mukaan"
 
 #: src/Widgets/LinkListBox.vala:205
-#, fuzzy
-#| msgid "Unknown License"
 msgid "No License"
-msgstr "Tuntematon lisenssi"
+msgstr "Ei lisenssiä"
 
 #: src/Widgets/LinkListBox.vala:206 src/Widgets/LinkListBox.vala:265
 #, fuzzy, c-format
@@ -1095,10 +1083,8 @@ msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://fi.wikipedia.org/wiki/Public_domain"
 
 #: src/Widgets/LinkListBox.vala:261
-#, fuzzy
-#| msgid "Unknown License"
 msgid "Custom License"
-msgstr "Tuntematon lisenssi"
+msgstr "Mukautettu lisenssi"
 
 #: src/Widgets/LinkListBox.vala:344
 msgid "Payment provided by Stripe"
