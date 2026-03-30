@@ -2,14 +2,14 @@
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026.
 # Kimmo Vänttinen <kvanttinen72@gmail.com>, 2018.
 # Veli-Pekka Samuli Finnilä <wompo@users.noreply.l10n.elementaryos.org>, 2026.
+# JTi65 <jouko.tiilikainen@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
 "PO-Revision-Date: 2026-03-30 16:04+0000\n"
-"Last-Translator: Veli-Pekka Samuli Finnilä "
-"<wompo@users.noreply.l10n.elementaryos.org>\n"
+"Last-Translator: JTi65 <jouko.tiilikainen@gmail.com>\n"
 "Language-Team: Finnish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/fi/>\n"
 "Language: fi\n"
@@ -886,7 +886,7 @@ msgstr "Asetukset"
 #: src/Views/Homepage.vala:130
 msgctxt "action"
 msgid "Search"
-msgstr "Etsi"
+msgstr "Hae"
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:189
