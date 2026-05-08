@@ -1,5 +1,5 @@
 Format: http://dep.debian.net/deps/dep5
-Upstream-Name: appcenter
+Upstream-Name: io.elementary.appcenter
 Source: https://github.com/elementary/appcenter
 
 Files: src/* debian/*
