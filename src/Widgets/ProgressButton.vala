@@ -4,6 +4,9 @@
  */
 
 public class AppCenter.ProgressButton : Gtk.Button {
+    private const string ACTION_GROUP_PREFIX = "package";
+    private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
+
     public AppCenterCore.Package package { get; construct; }
 
     private Gtk.ProgressBar progressbar;
@@ -16,42 +19,21 @@ public class AppCenter.ProgressButton : Gtk.Button {
         add_css_class ("progress");
         add_css_class ("text-button");
 
-        package.change_information.progress_changed.connect (update_progress);
-        package.change_information.status_changed.connect (update_progress_status);
-
-        update_progress_status ();
-        update_progress ();
+        package.change_information.bind_property ("status-description", this, "tooltip-text", SYNC_CREATE);
 
         var cancel_label = new Gtk.Label (_("Cancel")) {
             mnemonic_widget = this
         };
 
         progressbar = new Gtk.ProgressBar ();
+        package.change_information.bind_property ("progress", progressbar, "fraction", SYNC_CREATE);
 
         var box = new Gtk.Box (VERTICAL, 0);
         box.append (cancel_label);
         box.append (progressbar);
 
         child = box;
-    }
-
-    private void update_progress () {
-        Idle.add (() => {
-            progressbar.fraction = package.progress;
-            return GLib.Source.REMOVE;
-        });
-    }
-
-    private void update_progress_status () {
-        Idle.add (() => {
-            tooltip_text = package.get_progress_description ();
-            sensitive = package.change_information.can_cancel && !package.changes_finished;
-            /* Ensure progress bar shows complete to match status (lp:1606902) */
-            if (package.changes_finished) {
-                progressbar.fraction = 1.0f;
-            }
-
-            return GLib.Source.REMOVE;
-        });
+        action_name = ACTION_PREFIX + AppCenterCore.ChangeInformation.CANCEL_ACTION_NAME;
+        insert_action_group (ACTION_GROUP_PREFIX, package.change_information.action_group);
     }
 }

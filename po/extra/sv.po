@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 06:00+0000\n"
-"PO-Revision-Date: 2025-10-22 08:07+0000\n"
+"POT-Creation-Date: 2026-03-17 16:54+0000\n"
+"PO-Revision-Date: 2026-03-22 14:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/appcenter/"
 "extra/sv/>\n"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:6
+#: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
 msgstr "Bläddra och hantera appar"
 
@@ -56,55 +56,61 @@ msgstr "Betala vad du kan för att ge ditt stöd till utvecklare"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:82
-#: data/appcenter.metainfo.xml.in:103 data/appcenter.metainfo.xml.in:116
-#: data/appcenter.metainfo.xml.in:136 data/appcenter.metainfo.xml.in:154
-#: data/appcenter.metainfo.xml.in:184 data/appcenter.metainfo.xml.in:204
-#: data/appcenter.metainfo.xml.in:219 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:85
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:145
+#: data/appcenter.metainfo.xml.in:165 data/appcenter.metainfo.xml.in:183
+#: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:248 data/appcenter.metainfo.xml.in:262
 msgid "Other Improvements:"
 msgstr "Andra förbättringar:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:105 data/appcenter.metainfo.xml.in:118
-#: data/appcenter.metainfo.xml.in:138 data/appcenter.metainfo.xml.in:159
-#: data/appcenter.metainfo.xml.in:187 data/appcenter.metainfo.xml.in:209
-#: data/appcenter.metainfo.xml.in:221 data/appcenter.metainfo.xml.in:235
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:134 data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:167 data/appcenter.metainfo.xml.in:188
+#: data/appcenter.metainfo.xml.in:216 data/appcenter.metainfo.xml.in:238
+#: data/appcenter.metainfo.xml.in:250 data/appcenter.metainfo.xml.in:264
 msgid "Updated translations"
 msgstr "Uppdaterade översättningar"
 
-#: data/appcenter.metainfo.xml.in:150 data/appcenter.metainfo.xml.in:180
-#: data/appcenter.metainfo.xml.in:200 data/appcenter.metainfo.xml.in:228
+#: data/appcenter.metainfo.xml.in:73
+msgid "Performance improvements"
+msgstr "Prestandaförbättringar"
+
+#: data/appcenter.metainfo.xml.in:179 data/appcenter.metainfo.xml.in:209
+#: data/appcenter.metainfo.xml.in:229 data/appcenter.metainfo.xml.in:257
 msgid "New features:"
 msgstr "Nya funktioner:"
 
-#: data/appcenter.metainfo.xml.in:152
+#: data/appcenter.metainfo.xml.in:181
 msgid "Manage autostart in System Settings → Applications"
 msgstr "Hantera automatisk start i Systeminställningar → Program"
 
-#: data/appcenter.metainfo.xml.in:156
+#: data/appcenter.metainfo.xml.in:185
 msgid "Automatic app updates by default"
 msgstr "Automatiska appuppdateringar som standard"
 
-#: data/appcenter.metainfo.xml.in:157
+#: data/appcenter.metainfo.xml.in:186
 msgid "OS Updates have moved to System Settings"
 msgstr "OS-uppdateringar har flyttats till Systeminställningar"
 
-#: data/appcenter.metainfo.xml.in:158
+#: data/appcenter.metainfo.xml.in:187
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
 "Märk appar som är gjorda för elementary OS istället för att märka appar från "
 "andra fjärrservrar"
 
-#: data/appcenter.metainfo.xml.in:182
+#: data/appcenter.metainfo.xml.in:211
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr "Varna när appar använder föråldrade Autostart, Meddelanden"
 
-#: data/appcenter.metainfo.xml.in:186
+#: data/appcenter.metainfo.xml.in:215
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr "Fixa flimmer på AppInfo-vyer vid hämtning av installationsstorlek"
 
-#: data/appcenter.metainfo.xml.in:202
+#: data/appcenter.metainfo.xml.in:231
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
@@ -112,25 +118,25 @@ msgstr ""
 "Varna när appar har åtkomst till hem- eller systemmappar, plats, "
 "inställningar eller har en osäker sandlåda."
 
-#: data/appcenter.metainfo.xml.in:206
+#: data/appcenter.metainfo.xml.in:235
 msgid "Tighten up spacing and margins in App Info views"
 msgstr "Strama upp avstånd och marginaler i App Info-vyer"
 
-#: data/appcenter.metainfo.xml.in:207
+#: data/appcenter.metainfo.xml.in:236
 msgid "Show a placeholder banner on the home page when loading"
 msgstr "Visa en platshållarbanderoll på startsidan när den läses in"
 
-#: data/appcenter.metainfo.xml.in:208
+#: data/appcenter.metainfo.xml.in:237
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
 "Lista inte appar som inte tillhör AppCenter under en separat rubrik i "
 "kategorivyer"
 
-#: data/appcenter.metainfo.xml.in:230
+#: data/appcenter.metainfo.xml.in:259
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Erbjud ett reparationsalternativ om Flatpak-uppdateringar misslyckas"
 
-#: data/appcenter.metainfo.xml.in:231
+#: data/appcenter.metainfo.xml.in:260
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
@@ -138,11 +144,11 @@ msgstr ""
 "Visa ett meddelande i uppdateringsvyn när uppdateringarna är aktuella, "
 "inklusive när uppdateringarna senast kontrollerades"
 
-#: data/io.elementary.appcenter.desktop.in.in:9
+#: data/io.elementary.appcenter.desktop.in.in:8
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "installera;avinstallera;ta bort;katalogisera;lagra;appar;programvara;"
 
-#: data/io.elementary.appcenter.desktop.in.in:26
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "Leta efter uppdateringar"
 

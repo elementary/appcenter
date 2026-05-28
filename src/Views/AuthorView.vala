@@ -63,5 +63,10 @@ private class AppCenter.AuthorView : Gtk.Box {
         append (clamp);
         add_css_class ("bottom-toolbar");
         add_css_class (Granite.STYLE_CLASS_FLAT);
+
+        flowbox.child_activated.connect ((child) => {
+            var package = ((AppCenter.Widgets.ListPackageRowGrid) child.get_child ()).package;
+            activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+        });
     }
 }

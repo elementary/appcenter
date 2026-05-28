@@ -1,36 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/extra/"
-"gl/>\n"
-"Language: gl\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
-"X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
 #: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
-msgstr "Centro de aplicacións"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
-msgstr "Explore e xestione aplicacións"
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,10 +34,6 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Unha tenda de aplicativos para desenvolvedores independentes de software "
-"libre. Navegue polas categorías ou busque e descubra novos aplicativos. "
-"AppCenter tamén é usado para actualizar o seu sistema á última e mellor "
-"versión para ter novas características e correccións."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -56,9 +48,8 @@ msgid "Pay what you can to support developers"
 msgstr ""
 
 #: data/appcenter.metainfo.xml.in:62
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr ""
 
 #: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:85
 #: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:111
@@ -141,13 +132,12 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:8
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "instalar;desinstalar;eliminar;catálogo;tenda;aplicativos;actualizacións;software;"
+msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Comprobar Actualizacións"
+msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
@@ -156,22 +146,3 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
 msgstr ""
-
-#~ msgid "@APP_NAME@"
-#~ msgstr "@APP_NAME@"
-
-#, fuzzy
-#~| msgid "Check for Updates"
-#~ msgid "Manually check for new updates"
-#~ msgstr "Comprobar Actualizacións"
-
-#, fuzzy
-#~| msgid "Check for Updates"
-#~ msgid "Minor updates"
-#~ msgstr "Comprobar Actualizacións"
-
-#~ msgid "@PROJECT_NAME@"
-#~ msgstr "@PROJECT_NAME@"
-
-#~ msgid "@DESKTOP_ICON@"
-#~ msgstr "@DESKTOP_ICON@"

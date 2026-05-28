@@ -17,7 +17,7 @@
  * Authored by: Adam Bieńkowski <donadigos159@gmail.com>
  */
 
-public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
+public class AppCenter.Widgets.ReleaseRow : Granite.Box {
     public AppStream.Release release { get; construct; }
 
     public ReleaseRow (AppStream.Release release) {
@@ -31,10 +31,9 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
     construct {
         var header_icon = new Gtk.Image.from_icon_name ("tag-symbolic");
 
-        var header_label = new Gtk.Label (format_version (release.get_version ())) {
-            use_markup = true
+        var header_label = new Granite.HeaderLabel (format_version (release.get_version ())) {
+            size = H3
         };
-        header_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var date_label = new Gtk.Label (format_date (release.get_timestamp ())) {
             halign = END,
@@ -50,12 +49,12 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
             xalign = 0
         };
 
-        var header_box = new Gtk.Box (HORIZONTAL, 0);
-        header_box.add_css_class ("header");
+        var header_box = new Granite.Box (HORIZONTAL, HALF);
         header_box.append (header_icon);
         header_box.append (header_label);
         header_box.append (date_label);
 
+        child_spacing = HALF;
         orientation = VERTICAL;
         append (header_box);
         append (description_label);
@@ -100,7 +99,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.Box {
 
     private string format_version (string version) {
         if (version != null) {
-            return "<b>%s</b>".printf (version);
+            return version;
         } else {
             return _("Unknown version");
         }

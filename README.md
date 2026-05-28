@@ -11,6 +11,7 @@ You'll need the following dependencies:
 * gettext
 * libadwaita-1-dev (>= 1.4)
 * libappstream-dev (>= 1.0.0)
+* libdbus-1-dev
 * libflatpak-dev (>= 1.0.7)
 * libgee-0.8-dev
 * libgranite-7-dev (>=7.7.0)
@@ -43,14 +44,6 @@ See debug messages:
 As specified in the [GLib documentation](https://developer.gnome.org/glib/stable/glib-running.html)
 
     G_MESSAGES_DEBUG=all io.elementary.appcenter
-
-Show restart required messaging:
-
-    sudo touch /var/run/reboot-required
-
-Hide restart required messaging:
-
-    sudo rm /var/run/reboot-required
 
 Load and preview a local AppStream XML metadata file, your local metadata will show up in the featured banner and will also be searchable. Metadata loaded this way will have a `(local)` suffix in it's name.
 

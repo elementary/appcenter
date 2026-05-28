@@ -65,6 +65,35 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.4.0" date="2026-03-31">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+          <li>Performance improvements</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/14">Show operations in progress on the "Installed" tab</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/1368">Pending and Current Operation View</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2401">Toast appears empty when updates are installed.</issue>
+      </issues>
+    </release>
+
+    <release version="8.3.2" date="2026-02-04">
+      <description>
+        <p>Other Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/appcenter/issues/1379">AppCenter still shows number of updates on the icon if updated through the terminal</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2371">Revert change from list/flowbox activate to click controller</issue>
+        <issue url="https://github.com/elementary/appcenter/issues/2393">User feedback on "Uninstall"</issue>
+      </issues>
+    </release>
+
     <release version="8.3.1" date="2025-09-20">
       <description>
         <p>Other Improvements:</p>

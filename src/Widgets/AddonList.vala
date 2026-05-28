@@ -25,6 +25,7 @@ public class AppCenter.AddonList : Granite.Bin {
             single_click_activate = true,
             vexpand = true
         };
+        list_view.activate.connect (on_activate);
 
         var scrolled = new Gtk.ScrolledWindow () {
             child = list_view,
@@ -48,6 +49,11 @@ public class AppCenter.AddonList : Granite.Bin {
                 return true;
             }
         );
+    }
+
+    private void on_activate (Gtk.GridView view, uint pos) {
+        var package = (AppCenterCore.Package) view.model.get_item (pos);
+        activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
     }
 
     private void on_bind (Object obj) {
