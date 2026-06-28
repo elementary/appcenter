@@ -3,13 +3,14 @@
 # Zisis Avouris <zisisavouris@gmail.com>, 2023.
 # Orionas Kakomoiroglou <209243298+OrionasKakomoiroglou@users.noreply.github.com>, 2025.
 # Jim Spentzos <jimspentzos2000@gmail.com>, 2025, 2026.
+# Kefalos Apostolos <apostkef@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
 "PO-Revision-Date: 2026-06-28 15:56+0000\n"
-"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
+"Last-Translator: Kefalos Apostolos <apostkef@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/el/>\n"
 "Language: el\n"
@@ -1097,7 +1098,7 @@ msgstr "Ιδιόκτητο"
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:247
 msgid "https://www.gnu.org/proprietary/proprietary.en.html"
-msgstr ""
+msgstr "https://www.gnu.org/proprietary/proprietary.en.html"
 
 #: src/Widgets/LinkListBox.vala:253 src/Widgets/LinkListBox.vala:286
 msgid "Public Domain"
