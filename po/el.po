@@ -2,15 +2,14 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # Zisis Avouris <zisisavouris@gmail.com>, 2023.
 # Orionas Kakomoiroglou <209243298+OrionasKakomoiroglou@users.noreply.github.com>, 2025.
-# Jim Spentzos <jimspentzos2000@gmail.com>, 2025.
+# Jim Spentzos <jimspentzos2000@gmail.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2025-11-12 22:55+0000\n"
-"Last-Translator: Orionas Kakomoiroglou "
-"<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
+"PO-Revision-Date: 2026-06-28 15:56+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/el/>\n"
 "Language: el\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -29,7 +28,7 @@ msgstr "AppCenter"
 #: src/Application.vala:75
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Δεν ήταν δυνατή η ανάλυση του τύπου MIME %s"
+msgstr "Δεν ήταν δυνατή η ανάλυση του τύπου πολυμέσου %s"
 
 #: src/Application.vala:94
 #, c-format
@@ -123,7 +122,7 @@ msgstr "Οικονομικά"
 
 #: src/Core/CategoryManager.vala:51
 msgid "Fun & Games"
-msgstr "Διασκέδαση & Παιχνίδια"
+msgstr "Διασκέδαση και παιχνίδια"
 
 #: src/Core/CategoryManager.vala:69
 msgid "Graphics"
@@ -135,7 +134,7 @@ msgstr "Διαδίκτυο"
 
 #: src/Core/CategoryManager.vala:84
 msgid "Math, Science, & Engineering"
-msgstr "Μαθηματικά, Επιστήμη και Μηχανική"
+msgstr "Μαθηματικά, επιστήμες και μηχανική"
 
 #: src/Core/CategoryManager.vala:104
 msgid "Media Production"
@@ -870,18 +869,15 @@ msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr "Όπως για παράδειγμα, ένα χειριστήριο PlayStation, Xbox ή 8BitDo."
 
 #: src/Views/AppListUpdateView.vala:23
-#, fuzzy
-#| msgid "Show available updates"
 msgid "Available Updates"
-msgstr "Εμφάνιση διαθέσιμων ενημερώσεων"
+msgstr "Διαθέσιμες ενημερώσεις"
 
 #: src/Views/AppListUpdateView.vala:32
-#, fuzzy, c-format
-#| msgid "Show available updates"
+#, c-format
 msgid "%u Available Update"
 msgid_plural "%u Available Updates"
-msgstr[0] "Εμφάνιση διαθέσιμων ενημερώσεων"
-msgstr[1] "Εμφάνιση διαθέσιμων ενημερώσεων"
+msgstr[0] "%u διαθέσιμη ενημέρωση"
+msgstr[1] "%u διαθέσιμες ενημερώσεις"
 
 #: src/Views/AppListUpdateView.vala:43 src/Widgets/SizeLabel.vala:23
 #, c-format
@@ -894,7 +890,7 @@ msgstr "Ενημέρωση όλων"
 
 #: src/Views/AppListUpdateView.vala:75
 msgid "In Progress"
-msgstr ""
+msgstr "Σε εξέλιξη"
 
 #: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
@@ -932,7 +928,7 @@ msgstr "Εγκατεστημένες"
 #: src/Views/AppListUpdateView.vala:219
 #, c-format
 msgid "Last checked %s"
-msgstr ""
+msgstr "Τελευταίος έλεγχος: %s"
 
 #: src/Views/AuthorView.vala:32
 #, c-format
@@ -962,7 +958,7 @@ msgstr "Ενημερώσεις και εγκατεστημένες εφαρμο�
 
 #: src/Views/Homepage.vala:180
 msgid "Home"
-msgstr "Αρχική Σελίδα"
+msgstr "Αρχική"
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
