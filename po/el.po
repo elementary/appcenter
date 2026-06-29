@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2026-06-28 15:56+0000\n"
-"Last-Translator: Kefalos Apostolos <apostkef@gmail.com>\n"
+"PO-Revision-Date: 2026-06-29 11:48+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/el/>\n"
 "Language: el\n"
@@ -34,51 +34,49 @@ msgstr "Δεν ήταν δυνατή η ανάλυση του τύπου πολ�
 #: src/Application.vala:94
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Ο σύνδεσμος '%s' δεν βρέθηκε, αναζήτηση αντί αυτού"
+msgstr ""
+"Δεν ήταν δυνατή η εύρεση του καθορισμένου συνδέσμου «%s», γίνεται αναζήτηση"
 
 #: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
-"Το AppCenter θα ξεκινά αυτόματα κατά την εκκίνηση αυτής της συσκευής και θα "
-"λειτουργεί και όταν είναι κλειστό το παράθυρο για να μπορεί να ελέγχει και "
-"να εγκαθιστά αυτόματα τις ενημερώσεις."
+"Το AppCenter θα ξεκινά αυτόματα κατά την ενεργοποίηση αυτής της συσκευής, "
+"ενώ θα λειτουργεί ακόμα και με κλειστό το παράθυρο, προκειμένου να ελέγχει "
+"και να εγκαθιστά αυτόματα τις ενημερώσεις."
 
 #: src/Application.vala:323
 msgid "The app has been installed"
-msgstr "Η εφαρμογή εγκαταστάθηκε"
+msgstr "Η εφαρμογή έχει εγκατασταθεί"
 
 #: src/Application.vala:324 src/MainWindow.vala:225
 #, c-format
 msgid "“%s” has been installed"
-msgstr "Η εφαρμογή \"%s\" έχει εγκατασταθεί"
+msgstr "Το «%s» έχει εγκατασταθεί"
 
 #: src/Application.vala:334
-#, fuzzy
-#| msgid "The app has been installed"
 msgid "The app has been uninstalled"
-msgstr "Η εφαρμογή εγκαταστάθηκε"
+msgstr "Η εφαρμογή έχει καταργηθεί"
 
 #: src/Application.vala:335 src/MainWindow.vala:237
-#, fuzzy, c-format
-#| msgid "“%s” has been installed"
+#, c-format
 msgid "“%s” has been uninstalled"
-msgstr "Η εφαρμογή \"%s\" έχει εγκατασταθεί"
+msgstr "Το «%s» έχει καταργηθεί"
 
 #: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr "Σφάλμα εκκίνησης του “%s“"
+msgstr "Σφάλμα εκκίνησης του «%s»"
 
 #: src/MainWindow.vala:89
 msgid "Network Not Available."
-msgstr "Το δίκτυο δεν είναι διαθέσιμο."
+msgstr "Δεν υπάρχει διαθέσιμο δίκτυο."
 
 #: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
-"Συνδεθείτε στο διαδίκτυο για να περιηγηθείτε και να εγκαταστήσετε εφαρμογές."
+"Συνδεθείτε στο διαδίκτυο για να εξερευνήσετε και να εγκαταστήσετε εφαρμογές."
 
 #: src/MainWindow.vala:100
 msgid "Network Settings…"
@@ -91,7 +89,7 @@ msgstr "Εκτέλεση σε δοκιμαστική λειτουργία"
 #: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr "Εγκαταστήστε το %s για να περιηγηθείτε και να εγκαταστήσετε εφαρμογές."
+msgstr "Εγκαταστήστε το %s για να εξερευνήσετε και να εγκαταστήσετε εφαρμογές."
 
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
@@ -151,7 +149,7 @@ msgstr "Σύστημα"
 
 #: src/Core/CategoryManager.vala:125
 msgid "Universal Access"
-msgstr "Προσβασιμότητα"
+msgstr "Καθολική πρόσβαση"
 
 #: src/Core/CategoryManager.vala:127
 msgid "Video"
@@ -163,7 +161,7 @@ msgstr "Συγγραφή και γλώσσα"
 
 #: src/Core/CategoryManager.vala:144
 msgid "Privacy & Security"
-msgstr "Ιδιωτικότητα και ασφάλεια"
+msgstr "Απόρρητο και ασφάλεια"
 
 #: src/Core/ChangeInformation.vala:39 src/Core/ChangeInformation.vala:65
 msgid "Waiting"
@@ -175,7 +173,7 @@ msgstr "Ολοκληρώθηκε"
 
 #: src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
-msgstr "Γίνεται ακύρωση"
+msgstr "Ακύρωση"
 
 #: src/Core/ChangeInformation.vala:89
 msgid "Starting"
@@ -256,7 +254,7 @@ msgstr "Λήψη μεγέθους λήψης…"
 
 #: src/Core/Job.vala:44
 msgid "Checking for updates…"
-msgstr "Γίνεται έλεγχος για ενημερώσεις…"
+msgstr "Έλεγχος για ενημερώσεις…"
 
 #: src/Core/Job.vala:46
 msgid "Installing…"
@@ -308,22 +306,22 @@ msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Ο μήνας λήξης δεν είναι έγκυρος. Παρακαλώ δοκιμάστε ξανά χρησιμοποιώντας τη "
-"σωστή ημερομηνία λήξης."
+"Ο μήνας λήξης δεν είναι έγκυρος. Δοκιμάστε ξανά, χρησιμοποιώντας τη σωστή "
+"ημερομηνία λήξης."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Το έτος λήξης δεν είναι έγκυρο. Παρακαλώ δοκιμάστε ξανά χρησιμοποιώντας τη "
-"σωστή ημερομηνία λήξης."
+"Το έτος λήξης δεν είναι έγκυρο. Δοκιμάστε ξανά, χρησιμοποιώντας τη σωστή "
+"ημερομηνία λήξης."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
-"Ο κωδικός CVC δεν είναι έγκυρος. Παρακαλώ δοκιμάστε ξανά χρησιμοποιώντας το "
-"σωστό κωδικό CVC."
+"Ο κωδικός CVC δεν είναι έγκυρος. Δοκιμάστε ξανά, χρησιμοποιώντας το σωστό "
+"CVC."
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
@@ -377,8 +375,8 @@ msgstr ""
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"Ο αριθμός PIN δεν είναι έγκυρος. Παρακαλώ δοκιμάστε ξανά χρησιμοποιώντας τον "
-"σωστό αριθμό PIN."
+"Ο αριθμός PIN δεν είναι έγκυρος. Δοκιμάστε ξανά, χρησιμοποιώντας το σωστό "
+"PIN."
 
 #: src/Core/Stripe.vala:131
 msgid ""
@@ -423,17 +421,17 @@ msgid ""
 "This may be a temporary issue or could have been caused by external or "
 "manually compiled software."
 msgstr ""
-"Αυτό μπορεί να είναι ένα προσωρινό σφάλμα ή να προκλήθηκε από εξωτερικό ή "
-"χειροκίνητα μεταγλωττισμένο λογισμικό."
+"Αυτό μπορεί να είναι ένα προσωρινό ζήτημα ή να έχει προκληθεί από εξωτερικό "
+"ή χειροκίνητα μεταγλωττισμένο λογισμικό."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
-msgstr "Αποτυχία εγκατάστασης εφαρμογής"
+msgstr "Αποτυχία εγκατάστασης της εφαρμογής"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
-msgstr "Αποτυχία εγκατάστασης “%s”"
+msgstr "Αποτυχία εγκατάστασης του «%s»"
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
@@ -454,7 +452,7 @@ msgstr ""
 #: src/Dialogs/ReleasesDialog.vala:18
 #, c-format
 msgid "What's new in %s"
-msgstr "Τι είναι καινούργιο στο %s"
+msgstr "Τι νέο υπάρχει στο %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
@@ -563,7 +561,7 @@ msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
-msgstr "Αποτυχία απεγκατάστασης εφαρμογής"
+msgstr "Αποτυχία κατάργησης της εφαρμογής"
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
@@ -674,7 +672,7 @@ msgstr "Αμετάφραστη"
 
 #: src/Views/AppInfoView.vala:319
 msgid "This app is not available in your language"
-msgstr "Αυτή η εφαρμογή δεν είναι διαθέσιμη στην γλώσσα σας"
+msgstr "Αυτή η εφαρμογή δεν διατίθεται στη γλώσσα σας"
 
 #: src/Views/AppInfoView.vala:326
 msgid "Not Fully Translated"
@@ -748,11 +746,11 @@ msgstr "Κοινοποίηση Πληροφοριών"
 
 #: src/Views/AppInfoView.vala:597
 msgid "Screenshot Not Available"
-msgstr "Το στιγμιότυπο οθόνης δεν είναι διαθέσιμο"
+msgstr "Δεν διατίθεται στιγμιότυπο οθόνης"
 
 #: src/Views/AppInfoView.vala:631
 msgid "What's New"
-msgstr "Τι είναι καινούργιο"
+msgstr "Τι νέο υπάρχει"
 
 #: src/Views/AppInfoView.vala:635
 msgid "Version History…"
@@ -895,7 +893,7 @@ msgstr "Σε εξέλιξη"
 
 #: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
-msgstr "Όλα Ενημερωμένα"
+msgstr "Όλα είναι ενημερωμένα"
 
 #: src/Views/AppListUpdateView.vala:131
 msgid "Automatically Update Free & Purchased Apps"
@@ -907,7 +905,7 @@ msgstr "Οι εφαρμογές υπό δωρεάν δοκιμή δεν θα ε�
 
 #: src/Views/AppListUpdateView.vala:136
 msgid "Check for Updates"
-msgstr "Έλεγχος για Ενημερώσεις"
+msgstr "Έλεγχος για ενημερώσεις"
 
 #: src/Views/AppListUpdateView.vala:161
 msgid "Settings"
@@ -1034,11 +1032,11 @@ msgstr "%d$"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr "Ιστοσελίδα"
+msgstr "Ιστότοπος"
 
 #: src/Widgets/LinkListBox.vala:46
 msgid "Get Help"
-msgstr "Λάβετε βοήθεια"
+msgstr "Λήψη βοήθειας"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
@@ -1050,15 +1048,15 @@ msgstr "Επικοινωνήστε με τον προγραμματιστή"
 
 #: src/Widgets/LinkListBox.vala:109
 msgid "Sponsor"
-msgstr "Συνεισφέρετε"
+msgstr "Χορηγία"
 
 #: src/Widgets/LinkListBox.vala:119
 msgid "Contribute Translations"
-msgstr "Συνεισφέρετε μεταφράσεις"
+msgstr "Συνεισφορά μεταφράσεων"
 
 #: src/Widgets/LinkListBox.vala:129
 msgid "Get The Source Code"
-msgstr "Δείτε τον πηγαίο κώδικα"
+msgstr "Απόκτηση πηγαίου κώδικα"
 
 #: src/Widgets/LinkListBox.vala:139
 msgid "Get Involved"
@@ -1121,7 +1119,7 @@ msgstr "Η πληρωμή παρέχεται από την Stripe"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
-msgstr "Διορθωμένα Προβλήματα"
+msgstr "Διορθωμένα ζητήματα"
 
 #: src/Widgets/ReleaseRow.vala:97
 msgid "Unknown date"
