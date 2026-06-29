@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2026-04-19 22:13+0000\n"
+"PO-Revision-Date: 2026-06-30 07:58+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/es/>\n"
@@ -43,7 +43,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -54,7 +54,7 @@ msgstr "Centro de Aplicaciones"
 #: src/Application.vala:75
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "No se pudo analizar el tipo MIME %s"
+msgstr "No se pudo analizar el tipo de medio %s"
 
 #: src/Application.vala:94
 #, c-format
