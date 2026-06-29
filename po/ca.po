@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2026-02-27 16:34+0000\n"
+"PO-Revision-Date: 2026-06-30 07:57+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -458,7 +458,7 @@ msgstr "Pagament"
 #: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:248
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Paga %d USD per %s"
+msgstr "Pagueu %d $ per %s"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
@@ -506,7 +506,7 @@ msgstr "Cancel·la"
 #: src/Dialogs/StripeDialog.vala:403
 #, c-format
 msgid "Pay $%d.00"
-msgstr "Paga %d,00 USD"
+msgstr "Pagueu %d.00 $"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
@@ -1016,13 +1016,13 @@ msgstr "Requereix pagaments, que no estan habilitats."
 #: src/Widgets/HumbleButton.vala:98
 #, c-format
 msgid "$%d.00"
-msgstr "%d,00 USD"
+msgstr "%d.00 $"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:101
 #, c-format
 msgid "$%d"
-msgstr "%d USD"
+msgstr "%d $"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
