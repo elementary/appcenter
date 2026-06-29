@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2026-06-28 15:56+0000\n"
+"PO-Revision-Date: 2026-06-29 11:48+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/extra/"
 "el/>\n"
@@ -157,7 +157,7 @@ msgstr "εγκατάσταση;απεγκατάσταση;αφαίρεση;κα�
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Έλεγχος για Ενημερώσεις"
+msgstr "Έλεγχος για ενημερώσεις"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
