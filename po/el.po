@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2026-06-29 11:48+0000\n"
+"PO-Revision-Date: 2026-06-30 07:58+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/el/>\n"
@@ -206,7 +206,7 @@ msgstr ""
 
 #: src/Core/FlatpakBackend.vala:1652
 msgid "Installing"
-msgstr "Γίνεται εγκατάσταση"
+msgstr "Εγκατάσταση"
 
 #: src/Core/FlatpakBackend.vala:1725
 msgid "Error getting flatpak installation for removal"
@@ -214,17 +214,15 @@ msgstr ""
 
 #: src/Core/FlatpakBackend.vala:1763
 msgid "Uninstalling"
-msgstr "Γίνεται απεγκατάσταση"
+msgstr "Κατάργηση"
 
 #: src/Core/FlatpakBackend.vala:1832
-#, fuzzy
-#| msgid "Failed to Fetch Updates"
 msgid "Failed to split package key"
-msgstr "Αποτυχία λήψης ενημερώσεων"
+msgstr "Αποτυχία διαίρεσης του κλειδιού πακέτου"
 
 #: src/Core/FlatpakBackend.vala:1920
 msgid "Updating"
-msgstr "Γίνεται ενημέρωση"
+msgstr "Ενημέρωση"
 
 #: src/Core/FlatpakBackend.vala:2029
 #, c-format
@@ -258,7 +256,7 @@ msgstr "Έλεγχος για ενημερώσεις…"
 
 #: src/Core/Job.vala:46
 msgid "Installing…"
-msgstr "Γίνεται εγκατάσταση…"
+msgstr "Εγκατάσταση…"
 
 #: src/Core/Job.vala:48
 msgid "Installing updates…"
@@ -266,11 +264,11 @@ msgstr "Εγκατάσταση ενημερώσεων…"
 
 #: src/Core/Job.vala:50
 msgid "Uninstalling…"
-msgstr "Γίνεται απεγκατάσταση…"
+msgstr "Κατάργηση…"
 
 #: src/Core/Job.vala:52
 msgid "Repairing…"
-msgstr "Γίνεται επιδιόρθωση…"
+msgstr "Επιδιόρθωση…"
 
 #: src/Core/Package.vala:309
 #, c-format
@@ -280,26 +278,28 @@ msgstr "Οι προγραμματιστές του %s"
 #: src/Core/Package.vala:477
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr "Η κατάσταση εφαρμογής δεν έχει οριστεί ως εγκατεστημένη στο πακέτο: %s"
+msgstr ""
+"Η κατάσταση της εφαρμογής δεν έχει οριστεί ως «εγκατεστημένη» στο AppCenter "
+"για το πακέτο: %s"
 
 #: src/Core/Stripe.vala:27
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Παρουσιάστηκε ένα σφάλμα κατά την επεξεργασία της κάρτας. Παρακαλώ δοκιμάστε "
-"ξανά αργότερα. Ζητούμε συγγνώμη για την ταλαιπωρία."
+"Προέκυψε σφάλμα κατά την επεξεργασία της κάρτας. Δοκιμάστε ξανά αργότερα. "
+"Ζητούμε συγγνώμη για την ταλαιπωρία."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr "Παρακαλώ ελέγξτε τα στοιχεία της πληρωμής σας και δοκιμάστε ξανά."
+msgstr "Ελέγξτε τα στοιχεία πληρωμής σας και δοκιμάστε ξανά."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"Ο αριθμός κάρτας είναι λανθασμένος. Παρακαλώ δοκιμάστε ξανά χρησιμοποιώντας "
-"τον σωστό αριθμό κάρτας."
+"Ο αριθμός της κάρτας είναι εσφαλμένος. Δοκιμάστε ξανά, χρησιμοποιώντας τον "
+"σωστό αριθμό κάρτας."
 
 #: src/Core/Stripe.vala:66
 msgid ""
