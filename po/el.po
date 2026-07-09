@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2026-06-30 07:58+0000\n"
+"PO-Revision-Date: 2026-07-10 16:00+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/el/>\n"
@@ -198,11 +198,11 @@ msgstr "Ενημερώσεις για runtime εφαρμογών"
 
 #: src/Core/FlatpakBackend.vala:1601 src/Core/FlatpakBackend.vala:1708
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "Το στοιχείο δεν διαθέτει πακέτο flatpak"
 
 #: src/Core/FlatpakBackend.vala:1608 src/Core/FlatpakBackend.vala:1817
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Σφάλμα κατά τη λήψη της εγκατάστασης flatpak"
 
 #: src/Core/FlatpakBackend.vala:1652
 msgid "Installing"
@@ -210,7 +210,7 @@ msgstr "Εγκατάσταση"
 
 #: src/Core/FlatpakBackend.vala:1725
 msgid "Error getting flatpak installation for removal"
-msgstr ""
+msgstr "Σφάλμα κατά τη λήψη της εγκατάστασης flatpak για αφαίρεση"
 
 #: src/Core/FlatpakBackend.vala:1763
 msgid "Uninstalling"
