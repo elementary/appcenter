@@ -45,6 +45,12 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     private Gtk.Revealer oars_flowbox_revealer;
     private Gtk.Revealer uninstall_button_revealer;
 
+    private Gtk.Revealer title_revealer;
+    private Gtk.Box header;
+    private Gtk.ScrolledWindow scrolled;
+    private Gtk.Revealer screenshot_arrow_revealer_p;
+    private Gtk.Revealer screenshot_arrow_revealer_n;
+
     private bool is_runtime_warning_shown = false;
     private bool permissions_shown = false;
 
@@ -75,7 +81,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         title_widget.append (title_label);
         title_widget.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
-        var title_revealer = new Gtk.Revealer () {
+        title_revealer = new Gtk.Revealer () {
             child = title_widget,
             transition_type = CROSSFADE
         };
@@ -192,7 +198,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             maximum_size = MAX_WIDTH
         };
 
-        var header = new Gtk.Box (HORIZONTAL, 0) {
+        header = new Gtk.Box (HORIZONTAL, 0) {
             hexpand = true
         };
         header.append (header_clamp);
@@ -555,14 +561,14 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 }
             });
 
-            var screenshot_arrow_revealer_p = new Gtk.Revealer () {
+            screenshot_arrow_revealer_p = new Gtk.Revealer () {
                 child = screenshot_previous,
                 halign = Gtk.Align.START,
                 valign = Gtk.Align.CENTER,
                 transition_type = Gtk.RevealerTransitionType.CROSSFADE
             };
 
-            var screenshot_arrow_revealer_n = new Gtk.Revealer () {
+            screenshot_arrow_revealer_n = new Gtk.Revealer () {
                 child = screenshot_next,
                 halign = Gtk.Align.END,
                 valign = Gtk.Align.CENTER,
@@ -673,7 +679,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
         box.append (body_clamp);
         box.append (new AuthorView (package, MAX_WIDTH));
 
-        var scrolled = new Gtk.ScrolledWindow () {
+        scrolled = new Gtk.ScrolledWindow () {
             child = box,
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             hexpand = true,
