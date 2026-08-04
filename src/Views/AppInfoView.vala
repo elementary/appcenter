@@ -146,14 +146,13 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
 
         origin_liststore = new GLib.ListStore (typeof (AppCenterCore.Package));
 
-        var list_factory = new Gtk.SignalListItemFactory ();
-        list_factory.setup.connect (origin_setup_factory);
-        list_factory.bind.connect (origin_bind_factory);
+        var origin_expression = new Gtk.PropertyExpression (
+            typeof (AppCenterCore.Package), null, "origin-description"
+        );
 
-        origin_dropdown = new Gtk.DropDown (origin_liststore, null) {
+        origin_dropdown = new Gtk.DropDown (origin_liststore, origin_expression) {
             halign = START,
             valign = CENTER,
-            factory = list_factory
         };
 
         foreach (var origin_package in package.origin_packages) {
@@ -980,24 +979,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 critical (e.message);
             }
         });
-    }
-
-    private void origin_setup_factory (Object object) {
-        var title = new Gtk.Label ("") {
-            xalign = 0
-        };
-
-        var list_item = (Gtk.ListItem) object;
-        list_item.child = title;
-    }
-
-    private void origin_bind_factory (Object object) {
-        var list_item = object as Gtk.ListItem;
-
-        var package = (AppCenterCore.Package) list_item.get_item ();
-
-        var title = (Gtk.Label) list_item.child;
-        title.label = package.origin_description;
     }
 
     private void get_gamepad_info_for_kind (AppStream.RelationKind kind, out string icon_name, out string title, out string description) {
