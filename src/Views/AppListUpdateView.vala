@@ -8,7 +8,7 @@
 
 /** AppList for the Updates View. Sorts update_available first and shows headers.
  * Does not show Uninstall Button **/
-public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
+public class AppCenter.UpdatesDialog : Gtk.Window {
     private Gtk.FlowBox installed_flowbox;
     private Gtk.ListBox list_box;
     private Granite.HeaderLabel installed_header;
@@ -117,7 +117,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
 
         var clamp = new Adw.Clamp () {
             child = box,
-            maximum_size = AppInfoView.MAX_WIDTH,
+            maximum_size = Views.AppInfoView.MAX_WIDTH,
         };
 
         var scrolled = new Gtk.ScrolledWindow () {
@@ -154,7 +154,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         menu_popover.add_css_class (Granite.STYLE_CLASS_MENU);
 
         var menu_button = new Gtk.MenuButton () {
-            icon_name = "open-menu",
+            icon_name = "open-menu-symbolic",
             popover = menu_popover,
             primary = true,
             tooltip_markup = ("%s\n" + Granite.TOOLTIP_SECONDARY_TEXT_MARKUP).printf (
@@ -162,21 +162,11 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
                 "F10"
             )
         };
-        menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-
-        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
-            action_name = "win.search",
-            /// TRANSLATORS: the action of searching
-            tooltip_text = C_("action", "Search")
-        };
-        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var headerbar = new Gtk.HeaderBar () {
             title_widget = new Gtk.Grid () { visible = false }
         };
-        headerbar.pack_start (new BackButton ());
         headerbar.pack_end (menu_button);
-        headerbar.pack_end (search_button);
 
         var toolbarview = new Adw.ToolbarView () {
             content = scrolled
@@ -184,9 +174,15 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         toolbarview.add_top_bar (headerbar);
         toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
+        titlebar = new Gtk.Grid () { visible = false };
         child = toolbarview;
+        hide_on_close = true;
         /// TRANSLATORS: the name of the Installed Apps view
         title = C_("view", "Installed");
+        default_height = 600;
+        default_width = 400;
+        height_request = 400;
+        add_css_class ("dialog");
 
         list_box.row_activated.connect ((row) => {
             if (row.get_child () is Widgets.InstalledPackageRowGrid) {

@@ -25,7 +25,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     // Launchable package set when installed
     private AppCenterCore.Package? last_installed_package;
 
-    private Views.AppListUpdateView installed_view;
+    private UpdatesDialog installed_view;
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);
@@ -72,7 +72,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         var homepage = new Homepage ();
 
-        installed_view = new Views.AppListUpdateView ();
+        installed_view = new UpdatesDialog () {
+            modal = true,
+            transient_for = this
+        };
 
         navigation_view = new Adw.NavigationView ();
         navigation_view.add (homepage);
@@ -196,11 +199,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        if (installed_view.parent != null) {
-            navigation_view.pop_to_page (installed_view);
-        } else {
-            navigation_view.push (installed_view);
-        }
+        installed_view.present ();
     }
 
     public void search (string term = "", bool mimetype = false) {
