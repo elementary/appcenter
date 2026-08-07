@@ -8,7 +8,9 @@
 
 /** AppList for the Updates View. Sorts update_available first and shows headers.
  * Does not show Uninstall Button **/
-public class AppCenter.UpdatesDialog : Gtk.Window {
+public class AppCenter.UpdatesDialog : Gtk.ApplicationWindow {
+    public signal void navigate (string uid);
+
     private Gtk.FlowBox installed_flowbox;
     private Gtk.ListBox list_box;
     private Granite.HeaderLabel installed_header;
@@ -17,6 +19,8 @@ public class AppCenter.UpdatesDialog : Gtk.Window {
     private uint updated_label_timeout_id = 0;
 
     construct {
+        application = (Gtk.Application) GLib.Application.get_default ();
+
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
@@ -187,14 +191,16 @@ public class AppCenter.UpdatesDialog : Gtk.Window {
         list_box.row_activated.connect ((row) => {
             if (row.get_child () is Widgets.InstalledPackageRowGrid) {
                 var package = ((Widgets.InstalledPackageRowGrid) row.get_child ()).package;
-                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+                navigate (package.uid);
+                close ();
             }
         });
 
         installed_flowbox.child_activated.connect ((child) => {
             if (child.get_child () is Widgets.InstalledPackageRowGrid) {
                 var package = ((Widgets.InstalledPackageRowGrid) child.get_child ()).package;
-                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+                navigate (package.uid);
+                close ();
             }
         });
 

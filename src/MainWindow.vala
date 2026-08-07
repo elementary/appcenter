@@ -76,6 +76,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             modal = true,
             transient_for = this
         };
+        installed_view.navigate.connect ((uid) => activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, uid));
 
         navigation_view = new Adw.NavigationView ();
         navigation_view.add (homepage);
