@@ -66,7 +66,6 @@ public class AppCenter.UpdatesDialog : Gtk.ApplicationWindow {
         updatable_header.append (update_all_button);
 
         list_box = new Gtk.ListBox () {
-            activate_on_single_click = true,
             hexpand = true,
         };
         list_box.bind_model (flatpak_backend.updatable_packages, create_row_from_package);
@@ -82,7 +81,6 @@ public class AppCenter.UpdatesDialog : Gtk.ApplicationWindow {
         };
 
         var in_progress_list = new Gtk.ListBox () {
-            activate_on_single_click = true,
             hexpand = true,
         };
         in_progress_list.bind_model (flatpak_backend.working_packages, create_row_from_package);
@@ -103,6 +101,7 @@ public class AppCenter.UpdatesDialog : Gtk.ApplicationWindow {
         );
 
         installed_flowbox = new Gtk.FlowBox () {
+            activate_on_single_click = false,
             column_spacing = 24,
             max_children_per_line = 5,
             row_spacing = 12
