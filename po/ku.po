@@ -1,85 +1,89 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
+# Cyax <fakecyax@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2023-02-16 09:45+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Kurdish <https://l10n.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2026-08-17 11:01+0000\n"
+"Last-Translator: Cyax <fakecyax@gmail.com>\n"
+"Language-Team: Kurdish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/ku/>\n"
 "Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
-msgstr "Dikanê bername"
+msgstr "Navenda bernameyan"
 
 #: src/Application.vala:75
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "Cûreyê mediyayê %s nehate analîzkirin"
 
 #: src/Application.vala:94
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Girêdana diyarkirî '%s' nehate dîtin, li cihê wê tê lêgerîn"
 
 #: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
+"Navenda bernameyan wê di dema vêxistinê vê amûr de xweber û dixebite dema "
+"çarçoveya wê girtî be da ku bikaribe rojanekirinan xweber kontrol bike û saz "
+"bike."
 
 #: src/Application.vala:323
 msgid "The app has been installed"
-msgstr ""
+msgstr "Bername hate sazkirin"
 
 #: src/Application.vala:324 src/MainWindow.vala:225
 #, c-format
 msgid "“%s” has been installed"
-msgstr ""
+msgstr "“%s” hate sazkirin"
 
 #: src/Application.vala:334
 msgid "The app has been uninstalled"
-msgstr ""
+msgstr "Bername hate rakirin"
 
 #: src/Application.vala:335 src/MainWindow.vala:237
 #, c-format
 msgid "“%s” has been uninstalled"
-msgstr ""
+msgstr "“%s” hate rakirin"
 
 #: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr ""
+msgstr "Destpêkkirina \"%s\" têk çû"
 
 #: src/MainWindow.vala:89
 msgid "Network Not Available."
-msgstr ""
+msgstr "Tor ne berdest e."
 
 #: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "Ji bo gerîn û sazkirina bernameyan bi înternetê ve girê bide."
 
 #: src/MainWindow.vala:100
 msgid "Network Settings…"
-msgstr ""
+msgstr "Sazkairyên torê…"
 
 #: src/MainWindow.vala:108
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Di awaya demoyê de dixebite"
 
 #: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "Ji bo gerîn û sazkirina bernameyan %s saz bike."
 
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
@@ -87,35 +91,31 @@ msgstr "Veke"
 
 #: src/Core/CategoryManager.vala:20
 msgid "Accessories"
-msgstr "Bernameyên alîkar"
+msgstr "Aksesuwar"
 
 #: src/Core/CategoryManager.vala:21
 msgid "Audio"
 msgstr "Deng"
 
 #: src/Core/CategoryManager.vala:23
-#, fuzzy
 msgid "Communication"
-msgstr "Perwerdehî"
+msgstr "Têkilî"
 
 #: src/Core/CategoryManager.vala:33
 msgid "Development"
-msgstr "Pêşxistin"
+msgstr "Pêşvebirin"
 
 #: src/Core/CategoryManager.vala:44
 msgid "Education"
-msgstr "Perwerdehî"
+msgstr "Perwerde"
 
 #: src/Core/CategoryManager.vala:46
-#, fuzzy
 msgid "Finance"
-msgstr "Betal bike"
+msgstr "Finans"
 
 #: src/Core/CategoryManager.vala:51
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Lîstik"
+msgstr "Xweşî & Lîstik"
 
 #: src/Core/CategoryManager.vala:69
 msgid "Graphics"
@@ -123,16 +123,15 @@ msgstr "Grafîk"
 
 #: src/Core/CategoryManager.vala:79
 msgid "Internet"
-msgstr "Tor"
+msgstr "Înternet"
 
 #: src/Core/CategoryManager.vala:84
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Zanist & endezyarî"
+msgstr "Matematîk, Zanist & Endezyarî"
 
 #: src/Core/CategoryManager.vala:104
 msgid "Media Production"
-msgstr ""
+msgstr "Berhemdariya mediyayê"
 
 #: src/Core/CategoryManager.vala:112
 msgid "Office"
@@ -140,7 +139,7 @@ msgstr "Nivîsgeh"
 
 #: src/Core/CategoryManager.vala:120
 msgid "System"
-msgstr "Pergêl"
+msgstr "Pergal"
 
 #: src/Core/CategoryManager.vala:125
 msgid "Universal Access"
@@ -148,15 +147,15 @@ msgstr "Gihîştina gerdûnî"
 
 #: src/Core/CategoryManager.vala:127
 msgid "Video"
-msgstr "Vîdyo"
+msgstr "Vîdiyo"
 
 #: src/Core/CategoryManager.vala:133
 msgid "Writing & Language"
-msgstr ""
+msgstr "Nivîsandin & Ziman"
 
 #: src/Core/CategoryManager.vala:144
 msgid "Privacy & Security"
-msgstr ""
+msgstr "Taybetmendî & Ewlehî"
 
 #: src/Core/ChangeInformation.vala:39 src/Core/ChangeInformation.vala:65
 msgid "Waiting"
@@ -168,7 +167,7 @@ msgstr "Bi dawî bû"
 
 #: src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
-msgstr "Tê betalkirin"
+msgstr "Tê têkbirin"
 
 #: src/Core/ChangeInformation.vala:89
 msgid "Starting"
@@ -177,30 +176,27 @@ msgstr "Dest pê dike"
 #: src/Core/FlatpakBackend.vala:45
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (li seranserê pergalê)"
 
 #: src/Core/FlatpakBackend.vala:159
 msgid "package operations are being performed"
-msgstr ""
+msgstr "kirariyên pakêtê tên pêkanîn"
 
 #: src/Core/FlatpakBackend.vala:224
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Updates"
 msgid "Runtime Updates"
-msgstr "rojanekirin"
+msgstr "Rojanekirinên dema xebitandinê"
 
 #: src/Core/FlatpakBackend.vala:225
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Rojanekirinên bo sepanên dema xebitandinê"
 
 #: src/Core/FlatpakBackend.vala:1601 src/Core/FlatpakBackend.vala:1708
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "Pêkhateyê pakêta flatpak tune ye"
 
 #: src/Core/FlatpakBackend.vala:1608 src/Core/FlatpakBackend.vala:1817
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Di dema sazkirina flatpak de şaşetî çê bû"
 
 #: src/Core/FlatpakBackend.vala:1652
 msgid "Installing"
@@ -208,118 +204,117 @@ msgstr "Saz dike"
 
 #: src/Core/FlatpakBackend.vala:1725
 msgid "Error getting flatpak installation for removal"
-msgstr ""
+msgstr "Di dema sazkirina flatpak de ji bo rakirinê şaşetî çê bû"
 
 #: src/Core/FlatpakBackend.vala:1763
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Jêrake"
+msgstr "Tê rakirin"
 
 #: src/Core/FlatpakBackend.vala:1832
 msgid "Failed to split package key"
-msgstr ""
+msgstr "Dabeşkirina kilîta pakêtê têk çû"
 
 #: src/Core/FlatpakBackend.vala:1920
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Rojanekirin"
+msgstr "Tê rojanekirin"
 
 #: src/Core/FlatpakBackend.vala:2029
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Guherto: %s"
 
 #: src/Core/FlatpakBackend.vala:2034
-#, fuzzy, c-format
-#| msgctxt "view"
-#| msgid "Updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "rojanekirin"
-msgstr[1] "rojanekirin"
+msgstr[0] "%u dema xebitandinê bi rojanekirinan re"
+msgstr[1] "%u dema xebitandinê bi rojanekirinan re"
 
 #: src/Core/FlatpakBackend.vala:2039
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/FlatpakBackend.vala:2143
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (herêmî)"
 
 #: src/Core/Job.vala:41
 msgid "Getting download size…"
-msgstr ""
+msgstr "Mezinahiya daxistinê tê sitandin…"
 
 #: src/Core/Job.vala:44
 msgid "Checking for updates…"
-msgstr ""
+msgstr "Ji bo rojanekirin tên kontrolkirin…"
 
 #: src/Core/Job.vala:46
-#, fuzzy
-#| msgid "Installing"
 msgid "Installing…"
-msgstr "Saz dike"
+msgstr "Tê sazkirin…"
 
 #: src/Core/Job.vala:48
-#, fuzzy
-#| msgid "Installing updates"
 msgid "Installing updates…"
-msgstr "rojanekirin çêkirin"
+msgstr "Rojanekirin tên sazkirin…"
 
 #: src/Core/Job.vala:50
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling…"
-msgstr "Jêrake"
+msgstr "Tê rakirin…"
 
 #: src/Core/Job.vala:52
 msgid "Repairing…"
-msgstr ""
+msgstr "Tê çêkirin…"
 
 #: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "Pêşvebirên %s"
 
 #: src/Core/Package.vala:477
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Rewşa bernameyê di navenda sepanan de wekî sazkirî nehatiye diyarkirin ji bo "
+"pakêta: %s"
 
 #: src/Core/Stripe.vala:27
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Di dema kiryarkirina kartê de şaşetiyek çê bû. Tika ye paşê dîsa hewl bide. "
+"Ji bo vê astengiyê em lêborînê dixwazin."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Tika ye zanyariya diravdayînê xwe binirxîne û dîsa hewl bide."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Jimara kertê ne rast e. Tika ye bi riya bikaranîna jimara kertê ya rast dîsa "
+"hewl bide."
 
 #: src/Core/Stripe.vala:66
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Meha bidawîbûnê ne derbasdar e. Tika ye bi riya bikaranîna dîroka bidawîbûnê "
+"ya rast dîsa hewl bide."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Sala bidawîbûnê ne derbasdar e. Tika ye bi riya bikaranîna dîroka bidawîbûnê "
+"ya rast dîsa hewl bide."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"Jimara CVC ne rast e. Tika ye bi riya bikaranîna CVC a rast dîsa hewl bide."
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
@@ -404,23 +399,21 @@ msgid ""
 msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "Jêrake"
+msgstr "Sazkirina bernameyê têk çû"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
-msgstr ""
+msgstr "Sazkirina “%s” têk çû"
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
-msgstr ""
+msgstr "Çê bike"
 
 #: src/Dialogs/RepairFailDialog.vala:24
-#, fuzzy
 msgid "Failed to Repair"
-msgstr "Jêrake"
+msgstr "Çêkirin têk çû"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
@@ -431,11 +424,11 @@ msgstr ""
 #: src/Dialogs/ReleasesDialog.vala:18
 #, c-format
 msgid "What's new in %s"
-msgstr ""
+msgstr "Çi tiştên nû di %s de hene"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
-msgstr ""
+msgstr "Diravdayîn"
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
@@ -443,21 +436,23 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:248
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Ji bo %2$s $%1$d dirav bide"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment suggested by the developer. You can also choose "
 "your own price."
 msgstr ""
+"Ev diravdayîn yekcarî ye ku ji aliyê pêşvebir ve tê pêşniyarkirin. Tu dikarî "
+"nirxê bi xwe hilbijêrî."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
-msgstr ""
+msgstr "an"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
-msgstr ""
+msgstr "Ename"
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid ""
@@ -472,26 +467,26 @@ msgstr ""
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:177
 msgid "MM / YY"
-msgstr ""
+msgstr "MM/SS"
 
 #: src/Dialogs/StripeDialog.vala:186
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
 #: src/Widgets/ProgressButton.vala:24
 msgid "Cancel"
-msgstr "Betal bike"
+msgstr "Têk bibe"
 
 #: src/Dialogs/StripeDialog.vala:232 src/Dialogs/StripeDialog.vala:246
 #: src/Dialogs/StripeDialog.vala:403
 #, c-format
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "$%d.00 dirav bide"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr ""
+msgstr "Belaş hewl bide"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
@@ -503,29 +498,28 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:395
 msgid "Pay Later"
-msgstr ""
+msgstr "Diravê paşê bide"
 
 #: src/Dialogs/StripeDialog.vala:396
 msgid "Retry"
-msgstr ""
+msgstr "Dîsa hewl bide"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Rakirina vê bernameyê dibe ku daneyên wê jî jê bibe."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Jêrake"
+msgstr "Bername rake?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr ""
+msgstr "“%s” rake?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:84
 msgid "Uninstall"
-msgstr "Jêrake"
+msgstr "Rake"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
@@ -533,24 +527,24 @@ msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "Rakirina bernameyê têk çû"
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Rakirina “%s” têk çû"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Anîna rojekirin têk çû"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Guh nedê"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "Dîsa hewl bide"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid ""
@@ -560,21 +554,17 @@ msgid ""
 msgstr ""
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "Jêrake"
+msgstr "Rojekirina bernameyê têk çû"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
-msgstr ""
+msgstr "Rojanekirina “%s” têk çû"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Updates"
 msgid "Refresh Updates"
-msgstr "rojanekirin"
+msgstr "Rojanekirinan nû bike"
 
 #: src/Views/AppInfoView.vala:206
 msgid "Illicit Substances"
@@ -586,15 +576,15 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:212
 msgid "Sex & Nudity"
-msgstr ""
+msgstr "Seks & Tazîbûn"
 
 #: src/Views/AppInfoView.vala:213
 msgid "Adult nudity or sexual themes"
-msgstr ""
+msgstr "Tazîbûna mezinan an mijarên seksî"
 
 #: src/Views/AppInfoView.vala:218
 msgid "Offensive Language"
-msgstr ""
+msgstr "Zimanê êrîşkar"
 
 #: src/Views/AppInfoView.vala:219
 msgid "Profanity, discriminatory language, or adult humor"
@@ -602,7 +592,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:224
 msgid "Gambling"
-msgstr ""
+msgstr "Qimar"
 
 #: src/Views/AppInfoView.vala:225
 msgid "Realistic or participatory gambling"
@@ -611,57 +601,53 @@ msgstr ""
 #: src/Views/AppInfoView.vala:271
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Views/AppInfoView.vala:273
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "Li bendê ye"
-msgstr[1] "Li bendê ye"
+msgstr[0] "%u nirxandin"
+msgstr[1] "%u nirxandin"
 
 #: src/Views/AppInfoView.vala:286
 msgid "Made for elementary OS"
-msgstr ""
+msgstr "Ji bo elementary OS hatiye çêkirin"
 
 #: src/Views/AppInfoView.vala:287
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
+"Ji aliyê elementary ve ji bo ewlehî, taybetmendî û entegrasyona pergala "
+"hatiye nirxandin"
 
 #: src/Views/AppInfoView.vala:310
 msgid "May Not Be Translated"
-msgstr ""
+msgstr "Dibe ku nehatibe wergerandin"
 
 #: src/Views/AppInfoView.vala:311
 msgid "This app does not provide language information"
-msgstr ""
+msgstr "Ev bername agahdariya zimên nade"
 
 #: src/Views/AppInfoView.vala:318
-#, fuzzy
-#| msgid "translator-credits"
 msgid "Not Translated"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Rokar ✌ https://launchpad.net/~rokarali\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+msgstr "Nehatiye wergerandin"
 
 #: src/Views/AppInfoView.vala:319
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Ev bername di zimanê te de ne berdest e"
 
 #: src/Views/AppInfoView.vala:326
 msgid "Not Fully Translated"
-msgstr ""
+msgstr "Hemû nehatiye wergerandin"
 
 #: src/Views/AppInfoView.vala:327
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr ""
+msgstr "Ev bername %i%% bi zimanê te hatiye wergerandin"
 
 #: src/Views/AppInfoView.vala:351
 msgid "Conflict"
-msgstr ""
+msgstr "Tevlihevî"
 
 #: src/Views/AppInfoView.vala:352
 msgid "Depictions of unsafe situations or aggressive conflict"
@@ -697,11 +683,11 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:442
 msgid "Online Interactions"
-msgstr ""
+msgstr "Têkiliyên serhêl"
 
 #: src/Views/AppInfoView.vala:452
 msgid "Location Sharing"
-msgstr ""
+msgstr "Parvekirina cihê"
 
 #: src/Views/AppInfoView.vala:453
 msgid "Other people can see your real-world location"
@@ -717,7 +703,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:473
 msgid "Info Sharing"
-msgstr ""
+msgstr "Parvekirina zanyariyan"
 
 #: src/Views/AppInfoView.vala:597
 msgid "Screenshot Not Available"
@@ -725,7 +711,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:631
 msgid "What's New"
-msgstr ""
+msgstr "Çi tiştên nû hene"
 
 #: src/Views/AppInfoView.vala:635
 msgid "Version History…"
@@ -766,7 +752,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:795
 msgid "System Folder Access"
-msgstr ""
+msgstr "Gihîştina peldanka pergalê"
 
 #: src/Views/AppInfoView.vala:796
 msgid "Including everyone's Home folders, but not including system internals"
@@ -792,7 +778,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:823
 msgid "Location Access"
-msgstr ""
+msgstr "Gihîştina cihê"
 
 #: src/Views/AppInfoView.vala:824
 msgid "Can see your precise location at any time without asking"
@@ -809,11 +795,11 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:843
 msgid "System Settings Access"
-msgstr ""
+msgstr "Gihîştina sazkariyên pergalê"
 
 #: src/Views/AppInfoView.vala:844
 msgid "Can read and modify system settings"
-msgstr ""
+msgstr "Dikare sazkariyên pergalê bixwîne û biguhêrîne"
 
 #: src/Views/AppInfoView.vala:1006
 msgid "Requires a Controller"
@@ -832,11 +818,8 @@ msgid "Such as a PlayStation, Xbox, or 8BitDo controller."
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:23
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Updates"
 msgid "Available Updates"
-msgstr "rojanekirin"
+msgstr "Rojanekirinên berdest"
 
 #: src/Views/AppListUpdateView.vala:32
 #, fuzzy, c-format
@@ -850,136 +833,126 @@ msgstr[1] "%u Berdest rojane gihîştî"
 #: src/Views/AppListUpdateView.vala:43 src/Widgets/SizeLabel.vala:23
 #, c-format
 msgid "Up to %s"
-msgstr ""
+msgstr "Heta %s"
 
 #: src/Views/AppListUpdateView.vala:51
 msgid "Update All"
-msgstr "Gişti rojane bike"
+msgstr "Hemûyan rojane bike"
 
 #: src/Views/AppListUpdateView.vala:75
 msgid "In Progress"
-msgstr ""
+msgstr "Di pêvajoyê de ye"
 
 #: src/Views/AppListUpdateView.vala:91
 msgid "Up to Date"
-msgstr ""
+msgstr "Rojane ye"
 
 #: src/Views/AppListUpdateView.vala:131
 msgid "Automatically Update Free & Purchased Apps"
-msgstr ""
+msgstr "Bernameyên belaş û kirînî xweber rojane bike"
 
 #: src/Views/AppListUpdateView.vala:132
 msgid "Apps being tried for free will not update automatically"
-msgstr ""
+msgstr "Bernameyên ku bi belaşî tên hewldan wê xweber neyên rojanekirin"
 
 #: src/Views/AppListUpdateView.vala:136
 msgid "Check for Updates"
-msgstr ""
+msgstr "Ji bo rojanekirinan kontrol bike"
 
 #: src/Views/AppListUpdateView.vala:161
-#, fuzzy
-#| msgid "Starting"
 msgid "Settings"
-msgstr "Dest pê dike"
+msgstr "Sazkarî"
 
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppListUpdateView.vala:170 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:130
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
 msgstr "Lê bigere"
 
 #. / TRANSLATORS: the name of the Installed Apps view
 #: src/Views/AppListUpdateView.vala:189
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Saz Bike"
+msgstr "Sazkirî"
 
 #: src/Views/AppListUpdateView.vala:219
 #, c-format
 msgid "Last checked %s"
-msgstr ""
+msgstr "Cara paşîn %s hatiye kontrolkirin"
 
 #: src/Views/AuthorView.vala:32
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Bernameyên din yên ji aliyê %s ve"
 
 #: src/Views/CategoryView.vala:33 src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr ""
 
 #: src/Views/CategoryView.vala:35
-#, fuzzy
-#| msgid "Search Apps"
 msgid "Paid Apps"
-msgstr "bername lê bigere"
+msgstr "Bernameyên bi pere"
 
 #: src/Views/CategoryView.vala:37
-#, fuzzy
-#| msgid "Free"
 msgid "Free Apps"
-msgstr "belaş"
+msgstr "Bernameyên belaş"
 
 #: src/Views/Homepage.vala:87
 msgid "Categories"
 msgstr "Beş"
 
 #: src/Views/Homepage.vala:137
-#, fuzzy
 msgctxt "view"
 msgid "Updates & installed apps"
-msgstr "Jêrake"
+msgstr "Rojanekirin & bernameyên sazkirî"
 
 #: src/Views/Homepage.vala:180
 msgid "Home"
-msgstr ""
+msgstr "Rûpela sereke"
 
 #: src/Views/SearchView.vala:41 src/Views/SearchView.vala:148
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/SearchView.vala:42
 msgid "No Apps Found"
-msgstr ""
+msgstr "Ti bername nehat dîtin"
 
 #: src/Views/SearchView.vala:43 src/Views/SearchView.vala:158
 msgid "The search term must be at least 3 characters long."
-msgstr ""
+msgstr "Mijara lêgerînê divê herî kêm 3 karakter dirêj be."
 
 #: src/Views/SearchView.vala:51 src/Views/SearchView.vala:187
 msgid "Search Apps"
-msgstr "bername lê bigere"
+msgstr "Li bernameryan bigere"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:100
 msgctxt "view"
 msgid "Search"
-msgstr "Lê bigere"
+msgstr "Bigere"
 
 #: src/Views/SearchView.vala:149
 #, c-format
 msgid ""
 "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"Hewl bide ku peyvên lêgerînê biguhêrînî. Tu dikarî bernameyên Flatpak ji "
+"derve ve jî saz bikî b.m. ji %s"
 
 #: src/Views/SearchView.vala:182
 #, c-format
 msgid "Search %s"
-msgstr "Li %s Bigere"
+msgstr "Li %s bigere"
 
 #: src/Widgets/ActionStack.vala:35
 msgid "In-app purchases"
-msgstr ""
+msgstr "Kirînên nav-bernameyê"
 
 #: src/Widgets/ActionStack.vala:138 src/Widgets/HumbleButton.vala:67
-#, fuzzy
 msgid "Install"
-msgstr "Saz Bike"
+msgstr "Saz bike"
 
 #: src/Widgets/ActionStack.vala:153
 msgid "Update"
@@ -987,144 +960,140 @@ msgstr "Rojanekirin"
 
 #: src/Widgets/AddonList.vala:14
 msgid "Add-Ons"
-msgstr ""
+msgstr "Pêvek"
 
 #: src/Widgets/CardNumberEntry.vala:29
 msgid "Card Number"
-msgstr ""
+msgstr "Jimara kertê"
 
 #: src/Widgets/HumbleButton.vala:54
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Pêdivî bi diravdayînê heye, ku ne çalakkirî ye"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:98
 #, c-format
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:101
 #, c-format
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: src/Widgets/LinkListBox.vala:36
 msgid "Website"
-msgstr ""
+msgstr "Malper"
 
 #: src/Widgets/LinkListBox.vala:46
 msgid "Get Help"
-msgstr ""
+msgstr "Alîkariyê bistîne"
 
 #: src/Widgets/LinkListBox.vala:56
 msgid "Send Feedback"
-msgstr ""
+msgstr "Bersivê bişîne"
 
 #: src/Widgets/LinkListBox.vala:66
 msgid "Contact The Developer"
-msgstr ""
+msgstr "Bi pêşvebir re bikeve têkiliyê"
 
 #: src/Widgets/LinkListBox.vala:109
 msgid "Sponsor"
-msgstr ""
+msgstr "Sponsor"
 
 #: src/Widgets/LinkListBox.vala:119
 msgid "Contribute Translations"
-msgstr ""
+msgstr "Beşdarî wergerê bibe"
 
 #: src/Widgets/LinkListBox.vala:129
 msgid "Get The Source Code"
-msgstr ""
+msgstr "Koda çavkaniyê bistîne"
 
 #: src/Widgets/LinkListBox.vala:139
 msgid "Get Involved"
-msgstr ""
+msgstr "Beşdar bibe"
 
 #: src/Widgets/LinkListBox.vala:205
-#, fuzzy
 msgid "No License"
-msgstr "Gotin nenas"
+msgstr "Lîsans tune ye"
 
 #: src/Widgets/LinkListBox.vala:206 src/Widgets/LinkListBox.vala:265
 #, c-format
 msgid "Contact %s for licensing information"
-msgstr ""
+msgstr "Ji bo zanyariya lîsansê bi %s re bikeve têkiliyê"
 
 #. TRANSLATORS: delimiter for a list of software licenses
 #: src/Widgets/LinkListBox.vala:218
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: src/Widgets/LinkListBox.vala:219
 msgid "Mixed License"
-msgstr ""
+msgstr "Lîsansa tevlihev"
 
 #: src/Widgets/LinkListBox.vala:233
 msgid "Free Software"
-msgstr ""
+msgstr "Nermalava belaş"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:237
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw"
 
 #: src/Widgets/LinkListBox.vala:243 src/Widgets/LinkListBox.vala:288
 msgid "Proprietary"
-msgstr ""
+msgstr "Xwedan"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:247
 msgid "https://www.gnu.org/proprietary/proprietary.en.html"
-msgstr ""
+msgstr "https://www.gnu.org/proprietary/proprietary.en.html"
 
 #: src/Widgets/LinkListBox.vala:253 src/Widgets/LinkListBox.vala:286
 msgid "Public Domain"
-msgstr ""
+msgstr "Navpara giştî"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Widgets/LinkListBox.vala:256
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://en.wikipedia.org/wiki/Public_domain"
 
 #: src/Widgets/LinkListBox.vala:261
-#, fuzzy
 msgid "Custom License"
-msgstr "Gotin nenas"
+msgstr "Lîsansa taybet"
 
 #: src/Widgets/LinkListBox.vala:344
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Diravdayîn ji aliyê Stripe ve tê pêşkêşkirin"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
-msgstr ""
+msgstr "Pirsgirêkên hatine çareserkirin"
 
 #: src/Widgets/ReleaseRow.vala:97
-#, fuzzy
-#| msgid "Unknown state"
 msgid "Unknown date"
-msgstr "Gotin nenas"
+msgstr "Dîroka nenas"
 
 #: src/Widgets/ReleaseRow.vala:104
 msgid "Unknown version"
-msgstr "Gotin nenas"
+msgstr "Guhertoya nenas"
 
 #: src/Widgets/ReleaseRow.vala:120
 msgid "No description available"
-msgstr ""
+msgstr "Danasîn ne berdest e"
 
 #: src/Widgets/SizeLabel.vala:39
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Mezinahiya daxistinê ya rastîn dibe ku biçûktir be"
 
 #: src/Widgets/SizeLabel.vala:40
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Tenê beşên bernameryan û rojanekirinên ku pêdivî ne wê werin daxistin."
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
-msgstr ""
+msgstr "Nîşeyên weşandinê"
 
 #~ msgid "Free"
 #~ msgstr "belaş"
