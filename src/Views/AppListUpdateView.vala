@@ -8,7 +8,9 @@
 
 /** AppList for the Updates View. Sorts update_available first and shows headers.
  * Does not show Uninstall Button **/
-public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
+public class AppCenter.UpdatesDialog : Gtk.ApplicationWindow {
+    public signal void navigate (string uid);
+
     private Gtk.FlowBox installed_flowbox;
     private Gtk.ListBox list_box;
     private Granite.HeaderLabel installed_header;
@@ -17,6 +19,8 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
     private uint updated_label_timeout_id = 0;
 
     construct {
+        application = (Gtk.Application) GLib.Application.get_default ();
+
         var update_manager = AppCenterCore.UpdateManager.get_default ();
         unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
 
@@ -62,7 +66,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         updatable_header.append (update_all_button);
 
         list_box = new Gtk.ListBox () {
-            activate_on_single_click = true,
             hexpand = true,
         };
         list_box.bind_model (flatpak_backend.updatable_packages, create_row_from_package);
@@ -78,7 +81,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         };
 
         var in_progress_list = new Gtk.ListBox () {
-            activate_on_single_click = true,
             hexpand = true,
         };
         in_progress_list.bind_model (flatpak_backend.working_packages, create_row_from_package);
@@ -99,6 +101,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         );
 
         installed_flowbox = new Gtk.FlowBox () {
+            activate_on_single_click = false,
             column_spacing = 24,
             max_children_per_line = 5,
             row_spacing = 12
@@ -117,7 +120,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
 
         var clamp = new Adw.Clamp () {
             child = box,
-            maximum_size = AppInfoView.MAX_WIDTH,
+            maximum_size = Views.AppInfoView.MAX_WIDTH,
         };
 
         var scrolled = new Gtk.ScrolledWindow () {
@@ -154,7 +157,7 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         menu_popover.add_css_class (Granite.STYLE_CLASS_MENU);
 
         var menu_button = new Gtk.MenuButton () {
-            icon_name = "open-menu",
+            icon_name = "open-menu-symbolic",
             popover = menu_popover,
             primary = true,
             tooltip_markup = ("%s\n" + Granite.TOOLTIP_SECONDARY_TEXT_MARKUP).printf (
@@ -162,21 +165,11 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
                 "F10"
             )
         };
-        menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-
-        var search_button = new Gtk.Button.from_icon_name ("edit-find") {
-            action_name = "win.search",
-            /// TRANSLATORS: the action of searching
-            tooltip_text = C_("action", "Search")
-        };
-        search_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var headerbar = new Gtk.HeaderBar () {
             title_widget = new Gtk.Grid () { visible = false }
         };
-        headerbar.pack_start (new BackButton ());
         headerbar.pack_end (menu_button);
-        headerbar.pack_end (search_button);
 
         var toolbarview = new Adw.ToolbarView () {
             content = scrolled
@@ -184,21 +177,29 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         toolbarview.add_top_bar (headerbar);
         toolbarview.add_css_class (Granite.STYLE_CLASS_VIEW);
 
+        titlebar = new Gtk.Grid () { visible = false };
         child = toolbarview;
+        hide_on_close = true;
         /// TRANSLATORS: the name of the Installed Apps view
         title = C_("view", "Installed");
+        default_height = 600;
+        default_width = 400;
+        height_request = 400;
+        add_css_class ("dialog");
 
         list_box.row_activated.connect ((row) => {
             if (row.get_child () is Widgets.InstalledPackageRowGrid) {
                 var package = ((Widgets.InstalledPackageRowGrid) row.get_child ()).package;
-                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+                navigate (package.uid);
+                close ();
             }
         });
 
         installed_flowbox.child_activated.connect ((child) => {
             if (child.get_child () is Widgets.InstalledPackageRowGrid) {
                 var package = ((Widgets.InstalledPackageRowGrid) child.get_child ()).package;
-                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
+                navigate (package.uid);
+                close ();
             }
         });
 
