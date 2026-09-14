@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-17 16:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ((n == 1) ? 1 : (((n % 100 "
+"== 2 || n % 100 == 22 || n % 100 == 42 || n % 100 == 62 || n % 100 == 82) || "
+"n % 1000 == 0 && (n % 100000 >= 1000 && n % 100000 <= 20000 || n % 100000 == "
+"40000 || n % 100000 == 60000 || n % 100000 == 80000) || n != 0 && n % "
+"1000000 == 100000) ? 2 : ((n % 100 == 3 || n % 100 == 23 || n % 100 == 43 || "
+"n % 100 == 63 || n % 100 == 83) ? 3 : ((n != 1 && (n % 100 == 1 || n % 100 "
+"== 21 || n % 100 == 41 || n % 100 == 61 || n % 100 == 81)) ? 4 : 5))));\n"
+
+#: data/appcenter.metainfo.xml.in:11
+#: data/io.elementary.appcenter.desktop.in.in:5
+msgid "AppCenter"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:12
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "Browse and manage apps"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:14
+msgid ""
+"The open source, pay-what-you-want app store from elementary. Reviewed and "
+"curated by elementary to ensure a native, privacy-respecting, and secure "
+"experience. Browse by categories or search and discover new apps. AppCenter "
+"is also used for updating your system to the latest and greatest version for "
+"new features and fixes."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:19
+msgid "Discover new apps"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:23
+msgid "Stay up to date"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:27
+msgid "Pay what you can to support developers"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:62
+msgid "elementary, Inc."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:85
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:145
+#: data/appcenter.metainfo.xml.in:165 data/appcenter.metainfo.xml.in:183
+#: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:248 data/appcenter.metainfo.xml.in:262
+msgid "Other Improvements:"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:134 data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:167 data/appcenter.metainfo.xml.in:188
+#: data/appcenter.metainfo.xml.in:216 data/appcenter.metainfo.xml.in:238
+#: data/appcenter.metainfo.xml.in:250 data/appcenter.metainfo.xml.in:264
+msgid "Updated translations"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:73
+msgid "Performance improvements"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:179 data/appcenter.metainfo.xml.in:209
+#: data/appcenter.metainfo.xml.in:229 data/appcenter.metainfo.xml.in:257
+msgid "New features:"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:181
+msgid "Manage autostart in System Settings → Applications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:185
+msgid "Automatic app updates by default"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:186
+msgid "OS Updates have moved to System Settings"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:187
+msgid ""
+"Badge apps made for elementary OS instead of badging apps from other remotes"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:211
+msgid "Warn when apps use legacy Autostart, Notifications"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:215
+msgid "Fix flickering on AppInfo views when getting install size"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:231
+msgid ""
+"Warn when apps have access to Home or system folders, location, settings, or "
+"have an insecure sandbox."
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:235
+msgid "Tighten up spacing and margins in App Info views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:236
+msgid "Show a placeholder banner on the home page when loading"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:237
+msgid "Don't list non-AppCenter apps under a separate header in category views"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:259
+msgid "Offer a Repair option if Flatpak updates fail"
+msgstr ""
+
+#: data/appcenter.metainfo.xml.in:260
+msgid ""
+"Show a message in the updates view when up to date, including when updates "
+"were last checked"
+msgstr ""
+
+#: data/io.elementary.appcenter.desktop.in.in:8
+msgid "install;uninstall;remove;catalogue;store;apps;software;"
+msgstr ""
+
+#: data/io.elementary.appcenter.desktop.in.in:25
+msgid "Check for Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.policy.in:10
+msgid "Repair software sources"
+msgstr ""
+
+#: data/io.elementary.appcenter.policy.in:11
+msgid "Authentication is required to repair software sources"
+msgstr ""
