@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-09-15 13:03+0000\n"
+"Last-Translator: Flynn <flynn@users.noreply.l10n.elementaryos.org>\n"
+"Language-Team: Cornish <https://l10n.elementaryos.org/projects/appcenter/"
+"appcenter/kw/>\n"
 "Language: kw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,403 +22,441 @@ msgstr ""
 "1000000 == 100000) ? 2 : ((n % 100 == 3 || n % 100 == 23 || n % 100 == 43 || "
 "n % 100 == 63 || n % 100 == 83) ? 3 : ((n != 1 && (n % 100 == 1 || n % 100 "
 "== 21 || n % 100 == 41 || n % 100 == 61 || n % 100 == 81)) ? 4 : 5))));\n"
+"X-Generator: Weblate 2026.5\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:26 src/MainWindow.vala:45
 msgid "AppCenter"
-msgstr ""
+msgstr "Appva"
 
 #: src/Application.vala:75
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "Ny yllir redya an eghen vedia %s"
 
 #: src/Application.vala:94
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Ny allas kevren ragnotys '%s' bos kevys, ow hwilas yn le"
 
 #: src/Application.vala:246
 msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
+"Appva a wra dalleth yn awtomatek pan vo bywhys an devis ma hag a yll "
+"eksekutya pan dheges yw hy fenester rag may hyll checkya ha lea nowedhyansow "
+"yn awtomatek."
 
 #: src/Application.vala:323
 msgid "The app has been installed"
-msgstr ""
+msgstr "Leys veu an app"
 
 #: src/Application.vala:324 src/MainWindow.vala:225
 #, c-format
 msgid "“%s” has been installed"
-msgstr ""
+msgstr "Leys veu “%s”"
 
 #: src/Application.vala:334
 msgid "The app has been uninstalled"
-msgstr ""
+msgstr "Dileys veu an app"
 
 #: src/Application.vala:335 src/MainWindow.vala:237
 #, c-format
 msgid "“%s” has been uninstalled"
-msgstr ""
+msgstr "Dileys veu “%s”"
 
 #: src/MainWindow.vala:57
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr ""
+msgstr "Y fyllis lonchya “%s“"
 
 #: src/MainWindow.vala:89
 msgid "Network Not Available."
-msgstr ""
+msgstr "Rosweyth Ankavadow."
 
 #: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "Junyewgh dhe'n kesrosweyth rag peuri ha lea appys."
 
 #: src/MainWindow.vala:100
 msgid "Network Settings…"
-msgstr ""
+msgstr "Settyansow Rosweyth…"
 
 #: src/MainWindow.vala:108
 msgid "Running in Demo Mode"
-msgstr ""
+msgstr "Owth Eksekutya yn Fordh Brevi"
 
 #: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "Leewgh %s rag peuri ha lea appys."
 
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
-msgstr ""
+msgstr "Ygeri"
 
 #: src/Core/CategoryManager.vala:20
 msgid "Accessories"
-msgstr ""
+msgstr "Gweresoryon"
 
 #: src/Core/CategoryManager.vala:21
 msgid "Audio"
-msgstr ""
+msgstr "Son"
 
 #: src/Core/CategoryManager.vala:23
 msgid "Communication"
-msgstr ""
+msgstr "Keskomunyans"
 
 #: src/Core/CategoryManager.vala:33
 msgid "Development"
-msgstr ""
+msgstr "Displegyans"
 
 #: src/Core/CategoryManager.vala:44
 msgid "Education"
-msgstr ""
+msgstr "Adhyskans"
 
 #: src/Core/CategoryManager.vala:46
 msgid "Finance"
-msgstr ""
+msgstr "Arghansereth"
 
 #: src/Core/CategoryManager.vala:51
 msgid "Fun & Games"
-msgstr ""
+msgstr "Gwariow"
 
 #: src/Core/CategoryManager.vala:69
 msgid "Graphics"
-msgstr ""
+msgstr "Grafegow"
 
 #: src/Core/CategoryManager.vala:79
 msgid "Internet"
-msgstr ""
+msgstr "Kesrosweyth"
 
 #: src/Core/CategoryManager.vala:84
 msgid "Math, Science, & Engineering"
-msgstr ""
+msgstr "Awgrym, Godhonieth, & Ynjynorieth"
 
 #: src/Core/CategoryManager.vala:104
 msgid "Media Production"
-msgstr ""
+msgstr "Askorrans Media"
 
 #: src/Core/CategoryManager.vala:112
 msgid "Office"
-msgstr ""
+msgstr "Sodhva"
 
 #: src/Core/CategoryManager.vala:120
 msgid "System"
-msgstr ""
+msgstr "Kevreyth"
 
 #: src/Core/CategoryManager.vala:125
 msgid "Universal Access"
-msgstr ""
+msgstr "Hedhas Ollvysel"
 
 #: src/Core/CategoryManager.vala:127
 msgid "Video"
-msgstr ""
+msgstr "Gwydhyow"
 
 #: src/Core/CategoryManager.vala:133
 msgid "Writing & Language"
-msgstr ""
+msgstr "Skrifa & Yeth"
 
 #: src/Core/CategoryManager.vala:144
 msgid "Privacy & Security"
-msgstr ""
+msgstr "Privetter & Diogeledh"
 
 #: src/Core/ChangeInformation.vala:39 src/Core/ChangeInformation.vala:65
 msgid "Waiting"
-msgstr ""
+msgstr "Ow Kortos"
 
 #: src/Core/ChangeInformation.vala:71
 msgid "Finished"
-msgstr ""
+msgstr "Deu"
 
 #: src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
-msgstr ""
+msgstr "Ow Hedhi"
 
 #: src/Core/ChangeInformation.vala:89
 msgid "Starting"
-msgstr ""
+msgstr "Ow Talleth"
 
 #: src/Core/FlatpakBackend.vala:45
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (dres oll an kevreyth)"
 
 #: src/Core/FlatpakBackend.vala:159
 msgid "package operations are being performed"
-msgstr ""
+msgstr "yma oberyansow fardel ow pos gwrys"
 
 #: src/Core/FlatpakBackend.vala:224
 msgid "Runtime Updates"
-msgstr ""
+msgstr "Nowedhyansow Kerghynnedh"
 
 #: src/Core/FlatpakBackend.vala:225
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Nowedhyansow dhe gerghynnedhow app"
 
 #: src/Core/FlatpakBackend.vala:1601 src/Core/FlatpakBackend.vala:1708
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "Nyns eus gronn flatpak gans an rann vedhelweyth"
 
 #: src/Core/FlatpakBackend.vala:1608 src/Core/FlatpakBackend.vala:1817
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "Gwall dres kerghes leans flatpak"
 
 #: src/Core/FlatpakBackend.vala:1652
 msgid "Installing"
-msgstr ""
+msgstr "Ow Lea"
 
 #: src/Core/FlatpakBackend.vala:1725
 msgid "Error getting flatpak installation for removal"
-msgstr ""
+msgstr "Gwall dres kerghes leans flatpak rag dileans"
 
 #: src/Core/FlatpakBackend.vala:1763
 msgid "Uninstalling"
-msgstr ""
+msgstr "Ow Tilea"
 
 #: src/Core/FlatpakBackend.vala:1832
 msgid "Failed to split package key"
-msgstr ""
+msgstr "Y fyllis folsa alhwedh fardel"
 
 #: src/Core/FlatpakBackend.vala:1920
 msgid "Updating"
-msgstr ""
+msgstr "Ow Nowedhi"
 
 #: src/Core/FlatpakBackend.vala:2029
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Dyllans: %s"
 
 #: src/Core/FlatpakBackend.vala:2034
 #, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u kerghynnedh gans nowedhyansow"
+msgstr[1] "%u kerghynnedh gans nowedhyansow"
+msgstr[2] "%u kerghynnedh gans nowedhyansow"
+msgstr[3] "%u kerghynnedh gans nowedhyansow"
+msgstr[4] "%u kerghynnedh gans nowedhyansow"
+msgstr[5] "%u kerghynnedh gans nowedhyansow"
 
 #: src/Core/FlatpakBackend.vala:2039
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/FlatpakBackend.vala:2143
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (leel)"
 
 #: src/Core/Job.vala:41
 msgid "Getting download size…"
-msgstr ""
+msgstr "Ow kerghes braster an iskarg…"
 
 #: src/Core/Job.vala:44
 msgid "Checking for updates…"
-msgstr ""
+msgstr "Ow checkya rag nowedhyansow…"
 
 #: src/Core/Job.vala:46
 msgid "Installing…"
-msgstr ""
+msgstr "Ow Lea…"
 
 #: src/Core/Job.vala:48
 msgid "Installing updates…"
-msgstr ""
+msgstr "Ow lea nowedhyansow…"
 
 #: src/Core/Job.vala:50
 msgid "Uninstalling…"
-msgstr ""
+msgstr "Ow Tilea…"
 
 #: src/Core/Job.vala:52
 msgid "Repairing…"
-msgstr ""
+msgstr "Owth Ewnhe…"
 
 #: src/Core/Package.vala:309
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "Displegyoryon %s"
 
 #: src/Core/Package.vala:477
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Nyns yw studh an app settys avel leys yn Appva rag fardel: %s"
 
 #: src/Core/Stripe.vala:27
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Yth esa gwall dres argerdhes an garten. Assayewgh arta wosa henna mar pleg. "
+"Edrek a’gan beus a neb ankombrynsi."
 
 #: src/Core/Stripe.vala:28
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Daswelewgh agas kedhlow talas mar pleg hag assayewgh arta."
 
 #: src/Core/Stripe.vala:64 src/Core/Stripe.vala:126
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Anewn yw an niver karten. Assayewgh arta mar pleg ow tevnydhya an niver "
+"karten ewn."
 
 #: src/Core/Stripe.vala:66
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Anewn yw an mis-diwedha. Assayewgh arta mar pleg ow tevnydhya an dedhyas-"
+"diwedha ewn."
 
 #: src/Core/Stripe.vala:68 src/Core/Stripe.vala:123
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Anewn yw an vledhen-dhiwedha. Assayewgh arta mar pleg ow tevnydhya an "
+"dedhyas-diwedha ewn."
 
 #: src/Core/Stripe.vala:71 src/Core/Stripe.vala:121
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "Anewn yw an niver CVC. Assayewgh arta mar pleg ow tevnydhya an CVC ewn."
 
 #: src/Core/Stripe.vala:73 src/Core/Stripe.vala:112
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "An garten re dhiwedhas. Assayewgh arta mar pleg gans karten aral."
 
 #: src/Core/Stripe.vala:89
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Yma re wovynnow talas y'n eur ma, assayewgh arta wosa henna mar pleg."
 
 #: src/Core/Stripe.vala:106
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Ny skoodh an garten ma an eghen ma a dreuswrians. Assayewgh arta mar pleg "
+"gans karten aral."
 
 #: src/Core/Stripe.vala:108
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Nyns yw an arghansedh skoodhys gans an garten ma. Assayewgh arta mar pleg "
+"gans karten aral."
 
 #: src/Core/Stripe.vala:110
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Argerdhys veu an treuswrians seulabrys."
 
 #: src/Core/Stripe.vala:114
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr ""
+"Anewn yw an koden ZIP/Postek. Assayewgh arta mar pleg ow tevnydhya an goden "
+"ZIP/posek ewn."
 
 #: src/Core/Stripe.vala:116
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Nyns eus arghans lowr dhywgh. Devnydhyewgh method talas aral mar pleg."
 
 #: src/Core/Stripe.vala:118
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "An ewn yw an myns. Assayewgh arta mar pleg ow tevnydhya myns ewn."
 
 #: src/Core/Stripe.vala:129
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "Anewn yw an niver PIN. Assayewgh arta mar pleg ow tevnydhya an PIN ewn."
 
 #: src/Core/Stripe.vala:131
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "Re beu re assayys PIN. Assayewgh arta mar pleg gans karten aral."
 
 #: src/Core/Stripe.vala:151
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Ny yllir kowlwul an treuswrians. Kestavewgh agas arghanti rag kedhlow pella "
+"mar pleg."
 
 #: src/Core/Stripe.vala:154
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Hedhys veu an finweth gasadow po kresys war'n garten."
 
 #: src/Core/Stripe.vala:157
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"An garten proviys yw karten-brevi. Devnydhyewgh karten wir mar pleg rag mos "
+"yn-rag."
 
 #: src/Core/UpdateManager.vala:173
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nowedhyans Vyth Kavadow"
+msgstr[1] "Nowedhyans Kavadow"
+msgstr[2] "Nowedhyansow Kavadow"
+msgstr[3] "Nowedhyansow Kavadow"
+msgstr[4] "Nowedhyansow Kavadow"
+msgstr[5] "Nowedhyansow Kavadow"
 
 #: src/Core/UpdateManager.vala:175
 #, c-format
 msgid "%u app update is available"
 msgid_plural "%u app updates are available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Yma %u nowedhyans app kavadow"
+msgstr[1] "Yma %u nowedhyans app kavadow"
+msgstr[2] "Yma %u nowedhyans app kavadow"
+msgstr[3] "Yma %u nowedhyans app kavadow"
+msgstr[4] "Yma %u nowedhyans app kavadow"
+msgstr[5] "Yma %u nowedhyans app kavadow"
 
 #: src/Dialogs/InstallFailDialog.vala:27
 msgid ""
 "This may be a temporary issue or could have been caused by external or "
 "manually compiled software."
 msgstr ""
+"Martesen hemm yw kudyn anbarghus po kawsys yw gans medhelweyth kevernys a-"
+"ves po dre dhorn."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
-msgstr ""
+msgstr "Y fyllis lea app"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
-msgstr ""
+msgstr "Y fyllis lea “%s”"
 
 #: src/Dialogs/InstallFailDialog.vala:44 src/Dialogs/UpgradeFailDialog.vala:46
 msgid "Repair"
-msgstr ""
+msgstr "Ewnhe"
 
 #: src/Dialogs/RepairFailDialog.vala:24
 msgid "Failed to Repair"
-msgstr ""
+msgstr "Y Fyllis Ewnhe"
 
 #: src/Dialogs/RepairFailDialog.vala:25 src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Martesen kawsys veu hemma gans gwithvaow medhelweyth a-ves keworrys dre "
+"dhorn po restren bennfentynnyow legrys."
 
 #: src/Dialogs/ReleasesDialog.vala:18
 #, c-format
 msgid "What's new in %s"
-msgstr ""
+msgstr "Pyth yw nowydh yn %s"
 
 #: src/Dialogs/StripeDialog.vala:51
 msgid "Payment"
-msgstr ""
+msgstr "Talas"
 
 #. TRANSLATORS: The %d is an integer amount of dollars and the %s is the name of the app
 #. being purchased. The order can be changed with "%2$s %1$d". For example:
@@ -425,113 +464,117 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:76 src/Dialogs/StripeDialog.vala:248
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Pe $%d rag %s"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment suggested by the developer. You can also choose "
 "your own price."
 msgstr ""
+"Hemm yw talas unweyth profys gans an displegyer. Hwi a yll dewis ynwedh pris "
+"agas honan."
 
 #: src/Dialogs/StripeDialog.vala:103
 msgid "or"
-msgstr ""
+msgstr "po"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
-msgstr ""
+msgstr "Ebost"
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid ""
 "Only used to send you a receipt. You will not be subscribed to any mailing "
 "list."
 msgstr ""
+"Devnydhys hepken rag danvon akwytyans dhywgh. Ny vythydh ragbrenys dhe neb "
+"rol-ebost."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Polici Privetter"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:177
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / BB"
 
 #: src/Dialogs/StripeDialog.vala:186
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:230 src/Dialogs/StripeDialog.vala:404
 #: src/Widgets/ProgressButton.vala:24
 msgid "Cancel"
-msgstr ""
+msgstr "Hedhi"
 
 #: src/Dialogs/StripeDialog.vala:232 src/Dialogs/StripeDialog.vala:246
 #: src/Dialogs/StripeDialog.vala:403
 #, c-format
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "Pe $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:244
 msgid "Try for Free"
-msgstr ""
+msgstr "Previ heb Kost"
 
 #: src/Dialogs/StripeDialog.vala:324
 msgid "Processing"
-msgstr ""
+msgstr "Owth Argerdhes"
 
 #: src/Dialogs/StripeDialog.vala:349
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Yth Esa Kudyn Dres Argerdhes Agas Talas"
 
 #: src/Dialogs/StripeDialog.vala:395
 msgid "Pay Later"
-msgstr ""
+msgstr "Pe Wosa Henna"
 
 #: src/Dialogs/StripeDialog.vala:396
 msgid "Retry"
-msgstr ""
+msgstr "Assaya arta"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Y fydh martesen data a'n app ma dileys der y dhilea."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:34
 msgid "Uninstall app?"
-msgstr ""
+msgstr "Dilea app?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:37
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr ""
+msgstr "Dilea “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:41 src/Views/AppInfoView.vala:84
 msgid "Uninstall"
-msgstr ""
+msgstr "Dilea"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
+msgstr "Kawsys veu hemma martesen gans medhelweyth a-ves po kevernys dre dhorn."
 
 #: src/Dialogs/UninstallFailDialog.vala:36
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "Y fyllis dilea app"
 
 #: src/Dialogs/UninstallFailDialog.vala:39
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Y fyllis dilea “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Y Fyllis Kerghes Nowedhyans"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Skonya Aswon"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "Assaya Arta"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
 msgid ""
@@ -539,184 +582,193 @@ msgid ""
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
 msgstr ""
+"Kawsys veu hemma martesen gans medhelweyth kergys a-denewen po kevernys dre "
+"dhorn, pennfenten vedhelweyth parti-tressa, po gwall dyghtyell fardel. "
+"Daskarg nowedhyansow dre dhorn a a yll martesen ewnhe an kudyn."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
-msgstr ""
+msgstr "Y fyllis nowedhi app"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
-msgstr ""
+msgstr "Y fyllis nowedhi “%s”"
 
 #: src/Dialogs/UpgradeFailDialog.vala:44
 msgid "Refresh Updates"
-msgstr ""
+msgstr "Daskarga Nowedhyansow"
 
 #: src/Views/AppInfoView.vala:206
 msgid "Illicit Substances"
-msgstr ""
+msgstr "Substansow Anlaghel"
 
 #: src/Views/AppInfoView.vala:207
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
+msgstr "Lok po kampollow a alkohol, narkotegow, po tobacko"
 
 #: src/Views/AppInfoView.vala:212
 msgid "Sex & Nudity"
-msgstr ""
+msgstr "Kyjyans & Nothedh"
 
 #: src/Views/AppInfoView.vala:213
 msgid "Adult nudity or sexual themes"
-msgstr ""
+msgstr "Nothedh tevesik po themow reydhel"
 
 #: src/Views/AppInfoView.vala:218
 msgid "Offensive Language"
-msgstr ""
+msgstr "Yeth Offensus"
 
 #: src/Views/AppInfoView.vala:219
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr ""
+msgstr "Kossyans, yeth dhisfaverek, po hwarthuster tevesik"
 
 #: src/Views/AppInfoView.vala:224
 msgid "Gambling"
-msgstr ""
+msgstr "Hapwari"
 
 #: src/Views/AppInfoView.vala:225
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "Hapwari gwirvosek po kevrennek"
 
 #: src/Views/AppInfoView.vala:271
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Views/AppInfoView.vala:273
 #, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u breusyans"
+msgstr[1] "%u breusyans"
+msgstr[2] "%u breusyans"
+msgstr[3] "%u breusyans"
+msgstr[4] "%u breusyans"
+msgstr[5] "%u breusyans"
 
 #: src/Views/AppInfoView.vala:286
 msgid "Made for elementary OS"
-msgstr ""
+msgstr "Gwrys rag elementary OS"
 
 #: src/Views/AppInfoView.vala:287
 msgid "Reviewed by elementary for security, privacy, and system integration"
 msgstr ""
+"Dashwithrys gans elementary rag diogeledh, privetter, hag ewngemyskans "
+"kevreyth"
 
 #: src/Views/AppInfoView.vala:310
 msgid "May Not Be Translated"
-msgstr ""
+msgstr "Nyns Yw Treylys Martesen"
 
 #: src/Views/AppInfoView.vala:311
 msgid "This app does not provide language information"
-msgstr ""
+msgstr "Ny brovi an app ma kedhlow yeth"
 
 #: src/Views/AppInfoView.vala:318
 msgid "Not Translated"
-msgstr ""
+msgstr "Nyns yw Treylys"
 
 #: src/Views/AppInfoView.vala:319
 msgid "This app is not available in your language"
-msgstr ""
+msgstr "Nyns yw an app ma kavadow yn agas yeth"
 
 #: src/Views/AppInfoView.vala:326
 msgid "Not Fully Translated"
-msgstr ""
+msgstr "Nyns yw Treylys yn Leun"
 
 #: src/Views/AppInfoView.vala:327
 #, c-format
 msgid "This app is %i%% translated in your language"
-msgstr ""
+msgstr "An app ma yw %i%% treylys yn agas yeth"
 
 #: src/Views/AppInfoView.vala:351
 msgid "Conflict"
-msgstr ""
+msgstr "Kas"
 
 #: src/Views/AppInfoView.vala:352
 msgid "Depictions of unsafe situations or aggressive conflict"
-msgstr ""
+msgstr "Portrayansow a blitys diantel po kas argasus"
 
 #: src/Views/AppInfoView.vala:365
 msgid "Violence"
-msgstr ""
+msgstr "Garowder"
 
 #: src/Views/AppInfoView.vala:370
 msgid "Fantasy Violence"
-msgstr ""
+msgstr "Garowder Fantasi"
 
 #: src/Views/AppInfoView.vala:375
 msgid "Graphic violence, bloodshed, or death"
-msgstr ""
+msgstr "Garowder grafek, skollyans goos, po mernans"
 
 #: src/Views/AppInfoView.vala:419
 msgid "Multiplayer"
-msgstr ""
+msgstr "Lieswarier"
 
 #: src/Views/AppInfoView.vala:420
 msgid "Online play with other people"
-msgstr ""
+msgstr "Gwari warlinen gans tus erel"
 
 #: src/Views/AppInfoView.vala:436
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Messajyans anvusurys Son, Gwydhyow, po Tekst gans tus erel"
 
 #: src/Views/AppInfoView.vala:438
 msgid "Moderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Messajyans Musurys Son, Gwydhyow, po Tekst gans tus erel"
 
 #: src/Views/AppInfoView.vala:442
 msgid "Online Interactions"
-msgstr ""
+msgstr "Keswriansow Warlinen"
 
 #: src/Views/AppInfoView.vala:452
 msgid "Location Sharing"
-msgstr ""
+msgstr "Kevrennans Tyller"
 
 #: src/Views/AppInfoView.vala:453
 msgid "Other people can see your real-world location"
-msgstr ""
+msgstr "Tus erel a yll gweles agas tyller y'n bys gwir"
 
 #: src/Views/AppInfoView.vala:465
 msgid "Collects anonymous usage data"
-msgstr ""
+msgstr "Kuntel data usadow dihanow"
 
 #: src/Views/AppInfoView.vala:468
 msgid "Collects usage data that could be used to identify you"
-msgstr ""
+msgstr "Kuntel data usadow may hyll bos devnydhys rag agas aswon"
 
 #: src/Views/AppInfoView.vala:473
 msgid "Info Sharing"
-msgstr ""
+msgstr "Kevrennans Kedhlow"
 
 #: src/Views/AppInfoView.vala:597
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "Skrin-Skeusen Ankavadow"
 
 #: src/Views/AppInfoView.vala:631
 msgid "What's New"
-msgstr ""
+msgstr "Pyth yw Nowydh"
 
 #: src/Views/AppInfoView.vala:635
 msgid "Version History…"
-msgstr ""
+msgstr "Istori Dyllans…"
 
 #: src/Views/AppInfoView.vala:755 src/Views/AppInfoView.vala:762
 msgid "Outdated"
-msgstr ""
+msgstr "Anterrus"
 
 #: src/Views/AppInfoView.vala:756
 msgid "May not work as expected or receive security updates"
-msgstr ""
+msgstr "Martesen ny ober dell yw gwaytys po degemeres nowedhyansow diogeledh"
 
 #: src/Views/AppInfoView.vala:763
 msgid "May not work as expected or support the latest features"
-msgstr ""
+msgstr "Martesen ny ober dell yw gwaytys po skoodhya an nasyow diwettha"
 
 #: src/Views/AppInfoView.vala:771
 msgid "Unstable"
-msgstr ""
+msgstr "Diantel"
 
 #: src/Views/AppInfoView.vala:772
 #, c-format
@@ -724,26 +776,30 @@ msgid ""
 "Built for an unstable version of %s; may contain major issues. Not "
 "recommended for use on a production system."
 msgstr ""
+"Drehevys rag dyllans diantel a %s; hemm a yll yssynsi kudynnow meur. Nyns yw "
+"komendys rag devnydh war gevreyth askorrans."
 
 #: src/Views/AppInfoView.vala:785
 msgid "Insecure Sandbox"
-msgstr ""
+msgstr "Kowel Diantel"
 
 #: src/Views/AppInfoView.vala:786
 msgid "Can ignore or modify its own system permissions"
-msgstr ""
+msgstr "Hemm a yll skonya aswon po chanjya y gumyasow kevreyth"
 
 #: src/Views/AppInfoView.vala:795
 msgid "System Folder Access"
-msgstr ""
+msgstr "Hedhas Restrenva Gevreyth"
 
 #: src/Views/AppInfoView.vala:796
 msgid "Including everyone's Home folders, but not including system internals"
 msgstr ""
+"Ow komprehendya an restrenvaow Tre pubonan, mes ny gomprehend hemma "
+"pervedhow an kevreyth"
 
 #: src/Views/AppInfoView.vala:803
 msgid "Home Folder Access"
-msgstr ""
+msgstr "Hedhas Restrenva Dre"
 
 #: src/Views/AppInfoView.vala:804
 msgid ""
@@ -838,7 +894,7 @@ msgstr ""
 
 #: src/Views/AppListUpdateView.vala:136
 msgid "Check for Updates"
-msgstr ""
+msgstr "Checkya rag Nowedhyansow"
 
 #: src/Views/AppListUpdateView.vala:161
 msgid "Settings"
