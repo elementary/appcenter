@@ -2,27 +2,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 14:56+0000\n"
-"PO-Revision-Date: 2023-05-27 17:07+0000\n"
-"Last-Translator: Faisal Rachmadin "
-"<frachmadin@users.noreply.l10n.elementary.io>\n"
-"Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
+"POT-Creation-Date: 2026-03-17 16:54+0000\n"
+"PO-Revision-Date: 2026-09-03 10:01+0000\n"
+"Last-Translator: Chairul Akmal <chairulakmal@protonmail.com>\n"
+"Language-Team: Indonesian <https://l10n.elementaryos.org/projects/appcenter/"
 "extra/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
-#: data/io.elementary.appcenter.desktop.in.in:6
+#: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: data/appcenter.metainfo.xml.in:12
-#: data/io.elementary.appcenter.desktop.in.in:7
+#: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
 msgstr "Jelajahi dan kelola aplikasi"
 
@@ -34,12 +33,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Toko aplikasi terbuka, bayar-yang-anda-bisa untuk pengembang mandiri dari "
-"elementary. Ditinjau dan dikurasi oleh elementary untuk memastikan "
-"pengalaman yang alami, menghormati-privasi, dan aman. Telusur berdasarkan "
-"kategori atau cari dan temukan aplikasi baru. AppCenter juga digunakan untuk "
-"memperbarui sistem Anda ke versi terbaru dan terhebat untuk fitur dan "
-"perbaikan yang baru."
+"Toko aplikasi sumber terbuka dari elementary dengan sistem bayar sesuai "
+"kemampuan Anda. Ditinjau dan dikurasi oleh elementary untuk memastikan "
+"pengalaman yang alami, menghormati privasi, dan aman. Telusuri berdasarkan "
+"kategori, atau cari dan temukan aplikasi baru. AppCenter juga digunakan "
+"untuk memperbarui sistem Anda ke versi terbaru dan terbaik demi mendapatkan "
+"fitur dan perbaikan baru."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
@@ -55,95 +54,102 @@ msgstr "Bayar apa yang Anda bisa untuk mendukung pengembang"
 
 #: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
-msgstr "elementary, PT."
+msgstr "elementary, Inc."
 
-#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:84
-#: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:117
-#: data/appcenter.metainfo.xml.in:130 data/appcenter.metainfo.xml.in:150
-#: data/appcenter.metainfo.xml.in:168 data/appcenter.metainfo.xml.in:198
-#: data/appcenter.metainfo.xml.in:218 data/appcenter.metainfo.xml.in:233
-#: data/appcenter.metainfo.xml.in:247
+#: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:85
+#: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:111
+#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:145
+#: data/appcenter.metainfo.xml.in:165 data/appcenter.metainfo.xml.in:183
+#: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:233
+#: data/appcenter.metainfo.xml.in:248 data/appcenter.metainfo.xml.in:262
 msgid "Other Improvements:"
 msgstr "Peningkatan Lainnya:"
 
-#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:86
-#: data/appcenter.metainfo.xml.in:98 data/appcenter.metainfo.xml.in:119
-#: data/appcenter.metainfo.xml.in:132 data/appcenter.metainfo.xml.in:152
-#: data/appcenter.metainfo.xml.in:173 data/appcenter.metainfo.xml.in:201
-#: data/appcenter.metainfo.xml.in:223 data/appcenter.metainfo.xml.in:235
-#: data/appcenter.metainfo.xml.in:249
+#: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
+#: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:113
+#: data/appcenter.metainfo.xml.in:134 data/appcenter.metainfo.xml.in:147
+#: data/appcenter.metainfo.xml.in:167 data/appcenter.metainfo.xml.in:188
+#: data/appcenter.metainfo.xml.in:216 data/appcenter.metainfo.xml.in:238
+#: data/appcenter.metainfo.xml.in:250 data/appcenter.metainfo.xml.in:264
 msgid "Updated translations"
 msgstr "Terjemahan diperbarui"
 
-#: data/appcenter.metainfo.xml.in:164 data/appcenter.metainfo.xml.in:194
-#: data/appcenter.metainfo.xml.in:214 data/appcenter.metainfo.xml.in:242
+#: data/appcenter.metainfo.xml.in:73
+msgid "Performance improvements"
+msgstr "Peningkatan kinerja"
+
+#: data/appcenter.metainfo.xml.in:179 data/appcenter.metainfo.xml.in:209
+#: data/appcenter.metainfo.xml.in:229 data/appcenter.metainfo.xml.in:257
 msgid "New features:"
 msgstr "Fitur baru:"
 
-#: data/appcenter.metainfo.xml.in:166
+#: data/appcenter.metainfo.xml.in:181
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Kelola mulai otomatis di Pengaturan Sistem → Aplikasi"
 
-#: data/appcenter.metainfo.xml.in:170
+#: data/appcenter.metainfo.xml.in:185
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Pembaruan aplikasi otomatis secara bawaan"
 
-#: data/appcenter.metainfo.xml.in:171
+#: data/appcenter.metainfo.xml.in:186
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "Pembaruan OS telah dipindahkan ke Pengaturan Sistem"
 
-#: data/appcenter.metainfo.xml.in:172
+#: data/appcenter.metainfo.xml.in:187
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Beri lencana pada aplikasi yang dibuat untuk elementary OS, bukan pada "
+"aplikasi dari remote lain"
 
-#: data/appcenter.metainfo.xml.in:196
+#: data/appcenter.metainfo.xml.in:211
 msgid "Warn when apps use legacy Autostart, Notifications"
 msgstr ""
+"Beri peringatan saat aplikasi menggunakan Autostart dan Notifikasi lawas"
 
-#: data/appcenter.metainfo.xml.in:200
+#: data/appcenter.metainfo.xml.in:215
 msgid "Fix flickering on AppInfo views when getting install size"
-msgstr ""
+msgstr "Perbaiki kedipan pada tampilan AppInfo saat mengambil ukuran pemasangan"
 
-#: data/appcenter.metainfo.xml.in:216
+#: data/appcenter.metainfo.xml.in:231
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Beri peringatan saat aplikasi memiliki akses ke folder Beranda atau folder "
+"sistem, lokasi, pengaturan, atau memiliki sandbox yang tidak aman."
 
-#: data/appcenter.metainfo.xml.in:220
-#, fuzzy
-#| msgid "Ellipsize long app names in App Info views"
+#: data/appcenter.metainfo.xml.in:235
 msgid "Tighten up spacing and margins in App Info views"
-msgstr "Nama aplikasi yang panjang pada tampilan info App akan dielipskan"
+msgstr "Rapatkan jarak dan margin pada tampilan App Info"
 
-#: data/appcenter.metainfo.xml.in:221
-#, fuzzy
-#| msgid "Navigate banners on the home page with multitouch gestures"
+#: data/appcenter.metainfo.xml.in:236
 msgid "Show a placeholder banner on the home page when loading"
-msgstr "Navigasikan spanduk di beranda dengan gerakan multisentuh"
+msgstr "Tampilkan spanduk pengganti di halaman beranda saat memuat"
 
-#: data/appcenter.metainfo.xml.in:222
+#: data/appcenter.metainfo.xml.in:237
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Jangan tampilkan aplikasi non-AppCenter di bawah tajuk terpisah pada "
+"tampilan kategori"
 
-#: data/appcenter.metainfo.xml.in:244
+#: data/appcenter.metainfo.xml.in:259
 msgid "Offer a Repair option if Flatpak updates fail"
 msgstr "Tawarkan opsi Perbaikan jika pembaruan Flatpak gagal"
 
-#: data/appcenter.metainfo.xml.in:245
+#: data/appcenter.metainfo.xml.in:260
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
-"Tampilkan pesan di tampilan pembaruan saat diperbarui, termasuk kapan "
+"Tampilkan pesan di tampilan pembaruan saat sudah mutakhir, termasuk kapan "
 "pembaruan terakhir diperiksa"
 
-#: data/io.elementary.appcenter.desktop.in.in:9
+#: data/io.elementary.appcenter.desktop.in.in:8
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "pasang;copot pemasangan;hapus;katalog;toko;aplikasi;perangkat lunak;"
+msgstr "pasang;hapus;copot;katalog;toko;aplikasi;perangkat lunak;"
 
-#: data/io.elementary.appcenter.desktop.in.in:26
+#: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
 msgstr "Periksa Pembaruan"
 
@@ -226,9 +232,6 @@ msgstr "Autentikasi diperlukan untuk memperbaiki sumber perangkat lunak"
 
 #~ msgid "Redesigned \"Fun &amp; Games\" category card"
 #~ msgstr "Kartu kategori “Hiburan &amp; Permainan” yang didesain ulang"
-
-#~ msgid "Performance improvements"
-#~ msgstr "Peningkatan kinerja"
 
 #~ msgid "Stability improvements"
 #~ msgstr "Peningkatan Stabilitas"

@@ -25,7 +25,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     // Launchable package set when installed
     private AppCenterCore.Package? last_installed_package;
 
-    private Views.AppListUpdateView? installed_view;
+    private Views.AppListUpdateView installed_view;
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);
@@ -71,6 +71,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
 
         var homepage = new Homepage ();
+
+        installed_view = new Views.AppListUpdateView ();
 
         navigation_view = new Adw.NavigationView ();
         navigation_view.add (homepage);
@@ -145,10 +147,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         backend.notify["job-type"].connect (update_overlaybar_label);
 
         overlaybar.label = backend.job_type.to_string ();
-
-        if (installed_view == null) {
-            installed_view = new Views.AppListUpdateView ();
-        }
     }
 
     public override bool close_request () {
@@ -240,7 +238,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 toast.set_default_action (null);
                 break;
             default:
-                break;
+                return;
         }
 
         toast.send_notification ();

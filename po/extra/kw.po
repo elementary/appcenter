@@ -1,36 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 16:54+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/extra/"
-"gl/>\n"
-"Language: gl\n"
+"PO-Revision-Date: 2026-09-15 13:03+0000\n"
+"Last-Translator: Flynn <flynn@users.noreply.l10n.elementaryos.org>\n"
+"Language-Team: Cornish <https://l10n.elementaryos.org/projects/appcenter/"
+"extra/kw/>\n"
+"Language: kw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
-"X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
+"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ((n == 1) ? 1 : (((n % 100 "
+"== 2 || n % 100 == 22 || n % 100 == 42 || n % 100 == 62 || n % 100 == 82) || "
+"n % 1000 == 0 && (n % 100000 >= 1000 && n % 100000 <= 20000 || n % 100000 == "
+"40000 || n % 100000 == 60000 || n % 100000 == 80000) || n != 0 && n % "
+"1000000 == 100000) ? 2 : ((n % 100 == 3 || n % 100 == 23 || n % 100 == 43 || "
+"n % 100 == 63 || n % 100 == 83) ? 3 : ((n != 1 && (n % 100 == 1 || n % 100 "
+"== 21 || n % 100 == 41 || n % 100 == 61 || n % 100 == 81)) ? 4 : 5))));\n"
+"X-Generator: Weblate 2026.5\n"
 
 #: data/appcenter.metainfo.xml.in:11
 #: data/io.elementary.appcenter.desktop.in.in:5
 msgid "AppCenter"
-msgstr "Centro de aplicacións"
+msgstr "Appva"
 
 #: data/appcenter.metainfo.xml.in:12
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "Browse and manage apps"
-msgstr "Explore e xestione aplicacións"
+msgstr "Peuri ha dyghtya appys"
 
 #: data/appcenter.metainfo.xml.in:14
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,27 +43,27 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Unha tenda de aplicativos para desenvolvedores independentes de software "
-"libre. Navegue polas categorías ou busque e descubra novos aplicativos. "
-"AppCenter tamén é usado para actualizar o seu sistema á última e mellor "
-"versión para ter novas características e correccións."
+"An gwerthji appys rydh, pe-dell-vynnydh a elementary. Dashwithrys ha dyghtys "
+"gans elementary rag surhe klewans teythiek, privedh, ha diogel. Peurewgh dre "
+"glassys po hwilewgh ha trovya appys nowydh. Appva yw devnydhys ynwedh rag "
+"nowedhi agas kevreyth dhe'n dyllans diwettha ha moyha rag nasyow hag "
+"ewnheansow nowydh."
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Trovya appys nowydh"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Remaynya nowedhys"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Peewgh dell yllydh rag skoodhya displegyoryon"
 
 #: data/appcenter.metainfo.xml.in:62
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/appcenter.metainfo.xml.in:70 data/appcenter.metainfo.xml.in:85
 #: data/appcenter.metainfo.xml.in:99 data/appcenter.metainfo.xml.in:111
@@ -67,7 +72,7 @@ msgstr "elementary LLC."
 #: data/appcenter.metainfo.xml.in:213 data/appcenter.metainfo.xml.in:233
 #: data/appcenter.metainfo.xml.in:248 data/appcenter.metainfo.xml.in:262
 msgid "Other Improvements:"
-msgstr ""
+msgstr "Gwellheansow Erel:"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:87
 #: data/appcenter.metainfo.xml.in:101 data/appcenter.metainfo.xml.in:113
@@ -76,102 +81,88 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:216 data/appcenter.metainfo.xml.in:238
 #: data/appcenter.metainfo.xml.in:250 data/appcenter.metainfo.xml.in:264
 msgid "Updated translations"
-msgstr ""
+msgstr "Treylyansow nowedhys"
 
 #: data/appcenter.metainfo.xml.in:73
 msgid "Performance improvements"
-msgstr ""
+msgstr "Gwellheansow tooth"
 
 #: data/appcenter.metainfo.xml.in:179 data/appcenter.metainfo.xml.in:209
 #: data/appcenter.metainfo.xml.in:229 data/appcenter.metainfo.xml.in:257
 msgid "New features:"
-msgstr ""
+msgstr "Nasyow nowydh:"
 
 #: data/appcenter.metainfo.xml.in:181
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Dyghtya awtodalleth yn Settyansow Kevreyth → Appys"
 
 #: data/appcenter.metainfo.xml.in:185
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Nowedhyansow app awtomatek dre dhefowt"
 
 #: data/appcenter.metainfo.xml.in:186
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "Nowedhyansow KO re wayas dhe Settyansow Kevreyth"
 
 #: data/appcenter.metainfo.xml.in:187
 msgid ""
 "Badge apps made for elementary OS instead of badging apps from other remotes"
 msgstr ""
+"Arwodha appys gwrys rag elementary OS yn le owth arwodha appys a "
+"bellwithvaow erel"
 
 #: data/appcenter.metainfo.xml.in:211
 msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr ""
+msgstr "Gwarnya pan eus appys ow tevnydhya Awtodalleth ha Gwarnyansow anterrus"
 
 #: data/appcenter.metainfo.xml.in:215
 msgid "Fix flickering on AppInfo views when getting install size"
-msgstr ""
+msgstr "Ewnhe flyckrans yn gwelyow AppInfo hag ow kerghes braster leans"
 
 #: data/appcenter.metainfo.xml.in:231
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Gwarnya pan eus appys gans hedhas dhe restrenvaow Tre po kevreyth, tyller, "
+"settyansow, po gans kowel andhiogel."
 
 #: data/appcenter.metainfo.xml.in:235
 msgid "Tighten up spacing and margins in App Info views"
-msgstr ""
+msgstr "Tynnhe spas hag emlow yn gwelyow Kedhlow App"
 
 #: data/appcenter.metainfo.xml.in:236
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Diskwedhes baner anbarghus war'n folen dre yn kargans"
 
 #: data/appcenter.metainfo.xml.in:237
 msgid "Don't list non-AppCenter apps under a separate header in category views"
-msgstr ""
+msgstr "Ny rolya appys di-Appva a-woles dhe bennlinen dhiblans yn gwelyow klass"
 
 #: data/appcenter.metainfo.xml.in:259
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Offra dewis Ewnhe mar fyllons nowedhyansow Flatpak"
 
 #: data/appcenter.metainfo.xml.in:260
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Diskwedhes messach y'n gwel nowedhyans pan nowedhys, ow komprehendya p'eur "
+"esa nowedhyansow checkys diwettha"
 
 #: data/io.elementary.appcenter.desktop.in.in:8
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "instalar;desinstalar;eliminar;catálogo;tenda;aplicativos;actualizacións;software;"
+msgstr "lea;dilea;remova;rolas;menegva;gwerthji;appys;medhelweyth;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Comprobar Actualizacións"
+msgstr "Checkya rag Nowedhyansow"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
-msgstr ""
+msgstr "Ewnhe pennfentynnyow medhelweyth"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to repair software sources"
-msgstr ""
-
-#~ msgid "@APP_NAME@"
-#~ msgstr "@APP_NAME@"
-
-#, fuzzy
-#~| msgid "Check for Updates"
-#~ msgid "Manually check for new updates"
-#~ msgstr "Comprobar Actualizacións"
-
-#, fuzzy
-#~| msgid "Check for Updates"
-#~ msgid "Minor updates"
-#~ msgstr "Comprobar Actualizacións"
-
-#~ msgid "@PROJECT_NAME@"
-#~ msgstr "@PROJECT_NAME@"
-
-#~ msgid "@DESKTOP_ICON@"
-#~ msgstr "@DESKTOP_ICON@"
+msgstr "Res yw dhywgh omwirhe rag ewnhe pennfentynnyow medhelweyth"

@@ -50,7 +50,12 @@ public class AppCenter.Screenshot : Granite.Bin {
         });
     }
 
-    private void set_accent_color (string color) {
+    private void set_accent_color (string? color) {
+        if (color == null) {
+            /* We automatically use the accent color */
+            return;
+        }
+
         if (providers == null) {
             providers = new Gee.HashMap<string, Gtk.CssProvider> ();
         }

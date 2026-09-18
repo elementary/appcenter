@@ -98,11 +98,14 @@ public class AppCenterCore.Package : Object {
     public const uint EXACT_MATCH_SCORE = 100;
     public const uint PARTIAL_MATCH_SCORE = 50;
 
+    public unowned Backend backend { get; construct; }
     public string uid { get; construct; }
 
     public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
+
+    public bool working { get { return state == INSTALLING || state == UPDATING || state == REMOVING; } }
 
     public double progress {
         get {
@@ -148,11 +151,7 @@ public class AppCenterCore.Package : Object {
                 return _component_id;
             }
 
-            _component_id = component.id;
-            if (_component_id.has_suffix (".desktop")) {
-                // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
-                _component_id = _component_id.substring (0, _component_id.length - 8);
-            }
+            _component_id = Utils.normalize_component_id (component.id);
 
             return _component_id;
         }
@@ -184,12 +183,6 @@ public class AppCenterCore.Package : Object {
     public bool is_updating {
         get {
             return state == State.UPDATING;
-        }
-    }
-
-    public bool changes_finished {
-        get {
-            return change_information.status == ChangeInformation.Status.FINISHED;
         }
     }
 
@@ -420,8 +413,8 @@ public class AppCenterCore.Package : Object {
         change_information = new ChangeInformation ();
     }
 
-    public Package (string uid, AppStream.Component component) {
-        Object (uid: uid, component: component);
+    public Package (Backend backend, string uid, AppStream.Component component) {
+        Object (backend: backend, uid: uid, component: component);
     }
 
     public void replace_component (AppStream.Component component) {
@@ -457,7 +450,8 @@ public class AppCenterCore.Package : Object {
         // Only trigger a notify if the state has changed, quite a lot of things listen to this
         if (state != new_state) {
             state = new_state;
-            FlatpakBackend.get_default ().notify_package_changed (this);
+            notify_property ("working");
+            backend.notify_package_changed (this);
         }
     }
 
@@ -504,15 +498,14 @@ public class AppCenterCore.Package : Object {
         change_information.start ();
         state = performing;
 
-        unowned var flatpak_backend = AppCenterCore.FlatpakBackend.get_default ();
-        flatpak_backend.notify_package_changed (this);
+        backend.notify_package_changed (this);
 
         try {
             yield perform_package_operation ();
-            flatpak_backend.operation_finished (this, performing, null);
+            backend.operation_finished (this, performing, null);
         } catch (GLib.Error e) {
             warning ("Operation failed for package %s - %s", name, e.message);
-            flatpak_backend.operation_finished (this, performing, e);
+            backend.operation_finished (this, performing, e);
             throw e;
         } finally {
             change_information.complete ();
@@ -521,8 +514,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private async void perform_package_operation () throws GLib.Error {
-        unowned var backend = AppCenterCore.FlatpakBackend.get_default ();
-
         switch (state) {
             case State.UPDATING:
                 yield backend.update_package (this, change_information);
@@ -624,10 +615,6 @@ public class AppCenterCore.Package : Object {
         return summary;
     }
 
-    public string get_progress_description () {
-        return change_information.status_description;
-    }
-
     public GLib.Icon get_icon (uint size, uint scale_factor) {
         GLib.Icon? icon = null;
         uint current_size = 0;
@@ -662,11 +649,11 @@ public class AppCenterCore.Package : Object {
                     break;
 
                 case AppStream.IconKind.UNKNOWN:
-                    warning ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
+                    debug ("'%s' is an unknown kind of AppStream icon", _icon.get_name ());
                     break;
 
                 case AppStream.IconKind.REMOTE:
-                    warning ("'%s' is a remote AppStream icon", _icon.get_name ());
+                    debug ("'%s' is a remote AppStream icon", _icon.get_name ());
                     break;
             }
         }

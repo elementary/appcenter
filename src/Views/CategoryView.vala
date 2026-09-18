@@ -212,9 +212,10 @@ public class AppCenter.CategoryView : Adw.NavigationPage {
 
             if (label != null) {
                 var header = new Granite.HeaderLabel (label) {
-                    margin_start = 12
+                    margin_start = 12,
+                    size = H2
                 };
-                header.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+
                 append (header);
             }
             append (flowbox);

@@ -51,24 +51,6 @@ homepage {
             margin-right: -12px; /*Offset space inside icon*/;
         }
 
-        > box {
-            border-spacing: rem(24px);
-        }
-
-        label.name {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            margin-bottom: -0.1em;
-        }
-
-        label.summary {
-            font-size: 1.25rem;
-            font-weight: 400;
-            letter-spacing: -0.035em;
-            margin-bottom: 0.75em;
-        }
-
         label.description {
             font-size: 0.95rem;
             opacity: 0.85;

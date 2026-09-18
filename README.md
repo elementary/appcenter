@@ -45,14 +45,6 @@ As specified in the [GLib documentation](https://developer.gnome.org/glib/stable
 
     G_MESSAGES_DEBUG=all io.elementary.appcenter
 
-Show restart required messaging:
-
-    sudo touch /var/run/reboot-required
-
-Hide restart required messaging:
-
-    sudo rm /var/run/reboot-required
-
 Load and preview a local AppStream XML metadata file, your local metadata will show up in the featured banner and will also be searchable. Metadata loaded this way will have a `(local)` suffix in it's name.
 
     io.elementary.appcenter --load-local /path/to/file.appdata.xml

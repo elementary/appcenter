@@ -33,7 +33,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
     private GLib.ListStore origin_liststore;
     private Gtk.CssProvider accent_provider;
     private Gtk.DropDown origin_dropdown;
-    private Gtk.Label app_subtitle;
     private Gtk.Overlay screenshot_overlay;
     private Adw.Carousel screenshot_carousel;
     private Adw.Clamp screenshot_not_found_clamp;
@@ -140,35 +139,20 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             package = package
         };
 
-        var app_title = new Gtk.Label (package.name) {
-            can_focus = false,
-            selectable = true,
-            wrap = true,
-            xalign = 0
+        var app_title = new Granite.HeaderLabel (package.name) {
+            secondary_text = package.get_summary (),
+            size = H1
         };
-        app_title.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
-
-        app_subtitle = new Gtk.Label (null) {
-            can_focus = false,
-            label = package.get_summary (),
-            selectable = true,
-            wrap = true,
-            wrap_mode = Pango.WrapMode.WORD_CHAR,
-            xalign = 0
-        };
-        app_subtitle.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-        app_subtitle.add_css_class (Granite.CssClass.DIM);
 
         origin_liststore = new GLib.ListStore (typeof (AppCenterCore.Package));
 
-        var list_factory = new Gtk.SignalListItemFactory ();
-        list_factory.setup.connect (origin_setup_factory);
-        list_factory.bind.connect (origin_bind_factory);
+        var origin_expression = new Gtk.PropertyExpression (
+            typeof (AppCenterCore.Package), null, "origin-description"
+        );
 
-        origin_dropdown = new Gtk.DropDown (origin_liststore, null) {
+        origin_dropdown = new Gtk.DropDown (origin_liststore, origin_expression) {
             halign = START,
             valign = CENTER,
-            factory = list_factory
         };
 
         foreach (var origin_package in package.origin_packages) {
@@ -184,8 +168,7 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
             column_spacing = 12,
             valign = Gtk.Align.CENTER
         };
-        header_grid.attach (app_title, 0, 0);
-        header_grid.attach (app_subtitle, 0, 1, 2);
+        header_grid.attach (app_title, 0, 0, 1, 2);
         header_grid.attach (origin_dropdown, 0, 2, 2);
 
         if (!package.is_local) {
@@ -996,24 +979,6 @@ public class AppCenter.Views.AppInfoView : Adw.NavigationPage {
                 critical (e.message);
             }
         });
-    }
-
-    private void origin_setup_factory (Object object) {
-        var title = new Gtk.Label ("") {
-            xalign = 0
-        };
-
-        var list_item = (Gtk.ListItem) object;
-        list_item.child = title;
-    }
-
-    private void origin_bind_factory (Object object) {
-        var list_item = object as Gtk.ListItem;
-
-        var package = (AppCenterCore.Package) list_item.get_item ();
-
-        var title = (Gtk.Label) list_item.child;
-        title.label = package.origin_description;
     }
 
     private void get_gamepad_info_for_kind (AppStream.RelationKind kind, out string icon_name, out string title, out string description) {
