@@ -24,10 +24,6 @@ public class AppCenter.SearchListItem : Granite.ListItem {
     private Granite.Box box;
     private Granite.HeaderLabel label;
 
-    class construct {
-        set_css_name ("search-list-item");
-    }
-
     construct {
         app_icon = new AppIcon (48);
 
@@ -42,5 +38,6 @@ public class AppCenter.SearchListItem : Granite.ListItem {
         box.append (label);
 
         child = box;
+        add_css_class ("search");
     }
 }
