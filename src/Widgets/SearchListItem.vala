@@ -3,26 +3,26 @@
  * SPDX-FileCopyrightText: 2025 elementary, Inc. (https://elementary.io)
  */
 
-public class AppCenter.SearchListItem : Gtk.Grid {
+public class AppCenter.SearchListItem : Granite.ListItem {
     public AppCenterCore.Package package {
         set {
             app_icon.package = value;
-            name_label.label = value.name;
-            summary_label.label = value.get_summary ();
+            label.label = value.name;
+            label.secondary_text = value.get_summary ();
 
             if (action_stack != null) {
-                remove (action_stack);
+                box.remove (action_stack);
             }
 
             action_stack = new ActionStack (value);
-            attach (action_stack, 2, 0, 1, 2);
+            box.append (action_stack);
         }
     }
 
     private AppCenter.ActionStack action_stack;
     private AppCenter.AppIcon app_icon;
-    private Gtk.Label name_label;
-    private Gtk.Label summary_label;
+    private Granite.Box box;
+    private Granite.HeaderLabel label;
 
     class construct {
         set_css_name ("search-list-item");
@@ -31,29 +31,16 @@ public class AppCenter.SearchListItem : Gtk.Grid {
     construct {
         app_icon = new AppIcon (48);
 
-        name_label = new Gtk.Label (null) {
+        label = new Granite.HeaderLabel ("") {
             ellipsize = END,
-            max_width_chars = 30,
-            valign = END,
-            xalign = 0
+            size = H3,
+            valign = CENTER
         };
-        name_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        summary_label = new Gtk.Label (null) {
-            ellipsize = END,
-            hexpand = true,
-            lines = 2,
-            width_chars = 20,
-            max_width_chars = 35,
-            valign = START,
-            wrap = true,
-            xalign = 0
-        };
-        summary_label.add_css_class (Granite.CssClass.DIM);
-        summary_label.add_css_class (Granite.CssClass.SMALL);
+        box = new Granite.Box (HORIZONTAL);
+        box.append (app_icon);
+        box.append (label);
 
-        attach (app_icon, 0, 0, 1, 2);
-        attach (name_label, 1, 0);
-        attach (summary_label, 1, 1);
+        child = box;
     }
 }

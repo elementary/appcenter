@@ -5,6 +5,9 @@ navigation-view-page.search {
 }
 
 search-list-item {
-    border-spacing: 1em 0;
     margin: 0.5em 1em;
+
+    header {
+        margin: 0;
+    }
 }
