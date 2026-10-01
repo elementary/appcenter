@@ -1475,6 +1475,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
     private static void perform_xml_fixups (string origin_name, File src_file, string dest_path) {
         var path = src_file.get_path ();
+        // XML_PARSE_UNZIP
         Xml.Doc* doc = Xml.Parser.read_file (path, null, 1 << 24);
         if (doc == null) {
             warning ("Appstream XML file %s not found or permissions missing", path);
