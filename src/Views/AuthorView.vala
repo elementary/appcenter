@@ -17,19 +17,10 @@ private class AppCenter.AuthorView : Gtk.Box {
     }
 
     construct {
-        if (package.author == null) {
-            return;
-        }
-
-        var author_packages = package.author_id == null
-            ? AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX)
-            : AppCenterCore.FlatpakBackend.get_default ().get_packages_by_author_id (package.author_id, AUTHOR_OTHER_APPS_MAX);
-
-        if (author_packages.size <= 1) {
-            return;
-        }
-
         var header = new Granite.HeaderLabel (_("Other Apps by %s").printf (package.author_title));
+
+        var packages = AppCenterCore.ComponentStore.get_default ().get_components_for_same_author (package);
+        packages.bind_property ("n-items", this, "visible", SYNC_CREATE);
 
         var flowbox = new Gtk.FlowBox () {
             activate_on_single_click = true,
@@ -37,15 +28,7 @@ private class AppCenter.AuthorView : Gtk.Box {
             row_spacing = 12,
             homogeneous = true
         };
-
-        foreach (var author_package in author_packages) {
-            if (author_package.component.get_id () == package.component.get_id ()) {
-                continue;
-            }
-
-            var other_app = new AppCenter.Widgets.ListPackageRowGrid (author_package);
-            flowbox.append (other_app);
-        }
+        flowbox.bind_model (packages, create_widget_func);
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
         box.append (header);
@@ -68,5 +51,9 @@ private class AppCenter.AuthorView : Gtk.Box {
             var package = ((AppCenter.Widgets.ListPackageRowGrid) child.get_child ()).package;
             activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
         });
+    }
+
+    private static Gtk.Widget create_widget_func (GLib.Object item) {
+        return new AppCenter.Widgets.ListPackageRowGrid ((AppCenterCore.Package) item);
     }
 }

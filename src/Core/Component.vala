@@ -46,4 +46,14 @@ public class AppCenterCore.Component : Object, ListModel {
     public Object? get_item (uint position) {
         return packages.get ((int) position);
     }
+
+    public Package? get_package_from_same_origin (Package package) {
+        foreach (var p in packages) {
+            if (p.component.get_origin () == package.component.get_origin ()) {
+                return p;
+            }
+        }
+
+        return null;
+    }
 }
