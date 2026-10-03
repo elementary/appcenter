@@ -149,24 +149,15 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
             unowned var app = (Gtk.Application) GLib.Application.get_default ();
 
-            if (inhibit_token == 0) {
+            if (inhibit_token == 0 && job.operation.should_inhibit ()) {
                 /* If you came here trying to debug the critical `assertion 'GTK_IS_NATIVE (self)' failed`:
                    This was a bug in GTK and has been fixed so this should go away in OS 9
                    https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/8638 */
-                switch (job.operation) {
-                    case INSTALL_PACKAGE:
-                    case UPDATE_PACKAGE:
-                    case REMOVE_PACKAGE:
-                    case REPAIR:
-                        inhibit_token = app.inhibit (
-                            app.get_active_window (),
-                            Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
-                            job.operation.to_string ()
-                        );
-                        break;
-                    default:
-                        break;
-                }
+                inhibit_token = app.inhibit (
+                    app.get_active_window (),
+                    Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+                    job.operation.to_string ()
+                );
             }
 
             switch (job.operation) {

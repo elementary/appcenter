@@ -54,6 +54,18 @@ public class AppCenterCore.Job : Object {
 
             return "";
         }
+
+        public bool should_inhibit () {
+            switch (this) {
+                case INSTALL_PACKAGE:
+                case UPDATE_PACKAGE:
+                case REMOVE_PACKAGE:
+                case REPAIR:
+                    return true;
+            }
+
+            return false;
+        }
     }
 
     public Job (Type type) {
