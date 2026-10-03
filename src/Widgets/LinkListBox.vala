@@ -26,8 +26,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             selection_mode = NONE,
             valign = START
         };
-        contact_listbox.add_css_class ("boxed-list");
-        contact_listbox.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
+        contact_listbox.add_css_class (Granite.CssClass.CARD);
 
         var homepage_url = component.get_url (HOMEPAGE);
         if (homepage_url != null) {
@@ -76,8 +75,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
             selection_mode = NONE,
             valign = START
         };
-        contribute_listbox.add_css_class ("boxed-list");
-        contribute_listbox.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
+        contribute_listbox.add_css_class (Granite.CssClass.CARD);
 
         var project_license = component.project_license;
         if (project_license != null) {
@@ -292,7 +290,7 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         return final_token_list.to_array ();
     }
 
-    private class LinkRow : Gtk.ListBoxRow {
+    private class LinkRow : Granite.ListItem {
         public string uri_or_key { get; construct; }
         public string icon_name { get; construct; }
         public string label_string { get; construct; }
