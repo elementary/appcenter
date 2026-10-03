@@ -14,6 +14,9 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
+[CCode (cheader_filename = "malloc.h")]
+extern int malloc_trim (size_t pad);
+
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_PREFIX = "win.";
     public const string ACTION_SHOW_PACKAGE = "show-package";
@@ -156,7 +159,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         // We have to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
         ((AppCenter.App) application).request_background.begin (() =>
-            Idle.add_once (() => destroy ())
+            Idle.add_once (() => {
+                destroy ();
+                Idle.add_once (() => malloc_trim (0));
+            })
         );
 
         return true;

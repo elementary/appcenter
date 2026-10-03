@@ -14,6 +14,7 @@ public class AppCenter.Screenshot : Granite.Bin {
 
     private static Gee.HashMap<string, Gtk.CssProvider>? providers;
     private Gtk.Picture picture;
+    private string? accent_color;
 
     class construct {
         set_css_name ("screenshot");
@@ -40,14 +41,18 @@ public class AppCenter.Screenshot : Granite.Bin {
         add_css_class (Granite.CssClass.CARD);
 
         bind_property ("caption", label, "label");
+
+        // Only capture `this` here: capturing a local would make Vala use
+        // g_signal_connect_data (), which refs us into the process-lifetime
+        // Granite.Settings singleton and leaks every screenshot ever shown
+        Granite.Settings.get_default ().notify["prefers-color-scheme"].connect (() => {
+            set_accent_color (accent_color);
+        });
     }
 
     public void set_branding (AppCenterCore.Package package) {
-        set_accent_color (package.get_color_primary ());
-
-        Granite.Settings.get_default ().notify["prefers-color-scheme"].connect (() => {
-            set_accent_color (package.get_color_primary ());
-        });
+        accent_color = package.get_color_primary ();
+        set_accent_color (accent_color);
     }
 
     private void set_accent_color (string? color) {
