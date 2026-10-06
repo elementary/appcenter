@@ -145,7 +145,14 @@ public class AppCenter.SearchView : Adw.NavigationPage {
 
     private void search () {
         if (search_entry.text.length >= VALID_QUERY_LENGTH) {
-            var dyn_flathub_link = "<a href='https://flathub.org/apps/search/%s'>%s</a>".printf (search_entry.text, _("Flathub"));
+            // Get system locale and extract language code (e.g., "de_DE.UTF-8" -> "de")
+            var locale = Intl.setlocale (LocaleCategory.MESSAGES, null);
+            var lang = "en"; // Default to English
+            if (locale != null && locale.length >= 2) {
+                lang = locale.substring (0, 2).down ();
+            }
+            
+            var dyn_flathub_link = "<a href='https://flathub.org/%s/apps/search?q=%s'>%s</a>".printf (lang, search_entry.text, _("Flathub"));
             alert_view.description = _("Try changing search terms. You can also sideload Flatpak apps e.g. from %s").printf (dyn_flathub_link);
 
             if (mimetype) {
