@@ -1141,13 +1141,11 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         }
 
         var dest_folder = File.new_for_path (dest_path);
-        if (!dest_folder.query_exists ()) {
-            try {
-                dest_folder.make_directory_with_parents ();
-            } catch (Error e) {
-                critical ("Error while creating flatpak metadata dir: %s", e.message);
-                return;
-            }
+        try {
+            mkdir_if_not_exists (dest_folder);
+        } catch (Error e) {
+            critical ("Error while creating flatpak metadata dir: %s", e.message);
+            return;
         }
 
         delete_folder_contents (dest_folder);
@@ -1199,43 +1197,39 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
             var appstream_dir = remote.get_appstream_dir (null);
             var metadata_file = appstream_dir.get_child ("appstream.xml.gz");
-            if (metadata_file.query_exists ()) {
-                perform_xml_fixups (origin_name, metadata_file, dest_path);
+            if (!metadata_file.query_exists ()) {
+                warning ("Metainfo does not exist for remote: %s", origin_name);
+                continue;
+            }
 
-                var local_icons_path = dest_folder.get_child ("icons");
-                if (!local_icons_path.query_exists ()) {
-                    try {
-                        local_icons_path.make_directory ();
-                    } catch (Error e) {
-                        warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
-                        continue;
-                    }
-                }
+            perform_xml_fixups (origin_name, metadata_file, dest_path);
 
-                var remote_icons_folder = appstream_dir.get_child ("icons");
-                if (!remote_icons_folder.query_exists ()) {
+            var local_icons_folder = dest_folder.get_child ("icons");
+            var remote_icons_folder = appstream_dir.get_child ("icons");
+            try {
+                mkdir_if_not_exists (local_icons_folder);
+                mkdir_if_not_exists (remote_icons_folder);
+            } catch (Error e) {
+                warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
+                continue;
+            }
+
+            if (remote_icons_folder.get_child (origin_name).query_exists ()) {
+                local_icons_folder = local_icons_folder.get_child (origin_name);
+                try {
+                    local_icons_folder.make_symbolic_link (remote_icons_folder.get_child (origin_name).get_path ());
+                } catch (Error e) {
+                    warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
                     continue;
                 }
-
-                if (remote_icons_folder.get_child (origin_name).query_exists ()) {
-                    local_icons_path = local_icons_path.get_child (origin_name);
-                    try {
-                        local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin_name).get_path ());
-                    } catch (Error e) {
-                        warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
-                        continue;
-                    }
-                } else {
-                    local_icons_path = local_icons_path.get_child (origin_name);
-                    try {
-                        local_icons_path.make_symbolic_link (remote_icons_folder.get_path ());
-                    } catch (Error e) {
-                        warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
-                        continue;
-                    }
-                }
             } else {
-                continue;
+                local_icons_folder = local_icons_folder.get_child (origin_name);
+                try {
+                    local_icons_folder.make_symbolic_link (remote_icons_folder.get_path ());
+                } catch (Error e) {
+                    warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
+                    continue;
+                }
             }
 
             // Make sure we emit the signal on the main thread since UI is connected to this
@@ -1244,6 +1238,14 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 return Source.REMOVE;
             });
         }
+    }
+
+    private void mkdir_if_not_exists (File file) throws Error {
+        if (file.query_exists ()) {
+            return;
+        }
+
+        file.make_directory_with_parents ();
     }
 
     private void reload_appstream_pool () {
