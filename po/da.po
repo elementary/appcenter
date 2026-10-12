@@ -3,13 +3,14 @@
 # Rantyrant <diseasemonger@gmail.com>, 2020.
 # David Hewitt <davidmhewitt@gmail.com>, 2023.
 # CodeBeats <nicholai67@hotmail.com>, 2026.
+# SalsaCat <laugessvan@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-03 21:17+0000\n"
 "PO-Revision-Date: 2026-10-13 09:03+0000\n"
-"Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
+"Last-Translator: SalsaCat <laugessvan@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/da/>\n"
 "Language: da\n"
@@ -40,6 +41,9 @@ msgid ""
 "AppCenter will automatically start when this device turns on and run when "
 "its window is closed so that it can automatically check and install updates."
 msgstr ""
+"AppCenter vil automatisk starte når denne enhed tænder, og vil køre i "
+"baggrunden når dens vindue er lukket så den automatisk kan tjekke og "
+"installere opdateringer."
 
 #: src/Application.vala:323
 msgid "The app has been installed"
@@ -60,10 +64,9 @@ msgid "“%s” has been uninstalled"
 msgstr "\"%s\" er blevet afinstalleret"
 
 #: src/MainWindow.vala:57
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Det lykkedes ikke at afinstallere \"%s\""
+msgstr "Det lykkedes ikke at åbne \"%s\""
 
 #: src/MainWindow.vala:89
 msgid "Network Not Available."
@@ -84,7 +87,7 @@ msgstr ""
 #: src/MainWindow.vala:109
 #, c-format
 msgid "Install %s to browse and install apps."
-msgstr ""
+msgstr "Installer %s for at søge og installere apps."
 
 #: src/MainWindow.vala:229 src/Widgets/ActionStack.vala:62
 msgid "Open"
@@ -115,10 +118,8 @@ msgid "Finance"
 msgstr "Finans"
 
 #: src/Core/CategoryManager.vala:51
-#, fuzzy
-#| msgid "Games"
 msgid "Fun & Games"
-msgstr "Spil"
+msgstr "Sjov & Spil"
 
 #: src/Core/CategoryManager.vala:69
 msgid "Graphics"
@@ -157,10 +158,8 @@ msgid "Writing & Language"
 msgstr "Skrift & Sprog"
 
 #: src/Core/CategoryManager.vala:144
-#, fuzzy
-#| msgid "Privacy Policy"
 msgid "Privacy & Security"
-msgstr "Fortrolighedspolitik"
+msgstr "Privatlivspolitik"
 
 #: src/Core/ChangeInformation.vala:39 src/Core/ChangeInformation.vala:65
 msgid "Waiting"
@@ -189,7 +188,7 @@ msgstr "Runtime opdateringer"
 
 #: src/Core/FlatpakBackend.vala:225
 msgid "Updates to app runtimes"
-msgstr ""
+msgstr "Opdateringer til app-køretidsmiljøer"
 
 #: src/Core/FlatpakBackend.vala:1596 src/Core/FlatpakBackend.vala:1703
 msgid "Component has no flatpak bundle"
@@ -227,13 +226,11 @@ msgid "Version: %s"
 msgstr "Version: %s"
 
 #: src/Core/FlatpakBackend.vala:2029
-#, fuzzy, c-format
-#| msgid "%u component with updates"
-#| msgid_plural "%u components with updates"
+#, c-format
 msgid "%u runtime with updates"
 msgid_plural "%u runtimes with updates"
-msgstr[0] "%u komponent med updateringer"
-msgstr[1] "%u komponenter med updateringer"
+msgstr[0] "%u komponent med opdateringer"
+msgstr[1] "%u komponenter med opdateringer"
 
 #: src/Core/FlatpakBackend.vala:2034
 #, c-format
@@ -267,7 +264,7 @@ msgstr "Afinstallerer…"
 
 #: src/Core/Job.vala:52
 msgid "Repairing…"
-msgstr "Reparere…"
+msgstr "Reparerer"
 
 #: src/Core/Package.vala:309
 #, c-format
