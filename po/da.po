@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-03 21:17+0000\n"
 "PO-Revision-Date: 2026-10-13 09:03+0000\n"
-"Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
+"Last-Translator: SalsaCat <laugessvan@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/da/>\n"
 "Language: da\n"
@@ -29,7 +29,7 @@ msgstr "AppCenter"
 #: src/Application.vala:75
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Kunne ikke forstå medie type %s"
+msgstr "Kunne ikke forstå medietype %s"
 
 #: src/Application.vala:94
 #, c-format
@@ -70,7 +70,7 @@ msgstr "Det lykkedes ikke at åbne \"%s\""
 
 #: src/MainWindow.vala:89
 msgid "Network Not Available."
-msgstr "Netværket Er Utilgængeligt."
+msgstr "Netværk Utilgængeligt."
 
 #: src/MainWindow.vala:90
 msgid "Connect to the Internet to browse and install apps."
