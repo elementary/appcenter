@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-03 21:17+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/extra/"
-"da/>\n"
+"PO-Revision-Date: 2026-10-13 09:03+0000\n"
+"Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
+"Language-Team: Danish <https://l10n.elementaryos.org/projects/appcenter/"
+"extra/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/appcenter.metainfo.xml.in:11
@@ -45,15 +45,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:19
 msgid "Discover new apps"
-msgstr ""
+msgstr "Opdag nye apps"
 
 #: data/appcenter.metainfo.xml.in:23
 msgid "Stay up to date"
-msgstr ""
+msgstr "Hold dig opdateret"
 
 #: data/appcenter.metainfo.xml.in:27
 msgid "Pay what you can to support developers"
-msgstr ""
+msgstr "Betal hvad du kan for at støtte udviklere"
 
 #: data/appcenter.metainfo.xml.in:62
 msgid "elementary, Inc."
@@ -94,15 +94,15 @@ msgstr "Nye funktioner"
 
 #: data/appcenter.metainfo.xml.in:190
 msgid "Manage autostart in System Settings → Applications"
-msgstr ""
+msgstr "Administrer autostart i Systemindstillinger → Applikationer"
 
 #: data/appcenter.metainfo.xml.in:194
 msgid "Automatic app updates by default"
-msgstr ""
+msgstr "Automatisk appopdateringer som standard"
 
 #: data/appcenter.metainfo.xml.in:195
 msgid "OS Updates have moved to System Settings"
-msgstr ""
+msgstr "OS Opdateringer er flyttet til Systemindstillinger"
 
 #: data/appcenter.metainfo.xml.in:196
 msgid ""
@@ -111,17 +111,20 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:220
 msgid "Warn when apps use legacy Autostart, Notifications"
-msgstr ""
+msgstr "Advar når apps bruger legacy Autostart, Notifikationer"
 
 #: data/appcenter.metainfo.xml.in:224
 msgid "Fix flickering on AppInfo views when getting install size"
 msgstr ""
+"Ret flimren i AppInfo visninger under hentning af installationsstørrelse"
 
 #: data/appcenter.metainfo.xml.in:240
 msgid ""
 "Warn when apps have access to Home or system folders, location, settings, or "
 "have an insecure sandbox."
 msgstr ""
+"Advar når apps har adgang til hjemme eller systemmapper, placering, "
+"indstillinger eller har en usikker sandkasse."
 
 #: data/appcenter.metainfo.xml.in:244
 #, fuzzy
@@ -136,6 +139,8 @@ msgstr ""
 #: data/appcenter.metainfo.xml.in:246
 msgid "Don't list non-AppCenter apps under a separate header in category views"
 msgstr ""
+"Lad være med at liste ikke-AppCenter apps under en separat overskrift i "
+"kategorivisninger"
 
 #: data/appcenter.metainfo.xml.in:268
 msgid "Offer a Repair option if Flatpak updates fail"
@@ -153,11 +158,11 @@ msgstr "installer;afinstaller;fjern;katalog;butik;apps;opdateringer;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:25
 msgid "Check for Updates"
-msgstr "Søg efter Opdateringer"
+msgstr "Søg efter opdateringer"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Repair software sources"
-msgstr ""
+msgstr "Reparer softwarekilder"
 
 #: data/io.elementary.appcenter.policy.in:11
 #, fuzzy
