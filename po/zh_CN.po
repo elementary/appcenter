@@ -2,7 +2,7 @@
 # YISH <mokeyish@163.com>, 2018, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2018, 2023.
 # WANG, Wei <ww460160885@gmail.com>, 2019.
-# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021, 2023, 2024.
+# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021, 2023, 2024, 2026.
 # Zang Jiucheng <zangjiucheng@gmail.com>, 2021.
 # Yuchen Deng <loaden@gmail.com>, 2021, 2022.
 # Yuchen Deng <inbz@qq.com>, 2021.
@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-03 21:17+0000\n"
-"PO-Revision-Date: 2025-10-26 09:55+0000\n"
-"Last-Translator: JieXu <xujie0739@qq.com>\n"
+"PO-Revision-Date: 2026-10-13 09:03+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "l10n.elementaryos.org/projects/appcenter/appcenter/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -60,16 +60,13 @@ msgid "“%s” has been installed"
 msgstr "“%s” 已安装"
 
 #: src/Application.vala:334
-#, fuzzy
-#| msgid "The app has been installed"
 msgid "The app has been uninstalled"
-msgstr "应用已安装"
+msgstr "应用已卸载"
 
 #: src/Application.vala:335 src/MainWindow.vala:237
-#, fuzzy, c-format
-#| msgid "“%s” has been installed"
+#, c-format
 msgid "“%s” has been uninstalled"
-msgstr "“%s” 已安装"
+msgstr "“%s” 已卸载"
 
 #: src/MainWindow.vala:57
 #, c-format
@@ -200,11 +197,11 @@ msgstr "针对应用运行环境的更新"
 
 #: src/Core/FlatpakBackend.vala:1596 src/Core/FlatpakBackend.vala:1703
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "组件没有 Flatpak bundle"
 
 #: src/Core/FlatpakBackend.vala:1603 src/Core/FlatpakBackend.vala:1812
 msgid "Error getting flatpak installation"
-msgstr ""
+msgstr "获取 Flatpak 安装时发生错误"
 
 #: src/Core/FlatpakBackend.vala:1647
 msgid "Installing"
