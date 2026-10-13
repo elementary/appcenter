@@ -169,11 +169,11 @@ public class AppCenter.LinkListBox : Gtk.Widget {
         }
 
         contact_listbox.row_activated.connect ((row) => {
-            ((LinkRow) row).launch (component);
+            ((LinkRow) row.child).launch (component);
         });
 
         contribute_listbox.row_activated.connect ((row) => {
-            ((LinkRow) row).launch (component);
+            ((LinkRow) row.child).launch (component);
         });
     }
 
