@@ -134,7 +134,6 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
     private uint installation_changed_timeout_id = 0;
     private bool update_check_running = false;
-    private bool update_check_pending = false;
 
     private uint total_operations;
     private int current_operation;
@@ -302,7 +301,11 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 warning ("Couldn't user create Installation File Monitor : %s", e.message);
             }
 
-            user_installation_changed_monitor.changed.connect (() => queue_installation_changed_check ());
+            user_installation_changed_monitor.changed.connect (() => {
+                if (!working) {
+                    queue_installation_changed_check ();
+                }
+            });
         } else {
             warning ("Couldn't create user Installation File Monitor due to no installation");
         }
@@ -317,7 +320,11 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
             // Only trigger a cache refresh if we're not doing anything (i.e. its an external change).
             // Reloads the appstream data for enabled remotes and checks what applications are
             // installed/require updates.
-            system_installation_changed_monitor.changed.connect (() => queue_installation_changed_check ());
+            system_installation_changed_monitor.changed.connect (() => {
+                if (!working) {
+                    queue_installation_changed_check ();
+                }
+            });
         } else {
             warning ("Couldn't create system Installation File Monitor due to no installation");
         }
@@ -409,41 +416,35 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
         installation_changed_timeout_id = Timeout.add_seconds_once (2, () => {
             installation_changed_timeout_id = 0;
-
-            debug ("Flatpak installation changed (debounced); triggering update check.");
-
-            // Clear the installed state of all packages as something may have changed
-            // we weren't aware of
-            foreach (var package in package_list.values) {
-                if (package.state != Package.State.NOT_INSTALLED || package.installed) {
-                    package.clear_installed ();
-                }
-            }
-
             trigger_update_check.begin ();
         });
     }
 
     private async void trigger_update_check () {
         if (update_check_running) {
-            update_check_pending = true;
             return;
         }
 
         update_check_running = true;
 
-        do {
-            update_check_pending = false;
+        debug ("Flatpak installation changed (debounced); triggering update check.");
 
-            try {
-                yield refresh_cache (null);
-            } catch (Error e) {
-                warning ("Unable to refresh cache after external change: %s", e.message);
+        // Clear the installed state of all packages as something may have changed
+        // we weren't aware of
+        foreach (var package in package_list.values) {
+            if (package.state != Package.State.NOT_INSTALLED || package.installed) {
+                package.clear_installed ();
             }
+        }
 
-            reload_installed_packages ();
-            yield get_updates (null);
-        } while (update_check_pending);
+        try {
+            yield refresh_cache (null);
+        } catch (Error e) {
+            warning ("Unable to refresh cache after external change: %s", e.message);
+        }
+
+        reload_installed_packages ();
+        yield get_updates (null);
 
         update_check_running = false;
     }
