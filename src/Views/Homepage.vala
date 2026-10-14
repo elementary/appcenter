@@ -258,7 +258,7 @@ public class AppCenter.Homepage : Adw.NavigationPage {
         }
 
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
-            if (!banner_carousel.is_visible ()) {
+            if (!banner_carousel.is_visible () || banner_carousel.n_pages < 2) {
                 return Source.CONTINUE;
             }
 
@@ -269,7 +269,10 @@ public class AppCenter.Homepage : Adw.NavigationPage {
                 new_index = 0;
             }
 
-            banner_carousel.scroll_to (banner_carousel.get_nth_page (new_index), true);
+            var new_widget = banner_carousel.get_nth_page (new_index);
+            if (new_widget != null) {
+                banner_carousel.scroll_to (new_widget, true);
+            }
 
             return Source.CONTINUE;
         });

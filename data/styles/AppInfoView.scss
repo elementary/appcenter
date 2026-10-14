@@ -96,9 +96,9 @@ appinfoview {
     }
 
     linklistbox {
-        row.link grid {
-            padding: 0 rem(6px);
-            border-spacing: rem(12px) 0;
+        granite-listitem.link grid {
+            border-spacing: 1em 0;
+            padding: 0 0.5em;
         }
     }
 }

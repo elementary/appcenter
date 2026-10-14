@@ -77,8 +77,14 @@ public class AppCenter.SearchView : Adw.NavigationPage {
             single_click_activate = true
         };
 
-        scrolled = new Gtk.ScrolledWindow () {
+        var clamp_scrollable = new Adw.ClampScrollable () {
             child = grid_view,
+            maximum_size = 800,
+            tightening_threshold = 800
+        };
+
+        scrolled = new Gtk.ScrolledWindow () {
+            child = clamp_scrollable,
             hscrollbar_policy = NEVER
         };
 
