@@ -17,6 +17,9 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
+[CCode (cheader_filename = "malloc.h")]
+extern int malloc_trim (size_t pad);
+
 public class AppCenterCore.FlatpakPackage : Package {
     public weak Flatpak.Installation installation { public get; construct; }
 
@@ -128,6 +131,9 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
     private static GLib.FileMonitor user_installation_changed_monitor;
     private static GLib.FileMonitor system_installation_changed_monitor;
+
+    private uint installation_changed_timeout_id = 0;
+    private bool update_check_running = false;
 
     private uint total_operations;
     private int current_operation;
@@ -297,17 +303,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
             user_installation_changed_monitor.changed.connect (() => {
                 if (!working) {
-                    debug ("Flatpak user installation changed.");
-
-                    // Clear the installed state of all packages as something may have changed we weren't
-                    // aware of
-                    foreach (var package in package_list.values) {
-                        if (package.state != Package.State.NOT_INSTALLED || package.installed) {
-                            package.clear_installed ();
-                        }
-                    }
-
-                    trigger_update_check.begin ();
+                    queue_installation_changed_check ();
                 }
             });
         } else {
@@ -321,22 +317,12 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 warning ("Couldn't create system Installation File Monitor : %s", e.message);
             }
 
+            // Only trigger a cache refresh if we're not doing anything (i.e. its an external change).
+            // Reloads the appstream data for enabled remotes and checks what applications are
+            // installed/require updates.
             system_installation_changed_monitor.changed.connect (() => {
-                // Only trigger a cache refresh if we're not doing anything (i.e. its an external change)
                 if (!working) {
-                    debug ("Flatpak system installation changed.");
-
-                    // Clear the installed state of all packages as something may have changed we weren't
-                    // aware of
-                    foreach (var package in package_list.values) {
-                        if (package.state != Package.State.NOT_INSTALLED || package.installed) {
-                            package.clear_installed ();
-                        }
-                    }
-
-                    // Reloads the appstream data for enabled remotes and checks what applications are
-                    // installed/require updates
-                    trigger_update_check.begin ();
+                    queue_installation_changed_check ();
                 }
             });
         } else {
@@ -423,7 +409,34 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         });
     }
 
+    private void queue_installation_changed_check () {
+        if (installation_changed_timeout_id != 0) {
+            Source.remove (installation_changed_timeout_id);
+        }
+
+        installation_changed_timeout_id = Timeout.add_seconds_once (2, () => {
+            installation_changed_timeout_id = 0;
+            trigger_update_check.begin ();
+        });
+    }
+
     private async void trigger_update_check () {
+        if (update_check_running) {
+            return;
+        }
+
+        update_check_running = true;
+
+        debug ("Flatpak installation changed (debounced); triggering update check.");
+
+        // Clear the installed state of all packages as something may have changed
+        // we weren't aware of
+        foreach (var package in package_list.values) {
+            if (package.state != Package.State.NOT_INSTALLED || package.installed) {
+                package.clear_installed ();
+            }
+        }
+
         try {
             yield refresh_cache (null);
         } catch (Error e) {
@@ -432,6 +445,8 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
         reload_installed_packages ();
         yield get_updates (null);
+
+        update_check_running = false;
     }
 
     static construct {
@@ -2062,6 +2077,8 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         }
 
         fill_runtime_updates ();
+
+        malloc_trim (0);
     }
 
     private void repair_internal (Job job) {
