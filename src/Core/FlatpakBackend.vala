@@ -149,14 +149,14 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
 
             unowned var app = (Gtk.Application) GLib.Application.get_default ();
 
-            if (inhibit_token == 0) {
+            if (inhibit_token == 0 && job.operation.should_inhibit ()) {
                 /* If you came here trying to debug the critical `assertion 'GTK_IS_NATIVE (self)' failed`:
                    This was a bug in GTK and has been fixed so this should go away in OS 9
                    https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/8638 */
                 inhibit_token = app.inhibit (
                     app.get_active_window (),
                     Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
-                    _("package operations are being performed")
+                    job.operation.to_string ()
                 );
             }
 
@@ -1197,16 +1197,10 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 debug ("Appstream updated: %s", success.to_string ());
             }
 
-            var metadata_location = remote.get_appstream_dir (null).get_path ();
-            var metadata_folder_file = File.new_for_path (metadata_location);
-
-            var metadata_path = Path.build_filename (metadata_location, "appstream.xml.gz");
-            var metadata_file = File.new_for_path (metadata_path);
-
+            var appstream_dir = remote.get_appstream_dir (null);
+            var metadata_file = appstream_dir.get_child ("appstream.xml.gz");
             if (metadata_file.query_exists ()) {
-                var dest_file = dest_folder.get_child (origin_name + ".xml.gz");
-
-                perform_xml_fixups (origin_name, metadata_file, dest_file);
+                perform_xml_fixups (origin_name, metadata_file, dest_path);
 
                 var local_icons_path = dest_folder.get_child ("icons");
                 if (!local_icons_path.query_exists ()) {
@@ -1218,7 +1212,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                     }
                 }
 
-                var remote_icons_folder = metadata_folder_file.get_child ("icons");
+                var remote_icons_folder = appstream_dir.get_child ("icons");
                 if (!remote_icons_folder.query_exists ()) {
                     continue;
                 }
@@ -1479,9 +1473,10 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         }
     }
 
-    private static void perform_xml_fixups (string origin_name, File src_file, File dest_file) {
+    private static void perform_xml_fixups (string origin_name, File src_file, string dest_path) {
         var path = src_file.get_path ();
-        Xml.Doc* doc = Xml.Parser.parse_file (path);
+        // XML_PARSE_UNZIP
+        Xml.Doc* doc = Xml.Parser.read_file (path, null, 1 << 24);
         if (doc == null) {
             warning ("Appstream XML file %s not found or permissions missing", path);
             return;
@@ -1570,7 +1565,7 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
         }
 
         doc->set_compress_mode (7);
-        doc->save_file (dest_file.get_path ());
+        doc->save_file (Path.build_filename (dest_path, origin_name + ".xml.gz"));
 
         delete res;
         delete doc;
