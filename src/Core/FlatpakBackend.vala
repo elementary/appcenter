@@ -527,6 +527,11 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
                 continue;
             }
 
+            // Skip local packages that don't have Flatpak bundes
+            if (package.is_local) {
+                continue;
+            }
+
             unowned var bundle = package.component.get_bundle (FLATPAK);
             if (bundle?.get_id ()?.has_suffix ("daily")) {
                 continue;
