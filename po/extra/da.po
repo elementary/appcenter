@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-03 21:17+0000\n"
-"PO-Revision-Date: 2026-10-13 09:03+0000\n"
+"PO-Revision-Date: 2026-10-23 02:42+0000\n"
 "Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/appcenter/"
 "extra/da/>\n"
@@ -66,10 +66,8 @@ msgstr "elementary, Inc."
 #: data/appcenter.metainfo.xml.in:192 data/appcenter.metainfo.xml.in:222
 #: data/appcenter.metainfo.xml.in:242 data/appcenter.metainfo.xml.in:257
 #: data/appcenter.metainfo.xml.in:271
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Other Improvements:"
-msgstr "Tastatur forbedringer"
+msgstr "Andre Forbedringer:"
 
 #: data/appcenter.metainfo.xml.in:72 data/appcenter.metainfo.xml.in:81
 #: data/appcenter.metainfo.xml.in:96 data/appcenter.metainfo.xml.in:110
@@ -87,10 +85,8 @@ msgstr "Ydelses forbedringer"
 
 #: data/appcenter.metainfo.xml.in:188 data/appcenter.metainfo.xml.in:218
 #: data/appcenter.metainfo.xml.in:238 data/appcenter.metainfo.xml.in:266
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Nye funktioner"
+msgstr "Nye funktioner:"
 
 #: data/appcenter.metainfo.xml.in:190
 msgid "Manage autostart in System Settings → Applications"
@@ -144,13 +140,15 @@ msgstr ""
 
 #: data/appcenter.metainfo.xml.in:268
 msgid "Offer a Repair option if Flatpak updates fail"
-msgstr ""
+msgstr "Tilbyd en reparationsmulighed, hvis Flatpak opdateringer mislykkes"
 
 #: data/appcenter.metainfo.xml.in:269
 msgid ""
 "Show a message in the updates view when up to date, including when updates "
 "were last checked"
 msgstr ""
+"Vis en meddelelse i opdateringsvisningen, når alt er opdateret, inklusiv "
+"hvornår der sidst blev søgt efter opdateringer"
 
 #: data/io.elementary.appcenter.desktop.in.in:8
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -165,10 +163,8 @@ msgid "Repair software sources"
 msgstr "Reparer softwarekilder"
 
 #: data/io.elementary.appcenter.policy.in:11
-#, fuzzy
-#| msgid "Authentication is required to update software"
 msgid "Authentication is required to repair software sources"
-msgstr "Autentificering er påkrævet for at opdatere software"
+msgstr "Autentificering er påkrævet for at reparer softwarekilder"
 
 #~ msgid "Update software"
 #~ msgstr "Opdater software"
