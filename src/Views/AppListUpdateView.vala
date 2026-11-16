@@ -9,9 +9,10 @@
 /** AppList for the Updates View. Sorts update_available first and shows headers.
  * Does not show Uninstall Button **/
 public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
-    private Gtk.FlowBox installed_flowbox;
-    private Gtk.ListBox list_box;
+    private Granite.Box updatable_header;
+    private Granite.HeaderLabel in_progress_header;
     private Granite.HeaderLabel installed_header;
+
     private Gtk.SizeGroup action_button_group;
 
     private uint updated_label_timeout_id = 0;
@@ -54,43 +55,21 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         };
         update_all_button.add_css_class (Granite.CssClass.SUGGESTED);
 
-        var updatable_header = new Granite.Box (HORIZONTAL) {
-            margin_end = 12,
-            margin_start = 12
+        updatable_header = new Granite.Box (HORIZONTAL) {
+            margin_end = 6,
+            margin_start = 6
         };
         updatable_header.append (updatable_header_label);
         updatable_header.append (update_all_button);
 
-        list_box = new Gtk.ListBox () {
-            activate_on_single_click = true,
-            hexpand = true,
+        in_progress_header = new Granite.HeaderLabel (_("In Progress")) {
+            margin_end = 6,
+            margin_start = 6
         };
-        list_box.bind_model (flatpak_backend.updatable_packages, create_row_from_package);
-
-        var updatable_section = new Granite.Box (VERTICAL, HALF);
-        updatable_section.append (updatable_header);
-        updatable_section.append (list_box);
-        flatpak_backend.updatable_packages.bind_property ("n-items", updatable_section, "visible", SYNC_CREATE);
-
-        var in_progress_header = new Granite.HeaderLabel (_("In Progress")) {
-            margin_end = 12,
-            margin_start = 12
-        };
-
-        var in_progress_list = new Gtk.ListBox () {
-            activate_on_single_click = true,
-            hexpand = true,
-        };
-        in_progress_list.bind_model (flatpak_backend.working_packages, create_row_from_package);
-
-        var in_progress_section = new Granite.Box (VERTICAL, HALF);
-        in_progress_section.append (in_progress_header);
-        in_progress_section.append (in_progress_list);
-        flatpak_backend.working_packages.bind_property ("n-items", in_progress_section, "visible", SYNC_CREATE);
 
         installed_header = new Granite.HeaderLabel (_("Up to Date")) {
-            margin_end = 12,
-            margin_start = 12
+            margin_end = 6,
+            margin_start = 6
         };
 
         var installed_sort_model = new Gtk.SortListModel (
@@ -98,25 +77,29 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
             new Gtk.CustomSorter ((CompareDataFunc<GLib.Object>) AppCenterCore.Package.compare_newest_release)
         );
 
-        installed_flowbox = new Gtk.FlowBox () {
-            column_spacing = 24,
-            max_children_per_line = 5,
-            row_spacing = 12
+        var model_store = new ListStore (typeof (ListModel));
+        model_store.append (flatpak_backend.updatable_packages);
+        model_store.append (flatpak_backend.working_packages);
+        model_store.append (installed_sort_model);
+
+        var flatten_model = new Gtk.FlattenListModel (model_store);
+        var selection_model = new Gtk.NoSelection (flatten_model);
+
+        var item_factory = new Gtk.SignalListItemFactory ();
+        item_factory.bind.connect (on_item_bind);
+
+        var header_factory = new Gtk.SignalListItemFactory ();
+        header_factory.bind.connect (on_header_bind);
+        header_factory.unbind.connect (on_header_unbind);
+
+        var list_view = new Gtk.ListView (selection_model, item_factory) {
+            header_factory = header_factory,
+            single_click_activate = true,
         };
-        installed_flowbox.bind_model (installed_sort_model, create_installed_from_package);
+        list_view.activate.connect (on_row_activated);
 
-        var installed_section = new Granite.Box (VERTICAL, HALF);
-        installed_section.append (installed_header);
-        installed_section.append (installed_flowbox);
-        flatpak_backend.updated_packages.bind_property ("n-items", installed_section, "visible", SYNC_CREATE);
-
-        var box = new Granite.Box (VERTICAL, DOUBLE);
-        box.append (updatable_section);
-        box.append (in_progress_section);
-        box.append (installed_section);
-
-        var clamp = new Adw.Clamp () {
-            child = box,
+        var clamp = new Adw.ClampScrollable () {
+            child = list_view,
             maximum_size = AppInfoView.MAX_WIDTH,
         };
 
@@ -188,20 +171,6 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         /// TRANSLATORS: the name of the Installed Apps view
         title = C_("view", "Installed");
 
-        list_box.row_activated.connect ((row) => {
-            if (row.get_child () is Widgets.InstalledPackageRowGrid) {
-                var package = ((Widgets.InstalledPackageRowGrid) row.get_child ()).package;
-                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
-            }
-        });
-
-        installed_flowbox.child_activated.connect ((child) => {
-            if (child.get_child () is Widgets.InstalledPackageRowGrid) {
-                var package = ((Widgets.InstalledPackageRowGrid) child.get_child ()).package;
-                activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
-            }
-        });
-
         App.settings.bind (
             "automatic-updates",
             automatic_updates_button,
@@ -240,24 +209,40 @@ public class AppCenter.Views.AppListUpdateView : Adw.NavigationPage {
         }
     }
 
-    private Gtk.Widget create_row_from_package (Object object) {
-        unowned var package = (AppCenterCore.Package) object;
+    private void on_item_bind (Object obj) {
+        var list_item = (Gtk.ListItem) obj;
+        var package = (AppCenterCore.Package) list_item.get_item ();
+
         var row = new Widgets.InstalledPackageRowGrid (package, action_button_group);
 
-        unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
-        update_manager.bind_property ("updating-all", row, "action-sensitive", SYNC_CREATE | INVERT_BOOLEAN);
+        if (package.working || package.update_available) {
+            unowned var update_manager = AppCenterCore.UpdateManager.get_default ();
+            update_manager.bind_property ("updating-all", row, "action-sensitive", SYNC_CREATE | INVERT_BOOLEAN);
+        }
 
-        return row;
+        list_item.set_child (row);
     }
 
-    private Gtk.Widget create_installed_from_package (Object object) {
-        unowned var package = (AppCenterCore.Package) object;
-        return new Widgets.InstalledPackageRowGrid (package, action_button_group);
+    private void on_header_bind (Object obj) {
+        var header = (Gtk.ListHeader) obj;
+        var package = (AppCenterCore.Package) header.item;
+
+        if (package.working) {
+            header.set_child (in_progress_header);
+        } else if (package.update_available) {
+            header.set_child (updatable_header);
+        } else {
+            header.set_child (installed_header);
+        }
     }
 
-    public void clear () {
-        // Free widgets with all their connected signals https://github.com/elementary/appcenter/pull/846
-        list_box.remove_all ();
-        installed_flowbox.remove_all ();
+    private void on_header_unbind (Object obj) {
+        var list_item = (Gtk.ListHeader) obj;
+        list_item.set_child (null);
+    }
+
+    private void on_row_activated (Gtk.ListView list_view, uint pos) {
+        var package = (AppCenterCore.Package) list_view.model.get_item (pos);
+        activate_action_variant (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_PACKAGE, package.uid);
     }
 }
