@@ -1244,8 +1244,9 @@ public class AppCenterCore.FlatpakBackend : Object, Backend {
             }
 
             // Make sure we emit the signal on the main thread since UI is connected to this
+            var name = remote.get_name ();
             Idle.add (() => {
-                on_metadata_remote_preprocessed (remote.get_name ());
+                on_metadata_remote_preprocessed (name);
                 return Source.REMOVE;
             });
         }
