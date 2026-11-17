@@ -8,6 +8,7 @@ appcenter_files = files(
     'Core' / 'CategoryManager.vala',
     'Core/ChangeInformation.vala',
     'Core' / 'Component.vala',
+    'Core' / 'ComponentStore.vala',
     'Core/FlatpakBackend.vala',
     'Core/HttpClient.vala',
     'Core/Job.vala',
