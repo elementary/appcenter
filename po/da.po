@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-03 21:17+0000\n"
-"PO-Revision-Date: 2026-10-23 02:42+0000\n"
+"PO-Revision-Date: 2026-11-20 21:04+0000\n"
 "Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/appcenter/"
 "appcenter/da/>\n"
@@ -192,7 +192,7 @@ msgstr "Opdateringer til app-køretidsmiljøer"
 
 #: src/Core/FlatpakBackend.vala:1596 src/Core/FlatpakBackend.vala:1703
 msgid "Component has no flatpak bundle"
-msgstr ""
+msgstr "Komponenten har ingen flatpak bundt"
 
 #: src/Core/FlatpakBackend.vala:1603 src/Core/FlatpakBackend.vala:1812
 msgid "Error getting flatpak installation"
@@ -559,17 +559,14 @@ msgid "Try Again"
 msgstr "Prøv Igen"
 
 #: src/Dialogs/UpgradeFailDialog.vala:27
-#, fuzzy
-#| msgid ""
-#| "This may have been caused by external, manually added software "
-#| "repositories or a corrupted sources file."
 msgid ""
 "This may have been caused by sideloaded or manually compiled software, a "
 "third-party software source, or a package manager error. Manually refreshing "
 "updates may resolve the issue."
 msgstr ""
-"Dette kan have været forårsaget af eksterne manuelt tilføjede software "
-"repositories eller en beskadiget kilde fil."
+"Dette kan have været forårsaget af eksterne eller manuelt kompileret, en "
+"tredjeparts softwarekilde eller en pakkehåndteringsfejl. Manuel opdatering "
+"kan muligvis løse problemet."
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
@@ -622,12 +619,11 @@ msgid "%i%%"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:272
-#, fuzzy, c-format
-#| msgid "Waiting"
+#, c-format
 msgid "%u rating"
 msgid_plural "%u ratings"
-msgstr[0] "Venter"
-msgstr[1] "Venter"
+msgstr[0] "%u bedømmelse"
+msgstr[1] "%u bedømmelser"
 
 #: src/Views/AppInfoView.vala:285
 msgid "Made for elementary OS"
@@ -643,7 +639,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:310
 msgid "This app does not provide language information"
-msgstr ""
+msgstr "Denne app giver ikke sprogoplysninger"
 
 #: src/Views/AppInfoView.vala:317
 msgid "Not Translated"
@@ -676,7 +672,7 @@ msgstr "Vold"
 
 #: src/Views/AppInfoView.vala:369
 msgid "Fantasy Violence"
-msgstr ""
+msgstr "Fantasi vold"
 
 #: src/Views/AppInfoView.vala:374
 msgid "Graphic violence, bloodshed, or death"
@@ -888,9 +884,6 @@ msgstr "Indstillinger"
 #. / TRANSLATORS: the action of searching
 #: src/Views/AppListUpdateView.vala:170 src/Views/CategoryView.vala:67
 #: src/Views/Homepage.vala:130
-#, fuzzy
-#| msgctxt "view"
-#| msgid "Search"
 msgctxt "action"
 msgid "Search"
 msgstr "Søg"
@@ -1016,7 +1009,7 @@ msgstr "Få Hjælp"
 
 #: src/Widgets/LinkListBox.vala:55
 msgid "Send Feedback"
-msgstr ""
+msgstr "Send Feedback"
 
 #: src/Widgets/LinkListBox.vala:65
 msgid "Contact The Developer"
@@ -1027,10 +1020,8 @@ msgid "Sponsor"
 msgstr ""
 
 #: src/Widgets/LinkListBox.vala:117
-#, fuzzy
-#| msgid "Suggest Translations"
 msgid "Contribute Translations"
-msgstr "Foreslå Oversættelser"
+msgstr "Bidrag med oversættelser"
 
 #: src/Widgets/LinkListBox.vala:127
 msgid "Get The Source Code"
@@ -1093,7 +1084,7 @@ msgstr "Brugerdefineret licens"
 
 #: src/Widgets/LinkListBox.vala:342
 msgid "Payment provided by Stripe"
-msgstr ""
+msgstr "Betaling leveret af Stripe"
 
 #: src/Widgets/ReleaseRow.vala:66
 msgid "Fixed Issues"
@@ -1123,7 +1114,7 @@ msgstr ""
 
 #: src/Widgets/AppContainers/InstalledPackageRowGrid.vala:63
 msgid "Release notes"
-msgstr ""
+msgstr "Udgivelsesnoter"
 
 #, c-format
 #~ msgid "%u Update Available"
