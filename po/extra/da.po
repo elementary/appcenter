@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-03 21:17+0000\n"
-"PO-Revision-Date: 2026-10-23 02:42+0000\n"
+"PO-Revision-Date: 2026-11-20 21:04+0000\n"
 "Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/appcenter/"
 "extra/da/>\n"
@@ -130,7 +130,7 @@ msgstr "Ellipsize lange appnavne i App Info-visninger"
 
 #: data/appcenter.metainfo.xml.in:245
 msgid "Show a placeholder banner on the home page when loading"
-msgstr ""
+msgstr "Vis et pladsholderbanner på startsiden ved indlæsning"
 
 #: data/appcenter.metainfo.xml.in:246
 msgid "Don't list non-AppCenter apps under a separate header in category views"
