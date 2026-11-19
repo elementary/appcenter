@@ -150,10 +150,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public override bool close_request () {
-        if (installed_view != null) {
-            installed_view.clear ();
-        }
-
         // We have to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
         ((AppCenter.App) application).request_background.begin (() =>
             Idle.add_once (() => destroy ())
